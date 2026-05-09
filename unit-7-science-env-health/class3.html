@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 3 Revision: Environment / पर्यावरणीय कारक</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1117;
+      --panel: #171b24;
+      --panel-2: #1e2430;
+      --text: #f7fafc;
+      --muted: #d7dee8;
+      --line: #334155;
+      --cyan: #00d4ff;
+      --orange: #ff7a3d;
+      --green: #00d084;
+      --purple: #b388ff;
+      --yellow: #ffd166;
+      --danger: #ff5c7a;
+      --shadow: 0 16px 40px rgba(0, 0, 0, .25);
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --panel-2: #eef3f8;
+      --text: #121826;
+      --muted: #374151;
+      --line: #cbd5e1;
+      --shadow: 0 16px 40px rgba(15, 23, 42, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(0, 212, 255, .10), transparent 28rem),
+        radial-gradient(circle at 90% 12%, rgba(255, 122, 61, .10), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: .01em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      padding: 28px 0 18px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(0, 212, 255, .14), rgba(255, 122, 61, .10)), var(--panel);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--yellow);
+      font-weight: 800;
+      font-size: .9rem;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      margin-top: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      max-width: 800px;
+      color: var(--muted);
+      margin: 12px 0 0;
+      font-size: 1.05rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge, button, select {
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    button, select {
+      cursor: pointer;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--panel) 92%, transparent);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .progress-shell {
+      height: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      transition: width .25s ease;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    nav {
+      position: sticky;
+      top: 82px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 12px;
+      max-height: calc(100vh - 100px);
+      overflow: auto;
+    }
+
+    nav strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      background: var(--panel-2);
+      color: var(--text);
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      scroll-margin-top: 86px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .done {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: .92rem;
+    }
+
+    .done input, .checklist input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--green);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 14px;
+    }
+
+    .card ul, .card ol {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    .hot {
+      border-color: color-mix(in srgb, var(--orange) 70%, var(--line));
+      background: color-mix(in srgb, var(--orange) 14%, var(--panel));
+    }
+
+    .definition {
+      border-left: 5px solid var(--cyan);
+    }
+
+    .memory {
+      border-left: 5px solid var(--purple);
+    }
+
+    .term {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(0, 212, 255, .14);
+      border: 1px solid rgba(0, 212, 255, .35);
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--panel-2);
+      color: var(--text);
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 10px 12px;
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .visual {
+      border: 1px dashed color-mix(in srgb, var(--cyan) 55%, var(--line));
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 12px;
+      background: color-mix(in srgb, var(--cyan) 8%, var(--panel));
+    }
+
+    .caption {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 8px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .image-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      overflow: hidden;
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 360px;
+      object-fit: contain;
+      background: #0b1220;
+    }
+
+    .image-card .caption {
+      padding: 10px 12px 12px;
+      margin: 0;
+    }
+
+    .image-card a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .node {
+      min-width: 130px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .arrow {
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .earth {
+      width: min(330px, 100%);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 50%;
+      position: relative;
+      background:
+        radial-gradient(circle at 45% 42%, #2ed47a 0 12%, transparent 13%),
+        radial-gradient(circle at 63% 58%, #2ed47a 0 10%, transparent 11%),
+        radial-gradient(circle at 34% 67%, #2ed47a 0 9%, transparent 10%),
+        radial-gradient(circle at 50% 50%, #1d8cf8 0 58%, #0b426f 60% 100%);
+      box-shadow: inset -24px -24px 50px rgba(0,0,0,.35);
+    }
+
+    .earth::before, .earth::after {
+      content: "";
+      position: absolute;
+      inset: -8%;
+      border-radius: 50%;
+      border: 3px solid rgba(0, 212, 255, .36);
+    }
+
+    .earth::after {
+      inset: -16%;
+      border-color: rgba(179, 136, 255, .24);
+    }
+
+    .layers {
+      display: grid;
+      gap: 8px;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .bar {
+      min-height: 42px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      font-weight: 800;
+    }
+
+    .quiz {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .qa button {
+      width: 100%;
+      text-align: left;
+      background: var(--panel-2);
+    }
+
+    .answer {
+      display: none;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 8px 8px;
+      color: var(--muted);
+    }
+
+    .qa.open .answer {
+      display: block;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .checklist label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 22px 0 36px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+        max-height: none;
+      }
+
+      .topbar-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .layer {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+      }
+
+      .topbar, nav, button, .done {
+        display: none !important;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      section, .card, details, .visual {
+        box-shadow: none;
+        border-color: #999;
+        background: white;
+      }
+
+      details {
+        display: block;
+      }
+
+      details > * {
+        display: block;
+      }
+
+      .answer {
+        display: block;
+        border: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <span class="kicker">🎯 MPPSC Unit 7 • Lecture 3</span>
+        <h1>🌍 Environment / पर्यावरणीय कारक</h1>
+        <p class="subtitle">Video transcript se bana hua Hinglish revision page. Focus: Environment ka meaning, components/factors, atmosphere, biotic-abiotic examples, aur conservation ka exam angle.</p>
+        <div class="badges">
+          <span class="badge">Total Topics: 9</span>
+          <span class="badge">🔥 Exam Hot Included</span>
+          <span class="badge">✅ Checklist + Quiz</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="topbar" aria-label="Quick navigation and progress">
+      <div class="topbar-inner">
+        <div>
+          <div class="progress-shell"><div class="progress-fill" id="progressFill"></div></div>
+          <small id="progressText">0% revision done</small>
+        </div>
+        <select id="jumpMenu" aria-label="Jump to topic">
+          <option value="">Jump to topic</option>
+          <option value="overview">Overview</option>
+          <option value="meaning">Meaning & Definition</option>
+          <option value="features">Characteristics</option>
+          <option value="atmosphere">Atmosphere</option>
+          <option value="layers">Atmospheric Layers</option>
+          <option value="abiotic">Abiotic Factors</option>
+          <option value="biotic">Biotic Factors</option>
+          <option value="human">Human-made Environment</option>
+          <option value="conservation">Conservation</option>
+          <option value="masters">Master Revision</option>
+        </select>
+        <button id="themeToggle" type="button">Theme</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <nav aria-label="Table of contents">
+        <strong>📌 Table of Contents</strong>
+        <a href="#overview">Overview + Exam Weight</a>
+        <a href="#meaning">Environment Meaning</a>
+        <a href="#features">Characteristics</a>
+        <a href="#atmosphere">Atmosphere Composition</a>
+        <a href="#layers">5 Layers of Atmosphere</a>
+        <a href="#abiotic">Abiotic Factors</a>
+        <a href="#biotic">Biotic Factors</a>
+        <a href="#human">Human-made Factors</a>
+        <a href="#conservation">Conservation Lead-in</a>
+        <a href="#masters">Master Revision</a>
+      </nav>
+
+      <main>
+        <section id="overview" data-topic>
+          <div class="section-head">
+            <h2>🔥 Overview + Exam Weight</h2>
+            <label class="done"><input type="checkbox" data-done="overview"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card hot">
+              <h3>Exam Hot</h3>
+              <ul>
+                <li>Teacher ne clearly bola: Science syllabus me Environment se questions aate hi aate hain.</li>
+                <li>Environment se 2-3 questions ka strong chance bataya gaya.</li>
+                <li>Protection of Environment / पर्यावरण संरक्षण ko sabse important bola gaya.</li>
+                <li>Environment section ke baad Ecosystem aur Biodiversity cover honge.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Lecture Context</h3>
+              <ul>
+                <li>Unit 7 ka naya syllabus chal raha hai.</li>
+                <li>Pehle topic: Branches of Science ka initial knowledge complete ho chuka hai.</li>
+                <li>Aaj ka Lecture 3: Environment / Environmental Factors.</li>
+                <li>10 Units ke liye 10,000 MCQ practice ka target bataya gaya.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="visual">
+            <div class="flow">
+              <div class="node">Unit 7</div><div class="arrow">→</div>
+              <div class="node">Environment Factors</div><div class="arrow">→</div>
+              <div class="node">Conservation</div><div class="arrow">→</div>
+              <div class="node">Ecosystem</div><div class="arrow">→</div>
+              <div class="node">Biodiversity</div>
+            </div>
+            <div class="caption">Visual: Lecture flow based on transcript.</div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Blue_Marble.jpg?width=900" alt="Earth seen from space, showing the planet as one shared home" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:The_Blue_Marble.jpg">Wikimedia Commons</a>, Apollo 17 crew / NASA, Public Domain. Use this for “Earth is our shared home” revision anchor.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Environment ko exam ke liye important kyu bola gaya?</button><div class="answer">Kyuki teacher ke according almost har exam me Environment se questions pooche jaate hain, aur is topic se 2-3 questions aa sakte hain.</div></div>
+            <div class="qa"><button type="button">Q. Is lecture ka main topic kya tha?</button><div class="answer">Environment / पर्यावरणीय कारक / Environmental Factors.</div></div>
+          </div>
+        </section>
+
+        <section id="meaning" data-topic>
+          <div class="section-head">
+            <h2>🌐 Environment: Meaning & Definition</h2>
+            <label class="done"><input type="checkbox" data-done="meaning"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card definition">
+              <h3>Shabdik Arth</h3>
+              <ul>
+                <li><span class="term">परि</span> = charo taraf / all around.</li>
+                <li><span class="term">आवरण</span> = jo ghere hue ho / covering.</li>
+                <li>Isliye पर्यावरण ka literal sense: jo jeevon ko charo taraf se ghere hue hai.</li>
+                <li>Teacher ne perimeter/circumference se “परि” ko relate karke samjhaya.</li>
+              </ul>
+            </div>
+            <div class="card definition">
+              <h3>Deep Definition</h3>
+              <p>Environment = <strong>biotic components</strong> aur <strong>abiotic components</strong> ke beech ka mutual interaction / parasparik sah-sambandh.</p>
+              <ul>
+                <li>Biotic = Biosphere / जैव मंडल.</li>
+                <li>Abiotic = Lithosphere, Hydrosphere, Atmosphere.</li>
+                <li>Jeev-jantu, plants, humans air-water-land ke saath interaction karte hain.</li>
+              </ul>
+            </div>
+          </div>
+          <details open>
+            <summary>EPA 1986 ke according definition</summary>
+            <p>Environment Protection Act 1986 ke context me environment ko physical/biotic conditions aur unki interaction ke roop me samjha gaya. Teacher ne clarify kiya: <strong>भौतिक = अजैविक = Physical</strong>, aur <strong>जैविक = Biotic</strong>.</p>
+          </details>
+          <div class="visual">
+            <div class="flow">
+              <div class="node">जैव मंडल<br>Biosphere</div><div class="arrow">↔</div>
+              <div class="node">स्थल मंडल<br>Lithosphere</div><div class="arrow">↔</div>
+              <div class="node">जल मंडल<br>Hydrosphere</div><div class="arrow">↔</div>
+              <div class="node">वायु मंडल<br>Atmosphere</div>
+            </div>
+            <div class="caption">HTML/CSS diagram: Environment as interaction between biotic and abiotic components.</div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atmosphere-Biosphere-Hydrosphere-Lithosphere.png?width=800" alt="Diagram showing atmosphere, biosphere, hydrosphere and lithosphere as Earth system spheres" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Atmosphere-Biosphere-Hydrosphere-Lithosphere.png">Wikimedia Commons</a>, CK-12 Foundation, CC BY-SA 3.0. Ye biotic-abiotic interaction ko visually yaad karne ke liye.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. “पर्यावरण” kin do words se bana hai?</button><div class="answer">परि + आवरण. परि = charo taraf, आवरण = covering/ghera hua.</div></div>
+            <div class="qa"><button type="button">Q. Biotic component ka main sphere kaunsa hai?</button><div class="answer">जैव मंडल / Biosphere.</div></div>
+            <div class="qa"><button type="button">Q. Physical component ka Hindi exam term kya ho sakta hai?</button><div class="answer">भौतिक घटक, jo yahan अजैविक component ke sense me use hua.</div></div>
+          </div>
+        </section>
+
+        <section id="features" data-topic>
+          <div class="section-head">
+            <h2>🧠 Environment Ki Characteristics</h2>
+            <label class="done"><input type="checkbox" data-done="features"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Key Features</h3>
+              <ul>
+                <li>Environment biotic aur abiotic elements se milkar bana hai.</li>
+                <li>Environment <strong>परिवर्तनशील</strong> hai: weather, temperature, rain, wind, clouds change hote rehte hain.</li>
+                <li>Jeev environment ke according <strong>अनुकूलन / adaptation</strong> dikhate hain.</li>
+                <li>Environment resources ka bhandar hai: water, air, soil, forests, minerals.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Self System</h3>
+              <ul>
+                <li><strong>स्व नियंत्रण</strong>: Environment apne aap ko regulate aur heal kar sakta hai.</li>
+                <li>Corona lockdown example: pollution sources band hue to air and water quality improve hui.</li>
+                <li><strong>स्व पोषण</strong>: Plants photosynthesis se food banate hain.</li>
+                <li>Food chain/food web me plants base support dete hain.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card memory">
+            <h3>Memory Hook: “B-PARS”</h3>
+            <p><strong>B</strong>iotic-Abiotic, <strong>P</strong>arivartansheel, <strong>A</strong>daptation, <strong>R</strong>esource bhandar, <strong>S</strong>elf-control/self-nutrition.</p>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Water_cycle_flowchart.png?width=900" alt="Flowchart of hydrological cycle showing water movement across Earth systems" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Water_cycle_flowchart.png">Wikimedia Commons</a>, Entropyrider, CC0. Resource cycle aur self-regulation ko connect karne ke liye.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Environment ko parivartansheel kyu kaha?</button><div class="answer">Kyuki weather, temperature, rain, wind, cloud formation jaise factors continuously change hote hain.</div></div>
+            <div class="qa"><button type="button">Q. Photosynthesis ka relation kis feature se hai?</button><div class="answer">स्व पोषण / self-nutrition. Plants apna food photosynthesis se banate hain.</div></div>
+          </div>
+        </section>
+
+        <section id="atmosphere" data-topic>
+          <div class="section-head">
+            <h2>☁️ Atmosphere / वायुमंडल</h2>
+            <label class="done"><input type="checkbox" data-done="atmosphere"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card definition">
+              <h3>Definition</h3>
+              <p>Earth ke charo taraf gases ka mota covering/आवरण hota hai. Isi gas-cover ko <strong>वायुमंडल / Atmosphere</strong> bolte hain.</p>
+              <p>Ye environment ka <strong>abiotic factor</strong> hai.</p>
+            </div>
+            <div class="visual">
+              <div class="earth" role="img" aria-label="Earth with atmosphere rings"></div>
+              <div class="caption">CSS visual: Earth ke charo taraf vayu ka covering.</div>
+            </div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth_system_diagram.png?width=900" alt="NASA Earth system diagram showing atmosphere, ocean, land, ice and life interactions" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Earth_system_diagram.png">Wikimedia Commons</a>, Kevin W. Miller / NASA, Public Domain. Atmosphere ko Earth system ke part ke roop me dekho.</figcaption>
+            </figure>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Gas</th><th>Symbol</th><th>Approx Amount</th><th>Exam Note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nitrogen</td><td>N₂</td><td>78.0%</td><td>Sabse adhik gas.</td></tr>
+              <tr><td>Oxygen</td><td>O₂</td><td>20.95% ≈ 21%</td><td>Second highest; life ke liye important.</td></tr>
+              <tr><td>Argon</td><td>Ar</td><td>0.93%</td><td>Third position.</td></tr>
+              <tr><td>Carbon dioxide</td><td>CO₂</td><td>0.036% / approx 0.03%</td><td>Global warming/carbon emission context me important.</td></tr>
+              <tr><td>Neon, Helium etc.</td><td>Ne, He</td><td>Trace</td><td>Baaki gases chhoti quantity me.</td></tr>
+            </tbody>
+          </table>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Atmosphere me sabse adhik gas kaunsi hai?</button><div class="answer">Nitrogen, approx 78%.</div></div>
+            <div class="qa"><button type="button">Q. Oxygen ki approximate quantity kya yaad rakhni hai?</button><div class="answer">Approx 21%.</div></div>
+          </div>
+        </section>
+
+        <section id="layers" data-topic>
+          <div class="section-head">
+            <h2>🧭 Atmosphere Ki 5 Layers</h2>
+            <label class="done"><input type="checkbox" data-done="layers"> Done</label>
+          </div>
+          <div class="visual">
+            <div class="layers">
+              <div class="layer"><div class="bar" style="background:#293241">640-1000 km</div><div class="card"><strong>बहिर्मंडल / Exosphere</strong>: Hydrogen aur Helium ki adhikta.</div></div>
+              <div class="layer"><div class="bar" style="background:#3d315b">80-640 km</div><div class="card"><strong>आयन मंडल / Ionosphere / Thermosphere</strong>: Temperature rapidly badhta hai; electrical and magnetic phenomena.</div></div>
+              <div class="layer"><div class="bar" style="background:#37505c">50-80 km</div><div class="card"><strong>मध्य मंडल / Mesosphere</strong>: Sabse nyuntam temperature; temperature me heavy fall.</div></div>
+              <div class="layer"><div class="bar" style="background:#2f4858">18-50 km</div><div class="card"><strong>समताप मंडल / Stratosphere</strong>: Ozone layer; UV rays ko rokta hai; exam answer for aeroplane layer.</div></div>
+              <div class="layer"><div class="bar" style="background:#006d77">0-8/18 km</div><div class="card"><strong>क्षोभ मंडल / Troposphere</strong>: Weather events, clouds, rain, wind, lightning, hail.</div></div>
+            </div>
+            <div class="caption">Layer diagram made in CSS; distances are transcript-based revision values.</div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atmosphere_layers-en.svg?width=700" alt="Diagram of Earth's atmosphere layers from troposphere to exosphere" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Atmosphere_layers-en.svg">Wikimedia Commons</a>, NOAA &amp; User:Mysid, Public Domain. Exam me 5 layers ka order revise karne ke liye.</figcaption>
+            </figure>
+          </div>
+          <details open>
+            <summary>Troposphere / क्षोभ मंडल</summary>
+            <ul>
+              <li>Earth ke bilkul paas wali layer.</li>
+              <li>Thickness: poles par approx 8 km; equator/vishuvat rekha par approx 18 km.</li>
+              <li>Reason: equator par heat zyada, air light aur expanded; poles par cold dense air compressed.</li>
+              <li>All weather phenomena yahin: rain, wind, cloud formation, lightning, hail.</li>
+              <li>Temperature generally height ke saath decrease karta hai.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Stratosphere / समताप मंडल</summary>
+            <ul>
+              <li>Approx 18-50 km.</li>
+              <li>Ozone layer yahin hoti hai.</li>
+              <li>Ozone = O₃; oxygen molecule O₂ me ek oxygen aur judta hai.</li>
+              <li>Ozone Sun ki ultraviolet/parabaigani rays ko rokta hai.</li>
+              <li>Ozone depletion se skin diseases, skin cancer, plants damage jaise effects ho sakte hain.</li>
+              <li>Exam me aeroplane ke liye mostly Stratosphere answer mark karna bataya gaya; practical flight upper troposphere/lower stratosphere me hoti hai.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Mesosphere, Ionosphere, Exosphere</summary>
+            <ul>
+              <li>Mesosphere: 50-80 km; sabse kam temperature.</li>
+              <li>Ionosphere: 80-640 km; ions/charges ki wajah se electrical aur magnetic events; temperature badhta hai; Thermosphere bhi kaha.</li>
+              <li>Exosphere: 640-1000 km; Hydrogen aur Helium gases ki adhikta.</li>
+            </ul>
+          </details>
+          <div class="card memory">
+            <h3>Mnemonic: “क्ष-स-म-आ-ब”</h3>
+            <p><strong>क्ष</strong>ोभ → <strong>स</strong>मताप → <strong>म</strong>ध्य → <strong>आ</strong>यन → <strong>ब</strong>हिर. Neeche se upar isi order me layers revise karo.</p>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Weather events kis layer me hote hain?</button><div class="answer">Troposphere / क्षोभ मंडल.</div></div>
+            <div class="qa"><button type="button">Q. Ozone layer kis mandal me hoti hai?</button><div class="answer">Stratosphere / समताप मंडल.</div></div>
+            <div class="qa"><button type="button">Q. Sabse low temperature kis layer me hota hai?</button><div class="answer">Mesosphere / मध्य मंडल.</div></div>
+            <div class="qa"><button type="button">Q. Ionosphere ko Thermosphere kyu bolte hain?</button><div class="answer">Ions/charged particles ki wajah se electrical effects aur temperature rise hota hai.</div></div>
+          </div>
+        </section>
+
+        <section id="abiotic" data-topic>
+          <div class="section-head">
+            <h2>🏔️ Abiotic / अजैविक Factors</h2>
+            <label class="done"><input type="checkbox" data-done="abiotic"> Done</label>
+          </div>
+          <p>Abiotic factors = jisme jaan nahi hoti. Inhe physical components / भौतिक संघटक bhi bol sakte hain.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>स्थलीय / Terrestrial</h3>
+              <ul>
+                <li>Lithosphere / स्थल मंडल.</li>
+                <li>Soil / मृदा.</li>
+                <li>Rocks / शैल / चट्टानें.</li>
+                <li>Minerals and ores / खनिज, अयस्क.</li>
+                <li>Landforms: mountains, plateaus, plains, desert.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>वायुमंडलीय / Atmospheric</h3>
+              <ul>
+                <li>Gases ka covering.</li>
+                <li>Water vapour / जलवाष्प.</li>
+                <li>Temperature.</li>
+                <li>Winds / हवाएं.</li>
+                <li>Rainfall and clouds.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>जलीय / Hydrological</h3>
+              <ul>
+                <li>Surface water: नदी, तालाब, झरने.</li>
+                <li>Oceanic water: sea and oceans.</li>
+                <li>Groundwater: underground water.</li>
+                <li>Examples: कुआं, नलकूप, hand pump, boring.</li>
+              </ul>
+            </div>
+            <div class="card hot">
+              <h3>Groundwater Alert</h3>
+              <ul>
+                <li>Underground water recharge hona zaroori hai.</li>
+                <li>Overuse se big cities me groundwater level niche ja raha hai.</li>
+                <li>Transcript examples: Chennai me groundwater crisis; Bengaluru bhi risk par bataya.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="visual">
+            <div class="flow">
+              <div class="node">Abiotic</div><div class="arrow">→</div>
+              <div class="node">Land</div><div class="node">Air</div><div class="node">Water</div>
+            </div>
+            <div class="caption">Revision diagram: three major abiotic factor groups.</div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Groundwater_flow_and_infiltration_diagram.svg?width=760" alt="Groundwater flow and infiltration diagram showing water moving through soil layers" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Groundwater_flow_and_infiltration_diagram.svg">Wikimedia Commons</a>, Mrmw, CC0. Groundwater recharge, wells aur underground water concept ke liye.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Abiotic ka simple meaning kya hai?</button><div class="answer">Jisme jaan nahi hoti: soil, rocks, water, air, gases, temperature etc.</div></div>
+            <div class="qa"><button type="button">Q. Groundwater ke examples kya diye gaye?</button><div class="answer">Kua, nalkoop, hand pump, boring.</div></div>
+          </div>
+        </section>
+
+        <section id="biotic" data-topic>
+          <div class="section-head">
+            <h2>🌱 Biotic / जैविक Factors</h2>
+            <label class="done"><input type="checkbox" data-done="biotic"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Plants / पादप</h3>
+              <ul>
+                <li>Small plants and big trees sab included.</li>
+                <li>Photosynthesis se apna bhojan banate hain.</li>
+                <li>Food chain ka base support.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Animals / जीव-जंतु</h3>
+              <ul>
+                <li>All animals included.</li>
+                <li>Human/मनुष्य ko teacher ne “सबसे बड़ा/पढ़ा-लिखा जानवर” style me explain kiya.</li>
+                <li>Humans environment ko heavily modify karte hain.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Microorganisms / सूक्ष्म जीव</h3>
+              <ul>
+                <li>Virus / विषाणु.</li>
+                <li>Bacteria / जीवाणु.</li>
+                <li>Fungi / कवक.</li>
+                <li>Ye helpful bhi ho sakte hain aur harmful bhi.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Disease Link</h3>
+              <ul>
+                <li>Virus: air me spread/panapne ka example; Corona virus mention hua.</li>
+                <li>Bacteria: dirty water se bacterial diseases.</li>
+                <li>Fungi: body/sade-gale padarth/achar par phaphund.</li>
+                <li>Communicable diseases, prevention, health indicators future biology topics me cover honge.</li>
+              </ul>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr><th>Hindi Term</th><th>English Term</th><th>Lecture Clue</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>विषाणु</td><td>Virus</td><td>Air/Corona example.</td></tr>
+              <tr><td>जीवाणु</td><td>Bacteria</td><td>Dirty water disease example.</td></tr>
+              <tr><td>कवक</td><td>Fungi</td><td>Phaphund on body, pickle, decomposing matter.</td></tr>
+            </tbody>
+          </table>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/E._coli_Bacteria_%287316101966%29.jpg?width=760" alt="Scanning electron micrograph of E. coli bacteria" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:E._coli_Bacteria_(7316101966).jpg">Wikimedia Commons</a>, NIAID, Public Domain. जीवाणु / bacteria ka real micrograph.</figcaption>
+            </figure>
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aspergillus_fumigatus.jpg?width=760" alt="Aspergillus fumigatus fungus growing in culture" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Aspergillus_fumigatus.jpg">Wikimedia Commons</a>, Dr. David Midgley, CC BY-SA 2.5. कवक / fungi ko phaphund example se connect karo.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Biotic factor me kaun-kaun aate hain?</button><div class="answer">Plants, animals, humans, microorganisms.</div></div>
+            <div class="qa"><button type="button">Q. Fungi ka Hindi term aur example?</button><div class="answer">कवक; phaphund as example.</div></div>
+          </div>
+        </section>
+
+        <section id="human" data-topic>
+          <div class="section-head">
+            <h2>🏭 Human-made Environment / मानव निर्मित कारक</h2>
+            <label class="done"><input type="checkbox" data-done="human"> Done</label>
+          </div>
+          <p>Teacher ne bataya ki natural biotic-abiotic ke alawa humans naye environment/ecosystems create karte hain. Isliye human-made environment ko third factor/component ke roop me yaad rakhna hai.</p>
+          <div class="grid">
+            <div class="card"><h3>कृषि उत्पादन क्षेत्र</h3><p>Fields, crops, wheat, rice, bajra, sugarcane, pulses etc. Human-created agricultural environment.</p></div>
+            <div class="card"><h3>औद्योगिक संकुल</h3><p>Factories, industries, industrial complexes; alag production environment.</p></div>
+            <div class="card"><h3>परिवहन संकुल</h3><p>City transport systems: bus, train, airplane and related networks.</p></div>
+            <div class="card"><h3>वाणिज्यिक / व्यापारिक संकुल</h3><p>Trade and commerce zones; markets and business environment.</p></div>
+          </div>
+          <div class="card memory">
+            <h3>Mnemonic: “K-O-P-V”</h3>
+            <p><strong>K</strong>rishi, <strong>O</strong>udyogik, <strong>P</strong>arivahan, <strong>V</strong>anijyik. Human-made environment ke four examples.</p>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Agricultural_field.jpg?width=760" alt="Agricultural field as an example of human-made environment" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:Agricultural_field.jpg">Wikimedia Commons</a>, Chenspec, CC BY-SA 3.0. कृषि उत्पादन क्षेत्र ke liye real-world visual.</figcaption>
+            </figure>
+          </div>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Human-made environment ke 4 examples kya hain?</button><div class="answer">Agricultural production area, industrial complex, transport complex, commercial/trade complex.</div></div>
+          </div>
+        </section>
+
+        <section id="conservation" data-topic>
+          <div class="section-head">
+            <h2>🛡️ Conservation / पर्यावरण संरक्षण</h2>
+            <label class="done"><input type="checkbox" data-done="conservation"> Done</label>
+          </div>
+          <div class="grid">
+            <div class="card hot">
+              <h3>Exam Hot</h3>
+              <ul>
+                <li>Environment Protection Act, 1986 ko India ka important legal step bataya.</li>
+                <li>Teacher ne kaha: protection/conservation se paper me baar-baar questions pooche gaye hain.</li>
+                <li>Global conferences: Stockholm 1972 ko first major global environmental conference bataya.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Earth as Home</h3>
+              <ul>
+                <li>Ghar ganda ho to rehna mushkil hota hai; Earth bhi hamara ghar hai.</li>
+                <li>“वसुधैव कुटुम्बकम” ka reference: poori Earth ko family/home ki tarah protect karna duty hai.</li>
+                <li>Dustbin/garbage vehicle me waste dena; bahar polythene me kachra na fekna.</li>
+                <li>Swachhta Abhiyan aur mains syllabus me cleanliness ka relevance bataya.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="visual">
+            <div class="flow">
+              <div class="node">1972</div><div class="arrow">→</div>
+              <div class="node">Stockholm, Sweden</div><div class="arrow">→</div>
+              <div class="node">Global Environment Concern</div><div class="arrow">→</div>
+              <div class="node">Earth Summit after 20 years</div>
+            </div>
+            <div class="caption">Timeline from transcript: Stockholm Conference in 1972; Earth Summit discussion marked for next class.</div>
+          </div>
+          <div class="image-grid">
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UN-environment-in-Stockholm-1972.jpg?width=900" alt="Members of the United Nations Conference on the Human Environment in Stockholm, 1972" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:UN-environment-in-Stockholm-1972.jpg">Wikimedia Commons</a>, Anonymous / Pressens Bild, Public Domain in Sweden. Stockholm 1972 ko historical anchor banaye.</figcaption>
+            </figure>
+            <figure class="image-card">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_dustbin.jpg?width=760" alt="Dustbin used to keep surroundings clean" loading="lazy" decoding="async">
+              <figcaption class="caption">Image: <a href="https://commons.wikimedia.org/wiki/File:The_dustbin.jpg">Wikimedia Commons</a>, Justmee3001, CC BY-SA 4.0. Ghar aur Earth dono ko clean rakhne wali example ke liye.</figcaption>
+            </figure>
+          </div>
+          <details open>
+            <summary>Stockholm Conference 1972</summary>
+            <ul>
+              <li>World level par first major environmental conference ke roop me bataya gaya.</li>
+              <li>Location: Stockholm, Sweden.</li>
+              <li>Concern: environment degradation, climate protection, future generations, development impacts.</li>
+              <li>Teacher ne renewable energy sources ki taraf jaane, climate change, global warming, carbon emission control par zor diya.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Upcoming Topic</summary>
+            <ul>
+              <li>Earth Summit / पृथ्वी शिखर सम्मेलन next session me detail se hoga.</li>
+              <li>Environment conservation ka detailed part next class me continue hoga.</li>
+              <li>Then Ecosystem / पारिस्थितिक तंत्र, Biodiversity / जैव विविधता, and MCQ practice.</li>
+            </ul>
+          </details>
+          <div class="quiz">
+            <div class="qa"><button type="button">Q. Stockholm Conference kab aur kahan hua?</button><div class="answer">1972, Stockholm, Sweden.</div></div>
+            <div class="qa"><button type="button">Q. Environment Protection Act India me kab aaya?</button><div class="answer">1986.</div></div>
+            <div class="qa"><button type="button">Q. Conservation ke liye teacher ne daily-life example kya diya?</button><div class="answer">Jaisa ghar ko clean rakhte hain, waise Earth ko bhi clean rakhna hai; kachra dustbin/garbage vehicle me dena hai.</div></div>
+          </div>
+        </section>
+
+        <section id="masters" data-topic>
+          <div class="section-head">
+            <h2>📚 Master Revision</h2>
+            <label class="done"><input type="checkbox" data-done="masters"> Done</label>
+          </div>
+          <h3>Full Forms & Terms</h3>
+          <table>
+            <thead>
+              <tr><th>Term</th><th>Expansion / Meaning</th><th>Hindi Revision</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>MCQ</td><td>Multiple Choice Question</td><td>बहुविकल्पीय प्रश्न</td></tr>
+              <tr><td>EPA 1986</td><td>Environment Protection Act, 1986</td><td>पर्यावरण संरक्षण अधिनियम, 1986</td></tr>
+              <tr><td>UV</td><td>Ultraviolet rays</td><td>पराबैंगनी किरणें</td></tr>
+              <tr><td>O₂</td><td>Oxygen molecule</td><td>ऑक्सीजन</td></tr>
+              <tr><td>O₃</td><td>Ozone</td><td>ओजोन परत का main molecule</td></tr>
+              <tr><td>CO₂</td><td>Carbon dioxide</td><td>कार्बन डाइऑक्साइड</td></tr>
+              <tr><td>N₂</td><td>Nitrogen</td><td>वायुमंडल की सबसे अधिक गैस</td></tr>
+              <tr><td>G20</td><td>Group of Twenty</td><td>वसुधैव कुटुम्बकम heading ke context me mention</td></tr>
+            </tbody>
+          </table>
+
+          <h3>🔥 Exam Hot Facts</h3>
+          <div class="card hot">
+            <ul>
+              <li>Environment se exam me questions aate hain; 2-3 questions ka chance bataya.</li>
+              <li>Environment = biotic + abiotic components ka interaction.</li>
+              <li>Environment Protection Act: 1986.</li>
+              <li>Atmosphere gases: Nitrogen 78%, Oxygen approx 21%, Argon 0.93%, CO₂ approx 0.03%.</li>
+              <li>Weather events: Troposphere.</li>
+              <li>Ozone layer: Stratosphere; UV rays ko rokta hai.</li>
+              <li>Mesosphere: lowest temperature.</li>
+              <li>Ionosphere/Thermosphere: temperature rise, electrical/magnetic phenomena.</li>
+              <li>Exosphere: Hydrogen and Helium dominance.</li>
+              <li>Stockholm Conference: 1972, Stockholm, Sweden.</li>
+            </ul>
+          </div>
+
+          <h3>✅ Master Revision Checklist</h3>
+          <div class="checklist" id="checklist">
+            <label><input type="checkbox" data-check="c1"> पर्यावरण ka shabdik arth: परि + आवरण.</label>
+            <label><input type="checkbox" data-check="c2"> Biotic = जैव मंडल; Abiotic = स्थल, जल, वायु मंडल.</label>
+            <label><input type="checkbox" data-check="c3"> Environment Protection Act 1986 definition angle revise ho gaya.</label>
+            <label><input type="checkbox" data-check="c4"> Environment characteristics: biotic-abiotic, changeable, adaptation, resources, self-control, self-nutrition.</label>
+            <label><input type="checkbox" data-check="c5"> Atmosphere gas percentages: N₂ 78, O₂ 21, Ar 0.93, CO₂ 0.03.</label>
+            <label><input type="checkbox" data-check="c6"> 5 layers order: क्षोभ, समताप, मध्य, आयन, बहिर.</label>
+            <label><input type="checkbox" data-check="c7"> Troposphere: weather events; 8 km poles, 18 km equator.</label>
+            <label><input type="checkbox" data-check="c8"> Stratosphere: ozone layer, UV protection, aeroplane exam answer.</label>
+            <label><input type="checkbox" data-check="c9"> Mesosphere: lowest temperature.</label>
+            <label><input type="checkbox" data-check="c10"> Ionosphere/Thermosphere: ions, electrical/magnetic events, temp rise.</label>
+            <label><input type="checkbox" data-check="c11"> Abiotic factors: terrestrial, atmospheric, hydrological.</label>
+            <label><input type="checkbox" data-check="c12"> Biotic factors: plants, animals, microorganisms.</label>
+            <label><input type="checkbox" data-check="c13"> Virus, bacteria, fungi examples revise ho gaye.</label>
+            <label><input type="checkbox" data-check="c14"> Human-made factors: Krishi, Oudyogik, Parivahan, Vanijyik.</label>
+            <label><input type="checkbox" data-check="c15"> Stockholm 1972, Sweden and conservation angle revise ho gaya.</label>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>Upcoming: Environment conservation detail, Earth Summit, Ecosystem, Biodiversity, and MCQ practice.</p>
+    </footer>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('class3-theme') || 'dark';
+    root.dataset.theme = savedTheme;
+
+    function setThemeLabel() {
+      themeToggle.textContent = root.dataset.theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+
+    setThemeLabel();
+    themeToggle.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('class3-theme', root.dataset.theme);
+      setThemeLabel();
+    });
+
+    document.getElementById('jumpMenu').addEventListener('change', (event) => {
+      const target = event.target.value;
+      if (target) document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+      event.target.value = '';
+    });
+
+    document.querySelectorAll('.qa button').forEach((button) => {
+      button.addEventListener('click', () => button.parentElement.classList.toggle('open'));
+    });
+
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const doneBoxes = [...document.querySelectorAll('[data-done]')];
+    const checklistBoxes = [...document.querySelectorAll('[data-check]')];
+    const allBoxes = [...doneBoxes, ...checklistBoxes];
+
+    function loadChecks() {
+      allBoxes.forEach((box) => {
+        const key = box.dataset.done ? `done-${box.dataset.done}` : `check-${box.dataset.check}`;
+        box.checked = localStorage.getItem(`class3-${key}`) === '1';
+      });
+    }
+
+    function saveAndRender() {
+      allBoxes.forEach((box) => {
+        const key = box.dataset.done ? `done-${box.dataset.done}` : `check-${box.dataset.check}`;
+        localStorage.setItem(`class3-${key}`, box.checked ? '1' : '0');
+      });
+
+      const completed = allBoxes.filter((box) => box.checked).length;
+      const percent = Math.round((completed / allBoxes.length) * 100);
+      progressFill.style.width = `${percent}%`;
+      progressText.textContent = `${percent}% revision done (${completed}/${allBoxes.length})`;
+    }
+
+    loadChecks();
+    saveAndRender();
+    allBoxes.forEach((box) => box.addEventListener('change', saveAndRender));
+  </script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPSC Unit 10 – Revision Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="dark"]{
+  --bg:#0f1117;--surface:#161b22;--surface2:#1c2128;--border:#30363d;
+  --text:#e6edf3;--muted:#8b949e;--faint:#484f58;
+  --green:#3fb950;--green-bg:#12261e;--green-border:#238636;
+  --blue:#58a6ff;--blue-bg:#0d1b2e;--blue-border:#1f6feb;
+  --orange:#ffa657;--orange-bg:#271b0a;--orange-border:#9e6a03;
+  --red:#f85149;--red-bg:#2d1215;--red-border:#b91c1c;
+  --purple:#d2a8ff;--purple-bg:#1d1335;--purple-border:#6e40c9;
+  --teal:#39d353;--yellow:#e3b341;
+  --radius:8px;--radius-lg:12px;
+}
+[data-theme="light"]{
+  --bg:#f6f8fa;--surface:#ffffff;--surface2:#f0f2f5;--border:#d0d7de;
+  --text:#1f2328;--muted:#656d76;--faint:#adb5bd;
+  --green:#1a7f37;--green-bg:#dafbe1;--green-border:#2da44e;
+  --blue:#0969da;--blue-bg:#ddf4ff;--blue-border:#54aeff;
+  --orange:#bc4c00;--orange-bg:#fff1e5;--orange-border:#fb8f44;
+  --red:#cf222e;--red-bg:#fff0ee;--red-border:#ff8182;
+  --purple:#8250df;--purple-bg:#fbefff;--purple-border:#d8b4fe;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+.hindi{font-family:'Noto Sans Devanagari','Inter',sans-serif}
+
+/* HEADER */
+.header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;gap:12px;flex-wrap:wrap}
+.header-left{display:flex;align-items:center;gap:12px}
+.badge{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.5px}
+.header h1{font-size:16px;font-weight:700;color:var(--text)}
+.header p{font-size:12px;color:var(--muted);margin-top:1px}
+.theme-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;transition:all .2s}
+.theme-btn:hover{color:var(--text);border-color:var(--blue)}
+
+/* NAV PILLS */
+.nav{display:flex;gap:8px;padding:16px 24px;overflow-x:auto;border-bottom:1px solid var(--border);background:var(--surface);flex-wrap:nowrap}
+.nav::-webkit-scrollbar{height:4px}.nav::-webkit-scrollbar-track{background:transparent}.nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.nav a{white-space:nowrap;text-decoration:none;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;color:var(--muted);border:1px solid transparent;transition:all .15s}
+.nav a:hover,.nav a.active{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-border)}
+
+/* LAYOUT */
+.container{max-width:1000px;margin:0 auto;padding:24px 20px;display:flex;flex-direction:column;gap:24px}
+
+/* SECTION CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.card-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.card-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.card-title{font-size:15px;font-weight:700;color:var(--text)}
+.card-body{padding:20px}
+
+/* COLOR ACCENTS */
+.accent-green .card-icon{background:var(--green-bg)}
+.accent-blue .card-icon{background:var(--blue-bg)}
+.accent-orange .card-icon{background:var(--orange-bg)}
+.accent-red .card-icon{background:var(--red-bg)}
+.accent-purple .card-icon{background:var(--purple-bg)}
+.accent-teal .card-icon{background:#0d2618}
+
+/* TOPIC GRID */
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.topic-item{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:flex-start;gap:8px}
+.topic-item .dot{width:6px;height:6px;border-radius:50%;background:var(--green);margin-top:7px;flex-shrink:0}
+.topic-item span{font-size:13px;color:var(--text);line-height:1.4}
+
+/* INFO TABLE */
+.info-table{width:100%;border-collapse:collapse;font-size:13px}
+.info-table th{background:var(--surface2);color:var(--muted);font-weight:600;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.info-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)}
+.info-table tr:last-child td{border-bottom:none}
+.info-table tr:hover td{background:var(--surface2)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin:1px}
+.tag-green{background:var(--green-bg);color:var(--green)}
+.tag-blue{background:var(--blue-bg);color:var(--blue)}
+.tag-orange{background:var(--orange-bg);color:var(--orange)}
+.tag-red{background:var(--red-bg);color:var(--red)}
+.tag-purple{background:var(--purple-bg);color:var(--purple)}
+
+/* PYQ CARD */
+.pyq-list{display:flex;flex-direction:column;gap:12px}
+.pyq-item{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.pyq-meta{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.pyq-year{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-border);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.pyq-question{font-size:13px;color:var(--text);margin-bottom:8px;font-weight:500}
+.pyq-answer{font-size:13px;color:var(--green);font-weight:600;padding:6px 10px;background:var(--green-bg);border-radius:5px;border-left:3px solid var(--green)}
+.pyq-note{font-size:12px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)}
+
+/* KEY FACTS */
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.fact-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px;position:relative;overflow:hidden}
+.fact-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--blue)}
+.fact-card.green::before{background:var(--green)}
+.fact-card.orange::before{background:var(--orange)}
+.fact-card.purple::before{background:var(--purple)}
+.fact-card.red::before{background:var(--red)}
+.fact-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:4px}
+.fact-value{font-size:14px;font-weight:700;color:var(--text)}
+.fact-sub{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* ALERT BOX */
+.alert{display:flex;gap:10px;padding:12px 14px;border-radius:8px;font-size:13px;margin-bottom:12px;align-items:flex-start}
+.alert-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+.alert-orange{background:var(--orange-bg);border:1px solid var(--orange-border);color:var(--orange)}
+.alert-red{background:var(--red-bg);border:1px solid var(--red-border);color:var(--red)}
+.alert-blue{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue)}
+.alert-green{background:var(--green-bg);border:1px solid var(--green-border);color:var(--green)}
+
+/* CONFUSION BOX */
+.confusion-box{background:var(--red-bg);border:1px solid var(--red-border);border-radius:8px;padding:16px}
+.confusion-box h4{color:var(--red);font-size:13px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.confusion-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px;font-size:13px}
+.vs{color:var(--faint);font-weight:700;font-size:11px;padding:2px 6px;border:1px solid var(--faint);border-radius:4px}
+
+/* SECTION DIVIDER */
+.section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:0 0 8px;border-bottom:1px solid var(--border);margin-bottom:14px}
+
+/* UL STYLED */
+.styled-ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.styled-ul li{font-size:13px;padding:6px 10px;background:var(--surface2);border-radius:6px;display:flex;align-items:flex-start;gap:8px}
+.styled-ul li::before{content:'›';color:var(--blue);font-weight:700;flex-shrink:0}
+
+
+/* ENGLISH REVISION HELPERS */
+.en{display:block;color:var(--muted);font-size:12px;line-height:1.45;margin-top:2px;font-family:'Inter',sans-serif;font-weight:500}
+.en-inline{color:var(--muted);font-size:12px;font-family:'Inter',sans-serif;font-weight:500}
+.bilingual-note{background:var(--surface2);border:1px dashed var(--border);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--text);margin:10px 0}
+.glossary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.glossary-item{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.glossary-hi{font-family:'Noto Sans Devanagari','Inter',sans-serif;font-weight:700;font-size:13px;color:var(--text)}
+.glossary-en{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* FIXED MP MAP PANELS */
+.map-rail{position:fixed;top:118px;width:476px;max-height:calc(100vh - 132px);overflow:auto;z-index:20;background:rgba(22,27,34,.96);border:1px solid var(--border);border-radius:12px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.25);backdrop-filter:blur(6px)}
+[data-theme="light"] .map-rail{background:rgba(255,255,255,.96)}
+.map-rail.left{left:12px}.map-rail.right{right:12px}
+.map-title{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px}
+.map-rail img{width:100%;border-radius:8px;border:1px solid var(--border);background:#fff;display:block}
+.map-caption{font-size:10px;color:var(--muted);line-height:1.35;margin-top:6px}
+.district-list{columns:2;column-gap:14px;font-size:10.5px;color:var(--text);line-height:1.55;margin-top:8px}
+.district-list span{display:block;break-inside:avoid}
+.map-pill{display:inline-block;background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);padding:2px 6px;border-radius:999px;font-size:10px;margin-bottom:6px}
+@media(max-width:1500px){.map-rail{width:190px}.container{max-width:900px}}
+@media(max-width:1280px){.map-rail{display:none}}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .header{padding:12px 16px}
+  .nav{padding:10px 16px}
+  .container{padding:16px}
+  .topic-grid{grid-template-columns:1fr 1fr}
+  .fact-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="map-rail left" aria-label="Madhya Pradesh latest district map">
+  <div class="map-title">MP Latest Map — 55 Districts</div>
+  <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh latest district map with district names">
+  <div class="map-caption">Fixed while scrolling. Source: SLBC Madhya Pradesh state profile map; current administrative count shown as 55 districts.</div>
+</div>
+<div class="map-rail right" aria-label="Madhya Pradesh district names list">
+  <div class="map-title">District Names Quick View</div>
+  <span class="map-pill">Latest revision helper</span>
+  <div class="district-list"><span>1. Agar Malwa</span><span>2. Alirajpur</span><span>3. Anuppur</span><span>4. Ashoknagar</span><span>5. Balaghat</span><span>6. Barwani</span><span>7. Betul</span><span>8. Bhind</span><span>9. Bhopal</span><span>10. Burhanpur</span><span>11. Chhatarpur</span><span>12. Chhindwara</span><span>13. Damoh</span><span>14. Datia</span><span>15. Dewas</span><span>16. Dhar</span><span>17. Dindori</span><span>18. Guna</span><span>19. Gwalior</span><span>20. Harda</span><span>21. Indore</span><span>22. Jabalpur</span><span>23. Jhabua</span><span>24. Katni</span><span>25. Khandwa</span><span>26. Khargone</span><span>27. Maihar</span><span>28. Mandla</span><span>29. Mandsaur</span><span>30. Mauganj</span><span>31. Morena</span><span>32. Narmadapuram</span><span>33. Narsinghpur</span><span>34. Neemuch</span><span>35. Niwari</span><span>36. Pandhurna</span><span>37. Panna</span><span>38. Raisen</span><span>39. Rajgarh</span><span>40. Ratlam</span><span>41. Rewa</span><span>42. Sagar</span><span>43. Satna</span><span>44. Sehore</span><span>45. Seoni</span><span>46. Shahdol</span><span>47. Shajapur</span><span>48. Sheopur</span><span>49. Shivpuri</span><span>50. Sidhi</span><span>51. Singrauli</span><span>52. Tikamgarh</span><span>53. Ujjain</span><span>54. Umaria</span><span>55. Vidisha</span></div>
+</div>
+
+
+<div class="header">
+  <div class="header-left">
+    <span class="badge">MPPSC PRELIMS</span>
+    <div>
+      <h1>Unit 10 — MP Special: जनजातियाँ &amp; लोक संस्कृति</h1>
+      <p>Teacher: Pramod Rana Sir &nbsp;|&nbsp; KGS Coaching &nbsp;|&nbsp; Started: 6 March 2024</p><p class="en">Bilingual revision: Hindi terms + simple English meanings for English-medium comfort.</p>
+    </div>
+  </div>
+  <button class="theme-btn" data-theme-toggle onclick="toggleTheme()">☀ Light</button>
+</div>
+
+<nav class="nav">
+  <a href="#syllabus" class="active">📋 Syllabus</a>
+  <a href="#english-glossary">🔤 Hindi-English</a>
+  <a href="#tribes-geo">🗺 Tribe Zones</a>
+  <a href="#major-tribes">🏕 Major Tribes</a>
+  <a href="#pvtg">⭐ PVTGs</a>
+  <a href="#freedom">⚔ Freedom Movement</a>
+  <a href="#art-culture">🎨 Art &amp; Culture</a>
+  <a href="#padmashri">🏅 Padma Awards</a>
+  <a href="#schemes">🏛 Schemes</a>
+  <a href="#museums">🏺 Museums</a>
+  <a href="#confusions">⚠ Confusions</a>
+  <a href="#pyq">📝 PYQs</a>
+  <a href="#stats">📊 Key Stats</a>
+</nav>
+
+<div class="container">
+
+<!-- SYLLABUS -->
+<div class="card accent-blue" id="syllabus">
+  <div class="card-header">
+    <div class="card-icon">📋</div>
+    <div><div class="card-title">Unit 10 — Complete Syllabus Overview</div><span class="en">Full topic checklist for revision</span></div>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-blue"><span class="alert-icon">ℹ</span><span>इस पूरी Unit 10 से MPPSC Prelims में लगभग <strong>10 questions</strong> आ सकते हैं। हर topic से question आता है — कोई भी skip मत करो।</span></div>
+    <div class="topic-grid">
+      <div class="topic-item"><div class="dot"></div><span>जनजातियों का भौगोलिक विस्तार (MP में कहाँ-कहाँ)</span></div>
+      <div class="topic-item"><div class="dot"></div><span>जनजातियों से संबंधित संवैधानिक प्रावधान</span></div>
+      <div class="topic-item"><div class="dot"></div><span>MP की प्रमुख जनजातियाँ (भील, गोंड, बैगा आदि)</span></div>
+      <div class="topic-item"><div class="dot"></div><span>विशेष पिछड़ी जनजातियाँ — PVTGs</span></div>
+      <div class="topic-item"><div class="dot"></div><span>घुमन्तु / विमुक्त जातियाँ</span></div>
+      <div class="topic-item"><div class="dot"></div><span>जनजातियों के कल्याण के लिए सरकारी योजनाएँ</span></div>
+      <div class="topic-item"><div class="dot"></div><span>जनजातियों की संस्कृति, परंपराएँ, त्यौहार, भाषाएँ</span></div>
+      <div class="topic-item"><div class="dot"></div><span>जनजातीय साहित्य (Verrier Elwin)</span></div>
+      <div class="topic-item"><div class="dot"></div><span>स्वतंत्रता आंदोलन में जनजातियों का योगदान</span></div>
+      <div class="topic-item"><div class="dot"></div><span>प्रमुख जनजातीय व्यक्तित्व</span></div>
+      <div class="topic-item"><div class="dot"></div><span>प्रमुख जनजातीय संस्थान व संग्रहालय</span></div>
+      <div class="topic-item"><div class="dot"></div><span>MP की लोक संस्कृति (निमाड़, मालवा, बुंदेलखंड)</span></div>
+      <div class="topic-item"><div class="dot"></div><span>लोक साहित्यकार</span></div>
+      <div class="topic-item"><div class="dot"></div><span>लोक नृत्य, लोक गीत, लोक नाटक, लोक चित्रकला</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HINDI-ENGLISH REVISION GLOSSARY -->
+<div class="card accent-blue" id="english-glossary">
+  <div class="card-header">
+    <div class="card-icon">🔤</div>
+    <div><div class="card-title">Hindi + English Quick Revision Glossary</div><span class="en">Use this to understand Hindi words quickly while revising Unit 10.</span></div>
+  </div>
+  <div class="card-body">
+    <div class="bilingual-note"><strong>Revision rule:</strong> Hindi fact याद करो, English meaning से concept clear करो. Exam में Hindi/English दोनों wording समझ आ जाएगी.</div>
+    <div class="glossary-grid">
+      <div class="glossary-item"><div class="glossary-hi">जनजाति</div><div class="glossary-en">Tribe / Scheduled Tribe community</div></div>
+      <div class="glossary-item"><div class="glossary-hi">भौगोलिक विस्तार</div><div class="glossary-en">Geographical distribution</div></div>
+      <div class="glossary-item"><div class="glossary-hi">संवैधानिक प्रावधान</div><div class="glossary-en">Constitutional provisions</div></div>
+      <div class="glossary-item"><div class="glossary-hi">विशेष पिछड़ी जनजाति</div><div class="glossary-en">PVTG: Particularly Vulnerable Tribal Group</div></div>
+      <div class="glossary-item"><div class="glossary-hi">घुमन्तु / विमुक्त जाति</div><div class="glossary-en">Nomadic / Denotified community</div></div>
+      <div class="glossary-item"><div class="glossary-hi">लोक संस्कृति</div><div class="glossary-en">Folk culture</div></div>
+      <div class="glossary-item"><div class="glossary-hi">लोक नृत्य</div><div class="glossary-en">Folk dance</div></div>
+      <div class="glossary-item"><div class="glossary-hi">लोक गीत</div><div class="glossary-en">Folk song</div></div>
+      <div class="glossary-item"><div class="glossary-hi">लोक नाट्य</div><div class="glossary-en">Folk theatre / folk drama</div></div>
+      <div class="glossary-item"><div class="glossary-hi">चित्रकला</div><div class="glossary-en">Painting / art style</div></div>
+      <div class="glossary-item"><div class="glossary-hi">स्वतंत्रता आंदोलन</div><div class="glossary-en">Freedom movement</div></div>
+      <div class="glossary-item"><div class="glossary-hi">जनजातीय संग्रहालय</div><div class="glossary-en">Tribal museum</div></div>
+      <div class="glossary-item"><div class="glossary-hi">कल्याण योजना</div><div class="glossary-en">Welfare scheme</div></div>
+      <div class="glossary-item"><div class="glossary-hi">उपजाति</div><div class="glossary-en">Sub-tribe</div></div>
+      <div class="glossary-item"><div class="glossary-hi">राजकीय नृत्य</div><div class="glossary-en">State dance</div></div>
+      <div class="glossary-item"><div class="glossary-hi">रियासत</div><div class="glossary-en">Princely state</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRIBES GEO -->
+<div class="card accent-green" id="tribes-geo">
+  <div class="card-header">
+    <div class="card-icon">🗺</div>
+    <div><div class="card-title">MP में जनजातियों का भौगोलिक विस्तार</div><span class="en">Geographical distribution of tribes in MP</span></div>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-green"><span class="alert-icon">📌</span><span>MP का क्षेत्रफल = <strong>3,08,252 वर्ग किमी</strong> | वन क्षेत्र (ISFR 2021) = <strong>77,493 वर्ग किमी</strong></span></div>
+    <table class="info-table">
+      <thead><tr><th>दिशा / क्षेत्र<br><span class="en-inline">Direction / region</span></th><th>प्रमुख जनजाति<br><span class="en-inline">Major tribe</span></th><th>जिले<br><span class="en-inline">Districts</span></th></tr></thead>
+      <tbody>
+        <tr><td>पश्चिम (West)</td><td><span class="tag tag-green">भील</span><span class="tag tag-green">भिलाला</span></td><td>झाबुआ, अलीराजपुर, धार, बड़वानी</td></tr>
+        <tr><td>मध्य-दक्षिण</td><td><span class="tag tag-blue">गोंड</span><span class="tag tag-blue">बैगा</span></td><td>मंडला, डिंडोरी, बालाघाट, सिवनी</td></tr>
+        <tr><td>उत्तर-पश्चिम</td><td><span class="tag tag-orange">शहरिया</span></td><td>श्योपुर, गुना, शिवपुरी</td></tr>
+        <tr><td>मध्य (विंध्य)</td><td><span class="tag tag-purple">कोल</span><span class="tag tag-purple">भारिया</span></td><td>रीवा, सतना, छिंदवाड़ा</td></tr>
+        <tr><td>पूर्व</td><td><span class="tag tag-green">कोरकू</span></td><td>होशंगाबाद, बैतूल, खंडवा</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px">
+      <div class="section-title">जनसंख्या Stats (2011 Census)</div>
+      <div class="fact-grid">
+        <div class="fact-card orange"><div class="fact-label">सर्वाधिक % में</div><div class="fact-value">अलीराजपुर</div><div class="fact-sub">Tribal % सबसे ज्यादा</div></div>
+        <div class="fact-card green"><div class="fact-label">सर्वाधिक संख्या में</div><div class="fact-value">धार</div><div class="fact-sub">Absolute numbers</div></div>
+        <div class="fact-card red"><div class="fact-label">सबसे कम</div><div class="fact-value">भिंड</div><div class="fact-sub">% और संख्या दोनों में</div></div>
+        <div class="fact-card"><div class="fact-label">MP Tribal %</div><div class="fact-value">21.1%</div><div class="fact-sub">Article 21 trick से याद करो</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAJOR TRIBES -->
+<div class="card accent-orange" id="major-tribes">
+  <div class="card-header">
+    <div class="card-icon">🏕</div>
+    <div><div class="card-title">MP की प्रमुख जनजातियाँ</div><span class="en">Major tribes of Madhya Pradesh</span></div>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-orange"><span class="alert-icon">🔑</span><span>MP में <strong>43 जनजातियाँ</strong> अधिसूचित हैं (पहले 46 थीं — <strong>कीर, मीणा, पारदी</strong> को 2003 में हटाया गया)</span></div>
+    <table class="info-table">
+      <thead><tr><th>जनजाति<br><span class="en-inline">Tribe</span></th><th>उपजातियाँ (Sub-tribes)</th><th>Key Facts</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>भील</strong> 🏆 <span class="tag tag-green">सबसे बड़ी</span></td>
+          <td>भिलाला, रथिया, पटिया, बेगास, उमरड़ी, तड़वी</td>
+          <td>MP की सबसे बड़ी जनजाति | भीली भाषा | पिथोरा चित्रकारी</td>
+        </tr>
+        <tr>
+          <td><strong>गोंड</strong></td>
+          <td>अगरिया, प्रधान, ओजा, सोलस, कोयला, भूतास, नाग्रस</td>
+          <td>गोंडी भाषा | डिगना कला | नो-डोरा अलंकरण | पाटनगढ़ (डिंडोरी)</td>
+        </tr>
+        <tr>
+          <td><strong>बैगा</strong> ⭐ PVTG</td>
+          <td>बिजावर</td>
+          <td>बूढ़ा देव = प्रमुख देवता | साज वृक्ष पवित्र | परधोनी नृत्य</td>
+        </tr>
+        <tr>
+          <td><strong>भारिया</strong> ⭐ PVTG</td>
+          <td>पटरिया</td>
+          <td>छिंदवाड़ा में | PVTG</td>
+        </tr>
+        <tr>
+          <td><strong>शहरिया</strong> ⭐ PVTG</td>
+          <td>—</td>
+          <td>उत्तर-पश्चिम MP | PVTG</td>
+        </tr>
+        <tr>
+          <td><strong>अगरिया</strong></td>
+          <td>—</td>
+          <td>लोहे का काम | लोहासुर = देवता | दहकती हुई भट्टियाँ</td>
+        </tr>
+        <tr>
+          <td><strong>कोरकू</strong></td>
+          <td>—</td>
+          <td>होशंगाबाद, बैतूल | जंगल सत्याग्रह में योगदान</td>
+        </tr>
+        <tr>
+          <td><strong>कोल</strong></td>
+          <td>—</td>
+          <td>विंध्य क्षेत्र</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px">
+      <div class="section-title">🏅 MP की सबसे बड़ी जनजाति — भील</div>
+      <div class="alert alert-green"><span class="alert-icon">📊</span><span>MP में कुल जनजाति जनसंख्या का लगभग <strong>39%</strong> = भील + भिलाला जनजाति</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PVTGs -->
+<div class="card accent-purple" id="pvtg">
+  <div class="card-header">
+    <div class="card-icon">⭐</div>
+    <div><div class="card-title">PVTGs — Particularly Vulnerable Tribal Groups</div><span class="en">Most vulnerable tribal communities</span></div>
+  </div>
+  <div class="card-body">
+    <div class="alert alert-blue"><span class="alert-icon">📌</span><span>MP में केवल <strong>3 PVTGs</strong> हैं: <strong>बैगा, भारिया, शहरिया</strong></span></div>
+    <table class="info-table">
+      <thead><tr><th>PVTG</th><th>क्षेत्र</th><th>Key Points</th></tr></thead>
+      <tbody>
+        <tr><td><strong>बैगा</strong></td><td>मंडला, डिंडोरी, बालाघाट, सेडोल, उमरिया, अनूपपुर</td><td>बैगा विकास अभिकरण = 6 जिलों में | बूढ़ा देव | साज वृक्ष पूजा</td></tr>
+        <tr><td><strong>भारिया</strong></td><td>छिंदवाड़ा (पातालकोट)</td><td>पटरिया उपजाति</td></tr>
+        <tr><td><strong>शहरिया</strong></td><td>श्योपुर, गुना, शिवपुरी</td><td>उत्तर-पश्चिम MP</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px">
+      <div class="section-title">⚙ संवैधानिक प्रावधान</div>
+      <table class="info-table">
+        <thead><tr><th>Article</th><th>Provision</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-blue">Article 15(4)</span></td><td>शैक्षणिक संस्थानों में ST के लिए विशेष प्रावधान</td></tr>
+          <tr><td><span class="tag tag-blue">Article 16(4)</span></td><td>सरकारी नौकरियों में ST को आरक्षण</td></tr>
+          <tr><td><span class="tag tag-blue">Article 17</span></td><td>छुआछूत का अंत | SC/ST Act 1989</td></tr>
+          <tr><td><span class="tag tag-blue">Article 164(1)</span></td><td>जनजातीय कल्याण मंत्री — MP, Bihar, Odisha में</td></tr>
+          <tr><td><span class="tag tag-blue">Article 338A</span></td><td>राष्ट्रीय अनुसूचित जनजाति आयोग</td></tr>
+          <tr><td><span class="tag tag-blue">Article 342</span></td><td>राष्ट्रपति किसी जाति को ST अधिसूचित कर सकता है</td></tr>
+          <tr><td><span class="tag tag-blue">5th &amp; 6th Schedule</span></td><td>ST क्षेत्रों के लिए विशेष प्रावधान</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FREEDOM MOVEMENT -->
+<div class="card accent-red" id="freedom">
+  <div class="card-header">
+    <div class="card-icon">⚔</div>
+    <div><div class="card-title">स्वतंत्रता आंदोलन में जनजातियों का योगदान</div><span class="en">Role of tribal leaders in the freedom movement</span></div>
+  </div>
+  <div class="card-body">
+    <table class="info-table">
+      <thead><tr><th>व्यक्तित्व<br><span class="en-inline">Personality</span></th><th>जनजाति<br><span class="en-inline">Tribe</span></th><th>क्षेत्र / रियासत<br><span class="en-inline">Area / princely state</span></th><th>योगदान<br><span class="en-inline">Contribution</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>भीमा नायक</strong></td><td>भील</td><td><span class="tag tag-orange">बड़वानी</span></td><td>1857 की क्रांति | "निमाड़ का रोबिन हुड"</td></tr>
+        <tr><td><strong>खाज्या नायक</strong></td><td>भील</td><td><span class="tag tag-orange">बड़वानी</span></td><td>1857 की क्रांति</td></tr>
+        <tr><td><strong>सीताराम कँवर</strong></td><td>भील</td><td><span class="tag tag-orange">बड़वानी</span></td><td>1857 | शंकर शाह की सेना में भी</td></tr>
+        <tr><td><strong>शंकर शाह</strong></td><td>गोंड</td><td><span class="tag tag-blue">गड़ा-मंडला (जबलपुर)</span></td><td>1857 की क्रांति</td></tr>
+        <tr><td><strong>रघुनाथ शाह</strong></td><td>गोंड</td><td><span class="tag tag-blue">गड़ा-मंडला</span></td><td>1857 की क्रांति</td></tr>
+        <tr><td><strong>टांटिया भील (टांटिया मामा)</strong></td><td>भील</td><td><span class="tag tag-green">खंडवा (पंधाना)</span></td><td>जन्म: पंधाना | फाँसी: 4 दिसम्बर 1889 | पातालपानी में समाधि</td></tr>
+        <tr><td><strong>गंजन सिंह कोरकू</strong></td><td>कोरकू</td><td>बैतूल</td><td>जंगल सत्याग्रह (घोड़ा डोंगरी, बैतूल)</td></tr>
+        <tr><td><strong>रघुनाथ सिंह मंडलोई (भिलाला)</strong></td><td>भिलाला</td><td>—</td><td>1857 की क्रांति — PYQ 2023</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px">
+      <div class="section-title">🔑 टांटिया मामा — Important Facts</div>
+      <div class="fact-grid">
+        <div class="fact-card orange"><div class="fact-label">असली नाम</div><div class="fact-value">तांत्या / टांटिया भील</div></div>
+        <div class="fact-card"><div class="fact-label">जन्म</div><div class="fact-value">खंडवा — पंधाना</div></div>
+        <div class="fact-card red"><div class="fact-label">फाँसी</div><div class="fact-value">4 दिसम्बर 1889</div></div>
+        <div class="fact-card green"><div class="fact-label">समाधि</div><div class="fact-value">पातालपानी (MP)</div></div>
+        <div class="fact-card purple"><div class="fact-label">उपाधि</div><div class="fact-value">भारतीय आदिवासियों का Robin Hood</div></div>
+        <div class="fact-card"><div class="fact-label">मूर्ति उद्घाटन</div><div class="fact-value">4 Dec 2022 — इंदौर, भावर कुआँ</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ART & CULTURE -->
+<div class="card accent-teal" id="art-culture">
+  <div class="card-header">
+    <div class="card-icon">🎨</div>
+    <div><div class="card-title">जनजातीय कला, संस्कृति &amp; लोक नृत्य</div><span class="en">Tribal art, culture and folk dances</span></div>
+  </div>
+  <div class="card-body">
+    <div class="section-title">चित्रकला शैलियाँ</div>
+    <table class="info-table">
+      <thead><tr><th>कला शैली<br><span class="en-inline">Art style</span></th><th>जनजाति<br><span class="en-inline">Tribe</span></th><th>प्रमुख कलाकार<br><span class="en-inline">Artist</span></th><th>विशेष<br><span class="en-inline">Special point</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>पिथोरा चित्रकारी</strong></td><td>भील</td><td><strong>भूरी बाई</strong> (झाबुआ) — Padmashri 2021</td><td>पहले दीवार पर → भूरी बाई ने कैनवास पर लाई | MP Vidhan Sabha में भी</td></tr>
+        <tr><td><strong>गोंड चित्रकला</strong></td><td>गोंड</td><td>आनंद सिंह श्याम, जंगर सिंह श्याम, कलावती श्याम (डिंडोरी-पाटनगढ़)</td><td>पाटनगढ़ = "चित्रकारों का गाँव"</td></tr>
+        <tr><td><strong>डिगना कला</strong></td><td>गोंड</td><td><strong>दुर्गाबाई व्याम</strong> — Padmashri 2022</td><td>दीवार पर मिट्टी से | नो-डोरा अलंकरण</td></tr>
+        <tr><td><strong>ढोकरा कला</strong></td><td>—</td><td>—</td><td>बैतूल साइड</td></tr>
+        <tr><td><strong>बाग प्रिंट</strong></td><td>—</td><td>—</td><td>धार जिला</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:16px">
+      <div class="section-title">लोक नृत्य — Region-wise</div>
+      <table class="info-table">
+        <thead><tr><th>नृत्य<br><span class="en-inline">Dance</span></th><th>क्षेत्र<br><span class="en-inline">Region</span></th><th>विशेष<br><span class="en-inline">Special point</span></th></tr></thead>
+        <tbody>
+          <tr><td><strong>राई नृत्य</strong> 🏆</td><td>बुंदेलखंड</td><td>MP का <strong>राजकीय नृत्य</strong> | बेड़नी जाति की महिलाएँ | राम सहाय पांडे (सागर) — Padmashri 2022</td></tr>
+          <tr><td><strong>मोनी नृत्य</strong></td><td>बुंदेलखंड (सागर)</td><td>दीपावली पर किया जाता है</td></tr>
+          <tr><td><strong>काठी</strong></td><td>निमाड़</td><td>पार्वती माता से संबंधित | रंगीन वस्त्र (बाना)</td></tr>
+          <tr><td><strong>फेफरिया</strong></td><td>निमाड़</td><td>फेफ वाद्ययंत्र</td></tr>
+          <tr><td><strong>मांडल</strong></td><td>निमाड़</td><td>महिलाओं द्वारा</td></tr>
+          <tr><td><strong>डंडा नृत्य</strong></td><td>निमाड़</td><td>किसानों द्वारा</td></tr>
+          <tr><td><strong>परधोनी</strong></td><td>बैगा जनजाति</td><td>अर्जुन सिंह ध्रुवे (डिंडोरी) — Padmashri 2022</td></tr>
+          <tr><td><strong>माच</strong></td><td>मालवा</td><td>लोक नाट्य | ओम प्रकाश शर्मा (उज्जैन) — Padmashri 2024</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px">
+      <div class="section-title">तुर्रा-कलगी (Turra-Kalgi)</div>
+      <div class="alert alert-blue"><span class="alert-icon">🎵</span><span>निमाड़ का लोकगीत (MPPSC इसे 3 क्षेत्रों का मानता है) | दो अखाड़े: <strong>तुर्रा अखाड़ा</strong> + <strong>कालगी/कलगी अखाड़ा</strong> | शिव और शक्ति से संबंधित | रात भर प्रतियोगिता</span></div>
+    </div>
+    <div style="margin-top:14px">
+      <div class="section-title">📚 जनजातीय साहित्य — Verrier Elwin</div>
+      <table class="info-table">
+        <thead><tr><th>पुस्तक</th><th>विषय</th></tr></thead>
+        <tbody>
+          <tr><td><strong>The Baiga</strong></td><td>बैगा जनजाति पर</td></tr>
+          <tr><td><strong>The Muria and their Ghotul</strong></td><td>मुड़िया जनजाति के घोटुल पर</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:8px;font-size:13px;color:var(--muted)">Verrier Elwin — अंग्रेज, डिंडोरी के पास गाँव में रहे | बैगा जनजाति पर गहरा अध्ययन किया</div>
+    </div>
+  </div>
+</div>
+
+<!-- PADMASHRI -->
+<div class="card accent-purple" id="padmashri">
+  <div class="card-header">
+    <div class="card-icon">🏅</div>
+    <div><div class="card-title">Padmashri Winners — MP (Tribal &amp; Folk Arts)</div><span class="en">Award winners important for MPPSC</span></div>
+  </div>
+  <div class="card-body">
+    <table class="info-table">
+      <thead><tr><th>Year</th><th>नाम</th><th>क्षेत्र</th><th>कला / योगदान</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-purple">2021</span></td><td><strong>भूरी बाई</strong></td><td>झाबुआ</td><td>पिथोरा चित्रकारी (भील) — कैनवास पर लाने वाली पहली</td></tr>
+        <tr><td><span class="tag tag-purple">2022</span></td><td><strong>दुर्गाबाई व्याम</strong></td><td>मंडला साइड</td><td>गोंड डिगना कला</td></tr>
+        <tr><td><span class="tag tag-purple">2022</span></td><td><strong>अर्जुन सिंह ध्रुवे</strong></td><td>डिंडोरी</td><td>बैगा जनजाति — परधोनी नृत्य</td></tr>
+        <tr><td><span class="tag tag-purple">2022</span></td><td><strong>राम सहाय पांडे</strong></td><td>सागर</td><td>राई नृत्य</td></tr>
+        <tr><td><span class="tag tag-purple">2022</span></td><td>एनपी मिश्रा</td><td>भोपाल</td><td>भोपाल गैस त्रासदी में सहायता</td></tr>
+        <tr><td><span class="tag tag-purple">2022</span></td><td>अवध किशोर जाडया</td><td>छतरपुर</td><td>आयुर्वेदिक चिकित्सक</td></tr>
+        <tr><td><span class="tag tag-orange">2023</span></td><td><strong>दैया बाई</strong></td><td>उमरिया</td><td>बैगा चित्रकारी</td></tr>
+        <tr><td><span class="tag tag-orange">2023</span></td><td>एम.एस. डावर</td><td>जबलपुर</td><td>रोगियों का मुफ्त इलाज</td></tr>
+        <tr><td><span class="tag tag-orange">2023</span></td><td>रमेश-शांति परमार</td><td>झाबुआ</td><td>गुड़िया शिल्प</td></tr>
+        <tr><td><span class="tag tag-green">2024</span></td><td><strong>ओम प्रकाश शर्मा</strong></td><td>उज्जैन</td><td>माच नाट्य (मालवा)</td></tr>
+        <tr><td><span class="tag tag-green">2024</span></td><td><strong>कालूराम बामनिया</strong></td><td>देवास</td><td>कबीर भजन</td></tr>
+        <tr><td><span class="tag tag-green">2024</span></td><td>सत्येंद्र सिंह लोहिया</td><td>भिंड</td><td>Para swimmer</td></tr>
+        <tr><td><span class="tag tag-green">2024</span></td><td>भगवतीलाल राजपुरोहित</td><td>धार (कर्मस्थली: उज्जैन)</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SCHEMES -->
+<div class="card accent-green" id="schemes">
+  <div class="card-header">
+    <div class="card-icon">🏛</div>
+    <div><div class="card-title">जनजाति कल्याण योजनाएँ</div><span class="en">Tribal welfare schemes</span></div>
+  </div>
+  <div class="card-body">
+    <table class="info-table">
+      <thead><tr><th>योजना<br><span class="en-inline">Scheme</span></th><th>Launch</th><th>उद्देश्य<br><span class="en-inline">Purpose</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>टांटिया मामा आर्थिक कल्याण योजना</strong></td><td>Sept 2022</td><td>जनजातीय BPL लाभार्थियों को स्वरोजगार के लिए कम लागत के उपकरण + कार्यशील पूंजी</td></tr>
+        <tr><td><strong>आकांक्षा योजना</strong></td><td>—</td><td>जनजाति छात्रों को Competitive exam की Free coaching</td></tr>
+        <tr><td><strong>भगवान बिरसा मुंडा योजना</strong></td><td>—</td><td>जनजाति विकास</td></tr>
+        <tr><td><strong>दूधारू पशु प्रदाय योजना</strong></td><td>—</td><td>जनजातियों को दुधारू पशु</td></tr>
+        <tr><td><strong>विमुक्त/घुमंतु विभाग</strong></td><td>—</td><td>घुमंतु और अर्ध-घुमक्कड़ जातियों का कल्याण</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px">
+      <div class="alert alert-orange"><span class="alert-icon">⚠</span><span><strong>विमुक्त घुमंतु दिवस:</strong> 31 अगस्त (याद रखो: 29 Aug = खेल दिवस, उसके 2 दिन बाद = 31 Aug)</span></div>
+    </div>
+    <div style="margin-top:10px">
+      <div class="section-title">घुमंतु जातियाँ</div>
+      <div class="styled-ul">
+        <li>जो एक जगह स्थायी नहीं रहती — "घुमंतु"</li>
+        <li>अंग्रेजों ने 1821 में Criminal Act बनाकर इन्हें आपराधिक घोषित किया</li>
+        <li>एक गाँव से दूसरे गाँव जाने के लिए भी Police की अनुमति लेनी पड़ती थी</li>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSEUMS -->
+<div class="card accent-blue" id="museums">
+  <div class="card-header">
+    <div class="card-icon">🏺</div>
+    <div><div class="card-title">प्रमुख जनजातीय संग्रहालय &amp; संस्थान</div><span class="en">Important tribal museums and institutions</span></div>
+  </div>
+  <div class="card-body">
+    <table class="info-table">
+      <thead><tr><th>संग्रहालय<br><span class="en-inline">Museum</span></th><th>स्थान<br><span class="en-inline">Location</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>MP जनजातीय संग्रहालय</strong> 🏆</td><td><span class="tag tag-blue">भोपाल</span></td></tr>
+        <tr><td><strong>बादल भोई आदिवासी जनजातीय संग्रहालय</strong></td><td><span class="tag tag-green">छिंदवाड़ा</span></td></tr>
+        <tr><td><strong>आदिव्रत जनजातीय संग्रहालय</strong></td><td><span class="tag tag-orange">छतरपुर — खजराहो</span></td></tr>
+        <tr><td><strong>रानी दुर्गावती संग्रहालय</strong></td><td><span class="tag tag-purple">जबलपुर</span></td></tr>
+        <tr><td><strong>आदिवासी लोक कला परिषद</strong></td><td>MP (स्थापना: 1980)</td></tr>
+        <tr><td>इंदिरा गांधी मानव संग्रहालय</td><td>भोपाल</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CONFUSIONS -->
+<div class="card accent-red" id="confusions">
+  <div class="card-header">
+    <div class="card-icon">⚠</div>
+    <div><div class="card-title">⚠ Common Confusions — Paper में गलती मत करना!</div><span class="en">Common traps to avoid in the exam</span></div>
+  </div>
+  <div class="card-body">
+    <div class="confusion-box">
+      <h4>🔴 Most Common Confusions</h4>
+      <table class="info-table">
+        <thead><tr><th>Confusion Point</th><th>Person A</th><th>Person B</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>"रोबिन हुड" कौन?</td>
+            <td><strong>भीमा नायक</strong> = निमाड़ का रोबिन हुड</td>
+            <td><strong>टांटिया मामा</strong> = भारतीय आदिवासियों का रोबिन हुड</td>
+          </tr>
+          <tr>
+            <td>बड़वानी vs मंडला</td>
+            <td><strong>भीमा नायक, खाज्या नायक, सीताराम कँवर</strong> = बड़वानी</td>
+            <td><strong>शंकर शाह, रघुनाथ शाह</strong> = गड़ा-मंडला (जबलपुर)</td>
+          </tr>
+          <tr>
+            <td>जनसंख्या % vs संख्या</td>
+            <td><strong>% में सर्वाधिक</strong> = अलीराजपुर</td>
+            <td><strong>संख्या में सर्वाधिक</strong> = धार | <strong>सबसे कम</strong> = भिंड (दोनों में)</td>
+          </tr>
+          <tr>
+            <td>पिथोरा vs गोंड कला</td>
+            <td><strong>पिथोरा</strong> = भील जनजाति | भूरी बाई</td>
+            <td><strong>गोंड चित्रकला</strong> = गोंड जनजाति | आनंद सिंह श्याम</td>
+          </tr>
+          <tr>
+            <td>डिगना vs डोकरा</td>
+            <td><strong>डिगना</strong> = गोंड | दुर्गाबाई व्याम</td>
+            <td><strong>ढोकरा</strong> = बैतूल साइड</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- PYQ -->
+<div class="card accent-orange" id="pyq">
+  <div class="card-header">
+    <div class="card-icon">📝</div>
+    <div><div class="card-title">Previous Year Questions (PYQs) — Unit 10</div><span class="en">Previous year questions for active recall</span></div>
+  </div>
+  <div class="card-body">
+    <div class="pyq-list">
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2023</span><span class="tag tag-green">1857 आंदोलन</span></div>
+        <div class="pyq-question">सीताराम कँवर और रघुनाथ सिंह मंडलोई (भिलाला) अंग्रेज-विरोधी क्रांति में कब शामिल हुए थे?</div>
+        <div class="pyq-answer">✅ 1857 की क्रांति में</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2023</span><span class="tag tag-green">1857 — रियासत</span></div>
+        <div class="pyq-question">भीमा नायक का संबंध किस रियासत से है?</div>
+        <div class="pyq-answer">✅ बड़वानी रियासत</div>
+        <div class="pyq-note">💡 Trick: भीम बहुत बड़े थे → बड़वानी</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2023</span><span class="tag tag-blue">जनजातीय कला</span></div>
+        <div class="pyq-question">दीवार पर मिट्टी से बनाई जाने वाली "नो-डोरा अलंकरण" किस जनजाति की विशेषता है?</div>
+        <div class="pyq-answer">✅ गोंड जनजाति</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2023</span><span class="tag tag-orange">योजना</span></div>
+        <div class="pyq-question">टांटिया मामा आर्थिक कल्याण योजना कब शुरू हुई और इसका उद्देश्य क्या है?</div>
+        <div class="pyq-answer">✅ September 2022 | जनजातीय BPL को स्वरोजगार हेतु उपकरण + कार्यशील पूंजी</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2022</span><span class="tag tag-blue">गोंड कला</span></div>
+        <div class="pyq-question">आनंद सिंह श्याम और धनयाबाई का संबंध किस कला से है?</div>
+        <div class="pyq-answer">✅ गोंड चित्रकला</div>
+        <div class="pyq-note">💡 पाटनगढ़ गाँव (डिंडोरी) = "चित्रकारों का गाँव"</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2022</span><span class="tag tag-purple">Padmashri</span></div>
+        <div class="pyq-question">दुर्गाबाई व्याम किस जनजाति कला से संबंधित हैं?</div>
+        <div class="pyq-answer">✅ गोंड जनजाति की डिगना शैली | Padmashri 2022</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2021</span><span class="tag tag-blue">लोक संस्कृति</span></div>
+        <div class="pyq-question">सागर के आँचलिक क्षेत्रों में दीपावली पर कौन सा लोक नृत्य किया जाता है?</div>
+        <div class="pyq-answer">✅ मोनी नृत्य (बुंदेलखंड)</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2021</span><span class="tag tag-orange">लोकगीत</span></div>
+        <div class="pyq-question">तुर्रा-कलगी से संबंधित प्रश्न (यह किसका लोक नाट्य है?)</div>
+        <div class="pyq-answer">✅ निमाड़ का लोकगीत/लोक नाट्य | 2 अखाड़े: तुर्रा + कलगी | शिव-शक्ति से संबंधित</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2021</span><span class="tag tag-green">राई नृत्य</span></div>
+        <div class="pyq-question">राम सहाय पांडे किस लोक नृत्य से संबंधित हैं?</div>
+        <div class="pyq-answer">✅ राई नृत्य | सागर के | MP का राजकीय नृत्य | बेड़नी जाति की महिलाएँ</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2021</span><span class="tag tag-purple">संग्रहालय</span></div>
+        <div class="pyq-question">MP में जनजातीय संग्रहालय किस शहर में है?</div>
+        <div class="pyq-answer">✅ भोपाल</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2019</span><span class="tag tag-blue">लोक नृत्य</span></div>
+        <div class="pyq-question">काठी क्या है?</div>
+        <div class="pyq-answer">✅ निमाड़ का लोक नृत्य | पार्वती माता से संबंधित | रंगीन वस्त्र = "बाना"</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE 2018</span><span class="tag tag-orange">जनजाति %</span></div>
+        <div class="pyq-question">MP के किस जिले में जनजातीय जनसंख्या का सर्वाधिक प्रतिशत है?</div>
+        <div class="pyq-answer">✅ अलीराजपुर</div>
+        <div class="pyq-note">💡 संख्या में सर्वाधिक = धार | सबसे कम = भिंड</div>
+      </div>
+
+      <div class="pyq-item">
+        <div class="pyq-meta"><span class="pyq-year">MPPSC PRE</span><span class="tag tag-red">Confusing</span></div>
+        <div class="pyq-question">निम्न में से कौन सी जनजाति MP में नहीं है? (Sub-tribe wale questions)</div>
+        <div class="pyq-answer">✅ भील उपजाति: भिलाला, रथिया, पटिया, बेगास | गोंड उपजाति: अगरिया, प्रधान, ओजा, सोलस</div>
+        <div class="pyq-note">💡 2003 में हटाई गईं: कीर, मीणा, पारदी → अब OBC</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- KEY STATS -->
+<div class="card accent-blue" id="stats">
+  <div class="card-header">
+    <div class="card-icon">📊</div>
+    <div><div class="card-title">Quick Revision — Key Numbers &amp; Facts</div><span class="en">High-yield numbers to memorize</span></div>
+  </div>
+  <div class="card-body">
+    <div class="fact-grid">
+      <div class="fact-card"><div class="fact-label">MP क्षेत्रफल</div><div class="fact-value">3,08,252 km²</div></div>
+      <div class="fact-card green"><div class="fact-label">MP वन (ISFR 2021)</div><div class="fact-value">77,493 km²</div></div>
+      <div class="fact-card orange"><div class="fact-label">ST जनसंख्या %</div><div class="fact-value">21.1%</div><div class="fact-sub">2011 Census | Art.21 trick</div></div>
+      <div class="fact-card purple"><div class="fact-label">MP की जनजातियाँ</div><div class="fact-value">43</div><div class="fact-sub">पहले 46, 2003 में 3 हटाईं</div></div>
+      <div class="fact-card"><div class="fact-label">PVTGs in MP</div><div class="fact-value">3</div><div class="fact-sub">बैगा, भारिया, शहरिया</div></div>
+      <div class="fact-card green"><div class="fact-label">सबसे बड़ी जनजाति</div><div class="fact-value">भील</div><div class="fact-sub">39% = भील+भिलाला</div></div>
+      <div class="fact-card red"><div class="fact-label">टांटिया फाँसी</div><div class="fact-value">4 Dec 1889</div><div class="fact-sub">पातालपानी में समाधि</div></div>
+      <div class="fact-card orange"><div class="fact-label">लोक कला परिषद</div><div class="fact-value">1980</div><div class="fact-sub">आदिवासी लोक कला परिषद</div></div>
+      <div class="fact-card purple"><div class="fact-label">बैगा विकास अभिकरण</div><div class="fact-value">6 जिले</div><div class="fact-sub">बालाघाट, मंडला, डिंडोरी, सेडोल, उमरिया, अनूपपुर</div></div>
+      <div class="fact-card"><div class="fact-label">MP राजकीय नृत्य</div><div class="fact-value">राई नृत्य</div><div class="fact-sub">बुंदेलखंड | बेड़नी महिलाएँ</div></div>
+      <div class="fact-card green"><div class="fact-label">विमुक्त दिवस</div><div class="fact-value">31 अगस्त</div></div>
+      <div class="fact-card blue"><div class="fact-label">SC/ST Act</div><div class="fact-value">1989</div></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card accent-blue" id="map-source-note">
+  <div class="card-body">
+    <div class="alert alert-blue"><span class="alert-icon">🗺</span><span><strong>Map note:</strong> Side map/list is fixed for revision so you do not need to open MP map repeatedly. Current MP administrative count used here: <strong>55 districts</strong>.</span></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  const btn=document.querySelector('.theme-btn');
+  const current=html.getAttribute('data-theme');
+  if(current==='dark'){html.setAttribute('data-theme','light');btn.textContent='🌙 Dark';}
+  else{html.setAttribute('data-theme','dark');btn.textContent='☀ Light';}
+}
+// Active nav on scroll
+const sections=document.querySelectorAll('[id]');
+const navLinks=document.querySelectorAll('.nav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)current=s.id;});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+});
+</script>
+</body>
+</html>

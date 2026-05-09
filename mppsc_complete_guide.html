@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MPPSC Prelims – Complete Guide</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#0d0d1a;color:#e0e0f0;min-height:100vh;}
+
+    /* ── HEADER ── */
+    header{background:linear-gradient(135deg,#1a1a3e,#2d1b69,#1a1a3e);padding:30px 20px 22px;text-align:center;border-bottom:2px solid #6c3fc7;}
+    header h1{font-size:1.8rem;color:#c4a1ff;margin-bottom:6px;}
+    header p{color:#a0a0c8;font-size:.95rem;}
+    .hbadge{display:inline-block;background:#6c3fc7;color:#fff;border-radius:20px;padding:4px 14px;font-size:.8rem;margin-top:8px;}
+
+    /* ── NAV TABS ── */
+    .tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;background:#110f20;padding:14px 16px;border-bottom:1px solid #2a2060;position:sticky;top:0;z-index:99;}
+    .tab-btn{background:#1d1540;color:#c4a1ff;border:1px solid #3d2880;border-radius:20px;padding:6px 15px;font-size:.82rem;cursor:pointer;transition:.2s;}
+    .tab-btn:hover,.tab-btn.active{background:#6c3fc7;color:#fff;border-color:#6c3fc7;}
+
+    /* ── SECTIONS ── */
+    .section{display:none;max-width:980px;margin:24px auto;padding:0 16px 40px;}
+    .section.active{display:block;}
+
+    /* ── INTRO BOX ── */
+    .intro{background:#16162e;border-left:4px solid #6c3fc7;border-radius:8px;padding:16px 18px;margin-bottom:22px;line-height:1.7;font-size:.95rem;color:#cfc8f5;}
+    .intro strong{color:#c4a1ff;}
+
+    /* ── SECTION HEADING ── */
+    .sh{font-size:1.1rem;color:#b39ddb;margin:28px 0 12px;border-bottom:1px solid #2d1b69;padding-bottom:5px;}
+
+    /* ── UNIT CARD ── */
+    .ucard{background:#16162e;border:1px solid #2a2060;border-radius:12px;padding:22px 18px 16px;margin-bottom:18px;position:relative;}
+    .ucard:hover{box-shadow:0 4px 22px #6c3fc740;}
+    .ubadge{position:absolute;top:-12px;left:16px;background:#6c3fc7;color:#fff;font-size:.72rem;font-weight:700;border-radius:20px;padding:3px 13px;}
+    .ucard h2{font-size:1rem;color:#c4a1ff;margin:4px 0 10px;}
+    .utag{display:inline-block;background:#231550;color:#b39ddb;border-radius:5px;padding:2px 8px;font-size:.75rem;margin-left:6px;}
+
+    /* ── ROWS inside card ── */
+    .row{display:flex;gap:10px;margin-bottom:8px;font-size:.88rem;line-height:1.5;}
+    .lbl{min-width:80px;font-weight:600;color:#9575cd;font-size:.8rem;padding-top:1px;flex-shrink:0;}
+    .val{color:#ddd8f8;}
+
+    /* ── SYLLABUS LIST ── */
+    .syl-list{padding-left:18px;margin:6px 0 4px;}
+    .syl-list li{margin-bottom:4px;font-size:.85rem;color:#c8c0f0;line-height:1.5;}
+    .syl-list li::marker{color:#6c3fc7;}
+
+    /* ── TOPIC CHIPS ── */
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+    .chip{background:#1a1040;color:#c4a1ff;border:1px solid #3d2880;border-radius:5px;padding:3px 10px;font-size:.78rem;}
+
+    /* ── TABLE ── */
+    .tbl{width:100%;border-collapse:collapse;margin-top:10px;font-size:.87rem;}
+    .tbl th{background:#2d1b69;color:#c4a1ff;padding:9px 12px;text-align:left;}
+    .tbl td{background:#16162e;color:#ddd8f8;padding:8px 12px;border-bottom:1px solid #2a2060;vertical-align:top;}
+    .tbl tr:hover td{background:#1c1844;}
+
+    /* ── STRATEGY CARD ── */
+    .scard{background:#1a1040;border:1px solid #4a3080;border-radius:8px;padding:14px 18px;margin-bottom:14px;}
+    .scard h3{color:#c4a1ff;margin-bottom:8px;font-size:.97rem;}
+    .scard ul{padding-left:18px;}
+    .scard ul li{margin-bottom:6px;font-size:.88rem;color:#c8c0f0;line-height:1.5;}
+
+    /* ── WARNING BOX ── */
+    .warn{background:#200a00;border-left:4px solid #ff6b35;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:.88rem;color:#ffcba4;line-height:1.6;}
+    .warn strong{color:#ff9066;}
+
+    /* ── PRIORITY BADGE ── */
+    .pri-high{color:#69f0ae;font-weight:700;}
+    .pri-med{color:#ffd740;font-weight:700;}
+    .pri-low{color:#ef5350;font-weight:700;}
+
+    footer{text-align:center;padding:18px;color:#5a5080;font-size:.82rem;border-top:1px solid #1a1040;}
+    @media(max-width:600px){header h1{font-size:1.2rem;} .tbl{font-size:.78rem;}}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 MPPSC Prelims — Complete Preparation Guide</h1>
+  <p>Syllabus + Best Books + YouTube Classes + Strategy — सब एक जगह</p>
+  <span class="hbadge">🆓 100% Free में तैयारी संभव</span>
+</header>
+
+<!-- NAV TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('overview')">🏠 Overview</button>
+  <button class="tab-btn" onclick="showTab('syllabus')">📋 Full Syllabus</button>
+  <button class="tab-btn" onclick="showTab('resources')">📖 Books &amp; Classes</button>
+  <button class="tab-btn" onclick="showTab('strategy')">🎯 Strategy</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 1: OVERVIEW
+════════════════════════════════════════════════════ -->
+<div id="tab-overview" class="section active">
+
+  <div class="intro">
+    <strong>⚠️ सबसे पहले समझो:</strong> MPPSC Prelims <strong>कोई पूरा Subject नहीं पूछता।</strong>
+    उसने Prelims को <strong>10 Units</strong> में बांटा है और हर Unit में <strong>Fixed Topics</strong> हैं।
+    Syllabus Line by Line पढ़ो — किसी Subject की पूरी Book रटने की जरूरत नहीं।
+  </div>
+
+  <div class="sh">📊 Exam Pattern — MPPSC Prelims 2026</div>
+  <table class="tbl">
+    <tr><th>Paper</th><th>Subject</th><th>Questions</th><th>Marks</th><th>Duration</th><th>Negative Marking</th></tr>
+    <tr><td>Paper I</td><td>General Studies</td><td>100</td><td>200</td><td>2 घंटे</td><td>⅓ Mark per Wrong</td></tr>
+    <tr><td>Paper II</td><td>General Aptitude Test (CSAT)</td><td>100</td><td>200</td><td>2 घंटे</td><td>Qualifying (33% चाहिए)</td></tr>
+  </table>
+  <div class="intro" style="margin-top:14px;">
+    <strong>Note:</strong> Paper II सिर्फ Qualifying है — इसके Marks Merit में नहीं जुड़ते। Merit केवल Paper I के Marks से बनती है।
+  </div>
+
+  <div class="sh">🗂️ 10 Units — Quick View</div>
+  <table class="tbl">
+    <tr><th>Unit</th><th>Topic</th><th>Scope</th><th>Priority</th></tr>
+    <tr><td><strong>Unit 1</strong></td><td>History of India</td><td>India (National)</td><td><span class="pri-med">Medium</span></td></tr>
+    <tr><td><strong>Unit 2</strong></td><td>History, Culture &amp; Literature of MP</td><td>Madhya Pradesh</td><td><span class="pri-high">High</span></td></tr>
+    <tr><td><strong>Unit 3</strong></td><td>Geography of India</td><td>India (National)</td><td><span class="pri-med">Medium</span></td></tr>
+    <tr><td><strong>Unit 4</strong></td><td>Geography of Madhya Pradesh</td><td>Madhya Pradesh</td><td><span class="pri-high">High</span></td></tr>
+    <tr><td><strong>Unit 5</strong></td><td>Constitutional System of India &amp; MP</td><td>India + MP</td><td><span class="pri-high">High</span></td></tr>
+    <tr><td><strong>Unit 6</strong></td><td>Economy of India &amp; Madhya Pradesh</td><td>India + MP</td><td><span class="pri-med">Medium</span></td></tr>
+    <tr><td><strong>Unit 7</strong></td><td>Science, Environment &amp; Health</td><td>India (National)</td><td><span class="pri-high">High ✅</span></td></tr>
+    <tr><td><strong>Unit 8</strong></td><td>Current Affairs (International/National/MP)</td><td>All Levels</td><td><span class="pri-high">High ✅</span></td></tr>
+    <tr><td><strong>Unit 9</strong></td><td>Information &amp; Communication Technology</td><td>India (National)</td><td><span class="pri-high">High ✅</span></td></tr>
+    <tr><td><strong>Unit 10</strong></td><td>Tribes of MP — Heritage, Folk Culture</td><td>Madhya Pradesh</td><td><span class="pri-high">High ✅</span></td></tr>
+  </table>
+
+  <div class="warn" style="margin-top:16px;">
+    <strong>🔑 Unit 2, 4, 5 एक साथ क्यों?</strong><br/>
+    ये तीनों Units में <strong>MP (Madhya Pradesh) का हिस्सा</strong> है + India का हिस्सा है।
+    इनके लिए एक ही Book — <strong>Pariksha Dham</strong> — MP portion cover करती है।
+    इसीलिए Video में इन्हें एक साथ mention किया गया। लेकिन <strong>ये तीन अलग-अलग Units हैं</strong>:
+    Unit 2 = MP History/Culture, Unit 4 = MP Geography, Unit 5 = MP + India Polity.
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 2: FULL SYLLABUS
+════════════════════════════════════════════════════ -->
+<div id="tab-syllabus" class="section">
+
+  <div class="intro">
+    यह Official MPPSC Prelims 2026 का Paper I (General Studies) का पूरा Syllabus है।
+    <strong>Line by Line इसी से पढ़ो</strong> — इससे बाहर कुछ नहीं पूछा जाएगा।
+  </div>
+
+  <!-- UNIT 1 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 1 — India Level</div>
+    <h2>📜 History of India</h2>
+    <ul class="syl-list">
+      <li>Ancient Indian Knowledge Tradition — Vedas, Upanishads, Aranyakas, Brahmanas, Shaddarshan, Smritis, Sabha-Samiti, Republics, Varna-Ashrama, Purushartha, Panch Mahayagya, Karma, Bodhisattva, Tirthankara</li>
+      <li>Salient features of Ancient &amp; Medieval India — Administrative, Social, Economic Systems</li>
+      <li>India's Cultural Heritage — Art forms, Literature, Festivals, Events</li>
+      <li>Social &amp; Religious Reform Movements of 19th &amp; 20th Century</li>
+      <li>Independence Struggle &amp; Indian National Movement</li>
+      <li>Integration &amp; Reorganization of India after Independence</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 2 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 2 — MP Level</div>
+    <h2>🏛️ History, Culture &amp; Literature of Madhya Pradesh</h2>
+    <ul class="syl-list">
+      <li>Major Events &amp; Major Dynasties of Madhya Pradesh</li>
+      <li>Contribution of MP in Freedom Movement</li>
+      <li>Major Arts &amp; Sculpture of Madhya Pradesh</li>
+      <li>Major Tribes &amp; Dialects of MP</li>
+      <li>Major Festivals, Folk Music, Folk Arts, Folk Literature of MP</li>
+      <li>Important Literary Creators of MP and their Works</li>
+      <li>Major Tourist Places — Religious, Cultural, Archaeological importance in MP</li>
+      <li>World Heritage Sites in Madhya Pradesh</li>
+      <li>Important Tribal Personalities of Madhya Pradesh</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 3 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 3 — India Level</div>
+    <h2>🌏 Geography of India</h2>
+    <ul class="syl-list">
+      <li>Mountains, Hills, Plateaus, Rivers, and Lakes</li>
+      <li>Climate phenomena — El Niño, La Niña, Southern Oscillation, Western Disturbance, Climate Change</li>
+      <li>Natural Resources — Forest, Minerals, Water Resources</li>
+      <li>Major Crops, Food Security, Green Revolution, Second Green Revolution strategies</li>
+      <li>Conventional &amp; Non-Conventional Energy Sources</li>
+      <li>Natural Hazards &amp; Disasters in India, Major Cyclones</li>
+      <li>Population Growth, Distribution, Density, Rural-Urban Migration</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 4 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 4 — MP Level</div>
+    <h2>🗺️ Geography of Madhya Pradesh</h2>
+    <ul class="syl-list">
+      <li>Forest, Forest Produce, Rivers, Hills, and Plateaus of MP</li>
+      <li>Climate — Seasons, Temperature, Rainfall</li>
+      <li>Natural Resources — Soils and Major Mineral Resources</li>
+      <li>Major Crops, Water Resources, Irrigation &amp; Irrigation Projects</li>
+      <li>Conventional &amp; Non-Conventional Sources of Energy in MP</li>
+      <li>Major Industries of Madhya Pradesh</li>
+      <li>Population Growth, Distribution, Density, Urbanization in MP</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 5 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 5 — India + MP</div>
+    <h2>⚖️ Constitutional System of India &amp; Madhya Pradesh</h2>
+    <ul class="syl-list">
+      <li>Constituent Assembly</li>
+      <li>Federal Executive — President, Parliament</li>
+      <li>Supreme Court &amp; Judicial System</li>
+      <li>Constitutional Amendments</li>
+      <li>Fundamental Rights &amp; Duties, Directive Principles of State Policy (DPSP)</li>
+      <li>National &amp; Regional Constitutional/Statutory Commissions &amp; Institutions</li>
+      <li>Constitutional System of MP — Governor, Cabinet, Legislative Assembly, High Court</li>
+      <li>Three-Tier Panchayati Raj &amp; Civil Administration in MP</li>
+      <li>Good Governance in Madhya Pradesh</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 6 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 6 — India + MP</div>
+    <h2>💰 Economy of India &amp; Madhya Pradesh</h2>
+    <ul class="syl-list">
+      <li>Current Situation of MP in Indian Economy</li>
+      <li>Population &amp; Human Resources Development — Education, Health, Skills in MP</li>
+      <li>Progress in Sustainable Development Goals (SDGs) in MP</li>
+      <li>Agriculture, Industry, MSME, Infrastructure Development in MP</li>
+      <li>Aatmanirbhar MP, One District One Product (ODOP)</li>
+      <li>Intellectual Property Rights (IPR) in MP</li>
+      <li>Recent Trends in Indian Economy — Agriculture, Industry, Service sectors</li>
+      <li>Financial Institutions — RBI, Commercial Banks, SEBI, NBFCs</li>
+      <li>India's Foreign Trade Policies — G-20, SAARC, ASEAN</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 7 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 7 — India Level ✅ High Priority</div>
+    <h2>🔬 Science, Environment &amp; Health</h2>
+    <ul class="syl-list">
+      <li>Preliminary Knowledge of Main Branches of Science</li>
+      <li>Important Indian Scientific Research Institutions &amp; their Achievements</li>
+      <li>Satellite &amp; Space Technology Achievements of India</li>
+      <li>Structure of Human Body</li>
+      <li>Nutrition, Food, Nutrients &amp; Malnutrition</li>
+      <li>Genetic Diseases — Sickle Cell Anemia: Cause, Effect, Diagnosis, Programs</li>
+      <li>Health Policy &amp; Programs, Infectious Diseases &amp; Prevention, Health Indicators</li>
+      <li>Sustainable Development &amp; SDGs</li>
+      <li>Environmental Factors, Biodiversity &amp; Ecosystem</li>
+      <li>Pollution, Natural Calamities &amp; Management</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 8 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 8 — All Levels ✅ High Priority</div>
+    <h2>📰 Current Affairs — International, National &amp; MP</h2>
+    <ul class="syl-list">
+      <li>International Current Events (Global Affairs, International Relations)</li>
+      <li>National Current Events (India-level News, Schemes, Awards, etc.)</li>
+      <li>Current Events of Madhya Pradesh (MP-specific News, Developments)</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 9 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 9 — India Level ✅ High Priority</div>
+    <h2>💻 Information &amp; Communication Technology</h2>
+    <ul class="syl-list">
+      <li>Basic Knowledge of Computer (Hardware, Software, Generations)</li>
+      <li>Electronics, Information &amp; Communication Technology</li>
+      <li>Robotics, Artificial Intelligence (AI) &amp; Cyber Security</li>
+      <li>E-Governance</li>
+      <li>Internet &amp; Social Networking Platforms</li>
+    </ul>
+  </div>
+
+  <!-- UNIT 10 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 10 — MP Level ✅ High Priority</div>
+    <h2>🏕️ Tribes of MP — Heritage, Folk Culture &amp; Literature</h2>
+    <ul class="syl-list">
+      <li>Geographical Distribution of Tribes in MP, Constitutional Provisions for Tribes</li>
+      <li>Major Tribes of MP, PVTGs (Particularly Vulnerable Tribal Groups), Tribal Welfare Programs</li>
+      <li>Tribal Culture of MP — Customs, Traditions, Special Arts, Festivals, Dialects, Literature</li>
+      <li>MP Tribals' Contribution to Freedom Movement &amp; Tribal Personalities of MP</li>
+      <li>Important Institutes, Museums &amp; Publications related to MP Tribes</li>
+      <li>Folk Culture &amp; Literature of Madhya Pradesh</li>
+    </ul>
+  </div>
+
+  <!-- PAPER II note -->
+  <div class="sh">📝 Paper II — General Aptitude Test (CSAT) — Qualifying Only</div>
+  <div class="scard">
+    <h3>Topics (minimum 33% चाहिए, Merit में नहीं जुड़ता)</h3>
+    <div class="chips">
+      <span class="chip">Comprehension (Reading)</span>
+      <span class="chip">Communication Skills</span>
+      <span class="chip">Logical Reasoning</span>
+      <span class="chip">Analytical Ability</span>
+      <span class="chip">Decision Making</span>
+      <span class="chip">Problem Solving</span>
+      <span class="chip">Mental Ability</span>
+      <span class="chip">Basic Numeracy (Class 10)</span>
+      <span class="chip">Data Interpretation</span>
+      <span class="chip">Hindi Comprehension (Class 10)</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 3: BOOKS & CLASSES
+════════════════════════════════════════════════════ -->
+<div id="tab-resources" class="section">
+
+  <div class="intro">
+    Video में जो sources बताए गए, नीचे हर Unit के लिए clearly separated हैं।
+    <strong>MP Portion = Pariksha Dham</strong> की Book हर जगह है। India Portion के लिए अलग sources हैं।
+  </div>
+
+  <!-- UNIT 10 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 10 — जनजाति</div>
+    <h2>🏕️ Tribes of MP</h2>
+    <div class="row"><span class="lbl">📗 Long Term<br/>(2-3 साल)</span><span class="val"><strong>Nirman IAS</strong> की Book — Detailed coverage</span></div>
+    <div class="row"><span class="lbl">📘 Short Term<br/>(≤1 साल)</span><span class="val"><strong>Selection Tak</strong> की Book — Concise &amp; focused</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val"><strong>KGS Khan Sir — MP Channel</strong><br/>Full Playlist available | Search: "KGS MP Janjati"</span></div>
+  </div>
+
+  <!-- UNIT 9 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 9 — Computer / ICT</div>
+    <h2>💻 Information &amp; Communication Technology</h2>
+    <div class="row"><span class="lbl">📗 Book</span><span class="val"><strong>Pariksha Dham</strong> — Unit 9 के लिए Perfect, Point-to-Point</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val"><strong>Shubham Gupta Sir</strong><br/>Full Computer Playlist available</span></div>
+  </div>
+
+  <!-- UNIT 8 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 8 — Current Affairs</div>
+    <h2>📰 Current Affairs (International / National / MP)</h2>
+    <div class="row"><span class="lbl">🗺️ MP Portion</span><span class="val"><strong>Tathyavan Magazine</strong> — Exam के समय की Latest Issue लो<br/>यह MP Current Affairs के लिए Sufficient है</span></div>
+    <div class="row"><span class="lbl">🌍 National &amp; Intl</span><span class="val"><strong>Kumar Gaurav Sir</strong> की Daily YouTube Class<br/>या कोई Monthly Current Affairs Magazine</span></div>
+  </div>
+
+  <!-- UNIT 7 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 7 — Science &amp; Environment</div>
+    <h2>🔬 Science, Environment &amp; Health</h2>
+    <div class="row"><span class="lbl">📗 Book</span><span class="val"><strong>Pariksha Dham</strong> — Point-to-Point, बहुत शानदार है</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val"><strong>Shri Rama Academy</strong><br/>Unit 7 की Full Playlist available</span></div>
+  </div>
+
+  <!-- UNIT 6 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 6 — Economy ⚠️ Special</div>
+    <h2>💰 Economy of India &amp; MP</h2>
+    <div class="warn" style="margin-bottom:10px;"><strong>⏳ Wait करो!</strong> Economics Data हर साल बदलता है — Budget, SDG Goals, Rankings सब Update होते हैं। Exam से 2-3 महीने पहले सबसे Updated Book/Notes लो।</div>
+    <div class="row"><span class="lbl">📗 Book</span><span class="val">Exam के <strong>2-3 महीने पहले</strong> Market की सबसे Updated Book या Notes लो</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val">Basics clear करने के लिए कोई भी Economics Channel देख सकते हो अभी</span></div>
+  </div>
+
+  <!-- UNIT 5 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 5 — Polity (India + MP)</div>
+    <h2>⚖️ Constitutional System of India &amp; MP</h2>
+    <div class="row"><span class="lbl">📗 MP Polity</span><span class="val"><strong>Pariksha Dham</strong> — MP Polity के लिए Sufficient है</span></div>
+    <div class="row"><span class="lbl">📗 India Polity</span><span class="val">Polity Basics समझ जाओगे MP से ही, Extra notes की जरूरत नहीं</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube<br/>(India Polity)</span><span class="val"><strong>Shri Rama Academy</strong><br/>India Polity की Full Playlist available</span></div>
+  </div>
+
+  <!-- UNIT 4 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 4 — MP Geography</div>
+    <h2>🗺️ Geography of Madhya Pradesh</h2>
+    <div class="row"><span class="lbl">📗 Book</span><span class="val"><strong>Pariksha Dham</strong> — MP Geography के लिए Must Have</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val"><strong>MP Exam Wala (Physics Wala का MP Channel)</strong><br/>Unit 4 MP Geography की Full Playlist available</span></div>
+  </div>
+
+  <!-- UNIT 3 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 3 — India Geography</div>
+    <h2>🌏 Geography of India</h2>
+    <div class="row"><span class="lbl">📗 Notes</span><span class="val">किसी एक की Coaching Notes लो:<br/><strong>Akar</strong> या <strong>Utkarsh</strong> या <strong>Drishti</strong></span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val"><strong>Shubham Gupta Sir</strong><br/>India Geography की Full Playlist available</span></div>
+  </div>
+
+  <!-- UNIT 2 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 2 — MP History &amp; Culture</div>
+    <h2>🏛️ History, Culture &amp; Literature of MP</h2>
+    <div class="row"><span class="lbl">📗 Book</span><span class="val"><strong>Pariksha Dham</strong> — MP History/Culture/Literature के लिए</span></div>
+    <div class="row"><span class="lbl">📘 Extra (Optional)</span><span class="val">अगर 2-3 साल हैं: <strong>Tathyavan MP GK Book</strong> भी साथ में पढ़ सकते हो</span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val">Dedicated Full Playlist अभी तक available नहीं — Book से पढ़ो</span></div>
+  </div>
+
+  <!-- UNIT 1 -->
+  <div class="ucard">
+    <div class="ubadge">Unit 1 — India History</div>
+    <h2>📜 History of India</h2>
+    <div class="row"><span class="lbl">📗 Notes</span><span class="val">किसी एक की Coaching Notes लो:<br/><strong>Akar</strong> या <strong>Utkarsh</strong> या <strong>Drishti</strong></span></div>
+    <div class="row"><span class="lbl">▶️ YouTube</span><span class="val">अभी तक कोई Full Unit Playlist available नहीं।<br/>Notes से पढ़ो — अगर मिले तो Video comment में Pin होगी।</span></div>
+    <div class="warn" style="margin-top:8px;">⚠️ यह Unit बहुत Vast है। Notes से पढ़ना ही बेस्ट Option है। NCERT या Spectrum की जरूरत नहीं।</div>
+  </div>
+
+  <!-- Quick Reference Table -->
+  <div class="sh">📌 Quick Reference — Books</div>
+  <table class="tbl">
+    <tr><th>Book / Source</th><th>किन Units के लिए</th><th>कब लो</th></tr>
+    <tr><td><strong>Pariksha Dham</strong></td><td>Unit 2 (MP History), Unit 4 (MP Geo), Unit 5 (MP Polity), Unit 7 (Science), Unit 9 (Computer)</td><td>अभी ले सकते हो</td></tr>
+    <tr><td><strong>Tathyavan Magazine</strong></td><td>Unit 8 (MP Current Affairs)</td><td>Exam के 2-3 माह पहले</td></tr>
+    <tr><td><strong>Nirman IAS Book</strong></td><td>Unit 10 (Janjati)</td><td>Long Term (2-3 साल) वालों के लिए</td></tr>
+    <tr><td><strong>Selection Tak Book</strong></td><td>Unit 10 (Janjati)</td><td>Short Term (≤1 साल) वालों के लिए</td></tr>
+    <tr><td><strong>Akar / Utkarsh / Drishti Notes</strong></td><td>Unit 1 (India History), Unit 3 (India Geo)</td><td>किसी एक की Notes लो</td></tr>
+    <tr><td><strong>Updated Book/Notes (Economy)</strong></td><td>Unit 6 (Economy)</td><td>Exam से 2-3 माह पहले ही लो</td></tr>
+  </table>
+
+  <div class="sh" style="margin-top:24px;">▶️ Quick Reference — YouTube Channels</div>
+  <table class="tbl">
+    <tr><th>YouTube Channel</th><th>किन Units के लिए</th></tr>
+    <tr><td><strong>KGS Khan Sir — MP Channel</strong></td><td>Unit 10 — Janjati (MP Tribes)</td></tr>
+    <tr><td><strong>Shubham Gupta Sir</strong></td><td>Unit 9 — Computer | Unit 3 — India Geography</td></tr>
+    <tr><td><strong>Kumar Gaurav Sir</strong></td><td>Unit 8 — Current Affairs (National/International)</td></tr>
+    <tr><td><strong>Shri Rama Academy</strong></td><td>Unit 7 — Science &amp; Environment | Unit 5 — India Polity</td></tr>
+    <tr><td><strong>MP Exam Wala (Physics Wala)</strong></td><td>Unit 4 — MP Geography</td></tr>
+  </table>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TAB 4: STRATEGY
+════════════════════════════════════════════════════ -->
+<div id="tab-strategy" class="section">
+
+  <div class="sh">🎯 Reading Order — किस क्रम में पढ़ें?</div>
+
+  <div class="scard">
+    <h3>✅ Phase 1 — पहले ये Units (आसान + High Scoring)</h3>
+    <ul>
+      <li><strong>Unit 10</strong> — Janjati: MP-specific, कम Syllabus, Easy to score</li>
+      <li><strong>Unit 9</strong> — Computer: Fixed Topics, Short Syllabus, Scoring</li>
+      <li><strong>Unit 7</strong> — Science: Fixed Topics, Pariksha Dham से Point-to-Point</li>
+      <li><strong>Unit 4</strong> — MP Geography: MP-specific, Pariksha Dham काफी है</li>
+      <li><strong>Unit 2</strong> — MP History/Culture: MP-specific, Pariksha Dham काफी है</li>
+    </ul>
+  </div>
+
+  <div class="scard">
+    <h3>⚡ Phase 2 — इसके बाद</h3>
+    <ul>
+      <li><strong>Unit 5</strong> — Polity (India + MP): India Polity = Shri Rama Academy, MP = Pariksha Dham</li>
+      <li><strong>Unit 8</strong> — Current Affairs: Daily basis पर Kumar Gaurav Sir, Monthly Tathyavan</li>
+    </ul>
+  </div>
+
+  <div class="scard">
+    <h3>📌 Phase 3 — Vast Units (Time दो)</h3>
+    <ul>
+      <li><strong>Unit 1</strong> — India History: Coaching Notes (Akar/Utkarsh/Drishti) से पढ़ो</li>
+      <li><strong>Unit 3</strong> — India Geography: Shubham Gupta Sir + Coaching Notes</li>
+    </ul>
+  </div>
+
+  <div class="scard">
+    <h3>⏳ Phase 4 — Exam से 2-3 महीने पहले</h3>
+    <ul>
+      <li><strong>Unit 6</strong> — Economy: तब Market की सबसे Updated Book/Notes लो</li>
+      <li><strong>Unit 8</strong> — Current Affairs: Tathyavan Magazine की Latest Issue लो</li>
+      <li>सभी Units का Revision करो</li>
+    </ul>
+  </div>
+
+  <div class="sh">⚠️ Common Mistakes — ये मत करो</div>
+  <div class="scard">
+    <h3>❌ गलतियाँ जो Avoid करनी हैं</h3>
+    <ul>
+      <li>Laxmikant, Spectrum जैसी मोटी Books — <strong>1 साल या कम समय में बिलकुल मत पढ़ो</strong></li>
+      <li>NCERT की जरूरत नहीं — MPPSC अपने Fixed Topics पूछता है, UPSC की तरह नहीं</li>
+      <li>UPSC और MPPSC को Compare मत करो — Syllabus और Level बिलकुल अलग है</li>
+      <li>Random YouTube Videos देखना — सिर्फ Full Playlist वाले Channels follow करो</li>
+      <li>Unit 6 (Economy) को अभी से ही पूरा पढ़ना — Data outdated हो जाएगा</li>
+      <li>Subject-wise पढ़ना — हमेशा <strong>Syllabus Line by Line &amp; Unit by Unit</strong> पढ़ो</li>
+    </ul>
+  </div>
+
+  <div class="sh">💡 Smart Tips</div>
+  <div class="scard">
+    <h3>✅ ये करो</h3>
+    <ul>
+      <li>पहले MPPSC Official Syllabus PDF Download करो — mppsc.mp.gov.in पर जाओ</li>
+      <li>हर Unit का Syllabus print करो, पढ़ते समय हर point tick करते जाओ</li>
+      <li><strong>Last 4 Units (7, 8, 9, 10)</strong> पर special focus — इनमें कम समय में ज्यादा Units cover होती हैं</li>
+      <li>MP-specific Content (Unit 2, 4, 10) — यह सिर्फ MPPSC में पूछा जाता है, यहाँ compete कम है</li>
+      <li>Paper II (CSAT) के लिए ज्यादा time मत दो — सिर्फ 33% चाहिए qualifying के लिए</li>
+      <li>10th/11th/12th में हो → पहले Board पूरा करो, फिर तैयारी शुरू करो</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>MPPSC Prelims Complete Guide | ईमानदारी से बताया गया | जय हिंद 🇮🇳 | Source: Official MPPSC Syllabus 2026</footer>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

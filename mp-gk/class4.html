@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP Bhaugolik Sthiti evam Vistar - Revision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --panel: #171827;
+      --panel-2: #202236;
+      --text: #f7f8ff;
+      --muted: #d7dcff;
+      --line: #3a3f63;
+      --cyan: #00d4ff;
+      --orange: #ff6b35;
+      --green: #00ff88;
+      --purple: #b388ff;
+      --hot: #ffcf5a;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+    }
+
+    [data-theme="light"] {
+      --bg: #f7f8fc;
+      --panel: #ffffff;
+      --panel-2: #eef2ff;
+      --text: #171827;
+      --muted: #343a55;
+      --line: #c7cce4;
+      --shadow: 0 14px 36px rgba(30, 45, 90, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 17px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(100%, 1380px);
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 22px 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 6vw, 3rem);
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+    }
+
+    .sub {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--panel-2);
+      font-weight: 700;
+      font-size: .86rem;
+    }
+
+    .progress-shell {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      height: 14px;
+      overflow: hidden;
+      background: var(--panel-2);
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      transition: width .3s ease;
+    }
+
+    .progress-text {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .9rem;
+      margin-top: 4px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr) 240px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    nav,
+    .map-panel {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+
+    .map-panel {
+      top: 12px;
+      z-index: 4;
+    }
+
+    .map-panel img {
+      display: block;
+      width: 230%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+    }
+
+    .map-caption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .toc {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 7px;
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    .toc a:hover {
+      border-color: var(--line);
+      color: var(--text);
+      background: var(--panel-2);
+    }
+
+    .controls {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    select,
+    button {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: var(--panel-2);
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+    }
+
+    button {
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      border-color: var(--cyan);
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+      padding-bottom: 32px;
+    }
+
+    section {
+      scroll-margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      animation: rise .28s ease both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .done {
+      flex: 0 0 auto;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card,
+    details,
+    .hotbox,
+    .definition,
+    .quiz,
+    .memory,
+    .diagram {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 14px;
+    }
+
+    .card ul,
+    .hotbox ul,
+    .definition ul,
+    .memory ul {
+      margin: 8px 0 0;
+      padding-left: 21px;
+    }
+
+    .card li,
+    .hotbox li,
+    .definition li,
+    .memory li {
+      margin: 5px 0;
+    }
+
+    details {
+      margin-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(0, 212, 255, .12);
+      color: var(--text);
+    }
+
+    .accent-cyan {
+      border-top: 4px solid var(--cyan);
+    }
+
+    .accent-orange {
+      border-top: 4px solid var(--orange);
+    }
+
+    .accent-green {
+      border-top: 4px solid var(--green);
+    }
+
+    .accent-purple {
+      border-top: 4px solid var(--purple);
+    }
+
+    .hotbox {
+      border-color: color-mix(in srgb, var(--hot), var(--line) 35%);
+    }
+
+    .hot {
+      color: var(--hot);
+      font-weight: 800;
+    }
+
+    .definition {
+      border-left: 5px solid var(--cyan);
+    }
+
+    .memory {
+      border-left: 5px solid var(--purple);
+    }
+
+    .flow {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .flow span {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: var(--panel);
+    }
+
+    .qa {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .answer {
+      display: none;
+      border-left: 4px solid var(--green);
+      padding: 8px 10px;
+      background: var(--panel);
+      border-radius: 6px;
+    }
+
+    .answer.show {
+      display: block;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    label.item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: var(--panel-2);
+      font-weight: 700;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      accent-color: var(--green);
+      flex: 0 0 auto;
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 18px 0 30px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        top: 0;
+        border-radius: 0;
+        margin-inline: -18px;
+      }
+
+      .map-panel {
+        position: static;
+        margin-inline: 0;
+      }
+
+      .map-panel img {
+        max-width: 540px;
+        margin: 0 auto;
+      }
+
+      .toc {
+        display: none;
+      }
+
+      .grid,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --panel: #fff;
+        --panel-2: #fff;
+        --text: #000;
+        --muted: #111;
+        --line: #999;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      nav,
+      .controls,
+      button,
+      .progress-shell,
+      .done,
+      .map-panel {
+        display: none !important;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      section {
+        box-shadow: none;
+        break-inside: avoid;
+        margin-bottom: 14px;
+      }
+
+      details:not([open])> :not(summary) {
+        display: block;
+      }
+
+      .answer {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap hero">
+      <div class="badges">
+        <span class="badge">🎯 MPPSC Pre 2025</span>
+        <span class="badge">📍 Lecture 4</span>
+        <span class="badge">🗂 12 Revision Topics</span>
+      </div>
+      <h1>🗺️ Madhya Pradesh ki Bhaugolik Sthiti evam Vistar</h1>
+      <p class="sub">Video transcript se nikala gaya compact Hinglish revision page. Promo, student names, share/like
+        chatter skip kiya gaya hai; lecture ke study facts preserve kiye gaye hain.</p>
+      <div>
+        <div class="progress-shell" aria-label="Revision progress">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="progressText" class="progress-text">0% revision complete</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+    <nav aria-label="Table of contents">
+      <div class="nav-title">⚡ Quick Nav</div>
+      <ul class="toc">
+        <li><a href="#identity">MP Identity</a></li>
+        <li><a href="#geology">Geology</a></li>
+        <li><a href="#latlong">Latitude-Longitude</a></li>
+        <li><a href="#extent">Location & Extent</a></li>
+        <li><a href="#centers">Center Points</a></li>
+        <li><a href="#ist">IST & Time</a></li>
+        <li><a href="#tropic">Kark Rekha</a></li>
+        <li><a href="#borders">Border States</a></li>
+        <li><a href="#divisions">Divisions</a></li>
+        <li><a href="#interior">Interior Districts</a></li>
+        <li><a href="#masters">Master Tables</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+      </ul>
+      <div class="controls">
+        <select id="jump">
+          <option value="">Jump to topic</option>
+          <option value="#identity">MP Identity</option>
+          <option value="#geology">Geology</option>
+          <option value="#latlong">Latitude-Longitude</option>
+          <option value="#extent">Location & Extent</option>
+          <option value="#centers">Center Points</option>
+          <option value="#ist">IST & Time</option>
+          <option value="#tropic">Kark Rekha</option>
+          <option value="#borders">Border States</option>
+          <option value="#divisions">Divisions</option>
+          <option value="#interior">Interior Districts</option>
+          <option value="#masters">Master Tables</option>
+          <option value="#checklist">Checklist</option>
+        </select>
+        <button id="themeToggle" type="button">🌙 Theme</button>
+      </div>
+    </nav>
+
+    <main>
+      <section id="identity" class="accent-cyan">
+        <div class="section-head">
+          <div>
+            <h2>💠 MP Identity: Naam, Nickname, Slogan</h2>
+            <p class="mini">Basic identity facts lecture ke starting core points the.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-identity">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>📌 Key Facts</h3>
+            <ul>
+              <li>India ke middle me situated hone ke karan state ka naam <b>Madhya Pradesh</b> pada.</li>
+              <li>Naam <b>former Prime Minister Pandit Jawaharlal Nehru</b> se linked bataya gaya.</li>
+              <li>MP ko <b>Hriday Pradesh</b> aur <b>Heart of India</b> bhi kaha jata hai.</li>
+              <li>MP ka slogan/dhyey vakya: <b>Hriday Bharatam</b>.</li>
+            </ul>
+          </div>
+          <div class="definition">
+            <h3>🔐 Definition</h3>
+            <ul>
+              <li><b>Bhu-Aaveshthit / Landlocked:</b> MP ki boundary na sea border ko touch karti hai, na kisi
+                international border ko.</li>
+              <li>MP kisi bhi country ki boundary se directly touch nahi hota.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hotbox">
+          <h3>🔥 Exam Hot</h3>
+          <ul>
+            <li>MP = Heart of India / Hriday Pradesh.</li>
+            <li>Slogan = <b>Hriday Bharatam</b>.</li>
+            <li>MP completely landlocked state hai.</li>
+          </ul>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">MP ka slogan kya hai?</button>
+            <div class="answer">Hriday Bharatam.</div>
+            <button type="button" class="reveal">Landlocked ka simple meaning?</button>
+            <div class="answer">Sea border aur international border dono ko touch nahi karta.</div>
+            <button type="button" class="reveal">MP ko Heart of India kyon kaha jata hai?</button>
+            <div class="answer">India ke center me situated hone ke karan.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="geology" class="accent-orange">
+        <div class="section-head">
+          <div>
+            <h2>🪨 Geological View: Gondwana, Deccan Trap, Vindhyan</h2>
+            <p class="mini">Teacher ne MP ko geological point of view se oldest Gondwana land part bataya.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-geology">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🧠 Core Concept</h3>
+            <ul>
+              <li>MP ka bhag <b>Gondwana Land</b> ke pracheen bhubhag se related bataya gaya.</li>
+              <li>Earth formation ke time landmass Angara Land aur Gondwana Land me divide hua tha.</li>
+              <li>Plate tectonic movement, earthquake type forces se land/surface position gradually shift hoti rahi.
+              </li>
+              <li>Lecture logic: pehle Gondwana side/Southern Hemisphere context, aaj MP Northern Hemisphere me hai.
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📍 Rock Regions</h3>
+            <ul>
+              <li><b>South-West MP:</b> Deccan Trap rocks.</li>
+              <li>Deccan Trap = basalt rocks / cooled volcanic lava se nirmit.</li>
+              <li>South-West area me <b>Nimar</b> aur <b>Malwa plateau</b> mention hua.</li>
+              <li><b>Eastern MP:</b> Vindhyan rock group; Sidhi, Singrauli, Rewa side example.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="diagram">
+          <h3>📊 Boundary Logic</h3>
+          <div class="flow">
+            <span>NW/North</span>
+            <span>Chambal River</span>
+            <span>+ Tributaries</span>
+            <span>Boundary</span>
+            <span>South</span>
+            <span>Tapti River</span>
+            <span>East</span>
+            <span>Mekal Range</span>
+          </div>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">Deccan Trap kis region me bataya?</button>
+            <div class="answer">South-West MP: Nimar aur Malwa side.</div>
+            <button type="button" class="reveal">Eastern MP me kaunsa rock group?</button>
+            <div class="answer">Vindhyan rock group.</div>
+            <button type="button" class="reveal">South boundary kis river se linked?</button>
+            <div class="answer">Tapti River.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="latlong" class="accent-green">
+        <div class="section-head">
+          <div>
+            <h2>🌐 Latitude-Longitude Concept</h2>
+            <p class="mini">Sir ne globe se concept samjhaya: direction district ke hisab se nahi, globe ke hisab se
+              likhni hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-latlong">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🌍 Globe Basics</h3>
+            <ul>
+              <li><b>Globe</b> = Earth ka model / prithvi ka namuna.</li>
+              <li>Equator = <b>0 degree latitude</b> / Bhumadhya Rekha.</li>
+              <li>Globe par lines imaginary / kalpanik hoti hain.</li>
+              <li>Hemisphere = gola ka ardh bhag.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🧭 Lines & Direction</h3>
+            <ul>
+              <li><b>Horizontal lines</b> = Latitude / Akshansh Rekha.</li>
+              <li>Akshanshiya position batate waqt MP ke liye direction <b>North / Uttari</b> hogi.</li>
+              <li><b>Vertical lines</b> = Longitude / Deshantar Rekha.</li>
+              <li>Deshantariya position batate waqt MP ke liye direction <b>East / Poorvi</b> hogi.</li>
+            </ul>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th>Hinglish Rule</th>
+              <th>Exam Mistake Avoid</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Akshansh</td>
+              <td>Horizontal line; MP Northern Hemisphere me hai.</td>
+              <td>Burhanpur southern district hai, par coordinate me <b>N</b> hi likhna hai.</td>
+            </tr>
+            <tr>
+              <td>Deshantar</td>
+              <td>Vertical line; MP Eastern Hemisphere me hai.</td>
+              <td>Alirajpur western district hai, par coordinate me <b>E</b> hi likhna hai.</td>
+            </tr>
+            <tr>
+              <td>Time</td>
+              <td>Longitude time ka determination karti hai.</td>
+              <td>Latitude ko time se confuse na karein.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">MP ki latitude direction kya hogi?</button>
+            <div class="answer">Uttari Akshansh / North Latitude.</div>
+            <button type="button" class="reveal">MP ki longitude direction kya hogi?</button>
+            <div class="answer">Poorvi Deshantar / East Longitude.</div>
+            <button type="button" class="reveal">Equator kitne degree par hota hai?</button>
+            <div class="answer">0 degree latitude.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="extent" class="accent-purple">
+        <div class="section-head">
+          <div>
+            <h2>📏 Location, Area & Extent</h2>
+            <p class="mini">Exact coordinates, area aur extreme districts high-value data hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-extent">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🧮 Area Facts</h3>
+            <ul>
+              <li>Present total area: <b>308,252 sq km</b>.</li>
+              <li>India ke area ka approx <b>9.38%</b>.</li>
+              <li>Partition ke pehle area: <b>443,446 sq km</b>.</li>
+              <li>Partition Chhattisgarh se hua tha.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📍 Extreme Districts</h3>
+            <ul>
+              <li>Northern district: <b>Morena</b>.</li>
+              <li>Southern district: <b>Burhanpur</b>.</li>
+              <li>Eastern district: <b>Singrauli</b>.</li>
+              <li>Western district: <b>Alirajpur</b>.</li>
+            </ul>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Measurement</th>
+              <th>Value</th>
+              <th>Remember</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Latitude range</td>
+              <td>21°06' N to 26°30' N</td>
+              <td>Dono ke sath <b>North</b>.</td>
+            </tr>
+            <tr>
+              <td>Longitude range</td>
+              <td>74°09' E to 82°48' E</td>
+              <td>Dono ke sath <b>East</b>.</td>
+            </tr>
+            <tr>
+              <td>North-South distance</td>
+              <td>605 km</td>
+              <td>Distance hai, sq km nahi.</td>
+            </tr>
+            <tr>
+              <td>East-West distance</td>
+              <td>870 km</td>
+              <td>Distance hai, km me likhna.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hotbox">
+          <h3>🔥 Exam Hot</h3>
+          <ul>
+            <li>Latitude/Longitude me district direction nahi, globe direction lagti hai.</li>
+            <li>Area ke liye sq km; length/distance ke liye sirf km.</li>
+          </ul>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">MP ka total present area?</button>
+            <div class="answer">308,252 sq km.</div>
+            <button type="button" class="reveal">East-West distance?</button>
+            <div class="answer">870 km.</div>
+            <button type="button" class="reveal">MP ka western district?</button>
+            <div class="answer">Alirajpur.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="centers" class="accent-cyan">
+        <div class="section-head">
+          <div>
+            <h2>🎯 Center Point Facts</h2>
+            <p class="mini">Lecture me center-point data ko latest/authentic source ke hisab se emphasize kiya gaya.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-centers">
+            Done</label>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Question Pattern</th>
+              <th>Answer</th>
+              <th>Extra Fact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Earth center point</td>
+              <td>Mangalnath Temple, Ujjain</td>
+              <td>Mangal grah / Mars ko dedicated.</td>
+            </tr>
+            <tr>
+              <td>Akhand Bharat ka center point</td>
+              <td>Barsali, Betul</td>
+              <td>Teacher trick: "Var ko apni Sali se Akhand lagav" = Barsali.</td>
+            </tr>
+            <tr>
+              <td>Bharat ka bhaugolik center point</td>
+              <td>Karondi, Katni</td>
+              <td>Dusra naam: Ram Manohar Lohia Nagar.</td>
+            </tr>
+            <tr>
+              <td>Bharat ka dil kis village ko?</td>
+              <td>Karondi village, Katni</td>
+              <td>State ka dil = MP; village ka dil = Karondi.</td>
+            </tr>
+            <tr>
+              <td>MP ka center point</td>
+              <td>Sagar</td>
+              <td>Center point of Madhya Pradesh.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hotbox">
+          <h3>🔥 Exam Hot</h3>
+          <ul>
+            <li>Karondi, Katni par VYAPAM/PYQ type question mention hua.</li>
+            <li>Village-level "Bharat ka dil" pucha ja sakta hai: Karondi village, Katni.</li>
+          </ul>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">Akhand Bharat ka center point?</button>
+            <div class="answer">Barsali, Betul.</div>
+            <button type="button" class="reveal">Karondi ka dusra naam?</button>
+            <div class="answer">Ram Manohar Lohia Nagar.</div>
+            <button type="button" class="reveal">MP ka center point?</button>
+            <div class="answer">Sagar.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ist" class="accent-orange">
+        <div class="section-head">
+          <div>
+            <h2>⏱️ IST Line, Time Difference, Sunrise-Sunset</h2>
+            <p class="mini">Longitude time determine karti hai; Singrauli-Alirajpur time gap key fact hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-ist">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🕒 Standard Meridian</h3>
+            <ul>
+              <li>India Standard Meridian / timeline: <b>82.5° E longitude</b>.</li>
+              <li>MP ke ekmatra district <b>Singrauli</b> se pass hoti hai.</li>
+              <li>Singrauli MP ka eastern district hai.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌅 Sunrise-Sunset</h3>
+            <ul>
+              <li>Singrauli aur Alirajpur ke last points me <b>34 minutes</b> ka difference.</li>
+              <li>Sabse pehle sunrise aur sunset: <b>Singrauli</b>.</li>
+              <li>Sabse baad me sunrise aur sunset: <b>Alirajpur</b>.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="definition">
+          <h3>🔐 Word Trap</h3>
+          <p>"Sabse pehle" dono cases me East side Singrauli. "Sabse baad me" dono cases me West side Alirajpur.</p>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">82.5° E MP ke kis district se pass hoti hai?</button>
+            <div class="answer">Singrauli.</div>
+            <button type="button" class="reveal">Singrauli-Alirajpur time difference?</button>
+            <div class="answer">34 minutes.</div>
+            <button type="button" class="reveal">Sabse baad me sunset?</button>
+            <div class="answer">Alirajpur.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tropic" class="accent-green">
+        <div class="section-head">
+          <div>
+            <h2>☀️ Kark Rekha / Tropic of Cancer</h2>
+            <p class="mini">23.5° N latitude line MP ko two equal parts me divide karti hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-tropic">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>📌 Key Facts</h3>
+            <ul>
+              <li>Kark Rekha = <b>23.5° N latitude</b>.</li>
+              <li>MP ko do barabar bhagon me divide karti hai.</li>
+              <li>MP ke <b>14 districts</b> aur <b>5 divisions</b> se pass hoti hai.</li>
+              <li><b>Bhopal division</b> ka har district Kark Rekha par situated hai.</li>
+              <li>21 June ko sun rays Tropic of Cancer par perpendicular hoti hain.</li>
+              <li>21 June ko Ujjain ke Mahakal Temple par sun rays direct/perpendicular batayi gayi.</li>
+            </ul>
+          </div>
+          <div class="memory">
+            <h3>🧠 Teacher Memory Story</h3>
+            <ul>
+              <li>Shahdol division: Shahdol + uska beta Umaria.</li>
+              <li>Jabalpur division: Jabalpur + Katni.</li>
+              <li>Sagar division: Sagar + Damoh.</li>
+              <li>Bhopal division: sa-parivar 5 districts.</li>
+              <li>Ujjain/Mahakal: Ratlam + Agar Malwa ko le jata hai.</li>
+            </ul>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Division</th>
+              <th>Kark Rekha Districts</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Shahdol</td>
+              <td>Shahdol, Umaria</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Jabalpur</td>
+              <td>Jabalpur, Katni</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Sagar</td>
+              <td>Sagar, Damoh</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Bhopal</td>
+              <td>Bhopal, Raisen, Sehore, Vidisha, Rajgarh</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Ujjain</td>
+              <td>Ujjain, Ratlam, Agar Malwa</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">Kark Rekha MP ke kitne districts se pass hoti hai?</button>
+            <div class="answer">14 districts.</div>
+            <button type="button" class="reveal">Kark Rekha ka coordinate?</button>
+            <div class="answer">23.5° North Latitude.</div>
+            <button type="button" class="reveal">Kaunsa division pura Kark Rekha par hai?</button>
+            <div class="answer">Bhopal division.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="borders" class="accent-purple">
+        <div class="section-head">
+          <div>
+            <h2>🧩 Border States & Border Districts</h2>
+            <p class="mini">Current MP boundary 5 states se touch hoti hai. Partition se pehle 7 states se boundary
+              share hoti thi.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-borders">
+            Done</label>
+        </div>
+        <details open>
+          <summary>📍 Current 5 Neighboring States</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>MP Border Districts</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uttar Pradesh</td>
+                <td>Morena, Bhind, Datia, Shivpuri, Ashoknagar, Sagar, Tikamgarh, Niwari, Chhatarpur, Panna, Satna,
+                  Rewa, Mauganj, Singrauli</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Chhattisgarh</td>
+                <td>Singrauli, Sidhi, Shahdol, Anuppur, Dindori, Mandla, Balaghat</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Maharashtra</td>
+                <td>Balaghat, Seoni, Chhindwara, Pandhurna, Betul, Khandwa, Burhanpur, Khargone, Barwani, Alirajpur</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Gujarat</td>
+                <td>Alirajpur, Jhabua</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Rajasthan</td>
+                <td>Jhabua, Ratlam, Mandsaur, Neemuch, Agar Malwa, Rajgarh, Guna, Shivpuri, Sheopur, Morena</td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+        <details>
+          <summary>🔀 Two-State Boundary Touching Districts</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>District</th>
+                <th>Touches These Two States</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Morena</td>
+                <td>Uttar Pradesh + Rajasthan</td>
+              </tr>
+              <tr>
+                <td>Shivpuri</td>
+                <td>Uttar Pradesh + Rajasthan</td>
+              </tr>
+              <tr>
+                <td>Singrauli</td>
+                <td>Uttar Pradesh + Chhattisgarh</td>
+              </tr>
+              <tr>
+                <td>Balaghat</td>
+                <td>Chhattisgarh + Maharashtra</td>
+              </tr>
+              <tr>
+                <td>Alirajpur</td>
+                <td>Maharashtra + Gujarat</td>
+              </tr>
+              <tr>
+                <td>Jhabua</td>
+                <td>Gujarat + Rajasthan</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+        <details>
+          <summary>🕰 Before Partition</summary>
+          <div class="card">
+            <ul>
+              <li>Partition ke pehle MP boundary <b>7 states</b> se touch hoti thi.</li>
+              <li>States: Rajasthan, Maharashtra, Gujarat, Uttar Pradesh, Bihar, Odisha, Andhra Pradesh.</li>
+              <li>Chhattisgarh us time MP ka hi part tha, separate neighboring state nahi tha.</li>
+            </ul>
+          </div>
+        </details>
+        <div class="hotbox">
+          <h3>🔥 Exam Hot</h3>
+          <ul>
+            <li>UP se 14 districts touch karte hain; <b>Sidhi UP ko touch nahi karta</b>.</li>
+            <li>Maharashtra se Pandhurna ke baad count 10 bataya gaya.</li>
+            <li>Two-state boundary touching districts total <b>6</b>.</li>
+          </ul>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">Gujarat se MP ke kitne districts touch karte hain?</button>
+            <div class="answer">2: Alirajpur, Jhabua.</div>
+            <button type="button" class="reveal">UP + Chhattisgarh dono ko kaunsa district touch karta hai?</button>
+            <div class="answer">Singrauli.</div>
+            <button type="button" class="reveal">Partition se pehle MP boundary kitne states se touch hoti thi?</button>
+            <div class="answer">7 states.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="divisions" class="accent-cyan">
+        <div class="section-head">
+          <div>
+            <h2>🗂 MP Divisions & Districts</h2>
+            <p class="mini">Lecture ke hisab se MP me 10 divisions aur 55 districts bataye gaye.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-divisions">
+            Done</label>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Division</th>
+              <th>Districts</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jabalpur</td>
+              <td>Jabalpur, Seoni, Narsinghpur, Balaghat, Pandhurna, Dindori, Mandla, Chhindwara, Katni</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Indore</td>
+              <td>Indore, Dhar, Jhabua, Alirajpur, Khargone, Khandwa, Barwani, Burhanpur</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Ujjain</td>
+              <td>Ujjain, Ratlam, Agar Malwa, Shajapur, Neemuch, Mandsaur, Dewas</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Bhopal</td>
+              <td>Bhopal, Rajgarh, Sehore, Raisen, Vidisha</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Narmadapuram</td>
+              <td>Narmadapuram, Betul, Harda</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Sagar</td>
+              <td>Sagar, Chhatarpur, Panna, Tikamgarh, Niwari, Damoh</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Gwalior</td>
+              <td>Gwalior, Datia, Ashoknagar, Guna, Shivpuri</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Chambal</td>
+              <td>Sheopur, Morena, Bhind</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Rewa</td>
+              <td>Rewa, Sidhi, Singrauli, Satna, Mauganj, Maihar</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Shahdol</td>
+              <td>Shahdol, Umaria, Anuppur</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid">
+          <div class="card">
+            <h3>📊 Biggest-Smallest</h3>
+            <ul>
+              <li>Area aur district count dono ke hisab se biggest division: <b>Jabalpur</b>.</li>
+              <li>3-district divisions: Chambal, Narmadapuram, Shahdol.</li>
+              <li>Area ke hisab se smallest division: <b>Shahdol</b>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📌 Indore Division Note</h3>
+            <ul>
+              <li>Malwa side: Indore, Dhar, Jhabua, Alirajpur.</li>
+              <li>Nimar side: Khargone, Khandwa, Barwani, Burhanpur.</li>
+              <li>Khargone = Western Nimar; Khandwa = Eastern Nimar; Barwani = Nimar ka Paris.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">MP me kitne divisions aur districts bataye?</button>
+            <div class="answer">10 divisions, 55 districts.</div>
+            <button type="button" class="reveal">Largest division?</button>
+            <div class="answer">Jabalpur division.</div>
+            <button type="button" class="reveal">Shahdol division ke districts?</button>
+            <div class="answer">Shahdol, Umaria, Anuppur.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="interior" class="accent-orange">
+        <div class="section-head">
+          <div>
+            <h2>📍 Interior vs Border Districts</h2>
+            <p class="mini">Jo district kisi bhi other state boundary ko touch nahi karta, woh antarvarti/interior
+              district hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-interior">
+            Done</label>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🗂 Interior Districts: 18</h3>
+            <ul>
+              <li>Gwalior, Vidisha, Ujjain, Dhar, Indore, Dewas</li>
+              <li>Shajapur, Sehore, Bhopal, Raisen, Narmadapuram, Harda</li>
+              <li>Narsinghpur, Damoh, Katni, Jabalpur, Umaria, Maihar</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📌 Border Districts: 37</h3>
+            <ul>
+              <li>Total districts 55 hain.</li>
+              <li>Interior 18 minus karne par border/bahirvarti districts = <b>37</b>.</li>
+              <li>Mandla ko interior me include mat karna.</li>
+              <li>Reason given: Mandla boundary Chhattisgarh ke Kabirdham district ko touch karti hai.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quiz">
+          <h3>🎯 Quick Recall</h3>
+          <div class="qa">
+            <button type="button" class="reveal">Interior districts total?</button>
+            <div class="answer">18.</div>
+            <button type="button" class="reveal">Border districts total?</button>
+            <div class="answer">37.</div>
+            <button type="button" class="reveal">Mandla interior me kyon nahi?</button>
+            <div class="answer">Mandla Chhattisgarh ke Kabirdham district se boundary touch karta hai.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="masters" class="accent-green">
+        <div class="section-head">
+          <div>
+            <h2>📚 Master Tables: Full Forms & Hot Facts</h2>
+            <p class="mini">End revision ke liye sabse puchne layak facts ek jagah.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-masters">
+            Done</label>
+        </div>
+        <details open>
+          <summary>🔤 Full Forms / Abbreviations</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>Short Form</th>
+                <th>Full Form</th>
+                <th>Meaning in Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MP</td>
+                <td>Madhya Pradesh</td>
+                <td>State under study.</td>
+              </tr>
+              <tr>
+                <td>MPPSC</td>
+                <td>Madhya Pradesh Public Service Commission</td>
+                <td>Target exam series.</td>
+              </tr>
+              <tr>
+                <td>IST</td>
+                <td>Indian Standard Time</td>
+                <td>82.5° E standard meridian se related.</td>
+              </tr>
+              <tr>
+                <td>PYQ</td>
+                <td>Previous Year Question</td>
+                <td>Teacher ne Karondi/Katni type question mention kiya.</td>
+              </tr>
+              <tr>
+                <td>CG</td>
+                <td>Chhattisgarh</td>
+                <td>Neighboring state after partition.</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+        <details open>
+          <summary>🔥 Master Exam Hot Facts</summary>
+          <ul>
+            <li>MP ka slogan: Hriday Bharatam.</li>
+            <li>MP landlocked hai: no sea border, no international border.</li>
+            <li>Present area: 308,252 sq km; India ka 9.38% approx.</li>
+            <li>Latitude: 21°06' N to 26°30' N; Longitude: 74°09' E to 82°48' E.</li>
+            <li>Extent: N-S 605 km; E-W 870 km.</li>
+            <li>Extreme districts: Morena, Burhanpur, Singrauli, Alirajpur.</li>
+            <li>Earth center point: Mangalnath Temple, Ujjain.</li>
+            <li>India geographical center: Karondi, Katni; also Ram Manohar Lohia Nagar.</li>
+            <li>Village called heart of India: Karondi village, Katni.</li>
+            <li>MP center point: Sagar.</li>
+            <li>IST line 82.5° E passes through Singrauli, the only MP district mentioned.</li>
+            <li>Singrauli-Alirajpur time difference: 34 minutes.</li>
+            <li>Kark Rekha: 14 districts, 5 divisions; Bhopal division all districts.</li>
+            <li>Two-state boundary touching districts: 6.</li>
+            <li>Interior districts: 18; border districts: 37.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>📌 Teacher Revision Advice</summary>
+          <ul>
+            <li>MP ke 55 districts blank map me bina dekhe fill karne hain.</li>
+            <li>Revision ka tareeka: jo padha hai use kisi ko samjhao; koi na mile to self-explain karo.</li>
+            <li>Purane teen lectures bhi dekhne ko bola gaya.</li>
+            <li>Daily 8 PM live class continuation mention hua; koi specific next academic topic transcript me name nahi
+              hua.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section id="checklist" class="accent-purple">
+        <div class="section-head">
+          <div>
+            <h2>✅ Master Revision Checklist</h2>
+            <p class="mini">Checkbox progress localStorage me save hota hai.</p>
+          </div>
+          <label class="done"><input class="persist-check section-check" type="checkbox" data-id="done-checklist">
+            Done</label>
+        </div>
+        <div class="checklist">
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c1"> MP ka naam Nehru ji se linked
+            aur Heart of India yaad hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c2"> Hriday Bharatam slogan yaad
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c3"> Landlocked definition clear
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c4"> Gondwana, Deccan Trap, Vindhyan
+            rock regions yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c5"> Latitude me North, longitude me
+            East likhna hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c6"> 21°06' N to 26°30' N yaad
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c7"> 74°09' E to 82°48' E yaad
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c8"> 308,252 sq km aur 9.38% yaad
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c9"> 605 km N-S aur 870 km E-W yaad
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c10"> Morena, Burhanpur, Singrauli,
+            Alirajpur extreme districts yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c11"> Mangalnath, Barsali, Karondi,
+            Sagar center facts yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c12"> 82.5° E Singrauli se pass hoti
+            hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c13"> Singrauli-Alirajpur 34 minutes
+            difference yaad hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c14"> Kark Rekha ke 14 districts aur
+            5 divisions yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c15"> 21 June Mahakal/Ujjain fact
+            yaad hai.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c16"> Current neighboring state
+            counts: UP 14, CG 7, MH 10, Gujarat 2, Rajasthan 10.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c17"> Two-state boundary districts 6
+            yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c18"> 10 divisions aur 55 districts
+            ka structure revise kiya.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c19"> Interior districts 18 aur
+            border districts 37 yaad hain.</label>
+          <label class="item"><input class="persist-check" type="checkbox" data-id="c20"> Mandla ko interior me include
+            nahi karna.</label>
+        </div>
+      </section>
+    </main>
+
+    <aside class="map-panel" aria-label="Madhya Pradesh reference map">
+      <div class="nav-title">🗺️ MP Reference Map</div>
+      <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" width="540" height="387"
+        alt="Madhya Pradesh new map showing 55 districts">
+      <div class="map-caption">Borders, Kark Rekha, divisions, extreme districts aur interior/border district revision
+        ke liye static side map.</div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <b>📌 Upcoming Topic:</b> Transcript me next academic topic ka naam nahi diya gaya; sir ne daily 8 PM live
+      continuation aur previous 3 lectures dekhne ko bola.
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("mp-revision-theme") || "dark";
+    root.dataset.theme = savedTheme;
+
+    function setThemeLabel() {
+      themeToggle.textContent = root.dataset.theme === "light" ? "☀️ Theme" : "🌙 Theme";
+    }
+    setThemeLabel();
+
+    themeToggle.addEventListener("click", () => {
+      root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
+      localStorage.setItem("mp-revision-theme", root.dataset.theme);
+      setThemeLabel();
+    });
+
+    document.getElementById("jump").addEventListener("change", (event) => {
+      if (event.target.value) {
+        document.querySelector(event.target.value).scrollIntoView({ behavior: "smooth" });
+        event.target.value = "";
+      }
+    });
+
+    document.querySelectorAll(".reveal").forEach((button) => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
+        answer.classList.toggle("show");
+      });
+    });
+
+    const checks = Array.from(document.querySelectorAll(".persist-check"));
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+
+    function updateProgress() {
+      const done = checks.filter((check) => check.checked).length;
+      const pct = checks.length ? Math.round((done / checks.length) * 100) : 0;
+      progressFill.style.width = pct + "%";
+      progressText.textContent = pct + "% revision complete (" + done + "/" + checks.length + ")";
+    }
+
+    checks.forEach((check) => {
+      const key = "mp-revision-" + check.dataset.id;
+      check.checked = localStorage.getItem(key) === "1";
+      check.addEventListener("change", () => {
+        localStorage.setItem(key, check.checked ? "1" : "0");
+        updateProgress();
+      });
+    });
+    updateProgress();
+  </script>
+</body>
+
+</html>

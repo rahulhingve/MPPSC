@@ -1,0 +1,1506 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class 8 Revision: Bhil Janjati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1220;
+      --panel: #171b2e;
+      --panel-2: #20263d;
+      --text: #f7f9ff;
+      --muted: #dbe3f2;
+      --line: rgba(255, 255, 255, .18);
+      --cyan: #00d4ff;
+      --orange: #ff8a3d;
+      --green: #00e58a;
+      --purple: #b388ff;
+      --red: #ff5f73;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .32);
+    }
+
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --panel-2: #edf2f8;
+      --text: #131826;
+      --muted: #263242;
+      --line: rgba(20, 31, 51, .16);
+      --shadow: 0 16px 42px rgba(31, 45, 71, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--cyan);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: var(--panel-2);
+    }
+
+    .app {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      padding: 28px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: var(--panel);
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow: auto;
+      padding: 16px 0;
+    }
+
+    .navbox,
+    .toolbox {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .toolbox {
+      margin-bottom: 12px;
+    }
+
+    .progress-shell {
+      height: 10px;
+      background: var(--panel-2);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      transition: width .25s ease;
+    }
+
+    .progress-text {
+      margin-top: 8px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .controls {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    button,
+    select {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+      padding: 8px 10px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
+      border-color: var(--line);
+      background: var(--panel-2);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section.topic {
+      --accent: var(--cyan);
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 18px;
+    }
+
+    section.topic h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .topic-head {
+      border-left: 5px solid var(--accent);
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+
+    .topic-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card,
+    details,
+    .visual,
+    .quiz,
+    .hot,
+    .table-wrap {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3,
+    details h3,
+    .visual h3,
+    .quiz h3,
+    .hot h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card ul,
+    .hot ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .fact {
+      border-left: 4px solid var(--accent);
+      padding: 8px 12px;
+      background: var(--panel-2);
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+
+    .hot {
+      border-color: color-mix(in srgb, var(--orange) 70%, var(--line));
+    }
+
+    .hot h3 {
+      color: var(--orange);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow-wrap: anywhere;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--text);
+      background: var(--panel-2);
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    details {
+      margin: 12px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .quiz-item {
+      border-top: 1px solid var(--line);
+      padding: 10px 0;
+    }
+
+    .quiz-item:first-of-type {
+      border-top: 0;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 8px;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .quiz-item.revealed .answer {
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    figcaption {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 8px;
+    }
+
+    .image-fallback {
+      display: none;
+      padding: 12px;
+      border: 1px dashed var(--orange);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .image-failed+.image-fallback {
+      display: block;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .flow span {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      font-weight: 700;
+    }
+
+    .checks {
+      display: grid;
+      gap: 8px;
+    }
+
+    .checks label {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      accent-color: var(--green);
+    }
+
+    .sticky-map {
+      position: sticky;
+      top: 12px;
+    }
+
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        max-height: none;
+        padding: 8px 0;
+      }
+
+      .navbox nav {
+        display: none;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 48vh;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --panel: #fff;
+        --panel-2: #f1f1f1;
+        --text: #000;
+        --muted: #111;
+        --line: #999;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      aside,
+      button,
+      select,
+      .progress-shell {
+        display: none !important;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .card,
+      details,
+      .visual,
+      .quiz,
+      .hot,
+      .table-wrap {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      details>* {
+        display: block !important;
+      }
+
+      .answer {
+        display: block !important;
+        color: #000;
+      }
+
+      img {
+        max-height: 260px;
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <div class="badges">
+          <span class="badge">MPPSC Paper 2</span>
+          <span class="badge">Class 8</span>
+          <span class="badge">10 Major Topics</span>
+          <span class="badge">Bhil Janjati</span>
+        </div>
+        <h1>भील जनजाति Revision</h1>
+        <p>Transcript-based Hinglish notes: class me jo facts, terms, exam hints, memory tricks aur upcoming topics bole
+          gaye, unko compact cards, tables, quizzes aur checklist me convert kiya gaya hai.</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside>
+        <div class="toolbox">
+          <div class="progress-shell" aria-label="revision progress">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="progress-text" id="progressText">0% checklist complete</div>
+          <div class="controls">
+            <select id="jumpMenu" aria-label="Jump to topic">
+              <option value="">Jump to topic</option>
+            </select>
+            <button id="themeToggle" type="button">Toggle Theme</button>
+          </div>
+        </div>
+        <div class="navbox">
+          <strong>Table of Contents</strong>
+          <nav id="toc">
+            <a href="#origin">Origin & Distribution</a>
+            <a href="#subtribe">Sub-tribes & Society</a>
+            <a href="#religion">Religion & Deities</a>
+            <a href="#birthdeath">Birth & Death</a>
+            <a href="#marriage">Marriage Customs</a>
+            <a href="#dance">Dance, Music & Language</a>
+            <a href="#art">Pithora Art</a>
+            <a href="#weapons">Weapons & Tools</a>
+            <a href="#festivals">Festivals & Fairs</a>
+            <a href="#masters">Master Revision</a>
+          </nav>
+        </div>
+      </aside>
+
+      <main>
+        <section class="topic" id="origin" style="--accent: var(--cyan)">
+          <div class="topic-head">
+            <h2>🎯 Origin & Distribution | उत्पत्ति और क्षेत्र</h2>
+            <p>Bhil tribe ka basic identity, naming, original place aur MP distribution yahan revise karo.</p>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Naam ka Origin</h3>
+              <ul>
+                <li>भील शब्द ko teacher ne Sanskrit <b>भिल्ल</b> se joda.</li>
+                <li>भिल्ल ka meaning class me <b>धनुष-पाण / धनुषधारी</b> bataya gaya.</li>
+                <li>Ek aur origin: Dravidian word <b>भील</b> se bhi mana gaya.</li>
+                <li>Memory hook: <b>Bhil = Bow</b>, yani धनुष-बाण se identity.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Location Facts</h3>
+              <ul>
+                <li>मूल स्थान: Rajasthan me <b>Kumbhalgarh ke paas Dhol/Dhol area</b> class me bola gaya.</li>
+                <li>MP me western belt: <b>Alirajpur, Jhabua, Dhar, Ratlam, Mandsaur</b>.</li>
+                <li>Teacher ne Bhil ko MP ke western parts me important bataya.</li>
+                <li>भामट/Bhomat ko Bhil-bahulya area ke roop me revise karaya.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="visual">
+              <figure>
+                <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" loading="eager" fetchpriority="high"
+                  decoding="async" alt="Madhya Pradesh map for locating western Bhil-dominated districts">
+                <a class="image-fallback" href="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif">Image load
+                  nahi hui: MP map open karo</a>
+                <figcaption>Image: SLBC Madhya Pradesh reference map, source URL provided in revision prompt.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="visual">
+              <figure>
+                <img data-file="Kumbhalgarh Fort (World Second Largest Wall).jpg"
+                  src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kumbhalgarh%20Fort%20%28World%20Second%20Largest%20Wall%29.jpg?width=900"
+                  loading="eager" fetchpriority="high" decoding="async"
+                  alt="Kumbhalgarh Fort wall in Rajasthan, memory anchor for Bhil original-place discussion">
+                <a class="image-fallback"
+                  href="https://commons.wikimedia.org/wiki/File:Kumbhalgarh_Fort_(World_Second_Largest_Wall).jpg">Image
+                  load nahi hui: Wikimedia source open karo</a>
+                <figcaption>Image: Wikimedia Commons, VAIRAGEE ABHILASH, CC BY-SA 4.0.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>भील को <b>वन पुत्र</b> Colonel Tod ne kaha.</li>
+              <li>भील को <b>तीरंदाज</b> Ptolemy ne kaha.</li>
+              <li>MP western districts wali line repeatedly important boli gayi.</li>
+            </ul>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Bhil shabd ka Sanskrit source kya bataya? <button
+                type="button">Answer</button>
+              <div class="answer">भिल्ल, meaning धनुष-पाण/धनुषधारी.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> वन पुत्र kisne kaha? <button type="button">Answer</button>
+              <div class="answer">Colonel Tod.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> MP me Bhil tribe kin districts me boli gayi? <button
+                type="button">Answer</button>
+              <div class="answer">Alirajpur, Jhabua, Dhar, Ratlam, Mandsaur side.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="subtribe" style="--accent: var(--green)">
+          <div class="topic-head">
+            <h2>🧩 Sub-tribes, Economy & Society</h2>
+            <p>Sub-tribes, roles, livelihood, social hierarchy, clothes, food aur constitutional articles.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Sub-tribes / उपजातियां</caption>
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>Class Fact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bilala / बिलाला</td>
+                  <td>सबसे बड़ी उपजाति; मूल/संबंध Chhattisgarh bola; apne aap ko Maharana Pratap ka vanshaj mante hain.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rathya / Rathwa</td>
+                  <td>Bhil sub-tribe ke roop me revise kiya.</td>
+                </tr>
+                <tr>
+                  <td>Umri / उमड़ी</td>
+                  <td>Sub-tribe list me.</td>
+                </tr>
+                <tr>
+                  <td>Tadvi / तड़वी</td>
+                  <td>Aurangzeb ke time Islam accept karne wali sub-group class me boli gayi.</td>
+                </tr>
+                <tr>
+                  <td>Baigas, Barela</td>
+                  <td>Bhil sub-groups/list me revise kiye.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Social Structure</h3>
+              <ul>
+                <li>समाज: <b>पितृसत्तात्मक</b>.</li>
+                <li>झोपड़ी/घर: <b>कू / टापरा</b>.</li>
+                <li>कू/टापरा milkar <b>फाल्या</b>, फाल्या milkar <b>पाल</b>.</li>
+                <li>पाल ka mukhiya: <b>गमेती</b>.</li>
+                <li>गमेती ki help: <b>पटेल</b>; Patel ki help: <b>तड़वी</b>.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Roles & Ritual Persons</h3>
+              <ul>
+                <li>सबसे पवित्र व्यक्ति: <b>भगत</b>.</li>
+                <li><b>पुजार</b>: औषधियों ki knowledge rakhta hai.</li>
+                <li><b>कोटवार</b>: चौकीदार type role.</li>
+                <li><b>बड़वा</b>: तांत्रिक क्रिया karta hai.</li>
+                <li><b>गायक</b>: बड़वा ki help karta hai; <b>कामड़ी</b> rakhta hai.</li>
+                <li>भोपे ka bhi zikr hua.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Economy & Occupation</h3>
+              <ul>
+                <li>मुख्य व्यवसाय: <b>कृषि</b>.</li>
+                <li>पहाड़ी खेती: <b>चीमाता / सी-माथा</b>.</li>
+                <li>पहाड़ी area ke Bhil: <b>पालवी</b>.</li>
+                <li>मैदानी area ke Bhil: <b>वागड़ी</b>; plain farming ko class me <b>दजिया/दजिन</b> jaisa bola gaya.
+                </li>
+                <li>पशुपालन, शिकार, forest products bechna.</li>
+                <li>Alirajpur ke Jobat me <b>पंजा दरिया</b>; Neemuch me <b>Nandna block print</b> famous bola.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Food, Dress & Ornaments</h3>
+              <ul>
+                <li>Food/drink: <b>राबड़ी, महुआ, ताड़ी, कड़कनाथ मुर्गा</b>.</li>
+                <li>Women: श्रृंगार-priya, <b>गुदना/tattoo</b> pasand.</li>
+                <li><b>जेला</b>: sir par chandi ka ornament.</li>
+                <li><b>सुंदरी</b>: red sari; <b>पीरिया</b>: yellow dress type, wedding context.</li>
+                <li><b>अंगरखा</b>, <b>पोत्या</b>, <b>ठेपाना</b> (tang dhoti) revise kiye gaye.</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Constitution & Gotra Notes</summary>
+            <div class="fact">Article <b>15(4)</b>: socially/educationally backward classes aur SC/ST ke liye special
+              provisions.</div>
+            <div class="fact">Article <b>46</b>: State ka duty hai SC/ST aur weaker sections ke educational/economic
+              interests promote karna.</div>
+            <div class="fact">Article <b>350A</b>: linguistic minority children ko primary stage par mother tongue me
+              instruction facility.</div>
+            <div class="fact">Gotra examples: <b>स्यान, निंगवाल, सिंघाड़िया</b>. Same gotra marriage nahi karte.</div>
+            <div class="fact"><b>हल परंपरा</b>: ek-dusre ki help karne wali community-help tradition.</div>
+          </details>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Pal ka mukhiya kaun? <button type="button">Answer</button>
+              <div class="answer">गमेती.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Pujaar kya janta hai? <button type="button">Answer</button>
+              <div class="answer">औषधियों ke baare me knowledge.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Pahadi area me rehne wale Bhil? <button type="button">Answer</button>
+              <div class="answer">पालवी.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="religion" style="--accent: var(--purple)">
+          <div class="topic-head">
+            <h2>🙏 Religion & Deities | धार्मिक विशेषताएं</h2>
+            <p>Teacher ne Hindu deities ke influence ke saath Bhil-specific dev-devi list karayi.</p>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Belief Base</h3>
+              <ul>
+                <li>Bhil log <b>Mahadev/Shankar</b> ko protector/संरक्षक mante hain.</li>
+                <li>Class story: Shankar se sambandhit origin aur Nishad/Nandi wali kahani batayi gayi.</li>
+                <li>Shiv, Ram, Krishna, Lakshmi jaise Hindu deities ki worship bhi batayi.</li>
+                <li>घोड़े ke prati shraddha; सांप ki worship.</li>
+                <li>Case/सत्य context: Kesarinath ji ke saamne sach bolne wali baat teacher ne memory tip me boli.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Devta Table</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Devta</th>
+                    <th>Remember</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>राजा पंथा / राजा पंताय</td>
+                    <td>प्रमुख और शक्तिशाली देवता.</td>
+                  </tr>
+                  <tr>
+                    <td>बाव देव / वामदेव</td>
+                    <td>Indra Dev ka roop; rain/Indra se link.</td>
+                  </tr>
+                  <tr>
+                    <td>गल देव</td>
+                    <td>Pitru dev; Narasimha ka roop; manokamna puri karne wale.</td>
+                  </tr>
+                  <tr>
+                    <td>भाटी देव</td>
+                    <td>Sarp devta.</td>
+                  </tr>
+                  <tr>
+                    <td>खूंट देव</td>
+                    <td>Anushthan ke khunt/wooden posts aur death memory posts se linked.</td>
+                  </tr>
+                  <tr>
+                    <td>टोटम</td>
+                    <td>Kul devta.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card">
+              <h3>Devi Table</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Devi</th>
+                    <th>Class Fact</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>जसमा देवी</td>
+                    <td>Lakshmi ka roop; Deepawali par puja.</td>
+                  </tr>
+                  <tr>
+                    <td>आमजा / केलड़ा माता</td>
+                    <td>Kuldevi; Udaipur me temple bola.</td>
+                  </tr>
+                  <tr>
+                    <td>भराड़ी / बराड़ी माता</td>
+                    <td>Lok devi; wedding/वैवाहिक अवसर par puja.</td>
+                  </tr>
+                  <tr>
+                    <td>खड़िया / खोडियाल माता</td>
+                    <td>Jhabua me temple; forest/Bhil devi context.</td>
+                  </tr>
+                  <tr>
+                    <td>बरोड़ी माता</td>
+                    <td>End recall me revise karne ko bola gaya.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="visual">
+              <h3>Memory Flow</h3>
+              <div class="flow">
+                <span>राजा पंथा = main</span>
+                <span>गल देव = pitru</span>
+                <span>बाव देव = Indra</span>
+                <span>भाटी देव = sarp</span>
+                <span>जसमा = Lakshmi</span>
+                <span>भराड़ी = marriage</span>
+                <span>आमजा/केलड़ा = kuldevi</span>
+              </div>
+            </div>
+          </div>
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>प्रमुख देवता: राजा पंथा.</li>
+              <li>पितृ देव: गल देव.</li>
+              <li>इंद्र देव: बाव देव/वामदेव.</li>
+              <li>सर्प देव: भाटी देव.</li>
+              <li>लोक देवी: भराड़ी; कुल देवी: आमजा/केलड़ा; दीपावली देवी: जसमा.</li>
+            </ul>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Gal Dev kis roop me mane gaye? <button type="button">Answer</button>
+              <div class="answer">Narasimha ka roop; Pitru Dev.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Jasma Devi ki puja kab? <button type="button">Answer</button>
+              <div class="answer">Deepawali par.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Bhati Dev ka link? <button type="button">Answer</button>
+              <div class="answer">Sarp devta.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="birthdeath" style="--accent: var(--orange)">
+          <div class="topic-head">
+            <h2>🍼 Birth & Death Customs</h2>
+            <p>Janm aur mrityu se related rituals ko direct exam table me rakha gaya hai.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Birth Customs</caption>
+              <thead>
+                <tr>
+                  <th>Custom</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>डोंगर ढलवाई</td>
+                  <td>Newborn ko makai ke dher par litana; head north, feet south. Ludakna/powerful memory trick class
+                    me bola.</td>
+                </tr>
+                <tr>
+                  <td>शांता प्रथा</td>
+                  <td>Birth ke 7th day prasuta ko haldi laga kar snan karaya jata hai.</td>
+                </tr>
+                <tr>
+                  <td>डाम प्रथा</td>
+                  <td>12 saal ke ladke ki right arm par garam teer se daag; bravery symbol.</td>
+                </tr>
+                <tr>
+                  <td>सूर्य पूजा</td>
+                  <td>Child birth par Surya Bhagwan ki puja aur naming-related rituals ka mention.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Death Customs</caption>
+              <thead>
+                <tr>
+                  <th>Custom</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>गाता / गात / तला</td>
+                  <td>Death memory me stone sculpture/शिल्प gadna.</td>
+                </tr>
+                <tr>
+                  <td>टिया</td>
+                  <td>Garib Bhil death ritual me 3rd day group feast/arrangement complete karna.</td>
+                </tr>
+                <tr>
+                  <td>कट्टा प्रथा</td>
+                  <td>Full death feast/custom; 12/13-day type larger ritual context.</td>
+                </tr>
+                <tr>
+                  <td>Burial/Cremation</td>
+                  <td>Teacher ne bola: economic condition ke hisab se kuch garib log गाड़ते, samarth log जलाते hain.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> 7th day haldi-snan custom? <button type="button">Answer</button>
+              <div class="answer">शांता प्रथा.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Right arm par hot arrow mark? <button type="button">Answer</button>
+              <div class="answer">डाम प्रथा.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Death memory stone sculpture? <button type="button">Answer</button>
+              <div class="answer">गाता/गात/तला प्रथा.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="marriage" style="--accent: var(--red)">
+          <div class="topic-head">
+            <h2>💍 Marriage Customs | विवाह प्रणाली</h2>
+            <p>Bhil marriages, mediator, Dapa system aur wedding rituals.</p>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Core Rules</h3>
+              <ul>
+                <li>Marriage mediator: <b>भांज गड़िया / बांज गढ़िया</b>.</li>
+                <li>Same gotra me marriage nahi karte.</li>
+                <li><b>दापा/दपा प्रथा</b>: bride price; वर पक्ष gives to वधू पक्ष.</li>
+                <li>Dapa practice ko reduce/stop karne ke liye <b>2016 se साथीदार आंदोलन</b> bola gaya.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Dapa Types</h3>
+              <ul>
+                <li><b>Cash</b>: normal नगद dapa.</li>
+                <li><b>खांडा कूटा</b>: maveshi/cattle ke roop me dapa.</li>
+                <li><b>सावा</b>: anaj/grain ke roop me dapa.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Marriage Types</caption>
+              <thead>
+                <tr>
+                  <th>Vivaah</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>भगोरिया विवाह</td>
+                  <td>Bhagoria me gulal se choice, family consent ke baad marriage.</td>
+                </tr>
+                <tr>
+                  <td>गोल गधेड़ो विवाह</td>
+                  <td>Festival/dance context me partner choice/run-away style; now often family consent.</td>
+                </tr>
+                <tr>
+                  <td>नात / नाथरा विवाह</td>
+                  <td>Widow remarriage.</td>
+                </tr>
+                <tr>
+                  <td>घर घुसी विवाह</td>
+                  <td>Girl ladke ke ghar me ghus kar rehne lage; forced/insistent union style.</td>
+                </tr>
+                <tr>
+                  <td>सेवा विवाह</td>
+                  <td>Groom bride-price afford nahi kar pata, to bride family ki service karta hai.</td>
+                </tr>
+                <tr>
+                  <td>विनिमय विवाह</td>
+                  <td>Exchange/atta-satta marriage.</td>
+                </tr>
+                <tr>
+                  <td>भराय / भरायण विवाह</td>
+                  <td>Girl ke parents poor hon, girl ladke ke ghar jakar marriage relation establish kare.</td>
+                </tr>
+                <tr>
+                  <td>मंगनी विवाह</td>
+                  <td>Bhajgadiya mediation, consent aur dapa decision ke saath engagement-marriage.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <details>
+            <summary>Wedding Rituals</summary>
+            <div class="fact"><b>हल्दी पीठी</b>: boy/girl priests Kajli Mata ke devre jate; girl ko bangles; haldi
+              ritual.</div>
+            <div class="fact"><b>बाना बिठाना</b>: new clothes given.</div>
+            <div class="fact"><b>मंडप</b>: कांकड़ tree ke four posts/khunte se mandap.</div>
+            <div class="fact"><b>बारात</b>: music instruments; matke me madira le jana, jise <b>छाक</b> bola.</div>
+            <div class="fact"><b>पहरान भी</b>: mama dwara bhanja/bhanji ke liye clothes lana, bhat/mayra jaisa.</div>
+            <div class="fact"><b>लात मार शाला नृत्य</b>: barat aane par bride side se dance context class me bola.</div>
+          </details>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Widow remarriage? <button type="button">Answer</button>
+              <div class="answer">नात/नाथरा विवाह.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Bride price ko kya bola? <button type="button">Answer</button>
+              <div class="answer">दापा/दपा प्रथा.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Dapa me anaj diya jaye to? <button type="button">Answer</button>
+              <div class="answer">सावा.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="dance" style="--accent: var(--cyan)">
+          <div class="topic-head">
+            <h2>🥁 Dance, Music & Language</h2>
+            <p>Nrittya list, Relo song aur Bhili language ke article/year facts.</p>
+          </div>
+          <div class="grid">
+            <div class="visual">
+              <figure>
+                <img data-file="Bhil tribes dancing in the festival 02.jpg"
+                  src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhil%20tribes%20dancing%20in%20the%20festival%2002.jpg?width=900"
+                  loading="eager" fetchpriority="high" decoding="async"
+                  alt="Bhil tribal festival dance, useful visual for Bhagoria and Gair/Gher dance recall">
+                <a class="image-fallback"
+                  href="https://commons.wikimedia.org/wiki/File:Bhil_tribes_dancing_in_the_festival_02.jpg">Image load
+                  nahi hui: Wikimedia source open karo</a>
+                <figcaption>Image: Wikimedia Commons, Tawaranil, CC BY-SA 4.0.</figcaption>
+              </figure>
+            </div>
+            <div class="card">
+              <h3>Dance List</h3>
+              <ul>
+                <li><b>भगोरिया नृत्य</b>, <b>गोल गधेड़ो</b>, <b>गहर/घैर</b>: Bhagoria/Holi context.</li>
+                <li><b>दुधवा</b>, <b>डोया</b>: Bhagoria haat context me revise.</li>
+                <li><b>गरबी/गर्भ नृत्य</b>: Deepawali ke samay.</li>
+                <li><b>डोहा/डोह नृत्य</b>: manauti wala religious dance.</li>
+                <li><b>वीर बाल्या</b>: Shravan aur Navratri me Badwa dwara.</li>
+                <li><b>दागला, कहरवा, पड़वा, घूमर</b>: Bhil dance list me.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Music & Song</h3>
+              <ul>
+                <li><b>रेलो गीत</b>: Malwa ke Bhil gaate hain.</li>
+                <li>Wedding/festival me वाद्य-यंत्र aur dance customs ka repeated mention.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bhili Language</h3>
+              <ul>
+                <li>मुख्य बोली: <b>भीली</b>.</li>
+                <li>Western MP belt: Ratlam, Dhar, Mandsaur, Jhabua, Alirajpur, Khargone side.</li>
+                <li>Bhili par <b>Malvi</b> aur <b>Nimadi</b> ka influence.</li>
+                <li>Malvi/Nimadi ko class me Shauraseni Apabhransh se connected bola.</li>
+                <li>Bhili ka first use: <b>Padri Thomson, 1835</b>.</li>
+                <li>Article <b>350A</b>: primary education mother tongue/language facility.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Bhili language first use: Padri Thomson, 1835.</li>
+              <li>Garbi = Deepawali; Doha/Doh = manauti; Veer Balya = Shravan/Navratri by Badwa.</li>
+              <li>Relo is a song, dance nahi.</li>
+            </ul>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Bhili ka first use kisne aur kab? <button type="button">Answer</button>
+              <div class="answer">Padri Thomson, 1835.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Deepawali wala dance? <button type="button">Answer</button>
+              <div class="answer">गरबी/गर्भ नृत्य.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Malwa Bhil ka song? <button type="button">Answer</button>
+              <div class="answer">रेलो गीत.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="art" style="--accent: var(--green)">
+          <div class="topic-head">
+            <h2>🎨 Pithora & Bhitti Chitra</h2>
+            <p>Bhil wall art, Pithora painting, artists, awards aur household terms.</p>
+          </div>
+          <div class="grid">
+            <div class="visual">
+              <figure>
+                <img data-file="Pithora.jpg"
+                  src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pithora.jpg?width=900" loading="eager"
+                  fetchpriority="high" decoding="async"
+                  alt="Pithora painting with horse motif, practiced by Rathwa and Bhil tribes">
+                <a class="image-fallback" href="https://commons.wikimedia.org/wiki/File:Pithora.jpg">Image load nahi
+                  hui: Wikimedia source open karo</a>
+                <figcaption>Image: Wikimedia Commons, Bhoomi lakher, CC BY-SA 4.0.</figcaption>
+              </figure>
+            </div>
+            <div class="card">
+              <h3>Pithora Facts</h3>
+              <ul>
+                <li>Bhil wall painting / भित्ति चित्र me <b>पिथोरा</b> important.</li>
+                <li>Purpose: घर की बाधा door ho, shanti aur samriddhi aaye.</li>
+                <li>Pithora me <b>घोड़े aur बैल</b> ka prayog jyada.</li>
+                <li>Pithora artists ko <b>लखिन्द्रा / लखि</b> bola.</li>
+                <li><b>गोत्र/गोतरज</b>: mangalik occasions par ghar ki walls par painting.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Pithora Artists</caption>
+              <thead>
+                <tr>
+                  <th>Artist</th>
+                  <th>Class Fact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>पेमा फलिया / पेमा फाल्या</td>
+                  <td>Alirajpur district ke Bhavra/Bhabra se; Pithora artist; Shikhar Samman 1987; Tulsi Samman 2017.
+                  </td>
+                </tr>
+                <tr>
+                  <td>भूरी बाई</td>
+                  <td>Jhabua se; Pithora artist; canvas par Pithora lane ka mention; Indira Gandhi Vidhan Sabha building
+                    etc.; Padma Shri 2021.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <details>
+            <summary>Other Household / Utility Terms From Class</summary>
+            <div class="fact"><b>कंगी</b>: water pot stand type term class me revise hua.</div>
+            <div class="fact"><b>मुहाल / महादा</b>: grain-storage/wooden hut-type term transcript me aaya.</div>
+            <div class="fact"><b>सूपा</b>, <b>मलता</b>, <b>गट्टी</b>, <b>चाला</b>: household/agricultural utility terms
+              as class recall.</div>
+          </details>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Pithora ka purpose? <button type="button">Answer</button>
+              <div class="answer">Shanti, samriddhi, ghar ki badha door karna.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Pithora artists ko kya kaha? <button type="button">Answer</button>
+              <div class="answer">लखिन्द्रा/लखि.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Bhuri Bai ko Padma Shri kab? <button type="button">Answer</button>
+              <div class="answer">2021.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="weapons" style="--accent: var(--orange)">
+          <div class="topic-head">
+            <h2>🏹 Weapons & Tools | अस्त्र-शस्त्र</h2>
+            <p>Bhil identity ka strong exam area: bow, arrow, falya, gofar.</p>
+          </div>
+          <div class="grid">
+            <div class="visual">
+              <figure>
+                <img data-file="Bow-Arrow BritishIndianArmy.jpg"
+                  src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bow-Arrow%20BritishIndianArmy.jpg?width=800"
+                  loading="eager" fetchpriority="high" decoding="async"
+                  alt="Bow and arrow visual for Bhil weapons terminology">
+                <a class="image-fallback"
+                  href="https://commons.wikimedia.org/wiki/File:Bow-Arrow_BritishIndianArmy.jpg">Image load nahi hui:
+                  Wikimedia source open karo</a>
+                <figcaption>Image: Wikimedia Commons, Abhinav619, CC BY-SA 4.0.</figcaption>
+              </figure>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <caption>Weapon Terms</caption>
+                <thead>
+                  <tr>
+                    <th>Term</th>
+                    <th>Meaning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>धनली / नली / कामठी</td>
+                    <td>धनुष.</td>
+                  </tr>
+                  <tr>
+                    <td>बिल्की / बिलख</td>
+                    <td>तीर / बाण.</td>
+                  </tr>
+                  <tr>
+                    <td>बिट लो / बिटलो</td>
+                    <td>Bird hunting ke liye arrow.</td>
+                  </tr>
+                  <tr>
+                    <td>फलिया</td>
+                    <td>Lohe ka bada dhardar weapon; animals etc. ke context me.</td>
+                  </tr>
+                  <tr>
+                    <td>गोफर</td>
+                    <td>Rope/sling type tool; pagdi me rakhne ka mention.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Extra Identity Point</h3>
+            <p>Class me bola gaya ki Bhil apne aap ko Eklavya ke vanshaj bhi mante hain, aur bina anguthe ke
+              dhanush-baan chalane wali memory line bhi batayi gayi.</p>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Dhanush ko kya bola? <button type="button">Answer</button>
+              <div class="answer">धनली/नली/कामठी.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Bird-hunting arrow? <button type="button">Answer</button>
+              <div class="answer">बिट लो / बिटलो.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Iron sharp weapon? <button type="button">Answer</button>
+              <div class="answer">फलिया.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="festivals" style="--accent: var(--purple)">
+          <div class="topic-head">
+            <h2>🎪 Festivals & Fairs | पर्व, उत्सव, मेले</h2>
+            <p>Bhagoria, Gal, Garh, Divasa, Indal aur Beneshwar Mela ke direct exam facts.</p>
+          </div>
+          <div class="grid">
+            <div class="visual">
+              <figure>
+                <img data-file="Beneshwar dham.JPG"
+                  src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Beneshwar%20dham.JPG?width=800"
+                  loading="eager" fetchpriority="high" decoding="async"
+                  alt="Beneshwar Dham at Dungarpur, visual anchor for Bhilon ka Kumbh">
+                <a class="image-fallback" href="https://commons.wikimedia.org/wiki/File:Beneshwar_dham.JPG">Image load
+                  nahi hui: Wikimedia source open karo</a>
+                <figcaption>Image: Wikimedia Commons, Vedpriyaa, CC BY-SA 4.0.</figcaption>
+              </figure>
+            </div>
+            <div class="card">
+              <h3>Bhagoria Festival</h3>
+              <ul>
+                <li>Major Bhil fair/festival; start Gujarat side se boli gayi.</li>
+                <li>Holi se pehle <b>7 din</b> tak.</li>
+                <li>3 parts: <b>Gulaliya</b> 2 din, <b>Gol Gadhedo</b> 3 din, <b>Ujaliya/Ujad</b> 2 din.</li>
+                <li>Pranay/parichay festival type: gulal se partner choice.</li>
+                <li>Jhabua-Alirajpur area me prominent.</li>
+                <li>Gher/Gair dance, mahua/tadi, groups/toliyan ka mention.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Other Festivals</h3>
+              <ul>
+                <li><b>गल उत्सव</b>: Gal Dev/Gal Baba ke samman me; Holi ke 2nd day ritual.</li>
+                <li><b>गढ़ उत्सव</b>: Holi ke 12th/13th day.</li>
+                <li><b>दिवासा पर्व</b>: Indra/Bav Dev ko prasann karne ke liye.</li>
+                <li><b>इंदल</b>: Manokamna puri karne ke liye आयोजन.</li>
+                <li>Bhil log Holi, Diwali, Dussehra jaise Hindu festivals bhi manate hain.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Beneshwar Mela</h3>
+              <ul>
+                <li>Location: <b>Dungarpur, Rajasthan</b>.</li>
+                <li>Sangam: <b>Mahi, Som, Jakham</b> rivers.</li>
+                <li>Called: <b>भीलों का कुंभ</b>.</li>
+                <li>Annual fair: January-February, class me 4 din ka bola.</li>
+                <li>Mahi river Tropic of Cancer ko do baar cut karti hai, class memory line.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Bhagoria = Holi se pehle 7 din; Gulaliya + Gol Gadhedo + Ujaliya.</li>
+              <li>Gal Utsav = Holi ke dusre din; Garh Utsav = Holi ke 12th/13th din.</li>
+              <li>Beneshwar Mela = Dungarpur, Mahi-Som-Jakham Sangam, Bhilon ka Kumbh.</li>
+            </ul>
+          </div>
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <div class="quiz-item"><b>Q.</b> Beneshwar Mela kin nadiyon ke sangam par? <button
+                type="button">Answer</button>
+              <div class="answer">Mahi, Som, Jakham.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Bhagoria kitne din? <button type="button">Answer</button>
+              <div class="answer">Holi se pehle 7 din.</div>
+            </div>
+            <div class="quiz-item"><b>Q.</b> Divasa Parv kisliye? <button type="button">Answer</button>
+              <div class="answer">Indra/Bav Dev ko prasann karne ke liye.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="topic" id="masters" style="--accent: var(--green)">
+          <div class="topic-head">
+            <h2>✅ Master Revision</h2>
+            <p>One-shot tables, hot facts, checklist aur upcoming topics.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Master Fact Table</caption>
+              <thead>
+                <tr>
+                  <th>Prompt</th>
+                  <th>Answer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>वन पुत्र</td>
+                  <td>Colonel Tod</td>
+                </tr>
+                <tr>
+                  <td>तीरंदाज</td>
+                  <td>Ptolemy</td>
+                </tr>
+                <tr>
+                  <td>Largest sub-tribe</td>
+                  <td>Bilala</td>
+                </tr>
+                <tr>
+                  <td>Most sacred person</td>
+                  <td>Bhagat</td>
+                </tr>
+                <tr>
+                  <td>Pal chief</td>
+                  <td>Gameti</td>
+                </tr>
+                <tr>
+                  <td>Pitru Dev</td>
+                  <td>Gal Dev</td>
+                </tr>
+                <tr>
+                  <td>Sarp Dev</td>
+                  <td>Bhati Dev</td>
+                </tr>
+                <tr>
+                  <td>Kuldevi</td>
+                  <td>Amja/Kelda Mata</td>
+                </tr>
+                <tr>
+                  <td>Lok Devi</td>
+                  <td>Bharadi Mata</td>
+                </tr>
+                <tr>
+                  <td>Widow remarriage</td>
+                  <td>Naat/Nathra</td>
+                </tr>
+                <tr>
+                  <td>Bride price</td>
+                  <td>Dapa</td>
+                </tr>
+                <tr>
+                  <td>Cattle dapa</td>
+                  <td>Khanda Kuta</td>
+                </tr>
+                <tr>
+                  <td>Grain dapa</td>
+                  <td>Sawa</td>
+                </tr>
+                <tr>
+                  <td>Bhili first use</td>
+                  <td>Padri Thomson, 1835</td>
+                </tr>
+                <tr>
+                  <td>Pithora artists</td>
+                  <td>Pema Falya, Bhuri Bai</td>
+                </tr>
+                <tr>
+                  <td>Beneshwar Mela</td>
+                  <td>Dungarpur, Mahi-Som-Jakham, Bhilon ka Kumbh</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="hot">
+            <h3>🔥 All Exam Hot Facts</h3>
+            <ul>
+              <li>Article 15(4), Article 46, Article 350A.</li>
+              <li>Same gotra marriage nahi hota.</li>
+              <li>Sathidar Movement 2016 se Dapa pratha ke khilaf.</li>
+              <li>Bhuri Bai: Padma Shri 2021; Pema Falya: Shikhar 1987, Tulsi 2017.</li>
+              <li>Bhil dances: Bhagoria, Dudhwa, Gher, Gol Gadhedo, Doya, Garbi, Doha/Doh, Veer Balya, Dagla, Keharwa,
+                Padwa, Ghoomar.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Master Revision Checklist</h3>
+            <div class="checks" id="checklist">
+              <label><input type="checkbox" data-key="bhil-origin"> <span>Bhil = Bhill/Dravidian origin + धनुष-पाण
+                  meaning revise ho gaya.</span></label>
+              <label><input type="checkbox" data-key="distribution"> <span>Western MP districts: Alirajpur, Jhabua,
+                  Dhar, Ratlam, Mandsaur yaad hain.</span></label>
+              <label><input type="checkbox" data-key="tod-ptolemy"> <span>Colonel Tod = वन पुत्र; Ptolemy =
+                  तीरंदाज.</span></label>
+              <label><input type="checkbox" data-key="subtribes"> <span>Bilala, Rathya, Umri, Tadvi, Baigas, Barela
+                  sub-tribes revise.</span></label>
+              <label><input type="checkbox" data-key="society"> <span>Koo/Tapra → Falya → Pal → Gameti hierarchy
+                  revise.</span></label>
+              <label><input type="checkbox" data-key="economy"> <span>Agriculture, Chimata, Palvi, Vagdi, Jobat Panja
+                  Dariya, Neemuch Nandna print yaad.</span></label>
+              <label><input type="checkbox" data-key="religion"> <span>Raja Pantha, Gal Dev, Bav Dev, Bhati Dev, Jasma,
+                  Bharadi, Amja/Kelda Mata revise.</span></label>
+              <label><input type="checkbox" data-key="birthdeath"> <span>Dongar Dhalwai, Shanta, Dam, Gata, Tiya, Katta
+                  customs revise.</span></label>
+              <label><input type="checkbox" data-key="marriage"> <span>Bhagoria, Gol Gadhedo, Naat, Ghar Ghusi, Seva,
+                  Vinimay, Bharay, Mangni marriage revise.</span></label>
+              <label><input type="checkbox" data-key="dapa"> <span>Dapa, Khanda Kuta, Sawa aur Sathidar Movement 2016
+                  revise.</span></label>
+              <label><input type="checkbox" data-key="dance"> <span>Dance list + Relo song + Bhili language + Padri
+                  Thomson 1835 revise.</span></label>
+              <label><input type="checkbox" data-key="art"> <span>Pithora art, Lakhindra artists, Pema Falya, Bhuri Bai
+                  awards revise.</span></label>
+              <label><input type="checkbox" data-key="weapons"> <span>Dhanli/Kamthi, Bilki, Bitlo, Falya, Gofar
+                  revise.</span></label>
+              <label><input type="checkbox" data-key="festivals"> <span>Bhagoria 7 days, Gal/Garh/Divasa/Indal,
+                  Beneshwar Mela revise.</span></label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>📌 Upcoming Topic</h3>
+            <p>Teacher ne bola ki <b>प्रमुख तथ्य aur MCQ</b> next class me honge. End me ye bhi bola ki next class me
+              Bhil complete hoga; Gand/Gond start nahi ho payega.</p>
+          </div>
+          <footer class="card">
+            <h3>Revision Tip</h3>
+            <p>First pass me sirf tables padho. Second pass me Quick Recall buttons use karo. Third pass me checklist
+              tick karo aur jo unchecked rahe, wahi final revision target hai.</p>
+          </footer>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("class8-theme");
+    if (savedTheme) root.dataset.theme = savedTheme;
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      root.dataset.theme = next;
+      localStorage.setItem("class8-theme", next);
+    });
+
+    const sections = [...document.querySelectorAll("section.topic")];
+    const jump = document.getElementById("jumpMenu");
+    sections.forEach(section => {
+      const opt = document.createElement("option");
+      opt.value = section.id;
+      opt.textContent = section.querySelector("h2").textContent.replace(/\s+/g, " ").trim();
+      jump.appendChild(opt);
+    });
+    jump.addEventListener("change", () => {
+      if (jump.value) document.getElementById(jump.value).scrollIntoView({ behavior: "smooth" });
+    });
+
+    document.querySelectorAll(".quiz-item button").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".quiz-item");
+        item.classList.toggle("revealed");
+        button.textContent = item.classList.contains("revealed") ? "Hide" : "Answer";
+      });
+    });
+
+    const checks = [...document.querySelectorAll("#checklist input[type='checkbox']")];
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    function updateProgress() {
+      const done = checks.filter(c => c.checked).length;
+      const total = checks.length || 1;
+      const pct = Math.round((done / total) * 100);
+      progressBar.style.width = pct + "%";
+      progressText.textContent = `${pct}% checklist complete (${done}/${total})`;
+    }
+    checks.forEach(check => {
+      check.checked = localStorage.getItem("class8-check-" + check.dataset.key) === "1";
+      check.addEventListener("change", () => {
+        localStorage.setItem("class8-check-" + check.dataset.key, check.checked ? "1" : "0");
+        updateProgress();
+      });
+    });
+    updateProgress();
+
+    const navLinks = [...document.querySelectorAll("#toc a")];
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id));
+      });
+    }, { rootMargin: "-25% 0px -65% 0px", threshold: 0.01 });
+    sections.forEach(section => observer.observe(section));
+
+    document.querySelectorAll("img").forEach(img => {
+      const original = img.currentSrc || img.src;
+      img.addEventListener("error", () => {
+        if (img.dataset.triedRedirect || !img.dataset.file) {
+          img.classList.add("image-failed");
+          return;
+        }
+        img.dataset.triedRedirect = "1";
+        img.src = "https://commons.wikimedia.org/wiki/Special:Redirect/file/" + encodeURIComponent(img.dataset.file);
+      });
+      const preload = new Image();
+      preload.decoding = "async";
+      preload.src = original;
+    });
+  </script>
+</body>
+
+</html>

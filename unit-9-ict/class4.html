@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+
+<!-- add static quick navigation for  -->
+
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖥️ MPPSC Computer Revision — Unit 9 ICT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a14;
+            --card: #12121f;
+            --card2: #1a1a2e;
+            --border: #2a2a40;
+            --text: #e8e8f0;
+            --text2: #a0a0b8;
+            --cyan: #00d4ff;
+            --orange: #ff6b35;
+            --green: #00ff88;
+            --purple: #b388ff;
+            --red: #ff5555;
+            --yellow: #ffd700;
+            --pink: #ff69b4
+        }
+
+        [data-theme="light"] {
+            --bg: #f4f4f8;
+            --card: #ffffff;
+            --card2: #eef0f5;
+            --border: #d0d5dd;
+            --text: #1a1a2e;
+            --text2: #555570
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 17px;
+            line-height: 1.75;
+            min-height: 100vh
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 16px
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: 20px 0 8px
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text2);
+            font-size: 0.95rem;
+            margin-bottom: 24px
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--cyan);
+            margin: 32px 0 16px;
+            padding: 12px 16px;
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), transparent);
+            border-left: 4px solid var(--cyan);
+            border-radius: 0 8px 8px 0
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--purple);
+            margin: 20px 0 10px
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 12px 0;
+            transition: border-color 0.3s
+        }
+
+        .card:hover {
+            border-color: var(--cyan)
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .hot {
+            background: linear-gradient(135deg, rgba(255, 85, 85, 0.15), rgba(255, 107, 53, 0.1));
+            border-color: var(--red) !important
+        }
+
+        .hot::before {
+            content: "🔥 EXAM HOT";
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--red);
+            letter-spacing: 1px;
+            margin-bottom: 6px
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.95rem
+        }
+
+        th {
+            background: var(--card2);
+            color: var(--cyan);
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid var(--border)
+        }
+
+        td {
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+            color: var(--text)
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02)
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600
+        }
+
+        .tag-cyan {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--cyan)
+        }
+
+        .tag-green {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--green)
+        }
+
+        .tag-orange {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--orange)
+        }
+
+        .tag-red {
+            background: rgba(255, 85, 85, 0.15);
+            color: var(--red)
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 8px 0
+        }
+
+        li {
+            margin: 5px 0
+        }
+
+        li::marker {
+            color: var(--cyan)
+        }
+
+        .highlight {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 3px solid var(--cyan);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0
+        }
+
+        .def {
+            background: rgba(179, 136, 255, 0.1);
+            border-left: 3px solid var(--purple);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0
+        }
+
+        .warn {
+            background: rgba(255, 215, 0, 0.08);
+            border-left: 3px solid var(--yellow);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0
+        }
+
+        details {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow: hidden
+        }
+
+        summary {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--green);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        summary::before {
+            content: "▶";
+            font-size: 0.7rem;
+            transition: transform 0.3s
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--border)
+        }
+
+        .details-body {
+            padding: 14px 16px
+        }
+
+        .quiz-q {
+            font-weight: 600;
+            color: var(--orange);
+            margin: 6px 0
+        }
+
+        .quiz-a {
+            background: var(--card2);
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin: 4px 0 14px;
+            display: none;
+            color: var(--green)
+        }
+
+        .quiz-btn {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 4px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-bottom: 8px
+        }
+
+        .quiz-btn:hover {
+            background: rgba(0, 255, 136, 0.2)
+        }
+
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 20px 0
+        }
+
+        .toc a {
+            color: var(--text2);
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.2s
+        }
+
+        .toc a:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--cyan)
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--card2);
+            border-radius: 3px;
+            margin: 16px 0;
+            overflow: hidden
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--green));
+            border-radius: 3px;
+            transition: width 0.5s;
+            width: 0%
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .checklist input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--green);
+            flex-shrink: 0;
+            margin-top: 3px
+        }
+
+        .mnemonic {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(179, 136, 255, 0.1));
+            border: 1px dashed var(--pink);
+            border-radius: 10px;
+            padding: 14px;
+            margin: 10px 0;
+            text-align: center
+        }
+
+        .mnemonic-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--pink);
+            letter-spacing: 1px;
+            margin-bottom: 6px
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            margin: 12px 0
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border)
+        }
+
+        .tl-item {
+            position: relative;
+            margin: 14px 0;
+            padding-left: 16px
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--cyan);
+            border: 2px solid var(--bg)
+        }
+
+        .tl-year {
+            font-weight: 800;
+            color: var(--orange);
+            font-size: 0.9rem
+        }
+
+        .tl-title {
+            font-weight: 700;
+            color: var(--text)
+        }
+
+        .tl-desc {
+            color: var(--text2);
+            font-size: 0.92rem
+        }
+
+        @media(max-width:600px) {
+            body {
+                font-size: 16px
+            }
+
+            .container {
+                padding: 10px
+            }
+
+            h1 {
+                font-size: 1.4rem
+            }
+
+            h2 {
+                font-size: 1.2rem
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000
+            }
+
+            h2 {
+                color: #000;
+                background: none;
+                border-left-color: #000
+            }
+
+            .card {
+                border-color: #ccc
+            }
+
+            details {
+                border-color: #ccc
+            }
+
+            details[open] .details-body {
+                display: block !important
+            }
+
+            .quiz-a {
+                display: block !important;
+                background: #f0f0f0;
+                color: #000
+            }
+
+            th {
+                background: #eee;
+                color: #000
+            }
+
+            td {
+                color: #000
+            }
+        }
+
+        .theme-btn {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 999;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s
+        }
+
+        .theme-btn:hover {
+            border-color: var(--cyan);
+            transform: scale(1.08)
+        }
+
+        .sticky-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 6px 8px;
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.4);
+            scrollbar-width: none
+        }
+
+        .sticky-nav::-webkit-scrollbar {
+            display: none
+        }
+
+        .sticky-nav a {
+            flex-shrink: 0;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: var(--card2);
+            color: var(--text2);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border: 1px solid transparent
+        }
+
+        .sticky-nav a:hover,
+        .sticky-nav a.active {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--cyan);
+            border-color: var(--cyan)
+        }
+
+        .container {
+            padding-bottom: 60px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- STICKY QUICK NAV -->
+    <nav class="sticky-nav" id="stickyNav">
+        <a href="#t1">1️⃣ परिचय</a>
+        <a href="#t2">2️⃣ इतिहास</a>
+        <a href="#t3">3️⃣ पीढ़ियाँ</a>
+        <a href="#t4">4️⃣ प्रकार</a>
+        <a href="#t5">5️⃣ CPU</a>
+        <a href="#t6">6️⃣ मेमोरी</a>
+        <a href="#t7">7️⃣ हार्डवेयर</a>
+        <a href="#fullforms">📋 Full Forms</a>
+        <a href="#checklist">✅ Checklist</a>
+    </nav>
+
+    <div class="container">
+
+        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle Light/Dark">🌙</button>
+        <h1>🖥️ MPPSC कंप्यूटर Complete Revision</h1>
+        <p class="subtitle">Unit 9 — ICT (सूचना एवं संचार प्रौद्योगिकी) | Prelims 2026 | 7 Topics Covered</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p style="text-align:center;color:var(--text2);font-size:0.85rem" id="progressText">📊 Revision Progress: 0/7
+            Topics</p>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+            <h3 style="margin-top:0">📑 विषय सूची — Table of Contents</h3>
+            <a href="#t1">1️⃣ कंप्यूटर का परिचय — Introduction</a>
+            <a href="#t2">2️⃣ कंप्यूटर का इतिहास — History</a>
+            <a href="#t3">3️⃣ कंप्यूटर की पीढ़ियाँ — Generations</a>
+            <a href="#t4">4️⃣ कंप्यूटर के प्रकार — Types & Supercomputers</a>
+            <a href="#t5">5️⃣ कंप्यूटर की संरचना — CPU Architecture</a>
+            <a href="#t6">6️⃣ कंप्यूटर मेमोरी — Memory (RAM/ROM)</a>
+            <a href="#t7">7️⃣ कंप्यूटर हार्डवेयर — Input/Output Devices & Ports</a>
+            <a href="#fullforms">📋 Master Full Forms Table</a>
+            <a href="#checklist">✅ Master Revision Checklist</a>
+        </div>
+
+        <!-- ===== TOPIC 1: INTRODUCTION ===== -->
+        <h2 id="t1">1️⃣ कंप्यूटर का परिचय — Introduction to Computer</h2>
+
+        <div class="card">
+            <div class="card-title">💡 कंप्यूटर क्या है? — What is Computer?</div>
+            <ul>
+                <li><b>Computer</b> शब्द English के <b>"Compute"</b> से बना है → अर्थ: <b>गणना करना (To Calculate)</b>
+                </li>
+                <li>कंप्यूटर एक <b>स्वचालित इलेक्ट्रॉनिक मशीन</b> है जो Data को <b>Process</b> और <b>Store</b> करती है
+                </li>
+                <li>यह एक <b>Automatic, Digital, Multi-purpose</b> device है</li>
+            </ul>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">⚡ कंप्यूटर के 4 Basic Functions</div>
+            <table>
+                <tr>
+                    <th>Function</th>
+                    <th>Hindi</th>
+                    <th>क्या होता है?</th>
+                </tr>
+                <tr>
+                    <td>1. Input</td>
+                    <td>निवेश</td>
+                    <td>Data/Command कंप्यूटर में डालना (Keyboard, Mouse से)</td>
+                </tr>
+                <tr>
+                    <td>2. Processing</td>
+                    <td>प्रसंस्करण</td>
+                    <td>CPU द्वारा Data को process करना</td>
+                </tr>
+                <tr>
+                    <td>3. Storage</td>
+                    <td>भंडारण</td>
+                    <td>Data को save/store करना (Hard Disk, RAM में)</td>
+                </tr>
+                <tr>
+                    <td>4. Output</td>
+                    <td>निर्गम</td>
+                    <td>Result दिखाना (Monitor, Printer पर)</td>
+                </tr>
+            </table>
+            <div class="highlight">🎯 <b>कंप्यूटर का सबसे Basic काम:</b> Data को Process करके Information में बदलना
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🧩 कंप्यूटर के 3 घटक — 3 Components</div>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Hindi</th>
+                    <th>Definition</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td><b>Hardware</b></td>
+                    <td>हार्डवेयर</td>
+                    <td>कंप्यूटर के वे भाग जिन्हें हम <b>छू सकते हैं</b> (Physical Parts)</td>
+                    <td>Keyboard, Mouse, Monitor, CPU, Printer, Motherboard, Speaker</td>
+                </tr>
+                <tr>
+                    <td><b>Software</b></td>
+                    <td>सॉफ्टवेयर</td>
+                    <td><b>अनुदेशों का समूह</b> (Set of Instructions) जो Hardware की मदद से Data Process करता है</td>
+                    <td>Windows, Android, MS Office</td>
+                </tr>
+                <tr>
+                    <td><b>Data</b></td>
+                    <td>डाटा</td>
+                    <td><b>अव्यवस्थित तथ्य एवं आंकड़े</b> (Unorganized Facts)</td>
+                    <td>Numbers, Text, Images</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">📊 Data vs Information — बहुत Important अंतर!</div>
+            <table>
+                <tr>
+                    <th>Data (डाटा)</th>
+                    <th>Information (सूचना)</th>
+                </tr>
+                <tr>
+                    <td>अव्यवस्थित तथ्य — Unorganized Facts</td>
+                    <td>व्यवस्थित तथ्य — Organized Facts</td>
+                </tr>
+                <tr>
+                    <td>Raw (कच्चा) होता है</td>
+                    <td>Processed (प्रसंस्कृत) होता है</td>
+                </tr>
+                <tr>
+                    <td>जैसे: बिखरी किताबें</td>
+                    <td>जैसे: अलमारी में जमी किताबें</td>
+                </tr>
+            </table>
+            <p style="margin-top:8px"><b>Data के 2 प्रकार:</b></p>
+            <ul>
+                <li><b>Numerical (संख्यात्मक)</b> — सिर्फ numbers (e.g., phone number)</li>
+                <li><b>Symbolic (चिन्हात्मक/Non-Numeric)</b> — letters + symbols + numbers mixed (e.g., Password,
+                    Address)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔧 Software के 2 प्रकार</div>
+            <table>
+                <tr>
+                    <th>System Software</th>
+                    <th>Application Software</th>
+                </tr>
+                <tr>
+                    <td>कंप्यूटर का <b>आधार</b> — इसके बिना कुछ नहीं चलेगा</td>
+                    <td>किसी <b>विशेष काम</b> के लिए बनाया जाता है</td>
+                </tr>
+                <tr>
+                    <td>इसके ऊपर सारे Software काम करते हैं</td>
+                    <td>System Software के ऊपर चलता है</td>
+                </tr>
+                <tr>
+                    <td>🖥️ Windows, Android, iOS, Linux</td>
+                    <td>📱 MS Office, Photoshop, WhatsApp, Amazon</td>
+                </tr>
+                <tr>
+                    <td>= Operating System</td>
+                    <td>= Apps</td>
+                </tr>
+            </table>
+            <div class="warn">💡 <b>याद रखो:</b> Android = System Software | WhatsApp/Flipkart = Application Software
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📚 अन्य Important शब्द</div>
+            <table>
+                <tr>
+                    <th>Term</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td><b>Database</b></td>
+                    <td>Data का डिजिटल रूप में <b>व्यवस्थित संग्रह</b> (Organized digital storage)</td>
+                </tr>
+                <tr>
+                    <td><b>DBMS</b></td>
+                    <td>Database Management System — Database को manage करने वाला <b>Application Software</b></td>
+                </tr>
+                <tr>
+                    <td><b>Programmer</b></td>
+                    <td>जो Program/Software <b>बनाता</b> है (e.g., Mark Zuckerberg → Facebook)</td>
+                </tr>
+                <tr>
+                    <td><b>User / Operator</b></td>
+                    <td>जो Computer <b>चलाता</b> है (e.g., हम सब)</td>
+                </tr>
+                <tr>
+                    <td><b>End User</b></td>
+                    <td>Computer उपयोगकर्ता जो विशेषज्ञ <b>नहीं</b> है</td>
+                </tr>
+                <tr>
+                    <td><b>First Programmer</b></td>
+                    <td><b>Lady Ada Augusta (Lovelace)</b> — दुनिया की पहली Programmer</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⚡ कंप्यूटर की विशेषताएँ — Features</div>
+            <ul>
+                <li>🚀 <b>Speed (गति)</b> — GHz में मापी जाती है, Super Computers में FLOPS में</li>
+                <li>🤖 <b>Automatic (स्वचालित)</b> — Commands देने पर खुद काम करता है</li>
+                <li>🎯 <b>Accuracy (त्रुटि रहित)</b> — जब तक Bug न हो, 100% accurate</li>
+                <li>🌍 <b>Universal (सार्वभौमिक)</b> — हर जगह काम कर सकता है</li>
+                <li>💾 <b>Storage Capacity (भंडारण क्षमता)</b> — TB/PB में Data store</li>
+                <li>🧠 <b>No IQ (कोई बुद्धि नहीं)</b> — खुद नहीं सोच सकता, Commands चाहिए (AI से बदल रहा है)</li>
+            </ul>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🎯 परीक्षा में पूछे गए Important तथ्य</div>
+            <table>
+                <tr>
+                    <th>प्रश्न / Fact</th>
+                    <th>उत्तर / Answer</th>
+                </tr>
+                <tr>
+                    <td>🔥 भारत का पहला Computer कहाँ लगा?</td>
+                    <td><b>Indian Statistical Institute (ISI), Kolkata — 1956</b></td>
+                </tr>
+                <tr>
+                    <td>🔥 भारत के पहले Computer का नाम?</td>
+                    <td><b>HEC-2M</b> (लागत: ₹10 लाख)</td>
+                </tr>
+                <tr>
+                    <td>🔥 भारत का पहला Computer Literate जिला?</td>
+                    <td><b>Malappuram, Kerala</b></td>
+                </tr>
+                <tr>
+                    <td>🔥 विश्व कंप्यूटर साक्षरता दिवस?</td>
+                    <td><b>2 December</b></td>
+                </tr>
+                <tr>
+                    <td>Computer Process का बुनियादी लक्ष्य?</td>
+                    <td>Data को Information में Process करना</td>
+                </tr>
+                <tr>
+                    <td>अर्थपूर्ण ढंग से प्रस्तुत Data को क्या कहते हैं?</td>
+                    <td><b>Information (सूचना)</b></td>
+                </tr>
+                <tr>
+                    <td>Non-Numeric Data का उदाहरण?</td>
+                    <td>कर्मचारी का पता (Address), Password</td>
+                </tr>
+                <tr>
+                    <td>Digital Divide क्या है?</td>
+                    <td>Computer/Internet users और वंचित लोगों के बीच का <b>अंतर</b></td>
+                </tr>
+                <tr>
+                    <td>ECS (Banking में)?</td>
+                    <td><b>Electronic Clearing System</b></td>
+                </tr>
+            </table>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 1</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: Computer शब्द किस English word से बना है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Compute (अर्थ: गणना करना)</p>
+
+                <p class="quiz-q">Q2: कंप्यूटर के 3 Components कौन से हैं?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Hardware, Software, Data</p>
+
+                <p class="quiz-q">Q3: Data और Information में क्या अंतर है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Data = अव्यवस्थित तथ्य (Unorganized Facts) | Information = व्यवस्थित तथ्य
+                    (Organized/Processed Data)</p>
+
+                <p class="quiz-q">Q4: भारत का पहला Computer कहाँ और कब लगा?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ ISI Kolkata, 1956 — नाम: HEC-2M</p>
+
+                <p class="quiz-q">Q5: विश्व कंप्यूटर साक्षरता दिवस कब मनाया जाता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ 2 December</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 2: HISTORY ===== -->
+        <h2 id="t2">2️⃣ कंप्यूटर का इतिहास — History of Computer</h2>
+
+        <div class="card">
+            <div class="card-title">📜 गणना उपकरणों का विकास — Evolution Timeline</div>
+            <p style="color:var(--text2);margin-bottom:12px">गणना करने वाले उपकरण → Mechanical → Electro-Mechanical →
+                Electronic</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🧮 1. Abacus (अबेकस)</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>2400 BC (ईसा पूर्व)</b></td>
+                </tr>
+                <tr>
+                    <td>📍 कहाँ?</td>
+                    <td><b>Babylon (बेबीलोन / मेसोपोटामिया)</b></td>
+                </tr>
+                <tr>
+                    <td>❓ क्या है?</td>
+                    <td>विश्व का <b>सबसे पुराना गणना यंत्र</b> (Oldest Counting Device)</td>
+                </tr>
+                <tr>
+                    <td>🔧 बनावट</td>
+                    <td>लकड़ी का Frame + तारें + मोती (Beads on wires)</td>
+                </tr>
+                <tr>
+                    <td>➕ कार्य</td>
+                    <td>जोड़ (+) और घटाना (−) — Addition & Subtraction only</td>
+                </tr>
+            </table>
+            <div class="highlight">🎯 <b>Exam Tip:</b> Abacus को "World's First Calculator" भी कहा जाता है</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🦴 2. Napier's Bones (नेपियर बोन्स)</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1617</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>John Napier (जॉन नेपियर)</b> — Scotland</td>
+                </tr>
+                <tr>
+                    <td>❓ क्या है?</td>
+                    <td>जानवरों की हड्डियों से बना गणना उपकरण</td>
+                </tr>
+                <tr>
+                    <td>📖 Technique</td>
+                    <td><b>Rabdologia (रेबडोलॉजी)</b></td>
+                </tr>
+                <tr>
+                    <td>➕ कार्य</td>
+                    <td>गुणा (×), भाग (÷), वर्गमूल (√)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📏 3. Slide Rule (स्लाइड रूल)</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1622</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>William Oughtred (विलियम ऑट्रेड)</b> — Germany</td>
+                </tr>
+                <tr>
+                    <td>➕ कार्य</td>
+                    <td>Logarithmic calculations (लघुगणक गणनाएँ)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">⚙️ 4. Pascaline (पास्कलीन)</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1642</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>Blaise Pascal (ब्लेज़ पास्कल)</b> — France 🇫🇷</td>
+                </tr>
+                <tr>
+                    <td>❓ क्या है?</td>
+                    <td>विश्व का <b>पहला Mechanical Calculator</b></td>
+                </tr>
+                <tr>
+                    <td>➕ कार्य</td>
+                    <td>सिर्फ जोड़ (+) और घटाना (−)</td>
+                </tr>
+                <tr>
+                    <td>📖 अन्य नाम</td>
+                    <td>Adding Machine</td>
+                </tr>
+            </table>
+            <div class="warn">💡 <b>Remember:</b> Pascal ने <b>सिर्फ + और −</b> किया | Napier ने ×, ÷, √ किया — Confuse
+                मत होना!</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🧵 5. Jacquard Loom (जैकार्ड लूम)</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1804</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>Joseph Marie Jacquard (जोसेफ मैरी जैकार्ड)</b></td>
+                </tr>
+                <tr>
+                    <td>❓ क्या है?</td>
+                    <td>पहला <b>Mechanical Loom (कपड़ा बुनने की मशीन)</b></td>
+                </tr>
+                <tr>
+                    <td>🔑 Special</td>
+                    <td><b>Punched Cards</b> का पहली बार इस्तेमाल यहीं हुआ</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🏛️ 6-7. Charles Babbage — Father of Computer 🔥</div>
+            <table>
+                <tr>
+                    <th>Machine</th>
+                    <th>Year</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><b>Difference Engine</b></td>
+                    <td><b>1822</b></td>
+                    <td>Steam powered, Algebraic calculations, गणितीय गणना</td>
+                </tr>
+                <tr>
+                    <td><b>Analytical Engine</b></td>
+                    <td><b>1837</b></td>
+                    <td>आधुनिक कंप्यूटर का <b>Blueprint</b> — 5 Parts: <b>Input, Output, Control, Store, Mill</b></td>
+                </tr>
+            </table>
+            <div class="highlight">🎯 <b>Charles Babbage = Father of Computer</b> — Analytical Engine = Modern Computer
+                का नक्शा</div>
+            <div class="warn">👩‍💻 <b>Lady Ada Augusta (Lovelace)</b> ने Analytical Engine के लिए पहला Program लिखा →
+                <b>World's First Programmer</b>
+            </div>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">📊 8. Tabulating Machine</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1880</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>Herman Hollerith (हरमन हॉलेरिथ)</b> — USA 🇺🇸</td>
+                </tr>
+                <tr>
+                    <td>🔑 Use</td>
+                    <td><b>1890 US Census (जनगणना)</b> में इस्तेमाल हुई</td>
+                </tr>
+                <tr>
+                    <td>🏢 Company</td>
+                    <td>1924 में Hollerith की कंपनी का नाम बदलकर <b>IBM</b> रखा गया</td>
+                </tr>
+            </table>
+            <div class="highlight">🔥 <b>IBM = International Business Machines</b> — यह Full Form बार-बार पूछी जाती है!
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⚡ 9. ABC Computer</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1942</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>John Atanasoff & Clifford Berry</b></td>
+                </tr>
+                <tr>
+                    <td>Full Form</td>
+                    <td><b>Atanasoff-Berry Computer</b></td>
+                </tr>
+                <tr>
+                    <td>🔑 विशेषता</td>
+                    <td>पहला <b>Automatic Electronic Digital Computer</b></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔩 10. Harvard Mark-1</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>📅 कब?</td>
+                    <td><b>1944</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>Howard Aiken (हावर्ड एकिन)</b> — IBM के साथ</td>
+                </tr>
+                <tr>
+                    <td>❓ Type</td>
+                    <td>General Purpose <b>Electro-Mechanical</b> Computer</td>
+                </tr>
+                <tr>
+                    <td>🔑 Use</td>
+                    <td>World War II में इस्तेमाल, <b>Magnetic Drum Storage</b></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 11-14. Electronic Computers — SUPER IMPORTANT Full Forms!</div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Full Form</th>
+                    <th>Inventor</th>
+                    <th>Key Fact</th>
+                </tr>
+                <tr>
+                    <td><b>ENIAC</b></td>
+                    <td>Electronic Numerical Integrator And Computer</td>
+                    <td>Presper Eckert & John Mauchly</td>
+                    <td>पहला <b>Programmable Electronic General Purpose Digital Computer</b>, Vacuum Tubes</td>
+                </tr>
+                <tr>
+                    <td><b>EDSAC</b></td>
+                    <td>Electronic Delay Storage Automatic Calculator</td>
+                    <td>Maurice Wilkes</td>
+                    <td>Mercury Delay Line memory</td>
+                </tr>
+                <tr>
+                    <td><b>EDVAC</b></td>
+                    <td>Electronic Discrete Variable Automatic Computer</td>
+                    <td>John Von Neumann</td>
+                    <td>30 Tons weight, 150 feet wide</td>
+                </tr>
+                <tr>
+                    <td><b>UNIVAC</b></td>
+                    <td>Universal Automatic Computer</td>
+                    <td>Eckert & Mauchly</td>
+                    <td>पहला Commercial Computer, <b>Magnetic Tape</b> use</td>
+                </tr>
+            </table>
+            <div class="mnemonic">
+                <div class="mnemonic-label">🧠 MEMORY TRICK — Full Forms याद रखो</div>
+                <b>E</b>NIAC = <b>E</b>lectronic <b>N</b>umerical <b>I</b>ntegrator <b>A</b>nd <b>C</b>omputer<br>
+                <b>E</b>DVAC = <b>E</b>lectronic <b>D</b>iscrete <b>V</b>ariable <b>A</b>utomatic <b>C</b>omputer<br>
+                <b>U</b>NIVAC = <b>U</b>niversal <b>A</b>utomatic <b>C</b>omputer
+            </div>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔬 15-16. Microprocessor & Apple</div>
+            <table>
+                <tr>
+                    <th>Detail</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>🔥 Microprocessor कब बना?</td>
+                    <td><b>1971</b></td>
+                </tr>
+                <tr>
+                    <td>👤 किसने?</td>
+                    <td><b>Ted Hoff (टेड हॉफ)</b> — Intel Company</td>
+                </tr>
+                <tr>
+                    <td>📛 पहला Microprocessor</td>
+                    <td><b>Intel 4004</b></td>
+                </tr>
+                <tr>
+                    <td>🍎 Apple II</td>
+                    <td><b>1977</b> — Steve Jobs — पहला Commercial Microcomputer</td>
+                </tr>
+            </table>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 2 (History)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: विश्व का सबसे पुराना गणना यंत्र कौन सा है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Abacus (अबेकस) — 2400 BC, Babylon</p>
+
+                <p class="quiz-q">Q2: Pascaline किसने बनाया और यह क्या कर सकता था?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Blaise Pascal (1642, France) — सिर्फ जोड़ (+) और घटाना (−)</p>
+
+                <p class="quiz-q">Q3: Father of Computer किसे कहा जाता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Charles Babbage — Analytical Engine (1837) के कारण</p>
+
+                <p class="quiz-q">Q4: ENIAC का Full Form बताइए</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Electronic Numerical Integrator And Computer</p>
+
+                <p class="quiz-q">Q5: IBM का पुराना नाम क्या था और किसने बनाया?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Herman Hollerith की Tabulating Machine Company → 1924 में IBM बनी (International
+                    Business Machines)</p>
+
+                <p class="quiz-q">Q6: पहला Microprocessor कौन सा था?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Intel 4004 (1971) — Ted Hoff ने बनाया</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 3: GENERATIONS ===== -->
+        <h2 id="t3">3️⃣ कंप्यूटर की पीढ़ियाँ — Generations of Computer</h2>
+
+        <div class="card">
+            <div class="card-title">📌 सामान्य नियम — General Trend</div>
+            <div class="highlight">पीढ़ी बढ़ने के साथ: <b>आकार ↓ घटता है</b> | <b>गति ↑ बढ़ती है</b> | <b>भंडारण ↑ बढ़ता
+                    है</b> | <b>कीमत ↓ घटती है</b></div>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 सभी 5 पीढ़ियाँ — Complete Comparison Table</div>
+            <table>
+                <tr>
+                    <th>पीढ़ी</th>
+                    <th>काल</th>
+                    <th>Technology</th>
+                    <th>भाषा</th>
+                    <th>उदाहरण</th>
+                </tr>
+                <tr>
+                    <td><b>1st Gen</b></td>
+                    <td>1940-1956</td>
+                    <td><b>Vacuum Tubes</b> (निर्वात नलिका)</td>
+                    <td>Machine Language (0,1)</td>
+                    <td>ENIAC, UNIVAC</td>
+                </tr>
+                <tr>
+                    <td><b>2nd Gen</b></td>
+                    <td>1956-1963</td>
+                    <td><b>Transistors</b> (ट्रांजिस्टर)</td>
+                    <td>Assembly Language</td>
+                    <td>COBOL, FORTRAN</td>
+                </tr>
+                <tr>
+                    <td><b>3rd Gen</b></td>
+                    <td>1964-1971</td>
+                    <td><b>IC</b> (Integrated Circuit)</td>
+                    <td>High-Level Languages</td>
+                    <td>PDP series, IBM 360</td>
+                </tr>
+                <tr>
+                    <td><b>4th Gen</b></td>
+                    <td>1971-Present</td>
+                    <td><b>Microprocessor</b> (VLSI/ULSI)</td>
+                    <td>GUI + HLL</td>
+                    <td>PC, Laptop, Mac</td>
+                </tr>
+                <tr>
+                    <td><b>5th Gen</b></td>
+                    <td>Present-Future</td>
+                    <td><b>AI</b> (Artificial Intelligence)</td>
+                    <td>Natural Language</td>
+                    <td>Robots, Alexa, ChatGPT</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📦 1st Generation (1940-1956) — Vacuum Tubes</div>
+            <ul>
+                <li>🔧 <b>Vacuum Tubes (निर्वात नलिका)</b> — बहुत बड़ी, बहुत गर्म, ज्यादा बिजली</li>
+                <li>💾 Storage: <b>Magnetic Drum</b></li>
+                <li>💬 Language: <b>Machine Language</b> (Binary — 0 और 1)</li>
+                <li>📏 आकार: कमरे जितना बड़ा</li>
+                <li>🖥️ Examples: <b>ENIAC, UNIVAC, EDVAC, EDSAC</b></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⚡ 2nd Generation (1956-1963) — Transistors</div>
+            <ul>
+                <li>🔧 <b>Transistors</b> ने Vacuum Tubes की जगह ली — छोटा, तेज, कम बिजली</li>
+                <li>💾 Storage: <b>Magnetic Core Memory</b></li>
+                <li>💬 Language: <b>Assembly Language</b></li>
+                <li>📖 Programming: <b>COBOL, FORTRAN</b> भाषाएँ बनीं</li>
+            </ul>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 3rd Generation (1964-1971) — IC (Integrated Circuit)</div>
+            <ul>
+                <li>🔧 <b>IC = Integrated Circuit</b> — एक चिप पर कई Transistors</li>
+                <li>👤 <b>IC का आविष्कारक: Jack Kilby (जैक किल्बी)</b></li>
+                <li>💬 Language: <b>High-Level Languages</b> (C, BASIC आदि)</li>
+                <li>📏 आकार और भी छोटा, गति और भी तेज</li>
+            </ul>
+            <div class="highlight">🔥 <b>Jack Kilby = IC का Father</b> — यह बार-बार पूछा जाता है!</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">💻 4th Generation (1971-Present) — Microprocessor</div>
+            <ul>
+                <li>🔧 <b>Microprocessor</b> — हजारों IC एक चिप पर (<b>VLSI</b> = Very Large Scale Integration)</li>
+                <li><b>ULSI</b> = Ultra Large Scale Integration — और भी ज्यादा circuits</li>
+                <li>🖥️ <b>Personal Computers (PC)</b> का जन्म इसी पीढ़ी में हुआ</li>
+                <li>🖱️ <b>GUI (Graphical User Interface)</b> — Mouse से चलाना शुरू हुआ</li>
+                <li>📱 Laptops, Tablets, Smartphones — सब इसी पीढ़ी के</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🤖 5th Generation (Present-Future) — AI</div>
+            <ul>
+                <li>🧠 <b>Artificial Intelligence (कृत्रिम बुद्धिमत्ता)</b></li>
+                <li>⚙️ <b>Parallel Processing</b> — एक साथ कई काम</li>
+                <li>🗣️ <b>Natural Language Processing (NLP)</b> — इंसानी भाषा समझना</li>
+                <li>🤖 Examples: Robots, Voice Assistants (Alexa, Siri), Self-driving Cars</li>
+            </ul>
+        </div>
+
+        <div class="mnemonic">
+            <div class="mnemonic-label">🧠 MEMORY TRICK — पीढ़ियों की Technology याद रखो</div>
+            <b>V</b>acuum → <b>T</b>ransistor → <b>I</b>C → <b>M</b>icroprocessor → <b>A</b>I<br>
+            <b>"VT IM A"</b> — "VT I'M A computer generation expert!" 😄
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 3 (Generations)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: 1st Generation में कौन सी Technology इस्तेमाल होती थी?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Vacuum Tubes (निर्वात नलिका)</p>
+
+                <p class="quiz-q">Q2: IC (Integrated Circuit) का आविष्कारक कौन है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Jack Kilby (जैक किल्बी) — 3rd Generation</p>
+
+                <p class="quiz-q">Q3: VLSI का Full Form बताइए</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Very Large Scale Integration — 4th Generation (Microprocessor)</p>
+
+                <p class="quiz-q">Q4: 5th Generation की मुख्य Technology कौन सी है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Artificial Intelligence (AI) — कृत्रिम बुद्धिमत्ता</p>
+
+                <p class="quiz-q">Q5: COBOL और FORTRAN किस पीढ़ी में आईं?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ 2nd Generation (Transistor युग)</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 4: TYPES ===== -->
+        <h2 id="t4">4️⃣ कंप्यूटर के प्रकार — Types of Computer</h2>
+
+        <div class="card">
+            <div class="card-title">📂 वर्गीकरण के 3 आधार</div>
+            <table>
+                <tr>
+                    <th>आधार (Basis)</th>
+                    <th>प्रकार (Types)</th>
+                </tr>
+                <tr>
+                    <td>🎯 <b>उद्देश्य (Purpose)</b></td>
+                    <td>General Purpose, Special Purpose</td>
+                </tr>
+                <tr>
+                    <td>⚡ <b>अनुप्रयोग (Application)</b></td>
+                    <td>Analog, Digital, Hybrid</td>
+                </tr>
+                <tr>
+                    <td>📏 <b>आकार (Size)</b></td>
+                    <td>Micro, Mini, Mainframe, Super</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🎯 उद्देश्य के आधार पर — By Purpose</div>
+            <table>
+                <tr>
+                    <th>General Purpose Computer</th>
+                    <th>Special Purpose Computer</th>
+                </tr>
+                <tr>
+                    <td>कई काम कर सकता है — Documents, Gaming, Browsing</td>
+                    <td>सिर्फ एक <b>विशेष काम</b> के लिए बना</td>
+                </tr>
+                <tr>
+                    <td>🖥️ PC, Laptop</td>
+                    <td>🚦 Traffic Signal, Washing Machine, ATM</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 अनुप्रयोग के आधार पर — By Application</div>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Signal</th>
+                    <th>काम</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><b>Analog</b></td>
+                    <td>Continuous (लगातार)</td>
+                    <td>भौतिक मात्राएँ मापता है (तापमान, दबाव)</td>
+                    <td>Speedometer, Thermometer</td>
+                </tr>
+                <tr>
+                    <td><b>Digital</b></td>
+                    <td>Discrete (0 और 1)</td>
+                    <td>Digits (अंकों) में Process करता है</td>
+                    <td>PC, Laptop, Calculator</td>
+                </tr>
+                <tr>
+                    <td><b>Hybrid</b></td>
+                    <td>दोनों का मिश्रण</td>
+                    <td>Input/Output = Analog, Processing = Digital</td>
+                    <td>🏥 Hospital Machines (ECG, Dialysis)</td>
+                </tr>
+            </table>
+            <div class="highlight">🔥 <b>Hybrid Computer</b> सबसे ज्यादा <b>Hospitals</b> और <b>Defence (रक्षा)</b> में
+                इस्तेमाल होता है</div>
+            <div class="warn">💡 वर्तमान में सबसे ज्यादा <b>Digital Computers</b> का इस्तेमाल होता है</div>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">📏 आकार के आधार पर — By Size (MOST IMPORTANT!)</div>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><b>Micro Computer</b></td>
+                    <td>सबसे छोटा</td>
+                    <td>PC, Laptop, Notebook, Tablet, Smartphone, Palmtop, Workstation, Surface</td>
+                </tr>
+                <tr>
+                    <td><b>Mini Computer</b></td>
+                    <td>Micro से बड़ा</td>
+                    <td>Medium-sized organizations में</td>
+                </tr>
+                <tr>
+                    <td><b>Mainframe</b></td>
+                    <td>बड़ा</td>
+                    <td>बड़ी संस्थाओं में (Banks, Airlines)</td>
+                </tr>
+                <tr>
+                    <td><b>Super Computer</b></td>
+                    <td>सबसे बड़ा व शक्तिशाली</td>
+                    <td>आकार, गति, भंडारण — सभी में सबसे ज्यादा</td>
+                </tr>
+            </table>
+            <div class="warn">💡 <b>याद रखो:</b> Laptop, Smartphone, Tablet, Palmtop — सभी <b>Micro Computer</b> के
+                उदाहरण हैं!</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">💻 Micro Computer — विस्तार से</div>
+            <ul>
+                <li>🕐 शुरुआत: <b>1971</b> — Intel 4004 Microprocessor के बाद</li>
+                <li><b>PC (Personal Computer)</b> — Desktop/Tower</li>
+                <li><b>Workstation</b> — High-power PC (Design, Animation)</li>
+                <li><b>Laptop</b> — Portable, battery powered</li>
+                <li><b>Notebook</b> — Laptop से छोटा</li>
+                <li><b>Tablet</b> — Touch screen, iPad</li>
+                <li><b>Palmtop/PDA</b> — हथेली में आ जाए</li>
+                <li><b>Smartphone</b> — Mini computer in pocket</li>
+            </ul>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🚀 Super Computer — India के Super Computers 🔥</div>
+            <table>
+                <tr>
+                    <th>Fact</th>
+                    <th>Answer</th>
+                </tr>
+                <tr>
+                    <td>🔥 विश्व का पहला Super Computer</td>
+                    <td><b>Cray-1</b> (USA) — <b>Seymour Cray</b></td>
+                </tr>
+                <tr>
+                    <td>🔥 भारत का पहला Super Computer</td>
+                    <td><b>PARAM 8000</b> (1991)</td>
+                </tr>
+                <tr>
+                    <td>🔥 PARAM किसने बनाया?</td>
+                    <td><b>Vijay Bhatkar (विजय भटकर)</b> — <b>C-DAC, Pune</b></td>
+                </tr>
+                <tr>
+                    <td>C-DAC Full Form</td>
+                    <td><b>Centre for Development of Advanced Computing</b></td>
+                </tr>
+                <tr>
+                    <td>गति की इकाई</td>
+                    <td><b>FLOPS</b> (Floating Point Operations Per Second)</td>
+                </tr>
+                <tr>
+                    <td>भारत के अन्य Super Computers</td>
+                    <td>PARAM Siddhi, <b>Pratyush</b> (मौसम), <b>Mihir</b> (मौसम)</td>
+                </tr>
+            </table>
+            <div class="mnemonic">
+                <div class="mnemonic-label">🧠 MEMORY TRICK</div>
+                <b>PARAM</b> = Vijay <b>B</b>hatkar + C-<b>D</b>AC + <b>P</b>une → "<b>BDP</b> ने PARAM बनाया!"
+            </div>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 4 (Types)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: Hybrid Computer सबसे ज्यादा कहाँ इस्तेमाल होता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Hospitals (अस्पतालों) और Defence (रक्षा) क्षेत्र में</p>
+
+                <p class="quiz-q">Q2: Laptop किस प्रकार का Computer है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Micro Computer</p>
+
+                <p class="quiz-q">Q3: भारत का पहला Super Computer कौन सा है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ PARAM 8000 (1991) — Vijay Bhatkar, C-DAC Pune</p>
+
+                <p class="quiz-q">Q4: FLOPS क्या है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Floating Point Operations Per Second — Super Computer की गति मापने की इकाई</p>
+
+                <p class="quiz-q">Q5: विश्व का पहला Super Computer कौन सा है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Cray-1 (USA) — Seymour Cray ने बनाया</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 5: CPU ARCHITECTURE ===== -->
+        <h2 id="t5">5️⃣ कंप्यूटर की संरचना — CPU Architecture</h2>
+
+        <div class="card hot">
+            <div class="card-title">🧠 CPU = Central Processing Unit = कंप्यूटर का दिमाग</div>
+            <div class="def">CPU को कंप्यूटर का <b>"Brain" (मस्तिष्क)</b> कहा जाता है। इसे <b>"Heart of Computer"</b> भी
+                कहते हैं।</div>
+            <table>
+                <tr>
+                    <th>Part</th>
+                    <th>Full Form</th>
+                    <th>काम</th>
+                </tr>
+                <tr>
+                    <td>🔢 <b>ALU</b></td>
+                    <td>Arithmetic Logic Unit</td>
+                    <td>गणितीय (+,−,×,÷) और तार्किक (AND, OR, NOT) operations</td>
+                </tr>
+                <tr>
+                    <td>🎛️ <b>CU</b></td>
+                    <td>Control Unit</td>
+                    <td>सभी operations को <b>Control/Manage</b> करता है — "Traffic Police" जैसा</td>
+                </tr>
+                <tr>
+                    <td>📝 <b>MR</b></td>
+                    <td>Memory Register</td>
+                    <td>Processing के दौरान <b>अस्थायी Data</b> store करता है (बहुत तेज)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔄 Data Flow — कैसे काम करता है?</div>
+            <div class="highlight">
+                <b>Input</b> (Keyboard से "SHUBHAM" टाइप किया)<br>
+                → <b>Input Interface</b> (सामान्य भाषा → Binary 0/1 में बदला)<br>
+                → <b>CPU Processing</b> (ALU + CU + Registers)<br>
+                → <b>Output Interface</b> (Binary → वापस हमारी भाषा में)<br>
+                → <b>Output</b> (Monitor पर "SHUBHAM" दिखा)
+            </div>
+            <div class="warn">💡 यह सारा काम <b>Nanoseconds</b> में होता है — इतनी Speed!</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔢 Binary System (द्विआधारी प्रणाली)</div>
+            <ul>
+                <li>Computer सिर्फ <b>0 और 1</b> समझता है — इसे <b>Machine Language</b> कहते हैं</li>
+                <li><b>0 = OFF</b> (बिजली नहीं) | <b>1 = ON</b> (बिजली है)</li>
+                <li>हर अक्षर, नंबर, चित्र — सब <b>Binary (0/1)</b> में convert होता है</li>
+            </ul>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 5 (CPU)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: CPU के 3 भाग कौन से हैं?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ ALU (Arithmetic Logic Unit), CU (Control Unit), MR (Memory Register)</p>
+
+                <p class="quiz-q">Q2: CPU को क्या कहा जाता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Brain of Computer / Heart of Computer</p>
+
+                <p class="quiz-q">Q3: Input Interface क्या करता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ सामान्य भाषा को Binary (0/1) में बदलता है</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 6: MEMORY ===== -->
+        <h2 id="t6">6️⃣ कंप्यूटर मेमोरी — Memory (RAM / ROM / Secondary)</h2>
+
+        <div class="card">
+            <div class="card-title">🗂️ Memory के प्रकार — Overview</div>
+            <table>
+                <tr><th>Category</th><th>Types</th><th>Nature</th></tr>
+                <tr><td><b>Primary Memory</b></td><td>RAM, ROM</td><td>CPU से सीधे जुड़ी, Fast</td></tr>
+                <tr><td><b>Secondary Memory</b></td><td>HDD, SSD, CD, DVD, Pen Drive</td><td>बाहरी भंडारण, Slow but Permanent</td></tr>
+                <tr><td><b>Cache Memory</b></td><td>L1, L2, L3</td><td>CPU और RAM के बीच, Fastest!</td></tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 RAM vs ROM — सबसे Important अंतर</div>
+            <table>
+                <tr><th>Feature</th><th>RAM</th><th>ROM</th></tr>
+                <tr><td>Full Form</td><td><b>Random Access Memory</b></td><td><b>Read Only Memory</b></td></tr>
+                <tr><td>प्रकृति</td><td><b>Volatile (अस्थायी)</b> — बंद करो तो Data उड़ जाता है</td><td><b>Non-Volatile (स्थायी)</b> — Data बना रहता है</td></tr>
+                <tr><td>काम</td><td>Processing के दौरान Data रखता है</td><td>स्थायी Instructions store करता है (BIOS)</td></tr>
+                <tr><td>Read/Write</td><td>दोनों हो सकते हैं</td><td>सिर्फ Read (पढ़ना)</td></tr>
+                <tr><td>Speed</td><td>Fast</td><td>RAM से Slow</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">💾 RAM के 2 प्रकार</div>
+            <table>
+                <tr><th>Feature</th><th>SRAM (Static RAM)</th><th>DRAM (Dynamic RAM)</th></tr>
+                <tr><td>Full Form</td><td><b>Static Random Access Memory</b></td><td><b>Dynamic Random Access Memory</b></td></tr>
+                <tr><td>Speed</td><td>बहुत तेज (Faster)</td><td>धीमी (Slower)</td></tr>
+                <tr><td>Cost</td><td>महंगी (Expensive)</td><td>सस्ती (Cheaper)</td></tr>
+                <tr><td>Use</td><td><b>Cache Memory</b> में</td><td><b>Main Memory (RAM)</b> के रूप में</td></tr>
+                <tr><td>Refresh</td><td>जरूरत नहीं</td><td>बार-बार Refresh करना पड़ता है</td></tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 ROM के प्रकार — Full Forms बहुत पूछी जाती हैं!</div>
+            <table>
+                <tr><th>Type</th><th>Full Form</th><th>विशेषता</th></tr>
+                <tr><td><b>PROM</b></td><td>Programmable Read Only Memory</td><td>सिर्फ <b>एक बार</b> लिखा जा सकता है, मिटा नहीं सकते। Use: खिलौने, OTP</td></tr>
+                <tr><td><b>EPROM</b></td><td>Erasable Programmable ROM</td><td><b>UV Rays (पराबैंगनी किरणें)</b> से <b>40 मिनट</b> में मिटता है। Use: TV Tuner</td></tr>
+                <tr><td><b>EEPROM</b></td><td>Electrically Erasable Programmable ROM</td><td><b>Electronic Signal</b> से <b>4-10 Nanoseconds</b> में मिटता है = <b>Flash Memory</b>। Use: BIOS</td></tr>
+            </table>
+            <div class="mnemonic">
+                <div class="mnemonic-label">🧠 MEMORY TRICK — ROM के प्रकार</div>
+                <b>P</b>ROM = <b>P</b>rogrammable (एक बार लिखो, कभी मिटाओ मत)<br>
+                <b>EP</b>ROM = <b>E</b>rasable + UV Light (40 min में मिटाओ)<br>
+                <b>EEP</b>ROM = <b>E</b>lectrically Erasable (4-10 ns, Flash Memory!)
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">⚡ Cache Memory</div>
+            <ul>
+                <li>CPU और RAM के <b>बीच में</b> होती है</li>
+                <li><b>सबसे तेज</b> Memory — Speed: Cache > RAM > Secondary</li>
+                <li>बार-बार Use होने वाला Data यहाँ Store होता है</li>
+                <li>SRAM से बनी होती है</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🌐 Virtual Memory (आभासी मेमोरी)</div>
+            <ul>
+                <li>यह एक <b>Technique</b> है — RAM की Capacity बढ़ाने के लिए</li>
+                <li>RAM में जो Data <b>अभी जरूरी नहीं</b>, वह <b>Hard Disk</b> में भेज दिया जाता है</li>
+                <li>जब जरूरत पड़ती है तो वापस RAM में उठा लिया जाता है</li>
+                <li>इससे RAM की <b>Processing Speed बढ़ जाती है</b></li>
+            </ul>
+            <div class="def">🏠 <b>सरल उदाहरण:</b> जैसे मुख्य कमरे में जगह कम हो तो अस्थायी सामान दूसरे कमरे में रख दो, जरूरत पड़े तो वापस ले आओ!</div>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">💿 Secondary Memory & HDD vs SSD</div>
+            <table>
+                <tr><th>Device</th><th>Type</th><th>Key Fact</th></tr>
+                <tr><td><b>HDD</b></td><td>Hard Disk Drive</td><td>Magnetic, बड़ी Storage, सस्ती</td></tr>
+                <tr><td><b>SSD</b></td><td>Solid State Drive</td><td><b>IC Chip</b>, HDD से तेज, महंगी, कम Storage</td></tr>
+                <tr><td><b>CD</b></td><td>Compact Disc</td><td>700 MB</td></tr>
+                <tr><td><b>DVD</b></td><td>Digital Versatile Disc</td><td>4.7 GB</td></tr>
+                <tr><td><b>Blu-ray</b></td><td>Blu-ray Disc</td><td>25-50 GB</td></tr>
+                <tr><td><b>Pen Drive</b></td><td>USB Flash Drive</td><td>Portable, USB port</td></tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">📐 Memory Units — मेमोरी इकाइयाँ 🔥</div>
+            <table>
+                <tr><th>Unit</th><th>Value</th></tr>
+                <tr><td><b>Bit</b></td><td>0 या 1 — सबसे छोटी इकाई</td></tr>
+                <tr><td><b>Nibble</b></td><td>4 Bits</td></tr>
+                <tr><td><b>Byte</b></td><td>8 Bits</td></tr>
+                <tr><td><b>KB</b> (Kilobyte)</td><td>1024 Bytes</td></tr>
+                <tr><td><b>MB</b> (Megabyte)</td><td>1024 KB</td></tr>
+                <tr><td><b>GB</b> (Gigabyte)</td><td>1024 MB</td></tr>
+                <tr><td><b>TB</b> (Terabyte)</td><td>1024 GB</td></tr>
+                <tr><td><b>PB</b> (Petabyte)</td><td>1024 TB</td></tr>
+                <tr><td><b>EB</b> (Exabyte)</td><td>1024 PB</td></tr>
+                <tr><td><b>ZB</b> (Zettabyte)</td><td>1024 EB</td></tr>
+                <tr><td><b>YB</b> (Yottabyte)</td><td>1024 ZB</td></tr>
+            </table>
+            <div class="mnemonic">
+                <div class="mnemonic-label">🧠 MEMORY TRICK — Units याद रखो</div>
+                <b>K</b>B → <b>M</b>B → <b>G</b>B → <b>T</b>B → <b>P</b>B → <b>E</b>B → <b>Z</b>B → <b>Y</b>B<br>
+                "<b>K</b>aise <b>M</b>eri <b>G</b>aadi <b>T</b>ez <b>P</b>hir <b>E</b>k <b>Z</b>or <b>Y</b>aar" 🚗
+            </div>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 6 (Memory)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: RAM और ROM में मुख्य अंतर?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ RAM = Volatile (अस्थायी) | ROM = Non-Volatile (स्थायी)</p>
+
+                <p class="quiz-q">Q2: EPROM को मिटाने के लिए क्या चाहिए?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ UV Rays (पराबैंगनी किरणें) — 40 मिनट तक</p>
+
+                <p class="quiz-q">Q3: EEPROM को और क्या कहते हैं?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Flash Memory — Use: BIOS</p>
+
+                <p class="quiz-q">Q4: 1 Byte = कितने Bits?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ 8 Bits</p>
+
+                <p class="quiz-q">Q5: सबसे तेज Memory कौन सी है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Cache Memory (CPU और RAM के बीच)</p>
+            </div>
+        </details>
+
+        <!-- ===== TOPIC 7: HARDWARE I/O ===== -->
+        <h2 id="t7">7️⃣ कंप्यूटर हार्डवेयर — Input/Output Devices & Ports</h2>
+
+        <div class="card hot">
+            <div class="card-title">⌨️ Keyboard — कीबोर्ड (प्रमुख Input Device)</div>
+            <table>
+                <tr><th>Key Type</th><th>Count</th><th>Details</th></tr>
+                <tr><td><b>Total Keys</b></td><td><b>104</b></td><td>Standard keyboard</td></tr>
+                <tr><td><b>Function Keys</b></td><td>12 (F1-F12)</td><td>Special functions</td></tr>
+                <tr><td><b>Alphanumeric</b></td><td>A-Z + 0-9</td><td>Letters + Numbers</td></tr>
+                <tr><td><b>Numeric Keypad</b></td><td>0-9 (दाईं तरफ)</td><td>Calculator जैसा</td></tr>
+                <tr><td><b>Special Keys</b></td><td>Shift, Ctrl, Alt, Tab, Caps, Enter</td><td>Modifier keys</td></tr>
+                <tr><td><b>Navigation/Cursor</b></td><td>↑↓←→, Home, End, PgUp, PgDn</td><td>Movement keys</td></tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🖱️ Mouse — माउस</div>
+            <table>
+                <tr><th>Fact</th><th>Detail</th></tr>
+                <tr><td>🔥 आविष्कारक</td><td><b>Douglas Engelbart (डगलस एंगेलबर्ट)</b></td></tr>
+                <tr><td>Pointer Device</td><td>Pointing Device या Cursor Moving Device भी कहते हैं</td></tr>
+            </table>
+            <p style="margin-top:8px"><b>Mouse के प्रकार:</b></p>
+            <ul>
+                <li><b>Mechanical Mouse</b> — Rubber Ball वाला (पुराना)</li>
+                <li><b>Optical Mouse</b> — LED/Laser Light से काम करता है</li>
+                <li><b>Wireless Mouse</b> — बिना तार, Bluetooth/RF</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📷 Scanner के प्रकार</div>
+            <ul>
+                <li><b>Flatbed Scanner</b> — सबसे Common, Documents/Photos</li>
+                <li><b>Handheld Scanner</b> — हाथ में पकड़ कर Scan</li>
+                <li><b>Drum Scanner</b> — High-quality, Professional use</li>
+            </ul>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🔥 Special Input Devices — OCR, OMR, MICR</div>
+            <table>
+                <tr><th>Device</th><th>Full Form</th><th>काम</th><th>Example</th></tr>
+                <tr><td><b>OCR</b></td><td>Optical Character Recognition</td><td>छपे हुए <b>अक्षरों</b> को पहचानता है</td><td>Books को Digital करना</td></tr>
+                <tr><td><b>OMR</b></td><td>Optical Mark Recognition</td><td><b>निशानों/Marks</b> को पहचानता है</td><td>🔥 Exam Answer Sheets checking</td></tr>
+                <tr><td><b>MICR</b></td><td>Magnetic Ink Character Recognition</td><td><b>चुंबकीय स्याही</b> से छपे अक्षर पढ़ता है</td><td>🔥 Bank Cheques/चेक</td></tr>
+            </table>
+            <div class="warn">💡 <b>OMR = Exam Sheets</b> | <b>MICR = Bank Cheques</b> — यह जरूर याद रखें!</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📊 Barcode & QR Code</div>
+            <table>
+                <tr><th>Feature</th><th>Barcode</th><th>QR Code</th></tr>
+                <tr><td>Full Form</td><td>—</td><td><b>Quick Response Code</b></td></tr>
+                <tr><td>Structure</td><td>काली-सफेद <b>Lines</b></td><td>काले-सफेद <b>Squares</b></td></tr>
+                <tr><td>Digits</td><td><b>13 अंकों</b> का Code</td><td>ज्यादा Data store</td></tr>
+                <tr><td>Use</td><td>Product identification (Shopping)</td><td>🔥 <b>UPI Payments</b>, Menu, Tracking</td></tr>
+                <tr><td>Storage</td><td>कम Data</td><td>Barcode से <b>ज्यादा</b> Data</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🎮 अन्य Input Devices</div>
+            <ul>
+                <li><b>Joystick</b> — Gaming 🎮</li>
+                <li><b>Stylus</b> — Pen-type Input Device (Drawing/Writing)</li>
+                <li><b>Light Pen</b> — Screen पर सीधे Draw</li>
+                <li><b>Webcam</b> — Video Input</li>
+                <li><b>Trackball</b> — Inverted Mouse</li>
+                <li><b>Touchpad</b> — Laptop में Mouse की जगह</li>
+                <li><b>Touch Screen</b> — Screen को छूकर Input</li>
+                <li><b>Microphone</b> — Voice Input</li>
+                <li><b>Digital Camera</b> — Photo/Video Input</li>
+                <li><b>Smart Card Reader</b> — Card Data पढ़ता है</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔒 Biometric Devices</div>
+            <div class="def">Bio (शरीर) + Metric (मापना) = शारीरिक विशेषताओं से पहचान</div>
+            <table>
+                <tr><th>Type</th><th>क्या Scan करता है?</th></tr>
+                <tr><td><b>Finger Scanner</b></td><td>उंगली/अंगूठे का निशान</td></tr>
+                <tr><td><b>Face Scanner</b></td><td>चेहरा</td></tr>
+                <tr><td><b>Iris Scanner</b></td><td>आँखों की पुतली</td></tr>
+                <tr><td><b>Voice Scanner</b></td><td>आवाज</td></tr>
+                <tr><td><b>Hand Scanner</b></td><td>पूरा हाथ</td></tr>
+            </table>
+        </div>
+
+        <h3>📺 Output Devices (निर्गम उपकरण)</h3>
+
+        <div class="card hot">
+            <div class="card-title">🖥️ Monitor के प्रकार</div>
+            <table>
+                <tr><th>Type</th><th>Full Form</th><th>Details</th></tr>
+                <tr><td><b>CRT</b></td><td>Cathode Ray Tube</td><td>सबसे पुराना, भारी, बड़ा</td></tr>
+                <tr><td><b>LCD</b></td><td>Liquid Crystal Display</td><td>पतला, कम बिजली</td></tr>
+                <tr><td><b>LED</b></td><td>Light Emitting Diode</td><td>LCD से बेहतर, Bright</td></tr>
+                <tr><td><b>TFT</b></td><td>Thin Film Transistor</td><td>Advanced LCD variant</td></tr>
+            </table>
+        </div>
+
+        <div class="card hot">
+            <div class="card-title">🖨️ Printer के प्रकार — EXAM IMPORTANT!</div>
+            <table>
+                <tr><th>Category</th><th>Type</th><th>Details</th></tr>
+                <tr><td rowspan="5"><b>Impact Printer</b><br>(छापने में आवाज आती है)</td><td><b>Dot Matrix</b></td><td>Pin से Dots बनाकर Print</td></tr>
+                <tr><td><b>Daisy Wheel</b></td><td>Flower-shaped wheel</td></tr>
+                <tr><td><b>Line Printer</b></td><td>एक बार में पूरी Line print</td></tr>
+                <tr><td><b>Chain Printer</b></td><td>Chain mechanism</td></tr>
+                <tr><td><b>Drum Printer</b></td><td>Rotating drum</td></tr>
+                <tr><td rowspan="3"><b>Non-Impact Printer</b><br>(बिना आवाज)</td><td><b>Inkjet</b></td><td>Ink spray — Color printing</td></tr>
+                <tr><td><b>Laser</b></td><td>🔥 सबसे तेज, Best quality</td></tr>
+                <tr><td><b>Thermal</b></td><td>Heat से Print — ATM receipts</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📐 अन्य Output Devices</div>
+            <ul>
+                <li><b>Plotter</b> — बड़े Engineering Drawings, Maps print करता है (Types: Flatbed, Drum)</li>
+                <li><b>Projector</b> — बड़ी Screen पर Display</li>
+                <li><b>Speaker</b> — Audio Output</li>
+            </ul>
+        </div>
+
+        <h3>🔌 Ports, Motherboard & अन्य Hardware</h3>
+
+        <div class="card hot">
+            <div class="card-title">🔌 Important Ports & Full Forms 🔥</div>
+            <table>
+                <tr><th>Port</th><th>Full Form</th><th>काम</th></tr>
+                <tr><td><b>USB</b></td><td>Universal Serial Bus</td><td>Pen Drive, Mouse, Keyboard connect</td></tr>
+                <tr><td><b>HDMI</b></td><td>High Definition Multimedia Interface</td><td>HD Video + Audio</td></tr>
+                <tr><td><b>VGA</b></td><td>Video Graphics Array</td><td>Monitor connect (पुराना)</td></tr>
+                <tr><td><b>RJ45</b></td><td>Registered Jack 45</td><td>Ethernet/Internet cable</td></tr>
+                <tr><td><b>Thunderbolt</b></td><td>—</td><td>Apple devices, High-speed data</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🟩 Motherboard & Other Hardware</div>
+            <table>
+                <tr><th>Term</th><th>Detail</th></tr>
+                <tr><td><b>Motherboard</b></td><td>कंप्यूटर का <b>Main Circuit Board</b> — सभी parts इसी से जुड़ते हैं</td></tr>
+                <tr><td><b>Bus</b></td><td>Motherboard पर <b>तारों का समूह</b> — Data transfer करता है</td></tr>
+                <tr><td><b>UPS</b></td><td><b>Uninterruptible Power Supply</b> — Backup power देता है</td></tr>
+                <tr><td><b>SMPS</b></td><td><b>Switched Mode Power Supply</b> — AC को DC में बदलता है</td></tr>
+                <tr><td><b>Firmware</b></td><td>Hardware बनाते समय Install किया गया Software (e.g., BIOS)</td></tr>
+            </table>
+            <div class="warn">💡 <b>Firmware = Software जो Hardware बनाते समय Install होता है</b> — यह Exam में पूछा गया है!</div>
+        </div>
+
+        <details>
+            <summary>🧠 Quick Recall Quiz — Topic 7 (Hardware)</summary>
+            <div class="details-body">
+                <p class="quiz-q">Q1: Mouse का आविष्कारक कौन है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Douglas Engelbart (डगलस एंगेलबर्ट)</p>
+
+                <p class="quiz-q">Q2: OMR का इस्तेमाल कहाँ होता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Exam Answer Sheets की Checking में (Optical Mark Recognition)</p>
+
+                <p class="quiz-q">Q3: MICR का Use कहाँ होता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Bank Cheques में (Magnetic Ink Character Recognition)</p>
+
+                <p class="quiz-q">Q4: USB का Full Form बताइए</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ Universal Serial Bus</p>
+
+                <p class="quiz-q">Q5: Firmware क्या होता है?</p>
+                <button class="quiz-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+                <p class="quiz-a">✅ ऐसा Software जो Hardware बनाते समय Install किया जाता है (e.g., BIOS)</p>
+            </div>
+        </details>
+
+        <!-- ===== MASTER FULL FORMS TABLE ===== -->
+        <h2 id="fullforms">📋 Master Full Forms Table — सभी Full Forms एक जगह</h2>
+
+        <div class="card">
+            <table>
+                <tr><th>Short</th><th>Full Form</th></tr>
+                <tr><td><b>CPU</b></td><td>Central Processing Unit</td></tr>
+                <tr><td><b>ALU</b></td><td>Arithmetic Logic Unit</td></tr>
+                <tr><td><b>CU</b></td><td>Control Unit</td></tr>
+                <tr><td><b>RAM</b></td><td>Random Access Memory</td></tr>
+                <tr><td><b>ROM</b></td><td>Read Only Memory</td></tr>
+                <tr><td><b>PROM</b></td><td>Programmable Read Only Memory</td></tr>
+                <tr><td><b>EPROM</b></td><td>Erasable Programmable Read Only Memory</td></tr>
+                <tr><td><b>EEPROM</b></td><td>Electrically Erasable Programmable ROM</td></tr>
+                <tr><td><b>SRAM</b></td><td>Static Random Access Memory</td></tr>
+                <tr><td><b>DRAM</b></td><td>Dynamic Random Access Memory</td></tr>
+                <tr><td><b>HDD</b></td><td>Hard Disk Drive</td></tr>
+                <tr><td><b>SSD</b></td><td>Solid State Drive</td></tr>
+                <tr><td><b>IC</b></td><td>Integrated Circuit</td></tr>
+                <tr><td><b>VLSI</b></td><td>Very Large Scale Integration</td></tr>
+                <tr><td><b>ULSI</b></td><td>Ultra Large Scale Integration</td></tr>
+                <tr><td><b>ENIAC</b></td><td>Electronic Numerical Integrator And Computer</td></tr>
+                <tr><td><b>EDSAC</b></td><td>Electronic Delay Storage Automatic Calculator</td></tr>
+                <tr><td><b>EDVAC</b></td><td>Electronic Discrete Variable Automatic Computer</td></tr>
+                <tr><td><b>UNIVAC</b></td><td>Universal Automatic Computer</td></tr>
+                <tr><td><b>IBM</b></td><td>International Business Machines</td></tr>
+                <tr><td><b>C-DAC</b></td><td>Centre for Development of Advanced Computing</td></tr>
+                <tr><td><b>FLOPS</b></td><td>Floating Point Operations Per Second</td></tr>
+                <tr><td><b>OCR</b></td><td>Optical Character Recognition</td></tr>
+                <tr><td><b>OMR</b></td><td>Optical Mark Recognition</td></tr>
+                <tr><td><b>MICR</b></td><td>Magnetic Ink Character Recognition</td></tr>
+                <tr><td><b>USB</b></td><td>Universal Serial Bus</td></tr>
+                <tr><td><b>HDMI</b></td><td>High Definition Multimedia Interface</td></tr>
+                <tr><td><b>VGA</b></td><td>Video Graphics Array</td></tr>
+                <tr><td><b>CRT</b></td><td>Cathode Ray Tube</td></tr>
+                <tr><td><b>LCD</b></td><td>Liquid Crystal Display</td></tr>
+                <tr><td><b>LED</b></td><td>Light Emitting Diode</td></tr>
+                <tr><td><b>TFT</b></td><td>Thin Film Transistor</td></tr>
+                <tr><td><b>UPS</b></td><td>Uninterruptible Power Supply</td></tr>
+                <tr><td><b>SMPS</b></td><td>Switched Mode Power Supply</td></tr>
+                <tr><td><b>DBMS</b></td><td>Database Management System</td></tr>
+                <tr><td><b>AI</b></td><td>Artificial Intelligence</td></tr>
+                <tr><td><b>NLP</b></td><td>Natural Language Processing</td></tr>
+                <tr><td><b>GUI</b></td><td>Graphical User Interface</td></tr>
+                <tr><td><b>ECS</b></td><td>Electronic Clearing System</td></tr>
+                <tr><td><b>QR</b></td><td>Quick Response</td></tr>
+                <tr><td><b>DVD</b></td><td>Digital Versatile Disc</td></tr>
+                <tr><td><b>CD</b></td><td>Compact Disc</td></tr>
+            </table>
+        </div>
+
+        <!-- ===== MASTER REVISION CHECKLIST ===== -->
+        <h2 id="checklist">✅ Master Revision Checklist</h2>
+
+        <div class="card">
+            <div class="card-title">📝 Tick करते जाओ — सब याद हो जाएगा!</div>
+            <p style="color:var(--green);font-weight:600;margin-bottom:12px" id="checkProgress">✅ 0 / 30 Complete</p>
+            <ul class="checklist" id="masterChecklist">
+                <li><input type="checkbox" data-key="c1"><span>Computer = Compute = गणना करना, 4 Functions: IPOS</span></li>
+                <li><input type="checkbox" data-key="c2"><span>3 Components: Hardware (छूना), Software (Instructions), Data (तथ्य)</span></li>
+                <li><input type="checkbox" data-key="c3"><span>Data = अव्यवस्थित | Information = व्यवस्थित</span></li>
+                <li><input type="checkbox" data-key="c4"><span>First Computer India: HEC-2M, ISI Kolkata, 1956</span></li>
+                <li><input type="checkbox" data-key="c5"><span>Computer Literacy Day: 2 December</span></li>
+                <li><input type="checkbox" data-key="c6"><span>First Programmer: Lady Ada Augusta (Lovelace)</span></li>
+                <li><input type="checkbox" data-key="c7"><span>Abacus — 2400 BC, Babylon, Oldest Counting Device</span></li>
+                <li><input type="checkbox" data-key="c8"><span>Pascaline — 1642, Blaise Pascal, First Mechanical Calculator</span></li>
+                <li><input type="checkbox" data-key="c9"><span>Charles Babbage = Father of Computer (Analytical Engine, 1837)</span></li>
+                <li><input type="checkbox" data-key="c10"><span>IBM = International Business Machines (Herman Hollerith, 1924)</span></li>
+                <li><input type="checkbox" data-key="c11"><span>ENIAC = Electronic Numerical Integrator And Computer</span></li>
+                <li><input type="checkbox" data-key="c12"><span>EDVAC = Electronic Discrete Variable Automatic Computer</span></li>
+                <li><input type="checkbox" data-key="c13"><span>UNIVAC = Universal Automatic Computer (First Commercial)</span></li>
+                <li><input type="checkbox" data-key="c14"><span>First Microprocessor: Intel 4004 (1971, Ted Hoff)</span></li>
+                <li><input type="checkbox" data-key="c15"><span>5 Generations: Vacuum→Transistor→IC→Microprocessor→AI</span></li>
+                <li><input type="checkbox" data-key="c16"><span>IC Inventor: Jack Kilby (3rd Gen)</span></li>
+                <li><input type="checkbox" data-key="c17"><span>VLSI/ULSI = 4th Gen (Microprocessor)</span></li>
+                <li><input type="checkbox" data-key="c18"><span>Hybrid Computer = Hospitals + Defence</span></li>
+                <li><input type="checkbox" data-key="c19"><span>PARAM 8000 = India's First Supercomputer (Vijay Bhatkar, C-DAC Pune)</span></li>
+                <li><input type="checkbox" data-key="c20"><span>Cray-1 = World's First Supercomputer (Seymour Cray)</span></li>
+                <li><input type="checkbox" data-key="c21"><span>CPU = ALU + CU + MR (Brain of Computer)</span></li>
+                <li><input type="checkbox" data-key="c22"><span>RAM = Volatile | ROM = Non-Volatile</span></li>
+                <li><input type="checkbox" data-key="c23"><span>PROM (1 बार) → EPROM (UV, 40min) → EEPROM (Electric, Flash)</span></li>
+                <li><input type="checkbox" data-key="c24"><span>Cache Memory = Fastest (CPU-RAM बीच)</span></li>
+                <li><input type="checkbox" data-key="c25"><span>1 Byte = 8 Bits | 1 KB = 1024 Bytes</span></li>
+                <li><input type="checkbox" data-key="c26"><span>Mouse Inventor: Douglas Engelbart</span></li>
+                <li><input type="checkbox" data-key="c27"><span>OMR = Exam Sheets | MICR = Bank Cheques</span></li>
+                <li><input type="checkbox" data-key="c28"><span>USB = Universal Serial Bus | HDMI = High Definition Multimedia Interface</span></li>
+                <li><input type="checkbox" data-key="c29"><span>Firmware = Hardware बनाते समय Install Software</span></li>
+                <li><input type="checkbox" data-key="c30"><span>UPS = Uninterruptible Power Supply | SMPS = AC→DC</span></li>
+            </ul>
+        </div>
+
+        <!-- UPCOMING TOPICS -->
+        <div class="card" style="border-color:var(--orange);margin-top:24px">
+            <div class="card-title">📌 Upcoming Topics (अगले Lecture में)</div>
+            <ul>
+                <li>🔜 Software Types in Detail</li>
+                <li>🔜 Programming Languages (Machine, Assembly, High-Level)</li>
+                <li>🔜 Operating Systems (Windows, Linux, Android, iOS)</li>
+            </ul>
+            <p style="color:var(--text2);margin-top:8px">Teacher ने कहा: "यह तीन Topics Internet वाले Lecture में Cover करेंगे"</p>
+        </div>
+
+    </div><!-- container -->
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }) }) });
+        
+        // Theme toggle
+        function toggleTheme() { const b = document.documentElement; const t = b.getAttribute('data-theme') === 'light' ? '' : 'light'; b.setAttribute('data-theme', t); document.getElementById('themeBtn').textContent = t === 'light' ? '☀️' : '🌙'; localStorage.setItem('theme', t) }
+        (function () { const s = localStorage.getItem('theme'); if (s) { document.documentElement.setAttribute('data-theme', s); document.getElementById('themeBtn').textContent = s === 'light' ? '☀️' : '🌙' } })();
+        
+        // Checklist with localStorage
+        const checks = document.querySelectorAll('#masterChecklist input[type="checkbox"]');
+        const total = checks.length;
+        function updateProgress() {
+            const done = document.querySelectorAll('#masterChecklist input:checked').length;
+            document.getElementById('checkProgress').textContent = '✅ ' + done + ' / ' + total + ' Complete';
+            document.getElementById('progressFill').style.width = Math.round((done / total) * 100) + '%';
+            document.getElementById('progressText').textContent = '📊 Revision Progress: ' + done + '/' + total + ' Facts Learned';
+        }
+        checks.forEach(cb => {
+            const key = cb.getAttribute('data-key');
+            if (localStorage.getItem(key) === '1') cb.checked = true;
+            cb.addEventListener('change', () => { localStorage.setItem(key, cb.checked ? '1' : '0'); updateProgress(); });
+        });
+        updateProgress();
+
+        // Scroll spy for sticky nav
+        const sections = ['t1','t2','t3','t4','t5','t6','t7','fullforms','checklist'];
+        const navLinks = document.querySelectorAll('.sticky-nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= 120) current = id;
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+                if (a.classList.contains('active')) a.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+        });
+    </script>
+</body>
+
+</html>

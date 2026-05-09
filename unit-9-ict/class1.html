@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Revision — MPPSC Unit 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root, [data-theme="light"] {
+  --bg: #f5f3ef;
+  --surface: #faf9f6;
+  --surface2: #f0ede7;
+  --border: rgba(0,0,0,0.09);
+  --text: #1a1a18;
+  --text-muted: #6b6a65;
+  --text-faint: #b0afa9;
+  --accent: #0d7a6e;
+  --accent-hover: #0a5e54;
+  --accent-bg: rgba(13,122,110,0.1);
+  --accent2: #7b4fcf;
+  --accent2-bg: rgba(123,79,207,0.1);
+  --warn: #c05621;
+  --warn-bg: rgba(192,86,33,0.1);
+  --success: #3a7a20;
+  --success-bg: rgba(58,122,32,0.1);
+  --blue: #1e6fa0;
+  --blue-bg: rgba(30,111,160,0.1);
+  --gold: #b87c00;
+  --gold-bg: rgba(184,124,0,0.1);
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+}
+[data-theme="dark"] {
+  --bg: #141412;
+  --surface: #1c1b19;
+  --surface2: #242320;
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e0dc;
+  --text-muted: #8a8880;
+  --text-faint: #504e4a;
+  --accent: #3da898;
+  --accent-hover: #5bbfb0;
+  --accent-bg: rgba(61,168,152,0.12);
+  --accent2: #a67fef;
+  --accent2-bg: rgba(166,127,239,0.12);
+  --warn: #e07a45;
+  --warn-bg: rgba(224,122,69,0.12);
+  --success: #6baf45;
+  --success-bg: rgba(107,175,69,0.12);
+  --blue: #5a9fd4;
+  --blue-bg: rgba(90,159,212,0.12);
+  --gold: #daa836;
+  --gold-bg: rgba(218,168,54,0.12);
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4 { line-height: 1.2; font-weight: 600; }
+p { max-width: 72ch; color: var(--text-muted); }
+strong { color: var(--text); font-weight: 600; }
+a { color: var(--accent); text-decoration: none; }
+ul, ol { padding-left: 1.4em; }
+li { margin-bottom: 0.3em; color: var(--text-muted); }
+li strong { color: var(--text); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { background: var(--surface2); color: var(--text); font-weight: 600; text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+td { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+tr:hover td { background: var(--surface2); }
+code { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: var(--surface2); padding: 2px 6px; border-radius: 4px; color: var(--accent); }
+
+/* ===== LAYOUT ===== */
+.app-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0 24px;
+  height: 60px;
+  display: flex; align-items: center; gap: 16px;
+  box-shadow: var(--shadow);
+}
+.app-bar-logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text);
+  flex: 1;
+}
+.app-bar-logo span { color: var(--accent); }
+.app-bar-nav {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  list-style: none; padding: 0;
+}
+.app-bar-nav li { margin: 0; }
+.app-bar-nav a {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.18s;
+}
+.app-bar-nav a:hover { background: var(--accent-bg); color: var(--accent); }
+
+.theme-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+.main-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--accent-bg) 0%, var(--accent2-bg) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 12px; font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.hero p { font-size: 14px; color: var(--text-muted); max-width: 60ch; margin-bottom: 16px; }
+.hero-meta {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+.hero-badge {
+  font-size: 12px; font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+/* ===== SECTION ===== */
+.section {
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.section-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.18s;
+}
+.section-header:hover { background: var(--bg); }
+.section-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.section-title {
+  flex: 1;
+  font-size: 15px; font-weight: 600;
+  color: var(--text);
+}
+.section-num {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+.toggle-icon {
+  color: var(--text-faint);
+  transition: transform 0.25s;
+  font-size: 14px;
+}
+.section.collapsed .toggle-icon { transform: rotate(-90deg); }
+.section-body {
+  padding: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.section.collapsed .section-body { display: none; }
+
+/* ===== CARDS ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  transition: all 0.18s;
+}
+.card:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.card-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+}
+.card-title {
+  font-size: 14px; font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.card-desc { font-size: 13px; color: var(--text-muted); }
+
+/* ===== CALLOUTS ===== */
+.callout {
+  display: flex; gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  margin: 12px 0;
+  font-size: 14px;
+}
+.callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.callout-text { line-height: 1.5; }
+.callout.tip { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+.callout.tip .callout-text { color: var(--accent); }
+.callout.warn { background: var(--warn-bg); border-color: var(--warn); color: var(--warn); }
+.callout.warn .callout-text { color: var(--warn); }
+.callout.note { background: var(--gold-bg); border-color: var(--gold); color: var(--gold); }
+.callout.note .callout-text { color: var(--gold); }
+.callout.exam { background: var(--accent2-bg); border-color: var(--accent2); color: var(--accent2); }
+.callout.exam .callout-text { color: var(--accent2); }
+
+/* ===== LAYERS ===== */
+.layer-stack { display: flex; flex-direction: column; gap: 4px; margin: 12px 0; }
+.layer {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  transition: transform 0.15s;
+}
+.layer:hover { transform: translateX(4px); }
+.layer-num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  flex-shrink: 0;
+}
+.layer-name { font-weight: 600; font-size: 14px; color: var(--text); flex: 1; }
+.layer-desc { font-size: 12px; color: var(--text-muted); }
+.layer-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  padding: 2px 8px; border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* ===== COMPARISON ===== */
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-top: 12px;
+}
+.compare-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.compare-box h4 {
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.compare-box ul { font-size: 13px; padding-left: 1.2em; }
+.compare-box li { margin-bottom: 6px; }
+
+/* ===== MNEMONIC ===== */
+.mnemonic {
+  background: var(--accent2-bg);
+  border: 1px solid var(--accent2);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin: 12px 0;
+}
+.mnemonic-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent2); margin-bottom: 6px; }
+.mnemonic-text { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.mnemonic-meaning { font-size: 13px; color: var(--text-muted); }
+
+/* ===== UNIT TABLE ===== */
+.unit-row { display: flex; gap: 0; margin: 12px 0; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.unit-cell { flex: 1; text-align: center; padding: 10px 6px; border-right: 1px solid var(--border); background: var(--surface2); }
+.unit-cell:last-child { border-right: none; }
+.unit-val { font-size: 13px; font-weight: 700; color: var(--text); }
+.unit-label { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.unit-arrow { display: flex; align-items: center; justify-content: center; width: 30px; background: var(--bg); color: var(--accent); font-size: 12px; border-right: 1px solid var(--border); flex-shrink: 0; }
+
+/* ===== SWITCHING ===== */
+.switch-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+.switch-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; }
+.switch-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.switch-card p { font-size: 13px; margin: 0; max-width: none; }
+.switch-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ===== PREV YEAR Qs ===== */
+.question-list { list-style: none; padding: 0; }
+.question-item {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.question-text { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.question-ans {
+  font-size: 13px;
+  background: var(--success-bg);
+  border: 1px solid var(--success);
+  color: var(--success);
+  border-radius: 6px;
+  padding: 5px 12px;
+  display: inline-block;
+}
+.question-topic {
+  font-size: 11px; color: var(--text-faint);
+  margin-top: 6px;
+}
+
+/* ===== PROGRESS ===== */
+.progress-bar { background: var(--border); border-radius: 10px; height: 6px; margin-top: 4px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 10px; background: var(--accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .app-bar-nav { display: none; }
+  .switch-cards { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 20px; }
+  .main-wrap { padding: 20px 14px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- APP BAR -->
+<header class="app-bar">
+  <div class="app-bar-logo">ICT <span>Revision</span> — MPPSC</div>
+  <nav>
+    <ul class="app-bar-nav">
+      <li><a href="#units">Units</a></li>
+      <li><a href="#networks">Networks</a></li>
+      <li><a href="#osi">OSI</a></li>
+      <li><a href="#switching">Switching</a></li>
+      <li><a href="#internet">Internet</a></li>
+      <li><a href="#topics">More Topics</a></li>
+      <li><a href="#pyq">PYQs</a></li>
+    </ul>
+  </nav>
+  <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<main class="main-wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">📡 MPPSC Unit 9</div>
+  <h1>Information &amp; Communication Technology</h1>
+  <p>सूचना एवं संचार प्रौद्योगिकी — Complete revision notes from the 3-hour Unacademy lecture by Shubham Kumar Gupta. Exam-focused, all key facts in one place.</p>
+  <div class="hero-meta">
+    <span class="hero-badge">📋 9 Major Topics</span>
+    <span class="hero-badge">❓ PYQ Analysis</span>
+    <span class="hero-badge">🧠 Mnemonics Included</span>
+    <span class="hero-badge">⚡ Exam Tips</span>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: INTRO ===== -->
+<div class="section" id="intro">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent-bg)">📡</div>
+    <div class="section-title">What is ICT?</div>
+    <div class="section-num">01</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="compare-grid">
+      <div class="compare-box">
+        <h4 style="color:var(--accent)">IT — Information Technology</h4>
+        <ul>
+          <li>Deals with <strong>storage, retrieval, processing</strong> of data</li>
+          <li>Tools: Computers, Servers, Software</li>
+          <li>Focus: Managing <em>information</em></li>
+        </ul>
+      </div>
+      <div class="compare-box">
+        <h4 style="color:var(--accent2)">CT — Communication Technology</h4>
+        <ul>
+          <li>Deals with <strong>transmission</strong> of information</li>
+          <li>Tools: Radio, Telephone, Internet</li>
+          <li>Focus: <em>Transferring</em> information</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout tip" style="margin-top:12px">
+      <div class="callout-icon">💡</div>
+      <div class="callout-text"><strong>ICT = IT + CT.</strong> When information technology and communication technology are combined, the result is ICT. The internet is the perfect example of ICT in action.</div>
+    </div>
+    <h4 style="margin-top:16px; margin-bottom:10px; font-size:14px;">ICT Devices (Historical Order)</h4>
+    <div class="card-grid">
+      <div class="card"><div class="card-label">1st</div><div class="card-title">📮 Post Office (Daakghar)</div><div class="card-desc">First ICT device — communication via letters</div></div>
+      <div class="card"><div class="card-label">2nd</div><div class="card-title">☎️ Telephone</div><div class="card-desc">Voice communication over wires</div></div>
+      <div class="card"><div class="card-label">3rd</div><div class="card-title">📻 Radio</div><div class="card-desc">Wireless broadcast communication</div></div>
+      <div class="card"><div class="card-label">4th</div><div class="card-title">📱 Mobile Phone</div><div class="card-desc">Wireless voice + data</div></div>
+      <div class="card"><div class="card-label">Most Imp</div><div class="card-title">💻 Computer</div><div class="card-desc">Central ICT device — biggest topic</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: DIGITAL UNITS ===== -->
+<div class="section" id="units">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--blue-bg)">🔢</div>
+    <div class="section-title">Digital Units &amp; Measurement</div>
+    <div class="section-num">02</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <h4 style="margin-bottom:10px; font-size:14px;">Data Storage Units (each = 1024 of previous)</h4>
+    <div class="unit-row">
+      <div class="unit-cell"><div class="unit-val">Bit</div><div class="unit-label">0 or 1</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">Byte</div><div class="unit-label">8 Bits</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">KB</div><div class="unit-label">1024 Bytes</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">MB</div><div class="unit-label">1024 KB</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">GB</div><div class="unit-label">1024 MB</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">TB</div><div class="unit-label">1024 GB</div></div>
+      <div class="unit-arrow">→</div>
+      <div class="unit-cell"><div class="unit-val">PB</div><div class="unit-label">1024 TB</div></div>
+    </div>
+    <div class="callout note" style="margin-top:12px">
+      <div class="callout-icon">📌</div>
+      <div class="callout-text"><strong>Key Rule:</strong> Every step = ×1024. Bit is smallest (0 or 1). 8 bits = 1 Byte. After that, always multiply by 1024.</div>
+    </div>
+    <h4 style="margin:16px 0 10px; font-size:14px;">Communication Concepts</h4>
+    <table>
+      <tr><th>Term</th><th>Meaning</th><th>Exam Tip</th></tr>
+      <tr><td><strong>Bandwidth</strong></td><td>Amount of data that can be transmitted per second</td><td>Higher bandwidth = faster internet</td></tr>
+      <tr><td><strong>Bit Rate</strong></td><td>Number of bits transmitted per second (bps)</td><td>Used for internet speed measurement</td></tr>
+      <tr><td><strong>Baud Rate</strong></td><td>Number of signal changes per second</td><td>Different from bit rate</td></tr>
+      <tr><td><strong>Frequency</strong></td><td>Number of wave cycles per second (Hz)</td><td>Radio = low freq; Gamma = high freq</td></tr>
+      <tr><td><strong>Wavelength</strong></td><td>Distance between two wave peaks</td><td>Inversely proportional to frequency</td></tr>
+    </table>
+    <div class="compare-grid" style="margin-top:12px">
+      <div class="compare-box">
+        <h4 style="color:var(--warn)">🔴 Transducer (ट्रांसड्यूसर)</h4>
+        <ul>
+          <li>Converts <strong>one form of energy to another</strong></li>
+          <li>E.g., Microphone (sound → electrical), Speaker (electrical → sound)</li>
+        </ul>
+      </div>
+      <div class="compare-box">
+        <h4 style="color:var(--blue)">🔵 Amplifier (एम्प्लीफायर)</h4>
+        <ul>
+          <li><strong>Increases the power/strength</strong> of a wave signal</li>
+          <li>Does NOT change form — just makes signal stronger</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout warn" style="margin-top:12px">
+      <div class="callout-icon">⚡</div>
+      <div class="callout-text"><strong>Wave Frequency Order (Low → High):</strong> Radio Waves → Infrared → Visible Light → UV → X-Rays → Gamma Rays. Wavelength is opposite (highest for Radio, lowest for Gamma).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: NETWORKS ===== -->
+<div class="section" id="networks">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--success-bg)">🌐</div>
+    <div class="section-title">Computer Networks</div>
+    <div class="section-num">03</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="callout tip">
+      <div class="callout-icon">💡</div>
+      <div class="callout-text"><strong>Network:</strong> When 2 or more computers are connected to share data/resources. Each connected device is called a <strong>Node</strong>.</div>
+    </div>
+    <h4 style="margin:14px 0 10px; font-size:14px;">Types of Networks by Coverage Area</h4>
+    <table>
+      <tr><th>Network</th><th>Full Form</th><th>Range / Coverage</th><th>Example</th></tr>
+      <tr><td><code>PAN</code></td><td>Personal Area Network</td><td>~10 meters (personal device range)</td><td>Bluetooth, USB</td></tr>
+      <tr><td><code>LAN</code></td><td>Local Area Network</td><td>Building / Campus (up to ~1 km)</td><td>School/Office network</td></tr>
+      <tr><td><code>WLAN</code></td><td>Wireless LAN</td><td>Same as LAN, wireless</td><td>Wi-Fi network</td></tr>
+      <tr><td><code>CAN</code></td><td>Campus Area Network</td><td>Multiple buildings in a campus</td><td>University network</td></tr>
+      <tr><td><code>MAN</code></td><td>Metropolitan Area Network</td><td>Up to ~100 km (city-level)</td><td>City broadband</td></tr>
+      <tr><td><code>WAN</code></td><td>Wide Area Network</td><td>Worldwide (no limit)</td><td>Internet</td></tr>
+      <tr><td><code>SAN</code></td><td>Storage Area Network</td><td>Specialized for data storage</td><td>Enterprise storage</td></tr>
+      <tr><td><code>GAN</code></td><td>Global Area Network</td><td>Global (satellites + WAN)</td><td>Satellite internet</td></tr>
+      <tr><td><code>VPN</code></td><td>Virtual Private Network</td><td>Uses public internet securely</td><td>Secure remote access</td></tr>
+    </table>
+    <div class="callout exam" style="margin-top:12px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-text"><strong>Exam Focus:</strong> VPN provides <strong>encryption</strong> and hides IP address. It creates a secure "tunnel" over the public internet. Most discussed network type in recent exams.</div>
+    </div>
+
+    <h4 style="margin:16px 0 10px; font-size:14px;">Network Topologies</h4>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">BUS</div>
+        <div class="card-title">🚌 Bus Topology</div>
+        <div class="card-desc">All nodes connected to a single central cable. If main cable fails, entire network fails.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">STAR</div>
+        <div class="card-title">⭐ Star Topology</div>
+        <div class="card-desc">All nodes connected to a central <strong>Hub/Switch</strong>. Most common. Hub fails → all fail.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">RING</div>
+        <div class="card-title">💍 Ring Topology</div>
+        <div class="card-desc">Each node connected to two neighbors forming a ring. Data travels in one direction.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">TREE</div>
+        <div class="card-title">🌳 Tree Topology</div>
+        <div class="card-desc"><strong>Combination of Bus + Star.</strong> Hierarchical structure. Used in social networks.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">MESH</div>
+        <div class="card-title">🕸️ Mesh Topology</div>
+        <div class="card-desc">Every node connected to every other node. Most reliable, but expensive.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">HYBRID</div>
+        <div class="card-title">🔀 Hybrid Topology</div>
+        <div class="card-desc">Combination of two or more topologies. Flexible and scalable.</div>
+      </div>
+    </div>
+    <div class="callout note" style="margin-top:12px">
+      <div class="callout-icon">📌</div>
+      <div class="callout-text"><strong>Social Networks</strong> use <strong>Tree Topology</strong> (or Graph) — this was directly asked in MPPSC exam.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: OSI MODEL ===== -->
+<div class="section" id="osi">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent2-bg)">📦</div>
+    <div class="section-title">OSI Model &amp; TCP/IP Model</div>
+    <div class="section-num">04</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="compare-grid">
+      <div>
+        <h4 style="font-size:14px; margin-bottom:10px; color:var(--accent)">OSI Model — 7 Layers</h4>
+        <div class="callout tip" style="margin-bottom:12px">
+          <div class="callout-icon">📋</div>
+          <div class="callout-text"><strong>Full Form:</strong> Open System Interconnection Model</div>
+        </div>
+        <div class="layer-stack">
+          <div class="layer" style="border-color:var(--accent)">
+            <div class="layer-num" style="background:var(--accent-bg); color:var(--accent)">7</div>
+            <div class="layer-name">Application Layer</div>
+            <div class="layer-desc">User interfaces, email, browsing</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--accent2-bg); color:var(--accent2)">6</div>
+            <div class="layer-name">Presentation Layer</div>
+            <div class="layer-desc">Data format, encryption, compression</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--blue-bg); color:var(--blue)">5</div>
+            <div class="layer-name">Session Layer</div>
+            <div class="layer-desc">Manages sessions between devices</div>
+          </div>
+          <div class="layer" style="border-color:var(--warn); box-shadow: 0 0 0 2px var(--warn-bg)">
+            <div class="layer-num" style="background:var(--warn-bg); color:var(--warn)">4</div>
+            <div class="layer-name">Transport Layer ❤️</div>
+            <div class="layer-desc">Error recovery, flow control</div>
+            <span class="layer-badge" style="background:var(--warn-bg); color:var(--warn)">HEART of OSI</span>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--success-bg); color:var(--success)">3</div>
+            <div class="layer-name">Network Layer</div>
+            <div class="layer-desc">IP addressing, routing</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--gold-bg); color:var(--gold)">2</div>
+            <div class="layer-name">Data Link Layer</div>
+            <div class="layer-desc">MAC address, error detection</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--text-faint)20; color:var(--text-muted)">1</div>
+            <div class="layer-name">Physical Layer</div>
+            <div class="layer-desc">Physical cables, signals</div>
+          </div>
+        </div>
+        <div class="mnemonic" style="margin-top:10px">
+          <div class="mnemonic-label">🧠 Mnemonic (Top → Bottom)</div>
+          <div class="mnemonic-text">"All People Seem To Need Data Processing"</div>
+          <div class="mnemonic-meaning">Application → Presentation → Session → Transport → Network → Data Link → Physical</div>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:14px; margin-bottom:10px; color:var(--blue)">TCP/IP Model — 5 Layers</h4>
+        <div class="callout tip" style="margin-bottom:12px; background:var(--blue-bg); border-color:var(--blue)">
+          <div class="callout-icon">📋</div>
+          <div class="callout-text" style="color:var(--blue)"><strong>TCP:</strong> Transmission Control Protocol (delivers data) | <strong>IP:</strong> Internet Protocol (assigns address)</div>
+        </div>
+        <div class="layer-stack">
+          <div class="layer">
+            <div class="layer-num" style="background:var(--accent-bg); color:var(--accent)">5</div>
+            <div class="layer-name">Application Layer</div>
+            <div class="layer-desc">HTTP, FTP, SMTP, DNS</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--warn-bg); color:var(--warn)">4</div>
+            <div class="layer-name">Transport Layer</div>
+            <div class="layer-desc">TCP / UDP protocols</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--blue-bg); color:var(--blue)">3</div>
+            <div class="layer-name">Internet Layer</div>
+            <div class="layer-desc">IP addressing and routing</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--gold-bg); color:var(--gold)">2</div>
+            <div class="layer-name">Data Link Layer</div>
+            <div class="layer-desc">Frame transmission</div>
+          </div>
+          <div class="layer">
+            <div class="layer-num" style="background:var(--text-faint)20; color:var(--text-muted)">1</div>
+            <div class="layer-name">Physical Layer</div>
+            <div class="layer-desc">Cables, hardware signals</div>
+          </div>
+        </div>
+        <h4 style="margin:16px 0 8px; font-size:13px; color:var(--text-muted)">IPv4 vs IPv6</h4>
+        <table>
+          <tr><th></th><th>IPv4</th><th>IPv6</th></tr>
+          <tr><td>Address Size</td><td><strong>32-bit</strong></td><td><strong>128-bit</strong></td></tr>
+          <tr><td>Format</td><td>192.168.1.1</td><td>2001:0db8::1</td></tr>
+          <tr><td>Total Addresses</td><td>~4.3 billion</td><td>340 undecillion</td></tr>
+          <tr><td>Security</td><td>Optional</td><td>Built-in IPSec</td></tr>
+        </table>
+        <div class="callout exam" style="margin-top:12px">
+          <div class="callout-icon">🎯</div>
+          <div class="callout-text"><strong>PYQ Asked:</strong> IPv6 address size = <strong>128 bits</strong>. (Answer C was correct in MPPSC paper)</div>
+        </div>
+      </div>
+    </div>
+    <div class="callout warn" style="margin-top:12px">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-text"><strong>OSI has 7 layers</strong> — Transport Layer is called the "Heart of OSI Model". TCP/IP has 5 layers theoretically, 4 practically. These are the most exam-asked facts.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: SWITCHING ===== -->
+<div class="section" id="switching">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--warn-bg)">🔀</div>
+    <div class="section-title">Switching Techniques</div>
+    <div class="section-num">05</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="switch-cards">
+      <div class="switch-card">
+        <h4 style="color:var(--warn)">📞 Circuit Switching</h4>
+        <p>A <strong>dedicated physical path</strong> is established between sender and receiver <em>before</em> communication begins.</p>
+        <ul style="font-size:13px; margin-top:8px; padding-left:1.2em;">
+          <li>Physical connection must exist</li>
+          <li>Resources reserved for entire call</li>
+          <li>Inefficient if no data flowing</li>
+        </ul>
+        <span class="switch-tag" style="background:var(--warn-bg); color:var(--warn)">📱 Telephone / PSTN</span>
+      </div>
+      <div class="switch-card">
+        <h4 style="color:var(--accent)">📦 Packet Switching</h4>
+        <p>Message is broken into small <strong>packets</strong>. Each packet travels independently and reassembles at destination.</p>
+        <ul style="font-size:13px; margin-top:8px; padding-left:1.2em;">
+          <li>Each packet has source + destination address</li>
+          <li>Packets may take different routes</li>
+          <li>Reassembled at receiver end</li>
+          <li>Also called <strong>Store &amp; Forward</strong></li>
+        </ul>
+        <span class="switch-tag" style="background:var(--accent-bg); color:var(--accent)">🌐 Internet / TCP</span>
+      </div>
+      <div class="switch-card">
+        <h4 style="color:var(--blue)">✉️ Message Switching</h4>
+        <p>Entire message is stored at intermediate nodes, then forwarded when path is free. No dedicated path.</p>
+        <ul style="font-size:13px; margin-top:8px; padding-left:1.2em;">
+          <li>Message stored, then forwarded</li>
+          <li>Delay possible</li>
+          <li>Not important for exam focus</li>
+        </ul>
+        <span class="switch-tag" style="background:var(--blue-bg); color:var(--blue)">📧 Email</span>
+      </div>
+    </div>
+    <div class="callout tip" style="margin-top:12px">
+      <div class="callout-icon">💡</div>
+      <div class="callout-text"><strong>Key exam facts:</strong> (1) TCP/IP uses <strong>Packet Switching</strong>. (2) Packet switching = "Store and Forward" technique. (3) Each data packet has its own source address and destination address.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: INTERNET ===== -->
+<div class="section" id="internet">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--gold-bg)">🌍</div>
+    <div class="section-title">Internet — Protocols &amp; Bodies</div>
+    <div class="section-num">06</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="callout tip">
+      <div class="callout-icon">💡</div>
+      <div class="callout-text"><strong>Internet</strong> = Global WAN using TCP/IP protocol. It is the "network of networks". Not owned by any single entity.</div>
+    </div>
+    <h4 style="margin:14px 0 10px; font-size:14px;">Key Internet Protocols</h4>
+    <table>
+      <tr><th>Protocol</th><th>Full Form</th><th>Use</th></tr>
+      <tr><td><code>HTTP</code></td><td>HyperText Transfer Protocol</td><td>Web browsing (unsecure)</td></tr>
+      <tr><td><code>HTTPS</code></td><td>HTTP Secure</td><td>Secure web browsing</td></tr>
+      <tr><td><code>FTP</code></td><td>File Transfer Protocol</td><td>File transfer between computers</td></tr>
+      <tr><td><code>SMTP</code></td><td>Simple Mail Transfer Protocol</td><td>Sending emails</td></tr>
+      <tr><td><code>POP3</code></td><td>Post Office Protocol v3</td><td>Receiving emails</td></tr>
+      <tr><td><code>IMAP</code></td><td>Internet Message Access Protocol</td><td>Accessing emails on server</td></tr>
+      <tr><td><code>DNS</code></td><td>Domain Name System</td><td>Converts domain name to IP address</td></tr>
+      <tr><td><code>TCP/IP</code></td><td>Transmission Control / Internet Protocol</td><td>Core internet communication</td></tr>
+      <tr><td><code>VoIP</code></td><td>Voice over Internet Protocol</td><td>Voice calls over internet (Skype)</td></tr>
+    </table>
+    <h4 style="margin:16px 0 10px; font-size:14px;">Internet Regulatory Bodies</h4>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">International</div>
+        <div class="card-title">ICANN</div>
+        <div class="card-desc">Internet Corporation for Assigned Names and Numbers — manages domain names &amp; IP addresses globally</div>
+      </div>
+      <div class="card">
+        <div class="card-label">International</div>
+        <div class="card-title">IETF</div>
+        <div class="card-desc">Internet Engineering Task Force — develops internet standards and protocols</div>
+      </div>
+      <div class="card">
+        <div class="card-label">International</div>
+        <div class="card-title">W3C</div>
+        <div class="card-desc">World Wide Web Consortium — standards for the Web (HTML, CSS)</div>
+      </div>
+      <div class="card">
+        <div class="card-label">India</div>
+        <div class="card-title">CERT-In</div>
+        <div class="card-desc">Computer Emergency Response Team India — handles cyber security incidents in India</div>
+      </div>
+      <div class="card">
+        <div class="card-label">India</div>
+        <div class="card-title">TRAI</div>
+        <div class="card-desc">Telecom Regulatory Authority of India — regulates telecom &amp; internet services in India</div>
+      </div>
+      <div class="card">
+        <div class="card-label">India</div>
+        <div class="card-title">DOT</div>
+        <div class="card-desc">Department of Telecommunications — ministry level body for telecom policy</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 7: TOPICS ===== -->
+<div class="section" id="topics">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--accent2-bg)">🧠</div>
+    <div class="section-title">Social Media, Cyber Security, AI, E-Commerce &amp; E-Governance</div>
+    <div class="section-num">07</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+
+    <!-- Social Media -->
+    <h4 style="font-size:14px; margin-bottom:10px; color:var(--accent2)">📱 Social Networking Sites</h4>
+    <p style="margin-bottom:10px; font-size:14px;">Websites that connect people, allow sharing of information and communication online. Operate on a <strong>Tree/Graph topology</strong>.</p>
+    <table>
+      <tr><th>Platform</th><th>Founded</th><th>HQ / Key Fact</th></tr>
+      <tr><td>Facebook</td><td>2004</td><td>Meta Inc., USA — Mark Zuckerberg</td></tr>
+      <tr><td>Twitter / X</td><td>2006</td><td>San Francisco — Now owned by Elon Musk</td></tr>
+      <tr><td>Instagram</td><td>2010</td><td>Meta Inc., USA — Photo/Video sharing</td></tr>
+      <tr><td>LinkedIn</td><td>2003</td><td>Microsoft — Professional networking</td></tr>
+      <tr><td>YouTube</td><td>2005</td><td>Google — Video sharing</td></tr>
+      <tr><td>Koo App</td><td>2020</td><td>India — Twitter alternative; microblogging</td></tr>
+      <tr><td>ShareChat</td><td>2015</td><td>India — Indian language social media</td></tr>
+    </table>
+    <div class="callout exam" style="margin-top:10px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-text"><strong>Exam Tip:</strong> Social networking topology = <strong>Tree or Graph</strong>. Koo App is India's Twitter alternative. Both answers (Tree + Graph) were accepted by MPPSC for the topology question.</div>
+    </div>
+
+    <!-- Cyber Security -->
+    <h4 style="font-size:14px; margin:18px 0 10px; color:var(--warn)">🔐 Cyber Security</h4>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Attack</div>
+        <div class="card-title">🦠 Malware</div>
+        <div class="card-desc">Malicious software — Virus, Worm, Trojan Horse, Ransomware, Spyware</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Attack</div>
+        <div class="card-title">🎣 Phishing</div>
+        <div class="card-desc">Fake emails/websites to steal credentials</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Attack</div>
+        <div class="card-title">💣 DoS Attack</div>
+        <div class="card-desc">Denial of Service — flood server with requests to crash it</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Defence</div>
+        <div class="card-title">🔥 Firewall</div>
+        <div class="card-desc">Monitors and controls incoming/outgoing network traffic</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Defence</div>
+        <div class="card-title">🔒 Encryption</div>
+        <div class="card-desc">Converts data to unreadable form — only authorized users can decrypt</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Law (India)</div>
+        <div class="card-title">⚖️ IT Act 2000</div>
+        <div class="card-desc">India's primary law for cyber crimes and digital transactions</div>
+      </div>
+    </div>
+
+    <!-- AI -->
+    <h4 style="font-size:14px; margin:18px 0 10px; color:var(--accent)">🤖 Artificial Intelligence (AI)</h4>
+    <div class="compare-grid">
+      <div class="compare-box">
+        <h4 style="color:var(--accent)">Types of AI</h4>
+        <ul>
+          <li><strong>Weak AI (Narrow AI):</strong> Designed for specific task (Siri, Alexa, Chess AI)</li>
+          <li><strong>Strong AI (General AI):</strong> Human-level intelligence — still theoretical</li>
+          <li><strong>Super AI:</strong> Beyond human intelligence — future concept</li>
+        </ul>
+      </div>
+      <div class="compare-box">
+        <h4 style="color:var(--accent2)">Related Technologies</h4>
+        <ul>
+          <li><strong>Machine Learning (ML):</strong> AI learns from data without explicit programming</li>
+          <li><strong>Virtual Reality (VR):</strong> Simulated digital environment</li>
+          <li><strong>Augmented Reality (AR):</strong> Digital overlay on real world</li>
+          <li><strong>Big Data:</strong> Extremely large datasets for analysis</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- E-Commerce -->
+    <h4 style="font-size:14px; margin:18px 0 10px; color:var(--gold)">🛒 E-Commerce</h4>
+    <table>
+      <tr><th>Type</th><th>Full Form</th><th>Example</th></tr>
+      <tr><td><strong>B2C</strong></td><td>Business to Consumer</td><td>Amazon, Flipkart</td></tr>
+      <tr><td><strong>B2B</strong></td><td>Business to Business</td><td>Alibaba, IndiaMart</td></tr>
+      <tr><td><strong>C2C</strong></td><td>Consumer to Consumer</td><td>OLX, eBay</td></tr>
+      <tr><td><strong>G2C</strong></td><td>Government to Citizen</td><td>Government portals</td></tr>
+      <tr><td><strong>C2B</strong></td><td>Consumer to Business</td><td>Upwork, Freelancer</td></tr>
+    </table>
+
+    <!-- E-Governance -->
+    <h4 style="font-size:14px; margin:18px 0 10px; color:var(--blue)">🏛️ E-Governance</h4>
+    <div class="callout tip" style="margin-bottom:12px">
+      <div class="callout-icon">💡</div>
+      <div class="callout-text"><strong>E-Governance</strong> = Use of ICT by government to deliver services to citizens efficiently.</div>
+    </div>
+    <h5 style="font-size:13px; font-weight:600; margin-bottom:8px; color:var(--text-muted)">Gartner's 4-Phase Maturity Model (asked in MPPSC!)</h5>
+    <div class="layer-stack">
+      <div class="layer" style="border-color:var(--blue)">
+        <div class="layer-num" style="background:var(--blue-bg); color:var(--blue)">1</div>
+        <div class="layer-name">Information</div>
+        <div class="layer-desc">Government provides information online (websites, portals)</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num" style="background:var(--accent-bg); color:var(--accent)">2</div>
+        <div class="layer-name">Interaction</div>
+        <div class="layer-desc">Two-way communication — citizens can query, email departments</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num" style="background:var(--warn-bg); color:var(--warn)">3</div>
+        <div class="layer-name">Transaction</div>
+        <div class="layer-desc">Online transactions — tax payment, license renewal</div>
+      </div>
+      <div class="layer" style="border-color:var(--success)">
+        <div class="layer-num" style="background:var(--success-bg); color:var(--success)">4</div>
+        <div class="layer-name">Transformation</div>
+        <div class="layer-desc">Complete digital transformation of government services</div>
+      </div>
+    </div>
+    <div class="callout warn" style="margin-top:10px">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-text"><strong>PYQ Trap:</strong> Gartner's sequence = <strong>Information → Interaction → Transaction → Transformation</strong>. Not Transportation! This confuses many students. Answer is (D) in MPPSC paper.</div>
+    </div>
+    <h5 style="font-size:13px; font-weight:600; margin:14px 0 8px; color:var(--text-muted)">E-Governance Types</h5>
+    <table>
+      <tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td><strong>G2C</strong></td><td>Government to Citizen</td><td>DigiLocker, e-Aadhar, RTI portal</td></tr>
+      <tr><td><strong>G2B</strong></td><td>Government to Business</td><td>GST portal, company registration</td></tr>
+      <tr><td><strong>G2G</strong></td><td>Government to Government</td><td>Inter-department communication</td></tr>
+      <tr><td><strong>G2E</strong></td><td>Government to Employee</td><td>Government HR portals</td></tr>
+    </table>
+    <h5 style="font-size:13px; font-weight:600; margin:14px 0 8px; color:var(--text-muted)">Important Indian Government Portals</h5>
+    <div class="card-grid">
+      <div class="card"><div class="card-title">DigiLocker</div><div class="card-desc">Digital storage for official documents (Aadhaar, PAN, Marksheets)</div></div>
+      <div class="card"><div class="card-title">UMANG</div><div class="card-desc">Unified Mobile Application for New-age Governance</div></div>
+      <div class="card"><div class="card-title">MyGov</div><div class="card-desc">Citizen engagement platform for policy input</div></div>
+      <div class="card"><div class="card-title">e-NAM</div><div class="card-desc">National Agriculture Market — online trading for farmers</div></div>
+      <div class="card"><div class="card-title">GSTN</div><div class="card-desc">Goods &amp; Services Tax Network portal</div></div>
+      <div class="card"><div class="card-title">CoWIN</div><div class="card-desc">COVID-19 vaccine registration portal</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 8: ROBOTICS ===== -->
+<div class="section" id="robotics">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--success-bg)">🤖</div>
+    <div class="section-title">Robotics &amp; Laws of Robotics</div>
+    <div class="section-num">08</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="callout exam" style="margin-bottom:12px">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-text"><strong>PYQ (MPPSC 2021-22):</strong> "Which organization developed the Indian robot named Vyom Mitra?" <br>Answer: <strong>ISRO</strong> (for the Gaganyaan human spaceflight mission)</div>
+    </div>
+    <h4 style="font-size:14px; margin-bottom:10px;">Asimov's 3 Laws of Robotics</h4>
+    <div class="layer-stack">
+      <div class="layer" style="border-color:var(--warn)">
+        <div class="layer-num" style="background:var(--warn-bg); color:var(--warn)">1</div>
+        <div class="layer-name">First Law — Safety</div>
+        <div class="layer-desc">A robot may not injure a human being, or allow a human to come to harm through inaction</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num" style="background:var(--blue-bg); color:var(--blue)">2</div>
+        <div class="layer-name">Second Law — Obedience</div>
+        <div class="layer-desc">A robot must obey orders given by humans, except where it conflicts with the First Law</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num" style="background:var(--success-bg); color:var(--success)">3</div>
+        <div class="layer-name">Third Law — Self-preservation</div>
+        <div class="layer-desc">A robot must protect its own existence, as long as this doesn't conflict with Laws 1 or 2</div>
+      </div>
+    </div>
+    <div class="compare-grid" style="margin-top:12px">
+      <div class="compare-box">
+        <h4 style="color:var(--accent)">Vyom Mitra — Key Facts</h4>
+        <ul>
+          <li>Humanoid robot by <strong>ISRO</strong></li>
+          <li>For <strong>Gaganyaan mission</strong> (India's first human spaceflight)</li>
+          <li>Purpose: Test life support systems before sending humans</li>
+          <li>Can speak, recognize faces, operate switches</li>
+        </ul>
+      </div>
+      <div class="compare-box">
+        <h4 style="color:var(--accent2)">Famous Robots (GK)</h4>
+        <ul>
+          <li><strong>Sophia</strong> — AI robot by Hanson Robotics (Saudi Arabia citizenship)</li>
+          <li><strong>ASIMO</strong> — Honda's humanoid robot</li>
+          <li><strong>Atlas</strong> — Boston Dynamics robot</li>
+          <li><strong>Manav</strong> — India's first 3D printed humanoid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 9: PYQs ===== -->
+<div class="section" id="pyq">
+  <div class="section-header" onclick="toggleSection(this)">
+    <div class="section-icon" style="background:var(--warn-bg)">📝</div>
+    <div class="section-title">Previous Year Questions (PYQ Analysis)</div>
+    <div class="section-num">09</div>
+    <div class="toggle-icon">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="callout note" style="margin-bottom:16px">
+      <div class="callout-icon">📊</div>
+      <div class="callout-text"><strong>MPPSC 2021-22 Analysis:</strong> 10 questions from Unit 9 — 7 from our topics ✅, 3 from outside scope ❌. Target: get all 7 correct. 80:20 rule — 75-80% questions are from standard topics.</div>
+    </div>
+    <ul class="question-list">
+      <li class="question-item">
+        <div class="question-text">Q1. Which organization developed the Indian robot named <strong>Vyom Mitra</strong>?</div>
+        <div class="question-ans">✅ Answer: ISRO</div>
+        <div class="question-topic">Topic: Robotics — Easy ⭐</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q2. According to Gartner, in which sequence can the 4-phase e-governance maturity model be arranged?</div>
+        <div class="question-ans">✅ Answer: Information → Interaction → Transaction → Transformation</div>
+        <div class="question-topic">Topic: E-Governance — Difficult ⭐⭐⭐ (Many chose Transportation by mistake)</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q3. Social networking sites use which topology?</div>
+        <div class="question-ans">✅ Answer: Tree Topology (Graph also accepted)</div>
+        <div class="question-topic">Topic: Networks — Medium ⭐⭐</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q4. IPv6 defines the address of IP in how many bits?</div>
+        <div class="question-ans">✅ Answer: 128 bits</div>
+        <div class="question-topic">Topic: Internet Protocol — Easy ⭐</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q5. Which technique does TCP use for data transmission?</div>
+        <div class="question-ans">✅ Answer: Packet Switching</div>
+        <div class="question-topic">Topic: Switching / TCP/IP — Medium ⭐⭐</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q6. Packet Switching is also known as?</div>
+        <div class="question-ans">✅ Answer: Store and Forward technique</div>
+        <div class="question-topic">Topic: Switching Techniques — Easy ⭐</div>
+      </li>
+      <li class="question-item">
+        <div class="question-text">Q7. Which protocol collects user preferences to predict user interests? (Collaborative filtering question)</div>
+        <div class="question-ans">⚠️ Out of scope — skip if unsure</div>
+        <div class="question-topic">Topic: Advanced AI/Recommendation — Very Difficult ⭐⭐⭐⭐</div>
+      </li>
+    </ul>
+
+    <!-- Quick Revision Table -->
+    <h4 style="font-size:14px; margin:20px 0 10px;">⚡ Quick Revision — All Key Facts</h4>
+    <table>
+      <tr><th>Fact</th><th>Answer</th></tr>
+      <tr><td>OSI Model layers</td><td><strong>7 layers</strong></td></tr>
+      <tr><td>Heart of OSI Model</td><td><strong>Transport Layer</strong></td></tr>
+      <tr><td>TCP/IP Model layers</td><td><strong>5 (theoretically), 4 (practically)</strong></td></tr>
+      <tr><td>IPv4 address size</td><td><strong>32 bits</strong></td></tr>
+      <tr><td>IPv6 address size</td><td><strong>128 bits</strong></td></tr>
+      <tr><td>1 Byte = ?</td><td><strong>8 bits</strong></td></tr>
+      <tr><td>1 KB = ?</td><td><strong>1024 bytes</strong></td></tr>
+      <tr><td>Internet uses which switching?</td><td><strong>Packet Switching</strong></td></tr>
+      <tr><td>Email uses which switching?</td><td><strong>Message Switching</strong></td></tr>
+      <tr><td>Telephone uses which switching?</td><td><strong>Circuit Switching</strong></td></tr>
+      <tr><td>OSI Full Form</td><td><strong>Open System Interconnection</strong></td></tr>
+      <tr><td>TCP Full Form</td><td><strong>Transmission Control Protocol</strong></td></tr>
+      <tr><td>IP Full Form</td><td><strong>Internet Protocol</strong></td></tr>
+      <tr><td>Gartner's E-Governance Phase 3</td><td><strong>Transaction</strong></td></tr>
+      <tr><td>VPN provides</td><td><strong>Encryption + hides IP address</strong></td></tr>
+      <tr><td>Vyom Mitra made by</td><td><strong>ISRO (Gaganyaan mission)</strong></td></tr>
+      <tr><td>Social network topology</td><td><strong>Tree / Graph</strong></td></tr>
+      <tr><td>Highest wavelength wave</td><td><strong>Radio Waves</strong></td></tr>
+      <tr><td>Highest frequency wave</td><td><strong>Gamma Rays</strong></td></tr>
+      <tr><td>Transducer does</td><td><strong>Converts energy form</strong></td></tr>
+      <tr><td>Amplifier does</td><td><strong>Increases wave power/strength</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center; margin-top:32px; padding-top:20px; border-top:1px solid var(--border); color:var(--text-faint); font-size:12px;">
+  ICT Revision Notes — MPPSC Unit 9 &nbsp;|&nbsp; Source: Unacademy Lecture by Shubham Kumar Gupta &nbsp;|&nbsp; Study smart 🎯
+</div>
+
+</main>
+
+<script>
+// Theme toggle
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = 'dark'; // default dark (easy on eyes for studying)
+  r.setAttribute('data-theme', d);
+  if(t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    t.innerHTML = d === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  });
+})();
+
+// Toggle sections
+function toggleSection(header) {
+  const section = header.closest('.section');
+  section.classList.toggle('collapsed');
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('.app-bar-nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

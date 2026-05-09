@@ -1,0 +1,1354 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MPPSC Unit 7: Protection of Environment - Class 4 Revision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101217;
+      --panel: #181b24;
+      --panel-2: #202431;
+      --text: #f6f8fb;
+      --muted: #d9e0ea;
+      --line: #3b4152;
+      --cyan: #00d4ff;
+      --orange: #ff7a3d;
+      --green: #00d084;
+      --purple: #b388ff;
+      --red: #ff5e7a;
+      --shadow: 0 18px 42px rgba(0, 0, 0, .28);
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --panel-2: #eef2f7;
+      --text: #141823;
+      --muted: #334052;
+      --line: #cfd7e3;
+      --shadow: 0 14px 30px rgba(30, 42, 70, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Outfit", system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: var(--cyan);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .jump {
+      min-width: 220px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 10px;
+      background: var(--panel);
+      color: var(--text);
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 12px;
+      background: var(--panel);
+      color: var(--text);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: var(--cyan);
+    }
+
+    .progress-shell {
+      height: 8px;
+      background: var(--panel-2);
+      border-top: 1px solid var(--line);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--cyan), var(--orange));
+      transition: width .25s ease;
+    }
+
+    header {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 16px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 22px;
+      align-items: end;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 16px 46px;
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    nav.toc {
+      position: sticky;
+      top: 72px;
+      align-self: start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 9px 10px;
+      border-radius: 6px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      border-left: 3px solid transparent;
+    }
+
+    .toc a:hover {
+      background: var(--panel-2);
+      border-left-color: var(--cyan);
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    section.topic,
+    .master {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 90px;
+    }
+
+    section.topic {
+      border-top: 5px solid var(--accent, var(--cyan));
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .card,
+    details,
+    .visual,
+    .hot,
+    .quiz,
+    .memory {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 14px;
+    }
+
+    .card strong,
+    .hot strong {
+      color: var(--accent, var(--cyan));
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+      margin: 8px 0 0;
+    }
+
+    li+li {
+      margin-top: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: color-mix(in srgb, var(--accent, var(--cyan)) 20%, var(--panel-2));
+      color: var(--text);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .flow span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: var(--panel-2);
+      font-weight: 800;
+    }
+
+    .caption {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .image-fallback {
+      border: 1px dashed var(--orange);
+      border-radius: 8px;
+      padding: 12px;
+      background: color-mix(in srgb, var(--orange) 12%, var(--panel-2));
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .hot {
+      border-color: color-mix(in srgb, var(--red) 60%, var(--line));
+      background: color-mix(in srgb, var(--red) 12%, var(--panel-2));
+    }
+
+    .quiz details {
+      margin-top: 8px;
+      background: var(--panel);
+    }
+
+    .checklist label {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .checklist label:last-child {
+      border-bottom: 0;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      accent-color: var(--green);
+    }
+
+    .mini-note {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .jump {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav.toc {
+        position: static;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        font-size: 12pt;
+      }
+
+      .topbar,
+      nav.toc,
+      button {
+        display: none !important;
+      }
+
+      main,
+      header {
+        max-width: none;
+        display: block;
+        padding: 0;
+      }
+
+      section.topic,
+      .master,
+      .card,
+      details,
+      .visual,
+      .hot,
+      .quiz,
+      .memory {
+        box-shadow: none;
+        border-color: #999;
+        background: #fff;
+        color: #000;
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <strong>MPPSC Unit 7 Revision: Protection of Environment</strong>
+      <select class="jump" id="jumpNav" aria-label="Jump to topic">
+        <option value="#intro">Jump to topic</option>
+        <option value="#recap">Recap: Environment Basics</option>
+        <option value="#need">Need of Protection</option>
+        <option value="#stockholm">Stockholm Conference 1972</option>
+        <option value="#rio">Earth Summit 1992</option>
+        <option value="#unfccc">UNFCCC and COP</option>
+        <option value="#ozone">Ozone and Montreal</option>
+        <option value="#india">India: Acts and Institutions</option>
+        <option value="#days">Important Environment Days</option>
+        <option value="#masters">Master Revision</option>
+      </select>
+      <button id="themeToggle" type="button">Theme</button>
+    </div>
+    <div class="progress-shell">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <header id="intro">
+    <div class="hero">
+      <div>
+        <h1>🌍 पर्यावरण संरक्षण | Protection of Environment</h1>
+        <p class="lead">Class 4 revision page for MPPSC Pre Unit 7. Transcript ke promotional parts skip kiye gaye hain;
+          lecture ke exam-oriented facts, years, full forms, bodies, COPs, Indian institutions aur important days yahan
+          chunked format mein hain.</p>
+        <div class="badge-row">
+          <span class="badge">🎯 8 major topics</span>
+          <span class="badge">🔥 Exam Hot points marked</span>
+          <span class="badge">🧠 Quick Recall included</span>
+          <span class="badge">✅ Persistent checklist</span>
+        </div>
+      </div>
+      <figure class="visual">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Earth%20seen%20from%20Apollo%2017.jpg"
+          alt="Space se dikh rahi Earth, environment protection ka central visual" loading="eager" fetchpriority="high"
+          decoding="async" referrerpolicy="no-referrer">
+        <figcaption class="caption">Image: Wikimedia Commons / NASA, Public Domain.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc" aria-label="Table of contents">
+      <h3>📌 Table of Contents</h3>
+      <a href="#recap">Recap Basics</a>
+      <a href="#need">Need of Protection</a>
+      <a href="#stockholm">Stockholm 1972</a>
+      <a href="#rio">Earth Summit 1992</a>
+      <a href="#unfccc">UNFCCC + COP</a>
+      <a href="#ozone">Ozone + Montreal</a>
+      <a href="#india">India Acts</a>
+      <a href="#days">Important Days</a>
+      <a href="#masters">Master Revision</a>
+    </nav>
+
+    <div class="content">
+      <section class="topic" id="recap" style="--accent: var(--cyan)">
+        <h2>🧩 Recap: Environment Basics</h2>
+        <p class="lead">Lecture ne last class ka base repeat kiya, kyunki protection samajhne ke liye pehle environment
+          ke components clear hone chahiye.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Environment ka meaning</h3>
+            <ul>
+              <li><strong>परि + आवरण</strong>: jo humein chaaro taraf se ghere hue hai.</li>
+              <li>1986 Act ke according: physical aur biological conditions plus unki interaction ko environment kaha
+                gaya.</li>
+              <li>Components ko hi environmental factors bhi maan sakte hain.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Do main components</h3>
+            <ul>
+              <li><strong>Biotic / जैविक</strong>: biosphere, plants, animals, micro-organisms.</li>
+              <li><strong>Abiotic / अजैविक</strong>: lithosphere, hydrosphere, atmosphere.</li>
+              <li>Teacher ne man-made environment bhi factor bataya: industrial complex, transport, commercial areas.
+              </li>
+            </ul>
+          </article>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Examples</th>
+              <th>Memory Hook</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>जैविक / Biotic</td>
+              <td>जीव-जंतु, पेड़-पौधे, सूक्ष्म जीव, जीवाणु, विषाणु, कवक</td>
+              <td>Jisme life hai, wo biotic.</td>
+            </tr>
+            <tr>
+              <td>अजैविक / Abiotic</td>
+              <td>वायु, जल, स्थल, मृदा, खनिज, शैल</td>
+              <td>Jisme jaan nahi, wo abiotic.</td>
+            </tr>
+            <tr>
+              <td>मानव निर्मित</td>
+              <td>कृषि उत्पाद क्षेत्र, औद्योगिक संकुल, परिवहन, वाणिज्यिक संकुल</td>
+              <td>Human activity se bana environment.</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Biosphere_system.png"
+            alt="Biosphere, atmosphere, lithosphere aur hydrosphere ka relation diagram" loading="eager"
+            fetchpriority="high" decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, open-license educational diagram.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Environment ka shabdik arth kya hai?</summary>
+            <p>परि + आवरण, yani jo humein chaaro taraf se ghere hue hai.</p>
+          </details>
+          <details>
+            <summary>Biotic aur abiotic ka basic difference?</summary>
+            <p>Biotic mein life hoti hai; abiotic mein life nahi hoti.</p>
+          </details>
+          <details>
+            <summary>Atmosphere, hydrosphere, lithosphere kis category mein aate hain?</summary>
+            <p>Abiotic / अजैविक components.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="recap" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="need" style="--accent: var(--orange)">
+        <h2>⚠️ Protection ki Need</h2>
+        <p class="lead">Teacher ne Earth ko ghar ke example se samjhaya: ghar ganda ho to rehna mushkil hota hai; Earth
+          bhi shared home hai, isliye protection zaroori hai.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Why protection?</h3>
+            <ul>
+              <li>Future generations ke liye Earth secure rakhni hai.</li>
+              <li>Human activities se environment mein negative changes aa rahe hain.</li>
+              <li>Climate change se disaster risk badhta hai.</li>
+              <li>Vasudhaiva Kutumbakam: Earth ko common home ki tarah treat karo.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Major impacts discussed</h3>
+            <ul>
+              <li>जलवायु परिवर्तन / Climate Change</li>
+              <li>वैश्विक तापन / Global Warming</li>
+              <li>Greenhouse gases ka increase</li>
+              <li>Glacier melting and sea level rise</li>
+              <li>Ozone layer depletion and UV radiation risk</li>
+            </ul>
+          </article>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Teacher ne bola ki protection se questions banenge; environmental
+          factors ke saath conservation bhi padho.</div>
+        <figure class="visual">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth%27s%20greenhouse%20effect%20%28US%20EPA%2C%202012%29.png"
+            alt="Greenhouse effect diagram showing heat trapping around Earth" loading="eager" fetchpriority="high"
+            decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons / US EPA, Public Domain.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Global warming ka simple cause lecture mein kya bataya?</summary>
+            <p>Greenhouse gases badhne se average temperature normal se zyada ho jata hai.</p>
+          </details>
+          <details>
+            <summary>Sea level rise ka link kya hai?</summary>
+            <p>Glaciers melt hote hain, ocean level badhta hai, coastal/land areas doob sakte hain.</p>
+          </details>
+          <details>
+            <summary>Ozone layer humein kis radiation se bachati hai?</summary>
+            <p>Ultraviolet / पराबैंगनी radiation.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="need" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="stockholm" style="--accent: var(--green)">
+        <h2>🚲 Stockholm Conference 1972</h2>
+        <p class="lead">Environment protection par global level ka first major conference. Lecture mein isko environment
+          ka <strong>Magna Carta</strong> bola gaya.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Core facts</h3>
+            <ul>
+              <li><strong>Year:</strong> 1972</li>
+              <li><strong>Date:</strong> 5 June 1972</li>
+              <li><strong>Place:</strong> Stockholm, Sweden</li>
+              <li><strong>Countries:</strong> 119 countries</li>
+              <li><strong>Theme idea:</strong> climate/environment protection ke liye global rules.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>UNEP</h3>
+            <ul>
+              <li><strong>UNEP:</strong> United Nations Environment Programme.</li>
+              <li><strong>Hindi:</strong> संयुक्त राष्ट्र पर्यावरण कार्यक्रम.</li>
+              <li><strong>Established:</strong> 1972, Stockholm Conference ki achievement.</li>
+              <li><strong>Headquarters:</strong> Nairobi, Kenya.</li>
+              <li><strong>Award:</strong> Global 500 Award, environment work ke liye.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Environment ka Magna Carta = Stockholm Conference 1972. World
+          Environment Day = 5 June; first celebrated in 1973.</div>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UN-environment-in-Stockholm-1972.jpg"
+            alt="1972 Stockholm UN environment conference participants on bicycles" loading="eager" fetchpriority="high"
+            decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, Pressens Bild / Unknown author, conference photograph,
+            license as listed on Commons.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Stockholm Conference kis year mein hua?</summary>
+            <p>1972.</p>
+          </details>
+          <details>
+            <summary>UNEP ka HQ kahan hai?</summary>
+            <p>Nairobi, Kenya.</p>
+          </details>
+          <details>
+            <summary>World Environment Day pehli baar kab manaya gaya?</summary>
+            <p>5 June 1973.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="stockholm" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="rio" style="--accent: var(--purple)">
+        <h2>🌎 Earth Summit 1992 | Rio Conference</h2>
+        <p class="lead">Stockholm ke 20 saal baad review hua aur naye bodies/conventions banaye gaye. Lecture mein
+          names: Earth Summit, पृथ्वी शिखर सम्मेलन, Rio Conference. Note: official terminology mein Rio+20 generally
+          2012 follow-up ke liye use hota hai; 1992 wala exam fact Earth Summit/Rio Conference hai.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Fact</th>
+              <th>Revision Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Year</td>
+              <td>1992</td>
+            </tr>
+            <tr>
+              <td>Dates</td>
+              <td>3 June to 14 June 1992</td>
+            </tr>
+            <tr>
+              <td>Place</td>
+              <td>Rio de Janeiro, Brazil</td>
+            </tr>
+            <tr>
+              <td>Main aim</td>
+              <td>Stockholm decisions ka review, sustainable development, environment protection.</td>
+            </tr>
+            <tr>
+              <td>Main achievement</td>
+              <td>CBD, UNFCCC, UNCCD; Agenda 21; Rio Declaration; Forest Principles.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid">
+          <article class="card">
+            <h3>Three bodies</h3>
+            <ul>
+              <li><strong>UNFCCC</strong>: climate change par work.</li>
+              <li><strong>CBD</strong>: biological diversity ko conserve karna.</li>
+              <li><strong>UNCCD</strong>: desertification / मरुस्थलीकरण ko combat karna.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Agenda 21</h3>
+            <ul>
+              <li>Earth Summit se related 21 points/goals ka document.</li>
+              <li>Forest Principles / वनीकरण.</li>
+              <li>Sustainable Development ko dhyan mein rakha gaya.</li>
+              <li>Rio Declaration implementation.</li>
+              <li>Teacher ne bataya: ye non-binding / गैर बाध्यकारी tha.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="flow" aria-label="Timeline">
+          <span>1972 Stockholm</span><span>→</span><span>20-year review</span><span>→</span><span>1992 Earth
+            Summit</span><span>→</span><span>Agenda 21</span><span>→</span><span>1997 Earth Summit +5, New York</span>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Agenda 21 kis se related hai? Earth Summit / Rio Conference /
+          पृथ्वी शिखर सम्मेलन 1992.</div>
+        <figure class="visual">
+          <img
+            src="https://sgkplanet.com/wp-content/uploads/2019/09/UN-Conference-of-the-Human-Environment-and-Development-Rio-de-Janeiro-1992.jpg"
+            alt="1992 Rio Earth Summit meeting visual" loading="eager" fetchpriority="high" decoding="async"
+            referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, Rio Earth Summit 1992 file, Creative Commons license as
+            listed on Commons.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Earth Summit kahan hua?</summary>
+            <p>Rio de Janeiro, Brazil.</p>
+          </details>
+          <details>
+            <summary>CBD kis topic se related hai?</summary>
+            <p>Biological diversity / जैव विविधता.</p>
+          </details>
+          <details>
+            <summary>UNCCD ka focus kya hai?</summary>
+            <p>Combat Desertification, yani मरुस्थलीकरण ko rokna.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="rio" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="unfccc" style="--accent: var(--cyan)">
+        <h2>🌡️ UNFCCC and COP Milestones</h2>
+        <p class="lead">Lecture ke hisab se UNFCCC Earth Summit ki key achievement hai. Iske member countries climate
+          change control ke liye har saal COP meeting karte hain.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>UNFCCC facts</h3>
+            <ul>
+              <li><strong>Full form:</strong> United Nations Framework Convention on Climate Change.</li>
+              <li><strong>Hindi sense:</strong> जलवायु परिवर्तन पर संयुक्त राष्ट्र रूपरेखा सम्मेलन.</li>
+              <li><strong>Created:</strong> 1992.</li>
+              <li><strong>Effective:</strong> 1994.</li>
+              <li><strong>First COP:</strong> 1995, Berlin, Germany.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>COP meaning</h3>
+            <ul>
+              <li><strong>COP:</strong> Conference of Parties.</li>
+              <li>UNFCCC member countries ki annual climate meeting.</li>
+              <li>Goal: climate change ko control karna, emissions reduce karna.</li>
+            </ul>
+          </article>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>COP / Agreement</th>
+              <th>Year</th>
+              <th>Place</th>
+              <th>Exam Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>COP 1</td>
+              <td>1995</td>
+              <td>Berlin, Germany</td>
+              <td>First COP.</td>
+            </tr>
+            <tr>
+              <td>COP 3 / Kyoto Protocol</td>
+              <td>1997</td>
+              <td>Kyoto, Japan</td>
+              <td>Carbon emissions reduction, UNFCCC se related.</td>
+            </tr>
+            <tr>
+              <td>COP 8</td>
+              <td>2002</td>
+              <td>New Delhi, India</td>
+              <td>Poor countries ki development needs aur climate change reduction.</td>
+            </tr>
+            <tr>
+              <td>COP 21 / Paris Agreement</td>
+              <td>2015</td>
+              <td>Paris, France</td>
+              <td>Temperature rise ko 2°C se neeche, 1.5°C tak limit karne ka effort.</td>
+            </tr>
+            <tr>
+              <td>COP 25</td>
+              <td>2019</td>
+              <td>Madrid, Spain</td>
+              <td>Lecture list ka important COP.</td>
+            </tr>
+            <tr>
+              <td>No COP</td>
+              <td>2020</td>
+              <td>Not held</td>
+              <td>Special fact: 2020 mein COP nahi hui.</td>
+            </tr>
+            <tr>
+              <td>COP 26</td>
+              <td>2021</td>
+              <td>Glasgow, UK</td>
+              <td>Post-2020 COP.</td>
+            </tr>
+            <tr>
+              <td>COP 27</td>
+              <td>2022</td>
+              <td>Sharm el-Sheikh, Egypt</td>
+              <td>Recent COP in lecture.</td>
+            </tr>
+            <tr>
+              <td>COP 28</td>
+              <td>2023</td>
+              <td>Dubai, UAE</td>
+              <td>30 Nov to 12 Dec 2023; transcript mein UAE/Abu Dhabi bola gaya, official city Dubai hai.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Kyoto Protocol = COP 3, 1997, UNFCCC, climate change and carbon
+          emission reduction.</div>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Climate%20Change%20Schematic.svg"
+            alt="Climate change causes and effects schematic diagram" loading="eager" fetchpriority="high"
+            decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, Climate Change Schematic, CC BY-SA 4.0.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>UNFCCC kab effective hua?</summary>
+            <p>1994.</p>
+          </details>
+          <details>
+            <summary>COP 1 kahan hua?</summary>
+            <p>Berlin, Germany, 1995.</p>
+          </details>
+          <details>
+            <summary>Paris Agreement ka COP number?</summary>
+            <p>COP 21.</p>
+          </details>
+          <details>
+            <summary>2020 ka special COP fact?</summary>
+            <p>2020 mein COP organize nahi hui.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="unfccc" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="ozone" style="--accent: var(--orange)">
+        <h2>🛡️ Ozone Layer and Montreal Protocol</h2>
+        <p class="lead">Lecture mein ozone depletion ko environment protection ka important part bataya gaya, kyunki
+          ozone layer harmful UV radiation ko rokne mein help karti hai.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Ozone layer role</h3>
+            <ul>
+              <li>Sun se aane wali harmful ultraviolet rays ko rokna.</li>
+              <li>UV rays directly aayen to skin cancer aur plants damage ka risk.</li>
+              <li>Ozone depletion = ओजोन परत का क्षरण.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Montreal Protocol</h3>
+            <ul>
+              <li><strong>Year:</strong> 1987.</li>
+              <li><strong>Related to:</strong> Ozone layer protection.</li>
+              <li>Ozone-depleting substances ko control karne ka global effort.</li>
+            </ul>
+          </article>
+        </div>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Effect%20of%20the%20Montreal%20Protocol.svg"
+            alt="Montreal Protocol ka ozone depletion par expected effect diagram" loading="eager" fetchpriority="high"
+            decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons / NOAA Chemical Sciences Laboratory, CC0.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Montreal Protocol kis se related hai?</summary>
+            <p>Ozone layer protection / ozone depletion control.</p>
+          </details>
+          <details>
+            <summary>Ozone layer ka major function?</summary>
+            <p>UV / पराबैंगनी radiation se protection.</p>
+          </details>
+          <details>
+            <summary>World Ozone Day kab manaya jata hai?</summary>
+            <p>16 September.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="ozone" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="india" style="--accent: var(--green)">
+        <h2>🇮🇳 India: Acts, Policies and Institutions</h2>
+        <p class="lead">Lecture ne global conferences ke baad India ke steps cover kiye: acts, policies, NGT, NEERI,
+          NEAA.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>India Step</th>
+              <th>Revision Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1985</td>
+              <td>Environment and Forest Ministry</td>
+              <td>Environment/forest administration ka step.</td>
+            </tr>
+            <tr>
+              <td>1986</td>
+              <td>Environment Protection Act</td>
+              <td>छाता विधान / Umbrella legislation; all India; Stockholm decisions implementation.</td>
+            </tr>
+            <tr>
+              <td>1988</td>
+              <td>National Forest Policy</td>
+              <td>Forest conservation orientation.</td>
+            </tr>
+            <tr>
+              <td>2002</td>
+              <td>Biological Diversity Act</td>
+              <td>जैव विविधता संरक्षण अधिनियम, important year.</td>
+            </tr>
+            <tr>
+              <td>2004</td>
+              <td>National Water Policy, National Environment Policy</td>
+              <td>Lecture mein national water policy aur green/national environment policy ka mention.</td>
+            </tr>
+            <tr>
+              <td>2010</td>
+              <td>National Green Tribunal Act / NGT</td>
+              <td>Environment disputes ke liye tribunal.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid">
+          <article class="card">
+            <h3>NGT</h3>
+            <ul>
+              <li><strong>Full form:</strong> National Green Tribunal.</li>
+              <li><strong>Hindi:</strong> राष्ट्रीय हरित न्यायाधिकरण.</li>
+              <li><strong>Established:</strong> 18 October 2010.</li>
+              <li>Environment, forest conservation aur natural resources related matters.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>NEERI and NEAA</h3>
+            <ul>
+              <li><strong>NEERI:</strong> National Environmental Engineering Research Institute.</li>
+              <li><strong>Place:</strong> Nagpur, Maharashtra; <strong>Year:</strong> 1958.</li>
+              <li><strong>NEAA:</strong> National Environmental Appellate Authority.</li>
+              <li><strong>NEAA:</strong> 1997 Act; Environment Protection Act 1986 violations/appeals related hearing.
+              </li>
+            </ul>
+          </article>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> MPPSC ne NGT full form poocha hai. NGT = National Green Tribunal.
+        </div>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/National%20Green%20Tribunal.jpg"
+            alt="National Green Tribunal logo visual for Indian environmental institution" loading="eager"
+            fetchpriority="high" decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, Lakhan Singh Bhargav, CC BY-SA 4.0.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>Environment Protection Act kab aaya?</summary>
+            <p>1986.</p>
+          </details>
+          <details>
+            <summary>EPA 1986 ka other name lecture mein kya bataya?</summary>
+            <p>छाता विधान / Umbrella legislation.</p>
+          </details>
+          <details>
+            <summary>NEERI kahan hai?</summary>
+            <p>Nagpur, Maharashtra.</p>
+          </details>
+          <details>
+            <summary>NGT ki establishment date?</summary>
+            <p>18 October 2010.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="india" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="topic" id="days" style="--accent: var(--purple)">
+        <h2>📅 Important Environment Days</h2>
+        <p class="lead">Teacher ne ek linked story di: pehle mitti ko nam karo, phir tree lagao, next day water do, phir
+          Earth green hogi, biodiversity aayegi, environment banega, ozone protect hoga.</p>
+        <div class="memory">
+          <h3>🧠 Memory Trick</h3>
+          <p><strong>नमी → वन → जल → पृथ्वी → जैव विविधता → पर्यावरण → ओजोन</strong></p>
+          <p class="mini-note">Socho: 2 Feb ko wetland/nami, 21 March ko forest, 22 March ko water, 22 April ko Earth,
+            22 May biodiversity, 5 June environment, 16 September ozone.</p>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Day</th>
+              <th>Hook</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2 February</td>
+              <td>World Wetlands Day / आर्द्रभूमि दिवस</td>
+              <td>Mitti mein नमी banao.</td>
+            </tr>
+            <tr>
+              <td>21 March</td>
+              <td>World Forest Day / वन दिवस</td>
+              <td>Tree lagao, forest banao.</td>
+            </tr>
+            <tr>
+              <td>22 March</td>
+              <td>World Water Day / जल दिवस</td>
+              <td>Tree ko next day paani do.</td>
+            </tr>
+            <tr>
+              <td>22 April</td>
+              <td>Earth Day / पृथ्वी दिवस</td>
+              <td>Forest se Earth green ho gayi.</td>
+            </tr>
+            <tr>
+              <td>22 May</td>
+              <td>International Biodiversity Day / जैव विविधता दिवस</td>
+              <td>Plants aur animals ki variety.</td>
+            </tr>
+            <tr>
+              <td>5 June</td>
+              <td>World Environment Day / पर्यावरण दिवस</td>
+              <td>Pura environment hara-bhara.</td>
+            </tr>
+            <tr>
+              <td>16 September</td>
+              <td>World Ozone Day / विश्व ओजोन दिवस</td>
+              <td>Ozone layer ko protect karna.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> 5 June = World Environment Day; first celebrated on 5 June 1973.
+          16 September = World Ozone Day.</div>
+        <figure class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ramsar%20Convention.jpg"
+            alt="Ramsar Convention wetland visual for World Wetlands Day" loading="eager" fetchpriority="high"
+            decoding="async" referrerpolicy="no-referrer">
+          <figcaption class="caption">Image: Wikimedia Commons, Powell.Ramsar, CC BY-SA 4.0.</figcaption>
+        </figure>
+        <div class="quiz">
+          <h3>🧠 Quick Recall</h3>
+          <details>
+            <summary>World Water Day?</summary>
+            <p>22 March.</p>
+          </details>
+          <details>
+            <summary>World Biodiversity Day?</summary>
+            <p>22 May.</p>
+          </details>
+          <details>
+            <summary>Mnemonic ka order?</summary>
+            <p>नमी → वन → जल → पृथ्वी → जैव विविधता → पर्यावरण → ओजोन.</p>
+          </details>
+        </div>
+        <button class="done" data-topic="days" type="button">Mark Topic Complete</button>
+      </section>
+
+      <section class="master" id="masters">
+        <h2>📚 Master Full Forms</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Short Form</th>
+              <th>Full Form</th>
+              <th>Hindi Meaning / Topic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CBD</td>
+              <td>Convention on Biological Diversity</td>
+              <td>जैव विविधता संरक्षण</td>
+            </tr>
+            <tr>
+              <td>COP</td>
+              <td>Conference of Parties</td>
+              <td>UNFCCC member countries ki annual meeting</td>
+            </tr>
+            <tr>
+              <td>EPA</td>
+              <td>Environment Protection Act</td>
+              <td>पर्यावरण संरक्षण अधिनियम 1986</td>
+            </tr>
+            <tr>
+              <td>NEAA</td>
+              <td>National Environmental Appellate Authority</td>
+              <td>राष्ट्रीय पर्यावरण अपीलीय प्राधिकरण</td>
+            </tr>
+            <tr>
+              <td>NEERI</td>
+              <td>National Environmental Engineering Research Institute</td>
+              <td>राष्ट्रीय पर्यावरण अभियांत्रिकी शोध संस्थान</td>
+            </tr>
+            <tr>
+              <td>NGT</td>
+              <td>National Green Tribunal</td>
+              <td>राष्ट्रीय हरित न्यायाधिकरण</td>
+            </tr>
+            <tr>
+              <td>SDG</td>
+              <td>Sustainable Development Goals</td>
+              <td>सतत विकास लक्ष्य, 17 goals</td>
+            </tr>
+            <tr>
+              <td>UNCCD</td>
+              <td>United Nations Convention to Combat Desertification</td>
+              <td>मरुस्थलीकरण रोकने से संबंधित</td>
+            </tr>
+            <tr>
+              <td>UNEP</td>
+              <td>United Nations Environment Programme</td>
+              <td>संयुक्त राष्ट्र पर्यावरण कार्यक्रम</td>
+            </tr>
+            <tr>
+              <td>UNFCCC</td>
+              <td>United Nations Framework Convention on Climate Change</td>
+              <td>जलवायु परिवर्तन पर संयुक्त राष्ट्र रूपरेखा सम्मेलन</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="master">
+        <h2>🔥 Master Exam Hot Facts</h2>
+        <ul>
+          <li>Protection of Environment se questions aane ke high chances teacher ne emphasize kiye.</li>
+          <li>Environment Protection Act India mein 1986 mein aaya.</li>
+          <li>Stockholm Conference 1972 = first global environmental conference = environment ka Magna Carta.</li>
+          <li>UNEP HQ = Nairobi, Kenya; UNEP established in 1972.</li>
+          <li>World Environment Day = 5 June; first celebrated in 1973.</li>
+          <li>Earth Summit = 1992, Rio de Janeiro, Brazil.</li>
+          <li>Agenda 21 = Earth Summit / Rio Conference se related.</li>
+          <li>UNFCCC created in 1992, effective in 1994; first COP in 1995 Berlin.</li>
+          <li>Kyoto Protocol = COP 3, 1997, carbon emission reduction.</li>
+          <li>Paris Agreement = COP 21, 2015, 2°C se neeche aur 1.5°C effort.</li>
+          <li>NGT full form MPPSC mein poocha gaya: National Green Tribunal.</li>
+          <li>Important days sequence: 2 Feb, 21 Mar, 22 Mar, 22 Apr, 22 May, 5 Jun, 16 Sep.</li>
+        </ul>
+      </section>
+
+      <section class="master checklist" id="checklist">
+        <h2>✅ Master Revision Checklist</h2>
+        <p class="lead" id="checkCount">0 completed</p>
+        <label><input type="checkbox" data-check="c1"> Environment = physical + biological conditions and
+          interactions.</label>
+        <label><input type="checkbox" data-check="c2"> Biotic = biosphere; abiotic = atmosphere + hydrosphere +
+          lithosphere.</label>
+        <label><input type="checkbox" data-check="c3"> Environment Protection Act = 1986.</label>
+        <label><input type="checkbox" data-check="c4"> Stockholm Conference = 5 June 1972, Sweden.</label>
+        <label><input type="checkbox" data-check="c5"> Stockholm Conference = environment ka Magna Carta.</label>
+        <label><input type="checkbox" data-check="c6"> UNEP = United Nations Environment Programme, HQ Nairobi.</label>
+        <label><input type="checkbox" data-check="c7"> World Environment Day first celebrated on 5 June 1973.</label>
+        <label><input type="checkbox" data-check="c8"> Earth Summit = 1992, Rio de Janeiro, Brazil.</label>
+        <label><input type="checkbox" data-check="c9"> Earth Summit bodies = UNFCCC, CBD, UNCCD.</label>
+        <label><input type="checkbox" data-check="c10"> Agenda 21 = Earth Summit se related, non-binding
+          document.</label>
+        <label><input type="checkbox" data-check="c11"> UNFCCC = climate change; effective 1994.</label>
+        <label><input type="checkbox" data-check="c12"> COP = Conference of Parties; first COP 1995 Berlin.</label>
+        <label><input type="checkbox" data-check="c13"> Kyoto Protocol = COP 3, 1997.</label>
+        <label><input type="checkbox" data-check="c14"> Paris Agreement = COP 21, 2015.</label>
+        <label><input type="checkbox" data-check="c15"> Montreal Protocol = 1987, ozone layer protection.</label>
+        <label><input type="checkbox" data-check="c16"> NGT = National Green Tribunal, 18 October 2010.</label>
+        <label><input type="checkbox" data-check="c17"> NEERI = Nagpur, 1958, R&D.</label>
+        <label><input type="checkbox" data-check="c18"> Important days mnemonic: नमी → वन → जल → पृथ्वी → जैव विविधता →
+          पर्यावरण → ओजोन.</label>
+      </section>
+
+      <footer class="master">
+        <h2>📌 Upcoming Topic</h2>
+        <p>Teacher ne next class ke liye <strong>पारिस्थितिक तंत्र / Ecosystem</strong> aur ab tak ke topics ke MCQ
+          practice ka mention kiya.</p>
+        <p class="mini-note">Revision tip: pehle hot facts revise karo, phir full forms table, phir checklist bina dekhe
+          tick karne ki koshish karo.</p>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const jumpNav = document.getElementById('jumpNav');
+    const progressBar = document.getElementById('progressBar');
+    const checkCount = document.getElementById('checkCount');
+    const topicButtons = [...document.querySelectorAll('.done')];
+    const checks = [...document.querySelectorAll('[data-check]')];
+    const printOpened = new Set();
+
+    function forceLoadImages() {
+      document.querySelectorAll('img').forEach(img => {
+        img.loading = 'eager';
+        img.fetchPriority = 'high';
+        img.decoding = 'async';
+
+        const preload = document.createElement('link');
+        preload.rel = 'preload';
+        preload.as = 'image';
+        preload.href = img.currentSrc || img.src;
+        document.head.appendChild(preload);
+
+        let retryCount = 0;
+        img.addEventListener('error', () => {
+          retryCount += 1;
+          if (retryCount === 1 && img.src.includes('/Special:FilePath/')) {
+            const fileName = img.src.split('/Special:FilePath/')[1].split(/[?#]/)[0];
+            img.src = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + fileName;
+            return;
+          }
+
+          const fallback = document.createElement('div');
+          fallback.className = 'image-fallback';
+          fallback.innerHTML = `Image load nahi ho pa rahi. Source open karein: <a href="${img.src}" target="_blank" rel="noopener">image link</a>`;
+          img.replaceWith(fallback);
+        });
+
+        if (img.decode) img.decode().catch(() => { });
+        if (img.complete && img.naturalWidth === 0) {
+          queueMicrotask(() => img.dispatchEvent(new Event('error')));
+        }
+      });
+    }
+
+    function applyTheme(theme) {
+      root.dataset.theme = theme;
+      localStorage.setItem('class4-theme', theme);
+      themeToggle.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+    }
+
+    function updateProgress() {
+      const topicDone = topicButtons.filter(btn => localStorage.getItem('topic-' + btn.dataset.topic) === 'done').length;
+      const checkDone = checks.filter(input => input.checked).length;
+      const total = topicButtons.length + checks.length;
+      const done = topicDone + checkDone;
+      progressBar.style.width = total ? Math.round(done * 100 / total) + '%' : '0%';
+      checkCount.textContent = `${checkDone}/${checks.length} checklist facts completed`;
+      topicButtons.forEach(btn => {
+        const doneNow = localStorage.getItem('topic-' + btn.dataset.topic) === 'done';
+        btn.textContent = doneNow ? 'Topic Completed' : 'Mark Topic Complete';
+      });
+    }
+
+    applyTheme(localStorage.getItem('class4-theme') || 'dark');
+    forceLoadImages();
+
+    themeToggle.addEventListener('click', () => {
+      applyTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
+    });
+
+    jumpNav.addEventListener('change', () => {
+      const target = document.querySelector(jumpNav.value);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    topicButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = 'topic-' + btn.dataset.topic;
+        const next = localStorage.getItem(key) === 'done' ? '' : 'done';
+        if (next) localStorage.setItem(key, next);
+        else localStorage.removeItem(key);
+        updateProgress();
+      });
+    });
+
+    checks.forEach(input => {
+      const key = 'check-' + input.dataset.check;
+      input.checked = localStorage.getItem(key) === 'done';
+      input.addEventListener('change', () => {
+        if (input.checked) localStorage.setItem(key, 'done');
+        else localStorage.removeItem(key);
+        updateProgress();
+      });
+    });
+
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('details').forEach((details, index) => {
+        if (details.open) printOpened.add(index);
+        details.open = true;
+      });
+    });
+
+    window.addEventListener('afterprint', () => {
+      document.querySelectorAll('details').forEach((details, index) => {
+        details.open = printOpened.has(index);
+      });
+      printOpened.clear();
+    });
+
+    updateProgress();
+  </script>
+</body>
+
+</html>

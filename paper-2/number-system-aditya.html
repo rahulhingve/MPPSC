@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPSC CSAT 2026 - Number System (Aditya Sir) Deep Revision</title>
+    <meta name="description" content="Number System deep revision from Aditya Sir's lecture - MPPSC CSAT 2026">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --bg-card: #141820;
+            --bg-card2: #1a1f2e;
+            --blue: #5eaaff;
+            --purple: #b392f0;
+            --green: #56d4a0;
+            --amber: #f0c674;
+            --rose: #f47067;
+            --cyan: #39c5cf;
+            --orange: #e8915a;
+            --text: #d4dae5;
+            --text2: #8b95a8;
+            --hindi: #d2b3ff;
+            --border: #252d3d;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter','Noto Sans Devanagari',sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.85;
+            font-size: 17px;
+        }
+        ::-webkit-scrollbar { width:7px; }
+        ::-webkit-scrollbar-track { background:var(--bg); }
+        ::-webkit-scrollbar-thumb { background:var(--purple); border-radius:4px; }
+
+        .wrap { max-width:920px; margin:0 auto; padding:20px 22px 60px; }
+
+        /* Hero */
+        .hero {
+            text-align:center; padding:48px 20px 38px;
+            background: linear-gradient(160deg,#12151f 0%,#0b0e14 40%,#171c2a 100%);
+            border-bottom:1px solid var(--border);
+            position:relative; overflow:hidden;
+        }
+        .hero::after {
+            content:''; position:absolute; inset:0;
+            background: radial-gradient(circle at 25% 40%,rgba(94,170,255,0.06),transparent 55%),
+                        radial-gradient(circle at 75% 60%,rgba(179,146,240,0.06),transparent 55%);
+        }
+        .hero > * { position:relative; z-index:1; }
+        .badge {
+            display:inline-block; background:linear-gradient(135deg,var(--blue),var(--purple));
+            color:#fff; padding:5px 16px; border-radius:18px; font-size:12px;
+            font-weight:700; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:14px;
+        }
+        .hero h1 {
+            font-size:clamp(26px,5vw,40px); font-weight:800;
+            background:linear-gradient(135deg,var(--blue),var(--purple),var(--cyan));
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .hero .sub { font-size:19px; color:var(--hindi); font-weight:600; margin-top:4px; }
+        .hero .meta { margin-top:12px; color:var(--text2); font-size:13px; }
+
+        /* Section */
+        .sec {
+            background:var(--bg-card); border:1px solid var(--border); border-radius:14px;
+            padding:28px 26px; margin-top:26px; transition:border-color .3s;
+        }
+        .sec:hover { border-color:var(--purple); }
+        .sec-t { font-size:21px; font-weight:700; display:flex; align-items:center; gap:10px; }
+        .sec-s { color:var(--hindi); font-size:15px; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+
+        /* Concept box */
+        .cb {
+            background:rgba(255,255,255,.02); border-left:3px solid var(--blue);
+            padding:15px 18px; border-radius:0 10px 10px 0; margin:12px 0;
+        }
+        .cb.gr { border-left-color:var(--green); }
+        .cb.pu { border-left-color:var(--purple); }
+        .cb.am { border-left-color:var(--amber); }
+        .cb.ro { border-left-color:var(--rose); }
+        .cb.cy { border-left-color:var(--cyan); }
+        .cb.or { border-left-color:var(--orange); }
+
+        .hi { color:var(--hindi); font-weight:500; }
+        .en { color:var(--cyan); font-weight:500; }
+        .key { color:var(--amber); font-weight:600; }
+        .fm {
+            display:inline-block; background:rgba(240,198,116,.1); border:1px solid rgba(240,198,116,.22);
+            padding:2px 10px; border-radius:6px; font-weight:600; color:var(--amber); font-family:'Inter',monospace;
+        }
+
+        .tip {
+            background:rgba(86,212,160,.07); border:1px solid rgba(86,212,160,.18);
+            border-radius:10px; padding:13px 16px; margin:12px 0; font-size:15px;
+        }
+        .tip::before { content:'💡 '; }
+        .warn {
+            background:rgba(244,112,103,.07); border:1px solid rgba(244,112,103,.18);
+            border-radius:10px; padding:13px 16px; margin:12px 0; font-size:15px;
+        }
+        .warn::before { content:'⚠️ '; }
+        .trap {
+            background:rgba(232,145,90,.07); border:1px solid rgba(232,145,90,.2);
+            border-radius:10px; padding:13px 16px; margin:12px 0; font-size:15px;
+        }
+        .trap::before { content:'🪤 '; }
+
+        .tag {
+            display:inline-block; background:rgba(244,112,103,.12); color:var(--rose);
+            padding:2px 10px; border-radius:6px; font-size:11px; font-weight:700; letter-spacing:.5px;
+        }
+
+        table { width:100%; border-collapse:collapse; margin:12px 0; font-size:15px; }
+        th { background:rgba(94,170,255,.1); color:var(--blue); padding:10px 12px; text-align:left; font-weight:600; }
+        td { padding:10px 12px; border-bottom:1px solid var(--border); }
+        tr:hover td { background:rgba(255,255,255,.015); }
+
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin:12px 0; }
+        .gi {
+            background:rgba(255,255,255,.02); border:1px solid var(--border); border-radius:10px;
+            padding:14px; transition:border-color .3s, transform .2s;
+        }
+        .gi:hover { border-color:var(--blue); transform:translateY(-2px); }
+        .gi h4 { color:var(--blue); font-size:13px; margin-bottom:5px; text-transform:uppercase; letter-spacing:.5px; }
+
+        /* PYQ */
+        .pyq {
+            background:linear-gradient(135deg,rgba(244,112,103,.06),rgba(179,146,240,.06));
+            border:1px solid rgba(244,112,103,.2); border-radius:12px; padding:20px 22px; margin:16px 0;
+        }
+        .pyq-h { font-weight:700; color:var(--rose); margin-bottom:8px; font-size:13px; letter-spacing:.5px; }
+        .pyq-q { font-weight:600; margin-bottom:10px; }
+        .pyq-o { list-style:none; padding:0; }
+        .pyq-o li { padding:7px 12px; margin:3px 0; border-radius:7px; background:rgba(255,255,255,.02); }
+        .pyq-o li.c { background:rgba(86,212,160,.12); border:1px solid rgba(86,212,160,.25); }
+        .pyq-a { margin-top:10px; padding:12px 14px; background:rgba(86,212,160,.06); border-radius:8px; display:none; font-size:15px; line-height:1.7; }
+        .pyq-a.show { display:block; }
+        .btn {
+            margin-top:8px; background:linear-gradient(135deg,var(--purple),var(--blue)); color:#fff;
+            border:none; padding:7px 18px; border-radius:7px; cursor:pointer; font-weight:600; font-size:13px;
+        }
+        .btn:hover { opacity:.85; }
+
+        /* TOC */
+        .toc { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:22px 26px; margin-top:26px; }
+        .toc h3 { color:var(--blue); margin-bottom:12px; font-size:17px; }
+        .toc a { display:block; color:var(--text2); text-decoration:none; padding:5px 0; font-size:14px; transition:color .2s,padding-left .2s; }
+        .toc a:hover { color:var(--cyan); padding-left:8px; }
+
+        @media(max-width:600px) {
+            .wrap { padding:10px 12px 40px; }
+            .sec { padding:18px 14px; }
+            body { font-size:16px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="badge">MPPSC CSAT 2026 — Deep Revision</div>
+    <h1>Number System</h1>
+    <div class="sub">संख्या पद्धति — Aditya Sir's Method</div>
+    <div class="meta">🧠 Deep Concepts • Exam Traps • Operations Table • PYQ Solved</div>
+</header>
+
+<div class="wrap">
+
+    <nav class="toc">
+        <h3>📑 Topics (विषय सूची)</h3>
+        <a href="#s1">1. Number Family Tree — Dada-Beta Analogy</a>
+        <a href="#s2">2. Real vs Imaginary Numbers</a>
+        <a href="#s3">3. Rational vs Irrational — Deep Clarity</a>
+        <a href="#s4">4. 🪤 Trap 1: Root Wale Confusing Cases</a>
+        <a href="#s5">5. 🪤 Trap 2: Operations Trick (√75/√3)</a>
+        <a href="#s6">6. 🪤 Trap 3: π (Pi) Confusion</a>
+        <a href="#s7">7. ⚡ Operations Master Table</a>
+        <a href="#s8">8. Integer → Whole → Natural Classification</a>
+        <a href="#s9">9. 📝 PYQ Practice (CPO/CGL/CHSL 2025)</a>
+        <a href="#s10">10. 📖 Hindi-English Glossary</a>
+    </nav>
+
+    <!-- ===== S1: FAMILY TREE ===== -->
+    <section class="sec" id="s1">
+        <div class="sec-t">🌳 Number Family Tree — Dada-Beta Analogy</div>
+        <div class="sec-s">संख्या परिवार — पूरा वंशवृक्ष</div>
+
+        <div class="cb pu">
+            <h3 style="color:var(--purple);font-size:17px;">👴 Dada = Complex Number (सम्मिश्र संख्या)</h3>
+            <p style="margin-top:6px;">Sabse upar <span class="key">Complex Number</span> hai — ye poore number family ka <strong>dada</strong> hai.</p>
+            <p>Dada ke <strong>2 bete</strong> hain:</p>
+        </div>
+
+        <div class="grid" style="margin-top:14px;">
+            <div class="gi" style="border-color:var(--green);">
+                <h4 style="color:var(--green);">✅ Beta 1: Real Number (वास्तविक)</h4>
+                <p>Shareef beta — jo <span class="key">number line pe represent</span> ho sake.</p>
+                <p style="font-size:14px;color:var(--text2);margin-top:4px;">🎯 <strong>Isko padhna hai!</strong> Exam mein isi se questions aate hain.</p>
+            </div>
+            <div class="gi" style="border-color:var(--rose);">
+                <h4 style="color:var(--rose);">❌ Beta 2: Imaginary (काल्पनिक)</h4>
+                <p>Kalpana wala beta — number line pe <span class="key">represent nahi ho sakta</span>.</p>
+                <p style="font-size:14px;color:var(--text2);margin-top:4px;">❌ <strong>Isko padhna nahi hai!</strong></p>
+            </div>
+        </div>
+
+        <div class="cb" style="margin-top:16px;overflow-x:auto;">
+            <pre style="font-size:14px;line-height:1.6;color:var(--text);font-family:'Inter',monospace;">
+<span style="color:var(--amber);">Complex (सम्मिश्र) — DADA 👴</span>
+├── <span style="color:var(--green);">Real (वास्तविक) — Shareef Beta ✅</span>
+│   ├── <span style="color:var(--blue);">Rational (परिमेय)</span>
+│   │   ├── Integer (पूर्णांक) → ...-2,-1,0,1,2...
+│   │   │   ├── Whole (पूर्ण संख्या) → 0,1,2,3...
+│   │   │   │   └── Natural (प्राकृतिक) → 1,2,3...
+│   │   ├── Fraction (भिन्न) → 1/2, 3/4
+│   │   └── Decimal → 0.5, 0.333...
+│   └── <span style="color:var(--rose);">Irrational (अपरिमेय)</span> → √2, √3, π
+└── <span style="color:var(--text2);">Imaginary (काल्पनिक) — Kalpana Beta ❌</span>
+            </pre>
+        </div>
+
+        <div class="tip"><strong>Aditya Sir ka rule:</strong> Jaise Ambani ke 2 bete hain — Mukesh aur Anil. Focus Mukesh pe hai, Anil ko koi nahi puchta. Waise hi Real pe focus karo, Imaginary ko chhodo!</div>
+    </section>
+
+    <!-- ===== S2: REAL vs IMAGINARY ===== -->
+    <section class="sec" id="s2">
+        <div class="sec-t">🔍 Real vs Imaginary Numbers</div>
+        <div class="sec-s">वास्तविक बनाम काल्पनिक संख्या</div>
+
+        <div class="cb gr">
+            <h3 style="color:var(--green);font-size:17px;">✅ Real Number (वास्तविक संख्या)</h3>
+            <p style="margin-top:6px;"><strong>Definition:</strong> <span class="key">Those numbers which can be represented on number line</span></p>
+            <p><span class="hi">जिनको संख्या रेखा (number line) पर दर्शाया जा सके = वास्तविक संख्या</span></p>
+            <p style="margin-top:6px;">Jaise: 2, -3, 0.5, √2, π — ye sab number line pe aa sakte hain.</p>
+        </div>
+
+        <div class="cb ro" style="margin-top:14px;">
+            <h3 style="color:var(--rose);font-size:17px;">❌ Imaginary Number (काल्पनिक संख्या)</h3>
+            <p style="margin-top:6px;"><strong>Definition:</strong> Jab <span class="key">root ke andar minus</span> aaye = Imaginary</p>
+            <p><span class="fm">√(-1) = i</span> &nbsp; <span class="fm">√(-4) = 2i</span></p>
+            <p style="margin-top:6px;"><span class="hi">Jaise tum kisi ko kitna pyaar karte ho — iska koi measuring scale nahi hai. Waise hi ye sirf kalpana mein hai!</span></p>
+        </div>
+
+        <div class="cb am" style="margin-top:14px;">
+            <h3 style="color:var(--amber);font-size:17px;">🔗 Complex = Real + Imaginary</h3>
+            <p style="margin-top:6px;"><span class="fm">a + ib</span> → jahan <strong>a = Real part</strong>, <strong>ib = Imaginary part</strong></p>
+            <p>Dono ko mila do = Complex Number ban jaata hai.</p>
+        </div>
+
+        <div class="warn"><strong>Exam ke liye:</strong> Imaginary/Complex ke baare mein bilkul nahi padhna! Sirf <span class="key">Real Number</span> padhna hai. But "Complex/Imaginary kya hai" ye samajhna zaroori hai taaki question aaye to confuse na ho.</div>
+    </section>
+
+    <!-- ===== S3: RATIONAL vs IRRATIONAL ===== -->
+    <section class="sec" id="s3">
+        <div class="sec-t">⚖️ Rational vs Irrational — Deep Clarity</div>
+        <div class="sec-s">परिमेय बनाम अपरिमेय — गहरी समझ — <span class="tag">MOST IMPORTANT</span></div>
+
+        <p><strong>Real Number</strong> ke <strong>2 bete</strong>: Rational aur Irrational</p>
+
+        <!-- Rational -->
+        <div class="cb gr" style="margin-top:14px;">
+            <h3 style="color:var(--green);font-size:17px;">✅ Rational Number (परिमेय संख्या)</h3>
+            <p style="margin-top:6px;"><strong>Origin:</strong> <span class="key">"Rational" shabd aaya hai "Ratio" se</span> — matlab jisko ratio/fraction mein likh sako.</p>
+            <p><strong>Definition:</strong> Jo <span class="fm">p/q</span> ke form mein ho, jahan <span class="key">p, q = Integer</span> aur <span class="key">q ≠ 0</span></p>
+
+            <h4 style="margin-top:14px;color:var(--cyan);">Rational ke 2 properties (Pizza Example 🍕):</h4>
+            <table style="margin-top:8px;">
+                <tr><th>Type</th><th>Hindi</th><th>Kya hota hai?</th><th>Example</th></tr>
+                <tr>
+                    <td><span class="key">Terminating</span></td>
+                    <td>शांत दशमलव</td>
+                    <td>Decimal <strong>ruk jaata hai</strong> — iska ek ant hai</td>
+                    <td>1/2 = 0.5, 1/4 = 0.25</td>
+                </tr>
+                <tr>
+                    <td><span class="key">Non-Terminating Repeating</span></td>
+                    <td>अशांत आवर्ती दशमलव</td>
+                    <td>Rukta nahi but <strong>pattern repeat</strong> hota hai</td>
+                    <td>1/3 = 0.333..., 1/6 = 0.1666...</td>
+                </tr>
+            </table>
+
+            <div class="tip"><strong>Denominator Rule:</strong> Agar neeche wale number mein sirf <span class="key">2 ya 5 ke multiples</span> hain to Terminating hoga. Baaki mein Non-Terminating Repeating.</div>
+        </div>
+
+        <!-- Irrational -->
+        <div class="cb ro" style="margin-top:16px;">
+            <h3 style="color:var(--rose);font-size:17px;">❌ Irrational Number (अपरिमेय संख्या)</h3>
+            <p style="margin-top:6px;"><strong>Definition:</strong> Jisko <span class="key">p/q mein likh hi nahi sakte</span>.</p>
+            <p><strong>Property:</strong> <span class="key">Non-Terminating + Non-Repeating</span></p>
+            <p><span class="hi">ना रुकता है, ना दोहराता है — बस चलता जाता है!</span></p>
+
+            <table style="margin-top:10px;">
+                <tr><th>Example</th><th>Value</th><th>Kya ho raha?</th></tr>
+                <tr><td>√2</td><td>1.41421356...</td><td>Na ruka, na repeat hua</td></tr>
+                <tr><td>√3</td><td>1.73205080...</td><td>Na ruka, na repeat hua</td></tr>
+                <tr><td>π</td><td>3.14159265...</td><td>Na ruka, na repeat hua</td></tr>
+            </table>
+        </div>
+
+        <!-- Quick Summary -->
+        <h3 style="margin-top:20px;color:var(--amber);font-size:17px;">⚡ Ek Nazar Mein:</h3>
+        <table style="margin-top:8px;">
+            <tr><th>Category</th><th>Decimal Behaviour</th><th>Example</th><th>Type</th></tr>
+            <tr><td>Ruk jaaye</td><td>Terminating</td><td>0.5, 0.25</td><td style="color:var(--green);font-weight:600;">Rational ✅</td></tr>
+            <tr><td>Na ruke but repeat kare</td><td>Non-Terminating Repeating</td><td>0.333..., 0.1212...</td><td style="color:var(--green);font-weight:600;">Rational ✅</td></tr>
+            <tr><td>Na ruke, na repeat kare</td><td>Non-Terminating Non-Repeating</td><td>√2, √3, π</td><td style="color:var(--rose);font-weight:600;">Irrational ❌</td></tr>
+        </table>
+
+        <div class="warn"><strong>Misconception:</strong> Bahut log sochte hain "jisme root laga = Irrational". Ye <strong>GALAT</strong> hai! √4 = 2 (Rational hai). Sirf wo root Irrational hai jiska answer integer mein na aaye!</div>
+    </section>
+
+    <!-- ===== S4: TRAP 1 - ROOT WALE CASES ===== -->
+    <section class="sec" id="s4">
+        <div class="sec-t">🪤 Trap 1: Root Wale Confusing Cases</div>
+        <div class="sec-s">जड़ (Root) वाले भ्रामक प्रश्न — <span class="tag">EXAMINER'S FAVOURITE</span></div>
+
+        <p>Duniya kya yaad rakhti hai? → <em>"Jisme root laga = Irrational"</em>. <strong>Ye GALAT hai!</strong></p>
+
+        <div class="cb am" style="margin-top:14px;">
+            <h3 style="color:var(--amber);font-size:17px;">📏 Golden Rule: Root solve ho = Rational, Root na solve ho = Irrational</h3>
+            <table style="margin-top:10px;">
+                <tr><th>Expression</th><th>Solve</th><th>Root hata?</th><th>Type</th></tr>
+                <tr><td><span class="fm">√3</span></td><td>1.732...</td><td style="color:var(--rose);">❌ Nahi</td><td style="color:var(--rose);font-weight:600;">Irrational</td></tr>
+                <tr><td><span class="fm">√4</span></td><td>= 2 = 2/1</td><td style="color:var(--green);">✅ Haan</td><td style="color:var(--green);font-weight:600;">Rational</td></tr>
+                <tr><td><span class="fm">√9</span></td><td>= 3 = 3/1</td><td style="color:var(--green);">✅ Haan</td><td style="color:var(--green);font-weight:600;">Rational</td></tr>
+                <tr><td><span class="fm">√5</span></td><td>2.236...</td><td style="color:var(--rose);">❌ Nahi</td><td style="color:var(--rose);font-weight:600;">Irrational</td></tr>
+            </table>
+        </div>
+
+        <div class="cb ro" style="margin-top:16px;">
+            <h3 style="color:var(--rose);font-size:17px;">💣 Decimal Root Trap — √0.4 vs √0.04 vs √0.009</h3>
+            <p style="margin-top:6px;"><strong>Aditya Sir ka Master Rule:</strong></p>
+            <p>Root wale decimal mein <span class="key">2 Conditions</span> check karo:</p>
+            <p>1️⃣ Decimal ke baad <span class="key">Even places</span> (2,4,6,8...) honi chahiye</p>
+            <p>2️⃣ Us number ka <span class="key">perfect square root</span> aa jaana chahiye</p>
+            <p style="margin-top:6px;color:var(--text2);font-size:14px;">Dono conditions puri ho = Rational | Koi ek bhi fail = Irrational</p>
+        </div>
+
+        <h3 style="margin-top:18px;color:var(--cyan);font-size:17px;">🔍 Examples — Step by Step:</h3>
+        <table style="margin-top:8px;">
+            <tr><th>Root</th><th>Decimal ke baad digits</th><th>Even places?</th><th>Root solve?</th><th>Type</th></tr>
+            <tr>
+                <td><span class="fm">√0.4</span></td>
+                <td>1 digit (just "4")</td>
+                <td style="color:var(--rose);">❌ Odd (1)</td>
+                <td>—</td>
+                <td style="color:var(--rose);font-weight:600;">Irrational</td>
+            </tr>
+            <tr>
+                <td><span class="fm">√0.04</span></td>
+                <td>2 digits ("04")</td>
+                <td style="color:var(--green);">✅ Even (2)</td>
+                <td style="color:var(--green);">✅ √4=2 → 0.2</td>
+                <td style="color:var(--green);font-weight:600;">Rational ✅</td>
+            </tr>
+            <tr>
+                <td><span class="fm">√0.009</span></td>
+                <td>3 digits ("009")</td>
+                <td style="color:var(--rose);">❌ Odd (3)</td>
+                <td>—</td>
+                <td style="color:var(--rose);font-weight:600;">Irrational</td>
+            </tr>
+            <tr>
+                <td><span class="fm">√0.0009</span></td>
+                <td>4 digits ("0009")</td>
+                <td style="color:var(--green);">✅ Even (4)</td>
+                <td style="color:var(--green);">✅ √9=3 → 0.03</td>
+                <td style="color:var(--green);font-weight:600;">Rational ✅</td>
+            </tr>
+            <tr>
+                <td><span class="fm">√0.07</span></td>
+                <td>2 digits ("07")</td>
+                <td style="color:var(--green);">✅ Even (2)</td>
+                <td style="color:var(--rose);">❌ √7 solve nahi hota</td>
+                <td style="color:var(--rose);font-weight:600;">Irrational</td>
+            </tr>
+            <tr>
+                <td><span class="fm">√0.09</span></td>
+                <td>2 digits ("09")</td>
+                <td style="color:var(--green);">✅ Even (2)</td>
+                <td style="color:var(--green);">✅ √9=3 → 0.3</td>
+                <td style="color:var(--green);font-weight:600;">Rational ✅</td>
+            </tr>
+        </table>
+
+        <div class="tip"><strong>Quick Yaad Trick:</strong><br>
+        • Decimal ke baad <span class="key">Odd</span> places → <strong>ALWAYS Irrational</strong> (even check karne ki zarurat nahi)<br>
+        • Decimal ke baad <span class="key">Even</span> places → <strong>Tab bhi check karo</strong> ki us number ka root banta hai ya nahi<br>
+        • Jaise √0.07 → Even places hain BUT 7 ka root nahi banta → <strong>Irrational</strong></div>
+    </section>
+
+    <!-- ===== S5: TRAP 2 - OPERATIONS ===== -->
+    <section class="sec" id="s5">
+        <div class="sec-t">🪤 Trap 2: Operations Trick (√75/√3)</div>
+        <div class="sec-s">संक्रिया वाला जाल — दो अपरिमेय = परिमेय? — <span class="tag">TRICKY</span></div>
+
+        <p>Duniya sochti hai: Irrational ÷ Irrational = Irrational. <strong>Hamesha nahi!</strong></p>
+
+        <div class="cb or" style="margin-top:14px;">
+            <h3 style="color:var(--orange);font-size:17px;">🔍 Step by Step: √75 ÷ √3 = ?</h3>
+            <p style="margin-top:8px;">Step 1: <span class="fm">√75</span> → Kya 75 ka root hota hai? → <span style="color:var(--rose);">Nahi</span> → Irrational</p>
+            <p>Step 2: <span class="fm">√3</span> → Kya 3 ka root hota hai? → <span style="color:var(--rose);">Nahi</span> → Irrational</p>
+            <p style="color:var(--text2);">Duniya sochti hai: Dono Irrational → Answer bhi Irrational. <strong>GALAT!</strong></p>
+            <p style="margin-top:10px;">Step 3: Simplify karo → <span class="fm">√75 = √(25 × 3) = √25 × √3 = 5√3</span></p>
+            <p>Step 4: Divide → <span class="fm">5√3 ÷ √3 = 5</span></p>
+            <p>Step 5: <span class="fm">5 = 5/1</span> → p/q form → <span style="color:var(--green);font-weight:600;">RATIONAL! ✅</span></p>
+        </div>
+
+        <div class="warn"><strong>Aditya Sir:</strong> "Agar main examiner hota aur tumhe fansata — to dono numbers Irrational deta aur bolta batao kya hai? Tum guarantee kehte Irrational aur wahi fans jaate!"<br><br>
+        <strong>Lesson:</strong> Pehle <span class="key">simplify/solve</span> karo, phir decide karo ki Rational hai ya Irrational!</div>
+    </section>
+
+    <!-- ===== S6: TRAP 3 - PI ===== -->
+    <section class="sec" id="s6">
+        <div class="sec-t">🪤 Trap 3: π (Pi) vs 22/7 Confusion</div>
+        <div class="sec-s">पाई (π) और 22/7 का भ्रम — <span class="tag">EXAM TRAP</span></div>
+
+        <div class="grid">
+            <div class="gi" style="border-color:var(--rose);">
+                <h4 style="color:var(--rose);">π (Pi Symbol)</h4>
+                <p><span class="fm">π = 3.14159265...</span></p>
+                <p style="margin-top:4px;">Non-Terminating + Non-Repeating</p>
+                <p style="color:var(--rose);font-weight:600;margin-top:4px;">= IRRATIONAL ❌</p>
+            </div>
+            <div class="gi" style="border-color:var(--green);">
+                <h4 style="color:var(--green);">22/7 (Fraction)</h4>
+                <p><span class="fm">22/7 = 3.142857142857...</span></p>
+                <p style="margin-top:4px;">Non-Terminating BUT Repeating (142857 repeat)</p>
+                <p style="color:var(--green);font-weight:600;margin-top:4px;">= RATIONAL ✅</p>
+            </div>
+        </div>
+
+        <div class="trap"><strong>Examiner ka trap:</strong> Question mein "22/7" likhke puchta hai "ye Rational hai ya Irrational?" — Agar tum sochte ho 22/7 = π = Irrational... to <strong>GALAT</strong>!<br><br>
+        <span class="key">22/7 sirf π ki approximate value hai, π nahi hai!</span><br>
+        • 22/7 → p/q form mein hai → <span style="color:var(--green);">Rational ✅</span><br>
+        • π → p/q mein likh hi nahi sakte → <span style="color:var(--rose);">Irrational ❌</span></div>
+    </section>
+
+    <!-- ===== S7: OPERATIONS MASTER TABLE ===== -->
+    <section class="sec" id="s7">
+        <div class="sec-t">⚡ Operations Master Table</div>
+        <div class="sec-s">R + R = ? | IR + IR = ? | R × IR = ? — Full Postmortem — <span class="tag">GOLD CONTENT</span></div>
+
+        <p>Aditya Sir ne poori "cheerfaad" ki hai — sab combinations cover:</p>
+
+        <!-- R op R -->
+        <div class="cb gr" style="margin-top:14px;">
+            <h3 style="color:var(--green);font-size:16px;">✅ Rational ⊕ Rational = ALWAYS Rational</h3>
+            <table style="margin-top:8px;">
+                <tr><th>Operation</th><th>Example</th><th>Result</th><th>Type</th></tr>
+                <tr><td>R + R</td><td>2 + 3 = 5</td><td>5/1</td><td style="color:var(--green);">Rational ✅</td></tr>
+                <tr><td>R − R</td><td>3 − 2 = 1</td><td>1/1</td><td style="color:var(--green);">Rational ✅</td></tr>
+                <tr><td>R × R</td><td>2 × 3 = 6</td><td>6/1</td><td style="color:var(--green);">Rational ✅</td></tr>
+                <tr><td>R ÷ R</td><td>3 ÷ 2 = 1.5</td><td>3/2</td><td style="color:var(--green);">Rational ✅</td></tr>
+            </table>
+            <div class="tip"><strong>Simple:</strong> Rational ke saath kuch bhi karo → <span class="key">HAMESHA Rational</span>. Koi exception nahi!</div>
+        </div>
+
+        <!-- R op IR -->
+        <div class="cb" style="margin-top:16px;">
+            <h3 style="color:var(--blue);font-size:16px;">🔀 Rational ⊕ Irrational = Usually Irrational (1 Exception)</h3>
+            <table style="margin-top:8px;">
+                <tr><th>Operation</th><th>Example</th><th>Result</th></tr>
+                <tr><td>R + IR</td><td>2 + √3 = 2 + 1.732...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+                <tr><td>R − IR</td><td>2 − √3 = 0.267...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+                <tr><td>R × IR</td><td>2 × √3 = 2√3</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+            </table>
+
+            <div class="warn" style="margin-top:10px;"><strong>⚡ EXCEPTION (R × IR):</strong><br>
+            Agar Rational number = <span class="key">0</span> ho → <span class="fm">0 × √3 = 0</span> → <span style="color:var(--green);">Zero = Rational! ✅</span><br>
+            Matlab: R × IR = <strong>Usually Irrational</strong>, but jab R = 0 → <strong>Rational</strong></div>
+        </div>
+
+        <!-- IR op IR -->
+        <div class="cb ro" style="margin-top:16px;">
+            <h3 style="color:var(--rose);font-size:16px;">💥 Irrational ⊕ Irrational = DEPENDS! (Exceptions Exist)</h3>
+
+            <h4 style="margin-top:10px;color:var(--amber);">Case 1: IR + IR</h4>
+            <table style="margin-top:6px;">
+                <tr><th>Example</th><th>Result</th><th>Type</th></tr>
+                <tr><td>√2 + √3 = 1.414... + 1.732...</td><td>3.146...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+                <tr><td><span class="key">√2 + (−√2) = 0</span></td><td><span class="key">0</span></td><td style="color:var(--green);">Rational ✅ 💥</td></tr>
+            </table>
+            <div class="trap"><strong>Exception:</strong> Jab dono Irrational ek dusre ke <span class="key">opposite sign</span> ke hon → cancel hokar 0 → <span style="color:var(--green);">Rational</span>! Ye 99% log nahi jaante.</div>
+
+            <h4 style="margin-top:14px;color:var(--amber);">Case 2: IR × IR</h4>
+            <table style="margin-top:6px;">
+                <tr><th>Example</th><th>Result</th><th>Type</th></tr>
+                <tr><td>√2 × √3 = √6</td><td>2.449...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+                <tr><td><span class="key">√5 × √3 = √15</span></td><td>3.872...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+            </table>
+
+            <h4 style="margin-top:14px;color:var(--amber);">Case 3: IR ÷ IR</h4>
+            <table style="margin-top:6px;">
+                <tr><th>Example</th><th>Simplify</th><th>Result</th><th>Type</th></tr>
+                <tr><td>√3 ÷ √2</td><td>√(3/2)</td><td>1.224...</td><td style="color:var(--rose);">Irrational ❌</td></tr>
+                <tr><td><span class="key">√75 ÷ √3</span></td><td>√(75/3) = √25</td><td><span class="key">= 5</span></td><td style="color:var(--green);">Rational ✅ 💥</td></tr>
+            </table>
+            <div class="trap"><strong>Exception:</strong> IR ÷ IR se bhi Rational aa sakta hai jab simplify karne pe perfect square root aa jaaye!</div>
+        </div>
+
+        <!-- MEGA SUMMARY -->
+        <h3 style="margin-top:22px;color:var(--amber);font-size:17px;">📋 MEGA Summary Table:</h3>
+        <table style="margin-top:8px;">
+            <tr><th>Operation</th><th>Always?</th><th>Exception?</th></tr>
+            <tr><td>R ⊕ R (kuch bhi)</td><td style="color:var(--green);font-weight:600;">ALWAYS Rational ✅</td><td>None</td></tr>
+            <tr><td>R + IR / R − IR</td><td style="color:var(--rose);font-weight:600;">ALWAYS Irrational ❌</td><td>None</td></tr>
+            <tr><td>R × IR</td><td style="color:var(--rose);">Usually Irrational</td><td style="color:var(--amber);"><span class="key">If R = 0 → Rational</span></td></tr>
+            <tr><td>IR + IR</td><td style="color:var(--rose);">Usually Irrational</td><td style="color:var(--amber);"><span class="key">Opposite signs → 0 → Rational</span></td></tr>
+            <tr><td>IR × IR / IR ÷ IR</td><td style="color:var(--rose);">Usually Irrational</td><td style="color:var(--amber);"><span class="key">If perfect square bane → Rational</span></td></tr>
+        </table>
+    </section>
+
+    <!-- ===== S8: INTEGER, WHOLE, NATURAL ===== -->
+    <section class="sec" id="s8">
+        <div class="sec-t">🔢 Integer → Whole → Natural Classification</div>
+        <div class="sec-s">पूर्णांक → पूर्ण संख्या → प्राकृतिक संख्या</div>
+
+        <p>Rational ke teen bete hain: <strong>Integer, Fraction, Decimal</strong></p>
+
+        <div class="cb pu" style="margin-top:14px;">
+            <h3 style="color:var(--purple);font-size:16px;">📌 Integer (पूर्णांक)</h3>
+            <p>Jiske neeche mein kuch bhi na ho — <span class="key">no fraction, no decimal</span>.</p>
+            <p style="margin-top:6px;"><span class="fm">..., −3, −2, −1, 0, +1, +2, +3, ...</span></p>
+            <p style="margin-top:6px;">Number line pe aasani se represent ho sake = Integer</p>
+        </div>
+
+        <div class="cb" style="margin-top:16px;overflow-x:auto;">
+            <h3 style="color:var(--blue);font-size:16px;">📏 Number Line Visualization:</h3>
+            <pre style="font-size:15px;line-height:1.4;margin-top:8px;font-family:'Inter',monospace;">
+←───<span style="color:var(--rose);">─3──(−2)──(−1)</span>──<span style="color:var(--amber);">[0]</span>──<span style="color:var(--green);">(+1)──(+2)──(+3)</span>───→
+
+  <span style="color:var(--rose);">◄── Negative (ऋणात्मक)</span>   <span style="color:var(--amber);">↕</span>   <span style="color:var(--green);">Positive (धनात्मक) ──►</span>
+                             <span style="color:var(--amber);">Zero = NEUTRAL</span>
+            </pre>
+        </div>
+
+        <div class="cb am" style="margin-top:16px;">
+            <h3 style="color:var(--amber);font-size:16px;">⭐ Zero (शून्य) Special Case:</h3>
+            <p><span class="key">Zero na positive hai, na negative — Zero is NEUTRAL!</span></p>
+            <p><span class="hi">शून्य — ना बायें आता है, ना दायें. बीच में बैठा है.</span></p>
+            <p style="margin-top:6px;font-size:14px;color:var(--text2);">Aditya Sir: "Negative ki paribhasha — jo zero ke left mein aaye. Positive — jo right mein aaye. Zero na left mein hai na right mein. Center mein hai!"</p>
+        </div>
+
+        <div class="grid" style="margin-top:16px;">
+            <div class="gi" style="border-color:var(--cyan);">
+                <h4 style="color:var(--cyan);">WHOLE NUMBER (पूर्ण संख्या)</h4>
+                <p><span class="key">Zero + sab Positive</span></p>
+                <p><span class="fm">0, 1, 2, 3, 4, 5...</span></p>
+                <p style="font-size:13px;color:var(--text2);">Zero ke saath count = Whole</p>
+            </div>
+            <div class="gi" style="border-color:var(--orange);">
+                <h4 style="color:var(--orange);">NATURAL NUMBER (प्राकृतिक संख्या)</h4>
+                <p><span class="key">Sirf Positive (no zero)</span></p>
+                <p><span class="fm">1, 2, 3, 4, 5...</span></p>
+                <p style="font-size:13px;color:var(--text2);">Zero ke bina count = Natural</p>
+            </div>
+        </div>
+
+        <div class="tip"><strong>Aditya Sir ka formula:</strong><br>
+        • <span class="key">0 ke saath</span> ginti karo = <strong>Whole Number</strong> (पूर्ण संख्या)<br>
+        • <span class="key">0 ke bina</span> ginti karo = <strong>Natural Number</strong> (प्राकृतिक संख्या)<br>
+        Bas itna yaad rakho — life mein kabhi nahi bhuloge!</div>
+
+        <h3 style="margin-top:18px;color:var(--purple);font-size:17px;">📋 Complete Hierarchy:</h3>
+        <table style="margin-top:8px;">
+            <tr><th>Type</th><th>Hindi</th><th>Range</th><th>Zero?</th><th>Negative?</th></tr>
+            <tr><td>Integer</td><td>पूर्णांक</td><td>-∞ ... 0 ... +∞</td><td style="color:var(--green);">✅</td><td style="color:var(--green);">✅</td></tr>
+            <tr><td>Whole</td><td>पूर्ण संख्या</td><td>0, 1, 2, 3...</td><td style="color:var(--green);">✅</td><td style="color:var(--rose);">❌</td></tr>
+            <tr><td>Natural</td><td>प्राकृतिक संख्या</td><td>1, 2, 3, 4...</td><td style="color:var(--rose);">❌</td><td style="color:var(--rose);">❌</td></tr>
+            <tr><td>Fraction</td><td>भिन्न</td><td>1/2, 2/3, 3/4...</td><td>—</td><td>—</td></tr>
+            <tr><td>Decimal</td><td>दशमलव</td><td>0.2, 0.02, 0.5...</td><td>—</td><td>—</td></tr>
+        </table>
+    </section>
+
+    <!-- ===== S9: PYQ PRACTICE ===== -->
+    <section class="sec" id="s9">
+        <div class="sec-t">📝 PYQ Practice — CPO/CGL/CHSL 2025</div>
+        <div class="sec-s">Previous Year Questions with Explanations</div>
+
+        <!-- PYQ 1: CPO -->
+        <div class="pyq">
+            <div class="pyq-h">📌 CPO 2025 — QUESTION 1</div>
+            <div class="pyq-q">Which of these number set is NOT a subset of Real Numbers?<br>
+            <span class="hi">इनमें से कौन सा संख्या समूह वास्तविक संख्याओं का उपसमूह नहीं है?</span></div>
+            <ul class="pyq-o">
+                <li>A) Irrational Numbers</li>
+                <li>B) Rational Numbers</li>
+                <li class="c">C) Complex Numbers</li>
+                <li>D) Integers</li>
+            </ul>
+            <button class="btn" onclick="toggle('a1')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a1">
+                <p><strong>✅ Answer: C) Complex Numbers</strong></p>
+                <p><strong>Logic:</strong> Family tree yaad karo:</p>
+                <p>Complex = DADA hai. Real uska BETA hai.</p>
+                <p>Question pucha: Real ka subset (beta) kaun <strong>nahi</strong> hai?</p>
+                <p>• Irrational → Real ka beta ✅</p>
+                <p>• Rational → Real ka beta ✅</p>
+                <p>• Integer → Rational ka beta (matlab Real ka pota) ✅</p>
+                <p>• Complex → <span class="key">Real ka BAAP hai, beta nahi!</span> ❌</p>
+                <p>Baap kabhi bete ka subset nahi hota! 💥</p>
+            </div>
+        </div>
+
+        <!-- PYQ 2: CPO -->
+        <div class="pyq">
+            <div class="pyq-h">📌 CPO 2025 — QUESTION 2</div>
+            <div class="pyq-q">The set of real numbers includes which of the following?<br>
+            <span class="hi">वास्तविक संख्याओं के समूह में कौन शामिल है?</span></div>
+            <ul class="pyq-o">
+                <li>A) Only Rational Numbers</li>
+                <li class="c">B) Both Rational and Irrational Numbers</li>
+                <li>C) Only Irrational Numbers</li>
+                <li>D) Only Integers</li>
+            </ul>
+            <button class="btn" onclick="toggle('a2')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a2">
+                <p><strong>✅ Answer: B) Both Rational and Irrational</strong></p>
+                <p>Real ke 2 bete hain — Rational AUR Irrational. Dono isme shamil hain!</p>
+            </div>
+        </div>
+
+        <!-- PYQ 3: CPO -->
+        <div class="pyq">
+            <div class="pyq-h">📌 CPO 2025 — QUESTION 3</div>
+            <div class="pyq-q">Square root of any prime number is:<br>
+            <span class="hi">किसी भी अभाज्य संख्या का वर्गमूल होता है:</span></div>
+            <ul class="pyq-o">
+                <li>A) Rational</li>
+                <li class="c">B) Irrational</li>
+                <li>C) Integer</li>
+                <li>D) Complex</li>
+            </ul>
+            <button class="btn" onclick="toggle('a3')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a3">
+                <p><strong>✅ Answer: B) Irrational</strong></p>
+                <p>Prime numbers: 2, 3, 5, 7, 11...</p>
+                <p>√2 = 1.414... | √3 = 1.732... | √5 = 2.236... | √7 = 2.645...</p>
+                <p><span class="key">Kisi bhi prime number ka root kabhi solve nahi hota → Always Irrational!</span></p>
+            </div>
+        </div>
+
+        <!-- PYQ 4: CGL -->
+        <div class="pyq">
+            <div class="pyq-h">📌 CGL 2025 — QUESTION 4</div>
+            <div class="pyq-q">Which number is real but NOT rational?<br>
+            <span class="hi">कौन सी संख्या वास्तविक तो है लेकिन परिमेय नहीं है?</span></div>
+            <ul class="pyq-o">
+                <li>A) 3/4</li>
+                <li>B) −7</li>
+                <li class="c">C) √7</li>
+                <li>D) 0.5</li>
+            </ul>
+            <button class="btn" onclick="toggle('a4')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a4">
+                <p><strong>✅ Answer: C) √7</strong></p>
+                <p>Real BUT NOT Rational = matlab <span class="key">Irrational</span> puch raha hai!</p>
+                <p>• 3/4 → p/q form → Rational ✅</p>
+                <p>• −7 → Integer → Rational ✅</p>
+                <p>• √7 → Root solve nahi hota → <span style="color:var(--rose);">Irrational! ❌</span></p>
+                <p>• 0.5 → Terminating decimal → Rational ✅</p>
+            </div>
+        </div>
+
+        <!-- PYQ 5: CGL -->
+        <div class="pyq">
+            <div class="pyq-h">📌 CGL 2025 — QUESTION 5</div>
+            <div class="pyq-q">Which number is neither rational nor integer?<br>
+            <span class="hi">कौन सी संख्या ना तो परिमेय है ना ही पूर्णांक?</span></div>
+            <ul class="pyq-o">
+                <li>A) 0</li>
+                <li>B) −5</li>
+                <li class="c">C) √2</li>
+                <li>D) 7</li>
+            </ul>
+            <button class="btn" onclick="toggle('a5')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a5">
+                <p><strong>✅ Answer: C) √2</strong></p>
+                <p>Jo Rational hi nahi hai wo Integer kaise hoga? Integer to Rational ka beta hai!</p>
+                <p>√2 = Irrational → Not Rational → Not Integer → <span class="key">Neither!</span></p>
+            </div>
+        </div>
+
+        <!-- PYQ 6: Operations -->
+        <div class="pyq">
+            <div class="pyq-h">📌 SSC 2025 — QUESTION 6 (Operations)</div>
+            <div class="pyq-q">The sum of a rational number and an irrational number is:<br>
+            <span class="hi">एक परिमेय और एक अपरिमेय संख्या का योग होता है:</span></div>
+            <ul class="pyq-o">
+                <li>A) Always Rational</li>
+                <li class="c">B) Always Irrational</li>
+                <li>C) Always Integer</li>
+                <li>D) Sometimes Rational, Sometimes Irrational</li>
+            </ul>
+            <button class="btn" onclick="toggle('a6')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a6">
+                <p><strong>✅ Answer: B) Always Irrational</strong></p>
+                <p>R + IR = <span class="key">ALWAYS Irrational</span> (no exception!)</p>
+                <p>Example: 2 + √3 = 3.732... → Non-terminating Non-repeating → Irrational</p>
+            </div>
+        </div>
+
+        <!-- PYQ 7: Tricky Operations -->
+        <div class="pyq">
+            <div class="pyq-h">📌 SSC 2025 — QUESTION 7 (Tricky!)</div>
+            <div class="pyq-q">The product of a rational number with an irrational number is:<br>
+            <span class="hi">एक परिमेय को अपरिमेय से गुणा करने पर:</span></div>
+            <ul class="pyq-o">
+                <li>A) Always Rational</li>
+                <li>B) Always Irrational</li>
+                <li>C) Always Integer</li>
+                <li class="c">D) Sometimes Rational, Sometimes Irrational</li>
+            </ul>
+            <button class="btn" onclick="toggle('a7')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a7">
+                <p><strong>✅ Answer: D) Sometimes Rational, Sometimes Irrational</strong></p>
+                <p>Operations Table yaad karo!</p>
+                <p>• 2 × √3 = 2√3 → Irrational ❌</p>
+                <p>• <span class="key">0 × √3 = 0</span> → Rational! ✅</p>
+                <p>Jab R = 0 ho, result Rational aa jaata hai. Isliye "Sometimes" wala answer sahi hai.</p>
+                <p style="margin-top:6px;color:var(--amber);font-weight:600;">💡 Jo log "Always Irrational" select karte hain — unke number katte hain! Ye Aditya Sir wala exception hai.</p>
+            </div>
+        </div>
+
+        <!-- PYQ 8: IR + IR -->
+        <div class="pyq">
+            <div class="pyq-h">📌 SSC 2025 — QUESTION 8</div>
+            <div class="pyq-q">If x is irrational and y is irrational, then x + y is:<br>
+            <span class="hi">यदि x अपरिमेय है और y अपरिमेय है, तो x + y होगा:</span></div>
+            <ul class="pyq-o">
+                <li>A) Always Irrational</li>
+                <li>B) Always Rational</li>
+                <li class="c">C) Irrational unless x = −y, then Rational</li>
+                <li>D) Always Integer</li>
+            </ul>
+            <button class="btn" onclick="toggle('a8')">Show Answer & Explanation</button>
+            <div class="pyq-a" id="a8">
+                <p><strong>✅ Answer: C)</strong></p>
+                <p>Usually IR + IR = Irrational</p>
+                <p><strong>BUT:</strong> Agar <span class="key">x = −y</span> → x + y = 0 → <span style="color:var(--green);">Rational!</span></p>
+                <p>Example: √2 + (−√2) = 0 ← ye Rational hai!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== S10: GLOSSARY ===== -->
+    <section class="sec" id="s10">
+        <div class="sec-t">📖 Hindi-English Glossary</div>
+        <div class="sec-s">परीक्षा में काम आने वाले शब्द — Aditya Sir Style</div>
+        <table>
+            <tr><th>English</th><th>Hindi</th><th>Quick Meaning</th></tr>
+            <tr><td>Complex</td><td>सम्मिश्र</td><td>Real + Imaginary = Dada</td></tr>
+            <tr><td>Real</td><td>वास्तविक</td><td>Number line pe aa sake</td></tr>
+            <tr><td>Imaginary</td><td>काल्पनिक</td><td>Root ke andar minus (√-1 = i)</td></tr>
+            <tr><td>Rational</td><td>परिमेय</td><td>p/q form, q≠0, Ratio se aaya</td></tr>
+            <tr><td>Irrational</td><td>अपरिमेय</td><td>p/q mein nahi likh sakte</td></tr>
+            <tr><td>Terminating</td><td>शांत दशमलव</td><td>Decimal ruk jaata hai</td></tr>
+            <tr><td>Non-Terminating Repeating</td><td>अशांत आवर्ती</td><td>Rukta nahi but repeat karta hai</td></tr>
+            <tr><td>Non-Terminating Non-Repeating</td><td>अशांत अनावर्ती</td><td>Na ruke, na repeat kare</td></tr>
+            <tr><td>Integer</td><td>पूर्णांक</td><td>No decimal, no fraction</td></tr>
+            <tr><td>Whole Number</td><td>पूर्ण संख्या</td><td>0 ke saath ginti</td></tr>
+            <tr><td>Natural Number</td><td>प्राकृतिक संख्या</td><td>0 ke bina ginti</td></tr>
+            <tr><td>Subset</td><td>उपसमूह</td><td>Andar wala group (beta)</td></tr>
+            <tr><td>Fraction</td><td>भिन्न</td><td>Neeche bhi number ho (2/3)</td></tr>
+            <tr><td>Decimal</td><td>दशमलव</td><td>Point wali sankhya (0.5)</td></tr>
+            <tr><td>Number Line</td><td>संख्या रेखा</td><td>Numbers ka line pe representation</td></tr>
+            <tr><td>Square Root</td><td>वर्गमूल</td><td>√ symbol wala</td></tr>
+            <tr><td>Perfect Square</td><td>पूर्ण वर्ग</td><td>4, 9, 16, 25 (root solve hota hai)</td></tr>
+            <tr><td>Positive</td><td>धनात्मक</td><td>Zero ke right wale</td></tr>
+            <tr><td>Negative</td><td>ऋणात्मक</td><td>Zero ke left wale</td></tr>
+            <tr><td>Neutral</td><td>तटस्थ</td><td>Zero — na positive na negative</td></tr>
+        </table>
+    </section>
+
+    <div style="text-align:center;padding:34px 0 14px;color:var(--text2);font-size:13px;">
+        <p style="font-size:15px;color:var(--purple);">📚 Number System — Deep Revision Complete</p>
+        <p style="margin-top:4px;">Aditya Sir Method • Operations + Exceptions + 3 Traps • Bilingual</p>
+        <p style="margin-top:4px;">MPPSC CSAT 2026 🎯</p>
+    </div>
+
+</div>
+
+<script>
+function toggle(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Communication — Visual Revision Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #151c23;
+  --surface:   #1c252f;
+  --surface-2: #243040;
+  --surface-3: #2c3a4a;
+  --border:    #2e3e50;
+  --text:      #cdd6e0;
+  --text-muted:#8a9bb0;
+  --text-faint:#4e6070;
+  --accent:    #4fc3f7;
+  --accent2:   #81c784;
+  --accent3:   #ffb74d;
+  --accent4:   #f48fb1;
+  --accent5:   #ce93d8;
+  --accent6:   #80cbc4;
+  --red:       #ef9a9a;
+  --yellow:    #fff176;
+  --radius:    10px;
+  --font: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+[data-theme="light"] {
+  --bg:        #f0f4f8;
+  --surface:   #ffffff;
+  --surface-2: #eaf1f8;
+  --surface-3: #dce8f0;
+  --border:    #c5d6e3;
+  --text:      #1a2d3d;
+  --text-muted:#4a6070;
+  --text-faint:#8aabb0;
+  --accent:    #0277bd;
+  --accent2:   #2e7d32;
+  --accent3:   #e65100;
+  --accent4:   #ad1457;
+  --accent5:   #6a1b9a;
+  --accent6:   #00695c;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ── */
+.page-wrapper { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 18px 0;
+}
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 16px 10px;
+}
+.nav-item {
+  display: block;
+  padding: 7px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all .2s;
+}
+.nav-item:hover, .nav-item.active {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-left-color: var(--accent);
+}
+.nav-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-faint);
+  margin-right: 6px;
+}
+
+.main { flex: 1; overflow-x: hidden; }
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.topbar-title { font-size: 15px; font-weight: 700; color: var(--accent); }
+.topbar-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+.theme-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── CONTENT ── */
+.content { padding: 24px 36px; max-width: 980px; }
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 36px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.sec-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  cursor: pointer;
+  user-select: none;
+  gap: 10px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.sec-header:hover { opacity: .88; }
+.sec-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-family: var(--mono);
+}
+.sec-title { font-size: 16px; font-weight: 700; flex: 1; }
+.sec-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.tag-imp { background: color-mix(in srgb, var(--accent3) 20%, transparent); color: var(--accent3); }
+.tag-most { background: color-mix(in srgb, var(--red) 20%, transparent); color: var(--red); }
+.tag-basic { background: color-mix(in srgb, var(--accent2) 20%, transparent); color: var(--accent2); }
+.chevron { color: var(--text-faint); font-size: 16px; transition: transform .25s; }
+.sec-body { padding: 20px; display: none; }
+.sec-body.open { display: block; }
+.chevron.open { transform: rotate(90deg); }
+
+/* ── SUBSECTION ── */
+.subsec {
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.subsec-hd {
+  background: var(--surface-3);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.subsec-hd:hover { opacity: .85; }
+.subsec-title { font-size: 14px; font-weight: 600; flex: 1; }
+.subsec-body { padding: 16px; background: var(--surface); display: none; }
+.subsec-body.open { display: block; }
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── CARDS ROW ── */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 14px 0; }
+.card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+}
+.card-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ── TABLE ── */
+.tbl-wrap { overflow-x: auto; margin: 14px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  background: var(--surface-3);
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  vertical-align: top;
+  line-height: 1.5;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: color-mix(in srgb, var(--accent) 4%, transparent); }
+
+/* ── KEY FACTS ── */
+.kf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 12px 0; }
+.kf {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+}
+.kf.green { border-left-color: var(--accent2); }
+.kf.orange { border-left-color: var(--accent3); }
+.kf.pink { border-left-color: var(--accent4); }
+.kf.purple { border-left-color: var(--accent5); }
+.kf.teal { border-left-color: var(--accent6); }
+.kf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-faint); margin-bottom: 3px; }
+.kf-val { font-size: 14px; font-weight: 700; color: var(--text); }
+.kf-sub { font-size: 12px; color: var(--text-muted); }
+
+/* ── FLOW DIAGRAM ── */
+.flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+  padding: 16px;
+  background: var(--surface-2);
+  border-radius: 8px;
+}
+.flow-box {
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.flow-arrow { color: var(--text-faint); font-size: 18px; }
+
+/* ── BADGE ── */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin: 2px;
+}
+.b-blue { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+.b-green { background: color-mix(in srgb, var(--accent2) 18%, transparent); color: var(--accent2); }
+.b-orange { background: color-mix(in srgb, var(--accent3) 18%, transparent); color: var(--accent3); }
+.b-pink { background: color-mix(in srgb, var(--accent4) 18%, transparent); color: var(--accent4); }
+.b-purple { background: color-mix(in srgb, var(--accent5) 18%, transparent); color: var(--accent5); }
+.b-teal { background: color-mix(in srgb, var(--accent6) 18%, transparent); color: var(--accent6); }
+
+/* ── COMPARISON ── */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.cmp {
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 14px;
+  border-top: 3px solid;
+}
+.cmp.blue { border-top-color: var(--accent); }
+.cmp.green { border-top-color: var(--accent2); }
+.cmp.orange { border-top-color: var(--accent3); }
+.cmp.pink { border-top-color: var(--accent4); }
+.cmp-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.cmp ul { padding-left: 16px; }
+.cmp li { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; line-height: 1.5; }
+.cmp li strong { color: var(--text); }
+
+/* ── MEMO BOX ── */
+.memo {
+  background: color-mix(in srgb, var(--accent3) 10%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent3) 30%, transparent);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+.memo-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent3); margin-bottom: 4px; }
+
+.info {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.info strong { color: var(--accent); }
+
+/* ── WIRELESS CARD ── */
+.wl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 14px 0; }
+.wl-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  border-top: 3px solid;
+}
+.wl-name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.wl-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent); }
+.wl-row:last-child { border-bottom: none; }
+.wl-key { color: var(--text-faint); }
+.wl-val { font-weight: 600; color: var(--text); font-family: var(--mono); font-size: 11px; }
+
+/* ── DUPLEX VISUAL ── */
+.duplex-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+.dup-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.dup-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.dup-visual {
+  font-size: 20px;
+  margin: 8px 0;
+  letter-spacing: 4px;
+}
+.dup-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.dup-ex { font-size: 12px; color: var(--accent3); margin-top: 6px; font-weight: 600; }
+
+/* ── MISC ── */
+h4 { font-size: 14px; font-weight: 700; color: var(--text); margin: 14px 0 8px; }
+p { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.65; }
+ul, ol { padding-left: 20px; margin-bottom: 8px; }
+li { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; line-height: 1.55; }
+li strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+.hero {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 36px;
+}
+.hero h1 { font-size: 22px; font-weight: 800; color: var(--text); line-height: 1.3; }
+.hero p { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+code {
+  background: var(--surface-3);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.progress-bar-wrap { background: var(--surface-3); height: 4px; border-radius: 4px; margin: 12px 0; }
+.progress-bar { height: 4px; border-radius: 4px; background: var(--accent); }
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .content { padding: 16px; }
+  .compare-grid, .duplex-row { grid-template-columns: 1fr; }
+  .hero { padding: 18px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-title">Contents</div>
+  <a href="#s1" class="nav-item"><span class="nav-num">01</span> Components</a>
+  <a href="#s2" class="nav-item"><span class="nav-num">02</span> Types Overview</a>
+  <a href="#s3" class="nav-item"><span class="nav-num">03</span> Wired Communication</a>
+  <a href="#s4" class="nav-item"><span class="nav-num">04</span> Wireless: Long Range</a>
+  <a href="#s5" class="nav-item"><span class="nav-num">05</span> Wireless: Short Range</a>
+  <a href="#s6" class="nav-item"><span class="nav-num">06</span> By Capacity</a>
+  <a href="#s7" class="nav-item"><span class="nav-num">07</span> By Range (Networks)</a>
+  <a href="#s8" class="nav-item"><span class="nav-num">08</span> By Permission</a>
+  <a href="#s9" class="nav-item"><span class="nav-num">09</span> Other Types</a>
+  <a href="#s10" class="nav-item"><span class="nav-num">10</span> Communication Models</a>
+  <a href="#s11" class="nav-item"><span class="nav-num">11</span> Data Transmission</a>
+  <a href="#s12" class="nav-item"><span class="nav-num">12</span> Quick Revision Table</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div>
+    <div class="topbar-title">📡 ICT: Communication Technology</div>
+    <div class="topbar-sub">Visual Revision Guide — 3hr+ Lecture Notes</div>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" data-theme-toggle>☀ Light Mode</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Information & Communication Technology<br><span style="color:var(--accent)">Communication Chapter — Complete Revision</span></h1>
+  <p>Based on 3+ hour lecture. Covers all 6 parts: Components → Types → Signals → Models → Transmission Services → Modes.</p>
+  <div class="hero-tags">
+    <span class="badge b-blue">Wired Communication</span>
+    <span class="badge b-green">Wireless (Long & Short Range)</span>
+    <span class="badge b-orange">Capacity Types</span>
+    <span class="badge b-pink">Network Range Types</span>
+    <span class="badge b-purple">Communication Models</span>
+    <span class="badge b-teal">Transmission Modes</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ══ SECTION 1 ══ -->
+<div class="section" id="s1">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">01</span>
+    <span class="sec-title">Components of Communication System</span>
+    <span class="sec-tag tag-basic">Basic</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body open">
+    <p>Communication = <strong>Process of transmitting information from one point to another.</strong> Three essential components make this possible:</p>
+    <div class="flow">
+      <div class="flow-box" style="border-color:var(--accent);color:var(--accent)">📤 Transmitter<br><small style="color:var(--text-muted);font-size:11px">Converts signal to<br>electromagnetic waves</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--accent3);color:var(--accent3)">📶 Channel<br><small style="color:var(--text-muted);font-size:11px">Medium connecting<br>both devices</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--accent2);color:var(--accent2)">📥 Receiver<br><small style="color:var(--text-muted);font-size:11px">Device that receives<br>the message</small></div>
+    </div>
+    <div class="kf-grid">
+      <div class="kf"><div class="kf-label">Transmitter</div><div class="kf-val">Converts signal</div><div class="kf-sub">Electrical signal → Electromagnetic signal</div></div>
+      <div class="kf green"><div class="kf-label">Channel</div><div class="kf-val">Medium / Path</div><div class="kf-sub">Connects transmitter & receiver (wire or wireless)</div></div>
+      <div class="kf orange"><div class="kf-label">Receiver</div><div class="kf-val">Receives message</div><div class="kf-sub">Device that gets the transmitted signal</div></div>
+    </div>
+    <div class="memo"><div class="memo-label">🎯 Exam Tip</div>Without all 3 — Transmitter, Channel, Receiver — communication is NOT possible.</div>
+  </div>
+</div>
+
+<!-- ══ SECTION 2 ══ -->
+<div class="section" id="s2">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Types of Communication — Overview (5 Bases)</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body open">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Basis</th><th>Types</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><code>1</code></td><td><strong>Medium</strong></td><td>Wired / Wireless</td><td>Telephone cable / WiFi</td></tr>
+          <tr><td><code>2</code></td><td><strong>Capacity</strong></td><td>Baseband / Voiceband / Broadband</td><td>LAN / Telephone / Internet</td></tr>
+          <tr><td><code>3</code></td><td><strong>Range</strong></td><td>PAN / LAN / MAN / WAN</td><td>Bluetooth / Home / City / Internet</td></tr>
+          <tr><td><code>4</code></td><td><strong>Permission</strong></td><td>Internet / Intranet / Extranet</td><td>Google / Company internal / Partner access</td></tr>
+          <tr><td><code>5</code></td><td><strong>Others</strong></td><td>Serial, Parallel, Unicast, Multicast, Broadcast, Analog, Digital</td><td>USB / Printer port / Email / TV</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo"><div class="memo-label">📌 Remember</div>The "Medium" basis is the BIGGEST topic — covers Twisted Pair, Coaxial, Fiber Optic, WiFi, Bluetooth, WiMAX, Li-Fi, etc.</div>
+  </div>
+</div>
+
+<!-- ══ SECTION 3 ══ -->
+<div class="section" id="s3">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">03</span>
+    <span class="sec-title">Wired Communication (Guided Medium)</span>
+    <span class="sec-tag tag-most">Most Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body open">
+    <p>Also called <strong>Guided Communication System</strong>. Uses physical cables. Three types:</p>
+
+    <!-- TWISTED PAIR -->
+    <div class="subsec">
+      <div class="subsec-hd" onclick="toggleSubsec(this)">
+        <div class="dot" style="background:var(--accent)"></div>
+        <span class="subsec-title">1. Twisted Pair Wire (व्यवहारित युग्म तार)</span>
+        <span class="chevron">›</span>
+      </div>
+      <div class="subsec-body open">
+        <div class="kf-grid">
+          <div class="kf"><div class="kf-label">Material</div><div class="kf-val">Copper</div><div class="kf-sub">Two copper wires twisted together</div></div>
+          <div class="kf green"><div class="kf-label">Inventor</div><div class="kf-val">Alexander Graham Bell</div><div class="kf-sub">Inventor of telephone</div></div>
+          <div class="kf orange"><div class="kf-label">Used In</div><div class="kf-val">Telephone Lines</div><div class="kf-sub">Traditional telephone networks</div></div>
+          <div class="kf pink"><div class="kf-label">Cost</div><div class="kf-val">Cheapest</div><div class="kf-sub">Most affordable among 3 cables</div></div>
+        </div>
+        <h4>Structure</h4>
+        <div class="flow" style="justify-content:center">
+          <div class="flow-box">Copper Wire 1</div>
+          <div class="flow-arrow">+</div>
+          <div class="flow-box">Copper Wire 2</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box" style="color:var(--accent)">Twisted Together</div>
+          <div class="flow-arrow">+</div>
+          <div class="flow-box" style="color:var(--accent2)">Insulation Cover</div>
+        </div>
+        <div class="compare-grid">
+          <div class="cmp green">
+            <div class="cmp-title" style="color:var(--accent2)">✅ Advantages</div>
+            <ul>
+              <li><strong>Cheapest</strong> — lowest cost cable</li>
+              <li><strong>Easy to install</strong></li>
+              <li>Supports both <strong>Analog & Digital</strong> signals</li>
+              <li><strong>Fault tolerant</strong> — one fault doesn't break whole network</li>
+            </ul>
+          </div>
+          <div class="cmp pink">
+            <div class="cmp-title" style="color:var(--red)">❌ Disadvantages</div>
+            <ul>
+              <li><strong>Not for long distance</strong> communication</li>
+              <li><strong>Low data transmission rate</strong></li>
+              <li>Speed decreases as connections increase</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare-grid">
+          <div class="cmp blue"><div class="cmp-title">UTP — Unshielded Twisted Pair</div><ul><li>No extra metal shield</li><li>More common, cheaper</li></ul></div>
+          <div class="cmp orange"><div class="cmp-title">STP — Shielded Twisted Pair</div><ul><li>Has extra metal/foil shield</li><li>Better protection from interference</li></ul></div>
+        </div>
+        <div class="memo"><div class="memo-label">🎯 Exam Tip</div>Q: "If fault occurs in network, entire network fails" → This statement is <strong>FALSE</strong> for Twisted Pair. Entire network does NOT fail.</div>
+      </div>
+    </div>
+
+    <!-- COAXIAL -->
+    <div class="subsec">
+      <div class="subsec-hd" onclick="toggleSubsec(this)">
+        <div class="dot" style="background:var(--accent3)"></div>
+        <span class="subsec-title">2. Coaxial Cable (समकक्षीय तार)</span>
+        <span class="chevron">›</span>
+      </div>
+      <div class="subsec-body open">
+        <div class="kf-grid">
+          <div class="kf orange"><div class="kf-label">Inventor</div><div class="kf-val">Oliver Heaviside</div><div class="kf-sub">British mathematician</div></div>
+          <div class="kf"><div class="kf-label">Used In</div><div class="kf-val">Television (TV)</div><div class="kf-sub">Cable TV networks</div></div>
+          <div class="kf green"><div class="kf-label">Material</div><div class="kf-val">Copper + Aluminum</div><div class="kf-sub">Copper center + mesh layer</div></div>
+        </div>
+        <h4>Structure (Inside → Outside)</h4>
+        <div class="flow" style="justify-content:center;flex-wrap:wrap">
+          <div class="flow-box" style="color:var(--accent3)">① Solid Copper Core</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">② Insulator</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box" style="color:var(--accent3)">③ Cu/Al Mesh</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">④ Outer Insulator</div>
+        </div>
+        <div class="compare-grid">
+          <div class="cmp green">
+            <div class="cmp-title" style="color:var(--accent2)">✅ Advantages</div>
+            <ul>
+              <li><strong>High data speed</strong> & high bandwidth</li>
+              <li><strong>Very low errors</strong></li>
+              <li>Suitable for <strong>long distance</strong> communication</li>
+            </ul>
+          </div>
+          <div class="cmp pink">
+            <div class="cmp-title" style="color:var(--red)">❌ Disadvantages</div>
+            <ul>
+              <li><strong>Expensive</strong> (costlier than Twisted Pair)</li>
+              <li>Fault in cable = <strong>entire network fails</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="memo"><div class="memo-label">🎯 Key Difference from Twisted Pair</div>Coaxial: fault → FULL network down. Twisted Pair: fault → only that segment fails.</div>
+      </div>
+    </div>
+
+    <!-- FIBER OPTIC -->
+    <div class="subsec">
+      <div class="subsec-hd" onclick="toggleSubsec(this)">
+        <div class="dot" style="background:var(--accent5)"></div>
+        <span class="subsec-title">3. Fiber Optic Cable (प्रकाशीय तंतु तार)</span>
+        <span class="chevron">›</span>
+      </div>
+      <div class="subsec-body open">
+        <div class="kf-grid">
+          <div class="kf purple"><div class="kf-label">Principle</div><div class="kf-val">Total Internal Reflection</div><div class="kf-sub">प्रकाश का पूर्ण आंतरिक परावर्तन</div></div>
+          <div class="kf"><div class="kf-label">Material</div><div class="kf-val">Glass / Silica / Plastic</div><div class="kf-sub">Thin strands of glass or plastic</div></div>
+          <div class="kf green"><div class="kf-label">Signal Type</div><div class="kf-val">Light (Optical)</div><div class="kf-sub">LED → light pulses → Photo diode</div></div>
+          <div class="kf orange"><div class="kf-label">Speed</div><div class="kf-val">Fastest</div><div class="kf-sub">Used in modern internet (broadband)</div></div>
+        </div>
+        <h4>Structure</h4>
+        <div class="flow" style="justify-content:center;flex-wrap:wrap">
+          <div class="flow-box" style="color:var(--accent5)">① Core<br><small style="font-size:10px">(glass/silica/plastic)<br>Higher refractive index</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">② Cladding<br><small style="font-size:10px">(glass/silica/plastic)<br>Lower refractive index</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">③ Protective Coat</div>
+        </div>
+        <div class="info"><strong>Key Concept:</strong> Core's refractive index > Cladding's refractive index. This allows total internal reflection of light inside the core.</div>
+        <h4>How It Works</h4>
+        <div class="flow">
+          <div class="flow-box" style="color:var(--accent)">LED<br><small>generates light</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box">Light travels<br>through core</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box" style="color:var(--accent5)">Total Internal<br>Reflection</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box" style="color:var(--accent2)">Photo Diode<br>converts to signal</div>
+        </div>
+        <div class="compare-grid">
+          <div class="cmp green">
+            <div class="cmp-title" style="color:var(--accent2)">✅ Advantages</div>
+            <ul>
+              <li><strong>Highest speed</strong> — fastest data transmission</li>
+              <li><strong>Highest bandwidth</strong></li>
+              <li><strong>No electrical interference</strong></li>
+              <li>Best for <strong>very long distances</strong></li>
+              <li><strong>Most secure</strong> — hard to tap</li>
+            </ul>
+          </div>
+          <div class="cmp pink">
+            <div class="cmp-title" style="color:var(--red)">❌ Disadvantages</div>
+            <ul>
+              <li><strong>Most expensive</strong></li>
+              <li>Fragile — bends can damage it</li>
+              <li>Difficult to install & repair</li>
+            </ul>
+          </div>
+        </div>
+        <div class="memo"><div class="memo-label">🎯 Exam Question</div>"Fiber optic cable works on which principle?" → <strong>Total Internal Reflection of Light</strong> (प्रकाश का पूर्ण आंतरिक परावर्तन)</div>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <h4>📊 All Three Cables — Quick Comparison</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th style="color:var(--accent)">Twisted Pair</th><th style="color:var(--accent3)">Coaxial</th><th style="color:var(--accent5)">Fiber Optic</th></tr></thead>
+        <tbody>
+          <tr><td>Material</td><td>Copper</td><td>Copper + Al mesh</td><td>Glass / Silica / Plastic</td></tr>
+          <tr><td>Inventor</td><td>Alexander Graham Bell</td><td>Oliver Heaviside</td><td>—</td></tr>
+          <tr><td>Main Use</td><td>Telephone</td><td>Television (TV)</td><td>Internet (Broadband)</td></tr>
+          <tr><td>Cost</td><td>Cheapest ✓</td><td>Medium</td><td>Most Expensive</td></tr>
+          <tr><td>Speed</td><td>Slowest</td><td>Medium</td><td>Fastest ✓</td></tr>
+          <tr><td>Bandwidth</td><td>Low</td><td>Medium</td><td>Highest ✓</td></tr>
+          <tr><td>Long Distance</td><td>❌ No</td><td>✅ Yes</td><td>✅ Yes (best)</td></tr>
+          <tr><td>If Fault → ?</td><td>Only segment fails</td><td>Whole network fails</td><td>Localized</td></tr>
+          <tr><td>Signal Type</td><td>Electrical (Analog+Digital)</td><td>Electrical</td><td>Light (Optical)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 4 ══ -->
+<div class="section" id="s4">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">04</span>
+    <span class="sec-title">Wireless Communication — Long Range (5 Types)</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <p>All wireless communication uses <strong>Electromagnetic Waves</strong> (विद्युत चुंबकीय तरंगें). EM Spectrum: Radio → Microwave → Infrared → Visible → UV → X-ray → Gamma.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Type</th><th>Hindi Name</th><th>Key Feature</th></tr></thead>
+        <tbody>
+          <tr><td><code>1</code></td><td><strong>Space Waves</strong></td><td>अंतरिक्ष तरंगें</td><td>Travel in straight line (line of sight), used in TV broadcasting</td></tr>
+          <tr><td><code>2</code></td><td><strong>Sky Waves</strong></td><td>आकाशीय तरंगें</td><td>Reflect off ionosphere, used in AM radio (long distance)</td></tr>
+          <tr><td><code>3</code></td><td><strong>Ground Waves</strong></td><td>भूमि तरंगें</td><td>Travel along Earth's surface, used in AM radio (short distance)</td></tr>
+          <tr><td><code>4</code></td><td><strong>Satellite Communication</strong></td><td>उपग्रह संचार</td><td>Geostationary satellites, GPS, DTH television, very long range</td></tr>
+          <tr><td><code>5</code></td><td><strong>Microwave</strong></td><td>माइक्रो तरंगें</td><td>High frequency, line of sight, used in mobile networks & radar</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo"><div class="memo-label">📌 Remember</div>Long Range = Satellites, Sky waves, Ground waves, Space waves, Microwave. All use EM spectrum.</div>
+  </div>
+</div>
+
+<!-- ══ SECTION 5 ══ -->
+<div class="section" id="s5">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">05</span>
+    <span class="sec-title">Wireless Communication — Short Range (9 Technologies)</span>
+    <span class="sec-tag tag-most">Most Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <div class="wl-grid">
+
+      <!-- WiFi -->
+      <div class="wl-card" style="border-top-color:var(--accent)">
+        <div class="wl-name" style="color:var(--accent)">📶 Wi-Fi</div>
+        <div class="wl-row"><span class="wl-key">Full Form</span><span class="wl-val">Wireless Fidelity</span></div>
+        <div class="wl-row"><span class="wl-key">Standard</span><span class="wl-val">IEEE 802.11</span></div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">2.4 GHz / 5 GHz</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">~100 metres</span></div>
+        <div class="wl-row"><span class="wl-key">Year Started</span><span class="wl-val">1997</span></div>
+        <div class="wl-row"><span class="wl-key">Used For</span><span class="wl-val">Internet access (LAN)</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Connects devices to internet wirelessly. Access point (router) needed.</div>
+      </div>
+
+      <!-- WiMAX -->
+      <div class="wl-card" style="border-top-color:var(--accent2)">
+        <div class="wl-name" style="color:var(--accent2)">🌐 WiMAX</div>
+        <div class="wl-row"><span class="wl-key">Full Form</span><span class="wl-val">Worldwide Interoperability for Microwave Access</span></div>
+        <div class="wl-row"><span class="wl-key">Standard</span><span class="wl-val">IEEE 802.16</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">~50 km</span></div>
+        <div class="wl-row"><span class="wl-key">Speed</span><span class="wl-val">~70 Mbps</span></div>
+        <div class="wl-row"><span class="wl-key">Year</span><span class="wl-val">2001</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Like WiFi but covers huge area. Can replace last-mile broadband connections.</div>
+      </div>
+
+      <!-- Bluetooth -->
+      <div class="wl-card" style="border-top-color:var(--accent5)">
+        <div class="wl-name" style="color:var(--accent5)">🔷 Bluetooth</div>
+        <div class="wl-row"><span class="wl-key">Standard</span><span class="wl-val">IEEE 802.15.1</span></div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">2.4 – 2.5 GHz</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">~10 metres</span></div>
+        <div class="wl-row"><span class="wl-key">Year</span><span class="wl-val">1998</span></div>
+        <div class="wl-row"><span class="wl-key">Latest Version</span><span class="wl-val">v5.x</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">PAN (Personal Area Network). Named after Danish king Harald Bluetooth.</div>
+      </div>
+
+      <!-- Infrared -->
+      <div class="wl-card" style="border-top-color:var(--accent3)">
+        <div class="wl-name" style="color:var(--accent3)">🔴 Infrared (IR)</div>
+        <div class="wl-row"><span class="wl-key">Type</span><span class="wl-val">EM Wave (below visible)</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">Very Short (&lt;1.2 m)</span></div>
+        <div class="wl-row"><span class="wl-key">Line of Sight</span><span class="wl-val">Required (no obstacles)</span></div>
+        <div class="wl-row"><span class="wl-key">Used In</span><span class="wl-val">TV Remote, old phones</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Cannot pass through walls. Used in TV remotes and some printers.</div>
+      </div>
+
+      <!-- Radio Waves -->
+      <div class="wl-card" style="border-top-color:var(--accent6)">
+        <div class="wl-name" style="color:var(--accent6)">📻 Radio Waves</div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">3 kHz – 300 GHz</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">Long range possible</span></div>
+        <div class="wl-row"><span class="wl-key">Used In</span><span class="wl-val">AM/FM Radio, WiFi, Bluetooth</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Can pass through walls. Used in broadcasting. Omnidirectional.</div>
+      </div>
+
+      <!-- Li-Fi -->
+      <div class="wl-card" style="border-top-color:var(--yellow)">
+        <div class="wl-name" style="color:var(--yellow)">💡 Li-Fi</div>
+        <div class="wl-row"><span class="wl-key">Full Form</span><span class="wl-val">Light Fidelity</span></div>
+        <div class="wl-row"><span class="wl-key">Medium</span><span class="wl-val">Visible Light (LED)</span></div>
+        <div class="wl-row"><span class="wl-key">Speed</span><span class="wl-val">100× faster than WiFi</span></div>
+        <div class="wl-row"><span class="wl-key">Year Coined</span><span class="wl-val">2011 (Harald Haas)</span></div>
+        <div class="wl-row"><span class="wl-key">Limitation</span><span class="wl-val">Needs light; can't cross walls</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Uses light waves instead of radio waves. Very high speed but limited range.</div>
+      </div>
+
+      <!-- RFID -->
+      <div class="wl-card" style="border-top-color:var(--accent4)">
+        <div class="wl-name" style="color:var(--accent4)">🏷️ RFID</div>
+        <div class="wl-row"><span class="wl-key">Full Form</span><span class="wl-val">Radio Frequency Identification</span></div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">13.56 MHz (HF)</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">Up to 100 metres</span></div>
+        <div class="wl-row"><span class="wl-key">Standard</span><span class="wl-val">802.15.4</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Tag + Reader system. Used in inventory management, animal tracking, access cards.</div>
+      </div>
+
+      <!-- NFC -->
+      <div class="wl-card" style="border-top-color:var(--accent)">
+        <div class="wl-name" style="color:var(--accent)">📲 NFC</div>
+        <div class="wl-row"><span class="wl-key">Full Form</span><span class="wl-val">Near Field Communication</span></div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">13.56 MHz</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">~4 cm (very short)</span></div>
+        <div class="wl-row"><span class="wl-key">Speed</span><span class="wl-val">Up to 424 kbps</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Very short range. Used in contactless payments (Google Pay, PhonePe), tap-to-share.</div>
+      </div>
+
+      <!-- White-Fi -->
+      <div class="wl-card" style="border-top-color:var(--accent2)">
+        <div class="wl-name" style="color:var(--accent2)">📡 White-Fi</div>
+        <div class="wl-row"><span class="wl-key">Also Called</span><span class="wl-val">Super WiFi / White Space WiFi</span></div>
+        <div class="wl-row"><span class="wl-key">Standard</span><span class="wl-val">IEEE 802.22</span></div>
+        <div class="wl-row"><span class="wl-key">Frequency</span><span class="wl-val">TV White Spaces (470–790 MHz)</span></div>
+        <div class="wl-row"><span class="wl-key">Range</span><span class="wl-val">Up to 100 km</span></div>
+        <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">Uses unused TV frequency bands. Can penetrate walls. Rural internet connectivity.</div>
+      </div>
+
+    </div>
+
+    <!-- QUICK COMPARISON TABLE -->
+    <h4>📊 Short Range Wireless — Quick Reference</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Technology</th><th>Standard</th><th>Frequency</th><th>Range</th><th>Key Use</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--accent)"><strong>Wi-Fi</strong></td><td><code>802.11</code></td><td>2.4 / 5 GHz</td><td>~100 m</td><td>Home/Office Internet</td></tr>
+          <tr><td style="color:var(--accent2)"><strong>WiMAX</strong></td><td><code>802.16</code></td><td>Microwave</td><td>~50 km</td><td>Wide area broadband</td></tr>
+          <tr><td style="color:var(--accent5)"><strong>Bluetooth</strong></td><td><code>802.15.1</code></td><td>2.4–2.5 GHz</td><td>~10 m</td><td>Headphones, keyboard</td></tr>
+          <tr><td style="color:var(--accent3)"><strong>Infrared</strong></td><td>—</td><td>IR spectrum</td><td>&lt;1.2 m</td><td>TV remote</td></tr>
+          <tr><td style="color:var(--accent6)"><strong>Radio Waves</strong></td><td>—</td><td>3 kHz–300 GHz</td><td>Long</td><td>AM/FM Radio</td></tr>
+          <tr><td style="color:var(--yellow)"><strong>Li-Fi</strong></td><td>—</td><td>Visible light</td><td>Room only</td><td>Ultra-fast indoor</td></tr>
+          <tr><td style="color:var(--accent4)"><strong>RFID</strong></td><td><code>802.15.4</code></td><td>13.56 MHz</td><td>Up to 100 m</td><td>Tags, inventory, cards</td></tr>
+          <tr><td style="color:var(--accent)"><strong>NFC</strong></td><td>—</td><td>13.56 MHz</td><td>~4 cm</td><td>Contactless payment</td></tr>
+          <tr><td style="color:var(--accent2)"><strong>White-Fi</strong></td><td><code>802.22</code></td><td>470–790 MHz</td><td>~100 km</td><td>Rural internet</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo"><div class="memo-label">🎯 Exam Tips</div>
+      <ul style="margin:4px 0 0 16px">
+        <li>WiFi standard = <strong>802.11</strong> | WiMAX = <strong>802.16</strong> | Bluetooth = <strong>802.15.1</strong></li>
+        <li>NFC range = <strong>4 cm only</strong> (shortest)</li>
+        <li>Li-Fi = 100× faster than WiFi</li>
+        <li>White-Fi uses <strong>unused TV frequencies</strong></li>
+        <li>NFC & RFID both use <strong>13.56 MHz</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 6 ══ -->
+<div class="section" id="s6">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">06</span>
+    <span class="sec-title">By Capacity — Baseband, Voiceband, Broadband</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <div class="cards">
+      <div class="card">
+        <div class="card-title" style="color:var(--accent)">📌 Baseband</div>
+        <p>Only <strong>one signal</strong> at a time. Low bandwidth. Uses digital signal. Used in LAN (Ethernet). All bandwidth dedicated to single channel.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--accent3)">📞 Voiceband</div>
+        <p>Designed for <strong>voice transmission</strong>. Low bandwidth (300 Hz – 3400 Hz). Traditional telephone networks. Used in modem connections.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--accent2)">🚀 Broadband</div>
+        <p><strong>Multiple signals</strong> simultaneously. High bandwidth. Used in internet, cable TV, DSL. Supports voice, data, video at same time.</p>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th style="color:var(--accent)">Baseband</th><th style="color:var(--accent3)">Voiceband</th><th style="color:var(--accent2)">Broadband</th></tr></thead>
+        <tbody>
+          <tr><td>Channels</td><td>Single</td><td>Single (voice)</td><td>Multiple simultaneous</td></tr>
+          <tr><td>Bandwidth</td><td>Low</td><td>300–3400 Hz</td><td>Very High</td></tr>
+          <tr><td>Signal</td><td>Digital</td><td>Analog/Digital</td><td>Both</td></tr>
+          <tr><td>Example</td><td>Ethernet LAN</td><td>Telephone line</td><td>Internet, Cable TV</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 7 ══ -->
+<div class="section" id="s7">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">07</span>
+    <span class="sec-title">By Range — PAN, LAN, MAN, WAN</span>
+    <span class="sec-tag tag-basic">Basic</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Network</th><th>Full Name</th><th>Range</th><th>Example</th><th>Technology</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-purple">PAN</span></td><td>Personal Area Network</td><td>~10 m</td><td>Bluetooth devices around a person</td><td>Bluetooth, IR, NFC</td></tr>
+          <tr><td><span class="badge b-blue">LAN</span></td><td>Local Area Network</td><td>Building / Campus</td><td>Home/office network, school</td><td>Ethernet, WiFi</td></tr>
+          <tr><td><span class="badge b-orange">MAN</span></td><td>Metropolitan Area Network</td><td>City / Town</td><td>City cable network, ISP</td><td>Fiber optic, WiMAX</td></tr>
+          <tr><td><span class="badge b-green">WAN</span></td><td>Wide Area Network</td><td>Country / World</td><td>The Internet</td><td>Satellite, fiber, leased lines</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info"><strong>Range Order:</strong> PAN &lt; LAN &lt; MAN &lt; WAN. WAN = largest, connects the entire world (Internet).</div>
+    <h4>LAN Sub-Types</h4>
+    <div class="cards">
+      <div class="card"><div class="card-title" style="color:var(--accent5)">WLAN</div><p>Wireless LAN — WiFi-based local network</p></div>
+      <div class="card"><div class="card-title" style="color:var(--accent6)">CAN</div><p>Campus Area Network — Multiple buildings in a campus</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 8 ══ -->
+<div class="section" id="s8">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">08</span>
+    <span class="sec-title">By Permission — Internet, Intranet, Extranet</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <div class="compare-grid">
+      <div class="cmp blue">
+        <div class="cmp-title" style="color:var(--accent)">🌍 Internet</div>
+        <ul>
+          <li><strong>Public network</strong> — anyone can access</li>
+          <li>No single owner</li>
+          <li>Global network of networks</li>
+          <li>Uses TCP/IP protocol</li>
+          <li>Example: Google, YouTube</li>
+        </ul>
+      </div>
+      <div class="cmp orange">
+        <div class="cmp-title" style="color:var(--accent3)">🏢 Intranet</div>
+        <ul>
+          <li><strong>Private network</strong> — only employees</li>
+          <li>Owned by an organization</li>
+          <li>Internal communication & data</li>
+          <li>Secured with passwords/firewall</li>
+          <li>Example: Company internal portal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cmp" style="border-top-color:var(--accent5);margin-top:12px">
+      <div class="cmp-title" style="color:var(--accent5)">🔗 Extranet</div>
+      <ul>
+        <li><strong>Extended Intranet</strong> — selected outsiders can access</li>
+        <li>Company shares info with trusted partners/suppliers/customers</li>
+        <li>Example: A company giving supplier access to inventory system</li>
+        <li>More open than Intranet, less open than Internet</li>
+      </ul>
+    </div>
+    <div class="tbl-wrap" style="margin-top:14px">
+      <table>
+        <thead><tr><th>Feature</th><th style="color:var(--accent)">Internet</th><th style="color:var(--accent3)">Intranet</th><th style="color:var(--accent5)">Extranet</th></tr></thead>
+        <tbody>
+          <tr><td>Who can access?</td><td>Everyone (public)</td><td>Employees only</td><td>Employees + selected partners</td></tr>
+          <tr><td>Ownership</td><td>No one / everyone</td><td>Organization</td><td>Organization</td></tr>
+          <tr><td>Security</td><td>Low</td><td>High</td><td>Medium</td></tr>
+          <tr><td>Scale</td><td>Global</td><td>Internal</td><td>Extended internal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 9 ══ -->
+<div class="section" id="s9">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">09</span>
+    <span class="sec-title">Other Types — Serial, Parallel, Unicast, Multicast, Broadcast, Analog, Digital</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+
+    <!-- Serial vs Parallel -->
+    <h4>Serial vs Parallel Communication</h4>
+    <div class="compare-grid">
+      <div class="cmp blue">
+        <div class="cmp-title" style="color:var(--accent)">📤 Serial Communication</div>
+        <ul>
+          <li>Data sent <strong>one bit at a time</strong></li>
+          <li>Uses single wire</li>
+          <li>Slower but reliable for long distance</li>
+          <li>Example: <strong>USB, RS-232</strong></li>
+        </ul>
+      </div>
+      <div class="cmp orange">
+        <div class="cmp-title" style="color:var(--accent3)">📤📤 Parallel Communication</div>
+        <ul>
+          <li>Data sent <strong>multiple bits simultaneously</strong></li>
+          <li>Uses multiple wires</li>
+          <li>Faster but limited to short distances</li>
+          <li>Example: <strong>Old printer port</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Unicast / Multicast / Broadcast -->
+    <h4>Unicast vs Multicast vs Broadcast</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Sender</th><th>Receiver</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-blue">Unicast</span></td><td>1 device</td><td>1 specific device</td><td>WhatsApp message to one person, Email</td></tr>
+          <tr><td><span class="badge b-orange">Multicast</span></td><td>1 device</td><td>Selected group</td><td>WhatsApp group message, Video conference</td></tr>
+          <tr><td><span class="badge b-green">Broadcast</span></td><td>1 device</td><td>ALL devices in network</td><td>TV broadcast, Radio, ARP packet in network</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Analog vs Digital -->
+    <h4>Analog vs Digital Signal</h4>
+    <div class="compare-grid">
+      <div class="cmp blue">
+        <div class="cmp-title" style="color:var(--accent)">〜 Analog Signal</div>
+        <ul>
+          <li>Continuous wave — infinite values</li>
+          <li>Represented by sine wave</li>
+          <li>More susceptible to noise</li>
+          <li>Examples: Human voice, AM/FM radio</li>
+          <li>Old telephone system</li>
+        </ul>
+      </div>
+      <div class="cmp green">
+        <div class="cmp-title" style="color:var(--accent2)">▐▐ Digital Signal</div>
+        <ul>
+          <li>Discrete values — only <strong>0 or 1</strong></li>
+          <li>Represented as square wave</li>
+          <li>More reliable, less noise</li>
+          <li>Examples: Computer data, WiFi</li>
+          <li>Modern communication systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 10 ══ -->
+<div class="section" id="s10">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Communication Models (3 Basic + 8 Models)</span>
+    <span class="sec-tag tag-imp">Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <h4>3 Basic Communication Models</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Model Name</th><th>Key Idea</th><th>Components</th></tr></thead>
+        <tbody>
+          <tr><td><code>1</code></td><td><strong>Shannon-Weaver Model</strong> (1948)</td><td>First mathematical model. Introduced concept of "noise" in communication.</td><td>Source → Transmitter → Channel → Receiver → Destination (+ Noise)</td></tr>
+          <tr><td><code>2</code></td><td><strong>Aristotle's Model</strong></td><td>Oldest communication model. Speaker → Speech → Audience.</td><td>Speaker, Speech, Audience, Occasion, Effect</td></tr>
+          <tr><td><code>3</code></td><td><strong>Lasswell's Model</strong> (1948)</td><td>Who says What in Which channel to Whom with What effect.</td><td>Who → What → Channel → Whom → Effect</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4>8 Other Communication Models (Names to Remember)</h4>
+    <div class="kf-grid">
+      <div class="kf"><div class="kf-label">Model 1</div><div class="kf-val">Osgood-Schramm</div><div class="kf-sub">Circular model, both are sender & receiver</div></div>
+      <div class="kf green"><div class="kf-label">Model 2</div><div class="kf-val">Berlo's SMCR</div><div class="kf-sub">Source, Message, Channel, Receiver</div></div>
+      <div class="kf orange"><div class="kf-label">Model 3</div><div class="kf-val">Transactional Model</div><div class="kf-sub">Simultaneous exchange</div></div>
+      <div class="kf pink"><div class="kf-label">Model 4</div><div class="kf-val">Westley & MacLean</div><div class="kf-sub">Mass media model</div></div>
+      <div class="kf purple"><div class="kf-label">Model 5</div><div class="kf-val">Dance's Helical</div><div class="kf-sub">Spiral/helix — builds over time</div></div>
+      <div class="kf teal"><div class="kf-label">Model 6</div><div class="kf-val">Newcomb's ABX</div><div class="kf-sub">Three-party communication</div></div>
+    </div>
+    <div class="memo"><div class="memo-label">🎯 Exam Focus</div>Shannon-Weaver model is most important — introduced "noise" concept. Berlo's SMCR (Source, Message, Channel, Receiver) is also frequently asked.</div>
+  </div>
+</div>
+
+<!-- ══ SECTION 11 ══ -->
+<div class="section" id="s11">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Data Transmission Modes — Simplex, Half Duplex, Full Duplex</span>
+    <span class="sec-tag tag-most">Most Important</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body">
+    <div class="duplex-row">
+      <div class="dup-card" style="border-top:3px solid var(--accent)">
+        <div class="dup-title" style="color:var(--accent)">Simplex</div>
+        <div class="dup-visual">A ──→ B</div>
+        <div class="dup-desc">One-way communication only. Data flows in ONE direction only. Receiver cannot send back.</div>
+        <div class="dup-ex">📺 TV, Radio, Keyboard → Computer</div>
+      </div>
+      <div class="dup-card" style="border-top:3px solid var(--accent3)">
+        <div class="dup-title" style="color:var(--accent3)">Half Duplex</div>
+        <div class="dup-visual">A ⇄ B</div>
+        <div class="dup-desc">Two-way communication but NOT simultaneously. Only one can send at a time. Must take turns.</div>
+        <div class="dup-ex">📟 Walkie-Talkie, Fax Machine</div>
+      </div>
+      <div class="dup-card" style="border-top:3px solid var(--accent2)">
+        <div class="dup-title" style="color:var(--accent2)">Full Duplex</div>
+        <div class="dup-visual">A ⇔ B</div>
+        <div class="dup-desc">Two-way communication simultaneously. Both can send AND receive at same time.</div>
+        <div class="dup-ex">📱 Mobile Phone, Video Call, Telephone</div>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Mode</th><th>Direction</th><th>Simultaneous?</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge b-blue">Simplex</span></td><td>One-way only</td><td>❌ No</td><td>TV, Radio, Keyboard, Mouse</td></tr>
+          <tr><td><span class="badge b-orange">Half Duplex</span></td><td>Both ways (alternate)</td><td>❌ No (takes turns)</td><td>Walkie-Talkie, CB Radio, Fax</td></tr>
+          <tr><td><span class="badge b-green">Full Duplex</span></td><td>Both ways</td><td>✅ Yes</td><td>Mobile call, Telephone, Video call</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo"><div class="memo-label">🎯 Most Asked</div>"Walkie-talkie uses which mode?" → <strong>Half Duplex</strong> | "Telephone uses?" → <strong>Full Duplex</strong> | "TV remote uses?" → <strong>Simplex</strong></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 12 ══ -->
+<div class="section" id="s12">
+  <div class="sec-header" onclick="toggleSec(this)">
+    <span class="sec-num">12</span>
+    <span class="sec-title">⚡ Rapid Revision — All Key Facts</span>
+    <span class="sec-tag tag-most">Exam Ready</span>
+    <span class="chevron">›</span>
+  </div>
+  <div class="sec-body open">
+    <h4>🔑 Inventors & Discoveries</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Technology</th><th>Inventor / Key Person</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr><td>Twisted Pair Wire</td><td>Alexander Graham Bell</td><td>~1881</td></tr>
+          <tr><td>Coaxial Cable</td><td>Oliver Heaviside</td><td>1880</td></tr>
+          <tr><td>Bluetooth</td><td>Ericsson company (named after Harald Bluetooth, Danish king)</td><td>1998</td></tr>
+          <tr><td>Li-Fi (coined)</td><td>Harald Haas (University of Edinburgh)</td><td>2011</td></tr>
+          <tr><td>WiFi Standard (802.11)</td><td>IEEE</td><td>1997</td></tr>
+          <tr><td>Shannon-Weaver Model</td><td>Claude Shannon & Warren Weaver</td><td>1948</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>🔑 Key Standards at a Glance</h4>
+    <div class="kf-grid">
+      <div class="kf"><div class="kf-label">WiFi</div><div class="kf-val">IEEE 802.11</div><div class="kf-sub">2.4 GHz / 5 GHz · 100m range</div></div>
+      <div class="kf green"><div class="kf-label">WiMAX</div><div class="kf-val">IEEE 802.16</div><div class="kf-sub">50 km range · 70 Mbps</div></div>
+      <div class="kf purple"><div class="kf-label">Bluetooth</div><div class="kf-val">IEEE 802.15.1</div><div class="kf-sub">2.4 GHz · 10m range</div></div>
+      <div class="kf orange"><div class="kf-label">RFID</div><div class="kf-val">IEEE 802.15.4</div><div class="kf-sub">13.56 MHz · 100m</div></div>
+      <div class="kf pink"><div class="kf-label">NFC</div><div class="kf-val">13.56 MHz</div><div class="kf-sub">4 cm only · 424 kbps</div></div>
+      <div class="kf teal"><div class="kf-label">White-Fi</div><div class="kf-val">IEEE 802.22</div><div class="kf-sub">TV white spaces · 100 km</div></div>
+    </div>
+
+    <h4>🔑 Fiber Optic vs Twisted Pair vs Coaxial</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Property</th><th>Twisted Pair</th><th>Coaxial</th><th>Fiber Optic</th></tr></thead>
+        <tbody>
+          <tr><td>Speed</td><td>🐢 Slow</td><td>🚗 Medium</td><td>🚀 Fastest</td></tr>
+          <tr><td>Cost</td><td>💚 Cheapest</td><td>💛 Medium</td><td>🔴 Most expensive</td></tr>
+          <tr><td>Fault Effect</td><td>Only segment fails</td><td>Whole network fails</td><td>Localized</td></tr>
+          <tr><td>Long Distance</td><td>❌</td><td>✅</td><td>✅✅</td></tr>
+          <tr><td>Noise/Error</td><td>High</td><td>Low</td><td>Lowest</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>🔑 Communication Modes</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Mode</th><th>Direction</th><th>Simultaneous</th><th>Real-world Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Simplex</strong></td><td>One-way</td><td>No</td><td>TV, Radio, Keyboard</td></tr>
+          <tr><td><strong>Half Duplex</strong></td><td>Both (turns)</td><td>No</td><td>Walkie-Talkie, Fax</td></tr>
+          <tr><td><strong>Full Duplex</strong></td><td>Both</td><td>Yes</td><td>Phone call, Video call</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>🔑 Network Permission Types</h4>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Access</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Internet</strong></td><td>Public — everyone</td><td>Google, YouTube</td></tr>
+          <tr><td><strong>Intranet</strong></td><td>Employees only</td><td>Company internal portal</td></tr>
+          <tr><td><strong>Extranet</strong></td><td>Employees + selected partners</td><td>Supplier inventory access</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info" style="margin-top:16px"><strong>All 5 Bases of Communication Classification:</strong><br>
+    1. Medium (Wired/Wireless) &nbsp;|&nbsp; 2. Capacity (Base/Voice/Broadband) &nbsp;|&nbsp; 3. Range (PAN/LAN/MAN/WAN) &nbsp;|&nbsp; 4. Permission (Internet/Intranet/Extranet) &nbsp;|&nbsp; 5. Others (Serial/Parallel/Unicast/Multicast/Broadcast/Analog/Digital)</div>
+  </div>
+</div>
+
+</div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /page-wrapper -->
+
+<script>
+function toggleSec(hd) {
+  const body = hd.nextElementSibling;
+  const chev = hd.querySelector('.chevron');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+function toggleSubsec(hd) {
+  const body = hd.nextElementSibling;
+  const chev = hd.querySelector('.chevron');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '🌙 Dark Mode';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀ Light Mode';
+  }
+}
+// Active nav on scroll
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href') === '#' + current) item.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

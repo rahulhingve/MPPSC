@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPSC 2027 — Day-Wise Study Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a202c; }
+  
+  .header { background: linear-gradient(135deg, #1e3a5f, #2d6a9f); color: white; padding: 28px 24px; text-align: center; }
+  .header h1 { font-size: 1.8em; margin-bottom: 6px; }
+  .header p { opacity: 0.85; font-size: 0.95em; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  /* Daily Time Table */
+  .section-title { font-size: 1.2em; font-weight: 700; color: #1e3a5f; margin: 28px 0 14px; border-left: 4px solid #2d6a9f; padding-left: 12px; }
+
+  .daily-box { background: white; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  .time-row { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #edf2f7; gap: 14px; }
+  .time-row:last-child { border-bottom: none; }
+  .time-badge { background: #e8f0fe; color: #1e3a5f; font-size: 0.78em; font-weight: 700; padding: 4px 10px; border-radius: 20px; min-width: 110px; text-align: center; }
+  .time-label { font-weight: 600; font-size: 0.92em; min-width: 130px; }
+  .time-desc { color: #4a5568; font-size: 0.88em; flex: 1; }
+  .time-hours { background: #fef3c7; color: #92400e; font-size: 0.78em; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+  /* Weekly Phase */
+  .phase-card { background: white; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 16px; border-left: 5px solid #2d6a9f; }
+  .phase-card.forest { border-left-color: #276749; }
+  .phase-card.revision { border-left-color: #b7791f; }
+  .phase-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  .phase-title { font-weight: 700; font-size: 1em; color: #1e3a5f; }
+  .phase-weeks { background: #e8f0fe; color: #1e3a5f; font-size: 0.78em; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .phase-card.forest .phase-weeks { background: #c6f6d5; color: #276749; }
+  .phase-card.revision .phase-weeks { background: #fef3c7; color: #92400e; }
+
+  .unit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .unit-item { background: #f7fafc; border-radius: 8px; padding: 10px 12px; }
+  .unit-name { font-weight: 600; font-size: 0.88em; color: #2d3748; }
+  .unit-topics { font-size: 0.8em; color: #718096; margin-top: 3px; line-height: 1.4; }
+
+  /* 7-Day Week Pattern */
+  .week-pattern { background: white; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+  .day-row { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid #edf2f7; align-items: start; }
+  .day-row:last-child { border-bottom: none; }
+  .day-name { font-weight: 700; font-size: 0.88em; color: #2d6a9f; }
+  .day-morning { font-size: 0.83em; color: #2d3748; }
+  .day-evening { font-size: 0.83em; color: #4a5568; }
+  .day-row.sunday .day-name { color: #c53030; }
+  .day-row.sunday .day-morning { color: #c53030; font-style: italic; }
+
+  /* Rules */
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rule-card { background: white; border-radius: 10px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+  .rule-icon { font-size: 1.4em; margin-bottom: 6px; }
+  .rule-title { font-weight: 700; font-size: 0.9em; color: #1e3a5f; margin-bottom: 4px; }
+  .rule-text { font-size: 0.82em; color: #4a5568; line-height: 1.5; }
+
+  /* CSAT box */
+  .csat-box { background: #fffbeb; border: 1px solid #fcd34d; border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; }
+  .csat-box h3 { color: #92400e; font-size: 0.95em; margin-bottom: 8px; }
+  .csat-box p { font-size: 0.85em; color: #78350f; line-height: 1.6; }
+
+  /* Progress bar visual */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline-item { position: relative; padding-bottom: 20px; }
+  .timeline-item::before { content: ''; position: absolute; left: -20px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #2d6a9f; }
+  .timeline-item::after { content: ''; position: absolute; left: -15px; top: 18px; width: 2px; height: calc(100% - 12px); background: #bee3f8; }
+  .timeline-item:last-child::after { display: none; }
+  .tl-month { font-weight: 700; font-size: 0.92em; color: #1e3a5f; }
+  .tl-desc { font-size: 0.83em; color: #4a5568; margin-top: 3px; line-height: 1.5; }
+
+  .highlight-box { background: linear-gradient(135deg, #ebf8ff, #e6fffa); border-radius: 10px; padding: 16px; margin: 20px 0; border: 1px solid #bee3f8; }
+  .highlight-box h3 { color: #1e3a5f; font-size: 1em; margin-bottom: 8px; }
+  .highlight-box ul { padding-left: 18px; }
+  .highlight-box li { font-size: 0.87em; color: #2d3748; margin-bottom: 5px; line-height: 1.5; }
+
+  @media (max-width: 600px) {
+    .unit-grid { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .day-row { grid-template-columns: 75px 1fr; }
+    .day-evening { grid-column: 2; }
+    .time-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📚 MPPSC 2027 — Complete Day-Wise Study Plan</h1>
+  <p>Civil Service + Forest Service | Prelims → Mains | 6 Ghante/Day</p>
+</div>
+
+<div class="container">
+
+  <!-- DAILY TIMETABLE -->
+  <div class="section-title">⏰ Roz Ka Fixed Time Table (6 Ghante)</div>
+  <div class="daily-box">
+    <div class="time-row">
+      <div class="time-badge">6:00 – 8:30</div>
+      <div class="time-label">🧠 Deep Study</div>
+      <div class="time-desc">New Unit padhna — Mains-depth se (concept clear karo, notes nahi, sirf samjho)</div>
+      <div class="time-hours">2.5 hrs</div>
+    </div>
+    <div class="time-row">
+      <div class="time-badge">8:30 – 9:00</div>
+      <div class="time-label">☕ Break</div>
+      <div class="time-desc">Nashta, walk — dimag ko rest do</div>
+      <div class="time-hours">—</div>
+    </div>
+    <div class="time-row">
+      <div class="time-badge">9:00 – 10:30</div>
+      <div class="time-label">✅ MCQ Practice</div>
+      <div class="time-desc">Kal ka padhaa hua topic ke 20-25 MCQ solve karo + galat jawab review</div>
+      <div class="time-hours">1.5 hrs</div>
+    </div>
+    <div class="time-row">
+      <div class="time-badge">11:00 – 12:00</div>
+      <div class="time-label">📰 Current Affairs</div>
+      <div class="time-desc">MP + National news (1 newspaper ya app), Unit 8 ke liye build karo</div>
+      <div class="time-hours">1 hr</div>
+    </div>
+    <div class="time-row">
+      <div class="time-badge">12:00 – 12:30</div>
+      <div class="time-label">📊 CSAT (Paper 2)</div>
+      <div class="time-desc">Reasoning / Maths / Hindi Comprehension — roz thoda thoda (Forest ke liye important!)</div>
+      <div class="time-hours">30 min</div>
+    </div>
+    <div class="time-row">
+      <div class="time-badge">Raat (Optional)</div>
+      <div class="time-label">🔁 Quick Recall</div>
+      <div class="time-desc">Aaj kya padhaa — 5 points yaad karo, notes nahi, sirf mental recall</div>
+      <div class="time-hours">30 min</div>
+    </div>
+  </div>
+
+  <!-- 7-DAY WEEKLY PATTERN -->
+  <div class="section-title">📅 Hafte Ka Pattern (Ye Repeat Hoga Har Week)</div>
+  <div class="week-pattern">
+    <div class="day-row">
+      <div class="day-name">Somvar</div>
+      <div class="day-morning">🆕 Naya Unit shuru — pehla topic padhna (2.5 hrs deep reading)</div>
+      <div class="day-evening">MCQ: Previous unit ke questions</div>
+    </div>
+    <div class="day-row">
+      <div class="day-name">Mangalvar</div>
+      <div class="day-morning">🆕 Same Unit — dusra topic continue</div>
+      <div class="day-evening">MCQ: Aaj ke topics ke questions</div>
+    </div>
+    <div class="day-row">
+      <div class="day-name">Budhvar</div>
+      <div class="day-morning">🆕 Same Unit — complete karo, important points mark karo</div>
+      <div class="day-evening">MCQ: Puri unit ke mixed questions</div>
+    </div>
+    <div class="day-row">
+      <div class="day-name">Guruvar</div>
+      <div class="day-morning">🔁 Is week ke unit ka full revision — fast reading</div>
+      <div class="day-evening">MCQ: 30-40 questions full unit test</div>
+    </div>
+    <div class="day-row">
+      <div class="day-name">Shukrvar</div>
+      <div class="day-morning">🆕 Naya Unit shuru (agle unit ka pehla topic)</div>
+      <div class="day-evening">Current Affairs heavy day + CSAT</div>
+    </div>
+    <div class="day-row">
+      <div class="day-name">Shanivaar</div>
+      <div class="day-morning">📝 Pichle 2 weeks ki units ka combined revision</div>
+      <div class="day-evening">MP GK special — MP specific topics revise karo</div>
+    </div>
+    <div class="day-row sunday">
+      <div class="day-name">Ravivar</div>
+      <div class="day-morning">😴 Chhuti — ya hafif padhai (1-2 hrs max), Previous year papers dekho</div>
+      <div class="day-evening">—</div>
+    </div>
+  </div>
+
+  <!-- CSAT WARNING -->
+  <div class="csat-box">
+    <h3>⚠️ CSAT (Paper 2) ke baare mein important baat</h3>
+    <p>Civil Service ke liye CSAT <strong>sirf qualifying</strong> hai (33% chahiye). Lekin <strong>Forest Service ke liye CSAT merit mein count hota hai!</strong> Isliye CSAT ko sirf 30-45 min roz do, ignore mat karo. 7 topics hain: Comprehension, Reasoning, Logical Ability, Decision Making, Mental Ability, Maths (Class 10 level), Hindi Comprehension.</p>
+  </div>
+
+  <!-- PHASE-WISE UNIT PLAN -->
+  <div class="section-title">📋 Phase-Wise Unit Schedule — Paper 1 (10 Units)</div>
+
+  <div class="phase-card">
+    <div class="phase-head">
+      <div class="phase-title">🔴 Phase 1 — Abhi Chal Raha (Tumne Start Kar Diya)</div>
+      <div class="phase-weeks">Week 1–2 (Abhi)</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Unit 10 — Janjatiyaan (MP)</div>
+        <div class="unit-topics">Geographical spread, PVTGs (Baiga, Bhariya, Sahariya), tribal culture, folk literature, freedom movement mein yogdan</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Unit 9 — Suchna Praudyogiki</div>
+        <div class="unit-topics">Computer basics, AI, Robotics, Cyber Security, E-Governance, Social Media, Internet</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-card">
+    <div class="phase-head">
+      <div class="phase-title">🟠 Phase 2 — Science, Environment, Current Affairs</div>
+      <div class="phase-weeks">Week 3–5</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Unit 7 — Vigyan, Paryavaran, Swasthya</div>
+        <div class="unit-topics">Science branches, ISRO, Human body, SDGs, Biodiversity, Pollution, Health schemes (AYUSH, NHM)</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Unit 8 — Samsamayik Ghatnaen</div>
+        <div class="unit-topics">International, National, MP current events — ye ongoing hai, roz 30 min kafi. Monthly compilation banao.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-card">
+    <div class="phase-head">
+      <div class="phase-title">🟡 Phase 3 — Polity + Economy (Sabse Heavy)</div>
+      <div class="phase-weeks">Week 6–9</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Unit 5 — Samvaidhanik Vyavastha</div>
+        <div class="unit-topics">Constitution, Parliament, Supreme Court, MP Rajyapal, Panchayati Raj, 3-tier system, Good Governance</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Unit 6 — Arthvyavastha</div>
+        <div class="unit-topics">Indian Economy, MP economy, SDGs, Agriculture, MSME, Finance institutions, G20, SAARC, ODOP</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-card">
+    <div class="phase-head">
+      <div class="phase-title">🟢 Phase 4 — Geography (India + MP)</div>
+      <div class="phase-weeks">Week 10–12</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Unit 3 — Bharat ka Bhugol</div>
+        <div class="unit-topics">Mountains, rivers, climate, El Nino, Natural resources, Population, Disasters</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Unit 4 — MP ka Bhugol</div>
+        <div class="unit-topics">Van, Nadiyaan, Khanij, Faselein, Industries, Jansankhya — FOREST exam ke liye especially important!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-card">
+    <div class="phase-head">
+      <div class="phase-title">🔵 Phase 5 — History (India + MP)</div>
+      <div class="phase-weeks">Week 13–16</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Unit 1 — Bharat ka Itihas</div>
+        <div class="unit-topics">Ancient, Medieval, Cultural Heritage, 19th-20th century reforms, Freedom Movement, Post-independence</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Unit 2 — MP Itihas, Sanskriti, Sahitya</div>
+        <div class="unit-topics">Rajvansh, Arts, Tribes, Folk music, Literary creators, World Heritage sites, Janjatiya personalities</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-card revision">
+    <div class="phase-head">
+      <div class="phase-title">🔁 Phase 6 — Grand Revision Cycle 1</div>
+      <div class="phase-weeks">Week 17–20</div>
+    </div>
+    <p style="font-size:0.88em; color:#4a5568; line-height:1.6;">Sab 10 units ek baar fast revision. Har unit ko 2-2 din do. MCQ mock tests shuru karo. Previous year papers solve karo (2020, 2021, 2022, 2023). Galat answers pe extra focus.</p>
+  </div>
+
+  <div class="phase-card forest">
+    <div class="phase-head">
+      <div class="phase-title">🌳 Phase 7 — Forest Vaniki Add Karo (Section B)</div>
+      <div class="phase-weeks">Month 7 se start</div>
+    </div>
+    <div class="unit-grid">
+      <div class="unit-item">
+        <div class="unit-name">Van aur Vaniki (Unit 1-2)</div>
+        <div class="unit-topics">Forest types, Silviculture, Tree species (Teak, Sal, Mahua...), Wood products, Non-wood products</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Van Niti aur Kanoon (Unit 3)</div>
+        <div class="unit-topics">Forest Acts 1894, 1927, 1952, 1988, 2019, Wildlife Protection Act, Forest Rights Act 2006, PESA</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Van Rakshan (Unit 4)</div>
+        <div class="unit-topics">Forest fires, Grazing, Afforestation, Carbon pool, National Parks, Biosphere Reserves</div>
+      </div>
+      <div class="unit-item">
+        <div class="unit-name">Chemistry, Physics, Biology (Unit 6-8)</div>
+        <div class="unit-topics">Class 10-12 level science — tumhara ICT background help karega Unit 7 (Computer Science) mein!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LONG TERM TIMELINE -->
+  <div class="section-title">🗓️ 2025-2027 Big Picture Timeline</div>
+  <div class="daily-box">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-month">April – September 2025 (6 mahine)</div>
+        <div class="tl-desc">Paper 1 ke 10 units complete (Phase 1-5) + CSAT daily 30 min + Current Affairs daily</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-month">October – December 2025 (3 mahine)</div>
+        <div class="tl-desc">Grand Revision + Previous Year Papers + Mock Tests + Weak topics identify karo</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-month">January – March 2026 (3 mahine)</div>
+        <div class="tl-desc">Forest Vaniki Section B start + Civil Mains ke liye GS depth increase + CSAT strengthen</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-month">April – June 2026</div>
+        <div class="tl-desc">Prelims 2026 aaye to attempt karo (practice round!) — result se strength/weakness samjho</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-month">July 2026 – March 2027</div>
+        <div class="tl-desc">Mains preparation intense + Answer writing practice + Forest Vaniki complete + Interview prep</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-month">🎯 2027 — TARGET</div>
+        <div class="tl-desc">MPPSC Civil + Forest Service Prelims + Mains — Full preparation complete!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOLDEN RULES -->
+  <div class="section-title">⭐ 5 Golden Rules — Confusion Kabhi Nahi Hogi</div>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-icon">📖</div>
+      <div class="rule-title">Ek Unit = 3 Din</div>
+      <div class="rule-text">Koi bhi unit ek sath khatam karo — beech mein mat chhodo. 3 din ek unit ko do, 4th day revision.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">❌</div>
+      <div class="rule-title">Abhi Notes Mat Banao</div>
+      <div class="rule-text">Notes banane se time waste hota hai. Pehle 6 mahine sirf padho aur samjho. Notes Phase 6 mein banao.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">📰</div>
+      <div class="rule-title">Current Affairs Daily Compulsory</div>
+      <div class="rule-text">Unit 8 ongoing hai — roz 30 min news. MP + National. Monthly ek jagah compile karo (diary ya app).</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🔄</div>
+      <div class="rule-title">MCQ Practice Without Skip</div>
+      <div class="rule-text">Jo topic pada, uske MCQ roz solve karo. Galat jawab ka reason zaroor samjho — sirf answer dekhna nahi.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🌳</div>
+      <div class="rule-title">Forest Vaniki — 6 Mahine Baad</div>
+      <div class="rule-text">Abhi Vaniki mat padhna. Civil + Forest ka common GS foundation pehle mazboot karo. Vaniki month 7 se.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">💤</div>
+      <div class="rule-title">6 Ghante Quality > 9 Ghante Baith Ke</div>
+      <div class="rule-text">Abhi 6 ghante productive hain — yahi kaafi hai. Dhire dhire badhega. Quality padhai hi result deti hai.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:24px;">
+    <h3>🎯 Sabse Badi Baat — Ye Plan Follow Karo</h3>
+    <ul>
+      <li><strong>Subah uthke pehla kaam</strong> — Deep study block (2.5 hrs) karo, fresh mind hoti hai</li>
+      <li><strong>Ek din mein ek hi unit</strong> — 2 units ek saath padhne se confusion hoti hai</li>
+      <li><strong>Shanivaar</strong> — sirf revision, naya topic nahi</li>
+      <li><strong>Ravivar</strong> — Rest ya Previous Year Papers — naya topic bilkul nahi</li>
+      <li><strong>Monthly check</strong> — kitne units complete? MCQ accuracy kitni? Adjust karo</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPPSC Revision Launcher</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --card: #1e293b;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --chip: #0b1220;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg, #020617, #0f172a);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px
+        }
+
+        .hero {
+            background: rgba(15, 23, 42, .8);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 28px
+        }
+
+        p {
+            margin: 8px 0;
+            color: var(--muted)
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 18px 0;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            color: var(--text);
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background: linear-gradient(90deg, #0284c7, #0ea5e9);
+            border: none;
+            font-weight: 700;
+        }
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .chip {
+            background: var(--chip);
+            border: 1px solid var(--border);
+            padding: 8px 10px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .card {
+            background: rgba(17, 24, 39, .9);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .path {
+            font-size: 12px;
+            color: var(--muted);
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 999px;
+            background: #082f49;
+            color: #bae6fd;
+            border: 1px solid #0c4a6e;
+            margin-right: 6px;
+        }
+
+        .secondary {
+            background: #0b1220;
+            border: 1px solid var(--border);
+        }
+
+        .viewer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .viewer-box {
+            background: rgba(17, 24, 39, .95);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            line-height: 1.75;
+        }
+
+        .viewer a {
+            color: #7dd3fc
+        }
+
+        .viewer pre {
+            overflow: auto;
+            background: #020617;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .viewer code {
+            background: #0b1220;
+            padding: 2px 5px;
+            border-radius: 6px;
+        }
+
+        .hidden {
+            display: none
+        }
+
+        @media (max-width:900px) {
+            .controls {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media (max-width:640px) {
+            .controls {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        const app = document.getElementById('app');
+        const q = new URLSearchParams(location.search);
+        const viewFile = q.get('view');
+
+        function escapeHtml(str = '') {
+            return str.replace(/[&<>"']/g, s => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[s]));
+        }
+
+        function normalizeType(ext) {
+            return (ext || '').replace('.', '').toUpperCase();
+        }
+
+        function openTarget(file) {
+            const ext = file.ext.toLowerCase();
+            if (ext === '.md' || ext === '.txt') {
+                window.open(`./index.html?view=${encodeURIComponent(file.path)}`, '_blank');
+            } else {
+                window.open(`./${file.path}`, '_blank');
+            }
+        }
+
+        async function renderViewer(path) {
+            try {
+                const ext = path.split('.').pop().toLowerCase();
+                const res = await fetch(path);
+                if (!res.ok) throw new Error('Cannot load file');
+                const text = await res.text();
+
+                let content = '';
+                if (ext === 'md') {
+                    content = marked.parse(text);
+                } else {
+                    content = `<pre>${escapeHtml(text)}</pre>`;
+                }
+
+                app.innerHTML = `
+          <div class="viewer">
+            <div class="viewer-box">
+              <div class="small"><a href="./index.html">← Back to launcher</a></div>
+              <h1 style="margin-top:10px;">${escapeHtml(path.split('/').pop())}</h1>
+              <p class="small">${escapeHtml(path)}</p>
+              <div>${content}</div>
+            </div>
+          </div>
+        `;
+            } catch (err) {
+                app.innerHTML = `
+          <div class="viewer">
+            <div class="viewer-box">
+              <h1>Unable to open file</h1>
+              <p class="small">${escapeHtml(path)}</p>
+              <p>Open this site through GitHub Pages or a local HTTP server, not directly with file://</p>
+              <p><a href="./index.html">Back to launcher</a></p>
+            </div>
+          </div>
+        `;
+            }
+        }
+
+        async function renderHome() {
+            app.innerHTML = `
+        <div class="wrap">
+          <div class="hero">
+            <h1>MPPSC Revision Launcher</h1>
+            <p>Open any class file from one place, filter by subject folder, class number, type, or keyword.</p>
+
+            <div class="controls">
+              <input id="search" placeholder="Search subject, class, keyword..." />
+              <select id="folder"><option value="">All folders</option></select>
+              <select id="type">
+                <option value="">All types</option>
+                <option value=".html">HTML</option>
+                <option value=".md">MD</option>
+                <option value=".pdf">PDF</option>
+                <option value=".txt">TXT</option>
+                <option value=".opml">OPML</option>
+                <option value=".mm">MM</option>
+                <option value=".apkg">APKG</option>
+              </select>
+              <input id="classSearch" placeholder="Class no. e.g. 4 or 4.1" />
+            </div>
+
+            <div class="meta">
+              <div class="chip" id="countChip">Loading files...</div>
+              <div class="chip">HTML/PDF open directly</div>
+              <div class="chip">MD/TXT open in built-in viewer</div>
+            </div>
+          </div>
+
+          <div id="grid" class="grid"></div>
+        </div>
+      `;
+
+            const searchInput = document.getElementById('search');
+            const folderSelect = document.getElementById('folder');
+            const typeSelect = document.getElementById('type');
+            const classSearch = document.getElementById('classSearch');
+            const grid = document.getElementById('grid');
+            const countChip = document.getElementById('countChip');
+
+            let data;
+            try {
+                const res = await fetch('./files.json?v=' + Date.now());
+                data = await res.json();
+            } catch (err) {
+                grid.innerHTML = `
+          <div class="card">
+            <h3>files.json not found</h3>
+            <div class="path">Push the repo once and let the GitHub Action generate the manifest.</div>
+          </div>
+        `;
+                countChip.textContent = 'Manifest not loaded';
+                return;
+            }
+
+            const allFiles = data.files || [];
+            const folders = [...new Set(allFiles.map(f => f.folder))].sort((a, b) => a.localeCompare(b));
+            folders.forEach(f => {
+                const opt = document.createElement('option');
+                opt.value = f;
+                opt.textContent = f;
+                folderSelect.appendChild(opt);
+            });
+
+            function render() {
+                const s = searchInput.value.trim().toLowerCase();
+                const folder = folderSelect.value;
+                const type = typeSelect.value;
+                const cls = classSearch.value.trim().toLowerCase();
+
+                const filtered = allFiles.filter(f => {
+                    const hay = `${f.path} ${f.name} ${f.folder} ${f.classNumber || ''}`.toLowerCase();
+                    if (s && !hay.includes(s)) return false;
+                    if (folder && f.folder !== folder) return false;
+                    if (type && f.ext !== type) return false;
+                    if (cls && String(f.classNumber || '').toLowerCase() !== cls) return false;
+                    return true;
+                });
+
+                countChip.textContent = `${filtered.length} / ${allFiles.length} files`;
+
+                if (!filtered.length) {
+                    grid.innerHTML = `
+            <div class="card">
+              <h3>No files found</h3>
+              <div class="path">Try a different subject, class number, or keyword.</div>
+            </div>
+          `;
+                    return;
+                }
+
+                grid.innerHTML = filtered.map(f => `
+          <div class="card">
+            <div>
+              <span class="pill">${normalizeType(f.ext)}</span>
+              <span class="pill">${escapeHtml(f.folder)}</span>
+              ${f.classNumber ? `<span class="pill">Class ${escapeHtml(f.classNumber)}</span>` : ''}
+            </div>
+            <h3>${escapeHtml(f.name)}</h3>
+            <div class="path">${escapeHtml(f.path)}</div>
+            <div class="small">Recommended action: ${f.ext === '.md' || f.ext === '.txt' ? 'Open in viewer' : 'Open file'}</div>
+            <div class="row">
+              <button data-open="${encodeURIComponent(f.path)}">Open</button>
+              <button class="secondary" data-copy="${encodeURIComponent(f.path)}">Copy path</button>
+            </div>
+          </div>
+        `).join('');
+
+                grid.querySelectorAll('[data-open]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const path = decodeURIComponent(btn.dataset.open);
+                        openTarget(allFiles.find(x => x.path === path));
+                    });
+                });
+
+                grid.querySelectorAll('[data-copy]').forEach(btn => {
+                    btn.addEventListener('click', async () => {
+                        const path = decodeURIComponent(btn.dataset.copy);
+                        await navigator.clipboard.writeText(path);
+                        btn.textContent = 'Copied';
+                        setTimeout(() => btn.textContent = 'Copy path', 1000);
+                    });
+                });
+            }
+
+            [searchInput, folderSelect, typeSelect, classSearch].forEach(el => {
+                el.addEventListener('input', render);
+                el.addEventListener('change', render);
+            });
+
+            render();
+        }
+
+        if (viewFile) {
+            renderViewer(viewFile);
+        } else {
+            renderHome();
+        }
+    </script>
+</body>
+
+</html>

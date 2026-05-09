@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MPPSC Revision: Madhya Pradesh Janjatiyon ke Samvidhanik Pravadhan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1020;
+      --panel: #17192d;
+      --panel-2: #1f2238;
+      --text: #f8fbff;
+      --muted: #d8e1f0;
+      --cyan: #00d4ff;
+      --orange: #ff7a35;
+      --green: #00e68a;
+      --purple: #b388ff;
+      --red: #ff5370;
+      --border: rgba(255, 255, 255, 0.16);
+      --nav-bg: rgba(15, 16, 32, 0.94);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+    }
+    body.light {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --panel-2: #eef3f9;
+      --text: #111827;
+      --muted: #344054;
+      --border: rgba(17, 24, 39, 0.18);
+      --nav-bg: rgba(247, 249, 252, 0.96);
+      --shadow: 0 18px 45px rgba(17, 24, 39, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100%, 860px); margin: 0 auto; padding: 18px; }
+    header {
+      padding: 34px 0 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow { color: var(--cyan); font-weight: 800; text-transform: uppercase; font-size: 0.82rem; }
+    h1 { margin: 8px 0 12px; font-size: clamp(2rem, 7vw, 4rem); line-height: 1.08; }
+    h2 { margin: 0 0 12px; font-size: 1.75rem; line-height: 1.2; }
+    h3 { margin: 0 0 10px; font-size: 1.12rem; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .progress-shell {
+      height: 12px;
+      background: #242741;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      transition: width 0.25s ease;
+    }
+    .progress-text { margin-top: 8px; color: var(--muted); font-weight: 700; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-tools {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) auto;
+      gap: 10px;
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 10px 18px 0;
+      align-items: center;
+    }
+    .quick-jump {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      padding: 8px 10px;
+    }
+    .theme-toggle {
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font: inherit;
+      font-weight: 900;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .toc {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 18px;
+      margin: 0 auto;
+      width: min(100%, 920px);
+    }
+    .toc a {
+      white-space: nowrap;
+      text-decoration: none;
+      padding: 8px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 0.88rem;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    section {
+      margin: 24px 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow);
+    }
+    section[data-accent="cyan"] { border-top: 4px solid var(--cyan); }
+    section[data-accent="orange"] { border-top: 4px solid var(--orange); }
+    section[data-accent="green"] { border-top: 4px solid var(--green); }
+    section[data-accent="purple"] { border-top: 4px solid var(--purple); }
+    section[data-accent="red"] { border-top: 4px solid var(--red); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 14px; }
+    .card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .card strong, .hot strong { color: var(--text); }
+    .mini { font-size: 0.95rem; color: var(--muted); }
+    .hot {
+      border-left: 4px solid var(--orange);
+      padding: 12px 14px;
+      margin: 14px 0;
+      background: rgba(255, 122, 53, 0.12);
+      border-radius: 6px;
+    }
+    .def {
+      border-left: 4px solid var(--cyan);
+      padding: 12px 14px;
+      margin: 14px 0;
+      background: rgba(0, 212, 255, 0.10);
+      border-radius: 6px;
+    }
+    ul { margin: 8px 0 0; padding-left: 20px; }
+    li { margin: 5px 0; color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    th { color: var(--text); background: rgba(255,255,255,0.08); }
+    tr:last-child td { border-bottom: 0; }
+    details {
+      margin: 12px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel-2);
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    details > div { padding: 0 14px 14px; }
+    .timeline { display: grid; gap: 10px; }
+    .time-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+    .year { color: var(--green); font-weight: 900; }
+    .quiz { display: grid; gap: 10px; }
+    .qa {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      background: rgba(255,255,255,0.05);
+    }
+    .qa button {
+      margin-top: 8px;
+      border: 0;
+      border-radius: 6px;
+      padding: 8px 11px;
+      background: var(--cyan);
+      color: #07111b;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .answer { display: none; margin-top: 8px; color: var(--green); font-weight: 800; }
+    .answer.show { display: block; }
+    .visual {
+      margin: 16px 0;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #11172a;
+    }
+    .visual svg { width: 100%; height: auto; display: block; }
+    .checklist label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .checklist input { margin-top: 7px; transform: scale(1.15); accent-color: var(--green); }
+    footer { padding: 24px 0 48px; color: var(--muted); }
+    @media (max-width: 640px) {
+      .wrap { padding: 14px; }
+      section { padding: 16px; }
+      .nav-tools { grid-template-columns: 1fr; padding: 10px 14px 0; }
+      .theme-toggle { width: 100%; }
+      .time-item { grid-template-columns: 1fr; }
+      th, td { font-size: 0.92rem; padding: 8px; }
+    }
+    @media print {
+      body { background: #fff; color: #000; font-size: 12pt; }
+      nav, .nav-tools, .qa button, .progress-shell { display: none; }
+      section, .card, details, .visual { box-shadow: none; background: #fff; color: #000; border-color: #000; }
+      p, li, th, td, .mini, .answer { color: #000; }
+      details > div, .answer { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="eyebrow">MPPSC Paper 2 • Unit: Madhya Pradesh Janjatiyan</div>
+    <h1>💡 Janjatiyon ke Samvidhanik Pravadhan</h1>
+    <p>Madhya Pradesh ki tribes se related Articles, Schedules, Amendments, Commissions, Reservation aur PESA ka complete Hinglish revision page.</p>
+    <div class="badges">
+      <span class="badge">🎯 12 Major Topics</span>
+      <span class="badge">🔥 30+ Exam Hot Facts</span>
+      <span class="badge">🧠 Quick Recall + Checklist</span>
+    </div>
+    <div class="progress-shell"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text" id="progressText">0% checklist complete</div>
+  </header>
+
+  <nav aria-label="Table of contents">
+    <div class="nav-tools">
+      <label class="sr-only" for="quickJump">Quick jump</label>
+      <select class="quick-jump" id="quickJump" aria-label="Quick jump to topic">
+        <option value="">Quick jump to topic...</option>
+        <option value="foundation">Basics: Articles 15-46</option>
+        <option value="schedules">Article 244 & Schedules</option>
+        <option value="reservation">Articles 330-334</option>
+        <option value="states371">Article 371 States</option>
+        <option value="commissions">Commissions: 338A-339</option>
+        <option value="pesa">PESA Act</option>
+        <option value="mcq">MCQ Facts</option>
+        <option value="fullforms">Full Forms</option>
+        <option value="hotfacts">Exam Hot Facts</option>
+        <option value="checklist">Checklist</option>
+      </select>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">Light Mode</button>
+    </div>
+    <div class="toc">
+      <a href="#foundation">Basics</a>
+      <a href="#schedules">244 & Schedules</a>
+      <a href="#reservation">330-334</a>
+      <a href="#states371">371</a>
+      <a href="#commissions">338A-339</a>
+      <a href="#pesa">PESA</a>
+      <a href="#mcq">MCQ Facts</a>
+      <a href="#fullforms">Full Forms</a>
+      <a href="#hotfacts">Hot Facts</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="foundation" data-accent="cyan">
+      <h2>📘 Fundamental Rights & Directive Principles</h2>
+      <p>Teacher ne pehle Articles 15, 16, 17, 23, 24, 25, 29, 46 aur 350A ko ST welfare ke angle se revise karaya.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Article 15: Equality / Bhedbhav Nahi</h3>
+          <ul>
+            <li>Religion, race/origin, caste, sex/gender, place of birth ke basis par discrimination nahi.</li>
+            <li><strong>15(2):</strong> public wells, tanks, shops, hotels, roads jaise public places par kisi ko roka nahi ja sakta.</li>
+            <li><strong>15(3):</strong> women aur children ke liye special provisions ban sakte hain; Article 15 ka violation nahi maana jayega.</li>
+            <li><strong>15(4):</strong> ST/educationally backward groups ki educational upliftment ke liye special provision.</li>
+            <li><strong>15(5):</strong> admission/enrolment mein special provisions, government aur private educational institutions dono mein.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Article 16: Public Employment</h3>
+          <ul>
+            <li><strong>16:</strong> lok niyojan / government employment mein equality of opportunity.</li>
+            <li><strong>16(4):</strong> backward classes ke appointments/posts mein reservation ka provision.</li>
+            <li><strong>16(4A):</strong> promotion mein reservation.</li>
+            <li><strong>16(4B):</strong> backlog posts carry forward honge aur 50% limit mein count nahi honge.</li>
+            <li>Backlog ka simple meaning: bache hue reserved posts.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Article 46 & Cultural Rights</h3>
+          <ul>
+            <li><strong>Article 46:</strong> State SC/ST aur weak sections ke educational-economic interests ko promote karega.</li>
+            <li>Social injustice aur exploitation se protection dena state ka duty hai.</li>
+            <li><strong>Article 29:</strong> language, script aur culture ko protect karne ka right.</li>
+            <li><strong>Article 350A:</strong> primary level par mother tongue education ki facility, especially linguistic minorities ke liye.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Labour, Freedom & Religion</h3>
+          <ul>
+            <li><strong>Article 17:</strong> untouchability / chhuachhut ka end; SC/ST Act 1989 isi direction mein linked hai.</li>
+            <li><strong>Article 18:</strong> titles / upadhiyon ka end.</li>
+            <li><strong>Article 19:</strong> speech, movement, residence, association aur profession/business freedoms.</li>
+            <li><strong>Article 23:</strong> bonded labour, forced labour, begar allowed nahi.</li>
+            <li><strong>Article 24:</strong> 14 saal se kam bachchon se harmful work nahi karwaya jayega.</li>
+            <li><strong>Article 25:</strong> religious freedom; teacher ne tribal temple-entry context se link kiya.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="hot">🔥 <strong>Exam Hot:</strong> 15(4) First Amendment 1951 se, 15(5) 93rd Amendment 2005 se, 16(4A) 77th Amendment 1995 se, aur 16(4B) 81st Amendment 2000 se linked hai.</div>
+      <details>
+        <summary>🧠 Cases, Movements aur Side Facts</summary>
+        <div>
+          <table>
+            <tr><th>Fact</th><th>Revision Note</th></tr>
+            <tr><td>Champakam Dorairajan Case</td><td>Teacher ne 15(4) ke context mein bataya: medical/engineering reservation issue ke baad 1st Amendment 1951 se 15(4) add hua.</td></tr>
+            <tr><td>Indra Sawhney Case</td><td>Mandal/OBC reservation ke context mein: reservation 50% se zyada nahi; backlog issue ke baad 16(4B) add hua.</td></tr>
+            <tr><td>Kaka Kalelkar Commission</td><td>Article 340 / backward class commission ke example mein mention.</td></tr>
+            <tr><td>Mandal Commission</td><td>VP Singh ne Mandal recommendations ke basis par OBC ko 27% reservation diya.</td></tr>
+            <tr><td>Kailash Satyarthi</td><td>Bachpan Bachao Andolan 1980; Nobel Peace Prize 2014. Article 24 se link.</td></tr>
+          </table>
+        </div>
+      </details>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">Article 15(4) kis amendment se add hua? <button>Answer</button><div class="answer">First Constitutional Amendment, 1951.</div></div>
+        <div class="qa">Backlog posts aur 50% limit wala provision kaun sa hai? <button>Answer</button><div class="answer">Article 16(4B), 81st Amendment 2000.</div></div>
+        <div class="qa">SC/ST educational-economic interest ko promote karne wala article? <button>Answer</button><div class="answer">Article 46, Part IV.</div></div>
+      </div>
+    </section>
+
+    <section id="schedules" data-accent="green">
+      <h2>🗺️ Article 244, Fifth Schedule & Sixth Schedule</h2>
+      <div class="def"><strong>Article 244:</strong> Scheduled Areas aur Tribal Areas ke administration ka core article. 244(1) Fifth Schedule, 244(2) Sixth Schedule se link hai.</div>
+      <div class="grid">
+        <article class="card">
+          <h3>244(1): Fifth Schedule</h3>
+          <ul>
+            <li>Scheduled Areas ke liye special provisions.</li>
+            <li>Scheduled Area declare karne ka power President ke paas.</li>
+            <li>India mein teacher ke according 10 states mein Scheduled Areas.</li>
+            <li>Tribal Advisory Council (TAC) banayi jaati hai.</li>
+            <li>TAC mein total 20 members; 3/4 members ST MLAs hone chahiye.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>244(2): Sixth Schedule</h3>
+          <ul>
+            <li>Assam, Meghalaya, Mizoram, Tripura ke tribal areas ke special provisions.</li>
+            <li>In states mein Autonomous District Councils ka arrangement.</li>
+            <li>Teacher ne isko “swait jila parishad” ke naam se revise karaya.</li>
+          </ul>
+        </article>
+      </div>
+      <details open>
+        <summary>📌 10 Scheduled Area States</summary>
+        <div>
+          <table>
+            <tr><th>Memory Cluster</th><th>States</th></tr>
+            <tr><td>MP ke aas-paas</td><td>Madhya Pradesh, Rajasthan, Gujarat, Maharashtra, Chhattisgarh</td></tr>
+            <tr><td>East + South + North</td><td>Jharkhand, Odisha, Andhra Pradesh, Telangana, Himachal Pradesh</td></tr>
+          </table>
+        </div>
+      </details>
+      <details>
+        <summary>🏛️ Autonomous District Councils</summary>
+        <div>
+          <table>
+            <tr><th>State</th><th>Councils Mentioned</th></tr>
+            <tr><td>Assam</td><td>Bodoland, Karbi, Dima</td></tr>
+            <tr><td>Meghalaya</td><td>Garo, Khasi, Jaintia</td></tr>
+            <tr><td>Mizoram</td><td>Chakma, Lai, Mara</td></tr>
+            <tr><td>Tripura</td><td>Tripura Autonomous District Council</td></tr>
+          </table>
+        </div>
+      </details>
+      <div class="visual" aria-label="Article 244 visual map">
+        <svg viewBox="0 0 820 240" role="img">
+          <rect x="20" y="20" width="180" height="70" rx="8" fill="#00d4ff" opacity=".18" stroke="#00d4ff"/>
+          <text x="110" y="52" text-anchor="middle" fill="#fff" font-size="20" font-weight="800">Article 244</text>
+          <text x="110" y="76" text-anchor="middle" fill="#d8e1f0" font-size="14">Administration</text>
+          <line x1="200" y1="55" x2="330" y2="55" stroke="#d8e1f0" stroke-width="2"/>
+          <line x1="200" y1="55" x2="330" y2="165" stroke="#d8e1f0" stroke-width="2"/>
+          <rect x="330" y="20" width="210" height="80" rx="8" fill="#00e68a" opacity=".16" stroke="#00e68a"/>
+          <text x="435" y="52" text-anchor="middle" fill="#fff" font-size="18" font-weight="800">244(1)</text>
+          <text x="435" y="76" text-anchor="middle" fill="#d8e1f0" font-size="14">Fifth Schedule, TAC</text>
+          <rect x="330" y="130" width="210" height="80" rx="8" fill="#b388ff" opacity=".16" stroke="#b388ff"/>
+          <text x="435" y="162" text-anchor="middle" fill="#fff" font-size="18" font-weight="800">244(2)</text>
+          <text x="435" y="186" text-anchor="middle" fill="#d8e1f0" font-size="14">Sixth Schedule, ADC</text>
+          <rect x="600" y="20" width="190" height="80" rx="8" fill="#fff" opacity=".07" stroke="#ffffff"/>
+          <text x="695" y="52" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">10 States</text>
+          <text x="695" y="76" text-anchor="middle" fill="#d8e1f0" font-size="13">Scheduled Areas</text>
+          <rect x="600" y="130" width="190" height="80" rx="8" fill="#fff" opacity=".07" stroke="#ffffff"/>
+          <text x="695" y="162" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">AMMT</text>
+          <text x="695" y="186" text-anchor="middle" fill="#d8e1f0" font-size="13">Assam, Meghalaya, Mizoram, Tripura</text>
+        </svg>
+      </div>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">Fifth Schedule kis article se linked hai? <button>Answer</button><div class="answer">Article 244(1).</div></div>
+        <div class="qa">TAC mein total kitne members? <button>Answer</button><div class="answer">20 members, jisme 3/4 ST MLAs.</div></div>
+        <div class="qa">Sixth Schedule ke four states? <button>Answer</button><div class="answer">Assam, Meghalaya, Mizoram, Tripura.</div></div>
+      </div>
+    </section>
+
+    <section id="reservation" data-accent="orange">
+      <h2>🗳️ Part XVI: Articles 330, 332, 334</h2>
+      <p>Part XVI mein political reservation aur duration ka core revision hai. Teacher ne 330 → 332 → 334 ka pattern yaad karaya.</p>
+      <table>
+        <tr><th>Article</th><th>Kya Yaad Rakhna Hai</th><th>MP/India Numbers</th></tr>
+        <tr><td>Article 330</td><td>Lok Sabha mein SC/ST reservation.</td><td>ST ke liye total 47 Lok Sabha seats; MP se 6 ST seats; MP total Lok Sabha seats 29.</td></tr>
+        <tr><td>Article 332</td><td>State Legislative Assemblies mein SC/ST reservation.</td><td>MP Vidhan Sabha total 230; ST reserved 47; SC reserved 35.</td></tr>
+        <tr><td>334</td><td>SC/ST reservation kitne time tak continue rahega.</td><td>Initially 10 years from 26 Jan 1950; 104th Amendment 2019 ke baad 2030 tak / 80 years.</td></tr>
+      </table>
+      <div class="hot">🔥 <strong>Exam Hot:</strong> Lok Sabha mein ST total 47 seats aur MP Lok Sabha mein ST 6 seats. Question mein “India total” aur “MP se” ko carefully read karna.</div>
+      <details>
+        <summary>🧩 Mnemonics from Class</summary>
+        <div>
+          <ul>
+            <li><strong>330:</strong> “Om-Om” bolke Lok Sabha reservation yaad.</li>
+            <li><strong>MP Lok Sabha ST 6:</strong> Hockey visual se “6” yaad karo.</li>
+            <li><strong>330-332-334:</strong> Har baar 2 ka gap: Lok Sabha → Vidhan Sabha → duration.</li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>🕒 Article 334 Timeline</summary>
+        <div class="timeline">
+          <div class="time-item"><div class="year">1950</div><div>Constitution 26 January 1950 ko lagu; reservation initially 10 years ke liye.</div></div>
+          <div class="time-item"><div class="year">2019</div><div>104th Constitutional Amendment: SC/ST reservation 10 aur years ke liye extend; Anglo-Indian nominated seats remove.</div></div>
+          <div class="time-item"><div class="year">2030</div><div>Teacher ke hisaab se reservation ab 2030 tak / 80 years ho gaya. Future extension 2029 ke aas-paas decide ho sakta hai.</div></div>
+        </div>
+      </details>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">MP Vidhan Sabha mein ST reserved seats kitni? <button>Answer</button><div class="answer">47 seats.</div></div>
+        <div class="qa">Article 334 kis baat se related hai? <button>Answer</button><div class="answer">Lok Sabha aur State Assemblies mein SC/ST reservation ki duration.</div></div>
+        <div class="qa">104th Amendment 2019 ka double fact? <button>Answer</button><div class="answer">SC/ST reservation 2030 tak extend; Anglo-Indian nomination end.</div></div>
+      </div>
+    </section>
+
+    <section id="states371" data-accent="purple">
+      <h2>🏔️ Article 371: Special Provisions for States</h2>
+      <p>Teacher ne 371 series ko mnemonic ke through revise karaya. Focus: kaun sa clause kis state se linked hai.</p>
+      <table>
+        <tr><th>Provision</th><th>State / Subject</th><th>Mnemonic Hook</th></tr>
+        <tr><td>371</td><td>Gujarat & Maharashtra</td><td>Gujarat 1960 mein Maharashtra se alag hua.</td></tr>
+        <tr><td>371A</td><td>Nagaland</td><td>A = Apple, Nagaland ke “Naga Baba” ko apple.</td></tr>
+        <tr><td>371B</td><td>Assam</td><td>B = Ball, tea gardens / Assam hook.</td></tr>
+        <tr><td>371C</td><td>Manipur</td><td>C = Cat, “mani” hook.</td></tr>
+        <tr><td>371D</td><td>Andhra Pradesh & Telangana</td><td>Dog, andha vyakti, tel lagana.</td></tr>
+        <tr><td>371E</td><td>Andhra Pradesh mein Central University establish karne ka Parliament power</td><td>E = Egg, university/protein hook.</td></tr>
+        <tr><td>371F</td><td>Sikkim</td><td>F = Fish, river mein sikke → Sikkim. Sikkim state: 1975.</td></tr>
+        <tr><td>371G</td><td>Mizoram</td><td>G = Grapes; 1987 states sequence.</td></tr>
+        <tr><td>371H</td><td>Arunachal Pradesh</td><td>H after G; Mizoram-Arunachal-Goa sequence.</td></tr>
+        <tr><td>371I</td><td>Goa</td><td>I = Income, tab Goa ghoom paoge. Goa state: 1987.</td></tr>
+        <tr><td>371J</td><td>Karnataka</td><td>J = “Jag ghoomiya” + natak → Karnataka.</td></tr>
+      </table>
+      <div class="hot">🔥 <strong>Exam Hot:</strong> False statement type question mein 371D ko Gujarat bolna galat hai; 371D Andhra Pradesh & Telangana se linked hai.</div>
+      <details>
+        <summary>🌴 Goa Side Facts Mentioned</summary>
+        <div>
+          <ul>
+            <li>Goa mein teacher ne two districts yaad karaye: North Goa aur South Goa.</li>
+            <li>Panjim/Panaji aur Madgaon/Margao names class mein aaye.</li>
+            <li>Beach examples mention hue: Baga, Candolim, Calangute.</li>
+            <li>Goa churches UNESCO World Heritage list mein 1986 mein include hue; teacher ne Khajuraho ko bhi same year se link kiya.</li>
+          </ul>
+        </div>
+      </details>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">371F kis state ke liye? <button>Answer</button><div class="answer">Sikkim.</div></div>
+        <div class="qa">371G, 371H, 371I sequence? <button>Answer</button><div class="answer">Mizoram, Arunachal Pradesh, Goa.</div></div>
+        <div class="qa">371E kya kehta hai? <button>Answer</button><div class="answer">Parliament Andhra Pradesh mein Central University establish kar sakti hai.</div></div>
+      </div>
+    </section>
+
+    <section id="commissions" data-accent="red">
+      <h2>🏛️ Article 338A, 339, 342, 366 & 164(1)</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Article 338A: NCST</h3>
+          <ul>
+            <li>Article 338A mein National Commission for Scheduled Tribes.</li>
+            <li>338 mein National Commission for Scheduled Castes.</li>
+            <li>1978: executive order se SC/ST Commission.</li>
+            <li>65th Amendment 1990: constitutional status.</li>
+            <li>89th Amendment 2003: SC aur ST commissions separate.</li>
+            <li>NCST 2004 mein bana; first chairperson Kunwar Singh.</li>
+            <li>Composition: 1 Chairperson, 1 Vice-Chairperson, 3 Members.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>MP ST Commission</h3>
+          <ul>
+            <li>Madhya Pradesh Anusuchit Janjati Aayog 1995 mein establish hua.</li>
+            <li>Teacher ne isko statutory/sanvidhik body bataya.</li>
+            <li>Statutory body normal law process se banti hai, constitutional body nahi.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Article 339: Welfare Commission</h3>
+          <ul>
+            <li>President Scheduled Areas ke administration aur ST welfare report ke liye commission appoint kar sakta hai.</li>
+            <li>Constitution commencement ke 10 saal ke andar bhi commission ka provision.</li>
+            <li>1960 mein Dhebar Commission bana.</li>
+            <li>Dhebar Commission recommendations se very backward tribes / PVTG concept linked.</li>
+            <li>MP ke PVTG: Baiga, Bharia, Saharia.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Definition & Notification</h3>
+          <ul>
+            <li><strong>Article 366(25):</strong> Scheduled Tribes / Janjati definition context.</li>
+            <li><strong>Article 342:</strong> President kisi community ko Scheduled Tribe notify kar sakta hai.</li>
+            <li>MP mein pehle 46 ST groups; 2003 mein Parliament ne Keer, Meena, Pardhi ko remove kiya; ab 43.</li>
+            <li><strong>Article 341:</strong> Scheduled Castes se linked.</li>
+            <li><strong>Article 340:</strong> Backward classes commission; Kaka Kalelkar aur Mandal mention.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Article 164(1): Tribal Welfare Minister</h3>
+          <ul>
+            <li>Part VI: Articles 152 to 237 states se related.</li>
+            <li>State executive, legislature, judiciary isi range mein aate hain.</li>
+            <li>Separate tribal welfare ministry: MP, Chhattisgarh, Odisha, Jharkhand.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="hot">🔥 <strong>Exam Hot:</strong> 89th Amendment 2003 se NCST separate hua, lekin commission 2004 mein constituted hua.</div>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">NCST kis article mein hai? <button>Answer</button><div class="answer">Article 338A.</div></div>
+        <div class="qa">Dhebar Commission kab bana? <button>Answer</button><div class="answer">1960.</div></div>
+        <div class="qa">MP ke 3 PVTG? <button>Answer</button><div class="answer">Baiga, Bharia, Saharia.</div></div>
+      </div>
+    </section>
+
+    <section id="pesa" data-accent="green">
+      <h2>🌿 Panchayats, Urban Bodies & PESA Act</h2>
+      <div class="def"><strong>PESA:</strong> Panchayat Extension to Scheduled Areas / Panchayats (Extension to Scheduled Areas) Act. Teacher ne full form ko “Panchayat Extension to Scheduled Area(s)” ke roop mein yaad karaya.</div>
+      <table>
+        <tr><th>Topic</th><th>Fact</th></tr>
+        <tr><td>73rd Amendment</td><td>1992; Part IX add; Articles 243 to 243O panchayats.</td></tr>
+        <tr><td>Urban Local Bodies</td><td>Article 243P to 243ZG; teacher ne Part IX-A / nagriya nikay se link karaya.</td></tr>
+        <tr><td>243D</td><td>Panchayats mein reservation; 243D(1) ST reservation; 243D(2) women reservation.</td></tr>
+        <tr><td>243T</td><td>Nagriya nikay / urban bodies mein reservation; women reservation bhi linked.</td></tr>
+        <tr><td>243M</td><td>Scheduled Areas par normal Panchayat provisions directly apply nahi hote.</td></tr>
+        <tr><td>Dilip Singh Bhuria Committee</td><td>1994; Chairperson Dilip Singh Bhuria, Jhabua (MP); recommendations se PESA Act.</td></tr>
+        <tr><td>PESA Act</td><td>1996 mein Parliament ne pass kiya.</td></tr>
+        <tr><td>MP Implementation</td><td>Shahdol ke Scheduled Area se start; 15 November 2022; MP 7th state; 89 tribal-dominated development blocks.</td></tr>
+        <tr><td>15 November</td><td>Bhagwan Birsa Munda Jayanti; Janjatiya Gaurav Diwas.</td></tr>
+      </table>
+      <div class="hot">🔥 <strong>Exam Hot:</strong> PESA Act year 1996, Bhuria Committee 1994, MP implementation 15 November 2022.</div>
+      <h3>Quick Recall</h3>
+      <div class="quiz">
+        <div class="qa">PESA kis committee ki recommendations par aaya? <button>Answer</button><div class="answer">Dilip Singh Bhuria Committee, 1994.</div></div>
+        <div class="qa">PESA Act kis year pass hua? <button>Answer</button><div class="answer">1996.</div></div>
+        <div class="qa">MP mein PESA implementation kis date se linked hai? <button>Answer</button><div class="answer">15 November 2022, Birsa Munda Jayanti.</div></div>
+      </div>
+    </section>
+
+    <section id="mcq" data-accent="cyan">
+      <h2>📝 MCQ Revision Bank from Class</h2>
+      <p>Class ke end mein 23 questions hue. Teacher ne bola 23 mein se 19+ score target rakho; 19 se kam aaye to repeat revision karo.</p>
+      <table>
+        <tr><th>Question Pattern</th><th>Answer</th></tr>
+        <tr><td>Janjatiyon ki definition kis article mein?</td><td>Article 366, clause 25.</td></tr>
+        <tr><td>Scheduled Tribe term / ST notification kis article mein?</td><td>Article 342.</td></tr>
+        <tr><td>ST educational upliftment special provision?</td><td>Article 15(4), First Amendment 1951.</td></tr>
+        <tr><td>SC/ST educational-economic interests and protection from exploitation?</td><td>Article 46, Part IV.</td></tr>
+        <tr><td>Mother tongue primary education facility?</td><td>Article 350A.</td></tr>
+        <tr><td>Backward class appointment/post reservation?</td><td>Article 16(4).</td></tr>
+        <tr><td>Promotion reservation?</td><td>Article 16(4A), 77th Amendment 1995.</td></tr>
+        <tr><td>Backlog carry forward not in 50% limit?</td><td>Article 16(4B), 81st Amendment 2000.</td></tr>
+        <tr><td>Untouchability abolition?</td><td>Article 17.</td></tr>
+        <tr><td>Child labour restriction?</td><td>Article 24.</td></tr>
+        <tr><td>Scheduled/Tribal area administration?</td><td>Article 244; Fifth & Sixth Schedules.</td></tr>
+        <tr><td>Union, State, Concurrent lists?</td><td>Article 246; class note: Union List 100 subjects, State List 61, Concurrent List 52.</td></tr>
+        <tr><td>Union grants for ST welfare?</td><td>Article 275.</td></tr>
+        <tr><td>Tribal Advisory Council members?</td><td>Total 20; 3/4 ST MLAs.</td></tr>
+        <tr><td>India mein Scheduled Areas kitne states mein?</td><td>10 states.</td></tr>
+        <tr><td>Lok Sabha ST reserved seats total?</td><td>47.</td></tr>
+        <tr><td>MP se Lok Sabha ST reserved seats?</td><td>6.</td></tr>
+        <tr><td>MP Vidhan Sabha ST reserved seats?</td><td>47.</td></tr>
+        <tr><td>104th Amendment fact?</td><td>2019; reservation extend to 2030; Anglo-Indian nominated seats ended.</td></tr>
+        <tr><td>NCST separated by which amendment?</td><td>89th Amendment, 2003; NCST constituted 2004.</td></tr>
+        <tr><td>PESA Act pass year?</td><td>1996.</td></tr>
+      </table>
+    </section>
+
+    <section id="fullforms" data-accent="purple">
+      <h2>🔤 Master Full Forms</h2>
+      <table>
+        <tr><th>Short Form</th><th>Full Form</th><th>Hindi/Hinglish Meaning</th></tr>
+        <tr><td>ADC</td><td>Autonomous District Council</td><td>Swait Jila Parishad.</td></tr>
+        <tr><td>NCST</td><td>National Commission for Scheduled Tribes</td><td>Rashtriya Anusuchit Janjati Aayog.</td></tr>
+        <tr><td>NCSC</td><td>National Commission for Scheduled Castes</td><td>Rashtriya Anusuchit Jati Aayog.</td></tr>
+        <tr><td>OBC</td><td>Other Backward Classes</td><td>Anya Pichhda Varg.</td></tr>
+        <tr><td>PESA</td><td>Panchayats (Extension to Scheduled Areas) Act</td><td>Anusuchit Kshetron mein Panchayaton ka Vistar.</td></tr>
+        <tr><td>PVTG</td><td>Particularly Vulnerable Tribal Groups</td><td>Vishesh roop se kamzor/pichhdi janajati samuh.</td></tr>
+        <tr><td>SC</td><td>Scheduled Castes</td><td>Anusuchit Jati.</td></tr>
+        <tr><td>ST</td><td>Scheduled Tribes</td><td>Anusuchit Janjati.</td></tr>
+        <tr><td>TAC</td><td>Tribal Advisory Council</td><td>Janjatiya Salahkar Parishad.</td></tr>
+      </table>
+    </section>
+
+    <section id="hotfacts" data-accent="orange">
+      <h2>🔥 Master Exam Hot Facts</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Amendments</h3>
+          <ul>
+            <li>1st Amendment 1951: Article 15(4).</li>
+            <li>65th Amendment 1990: SC/ST Commission ko constitutional status.</li>
+            <li>73rd Amendment 1992: Panchayats, Part IX, 243-243O.</li>
+            <li>77th Amendment 1995: Article 16(4A), promotion reservation.</li>
+            <li>81st Amendment 2000: Article 16(4B), backlog posts.</li>
+            <li>89th Amendment 2003: NCST separate, 338A.</li>
+            <li>93rd Amendment 2005: Article 15(5).</li>
+            <li>104th Amendment 2019: SC/ST reservation extension; Anglo-Indian seats removed.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Numbers</h3>
+          <ul>
+            <li>Lok Sabha current elected seats: 543 after Anglo-Indian nominations removed.</li>
+            <li>Lok Sabha ST reserved total: 47.</li>
+            <li>MP Lok Sabha total: 29; MP ST Lok Sabha seats: 6.</li>
+            <li>MP Vidhan Sabha total: 230; ST 47; SC 35.</li>
+            <li>Scheduled Area states: 10.</li>
+            <li>TAC members: 20; 3/4 ST MLAs.</li>
+            <li>MP PVTG: 3; Baiga, Bharia, Saharia.</li>
+            <li>MP ST groups: earlier 46; after 2003 change 43.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Dates & Years</h3>
+          <ul>
+            <li>26 January 1950: Constitution enforced.</li>
+            <li>1960: Gujarat state formed; Dhebar Commission.</li>
+            <li>1975: Sikkim state.</li>
+            <li>1978: SC/ST Commission by executive order.</li>
+            <li>1980: Bachpan Bachao Andolan.</li>
+            <li>1986: Goa churches UNESCO World Heritage list mention.</li>
+            <li>1987: Mizoram, Arunachal Pradesh, Goa states.</li>
+            <li>1994: Dilip Singh Bhuria Committee.</li>
+            <li>1995: MP ST Commission.</li>
+            <li>1996: PESA Act.</li>
+            <li>2004: NCST constituted.</li>
+            <li>15 November 2022: MP PESA implementation start; Birsa Munda Jayanti.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="checklist" data-accent="green">
+      <h2>✅ Master Revision Checklist</h2>
+      <p>Checkboxes browser ke localStorage mein save honge. Is list ko complete karna = class ke saare core facts revise.</p>
+      <div class="checklist" id="checklistBox">
+        <label><input type="checkbox"> Article 15 discrimination grounds aur public access points revise.</label>
+        <label><input type="checkbox"> Article 15(3), 15(4), 15(5) with amendments and use-case revise.</label>
+        <label><input type="checkbox"> Article 16, 16(4), 16(4A), 16(4B) and backlog meaning revise.</label>
+        <label><input type="checkbox"> Champakam Dorairajan, Indra Sawhney, Kaka Kalelkar, Mandal facts revise.</label>
+        <label><input type="checkbox"> Articles 17, 23, 24, 25, 29, 46, 350A revise.</label>
+        <label><input type="checkbox"> Articles 18, 19 and Article 246 list counts revise.</label>
+        <label><input type="checkbox"> Article 244(1), Fifth Schedule, TAC and 10 Scheduled Area states revise.</label>
+        <label><input type="checkbox"> Article 244(2), Sixth Schedule and Assam-Meghalaya-Mizoram-Tripura councils revise.</label>
+        <label><input type="checkbox"> Article 243D, 243T, 243M and PESA linkage revise.</label>
+        <label><input type="checkbox"> Article 275 grants revise.</label>
+        <label><input type="checkbox"> Articles 330, 332, 334 and all MP/India seat numbers revise.</label>
+        <label><input type="checkbox"> 104th Amendment 2019 and Anglo-Indian removal revise.</label>
+        <label><input type="checkbox"> Article 371 to 371J state mapping revise.</label>
+        <label><input type="checkbox"> Article 338A NCST evolution and composition revise.</label>
+        <label><input type="checkbox"> Article 339, Dhebar Commission and MP PVTG revise.</label>
+        <label><input type="checkbox"> Articles 366(25), 342, 341, 340 and MP ST count revise.</label>
+        <label><input type="checkbox"> Article 164(1) tribal welfare minister states revise.</label>
+        <label><input type="checkbox"> PESA: Bhuria Committee 1994, Act 1996, MP 15 Nov 2022 revise.</label>
+        <label><input type="checkbox"> Full forms: ST, SC, NCST, NCSC, PESA, PVTG, TAC, ADC revise.</label>
+        <label><input type="checkbox"> 23 MCQ pattern and 19+ target note revise.</label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <section data-accent="cyan">
+      <h2>📌 Upcoming Topic</h2>
+      <p>Teacher ne next class ke liye <strong>Madhya Pradesh mein Bhil Janjati</strong> mention kiya.</p>
+      <p class="mini">Revision tip: pehle Article-number table 2 baar revise karo, phir checklist close book tick karo, phir MCQ bank se self-test lo.</p>
+    </section>
+  </footer>
+
+  <script>
+    const themeStorageKey = 'mppsc-tribal-constitution-theme';
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem(themeStorageKey) || 'dark';
+    document.body.classList.toggle('light', savedTheme === 'light');
+
+    function updateThemeLabel() {
+      const isLight = document.body.classList.contains('light');
+      themeToggle.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+    }
+
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      localStorage.setItem(themeStorageKey, document.body.classList.contains('light') ? 'light' : 'dark');
+      updateThemeLabel();
+    });
+    updateThemeLabel();
+
+    const quickJump = document.getElementById('quickJump');
+    quickJump.addEventListener('change', () => {
+      const target = document.getElementById(quickJump.value);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + quickJump.value);
+      }
+    });
+
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) quickJump.value = visible.target.id;
+    }, { rootMargin: '-20% 0px -60% 0px', threshold: [0.1, 0.35, 0.6] });
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    const quizButtons = document.querySelectorAll('.qa button');
+    quizButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.nextElementSibling.classList.toggle('show');
+      });
+    });
+
+    const storageKey = 'mppsc-tribal-constitution-revision-checklist';
+    const checks = Array.from(document.querySelectorAll('#checklistBox input[type="checkbox"]'));
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    checks.forEach((box, index) => {
+      box.checked = Boolean(saved[index]);
+      box.addEventListener('change', updateProgress);
+    });
+
+    function updateProgress() {
+      const state = checks.map((box) => box.checked);
+      localStorage.setItem(storageKey, JSON.stringify(state));
+      const done = state.filter(Boolean).length;
+      const total = checks.length || 1;
+      const pct = Math.round((done / total) * 100);
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('progressText').textContent = pct + '% checklist complete (' + done + '/' + total + ')';
+    }
+    updateProgress();
+  </script>
+</body>
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPSC 2026 — MP जनजातियाँ: संवैधानिक प्रावधान (Unit 10)</title>
+    <meta name="description" content="MPPSC 2026 Unit 10 - MP Tribes Constitutional Provisions Deep Revision">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#0c0f16; --bg2:#141921; --bg3:#1b2030;
+            --saffron:#f4a261; --green:#2ec4b6; --blue:#5eaaff;
+            --purple:#b392f0; --rose:#f47067; --amber:#f0c674;
+            --cyan:#39c5cf; --orange:#e8915a; --pink:#e879a8;
+            --text:#d6dce8; --text2:#8a94a8; --hindi:#d2b3ff;
+            --border:#252d3d;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter','Noto Sans Devanagari',sans-serif;background:var(--bg);color:var(--text);line-height:1.85;font-size:17px;}
+        ::-webkit-scrollbar{width:7px;} ::-webkit-scrollbar-track{background:var(--bg);} ::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:4px;}
+        .wrap{max-width:940px;margin:0 auto;padding:20px 22px 60px;}
+
+        .hero{text-align:center;padding:48px 20px 38px;background:linear-gradient(160deg,#14171f 0%,#0c0f16 40%,#1a1d2c 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+        .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(244,162,97,.07),transparent 55%),radial-gradient(circle at 70% 50%,rgba(46,196,182,.06),transparent 55%);}
+        .hero>*{position:relative;z-index:1;}
+        .badge{display:inline-block;background:linear-gradient(135deg,var(--saffron),var(--orange));color:#fff;padding:5px 16px;border-radius:18px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;}
+        .hero h1{font-size:clamp(24px,4.5vw,38px);font-weight:800;background:linear-gradient(135deg,var(--saffron),var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .hero .sub{font-size:18px;color:var(--hindi);font-weight:600;margin-top:4px;}
+        .hero .meta{margin-top:12px;color:var(--text2);font-size:13px;}
+
+        .sec{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px 26px;margin-top:26px;transition:border-color .3s;}
+        .sec:hover{border-color:var(--saffron);}
+        .sec-t{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+        .sec-s{color:var(--hindi);font-size:15px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+
+        .cb{background:rgba(255,255,255,.02);border-left:3px solid var(--blue);padding:15px 18px;border-radius:0 10px 10px 0;margin:12px 0;}
+        .cb.gr{border-left-color:var(--green);} .cb.pu{border-left-color:var(--purple);} .cb.am{border-left-color:var(--amber);}
+        .cb.ro{border-left-color:var(--rose);} .cb.cy{border-left-color:var(--cyan);} .cb.or{border-left-color:var(--orange);}
+        .cb.sf{border-left-color:var(--saffron);} .cb.pk{border-left-color:var(--pink);}
+
+        .hi{color:var(--hindi);font-weight:500;} .en{color:var(--cyan);font-weight:500;}
+        .key{color:var(--amber);font-weight:600;}
+        .fm{display:inline-block;background:rgba(240,198,116,.1);border:1px solid rgba(240,198,116,.22);padding:2px 10px;border-radius:6px;font-weight:600;color:var(--amber);font-family:'Inter',monospace;}
+
+        .tip{background:rgba(46,196,182,.07);border:1px solid rgba(46,196,182,.18);border-radius:10px;padding:13px 16px;margin:12px 0;font-size:15px;} .tip::before{content:'💡 ';}
+        .warn{background:rgba(244,112,103,.07);border:1px solid rgba(244,112,103,.18);border-radius:10px;padding:13px 16px;margin:12px 0;font-size:15px;} .warn::before{content:'⚠️ ';}
+        .imp{background:rgba(244,162,97,.07);border:1px solid rgba(244,162,97,.2);border-radius:10px;padding:13px 16px;margin:12px 0;font-size:15px;} .imp::before{content:'🎯 ';}
+        .tag{display:inline-block;background:rgba(244,112,103,.12);color:var(--rose);padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.5px;}
+
+        table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;}
+        th{background:rgba(244,162,97,.1);color:var(--saffron);padding:10px 12px;text-align:left;font-weight:600;}
+        td{padding:10px 12px;border-bottom:1px solid var(--border);}
+        tr:hover td{background:rgba(255,255,255,.015);}
+
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0;}
+        .gi{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:14px;transition:border-color .3s,transform .2s;}
+        .gi:hover{border-color:var(--saffron);transform:translateY(-2px);}
+        .gi h4{color:var(--saffron);font-size:13px;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+
+        .pyq{background:linear-gradient(135deg,rgba(244,112,103,.06),rgba(179,146,240,.06));border:1px solid rgba(244,112,103,.2);border-radius:12px;padding:20px 22px;margin:16px 0;}
+        .pyq-h{font-weight:700;color:var(--rose);margin-bottom:8px;font-size:13px;letter-spacing:.5px;}
+        .pyq-q{font-weight:600;margin-bottom:10px;}
+        .pyq-o{list-style:none;padding:0;} .pyq-o li{padding:7px 12px;margin:3px 0;border-radius:7px;background:rgba(255,255,255,.02);transition:background .3s,border .3s;}
+        .pyq.revealed li[data-c]{background:rgba(46,196,182,.12);border:1px solid rgba(46,196,182,.25);}
+        .pyq-a{margin-top:10px;padding:12px 14px;background:rgba(46,196,182,.06);border-radius:8px;display:none;font-size:15px;line-height:1.7;}
+        .pyq-a.show{display:block;}
+        .btn{margin-top:8px;background:linear-gradient(135deg,var(--saffron),var(--orange));color:#fff;border:none;padding:7px 18px;border-radius:7px;cursor:pointer;font-weight:600;font-size:13px;}
+        .btn:hover{opacity:.85;}
+
+        .toc{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-top:26px;}
+        .toc h3{color:var(--saffron);margin-bottom:12px;font-size:17px;}
+        .toc a{display:block;color:var(--text2);text-decoration:none;padding:5px 0;font-size:14px;transition:color .2s,padding-left .2s;}
+        .toc a:hover{color:var(--green);padding-left:8px;}
+
+        @media(max-width:600px){.wrap{padding:10px 12px 40px;}.sec{padding:18px 14px;}body{font-size:16px;}}
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="badge">MPPSC 2026 — Unit 10 — Class 5</div>
+    <h1>MP जनजातियाँ: संवैधानिक प्रावधान</h1>
+    <div class="sub">Constitutional Provisions for Scheduled Tribes</div>
+    <div class="meta">📜 Articles 15-335 • 🏛️ 5th & 6th Schedule • 🗳️ Panchayat/Nagar Reservation • PYQ Ready</div>
+</header>
+
+<div class="wrap">
+
+    <nav class="toc">
+        <h3>📑 Topics (विषय सूची)</h3>
+        <a href="#s1">1. 📜 Key Articles Quick Revision (366, 342, 15, 29, 46, 350A)</a>
+        <a href="#s2">2. 🏛️ Article 16 — Govt Job Equality + Promotion + Backlog</a>
+        <a href="#s3">3. ⚖️ Indira Sawhney Case 1992 & 50% Limit</a>
+        <a href="#s4">4. 🤝 Article 17 — Untouchability + SC/ST Act 1989</a>
+        <a href="#s5">5. 🛡️ Articles 23-24 — Anti-Exploitation</a>
+        <a href="#s6">6. 🗺️ Article 244 — Scheduled & Tribal Areas (5th Schedule)</a>
+        <a href="#s7">7. 🏔️ 6th Schedule — Autonomous District Councils</a>
+        <a href="#s8">8. 💰 Article 275 — Grants from Centre</a>
+        <a href="#s9">9. 🏛️ Article 164(1) — Tribal Welfare Ministry</a>
+        <a href="#s10">10. 🗳️ Articles 243D & 243T — Panchayat/Nagar Reservation</a>
+        <a href="#s11">11. 📝 Quick Revision PYQ Practice</a>
+        <a href="#s12">12. 📖 Hindi-English Glossary</a>
+    </nav>
+
+    <!-- ===== S1: KEY ARTICLES QUICK REVISION ===== -->
+    <section class="sec" id="s1">
+        <div class="sec-t">📜 Key Articles — Quick Revision (पिछली कक्षा से)</div>
+        <div class="sec-s">मूल अनुच्छेदों का तेज़ रिवीज़न</div>
+
+        <table>
+            <tr><th>Article</th><th>Hindi</th><th>Kya Kehta Hai?</th><th>Yaad Trick</th></tr>
+            <tr>
+                <td><span class="fm">366(25)</span></td>
+                <td>परिभाषा</td>
+                <td>ST ki <span class="key">definition</span> di gayi (but clearly define nahi ki)</td>
+                <td>3-6-6 = 366</td>
+            </tr>
+            <tr>
+                <td><span class="fm">342(1)</span></td>
+                <td>अनुसूचित जनजाति घोषणा</td>
+                <td><span class="key">Rashtrapati</span> kisi bhi jaati ko ST declare kar sakta hai (Rajyapal/Administrator ki salah se)</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><span class="fm">342(2)</span></td>
+                <td>संसद का अधिकार</td>
+                <td><span class="key">Sansad</span> kisi jaati ko ST bana ya <span class="key">hata</span> sakti hai</td>
+                <td>2003 mein Kir, Meena, Pardi ko hataya</td>
+            </tr>
+            <tr>
+                <td><span class="fm">15</span></td>
+                <td>समानता</td>
+                <td>Dharm, Jaati, Mool Vansh, Ling, Janm Sthan ke basis pe <span class="key">bhedbhav nahi</span></td>
+                <td>15 August = Sab Saman 🇮🇳</td>
+            </tr>
+            <tr>
+                <td><span class="fm">15(4)</span></td>
+                <td>शैक्षिक आरक्षण</td>
+                <td>SC/ST ke liye <span class="key">educational reservation</span> (1st Amendment 1951)</td>
+                <td>Champakam Dorairajan Case</td>
+            </tr>
+            <tr>
+                <td><span class="fm">15(5)</span></td>
+                <td>नामांकन में प्रावधान</td>
+                <td><span class="key">Private colleges</span> mein bhi reservation (93rd Amendment <span class="key">2005</span>)</td>
+                <td>Inamdar Case → 93rd → 15(5)</td>
+            </tr>
+            <tr>
+                <td><span class="fm">29(1)</span></td>
+                <td>संस्कृति संरक्षण</td>
+                <td>Alpsankhyak apni <span class="key">bhasha, lipi, sanskriti</span> bacha sakte hain (SC 1974 → ST bhi)</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><span class="fm">29(2)</span></td>
+                <td>शिक्षा में प्रवेश</td>
+                <td>Govt/Aided schools mein <span class="key">pravesh se mana nahi</span> karenge</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><span class="fm">46</span></td>
+                <td>DPSP — कल्याण</td>
+                <td>SC/ST ko <span class="key">shaikshik, aarthik</span> majboot + samajik anyay door karna (Rajya ka kartavya)</td>
+                <td>Bhag 4 — DPSP</td>
+            </tr>
+            <tr>
+                <td><span class="fm">350A</span></td>
+                <td>प्राथमिक भाषा में शिक्षा</td>
+                <td>Janajaatiyon ke bachchon ko <span class="key">unki apni bhasha</span> mein primary shiksha milegi</td>
+                <td>Bhag 17 (343-351)</td>
+            </tr>
+            <tr>
+                <td><span class="fm">330</span></td>
+                <td>लोकसभा आरक्षण</td>
+                <td>Lok Sabha mein SC/ST ko <span class="key">seats reserved</span></td>
+                <td>330 = LS, 332 = VS</td>
+            </tr>
+            <tr>
+                <td><span class="fm">332</span></td>
+                <td>विधानसभा आरक्षण</td>
+                <td>Vidhan Sabha mein SC/ST ko seats reserved</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><span class="fm">335</span></td>
+                <td>दावों का ध्यान</td>
+                <td>SC/ST ke <span class="key">claims ka dhyan</span> rakha jaayega (age relaxation, height etc.)</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td><span class="fm">371</span></td>
+                <td>विशेष राज्य प्रावधान</td>
+                <td>Kuch rajyon ko <span class="key">vishesh praavdhan</span></td>
+                <td>—</td>
+            </tr>
+        </table>
+
+        <div class="warn"><strong>2003 mein 3 janajaatiyan hatayi gayi:</strong> <span class="key">Kir, Meena, Pardi</span> ko MP ki ST list se hataya — Sansad ne (Article 342(2) ke tahat). Ye exam mein puchha ja sakta hai!</div>
+    </section>
+
+    <!-- ===== S2: ARTICLE 16 ===== -->
+    <section class="sec" id="s2">
+        <div class="sec-t">🏛️ Article 16 — Govt Job Equality + Promotion + Backlog</div>
+        <div class="sec-s">अनुच्छेद 16 — लोक नियोजन (सरकारी नौकरी) में समानता — <span class="tag">MOST IMPORTANT</span></div>
+
+        <div class="cb sf">
+            <h3 style="color:var(--saffron);font-size:17px;">📌 Article 16 Basic: Sarkari Naukri mein Samanta</h3>
+            <p>Article 15 mein <span class="key">5 grounds</span> pe bhedbhav ban: Dharm, Jaati, Mool Vansh, Ling, Janm Sthan</p>
+            <p>Article 16 mein <strong>2 aur grounds add</strong>:</p>
+            <table style="margin-top:8px;">
+                <tr><th>Article 15 (5 grounds)</th><th>Article 16 (5 + 2 = 7 grounds)</th></tr>
+                <tr><td>1. Dharm (धर्म)</td><td>Same ✅</td></tr>
+                <tr><td>2. Jaati (जाति)</td><td>Same ✅</td></tr>
+                <tr><td>3. Mool Vansh (मूल वंश)</td><td>Same ✅</td></tr>
+                <tr><td>4. Ling (लिंग)</td><td>Same ✅</td></tr>
+                <tr><td>5. Janm Sthan (जन्म स्थान)</td><td>Same ✅</td></tr>
+                <tr><td>—</td><td>6. <span class="key">Nivas Sthan (निवास स्थान)</span> 🆕</td></tr>
+                <tr><td>—</td><td>7. <span class="key">Vansh Kram (वंश क्रम)</span> 🆕</td></tr>
+            </table>
+            <div class="tip"><strong>Vansh Kram matlab:</strong> Tum rajghrane ke ho ya aam aadmi — sarkari naukri mein sab equal!</div>
+        </div>
+
+        <!-- 16(4) -->
+        <div class="cb gr" style="margin-top:16px;">
+            <h3 style="color:var(--green);font-size:16px;">✅ Article 16(4) — Aarakshan (आरक्षण)</h3>
+            <p><span class="key">4 → Chaaar → Naav mein baith ke sab ko aarakshan!</span></p>
+            <p>Agar rajya ko lage ki pichhde varg ko <strong>paryapt pratinidhitv</strong> nahi mila → <span class="key">Aarakshan diya jaayega</span></p>
+        </div>
+
+        <!-- 16(4A) -->
+        <div class="cb am" style="margin-top:14px;">
+            <h3 style="color:var(--amber);font-size:16px;">⬆️ Article 16(4A) — Promotion mein Aarakshan (पदोन्नति)</h3>
+            <p><span class="fm">77th Amendment — 1995</span></p>
+            <p><span class="key">A = Apple khayenge + Promotion milega!</span></p>
+            <p>SC/ST ko sarkari naukri mein <span class="key">promotion mein bhi aarakshan</span> milega — agar paryapt pratinidhitv nahi hai to.</p>
+        </div>
+
+        <!-- 16(4B) -->
+        <div class="cb pu" style="margin-top:14px;">
+            <h3 style="color:var(--purple);font-size:16px;">🔄 Article 16(4B) — Backlog Pad Carry Forward</h3>
+            <p><span class="fm">81st Amendment — 2000</span></p>
+            <p><span class="key">B = Ball se khelenge → Backlog pad carry forward honge!</span></p>
+            <p>Jo reserved seats <strong>bhari nahi gayi</strong> → wo agley saal <span class="key">carry forward</span> hongi.</p>
+            <p style="margin-top:6px;">50% ki seema mein ye backlog seats <span class="key">count nahi hongi</span> (alag se ginne jaayengi).</p>
+        </div>
+
+        <div class="imp"><strong>Quick Summary:</strong><br>
+        • <span class="fm">16(4)</span> → Aarakshan milega<br>
+        • <span class="fm">16(4A)</span> → <span class="key">Promotion</span> mein bhi (77th, 1995)<br>
+        • <span class="fm">16(4B)</span> → <span class="key">Backlog</span> carry forward (81st, 2000)</div>
+    </section>
+
+    <!-- ===== S3: INDIRA SAWHNEY CASE ===== -->
+    <section class="sec" id="s3">
+        <div class="sec-t">⚖️ Indira Sawhney Case 1992 & 50% Limit</div>
+        <div class="sec-s">इंदिरा साहनी केस — आरक्षण का 50% नियम — <span class="tag">LANDMARK CASE</span></div>
+
+        <div class="cb ro">
+            <h3 style="color:var(--rose);font-size:17px;">📜 Background Story:</h3>
+            <p>1. <span class="fm">Article 340</span> → Rashtrapati pichhdon ke liye aayog banayega</p>
+            <p>2. <span class="key">Kaka Kalelkar Aayog (1953)</span> → Recommendations nahi suni gayi</p>
+            <p>3. Morarji Desai govt → <span class="key">Mandal Aayog (1979)</span> → 3000+ jaatiyan pichhdi → 27% reservation recommend</p>
+            <p>4. <span class="key">VP Singh govt (1990)</span> → OBC ko 27% reservation de diya</p>
+            <p>5. PV Narasimha Rao govt → UR mein bhi 10% diya → <span class="key">Supreme Court ne reject</span> kar diya</p>
+        </div>
+
+        <div class="cb am" style="margin-top:14px;">
+            <h3 style="color:var(--amber);font-size:17px;">⚡ Supreme Court ke 2 Key Rulings:</h3>
+            <table style="margin-top:8px;">
+                <tr><th>#</th><th>Ruling</th><th>Hindi</th></tr>
+                <tr><td>1</td><td><span class="key">Aarakshan 50% se zyada nahi</span> hoga</td><td>आरक्षण 50% से अधिक नहीं</td></tr>
+                <tr><td>2</td><td>Backlog pad <span class="key">carry forward nahi</span> honge</td><td>बैकलॉग पद आगे नहीं बढ़ेंगे</td></tr>
+            </table>
+            <p style="margin-top:8px;color:var(--text2);font-size:14px;">Yaad trick: <span class="key">Indira jee ab nahi SAHEGI (Sawhney)</span> → 1992 → 9-2 = 11 → Remember!</p>
+        </div>
+
+        <div class="warn"><strong>Fir sarkar ne kya kiya?</strong><br>
+        • <span class="fm">77th Amend. (1995)</span> → 16(4A) joda → Promotion mein aarakshan<br>
+        • <span class="fm">81st Amend. (2000)</span> → 16(4B) joda → Backlog carry forward + 50% seema mein nahi ginenge</div>
+    </section>
+
+    <!-- ===== S4: ARTICLE 17 ===== -->
+    <section class="sec" id="s4">
+        <div class="sec-t">🤝 Article 17 — Untouchability Abolished</div>
+        <div class="sec-s">अनुच्छेद 17 — अस्पृश्यता (छुआछूत) का अंत</div>
+
+        <div class="cb gr">
+            <h3 style="color:var(--green);font-size:17px;">🚫 Article 17 = Chhuachhoot ka Ant</h3>
+            <p><span class="key">Ek saath ek sa = Chhuachhoot samapt!</span></p>
+            <p>Untouchability ko poori tarah se <span class="key">ban</span> kiya gaya.</p>
+        </div>
+
+        <div class="grid" style="margin-top:14px;">
+            <div class="gi" style="border-color:var(--green);">
+                <h4 style="color:var(--green);">Civil Rights Protection Act</h4>
+                <p><span class="fm">1955</span></p>
+                <p>Naagrik Adhikar Sanrakshan Adhiniyam</p>
+            </div>
+            <div class="gi" style="border-color:var(--rose);">
+                <h4 style="color:var(--rose);">SC/ST Act</h4>
+                <p><span class="fm">1989</span></p>
+                <p>Koi galat word bole ya zabardasti kaam karwaye → <span class="key">seedha warrant + giraftaar</span></p>
+            </div>
+        </div>
+
+        <div class="tip">SC/ST Act bahut powerful hai — <span class="key">non-bailable</span> hai. Janajaatiyon ke khilaf agar koi atyachaar kare to seedha action.</div>
+    </section>
+
+    <!-- ===== S5: ARTICLES 23-24 ===== -->
+    <section class="sec" id="s5">
+        <div class="sec-t">🛡️ Articles 23-24 — Anti-Exploitation</div>
+        <div class="sec-s">अनुच्छेद 23-24 — शोषण के विरुद्ध अधिकार</div>
+
+        <div class="grid">
+            <div class="gi" style="border-color:var(--orange);">
+                <h4 style="color:var(--orange);">Article 23 — Papa/Pitaji</h4>
+                <p><span class="key">Bandhua Majdoori</span> = Bonded Labour</p>
+                <p><span class="key">Balaat Shram</span> = Forced Labour</p>
+                <p><span class="key">Begaar</span> = Free mein kaam</p>
+                <p style="margin-top:6px;font-size:14px;color:var(--text2);">Violation → <span class="fm">Bonded Labour Act 1976</span></p>
+            </div>
+            <div class="gi" style="border-color:var(--cyan);">
+                <h4 style="color:var(--cyan);">Article 24 — Beta/Bachcha</h4>
+                <p><span class="key">14 saal se chhote bachchon</span> se aise kaam nahi karwayenge jisse:</p>
+                <p>• Shaareerik vikas ruke 💪</p>
+                <p>• Maansik vikas ruke 🧠</p>
+                <p style="margin-top:6px;font-size:14px;color:var(--text2);">Khadanon, Chai bagan mein banned</p>
+            </div>
+        </div>
+
+        <div class="tip"><strong>Yaad trick:</strong> 23 = Pehle BAAP (Bandhua Majdoori) → 24 = Phir BACHCHA (Child Labour ban). Pehle papa aata hai fir bachcha!</div>
+
+        <div class="cb am" style="margin-top:12px;">
+            <h3 style="color:var(--amber);font-size:16px;">🏆 Kailash Satyarthi — Bachpan Bachao Andolan</h3>
+            <p>📍 <span class="key">Vidisha, MP</span> ke hain</p>
+            <p>🏅 <span class="key">2014</span> mein <span class="key">Shanti ka Nobel Prize</span></p>
+            <p>Bachchon ko khadanon/factories se bachane ke liye andolan chalaya.</p>
+        </div>
+    </section>
+
+    <!-- ===== S6: ARTICLE 244 & 5TH SCHEDULE ===== -->
+    <section class="sec" id="s6">
+        <div class="sec-t">🗺️ Article 244 — Scheduled & Tribal Areas</div>
+        <div class="sec-s">अनुच्छेद 244 — अनुसूचित एवं जनजातीय क्षेत्र — <span class="tag">VERY IMPORTANT</span></div>
+
+        <p><span class="fm">Bhag 10</span> mein Article 244 hai — janajaatiyon ke liye <span class="key">vishesh praavdhan</span></p>
+
+        <div class="grid" style="margin-top:14px;">
+            <div class="gi" style="border-color:var(--saffron);">
+                <h4 style="color:var(--saffron);">244(1) — 5th Schedule</h4>
+                <p><span class="key">Anusuchit Kshetra</span> (Scheduled Areas)</p>
+                <p style="font-size:14px;">AMMT ko chhod ke baaki rajyon ke tribal areas</p>
+                <p style="font-size:14px;color:var(--text2);">Anusuchi No. 5</p>
+            </div>
+            <div class="gi" style="border-color:var(--green);">
+                <h4 style="color:var(--green);">244(2) — 6th Schedule</h4>
+                <p><span class="key">Janjaatiya Kshetra</span> (Tribal Areas)</p>
+                <p style="font-size:14px;">Sirf <span class="key">AMMT</span>: Assam, Meghalaya, Mizoram, Tripura</p>
+                <p style="font-size:14px;color:var(--text2);">Anusuchi No. 6</p>
+            </div>
+        </div>
+
+        <div class="cb sf" style="margin-top:16px;">
+            <h3 style="color:var(--saffron);font-size:17px;">📋 5th Schedule — Scheduled Areas (10 Rajya)</h3>
+            <p><span class="key">Rashtrapati</span> anusuchit kshetra ghoshit karta hai → jahaan janajaatiyon ki <span class="key">saghanata</span> hai</p>
+
+            <h4 style="margin-top:12px;color:var(--cyan);">10 States with Scheduled Areas:</h4>
+            <table style="margin-top:8px;">
+                <tr><th>#</th><th>State</th><th>Yaad Trick</th></tr>
+                <tr><td>1</td><td><span class="key">Himachal Pradesh</span></td><td>Sabse upar 🏔️</td></tr>
+                <tr><td>2</td><td><span class="key">Rajasthan</span></td><td rowspan="4" style="color:var(--saffron);">MP ke aaspaas ke 4 rajya<br>(MP ko 5 rajya chhoote hain — UP chhod do)</td></tr>
+                <tr><td>3</td><td><span class="key">Gujarat</span></td></tr>
+                <tr><td>4</td><td><span class="key">Maharashtra</span></td></tr>
+                <tr><td>5</td><td><span class="key">Madhya Pradesh</span> 🌟</td></tr>
+                <tr><td>6</td><td><span class="key">Chhattisgarh</span></td><td>MP se alag hua</td></tr>
+                <tr><td>7</td><td><span class="key">Jharkhand</span></td><td>Jhaadiyon mein janjaatiyan 🌿</td></tr>
+                <tr><td>8</td><td><span class="key">Odisha</span></td><td>Ud ke pahunche 🕊️</td></tr>
+                <tr><td>9</td><td><span class="key">Andhra Pradesh</span></td><td rowspan="2">AP se Telangana alag hua</td></tr>
+                <tr><td>10</td><td><span class="key">Telangana</span></td></tr>
+            </table>
+
+            <div class="tip"><strong>MP ke scheduled districts:</strong> <span class="key">Jhabua, Alirajpur, Barwani, Mandla, Dindori</span> + dakshin ka poora hissa. Ye poore districts anusuchit kshetra ghoshit hain!</div>
+        </div>
+
+        <div class="cb gr" style="margin-top:16px;">
+            <h3 style="color:var(--green);font-size:16px;">🏛️ Janjaatiya Salahkar Parishad (Tribal Advisory Council)</h3>
+            <p>Har anusuchit kshetra wale rajya mein <span class="key">Rajyapal</span> banayega</p>
+            <p>Total <span class="fm">20 sadsya</span></p>
+            <p>Inmein se <span class="key">3/4 (15 sadsya)</span> = Us rajya ke <span class="key">janjaatiya vidhayak</span> (ST MLAs)</p>
+            <p style="margin-top:6px;">Kaam: Rajyapal ko salah dena — kaunsa kanoon lagaana hai, kaunsa nahi</p>
+            <p>Rajyapal <span class="key">Rashtrapati ko report</span> bhi deta hai samay-samay par</p>
+        </div>
+
+        <div class="warn"><strong>Key Points:</strong><br>
+        • Anusuchit kshetra <span class="key">Rashtrapati</span> ghoshit karta hai<br>
+        • Kanoon lagaana ya nahi — <span class="key">Rajyapal</span> decide karega<br>
+        • Janjaatiya Salahkar Parishad Rajyapal ko <span class="key">salah</span> deti hai<br>
+        • UP mein anusuchit kshetra <span class="key">NAHI</span> hai (MP ke 5 parosion mein se UP chhod do)</div>
+    </section>
+
+    <!-- ===== S7: 6TH SCHEDULE ===== -->
+    <section class="sec" id="s7">
+        <div class="sec-t">🏔️ 6th Schedule — Autonomous District Councils</div>
+        <div class="sec-s">छठी अनुसूची — स्वायत्त जिला परिषद — 4 राज्य, 10 ADCs — <span class="tag">EXAM IMPORTANT</span></div>
+
+        <p><span class="fm">Article 244(2)</span> → Sirf <span class="key">4 Purvi rajya</span>: Assam, Meghalaya, Mizoram, Tripura</p>
+        <p style="margin-top:4px;">Yaad: <span class="key">AMMT</span> ya <span class="key">ATM mein</span> se paisa nikaal ke de diya!</p>
+
+        <div class="cb pu" style="margin-top:14px;">
+            <h3 style="color:var(--purple);font-size:16px;">📊 Swayatt Jila Parishad (ADC) — 30 Sadsya</h3>
+            <p>Total: <span class="fm">30 sadsya</span> | Inmein se <span class="key">26 chunke</span> aate hain (janjaatiyon dwara)</p>
+            <p>Bahut <span class="key">powerful</span> — kanoon bana sakte hain, lagu kar sakte hain</p>
+        </div>
+
+        <table style="margin-top:14px;">
+            <tr><th>State</th><th>ADCs</th><th>Yaad Trick</th></tr>
+            <tr>
+                <td><span class="key">Meghalaya</span></td>
+                <td>1. Garo Hills<br>2. Khasi Hills<br>3. Jaintia Hills</td>
+                <td><span class="key">GKJ</span> — Garo Khasi Jaintia (3 pahaadiyan)</td>
+            </tr>
+            <tr>
+                <td><span class="key">Mizoram</span></td>
+                <td>1. Chakma<br>2. Lai<br>3. Mara</td>
+                <td><span class="key">Chakma + Laai + Maara</span> = "Chakma diya, laaye, aur maara!" 😂</td>
+            </tr>
+            <tr>
+                <td><span class="key">Assam</span></td>
+                <td>1. Bodoland<br>2. Karbi Anglong<br>3. Dima Hasao</td>
+                <td><span class="key">Buddha Land pe baitha, Karbi kaam kara, Dima hasao!</span></td>
+            </tr>
+            <tr>
+                <td><span class="key">Tripura</span></td>
+                <td>1. Tripura Tribal Areas</td>
+                <td>Bas Tripura hi ek hai</td>
+            </tr>
+        </table>
+
+        <div class="imp"><strong>Total Count:</strong> <span class="key">4 Rajya × 10 ADCs</span> = Meghalaya (3) + Mizoram (3) + Assam (3) + Tripura (1) = <span class="key">10</span></div>
+    </section>
+
+    <!-- ===== S8: ARTICLE 275 ===== -->
+    <section class="sec" id="s8">
+        <div class="sec-t">💰 Article 275 — Grants from Centre</div>
+        <div class="sec-s">अनुच्छेद 275 — केंद्र से राज्यों को अनुदान — भाग 12</div>
+
+        <div class="cb gr">
+            <h3 style="color:var(--green);font-size:17px;">💵 Kendr → Rajya ko paisa dega</h3>
+            <p><span class="fm">Article 275 (Bhag 12)</span></p>
+            <p>Janajaatiyon ke <span class="key">kalyan ke liye</span> Kendr sarkar rajyon ko <span class="key">anudan (grant)</span> degi.</p>
+            <p style="margin-top:6px;">Paisa kahaan se aayega? → <span class="key">Bharat ki Sanchit Nidhi</span> (Consolidated Fund of India) se</p>
+            <p style="margin-top:6px;">Kab dega? → Jab Sansad ko lagega ki us rajya ko vishesh anudan ki zaroorat hai</p>
+        </div>
+
+        <div class="tip"><strong>Simple yaad:</strong> 275 = Paisa (Grant) | Sanchit Nidhi se aayega | Janjaatiyon ke kalyan ke liye</div>
+    </section>
+
+    <!-- ===== S9: ARTICLE 164(1) ===== -->
+    <section class="sec" id="s9">
+        <div class="sec-t">🏛️ Article 164(1) — Tribal Welfare Ministry</div>
+        <div class="sec-s">अनुच्छेद 164(1) — जनजातीय कल्याण मंत्रालय — भाग 6</div>
+
+        <div class="cb sf">
+            <h3 style="color:var(--saffron);font-size:17px;">🏢 4 Rajyon mein Janjaatiya Kalyan Mantralaya</h3>
+            <p><span class="fm">Article 164(1) (Bhag 6: Rajya)</span></p>
+            <p>Jahaan sabse zyada janajaatiyan → wahaan alag se <span class="key">Tribal Welfare Ministry</span> hoga.</p>
+        </div>
+
+        <div class="grid" style="margin-top:14px;">
+            <div class="gi" style="border-color:var(--saffron);">
+                <h4>1. Madhya Pradesh 🌟</h4>
+                <p>Sabse zyada ST population</p>
+            </div>
+            <div class="gi" style="border-color:var(--green);">
+                <h4>2. Chhattisgarh</h4>
+                <p>MP se alag hua</p>
+            </div>
+            <div class="gi" style="border-color:var(--cyan);">
+                <h4>3. Jharkhand</h4>
+                <p>Jhaadiyon mein janjaatiyan</p>
+            </div>
+            <div class="gi" style="border-color:var(--purple);">
+                <h4>4. Odisha</h4>
+                <p>Purvi bhaarat</p>
+            </div>
+        </div>
+
+        <div class="cb am" style="margin-top:14px;">
+            <h3 style="color:var(--amber);font-size:16px;">👤 MP ke Current Tribal Welfare Minister:</h3>
+            <p><span class="key">Dr. Kunwar Vijay Shah</span> (जनजातीय कार्य विभाग मंत्री)</p>
+            <p style="font-size:14px;color:var(--text2);">Yaad: Kunwar Sahab jeet gaye = Kunwar <strong>Vijay</strong> Shah</p>
+        </div>
+    </section>
+
+    <!-- ===== S10: PANCHAYAT / NAGAR RESERVATION ===== -->
+    <section class="sec" id="s10">
+        <div class="sec-t">🗳️ Articles 243D & 243T — Panchayat/Nagar Reservation</div>
+        <div class="sec-s">अनुच्छेद 243D एवं 243T — पंचायत और नगरीय निकाय में आरक्षण</div>
+
+        <div class="cb" style="margin-top:10px;">
+            <h3 style="color:var(--blue);font-size:16px;">📜 Background:</h3>
+            <p><span class="fm">73rd Amendment (1992)</span> → Bhag 9 joda → <span class="key">Panchayat</span> (Art. 243 to 243-O) → Anusuchi 11</p>
+            <p><span class="fm">74th Amendment (1992)</span> → Bhag 9A joda → <span class="key">Nagar Nikaay</span> (Art. 243P to 243ZG) → Anusuchi 12</p>
+            <p style="font-size:14px;color:var(--text2);">Dono PV Narasimha Rao ki sarkar mein aaye</p>
+        </div>
+
+        <div class="grid" style="margin-top:14px;">
+            <div class="gi" style="border-color:var(--saffron);">
+                <h4 style="color:var(--saffron);">243D — PANCHAYAT</h4>
+                <p><strong>D = Daas</strong> (janajaati log daas the)</p>
+                <p style="margin-top:6px;"><span class="fm">243D(1)</span>: SC/ST ke liye <span class="key">aarakshan</span></p>
+                <p><span class="fm">243D(2)</span>: Unki <span class="key">mahilaon ko 1/3</span> (ek tihai) seats reserved</p>
+                <p style="font-size:14px;color:var(--text2);">Gram, Janpad, Zila — sab panchayaton mein</p>
+            </div>
+            <div class="gi" style="border-color:var(--green);">
+                <h4 style="color:var(--green);">243T — NAGAR NIKAAY</h4>
+                <p><strong>T = Tree</strong> (garmi mein ped ke neeche baithe)</p>
+                <p style="margin-top:6px;"><span class="fm">243T(1)</span>: SC/ST ke liye <span class="key">aarakshan</span></p>
+                <p><span class="fm">243T(2)</span>: Unki <span class="key">mahilaon ko 1/3</span> seats reserved</p>
+                <p style="font-size:14px;color:var(--text2);">Nagar Parishad, Nagar Palika, Nagar Nigam — sab mein</p>
+            </div>
+        </div>
+
+        <div class="imp"><strong>Quick Formula:</strong><br>
+        • <span class="key">243D</span> = Panchayat mein aarakshan | D(1) = ST seats | D(2) = 1/3 mahila<br>
+        • <span class="key">243T</span> = Nagar mein aarakshan | T(1) = ST seats | T(2) = 1/3 mahila<br>
+        • Dono mein <span class="key">1/3 mahila</span> aarakshan compulsory!</div>
+    </section>
+
+    <!-- ===== S11: PYQ PRACTICE ===== -->
+    <section class="sec" id="s11">
+        <div class="sec-t">📝 Quick Revision PYQ Practice</div>
+        <div class="sec-s">अभ्यास प्रश्न — Exam Pattern Based</div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 1</div>
+            <div class="pyq-q">Article 16(4A) kis sanvidhaan sanshodhan dwara joda gaya?<br>
+            <span class="hi">अनुच्छेद 16(4A) किस संविधान संशोधन द्वारा जोड़ा गया?</span></div>
+            <ul class="pyq-o">
+                <li>A) 73rd Amendment, 1992</li>
+                <li data-c="1">B) 77th Amendment, 1995</li>
+                <li>C) 81st Amendment, 2000</li>
+                <li>D) 93rd Amendment, 2005</li>
+            </ul>
+            <button class="btn" onclick="toggle('a1')">Show Answer</button>
+            <div class="pyq-a" id="a1">
+                <p><strong>✅ B) 77th Amendment, 1995</strong></p>
+                <p>16(4A) = <span class="key">Promotion mein aarakshan</span> → A = Apple → 77th, 1995</p>
+                <p>16(4B) = Backlog → B = Ball → 81st, 2000 (ye alag hai!)</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 2</div>
+            <div class="pyq-q">Indira Sawhney Case (1992) mein Supreme Court ne kya kaha?<br>
+            <span class="hi">इंदिरा साहनी केस में सुप्रीम कोर्ट ने क्या कहा?</span></div>
+            <ul class="pyq-o">
+                <li>A) 75% se zyada aarakshan nahi</li>
+                <li data-c="1">B) 50% se zyada aarakshan nahi</li>
+                <li>C) 33% se zyada aarakshan nahi</li>
+                <li>D) Koi seema nahi</li>
+            </ul>
+            <button class="btn" onclick="toggle('a2')">Show Answer</button>
+            <div class="pyq-a" id="a2">
+                <p><strong>✅ B) 50% se zyada aarakshan nahi</strong></p>
+                <p>Indira Sawhney 1992 → <span class="key">50% limit</span> + Backlog carry forward nahi</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 3</div>
+            <div class="pyq-q">Chhathi Anusuchi (6th Schedule) kin rajyon ke liye hai?<br>
+            <span class="hi">छठी अनुसूची किन राज्यों के लिए है?</span></div>
+            <ul class="pyq-o">
+                <li>A) MP, CG, JH, Odisha</li>
+                <li>B) Rajasthan, Gujarat, Maharashtra, HP</li>
+                <li data-c="1">C) Assam, Meghalaya, Mizoram, Tripura</li>
+                <li>D) AP, Telangana, Karnataka, Kerala</li>
+            </ul>
+            <button class="btn" onclick="toggle('a3')">Show Answer</button>
+            <div class="pyq-a" id="a3">
+                <p><strong>✅ C) Assam, Meghalaya, Mizoram, Tripura</strong></p>
+                <p>Yaad: <span class="key">AMMT = ATM mein se paisa nikaal ke de diya!</span></p>
+                <p>Option A wale 5th Schedule ke hain (anusuchit kshetra).</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 4</div>
+            <div class="pyq-q">Janjaatiya Salahkar Parishad mein kitne sadsya hote hain?<br>
+            <span class="hi">जनजातीय सलाहकार परिषद में कितने सदस्य होते हैं?</span></div>
+            <ul class="pyq-o">
+                <li>A) 10</li>
+                <li data-c="1">B) 20</li>
+                <li>C) 30</li>
+                <li>D) 25</li>
+            </ul>
+            <button class="btn" onclick="toggle('a4')">Show Answer</button>
+            <div class="pyq-a" id="a4">
+                <p><strong>✅ B) 20</strong></p>
+                <p>Salahkar Parishad = <span class="key">20 sadsya</span> (3/4 = 15 ST MLAs)</p>
+                <p>Swayatt Jila Parishad (ADC) = 30 sadsya (confuse mat hona!)</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 5</div>
+            <div class="pyq-q">Article 243D(2) ke anusaar panchayaton mein SC/ST mahilaon ko kitna aarakshan?<br>
+            <span class="hi">अनुच्छेद 243D(2) के अनुसार पंचायतों में SC/ST महिलाओं को कितना आरक्षण?</span></div>
+            <ul class="pyq-o">
+                <li>A) 1/2 (aadha)</li>
+                <li data-c="1">B) 1/3 (ek tihai) kam se kam</li>
+                <li>C) 1/4 (ek chauthaai)</li>
+                <li>D) Koi aarakshan nahi</li>
+            </ul>
+            <button class="btn" onclick="toggle('a5')">Show Answer</button>
+            <div class="pyq-a" id="a5">
+                <p><strong>✅ B) 1/3 (ek tihai) kam se kam</strong></p>
+                <p>243D(2) = ST seats mein se <span class="key">kam se kam 1/3 mahilaon ke liye</span></p>
+                <p>Yahi baat 243T(2) mein Nagar nikayon ke liye bhi hai.</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 6</div>
+            <div class="pyq-q">Kin 4 rajyon mein Janjaatiya Kalyan Mantralaya hai?<br>
+            <span class="hi">किन 4 राज्यों में जनजातीय कल्याण मंत्रालय है?</span></div>
+            <ul class="pyq-o">
+                <li>A) Assam, Meghalaya, Mizoram, Tripura</li>
+                <li>B) Rajasthan, Gujarat, HP, Maharashtra</li>
+                <li data-c="1">C) MP, Chhattisgarh, Jharkhand, Odisha</li>
+                <li>D) AP, Telangana, Karnataka, Tamil Nadu</li>
+            </ul>
+            <button class="btn" onclick="toggle('a6')">Show Answer</button>
+            <div class="pyq-a" id="a6">
+                <p><strong>✅ C) MP, Chhattisgarh, Jharkhand, Odisha</strong></p>
+                <p>Article 164(1) → <span class="key">4 rajyon mein</span> alag Tribal Welfare Ministry</p>
+                <p>Option A wale → 6th Schedule ke rajya hain (ADC wale)</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 7</div>
+            <div class="pyq-q">Anusuchit kshetra koun ghoshit karta hai?<br>
+            <span class="hi">अनुसूचित क्षेत्र कौन घोषित करता है?</span></div>
+            <ul class="pyq-o">
+                <li>A) Rajyapal</li>
+                <li>B) Mukhyamantri</li>
+                <li data-c="1">C) Rashtrapati</li>
+                <li>D) Sansad</li>
+            </ul>
+            <button class="btn" onclick="toggle('a7')">Show Answer</button>
+            <div class="pyq-a" id="a7">
+                <p><strong>✅ C) Rashtrapati</strong></p>
+                <p><span class="key">Rashtrapati ghoshit karta hai</span>, Rajyapal kanoon lagata/hatata hai, Salahkar Parishad salah deti hai.</p>
+            </div>
+        </div>
+
+        <div class="pyq">
+            <div class="pyq-h">📌 QUESTION 8</div>
+            <div class="pyq-q">Kailash Satyarthi ko Nobel Prize kab mila aur kahan ke hain?<br>
+            <span class="hi">कैलाश सत्यार्थी को नोबेल पुरस्कार कब मिला और कहाँ के हैं?</span></div>
+            <ul class="pyq-o">
+                <li>A) 2012, Bhopal</li>
+                <li>B) 2014, Indore</li>
+                <li data-c="1">C) 2014, Vidisha (MP)</li>
+                <li>D) 2016, Gwalior</li>
+            </ul>
+            <button class="btn" onclick="toggle('a8')">Show Answer</button>
+            <div class="pyq-a" id="a8">
+                <p><strong>✅ C) 2014, Vidisha (MP)</strong></p>
+                <p>Bachpan Bachao Andolan → <span class="key">Shanti ka Nobel Prize 2014</span> → Vidisha, MP ke hain</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== S12: GLOSSARY ===== -->
+    <section class="sec" id="s12">
+        <div class="sec-t">📖 Hindi-English Glossary</div>
+        <div class="sec-s">परीक्षा में काम आने वाले शब्द</div>
+        <table>
+            <tr><th>English</th><th>Hindi</th><th>Quick Meaning</th></tr>
+            <tr><td>Scheduled Tribe</td><td>अनुसूचित जनजाति</td><td>Article 366(25) mein paribhasha</td></tr>
+            <tr><td>Scheduled Area</td><td>अनुसूचित क्षेत्र</td><td>Rashtrapati ghoshit karta hai (5th Sch.)</td></tr>
+            <tr><td>Tribal Area</td><td>जनजातीय क्षेत्र</td><td>AMMT ke liye (6th Schedule)</td></tr>
+            <tr><td>Tribal Advisory Council</td><td>जनजातीय सलाहकार परिषद</td><td>20 sadsya, Rajyapal ko salah</td></tr>
+            <tr><td>Autonomous District Council</td><td>स्वायत्त जिला परिषद</td><td>30 sadsya, 6th Schedule, powerful</td></tr>
+            <tr><td>Reservation</td><td>आरक्षण</td><td>Seats reserved for SC/ST</td></tr>
+            <tr><td>Promotion Reservation</td><td>पदोन्नति में आरक्षण</td><td>Article 16(4A), 77th Amend.</td></tr>
+            <tr><td>Backlog Vacancy</td><td>बैकलॉग रिक्ति</td><td>Bhari nahi gayi seats → carry forward</td></tr>
+            <tr><td>Untouchability</td><td>अस्पृश्यता / छुआछूत</td><td>Article 17 → completely banned</td></tr>
+            <tr><td>Bonded Labour</td><td>बंधुआ मजदूरी</td><td>Article 23 → banned</td></tr>
+            <tr><td>Forced Labour</td><td>बलात श्रम</td><td>Article 23 → banned</td></tr>
+            <tr><td>Child Labour</td><td>बाल श्रम</td><td>Article 24 → 14 saal se neeche banned</td></tr>
+            <tr><td>Consolidated Fund</td><td>संचित निधि</td><td>Article 275 → grants yahaan se</td></tr>
+            <tr><td>DPSP</td><td>राज्य नीति निदेशक तत्व</td><td>Bhag 4, Art. 46 → SC/ST kalyan</td></tr>
+            <tr><td>Panchayat</td><td>पंचायत</td><td>73rd Amend., Bhag 9, Anusuchi 11</td></tr>
+            <tr><td>Municipal Body</td><td>नगरीय निकाय</td><td>74th Amend., Bhag 9A, Anusuchi 12</td></tr>
+            <tr><td>Governor</td><td>राज्यपाल</td><td>Kanoon lagaye/hataye, report de</td></tr>
+            <tr><td>President</td><td>राष्ट्रपति</td><td>Anusuchit kshetra ghoshit kare</td></tr>
+            <tr><td>Parliament</td><td>संसद</td><td>ST bana/hata sakti hai (342(2))</td></tr>
+            <tr><td>Minority</td><td>अल्पसंख्यक</td><td>Art 29-30, ST bhi (SC 1974)</td></tr>
+        </table>
+    </section>
+
+    <div style="text-align:center;padding:34px 0 14px;color:var(--text2);font-size:13px;">
+        <p style="font-size:15px;color:var(--saffron);">📚 MP जनजातियाँ: संवैधानिक प्रावधान — Deep Revision Complete</p>
+        <p style="margin-top:4px;">Unit 10 Class 5 • 14 Articles • 5th & 6th Schedule • 8 PYQ • Bilingual</p>
+        <p style="margin-top:4px;">MPPSC 2026 🎯</p>
+    </div>
+
+
+</div>
+<script>function toggle(id){var a=document.getElementById(id);a.classList.toggle('show');a.closest('.pyq').classList.add('revealed');}</script>
+</body>
+</html>

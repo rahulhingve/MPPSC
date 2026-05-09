@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MPPSC MP GK Revision - Madhya Pradesh General Introduction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #101113;
+            --panel: #191b20;
+            --panel2: #20242a;
+            --text: #f5f4ef;
+            --muted: #b8b5ad;
+            --line: #343941;
+            --gold: #f5c84b;
+            --green: #59d98e;
+            --red: #ff6b8a;
+            --blue: #70b7ff;
+            --teal: #4bd8d8;
+            --ink: #111317;
+            --shadow: 0 18px 38px rgba(0, 0, 0, .28)
+        }
+
+        :root.light {
+            --bg: #f7f4ed;
+            --panel: #fffdf7;
+            --panel2: #f0efe8;
+            --text: #191813;
+            --muted: #5f5d55;
+            --line: #dad4c8;
+            --shadow: 0 12px 28px rgba(50, 45, 34, .12)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font: 16px/1.7 "Noto Sans Devanagari", "Inter", system-ui, sans-serif;
+            letter-spacing: 0
+        }
+
+        a {
+            color: inherit
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        button,
+        input {
+            font: inherit
+        }
+
+        .progress {
+            position: fixed;
+            inset: 0 0 auto;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--green), var(--blue));
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 20
+        }
+
+        .top {
+            position: sticky;
+            top: 0;
+            z-index: 15;
+            background: rgba(16, 17, 19, .86);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .light .top {
+            background: rgba(247, 244, 237, .88)
+        }
+
+        .bar {
+            max-width: 1180px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 13px 18px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--gold), var(--teal));
+            color: #101113;
+            font-weight: 800
+        }
+
+        .brand h1 {
+            font: 800 18px/1.25 Inter, sans-serif;
+            margin: 0
+        }
+
+        .brand p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px
+        }
+
+        .iconbtn {
+            border: 1px solid var(--line);
+            background: var(--panel2);
+            color: var(--text);
+            border-radius: 8px;
+            padding: 8px 11px;
+            cursor: pointer
+        }
+
+        .mobile-nav {
+            display: none;
+            overflow: auto;
+            gap: 8px;
+            padding: 10px 14px;
+            border-top: 1px solid var(--line)
+        }
+
+        .mobile-nav a,
+        .side a {
+            display: block;
+            text-decoration: none;
+            color: var(--muted);
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding: 8px 10px;
+            white-space: nowrap
+        }
+
+        .mobile-nav a.active,
+        .side a.active {
+            color: var(--text);
+            border-color: var(--teal);
+            background: rgba(75, 216, 216, .12)
+        }
+
+        .layout {
+            max-width: 1180px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 250px minmax(0, 900px);
+            gap: 28px;
+            padding: 28px 18px
+        }
+
+        .side {
+            position: sticky;
+            top: 78px;
+            align-self: start;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: var(--shadow);
+            padding: 14px
+        }
+
+        .side h2 {
+            font: 800 14px Inter, sans-serif;
+            margin: 0 0 10px
+        }
+
+        .hero,
+        .section,
+        .card,
+        .quiz,
+        .sourcebox {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            box-shadow: var(--shadow)
+        }
+
+        .hero {
+            overflow: hidden;
+            margin-bottom: 22px
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 0
+        }
+
+        .hero-copy {
+            padding: 28px
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(245, 200, 75, .55);
+            background: rgba(245, 200, 75, .14);
+            color: var(--gold);
+            border-radius: 999px;
+            padding: 5px 11px;
+            font: 700 13px Inter, sans-serif
+        }
+
+        .hero h2 {
+            font: 800 36px/1.12 "Noto Sans Devanagari", sans-serif;
+            margin: 16px 0 12px
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin: 0 0 16px
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px
+        }
+
+        .chip {
+            border: 1px solid var(--line);
+            background: var(--panel2);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 14px
+        }
+
+        .hero-img {
+            min-height: 320px;
+            background: var(--panel2)
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 18px
+        }
+
+        .section {
+            padding: 22px;
+            margin: 22px 0;
+            scroll-margin-top: 90px
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 14px;
+            margin-bottom: 16px
+        }
+
+        .section h3 {
+            font: 800 27px/1.25 "Noto Sans Devanagari", sans-serif;
+            margin: 0
+        }
+
+        .done {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--muted);
+            font-size: 14px;
+            white-space: nowrap
+        }
+
+        .grid {
+            display: grid;
+            gap: 12px
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        .card {
+            padding: 15px;
+            background: var(--panel2);
+            box-shadow: none
+        }
+
+        .card h4 {
+            margin: 0 0 8px;
+            font: 800 15px Inter, "Noto Sans Devanagari", sans-serif
+        }
+
+        .card p,
+        .card ul {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .card li {
+            margin: 5px 0
+        }
+
+        .visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            align-items: stretch;
+            margin: 14px 0
+        }
+
+        .photo {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--panel2)
+        }
+
+        .photo img {
+            height: 245px;
+            width: 100%;
+            object-fit: cover
+        }
+
+        .photo.contain img {
+            object-fit: contain;
+            background: #fff;
+            padding: 12px
+        }
+
+        .caption {
+            font-size: 12px;
+            color: var(--muted);
+            padding: 8px 10px;
+            border-top: 1px solid var(--line)
+        }
+
+        .hot {
+            border-color: rgba(245, 200, 75, .7);
+            background: linear-gradient(135deg, rgba(245, 200, 75, .22), rgba(245, 200, 75, .06))
+        }
+
+        .info {
+            border-color: rgba(112, 183, 255, .58);
+            background: rgba(112, 183, 255, .11)
+        }
+
+        .ok {
+            border-color: rgba(89, 217, 142, .58);
+            background: rgba(89, 217, 142, .1)
+        }
+
+        .bad {
+            border-color: rgba(255, 107, 138, .58);
+            background: rgba(255, 107, 138, .1)
+        }
+
+        .memo {
+            border-color: rgba(75, 216, 216, .58);
+            background: rgba(75, 216, 216, .1)
+        }
+
+        .bigfact {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1.35
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            margin: 12px 0
+        }
+
+        .table th,
+        .table td {
+            padding: 11px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top
+        }
+
+        .table th {
+            background: var(--panel2);
+            color: var(--teal);
+            font: 800 13px Inter, sans-serif
+        }
+
+        .table tr:last-child td {
+            border-bottom: 0
+        }
+
+        .timeline {
+            display: grid;
+            gap: 10px;
+            margin: 12px 0
+        }
+
+        .event {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 12px;
+            align-items: start
+        }
+
+        .year {
+            border-radius: 8px;
+            background: var(--gold);
+            color: #17120a;
+            font: 800 14px Inter, sans-serif;
+            text-align: center;
+            padding: 8px
+        }
+
+        .quiz {
+            padding: 14px;
+            background: var(--panel2);
+            box-shadow: none
+        }
+
+        .quiz details {
+            border-top: 1px solid var(--line);
+            padding: 10px 0
+        }
+
+        .quiz details:first-child {
+            border-top: 0
+        }
+
+        .quiz summary {
+            cursor: pointer;
+            font-weight: 700
+        }
+
+        .quiz p {
+            margin: 8px 0 0;
+            color: var(--green)
+        }
+
+        .checklist label {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            border: 1px solid var(--line);
+            background: var(--panel2);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 8px 0
+        }
+
+        .abbr {
+            border-bottom: 1px dotted var(--teal);
+            cursor: help
+        }
+
+        .back {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--gold);
+            color: #17120a;
+            width: 46px;
+            height: 46px;
+            font-weight: 900;
+            display: none;
+            box-shadow: var(--shadow);
+            cursor: pointer
+        }
+
+        .back.show {
+            display: block
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .62);
+            display: none;
+            place-items: center;
+            z-index: 30;
+            padding: 20px
+        }
+
+        .modal.open {
+            display: grid
+        }
+
+        .modalbox {
+            max-width: 440px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow)
+        }
+
+        .modalbox h3 {
+            margin: 0 0 8px
+        }
+
+        .sourcebox {
+            padding: 16px;
+            margin: 22px 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .sourcebox ul {
+            margin: 8px 0 0;
+            padding-left: 20px
+        }
+
+        @media(max-width:900px) {
+            .mobile-nav {
+                display: flex
+            }
+
+            .layout {
+                display: block;
+                padding: 18px 14px
+            }
+
+            .side {
+                display: none
+            }
+
+            .hero-grid,
+            .visual,
+            .grid.two,
+            .grid.three {
+                grid-template-columns: 1fr
+            }
+
+            .hero h2 {
+                font-size: 30px
+            }
+
+            .photo img {
+                height: 220px
+            }
+
+            .event {
+                grid-template-columns: 86px 1fr
+            }
+
+            .bar {
+                align-items: flex-start
+            }
+
+            .actions {
+                flex-shrink: 0
+            }
+        }
+
+        @media print {
+
+            .top,
+            .mobile-nav,
+            .side,
+            .back,
+            .progress,
+            .actions {
+                display: none !important
+            }
+
+            .layout {
+                display: block;
+                max-width: none
+            }
+
+            .section,
+            .hero,
+            .card,
+            .quiz {
+                box-shadow: none;
+                break-inside: avoid
+            }
+
+            body {
+                background: white;
+                color: black
+            }
+
+            .card p,
+            .card ul,
+            .hero p,
+            .caption {
+                color: #333
+            }
+
+            a {
+                text-decoration: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" id="progress"></div>
+    <header class="top">
+        <div class="bar">
+            <div class="brand">
+                <div class="logo">MP</div>
+                <div>
+                    <h1>MPPSC MP GK Revision</h1>
+                    <p>Madhya Pradesh General Introduction - Lecture 1</p>
+                </div>
+            </div>
+            <div class="actions"><button class="iconbtn" id="theme" title="Toggle theme">☀︎/☾</button><button
+                    class="iconbtn" id="help" title="Shortcuts">?</button></div>
+        </div>
+        <nav class="mobile-nav" id="mobileNav"></nav>
+    </header>
+    <div class="layout">
+        <aside class="side">
+            <h2>Revision Map</h2>
+            <nav id="sideNav"></nav>
+        </aside>
+        <main>
+            <section class="hero" id="top">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <span class="badge">⭐ MPPSC Prelims 2025 Focus</span>
+                        <h2>मध्य प्रदेश का सामान्य परिचय</h2>
+                        <p>Short Hinglish notes, visual hooks, exam traps, and quick recall. Live-chat filler हटाकर
+                            lecture ke exam facts yahan packed hain.</p>
+                        <div class="chips"><span class="chip">~18 min revision</span><span class="chip">13
+                                topics</span><span class="chip">55 districts homework</span><span class="chip">Images
+                                from Wikimedia Commons</span></div>
+                    </div>
+                    <div class="hero-img"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/India%20Madhya%20Pradesh%20location%20map.svg"
+                            alt="Madhya Pradesh location map"></div>
+                </div>
+            </section>
+
+            <section class="section" id="formation" data-title="Formation & Area">
+                <div class="section-head">
+                    <h3>📍 Formation, Location & Area</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid two">
+                    <div class="card hot">
+                        <h4>⭐ Exam Hotspot</h4>
+                        <p class="bigfact">Madhya Pradesh ka गठन: 1 November 1956.</p>
+                        <p>MP ka current exam area commonly <b>3,08,252 sq km</b> पढ़ना है.</p>
+                    </div>
+                    <div class="card info">
+                        <h4>🧠 Concept Hook</h4>
+                        <p>Ancient भूभाग Gondwana Land se जुड़ा बताया गया. आज MP Northern Hemisphere mein located hai.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="event">
+                        <div class="year">Earth history</div>
+                        <div class="card"><b>Angara Land</b> upper part, <b>Gondwana Land</b> lower part. Lecture ne MP
+                            ko Gondwana connection se याद कराया.</div>
+                    </div>
+                    <div class="event">
+                        <div class="year">1 Nov 1956</div>
+                        <div class="card">Madhya Pradesh formed. यही सबसे direct factual question hai.</div>
+                    </div>
+                    <div class="event">
+                        <div class="year">Area Trap</div>
+                        <div class="card">3,08,252 sq km vs 3,08,245 sq km. Difference <b>7 sq km Kirar Valley
+                                dispute</b> MP-CG border se linked बताया गया.</div>
+                    </div>
+                </div>
+                <div class="card bad">
+                    <h4>❌ Common Mistake</h4>
+                    <p>Area question mein agar 3,08,252 और 3,08,245 dono options aayen, lecture ke हिसाब से 3,08,252
+                        lock karna. Kirar Valley dispute अलग से MP-CG ke बीच याद रखना.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>MP ka formation kab hua?</summary>
+                        <p>1 November 1956.</p>
+                    </details>
+                    <details>
+                        <summary>Kirar Valley dispute kitne area ka बताया गया?</summary>
+                        <p>7 sq km.</p>
+                    </details>
+                    <details>
+                        <summary>MP kis hemisphere mein hai?</summary>
+                        <p>Northern Hemisphere.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="names" data-title="Names & Shape">
+                <div class="section-head">
+                    <h3>🏷️ Other Names & Shape</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid three">
+                    <div class="card hot">
+                        <h4>Vedic/Mythology Names</h4>
+                        <ul>
+                            <li><b>Rewottar</b>: Rewa/Narmada ke north wala part.</li>
+                            <li><b>Dakshinapath</b>: South India जाने का रास्ता.</li>
+                            <li>Burhanpur side se Deccan route याद करो.</li>
+                        </ul>
+                    </div>
+                    <div class="card ok">
+                        <h4>Popular Names</h4>
+                        <ul>
+                            <li>Hriday Pradesh / Heart of India</li>
+                            <li>Mini India / Laghu Bharat</li>
+                            <li>Soya State / Soya Pradesh</li>
+                            <li>Dalhan Pradesh</li>
+                            <li>Diamond State</li>
+                        </ul>
+                    </div>
+                    <div class="card info">
+                        <h4>Wildlife Names</h4>
+                        <ul>
+                            <li>Tiger State: 785 tigers, 2022 estimate.</li>
+                            <li>Leopard State / Tendua Pradesh</li>
+                            <li>Wolf State / Bhediya Pradesh</li>
+                            <li>Vulture State / Giddh Pradesh</li>
+                            <li>Tribal State / Janjatiya Pradesh</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid two">
+                    <div class="card memo">
+                        <h4>Mnemonic</h4>
+                        <p><b>Rewa-Uttar = Rewa ke uttar.</b> Narmada/Rewa ko center line मानो, north side ko Rewottar
+                            याद करो.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Shape</h4>
+                        <p>MP ka आकार <b>rectangular</b> aur <b>sitting camel</b> जैसा बताया गया. Map dekhte समय यह
+                            visual hook use करो.</p>
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Question Type</th>
+                        <th>Answer Hook</th>
+                    </tr>
+                    <tr>
+                        <td>Madhya Pradesh नाम किसने दिया?</td>
+                        <td>Pt. Jawaharlal Nehru.</td>
+                    </tr>
+                    <tr>
+                        <td>Heart of India क्यों?</td>
+                        <td>India ke center location ke कारण.</td>
+                    </tr>
+                    <tr>
+                        <td>Tiger State count?</td>
+                        <td>785 tigers as per 2022 estimate.</td>
+                    </tr>
+                </table>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>Dakshinapath ka meaning kya hai?</summary>
+                        <p>South ki ओर जाने वाला path/route.</p>
+                    </details>
+                    <details>
+                        <summary>MP ko Heart of India kyun kahte hain?</summary>
+                        <p>भारत ke central location ke कारण.</p>
+                    </details>
+                    <details>
+                        <summary>MP ka shape lecture mein कैसा बताया?</summary>
+                        <p>Rectangular aur sitting camel जैसा.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="capitals" data-title="Capitals">
+                <div class="section-head">
+                    <h3>🏙️ Special Capitals</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid two">
+                    <div class="card hot">
+                        <h4>⭐ Indore Cluster</h4>
+                        <ul>
+                            <li>Sports Capital of MP: <b>Indore</b></li>
+                            <li>Commercial Capital: <b>Indore</b></li>
+                            <li>Finance Capital: <b>Indore</b></li>
+                            <li>Industrial Capital: <b>Indore</b></li>
+                        </ul>
+                    </div>
+                    <div class="card info">
+                        <h4>Energy Capital</h4>
+                        <p><b>Singrauli</b> ko Energy Capital याद करो. Reason: Vindhyachal Thermal Power Station yahan
+                            linked hai.</p>
+                    </div>
+                </div>
+                <div class="card bad">
+                    <h4>❌ Trap</h4>
+                    <p>Cultural Capital lecture mein answer ke लिए छोड़ा गया tha. Page mein unsupported answer add nahi
+                        kiya गया.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>MP ki Commercial Capital?</summary>
+                        <p>Indore.</p>
+                    </details>
+                    <details>
+                        <summary>Energy Capital ka reason?</summary>
+                        <p>Singrauli, because Vindhyachal Thermal Power Station.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="emblem" data-title="State Emblem">
+                <div class="section-head">
+                    <h3>🛡️ State Emblem & Anthem</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="visual">
+                    <div class="photo"
+                        style="max-width: 500px; margin: 0 auto; overflow: hidden; border: 1px solid #ccc; border-radius: 8px;">
+                        <div style="width: 100%; height: 0; padding-bottom: 66.67%; position: relative;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Emblem_of_Madhya_Pradesh.svg"
+                                alt="Sanchi Stupa"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="caption">Sanchi Stupa visual hook: emblem ke 24 stupas aur Ashoka pillar location
+                            yaad karo.</div>
+                    </div>
+                    <div class="grid">
+                        <div class="card hot">
+                            <h4>Outer Layer</h4>
+                            <p><b>24 Buddhist stupas</b> ki आकृति. Stupa = Buddhist worship/relic structure.</p>
+                        </div>
+                        <div class="card info">
+                            <h4>Middle Layer</h4>
+                            <p>ऊपर <b>Madhya Pradesh Shasan</b>, नीचे <b>Satyamev Jayate</b>. Satyamev Jayate: Mundaka
+                                Upanishad se लिया गया.</p>
+                        </div>
+                        <div class="card ok">
+                            <h4>Inner Layer</h4>
+                            <p><b>Banyan tree</b> + lion capital/Ashoka pillar. Fourth lion पीछे होता है. Sanchi/Vidisha
+                                location याद करो.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bad">
+                    <h4>❌ Soybean Trap</h4>
+                    <p>Emblem mein wheat aur paddy की बालियां हैं. State crop soybean hone ke बावजूद emblem mein soybean
+                        nahi hai.</p>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>State Anthem</th>
+                        <th>Fact</th>
+                    </tr>
+                    <tr>
+                        <td>Declared</td>
+                        <td>26 July 2011</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td>Mera Madhya Pradesh</td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td>Mahesh Srivastava</td>
+                    </tr>
+                    <tr>
+                        <td>Music</td>
+                        <td>Sunil Jha and Aadesh Shrivastava</td>
+                    </tr>
+                    <tr>
+                        <td>Singer</td>
+                        <td>Shaan / Shantanu Mukherjee</td>
+                    </tr>
+                </table>
+                <div class="card memo">
+                    <h4>Memory Line</h4>
+                    <p>"Sukh ka data, sabka sathi..." se title <b>Mera Madhya Pradesh</b> connect karo.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>State emblem ke outer part mein kitne stupas?</summary>
+                        <p>24 stupas.</p>
+                    </details>
+                    <details>
+                        <summary>Satyamev Jayate kis Upanishad se?</summary>
+                        <p>Mundaka Upanishad.</p>
+                    </details>
+                    <details>
+                        <summary>State anthem ka title?</summary>
+                        <p>Mera Madhya Pradesh.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="animal" data-title="Animal & Fish">
+                <div class="section-head">
+                    <h3>🦌 State Animal & Fish</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="visual">
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Hard%20ground%20barasingha.jpg"
+                            alt="Hard ground barasingha">
+                        <div class="caption">Barasingha: Kanha ka gehna. 12 singh = Bara-singha.</div>
+                    </div>
+                    <div class="grid">
+                        <div class="card hot">
+                            <h4>State Animal</h4>
+                            <p><b>Barasingha / Swamp Deer</b>. Scientific name: Rucervus duvaucelii. Family:
+                                Cervidae.</p>
+                        </div>
+                        <div class="card ok">
+                            <h4>Other Names</h4>
+                            <p>Daldal wala mrig, jal-magn hiran, hard-ground barasingha. Kanha National Park se
+                                (kanha national park is situated in Balaghat and Mandla distict). strongest recall.</p>
+                        </div>
+                        <div class="card info">
+                            <h4>Adoption & Range</h4>
+                            <p>Adopted: <b>1 November 1981</b>. Lecture also notes south-west Nepal range.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid two">
+                    <div class="card hot">
+                        <h4>State Fish</h4>
+                        <!-- image is not loading use this <a href="https://imgbb.com/"><img src="https://i.ibb.co/cRLPQdC/486461712-980317547560769-1798512253394627015-n.jpg" alt="486461712 980317547560769 1798512253394627015 n" border="0"></a> -->
+                        <div class="visual">
+                            <div class="photo" style="height: 300px;">
+                                <img src="https://i.ibb.co/cRLPQdC/486461712-980317547560769-1798512253394627015-n.jpg"
+                                    alt="486461712 980317547560769 1798512253394627015 n" border="0">
+                                <div class="caption">Mahseer: Narmada ki rani.</div>
+                            </div>
+                        </div>
+                        <p><b>Mahseer</b>. Common MP GK tables often write <i>Tor tor</i>; lecture note used <i>Tor
+                                putitora</i>. Adopted in <b>2011</b>. Mainly Narmada River se linked.</p>
+                    </div>
+                    <div class="card info">
+                        <h4>Conservation Hook</h4>
+                        <p>IUCN Red List mention in lecture: 2012. Mahseer Breeding Centre: <b>Barwaha, Khargone</b>.
+                        </p>
+                    </div>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>Barasingha ko Kanha se kaise याद करोगे?</summary>
+                        <p>Kanha ka gehna.</p>
+                    </details>
+                    <details>
+                        <summary>Mahseer breeding centre kahan hai?</summary>
+                        <p>Barwaha, Khargone.</p>
+                    </details>
+                    <details>
+                        <summary>State fish scientific-name trap kya hai?</summary>
+                        <p>MP GK tables mein often <i>Tor tor</i>; lecture note mein <i>Tor putitora</i>.</p>
+                    </details>
+                    <details>
+                        <summary>State animal kab adopt हुआ?</summary>
+                        <p>1 November 1981.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="tree-flower-river-bird" data-title="Nature Symbols">
+                <div class="section-head">
+                    <h3>🌳 Tree, Flower, River & Bird</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid two">
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Lilium%20Candidum%20%28Madonna%20Lily%29.jpg"
+                            alt="White lily">
+                        <div class="caption">White Lily / Madonna Lily: <i>Lilium candidum</i>.</div>
+                    </div>
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Asian%20Paradise%20Flycatcher.jpg"
+                            alt="Asian paradise flycatcher">
+                        <div class="caption">Doodhraj / Shah Bulbul: long tail visual hook.</div>
+                    </div>
+                </div>
+                <div class="visual">
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Narmada%20River%20.jpg"
+                            alt="Narmada River">
+                        <div class="caption">Narmada: east-to-west flow, rift/fault valley hook.</div>
+
+
+
+                    </div>
+                    <div class="grid">
+                        <div class="card hot">
+                            <h4>State Tree</h4>
+                            <p><b>Banyan / Bargad / Vat</b>. Scientific: <i>Ficus benghalensis</i>. Adopted: 1 November
+                                1981. Emblem ke inner part mein भी है.</p>
+                        </div>
+                        <div class="card info">
+                            <h4>State River</h4>
+                            <p><b>Narmada</b>, living river status lecture note: May 2017. Rift/fault valley mein
+                                westward flow याद करो.</p>
+                        </div>
+                        <div class="card ok">
+                            <h4>State Bird</h4>
+                            <p><b>Asian Paradise Flycatcher</b>, Doodhraj/Shah Bulbul. Scientific: <i>Terpsiphone
+                                    paradisi</i>. Declared 1985 per lecture note.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card memo">
+                    <h4>Mnemonic</h4>
+                    <p><b>B-Bird-Bulbul, B-Banyan, N-Narmada.</b> Doodhraj ki white long tail aur White Lily dono white
+                        visual pair hain.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>State flower ka scientific name?</summary>
+                        <p><i>Lilium candidum</i>.</p>
+                    </details>
+                    <details>
+                        <summary>State bird ka Hindi common name?</summary>
+                        <p>Doodhraj / Shah Bulbul.</p>
+                    </details>
+                    <details>
+                        <summary>Narmada ki flow direction?</summary>
+                        <p>East to West.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="crop-fruit" data-title="Crop & Fruit">
+                <div class="section-head">
+                    <h3>🌾 State Crop & Fruit</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid two">
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Soybean%20Field%20%289624054886%29.jpg"
+                            alt="Soybean field">
+                        <div class="caption">Soybean: oilseed, commercial, Kharif crop.</div>
+                    </div>
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Mangifera%20indica%20fruit%20in%20India.jpg"
+                            alt="Mango fruit">
+                        <div class="caption">Mango: Mangifera indica. Rewa and Govindgarh hook.</div>
+                    </div>
+                </div>
+                <div class="grid two">
+                    <div class="card hot">
+                        <h4>State Crop: Soybean</h4>
+                        <ul>
+                            <li>Scientific name: <i>Glycine max</i>.</li>
+                            <li>Oilseed + commercial + Kharif crop.</li>
+                            <li>Soybean Research Centre: Khandwa Road, Indore.</li>
+                            <li>Lecture year note: 1987 institution.</li>
+                        </ul>
+                    </div>
+                    <div class="card info">
+                        <h4>State Fruit: Mango</h4>
+                        <ul>
+                            <li>Scientific name: <i>Mangifera indica</i>.</li>
+                            <li>Production hook: Rewa, Jabalpur; mainly Rewa.</li>
+                            <li>Sundarja mango GI tag: Rewa recall.</li>
+                            <li>Mango Research Centre: Govindgarh, Rewa.</li>
+                            <li>Noorjahan mango: Kathiwada side.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card bad">
+                    <h4>❌ Current Ranking Trap</h4>
+                    <p>Lecture notes ki Maharashtra soybean competition line ko ranking question mein latest data se
+                        verify karna. Static state crop answer remains <b>Soybean</b>.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>Soybean ka scientific name?</summary>
+                        <p><i>Glycine max</i>.</p>
+                    </details>
+                    <details>
+                        <summary>Mango Research Centre kahan?</summary>
+                        <p>Govindgarh, Rewa.</p>
+                    </details>
+                    <details>
+                        <summary>Sundarja GI tag kis fruit se linked?</summary>
+                        <p>Mango, Rewa.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="sport" data-title="Mallakhamb">
+                <div class="section-head">
+                    <h3>🤸 State Sport: Mallakhamb</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="visual">
+                    <div class="photo"><img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Performing%20mallakhamb.jpg"
+                            alt="Mallakhamb performance">
+                        <div class="caption">Mall + Khamb: athlete on pole. Visual se type याद रहेगा.</div>
+                    </div>
+                    <div class="grid">
+                        <div class="card hot">
+                            <h4>Declaration</h4>
+                            <p>Traditional Indian game <b>Mallakhamb</b> ko 2013 mein MP ka state sport declared किया
+                                गया. Announcement: 9 April 2013. Adoption: 10 April 2013.</p>
+                        </div>
+                        <div class="card info">
+                            <h4>Meaning</h4>
+                            <p><b>Mall</b> = wrestler/व्यायाम करने वाला. <b>Khamb</b> = pole. Gymnastics + martial art
+                                feel.</p>
+                        </div>
+                        <div class="card ok">
+                            <h4>Guru & Birth Hook</h4>
+                            <p>Acharya Vallabh Bhatt Deodhar को proponent/guru बताया गया. MP answer hook: birthplace
+                                <b>Ujjain</b>. Prabhash Joshi Award linked.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Type</th>
+                        <th>Recall</th>
+                    </tr>
+                    <tr>
+                        <td>Fixed / Pole Mallakhamb</td>
+                        <td>Ground mein fixed teak/sagwan pole.</td>
+                    </tr>
+                    <tr>
+                        <td>Hanging Mallakhamb</td>
+                        <td>Chain se latka छोटा pole.</td>
+                    </tr>
+                    <tr>
+                        <td>Rope / Shep Mallakhamb</td>
+                        <td>Rope par exercise. Lecture note: women mostly perform this type.</td>
+                    </tr>
+                </table>
+                <div class="card memo">
+                    <h4>Centers</h4>
+                    <p>MP mein <b>14 Mallakhamb centers</b> याद रखना. Lecture examples: Indore, Khargone, Ujjain, Betul,
+                        Datia, Panna, Ratlam, Shivpuri, Gwalior, Tikamgarh आदि.</p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>Mallakhamb ka state sport adoption date?</summary>
+                        <p>10 April 2013.</p>
+                    </details>
+                    <details>
+                        <summary>Rope Mallakhamb ko aur kya कहा?</summary>
+                        <p>Shep Mallakhamb.</p>
+                    </details>
+                    <details>
+                        <summary>MP answer hook mein Mallakhamb birth place?</summary>
+                        <p>Ujjain.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="dance-theatre" data-title="Dance & Theatre">
+                <div class="section-head">
+                    <h3>🎭 Folk Dance & Folk Theatre</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid two">
+                    <div class="card hot">
+                        <h4>State Folk Dance: Rai</h4>
+                        <ul>
+                            <li>Region: <b>Bundelkhand</b>.</li>
+                            <li>Community hook: <b>Bedia</b>.</li>
+                            <li>Main occasions: marriage, festivals, celebrations.</li>
+                            <li>Male character: <b>Vidushak</b>.</li>
+                            <li>Female artist: <b>Badhni</b>.</li>
+                        </ul>
+                    </div>
+                    <div class="card info">
+                        <h4>State Folk Theatre: Maach / Macha</h4>
+                        <ul>
+                            <li>Region: <b>Malwa</b>.</li>
+                            <li>Guru: <b>Bal Mukund</b>.</li>
+                            <li>Instruments: <b>Dholak and Sarangi</b>.</li>
+                            <li>Exam language: लोकनाट्य / theatre / drama.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card memo">
+                    <h4>Mnemonic</h4>
+                    <p><b>Rai = Bedia + Bundelkhand.</b> <b>Maach = Malwa + Mukund + Musical dholak-sarangi.</b></p>
+                </div>
+                <div class="quiz">
+                    <h4>Quick Quiz</h4>
+                    <details>
+                        <summary>Rai dance ka region?</summary>
+                        <p>Bundelkhand.</p>
+                    </details>
+                    <details>
+                        <summary>Maach ka guru?</summary>
+                        <p>Bal Mukund.</p>
+                    </details>
+                    <details>
+                        <summary>Maach mein kaunse instruments?</summary>
+                        <p>Dholak and Sarangi.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section" id="fullforms" data-title="Full Forms">
+                <div class="section-head">
+                    <h3>🔤 Full Forms & Abbreviations</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="grid three">
+                    <div class="card">
+                        <h4><span class="abbr" title="Madhya Pradesh Public Service Commission">MPPSC</span></h4>
+                        <p>Madhya Pradesh Public Service Commission</p>
+                    </div>
+                    <div class="card">
+                        <h4><span class="abbr" title="Madhya Pradesh">MP</span></h4>
+                        <p>Madhya Pradesh</p>
+                    </div>
+                    <div class="card">
+                        <h4><span class="abbr" title="General Knowledge">GK</span></h4>
+                        <p>General Knowledge</p>
+                    </div>
+                    <div class="card">
+                        <h4><span class="abbr" title="Chhattisgarh">CG</span></h4>
+                        <p>Chhattisgarh</p>
+                    </div>
+                    <div class="card">
+                        <h4><span class="abbr" title="International Union for Conservation of Nature">IUCN</span></h4>
+                        <p>International Union for Conservation of Nature</p>
+                    </div>
+                    <div class="card">
+                        <h4><span class="abbr" title="Geographical Indication">GI</span></h4>
+                        <p>Geographical Indication</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="checklist" data-title="Checklist">
+                <div class="section-head">
+                    <h3>✅ Master Revision Checklist</h3><label class="done"><input type="checkbox"> revised</label>
+                </div>
+                <div class="checklist">
+                    <label><input type="checkbox"> Formation date 1 November 1956 याद है.</label>
+                    <label><input type="checkbox"> Area 3,08,252 sq km and Kirar Valley 7 sq km dispute याद है.</label>
+                    <label><input type="checkbox"> Rewottar, Dakshinapath, Heart of India, Mini India, Soya State, Tiger
+                        State names revise हो गए.</label>
+                    <label><input type="checkbox"> State emblem ke 24 stupas, Satyamev Jayate, wheat-paddy, banyan,
+                        Ashoka pillar याद हैं.</label>
+                    <label><input type="checkbox"> Anthem title, date, author, composers, singer याद हैं.</label>
+                    <label><input type="checkbox"> Barasingha, Mahseer, Banyan, White Lily, Narmada, Doodhraj facts
+                        revise हो गए.</label>
+                    <label><input type="checkbox"> Soybean and Mango research centers याद हैं.</label>
+                    <label><input type="checkbox"> Mallakhamb declaration, types, Ujjain, 14 centers याद हैं.</label>
+                    <label><input type="checkbox"> Rai dance and Maach theatre region, characters, instruments याद
+                        हैं.</label>
+                    <label><input type="checkbox"> Homework: separate copy, 55 districts, 10 political maps, 4 colored
+                        pens.</label>
+                </div>
+            </section>
+
+            <section class="sourcebox">
+                <b>Image and fact notes:</b> Images are linked from Wikimedia Commons open-license files and credited
+                through their Commons pages. Key factual cross-checks used Drishti IAS MP GK and 2022 tiger count
+                reports.
+                <ul>
+                    <li><a href="https://commons.wikimedia.org/wiki/File:India_Madhya_Pradesh_location_map.svg">MP
+                            map</a>, <a
+                            href="https://commons.wikimedia.org/wiki/File:Hard_ground_barasingha.jpg">Barasingha</a>, <a
+                            href="https://commons.wikimedia.org/wiki/File:Sanchi_Stupa_-_Madhya_Pradesh_-_DSC_0001.jpg">Sanchi
+                            Stupa</a>, <a
+                            href="https://commons.wikimedia.org/wiki/File:The_Asian_Paradise_Flycatcher.jpg">Doodhraj</a>,
+                        <a href="https://commons.wikimedia.org/wiki/File:Narmada_River_.jpg">Narmada</a>, <a
+                            href="https://commons.wikimedia.org/wiki/File:Lilium_Candidum_(Madonna_Lily).jpg">White
+                            lily</a>, <a
+                            href="https://commons.wikimedia.org/wiki/File:Soybean_Field_(9624054886).jpg">Soybean</a>,
+                        <a href="https://commons.wikimedia.org/wiki/File:Mangifera_indica_fruit_in_India.jpg">Mango</a>,
+                        <a href="https://commons.wikimedia.org/wiki/File:Performing_mallakhamb.jpg">Mallakhamb</a>.
+                    </li>
+                    <li><a href="https://www.drishtiias.com/state-pcs/madhya-pradesh-gk">Drishti IAS MP GK</a> and <a
+                            href="https://www.ndtv.com/india-news/tiger-count-in-mp-rose-to-785-from-526-in-four-years-says-chouhan-congratulates-people-4251079">NDTV/PTI
+                            tiger count report</a>.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <button class="back" id="back" title="Back to top">↑</button>
+    <div class="modal" id="modal">
+        <div class="modalbox">
+            <h3>Keyboard Shortcuts</h3>
+            <p><b>T</b> theme toggle</p>
+            <p><b>?</b> open/close this help</p><button class="iconbtn" id="close">Close</button>
+        </div>
+    </div>
+    <script>
+        const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+        const root = document.documentElement, theme = $("#theme"), progress = $("#progress"), back = $("#back"), modal = $("#modal");
+        if (localStorage.theme === "light") root.classList.add("light");
+        theme.onclick = () => { root.classList.toggle("light"); localStorage.theme = root.classList.contains("light") ? "light" : "dark" };
+        $("#help").onclick = () => modal.classList.add("open"); $("#close").onclick = () => modal.classList.remove("open"); modal.onclick = e => { if (e.target === modal) modal.classList.remove("open") };
+        const sections = $$(".section[data-title]"), side = $("#sideNav"), mobile = $("#mobileNav");
+        sections.forEach(s => { const a = document.createElement("a"); a.href = "#" + s.id; a.textContent = s.dataset.title; side.appendChild(a); mobile.appendChild(a.cloneNode(true)) });
+        const navs = () => $$(".side a,.mobile-nav a");
+        const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { navs().forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id)) } }) }, { rootMargin: "-42% 0px -50% 0px", threshold: 0 });
+        sections.forEach(s => obs.observe(s));
+        window.addEventListener("scroll", () => { const h = document.documentElement; progress.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`; back.classList.toggle("show", scrollY > 300) });
+        back.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+        document.addEventListener("keydown", e => { if (e.key.toLowerCase() === "t") theme.click(); if (e.key === "?") modal.classList.toggle("open"); if (e.key === "Escape") modal.classList.remove("open") });
+    </script>
+</body>
+
+</html>

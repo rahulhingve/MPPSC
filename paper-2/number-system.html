@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPSC CSAT 2026 - Number System (संख्या पद्धति) Revision</title>
+    <meta name="description" content="MPPSC CSAT 2026 Number System complete revision notes with Hindi-English explanations">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f1117;
+            --bg-card: #1a1d2e;
+            --bg-card-hover: #222640;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+            --accent-green: #34d399;
+            --accent-amber: #fbbf24;
+            --accent-rose: #fb7185;
+            --accent-cyan: #22d3ee;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-hindi: #c4b5fd;
+            --border-color: #2d3148;
+            --glow-blue: rgba(96,165,250,0.15);
+            --glow-purple: rgba(167,139,250,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 17px;
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 4px; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 24px 60px; }
+
+        /* Hero Header */
+        .hero {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f1117 50%, #1a1d2e 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(96,165,250,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(167,139,250,0.06) 0%, transparent 50%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+        @keyframes heroGlow {
+            0% { transform: translateX(-5%); }
+            100% { transform: translateX(5%); }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .hero .subtitle {
+            font-size: 20px;
+            color: var(--text-hindi);
+            font-weight: 600;
+            position: relative;
+        }
+        .hero .meta {
+            margin-top: 14px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            position: relative;
+        }
+
+        /* Section Styles */
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 28px;
+            margin-top: 28px;
+            transition: border-color 0.3s;
+        }
+        .section:hover { border-color: var(--accent-purple); }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 24px; }
+        .section-subtitle {
+            color: var(--text-hindi);
+            font-size: 16px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Concept Card */
+        .concept {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--accent-blue);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .concept.green { border-left-color: var(--accent-green); }
+        .concept.purple { border-left-color: var(--accent-purple); }
+        .concept.amber { border-left-color: var(--accent-amber); }
+        .concept.rose { border-left-color: var(--accent-rose); }
+        .concept.cyan { border-left-color: var(--accent-cyan); }
+
+        .hindi { color: var(--text-hindi); font-weight: 500; }
+        .eng { color: var(--accent-cyan); font-weight: 500; }
+        .key { color: var(--accent-amber); font-weight: 600; }
+        .formula {
+            display: inline-block;
+            background: rgba(251,191,36,0.1);
+            border: 1px solid rgba(251,191,36,0.25);
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--accent-amber);
+            font-family: 'Inter', monospace;
+        }
+
+        /* Tip Box */
+        .tip {
+            background: rgba(52,211,153,0.08);
+            border: 1px solid rgba(52,211,153,0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 15px;
+        }
+        .tip::before { content: '💡 '; }
+
+        .warning {
+            background: rgba(251,113,133,0.08);
+            border: 1px solid rgba(251,113,133,0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 15px;
+        }
+        .warning::before { content: '⚠️ '; }
+
+        .exam-tag {
+            display: inline-block;
+            background: rgba(251,113,133,0.15);
+            color: var(--accent-rose);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 15px;
+        }
+        th {
+            background: rgba(96,165,250,0.12);
+            color: var(--accent-blue);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+
+        /* PYQ Box */
+        .pyq {
+            background: linear-gradient(135deg, rgba(251,113,133,0.08), rgba(167,139,250,0.08));
+            border: 1px solid rgba(251,113,133,0.25);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 18px 0;
+        }
+        .pyq-header {
+            font-weight: 700;
+            color: var(--accent-rose);
+            margin-bottom: 10px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        .pyq-q { font-weight: 600; margin-bottom: 12px; }
+        .pyq-options { list-style: none; padding: 0; }
+        .pyq-options li {
+            padding: 8px 14px;
+            margin: 4px 0;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .pyq-options li:hover { background: rgba(255,255,255,0.07); }
+        .pyq-options li.correct {
+            background: rgba(52,211,153,0.15);
+            border: 1px solid rgba(52,211,153,0.3);
+        }
+        .pyq-answer {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: rgba(52,211,153,0.08);
+            border-radius: 8px;
+            display: none;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .pyq-answer.show { display: block; }
+        .pyq-btn {
+            margin-top: 10px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+        .pyq-btn:hover { opacity: 0.85; }
+
+        /* Quick Recall Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 14px;
+            margin: 14px 0;
+        }
+        .grid-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .grid-item:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+        .grid-item h4 {
+            color: var(--accent-blue);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-top: 28px;
+        }
+        .toc h3 {
+            color: var(--accent-blue);
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+        .toc a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 15px;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+        .toc a:hover {
+            color: var(--accent-cyan);
+            padding-left: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 12px 14px 40px; }
+            .section { padding: 20px 16px; }
+            .hero { padding: 36px 16px 30px; }
+            body { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO HEADER -->
+<header class="hero">
+    <div class="hero-badge">MPPSC CSAT 2026</div>
+    <h1>Number System</h1>
+    <div class="subtitle">संख्या पद्धति — Complete Revision</div>
+    <div class="meta">📘 Paper 2 • Mathematics • PYQ Based • Bilingual Notes</div>
+</header>
+
+<div class="container">
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+        <h3>📑 Topics Covered (विषय सूची)</h3>
+        <a href="#types">1. Types of Numbers (संख्याओं के प्रकार)</a>
+        <a href="#rational">2. Rational & Irrational Numbers (परिमेय और अपरिमेय)</a>
+        <a href="#integer">3. Integer, Whole & Natural Numbers</a>
+        <a href="#prime">4. Prime Numbers (अभाज्य संख्या)</a>
+        <a href="#twin">5. Twin Prime & Co-Prime</a>
+        <a href="#even-odd">6. Even-Odd Rules (सम-विषम नियम)</a>
+        <a href="#divisibility">7. Divisibility Rules (विभाज्यता नियम)</a>
+        <a href="#unit-digit">8. Unit Digit (इकाई का अंक)</a>
+        <a href="#pyq">9. PYQ Practice (MPPSC 2025)</a>
+    </nav>
+
+    <!-- ===== SECTION 1: TYPES OF NUMBERS ===== -->
+    <section class="section" id="types">
+        <div class="section-title"><span class="icon">🔢</span> Types of Numbers</div>
+        <div class="section-subtitle">संख्याओं के प्रकार — Number Family Tree</div>
+
+        <p>Numbers (<span class="hindi">संख्याएं</span>) ka use hota hai <span class="key">counting (गिनने)</span> ke liye. Ye basically <strong>2 main categories</strong> mein divide hote hain:</p>
+
+        <div class="grid" style="margin-top:18px;">
+            <div class="grid-item" style="border-color: var(--accent-green);">
+                <h4>✅ Real Numbers (वास्तविक संख्या)</h4>
+                <p>Jo numbers hum daily use karte hain — integers, fractions, decimals sab isme aate hain.</p>
+                <p style="margin-top:8px;"><span class="exam-tag">📝 EXAM IMPORTANT</span></p>
+                <p style="font-size:14px; color:var(--text-secondary);">Paper mein questions <strong>isi se</strong> aate hain!</p>
+            </div>
+            <div class="grid-item" style="border-color: var(--accent-rose);">
+                <h4>❌ Imaginary Numbers (काल्पनिक संख्या)</h4>
+                <p><span class="formula">i = √(-1)</span> ke form mein hoti hain. Complex numbers bhi yahi aate hain.</p>
+                <p style="margin-top:8px; font-size:14px; color:var(--text-secondary);">CSAT mein isse question <strong>nahi</strong> puchha jaata.</p>
+            </div>
+        </div>
+
+        <div class="tip">Real Numbers ke andar hi sab kuch aata hai — Integer, Fraction, Decimal. Exam ke liye <strong>sirf Real Numbers</strong> pe focus karo!</div>
+
+        <h3 style="margin-top:22px; color:var(--accent-blue); font-size:18px;">📊 Number Family Tree (Complete Hierarchy)</h3>
+        <div class="concept" style="margin-top:12px; overflow-x:auto;">
+            <pre style="font-size:14px; line-height:1.6; color:var(--text-primary); font-family:'Inter',monospace;">
+Numbers (संख्याएं)
+├── <span style="color:var(--accent-green);">Real Numbers (वास्तविक संख्या)</span>
+│   ├── <span style="color:var(--accent-blue);">Rational (परिमेय संख्या)</span> → p/q form, q ≠ 0
+│   │   ├── Integers (पूर्णांक) → ...-2,-1, 0, 1, 2...
+│   │   │   ├── Whole Numbers (पूर्ण संख्या) → 0, 1, 2, 3...
+│   │   │   │   └── Natural Numbers (प्राकृतिक) → 1, 2, 3...
+│   │   │   │       ├── Even (सम) → 2, 4, 6...
+│   │   │   │       ├── Odd (विषम) → 1, 3, 5...
+│   │   │   │       ├── Prime (अभाज्य) → 2, 3, 5, 7...
+│   │   │   │       └── Composite (भाज्य) → 4, 6, 8, 9...
+│   │   ├── Fractions (भिन्न) → 1/2, 3/4...
+│   │   └── Decimals → Terminating & Repeating
+│   └── <span style="color:var(--accent-rose);">Irrational (अपरिमेय संख्या)</span> → √2, π, 0.123546...
+└── Imaginary (काल्पनिक) → 3i, -2i (Not in exam)
+            </pre>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2: RATIONAL & IRRATIONAL ===== -->
+    <section class="section" id="rational">
+        <div class="section-title"><span class="icon">⚖️</span> Rational & Irrational Numbers</div>
+        <div class="section-subtitle">परिमेय और अपरिमेय संख्या — <span class="exam-tag">MPPSC 2025 PYQ</span></div>
+
+        <!-- Rational -->
+        <div class="concept green">
+            <h3 style="color:var(--accent-green); font-size:18px;">✅ Rational Number (परिमेय संख्या)</h3>
+            <p style="margin-top:8px;">
+                <strong>Definition:</strong> Aisi sankhyaein jinhe hum <span class="formula">p/q</span> ke form mein likh sakte hain, 
+                jahan <span class="key">q ≠ 0</span> (denominator/हर zero nahi hona chahiye).
+            </p>
+            <p style="margin-top:6px;">
+                <span class="hindi">अंश (Numerator)</span> = p &nbsp;|&nbsp; <span class="hindi">हर (Denominator)</span> = q
+            </p>
+
+            <h4 style="margin-top:14px; color:var(--accent-cyan);">Rational ke andar kya-kya aata hai:</h4>
+            <table>
+                <tr><th>Type</th><th>Hindi</th><th>Example</th></tr>
+                <tr><td>Integer Values</td><td>पूर्णांक मान</td><td>-3, 0, 5, 100</td></tr>
+                <tr><td>Fractions</td><td>भिन्न</td><td>1/2, -3/4, 5/7</td></tr>
+                <tr><td>Terminating Decimal</td><td>शांत दशमलव</td><td>0.5, 3.75, 2.125</td></tr>
+                <tr><td>Repeating Decimal</td><td>पुनरावृत्ति दशमलव</td><td>0.333..., 0.1212...</td></tr>
+            </table>
+
+            <div class="tip"><strong>Terminating</strong> (शांत) = decimal ruk jaata hai (jaise 0.25)<br>
+            <strong>Repeating</strong> (पुनरावृत्ति) = same pattern baar baar aata hai (jaise 0.333...)<br>
+            Dono hi <strong>Rational</strong> hain! Bahut log repeating ko Irrational samajhte hain — ye <strong>galat</strong> hai!</div>
+
+            <p>Rational numbers <span class="key">positive bhi ho sakte hain, negative bhi</span>. Jaise: +1/2 aur -1/2 dono rational hain.</p>
+        </div>
+
+        <!-- Irrational -->
+        <div class="concept rose" style="margin-top:18px;">
+            <h3 style="color:var(--accent-rose); font-size:18px;">❌ Irrational Number (अपरिमेय संख्या)</h3>
+            <p style="margin-top:8px;">
+                <strong>Definition:</strong> Aisi sankhyaein jo p/q ke form mein <span class="key">nahi likh sakte</span>. 
+                Inke decimal <strong>na ruke, na repeat ho</strong>.
+            </p>
+
+            <h4 style="margin-top:14px; color:var(--accent-cyan);">Irrational kab hota hai:</h4>
+            <table>
+                <tr><th>Condition</th><th>Hindi</th><th>Example</th></tr>
+                <tr><td>Non-Terminating + Non-Repeating Decimal</td><td>ना रुकने वाला + ना दोहराने वाला</td><td>0.1235461...</td></tr>
+                <tr><td>Non-Perfect Square Root</td><td>अपूर्ण वर्गमूल</td><td>√2, √3, √5, √7</td></tr>
+                <tr><td>π (pi symbol)</td><td>पाई (चिन्ह)</td><td>3.14159265...</td></tr>
+            </table>
+
+            <div class="warning"><strong>π (pi) ka confusion:</strong><br>
+            • Agar <span class="key">π symbol</span> likha hai → <strong>Irrational</strong><br>
+            • Agar <span class="key">22/7</span> likha hai (approximate value) → <strong>Rational</strong> (kyunki p/q form hai)<br>
+            Exam mein ye trick question aata hai!</div>
+
+            <p>Irrational numbers bhi <span class="key">positive aur negative</span> dono ho sakte hain. Jaise: +√2 aur -√2.</p>
+        </div>
+
+        <!-- Quick Comparison -->
+        <h3 style="margin-top:22px; color:var(--accent-amber); font-size:18px;">⚡ Quick Comparison Table</h3>
+        <table style="margin-top:10px;">
+            <tr><th>Feature</th><th>Rational (परिमेय)</th><th>Irrational (अपरिमेय)</th></tr>
+            <tr><td>p/q form</td><td style="color:var(--accent-green);">✅ Haan</td><td style="color:var(--accent-rose);">❌ Nahi</td></tr>
+            <tr><td>Decimal type</td><td>Terminating ya Repeating</td><td>Non-Terminating + Non-Repeating</td></tr>
+            <tr><td>Perfect √</td><td>√4=2, √9=3 ✅</td><td>√2, √3, √5 ❌</td></tr>
+            <tr><td>Example</td><td>1/2, -3, 0.75, 0.333...</td><td>√2, π, 0.12354...</td></tr>
+        </table>
+    </section>
+
+    <!-- ===== SECTION 3: INTEGER, WHOLE, NATURAL ===== -->
+    <section class="section" id="integer">
+        <div class="section-title"><span class="icon">🔤</span> Integer, Whole & Natural Numbers</div>
+        <div class="section-subtitle">पूर्णांक, पूर्ण संख्या और प्राकृतिक संख्या</div>
+
+        <!-- Integer -->
+        <div class="concept">
+            <h3 style="color:var(--accent-blue); font-size:18px;">1️⃣ Integer (पूर्णांक संख्या)</h3>
+            <p style="margin-top:8px;">
+                <strong>Simple Rule:</strong> <span class="key">Without decimal point</span> — bina dashamlav (दशमलव) ke jo bhi number ho.
+            </p>
+            <p style="margin-top:6px;">Ye <strong>3 type</strong> ke hote hain:</p>
+            <table>
+                <tr><th>Type</th><th>Hindi</th><th>Example</th></tr>
+                <tr><td>Positive (+)</td><td>धनात्मक</td><td>+1, +2, +3, +100</td></tr>
+                <tr><td>Negative (-)</td><td>ऋणात्मक</td><td>-1, -2, -3, -50</td></tr>
+                <tr><td>Zero (0)</td><td>शून्य</td><td>0 (neither + nor -)</td></tr>
+            </table>
+            <div class="tip"><strong>Zero ka koi sign nahi hai</strong> — na positive, na negative. Zero is neutral!<br>
+            Agar kisi number ke aage koi sign nahi hai (jaise "2") → wo <strong>positive</strong> hai by default.</div>
+        </div>
+
+        <!-- Whole Number -->
+        <div class="concept green" style="margin-top:16px;">
+            <h3 style="color:var(--accent-green); font-size:18px;">2️⃣ Whole Numbers (पूर्ण संख्या)</h3>
+            <p style="margin-top:8px;">
+                <span class="key">0 se shuru</span> hoti hain aur <span class="hindi">अनंत (infinity ∞)</span> tak jaati hain.
+            </p>
+            <p style="margin-top:6px;"><span class="formula">0, 1, 2, 3, 4, 5, 6 ... ∞</span></p>
+            <p style="margin-top:6px; font-size:15px; color:var(--text-secondary);">Negative numbers isme <strong>nahi</strong> aate!</p>
+        </div>
+
+        <!-- Natural Number -->
+        <div class="concept purple" style="margin-top:16px;">
+            <h3 style="color:var(--accent-purple); font-size:18px;">3️⃣ Natural Numbers (प्राकृतिक संख्या)</h3>
+            <p style="margin-top:8px;">
+                <span class="key">1 se shuru</span> hoti hain aur <span class="hindi">अनंत (infinity ∞)</span> tak jaati hain.
+            </p>
+            <p style="margin-top:6px;"><span class="formula">1, 2, 3, 4, 5, 6 ... ∞</span></p>
+            <p style="margin-top:6px; font-size:15px; color:var(--text-secondary);">0 aur Negative numbers isme <strong>nahi</strong> aate!</p>
+        </div>
+
+        <div class="warning"><strong>Confuse mat hona!</strong> Hindi terms similar lagte hain:<br>
+        • <span class="hindi">पूर्णांक</span> = <strong>Integer</strong> (positive + negative + zero, no decimal)<br>
+        • <span class="hindi">पूर्ण संख्या</span> = <strong>Whole Number</strong> (0, 1, 2, 3...)<br>
+        • <span class="hindi">प्राकृतिक संख्या</span> = <strong>Natural Number</strong> (1, 2, 3...)<br>
+        MPPSC mein Hindi valid language hai — dono terms ka difference yaad rakho!</div>
+
+        <h3 style="margin-top:22px; color:var(--accent-amber); font-size:18px;">⚡ Quick Difference Table</h3>
+        <table style="margin-top:10px;">
+            <tr><th>Feature</th><th>Natural (प्राकृतिक)</th><th>Whole (पूर्ण)</th><th>Integer (पूर्णांक)</th></tr>
+            <tr><td>Starts from</td><td><span class="key">1</span></td><td><span class="key">0</span></td><td><span class="key">-∞</span></td></tr>
+            <tr><td>Zero included?</td><td style="color:var(--accent-rose);">❌</td><td style="color:var(--accent-green);">✅</td><td style="color:var(--accent-green);">✅</td></tr>
+            <tr><td>Negatives?</td><td style="color:var(--accent-rose);">❌</td><td style="color:var(--accent-rose);">❌</td><td style="color:var(--accent-green);">✅</td></tr>
+            <tr><td>Decimal?</td><td style="color:var(--accent-rose);">❌</td><td style="color:var(--accent-rose);">❌</td><td style="color:var(--accent-rose);">❌</td></tr>
+            <tr><td>Range</td><td>1 → ∞</td><td>0 → ∞</td><td>-∞ → 0 → ∞</td></tr>
+        </table>
+    </section>
+
+    <!-- ===== SECTION 4: PRIME NUMBERS ===== -->
+    <section class="section" id="prime">
+        <div class="section-title"><span class="icon">⭐</span> Prime & Composite Numbers</div>
+        <div class="section-subtitle">अभाज्य और भाज्य संख्या — <span class="exam-tag">VERY IMPORTANT</span></div>
+
+        <!-- Prime -->
+        <div class="concept purple">
+            <h3 style="color:var(--accent-purple); font-size:18px;">🌟 Prime Number (अभाज्य संख्या)</h3>
+            <p style="margin-top:8px;">
+                Aisi sankhya jo sirf <span class="key">1 se aur khud se</span> divide ho — uske sirf <strong>2 factors</strong> hon.
+            </p>
+            <p style="margin-top:6px;">Examples: <span class="formula">2, 3, 5, 7, 11, 13, 17, 19, 23, 29...</span></p>
+        </div>
+
+        <h3 style="margin-top:18px; color:var(--accent-amber); font-size:18px;">🧠 Must Remember Points:</h3>
+
+        <div class="grid" style="margin-top:12px;">
+            <div class="grid-item" style="border-color:var(--accent-amber);">
+                <h4 style="color:var(--accent-amber);">1 ke baare mein</h4>
+                <p><span class="key">1 = Neither Prime Nor Composite</span></p>
+                <p><span class="hindi">1 ना तो अभाज्य है, ना तो भाज्य</span></p>
+                <p style="font-size:14px;">1 is just an <strong>Odd Number</strong> (विषम संख्या)</p>
+            </div>
+            <div class="grid-item" style="border-color:var(--accent-green);">
+                <h4 style="color:var(--accent-green);">2 ke baare mein</h4>
+                <p><span class="key">2 = Smallest Prime Number</span></p>
+                <p><span class="hindi">2 सबसे छोटी अभाज्य संख्या</span></p>
+                <p style="font-size:14px;">2 = <strong>Only Even Prime</strong> (एकमात्र सम अभाज्य)</p>
+            </div>
+            <div class="grid-item" style="border-color:var(--accent-cyan);">
+                <h4 style="color:var(--accent-cyan);">3 ke baare mein</h4>
+                <p><span class="key">3 = Smallest Odd Prime</span></p>
+                <p><span class="hindi">3 सबसे छोटी विषम अभाज्य संख्या</span></p>
+            </div>
+            <div class="grid-item" style="border-color:var(--accent-rose);">
+                <h4 style="color:var(--accent-rose);">7 ke baare mein</h4>
+                <p><span class="key">7 = Largest 1-digit Odd Prime</span></p>
+                <p><span class="hindi">7 एक अंक की सबसे बड़ी विषम अभाज्य</span></p>
+                <p style="font-size:14px;">9 nahi! (9 = 3×3, composite hai)</p>
+            </div>
+        </div>
+
+        <div class="warning"><strong>Exam Trap:</strong> "Ek digit ki sabse badi vishm abhajya sankhya?" → Answer <span class="key">7</span> hai, 9 nahi!<br>
+        9 odd hai lekin prime nahi (9 = 3 × 3, iske 3 factors hain: 1, 3, 9)</div>
+
+        <div class="concept amber" style="margin-top:16px;">
+            <h3 style="color:var(--accent-amber); font-size:18px;">📋 11 = 2-Digit Smallest Prime</h3>
+            <p><span class="hindi">दो अंकों की सबसे छोटी अभाज्य संख्या</span> = <span class="key">11</span></p>
+        </div>
+
+        <h3 style="margin-top:22px; color:var(--accent-blue); font-size:18px;">📋 1 se 100 tak Prime Numbers (Yaad Karo!)</h3>
+        <div class="concept" style="margin-top:10px;">
+            <p style="font-size:14px; color:var(--text-secondary); margin-bottom:10px;">Total = <span class="key">25 prime numbers</span> hain 1 se 100 ke beech</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span class="formula">2</span><span class="formula">3</span><span class="formula">5</span><span class="formula">7</span><span class="formula">11</span>
+                <span class="formula">13</span><span class="formula">17</span><span class="formula">19</span><span class="formula">23</span><span class="formula">29</span>
+                <span class="formula">31</span><span class="formula">37</span><span class="formula">41</span><span class="formula">43</span><span class="formula">47</span>
+                <span class="formula">53</span><span class="formula">59</span><span class="formula">61</span><span class="formula">67</span><span class="formula">71</span>
+                <span class="formula">73</span><span class="formula">79</span><span class="formula">83</span><span class="formula">89</span><span class="formula">97</span>
+            </div>
+            <div class="tip" style="margin-top:12px;">Inhe <strong>yaad karna zaroori hai</strong> — jaise pahade yaad karte ho waise! Ye Maths + Reasoning dono mein kaam aayenge.</div>
+        </div>
+
+        <!-- Composite -->
+        <div class="concept rose" style="margin-top:18px;">
+            <h3 style="color:var(--accent-rose); font-size:18px;">🧱 Composite Number (भाज्य संख्या)</h3>
+            <p style="margin-top:8px;">
+                Jis number ke <span class="key">2 se zyada factors</span> (<span class="hindi">गुणनखंड</span>) hon = Composite.
+            </p>
+            <p style="margin-top:6px;">
+                <strong>Example:</strong> 6 → factors: 1, 2, 3, 6 (4 factors) → <span class="key">Composite</span><br>
+                4 → factors: 1, 2, 4 (3 factors) → <span class="key">Composite</span>
+            </p>
+        </div>
+
+        <table style="margin-top:16px;">
+            <tr><th>Property</th><th>Prime (अभाज्य)</th><th>Composite (भाज्य)</th></tr>
+            <tr><td>Factors count</td><td>Exactly 2 (1 & self)</td><td>More than 2</td></tr>
+            <tr><td>Examples</td><td>2, 3, 5, 7, 11</td><td>4, 6, 8, 9, 10</td></tr>
+            <tr><td>1 kahan?</td><td colspan="2" style="text-align:center;">1 = Neither Prime nor Composite</td></tr>
+        </table>
+    </section>
+
+    <!-- ===== SECTION 5: TWIN PRIME & CO-PRIME ===== -->
+    <section class="section" id="twin">
+        <div class="section-title"><span class="icon">👯</span> Twin Prime & Co-Prime</div>
+        <div class="section-subtitle">जुड़वा अभाज्य और सह-अभाज्य संख्या</div>
+
+        <!-- Twin Prime -->
+        <div class="concept cyan">
+            <h3 style="color:var(--accent-cyan); font-size:18px;">👯 Twin Prime Pair (जुड़वा अभाज्य युग्म)</h3>
+            <p style="margin-top:8px;"><strong>2 Conditions:</strong></p>
+            <p>1️⃣ Dono numbers <span class="key">Prime</span> (<span class="hindi">अभाज्य</span>) hone chahiye</p>
+            <p>2️⃣ Dono ke beech ka <span class="key">difference = 2</span> hona chahiye</p>
+
+            <h4 style="margin-top:14px; color:var(--accent-amber);">Examples of Twin Prime Pairs:</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">
+                <span class="formula">(3, 5)</span>
+                <span class="formula">(5, 7)</span>
+                <span class="formula">(11, 13)</span>
+                <span class="formula">(17, 19)</span>
+                <span class="formula">(29, 31)</span>
+                <span class="formula">(41, 43)</span>
+                <span class="formula">(59, 61)</span>
+                <span class="formula">(71, 73)</span>
+            </div>
+
+            <div class="warning" style="margin-top:12px;">Agar dono prime hain lekin gap 2 se zyada hai → Twin Prime <strong>nahi</strong> hai!<br>
+            Jaise (7, 11) — dono prime hain but gap = 4, so NOT twin prime.</div>
+        </div>
+
+        <!-- Co-Prime -->
+        <div class="concept green" style="margin-top:18px;">
+            <h3 style="color:var(--accent-green); font-size:18px;">🤝 Co-Prime (सह-अभाज्य संख्या)</h3>
+            <p style="margin-top:8px;">
+                <strong>Condition:</strong> Do numbers ka <span class="key">HCF = 1</span> hona chahiye.
+            </p>
+            <p style="margin-top:6px;"><span class="hindi">HCF = महत्तम समापवर्तक (Highest Common Factor)</span></p>
+
+            <h4 style="margin-top:14px; color:var(--accent-cyan);">Examples:</h4>
+            <table>
+                <tr><th>Pair</th><th>HCF</th><th>Co-Prime?</th></tr>
+                <tr><td>(2, 3)</td><td>1</td><td style="color:var(--accent-green);">✅ Yes</td></tr>
+                <tr><td>(4, 9)</td><td>1</td><td style="color:var(--accent-green);">✅ Yes</td></tr>
+                <tr><td>(14, 15)</td><td>1</td><td style="color:var(--accent-green);">✅ Yes</td></tr>
+                <tr><td>(4, 6)</td><td>2</td><td style="color:var(--accent-rose);">❌ No</td></tr>
+            </table>
+
+            <div class="tip"><strong>Important:</strong> Co-prime mein numbers khud prime hona zaroori <strong>nahi</strong> hai!<br>
+            Jaise (4, 9) — 4 aur 9 dono composite hain, but HCF = 1, so ye Co-Prime hain.</div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 6: EVEN-ODD RULES ===== -->
+    <section class="section" id="even-odd">
+        <div class="section-title"><span class="icon">🔄</span> Even-Odd Rules</div>
+        <div class="section-subtitle">सम-विषम संख्या के नियम — Exam Shortcuts</div>
+
+        <div class="grid">
+            <div class="grid-item" style="border-color:var(--accent-green);">
+                <h4 style="color:var(--accent-green);">Even (सम संख्या)</h4>
+                <p>Jo <span class="key">2 se puri tarah divide</span> ho jaaye</p>
+                <p style="font-size:14px;">Ex: 2, 4, 40, 400, 622</p>
+            </div>
+            <div class="grid-item" style="border-color:var(--accent-purple);">
+                <h4 style="color:var(--accent-purple);">Odd (विषम संख्या)</h4>
+                <p>Jo 2 se <span class="key">divide na ho</span></p>
+                <p style="font-size:14px;">Ex: 1, 3, 5, 7, 9, 11, 13</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top:20px; color:var(--accent-amber); font-size:18px;">📐 Addition & Subtraction Rules:</h3>
+        <table style="margin-top:10px;">
+            <tr><th>Operation</th><th>Rule</th><th>Example</th><th>Result Type</th></tr>
+            <tr><td>Odd + Odd</td><td><span class="hindi">विषम + विषम</span></td><td>1 + 3 = 4</td><td style="color:var(--accent-green);font-weight:600;">Even ✅</td></tr>
+            <tr><td>Even + Even</td><td><span class="hindi">सम + सम</span></td><td>2 + 4 = 6</td><td style="color:var(--accent-green);font-weight:600;">Even ✅</td></tr>
+            <tr><td>Odd + Even</td><td><span class="hindi">विषम + सम</span></td><td>5 + 2 = 7</td><td style="color:var(--accent-purple);font-weight:600;">Odd ✅</td></tr>
+            <tr><td>Odd − Even</td><td><span class="hindi">विषम − सम</span></td><td>5 − 2 = 3</td><td style="color:var(--accent-purple);font-weight:600;">Odd ✅</td></tr>
+        </table>
+
+        <h3 style="margin-top:20px; color:var(--accent-cyan); font-size:18px;">✖️ Multiplication & Power Rules:</h3>
+        <table style="margin-top:10px;">
+            <tr><th>Operation</th><th>Example</th><th>Result</th></tr>
+            <tr><td>Odd × Even</td><td>5 × 2 = 10</td><td style="color:var(--accent-green);font-weight:600;">Always Even</td></tr>
+            <tr><td>Odd<sup>Even power</sup></td><td>5² = 25</td><td style="color:var(--accent-purple);font-weight:600;">Always Odd</td></tr>
+            <tr><td>Even<sup>Odd power</sup></td><td>2³ = 8</td><td style="color:var(--accent-green);font-weight:600;">Always Even</td></tr>
+        </table>
+
+        <div class="tip"><strong>Quick Yaad Trick:</strong><br>
+        • Odd ± Odd = <strong>Even</strong> | Even ± Even = <strong>Even</strong><br>
+        • Odd ± Even = <strong>Odd</strong><br>
+        • Kisi bhi number ko <strong>Even se multiply</strong> karo → result <strong>hamesha Even</strong></div>
+    </section>
+
+    <!-- ===== SECTION 7: DIVISIBILITY RULES ===== -->
+    <section class="section" id="divisibility">
+        <div class="section-title"><span class="icon">➗</span> Divisibility Rules</div>
+        <div class="section-subtitle">विभाज्यता के नियम — <span class="exam-tag">MPPSC 2024 PYQ</span></div>
+
+        <p>Kisi bhi badi number ko bina divide kiye check karo ki wo kis se divisible hai:</p>
+
+        <table style="margin-top:14px;">
+            <tr><th>Divide by</th><th>Rule (नियम)</th><th>Example</th></tr>
+            <tr>
+                <td><span class="key">2</span></td>
+                <td>Number <span class="hindi">सम संख्या (Even)</span> ho</td>
+                <td>246 → Even → ✅ 2 se divisible</td>
+            </tr>
+            <tr>
+                <td><span class="key">3</span></td>
+                <td>Sabhi digits ka <span class="hindi">योग (sum)</span> 3 se divisible ho</td>
+                <td>201924 → 2+0+1+9+2+4 = 18 → 18÷3 = 6 ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">4</span></td>
+                <td>Last ke <span class="key">2 digits</span> se bana number 4 se divisible ho</td>
+                <td>2024 → last 2 digits = 24 → 24÷4 = 6 ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">5</span></td>
+                <td>Last digit <span class="key">0 ya 5</span> ho (<span class="hindi">इकाई का अंक</span>)</td>
+                <td>235 → last digit = 5 ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">6</span></td>
+                <td><span class="key">2 aur 3 dono</span> se divisible ho</td>
+                <td>246 → Even ✅ + (2+4+6=12, 12÷3=4) ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">7</span></td>
+                <td>Last digit ka <span class="key">double</span> karo → baki number se <span class="key">minus</span> karo → result 7 se divisible ho</td>
+                <td>798 → 8×2=16 → 79−16=63 → 63÷7=9 ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">8</span></td>
+                <td>Last ke <span class="key">3 digits</span> se bana number 8 se divisible ho</td>
+                <td>2,434 → last 3 = 434 → check 434÷8</td>
+            </tr>
+            <tr>
+                <td><span class="key">9</span></td>
+                <td>Sabhi digits ka <span class="hindi">योग (sum)</span> 9 se divisible ho (same as 3 rule)</td>
+                <td>729 → 7+2+9 = 18 → 18÷9 = 2 ✅</td>
+            </tr>
+            <tr>
+                <td><span class="key">11</span></td>
+                <td>Odd places ka sum − Even places ka sum = <span class="key">0 ya 11 ka multiple</span></td>
+                <td>938245 → (9+8+4)−(3+2+5) = 21−10 = 11 ✅</td>
+            </tr>
+        </table>
+
+        <!-- 7 ka detailed example -->
+        <div class="concept cyan" style="margin-top:18px;">
+            <h3 style="color:var(--accent-cyan); font-size:16px;">🔍 7 ka Rule — Step by Step Example</h3>
+            <p style="margin-top:8px;">Check: <span class="formula">798</span> → Is it divisible by 7?</p>
+            <p>Step 1: Last digit = <span class="key">8</span></p>
+            <p>Step 2: Double of 8 = <span class="key">16</span></p>
+            <p>Step 3: Baki number = <span class="key">79</span></p>
+            <p>Step 4: 79 − 16 = <span class="key">63</span></p>
+            <p>Step 5: 63 ÷ 7 = <span class="key">9</span> (Pura divide ho gaya!) ✅</p>
+            <p style="margin-top:8px; color:var(--accent-green); font-weight:600;">∴ 798 is divisible by 7 ✅</p>
+        </div>
+
+        <!-- 11 ka detailed example -->
+        <div class="concept purple" style="margin-top:16px;">
+            <h3 style="color:var(--accent-purple); font-size:16px;">🔍 11 ka Rule — Step by Step Example</h3>
+            <p style="margin-top:8px;">Check: <span class="formula">938245</span></p>
+            <p>Odd places (1st, 3rd, 5th): <span class="key">9 + 8 + 4 = 21</span></p>
+            <p>Even places (2nd, 4th, 6th): <span class="key">3 + 2 + 5 = 10</span></p>
+            <p>Difference: 21 − 10 = <span class="key">11</span></p>
+            <p style="margin-top:8px; color:var(--accent-green); font-weight:600;">11 ya 11 ka multiple hai → ∴ Divisible by 11 ✅</p>
+        </div>
+
+        <div class="tip"><strong>Exam Pattern:</strong> 11 ke rule mein question aisa aata hai: beech mein ek <span class="key">unknown variable (x)</span> daal deta hai aur puchta hai ki x ki value kya hogi taaki number 11 se divisible ho? Rule lagao — solve ho jayega!</div>
+    </section>
+
+    <!-- ===== SECTION 8: UNIT DIGIT ===== -->
+    <section class="section" id="unit-digit">
+        <div class="section-title"><span class="icon">🎯</span> Unit Digit Concept</div>
+        <div class="section-subtitle">इकाई का अंक ज्ञात करना — Find the Unit Digit</div>
+
+        <p>"Find the unit digit of the following expression" — ye question exam mein aata hai. Rules yaad karo:</p>
+
+        <div class="concept green" style="margin-top:14px;">
+            <h3 style="color:var(--accent-green); font-size:16px;">Rule 1: Unit digit = 0, 1, 5, 6</h3>
+            <p>Agar kisi number ki unit digit <span class="key">0, 1, 5, ya 6</span> hai → chahe power kitni bhi ho, <span class="key">unit digit wahi rahega</span>!</p>
+            <table style="margin-top:8px;">
+                <tr><th>Unit Digit</th><th>Any Power</th><th>Result Unit Digit</th></tr>
+                <tr><td>0</td><td>10⁹⁹ = ...0</td><td><span class="key">0</span></td></tr>
+                <tr><td>1</td><td>11⁹⁹ = ...1</td><td><span class="key">1</span></td></tr>
+                <tr><td>5</td><td>25⁹⁹ = ...5</td><td><span class="key">5</span></td></tr>
+                <tr><td>6</td><td>76⁹⁹ = ...6</td><td><span class="key">6</span></td></tr>
+            </table>
+        </div>
+
+        <div class="concept" style="margin-top:16px;">
+            <h3 style="color:var(--accent-blue); font-size:16px;">Rule 2: Unit digit = 2, 3, 7, 8</h3>
+            <p>Steps:</p>
+            <p>1️⃣ Given number ka <span class="key">last digit</span> uthaao</p>
+            <p>2️⃣ Power ko <span class="key">4 se divide</span> karo</p>
+            <p>3️⃣ Jo <span class="key">remainder</span> aaye → wo us digit ki power bana do</p>
+            <p>4️⃣ Agar remainder = 0 → power <span class="key">4</span> bana do</p>
+            <div class="tip" style="margin-top:10px;">Example: 7²³ → Power 23÷4 = remainder <span class="key">3</span> → So calculate 7³ = 343 → Unit digit = <span class="key">3</span></div>
+        </div>
+
+        <div class="concept amber" style="margin-top:16px;">
+            <h3 style="color:var(--accent-amber); font-size:16px;">Rule 3: Unit digit = 4 ya 9 (Special Case)</h3>
+            <p>Sirf power <span class="key">Odd hai ya Even</span> check karo:</p>
+            <table style="margin-top:8px;">
+                <tr><th>Digit</th><th>Odd Power (विषम)</th><th>Even Power (सम)</th></tr>
+                <tr><td><span class="key">4</span></td><td>4¹ = 4 → Unit = <span class="formula">4</span></td><td>4² = 16 → Unit = <span class="formula">6</span></td></tr>
+                <tr><td><span class="key">9</span></td><td>9¹ = 9 → Unit = <span class="formula">9</span></td><td>9² = 81 → Unit = <span class="formula">1</span></td></tr>
+            </table>
+            <div class="tip" style="margin-top:10px;"><strong>Yaad Trick:</strong><br>
+            • 4 ki <strong>Odd power</strong> → unit digit <strong>4</strong> | 4 ki <strong>Even power</strong> → unit digit <strong>6</strong><br>
+            • 9 ki <strong>Odd power</strong> → unit digit <strong>9</strong> | 9 ki <strong>Even power</strong> → unit digit <strong>1</strong></div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 9: PYQ PRACTICE ===== -->
+    <section class="section" id="pyq">
+        <div class="section-title"><span class="icon">📝</span> PYQ Practice — MPPSC 2025</div>
+        <div class="section-subtitle">Previous Year Questions with Explanations</div>
+
+        <!-- PYQ 1 -->
+        <div class="pyq">
+            <div class="pyq-header">📌 MPPSC 2025 — Question</div>
+            <div class="pyq-q">निम्नलिखित में से कौन सी संख्या परिमेय संख्या <strong>नहीं</strong> है?<br>
+            (Which of the following is NOT a rational number?)</div>
+            <ul class="pyq-options">
+                <li>A) 5/7</li>
+                <li>B) 0.333333</li>
+                <li class="correct">C) √2</li>
+                <li>D) −11/4</li>
+            </ul>
+            <button class="pyq-btn" onclick="toggleAnswer('ans1')">Show Answer & Explanation</button>
+            <div class="pyq-answer" id="ans1">
+                <p><strong>✅ Answer: C) √2</strong></p>
+                <p><strong>Explanation:</strong></p>
+                <p>• <strong>5/7</strong> → p/q form mein hai → <span style="color:var(--accent-green);">Rational ✅</span></p>
+                <p>• <strong>0.333333</strong> → Terminating decimal hai (6 baar 3 aakar ruk gaya) + Repeating pattern bhi hai → <span style="color:var(--accent-green);">Rational ✅</span></p>
+                <p>• <strong>√2</strong> → Non-perfect square root → p/q mein nahi likh sakte → <span style="color:var(--accent-rose);">Irrational ❌</span></p>
+                <p>• <strong>−11/4</strong> → Negative p/q form → <span style="color:var(--accent-green);">Rational ✅</span></p>
+                <p style="margin-top:8px;"><span class="key">Key Point:</span> √2 = 1.41421356... (na terminate hota hai, na repeat)</p>
+            </div>
+        </div>
+
+        <!-- PYQ 2 - Practice -->
+        <div class="pyq">
+            <div class="pyq-header">📌 PRACTICE QUESTION — Irrational Identify</div>
+            <div class="pyq-q">निम्नलिखित में कौन सा विकल्प अपरिमेय संख्या है?<br>
+            (Which of the following is Irrational?)</div>
+            <ul class="pyq-options">
+                <li class="correct">A) 0.1010010001...</li>
+                <li>B) 22/7</li>
+                <li>C) √49</li>
+                <li>D) 0.77... (repeating)</li>
+            </ul>
+            <button class="pyq-btn" onclick="toggleAnswer('ans2')">Show Answer & Explanation</button>
+            <div class="pyq-answer" id="ans2">
+                <p><strong>✅ Answer: A) 0.1010010001...</strong></p>
+                <p><strong>Explanation:</strong></p>
+                <p>• <strong>0.1010010001...</strong> → Zeros ka increment ho raha hai (1, then 0, then 1, then 00, then 1, then 000, then 1...) — koi fixed pattern nahi → <span style="color:var(--accent-rose);">Non-repeating + Non-terminating = Irrational ❌</span></p>
+                <p>• <strong>22/7</strong> → p/q form → <span style="color:var(--accent-green);">Rational ✅</span> (ye π ki approximate value hai, π symbol nahi)</p>
+                <p>• <strong>√49</strong> → √49 = 7 (perfect square) → Integer → <span style="color:var(--accent-green);">Rational ✅</span></p>
+                <p>• <strong>0.77...</strong> → Repeating decimal → <span style="color:var(--accent-green);">Rational ✅</span></p>
+            </div>
+        </div>
+
+        <!-- PYQ 3 - Assertion Reason -->
+        <div class="pyq">
+            <div class="pyq-header">📌 ASSERTION-REASON TYPE — MPPSC Pattern</div>
+            <div class="pyq-q">
+                <strong>कथन (A):</strong> प्रत्येक शांत दशमलव एक परिमेय संख्या होता है।<br>
+                <em>(Every terminating decimal is a rational number)</em><br><br>
+                <strong>कारण (R):</strong> प्रत्येक परिमेय संख्या को p/q के फॉर्म में लिखा जा सकता है।<br>
+                <em>(Every rational number can be written in p/q form)</em>
+            </div>
+            <ul class="pyq-options">
+                <li>A) A aur R dono sahi hain, R, A ki sahi vyakhya hai</li>
+                <li class="correct">B) A aur R dono sahi hain, R, A ki sahi vyakhya nahi hai</li>
+                <li>C) A sahi hai, R galat hai</li>
+                <li>D) A galat hai, R sahi hai</li>
+            </ul>
+            <button class="pyq-btn" onclick="toggleAnswer('ans3')">Show Answer & Explanation</button>
+            <div class="pyq-answer" id="ans3">
+                <p><strong>✅ Answer: B)</strong></p>
+                <p><strong>Explanation:</strong></p>
+                <p>• <strong>Assertion (A):</strong> "Har terminating decimal rational hai" → <span style="color:var(--accent-green);">TRUE ✅</span> (0.25, 0.5 etc. sab rational hain)</p>
+                <p>• <strong>Reason (R):</strong> "Har rational ko p/q mein likh sakte hain" → <span style="color:var(--accent-green);">TRUE ✅</span> (ye rational ki definition hai)</p>
+                <p>• <strong>Lekin:</strong> R sirf rational ki <span class="key">definition</span> bata raha hai. R directly ye explain nahi kar raha ki decimal terminating hone se rational kyun hota hai.</p>
+                <p>• R = Rational ki paribhasha (definition) | A = Decimal ki property</p>
+                <p>• Dono sahi hain, lekin R, A ko directly explain <strong>nahi</strong> karta!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section class="section" style="border-color:var(--accent-amber);">
+        <div class="section-title"><span class="icon">📖</span> Hindi-English Glossary</div>
+        <div class="section-subtitle">परीक्षा में काम आने वाले शब्द</div>
+        <table>
+            <tr><th>English</th><th>Hindi</th><th>Quick Meaning</th></tr>
+            <tr><td>Rational</td><td>परिमेय</td><td>p/q form, q≠0</td></tr>
+            <tr><td>Irrational</td><td>अपरिमेय</td><td>p/q mein nahi likh sakte</td></tr>
+            <tr><td>Integer</td><td>पूर्णांक</td><td>No decimal, + − 0</td></tr>
+            <tr><td>Whole Number</td><td>पूर्ण संख्या</td><td>0 se shuru, no negative</td></tr>
+            <tr><td>Natural Number</td><td>प्राकृतिक संख्या</td><td>1 se shuru</td></tr>
+            <tr><td>Prime</td><td>अभाज्य</td><td>Sirf 1 aur khud se divide</td></tr>
+            <tr><td>Composite</td><td>भाज्य</td><td>2 se zyada factors</td></tr>
+            <tr><td>Twin Prime</td><td>जुड़वा अभाज्य</td><td>Prime pair, gap=2</td></tr>
+            <tr><td>Co-Prime</td><td>सह-अभाज्य</td><td>HCF = 1</td></tr>
+            <tr><td>Even</td><td>सम</td><td>2 se divisible</td></tr>
+            <tr><td>Odd</td><td>विषम</td><td>2 se not divisible</td></tr>
+            <tr><td>Terminating</td><td>शांत दशमलव</td><td>Decimal ruk jaata hai</td></tr>
+            <tr><td>Repeating</td><td>पुनरावृत्ति</td><td>Same pattern baar baar</td></tr>
+            <tr><td>Numerator</td><td>अंश</td><td>Upar wala (p)</td></tr>
+            <tr><td>Denominator</td><td>हर</td><td>Neeche wala (q)</td></tr>
+            <tr><td>Divisibility</td><td>विभाज्यता</td><td>Kis se divide hoga</td></tr>
+            <tr><td>Factor</td><td>गुणनखंड</td><td>Jis se number banta hai</td></tr>
+            <tr><td>Unit Digit</td><td>इकाई का अंक</td><td>Last digit of number</td></tr>
+            <tr><td>Square Root</td><td>वर्गमूल</td><td>√ symbol</td></tr>
+            <tr><td>Remainder</td><td>शेषफल</td><td>Divide ke baad bacha hua</td></tr>
+        </table>
+    </section>
+
+    <div style="text-align:center; padding:30px 0 10px; color:var(--text-secondary); font-size:14px;">
+        <p>📚 MPPSC CSAT 2026 — Number System Revision Complete</p>
+        <p style="margin-top:4px;">Made for revision • Bilingual Hindi-English • Eye-friendly dark theme</p>
+    </div>
+
+</div>
+
+<script>
+function toggleAnswer(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

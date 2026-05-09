@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Janjatiya Revision | Pramod Rana Class</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root, [data-theme="light"] {
+  --bg: #f4f1eb;
+  --surface: #faf8f3;
+  --surface2: #fff;
+  --surface3: #ede9e0;
+  --border: rgba(0,0,0,0.1);
+  --text: #1e1b14;
+  --muted: #6b6760;
+  --faint: #aaa8a2;
+  --accent: #0f6b3c;
+  --accent-bg: #d6f0e1;
+  --accent2: #7c3a00;
+  --accent2-bg: #fde8cc;
+  --danger: #9c1b1b;
+  --danger-bg: #fde8e8;
+  --warn: #7a5500;
+  --warn-bg: #fff3d0;
+  --blue: #1a4a8c;
+  --blue-bg: #dceeff;
+  --purple: #5c1f8c;
+  --purple-bg: #f0e0ff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --trans: 200ms ease;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0e0c;
+  --surface: #161512;
+  --surface2: #1e1c18;
+  --surface3: #252320;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8e4da;
+  --muted: #8c8880;
+  --faint: #5a5852;
+  --accent: #3dba74;
+  --accent-bg: #0e2d1c;
+  --accent2: #e8963a;
+  --accent2-bg: #2a1a06;
+  --danger: #e05555;
+  --danger-bg: #2a0d0d;
+  --warn: #d4a820;
+  --warn-bg: #241d06;
+  --blue: #5b9de8;
+  --blue-bg: #0d1f38;
+  --purple: #a865e8;
+  --purple-bg: #1c0d2e;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) { --bg:#0f0e0c;--surface:#161512;--surface2:#1e1c18;--surface3:#252320;--border:rgba(255,255,255,0.08);--text:#e8e4da;--muted:#8c8880;--faint:#5a5852;--accent:#3dba74;--accent-bg:#0e2d1c;--accent2:#e8963a;--accent2-bg:#2a1a06;--danger:#e05555;--danger-bg:#2a0d0d;--warn:#d4a820;--warn-bg:#241d06;--blue:#5b9de8;--blue-bg:#0d1f38;--purple:#a865e8;--purple-bg:#1c0d2e;--shadow:0 2px 12px rgba(0,0,0,0.4);--shadow-lg:0 8px 30px rgba(0,0,0,0.5); }
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+body{font-family:'Noto Sans Devanagari','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
+img,svg{display:block;max-width:100%;}
+button{cursor:pointer;font:inherit;border:none;background:none;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);padding:0 20px;}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px;}
+.nav-logo{font-weight:700;font-size:15px;color:var(--accent);letter-spacing:-.3px;}
+.nav-logo span{color:var(--text);font-weight:400;}
+.nav-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:center;}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nav-tab{padding:6px 12px;border-radius:20px;font-size:12px;font-weight:500;color:var(--muted);white-space:nowrap;transition:all var(--trans);text-decoration:none;}
+.nav-tab:hover,.nav-tab.active{background:var(--accent-bg);color:var(--accent);}
+.theme-btn{width:36px;height:36px;border-radius:50%;background:var(--surface3);color:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all var(--trans);}
+.theme-btn:hover{color:var(--text);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);border-bottom:1px solid var(--border);padding:40px 20px;}
+.hero-inner{max-width:900px;margin:auto;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--warn-bg);color:var(--warn);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:16px;}
+.hero h1{font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.2;margin-bottom:10px;color:var(--text);}
+.hero p{font-size:15px;color:var(--muted);max-width:60ch;margin:0 auto 24px;}
+.score-box{display:inline-flex;gap:16px;background:var(--surface3);border-radius:12px;padding:16px 24px;flex-wrap:wrap;justify-content:center;}
+.score-item{text-align:center;}
+.score-num{font-size:28px;font-weight:700;line-height:1;}
+.score-lbl{font-size:11px;color:var(--muted);margin-top:3px;}
+.score-item.ok .score-num{color:var(--accent);}
+.score-item.err .score-num{color:var(--danger);}
+.score-item.warn .score-num{color:var(--warn);}
+
+/* MISTAKE ANALYSIS */
+.mistake-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px;}
+.mistake-card{border-radius:var(--radius-sm);padding:14px 16px;position:relative;overflow:hidden;}
+.mistake-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
+.mistake-card.wrong-pred{background:var(--warn-bg);}
+.mistake-card.wrong-pred::before{background:var(--warn);}
+.mistake-card.unknown{background:var(--danger-bg);}
+.mistake-card.unknown::before{background:var(--danger);}
+.mistake-q{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
+.mistake-card.wrong-pred .mistake-q{color:var(--warn);}
+.mistake-card.unknown .mistake-q{color:var(--danger);}
+.mistake-title{font-size:13px;font-weight:600;margin-bottom:3px;}
+.mistake-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+
+/* MAIN LAYOUT */
+.main{max-width:1100px;margin:0 auto;padding:32px 20px;}
+section{margin-bottom:48px;}
+.section-title{font-size:20px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.section-subtitle{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.section-title-bar{height:3px;width:40px;border-radius:2px;margin-bottom:16px;}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.card h3{font-size:15px;font-weight:700;margin-bottom:10px;}
+
+/* MEMORY TRICK */
+.memory-trick{background:var(--purple-bg);border:1px solid rgba(168,101,232,0.3);border-radius:var(--radius-sm);padding:12px 14px;margin-top:10px;font-size:13px;color:var(--purple);display:flex;gap:8px;align-items:flex-start;}
+.memory-trick::before{content:'🧠';font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* ALERT BOXES */
+.alert{border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;margin-top:10px;display:flex;gap:8px;align-items:flex-start;}
+.alert-icon{flex-shrink:0;font-size:15px;}
+.alert.danger{background:var(--danger-bg);color:var(--danger);}
+.alert.warn{background:var(--warn-bg);color:var(--warn);}
+.alert.tip{background:var(--accent-bg);color:var(--accent);}
+.alert.info{background:var(--blue-bg);color:var(--blue);}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);}
+table{width:100%;border-collapse:collapse;background:var(--surface);font-size:14px;}
+th{background:var(--surface3);padding:10px 14px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);border-bottom:1px solid var(--border);}
+td{padding:10px 14px;border-bottom:1px solid var(--border);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--surface2);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;}
+.badge.green{background:var(--accent-bg);color:var(--accent);}
+.badge.orange{background:var(--accent2-bg);color:var(--accent2);}
+.badge.red{background:var(--danger-bg);color:var(--danger);}
+.badge.blue{background:var(--blue-bg);color:var(--blue);}
+.badge.purple{background:var(--purple-bg);color:var(--purple);}
+
+/* TIMELINE / NUMBERED LIST */
+.fact-list{display:flex;flex-direction:column;gap:8px;}
+.fact-item{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);}
+.fact-num{width:26px;height:26px;background:var(--accent);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.fact-content{flex:1;}
+.fact-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+.fact-value{font-size:14px;font-weight:500;margin-top:1px;}
+.fact-note{font-size:12px;color:var(--muted);margin-top:2px;}
+
+/* COMPARISON TABLE COLORS */
+.highlight-green td:first-child{border-left:3px solid var(--accent);}
+.highlight-orange td:first-child{border-left:3px solid var(--accent2);}
+.highlight-red td:first-child{border-left:3px solid var(--danger);}
+.highlight-blue td:first-child{border-left:3px solid var(--blue);}
+
+/* MCQ SECTION */
+.mcq-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:var(--shadow);}
+.mcq-num{display:inline-flex;width:28px;height:28px;background:var(--surface3);border-radius:50%;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-bottom:10px;}
+.mcq-q{font-size:14px;font-weight:600;margin-bottom:12px;line-height:1.6;}
+.mcq-options{display:flex;flex-direction:column;gap:6px;}
+.mcq-option{padding:9px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);font-size:13px;cursor:pointer;transition:all var(--trans);text-align:left;background:var(--surface2);}
+.mcq-option:hover{border-color:var(--blue);background:var(--blue-bg);}
+.mcq-option.correct{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);}
+.mcq-option.wrong{background:var(--danger-bg);border-color:var(--danger);color:var(--danger);}
+.mcq-option.reveal{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);}
+.mcq-explain{margin-top:12px;padding:12px;background:var(--surface3);border-radius:var(--radius-sm);font-size:13px;display:none;}
+.mcq-explain.show{display:block;}
+.mcq-footer{margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.btn{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:600;transition:all var(--trans);}
+.btn-primary{background:var(--accent);color:var(--bg);}
+.btn-primary:hover{opacity:.9;}
+.btn-ghost{border:1px solid var(--border);color:var(--muted);}
+.btn-ghost:hover{color:var(--text);border-color:var(--text);}
+.mcq-tag{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;}
+.mcq-tag.critical{background:var(--danger-bg);color:var(--danger);}
+.mcq-tag.confusing{background:var(--warn-bg);color:var(--warn);}
+.mcq-tag.easy{background:var(--accent-bg);color:var(--accent);}
+
+/* PROGRESS */
+.progress-bar-wrap{height:6px;background:var(--surface3);border-radius:3px;margin-top:8px;}
+.progress-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--blue));}
+
+/* FORMULA BOX */
+.formula{background:var(--surface3);border-radius:var(--radius-sm);padding:14px;font-size:14px;font-weight:500;text-align:center;border:1px solid var(--border);margin:8px 0;}
+.formula .hi{color:var(--accent);font-weight:700;}
+.formula .lo{color:var(--danger);font-weight:700;}
+.formula .vs{color:var(--muted);}
+
+/* COMPARISON BOX */
+.compare-box{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;}
+.compare-side{text-align:center;}
+.compare-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:4px;}
+.compare-val{font-size:20px;font-weight:700;}
+.compare-sub{font-size:11px;color:var(--muted);}
+.compare-vs{font-size:12px;font-weight:700;color:var(--faint);}
+
+/* ACCORDION */
+.accordion{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:8px;}
+.accordion-header{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--surface);font-size:14px;font-weight:600;transition:background var(--trans);}
+.accordion-header:hover{background:var(--surface2);}
+.accordion-arrow{transition:transform var(--trans);color:var(--muted);}
+.accordion-body{background:var(--surface2);padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;}
+.accordion-body.open{max-height:600px;padding:14px 16px;}
+.accordion-header.open .accordion-arrow{transform:rotate(180deg);}
+
+/* TAG CLOUD */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.tag{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;background:var(--surface3);border:1px solid var(--border);}
+
+/* STICKY SCROLL */
+#progress-sticky{position:fixed;bottom:20px;right:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;font-size:12px;color:var(--muted);box-shadow:var(--shadow-lg);z-index:50;display:flex;gap:8px;align-items:center;transition:all var(--trans);}
+#progress-sticky span{color:var(--accent);font-weight:700;}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:24px 0;}
+
+/* CHIPS */
+.chip-list{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{padding:5px 12px;border-radius:20px;font-size:13px;font-weight:500;border:1px solid;}
+.chip.a{background:var(--accent-bg);color:var(--accent);border-color:transparent;}
+.chip.b{background:var(--blue-bg);color:var(--blue);border-color:transparent;}
+.chip.c{background:var(--warn-bg);color:var(--warn);border-color:transparent;}
+.chip.d{background:var(--purple-bg);color:var(--purple);border-color:transparent;}
+.chip.e{background:var(--danger-bg);color:var(--danger);border-color:transparent;}
+
+/* VISUAL NUMBER */
+.big-num{font-size:42px;font-weight:700;line-height:1;}
+.big-num-unit{font-size:14px;color:var(--muted);font-weight:400;}
+
+/* READING MODE */
+@media(max-width:600px){
+  .card-grid{grid-template-columns:1fr;}
+  .compare-box{grid-template-columns:1fr;text-align:center;}
+  .compare-vs{display:none;}
+  .nav-tabs{gap:2px;}
+  .nav-tab{padding:5px 10px;font-size:11px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+  <div class="nav-logo">MP <span>जनजाति</span></div>
+  <div class="nav-tabs">
+    <a class="nav-tab active" href="#analysis">🔍 Mistake Analysis</a>
+    <a class="nav-tab" href="#naming">📝 नामकरण</a>
+    <a class="nav-tab" href="#census">📊 जनगणना</a>
+    <a class="nav-tab" href="#books">📚 पुस्तकें</a>
+    <a class="nav-tab" href="#geo">🗺 भौगोलिक</a>
+    <a class="nav-tab" href="#pvtg">⭐ PVTG</a>
+    <a class="nav-tab" href="#constitution">⚖️ संविधान</a>
+    <a class="nav-tab" href="#mcq">🎯 MCQ</a>
+  </div>
+  <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-inner">
+  <div class="hero-badge">🎬 Video: Pramod Rana | MP जनजातियां - 3rd Class</div>
+  <h1>मध्य प्रदेश जनजाति<br>Smart Revision Sheet</h1>
+  <p>MPPSC Pre के लिए — Memory Tricks + Visual Tables + MCQ Pattern Analysis</p>
+  <div class="score-box">
+    <div class="score-item ok">
+      <div class="score-num">19</div>
+      <div class="score-lbl">Correct ✅</div>
+    </div>
+    <div class="score-item err">
+      <div class="score-num">4</div>
+      <div class="score-lbl">Wrong/Unknown ❌</div>
+    </div>
+    <div class="score-item warn">
+      <div class="score-num">Q3,16,18</div>
+      <div class="score-lbl">Wrong Prediction</div>
+    </div>
+    <div class="score-item err">
+      <div class="score-num">Q17</div>
+      <div class="score-lbl">Pata Hi Nahi</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- SECTION 0: MISTAKE ANALYSIS -->
+<section id="analysis">
+  <div class="section-title">🔍 Teri Galti Ka Pattern — Root Cause</div>
+  <div class="section-subtitle">2 baar revise kiya toh bhi galat — isliye pattern samajhna zaroori hai</div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3>📌 Pattern Analysis: Kaha Galti Hui?</h3>
+    <div class="alert warn" style="margin-bottom:12px;">
+      <span class="alert-icon">⚠️</span>
+      <div><strong>Main Problem:</strong> "Wrong Prediction" = तुम जानते हो concept, but <strong>confuse ho gaye 2 similar options me</strong>. Ye "passive revision" ki problem hai — read karte ho, recall nahi karte.</div>
+    </div>
+    <div class="mistake-grid">
+      <div class="mistake-card wrong-pred">
+        <div class="mistake-q">❌ Q3 — Wrong Prediction</div>
+        <div class="mistake-title">संख्या vs प्रतिशत Confusion</div>
+        <div class="mistake-desc">Tribal ranking — संख्या (count) aur प्रतिशत (%) ke order alag hain. Teri aankh ne galat wala pick kiya. Dono orders alag yaad karo.</div>
+      </div>
+      <div class="mistake-card wrong-pred">
+        <div class="mistake-q">❌ Q16 — Wrong Prediction</div>
+        <div class="mistake-title">Article Number Trap</div>
+        <div class="mistake-desc">Article 330, 332, 342 — teeno ek jaisi jगह milte hain. "Which article" questions me teri galti hoti hai. Numbers ki specific link chahiye.</div>
+      </div>
+      <div class="mistake-card unknown">
+        <div class="mistake-q">❓ Q17 — Pata Hi Nahi</div>
+        <div class="mistake-title">Lok Sabha / Vidhan Sabha ST Seats</div>
+        <div class="mistake-desc">MP se Lok Sabha me 6 ST seats aur Vidhan Sabha me 47 ST seats — ye specific fact class me tha par yaad nahi raha. "Blank spot" hai tera.</div>
+      </div>
+      <div class="mistake-card wrong-pred">
+        <div class="mistake-q">❌ Q18 — Wrong Prediction</div>
+        <div class="mistake-title">3 Hatayi Gayi Janjaatiyaan</div>
+        <div class="mistake-desc">Keer, Meena, Pardi — teeno ka naam sunke confusion. "Saal 2003 me hatai" vs "hatai gayii" type questions. Exact year + names dono pakke karo.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🧠 Fix Strategy — Teri Wrong Questions Ke Liye</h3>
+    <div class="alert tip" style="margin-bottom:8px;">
+      <span class="alert-icon">💡</span>
+      <div><strong>Active Recall karo:</strong> Read karne ke baad page band karo aur likhne ki koshish karo. Sirf dekh ke yaad nahi hoga.</div>
+    </div>
+    <div class="alert info">
+      <span class="alert-icon">📌</span>
+      <div><strong>Confusion Pairs:</strong> Jab bhi 2 similar facts dikhein (jaise संख्या vs %), dono ek saath comparison table me padho. Neeche har section me diya hai.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 1: NAMING -->
+<section id="naming">
+  <div class="section-title" style="color:var(--blue)">📝 जनजातियों के नाम — किसने क्या कहा?</div>
+  <div style="height:3px;width:40px;background:var(--blue);border-radius:2px;margin-bottom:16px;"></div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>नाम / Term</th><th>किसने कहा?</th><th>Extra Info</th><th>Memory Trick 🧠</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-blue">
+          <td><strong>आदिवासी</strong></td>
+          <td>काका कालेलकर + <strong>ठक्कर बापा</strong> + बेरियर एल्विन</td>
+          <td>ठक्कर बापा = आदिवासियों के पितृ पुरुष, गुजरात के</td>
+          <td>ठक्कर बापा ने <strong>1950</strong> में "Tribes of India" लिखी</td>
+        </tr>
+        <tr>
+          <td><strong>पहाड़ी</strong></td>
+          <td>जॉर्ज ग्रियर्सन (Ireland)</td>
+          <td>भाषा विद्वान थे</td>
+          <td>गियर लगाके पहाड़ी पर चढ़े = <em>ग्रियर्सन</em></td>
+        </tr>
+        <tr>
+          <td><strong>दलित</strong></td>
+          <td>अंग्रेज सरकार</td>
+          <td>—</td>
+          <td>अंग्रेज = दलित</td>
+        </tr>
+        <tr class="highlight-green">
+          <td><strong>गिरिजन</strong></td>
+          <td>महात्मा गांधी</td>
+          <td>गिरि = पहाड़ी + जन = रहने वाले</td>
+          <td>गांधी जी = गिरिजन (गिरि + जन)</td>
+        </tr>
+        <tr>
+          <td><strong>अनुसूचित जनजाति</strong></td>
+          <td>भारतीय संविधान</td>
+          <td>Article 342</td>
+          <td>संविधान = SC/ST टर्म</td>
+        </tr>
+        <tr class="highlight-red">
+          <td><strong>विलीन</strong></td>
+          <td>डॉ. दास एंड दास</td>
+          <td>—</td>
+          <td>दास एंड दास = विलीन (मिल गए)</td>
+        </tr>
+        <tr>
+          <td><strong>जंगलिया का जंगली</strong></td>
+          <td>1981 जनगणना में</td>
+          <td><strong>भारिया जनजाति</strong> को कहा — छिंदवाड़ा तामिया के पहाड़ों में</td>
+          <td>भारिया = जंगलिया का जंगली (1981)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert danger" style="margin-top:12px;">
+    <span class="alert-icon">🚨</span>
+    <div><strong>Common Trap Q:</strong> "गोविंद सदाशिव रिय ने आदिवासी कहा" — <strong>GALAT</strong> है! उन्होंने "पिछड़े" कहा था। <strong>आदिवासी = ठक्कर बापा</strong> ने सबसे पहले कहा।</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 2: CENSUS DATA -->
+<section id="census">
+  <div class="section-title" style="color:var(--accent)">📊 2011 जनगणना — MP जनजाति आंकड़े</div>
+  <div style="height:3px;width:40px;background:var(--accent);border-radius:2px;margin-bottom:16px;"></div>
+
+  <!-- Key Stats Grid -->
+  <div class="card-grid" style="margin-bottom:20px;">
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);">
+      <div class="big-num" style="color:var(--accent);">21.1%</div>
+      <div class="big-num-unit">MP की कुल जनसंख्या में जनजाति</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px;">= 1 करोड़ 53 लाख 16,784</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--blue);">
+      <div class="big-num" style="color:var(--blue);">14.7%</div>
+      <div class="big-num-unit">भारत की कुल जनजाति में MP का %</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px;">भारत में जनजाति = कुल जनसंख्या का 8.6%</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--warn);">
+      <div class="big-num" style="color:var(--warn);">25%</div>
+      <div class="big-num-unit">दशकीय वृद्धि दर (जनजातियों में)</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px;">MP overall वृद्धि = 20%, जनजाति = 25%</div>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--purple);">
+      <div class="big-num" style="color:var(--purple);">50</div>
+      <div class="big-num-unit">जनजाति जनघनत्व (प्रति वर्ग किमी)</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px;">MP कुल जनघनत्व = 236</div>
+    </div>
+  </div>
+
+  <!-- Confusion Point: % vs Count -->
+  <div class="card" style="margin-bottom:16px;border:2px dashed var(--warn);">
+    <h3>⚠️ सबसे ज्यादा Confusion — संख्या vs प्रतिशत (Q3 का trap यही था!)</h3>
+    <div class="tbl-wrap" style="margin-top:10px;">
+      <table>
+        <thead>
+          <tr><th>क्रम</th><th>संख्या के अनुसार (MORE जनजातियां)</th><th>प्रतिशत के अनुसार (HIGHER %)</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-green"><td><strong>1st</strong></td><td>🥇 <strong>धार</strong></td><td>🥇 <strong>अलीराजपुर</strong></td></tr>
+          <tr class="highlight-orange"><td><strong>2nd</strong></td><td>🥈 <strong>बड़वानी</strong></td><td>🥈 <strong>झाबुआ</strong></td></tr>
+          <tr><td><strong>3rd</strong></td><td>🥉 <strong>झाबुआ</strong></td><td>🥉 <strong>बड़वानी</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memory-trick">DBJ = Dhaar Badwani Jhabua (संख्या)  |  AJB = Alirajpur Jhabua Badwani (%) → "D-B-J" vs "A-J-B" — बस 1st position अलग!</div>
+    <div style="height:12px;"></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>क्रम</th><th>सबसे कम (संख्या)</th><th>सबसे कम (प्रतिशत)</th></tr></thead>
+        <tbody>
+          <tr><td>1st</td><td>भिंड</td><td>भिंड</td></tr>
+          <tr><td>2nd</td><td>दतिया</td><td>मुरैना</td></tr>
+          <tr><td>3rd</td><td>मुरैना</td><td>दतिया</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Growth Data -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📈 दशकीय वृद्धि (10 साल में)</h3>
+      <div class="fact-list">
+        <div class="fact-item">
+          <div class="fact-num" style="background:var(--accent);">↑</div>
+          <div class="fact-content">
+            <div class="fact-label">सर्वाधिक वृद्धि</div>
+            <div class="fact-value">छतरपुर (Chhatarpur)</div>
+            <div class="fact-note">Memory: छाते के नीचे खड़े रहे बढ़ते रहे</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num" style="background:var(--danger);">↓</div>
+          <div class="fact-content">
+            <div class="fact-label">न्यूनतम / ऋणात्मक</div>
+            <div class="fact-value">मंदसौर (Mandsaur)</div>
+            <div class="fact-note">+ उज्जैन + भिंड में भी ऋणात्मक वृद्धि</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>🏘️ शहरों में जनजाति</h3>
+      <div class="fact-list">
+        <div class="fact-item">
+          <div class="fact-num" style="background:var(--blue);">%</div>
+          <div class="fact-content">
+            <div class="fact-label">शहरी जनजाति</div>
+            <div class="fact-value">6.8% (≈10.40 लाख)</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num" style="background:var(--accent);">↑</div>
+          <div class="fact-content">
+            <div class="fact-label">सर्वाधिक शहरों में</div>
+            <div class="fact-value">भिंड जिला</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num" style="background:var(--danger);">↓</div>
+          <div class="fact-content">
+            <div class="fact-label">सबसे कम शहरों में</div>
+            <div class="fact-value">डिंडोरी जिला</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>♀️ लिंगानुपात</h3>
+      <div class="compare-box" style="margin-bottom:10px;">
+        <div class="compare-side">
+          <div class="compare-label">MP कुल</div>
+          <div class="compare-val" style="color:var(--blue);">931</div>
+          <div class="compare-sub">लड़कियां per 1000 लड़के</div>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-side">
+          <div class="compare-label">जनजाति</div>
+          <div class="compare-val" style="color:var(--accent);">984</div>
+          <div class="compare-sub">जनजाति लिंगानुपात</div>
+        </div>
+      </div>
+      <div class="alert tip">
+        <span class="alert-icon">⭐</span>
+        <div><strong>Balaghat Special:</strong> 1000 लड़कों पर 1050 लड़कियां — सर्वाधिक जनजाति लिंगानुपात</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 3: BOOKS -->
+<section id="books">
+  <div class="section-title" style="color:var(--accent2)">📚 पुस्तकें — Authors & Tribes</div>
+  <div style="height:3px;width:40px;background:var(--accent2);border-radius:2px;margin-bottom:16px;"></div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>पुस्तक</th><th>लेखक</th><th>साल</th><th>विशेष बात</th><th>Memory 🧠</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-blue">
+          <td><strong>Tribes of India</strong></td>
+          <td>ठक्कर बापा</td>
+          <td>1950</td>
+          <td>गुजरात के थे; आदिवासियों के पितृ पुरुष</td>
+          <td>ठक्कर पापा = Tribes of India (पिता ने India book लिखी)</td>
+        </tr>
+        <tr class="highlight-green">
+          <td><strong>The Baiga</strong></td>
+          <td>बेरियर एल्विन</td>
+          <td>1939</td>
+          <td>डिंडोरी की कौशल्या (बैगा जनजाति) से विवाह किया</td>
+          <td>बेरियल पर गिरे = <strong>ELWIN</strong>; "द बेगा" लिखी</td>
+        </tr>
+        <tr class="highlight-orange">
+          <td><strong>The Muria and Their Ghotul</strong></td>
+          <td>बेरियर एल्विन</td>
+          <td>—</td>
+          <td>मुड़िया/मुरिया जनजाति पर</td>
+          <td>एल्विन की दूसरी पुस्तक</td>
+        </tr>
+        <tr>
+          <td><strong>The Bhils: A Study</strong></td>
+          <td>T.V. Naik (टीवी नायक)</td>
+          <td>—</td>
+          <td>भील जनजाति पर</td>
+          <td>TV पर "नायक" मूवी देख रहे भील = T.V. Naik</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 4: GEOGRAPHICAL -->
+<section id="geo">
+  <div class="section-title" style="color:var(--warn)">🗺️ भौगोलिक वितरण — 4 क्षेत्र</div>
+  <div style="height:3px;width:40px;background:var(--warn);border-radius:2px;margin-bottom:16px;"></div>
+
+  <div class="card-grid" style="margin-bottom:20px;">
+    <div class="card" style="border-left:4px solid var(--accent);">
+      <h3 style="color:var(--accent);">🌅 पूर्वी क्षेत्र — 14%</h3>
+      <div class="chip-list" style="margin-bottom:8px;">
+        <span class="chip a">कोल</span><span class="chip a">बैगा</span><span class="chip a">गोंड</span><span class="chip a">पनिका</span><span class="chip a">उराव</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);">जिले: रीवा, सीधी, सिंगरौली, शहडोल, उमरिया, अनूपपुर, डिंडोरी, जबलपुर</div>
+      <div class="alert tip" style="margin-top:8px;">
+        <span class="alert-icon">📖</span>
+        <div>सबसे <strong>कम जनसंख्या</strong> पर सबसे <strong>ज्यादा साक्षर</strong> जनजाति यहाँ</div>
+      </div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--blue);">
+      <h3 style="color:var(--blue);">🌄 पश्चिमी क्षेत्र — 36% 🏆</h3>
+      <div class="chip-list" style="margin-bottom:8px;">
+        <span class="chip b">भील</span><span class="chip b">भिलाला</span><span class="chip b">कोरकू</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);">जिले: अलीराजपुर, झाबुआ, धार, रतलाम, मंदसौर, उज्जैन, देवास, इंदौर, खरगोन, खंडवा</div>
+      <div class="alert info" style="margin-top:8px;">
+        <span class="alert-icon">⭐</span>
+        <div><strong>सबसे ज्यादा जनजातियां</strong> यहाँ (~1/3) | भील = MP की सबसे बड़ी जनजाति</div>
+      </div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--warn);">
+      <h3 style="color:var(--warn);">☀️ उत्तरी क्षेत्र — 14%</h3>
+      <div class="chip-list" style="margin-bottom:8px;">
+        <span class="chip c">शहरिया</span><span class="chip c">खेरवार</span><span class="chip c">सौर</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);">जिले: शिवपुरी, मुरैना, भिंड, दतिया, ग्वालियर, अशोकनगर, गुना</div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--purple);">
+      <h3 style="color:var(--purple);">🌿 मध्य+दक्षिण क्षेत्र — 23%+26%</h3>
+      <div class="chip-list" style="margin-bottom:8px;">
+        <span class="chip d">कोरकू</span><span class="chip d">भारिया</span><span class="chip d">गोंड</span><span class="chip d">पारदी</span><span class="chip d">बैगा</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);">जिले: मंडला, बालाघाट, सिवनी, छिंदवाड़ा, बेतूल, होशंगाबाद, हरदा</div>
+    </div>
+  </div>
+
+  <!-- Tribal Ranking -->
+  <div class="card" style="margin-bottom:16px;">
+    <h3>🏅 MP की सबसे बड़ी जनजातियां (2011) — Rank याद रखो</h3>
+    <div class="memory-trick">1=बत्तक (Duck=1), 2=स्वान (Swan=2), 3=चश्मा, 4=नाव (Boat=4), 5=हुक. Ek duck bhil tha, 2nd swan gond, 3rd chashme wala kol, 4th naav me korku, 5th hook se sharia latka.</div>
+    <div class="tbl-wrap" style="margin-top:10px;">
+      <table>
+        <thead><tr><th>क्रम</th><th>जनजाति</th><th>क्षेत्र</th><th>विशेष</th></tr></thead>
+        <tbody>
+          <tr class="highlight-blue"><td><span class="badge blue">1st</span></td><td><strong>भील</strong></td><td>पश्चिमी</td><td>संस्कृत: "बिल" = धनुष | सबसे बड़ी</td></tr>
+          <tr class="highlight-green"><td><span class="badge green">2nd</span></td><td><strong>गोंड</strong></td><td>पूर्वी/सर्वत्र</td><td>सर्वव्यापी जनजाति</td></tr>
+          <tr><td><span class="badge">3rd</span></td><td><strong>कोल</strong></td><td>पूर्वी (रीवा-पन्ना)</td><td>कोयले से याद करो</td></tr>
+          <tr><td><span class="badge orange">4th</span></td><td><strong>कोरकू</strong></td><td>मध्य/दक्षिण</td><td>नाव में बैठे = 4th</td></tr>
+          <tr><td><span class="badge red">5th</span></td><td><strong>शहरिया</strong></td><td>उत्तरी</td><td>PVTG | हुक से लटका = 5th</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Special District Tribes -->
+  <div class="card">
+    <h3>📌 विशेष जिला-जनजाति लिंक (जरूर याद रखो)</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>जिला</th><th>विशेष जनजाति</th><th>Memory Trick</th></tr></thead>
+        <tbody>
+          <tr><td>बालाघाट</td><td><strong>हलवा (Halwa)</strong></td><td>घाट के किनारे बैठकर हलवा खाया</td></tr>
+          <tr><td>छिंदवाड़ा</td><td><strong>अबू जड़िया / मवासी</strong></td><td>कमलनाथ जी छिंदवाड़ा के = अब्बू ने झाड़ दिया</td></tr>
+          <tr><td>सिवनी+छिंदवाड़ा</td><td><strong>मवासी</strong></td><td>छिंदवाड़ा में मौसी का घर = मवासी</td></tr>
+          <tr><td>होशंगाबाद</td><td><strong>बंदरिया कोरकू</strong></td><td>पचमढ़ी में पहाड़ = बंदर = बंदरिया कोरकू</td></tr>
+          <tr><td>छिंदवाड़ा (तामिया)</td><td><strong>भारिया</strong></td><td>1 vikas abhikaran | "जंगलिया का जंगली" 1981 में</td></tr>
+          <tr><td>रीवा-पन्ना पठार</td><td><strong>कोल</strong></td><td>कोल = कोयला = काला पठार</td></tr>
+          <tr><td>मंडला-डिंडोरी</td><td><strong>बैगा चक्र</strong></td><td>बैगा गांवों की सघनता = बैगा चक्र</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 5: PVTG -->
+<section id="pvtg">
+  <div class="section-title" style="color:var(--danger)">⭐ PVTG — विशेष पिछड़ी जनजातियां</div>
+  <div style="height:3px;width:40px;background:var(--danger);border-radius:2px;margin-bottom:16px;"></div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <h3>3 PVTG (Particularly Vulnerable Tribal Groups)</h3>
+    <div class="memory-trick">बैग शहर से गांव → <strong>बैगा + शहरिया + भारिया</strong></div>
+    <div class="chip-list" style="margin-top:12px;">
+      <span class="chip e" style="font-size:14px;padding:8px 16px;">बैगा</span>
+      <span class="chip e" style="font-size:14px;padding:8px 16px;">भारिया</span>
+      <span class="chip e" style="font-size:14px;padding:8px 16px;">शहरिया</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🏛️ 11 विकास अभिकरण — 15 जिलों में</h3>
+    <div class="alert warn" style="margin-bottom:12px;">
+      <span class="alert-icon">🎯</span>
+      <div>यह Question MPPSC Pre में पूछा जा चुका है! अभिकरण संख्या ≠ जिले की संख्या</div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>PVTG</th><th>अभिकरण (Abhikaran)</th><th>जिले</th></tr></thead>
+        <tbody>
+          <tr class="highlight-green">
+            <td><strong>बैगा</strong></td>
+            <td><span class="badge green">6 अभिकरण</span></td>
+            <td>बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</td>
+          </tr>
+          <tr class="highlight-orange">
+            <td><strong>शहरिया</strong></td>
+            <td><span class="badge orange">4 अभिकरण</span></td>
+            <td>ग्वालियर, शिवपुरी, गुना + मोरैना, भिंड, दतिया, अशोकनगर = 8 जिले</td>
+          </tr>
+          <tr class="highlight-red">
+            <td><strong>भारिया</strong></td>
+            <td><span class="badge red">1 अभिकरण</span></td>
+            <td>छिंदवाड़ा (तामिया)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="formula" style="margin-top:12px;">
+      <span class="hi">6</span> बैगा  +  <span class="hi">4</span> शहरिया  +  <span class="hi">1</span> भारिया  =  <span class="hi">11</span> Total  |  फैले हैं <span class="hi">15</span> जिलों में
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 6: CONSTITUTION -->
+<section id="constitution">
+  <div class="section-title" style="color:var(--blue)">⚖️ संवैधानिक प्रावधान (Q16, Q17 का Area!)</div>
+  <div style="height:3px;width:40px;background:var(--blue);border-radius:2px;margin-bottom:16px;"></div>
+
+  <div class="alert danger" style="margin-bottom:16px;">
+    <span class="alert-icon">🚨</span>
+    <div><strong>Q16 और Q17 इसी section से थे!</strong> Article numbers carefully पढ़ो — 330, 332, 342 तीनों अलग हैं।</div>
+  </div>
+
+  <div class="card-grid" style="margin-bottom:16px;">
+    <div class="card" style="border-top:3px solid var(--blue);">
+      <h3>📋 Article 342</h3>
+      <div style="font-size:14px;line-height:1.8;">
+        <p>राष्ट्रपति किसी भी जाति को <strong>अनुसूचित जनजाति</strong> की list में शामिल कर सकता है।</p>
+        <div class="formula" style="margin:8px 0;">प्रारंभ में: <span class="hi">46</span> जनजातियां | 2003 में <span class="lo">3 हटाई</span> | अब: <span class="hi">43</span></div>
+        <div class="alert danger">
+          <span>🚨</span>
+          <div><strong>Q18 था यही!</strong> हटाई गई 3 जनजातियां: <strong>कीर + मीणा + पारदी</strong><br>
+          Memory: "खीर मीणाओं ने पर्दे में खाई" = <strong>कीर-मीणा-पार्दी</strong><br>
+          साल: <strong>2003</strong> (दिग्विजय सरकार के समय)</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--purple);">
+      <h3>📋 Article 330 — Lok Sabha</h3>
+      <div style="font-size:14px;line-height:1.8;">
+        <p>लोकसभा में SC & ST के लिए <strong>आरक्षण</strong></p>
+        <div class="formula">भारत में ST लोकसभा सीटें: <span class="hi">47</span><br>MP से ST सांसद: <span class="hi">6</span></div>
+        <div class="memory-trick">दीवाल में हाथी ने जड्ड मारा → Article <strong>330</strong></div>
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent);">
+      <h3>📋 Article 332 — Vidhan Sabha</h3>
+      <div style="font-size:14px;line-height:1.8;">
+        <p>विधानसभा में SC & ST के लिए <strong>आरक्षण</strong></p>
+        <div class="formula">MP विधानसभा कुल सीटें: <span class="hi">230</span><br>ST के लिए आरक्षित: <span class="hi">47</span></div>
+        <div class="alert info">
+          <span>💡</span>
+          <div>Coincidence: Lok Sabha ST national = 47, MP Vidhan Sabha ST = भी 47</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Part 16 (भाग 16) — Quick Summary</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Article</th><th>क्या?</th><th>Number (Key)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>342</strong></td><td>राष्ट्रपति ST list बनाएगा</td><td>46 → 43 जनजातियां</td></tr>
+          <tr><td><strong>330</strong></td><td>Lok Sabha में ST/SC reservation</td><td>MP से 6 ST सांसद</td></tr>
+          <tr><td><strong>332</strong></td><td>Vidhan Sabha में ST/SC reservation</td><td>MP में 47 ST विधायक सीटें</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTION 7: MCQ PRACTICE -->
+<section id="mcq">
+  <div class="section-title" style="color:var(--purple)">🎯 MCQ Practice — Video Wale Questions</div>
+  <div style="height:3px;width:40px;background:var(--purple);border-radius:2px;margin-bottom:8px;"></div>
+  <div class="section-subtitle">Click on option → Check answer → Read explanation. Repeat without hints!</div>
+
+  <div id="mcq-container"></div>
+
+  <div style="margin-top:20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+    <div style="font-size:14px;font-weight:600;margin-bottom:8px;">📊 Score Tracker</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;" id="score-display">
+      <span>Attempted: <strong id="s-att">0</strong></span>
+      <span style="color:var(--accent)">Correct: <strong id="s-cor">0</strong></span>
+      <span style="color:var(--danger)">Wrong: <strong id="s-wro">0</strong></span>
+    </div>
+    <div class="progress-bar-wrap" style="margin-top:10px;"><div class="progress-bar" id="score-bar" style="width:0%"></div></div>
+    <button class="btn btn-ghost" style="margin-top:10px;" onclick="resetAll()">🔄 Reset All</button>
+  </div>
+</section>
+
+</div><!-- end main -->
+
+<!-- Scroll Indicator -->
+<div id="progress-sticky">
+  📖 <span id="read-pct">0%</span> read
+</div>
+
+<script>
+// Theme Toggle
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  t && t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    t.innerHTML = d === 'dark' 
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+
+// Nav tab active on scroll
+const sections = document.querySelectorAll('section[id]');
+const navTabs = document.querySelectorAll('.nav-tab');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+  navTabs.forEach(t => { t.classList.toggle('active', t.getAttribute('href') === '#' + current); });
+  const pct = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  document.getElementById('read-pct').textContent = pct + '%';
+});
+
+// MCQ Data
+const mcqs = [
+  {
+    id: 1, q: "2011 की जनगणना के अनुसार, MP में प्रतिशत के अनुसार सबसे ज्यादा जनजाति किस जिले में है?",
+    opts: ["A. धार", "B. झाबुआ", "C. अलीराजपुर", "D. बड़वानी"],
+    ans: 2, tag: "confusing",
+    explain: "⚠️ TRAP! संख्या के अनुसार धार 1st है, लेकिन प्रतिशत के अनुसार अलीराजपुर 1st है। Q में 'प्रतिशत' लिखा था इसलिए अलीराजपुर सही।"
+  },
+  {
+    id: 2, q: "जनजातियों को 'गिरिजन' किसने कहा?",
+    opts: ["A. ठक्कर बापा", "B. बेरियर एल्विन", "C. महात्मा गांधी", "D. अंग्रेज सरकार"],
+    ans: 2, tag: "easy",
+    explain: "महात्मा गांधी ने 'गिरिजन' कहा। गिरि = पहाड़ी + जन = रहने वाले। याद: गांधी = गिरिजन।"
+  },
+  {
+    id: 3, q: "MP में 2003 में जनजाति सूची से कौन सी 3 जनजातियां हटाई गईं?",
+    opts: ["A. भील, पारदी, कीर", "B. कीर, मीणा, पारदी", "C. मीणा, पारदी, गोंड", "D. कीर, शहरिया, मीणा"],
+    ans: 1, tag: "critical",
+    explain: "🚨 Q18 TYPE! कीर + मीणा + पारदी। Memory: 'खीर मीणाओं ने पर्दे में खाई।' 2003 में दिग्विजय सिंह सरकार में हटाई गईं।"
+  },
+  {
+    id: 4, q: "Article 342 के तहत MP में पहले कितनी जनजातियां अधिसूचित थीं?",
+    opts: ["A. 43", "B. 47", "C. 46", "D. 49"],
+    ans: 2, tag: "confusing",
+    explain: "प्रारंभ में 46 जनजातियां थीं। 2003 में 3 हटाई गईं → अब 43 हैं। 47 का भ्रम न हो (वो विधानसभा ST सीटें हैं)।"
+  },
+  {
+    id: 5, q: "MP की विधानसभा में ST के लिए कितनी सीटें आरक्षित हैं?",
+    opts: ["A. 46", "B. 43", "C. 47", "D. 6"],
+    ans: 2, tag: "critical",
+    explain: "🚨 Q17 TYPE! MP विधानसभा में 47 ST सीटें (Article 332)। MP से Lok Sabha में 6 ST सांसद (Article 330)। 43 = scheduled tribes number — इससे confuse न हो।"
+  },
+  {
+    id: 6, q: "MP में जनजातियों की दशकीय वृद्धि दर 2001-2011 में कितनी रही?",
+    opts: ["A. 20%", "B. 25%", "C. 21.1%", "D. 14.7%"],
+    ans: 1, tag: "confusing",
+    explain: "जनजातियों की वृद्धि दर = 25%। MP की overall वृद्धि = 20%। 21.1% = MP में जनजाति का % share है।"
+  },
+  {
+    id: 7, q: "'द बेगा' (The Baiga) पुस्तक के लेखक कौन हैं?",
+    opts: ["A. ठक्कर बापा", "B. T.V. Naik", "C. बेरियर एल्विन", "D. George Grierson"],
+    ans: 2, tag: "easy",
+    explain: "बेरियर एल्विन ने 1939 में 'The Baiga' लिखी। वो डिंडोरी की कौशल्या (बैगा जनजाति) से विवाह करके यहीं रहे।"
+  },
+  {
+    id: 8, q: "MP के किस क्षेत्र में सबसे ज्यादा जनजातीय जनसंख्या निवास करती है?",
+    opts: ["A. पूर्वी क्षेत्र (14%)", "B. उत्तरी क्षेत्र (14%)", "C. मध्य+दक्षिणी (23%)", "D. पश्चिमी क्षेत्र (36%)"],
+    ans: 3, tag: "easy",
+    explain: "पश्चिमी क्षेत्र में सबसे ज्यादा ~36% जनजातियां। यहाँ भील, भिलाला, कोरकू हैं। पूर्वी क्षेत्र सबसे ज्यादा साक्षर है।"
+  },
+  {
+    id: 9, q: "MP में कुल कितने PVTG विकास अभिकरण हैं और ये कितने जिलों में हैं?",
+    opts: ["A. 11 अभिकरण, 11 जिले", "B. 11 अभिकरण, 15 जिले", "C. 15 अभिकरण, 11 जिले", "D. 3 अभिकरण, 15 जिले"],
+    ans: 1, tag: "confusing",
+    explain: "MPPSC में पूछा जा चुका है! 11 अभिकरण (6 बैगा + 4 शहरिया + 1 भारिया), लेकिन ये 15 जिलों में फैले हैं। Number ≠ Districts!"
+  },
+  {
+    id: 10, q: "निम्नलिखित में से कौन सा कथन गलत है?",
+    opts: [
+      "A. अंग्रेज सरकार ने जनजातियों को 'दलित' कहा",
+      "B. गांधी जी ने जनजातियों को 'गिरिजन' कहा",
+      "C. गोविंद सदाशिव रिय ने जनजातियों को 'आदिवासी' कहा",
+      "D. डॉ. दास एंड दास ने 'विलीन' कहा"
+    ],
+    ans: 2, tag: "critical",
+    explain: "🚨 TRICK Q! 'आदिवासी' सबसे पहले ठक्कर बापा ने कहा (काका कालेलकर + बेरियर एल्विन ने भी कहा)। गोविंद सदाशिव ने 'पिछड़े' कहा था — यह कथन गलत है।"
+  }
+];
+
+// Render MCQs
+let score = {att: 0, cor: 0, wro: 0};
+const container = document.getElementById('mcq-container');
+
+function renderMCQs() {
+  container.innerHTML = '';
+  mcqs.forEach((m, i) => {
+    const card = document.createElement('div');
+    card.className = 'mcq-card';
+    card.id = 'mcq-' + i;
+    const tagColor = m.tag === 'critical' ? 'critical' : m.tag === 'confusing' ? 'confusing' : 'easy';
+    const tagText = m.tag === 'critical' ? '🚨 Critical (Rahul mistake type)' : m.tag === 'confusing' ? '⚠️ Confusing' : '✅ Easy';
+    card.innerHTML = `
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;">
+        <div class="mcq-num">${m.id}</div>
+        <span class="mcq-tag ${tagColor}">${tagText}</span>
+      </div>
+      <div class="mcq-q">${m.q}</div>
+      <div class="mcq-options">
+        ${m.opts.map((o, j) => `<button class="mcq-option" data-mcq="${i}" data-opt="${j}" onclick="checkAns(${i},${j})">${o}</button>`).join('')}
+      </div>
+      <div class="mcq-explain" id="exp-${i}"></div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function checkAns(mcqIdx, optIdx) {
+  const m = mcqs[mcqIdx];
+  const card = document.getElementById('mcq-' + mcqIdx);
+  const btns = card.querySelectorAll('.mcq-option');
+  const exp = document.getElementById('exp-' + mcqIdx);
+  if (btns[0].disabled) return;
+
+  btns.forEach((b, j) => {
+    b.disabled = true;
+    if (j === m.ans) b.classList.add('correct');
+    else if (j === optIdx && j !== m.ans) b.classList.add('wrong');
+  });
+
+  exp.innerHTML = m.explain;
+  exp.classList.add('show');
+
+  score.att++;
+  if (optIdx === m.ans) score.cor++;
+  else score.wro++;
+
+  document.getElementById('s-att').textContent = score.att;
+  document.getElementById('s-cor').textContent = score.cor;
+  document.getElementById('s-wro').textContent = score.wro;
+  document.getElementById('score-bar').style.width = Math.round((score.cor/mcqs.length)*100) + '%';
+}
+
+function resetAll() {
+  score = {att:0, cor:0, wro:0};
+  document.getElementById('s-att').textContent = 0;
+  document.getElementById('s-cor').textContent = 0;
+  document.getElementById('s-wro').textContent = 0;
+  document.getElementById('score-bar').style.width = '0%';
+  renderMCQs();
+}
+
+renderMCQs();
+
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  const pct = Math.min(100, Math.round((window.scrollY / h) * 100));
+  document.getElementById('read-pct').textContent = pct + '%';
+});
+</script>
+</body>
+</html>

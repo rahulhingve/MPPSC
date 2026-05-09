@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Janjati Revision — Unit 10 Class 2</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+  --bg:#f7f6f2;--surface:#f9f8f5;--surface2:#fbfbf9;--surface-off:#edeae5;
+  --text:#28251d;--muted:#6a6960;--faint:#b0afa9;--inv:#f9f8f4;
+  --primary:#01696f;--ph:#cedcd8;
+  --warn:#964219;--err:#a12c7b;
+  --success:#437a22;--gold:#d19900;--blue:#006494;--purple:#7a39bb;
+  --border:rgba(40,37,29,0.12);--div:#dcd9d5;
+  --shadow-sm:0 1px 3px rgba(40,37,29,0.08);--shadow-md:0 4px 14px rgba(40,37,29,0.10);--shadow-lg:0 12px 32px rgba(40,37,29,0.13);
+  --r:0.5rem;--rl:0.75rem;--rxl:1rem;
+  --fs:clamp(0.875rem,0.8rem+0.35vw,1rem);
+  --fmd:clamp(1rem,0.95rem+0.25vw,1.125rem);
+  --flg:clamp(1.125rem,1rem+0.75vw,1.5rem);
+  --fxl:clamp(1.5rem,1.2rem+1.25vw,2.25rem);
+  --f2xl:clamp(2rem,1.2rem+2.5vw,3rem);
+}
+[data-theme="dark"]{
+  --bg:#171614;--surface:#1c1b19;--surface2:#201f1d;--surface-off:#22211f;
+  --text:#cdccca;--muted:#79807a;--faint:#5a5957;--inv:#2b2a28;
+  --primary:#4f98a3;--ph:#313b3b;
+  --warn:#bb653b;--err:#d163a7;
+  --success:#6daa45;--gold:#e8af34;--blue:#5591c7;--purple:#a86fdf;
+  --border:rgba(255,255,255,0.09);--div:#262523;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.22);--shadow-md:0 4px 14px rgba(0,0,0,0.32);--shadow-lg:0 12px 32px rgba(0,0,0,0.42);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Satoshi',sans-serif;font-size:var(--fmd);color:var(--text);background:var(--bg);line-height:1.65;transition:background .25s,color .25s}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{font-size:.95rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.5rem}
+.nav-logo svg{flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.btn-toggle{background:var(--surface-off);border:1px solid var(--border);border-radius:2rem;padding:.35rem .75rem;font-size:.8rem;font-weight:600;color:var(--text);cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:.4rem}
+.btn-toggle:hover{background:var(--primary);color:var(--inv)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,color-mix(in oklch,var(--primary) 55%,var(--blue)) 100%);color:white;padding:2.5rem 1.25rem 2rem;text-align:center}
+.hero h1{font-size:var(--f2xl);font-weight:700;line-height:1.15;margin-bottom:.5rem}
+.hero .subtitle{font-size:var(--flg);opacity:.88;margin-bottom:1rem}
+.hero .tags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1rem}
+.tag{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:2rem;padding:.25rem .75rem;font-size:.78rem;font-weight:600}
+
+/* LAYOUT */
+.container{max-width:1100px;margin:0 auto;padding:2rem 1.25rem}
+
+/* SECTION */
+section{margin-bottom:3rem}
+.sec-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.65rem;border-bottom:2px solid var(--primary)}
+.sec-num{background:var(--primary);color:white;width:2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;flex-shrink:0}
+.sec-header h2{font-size:var(--flg);font-weight:700;color:var(--text)}
+.sec-header .en{font-size:.88rem;color:var(--muted);font-weight:500}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:1.1rem 1.25rem;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.card-icon{font-size:1.5rem;margin-bottom:.5rem}
+.card h3{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:.35rem}
+.card .en-label{font-size:.78rem;color:var(--muted);font-weight:500;margin-bottom:.4rem;display:block}
+.card p{font-size:.9rem;color:var(--text);line-height:1.55}
+
+/* HIGHLIGHT BOX */
+.hbox{background:color-mix(in oklch,var(--primary) 8%,var(--surface));border:1px solid color-mix(in oklch,var(--primary) 30%,transparent);border-radius:var(--rl);padding:1rem 1.25rem;margin-bottom:1rem}
+.hbox-warn{background:color-mix(in oklch,var(--warn) 8%,var(--surface));border-color:color-mix(in oklch,var(--warn) 35%,transparent)}
+.hbox-gold{background:color-mix(in oklch,var(--gold) 8%,var(--surface));border-color:color-mix(in oklch,var(--gold) 35%,transparent)}
+.hbox-purple{background:color-mix(in oklch,var(--purple) 8%,var(--surface));border-color:color-mix(in oklch,var(--purple) 35%,transparent)}
+.hbox-success{background:color-mix(in oklch,var(--success) 8%,var(--surface));border-color:color-mix(in oklch,var(--success) 35%,transparent)}
+.hbox h4{font-size:.95rem;font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--shadow-sm);margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+thead{background:var(--primary);color:white}
+th{padding:.65rem 1rem;text-align:left;font-weight:700;white-space:nowrap}
+td{padding:.6rem 1rem;border-top:1px solid var(--div);vertical-align:top}
+tr:hover td{background:var(--surface-off)}
+.badge{display:inline-flex;align-items:center;gap:.25rem;background:var(--ph);color:var(--primary);border-radius:2rem;padding:.15rem .6rem;font-size:.75rem;font-weight:700}
+.badge-warn{background:color-mix(in oklch,var(--warn) 18%,var(--surface));color:var(--warn)}
+.badge-gold{background:color-mix(in oklch,var(--gold) 18%,var(--surface));color:var(--gold)}
+.badge-err{background:color-mix(in oklch,var(--err) 15%,var(--surface));color:var(--err)}
+.badge-success{background:color-mix(in oklch,var(--success) 18%,var(--surface));color:var(--success)}
+.badge-purple{background:color-mix(in oklch,var(--purple) 18%,var(--surface));color:var(--purple)}
+
+/* STAT GRID */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr));gap:.85rem;margin-bottom:1rem}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:1rem;text-align:center;box-shadow:var(--shadow-sm)}
+.stat .num{font-size:1.6rem;font-weight:800;color:var(--primary);line-height:1.1}
+.stat .lbl{font-size:.77rem;color:var(--muted);margin-top:.25rem;line-height:1.4}
+
+/* TRICK BOX */
+.trick{background:color-mix(in oklch,var(--gold) 10%,var(--surface));border-left:3.5px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:.75rem 1rem;margin:.6rem 0;font-size:.88rem}
+.trick strong{color:var(--gold)}
+
+/* PYQ */
+.pyq-list{display:flex;flex-direction:column;gap:.85rem}
+.pyq{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:var(--shadow-sm)}
+.pyq-q{padding:.8rem 1rem;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.5rem;user-select:none}
+.pyq-q:hover{background:var(--surface-off)}
+.pyq-a{padding:.75rem 1rem;background:color-mix(in oklch,var(--success) 8%,var(--surface));border-top:1px solid var(--div);font-size:.88rem;display:none}
+.pyq-a.open{display:block}
+.pyq-year{background:var(--ph);color:var(--primary);border-radius:2rem;padding:.1rem .55rem;font-size:.75rem;font-weight:700;flex-shrink:0}
+
+/* CONFUSE BOX */
+.confuse{background:color-mix(in oklch,var(--err) 7%,var(--surface));border:1px solid color-mix(in oklch,var(--err) 25%,transparent);border-radius:var(--rl);padding:1rem 1.25rem;margin-bottom:1rem}
+.confuse h4{color:var(--err);font-size:.92rem;font-weight:700;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+
+/* BILINGUAL PAIR */
+.bi{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.45rem}
+.bi .hi{font-weight:600;font-size:.92rem}
+.bi .en{font-size:.82rem;color:var(--muted);font-style:italic}
+
+/* QUICK FACTS */
+.qf-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.qf-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.9rem;padding:.5rem .75rem;background:var(--surface);border-radius:var(--r);border:1px solid var(--border)}
+.qf-list li::before{content:"📌";flex-shrink:0;margin-top:.05rem}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;margin-bottom:2.5rem;box-shadow:var(--shadow-sm)}
+.toc h3{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(200px,100%),1fr));gap:.35rem}
+.toc a{font-size:.82rem;color:var(--muted);text-decoration:none;padding:.3rem .5rem;border-radius:.3rem;display:flex;align-items:center;gap:.35rem;transition:all .15s}
+.toc a:hover{background:var(--ph);color:var(--primary)}
+.toc a span{font-size:.72rem;background:var(--ph);color:var(--primary);width:1.4rem;height:1.4rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+
+/* MAP SECTION */
+.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.map-grid{grid-template-columns:1fr}}
+
+/* DISTRICT TABLE COLORS */
+.top1{background:color-mix(in oklch,var(--success) 12%,var(--surface))}
+.top2{background:color-mix(in oklch,var(--success) 7%,var(--surface))}
+.top3{background:color-mix(in oklch,var(--success) 4%,var(--surface))}
+.bot1{background:color-mix(in oklch,var(--err) 10%,var(--surface))}
+.bot2{background:color-mix(in oklch,var(--err) 6%,var(--surface))}
+.bot3{background:color-mix(in oklch,var(--err) 3%,var(--surface))}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--div);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .hero h1{font-size:1.6rem}
+  .hero .subtitle{font-size:1rem}
+  .container{padding:1.5rem 1rem}
+  
+  
+  
+  
+}
+/* ===== AUTO FIXED MAP SIDEBAR SYSTEM ===== */
+
+/* easy controls */
+:root{
+  --map-width: 420px;      /* sidebar width change here */
+  --map-top: 110px;        /* top gap */
+  --map-img-height: 850px; /* map image size */
+}
+
+/* auto shift main content */
+body{
+  padding-left: calc(var(--map-width) + 25px);
+  padding-right: calc(var(--map-width) + 25px);
+}
+
+/* fixed side panels */
+.auto-map-rail{
+  position: fixed;
+  top: var(--map-top);
+  width: var(--map-width);
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  z-index: 999;
+  background: rgba(20,20,20,0.95);
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* left map */
+.auto-map-rail.left{
+  left:10px;
+}
+
+/* right district list */
+.auto-map-rail.right{
+  right:10px;
+}
+
+.auto-map-rail h3{
+  font-size:14px;
+  margin-bottom:10px;
+  color:#4da3ff;
+}
+
+.auto-map-rail img{
+  width:100%;
+  max-height: var(--map-img-height);
+  object-fit: contain;
+  border-radius:10px;
+  background:white;
+}
+
+.auto-map-list{
+  columns:2;
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* tablet */
+@media(max-width:1500px){
+  :root{
+    --map-width:280px;
+  }
+}
+
+/* mobile auto hide */
+@media(max-width:1200px){
+  .auto-map-rail{
+    display:none;
+  }
+
+  body{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+</style>
+</head>
+<body>
+<!-- LEFT MAP -->
+<div class="auto-map-rail left">
+  <h3>MP Latest District Map</h3>
+
+  <img 
+    src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif"
+    alt="MP District Map"
+  >
+</div>
+
+
+<!-- RIGHT DISTRICT LIST -->
+<div class="auto-map-rail right">
+  <h3>MP District Names</h3>
+
+  <div class="auto-map-list">
+    Agar Malwa<br>
+    Alirajpur<br>
+    Anuppur<br>
+    Ashoknagar<br>
+    Balaghat<br>
+    Barwani<br>
+    Betul<br>
+    Bhind<br>
+    Bhopal<br>
+    Burhanpur<br>
+    Chhatarpur<br>
+    Chhindwara<br>
+    Damoh<br>
+    Datia<br>
+    Dewas<br>
+    Dhar<br>
+    Dindori<br>
+    Guna<br>
+    Gwalior<br>
+    Indore<br>
+    Jabalpur<br>
+    Jhabua<br>
+    Katni<br>
+    Khandwa<br>
+    Khargone<br>
+    Maihar<br>
+    Mandla<br>
+    Mauganj<br>
+    Morena<br>
+    Narmadapuram<br>
+    Neemuch<br>
+    Niwari<br>
+    Pandhurna<br>
+    Panna<br>
+    Raisen<br>
+    Rajgarh<br>
+    Ratlam<br>
+    Rewa<br>
+    Sagar<br>
+    Satna<br>
+    Sehore<br>
+    Seoni<br>
+    Shahdol<br>
+    Shajapur<br>
+    Sheopur<br>
+    Shivpuri<br>
+    Sidhi<br>
+    Singrauli<br>
+    Tikamgarh<br>
+    Ujjain<br>
+    Umaria<br>
+    Vidisha
+  </div>
+</div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      MP Janjati • Unit 10 • Class 2
+    </div>
+    <div class="nav-right">
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">☀ Light</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>🏹 MP Janjati Revision</h1>
+  <div class="subtitle">मध्य प्रदेश की जनजातियाँ — General Introduction & Geographical Distribution</div>
+  <div class="tags">
+    <span class="tag">📺 Class 2 of Series</span>
+    <span class="tag">⏱ ~1 hr 19 min Video</span>
+    <span class="tag">🎯 MPPSC Pre 2024</span>
+    <span class="tag">📘 Unit 10 — Scheduled Tribes</span>
+    <span class="tag">🗺 Bilingual Hindi + English</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>📑 Topics Covered / आज क्या पढ़ेंगे</h3>
+    <div class="toc-grid">
+      <a href="#sec1"><span>1</span> Janjati Definition</a>
+      <a href="#sec2"><span>2</span> Characteristics</a>
+      <a href="#sec3"><span>3</span> Names by Scholars</a>
+      <a href="#sec4"><span>4</span> Key Books & Authors</a>
+      <a href="#sec5"><span>5</span> Constitutional Provisions</a>
+      <a href="#sec6"><span>6</span> MP Statistics 2011</a>
+      <a href="#sec7"><span>7</span> Top/Bottom Districts</a>
+      <a href="#sec8"><span>8</span> PVTGs & Agencies</a>
+      <a href="#sec9"><span>9</span> Political Representation</a>
+      <a href="#sec10"><span>10</span> Major Tribes by Pop.</a>
+      <a href="#sec11"><span>11</span> Racial Origins</a>
+      <a href="#sec12"><span>12</span> Quick Revision MCQs</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section id="sec1">
+    <div class="sec-header">
+      <div class="sec-num">1</div>
+      <div>
+        <h2>जनजाति क्या है? <span class="en">/ What is a Tribe?</span></h2>
+      </div>
+    </div>
+    <div class="hbox">
+      <h4>📖 Definition / परिभाषा</h4>
+      <div class="bi"><span class="hi">जनजाति = एक ऐसा मानव समूह जिनकी अलग परंपरा, रहन-सहन, रीति-रिवाज, भाषा, देवी-देवता और वंशज होते हैं। ये प्रकृति-पूजक होते हैं और बाहरी समुदायों से अलगाव रखते हैं।</span><span class="en">Tribe = A human community with distinct traditions, lifestyle, customs, language, deities, and lineage. They worship nature and remain isolated from outside communities.</span></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <h3>आदिवासी / Aadivasi</h3>
+        <span class="en-label">आदि = Ancient | वासी = Residents</span>
+        <p>जो प्राचीन काल से भारत में बसे हैं — मूल निवासी। <br><em>Those living in India since ancient times — the original inhabitants.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>अनुसूचित जनजाति / Scheduled Tribe</h3>
+        <span class="en-label">अनुसूचित = Scheduled = Enlisted/Listed</span>
+        <p>राष्ट्रपति ने आर्टिकल 342 के तहत जिन्हें सूची में डाला — वही ST। <br><em>Tribes listed by the President under Article 342 of the Constitution.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏔️</div>
+        <h3>गिरिजन / Girijaan</h3>
+        <span class="en-label">गिरि = Mountain | जन = People</span>
+        <p>महात्मा गांधी ने जनजातियों को गिरिजन कहा — पहाड़ियों में रहने वाले। <br><em>Mahatma Gandhi's term for tribes — "mountain-dwellers".</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="sec2">
+    <div class="sec-header">
+      <div class="sec-num">2</div>
+      <div><h2>जनजातियों की विशेषताएं <span class="en">/ Characteristics of Tribes</span></h2></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>सामाजिक / Social</h3>
+        <p>✔ पितृसत्तात्मक समाज (Patriarchal society)<br>✔ मुखिया प्रधान व्यवस्था (Head/Chief system)<br>✔ अलग विवाह पद्धतियाँ (Unique marriage customs)<br>✔ ज्यादातर मांसाहारी, शिकारी (Hunters, mostly non-veg)</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌾</div>
+        <h3>आर्थिक / Economic</h3>
+        <p>✔ मुख्यतः कृषि — जूम खेती / झूम कृषि (Slash & burn agriculture)<br>✔ भील — पहाड़ी कृषि = "चिल्लाई माता" (चीमाता)<br>✔ वनों से जड़ी-बूटी, इमली, बेर संग्रह<br>✔ शिकार व पशुपालन</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>राजनीतिक / Political</h3>
+        <p>✔ विधानसभा: <strong>47 सीटें</strong> ST के लिए (230 में से)<br>✔ लोकसभा: <strong>6 सीटें</strong> ST के लिए (29 में से MP से)<br>✔ SC/ST Act 1989 — सुरक्षा कानून<br>✔ PESA Act 1996 — पंचायत विस्तार</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>सांस्कृतिक / Cultural</h3>
+        <p>✔ पिथोरा चित्रकला — भूरी बाई (Bhuri Bai)<br>✔ गोंड कला / डिगना — दुर्गाबाई व्यam (Durgabai Vyam)<br>✔ बूढ़ा देव — बैगा जनजाति का देवता<br>✔ अलग पर्व, उत्सव, नृत्य</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="sec3">
+    <div class="sec-header">
+      <div class="sec-num">3</div>
+      <div><h2>विभिन्न विद्वानों ने क्या नाम दिया <span class="en">/ Names by Different Scholars</span></h2></div>
+    </div>
+    <div class="hbox hbox-warn">
+      <h4>⚠️ EXAM TRAP — इस Table से सीधे Question आते हैं!</h4>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Scholar / विद्वान</th><th>Term Used / नाम</th><th>Memory Trick 🎯</th><th>Extra Fact</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ठक्कर बप्पा</strong><br><em>Thakkar Bappa</em></td><td><span class="badge">आदिवासी / Aadivasi</span></td><td>ठाकुर साहब ने "आदिवासी" word सबसे पहले दिया → <strong>आदिवासियों का पितृ पुरुष</strong></td><td>गुजरात से थे | पुस्तक: Tribes of India (1950)</td></tr>
+          <tr><td><strong>काका कालेलकर</strong><br><em>Kaka Kalelkar</em></td><td><span class="badge">आदिवासी</span></td><td>काका जी भी "आदिवासी" कहते थे</td><td>कालेलकर आयोग 1953 (पिछड़ा वर्ग) → unsuccessful</td></tr>
+          <tr><td><strong>बेरियर एल्विन</strong><br><em>Verrier Elwin</em></td><td><span class="badge">आदिवासी</span></td><td>एलियन बैग लेके बैरियर पर गिरा → The Baiga, The Muria</td><td>डिंडोरी में रहे 12 साल | कौशल्या से विवाह</td></tr>
+          <tr><td><strong>महात्मा गांधी</strong><br><em>Mahatma Gandhi</em></td><td><span class="badge-gold badge">गिरिजन / Girijaan</span></td><td>हरिजन = SC | गिरिजन = ST (गिरि = पहाड़ी)</td><td>जैसे अनुसूचित जाति को "हरिजन" कहा</td></tr>
+          <tr><td><strong>अंग्रेज / British</strong><br><em>British Rulers</em></td><td><span class="badge-warn badge">दलित / Dalit</span></td><td>भोपू बजाते अंग्रेज — 1935 के कानून में अलग प्रतिनिधित्व</td><td>Government of India Act 1935</td></tr>
+          <tr><td><strong>जॉर्ज ग्रियर्सन</strong><br><em>George Grierson</em></td><td><span class="badge-purple badge">पहाड़ी / Pahadi</span></td><td>जॉर्ज ने गाड़ी में गियर लगाके पहाड़ी पर गए → भाषाविद्</td><td>निमाड़ी, बुंदेली बोली पर शोध किया</td></tr>
+          <tr><td><strong>दास एंड दास</strong><br><em>Das & Das</em></td><td><span class="badge-err badge">विलीन / Vileen</span></td><td>बेचारा दास = विलीन हो जाता है → Das & Das</td><td>—</td></tr>
+          <tr><td><strong>गोविंद सदाशिव घुर्ये</strong><br><em>G. S. Ghurye</em></td><td><span class="badge-warn badge">पिछड़े / Backward</span></td><td>सदाशिव पूजा करते थे फिर भी पिछड़े रहे :(</td><td>—</td></tr>
+          <tr><td><strong>भारतीय संविधान</strong><br><em>Indian Constitution</em></td><td><span class="badge-success badge">अनुसूचित जनजाति / Scheduled Tribe</span></td><td>Art. 342 — राष्ट्रपति ने सूचीबद्ध किया</td><td>Art. 366(25) में परिभाषा | 338A में आयोग</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trick">
+      <strong>🎯 Master Trick:</strong> <em>काका ठाकुर एलियन = आदिवासी | गांधी = गिरिजन | अंग्रेज = दलित | गियर-पहाड़ी = ग्रियर्सन | दास = विलीन | सदाशिव = पिछड़े | Constitution = अनुसूचित जनजाति</em>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="sec4">
+    <div class="sec-header">
+      <div class="sec-num">4</div>
+      <div><h2>महत्वपूर्ण पुस्तकें और लेखक <span class="en">/ Key Books & Authors</span></h2></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Book / पुस्तक</th><th>Author / लेखक</th><th>Year</th><th>About / विषय</th></tr></thead>
+        <tbody>
+          <tr class="top2"><td><strong>The Baiga / द बेगा</strong></td><td>Verrier Elwin / बेरियर एल्विन</td><td>1939</td><td>बैगा जनजाति पर शोध (Baiga tribe research)</td></tr>
+          <tr><td><strong>The Muria and Their Ghotul</strong></td><td>Verrier Elwin</td><td>1947</td><td>मुड़िया जनजाति — घोटुल परंपरा (Muria tribe)</td></tr>
+          <tr class="top2"><td><strong>Tribes of India / ट्राइब्स ऑफ इंडिया</strong></td><td>Thakkar Bappa / ठक्कर बप्पा</td><td>1950</td><td>जनजातियों को मुख्यधारा में लाने का प्रयास</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trick">
+      <strong>🎯 Trick:</strong> एलियन बैग लेके बैरियर पर गिरा → <strong>बैग-a</strong> (The Baiga) | फिर <strong>मुड़</strong>के देखा (The Muria) | ठाकुर बप्पा ने <strong>Tribes of India</strong> लिखी।
+    </div>
+    <div class="hbox hbox-purple">
+      <h4>🧑‍🎓 Verrier Elwin Extra Facts (Exam में आ सकता है!)</h4>
+      <ul style="padding-left:1.1rem;font-size:.88rem;line-height:1.8">
+        <li>डिंडोरी जिले में 12 साल तक रहे / स्कूल पढ़ाया</li>
+        <li>गांधी जी से मिले | अंग्रेजों ने पासपोर्ट रिन्यू में परेशान किया</li>
+        <li>कौशल्या (डिंडोरी की लड़की) से विवाह | बाद में छोड़ दिया</li>
+        <li>Stayed 12 years in Dindori, taught school | Met Gandhi | Married local tribal girl Kaushalya</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="sec5">
+    <div class="sec-header">
+      <div class="sec-num">5</div>
+      <div><h2>संवैधानिक प्रावधान <span class="en">/ Constitutional Provisions</span></h2></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>Article 342</h3>
+        <span class="en-label">Scheduled Tribes — Listing Authority</span>
+        <p>राष्ट्रपति लोक अधिसूचना द्वारा किसी जाति/समुदाय को ST में शामिल कर सकते हैं।<br><em>President can notify any caste/community as ST via public notification.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Article 366(25)</h3>
+        <span class="en-label">Definition of ST</span>
+        <p>ST की परिभाषा दी गई — पर स्पष्ट नहीं — बस यह कहा कि जो राष्ट्रपति ने 342 के तहत अधिसूचित की।<br><em>ST defined — but vaguely — as those notified by President under Art 342.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Article 338A</h3>
+        <span class="en-label">National ST Commission</span>
+        <p>राष्ट्रीय अनुसूचित जनजाति आयोग का प्रावधान। 89वाँ संशोधन 2003 → आयोग 2004 में।<br><em>National Commission for STs. Added by 89th Amendment 2003, formed 2004.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏘️</div>
+        <h3>PESA Act 1996</h3>
+        <span class="en-label">Panchayat Extension to Scheduled Areas</span>
+        <p>पंचायतों का विस्तार जनजातीय क्षेत्रों में। Full form याद रखना!<br><em>Extends Panchayati Raj to tribal/scheduled areas.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>SC/ST Act 1989</h3>
+        <span class="en-label">Atrocities Protection Act</span>
+        <p>SC/ST के साथ गलत होने पर सुरक्षा।<br><em>Protection against atrocities on SC/ST communities.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌲</div>
+        <h3>Forest Rights Act</h3>
+        <span class="en-label">Van Adhikar Kanoon</span>
+        <p>MP पहला राज्य जहाँ "जनजाति और अन्य परंपरागत वन निवासी अधिनियम" क्रियान्वित हुआ।<br><em>MP was the first state to implement the Forest Rights Act for tribal & forest dwellers.</em></p>
+      </div>
+    </div>
+    <div class="hbox hbox-gold">
+      <h4>🔑 1950 का नियम / Rule 1950</h4>
+      <div class="bi">
+        <span class="hi">राष्ट्रपति राजेंद्र प्रसाद ने 1950 में MP की <strong>46 जनजातियों</strong> को अनुसूचित किया।</span>
+        <span class="en">President Rajendra Prasad listed 46 tribes of MP as Scheduled in 1950.</span>
+      </div>
+      <div class="bi">
+        <span class="hi">2003 में <strong>3 जनजातियाँ हटाई</strong> गईं: <span class="badge-err badge">कीर</span> <span class="badge-err badge">मीणा</span> <span class="badge-err badge">पारदी</span> → अब <strong>43 अनुसूचित जनजातियाँ</strong></span>
+        <span class="en">In 2003, Keer, Meena & Pardhi removed → now 43 Scheduled Tribes remain.</span>
+      </div>
+      <div class="trick"><strong>Trick:</strong> आराम से <strong>खीर</strong> खा रहे थे <strong>मीणा</strong> जी <strong>पर्दे</strong> में — 2003 में लिस्ट से हट गए! (खीर = Keer, मीणा = Meena, पर्दे = Pardhi)</div>
+      <p style="font-size:.85rem;margin-top:.5rem">ध्यान रखना: MP में मीणा ओबीसी में आते हैं, ST में नहीं। / Note: In MP, Meena community falls under OBC, not ST.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="sec6">
+    <div class="sec-header">
+      <div class="sec-num">6</div>
+      <div><h2>MP जनजाति आँकड़े 2011 <span class="en">/ MP Tribal Statistics 2011</span></h2></div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">21.1%</div>
+        <div class="lbl">MP की कुल जनसंख्या में ST<br><em>ST % of total MP population</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">8.6%</div>
+        <div class="lbl">भारत की कुल जनसंख्या में ST<br><em>ST % of India's population</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">14.7%</div>
+        <div class="lbl">भारत की कुल ST में MP का हिस्सा<br><em>MP's share of India's total ST</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">43</div>
+        <div class="lbl">MP में अनुसूचित जनजातियाँ<br><em>Scheduled Tribes in MP</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">984</div>
+        <div class="lbl">ST लिंगानुपात (प्रति 1000 पुरुष)<br><em>ST sex ratio per 1000 males</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">931</div>
+        <div class="lbl">MP का सामान्य लिंगानुपात<br><em>Normal sex ratio of MP</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">~50%</div>
+        <div class="lbl">ST साक्षरता दर<br><em>Tribal literacy rate</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">59% / 41%</div>
+        <div class="lbl">ST पुरुष / महिला साक्षरता<br><em>Male / Female literacy</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">13वाँ</div>
+        <div class="lbl">% के हिसाब से MP का राज्यों में स्थान<br><em>MP's rank in states by % of STs</em></div>
+      </div>
+      <div class="stat">
+        <div class="num">1st</div>
+        <div class="lbl">संख्या में सर्वाधिक ST — MP<br><em>India's highest ST population (by count)</em></div>
+      </div>
+    </div>
+    <div class="confuse">
+      <h4>😵 कन्फ्यूजन क्लियर करो! / Clear the Confusion!</h4>
+      <div style="font-size:.88rem">
+        <p><strong>Q: संख्या में सर्वाधिक ST कहाँ?</strong> → <span class="badge-success badge">MP</span> (14.7% of India's total ST live here)</p>
+        <p style="margin-top:.4rem"><strong>Q: % में सर्वाधिक ST कहाँ (राज्य)?</strong> → <span class="badge-success badge">Mizoram (~80%+)</span></p>
+        <p style="margin-top:.4rem"><strong>Q: % में सर्वाधिक (राज्य + UT मिलाकर)?</strong> → <span class="badge-success badge">Lakshadweep</span></p>
+        <p style="margin-top:.4rem"><strong>Q: MP में % कितना?</strong> → <span class="badge">21.1%</span> (Art. 21 → जीवन का अधिकार trick!)</p>
+      </div>
+    </div>
+    <div class="hbox">
+      <h4>👥 बालाघाट का लिंगानुपात / Balaghat Sex Ratio</h4>
+      <div class="bi">
+        <span class="hi">बालाघाट में सर्वाधिक जनजातीय लिंगानुपात — 1000 पुरुषों पर <strong>1050 महिलाएं</strong></span>
+        <span class="en">Balaghat has highest tribal sex ratio — 1050 females per 1000 males in ST population</span>
+      </div>
+      <div class="bi">
+        <span class="hi">बालाघाट में सामान्य लिंगानुपात भी सबसे ज्यादा — 1000 पर 1021</span>
+        <span class="en">Overall sex ratio in Balaghat is also highest — 1021 females per 1000 males</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="sec7">
+    <div class="sec-header">
+      <div class="sec-num">7</div>
+      <div><h2>जिला-वार जनजाति वितरण <span class="en">/ District-wise Tribal Distribution</span></h2></div>
+    </div>
+    <div class="map-grid">
+      <div>
+        <div class="hbox hbox-success" style="margin-bottom:.75rem">
+          <h4>✅ संख्या के अनुसार सर्वाधिक (By Count — Most)</h4>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>District</th><th>Trick</th></tr></thead>
+            <tbody>
+              <tr class="top1"><td>🥇 1st</td><td><strong>धार / Dhar</strong></td><td>धारदार हथियार लेके आए जनजाति!</td></tr>
+              <tr class="top2"><td>🥈 2nd</td><td><strong>बड़वानी / Barwani</strong></td><td>बड़े-बड़े लोग</td></tr>
+              <tr class="top3"><td>🥉 3rd</td><td><strong>झाबुआ / Jhabua</strong></td><td>झाबुआ = झोपड़ी वाले</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="hbox hbox-warn" style="margin-bottom:.75rem">
+          <h4>❌ संख्या के अनुसार न्यूनतम (By Count — Least)</h4>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>District</th><th>Trick</th></tr></thead>
+            <tbody>
+              <tr class="bot1"><td>Least</td><td><strong>भिंड / Bhind</strong></td><td rowspan="3">भिंड दतिया मुरेना — चंबल साइड, कम जनजातियाँ</td></tr>
+              <tr class="bot2"><td>2nd Least</td><td><strong>दतिया / Datia</strong></td></tr>
+              <tr class="bot3"><td>3rd Least</td><td><strong>मुरेना / Morena</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="hbox hbox-success" style="margin-bottom:.75rem">
+          <h4>✅ प्रतिशत के अनुसार सर्वाधिक (By % — Most)</h4>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>District</th><th>% of Total Pop.</th></tr></thead>
+            <tbody>
+              <tr class="top1"><td>🥇 1st</td><td><strong>अलीराजपुर / Alirajpur</strong></td><td><strong>89%</strong></td></tr>
+              <tr class="top2"><td>🥈 2nd</td><td><strong>झाबुआ / Jhabua</strong></td><td>87%</td></tr>
+              <tr class="top3"><td>🥉 3rd</td><td><strong>बड़वानी / Barwani</strong></td><td>69%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="trick"><strong>Trick:</strong> अलीबाबा (अलीराजपुर) डंडे में दो गोल = % वाला | झोपड़ी (झाबुआ) | बड़े-बड़े (बड़वानी)</div>
+      </div>
+      <div>
+        <div class="hbox hbox-warn" style="margin-bottom:.75rem">
+          <h4>❌ प्रतिशत के अनुसार न्यूनतम (By % — Least)</h4>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>District</th><th>Note</th></tr></thead>
+            <tbody>
+              <tr class="bot1"><td>Least</td><td><strong>भिंड / Bhind</strong></td><td rowspan="3">Bhind % सबसे कम | Morena, Datia क्रम बदलता है %/संख्या में</td></tr>
+              <tr class="bot2"><td>2nd</td><td><strong>मुरेना / Morena</strong></td></tr>
+              <tr class="bot3"><td>3rd</td><td><strong>दतिया / Datia</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="confuse" style="margin-top:1rem">
+      <h4>😵 Morena/Datia Order Confusion!</h4>
+      <p style="font-size:.88rem">
+        <strong>संख्या में:</strong> Bhind → Datia → Morena (Bottom 3)<br>
+        <strong>% में:</strong> Bhind → Morena → Datia (Bottom 3)<br>
+        <em>Count order: Bhind, Datia, Morena | % order: Bhind, Morena, Datia — Morena & Datia swap!</em>
+      </p>
+    </div>
+    <div class="hbox" style="margin-top:1rem">
+      <h4>🏙️ शहरी / ग्रामीण जनजाति / Urban-Rural ST</h4>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Most (सर्वाधिक)</th><th>Least (न्यूनतम)</th></tr></thead>
+          <tbody>
+            <tr><td>शहरी ST / Urban ST</td><td><strong>भिंड / Bhind (76%+)</strong></td><td><strong>डिंडोरी / Dindori</strong></td></tr>
+            <tr><td>10-Year Growth Rate</td><td><strong>छतरपुर / Chhatarpur</strong> (Most increase)</td><td><strong>मंदसौर / Mandsaur</strong> (Negative growth)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="trick"><strong>Trick:</strong> मंदसौर, उज्जैन, भिंड में ST जनसंख्या ऋणात्मक वृद्धि (Negative growth). छतरपुर में छाता लेके जनजाति आ गए = सबसे ज्यादा बढ़े!</div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="sec8">
+    <div class="sec-header">
+      <div class="sec-num">8</div>
+      <div><h2>विशेष पिछड़ी जनजाति (PVTG) <span class="en">/ Particularly Vulnerable Tribal Groups</span></h2></div>
+    </div>
+    <div class="hbox hbox-purple">
+      <h4>🔴 MP की 3 PVTGs (Previously called "Primitive Tribal Groups")</h4>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem">
+        <span class="badge-purple badge" style="font-size:.95rem;padding:.3rem 1rem">🎒 बैगा / Baiga</span>
+        <span class="badge-purple badge" style="font-size:.95rem;padding:.3rem 1rem">🏔️ भारिया / Bharia</span>
+        <span class="badge-purple badge" style="font-size:.95rem;padding:.3rem 1rem">🏙️ शहरिया / Saharia</span>
+      </div>
+      <div class="trick" style="margin-top:.75rem"><strong>Trick:</strong> लॉकडाउन में बेचारे <strong>बैग</strong> भर के <strong>भार</strong> ढो-ढो के <strong>शहर</strong> छोड़ के गाँव गए — सबसे पिछड़े। (Baiga-Bharia-Saharia)</div>
+    </div>
+    <div class="hbox">
+      <h4>🏗️ विकास अभिकरण / Development Agencies</h4>
+      <div class="bi">
+        <span class="hi">MP में <strong>11 विकास अभिकरण</strong> बने, <strong>15 जिलों</strong> में विस्तार</span>
+        <span class="en">11 development agencies set up, covering 15 districts of MP</span>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>PVTG</th><th>Districts / जिले</th><th>Memory</th></tr></thead>
+        <tbody>
+          <tr><td><strong>बैगा / Baiga</strong></td><td>बालाघाट, मंडला, डिंडोरी, शहडोल संभाग (शहडोल, उमरिया, अनूपपुर)</td><td>बालाघाट बेहर में agency | पुष्पराजगढ़ (अनूपपुर) में</td></tr>
+          <tr><td><strong>भारिया / Bharia</strong></td><td>छिंदवाड़ा (Chhindwara) — पातालकोट क्षेत्र</td><td>भारिया = पहाड़ी क्षेत्र = पातालकोट</td></tr>
+          <tr><td><strong>शहरिया / Saharia</strong></td><td>उत्तर-पश्चिमी क्षेत्र — ग्वालियर-चंबल जोन</td><td>शहरिया = शहर के पास, उत्तर-पश्चिम MP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 9 -->
+  <section id="sec9">
+    <div class="sec-header">
+      <div class="sec-num">9</div>
+      <div><h2>राजनीतिक प्रतिनिधित्व <span class="en">/ Political Representation</span></h2></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>विधानसभा / Vidhan Sabha</h3>
+        <p>MP में कुल <strong>230 सीटें</strong><br>ST के लिए आरक्षित: <strong>47 सीटें</strong><br>SC के लिए: 35 सीटें<br><em>Total 230 seats | 47 reserved for ST</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏟️</div>
+        <h3>लोकसभा / Lok Sabha</h3>
+        <p>MP से कुल <strong>29 सीटें</strong><br>ST के लिए: <strong>6 सीटें</strong><br>SC के लिए: 4 सीटें<br><em>Total 29 seats from MP | 6 reserved for ST</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔖</div>
+        <h3>Article 330</h3>
+        <p>लोकसभा में SC/ST के लिए आरक्षण का प्रावधान।<br><em>Article 330 provides reservation for SC/ST in Lok Sabha.</em></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏘️</div>
+        <h3>MP के 89 विकास खंड</h3>
+        <p>सबसे ज्यादा इंदौर संभाग के 7 जिलों में। <strong>धार जिले में 12 विकास खंड</strong> (सर्वाधिक एक जिले में)।<br><em>MP has 89 development blocks | Max 12 in Dhar district</em></p>
+      </div>
+    </div>
+    <div class="confuse">
+      <h4>😵 47 vs 47 कन्फ्यूजन! / 47 vs 47 Confusion!</h4>
+      <p style="font-size:.88rem">
+        <strong>विधानसभा में ST सीटें (MP) = 47</strong><br>
+        <strong>Lok Sabha में Total ST Seats (India) = 47</strong><br>
+        दोनों में 47 है! Exam में ध्यान रखना — question किसके बारे में पूछ रहा है!<br>
+        <em>Both are 47! Be careful which one is asked!</em>
+      </p>
+    </div>
+    <div class="trick"><strong>🎯 Trick:</strong> MP Lok Sabha में ST = <strong>हकिया लेके 6 लोग गए</strong> (Hockey = 6 | 6 ST seats in Lok Sabha from MP)</div>
+  </section>
+
+  <!-- SECTION 10 -->
+  <section id="sec10">
+    <div class="sec-header">
+      <div class="sec-num">10</div>
+      <div><h2>जनसंख्या के अनुसार प्रमुख जनजातियाँ <span class="en">/ Major Tribes by Population</span></h2></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Rank</th><th>Tribe / जनजाति</th><th>% of MP's ST pop.</th><th>Area / क्षेत्र</th><th>Key Fact</th></tr></thead>
+        <tbody>
+          <tr class="top1"><td>🥇 1st</td><td><strong>भील / Bhil</strong></td><td><strong>~39%</strong></td><td>पश्चिम MP — झाबुआ, धार, बड़वानी</td><td>कड़कनाथ मुर्गा (झाबुआ) — GI Tag 2018 | उपजाति: बिलाला, रतिया, पटिया, तड़वी</td></tr>
+          <tr class="top2"><td>🥈 2nd</td><td><strong>गोंड / Gond</strong></td><td><strong>~33%</strong></td><td>दक्षिण-पूर्व MP — सर्वत्र पाई जाती है</td><td>डिगना कला | गोटुल परंपरा | पाटनगढ़ गाँव (डिंडोरी) — Gond art</td></tr>
+          <tr class="top3"><td>🥉 3rd</td><td><strong>कोल / Kol</strong></td><td>~3%</td><td>रीवा-पन्ना क्षेत्र (पूर्वी MP)</td><td>रीवा संभाग साइड मिलती है</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trick"><strong>Trick:</strong> भील (धनुष-बाण) = पश्चिम | गोंड (गोड = जोड़ना) = दक्षिण-पूर्व | कोल = कोल-पन्ना पत्थर = रीवा साइड</div>
+  </section>
+
+  <!-- SECTION 11 -->
+  <section id="sec11">
+    <div class="sec-header">
+      <div class="sec-num">11</div>
+      <div><h2>प्रजाति / नस्ल के अनुसार <span class="en">/ Racial Origins</span></h2></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Race / प्रजाति</th><th>Tribes / जनजातियाँ</th><th>Characteristics</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Proto Australoid</strong><br>प्रोटो ऑस्ट्रेलॉइड</td><td>भील / Bhil</td><td>ऑस्ट्रेलिया से आए | हट्टे-कट्टे, चौड़ी नाक, कम हाइट | Stocky build, broad nose, came from Australia</td></tr>
+          <tr><td><strong>Negroid / निग्रोइड</strong></td><td>अंडमान — Sentinel tribe</td><td>सेंटिनल जनजाति — बाहरी से नफरत | Andaman — hate outsiders!</td></tr>
+          <tr><td><strong>Mongoloid / मंगोलॉइड</strong></td><td>उत्तर-पूर्व भारत की जनजातियाँ</td><td>पूर्वोत्तर राज्य | NE India tribes</td></tr>
+          <tr><td><strong>Dravidian / द्रविड़</strong></td><td>दक्षिण भारत जनजातियाँ</td><td>South Indian tribes</td></tr>
+          <tr><td><strong>Munda/Kolian</strong></td><td>झारखंड क्षेत्र</td><td>झारखंड साइड — मुंडा, कोल / Jharkhand region</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — MCQs -->
+  <section id="sec12">
+    <div class="sec-header">
+      <div class="sec-num">12</div>
+      <div><h2>Practice MCQs (Video से) <span class="en">/ Quick Revision Questions</span></h2></div>
+    </div>
+    <div class="pyq-list">
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q1. जनजातियों को सबसे पहले "आदिवासी" किसने कहा?<br><small>Who first called tribes "Aadivasi"?</small></span>
+          <span class="pyq-year">Important</span>
+        </div>
+        <div class="pyq-a">✅ <strong>ठक्कर बप्पा (Thakkar Bappa)</strong><br>इसीलिए इन्हें "आदिवासियों का पितृ पुरुष" कहा जाता है। Gujarat se the.<br><em>That's why he's called "Father of Tribal Movement". He was from Gujarat.</em></div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q2. महात्मा गांधी ने जनजातियों को क्या कहा? / What did Gandhi call tribes?</span>
+          <span class="pyq-year">Important</span>
+        </div>
+        <div class="pyq-a">✅ <strong>गिरिजन / Girijaan</strong><br>गिरि = पहाड़ | जन = लोग | जैसे SC को हरिजन कहा, ST को गिरिजन<br><em>Just as he called SC = Harijan, he called ST = Girijaan (mountain people)</em></div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q3. PESA Act किस वर्ष लाया गया? / When was PESA Act enacted?</span>
+          <span class="pyq-year">MPPSC</span>
+        </div>
+        <div class="pyq-a">✅ <strong>1996</strong><br>PESA = Panchayat Extension to Scheduled Areas<br>पंचायतों का विस्तार अनुसूचित/जनजातीय क्षेत्रों में</div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q4. 2003 में MP की ST लिस्ट से कौन-कौन सी 3 जनजातियाँ हटाई गईं?</span>
+          <span class="pyq-year">Important</span>
+        </div>
+        <div class="pyq-a">✅ <strong>कीर, मीणा, पारदी (Keer, Meena, Pardhi)</strong><br>Trick: खीर खाते पर्दे में मीणा जी<br>अब MP में 43 अनुसूचित जनजातियाँ हैं (46 - 3 = 43)</div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q5. MP की कुल जनसंख्या में जनजातियाँ कितने % हैं? / What % of MP's population are tribes?</span>
+          <span class="pyq-year">Stats</span>
+        </div>
+        <div class="pyq-a">✅ <strong>21.1% (2011 Census)</strong><br>Trick: Art. 21 = जीवन जीने का अधिकार = 21.1% जनजातियाँ<br><em>Art 21 = Right to Life = 21.1% ST in MP (memory link)</em></div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q6. "The Baiga" पुस्तक किसने और कब लिखी? / Who wrote "The Baiga" and when?</span>
+          <span class="pyq-year">Books</span>
+        </div>
+        <div class="pyq-a">✅ <strong>Verrier Elwin (बेरियर एल्विन) — 1939</strong><br>The Muria and Their Ghotul → 1947<br>Trick: एलियन बैग लेके बैरियर पर गिरा</div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q7. MP की जनजातियों में लिंगानुपात कितना है? और किस जिले में सर्वाधिक?</span>
+          <span class="pyq-year">Stats</span>
+        </div>
+        <div class="pyq-a">✅ MP ST Sex Ratio = <strong>984</strong> (1000 males per 984 females)<br>सर्वाधिक जिला = <strong>बालाघाट (1050 per 1000)</strong><br>MP सामान्य लिंगानुपात = 931<br><em>Balaghat has highest tribal sex ratio in MP — 1050 females per 1000 males</em></div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q8. संख्या के अनुसार MP में सर्वाधिक जनजातीय जनसंख्या वाला जिला? / Highest tribal population district by count?</span>
+          <span class="pyq-year">Districts</span>
+        </div>
+        <div class="pyq-a">✅ <strong>धार / Dhar</strong> (followed by Barwani, Jhabua)<br>% के अनुसार: अलीराजपुर (89%) → झाबुआ → बड़वानी<br>Trick: <em>Dhar = धारदार जनजाति | Alirajpur % = अलीबाबा 89%</em></div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q9. MP की 3 PVTG (विशेष पिछड़ी जनजातियाँ) कौन-कौन सी हैं?</span>
+          <span class="pyq-year">PVTG</span>
+        </div>
+        <div class="pyq-a">✅ <strong>बैगा, भारिया, शहरिया (Baiga, Bharia, Saharia)</strong><br>Trick: बैग भरके भार ढोते हुए शहर छोड़ा = Baiga + Bharia + Saharia</div>
+      </div>
+      <div class="pyq">
+        <div class="pyq-q" onclick="togglePYQ(this)">
+          <span>Q10. MP के Vidhan Sabha में ST की कितनी सीटें? और Lok Sabha से MP की ST सीटें?</span>
+          <span class="pyq-year">Politics</span>
+        </div>
+        <div class="pyq-a">✅ Vidhan Sabha = <strong>47 सीटें ST</strong> (230 में से)<br>Lok Sabha = <strong>6 सीटें ST</strong> (MP से 29 में से)<br>Trick: हकिया लेके 6 ST लोकसभा गए! | LOK SABHA INDIA total ST = 47 (same as MP Vidhan Sabha ST seats!)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK CHEAT SHEET -->
+  <section>
+    <div class="sec-header">
+      <div class="sec-num">🚀</div>
+      <div><h2>Last-Minute Cheat Sheet <span class="en">/ Quick Recall</span></h2></div>
+    </div>
+    <ul class="qf-list">
+      <li>MP में ST = <strong>21.1%</strong> | India में = <strong>8.6%</strong> | India की कुल ST का = <strong>14.7%</strong> MP में</li>
+      <li>MP में <strong>43 ST</strong> (1950: 46 → 2003: −3 = Keer, Meena, Pardhi)</li>
+      <li>सबसे बड़ी जनजाति: <strong>भील 39% → गोंड 33% → कोल</strong></li>
+      <li>PVTGs: <strong>बैगा (बालाघाट/मंडला/डिंडोरी/शहडोल) | भारिया (छिंदवाड़ा) | शहरिया (उ-प MP)</strong></li>
+      <li>Art. <strong>342</strong> = ST listing | Art. <strong>366(25)</strong> = ST definition | Art. <strong>338A</strong> = ST Commission | Art. <strong>330</strong> = ST reservation in Lok Sabha</li>
+      <li>% सर्वाधिक: <strong>अलीराजपुर (89%) → झाबुआ → बड़वानी</strong> | संख्या सर्वाधिक: <strong>धार → बड़वानी → झाबुआ</strong></li>
+      <li>सबसे कम: <strong>भिंड, दतिया, मुरेना</strong> (दोनों संख्या और % में)</li>
+      <li>Sex Ratio: ST = <strong>984</strong> | Normal MP = 931 | Balaghat ST = <strong>1050</strong></li>
+      <li>Urban ST: सर्वाधिक <strong>भिंड</strong> | न्यूनतम <strong>डिंडोरी</strong></li>
+      <li>Growth Rate: सर्वाधिक <strong>छतरपुर</strong> | न्यूनतम (Negative) <strong>मंदसौर, उज्जैन, भिंड</strong></li>
+      <li>विधानसभा ST = <strong>47</strong> सीटें | Lok Sabha from MP = <strong>6</strong> ST सीटें</li>
+      <li>Thakkar Bappa = <strong>आदिवासियों का पितृ पुरुष</strong> | Gandhi = <strong>गिरिजन</strong> | Constitution = <strong>Scheduled Tribe</strong></li>
+    </ul>
+  </section>
+
+</div>
+
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:1.25rem;text-align:center;font-size:.82rem;color:var(--muted);margin-top:2rem">
+  MPPSC Pre 2024 | Unit 10 — Janjati | Class 2 Revision Notes | Bilingual Hindi + English
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement,cur=h.getAttribute('data-theme');
+  const next=cur==='dark'?'light':'dark';
+  h.setAttribute('data-theme',next);
+  document.getElementById('themeBtn').textContent=next==='dark'?'☀ Light':'🌙 Dark';
+}
+function togglePYQ(el){
+  const ans=el.nextElementSibling;
+  ans.classList.toggle('open');
+}
+// set initial button text
+document.getElementById('themeBtn').textContent='☀ Light';
+</script>
+</body>
+</html>

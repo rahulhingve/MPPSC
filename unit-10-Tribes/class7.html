@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MPPSC Paper 2 Revision - Class 7: Bhil Janjati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1220;
+      --panel: #171b2e;
+      --panel-2: #20263d;
+      --text: #f8fbff;
+      --muted: #d9e3f4;
+      --line: rgba(255,255,255,.15);
+      --cyan: #00d4ff;
+      --orange: #ff8a3d;
+      --green: #00e887;
+      --purple: #b388ff;
+      --red: #ff5d73;
+      --shadow: 0 18px 45px rgba(0,0,0,.32);
+      --radius: 8px;
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --panel-2: #eef3fb;
+      --text: #111827;
+      --muted: #334155;
+      --line: rgba(15,23,42,.16);
+      --shadow: 0 14px 34px rgba(31,41,55,.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 17px;
+      line-height: 1.72;
+      background:
+        linear-gradient(180deg, rgba(0,212,255,.10), transparent 440px),
+        var(--bg);
+      color: var(--text);
+    }
+
+    a { color: var(--cyan); }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+    }
+
+    .layout {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 800px);
+      gap: 24px;
+      align-items: start;
+    }
+
+    header {
+      padding: 34px 0 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 20px;
+    }
+
+    .hero {
+      width: min(1060px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      font-size: .86rem;
+      font-weight: 800;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: 0;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 16px;
+      max-width: 900px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+    }
+
+    .subtitle {
+      max-width: 850px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .86rem;
+    }
+
+    .progress-shell {
+      margin-top: 18px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 12px;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--green), var(--orange));
+      transition: width .25s ease;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 14px;
+      max-height: calc(100vh - 28px);
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(23,27,46,.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      padding: 14px;
+    }
+
+    [data-theme="light"] .sidebar { background: rgba(255,255,255,.92); }
+
+    .toc-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .toc {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+      display: grid;
+      gap: 7px;
+    }
+
+    .toc a {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 8px 9px;
+      line-height: 1.35;
+      font-weight: 800;
+      font-size: .92rem;
+    }
+
+    .toc a:hover, .toc a.active {
+      border-color: var(--cyan);
+      background: rgba(0,212,255,.10);
+    }
+
+    .controls {
+      display: grid;
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    button, select {
+      font: inherit;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      min-height: 42px;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: 900;
+      padding: 8px 11px;
+    }
+
+    select { padding: 7px 10px; width: 100%; }
+
+    main {
+      display: grid;
+      gap: 18px;
+      padding-bottom: 44px;
+    }
+
+    section.topic, .master {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      scroll-margin-top: 22px;
+    }
+
+    .topic-head {
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--accent, var(--cyan)) 24%, transparent), transparent);
+    }
+
+    .topic-head h2 {
+      font-size: clamp(1.35rem, 3vw, 2.1rem);
+      font-weight: 900;
+    }
+
+    .topic-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .topic-body {
+      padding: 18px 22px 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card, details, .visual, .quiz, .hot, .note {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.045);
+      padding: 14px;
+    }
+
+    [data-theme="light"] .card,
+    [data-theme="light"] details,
+    [data-theme="light"] .visual,
+    [data-theme="light"] .quiz,
+    [data-theme="light"] .hot,
+    [data-theme="light"] .note {
+      background: #f8fafc;
+    }
+
+    .card h3, .visual h3, .quiz h3, .hot h3, .note h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    ul, ol { margin: 8px 0 0; padding-left: 1.2rem; }
+    li + li { margin-top: 4px; }
+    strong { font-weight: 900; }
+
+    .hot {
+      border-color: color-mix(in srgb, var(--orange) 60%, var(--line));
+      background: color-mix(in srgb, var(--orange) 12%, transparent);
+    }
+
+    .note {
+      border-color: color-mix(in srgb, var(--green) 45%, var(--line));
+      background: color-mix(in srgb, var(--green) 10%, transparent);
+    }
+
+    details { padding: 0; }
+    summary {
+      cursor: pointer;
+      padding: 14px;
+      font-weight: 900;
+    }
+
+    details > div {
+      border-top: 1px solid var(--line);
+      padding: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      font-size: .96rem;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: color-mix(in srgb, var(--accent, var(--cyan)) 20%, var(--panel-2));
+      color: var(--text);
+      font-weight: 900;
+    }
+
+    .figcap {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.45;
+    }
+
+    .diagram {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .flow span, .chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px;
+      background: var(--panel-2);
+      font-weight: 900;
+    }
+
+    .quiz details {
+      background: transparent;
+      border-style: dashed;
+      margin-top: 8px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+    }
+
+    .check {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 9px;
+      align-items: start;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+    }
+
+    .check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      accent-color: var(--green);
+    }
+
+    .mobile-jump {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      padding: 9px 14px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .broken {
+      padding: 12px;
+      border: 1px dashed var(--orange);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: color-mix(in srgb, var(--orange) 14%, transparent);
+      margin-top: 8px;
+    }
+
+    footer {
+      width: min(800px, calc(100% - 28px));
+      margin: 0 auto 34px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 940px) {
+      .layout { display: block; width: min(800px, calc(100% - 22px)); }
+      .sidebar { display: none; }
+      .mobile-jump { display: block; }
+      .grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      body { font-size: 17px; }
+      .hero { width: min(100% - 22px, 800px); }
+      .topic-head, .topic-body { padding-left: 14px; padding-right: 14px; }
+      table { font-size: .9rem; }
+      th, td { padding: 8px; }
+    }
+
+    @media print {
+      body { background: white; color: black; font-size: 12pt; }
+      .sidebar, .mobile-jump, .controls, button, .progress-shell { display: none !important; }
+      .layout, .hero, footer { width: 100%; display: block; }
+      section.topic, .master, .card, details, .visual, .quiz, .hot, .note {
+        box-shadow: none;
+        border-color: #999;
+        background: white;
+        break-inside: avoid;
+      }
+      details > div { display: block !important; }
+      a { color: black; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-jump">
+    <select class="jump" aria-label="Quick jump mobile"></select>
+  </div>
+
+  <header>
+    <div class="hero">
+      <div class="eyebrow">MPPSC Paper 2 | Class 7 | Madhya Pradesh Tribes</div>
+      <h1>भील जनजाति Revision Page</h1>
+      <p class="subtitle">Transcript se nikala hua Hinglish revision: constitutional recap + Bhil janjati ki origin, distribution, sub-tribes, gotra, social setup, food, dress, Bhagoria aur economic facts.</p>
+      <div class="badges">
+        <span class="badge">9 Major Topics</span>
+        <span class="badge">Exam Hot Facts</span>
+        <span class="badge">Quick Recall</span>
+        <span class="badge">Persistent Checklist</span>
+      </div>
+      <div class="progress-shell" aria-label="Revision progress">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="toc-title"><span>Quick Nav</span><span id="progressText">0%</span></div>
+      <ul class="toc" id="toc"></ul>
+      <div class="controls">
+        <select class="jump" aria-label="Quick jump"></select>
+        <button id="themeBtn" type="button">Theme</button>
+        <button id="expandBtn" type="button">Expand All</button>
+      </div>
+    </aside>
+
+    <main>
+      <section class="topic" id="constitutional" style="--accent: var(--cyan)">
+        <div class="topic-head">
+          <h2>⚖️ Constitutional Revision: ST/SC Articles</h2>
+          <p>Class ki shuruaat previous class ke revision se hui thi. Ye facts direct one-liner MCQ ke liye important hain.</p>
+        </div>
+        <div class="topic-body">
+          <div class="visual">
+            <h3>Article Memory Map</h3>
+            <div class="flow">
+              <span>Rights & special provisions<br>15, 16, 17, 23, 24, 25, 29</span>
+              <span>Welfare & governance<br>46, 164(1), 243, 244, 275</span>
+              <span>Reservation/list/definition<br>330, 332, 334, 335, 342, 366(25)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Core Article Table</h3>
+            <table>
+              <thead><tr><th>Article</th><th>Class me bataya point</th><th>Exam Hook</th></tr></thead>
+              <tbody>
+                <tr><td>330</td><td>Lok Sabha me SC/ST reservation.</td><td>Lok Sabha = 330.</td></tr>
+                <tr><td>332</td><td>State Vidhan Sabha me SC/ST reservation.</td><td>Assembly = 332.</td></tr>
+                <tr><td>334</td><td>Reservation period 80 saal tak extend; 104th Constitutional Amendment, 2019.</td><td>Extension = 334.</td></tr>
+                <tr><td>335</td><td>SC/ST ke services-related claims ka dhyan.</td><td>Services = 335.</td></tr>
+                <tr><td>342</td><td>Scheduled Tribes ki list.</td><td>ST list = 342.</td></tr>
+                <tr><td>366(25)</td><td>Scheduled Tribes ki definition.</td><td>Definition = 366 clause 25.</td></tr>
+                <tr><td>46</td><td>ST welfare: educational, economic upliftment aur social injustice se protection.</td><td>Welfare directive = 46.</td></tr>
+                <tr><td>164(1)</td><td>MP, Chhattisgarh, Odisha, Jharkhand me Tribal Welfare Minister.</td><td>4 states yaad rakho.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <details>
+            <summary>More Articles from Revision</summary>
+            <div>
+              <table>
+                <thead><tr><th>Article / Amendment</th><th>Point</th></tr></thead>
+                <tbody>
+                  <tr><td>15(4)</td><td>ST ke education se related special provisions; First Amendment 1951 se linked bataya gaya.</td></tr>
+                  <tr><td>15(5)</td><td>Admission/enrolment me special provisions; 93rd Amendment 2005 se linked.</td></tr>
+                  <tr><td>16</td><td>Government jobs me equality.</td></tr>
+                  <tr><td>16(4)</td><td>Reservation in public employment.</td></tr>
+                  <tr><td>16(4A)</td><td>Promotion me reservation; 77th Amendment 1995.</td></tr>
+                  <tr><td>16(4B)</td><td>Backlog posts carry forward; 81st Amendment se linked bataya gaya.</td></tr>
+                  <tr><td>17</td><td>Untouchability / chhua-chhoot ka ant.</td></tr>
+                  <tr><td>23</td><td>Bonded labour / bandhua majdoori nahi.</td></tr>
+                  <tr><td>24</td><td>Children se harmful work nahi karwaya jayega.</td></tr>
+                  <tr><td>25</td><td>Religion related article.</td></tr>
+                  <tr><td>29(1)</td><td>Minority class apni education, script, culture protect kar sakta hai.</td></tr>
+                  <tr><td>243D(1)</td><td>Panchayats me reservation.</td></tr>
+                  <tr><td>243D(3)</td><td>Panchayats me women reservation.</td></tr>
+                  <tr><td>243T(1)</td><td>Urban local bodies me reservation.</td></tr>
+                  <tr><td>243T(3)</td><td>Urban local bodies me women reservation.</td></tr>
+                  <tr><td>244(1)</td><td>Scheduled Areas ke special provisions; Tribal Advisory Council.</td></tr>
+                  <tr><td>244(2)</td><td>Tribal Areas; Autonomous District Council, Assam-Meghalaya-Mizoram-Tripura context.</td></tr>
+                  <tr><td>275</td><td>Tribal areas ke liye grants / special assistance.</td></tr>
+                  <tr><td>350A</td><td>Primary education mother tongue / primary language me.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>ST list ka article: <strong>342</strong>.</li>
+              <li>ST definition: <strong>366(25)</strong>.</li>
+              <li>Lok Sabha reservation: <strong>330</strong>; Assembly reservation: <strong>332</strong>.</li>
+              <li>104th Amendment 2019 se reservation period 80 years tak: <strong>Article 334</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>ST ki list kis article me hai?</summary><div>Article 342.</div></details>
+            <details><summary>Lok Sabha aur Vidhan Sabha reservation ke articles?</summary><div>Lok Sabha: 330; Vidhan Sabha: 332.</div></details>
+            <details><summary>Tribal Welfare Minister wale 4 states?</summary><div>Madhya Pradesh, Chhattisgarh, Odisha, Jharkhand.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="mp-tribes" style="--accent: var(--green)">
+        <div class="topic-head">
+          <h2>🗺️ MP Tribes: Class Roadmap</h2>
+          <p>Teacher ne bataya ki MP ki tribes ko common pattern se padhenge: general info, social, economic, religious, culture, facts aur MCQ.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Major Tribes to be Covered</h3>
+              <ul>
+                <li><strong>Bhil</strong> - MP ki sabse badi tribe, is class ka main topic.</li>
+                <li><strong>Gond</strong> - second largest tribe batayi gayi.</li>
+                <li><strong>Kol</strong>, <strong>Korku</strong>, <strong>Sahariya</strong>, <strong>Bharia</strong>.</li>
+                <li>Aati-vishesh pichhdi tribes: <strong>Baiga, Bharia, Sahariya</strong>.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <h3>MP Static Map Reference</h3>
+              <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district map reference" loading="eager" fetchpriority="high" decoding="async">
+              <div class="figcap">Image: SLBC Madhya Pradesh public reference map, used for MP district orientation.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Study Pattern</h3>
+            <div class="flow">
+              <span>1. सामान्य जानकारी<br>General info</span>
+              <span>2. सामाजिक + आर्थिक<br>Social + Economic</span>
+              <span>3. धार्मिक + Culture + MCQ<br>Religious + Facts</span>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>MP ki sabse badi janajati kaunsi batayi gayi?</summary><div>Bhil janjati.</div></details>
+            <details><summary>MP tribes ko kis sequence me padhna hai?</summary><div>General info, social features, economic features, religious features, culture, key facts, MCQ.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="origin" style="--accent: var(--orange)">
+        <div class="topic-head">
+          <h2>🏹 Bhil Origin, Meaning & Historical Names</h2>
+          <p>Bhil word ko bow-arrow se link karke yaad karna hai. Teacher ne MPPSC Pre 2017 question ka reference bhi diya.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Bhil Word Meaning</h3>
+              <ul>
+                <li><strong>Bhil</strong> word Sanskrit ke <strong>Bhilla</strong> se bana bataya gaya.</li>
+                <li>Dravidian word <strong>Bil</strong> se bhi link bataya gaya.</li>
+                <li>Meaning: <strong>Dhanush / Baan</strong>.</li>
+                <li>Bhil log historically bow-arrow se shikar karte the, isliye name ko weapon se link karo.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <h3>Visual Anchor</h3>
+              <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhil%20community%20youth%20and%20women%20in%20traditional%20attire%20at%20a%20local%20gathering,%20Jhabua,%20Madhya%20Pradesh,%20India%20(5).jpg" alt="Bhil community youth and women in traditional attire at Jhabua, Madhya Pradesh" loading="eager" fetchpriority="high" decoding="async">
+              <div class="figcap">Image: Wikimedia Commons, Bhil community youth and women, Jhabua. License: CC BY-SA 4.0.</div>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Point</th><th>Detail</th><th>Memory Hook</th></tr></thead>
+            <tbody>
+              <tr><td>Original place</td><td>Rajasthan ke Kumbhalgarh, Udaipur ke paas Dhol / Dholiya Tol ko original place mana.</td><td>Kumbhalgarh + Dhol.</td></tr>
+              <tr><td>Colonel Tod</td><td>Bhil ko <strong>Vanputra</strong> kaha.</td><td>Tod ne van tod diya = Vanputra.</td></tr>
+              <tr><td>Ptolemy / Tolmi</td><td>Bhil ko <strong>Tirandaz</strong> kaha.</td><td>Tolmi = tell me who shot arrow.</td></tr>
+              <tr><td>Other name</td><td><strong>Pulin</strong> bhi kaha gaya.</td><td>Pul-in.</td></tr>
+              <tr><td>Text reference</td><td><strong>Katha Sarit Sagar</strong> me Bhil word ka early reference bataya.</td><td>Story text = Katha Sarit Sagar.</td></tr>
+              <tr><td>Vedic reference</td><td>Rigveda me Bhils ke liye <strong>Anas</strong> word bataya gaya.</td><td>Rigveda = Anas.</td></tr>
+            </tbody>
+          </table>
+
+          <details>
+            <summary>Mythological Links Mentioned</summary>
+            <div>
+              <ul>
+                <li>Bhil apne aap ko <strong>Mahadev / Bhagwan Shiv ka vanshaj</strong> mante hain.</li>
+                <li>Ek story me Shiv aur Bhil woman se Bhil descendants ka link bataya gaya.</li>
+                <li>Dusri story me Shiv ke putra <strong>Nishad</strong> se Bhil link bataya gaya.</li>
+                <li>Nishad ne Nandi ko mara, Shiv ne shraap diya ki pahadon me rahoge - isliye hill-dwelling link bataya.</li>
+                <li>Bhil Valmiki, Shabari aur Eklavya ko apne tradition se link karte hain.</li>
+                <li>Eklavya ko Bhil apna purvaj mante hain; teacher ne bataya ki arrow chalate waqt anguthe ka use nahi karne ka link diya jata hai.</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li><strong>MPPSC Pre 2017</strong>: Bhil word Sanskrit ke kis word se bana? Answer: <strong>Bhilla</strong>.</li>
+              <li>Colonel Tod = Vanputra; Ptolemy/Tolmi = Tirandaz.</li>
+              <li>Original place: Rajasthan ka Kumbhalgarh / Dholiya Tol.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Bhil word Sanskrit ke kis word se linked hai?</summary><div>Bhilla.</div></details>
+            <details><summary>Colonel Tod ne Bhils ko kya kaha?</summary><div>Vanputra.</div></details>
+            <details><summary>Bhil apna original place kahan mante hain?</summary><div>Rajasthan ke Kumbhalgarh ke Dhol / Dholiya Tol ko.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="distribution" style="--accent: var(--purple)">
+        <div class="topic-head">
+          <h2>📍 Distribution, Population & Physical Features</h2>
+          <p>Bhil tribe MP ke western belt me concentrated hai. Census numbers aur districts one-liners me puchhe ja sakte hain.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Where Found?</h3>
+              <ul>
+                <li>Rajasthan, Madhya Pradesh, Gujarat, Maharashtra side me Bhil population batayi gayi.</li>
+                <li>MP me western districts: <strong>Jhabua, Alirajpur, Barwani, Khargone, Khandwa, Dhar, Ratlam, Mandsaur, Neemuch</strong>.</li>
+                <li>Teacher ne highest concentration ke liye Jhabua / Dhar dono references bataye; exam me source ke hisab se dekhna.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <h3>MP Map Anchor</h3>
+              <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh map for locating western Bhil concentration districts" loading="eager" fetchpriority="high" decoding="async">
+              <div class="figcap">Image: SLBC Madhya Pradesh public reference map. Use western MP belt for Bhil concentration.</div>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Fact</th><th>Class Value</th></tr></thead>
+            <tbody>
+              <tr><td>MP population, 2011</td><td>7 crore 26 lakh 26,809 bataya gaya.</td></tr>
+              <tr><td>MP tribal share, 2011</td><td>21.1% bataya gaya.</td></tr>
+              <tr><td>Total tribal population</td><td>1 crore 53 lakh 17,984 bataya gaya.</td></tr>
+              <tr><td>Bhil population</td><td>46,18,068 / lagbhag 46 lakh bataya gaya.</td></tr>
+              <tr><td>Bhil + sub-tribes share</td><td>Total tribal population ka lagbhag 39% bataya gaya.</td></tr>
+              <tr><td>Largest tribe in MP</td><td>Bhil.</td></tr>
+              <tr><td>Race/ethnic type</td><td>Mostly <strong>Proto-Australoid</strong> bataya; kuch historians Negro bhi kehte hain, par teacher ne Proto-Australoid emphasise kiya.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <h3>Physical Features Mentioned</h3>
+            <ul>
+              <li>Medium height, flat nose, curly hair.</li>
+              <li>Strong body; bow-arrow warrior/hunter identity.</li>
+              <li>Men: short dhoti, pagdi/safa, silver earrings, kada; young Bhils flute/bansuri ke shaukeen.</li>
+              <li>Women: ornament-loving, tattoo/godna, silver ornaments, ghaghra, odhni/chunari.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>MP ki sabse badi tribe?</summary><div>Bhil.</div></details>
+            <details><summary>MP me Bhils mainly kis region me milte hain?</summary><div>Western MP: Jhabua, Alirajpur, Barwani, Khargone, Khandwa, Dhar, Ratlam, Mandsaur, Neemuch.</div></details>
+            <details><summary>Bhil tribe ko mostly kis racial group se linked bataya?</summary><div>Proto-Australoid.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="bhagoria" style="--accent: var(--red)">
+        <div class="topic-head">
+          <h2>🎨 Bhagoria Festival & Sub-Tribes</h2>
+          <p>Bhagoria ko teacher ne mnemonic framework banaya jisse Bhil sub-tribes yaad karayi gayi.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Bhagoria Festival</h3>
+              <ul>
+                <li>MP ke western districts me famous Bhil/Bhilala festival-hat.</li>
+                <li>Holi se <strong>7 din pehle</strong> start hota hai.</li>
+                <li>Earlier teacher ne ise प्रणय पर्व / love-selection tradition ke roop me explain kiya; ab mainly mela/hat form.</li>
+                <li>Major dances mentioned: Gair, Doya, Bhagoria, Gol Gadhedo.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <h3>Bhagoria Visual</h3>
+              <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhagoria%20Tribal%20Festival%2031.jpg" alt="Bhil tribe Bhagoria festival at Chhaktala Alirajpur" loading="eager" fetchpriority="high" decoding="async">
+              <div class="figcap">Image: Wikimedia Commons, Ritesh.sati19, Bhagoria Tribal Festival, CC BY-SA 4.0.</div>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Bhagoria Phase</th><th>Days</th><th>Class Note</th></tr></thead>
+            <tbody>
+              <tr><td>Gulaliya</td><td>First 2 days</td><td>Gulal exchange; earlier pranay/love selection tradition.</td></tr>
+              <tr><td>Gol Gadhedo</td><td>Next 3 days</td><td>Shourya/practice dance; girls circle, boy tries to take selected girl out.</td></tr>
+              <tr><td>Ujariya / Ujariya phase</td><td>Last 2 days</td><td>Mela ujadhna / closing phase; buying goods and local fair activities.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="card">
+            <h3>Bhil Sub-Tribes</h3>
+            <table>
+              <thead><tr><th>Sub-tribe</th><th>Point from Class</th></tr></thead>
+              <tbody>
+                <tr><td>Bhilala</td><td>Largest Bhil sub-tribe; Chhattisgarh origin bataya; Maharana Pratap vansh / Haldighati support link.</td></tr>
+                <tr><td>Patia / Patelia</td><td>Mnemonic me "pata liya" se link karaya.</td></tr>
+                <tr><td>Begas</td><td>Sub-tribe name; mnemonic me bag lekar mela jane se link.</td></tr>
+                <tr><td>Rathiya / Rathya</td><td>Rath/barat mnemonic.</td></tr>
+                <tr><td>Umdi</td><td>Tadvi ke saath dainiye sthiti aur Islam accept karne ka trend bataya.</td></tr>
+                <tr><td>Tadvi Bhil</td><td>Aurangzeb period se Islam influence; Guna-Shajapur side mention.</td></tr>
+                <tr><td>Barela</td><td>"Var maan liya" mnemonic.</td></tr>
+                <tr><td>Madvi / Bhadvo / Bhakta</td><td>Bhil sub-tribes me sabse pious/pavitra batayi.</td></tr>
+                <tr><td>Pujar</td><td>Medicinal knowledge; rog-upchar se related.</td></tr>
+                <tr><td>Kotwar</td><td>Village chowkidar / watchman type role.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Largest Bhil sub-tribe: <strong>Bhilala</strong>.</li>
+              <li>Most pious/pavitra sub-tribe: <strong>Madvi / Bhadvo / Bhakta</strong>.</li>
+              <li>Bhagoria: Holi se 7 din pehle; Gulaliya 2, Gol Gadhedo 3, Ujariya 2.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Bhagoria Holi se kitne din pehle hota hai?</summary><div>7 din pehle.</div></details>
+            <details><summary>Bhil ki sabse badi sub-tribe?</summary><div>Bhilala.</div></details>
+            <details><summary>Sabse pious Bhil sub-tribe?</summary><div>Madvi / Bhadvo / Bhakta.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="gotra" style="--accent: var(--cyan)">
+        <div class="topic-head">
+          <h2>🐾 Gotra & Belief Markers</h2>
+          <p>Teacher ne 71 gotra mention kiye, par exam-oriented 3 gotra yaad karaye.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Gotra Table</h3>
+              <table>
+                <thead><tr><th>Gotra</th><th>Belief / Practice</th><th>Mnemonic</th></tr></thead>
+                <tbody>
+                  <tr><td>Sanyan / Sangan</td><td>Cat / billi ke pujari.</td><td>Sanyas + billi.</td></tr>
+                  <tr><td>Ningwal</td><td>Machhli nahi khate; fish ko sacred mante.</td><td>Nigalna nahi = Ningwal.</td></tr>
+                  <tr><td>Singhadiya</td><td>Bail / ox ke pujari.</td><td>Singh = horns.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="visual">
+              <h3>Symbol Diagram</h3>
+              <div class="diagram">
+                <span class="chip">Sanyan → Cat worship</span>
+                <span class="chip">Ningwal → No fish eating</span>
+                <span class="chip">Singhadiya → Bull worship</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            <h3>Social Rule</h3>
+            <p>Bhil society gotra-pratha ko maanta hai. Same gotra me marriage nahi hoti.</p>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Kaunsa gotra fish nahi khata?</summary><div>Ningwal.</div></details>
+            <details><summary>Singhadiya gotra kiski worship karta hai?</summary><div>Bail / ox.</div></details>
+            <details><summary>Sanyan gotra kis se linked hai?</summary><div>Billi / cat worship.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="social" style="--accent: var(--green)">
+        <div class="topic-head">
+          <h2>🏘️ Social Setup, House & Village Administration</h2>
+          <p>Bhil social organization me house, falya, pal, ghameti, patel, tadvi jaise terms high-yield hain.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Settlement Terms</h3>
+              <table>
+                <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+                <tbody>
+                  <tr><td>Ku / Tapra</td><td>Bhil ka ghar / hut.</td></tr>
+                  <tr><td>Falya</td><td>3-4 huts ka group.</td></tr>
+                  <tr><td>Pal</td><td>4-5 falya ka bada village group.</td></tr>
+                  <tr><td>Bhomat</td><td>Bhil-bahul area.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="visual">
+              <h3>Settlement Flow</h3>
+              <div class="flow">
+                <span>Ku / Tapra<br>Single hut</span>
+                <span>Falya<br>Huts group</span>
+                <span>Pal<br>Falya group</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Household Objects</h3>
+            <table>
+              <thead><tr><th>Object</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td>Kangi</td><td>Bamboo granary / grain storage box.</td></tr>
+                <tr><td>Gatti</td><td>Grain grinding object / chakki type.</td></tr>
+                <tr><td>Supa / Chhala</td><td>Grain cleaning / winnowing object.</td></tr>
+                <tr><td>Muhalda</td><td>Wooden stand for water vessel.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Administration Roles</h3>
+              <table>
+                <thead><tr><th>Role</th><th>Function</th></tr></thead>
+                <tbody>
+                  <tr><td>Ghameti / Gameti</td><td>Pal ka chief / mukhiya.</td></tr>
+                  <tr><td>Patel</td><td>Administrative + social arrangement dekhta hai.</td></tr>
+                  <tr><td>Tadvi</td><td>Patel ka assistant.</td></tr>
+                  <tr><td>Kotwar</td><td>Village chowkidar type.</td></tr>
+                  <tr><td>Badwa</td><td>Devi-devta ka bhaar grahan karne wala; doctor-like recognition.</td></tr>
+                  <tr><td>Gayak</td><td>Badwa ka assistant.</td></tr>
+                  <tr><td>Pujar</td><td>Medicinal knowledge / treatment.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="visual">
+              <h3>Community Visual</h3>
+              <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhil%20Trible%20Ritual.jpg" alt="Bhil man performing ritual in a tribal temple in Jhabua, Madhya Pradesh" loading="lazy" decoding="async">
+              <div class="figcap">Image: Wikimedia Commons, Chetansoni, Bhil ritual in Jhabua. License: CC BY-SA 3.0.</div>
+            </div>
+          </div>
+
+          <div class="note">
+            <h3>Other Social Features</h3>
+            <ul>
+              <li>Society is <strong>patriarchal / pitra-sattatmak</strong>.</li>
+              <li>Same gotra marriage nahi hoti.</li>
+              <li>Language: <strong>Bhili</strong>; Malwi aur Nimadi ka influence bataya, kyunki Malwa-Nimar region me rehte hain.</li>
+            </ul>
+          </div>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Pal ka chief = <strong>Ghameti</strong>.</li>
+              <li>Patel ka assistant = <strong>Tadvi</strong>.</li>
+              <li>Ku/Tapra = house; Falya = huts group; Pal = falya group.</li>
+              <li>Muhalda = water vessel stand; Kangi = grain storage.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Bhil ke ghar ko kya kehte hain?</summary><div>Ku ya Tapra.</div></details>
+            <details><summary>Pal ka mukhiya kaun?</summary><div>Ghameti / Gameti.</div></details>
+            <details><summary>Patel ki sahayata kaun karta hai?</summary><div>Tadvi.</div></details>
+            <details><summary>Water vessel ke wooden stand ko kya kehte?</summary><div>Muhalda.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="food-dress" style="--accent: var(--orange)">
+        <div class="topic-head">
+          <h2>🍲 Food, Dress & Ornament Terms</h2>
+          <p>Bhil women ko teacher ne world's most ornament/rang-priya type se describe kiya. Dress terms MCQ-friendly hain.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Food & Drink</h3>
+              <ul>
+                <li><strong>Rabdi / Rabari</strong>: Makki ki thuli + chhachh se banti khatti food; favourite food.</li>
+                <li>Jowar aur makka ki roti.</li>
+                <li>Mahua drink, tadi from palm/tad tree.</li>
+                <li>Kadaknath chicken ka shikar/food mention.</li>
+                <li>Jhabua Kadaknath ko GI tag 2018-19 bataya; one district one product me bhi mention.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <h3>Traditional Attire Visual</h3>
+              <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhil-Bhilala%20tribal%20women%20wearing%20traditional%20attire%20and%20jewelry%20at%20Bhagoria%20Festival%202026,%20Ranapur%20(4).jpg" alt="Bhil-Bhilala tribal women wearing traditional attire and jewelry at Bhagoria Festival in Ranapur" loading="lazy" decoding="async">
+              <div class="figcap">Image: Wikimedia Commons, Bhil-Bhilala women at Bhagoria Festival 2026, Ranapur. License: CC BY-SA 4.0.</div>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Term</th><th>Meaning</th><th>Memory Hook</th></tr></thead>
+            <tbody>
+              <tr><td>The Pana / Thepana</td><td>Tight dhoti.</td><td>Tight dhoti par "the" stamp.</td></tr>
+              <tr><td>Potya</td><td>White safa / turban.</td><td>Upar safed safa pot diya.</td></tr>
+              <tr><td>Angrakha</td><td>Women waist garment.</td><td>Kamar me angrakha.</td></tr>
+              <tr><td>Jhela</td><td>Head silver chain / ornament.</td><td>Sir par chandi ka weight jhelna.</td></tr>
+              <tr><td>Sindoori</td><td>Red saree.</td><td>Sindoor = red.</td></tr>
+              <tr><td>Piriya / Peeriya</td><td>Yellow bridal lehenga/saree at marriage.</td><td>Piya ke ghar peeli dress.</td></tr>
+              <tr><td>Kathra</td><td>Silver/bronze body ornament worn by men/women.</td><td>Body ornament.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="visual">
+            <h3>Jewelry Detail</h3>
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Traditional%20silver%20waist%20belt%20worn%20by%20a%20Bhil%20community%20woman,%20Jhabua,%20Madhya%20Pradesh,%20India.jpg" alt="Traditional silver waist belt worn by a Bhil community woman in Jhabua, Madhya Pradesh" loading="lazy" decoding="async">
+            <div class="figcap">Image: Wikimedia Commons, traditional silver waist belt, Bhil community woman, Jhabua. License: CC BY-SA 4.0.</div>
+          </div>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Tight dhoti = <strong>Thepana</strong>.</li>
+              <li>White safa = <strong>Potya</strong>.</li>
+              <li>Red saree = <strong>Sindoori</strong>; yellow bridal dress = <strong>Piriya</strong>.</li>
+              <li>Head silver chain = <strong>Jhela</strong>.</li>
+              <li>Kadaknath chicken is linked with Bhil hunting/food in class.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Tang dhoti ko kya kehte hain?</summary><div>Thepana / The Pana.</div></details>
+            <details><summary>Safed safa ka term?</summary><div>Potya.</div></details>
+            <details><summary>Red saree aur yellow bridal dress?</summary><div>Sindoori aur Piriya.</div></details>
+            <details><summary>Bhil ka favourite makka-chhachh food?</summary><div>Rabdi / Rabari.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="economic" style="--accent: var(--purple)">
+        <div class="topic-head">
+          <h2>🌾 Economic Features: Farming & Crafts</h2>
+          <p>Bhil economy ka primary base agriculture bataya gaya, especially jhum/shifting cultivation terms.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Agriculture Terms</h3>
+              <table>
+                <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+                <tbody>
+                  <tr><td>Chi Mata / Chimata</td><td>Hilly areas me ki jane wali jhum agriculture.</td></tr>
+                  <tr><td>Daj / Daja</td><td>Plain areas me ki jane wali jhum agriculture.</td></tr>
+                  <tr><td>Palvi</td><td>Hill areas me rehne wale Bhil.</td></tr>
+                  <tr><td>Vagdi / Bagdi</td><td>Plain areas me rehne wale Bhil.</td></tr>
+                  <tr><td>Halma / Halwa pratha</td><td>Mutual help tradition: need par community farm-work help karti hai, baad me reciprocate.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="visual">
+              <h3>Memory Flow</h3>
+              <div class="flow">
+                <span>Hill Bhil<br>Palvi</span>
+                <span>Hill Jhum<br>Chi Mata</span>
+                <span>Plain Bhil<br>Vagdi → Daj</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Craft & Market Work</h3>
+            <ul>
+              <li>Forest produce aur market selling se income.</li>
+              <li><strong>Alirajpur ke Jobat</strong> area ke Bhil shilp-kala me skilled; <strong>Panja Daria</strong> banate hain.</li>
+              <li><strong>Neemuch ka Nandana Block Print</strong> famous bataya.</li>
+            </ul>
+          </div>
+
+          <div class="hot">
+            <h3>🔥 Exam Hot</h3>
+            <ul>
+              <li>Hill jhum = <strong>Chi Mata</strong>; plain jhum = <strong>Daj</strong>.</li>
+              <li>Hill Bhil = <strong>Palvi</strong>; plain Bhil = <strong>Vagdi</strong>.</li>
+              <li>Jobat, Alirajpur = <strong>Panja Daria</strong>; Neemuch = <strong>Nandana Block Print</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <details><summary>Pahadi jhum agriculture ka term?</summary><div>Chi Mata / Chimata.</div></details>
+            <details><summary>Plain-area jhum agriculture ka term?</summary><div>Daj / Daja.</div></details>
+            <details><summary>Hill aur plain Bhils ko kya kehte hain?</summary><div>Hill: Palvi; Plain: Vagdi / Bagdi.</div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="master" id="fullforms" style="--accent: var(--cyan)">
+        <div class="topic-head">
+          <h2>📘 Master Full Forms & Terms</h2>
+          <p>Transcript me technical full forms kam the, par exam terms ko ek jagah consolidate kiya gaya hai.</p>
+        </div>
+        <div class="topic-body">
+          <table>
+            <thead><tr><th>Term</th><th>Full / Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>SC</td><td>Scheduled Caste - Anusuchit Jati.</td></tr>
+              <tr><td>ST</td><td>Scheduled Tribe - Anusuchit Janjati.</td></tr>
+              <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission.</td></tr>
+              <tr><td>GI Tag</td><td>Geographical Indication tag - place-linked product recognition.</td></tr>
+              <tr><td>ODOP</td><td>One District One Product - district-specific product scheme.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="master" id="hotfacts" style="--accent: var(--orange)">
+        <div class="topic-head">
+          <h2>🔥 Master Exam Hot Facts</h2>
+          <p>One-page rapid-fire revision before test.</p>
+        </div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Constitution</h3>
+              <ul>
+                <li>Article 330 = Lok Sabha SC/ST reservation.</li>
+                <li>Article 332 = Assembly SC/ST reservation.</li>
+                <li>Article 334 = reservation extension; 104th Amendment 2019.</li>
+                <li>Article 342 = ST list.</li>
+                <li>Article 366(25) = ST definition.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bhil Rapid Facts</h3>
+              <ul>
+                <li>Bhil word = Sanskrit Bhilla / Dravid Bil; meaning dhanush-baan.</li>
+                <li>MPPSC Pre 2017: Bhil word Sanskrit ke Bhilla se.</li>
+                <li>Colonel Tod = Vanputra; Ptolemy/Tolmi = Tirandaz.</li>
+                <li>Original place = Kumbhalgarh, Rajasthan.</li>
+                <li>Largest MP tribe = Bhil; largest sub-tribe = Bhilala.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Social Terms</h3>
+              <ul>
+                <li>Ku/Tapra = house; Falya = huts group; Pal = falya group.</li>
+                <li>Pal chief = Ghameti; Patel = administration; Tadvi = Patel assistant.</li>
+                <li>Madvi/Bhadvo/Bhakta = most pious sub-tribe.</li>
+                <li>Sanyan = cat worship; Ningwal = no fish; Singhadiya = bull worship.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Culture & Economy</h3>
+              <ul>
+                <li>Bhagoria = Holi se 7 din pehle.</li>
+                <li>Thepana = tight dhoti; Potya = white safa; Sindoori = red saree; Piriya = yellow bridal dress.</li>
+                <li>Rabdi/Rabari = makki + chhachh food.</li>
+                <li>Chi Mata = hill jhum; Daj = plain jhum.</li>
+                <li>Palvi = hill Bhil; Vagdi = plain Bhil.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="master" id="checklist" style="--accent: var(--green)">
+        <div class="topic-head">
+          <h2>✅ Master Revision Checklist</h2>
+          <p>Checkboxes browser me save rahenge. Har item ko revise karne ke baad tick karo.</p>
+        </div>
+        <div class="topic-body">
+          <div class="note">
+            <h3 id="checkCount">0 / 0 Complete</h3>
+          </div>
+          <div class="checklist" id="checklistItems">
+            <label class="check"><input type="checkbox"><span>Article 330, 332, 334, 335, 342, 366(25) revise kar liye.</span></label>
+            <label class="check"><input type="checkbox"><span>15(4), 15(5), 16(4A), 16(4B), 46, 164(1), 243D/T, 244(1)/(2), 275, 350A revise kar liye.</span></label>
+            <label class="check"><input type="checkbox"><span>Bhil word = Bhilla/Bil = dhanush-baan yaad hai.</span></label>
+            <label class="check"><input type="checkbox"><span>Colonel Tod = Vanputra; Tolmi = Tirandaz; Pulin; Katha Sarit Sagar yaad hai.</span></label>
+            <label class="check"><input type="checkbox"><span>Kumbhalgarh/Dholiya Tol original place yaad hai.</span></label>
+            <label class="check"><input type="checkbox"><span>Western MP districts: Jhabua, Alirajpur, Barwani, Khargone, Khandwa, Dhar, Ratlam, Mandsaur, Neemuch yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>2011 numbers: tribal share 21.1%, Bhil 46,18,068, largest MP tribe yaad hai.</span></label>
+            <label class="check"><input type="checkbox"><span>Bhilala largest sub-tribe aur Madvi/Bhadvo/Bhakta pious sub-tribe yaad hai.</span></label>
+            <label class="check"><input type="checkbox"><span>Sanyan, Ningwal, Singhadiya gotra markers yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>Ku/Tapra, Falya, Pal, Bhomat settlement terms yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>Kangi, Gatti, Supa/Chhala, Muhalda household terms yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>Ghameti, Patel, Tadvi, Kotwar, Badwa, Gayak, Pujar roles yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>Rabdi/Rabari, mahua, tadi, jowar-makka roti, Kadaknath facts revise ho gaye.</span></label>
+            <label class="check"><input type="checkbox"><span>Thepana, Potya, Angrakha, Jhela, Sindoori, Piriya, Kathra dress terms yaad hain.</span></label>
+            <label class="check"><input type="checkbox"><span>Chi Mata/Daj, Palvi/Vagdi, Halma, Panja Daria, Nandana Block Print revise ho gaye.</span></label>
+            <label class="check"><input type="checkbox"><span>Upcoming topic: Bhil religious features next class me continue honge.</span></label>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <strong>Upcoming Topic:</strong> Transcript ke end me teacher ne religious features continue nahi kiye. Next class me Bhil devta/religious features cover honge.
+  </footer>
+
+  <script>
+    const sections = [...document.querySelectorAll('section.topic, section.master')];
+    const toc = document.getElementById('toc');
+    const jumpSelects = [...document.querySelectorAll('.jump')];
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const themeBtn = document.getElementById('themeBtn');
+    const expandBtn = document.getElementById('expandBtn');
+    const checklist = [...document.querySelectorAll('#checklistItems input')];
+    const checkCount = document.getElementById('checkCount');
+
+    function labelFor(section) {
+      return section.querySelector('h2').textContent.trim();
+    }
+
+    sections.forEach((section) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + section.id;
+      a.textContent = labelFor(section);
+      li.appendChild(a);
+      toc.appendChild(li);
+
+      jumpSelects.forEach((select) => {
+        const option = document.createElement('option');
+        option.value = section.id;
+        option.textContent = labelFor(section);
+        select.appendChild(option);
+      });
+    });
+
+    jumpSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        document.getElementById(select.value).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    const savedTheme = localStorage.getItem('class7-theme') || 'dark';
+    document.documentElement.dataset.theme = savedTheme;
+    themeBtn.textContent = savedTheme === 'dark' ? 'Light Theme' : 'Dark Theme';
+
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('class7-theme', next);
+      themeBtn.textContent = next === 'dark' ? 'Light Theme' : 'Dark Theme';
+    });
+
+    expandBtn.addEventListener('click', () => {
+      const details = [...document.querySelectorAll('details')];
+      const shouldOpen = details.some((detail) => !detail.open);
+      details.forEach((detail) => detail.open = shouldOpen);
+      expandBtn.textContent = shouldOpen ? 'Collapse All' : 'Expand All';
+    });
+
+    function updateProgress() {
+      const total = checklist.length;
+      const done = checklist.filter((box) => box.checked).length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      progressFill.style.width = pct + '%';
+      progressText.textContent = pct + '%';
+      checkCount.textContent = done + ' / ' + total + ' Complete';
+      localStorage.setItem('class7-checklist', JSON.stringify(checklist.map((box) => box.checked)));
+    }
+
+    const savedChecks = JSON.parse(localStorage.getItem('class7-checklist') || '[]');
+    checklist.forEach((box, index) => {
+      box.checked = Boolean(savedChecks[index]);
+      box.addEventListener('change', updateProgress);
+    });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        document.querySelectorAll('.toc a').forEach((a) => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+        jumpSelects.forEach((select) => select.value = id);
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+    sections.forEach((section) => observer.observe(section));
+
+    function wikimediaRedirectFrom(src) {
+      if (src.includes('Special:Redirect/file/')) return src;
+      return src;
+    }
+
+    document.querySelectorAll('img').forEach((img) => {
+      const original = img.currentSrc || img.src;
+      const test = new Image();
+      test.decoding = 'async';
+      test.onload = () => {};
+      test.onerror = () => {
+        const retry = wikimediaRedirectFrom(original);
+        if (retry !== img.src) {
+          img.src = retry;
+          return;
+        }
+        const fallback = document.createElement('div');
+        fallback.className = 'broken';
+        fallback.innerHTML = 'Image load nahi hui. Source open karein: <a href="' + original + '" target="_blank" rel="noopener">image link</a>';
+        img.insertAdjacentElement('afterend', fallback);
+      };
+      test.src = original;
+    });
+  </script>
+</body>
+</html>

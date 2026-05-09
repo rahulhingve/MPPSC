@@ -1,0 +1,115 @@
+name: Build and Deploy MPPSC Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare site folder
+        run: |
+          mkdir -p dist
+          rsync -av ./ dist/ \
+            --exclude ".git" \
+            --exclude ".github" \
+            --exclude "dist" \
+            --exclude "node_modules"
+
+      - name: Generate files.json
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const root = path.join(process.cwd(), 'dist');
+          const allowed = new Set([
+            '.html', '.md', '.pdf', '.txt', '.opml', '.mm', '.apkg'
+          ]);
+          const ignoreDirs = new Set(['.git', '.github', 'node_modules']);
+
+          const files = [];
+
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (ignoreDirs.has(entry.name)) continue;
+
+              const full = path.join(dir, entry.name);
+              const rel = path.relative(root, full).split(path.sep).join('/');
+
+              if (entry.isDirectory()) {
+                walk(full);
+                continue;
+              }
+
+              const ext = path.extname(entry.name).toLowerCase();
+              if (!allowed.has(ext)) continue;
+              if (rel === 'index.html' || rel === 'files.json') continue;
+
+              const parts = rel.split('/');
+              const topFolder = parts.length > 1 ? parts[0] : 'root';
+              const classMatch = entry.name.match(/class\s*([0-9]+(?:\.[0-9]+)?)/i);
+
+              files.push({
+                path: rel,
+                name: entry.name,
+                ext,
+                folder: topFolder,
+                classNumber: classMatch ? classMatch[1] : null
+              });
+            }
+          }
+
+          walk(root);
+
+          files.sort((a, b) =>
+            a.path.localeCompare(b.path, undefined, { numeric: true, sensitivity: 'base' })
+          );
+
+          fs.writeFileSync(
+            path.join(root, 'files.json'),
+            JSON.stringify({
+              generatedAt: new Date().toISOString(),
+              total: files.length,
+              files
+            }, null, 2)
+          );
+          NODE
+
+      - name: Disable Jekyll
+        run: touch dist/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

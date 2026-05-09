@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPPSC – Tribal Constitutional Provisions | Revision Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f1117;
+  --surface: #161b27;
+  --surface2: #1d2435;
+  --surface3: #252d42;
+  --border: rgba(255,255,255,0.08);
+  --text: #e4e8f0;
+  --muted: #8a95aa;
+  --faint: #4a5568;
+  --accent: #4f9cf9;
+  --accent-soft: rgba(79,156,249,0.12);
+  --green: #48bb78;
+  --green-soft: rgba(72,187,120,0.12);
+  --orange: #f6ad55;
+  --orange-soft: rgba(246,173,85,0.12);
+  --purple: #b794f4;
+  --purple-soft: rgba(183,148,244,0.12);
+  --red: #fc8181;
+  --red-soft: rgba(252,129,129,0.12);
+  --teal: #4fd1c5;
+  --teal-soft: rgba(79,209,197,0.12);
+  --yellow: #f6e05e;
+  --yellow-soft: rgba(246,224,94,0.10);
+  --radius: 10px;
+  --radius-lg: 14px;
+}
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface2: #edf2fb;
+  --surface3: #e2eaf6;
+  --border: rgba(0,0,0,0.08);
+  --text: #1a202c;
+  --muted: #4a5568;
+  --faint: #a0aec0;
+  --accent: #2b6cb0;
+  --accent-soft: rgba(43,108,176,0.10);
+  --green: #276749;
+  --green-soft: rgba(39,103,73,0.10);
+  --orange: #c05621;
+  --orange-soft: rgba(192,86,33,0.10);
+  --purple: #6b46c1;
+  --purple-soft: rgba(107,70,193,0.10);
+  --red: #c53030;
+  --red-soft: rgba(197,48,48,0.10);
+  --teal: #285e61;
+  --teal-soft: rgba(40,94,97,0.10);
+  --yellow: #975a16;
+  --yellow-soft: rgba(151,90,22,0.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.65;min-height:100vh;padding-bottom:80px}
+a{color:var(--accent);text-decoration:none}
+h1,h2,h3,h4{font-family:'Instrument Serif',serif;line-height:1.2;text-wrap:balance}
+
+/* ── TOP BAR ── */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(15,17,23,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;height:58px}
+[data-theme="light"] .topbar{background:rgba(245,247,250,0.92)}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.logo-badge{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(79,156,249,0.25);border-radius:6px;padding:3px 10px;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.topbar h1{font-size:clamp(0.9rem,2vw,1.05rem);font-family:'Inter',sans-serif;font-weight:600;color:var(--text)}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.theme-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:0.82rem;display:flex;align-items:center;gap:6px;transition:all 180ms ease}
+.theme-btn:hover{background:var(--surface3);color:var(--text)}
+.progress-bar{position:fixed;top:58px;left:0;width:0%;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal));z-index:200;transition:width 100ms linear}
+
+/* ── LAYOUT ── */
+.wrapper{max-width:900px;margin:0 auto;padding:clamp(1.5rem,4vw,2.5rem) clamp(1rem,4vw,2rem)}
+.page-header{margin-bottom:2rem;padding:1.8rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-soft) 0%,transparent 60%);pointer-events:none}
+.page-header .kgs-tag{font-size:0.72rem;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem}
+.page-header h2{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--text);margin-bottom:0.4rem}
+.page-header p{color:var(--muted);font-size:0.9rem}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
+.chip{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:4px 12px;font-size:0.75rem;color:var(--muted)}
+.chip span{font-weight:600;color:var(--text)}
+
+/* ── TOC ── */
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem 1.6rem;margin-bottom:2rem}
+.toc h3{font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.toc a{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;font-size:0.85rem;color:var(--muted);transition:all 150ms ease;border:1px solid transparent}
+.toc a:hover{background:var(--surface2);border-color:var(--border);color:var(--text)}
+.toc a .toc-num{min-width:22px;height:22px;border-radius:6px;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:var(--accent)}
+
+/* ── SECTION ── */
+.section{margin-bottom:2.2rem}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border)}
+.section-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.section-title{font-size:clamp(1.05rem,2.5vw,1.2rem);font-weight:600;font-family:'Inter',sans-serif}
+.section-subtitle{font-size:0.8rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:400}
+
+/* ── CARDS ── */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;transition:border-color 180ms ease,transform 180ms ease}
+.card:hover{border-color:rgba(79,156,249,0.35);transform:translateY(-2px)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:0.7rem}
+.card-article{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:100px;flex-shrink:0}
+.card-title{font-size:0.96rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:0.4rem}
+.card-desc{font-size:0.84rem;color:var(--muted);line-height:1.6}
+.tag-blue{background:var(--accent-soft);color:var(--accent)}
+.tag-green{background:var(--green-soft);color:var(--green)}
+.tag-orange{background:var(--orange-soft);color:var(--orange)}
+.tag-purple{background:var(--purple-soft);color:var(--purple)}
+.tag-red{background:var(--red-soft);color:var(--red)}
+.tag-teal{background:var(--teal-soft);color:var(--teal)}
+.tag-yellow{background:var(--yellow-soft);color:var(--yellow)}
+
+/* ── STAT TABLE ── */
+.stat-table{width:100%;border-collapse:collapse;font-size:0.86rem;background:var(--surface);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.stat-table th{background:var(--surface3);color:var(--muted);font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+.stat-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--text)}
+.stat-table tr:last-child td{border-bottom:none}
+.stat-table tr:hover td{background:var(--surface2)}
+.highlight-val{font-weight:700;color:var(--accent)}
+.pill{display:inline-block;padding:2px 8px;border-radius:100px;font-size:0.72rem;font-weight:600}
+
+/* ── CALLOUT ── */
+.callout{display:flex;gap:12px;padding:1rem 1.2rem;border-radius:var(--radius);margin:0.8rem 0;font-size:0.86rem;border:1px solid transparent}
+.callout-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.callout-body strong{display:block;margin-bottom:3px;font-size:0.88rem}
+.callout-body p,.callout-body ul{color:var(--muted);line-height:1.6}
+.callout-body ul{padding-left:1.1rem}
+.callout-body ul li{margin-bottom:3px}
+.callout.info{background:var(--accent-soft);border-color:rgba(79,156,249,0.25)}
+.callout.info .callout-icon,.callout.info strong{color:var(--accent)}
+.callout.success{background:var(--green-soft);border-color:rgba(72,187,120,0.25)}
+.callout.success .callout-icon,.callout.success strong{color:var(--green)}
+.callout.warn{background:var(--orange-soft);border-color:rgba(246,173,85,0.25)}
+.callout.warn .callout-icon,.callout.warn strong{color:var(--orange)}
+.callout.tip{background:var(--purple-soft);border-color:rgba(183,148,244,0.25)}
+.callout.tip .callout-icon,.callout.tip strong{color:var(--purple)}
+
+/* ── ARTICLE MAP ── */
+.article-list{display:flex;flex-direction:column;gap:0.6rem}
+.article-row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);font-size:0.86rem;transition:border-color 150ms ease}
+.article-row:hover{border-color:rgba(79,156,249,0.3)}
+.article-ref{font-weight:700;font-size:0.8rem}
+.article-content{color:var(--muted);line-height:1.55}
+.article-content strong{color:var(--text);font-weight:600}
+
+/* ── MEMORY TRICKS ── */
+.memory-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem}
+.memory-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;display:flex;flex-direction:column;gap:8px}
+.memory-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.memory-trick{font-size:1rem;color:var(--text);font-weight:600;line-height:1.4}
+.memory-explain{font-size:0.82rem;color:var(--muted)}
+
+/* ── QUIZ ── */
+.quiz-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.6rem;margin-top:2rem}
+.quiz-section h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--text)}
+.q-item{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.q-text{font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.8rem}
+.q-num{color:var(--accent);margin-right:6px}
+.options{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;align-items:flex-start;gap:8px;padding:7px 12px;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-size:0.84rem;color:var(--muted);transition:all 140ms ease;background:var(--surface2)}
+.opt:hover{border-color:var(--accent);color:var(--text)}
+.opt.correct{background:var(--green-soft)!important;border-color:var(--green)!important;color:var(--green)!important}
+.opt.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red)!important}
+.opt.disabled{cursor:default;pointer-events:none}
+.opt-key{min-width:20px;height:20px;border-radius:5px;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:1px}
+.q-explain{display:none;margin-top:8px;padding:8px 12px;background:var(--surface3);border-radius:8px;font-size:0.82rem;color:var(--muted);border-left:3px solid var(--green)}
+.q-explain.show{display:block}
+.quiz-score{background:var(--accent-soft);border:1px solid rgba(79,156,249,0.25);border-radius:var(--radius);padding:0.9rem 1.2rem;margin-top:1.2rem;display:none;text-align:center;font-size:0.9rem;color:var(--accent);font-weight:600}
+
+/* ── COMPARISON TABLE ── */
+.comp-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+.comp-table{width:100%;border-collapse:collapse;font-size:0.84rem;background:var(--surface)}
+.comp-table th{background:var(--surface3);color:var(--accent);font-weight:700;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;padding:11px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.comp-table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--muted);line-height:1.55}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:var(--surface2)}
+.comp-table td:first-child{font-weight:600;color:var(--text);white-space:nowrap}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:'';position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.1rem}
+.tl-dot{position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.tl-year{font-size:0.72rem;font-weight:700;color:var(--accent);margin-bottom:2px}
+.tl-text{font-size:0.85rem;color:var(--muted)}
+.tl-text strong{color:var(--text)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .memory-grid{grid-template-columns:1fr}
+  .article-row{grid-template-columns:1fr;gap:4px}
+  .article-ref{margin-bottom:2px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- TOP BAR -->
+<nav class="topbar">
+  <div class="topbar-left">
+    <span class="logo-badge">MPPSC 2024</span>
+    <h1>Tribal Constitutional Provisions — Class 4</h1>
+  </div>
+  <div class="topbar-right">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg id="themeIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="themeLabel">Light</span>
+    </button>
+  </div>
+</nav>
+
+<div class="wrapper">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="kgs-tag">KGS MP Exams · By Pramod Sir · 12 March 2024</div>
+    <h2>म.प्र. में जनजातियों से संबंधित<br>संवैधानिक प्रावधान</h2>
+    <p>Constitutional Provisions Related to Scheduled Tribes in Madhya Pradesh — Complete Revision Notes</p>
+    <div class="meta-chips">
+      <div class="chip">📚 <span>Class 4, Part 1</span></div>
+      <div class="chip">⏱️ <span>~81 mins covered</span></div>
+      <div class="chip">📌 <span>MPPSC Pre 2024</span></div>
+      <div class="chip">🎯 <span>Exam-focused</span></div>
+    </div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>📋 Topics Covered</h3>
+    <div class="toc-grid">
+      <a href="#s1"><div class="toc-num">1</div>Quick Stats Recap</a>
+      <a href="#s2"><div class="toc-num">2</div>Types of Provisions</a>
+      <a href="#s3"><div class="toc-num">3</div>Definition Articles</a>
+      <a href="#s4"><div class="toc-num">4</div>Educational & Cultural</a>
+      <a href="#s5"><div class="toc-num">5</div>Social Rights</a>
+      <a href="#s6"><div class="toc-num">6</div>Economic Provisions</a>
+      <a href="#s7"><div class="toc-num">7</div>Political Rights</a>
+      <a href="#s8"><div class="toc-num">8</div>Administrative</a>
+      <a href="#s9"><div class="toc-num">9</div>Special Provisions (371)</a>
+      <a href="#s10"><div class="toc-num">10</div>Schedules 5 & 6</a>
+      <a href="#s11"><div class="toc-num">11</div>Memory Tricks</div></a>
+      <a href="#s12"><div class="toc-num">12</div>MCQ Practice</a>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 1 ══ QUICK STATS RECAP -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-icon tag-blue" style="background:var(--accent-soft)">📊</div>
+      <div>
+        <div class="section-title">Quick Stats Recap (Previous Class)</div>
+        <div class="section-subtitle">Tribal Population Data — Madhya Pradesh (Census 2011)</div>
+      </div>
+    </div>
+
+    <table class="stat-table" style="margin-bottom:1rem">
+      <thead><tr><th>Fact</th><th>Value</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>ST Population in MP (2011)</td><td class="highlight-val">1,53,16,784</td><td>🔑 Must remember</td></tr>
+        <tr><td>ST % of India's total STs</td><td class="highlight-val">14.7%</td><td>MP has 2nd largest ST pop.</td></tr>
+        <tr><td>ST % of MP's total population</td><td class="highlight-val">21.1%</td><td>1 in 5 people in MP is ST</td></tr>
+        <tr><td>India's total ST %</td><td class="highlight-val">8.6%</td><td>of India's total population</td></tr>
+        <tr><td>Sex Ratio (STs in MP)</td><td class="highlight-val">984</td><td>Girls per 1000 boys</td></tr>
+        <tr><td>Highest sex ratio (district)</td><td class="highlight-val">Balaghat</td><td>1050 girls per 1000 boys</td></tr>
+        <tr><td>Population Density (ST areas)</td><td class="highlight-val">50 persons/km²</td><td>Sparse tribal habitation</td></tr>
+        <tr><td>Urban tribal population</td><td class="highlight-val">~6.8%</td><td>Most urban: Bhind; Least: Dindori</td></tr>
+      </tbody>
+    </table>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div class="card">
+        <div class="card-article tag-green pill">Most Tribes (Numbers)</div>
+        <div class="card-title" style="margin-top:8px">By Absolute Number</div>
+        <div class="card-desc">
+          <strong style="color:var(--green)">1st</strong> Dhar &nbsp;|&nbsp;
+          <strong style="color:var(--teal)">2nd</strong> Barwani &nbsp;|&nbsp;
+          <strong>3rd</strong> Jhabua
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-article tag-orange pill">Most Tribes (%)</div>
+        <div class="card-title" style="margin-top:8px">By Percentage</div>
+        <div class="card-desc">
+          <strong style="color:var(--orange)">1st</strong> Alirajpur &nbsp;|&nbsp;
+          <strong>2nd</strong> Jhabua &nbsp;|&nbsp;
+          <strong>3rd</strong> Barwani
+        </div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:1rem">
+      <div class="callout-icon">📍</div>
+      <div class="callout-body">
+        <strong>Districts with LEAST Tribes (Exam Trap!)</strong>
+        <p>By number & percentage: <strong>Bhind, Datia, Morena</strong></p>
+      </div>
+    </div>
+
+    <div style="margin-top:1.2rem">
+      <div class="card-title" style="font-family:Inter;font-weight:700;margin-bottom:0.8rem;font-size:0.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Geographical Distribution (4 Zones)</div>
+      <table class="stat-table">
+        <thead><tr><th>Zone</th><th>% of STs</th><th>Major Tribes</th></tr></thead>
+        <tbody>
+          <tr><td>🌅 <strong>Western</strong></td><td class="highlight-val">~36%</td><td>Bhil, Bilala, Korku</td></tr>
+          <tr><td>🌄 <strong>Northern</strong></td><td>~26%</td><td>Sahariya, Kherwar, Saur</td></tr>
+          <tr><td>🌞 <strong>Eastern</strong></td><td>~23%</td><td>Baiga, Kol, Gond</td></tr>
+          <tr><td>🌿 <strong>Southern</strong></td><td>~14%</td><td>Korku, Abujh Maria, Halba</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn" style="margin-top:1rem">
+      <div class="callout-icon">⚠️</div>
+      <div class="callout-body">
+        <strong>Article 342 — Notified Tribes</strong>
+        <p>Originally 46 tribes notified in MP → 3 removed in 2003 → Currently <strong>43 tribes</strong> in MP | Highest: <strong>Odisha (62 tribes)</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2 ══ TYPES OF PROVISIONS -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--purple-soft)">⚖️</div>
+      <div>
+        <div class="section-title">3 Types of Provisions</div>
+        <div class="section-subtitle">Constitutional vs Statutory vs Executive</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-article tag-blue pill">Type 1</div>
+        <div class="card-title">संवैधानिक प्रावधान<br><span style="font-size:0.82rem;font-weight:400;color:var(--muted)">Constitutional Provisions</span></div>
+        <div class="card-desc">Provisions that were part of the Constitution at the time of its making OR added later via <strong>Constitutional Amendment (Art. 368)</strong>.<br><br>
+        <em>Examples: Art. 46, Art. 338A, Art. 15(4)</em></div>
+      </div>
+      <div class="card">
+        <div class="card-article tag-teal pill">Type 2</div>
+        <div class="card-title">सांविधिक प्रावधान<br><span style="font-size:0.82rem;font-weight:400;color:var(--muted)">Statutory Provisions</span></div>
+        <div class="card-desc">Laws made by <strong>Parliament through ordinary legislation</strong> (simple/special majority) — NOT constitutional amendments.<br><br>
+        <em>Example: SC/ST (Prevention of Atrocities) Act, 1989</em></div>
+      </div>
+      <div class="card">
+        <div class="card-article tag-orange pill">Type 3</div>
+        <div class="card-title">कार्यकारी प्रावधान<br><span style="font-size:0.82rem;font-weight:400;color:var(--muted)">Executive Provisions</span></div>
+        <div class="card-desc">Provisions made by the <strong>Executive (Government Orders/Schemes)</strong>, not requiring legislation.<br><br>
+        <em>Example: National ST Commission (1978) — before it became constitutional via 89th Amendment</em></div>
+      </div>
+    </div>
+
+    <div class="callout tip" style="margin-top:1rem">
+      <div class="callout-icon">💡</div>
+      <div class="callout-body">
+        <strong>Key Difference</strong>
+        <p><strong>Constitutional amendment</strong> needs Special Majority (2/3 members + 50% state ratification for some) under <strong>Art. 368 (Part 20)</strong>. Ordinary laws need Simple/Absolute majority only. Art. 368 was borrowed from <strong>South Africa</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 3 ══ DEFINITION ARTICLES -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--teal-soft)">📖</div>
+      <div>
+        <div class="section-title">Definition-Related Articles</div>
+        <div class="section-subtitle">Where is "Scheduled Tribe" defined?</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-teal">Art. 366(25)</span><br><small style="color:var(--muted)">Part 19</small></div>
+        <div class="article-content"><strong>Definition of Scheduled Tribes</strong> — Article 366 contains definitions of various terms used in the Constitution. Clause 25 gives the definition of STs. Note: The definition here is not fully clear/precise — it says STs are those notified under Article 342.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-blue">Art. 342(1)</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>Power to Specify STs</strong> — The <strong>President</strong>, after consulting the <strong>Governor</strong> of a State (or Administrator of UT), may by <em>public notification</em> specify which communities are STs. Parliament can later amend this list.<br><br>
+        📅 On <strong>26 Jan 1950</strong>, President notified <strong>705 tribes</strong> across India (Art. 342(1)). MP had <strong>46 tribes</strong> initially, now <strong>43</strong>. Odisha leads with <strong>62 tribes</strong>.</div>
+      </div>
+    </div>
+
+    <div class="callout info" style="margin-top:1rem">
+      <div class="callout-icon">🔍</div>
+      <div class="callout-body">
+        <strong>Why "Scheduled" Tribes?</strong>
+        <p>Because on 26 January 1950, these tribes were scheduled/listed (notified) under Art. 342(1) — hence the term <em>"Anusuchit Janjati"</em> (Scheduled Tribe / ST).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 4 ══ EDUCATIONAL & CULTURAL -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-soft)">🎓</div>
+      <div>
+        <div class="section-title">Educational & Cultural Rights</div>
+        <div class="section-subtitle">Articles in Part 3 (Fundamental Rights)</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-blue">Art. 15</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Prohibition of Discrimination</strong> — No discrimination on grounds of religion, caste, sex, place of birth, or residence.<br>
+        <strong>Art. 15(4)</strong> — Added by <strong>1st Constitutional Amendment, 1951</strong> — State may make <em>special provisions</em> for socially/educationally backward classes including <strong>SC/ST</strong> (e.g., reservations in engineering, medical colleges).</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-green">Art. 16</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Equality of Opportunity in Public Employment</strong><br>
+        <strong>Art. 16(4)</strong> — Reservations in appointments for backward/ST communities.<br>
+        <strong>Art. 16(4A)</strong> — <strong>Reservation in promotions</strong> for SCs/STs.<br>
+        <strong>Art. 16(4B)</strong> — <strong>Backlog posts</strong> — unfilled vacancies carried forward to next year.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-purple">Art. 29</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Protection of Interests of Minorities</strong> — Any group with a <em>distinct language, script, or culture</em> has the right to conserve it. This protects tribal culture, language, and traditions.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-orange">Art. 46</span><br><small style="color:var(--muted)">Part 4 (DPSP)</small></div>
+        <div class="article-content"><strong>Promotion of Educational & Economic Interests</strong> — It is the State's <em>duty</em> (Directive Principle) to promote educational and economic interests of SCs, STs, and other weaker sections, and protect them from social injustice.</div>
+      </div>
+    </div>
+
+    <div class="callout success" style="margin-top:1rem">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body">
+        <strong>Remember: Fundamental Rights vs DPSP</strong>
+        <p>Arts. 14–18 (Equality), 19–22 (Freedom), 23–24 (Against Exploitation), 25–28 (Religion), <strong>29–30 (Culture & Education)</strong>, 32 (Constitutional Remedies) are <strong>Fundamental Rights (Part 3)</strong>. Art. 46 is a <strong>Directive Principle (Part 4)</strong> — not enforceable in court but binding on State policy.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 5 ══ SOCIAL RIGHTS -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--red-soft)">🤝</div>
+      <div>
+        <div class="section-title">Social Protection Articles</div>
+        <div class="section-subtitle">Against exploitation, untouchability & child labour</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-red">Art. 17</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Abolition of Untouchability (छुआछूत का अंत)</strong> — Untouchability is abolished and its practice is a punishable offence. Protects tribal communities from caste-based discrimination.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-red">Art. 23</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Prohibition of Bonded Labour (बंधुआ मजदूरी)</strong> — Traffic in human beings and forced labour (begar) are prohibited. Critical for tribal communities who were historically exploited as bonded labourers.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-orange">Art. 24</span><br><small style="color:var(--muted)">Part 3</small></div>
+        <div class="article-content"><strong>Prohibition of Child Labour</strong> — No child below <strong>14 years</strong> shall be employed in any factory or mine or engaged in any hazardous work. Protects tribal children from exploitation.</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-icon">🧠</div>
+      <div class="callout-body">
+        <strong>Trick: Art. 23 vs 24</strong>
+        <p><strong>"Person first, then Son"</strong> — Art. 23 = Adults (bonded labour) | Art. 24 = Children (child labour). Or: <strong>23 = बंधुआ, 24 = बच्चे</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 6 ══ ECONOMIC PROVISIONS -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--yellow-soft)">💰</div>
+      <div>
+        <div class="section-title">Economic Provisions</div>
+        <div class="section-subtitle">Financial support & grants for tribal welfare</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-yellow">Art. 275</span><br><small style="color:var(--muted)">Part 12</small></div>
+        <div class="article-content"><strong>Grants from Union to States</strong> — Parliament may provide <em>grants-in-aid</em> from the Consolidated Fund of India to states for tribal welfare and development of Scheduled Areas. Central government provides money to state governments specifically for ST upliftment.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-orange">Art. 46</span><br><small style="color:var(--muted)">Part 4 (DPSP)</small></div>
+        <div class="article-content"><strong>Economic Interests (DPSP)</strong> — State shall promote economic interests of SCs, STs and protect them from social injustice and all forms of exploitation. (Also listed under educational — dual purpose article.)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 7 ══ POLITICAL RIGHTS -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--accent-soft)">🗳️</div>
+      <div>
+        <div class="section-title">Political Rights & Reservations</div>
+        <div class="section-subtitle">Representation in Lok Sabha, State Assembly, Panchayats & ULBs</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-blue">Art. 330</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>Reservation in Lok Sabha</strong> — Seats reserved for SCs and STs in <strong>Lok Sabha</strong> proportionate to their population.<br>🔢 <strong>MP sends 47 ST members to Lok Sabha</strong></div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-teal">Art. 332</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>Reservation in State Assemblies (Vidhan Sabha)</strong> — STs get reserved seats in State Legislative Assemblies. <strong>MP has 47 ST reserved seats</strong> in Vidhan Sabha.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-purple">Art. 334</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>Reservation Duration</strong> — Originally, ST reservation was for <strong>10 years</strong> from 1950. Extended multiple times. The <strong>104th Constitutional Amendment (2019)</strong> extended it to <strong>2030</strong>. <br>⚠️ The same amendment <strong>abolished</strong> the Anglo-Indian reserved seats.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-green">Art. 243D</span><br><small style="color:var(--muted)">Part 9 (Panchayats)</small></div>
+        <div class="article-content"><strong>Reservation in Panchayats</strong> — Seats reserved for STs in Gram Panchayat, Janpad Panchayat and Zila Panchayat. Also includes women's reservation.<br>🧠 <strong>Trick:</strong> D से "Daas" (दास) → poor/weaker sections → ST reservation in Panchayats</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-orange">Art. 243T</span><br><small style="color:var(--muted)">Part 9A (ULBs)</small></div>
+        <div class="article-content"><strong>Reservation in Urban Local Bodies</strong> — Seats reserved for STs in Nagar Panchayat, Nagar Palika and Nagar Nigam.<br>🧠 <strong>Trick:</strong> T → "Tree" (पेड़) → आरक्षण की छांव in Urban Bodies</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">📌</div>
+      <div class="callout-body">
+        <strong>Part 9 (Panchayats) — Art. 243 to 243O</strong>
+        <p>Part 9A (Urban Bodies) — Art. 243P to 243ZG | Part 16 = Art. 330 to 342 (Special Provisions for SC/ST)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 8 ══ ADMINISTRATIVE -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--teal-soft)">🏛️</div>
+      <div>
+        <div class="section-title">Administrative Provisions</div>
+        <div class="section-subtitle">Tribal Commissions, Tribal Ministry, Scheduled Areas</div>
+      </div>
+    </div>
+
+    <div class="article-list">
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-teal">Art. 338A</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>National Commission for Scheduled Tribes (NCST)</strong> — A constitutional body for safeguarding rights and welfare of STs.<br>
+        📅 Originally created as an <em>executive body in 1978</em>. Made constitutional by the <strong>89th Constitutional Amendment Act</strong>. Now a statutory commission under Art. 338A.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-blue">Art. 339</span><br><small style="color:var(--muted)">Part 16</small></div>
+        <div class="article-content"><strong>Control of Union over Welfare of STs</strong> — The President may appoint a Commission to report on the administration of Scheduled Areas and welfare of STs. Must be done within 10 years of Constitution's commencement (also periodically thereafter).<br>
+        <em>Example: Dhebar Commission was appointed under this provision.</em></div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-green">Art. 164(1)</span><br><small style="color:var(--muted)">Part 6</small></div>
+        <div class="article-content"><strong>Tribal Affairs Ministry</strong> — In the states of <strong>MP, Chhattisgarh, Jharkhand and Odisha</strong>, there shall be a <em>Minister specifically in charge of Tribal Welfare</em>.<br>
+        🧠 <strong>Trick:</strong> "MP ke Chhattisgarh mein Jhad (Jhar) gir gaye, Ud ke Odisha pahunche" → <strong>MP + CG + Jharkhand + Odisha</strong></div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-purple">Art. 244(1)</span><br><small style="color:var(--muted)">Part 10</small></div>
+        <div class="article-content"><strong>Scheduled Areas Administration</strong> — Provisions of <strong>5th Schedule</strong> apply to the administration of Scheduled Areas and Scheduled Tribes in states <em>other than Assam, Meghalaya, Mizoram, Tripura</em>.<br>
+        Tribal Advisory Councils (जनजातीय सलाहकार परिषद) are established in these areas.</div>
+      </div>
+      <div class="article-row">
+        <div class="article-ref"><span class="pill tag-orange">Art. 244(2)</span><br><small style="color:var(--muted)">Part 10</small></div>
+        <div class="article-content"><strong>Tribal Areas Administration (NE States)</strong> — Provisions of <strong>6th Schedule</strong> apply to the administration of tribal areas in <strong>Assam, Meghalaya, Mizoram, and Tripura</strong>.<br>
+        🧠 <strong>Trick: "AMMT" or "एटीएम"</strong> → Assam + Meghalaya + Mizoram + Tripura</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">⚡</div>
+      <div class="callout-body">
+        <strong>5th Schedule vs 6th Schedule — Key Difference</strong>
+        <ul>
+          <li><strong>5th Schedule</strong> → Covers Scheduled Areas in ALL states EXCEPT Assam, Meghalaya, Mizoram, Tripura</li>
+          <li><strong>6th Schedule</strong> → Covers Tribal Areas SPECIFICALLY in Assam, Meghalaya, Mizoram, Tripura</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 9 ══ ARTICLE 371 SERIES -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--purple-soft)">🗺️</div>
+      <div>
+        <div class="section-title">Special Provisions — Article 371 Series</div>
+        <div class="section-subtitle">State-specific tribal and regional protections</div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-body">
+        <strong>Why Art. 371?</strong>
+        <p>Article 370 gave special status to J&K (now revoked). Similarly, Art. 371 and its sub-clauses give special provisions to various states (especially for tribal areas) to promote their development and protect their interests.</p>
+      </div>
+    </div>
+
+    <table class="stat-table" style="margin-top:1rem">
+      <thead><tr><th>Article</th><th>State</th><th>Key Provision</th></tr></thead>
+      <tbody>
+        <tr><td class="highlight-val">371</td><td>Gujarat & Maharashtra</td><td>Special provisions for certain areas</td></tr>
+        <tr><td class="highlight-val">371A</td><td><strong>Nagaland</strong></td><td>Protection of Naga customary law & land</td></tr>
+        <tr><td class="highlight-val">371B</td><td><strong>Assam</strong></td><td>Tribal area development</td></tr>
+        <tr><td class="highlight-val">371C</td><td><strong>Manipur</strong></td><td>Hill areas committee</td></tr>
+        <tr><td class="highlight-val">371D & E</td><td><strong>Andhra Pradesh / Telangana</strong></td><td>D = AP | E = AP Universities</td></tr>
+        <tr><td class="highlight-val">371F</td><td><strong>Sikkim</strong></td><td>Special provisions for Sikkim's integration</td></tr>
+        <tr><td class="highlight-val">371G, H, I</td><td><strong>Mizoram, Arunachal, Goa</strong></td><td>Protection of local laws and customs</td></tr>
+        <tr><td class="highlight-val">371J</td><td><strong>Karnataka</strong></td><td>Hyderabad-Karnataka region development</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip" style="margin-top:1rem">
+      <div class="callout-icon">📡</div>
+      <div class="callout-body">
+        <strong>Current Affairs: Ladakh</strong>
+        <p>There is a demand to include <strong>Ladakh under Art. 371</strong> to give it special tribal protections similar to these states. (Active political issue as of 2024)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 10 ══ SCHEDULES 5 & 6 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--orange-soft)">📋</div>
+      <div>
+        <div class="section-title">5th & 6th Schedules</div>
+        <div class="section-subtitle">Administration of Tribal / Scheduled Areas</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+      <div class="card" style="border-color:rgba(246,173,85,0.3)">
+        <div class="card-article tag-orange pill">Schedule 5</div>
+        <div class="card-title" style="margin-top:8px">Panchami Anusuchi</div>
+        <div class="card-desc" style="margin-top:4px">
+          <strong style="color:var(--text)">Covers:</strong> Scheduled Areas in ALL states EXCEPT AMMT<br><br>
+          <strong style="color:var(--text)">Provisions:</strong> Governor's special powers, Tribal Advisory Council (TAC), Govt. can restrict/modify laws, no alienation of tribal land<br><br>
+          <strong style="color:var(--text)">Article:</strong> 244(1)
+        </div>
+      </div>
+      <div class="card" style="border-color:rgba(183,148,244,0.3)">
+        <div class="card-article tag-purple pill">Schedule 6</div>
+        <div class="card-title" style="margin-top:8px">Shashthami Anusuchi</div>
+        <div class="card-desc" style="margin-top:4px">
+          <strong style="color:var(--text)">Covers:</strong> Tribal Areas of <strong>Assam, Meghalaya, Mizoram, Tripura</strong> (AMMT)<br><br>
+          <strong style="color:var(--text)">Provisions:</strong> Autonomous District Councils (ADCs) with legislative powers, separate courts for tribal areas<br><br>
+          <strong style="color:var(--text)">Article:</strong> 244(2)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 11 ══ MASTER ARTICLE MAP -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-soft)">🗺️</div>
+      <div>
+        <div class="section-title">Complete Article Quick-Reference</div>
+        <div class="section-subtitle">All articles sorted by category — Exam cheat sheet</div>
+      </div>
+    </div>
+
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <thead><tr><th>Article</th><th>Part</th><th>Category</th><th>Provision</th></tr></thead>
+        <tbody>
+          <tr><td>366(25)</td><td>19</td><td><span class="pill tag-teal">Definition</span></td><td>Definition of Scheduled Tribes</td></tr>
+          <tr><td>342(1)</td><td>16</td><td><span class="pill tag-teal">Definition</span></td><td>President notifies STs; Parliament amends the list</td></tr>
+          <tr><td>15(4)</td><td>3</td><td><span class="pill tag-green">Education</span></td><td>Special provisions for backward classes in education (added 1951)</td></tr>
+          <tr><td>16(4)</td><td>3</td><td><span class="pill tag-green">Education</span></td><td>Reservation in public employment</td></tr>
+          <tr><td>16(4A)</td><td>3</td><td><span class="pill tag-green">Education</span></td><td>Reservation in <strong>promotions</strong></td></tr>
+          <tr><td>16(4B)</td><td>3</td><td><span class="pill tag-green">Education</span></td><td>Backlog posts carried forward</td></tr>
+          <tr><td>29</td><td>3</td><td><span class="pill tag-green">Cultural</span></td><td>Right to conserve distinct language/culture</td></tr>
+          <tr><td>17</td><td>3</td><td><span class="pill tag-red">Social</span></td><td>Abolition of Untouchability</td></tr>
+          <tr><td>23</td><td>3</td><td><span class="pill tag-red">Social</span></td><td>Prohibition of bonded labour & human trafficking</td></tr>
+          <tr><td>24</td><td>3</td><td><span class="pill tag-red">Social</span></td><td>Prohibition of child labour (under 14)</td></tr>
+          <tr><td>46</td><td>4 (DPSP)</td><td><span class="pill tag-orange">Edu+Eco</span></td><td>State duty to promote educational & economic interests of SC/ST</td></tr>
+          <tr><td>275</td><td>12</td><td><span class="pill tag-yellow">Economic</span></td><td>Grants from Centre to States for tribal welfare</td></tr>
+          <tr><td>330</td><td>16</td><td><span class="pill tag-blue">Political</span></td><td>Reserved seats for STs in <strong>Lok Sabha</strong></td></tr>
+          <tr><td>332</td><td>16</td><td><span class="pill tag-blue">Political</span></td><td>Reserved seats for STs in State <strong>Vidhan Sabha</strong></td></tr>
+          <tr><td>334</td><td>16</td><td><span class="pill tag-blue">Political</span></td><td>Duration of reservation — extended to <strong>2030</strong> by 104th Amendment (2019)</td></tr>
+          <tr><td>243D</td><td>9</td><td><span class="pill tag-blue">Political</span></td><td>ST reservation in <strong>Panchayats</strong></td></tr>
+          <tr><td>243T</td><td>9A</td><td><span class="pill tag-blue">Political</span></td><td>ST reservation in <strong>Urban Local Bodies</strong></td></tr>
+          <tr><td>338A</td><td>16</td><td><span class="pill tag-teal">Admin</span></td><td>National Commission for Scheduled Tribes (NCST) — 89th Amendment</td></tr>
+          <tr><td>339</td><td>16</td><td><span class="pill tag-teal">Admin</span></td><td>President appoints Commission for Scheduled Areas (e.g., Dhebar Commission)</td></tr>
+          <tr><td>164(1)</td><td>6</td><td><span class="pill tag-teal">Admin</span></td><td>Tribal Welfare Minister mandatory in <strong>MP, CG, Jharkhand, Odisha</strong></td></tr>
+          <tr><td>244(1)</td><td>10</td><td><span class="pill tag-orange">Admin</span></td><td>5th Schedule — Scheduled Areas admin (all except AMMT)</td></tr>
+          <tr><td>244(2)</td><td>10</td><td><span class="pill tag-purple">Admin</span></td><td>6th Schedule — Tribal Areas of AMMT (Assam, Meghalaya, Mizoram, Tripura)</td></tr>
+          <tr><td>368</td><td>20</td><td><span class="pill tag-muted" style="background:var(--surface3);color:var(--muted)">Amendment</span></td><td>Constitutional amendment procedure (borrowed from South Africa)</td></tr>
+          <tr><td>371 series</td><td>21</td><td><span class="pill tag-purple">Special</span></td><td>State-specific special provisions (tribal areas in NE states etc.)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Memory Tricks -->
+    <div style="margin-top:1.5rem">
+      <div class="section-header" style="margin-bottom:1rem">
+        <div class="section-icon" style="background:var(--purple-soft)">🧠</div>
+        <div class="section-title">Memory Tricks (Pramod Sir's Method)</div>
+      </div>
+      <div class="memory-grid">
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--accent)">Art. 15</div>
+          <div class="memory-trick">"15 August flag ceremony"</div>
+          <div class="memory-explain">On 15 Aug, everyone gets ladoo equally — no discrimination by caste/religion/sex (Art. 15 = no discrimination)</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--green)">Parts</div>
+          <div class="memory-trick">"भाग 15 = चुनाव"</div>
+          <div class="memory-explain">15 Aug → parties carry flags → elections → Part 15 = Elections (Art. 324–329)</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--orange)">Art. 164(1)</div>
+          <div class="memory-trick">"MP mein CG ke jhad gaye, ud ke Odisha"</div>
+          <div class="memory-explain">4 states needing Tribal Minister: <strong>M</strong>adhya Pradesh, <strong>C</strong>hhattis<strong>g</strong>arh, <strong>Jh</strong>arkhand, <strong>O</strong>disha</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--teal)">Art. 244(2) / 6th Schedule</div>
+          <div class="memory-trick">"AMMT / ATM"</div>
+          <div class="memory-explain"><strong>A</strong>ssam + <strong>M</strong>eghalaya + <strong>M</strong>izoram + <strong>T</strong>ripura = "ATM mein janjatiya ko paise do"</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--red)">Art. 23 vs 24</div>
+          <div class="memory-trick">"Pehle aadmi, phir bacha"</div>
+          <div class="memory-explain">Art. 23 = Adults (bonded labour) | Art. 24 = Children (child labour) — बड़ा नंबर = छोटा बच्चा ❌</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--purple)">Art. 243D vs 243T</div>
+          <div class="memory-trick">"D = Daas (दास) | T = Tree (पेड़)"</div>
+          <div class="memory-explain">D → poor/weaker (Panchayats) | T → shade/shelter (Urban Local Bodies)</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--yellow)">Art. 338A</div>
+          <div class="memory-trick">"338A — 89th Amendment"</div>
+          <div class="memory-explain">NCST was executive body (1978) → made constitutional by <strong>89th Amendment</strong>. The "A" in 338A is for this additional (constitutional) body.</div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-tag" style="color:var(--accent)">16(4A) vs 16(4B)</div>
+          <div class="memory-trick">"A = Aarakshan in promotion | B = Backlog"</div>
+          <div class="memory-explain">Art. 16(4A) → Promotion mein reservation | Art. 16(4B) → Backlog posts carry forward</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 12 ══ MCQ PRACTICE -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-soft)">📝</div>
+      <div>
+        <div class="section-title">MCQ Practice</div>
+        <div class="section-subtitle">Test yourself — click an option to reveal the answer</div>
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3>🎯 Quick Fire MCQs — MPPSC Pattern</h3>
+      <div id="quizBody">
+
+        <div class="q-item" data-correct="b">
+          <div class="q-text"><span class="q-num">Q1.</span> Under which Article can the President notify a community as a Scheduled Tribe?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','b')"><div class="opt-key">A</div> Article 366(25)</div>
+            <div class="opt" onclick="answer(this,'b','b')"><div class="opt-key">B</div> Article 342(1)</div>
+            <div class="opt" onclick="answer(this,'c','b')"><div class="opt-key">C</div> Article 338A</div>
+            <div class="opt" onclick="answer(this,'d','b')"><div class="opt-key">D</div> Article 339</div>
+          </div>
+          <div class="q-explain">✅ Art. 342(1) — President consults the Governor and notifies STs via public notification. Art. 366(25) only defines the term.</div>
+        </div>
+
+        <div class="q-item" data-correct="c">
+          <div class="q-text"><span class="q-num">Q2.</span> Currently, how many Scheduled Tribes are notified in Madhya Pradesh?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','c')"><div class="opt-key">A</div> 46</div>
+            <div class="opt" onclick="answer(this,'b','c')"><div class="opt-key">B</div> 62</div>
+            <div class="opt" onclick="answer(this,'c','c')"><div class="opt-key">C</div> 43</div>
+            <div class="opt" onclick="answer(this,'d','c')"><div class="opt-key">D</div> 705</div>
+          </div>
+          <div class="q-explain">✅ Originally 46, but 3 were removed in 2003 → now <strong>43 tribes</strong> in MP. Odisha has the most: 62. Total in India: 705 (as per 1950 order).</div>
+        </div>
+
+        <div class="q-item" data-correct="a">
+          <div class="q-text"><span class="q-num">Q3.</span> The 89th Constitutional Amendment is related to which Article?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','a')"><div class="opt-key">A</div> Article 338A — NCST</div>
+            <div class="opt" onclick="answer(this,'b','a')"><div class="opt-key">B</div> Article 334 — Duration of reservation</div>
+            <div class="opt" onclick="answer(this,'c','a')"><div class="opt-key">C</div> Article 16(4A) — Promotion reservation</div>
+            <div class="opt" onclick="answer(this,'d','a')"><div class="opt-key">D</div> Article 244(1) — Scheduled Areas</div>
+          </div>
+          <div class="q-explain">✅ The <strong>89th Constitutional Amendment</strong> created the separate National Commission for Scheduled Tribes (NCST) under Art. 338A. Before this, it was an executive body since 1978.</div>
+        </div>
+
+        <div class="q-item" data-correct="d">
+          <div class="q-text"><span class="q-num">Q4.</span> In which states is a Minister for Tribal Welfare MANDATORY under Art. 164(1)?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','d')"><div class="opt-key">A</div> MP, UP, Rajasthan, Gujarat</div>
+            <div class="opt" onclick="answer(this,'b','d')"><div class="opt-key">B</div> Assam, Meghalaya, Mizoram, Tripura</div>
+            <div class="opt" onclick="answer(this,'c','d')"><div class="opt-key">C</div> MP, Maharashtra, Gujarat, Rajasthan</div>
+            <div class="opt" onclick="answer(this,'d','d')"><div class="opt-key">D</div> MP, Chhattisgarh, Jharkhand, Odisha</div>
+          </div>
+          <div class="q-explain">✅ Art. 164(1) mandates a dedicated Tribal Welfare Minister in <strong>Madhya Pradesh, Chhattisgarh, Jharkhand, and Odisha</strong> — states with large ST populations.</div>
+        </div>
+
+        <div class="q-item" data-correct="b">
+          <div class="q-text"><span class="q-num">Q5.</span> The 6th Schedule of the Indian Constitution relates to which states?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','b')"><div class="opt-key">A</div> All states with tribal areas</div>
+            <div class="opt" onclick="answer(this,'b','b')"><div class="opt-key">B</div> Assam, Meghalaya, Mizoram, Tripura</div>
+            <div class="opt" onclick="answer(this,'c','b')"><div class="opt-key">C</div> MP, CG, Jharkhand, Odisha</div>
+            <div class="opt" onclick="answer(this,'d','b')"><div class="opt-key">D</div> All 8 North-East states</div>
+          </div>
+          <div class="q-explain">✅ <strong>6th Schedule = AMMT</strong> (Assam, Meghalaya, Mizoram, Tripura) under Art. 244(2). For other states' tribal areas → 5th Schedule under Art. 244(1).</div>
+        </div>
+
+        <div class="q-item" data-correct="c">
+          <div class="q-text"><span class="q-num">Q6.</span> The 104th Constitutional Amendment (2019) extended SC/ST reservation till which year, and abolished which provision?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','c')"><div class="opt-key">A</div> Extended to 2025; abolished OBC reservation</div>
+            <div class="opt" onclick="answer(this,'b','c')"><div class="opt-key">B</div> Extended to 2035; abolished Art. 370</div>
+            <div class="opt" onclick="answer(this,'c','c')"><div class="opt-key">C</div> Extended to 2030; abolished Anglo-Indian reserved seats</div>
+            <div class="opt" onclick="answer(this,'d','c')"><div class="opt-key">D</div> Extended to 2040; abolished reservation in promotions</div>
+          </div>
+          <div class="q-explain">✅ <strong>104th Amendment (2019)</strong> → Extended SC/ST reservation to <strong>2030</strong> under Art. 334 AND abolished the <strong>Anglo-Indian</strong> reserved seats in Lok Sabha and state assemblies.</div>
+        </div>
+
+        <div class="q-item" data-correct="a">
+          <div class="q-text"><span class="q-num">Q7.</span> Which district in MP has the HIGHEST percentage of tribal population?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','a')"><div class="opt-key">A</div> Alirajpur</div>
+            <div class="opt" onclick="answer(this,'b','a')"><div class="opt-key">B</div> Dhar</div>
+            <div class="opt" onclick="answer(this,'c','a')"><div class="opt-key">C</div> Jhabua</div>
+            <div class="opt" onclick="answer(this,'d','a')"><div class="opt-key">D</div> Barwani</div>
+          </div>
+          <div class="q-explain">✅ By <strong>percentage</strong>: Alirajpur > Jhabua > Barwani. But by <strong>absolute numbers</strong>: Dhar > Barwani > Jhabua. This is a common exam trap!</div>
+        </div>
+
+        <div class="q-item" data-correct="b">
+          <div class="q-text"><span class="q-num">Q8.</span> Reservation in Panchayats for STs is provided under which Article?</div>
+          <div class="options">
+            <div class="opt" onclick="answer(this,'a','b')"><div class="opt-key">A</div> Article 243T</div>
+            <div class="opt" onclick="answer(this,'b','b')"><div class="opt-key">B</div> Article 243D</div>
+            <div class="opt" onclick="answer(this,'c','b')"><div class="opt-key">C</div> Article 330</div>
+            <div class="opt" onclick="answer(this,'d','b')"><div class="opt-key">D</div> Article 332</div>
+          </div>
+          <div class="q-explain">✅ Art. <strong>243D</strong> → Reservation in <strong>Panchayats</strong> (Gram/Janpad/Zila). Art. <strong>243T</strong> → Reservation in <strong>Urban Local Bodies</strong>. Art. 330 & 332 → Lok Sabha and State Assemblies respectively.</div>
+        </div>
+
+      </div>
+
+      <div class="quiz-score" id="quizScore"></div>
+    </div>
+  </div>
+
+</div><!-- end wrapper -->
+
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    label.textContent = 'Dark';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+    label.textContent = 'Light';
+  }
+}
+
+// Reading progress bar
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrollTop = window.scrollY || doc.scrollTop;
+  const docHeight = doc.scrollHeight - doc.clientHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+
+// Quiz logic
+let answered = 0, correct = 0;
+const total = document.querySelectorAll('.q-item').length;
+
+function answer(el, chosen, correctKey) {
+  const item = el.closest('.q-item');
+  if (item.dataset.done) return;
+  item.dataset.done = 'true';
+  answered++;
+  const opts = item.querySelectorAll('.opt');
+  opts.forEach(o => { o.classList.add('disabled'); o.onclick = null; });
+  if (chosen === correctKey) {
+    el.classList.add('correct');
+    correct++;
+  } else {
+    el.classList.add('wrong');
+    opts.forEach(o => {
+      const key = o.querySelector('.opt-key').textContent.toLowerCase();
+      if (key === correctKey) o.classList.add('correct');
+    });
+  }
+  item.querySelector('.q-explain').classList.add('show');
+  if (answered === total) {
+    const sc = document.getElementById('quizScore');
+    sc.style.display = 'block';
+    const pct = Math.round((correct/total)*100);
+    sc.textContent = `🎯 Score: ${correct}/${total} (${pct}%) — ${pct>=80?'Excellent! Ready for exam 🚀':pct>=60?'Good! Revise the incorrect ones 📖':'Keep practising! Go through the notes again 💪'}`;
+  }
+}
+
+// Smooth active TOC (optional highlight)
+const sections = document.querySelectorAll('[id^="s"]');
+const tocLinks = document.querySelectorAll('.toc a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  tocLinks.forEach(a => {
+    a.style.background = a.getAttribute('href') === '#'+current ? 'var(--surface3)' : '';
+    a.style.borderColor = a.getAttribute('href') === '#'+current ? 'var(--accent)' : 'transparent';
+    a.style.color = a.getAttribute('href') === '#'+current ? 'var(--text)' : '';
+  });
+});
+</script>
+</body>
+</html>

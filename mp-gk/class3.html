@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP Formation & Partition Revision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f0f1a;
+      --surface: #171827;
+      --surface-2: #202235;
+      --text: #f8fbff;
+      --muted: #d8e1ea;
+      --border: #3d415d;
+      --cyan: #00d4ff;
+      --orange: #ff6b35;
+      --green: #00ff88;
+      --purple: #b388ff;
+      --danger: #ff4f70;
+      --shadow: 0 18px 40px rgba(0, 0, 0, .28);
+    }
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #101321;
+      --muted: #2f3b4a;
+      --border: #ccd6e0;
+      --shadow: 0 14px 34px rgba(24, 38, 58, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: .01em;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a { color: inherit; }
+    header, main, footer { width: min(100%, 860px); margin: 0 auto; padding: 18px; }
+    .hero {
+      padding-top: 34px;
+      display: grid;
+      gap: 16px;
+    }
+    .badge-row, .tools, .quick-grid, .facts, .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .badge {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: .85rem;
+      font-weight: 800;
+    }
+    h1, h2, h3 { line-height: 1.25; letter-spacing: 0; margin: 0; }
+    h1 { font-size: clamp(2rem, 8vw, 4.25rem); font-weight: 900; }
+    h2 { font-size: clamp(1.45rem, 5vw, 2.25rem); font-weight: 900; }
+    h3 { font-size: 1.1rem; font-weight: 850; }
+    p { margin: 0; color: var(--muted); }
+    .lead { font-size: 1.05rem; max-width: 70ch; color: var(--text); }
+    .progress-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .bar {
+      height: 9px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    #progressBar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--green), var(--orange));
+      transition: width .25s ease;
+    }
+    select, button {
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      padding: 8px 11px;
+    }
+    select { flex: 1 1 240px; min-width: 0; }
+    button { cursor: pointer; }
+    button:hover, summary:hover { border-color: var(--cyan); }
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .toc a {
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-weight: 850;
+      color: var(--text);
+    }
+    section {
+      margin: 26px 0;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--accent, var(--cyan));
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 115px;
+      animation: rise .35s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-head {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .cards {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+    .card, details, .hot, .definition, .quiz, .diagram {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 15px;
+    }
+    ul, ol { margin: 9px 0 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    strong { color: var(--text); }
+    .hot { border-color: color-mix(in srgb, var(--danger) 70%, var(--border)); }
+    .definition { border-color: color-mix(in srgb, var(--green) 70%, var(--border)); }
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--text);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: .96rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: color-mix(in srgb, var(--accent, var(--cyan)) 22%, var(--surface-2)); color: var(--text); }
+    td { background: color-mix(in srgb, var(--surface) 72%, var(--surface-2)); }
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .event {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .year {
+      background: color-mix(in srgb, var(--accent, var(--cyan)) 28%, var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px;
+      font-weight: 900;
+      text-align: center;
+    }
+    .event-body {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: var(--surface-2);
+    }
+    .quiz-item {
+      display: grid;
+      gap: 8px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+    }
+    .quiz-item:first-child { border-top: 0; }
+    .answer { display: none; color: var(--green); font-weight: 850; }
+    .answer.show { display: block; }
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    label.check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      accent-color: var(--green);
+      margin-top: 4px;
+    }
+    .diagram {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .mini { font-size: .9rem; color: var(--muted); }
+    .print-note { display: none; }
+    @media (max-width: 640px) {
+      header, main, footer { padding: 14px; }
+      section { padding: 16px; scroll-margin-top: 145px; }
+      .event { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+    @media print {
+      :root, [data-theme="light"], [data-theme="dark"] {
+        --bg: #fff; --surface: #fff; --surface-2: #fff; --text: #000; --muted: #000; --border: #777; --shadow: none;
+      }
+      body { font-size: 12pt; }
+      .progress-wrap, .toc, button { display: none !important; }
+      header, main, footer { width: 100%; padding: 0; }
+      section, .card, details, .hot, .definition, .quiz { break-inside: avoid; box-shadow: none; }
+      details:not([open]) > *:not(summary) { display: block; }
+      .answer { display: block; color: #000; }
+      .print-note { display: block; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="progress-wrap">
+    <div class="nav-inner">
+      <div class="tools">
+        <select id="jumpMenu" aria-label="Quick jump">
+          <option value="">Jump to topic...</option>
+        </select>
+        <button id="themeToggle" type="button">☀️ Theme</button>
+        <span class="badge" id="progressText">0% revised</span>
+      </div>
+      <div class="bar" aria-label="Revision progress"><div id="progressBar"></div></div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="badge-row">
+      <span class="badge">MPPSC Pre 2025</span>
+      <span class="badge">MP GK</span>
+      <span class="badge">Lecture 3</span>
+      <span class="badge">10 Major Topics</span>
+    </div>
+    <h1>🎯 Madhya Pradesh ka Gathan & Partition</h1>
+    <p class="lead">Video transcript se banaya gaya Hinglish revision page: 1947 ke baad commissions, 1956 me MP ka formation, capital issue, divisions, district timeline aur 2000 me Chhattisgarh partition.</p>
+    <nav class="toc" aria-label="Table of contents" id="toc"></nav>
+  </header>
+
+  <main>
+    <section id="recap" style="--accent: var(--cyan)" data-title="Recap">
+      <div class="section-head">
+        <h2>🧭 Class Recap & Context</h2>
+        <p>Teacher ne previous lecture ka recap diya aur current lecture ko “Formation and Partition of Madhya Pradesh” bola.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Last Class me kya hua?</h3>
+          <ul>
+            <li>India aur Madhya Pradesh ko independence ke baad dekha gaya tha.</li>
+            <li>Administrative units: Part A, Part B, Part C aur Part D ka context.</li>
+            <li>MP ke liye Part A, B, C aur Bhopal State discuss hua tha.</li>
+            <li>Is lecture me wahin se आगे formation ka part start hota hai.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Core Issue</h3>
+          <ul>
+            <li>Independence ke baad states ko language basis par banane ki demand badhi.</li>
+            <li>South India me Tamil, Telugu, Kannada language groups se movement ki “चिंगारी” उठी.</li>
+            <li>Teacher ne bola: “partition” se zyada सही word yahan “formation” hai.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. Lecture ka main topic kya hai?</strong><button type="button" class="reveal">Answer</button><div class="answer">Madhya Pradesh ka gathan, formation aur partition.</div></div>
+        <div class="quiz-item"><strong>Q. Last class me MP ke kaunse parts dekhe the?</strong><button type="button" class="reveal">Answer</button><div class="answer">Part A, Part B, Part C aur Bhopal State.</div></div>
+      </div>
+    </section>
+
+    <section id="commissions" style="--accent: var(--orange)" data-title="1947 ke baad Commissions">
+      <div class="section-head">
+        <h2>📋 1947 ke Baad Major Commissions</h2>
+        <p>Language basis par state formation ke liye government ne committees/commissions banaye.</p>
+      </div>
+      <div class="timeline">
+        <div class="event"><div class="year">June 1948</div><div class="event-body"><strong>Dhar Commission</strong> establish hua. Head: S.K. Dhar / Shyam Krishna Dhar.</div></div>
+        <div class="event"><div class="year">Dec 1948</div><div class="event-body">Dhar Commission ne report submit ki: linguistic basis par provinces/states banana nation ke interest me ठीक नहीं.</div></div>
+        <div class="event"><div class="year">Dec 1948</div><div class="event-body"><strong>JVP Committee</strong> bani: Jawaharlal Nehru, Vallabhbhai Patel, Pattabhi Sitaramayya.</div></div>
+        <div class="event"><div class="year">Apr 1949</div><div class="event-body">JVP Committee ne linguistic reorganisation demand reject ki.</div></div>
+      </div>
+      <table>
+        <thead><tr><th>Commission / Committee</th><th>Members / Head</th><th>Report</th><th>Main Point</th></tr></thead>
+        <tbody>
+          <tr><td>Dhar Commission</td><td>S.K. Dhar / Shyam Krishna Dhar</td><td>December 1948</td><td>Language basis par formation राष्ट्रहित में ठीक नहीं.</td></tr>
+          <tr><td>JVP Committee</td><td>J: Jawaharlal Nehru, V: Vallabhbhai Patel, P: Pattabhi Sitaramayya</td><td>April 1949</td><td>Language basis reject; security, unity aur economic prosperity basis suggested.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>🧠 Memory Trick</summary>
+        <p><strong>JVP = Jawahar + Vallabh + Pattabhi.</strong> Dhar ne “नहीं”, JVP ne bhi “नहीं”, phir movement aur तेज हुआ.</p>
+      </details>
+      <div class="hot">
+        <h3>🔥 Exam Hot</h3>
+        <ul>
+          <li>Dhar Commission: June 1948, report December 1948.</li>
+          <li>JVP Committee: December 1948, report April 1949.</li>
+          <li>JVP ne reorganisation ka basis security, unity and economic prosperity बताया.</li>
+        </ul>
+      </div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. Dhar Commission ka full name/head?</strong><button type="button" class="reveal">Answer</button><div class="answer">S.K. Dhar / Shyam Krishna Dhar.</div></div>
+        <div class="quiz-item"><strong>Q. JVP me P kaun tha?</strong><button type="button" class="reveal">Answer</button><div class="answer">Pattabhi Sitaramayya.</div></div>
+        <div class="quiz-item"><strong>Q. JVP ne reorganisation ke liye kaunse basis suggest kiye?</strong><button type="button" class="reveal">Answer</button><div class="answer">Security, unity aur economic prosperity of the nation.</div></div>
+      </div>
+    </section>
+
+    <section id="andhra" style="--accent: var(--green)" data-title="Andhra Movement">
+      <div class="section-head">
+        <h2>🔥 Potti Sriramulu & Andhra Pradesh</h2>
+        <p>Dhar aur JVP ke rejection ke baad Telugu-speaking logon ka movement तेज ho gaya.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Movement</h3>
+          <ul>
+            <li>Madras State ke Telugu-speaking people ne separate state demand ki.</li>
+            <li>Leadership: <strong>Potti Sriramulu</strong>.</li>
+            <li>Demand: Telugu speakers ke liye अलग राज्य.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Turning Point</h3>
+          <ul>
+            <li><strong>15 December 1952</strong>: Potti Sriramulu ki death.</li>
+            <li>Cause: 58 days ki hunger strike / आमरण अनशन.</li>
+            <li>Death ke baad movement ki intensity बहुत बढ़ गई.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="hot">
+        <h3>🔥 Exam Hot</h3>
+        <p><strong>1 October 1953</strong> ko independent India ka first linguistic-basis state <strong>Andhra Pradesh</strong> formed hua. Teacher ne bola: “एक बार exam me पूछा जा चुका है.”</p>
+      </div>
+      <div class="diagram">Dhar/JVP reject
+      ↓
+Telugu movement in Madras
+      ↓
+Potti Sriramulu death: 15 Dec 1952
+      ↓
+Nehru announces Andhra Pradesh
+      ↓
+1 Oct 1953: First linguistic state</div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. Potti Sriramulu kis movement se जुड़े थे?</strong><button type="button" class="reveal">Answer</button><div class="answer">Telugu-speaking people ke separate Andhra Pradesh movement se.</div></div>
+        <div class="quiz-item"><strong>Q. Andhra Pradesh kab bana?</strong><button type="button" class="reveal">Answer</button><div class="answer">1 October 1953.</div></div>
+      </div>
+    </section>
+
+    <section id="src" style="--accent: var(--purple)" data-title="SRC 1953">
+      <div class="section-head">
+        <h2>⚖️ State Reorganisation Commission</h2>
+        <p>Andhra Pradesh banne ke baad baaki regions me bhi demand बढ़ी, isliye bada commission banaya gaya.</p>
+      </div>
+      <table>
+        <thead><tr><th>Point</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Name</td><td>State Reorganisation Commission / राज्य पुनर्गठन आयोग / Fazal Ali Commission</td></tr>
+          <tr><td>Established</td><td>1953</td></tr>
+          <tr><td>Report</td><td>December 1955</td></tr>
+          <tr><td>President</td><td>Fazal Ali - retired judge, Allahabad High Court</td></tr>
+          <tr><td>Member</td><td>Hridaynath Kunzru - Constituent Assembly member</td></tr>
+          <tr><td>Member</td><td>K.M. Panikkar - senior journalist</td></tr>
+        </tbody>
+      </table>
+      <div class="definition">
+        <h3>Recommendations</h3>
+        <ul>
+          <li>Country ki unity aur security ka maintenance/protection.</li>
+          <li>Linguistic and cultural uniformity.</li>
+          <li>Financial resources / financial inclusion.</li>
+          <li>Economic and administrative logic.</li>
+          <li>Government of India ne recommendations ko very few changes ke saath accept kiya.</li>
+        </ul>
+      </div>
+      <details>
+        <summary>🧠 Memory Trick: F-H-K</summary>
+        <p><strong>Fazal - Hridaynath - K.M.</strong>: “Formation ka Heart Knowledge” yaad rakho: Fazal Ali president, Hridaynath Kunzru member, K.M. Panikkar journalist.</p>
+      </details>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. SRC kis year me bana?</strong><button type="button" class="reveal">Answer</button><div class="answer">1953.</div></div>
+        <div class="quiz-item"><strong>Q. SRC report kab aayi?</strong><button type="button" class="reveal">Answer</button><div class="answer">December 1955.</div></div>
+        <div class="quiz-item"><strong>Q. Fazal Ali ka role?</strong><button type="button" class="reveal">Answer</button><div class="answer">Commission ke president; retired judge, Allahabad High Court.</div></div>
+      </div>
+    </section>
+
+    <section id="act1956" style="--accent: var(--cyan)" data-title="1956 Act & MP">
+      <div class="section-head">
+        <h2>📜 State Reorganisation Act 1956 & MP Formation</h2>
+        <p>SRC recommendations ke baad bill, act, constitutional amendment aur MP ka formal formation hua.</p>
+      </div>
+      <table>
+        <thead><tr><th>Fact</th><th>As Taught in Lecture</th></tr></thead>
+        <tbody>
+          <tr><td>State Reorganisation Bill</td><td>April 1956 me Parliament me present hua.</td></tr>
+          <tr><td>State Reorganisation Act</td><td>31 August 1956 ko pass hua.</td></tr>
+          <tr><td>President signature</td><td>Rajendra Prasad ji ke signature ka mention November 1956 ke context me aaya.</td></tr>
+          <tr><td>Constitutional Amendment</td><td>7th Constitutional Amendment.</td></tr>
+          <tr><td>States/UTs</td><td>14 states aur 6 Union Territories established hue. Teacher ne bola: Vyapam me question aaya tha.</td></tr>
+          <tr><td>MP Formation</td><td>1 November 1956.</td></tr>
+          <tr><td>Articles</td><td>Constitution ke Article 3 aur 4 ke under Madhya Pradesh ki establishment.</td></tr>
+        </tbody>
+      </table>
+      <div class="hot">
+        <h3>🔥 Exam Hot</h3>
+        <ul>
+          <li>State Reorganisation Act: <strong>31 August 1956</strong>.</li>
+          <li>Act ke under: <strong>14 states + 6 Union Territories</strong>.</li>
+          <li>Madhya Pradesh formation: <strong>1 November 1956</strong>.</li>
+          <li>Constitutional Amendment: <strong>7th</strong>.</li>
+        </ul>
+      </div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. MP ka formation date?</strong><button type="button" class="reveal">Answer</button><div class="answer">1 November 1956.</div></div>
+        <div class="quiz-item"><strong>Q. State Reorganisation Act ke baad kitne states aur UT bane?</strong><button type="button" class="reveal">Answer</button><div class="answer">14 states and 6 Union Territories.</div></div>
+      </div>
+    </section>
+
+    <section id="capital" style="--accent: var(--orange)" data-title="Capital & Offices">
+      <div class="section-head">
+        <h2>🏛️ Bhopal Capital ka Selection</h2>
+        <p>Capital ke liye discussion me Jabalpur recommendation aur Bhopal support dono aaye.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Jabalpur Recommendation</h3>
+          <ul>
+            <li>Fazal Ali ne Jabalpur ko capital recommend kiya tha.</li>
+            <li>Baad me Jabalpur ko judicial capital role mila.</li>
+            <li>High Court Jabalpur me रखा गया.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Bhopal kyun?</h3>
+          <ul>
+            <li>Dr. Shankar Dayal Sharma ne Bhopal ko capital banane ka पक्ष रखा.</li>
+            <li>Bhopal already developed urban area tha.</li>
+            <li>Nawab/Begum era ke large buildings available the, administrative use ke liye.</li>
+          </ul>
+        </article>
+      </div>
+      <table>
+        <thead><tr><th>City</th><th>Role / Office</th></tr></thead>
+        <tbody>
+          <tr><td>Bhopal</td><td>Capital of Madhya Pradesh.</td></tr>
+          <tr><td>Jabalpur</td><td>Judicial capital / High Court.</td></tr>
+          <tr><td>Indore</td><td>Public Service Commission.</td></tr>
+          <tr><td>Gwalior</td><td>Revenue Board headquarters.</td></tr>
+        </tbody>
+      </table>
+      <div class="definition">
+        <h3>Minto Hall Fact</h3>
+        <p>Old Vidhan Sabha building ke taur par <strong>Minto Hall</strong> ka use 1956 se 1996 tak, lagbhag 40 saal, hua.</p>
+      </div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. Fazal Ali ne kis city ko capital recommend kiya?</strong><button type="button" class="reveal">Answer</button><div class="answer">Jabalpur.</div></div>
+        <div class="quiz-item"><strong>Q. Bhopal ke पक्ष me teacher ne kaunse leader ka naam बताया?</strong><button type="button" class="reveal">Answer</button><div class="answer">Dr. Shankar Dayal Sharma.</div></div>
+      </div>
+    </section>
+
+    <section id="mp1956" style="--accent: var(--green)" data-title="MP in 1956">
+      <div class="section-head">
+        <h2>🗺️ 1956 ka Madhya Pradesh</h2>
+        <p>Formation ke time MP ke districts, divisions aur first office-holders.</p>
+      </div>
+      <div class="quick-grid">
+        <span class="badge">43 Districts</span>
+        <span class="badge">7 Divisions</span>
+        <span class="badge">First CM: Pt. Ravi Shankar Shukla</span>
+        <span class="badge">First Governor: Dr. Pattabhi Sitaramayya</span>
+      </div>
+      <table>
+        <thead><tr><th>Formation-time Divisions</th><th>Later Mentioned Divisions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Indore, Bhopal, Gwalior, Jabalpur, Rewa, Bilaspur, Raipur.</td>
+            <td>Sagar (1975), Ujjain (1977), Narmadapuram/Hoshangabad, Bastar, Chambal (1980), Shahdol (14 June 2008).</td>
+          </tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>📌 Shahdol Division Detail</summary>
+        <ul>
+          <li>14 June 2008 ko Shahdol Division आया.</li>
+          <li>Initial districts: Umaria, Anuppur, Shahdol, Dindori.</li>
+          <li>2012 me Dindori ko wapas Jabalpur Division me रख दिया गया.</li>
+          <li>Isliye current context me Shahdol Division me 3 districts बताए गए.</li>
+        </ul>
+      </details>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. 1956 me MP me kitne districts the?</strong><button type="button" class="reveal">Answer</button><div class="answer">43 districts.</div></div>
+        <div class="quiz-item"><strong>Q. First CM kaun the?</strong><button type="button" class="reveal">Answer</button><div class="answer">Pandit Ravi Shankar Shukla.</div></div>
+        <div class="quiz-item"><strong>Q. First Governor kaun the?</strong><button type="button" class="reveal">Answer</button><div class="answer">Dr. Pattabhi Sitaramayya.</div></div>
+      </div>
+    </section>
+
+    <section id="districts" style="--accent: var(--purple)" data-title="District Timeline">
+      <div class="section-head">
+        <h2>📍 District Formation Timeline: 43 se 55</h2>
+        <p>Teacher ne district growth ko summary ke रूप में याद कराया: 1956 → 1972 → 1998 → 2000 → 2003 → 2008 → 2013 → 2018 → 2023.</p>
+      </div>
+      <table>
+        <thead><tr><th>Year / Date</th><th>Total</th><th>New Districts / Changes</th><th>Old District</th></tr></thead>
+        <tbody>
+          <tr><td>1956</td><td>43</td><td>MP formation-time districts</td><td>-</td></tr>
+          <tr><td>1972</td><td>45</td><td>Rajnandgaon, Bhopal</td><td>Durg; Sehore</td></tr>
+          <tr><td>25 May 1998</td><td>55</td><td>10 districts on B.R. Dubey/Dave Committee recommendation. Present MP: Barwani, Sheopur, Katni, Dindori. Six went to Chhattisgarh.</td><td>Khargone, Morena, Jabalpur, Mandla</td></tr>
+          <tr><td>6 July 1998</td><td>61</td><td>6 districts on M.S. Singhdev Committee recommendation. Present MP: Harda, Neemuch, Umaria. Three went to Chhattisgarh.</td><td>Hoshangabad/Narmadapuram, Mandsaur, Shahdol</td></tr>
+          <tr><td>2000</td><td>45</td><td>16 districts transferred to Chhattisgarh after MP partition.</td><td>-</td></tr>
+          <tr><td>15 Aug 2003</td><td>48</td><td>Burhanpur, Ashoknagar, Anuppur</td><td>Khandwa, Guna, Shahdol</td></tr>
+          <tr><td>17 May 2008</td><td>49</td><td>Alirajpur</td><td>Jhabua</td></tr>
+          <tr><td>24 May 2008</td><td>50</td><td>Singrauli</td><td>Sidhi</td></tr>
+          <tr><td>16 Aug 2013</td><td>51</td><td>Agar Malwa</td><td>Shajapur</td></tr>
+          <tr><td>1 Oct 2018</td><td>52</td><td>Niwari</td><td>Tikamgarh</td></tr>
+          <tr><td>13 Aug 2023</td><td>53</td><td>Mauganj; collector office/flag start: 15 Aug 2023</td><td>Rewa</td></tr>
+          <tr><td>5 Oct 2023</td><td>54</td><td>Pandhurna</td><td>Chhindwara</td></tr>
+          <tr><td>5 Oct 2023</td><td>55</td><td>Maihar</td><td>Satna</td></tr>
+        </tbody>
+      </table>
+      <div class="definition">
+        <h3>Extra Location Hooks</h3>
+        <ul>
+          <li>Bhopal pehle Sehore ki tehsil tha; notification 13 September 1972, establishment 2 October 1972.</li>
+          <li>Khandwa ko Eastern Nimar / पूर्वी निमाड़ कहा गया.</li>
+          <li>Burhanpur ko Deccan ki Chabi / दक्कन की चाबी कहा गया.</li>
+          <li>Singrauli ko MP ki Energy Capital / ऊर्जा राजधानी कहा गया.</li>
+          <li>Mauganj ki boundary Uttar Pradesh ko touch karti hai.</li>
+          <li>Pandhurna ki boundary Maharashtra ko touch karti hai.</li>
+          <li>Maihar ki boundary kisi doosre state se नहीं लगती.</li>
+        </ul>
+      </div>
+      <details>
+        <summary>🧠 District Mnemonic</summary>
+        <p><strong>43-45-61-45-48-50-51-52-55</strong> ko rhythm me bolo: “छप्पन 43, बहत्तर 45, अट्ठानवे 61, दो हजार फिर 45, फिर 48-50-51-52-55.”</p>
+      </details>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. 2008 ke 49th aur 50th districts?</strong><button type="button" class="reveal">Answer</button><div class="answer">49th Alirajpur; 50th Singrauli.</div></div>
+        <div class="quiz-item"><strong>Q. 2023 me kaunse 3 districts bane?</strong><button type="button" class="reveal">Answer</button><div class="answer">Mauganj, Pandhurna, Maihar.</div></div>
+        <div class="quiz-item"><strong>Q. 1972 me kaunse 2 districts add hue?</strong><button type="button" class="reveal">Answer</button><div class="answer">Rajnandgaon aur Bhopal.</div></div>
+      </div>
+    </section>
+
+    <section id="cg" style="--accent: var(--orange)" data-title="MP-CG Partition">
+      <div class="section-head">
+        <h2>⚡ MP-Chhattisgarh Partition 2000</h2>
+        <p>2000 me MP ka division hua aur Chhattisgarh India ka 26th state bana.</p>
+      </div>
+      <table>
+        <thead><tr><th>Fact</th><th>Details</th></tr></thead>
+        <tbody>
+          <tr><td>Act</td><td>Madhya Pradesh Reorganisation Act, 2000 / MP पुनर्गठन अधिनियम.</td></tr>
+          <tr><td>New State</td><td>Chhattisgarh, India ka 26th state.</td></tr>
+          <tr><td>Capital</td><td>Raipur.</td></tr>
+          <tr><td>Area</td><td>146,361 sq km.</td></tr>
+          <tr><td>Lok Sabha members</td><td>11.</td></tr>
+          <tr><td>MLA seats</td><td>90.</td></tr>
+          <tr><td>Districts transferred</td><td>16.</td></tr>
+          <tr><td>Divisions transferred</td><td>Bastar, Raipur, Bilaspur.</td></tr>
+          <tr><td>Bill in Lok Sabha</td><td>26 July 2000, by L.K. Advani.</td></tr>
+          <tr><td>President signature</td><td>25 August 2000, K.R. Narayanan.</td></tr>
+          <tr><td>Constitutional Amendment</td><td>84th Constitutional Amendment.</td></tr>
+          <tr><td>Then MP Governor</td><td>Dr. Bhai Mahavir.</td></tr>
+          <tr><td>Then MP CM</td><td>Digvijaya Singh.</td></tr>
+          <tr><td>Article</td><td>Article 3 of Indian Constitution.</td></tr>
+          <tr><td>First CM of Chhattisgarh</td><td>Ajit Jogi.</td></tr>
+        </tbody>
+      </table>
+      <details>
+        <summary>🗂️ 16 Districts Given to Chhattisgarh</summary>
+        <p>Bastar, Bilaspur, Dantewada, Dhamtari, Durg, Janjgir-Champa, Jashpur, Kanker, Kawardha, Korba, Koriya, Mahasamund, Raigarh, Raipur, Rajnandgaon, Surguja.</p>
+      </details>
+      <div class="definition">
+        <h3>Reasoning Jo Lecture me Aaya</h3>
+        <ul>
+          <li>Chhattisgarh region backward tha aur apni administrative setup demand karta tha.</li>
+          <li>Mineral resources se rich area: Bhilai, Korba, Bailadila, Devbhog ka mention.</li>
+          <li>Teacher ka point: resources yahan se nikal rahe the, development ka पैसा doosri jagah lag raha tha.</li>
+        </ul>
+      </div>
+      <div class="quiz">
+        <h3>Quick Recall</h3>
+        <div class="quiz-item"><strong>Q. Chhattisgarh India ka kaunsa state bana?</strong><button type="button" class="reveal">Answer</button><div class="answer">26th state.</div></div>
+        <div class="quiz-item"><strong>Q. MP se CG ko kitne districts aur divisions mile?</strong><button type="button" class="reveal">Answer</button><div class="answer">16 districts aur 3 divisions.</div></div>
+        <div class="quiz-item"><strong>Q. First CM of Chhattisgarh?</strong><button type="button" class="reveal">Answer</button><div class="answer">Ajit Jogi.</div></div>
+      </div>
+    </section>
+
+    <section id="fullforms" style="--accent: var(--cyan)" data-title="Full Forms">
+      <div class="section-head">
+        <h2>🔤 Master Full Forms & Terms</h2>
+        <p>Transcript me aaye important English terms ko quick scan ke liye table me रखा गया है.</p>
+      </div>
+      <table>
+        <thead><tr><th>Short Form / Term</th><th>Full Form / Meaning</th><th>Hindi Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+          <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>मध्य प्रदेश लोक सेवा आयोग</td></tr>
+          <tr><td>PSC</td><td>Public Service Commission</td><td>लोक सेवा आयोग</td></tr>
+          <tr><td>SRC</td><td>State Reorganisation Commission</td><td>राज्य पुनर्गठन आयोग</td></tr>
+          <tr><td>SRA</td><td>State Reorganisation Act</td><td>राज्य पुनर्गठन अधिनियम</td></tr>
+          <tr><td>UT</td><td>Union Territory</td><td>केंद्र शासित प्रदेश</td></tr>
+          <tr><td>CM</td><td>Chief Minister</td><td>मुख्यमंत्री</td></tr>
+          <tr><td>MLA</td><td>Member of Legislative Assembly</td><td>विधानसभा सदस्य</td></tr>
+          <tr><td>CG</td><td>Chhattisgarh</td><td>छत्तीसगढ़</td></tr>
+          <tr><td>JVP</td><td>Jawaharlal Nehru, Vallabhbhai Patel, Pattabhi Sitaramayya</td><td>तीन-सदस्यीय समिति</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="hotfacts" style="--accent: var(--danger)" data-title="Exam Hot Facts">
+      <div class="section-head">
+        <h2>🔥 Master Exam Hot Facts</h2>
+        <p>Teacher ne jin points ko asked/important बताया, unhe yahan एक जगह रखा गया है.</p>
+      </div>
+      <div class="facts">
+        <span class="badge">Dhar Commission: June 1948</span>
+        <span class="badge">Dhar Report: Dec 1948</span>
+        <span class="badge">JVP Committee: Dec 1948</span>
+        <span class="badge">JVP Report: Apr 1949</span>
+        <span class="badge">Potti Sriramulu death: 15 Dec 1952</span>
+        <span class="badge">Andhra Pradesh: 1 Oct 1953</span>
+        <span class="badge">SRC: 1953</span>
+        <span class="badge">SRC Report: Dec 1955</span>
+        <span class="badge">SRA: 31 Aug 1956</span>
+        <span class="badge">14 states + 6 UTs</span>
+        <span class="badge">MP: 1 Nov 1956</span>
+        <span class="badge">MP Articles: 3 & 4</span>
+        <span class="badge">7th Amendment</span>
+        <span class="badge">CG: 26th state</span>
+        <span class="badge">84th Amendment</span>
+        <span class="badge">Current MP districts: 55</span>
+      </div>
+    </section>
+
+    <section id="checklist" style="--accent: var(--green)" data-title="Checklist">
+      <div class="section-head">
+        <h2>✅ Master Revision Checklist</h2>
+        <p>Checkboxes browser me save rahenge. Progress bar isi checklist se update hota hai.</p>
+      </div>
+      <div class="checklist" id="checklistBox">
+        <label class="check"><input type="checkbox" data-key="c1"> Dhar Commission: June 1948, S.K. Dhar, report December 1948.</label>
+        <label class="check"><input type="checkbox" data-key="c2"> JVP Committee: Nehru, Patel, Pattabhi; report April 1949.</label>
+        <label class="check"><input type="checkbox" data-key="c3"> Potti Sriramulu: 58-day hunger strike, death 15 December 1952.</label>
+        <label class="check"><input type="checkbox" data-key="c4"> Andhra Pradesh: 1 October 1953, first linguistic state of independent India.</label>
+        <label class="check"><input type="checkbox" data-key="c5"> SRC: 1953; Fazal Ali, Hridaynath Kunzru, K.M. Panikkar; report December 1955.</label>
+        <label class="check"><input type="checkbox" data-key="c6"> State Reorganisation Act: 31 August 1956; 14 states + 6 UTs.</label>
+        <label class="check"><input type="checkbox" data-key="c7"> MP formation: 1 November 1956 under Articles 3 and 4; 7th Amendment.</label>
+        <label class="check"><input type="checkbox" data-key="c8"> Bhopal capital; Jabalpur High Court; Indore PSC; Gwalior Revenue Board.</label>
+        <label class="check"><input type="checkbox" data-key="c9"> 1956 MP: 43 districts, 7 divisions, first CM Ravi Shankar Shukla, first Governor Pattabhi Sitaramayya.</label>
+        <label class="check"><input type="checkbox" data-key="c10"> 1972: Rajnandgaon from Durg, Bhopal from Sehore; Bhopal notification 13 September and formation 2 October.</label>
+        <label class="check"><input type="checkbox" data-key="c11"> 1998 first set: Barwani, Sheopur, Katni, Dindori in present MP.</label>
+        <label class="check"><input type="checkbox" data-key="c12"> 1998 second set: Harda, Neemuch, Umaria in present MP.</label>
+        <label class="check"><input type="checkbox" data-key="c13"> 2000 partition: Chhattisgarh 26th state; 16 districts and 3 divisions transferred.</label>
+        <label class="check"><input type="checkbox" data-key="c14"> 2003: Burhanpur, Ashoknagar, Anuppur; total 48.</label>
+        <label class="check"><input type="checkbox" data-key="c15"> 2008: Alirajpur 49th, Singrauli 50th.</label>
+        <label class="check"><input type="checkbox" data-key="c16"> 2013 Agar Malwa 51st; 2018 Niwari 52nd.</label>
+        <label class="check"><input type="checkbox" data-key="c17"> 2023: Mauganj 53rd, Pandhurna 54th, Maihar 55th.</label>
+        <label class="check"><input type="checkbox" data-key="c18"> Homework: 55 districts ka map location order याद करना.</label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section style="--accent: var(--purple)">
+      <div class="section-head">
+        <h2>📌 Upcoming Topic & Revision Tip</h2>
+      </div>
+      <p><strong>Upcoming Topic:</strong> Teacher ne bola next lecture me homework पूछेंगे aur 55 districts ko map par भरकर याद करना है.</p>
+      <p class="print-note">Print mode: answers visible and layout simplified.</p>
+    </section>
+  </footer>
+
+  <script>
+    const storageKey = "mp-formation-revision";
+    const state = JSON.parse(localStorage.getItem(storageKey) || "{}");
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const jumpMenu = document.getElementById("jumpMenu");
+    const toc = document.getElementById("toc");
+    const checks = [...document.querySelectorAll('input[type="checkbox"][data-key]')];
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+
+    function save() {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    function setTheme(theme) {
+      body.dataset.theme = theme;
+      state.theme = theme;
+      themeToggle.textContent = theme === "dark" ? "☀️ Theme" : "🌙 Theme";
+      save();
+    }
+
+    setTheme(state.theme || "dark");
+    themeToggle.addEventListener("click", () => setTheme(body.dataset.theme === "dark" ? "light" : "dark"));
+
+    document.querySelectorAll("main section, footer section").forEach((section) => {
+      const title = section.dataset.title || section.querySelector("h2")?.textContent || section.id;
+      if (!section.id) return;
+      const option = document.createElement("option");
+      option.value = section.id;
+      option.textContent = title;
+      jumpMenu.appendChild(option);
+      if (section.parentElement.tagName !== "FOOTER") {
+        const link = document.createElement("a");
+        link.href = "#" + section.id;
+        link.textContent = title;
+        toc.appendChild(link);
+      }
+    });
+
+    jumpMenu.addEventListener("change", () => {
+      if (jumpMenu.value) document.getElementById(jumpMenu.value).scrollIntoView({ behavior: "smooth" });
+    });
+
+    document.querySelectorAll(".reveal").forEach((button) => {
+      button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
+        answer.classList.toggle("show");
+        button.textContent = answer.classList.contains("show") ? "Hide" : "Answer";
+      });
+    });
+
+    function updateProgress() {
+      const done = checks.filter((box) => box.checked).length;
+      const pct = checks.length ? Math.round((done / checks.length) * 100) : 0;
+      progressBar.style.width = pct + "%";
+      progressText.textContent = `${pct}% revised (${done}/${checks.length})`;
+    }
+
+    checks.forEach((box) => {
+      box.checked = Boolean(state[box.dataset.key]);
+      box.addEventListener("change", () => {
+        state[box.dataset.key] = box.checked;
+        save();
+        updateProgress();
+      });
+    });
+    updateProgress();
+
+    window.addEventListener("beforeprint", () => {
+      document.querySelectorAll("details").forEach((details) => details.open = true);
+      document.querySelectorAll(".answer").forEach((answer) => answer.classList.add("show"));
+    });
+  </script>
+</body>
+</html>

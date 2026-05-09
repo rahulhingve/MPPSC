@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Internet and Computing Fundamentals</title>
+    <dateCreated>Tue, 05 May 2026 05:27:03 GMT</dateCreated>
+    <generator>NotebookLM Corrected Extractor v6.0</generator>
+  </head>
+  <body>
+    <outline text="Internet and Computing Fundamentals">
+      <outline text="Computer Software">
+        <outline text="System Software">
+          <outline text="Operating System">
+            <outline text="Windows">
+            </outline>
+            <outline text="Mac OS">
+            </outline>
+            <outline text="Linux/Unix">
+            </outline>
+            <outline text="Android/iOS">
+            </outline>
+          </outline>
+          <outline text="Utility Software">
+            <outline text="Disk Defragmenter">
+            </outline>
+            <outline text="Disk Cleaner">
+            </outline>
+            <outline text="Antivirus">
+            </outline>
+            <outline text="Backup Utility">
+            </outline>
+          </outline>
+          <outline text="Language Translators">
+            <outline text="Assembler">
+            </outline>
+            <outline text="Compiler">
+            </outline>
+            <outline text="Interpreter">
+            </outline>
+          </outline>
+          <outline text="Firmware &amp; Drivers">
+          </outline>
+        </outline>
+        <outline text="Application Software">
+          <outline text="General Purpose (MS Word, Photoshop)">
+          </outline>
+          <outline text="Special Purpose (GST Software)">
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Programming Languages">
+        <outline text="Low Level">
+          <outline text="Machine Language (Binary)">
+          </outline>
+          <outline text="Assembly Language (Mnemonics)">
+          </outline>
+        </outline>
+        <outline text="High Level">
+          <outline text="Procedural (FORTRAN, COBOL, BASIC, C)">
+          </outline>
+          <outline text="Object Oriented (Java, Python, C++, Ruby)">
+          </outline>
+          <outline text="Non-Procedural (SQL)">
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Internet Fundamentals">
+        <outline text="History &amp; Origins">
+          <outline text="ARPANET (1969)">
+          </outline>
+          <outline text="TCP/IP Protocol (Vint Cerf)">
+          </outline>
+          <outline text="WWW (Tim Berners-Lee)">
+          </outline>
+          <outline text="India: VSNL (1995)">
+          </outline>
+        </outline>
+        <outline text="Web Layers">
+          <outline text="Surface Web (4%)">
+          </outline>
+          <outline text="Deep Web (Private Data)">
+          </outline>
+          <outline text="Dark Web (TOR Browser)">
+          </outline>
+        </outline>
+        <outline text="Protocols">
+          <outline text="HTTP / HTTPS">
+          </outline>
+          <outline text="FTP (File Transfer)">
+          </outline>
+          <outline text="SMTP (Mail Send)">
+          </outline>
+          <outline text="POP3 / IMAP (Mail Receive)">
+          </outline>
+        </outline>
+        <outline text="Internet Address (URL)">
+          <outline text="Domain Name">
+          </outline>
+          <outline text="Top Level Domain (.com, .in, .org)">
+          </outline>
+          <outline text="IP Address (IPv4 vs IPv6)">
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Electronic Mail (Email)">
+        <outline text="Components">
+          <outline text="User Name">
+          </outline>
+          <outline text="CC &amp; BCC">
+          </outline>
+        </outline>
+        <outline text="Folders">
+          <outline text="Inbox / Outbox">
+          </outline>
+          <outline text="Spam / Junk">
+          </outline>
+          <outline text="Drafts / Trash">
+          </outline>
+        </outline>
+      </outline>
+      <outline text="Key Concepts &amp; Security">
+        <outline text="Net Neutrality">
+        </outline>
+        <outline text="Proxy Server">
+        </outline>
+        <outline text="Cloud Computing">
+        </outline>
+        <outline text="Phishing &amp; Spyware">
+        </outline>
+        <outline text="Starlink (Space Internet)">
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

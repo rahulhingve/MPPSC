@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPPSC Science Revision - Easy Hindi + English</title>
+  <style>
+    :root{
+      --bg: #f4f1ea;
+      --bg-soft: #faf8f4;
+      --card: #fffdf9;
+      --card-2: #f7f4ee;
+      --text: #2b2a27;
+      --muted: #66645f;
+      --accent: #2d6a6d;
+      --accent-2: #6f8f72;
+      --line: #ddd7cc;
+      --highlight: #e6f0ee;
+      --warn: #8a5a2b;
+      --shadow: 0 8px 24px rgba(54, 47, 36, 0.08);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #f1eee7 100%);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .container{
+      width:min(1120px, 92%);
+      margin:auto;
+      padding: 24px 0 60px;
+    }
+
+    .hero{
+      background: linear-gradient(135deg, #f8f6f0, #eef4f2);
+      border:1px solid var(--line);
+      border-radius: 28px;
+      padding: 34px 24px;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background: var(--highlight);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+
+    h1,h2,h3{
+      margin:0 0 10px 0;
+      line-height:1.2;
+    }
+
+    h1{
+      font-size: clamp(30px, 4vw, 48px);
+      margin-top: 14px;
+    }
+
+    h2{
+      font-size: clamp(22px, 3vw, 30px);
+      margin: 26px 0 16px;
+    }
+
+    h3{
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    p{margin: 8px 0 0}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .grid-2{grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));}
+    .grid-3{grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));}
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .soft{
+      background: var(--card-2);
+    }
+
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .list li{
+      margin: 8px 0;
+    }
+
+    .term{
+      display:inline-block;
+      background:#f0ece4;
+      border:1px solid #e1d9ca;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:14px;
+      margin: 4px 6px 0 0;
+      color:#4b4944;
+    }
+
+    .table-wrap{
+      overflow:auto;
+      border-radius: 18px;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--card);
+    }
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td{
+      padding: 14px 12px;
+      text-align:left;
+      border-bottom:1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th{
+      background:#f3efe7;
+      font-size:15px;
+    }
+
+    tr:hover td{
+      background:#fbfaf7;
+    }
+
+    .section{
+      margin-top: 24px;
+    }
+
+    .memory-box{
+      border-left: 4px solid var(--accent);
+      background: #f1f7f6;
+      padding: 14px 16px;
+      border-radius: 14px;
+      margin-top: 12px;
+    }
+
+    .qa{
+      background: #fffaf2;
+      border:1px solid #eadcc5;
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .qa b{
+      color: #7a4e1d;
+    }
+
+    .sticky-nav{
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(250,248,244,0.88);
+      border:1px solid var(--line);
+      border-radius: 18px;
+      padding: 10px;
+      margin: 16px 0 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #edf4f3;
+      border:1px solid #d6e4e1;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    .nav-links a:hover{
+      background:#e5f0ee;
+    }
+
+    .footer{
+      margin-top: 28px;
+      text-align:center;
+      color: var(--muted);
+      font-size:14px;
+    }
+
+    .mini{
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .highlight{
+      background: #fff7d9;
+      padding: 2px 7px;
+      border-radius: 8px;
+    }
+
+    .two-col{
+      columns: 2 260px;
+      column-gap: 18px;
+    }
+
+    .pill-title{
+      color:var(--accent);
+      font-weight:800;
+      margin-bottom:8px;
+      letter-spacing:.2px;
+    }
+
+    @media (max-width: 640px){
+      .hero{padding: 24px 18px;}
+      .sticky-nav{top: 6px;}
+      body{font-size:15.5px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <span class="badge">Easy Revision Page</span>
+      <h1>विज्ञान की प्रमुख शाखाएँ<br>Easy Hindi + English Revision</h1>
+      <p class="muted">
+        English medium students ke liye simple revision notes — Hindi term + English meaning + exam-oriented short points.
+      </p>
+      <div style="margin-top:14px;">
+        <span class="term">MPPSC Pre</span>
+        <span class="term">Unit 7</span>
+        <span class="term">Science Basics</span>
+        <span class="term">Hindi to English Help</span>
+      </div>
+    </section>
+
+    <nav class="sticky-nav">
+      <div class="nav-links">
+        <a href="#meaning">Science kya hai</a>
+        <a href="#subject">4 Subject Matter</a>
+        <a href="#branches">Main Branches</a>
+        <a href="#physics">Physics Sub-Branches</a>
+        <a href="#glossary">Glossary</a>
+        <a href="#memory">Memory Tricks</a>
+        <a href="#test">Self Test</a>
+      </div>
+    </nav>
+
+    <section id="meaning" class="section">
+      <h2>1) Science kya hai?</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Simple Definition</h3>
+          <p>
+            <span class="highlight">Science = सुव्यवस्थित / क्रमबद्ध ज्ञान</span>
+          </p>
+          <ul class="list">
+            <li>Nature aur physical world ke baare me jo knowledge observation, experiment aur testing se milta hai, use science kehte hain.</li>
+            <li>Science ka Hindi word = <b>विज्ञान</b>.</li>
+            <li>Ye word Latin ke <b>Scientia</b> se aaya mana jata hai.</li>
+          </ul>
+        </div>
+
+        <div class="card soft">
+          <h3>Exam Line</h3>
+          <p><b>याद रखने लायक एक लाइन:</b></p>
+          <p>
+            “वास्तविक अनुभव, प्रयोग और परीक्षण पर आधारित सुव्यवस्थित क्रमबद्ध ज्ञान को विज्ञान कहते हैं।”
+          </p>
+          <div class="memory-box">
+            <b>Shortcut:</b> Observe → Experiment → Test → Organized Knowledge = Science
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="subject" class="section">
+      <h2>2) Science ki 4 subject matter</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>चार मुख्य विषय</h3>
+          <ul class="list">
+            <li><b>प्रकृति (Nature)</b></li>
+            <li><b>ब्रह्मांड (Universe)</b></li>
+            <li><b>द्रव्य (Matter)</b></li>
+            <li><b>ऊर्जा (Energy)</b></li>
+          </ul>
+        </div>
+
+        <div class="card soft">
+          <h3>Matter vs Energy</h3>
+          <ul class="list">
+            <li><b>द्रव्य / Matter:</b> jo space gherata hai aur jiska mass hota hai.</li>
+            <li><b>ऊर्जा / Energy:</b> jiska mass aur volume nahi hota, par effect feel hota hai.</li>
+            <li><b>Examples of Matter:</b> pen, water, air, stone</li>
+            <li><b>Examples of Energy:</b> light, heat, sound, electricity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:18px;">
+        <div class="card">
+          <h3>Nature</h3>
+          <ul class="list">
+            <li><b>जैविक (Biotic):</b> plants, animals, microorganisms</li>
+            <li><b>अजैविक (Abiotic):</b> water, air, land, rocks</li>
+          </ul>
+        </div>
+        <div class="card soft">
+          <h3>Universe</h3>
+          <ul class="list">
+            <li>Stars</li>
+            <li>Planets</li>
+            <li>Satellites</li>
+            <li>Space bodies</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="branches" class="section">
+      <h2>3) Science ki main branches</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Natural Science</h3>
+          <p class="mini">प्राकृतिक विज्ञान</p>
+          <ul class="list">
+            <li>Nature aur uske components ka study</li>
+            <li>Isme aage 2 parts yaad rakho:</li>
+            <li><b>पदार्थ विज्ञान (Material Science)</b></li>
+            <li><b>जीव विज्ञान (Life Science / Biology)</b></li>
+          </ul>
+        </div>
+
+        <div class="card soft">
+          <h3>Social Science</h3>
+          <p class="mini">सामाजिक विज्ञान</p>
+          <ul class="list">
+            <li>Human society aur social life ka study</li>
+            <li>Examples: Economics, Political Science, Sociology, Geography</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="memory-box">
+        <b>Tree Trick:</b> Science = trunk, Natural Science + Social Science = 2 big branches, phir unke andar chhoti branches.
+      </div>
+    </section>
+
+    <section id="physics" class="section">
+      <h2>4) Physics ki important sub-branches</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Hindi Name</th>
+              <th>English Name</th>
+              <th>Kya study hota hai?</th>
+              <th>Quick Memory</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>यांत्रिकी</td>
+              <td>Mechanics</td>
+              <td>बल (force) aur uske effects ka study</td>
+              <td>Force wala chapter = Mechanics</td>
+            </tr>
+            <tr>
+              <td>ऊष्मा / ऊष्मागतिकी</td>
+              <td>Heat / Thermodynamics</td>
+              <td>Heat, uska transfer aur effects</td>
+              <td>Thermo = heat</td>
+            </tr>
+            <tr>
+              <td>प्रकाशिकी</td>
+              <td>Optics</td>
+              <td>Light ka production, nature, propagation, effects</td>
+              <td>Optics = Light</td>
+            </tr>
+            <tr>
+              <td>किरण प्रकाशिकी</td>
+              <td>Ray Optics</td>
+              <td>Light ko ray ke form me study karna</td>
+              <td>Ray = seedhi line wali light</td>
+            </tr>
+            <tr>
+              <td>तरंग प्रकाशिकी</td>
+              <td>Wave Optics</td>
+              <td>Light ko wave ke form me study karna</td>
+              <td>Wave = light as wave</td>
+            </tr>
+            <tr>
+              <td>ध्वनि तरंग</td>
+              <td>Acoustics</td>
+              <td>Sound waves ka study</td>
+              <td>Acoustics = Sound</td>
+            </tr>
+            <tr>
+              <td>वैद्युतिकी</td>
+              <td>Electricity</td>
+              <td>Electric charge, current aur effects</td>
+              <td>Electricity = charge flow</td>
+            </tr>
+            <tr>
+              <td>चुंबकत्व</td>
+              <td>Magnetism</td>
+              <td>Magnet aur magnetic effects ka study</td>
+              <td>Magnet = Magnetism</td>
+            </tr>
+            <tr>
+              <td>विद्युत चुंबकत्व</td>
+              <td>Electromagnetism</td>
+              <td>Electricity + magnetism dono ka study</td>
+              <td>Electro + Magnet</td>
+            </tr>
+            <tr>
+              <td>माप विज्ञान</td>
+              <td>Metrology</td>
+              <td>Measurement and units ka study</td>
+              <td>Meter yaad karo = Metrology</td>
+            </tr>
+            <tr>
+              <td>परमाणु भौतिकी</td>
+              <td>Atomic Physics</td>
+              <td>Atom ki structure aur properties ka study</td>
+              <td>Atom = Atomic Physics</td>
+            </tr>
+            <tr>
+              <td>खगोलिकी</td>
+              <td>Astronomy</td>
+              <td>Stars, planets, satellites, sky objects</td>
+              <td>Astro = space</td>
+            </tr>
+            <tr>
+              <td>नाभिकीय भौतिकी</td>
+              <td>Nuclear Physics</td>
+              <td>Nucleus, fission, fusion ka study</td>
+              <td>Nucleus = Nuclear</td>
+            </tr>
+            <tr>
+              <td>विकिरण विज्ञान</td>
+              <td>Radiology</td>
+              <td>Radiation aur radioactive materials ka study</td>
+              <td>Radioactive = Radiology</td>
+            </tr>
+            <tr>
+              <td>धातु संरचना विज्ञान</td>
+              <td>Metallography</td>
+              <td>Metals ki structure aur properties</td>
+              <td>Graphy = structure study</td>
+            </tr>
+            <tr>
+              <td>धातुकर्म विज्ञान</td>
+              <td>Metallurgy</td>
+              <td>Ore se metal extraction aur purification</td>
+              <td>Metal nikalna = Metallurgy</td>
+            </tr>
+            <tr>
+              <td>अंतरिक्ष यानकी</td>
+              <td>Astronautics</td>
+              <td>Space travel related study</td>
+              <td>Space travel = Astronautics</td>
+            </tr>
+            <tr>
+              <td>पर्वत विज्ञान</td>
+              <td>Orology</td>
+              <td>Mountains ka study</td>
+              <td>Orology = Oro = mountain</td>
+            </tr>
+            <tr>
+              <td>भूकंप विज्ञान</td>
+              <td>Seismology</td>
+              <td>Earthquake aur seismic waves ka study</td>
+              <td>Seismo = earthquake</td>
+            </tr>
+            <tr>
+              <td>चंद्र विज्ञान</td>
+              <td>Selenology</td>
+              <td>Moon ka study</td>
+              <td>Selene = Moon</td>
+            </tr>
+            <tr>
+              <td>भू-भौतिकी</td>
+              <td>Geophysics / Geology</td>
+              <td>Earth ki internal structure aur processes</td>
+              <td>Geo = Earth</td>
+            </tr>
+            <tr>
+              <td>समय मापन विज्ञान</td>
+              <td>Horology</td>
+              <td>Time measurement ka study</td>
+              <td>Horo = clock/time</td>
+            </tr>
+            <tr>
+              <td>सूक्ष्म यांत्रिकी</td>
+              <td>Quantum Mechanics</td>
+              <td>Very small particles ke behavior ka study</td>
+              <td>Quantum = micro world</td>
+            </tr>
+            <tr>
+              <td>निम्न तापीय विज्ञान</td>
+              <td>Cryogenics</td>
+              <td>Very low temperature par substances ka study</td>
+              <td>Cryo = cold</td>
+            </tr>
+            <tr>
+              <td>मणि विज्ञान / क्रिस्टलकी</td>
+              <td>Crystallography</td>
+              <td>Crystals ki structure ka study</td>
+              <td>Crystal = Crystallography</td>
+            </tr>
+            <tr>
+              <td>स्पेक्ट्रम विज्ञान</td>
+              <td>Spectroscopy</td>
+              <td>Different spectra / colour pattern ka study</td>
+              <td>Spectrum = colours</td>
+            </tr>
+            <tr>
+              <td>विकृति विज्ञान</td>
+              <td>Rheology</td>
+              <td>Deformation / shape change ka study</td>
+              <td>Shape badle = Rheology</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="glossary" class="section">
+      <h2>5) Hindi medium words ka easy glossary</h2>
+      <div class="card">
+        <div class="two-col">
+          <p><b>द्रव्य</b> = Matter</p>
+          <p><b>ऊर्जा</b> = Energy</p>
+          <p><b>ब्रह्मांड</b> = Universe</p>
+          <p><b>प्रकृति</b> = Nature</p>
+          <p><b>जैविक</b> = Biotic</p>
+          <p><b>अजैविक</b> = Abiotic</p>
+          <p><b>बल</b> = Force</p>
+          <p><b>संचरण</b> = Transfer / Propagation</p>
+          <p><b>उत्पादन</b> = Production</p>
+          <p><b>प्रभाव</b> = Effect</p>
+          <p><b>आवेश</b> = Charge</p>
+          <p><b>नाभिक</b> = Nucleus</p>
+          <p><b>विखंडन</b> = Fission</p>
+          <p><b>संलयन</b> = Fusion</p>
+          <p><b>विकिरण</b> = Radiation</p>
+          <p><b>धातु</b> = Metal</p>
+          <p><b>अयस्क</b> = Ore</p>
+          <p><b>मापन</b> = Measurement</p>
+          <p><b>सूक्ष्म</b> = Microscopic / Very small</p>
+          <p><b>विरूपण / विकृति</b> = Deformation</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="memory" class="section">
+      <h2>6) Fast memory tricks</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="pill-title">4 Subject Matter</div>
+          <p><b>प्र-ब्र-द्र-ऊ</b></p>
+          <p>प्रकृति, ब्रह्मांड, द्रव्य, ऊर्जा</p>
+        </div>
+        <div class="card soft">
+          <div class="pill-title">2 Main Branches</div>
+          <p><b>प्रा + सा</b></p>
+          <p>प्राकृतिक विज्ञान + सामाजिक विज्ञान</p>
+        </div>
+        <div class="card">
+          <div class="pill-title">Natural Science</div>
+          <p><b>पद + जीव</b></p>
+          <p>पदार्थ विज्ञान + जीव विज्ञान</p>
+        </div>
+      </div>
+
+      <div class="memory-box">
+        <b>One-line trick for Physics branches:</b><br>
+        Mechanics force ko padhta hai, Thermodynamics heat ko, Optics light ko, Acoustics sound ko, Electricity charge ko, Magnetism magnet ko, Astronomy space ko, Nuclear Physics nucleus ko.
+      </div>
+    </section>
+
+    <section id="test" class="section">
+      <h2>7) Self test for exam</h2>
+      <div class="grid grid-2">
+        <div class="qa">
+          <p><b>Q1.</b> Science ka simple meaning kya hai?</p>
+          <p><b>Ans:</b> व्यवस्थित / क्रमबद्ध ज्ञान based on observation, experiment and testing.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q2.</b> Matter aur energy me basic difference?</p>
+          <p><b>Ans:</b> Matter has mass and occupies space; energy ka effect hota hai but mass/volume nahi hota.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q3.</b> Optics kis ka study hai?</p>
+          <p><b>Ans:</b> Light.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q4.</b> Acoustics kis ka study hai?</p>
+          <p><b>Ans:</b> Sound waves.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q5.</b> Metrology kis ka study hai?</p>
+          <p><b>Ans:</b> Measurement and units.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q6.</b> Seismology kis se related hai?</p>
+          <p><b>Ans:</b> Earthquake.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q7.</b> Cryogenics kis par based hai?</p>
+          <p><b>Ans:</b> Very low temperature.</p>
+        </div>
+        <div class="qa">
+          <p><b>Q8.</b> Astronomy aur Astronautics me difference?</p>
+          <p><b>Ans:</b> Astronomy = space objects ka study; Astronautics = space travel related study.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8) Last minute revision</h2>
+      <div class="card soft">
+        <ul class="list">
+          <li>Science = organized knowledge.</li>
+          <li>4 subject matter = Nature, Universe, Matter, Energy.</li>
+          <li>Main branches = Natural Science + Social Science.</li>
+          <li>Natural Science = Material Science + Biology.</li>
+          <li>Mechanics-force, Thermodynamics-heat, Optics-light, Acoustics-sound, Electricity-charge, Magnetism-magnet.</li>
+          <li>Atomic Physics-atom, Nuclear Physics-nucleus, Astronomy-space, Seismology-earthquake, Cryogenics-low temperature.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer">
+      Made for calm revision • easy colours • Hindi + English friendly notes
+    </div>
+  </div>
+</body>
+</html>

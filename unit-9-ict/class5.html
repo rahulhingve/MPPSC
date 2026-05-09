@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 5 Revision - Computer Software & Internet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1220;
+      --panel: #171b2e;
+      --panel-2: #202642;
+      --text: #f7fbff;
+      --muted: #d9e2ef;
+      --line: rgba(255,255,255,.18);
+      --cyan: #00d4ff;
+      --orange: #ff8a3d;
+      --green: #00d084;
+      --purple: #b388ff;
+      --red: #ff5f6d;
+      --shadow: 0 18px 50px rgba(0,0,0,.28);
+      --radius: 8px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-2: #eef3f8;
+      --text: #0f172a;
+      --muted: #334155;
+      --line: rgba(15,23,42,.18);
+      --shadow: 0 12px 28px rgba(15,23,42,.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 17px;
+      line-height: 1.72;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(0,212,255,.16), rgba(255,138,61,.12));
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px 16px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 18px;
+      align-items: end;
+      min-height: 340px;
+    }
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: clamp(2rem, 5vw, 4.5rem); max-width: 900px; }
+    h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 12px; }
+    .sub { color: var(--muted); max-width: 760px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      font-weight: 700;
+      font-size: .86rem;
+    }
+    .stats {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .meter { height: 10px; background: rgba(255,255,255,.15); border-radius: 999px; overflow: hidden; }
+    .meter > span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--green), var(--cyan)); transition: width .25s ease; }
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    nav {
+      position: sticky;
+      top: 10px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+      max-height: calc(100vh - 20px);
+      overflow: auto;
+    }
+    nav a {
+      display: block;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: .92rem;
+    }
+    nav a:hover { background: var(--panel-2); color: var(--text); }
+    .tools {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .tools .wrap { display: flex; gap: 10px; align-items: center; padding-top: 10px; padding-bottom: 10px; }
+    select, button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 9px 11px;
+      font: inherit;
+      font-weight: 700;
+    }
+    select { min-width: 220px; max-width: 100%; }
+    button { cursor: pointer; }
+    button:hover { background: var(--panel-2); }
+    main { min-width: 0; }
+    section {
+      scroll-margin-top: 82px;
+      margin: 0 0 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section-head {
+      padding: 18px;
+      border-left: 6px solid var(--accent, var(--cyan));
+      background: linear-gradient(90deg, color-mix(in srgb, var(--accent, var(--cyan)) 14%, transparent), transparent);
+    }
+    .section-body { padding: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .cards-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .card {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+    .card ul, .hot ul, .checklist ul { margin: 8px 0 0; padding-left: 20px; }
+    .hot {
+      margin: 14px 0;
+      padding: 14px;
+      border: 1px solid rgba(255,95,109,.45);
+      background: color-mix(in srgb, var(--red) 12%, var(--panel));
+      border-radius: var(--radius);
+    }
+    .note {
+      margin: 14px 0;
+      padding: 14px;
+      border: 1px solid rgba(0,212,255,.4);
+      background: color-mix(in srgb, var(--cyan) 11%, var(--panel));
+      border-radius: var(--radius);
+    }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; overflow: hidden; }
+    th, td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+    th { background: color-mix(in srgb, var(--accent, var(--cyan)) 18%, var(--panel-2)); }
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-2);
+      margin: 10px 0;
+      padding: 10px 12px;
+    }
+    summary { cursor: pointer; font-weight: 800; }
+    .quiz .answer { display: none; margin-top: 7px; color: var(--green); font-weight: 700; }
+    .quiz button.reveal { padding: 5px 9px; margin-top: 6px; font-size: .9rem; }
+    .diagram {
+      display: grid;
+      gap: 8px;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      min-height: 128px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: color-mix(in srgb, var(--accent, var(--cyan)) 8%, var(--panel-2));
+    }
+    .flow { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; }
+    .node {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: var(--panel);
+      font-weight: 800;
+    }
+    .arrow { color: var(--accent, var(--cyan)); font-weight: 900; }
+    .timeline { display: grid; gap: 9px; margin: 12px 0; }
+    .event {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-2);
+    }
+    .year { color: var(--accent, var(--cyan)); font-weight: 900; }
+    .checkline { display: flex; gap: 9px; align-items: flex-start; margin: 7px 0; }
+    input[type="checkbox"] { width: 18px; height: 18px; margin-top: 5px; accent-color: var(--green); flex: 0 0 auto; }
+    footer { border-top: 1px solid var(--line); color: var(--muted); }
+    .mobile-only { display: none; }
+
+    @media (max-width: 900px) {
+      .hero, .layout, .grid, .cards-3 { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .mobile-only { display: block; }
+      .tools .wrap { flex-wrap: wrap; }
+      .stats { align-self: stretch; }
+    }
+
+    @media print {
+      :root, [data-theme="light"], [data-theme="dark"] {
+        --bg: #fff; --panel: #fff; --panel-2: #fff; --text: #000; --muted: #111; --line: #999; --shadow: none;
+      }
+      body { background: #fff; color: #000; font-size: 12pt; }
+      .tools, nav, button { display: none !important; }
+      .layout { display: block; }
+      section { break-inside: avoid; box-shadow: none; }
+      details { display: block; }
+      details > * { display: block; }
+      .answer { display: block !important; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="wrap hero">
+      <div>
+        <h1>Computer Software & Internet Revision</h1>
+        <p class="sub">MPPSC Paper 2, Unit 9 class notes ko Hinglish revision format mein convert kiya gaya hai. Promotional content skip kiya gaya hai; class ke educational points preserve kiye gaye hain.</p>
+        <div class="badges">
+          <span class="badge">13 major topics</span>
+          <span class="badge">Full forms table</span>
+          <span class="badge">Exam Hot facts</span>
+          <span class="badge">50 computer facts</span>
+          <span class="badge">Quick Recall</span>
+        </div>
+      </div>
+      <div class="stats">
+        <h3>Revision Progress</h3>
+        <p><strong id="progressText">0%</strong> checklist complete</p>
+        <div class="meter"><span id="progressBar"></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="tools">
+    <div class="wrap">
+      <select id="jump" aria-label="Jump to topic">
+        <option value="">Jump to topic</option>
+      </select>
+      <button id="themeBtn" type="button">Toggle Theme</button>
+      <span class="badge" id="doneText">0 / 0 done</span>
+    </div>
+  </div>
+
+  <div class="wrap layout">
+    <nav aria-label="Table of contents">
+      <strong>Table of Contents</strong>
+      <a href="#software">Software</a>
+      <a href="#languages">Programming Languages</a>
+      <a href="#os">Operating System & Ports</a>
+      <a href="#internet-intro">Internet Basics</a>
+      <a href="#history">Internet History</a>
+      <a href="#protocols">Internet Protocols</a>
+      <a href="#address">URL & Domains</a>
+      <a href="#devices">Internet Devices</a>
+      <a href="#tools">Web Tools</a>
+      <a href="#email">Email</a>
+      <a href="#organizations">Internet Organizations</a>
+      <a href="#glossary">Internet Vocabulary</a>
+      <a href="#current">Net Neutrality, Starlink, Proxy</a>
+      <a href="#masters">Master Tables</a>
+    </nav>
+
+    <main>
+      <section id="software" style="--accent: var(--cyan)">
+        <div class="section-head">
+          <h2>💻 Software - System vs Application</h2>
+          <p>Software = instructions/programs ka set, jinke basis par computer kaam karta hai. Class mein Ada Lovelace ko first programmer ke roop mein yaad karaya gaya.</p>
+        </div>
+        <div class="section-body">
+          <div class="grid">
+            <div class="card">
+              <h3>System Software</h3>
+              <ul>
+                <li>Electronic device ke fundamental/base software.</li>
+                <li>Computer ko on/off, run, configure aur maintain karne mein help.</li>
+                <li>User aur hardware ke beech interface banata hai.</li>
+                <li>Examples: Operating System, Utility Software, Language Translator, Firmware, Drivers.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Application Software</h3>
+              <ul>
+                <li>Specific user work ke liye banaye jaate hain.</li>
+                <li>Horizontal/General purpose: common tasks ke liye.</li>
+                <li>Vertical/Special purpose: kisi special domain/task ke liye.</li>
+                <li>Examples: PowerPoint, Photoshop, editor, games, browser apps.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram" aria-label="Software hierarchy diagram">
+            <div class="flow">
+              <span class="node">Software</span><span class="arrow">→</span>
+              <span class="node">System</span><span class="arrow">+</span>
+              <span class="node">Application</span>
+            </div>
+            <div class="flow">
+              <span class="node">OS</span><span class="node">Utility</span><span class="node">Translator</span><span class="node">Firmware</span><span class="node">Driver</span>
+            </div>
+          </div>
+
+          <details open>
+            <summary>Utility Software - Maintenance wale tools</summary>
+            <table>
+              <thead><tr><th>Utility</th><th>Kaam</th><th>Exam Angle</th></tr></thead>
+              <tbody>
+                <tr><td>Disk Defragmenter</td><td>Hard disk mein scattered files ko organize karke space better use karata hai.</td><td>Utility software ka example.</td></tr>
+                <tr><td>Disk Cleaner</td><td>Junk files remove karta hai.</td><td>Mobile/computer cleanup.</td></tr>
+                <tr><td>Disk Compressor</td><td>Files compress karke memory ka better use karata hai.</td><td>Memory saving.</td></tr>
+                <tr><td>Antivirus</td><td>Computer ko virus/external threat se bachata hai.</td><td>Utility system software.</td></tr>
+                <tr><td>Backup Utility</td><td>Files ka backup banata hai; deleted data recover karne mein help.</td><td>Important example.</td></tr>
+                <tr><td>Encryption/Decryption, Formatting, Software Update</td><td>Security, storage setup aur updates maintain karte hain.</td><td>Utility category.</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <details>
+            <summary>Language Translator</summary>
+            <p>Language translator doosri programming languages ko machine language yani binary 0/1 format mein convert karta hai.</p>
+            <table>
+              <thead><tr><th>Translator</th><th>Input</th><th>Output/Method</th></tr></thead>
+              <tbody>
+                <tr><td>Assembler</td><td>Assembly language</td><td>Machine language mein convert.</td></tr>
+                <tr><td>Compiler</td><td>High-level language</td><td>Poora program ek saath translate.</td></tr>
+                <tr><td>Interpreter</td><td>High-level language</td><td>Line-by-line translate.</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>System software ke examples: Language Translator, Driver, Firmware - answer "All of the above" ho sakta hai.</li>
+              <li>Antivirus, Disk Cleaner, Disk Defragmenter, Backup Utility = Utility Software.</li>
+              <li>POST = Power On Self Test; computer on hote hi BIOS devices check karta hai.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. System software ka basic kaam kya hai?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Hardware, user aur application software ke beech platform/interface provide karna.</p>
+            <p>Q. Compiler aur interpreter mein core difference?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Compiler poora program ek saath; interpreter line-by-line translate karta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="languages" style="--accent: var(--orange)">
+        <div class="section-head">
+          <h2>🧠 Programming Languages</h2>
+          <p>Programming language = jis language mein computer program likhe jaate hain. Low-level directly computer ke close hoti hai; high-level user/developer friendly hoti hai.</p>
+        </div>
+        <div class="section-body">
+          <table>
+            <thead><tr><th>Type</th><th>Sub-type</th><th>Facts</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td>Low Level</td><td>Machine Language</td><td>0/1 binary format; object code; first generation computers.</td><td>Binary instructions</td></tr>
+              <tr><td>Low Level</td><td>Assembly Language</td><td>English letters/short mnemonic codes; second generation; assembler needed.</td><td>ADD, MUL type mnemonics</td></tr>
+              <tr><td>High Level</td><td>Procedure</td><td>Program ek order/process mein likha jaata hai.</td><td>FORTRAN, ALGOL, COBOL, BASIC, LOGO, Pascal, C</td></tr>
+              <tr><td>High Level</td><td>Non-procedure</td><td>Fourth generation; query/task based.</td><td>SQL</td></tr>
+              <tr><td>High Level</td><td>Object Oriented</td><td>Real-world/user requirement ke hisab se software design.</td><td>C++, Java, JavaScript, Python, Ruby, C#</td></tr>
+            </tbody>
+          </table>
+
+          <details open>
+            <summary>Important Languages - Year, Developer, Use</summary>
+            <table>
+              <thead><tr><th>Language</th><th>Full Form / Fact</th><th>Developer/Year</th><th>Use</th></tr></thead>
+              <tbody>
+                <tr><td>FORTRAN</td><td>Formula Translation; first high-level language</td><td>IBM, John Backus, 1957</td><td>Scientific/math work</td></tr>
+                <tr><td>LISP</td><td>List Processing</td><td>John McCarthy, 1958</td><td>Artificial Intelligence</td></tr>
+                <tr><td>ALGOL</td><td>Algorithmic Language</td><td>Peter Naur mentioned, 1958</td><td>Algebra/math</td></tr>
+                <tr><td>COBOL</td><td>Common Business Oriented Language</td><td>Grace Hopper, 1959</td><td>Business applications</td></tr>
+                <tr><td>BASIC</td><td>Beginners All-purpose Symbolic Instruction Code</td><td>Thomas Kurtz & John Kemeny</td><td>Beginning education, math/business</td></tr>
+                <tr><td>LOGO</td><td>Logic Oriented Language</td><td>-</td><td>Children ko drawing/graphics se computer language sikhana</td></tr>
+                <tr><td>Pascal</td><td>Programming concepts sikhane ke liye</td><td>Niklaus Wirth, 1970</td><td>Education</td></tr>
+                <tr><td>C</td><td>Middle-level but high-level category; OS ki root</td><td>Transcript: Ken Thompson, 1972</td><td>Unix/Linux/Windows systems</td></tr>
+                <tr><td>C++</td><td>C + object-oriented features</td><td>Bjarne Stroustrup, 1983</td><td>Games, OS, applications</td></tr>
+                <tr><td>Java</td><td>Earlier name Oak; standard language</td><td>James Gosling, 1995</td><td>Android apps, server apps, games</td></tr>
+                <tr><td>C#</td><td>Microsoft language</td><td>Microsoft Corporation</td><td>Windows programming</td></tr>
+                <tr><td>Python</td><td>Popular OOP language</td><td>Guido van Rossum</td><td>Web, app development, machine learning</td></tr>
+                <tr><td>Ruby</td><td>Open-source language</td><td>Yukihiro Matsumoto</td><td>Web/application development</td></tr>
+                <tr><td>Prolog</td><td>Programming in Logic</td><td>-</td><td>Artificial Intelligence</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <div class="note">
+            <strong>Memory Trick</strong>
+            <p>Procedure languages ke liye: <strong>FALCON BP</strong> = FORTRAN, ALGOL, LOGO, COBOL, Pascal, BASIC. C ko "core/root" language ke roop mein alag yaad rakho.</p>
+          </div>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>Machine language code = Object Code; Assembly code = Mnemonic Code; High-level language code = Source Code.</li>
+              <li>FORTRAN, COBOL, BASIC ke full forms frequently asked.</li>
+              <li>Low-level: Machine + Assembly. High-level: Procedure, Non-procedure, Object-oriented.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. Assembly language ko machine language mein kaun convert karta hai?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Assembler.</p>
+            <p>Q. SQL kis category ki language hai?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Non-procedure high-level language.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="os" style="--accent: var(--green)">
+        <div class="section-head">
+          <h2>🖥️ Operating System & Ports</h2>
+          <p>Operating System ek system software hai jo computer ki activities ko control karta hai aur user-hardware ke beech interface ki tarah kaam karta hai.</p>
+        </div>
+        <div class="section-body">
+          <div class="grid">
+            <div class="card">
+              <h3>OS ke Main Functions</h3>
+              <ul>
+                <li>CPU/process management</li>
+                <li>Disk/file management</li>
+                <li>Memory management</li>
+                <li>Security management</li>
+                <li>Networking</li>
+                <li>User interface</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>OS Types - Names to Remember</h3>
+              <ul>
+                <li>Single user, Multi user</li>
+                <li>Character User Interface, Graphical User Interface</li>
+                <li>Batch, Single tasking, Multi tasking</li>
+                <li>Single processing, Multi processing</li>
+                <li>Real-time, Time sharing, Embedded, Network, Distributed</li>
+              </ul>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Operating System</th><th>Fact from Class</th></tr></thead>
+            <tbody>
+              <tr><td>MS-DOS</td><td>Microsoft Disk Operating System; 1981; IBM + Microsoft; C language.</td></tr>
+              <tr><td>Macintosh OS</td><td>Apple computers; 1984; Apple.</td></tr>
+              <tr><td>Windows</td><td>Windows 1.x in 1985; Windows 11 mentioned in 2021.</td></tr>
+              <tr><td>Linux</td><td>Multiprogrammable, multiprocessing, open-source OS.</td></tr>
+              <tr><td>iOS</td><td>iPhone OS; Apple, 2007; C++, Swift, Objective-C.</td></tr>
+              <tr><td>Android</td><td>Google/Open Handset Alliance; September 2008; Linux based; first Android device HTC Dream.</td></tr>
+            </tbody>
+          </table>
+
+          <details open>
+            <summary>Computer Ports</summary>
+            <table>
+              <thead><tr><th>Port</th><th>Full Form / Use</th></tr></thead>
+              <tbody>
+                <tr><td>USB</td><td>Universal Serial Bus; USB 1 = 12 Mbps, USB 2 = 480 Mbps, USB 3 = 5 Gbps.</td></tr>
+                <tr><td>PS/2</td><td>Personal System/2 port.</td></tr>
+                <tr><td>VGA</td><td>Video Graphics Array.</td></tr>
+                <tr><td>DVI</td><td>Digital Video Interface.</td></tr>
+                <tr><td>HDMI</td><td>High Definition Multimedia Interface.</td></tr>
+                <tr><td>Serial, Parallel, Game, Audio, Power, FireWire, Modem</td><td>Different peripheral/connectivity ports.</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. OS ka ek-line definition?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Program group jo computer activities control karta hai aur user-hardware interface provide karta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="internet-intro" style="--accent: var(--purple)">
+        <div class="section-head">
+          <h2>🌐 Internet Basics</h2>
+          <p>Internet = International Network; network of networks; duniya bhar ke computer networks ko connect karta hai.</p>
+        </div>
+        <div class="section-body">
+          <div class="diagram">
+            <div class="flow">
+              <span class="node">Computer A</span><span class="arrow">→ TCP breaks packets</span>
+              <span class="node">Internet</span><span class="arrow">→ IP finds address</span>
+              <span class="node">Computer B</span>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Definition</h3>
+              <p>Duniya bhar ke computer networks ko common protocol ke through connect karna Internet hai. Isliye ye Wide Area Network ka example hai.</p>
+            </div>
+            <div class="card">
+              <h3>Working</h3>
+              <p>TCP message ko packets mein todta hai; IP har connected device ko unique address deta hai; ISP internet service provide karta hai.</p>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Web Type</th><th>Meaning</th><th>Important Fact</th></tr></thead>
+            <tbody>
+              <tr><td>Surface Web</td><td>Publicly accessible information; no permission needed.</td><td>Class mein approx 4% bataya; examples Google, Wikipedia, Facebook, YouTube.</td></tr>
+              <tr><td>Deep Web</td><td>Login/permission required data.</td><td>Companies, government, paid subscriptions; biggest part.</td></tr>
+              <tr><td>Dark Web</td><td>Normal browser se access nahi; TOR required.</td><td>Illegal activities, hackers, crypto payments mentioned.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>Father of Internet: Vint Cerf, because TCP/IP protocol development se associated.</li>
+              <li>Internet ka koi single owner nahi; regulatory organizations standards/protocols manage karte hain.</li>
+              <li>Telnet login ke liye; Usenet filtering/indexing; Pushnet electronic bulletin board message ke liye class mein bataya gaya.</li>
+            </ul>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. Internet ka fundamental protocol?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">TCP/IP.</p>
+            <p>Q. Internet ka largest part class ke according?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Deep Web.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="history" style="--accent: var(--cyan)">
+        <div class="section-head">
+          <h2>📊 Internet History Timeline</h2>
+          <p>Class ne Internet ke global aur India development ko timeline ke form mein cover kiya.</p>
+        </div>
+        <div class="section-body">
+          <div class="timeline">
+            <div class="event"><div class="year">1940</div><div>Claude Shannon - Information Theory; remote information transmission idea. Father of Information Theory.</div></div>
+            <div class="event"><div class="year">1940</div><div>J. C. R. Licklider - Internet/networked computers ki concept.</div></div>
+            <div class="event"><div class="year">1965</div><div>Paul Baran & Donald Davies - Packet switching technique.</div></div>
+            <div class="event"><div class="year">1969</div><div>US Defence Department - ARPANET; Advanced Research Projects Administration Network.</div></div>
+            <div class="event"><div class="year">1974</div><div>Vint Cerf & Bob Kahn - TCP/IP protocol; "Internet" word use mentioned.</div></div>
+            <div class="event"><div class="year">1986</div><div>India mein ERNET/Educational Research Network; Department of Electronics + UNDP project.</div></div>
+            <div class="event"><div class="year">1989</div><div>Tim Berners-Lee - World Wide Web at CERN; open source/public use.</div></div>
+            <div class="event"><div class="year">15 Aug 1995</div><div>India mein commercial internet VSNL dwara start.</div></div>
+            <div class="event"><div class="year">1997</div><div>AOL instant messenger mentioned; Hotmail Microsoft ne acquire kiya.</div></div>
+            <div class="event"><div class="year">2011</div><div>BharatNet plan mentioned; villages ko broadband se connect karna.</div></div>
+            <div class="event"><div class="year">2021</div><div>India Internet Governance Forum, New Delhi, Electronic Niketan; internet inclusion/e-governance discussion.</div></div>
+          </div>
+
+          <div class="note">
+            <strong>India Facts</strong>
+            <p>NIC = National Informatics Centre, government websites and district connectivity; BSNL broadband service = DataOne; INFLIBNET = Information and Library Network by UGC; Hotmail ko class mein first free email service and Sabeer Bhatia se linked bataya gaya.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="protocols" style="--accent: var(--orange)">
+        <div class="section-head">
+          <h2>🔧 Internet Protocols</h2>
+          <p>Protocol = internet par information transfer ke rules. TCP/IP base protocol hai.</p>
+        </div>
+        <div class="section-body">
+          <table>
+            <thead><tr><th>Layer</th><th>Work</th><th>Protocols Mentioned</th></tr></thead>
+            <tbody>
+              <tr><td>Application</td><td>User-facing services</td><td>HTTP, HTTPS, Telnet, FTP, SMTP, POP, DNS</td></tr>
+              <tr><td>Transport</td><td>Data ek jagah se doosri jagah le jana</td><td>TCP, UDP, DCCP, SCTP, RSVP</td></tr>
+              <tr><td>Internet</td><td>Addressing</td><td>IPv4, IPv6, IPSec, IGMP, ICMP</td></tr>
+              <tr><td>Link</td><td>Devices/link connect</td><td>ARP, PPP, Ethernet, Wi-Fi</td></tr>
+            </tbody>
+          </table>
+
+          <details open>
+            <summary>IPv4 vs IPv6</summary>
+            <table>
+              <thead><tr><th>Point</th><th>IPv4</th><th>IPv6</th></tr></thead>
+              <tbody>
+                <tr><td>Launch</td><td>1981</td><td>1998</td></tr>
+                <tr><td>Bits</td><td>32-bit, 4 bytes</td><td>128-bit</td></tr>
+                <tr><td>Notation</td><td>Numeric dotted decimal</td><td>Hexadecimal style</td></tr>
+                <tr><td>Capacity</td><td>Approx 4.3 billion addresses</td><td>Very large address space</td></tr>
+                <tr><td>Need</td><td>Earlier devices ke liye sufficient laga</td><td>Device growth ke baad needed</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <table>
+            <thead><tr><th>Protocol</th><th>Full Form</th><th>Use</th></tr></thead>
+            <tbody>
+              <tr><td>TCP</td><td>Transmission Control Protocol</td><td>Packet switching; data ko packets mein todkar bhejna.</td></tr>
+              <tr><td>IP</td><td>Internet Protocol</td><td>Connected device ko unique address.</td></tr>
+              <tr><td>HTTP</td><td>HyperText Transfer Protocol</td><td>Web par data transfer; WWW backbone.</td></tr>
+              <tr><td>HTTPS</td><td>HyperText Transfer Protocol Secure</td><td>Secure web page transfer.</td></tr>
+              <tr><td>FTP</td><td>File Transfer Protocol</td><td>Files transfer.</td></tr>
+              <tr><td>SMTP</td><td>Simple Mail Transfer Protocol</td><td>Email send karna.</td></tr>
+              <tr><td>POP3</td><td>Post Office Protocol</td><td>Email receive karna.</td></tr>
+              <tr><td>IMAP</td><td>Internet Message Access Protocol</td><td>Mail server par mails store/access.</td></tr>
+              <tr><td>MIME</td><td>Multipurpose Internet Mail Extension</td><td>Email ke through multimedia data transfer.</td></tr>
+              <tr><td>UDP</td><td>User Datagram Protocol</td><td>Small datagram; streaming apps like YouTube/Netflix.</td></tr>
+              <tr><td>SNMP</td><td>Simple Network Management Protocol</td><td>Network management.</td></tr>
+              <tr><td>USSD</td><td>Unstructured Supplementary Service Data</td><td>Mobile special numbers like *123#.</td></tr>
+              <tr><td>Gopher</td><td>-</td><td>Server ki files ko local computer par access.</td></tr>
+              <tr><td>Telnet</td><td>-</td><td>Remote login.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. File transfer ke liye protocol?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">FTP - File Transfer Protocol.</p>
+            <p>Q. Email send vs receive protocols?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">Send: SMTP. Receive: POP3/IMAP.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="address" style="--accent: var(--green)">
+        <div class="section-head">
+          <h2>🔗 URL, Domain & Website</h2>
+          <p>URL internet par kisi website/webpage ka complete address hota hai.</p>
+        </div>
+        <div class="section-body">
+          <div class="diagram">
+            <div class="flow">
+              <span class="node">https</span><span class="arrow">://</span><span class="node">www</span><span class="arrow">.</span><span class="node">unacademy</span><span class="arrow">.</span><span class="node">com</span><span class="arrow">/</span><span class="node">folder</span><span class="arrow">/</span><span class="node">resource</span>
+            </div>
+            <p>Protocol → Separator → Subdomain → Domain → Top Level Domain → Directory → Resource</p>
+          </div>
+
+          <table>
+            <thead><tr><th>Part</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>Protocol</td><td>Data transfer rule: HTTP, HTTPS, FTP, mailto, telnet, news.</td></tr>
+              <tr><td>Separator</td><td>URL parts ko separate karta hai, e.g. ://, /, .</td></tr>
+              <tr><td>Subdomain</td><td>Usually www, but hamesha www zaroori nahi.</td></tr>
+              <tr><td>Domain Name</td><td>Website ka main naam, e.g. amazon, flipkart, unacademy; max 64 characters.</td></tr>
+              <tr><td>Top Level Domain</td><td>.com, .in, .org type suffix; website category/country indicate karta hai.</td></tr>
+              <tr><td>Directory</td><td>Website ke andar folder/path.</td></tr>
+              <tr><td>Resource</td><td>User jo exact file/video/page chahta hai.</td></tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead><tr><th>TLD</th><th>Meaning from Class</th></tr></thead>
+            <tbody>
+              <tr><td>.com</td><td>Commercial website</td></tr>
+              <tr><td>.in</td><td>India/Indian website</td></tr>
+              <tr><td>.co.in</td><td>Company registered in India</td></tr>
+              <tr><td>.net</td><td>Gateway/host/network related</td></tr>
+              <tr><td>.org</td><td>Organization, generally non-profit</td></tr>
+              <tr><td>.edu</td><td>Educational website</td></tr>
+              <tr><td>.gov</td><td>Government</td></tr>
+              <tr><td>.biz</td><td>Business</td></tr>
+              <tr><td>.info</td><td>Information</td></tr>
+              <tr><td>.mil</td><td>Military</td></tr>
+              <tr><td>.ltd</td><td>Private limited company</td></tr>
+            </tbody>
+          </table>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>URL = Uniform Resource Locator.</li>
+              <li>Website ka main name = Domain Name.</li>
+              <li>Website name ke baad wala part = Top Level Domain / domain suffix.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="devices" style="--accent: var(--purple)">
+        <div class="section-head">
+          <h2>📡 Internet Devices</h2>
+          <p>Internet access ke liye ISP, server, modem/router aur device ki need hoti hai.</p>
+        </div>
+        <div class="section-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Modem</h3>
+              <p>MO + DEM = Modulation + Demodulation. Telephone/analog signal aur computer/digital signal ke beech conversion karta hai.</p>
+              <ul>
+                <li>Digital → Analog = Modulation</li>
+                <li>Analog → Digital = Demodulation</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Router</h3>
+              <p>Internet ko wired ya wireless way mein aage distribute karta hai; home Wi-Fi routers mein modem component bhi hota hai.</p>
+            </div>
+            <div class="card">
+              <h3>Repeater</h3>
+              <p>Long cables/transmission mein signal weak na ho, isliye repeat/strengthen karta hai.</p>
+            </div>
+            <div class="card">
+              <h3>Hub</h3>
+              <p>Multiple devices ko ek local network mein connect karne ka simple device.</p>
+            </div>
+            <div class="card">
+              <h3>Multiplexer</h3>
+              <p>Low-speed transmission lines ko high-speed line se connect karta hai.</p>
+            </div>
+            <div class="card">
+              <h3>Gateway / Bridge</h3>
+              <p>Different networks/protocols ko connect karne mein help. Gateway protocol converter ki tarah kaam karta hai.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" style="--accent: var(--cyan)">
+        <div class="section-head">
+          <h2>🗂️ Web Tools: Hyperlink, Browser, Search Engine</h2>
+          <p>Internet tools wo software/features hain jo web information ko access, search aur connect karne mein help karte hain.</p>
+        </div>
+        <div class="section-body">
+          <div class="grid">
+            <div class="card">
+              <h3>Hyperlink, Hypertext, Hypermedia</h3>
+              <ul>
+                <li>Hyperlink: do ya adhik pages ko connect karta hai; usually blue color aur hand sign.</li>
+                <li>Hypertext: clickable text jisme page/site ka address stored hota hai.</li>
+                <li>Hypermedia: text ke saath image/video/media wali linked content.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Webpage, Website, WWW</h3>
+              <ul>
+                <li>Webpage: HTML mein bana document.</li>
+                <li>Website: multiple webpages ka group.</li>
+                <li>Home page: kisi website ka first page.</li>
+                <li>WWW inventor: Tim Berners-Lee; WWW ko W3C manage karta hai; HTTP WWW ka backbone.</li>
+              </ul>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Browser</th><th>Facts</th></tr></thead>
+            <tbody>
+              <tr><td>Mosaic</td><td>Early graphical browser mentioned.</td></tr>
+              <tr><td>Internet Explorer / Microsoft Edge</td><td>Microsoft browsers.</td></tr>
+              <tr><td>Google Chrome</td><td>Google browser; mobile/desktop use.</td></tr>
+              <tr><td>Safari</td><td>Apple browser.</td></tr>
+              <tr><td>Opera</td><td>Browser used especially on mobile.</td></tr>
+              <tr><td>TOR</td><td>The Onion Router; 2002; dark web access.</td></tr>
+              <tr><td>Epic</td><td>India ka first web browser class mein bataya gaya.</td></tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead><tr><th>Search Engine</th><th>Facts</th></tr></thead>
+            <tbody>
+              <tr><td>Google</td><td>US company; search engine, browser = Chrome.</td></tr>
+              <tr><td>Bing</td><td>Microsoft search engine.</td></tr>
+              <tr><td>Ask.com</td><td>Search engine.</td></tr>
+              <tr><td>Guruji.com</td><td>India ka first search engine class mein bataya gaya.</td></tr>
+              <tr><td>DuckDuckGo / Dogpile</td><td>Meta search engine examples; apna database nahi, doosre search engines ke database se results.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>Web browser access ka medium hai; search engine filtering/indexing karta hai.</li>
+              <li>India first browser: Epic; India first search engine: Guruji.com.</li>
+              <li>Meta search engine ka own database nahi hota.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="email" style="--accent: var(--orange)">
+        <div class="section-head">
+          <h2>📧 Electronic Mail (Email)</h2>
+          <p>Email internet ki facility hai jisse digital documents/messages bheje jaate hain. General attachment limit class mein 25 MB batayi gayi.</p>
+        </div>
+        <div class="section-body">
+          <div class="diagram">
+            <div class="flow">
+              <span class="node">username</span><span class="arrow">@</span><span class="node">domain</span><span class="arrow">.</span><span class="node">TLD</span>
+            </div>
+            <p>Username → @ separator → domain name → top level domain</p>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Inventor Facts from Class</h3>
+              <ul>
+                <li>Email inventor: Shiva Ayyadurai, 30 Aug 1982 class mein bataya.</li>
+                <li>@ sign email mein use karne se Ray Tomlinson linked.</li>
+                <li>Hotmail: Sabeer Bhatia; 1996; 1997 Microsoft ne buy kiya.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Email Rules</h3>
+              <ul>
+                <li>Username max 64 characters.</li>
+                <li>Domain name max 254 characters.</li>
+                <li>Email address mein space nahi hota.</li>
+                <li>@ aur dot ka structured use hota hai; separator ke roop mein @ important.</li>
+              </ul>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Field/Folder</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>From</td><td>Sender.</td></tr>
+              <tr><td>To</td><td>Main receiver.</td></tr>
+              <tr><td>CC</td><td>Carbon Copy; receiver ko pata rahega copy kisko gayi.</td></tr>
+              <tr><td>BCC</td><td>Blind Carbon Copy; main receiver ko copy recipients nahi dikhte.</td></tr>
+              <tr><td>Subject</td><td>Email ka main topic.</td></tr>
+              <tr><td>Body</td><td>Main message.</td></tr>
+              <tr><td>Attachment</td><td>File attach karna.</td></tr>
+              <tr><td>Compose</td><td>New email create/send karna.</td></tr>
+              <tr><td>Inbox</td><td>Received emails.</td></tr>
+              <tr><td>Draft</td><td>Incomplete saved email.</td></tr>
+              <tr><td>Outbox</td><td>Send attempt hua par send nahi hua email.</td></tr>
+              <tr><td>Sent</td><td>Already sent emails.</td></tr>
+              <tr><td>Spam/Junk/Malicious</td><td>Unwanted/harmful emails.</td></tr>
+              <tr><td>Trash</td><td>Deleted emails; class mein 30 days retention mentioned.</td></tr>
+              <tr><td>Archive</td><td>Inbox se hide/save karna.</td></tr>
+              <tr><td>Starred</td><td>Important mails mark karna.</td></tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead><tr><th>Email Service</th><th>Fact</th></tr></thead>
+            <tbody>
+              <tr><td>Gmail</td><td>2004; class mein 25 MB attachment limit.</td></tr>
+              <tr><td>Outlook</td><td>20 MB limit mentioned.</td></tr>
+              <tr><td>Yahoo / Zoho</td><td>25 MB limit mentioned.</td></tr>
+              <tr><td>GMX</td><td>50 MB limit mentioned.</td></tr>
+              <tr><td>AOL</td><td>25 MB limit mentioned.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Large File Trick</strong>
+            <p>25 MB se badi file ke liye file ko Google Drive/OneDrive jaise cloud server par upload karke link email mein paste kiya ja sakta hai.</p>
+          </div>
+
+          <div class="quiz">
+            <h3>Quick Recall</h3>
+            <p>Q. Email bhejne ke liye protocol?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">SMTP - Simple Mail Transfer Protocol.</p>
+            <p>Q. CC aur BCC mein difference?</p>
+            <button class="reveal" type="button">Show answer</button>
+            <p class="answer">CC visible copy; BCC hidden copy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="organizations" style="--accent: var(--green)">
+        <div class="section-head">
+          <h2>🏛️ Internet Organizations</h2>
+          <p>Internet ka single owner nahi hai. Standards, names, numbers aur web governance ke liye organizations ka role hota hai.</p>
+        </div>
+        <div class="section-body">
+          <table>
+            <thead><tr><th>Organization</th><th>Full Form / Role</th><th>Fact</th></tr></thead>
+            <tbody>
+              <tr><td>IETF</td><td>Internet Engineering Task Force; internet standards develop.</td><td>1986; California, USA class mein mentioned.</td></tr>
+              <tr><td>ISOC</td><td>Internet Society.</td><td>Important organization.</td></tr>
+              <tr><td>ICANN</td><td>Internet Corporation for Assigned Names and Numbers.</td><td>IP address and domain names; 1998; Los Angeles, California.</td></tr>
+              <tr><td>W3C</td><td>World Wide Web Consortium.</td><td>WWW standards/manage; Tim Berners-Lee linked; 1994 mentioned.</td></tr>
+              <tr><td>IAB</td><td>Internet Architecture Board.</td><td>Internet architecture/standards.</td></tr>
+              <tr><td>IRTF</td><td>Internet Research Task Force.</td><td>Research standards.</td></tr>
+              <tr><td>NIC</td><td>National Informatics Centre.</td><td>India government websites/district network.</td></tr>
+              <tr><td>NIXI</td><td>National Internet Exchange of India.</td><td>India internet exchange.</td></tr>
+              <tr><td>IIGF</td><td>India Internet Governance Forum.</td><td>2021 New Delhi launch discussed.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="glossary" style="--accent: var(--purple)">
+        <div class="section-head">
+          <h2>📚 Internet Vocabulary</h2>
+          <p>Class ke last part mein frequently asked internet terms discuss hue.</p>
+        </div>
+        <div class="section-body">
+          <table>
+            <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>Bookmark</td><td>Important/frequently visited webpage ka saved link.</td></tr>
+              <tr><td>Blog</td><td>Online diary/article jahan individual/institution thoughts, images, videos publish kar sakte hain.</td></tr>
+              <tr><td>Cookies</td><td>Server dwara bheji files/data jo browser cache memory mein store hota hai; repeated page access fast hota hai.</td></tr>
+              <tr><td>Cloud Computing</td><td>File/data ko local hard disk ke bajay internet server par store karke anywhere access karna. Examples: Google Drive, OneDrive.</td></tr>
+              <tr><td>Pop-up</td><td>Website visit par suddenly open hone wala ad/form/page.</td></tr>
+              <tr><td>Phishing</td><td>Fake link/email/website se personal information churaane ka attempt.</td></tr>
+              <tr><td>Spyware</td><td>Secretly download hua software jo private information collect karta hai. Examples: adware, trojan, keylogger, mobile spyware, password stealer.</td></tr>
+              <tr><td>Home Page</td><td>Website ka first page.</td></tr>
+              <tr><td>Host</td><td>Network ka main computer jisse doosre computers connected hote hain.</td></tr>
+              <tr><td>Client</td><td>Server se service lene wala computer.</td></tr>
+              <tr><td>Gateway</td><td>Protocol converter; different protocols/networks ko connect karta hai.</td></tr>
+              <tr><td>Web Surfing</td><td>Internet par different information search/browse karna.</td></tr>
+              <tr><td>Spooling</td><td>Print se pehle document ko high-speed print buffer mein bhejna; printer buffer se data lekar print karta hai.</td></tr>
+              <tr><td>Emoji</td><td>Full face/symbol graphics used in modern messages.</td></tr>
+              <tr><td>Emoticon</td><td>Text symbols se emotion dikhana, jaise :-) type signs.</td></tr>
+              <tr><td>Buffer</td><td>Do devices ki data transfer speed different ho to temporary storage/use.</td></tr>
+              <tr><td>Flame</td><td>Email/video conference mein abusive/insulting language use.</td></tr>
+              <tr><td>Adobe Flash</td><td>Webpage par multimedia objects/video chalane ki old technique/player.</td></tr>
+              <tr><td>Archie</td><td>FTP servers mein stored files search karne ka query-response system.</td></tr>
+              <tr><td>IRC</td><td>Internet Relay Chat; real-time chat/instant response.</td></tr>
+              <tr><td>PDF</td><td>Portable Document Format.</td></tr>
+              <tr><td>JPG</td><td>Image format; class mein Joint Photographic group type full form context diya gaya.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="hot">
+            <strong>🔥 Exam Hot</strong>
+            <ul>
+              <li>NPS mein Blog ko online diary type question ke roop mein class ne mark kiya.</li>
+              <li>Cookies server bhejta hai, browser cache mein store hoti hain.</li>
+              <li>Phishing fake website/link ke through personal data churaati hai.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="current" style="--accent: var(--cyan)">
+        <div class="section-head">
+          <h2>🚀 Net Neutrality, Space Internet & Proxy Server</h2>
+          <p>Lecture ke last current/other facts: net neutrality, Starlink space internet aur proxy server.</p>
+        </div>
+        <div class="section-body">
+          <div class="cards-3">
+            <div class="card">
+              <h3>Net Neutrality</h3>
+              <p>Internet service provider sabhi users/services ke saath equal behavior kare, kisi app/site ko unfair speed/blocking advantage na de. Isse right to internet type concept se link kiya gaya.</p>
+            </div>
+            <div class="card">
+              <h3>Space Internet / Starlink</h3>
+              <p>Satellite ke through internet provide karna. SpaceX/Elon Musk ka Starlink project; low earth orbit satellites; remote areas tak internet. Concern: space debris.</p>
+            </div>
+            <div class="card">
+              <h3>Proxy Server</h3>
+              <p>Client aur server ke beech intermediary. User ki request pehle proxy server ko jaati hai, proxy doosre IP se server se data laata hai.</p>
+            </div>
+          </div>
+
+          <table>
+            <thead><tr><th>Proxy Server Benefit</th><th>Explanation</th></tr></thead>
+            <tbody>
+              <tr><td>IP hide</td><td>User ka original IP address directly server tak nahi jaata.</td></tr>
+              <tr><td>Blocked sites access</td><td>Class mein blocked website access possible bataya.</td></tr>
+              <tr><td>Speed improve</td><td>Repeated info proxy cache memory mein store ho sakti hai.</td></tr>
+              <tr><td>Monitoring</td><td>Network use monitor karne mein help.</td></tr>
+              <tr><td>Security</td><td>Private network par attack risk reduce karne mein help.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>📌 Upcoming Topic</strong>
+            <p>Teacher ne next class mein Social Networking Sites padhane ki baat kahi. MCQ session isi playlist mein later include karne ki baat bhi boli. Future topics ke roop mein Cyber Security aur Artificial Intelligence ka mention hua.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="masters" style="--accent: var(--orange)">
+        <div class="section-head">
+          <h2>🎯 Master Revision Tables</h2>
+          <p>Full forms, exam hot facts aur final checklist.</p>
+        </div>
+        <div class="section-body">
+          <details open>
+            <summary>50 Important Computer Facts for Exam</summary>
+            <table>
+              <thead><tr><th>No.</th><th>Exam Fact</th><th>Quick Recall</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Bharat mein computer ka use 16 August 1986 ko Bangalore ke Head Post Office mein kiya gaya. Bharat ka first fully computerized post office New Delhi maana gaya.</td><td>Bangalore HPO; New Delhi</td></tr>
+                <tr><td>2</td><td>Transistor ka avishkar 1947 mein Bell Laboratory ke John Bardeen, William Shockley aur Walter Brattain ne kiya. Transistor silicon/germanium semiconductor se bani rapid switching device hai.</td><td>1947, Bell Lab</td></tr>
+                <tr><td>3</td><td>Integrated Circuit ka development 1958 mein Jack Kilby aur Robert Noyce dwara kiya gaya. IC chips silicon/germanium semiconductor material se banti hain.</td><td>1958; Kilby & Noyce</td></tr>
+                <tr><td>4</td><td>Moore's Law ke according chip mein devices/components ki sankhya har 18 months mein double ho jaati hai.</td><td>18 months double</td></tr>
+                <tr><td>5</td><td>ULSI technology mein ek chip par lagbhag 1 crore electronic devices banaye ja sakte hain.</td><td>ULSI = 1 crore devices</td></tr>
+                <tr><td>6</td><td>IBM ke Deep Blue computer ne world chess champion Garry Kasparov ko haraya tha. Ye 1 second mein 20 crore chess moves soch sakta tha.</td><td>Deep Blue vs Kasparov</td></tr>
+                <tr><td>7</td><td>Commercial use ke liye available pehla computer UNIVAC maana jaata hai.</td><td>UNIVAC</td></tr>
+                <tr><td>8</td><td>Stored Program concept John von Neumann ne diya tha.</td><td>Von Neumann</td></tr>
+                <tr><td>9</td><td>Computer mein use hone wali IC chips silicon ya germanium se banti hain.</td><td>Silicon/Germanium</td></tr>
+                <tr><td>10</td><td>IC chip ka construction/manufacturing semiconductor material se hota hai.</td><td>Semiconductor</td></tr>
+                <tr><td>11</td><td>Car speedometer ko analog computer ka example maana jaata hai.</td><td>Analog example</td></tr>
+                <tr><td>12</td><td>Bhabha Atomic Research Centre dwara developed supercomputer ka naam ANUPAM hai.</td><td>ANUPAM - BARC</td></tr>
+                <tr><td>13</td><td>Bharat mein bana supercomputer FLOSSOLVER National Aeronautical Laboratory, Bangalore dwara develop/design kiya gaya tha.</td><td>FLOSSOLVER - NAL Bangalore</td></tr>
+                <tr><td>14</td><td>Computer instruction cycle ko generally Fetch-Decode-Execute cycle ke roop mein samjha jaata hai.</td><td>Fetch → Decode → Execute</td></tr>
+                <tr><td>15</td><td>Disk par data/location ko dhoondhne ki process ko Seeking kaha jaata hai.</td><td>Seeking</td></tr>
+                <tr><td>16</td><td>RAM aur CPU ke beech high-speed storage area ke roop mein Cache Memory kaam karti hai, jisse processing speed improve hoti hai.</td><td>Cache memory</td></tr>
+                <tr><td>17</td><td>Wires ka set jiske dwara computer ke ek part se doosre part tak data transmit hota hai, Bus kehlata hai.</td><td>Bus</td></tr>
+                <tr><td>18</td><td>CPU ke liye doosra commonly used term Microprocessor hai.</td><td>CPU = Microprocessor</td></tr>
+                <tr><td>19</td><td>Motherboard ka doosra naam System Board hai.</td><td>System Board</td></tr>
+                <tr><td>20</td><td>Musical instrument ko sound card se connect karne ke liye MIDI Port use hota hai. MIDI = Musical Instrument Digital Interface.</td><td>MIDI Port</td></tr>
+                <tr><td>21</td><td>Computer power supply mein SMPS ka full form Switched-Mode Power Supply hai.</td><td>SMPS</td></tr>
+                <tr><td>22</td><td>Computer mein telephone jack jaisa dikhne wala port Modem Port maana jaata hai.</td><td>Modem Port</td></tr>
+                <tr><td>23</td><td>Computer ke internal devices/cards generally Motherboard se connect hote hain.</td><td>Motherboard</td></tr>
+                <tr><td>24</td><td>UPC = Universal Product Code. Iska use American super stores mein products track karne ke liye hota hai; ye commonly used barcode hai.</td><td>UPC Barcode</td></tr>
+                <tr><td>25</td><td>Keyboard se type kiya ja sakne wala letter, number ya symbol Character kehlata hai.</td><td>Character</td></tr>
+                <tr><td>26</td><td>Jo symbols kisi ek character ya characters ke combination ko represent karte hain, Wild Card kehlate hain.</td><td>Wild Card</td></tr>
+                <tr><td>27</td><td>Keyboard ki help se computer restart karne ke liye Ctrl + Alt + Del key combination use hota hai.</td><td>Ctrl + Alt + Del</td></tr>
+                <tr><td>28</td><td>Computer monitor ka size diagonal measurement se bataya jaata hai.</td><td>Diagonal</td></tr>
+                <tr><td>29</td><td>Printing measurement mein DPI ka full form Dots Per Inch hai.</td><td>DPI</td></tr>
+                <tr><td>30</td><td>Voice data ko word document/text mein convert karke computer par store karne wala software Speech Recognition Software hota hai.</td><td>Speech Recognition</td></tr>
+                <tr><td>31</td><td>Parallel Port ka common use Printer ke liye hota hai.</td><td>Printer</td></tr>
+                <tr><td>32</td><td>Bus width jitni zyada hoti hai, data transfer capacity/speed utni zyada hoti hai; jaise road zyada wide ho to traffic zyada pass hota hai.</td><td>Bus Width</td></tr>
+                <tr><td>33</td><td>ROM mein program/data fuse link ke through dala jaata hai. Data enter hone ke baad fuse link burn kar diya jaata hai, isliye ROM mein data dalne ko Burning kaha jaata hai.</td><td>ROM Burning</td></tr>
+                <tr><td>34</td><td>Computer mein information Digital Data ke roop mein store hoti hai.</td><td>Digital Data</td></tr>
+                <tr><td>35</td><td>Registers high-speed memory elements hote hain.</td><td>Registers</td></tr>
+                <tr><td>36</td><td>Computer ki built-in/internal memory ROM maani jaati hai.</td><td>ROM</td></tr>
+                <tr><td>37</td><td>ROM ka most advanced form EEPROM hai.</td><td>EEPROM</td></tr>
+                <tr><td>38</td><td>Dynamic RAM ka data 1 second mein kai baar refresh/renew kiya ja sakta hai.</td><td>DRAM Refresh</td></tr>
+                <tr><td>39</td><td>Cache Memory computer system hardware dwara arranged high-speed, small memory hoti hai.</td><td>Small high-speed memory</td></tr>
+                <tr><td>40</td><td>Random Access Memory electronic components se bani hoti hai jo data store karte hain.</td><td>RAM</td></tr>
+                <tr><td>41</td><td>Sequential Access ka use karne wali storage device Magnetic Tape hai.</td><td>Magnetic Tape</td></tr>
+                <tr><td>42</td><td>Disk ko tracks aur sectors mein divide karne ki process Formatting kehlati hai.</td><td>Formatting</td></tr>
+                <tr><td>43</td><td>Floppy disk mein data circular paths par record hota hai, jinhe Tracks kaha jaata hai.</td><td>Tracks</td></tr>
+                <tr><td>44</td><td>Floppy disk par future data writing se bachane ke liye Write Protect Notch hota hai.</td><td>Write Protect Notch</td></tr>
+                <tr><td>45</td><td>Computer memory mein saved data ko dhoondhkar dekhne/nikalne ki process Retrieve kehlati hai.</td><td>Retrieve</td></tr>
+                <tr><td>46</td><td>Hard drive ya kisi storage device par data ki permanent copy rakhne ki process Saving kehlati hai.</td><td>Saving</td></tr>
+                <tr><td>47</td><td>First computer architecture John von Neumann dwara 1948 mein present ki gayi thi.</td><td>1948 Architecture</td></tr>
+                <tr><td>48</td><td>"Siddharth" Bharat ka first personal computer maana gaya.</td><td>Siddharth</td></tr>
+                <tr><td>49</td><td>"Pac-Man" ek computer/game system tha jiska avishkar specifically game playing ke liye kiya gaya tha.</td><td>Pac-Man</td></tr>
+                <tr><td>50</td><td>Dr. John von Neumann ne data aur instructions ko binary system [0 & 1] mein store karne ki stored-program system approach develop ki.</td><td>Binary stored program</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <details open>
+            <summary>Master Full Forms</summary>
+            <table>
+              <thead><tr><th>Short Form</th><th>Full Form</th></tr></thead>
+              <tbody>
+                <tr><td>ARPANET</td><td>Advanced Research Projects Administration Network</td></tr>
+                <tr><td>BASIC</td><td>Beginners All-purpose Symbolic Instruction Code</td></tr>
+                <tr><td>BCC</td><td>Blind Carbon Copy</td></tr>
+                <tr><td>CC</td><td>Carbon Copy</td></tr>
+                <tr><td>COBOL</td><td>Common Business Oriented Language</td></tr>
+                <tr><td>DVI</td><td>Digital Video Interface</td></tr>
+                <tr><td>FORTRAN</td><td>Formula Translation</td></tr>
+                <tr><td>FTP</td><td>File Transfer Protocol</td></tr>
+                <tr><td>HDMI</td><td>High Definition Multimedia Interface</td></tr>
+                <tr><td>HTML</td><td>HyperText Markup Language</td></tr>
+                <tr><td>HTTP</td><td>HyperText Transfer Protocol</td></tr>
+                <tr><td>HTTPS</td><td>HyperText Transfer Protocol Secure</td></tr>
+                <tr><td>IETF</td><td>Internet Engineering Task Force</td></tr>
+                <tr><td>ICANN</td><td>Internet Corporation for Assigned Names and Numbers</td></tr>
+                <tr><td>IMAP</td><td>Internet Message Access Protocol</td></tr>
+                <tr><td>INFLIBNET</td><td>Information and Library Network</td></tr>
+                <tr><td>IP</td><td>Internet Protocol</td></tr>
+                <tr><td>IRC</td><td>Internet Relay Chat</td></tr>
+                <tr><td>ISP</td><td>Internet Service Provider</td></tr>
+                <tr><td>JPG</td><td>Joint Photographic Group</td></tr>
+                <tr><td>LISP</td><td>List Processing</td></tr>
+                <tr><td>MIME</td><td>Multipurpose Internet Mail Extension</td></tr>
+                <tr><td>MS-DOS</td><td>Microsoft Disk Operating System</td></tr>
+                <tr><td>NIC</td><td>National Informatics Centre</td></tr>
+                <tr><td>NIXI</td><td>National Internet Exchange of India</td></tr>
+                <tr><td>PDF</td><td>Portable Document Format</td></tr>
+                <tr><td>POP3</td><td>Post Office Protocol</td></tr>
+                <tr><td>POST</td><td>Power On Self Test</td></tr>
+                <tr><td>SMTP</td><td>Simple Mail Transfer Protocol</td></tr>
+                <tr><td>SNMP</td><td>Simple Network Management Protocol</td></tr>
+                <tr><td>SQL</td><td>Structured Query Language</td></tr>
+                <tr><td>TCP</td><td>Transmission Control Protocol</td></tr>
+                <tr><td>TOR</td><td>The Onion Router</td></tr>
+                <tr><td>UDP</td><td>User Datagram Protocol</td></tr>
+                <tr><td>URL</td><td>Uniform Resource Locator</td></tr>
+                <tr><td>USB</td><td>Universal Serial Bus</td></tr>
+                <tr><td>USSD</td><td>Unstructured Supplementary Service Data</td></tr>
+                <tr><td>VGA</td><td>Video Graphics Array</td></tr>
+                <tr><td>WWW</td><td>World Wide Web</td></tr>
+                <tr><td>W3C</td><td>World Wide Web Consortium</td></tr>
+                <tr><td>XML</td><td>Extensible Markup Language</td></tr>
+              </tbody>
+            </table>
+          </details>
+
+          <details open>
+            <summary>Master Exam Hot Facts</summary>
+            <ul>
+              <li>System software examples mein OS, utility, translator, firmware, driver sab aate hain.</li>
+              <li>Machine code = Object code; Assembly code = Mnemonic code; High-level code = Source code.</li>
+              <li>FORTRAN first high-level language; COBOL business-oriented; BASIC beginners language.</li>
+              <li>OS user aur hardware ke beech interface hai.</li>
+              <li>Internet = International Network; Network of Networks; TCP/IP fundamental protocol.</li>
+              <li>Vint Cerf = Father of Internet; Tim Berners-Lee = WWW inventor.</li>
+              <li>ARPANET 1969; India commercial internet 15 August 1995 via VSNL.</li>
+              <li>IPv4 = 32-bit; IPv6 = 128-bit.</li>
+              <li>URL ke parts: Protocol, Separator, Subdomain, Domain, TLD, Directory, Resource.</li>
+              <li>HTTP = WWW backbone; HTTPS = secure version.</li>
+              <li>Email send = SMTP; receive = POP3/IMAP; CC/BCC full forms important.</li>
+              <li>India first browser = Epic; India first search engine = Guruji.com.</li>
+              <li>Cookies server sends, browser cache stores.</li>
+              <li>Proxy server client-server ke beech intermediary hai.</li>
+            </ul>
+          </details>
+
+          <div class="checklist">
+            <h3>Master Revision Checklist</h3>
+            <div id="checklistItems"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p>Generated from class5 transcript. Promotional subscription/discount discussion was intentionally excluded from revision content.</p>
+    </div>
+  </footer>
+
+  <script>
+    const storageKey = "class5Revision";
+    const checks = [
+      "Software definition aur Ada Lovelace fact revise",
+      "System vs Application software difference revise",
+      "Utility software examples and uses revise",
+      "Assembler, Compiler, Interpreter difference revise",
+      "Low-level vs High-level language table revise",
+      "FORTRAN, LISP, ALGOL, COBOL, BASIC, LOGO, Pascal, C facts revise",
+      "Object-oriented languages Java, Python, C++, Ruby, C# revise",
+      "OS functions and OS types revise",
+      "MS-DOS, Mac, Windows, Linux, iOS, Android facts revise",
+      "USB, VGA, DVI, HDMI port full forms revise",
+      "Internet definition, TCP/IP working and ISP revise",
+      "Surface Web, Deep Web, Dark Web difference revise",
+      "Global and India internet timeline revise",
+      "Protocol layers and TCP/IP, HTTP/HTTPS, FTP, SMTP revise",
+      "IPv4 vs IPv6 comparison revise",
+      "URL parts and TLD meanings revise",
+      "Modem, router, repeater, hub, gateway revise",
+      "Hyperlink, Hypertext, Hypermedia, webpage, website revise",
+      "Browser vs search engine difference revise",
+      "Email structure, CC/BCC, folders, rules revise",
+      "Internet organizations IETF, ICANN, W3C, NIC revise",
+      "Bookmark, Blog, Cookies, Cloud, Pop-up, Phishing revise",
+      "Spyware, Spooling, Emoji/Emoticon, Buffer, Flame revise",
+      "Net Neutrality, Starlink, Proxy Server revise",
+      "50 important computer facts revise",
+      "Master full forms table revise"
+    ];
+
+    function readState() {
+      try { return JSON.parse(localStorage.getItem(storageKey) || "{}"); }
+      catch { return {}; }
+    }
+    function writeState(state) {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+    const state = readState();
+
+    const body = document.body;
+    body.dataset.theme = state.theme || "dark";
+    document.getElementById("themeBtn").addEventListener("click", () => {
+      state.theme = body.dataset.theme === "dark" ? "light" : "dark";
+      body.dataset.theme = state.theme;
+      writeState(state);
+    });
+
+    const checklist = document.getElementById("checklistItems");
+    checks.forEach((text, i) => {
+      const row = document.createElement("label");
+      row.className = "checkline";
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.dataset.idx = String(i);
+      input.checked = Boolean(state["check_" + i]);
+      const span = document.createElement("span");
+      span.textContent = text;
+      row.append(input, span);
+      checklist.appendChild(row);
+    });
+
+    function updateProgress() {
+      const inputs = [...document.querySelectorAll("#checklistItems input")];
+      const done = inputs.filter(x => x.checked).length;
+      const total = inputs.length;
+      const pct = total ? Math.round(done * 100 / total) : 0;
+      document.getElementById("progressText").textContent = pct + "%";
+      document.getElementById("progressBar").style.width = pct + "%";
+      document.getElementById("doneText").textContent = done + " / " + total + " done";
+    }
+    checklist.addEventListener("change", (e) => {
+      if (e.target.matches("input")) {
+        state["check_" + e.target.dataset.idx] = e.target.checked;
+        writeState(state);
+        updateProgress();
+      }
+    });
+
+    document.querySelectorAll(".reveal").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const answer = btn.nextElementSibling;
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    const jump = document.getElementById("jump");
+    document.querySelectorAll("main section").forEach((section) => {
+      const opt = document.createElement("option");
+      opt.value = "#" + section.id;
+      opt.textContent = section.querySelector("h2").textContent;
+      jump.appendChild(opt);
+    });
+    jump.addEventListener("change", () => {
+      if (jump.value) document.querySelector(jump.value).scrollIntoView({ behavior: "smooth" });
+    });
+    updateProgress();
+  </script>
+</body>
+</html>

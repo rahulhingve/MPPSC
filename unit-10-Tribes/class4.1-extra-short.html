@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>MP Janjati – Smart Revision Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --surface: #fbfbf9;
+      --surface-strong: #edeae5;
+      --accent: #01696f;
+      --accent-soft: #cedcd8;
+      --text-main: #28251d;
+      --text-muted: #686763;
+      --danger: #a12c7b;
+      --radius: 0.75rem;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e8f0ef 0, #f7f6f2 40%, #f7f6f2 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: var(--space-6) var(--space-3);
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(251, 251, 249, 0.98);
+      border-radius: 1.25rem;
+      box-shadow: var(--shadow-md);
+      padding: var(--space-8) var(--space-6);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    header {
+      margin-bottom: var(--space-6);
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: var(--space-2);
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 60ch;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 0.85rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: var(--space-2);
+    }
+
+    .tagline span {
+      font-size: 0.9rem;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.7fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        padding: var(--space-6) var(--space-3);
+      }
+      .layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text-muted);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li + li {
+      margin-top: var(--space-2);
+    }
+
+    .stat-label {
+      font-weight: 600;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #fff2c3, #ffe9e9);
+      border-radius: 0.5rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .rev-plan {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .rev-plan strong {
+      color: var(--accent);
+    }
+
+    .rev-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+
+    .rev-badges span {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(0,0,0,0.12);
+      background: #fff;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-3);
+      margin-top: var(--space-4);
+    }
+
+    /* Q&A blocks */
+
+    details.qa {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: var(--space-3);
+      margin-bottom: var(--space-2);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    details.qa[open] {
+      border-color: var(--accent-soft);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    details.qa summary {
+      cursor: pointer;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    details.qa summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .q-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-1);
+    }
+
+    .answer {
+      margin-top: var(--space-2);
+      padding-top: var(--space-2);
+      border-top: 1px dashed rgba(0,0,0,0.08);
+      font-size: 0.95rem;
+    }
+
+    .answer strong {
+      color: var(--accent);
+    }
+
+    .badge-type {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-left: var(--space-2);
+      white-space: nowrap;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 700px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hint-box {
+      margin-top: var(--space-3);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(1,105,111,0.06);
+      border-radius: 0.6rem;
+      padding: var(--space-3);
+    }
+
+    .hint-box ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+    }
+
+    .hint-box li + li {
+      margin-top: 0.35rem;
+    }
+
+    footer {
+      margin-top: var(--space-6);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .num-tag {
+      font-size: 0.75rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.4rem;
+      background: #fff7cf;
+      border: 1px solid rgba(0,0,0,0.07);
+      margin-left: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <div class="tagline">
+        <span class="pill-dot"></span>
+        <span>Active Recall + Chunking Based Revision</span>
+      </div>
+      <h1>MP की जनजातियाँ व संवैधानिक प्रावधान – Smart Revision Sheet</h1>
+      <p>
+        इस पेज को सिर्फ <span class="highlight">questions देख कर</span> अपने दिमाग से जवाब बोलो,
+        फिर क्लिक करके answer check करो। जितना ज्यादा खुद recall करोगे, उतना strong memory बनेगी।
+      </p>
+      <p style="margin-top:0.4rem; font-size:0.9rem; color:var(--text-muted);">
+        Content मुख्य रूप से तुम्हारे notes / class se लिया गया है[file:1] + basic संविधान facts (Article 46, 338A, 342 आदि).[web:17][web:22][web:25]
+      </p>
+    </header>
+
+    <section class="layout-grid">
+      <!-- LEFT: Quick stats + Articles overview -->
+      <section class="card">
+        <h2>
+          MP जनजाति – Super Quick Facts
+          <span class="pill"><span class="pill-dot"></span><span>1–2 min warm‑up</span></span>
+        </h2>
+        <ul>
+          <li>
+            <span class="stat-label">कुल अनुसूचित जनजाति जनसंख्या (2011):</span>
+            <span>1,53,16,784 (लगभग 1.53 करोड़)[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">भारत की कुल ST आबादी में MP का हिस्सा:</span>
+            <span>लगभग 14.7%[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">MP की कुल जनसंख्या में ST प्रतिशत:</span>
+            <span>लगभग 21.1%[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">जनजाति जनघनत्व:</span>
+            <span>50 व्यक्ति प्रति वर्ग किमी[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">शहरों में रहने वाली ST आबादी:</span>
+            <span>लगभग 6.8%[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">लिंगानुपात (ST):</span>
+            <span>984; बालाघाट में ~1050 लड़कियाँ प्रति 1000 लड़के[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">ST की संख्या सबसे ज़्यादा (जिले):</span>
+            <span>Dhar, Barwani, Jhabua[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">% के हिसाब से ST सबसे ज़्यादा:</span>
+            <span>Alirajpur, Jhabua, Barwani[file:1]</span>
+          </li>
+          <li>
+            <span class="stat-label">MP में अधिसूचित जनजातियाँ (Article 342):</span>
+            <span>पहले 46, 2003 में 3 हटने के बाद 43 रह गईं[file:1][web:25]</span>
+          </li>
+          <li>
+            <span class="stat-label">सबसे ज़्यादा अधिसूचित ST वाली state:</span>
+            <span>Odisha – 62 जनजातियाँ[file:1][web:25]</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- RIGHT: Spaced repetition plan -->
+      <section class="card">
+        <h2>
+          14 दिन का Revision Plan
+          <span class="pill"><span class="pill-dot"></span><span>Spaced repetition</span></span>
+        </h2>
+        <p class="rev-plan">
+          Same page ko बार‑बार, लेकिन <strong>interval बढ़ाते हुए</strong> revise करना –
+          यही spaced repetition है, जो लंबे समय तक याद रखने में cramming से कहीं बेहतर है।[web:2][web:5][web:6]
+        </p>
+        <div class="rev-badges">
+          <span><strong>Day 0</strong>: पहली बार पूरा पढ़ो</span>
+          <span><strong>Day 1</strong>: सिर्फ questions से revision</span>
+          <span><strong>Day 3</strong>: सिर्फ गलती वाले/कमज़ोर questions दोहराओ</span>
+          <span><strong>Day 7</strong>: पूरा set एक बार fast revise</span>
+          <span><strong>Day 14</strong>: exam‑style टेस्ट – बिना देखे answers likho</span>
+        </div>
+        <div class="hint-box">
+          <strong>Use ka तरीका:</strong>
+          <ul>
+            <li>हर question पर पहले 5–10 sec खुद सोचो, फिर answer खोलो (active recall).[web:4][web:11]</li>
+            <li>गलत वाले questions के आगे <span class="highlight">★</span> या <span class="highlight">❗</span> लगा दो – अगली बार इन्हें ज़्यादा revise करना।</li>
+            <li>समय कम हो तो सिर्फ “★” मार्क वाले questions करो (high‑yield revision).[web:5]</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <!-- SECTION: Conceptual chunks -->
+    <section class="card">
+      <h2 class="section-title">Concept Chunk 1 – संवैधानिक, सांविधिक व कार्यकारी प्रावधान</h2>
+      <div class="two-col">
+        <div>
+          <h3>1. संवैधानिक प्रावधान (Constitutional)</h3>
+          <p style="font-size:0.93rem; color:var(--text-muted); margin-bottom:var(--space-2);">
+            जो प्रावधान सीधे संविधान के भीतर लिखे गए हों (शुरुआत से या बाद में amendment से जोड़े गए) – जैसे
+            Article 46, 15(4), 338A, 342 आदि[file:1][web:17][web:22][web:23][web:25]
+          </p>
+          <ul>
+            <li><span class="num-tag">Art 46</span> – कमजोर वर्गों (विशेषकर SC/ST) के शैक्षिक व आर्थिक हितों को बढ़ावा देना और सामाजिक अन्याय व शोषण से सुरक्षा।[web:17][web:19]</li>
+            <li><span class="num-tag">Art 15(4)</span> – socially व educationally backward classes, SC/ST के उन्नयन के लिये विशेष प्रावधान (जैसे शिक्षा में आरक्षण); 1st Constitutional Amendment, 1951 से जोड़ा गया।[file:1][web:23]</li>
+            <li><span class="num-tag">Art 338A</span> – National Commission for Scheduled Tribes (NCST) – ST के हितों की निगरानी व सलाह देने वाली संवैधानिक संस्था।[file:1][web:22][web:27]</li>
+            <li><span class="num-tag">Art 342</span> – President द्वारा ST की सूची का notification (राज्य/केन्द्रशासित प्रदेश के अनुसार)।[web:25][web:30]</li>
+            <li><span class="num-tag">Art 330, 332</span> – Lok Sabha व राज्य विधान सभाओं में SC/ST के लिये आरक्षित सीटें।[web:24][web:29]</li>
+          </ul>
+        </div>
+        <div>
+          <h3>2. सांविधिक प्रावधान (Statutory)</h3>
+          <p style="font-size:0.93rem; color:var(--text-muted); margin-bottom:var(--space-2);">
+            Parliament/State legislature द्वारा बनाए गये कानून जिनका आधार संविधान के प्रावधान हों
+            (जैसे SC/ST (Prevention of Atrocities) Act आदि)।[web:31]
+          </p>
+          <h3 style="margin-top:var(--space-3);">3. कार्यकारी प्रावधान (Executive)</h3>
+          <p style="font-size:0.93rem; color:var(--text-muted);">
+            सरकार द्वारा लिए गये नीतिगत/प्रशासनिक फैसले – योजनाएँ, scholarships, hostels, विशेष
+            विकास कार्यक्रम आदि, जो संविधान व कानूनों को ground पर लागू करते हैं.[file:1][web:31]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Active Recall – Data based Q&A -->
+    <section class="card" style="margin-top:var(--space-4);">
+      <h2 class="section-title">Active Recall Set 1 – MP जनजाति Data (Numbers & जिलों पर आधारित)</h2>
+      <p class="q-label">📌 Use: पहले खुद answer बोलो → फिर click करके check करो</p>
+
+      <details class="qa">
+        <summary>
+          MP में 2011 जनगणना के अनुसार ST की कुल जनसंख्या कितनी है?
+          <span class="badge-type">Number</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong> 1,53,16,784 – यानी लगभग <strong>1.53 करोड़</strong> अनुसूचित जनजाति
+          की आबादी MP में है.[file:1]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          भारत की कुल ST आबादी में MP का योगदान (%) और MP की कुल आबादी में ST प्रतिशत लगभग कितना है?
+          <span class="badge-type">Percentage</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Bharat की कुल ST आबादी में MP का हिस्सा लगभग <strong>14.7%</strong> है, जबकि
+          MP की अपनी कुल जनसंख्या में ST का प्रतिशत लगभग <strong>21.1%</strong> है.[file:1]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          MP में ST जनघनत्व (person per km²) कितना है?
+          <span class="badge-type">Number</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong> लगभग <strong>50 व्यक्ति प्रति वर्ग किमी</strong> – यानी tribal जनसंख्या का
+          density 50 per km² है.[file:1]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          MP में ST की urban population लगभग कितने प्रतिशत है, और ST लिंगानुपात कितना है?
+          <span class="badge-type">Number</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          शहरों में रहने वाली ST आबादी लगभग <strong>6.8%</strong> है, और ST लिंगानुपात
+          <strong>984</strong> (1000 लड़कों पर 984 लड़कियाँ) है; Balaghat जिला ~1050 girls/1000 boys के साथ सबसे ऊपर है.[file:1]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          किस तीन जिलों में ST की संख्या (absolute) सबसे ज़्यादा है? और प्रतिशत के हिसाब से top तीन जिले कौन‑से हैं?
+          <span class="badge-type">Districts</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          संख्या के हिसाब से: <strong>Dhar, Barwani, Jhabua</strong> – इन जिलों में ST की actual संख्या सबसे ज़्यादा है.[file:1]
+          <br><br>
+          प्रतिशत (%) के हिसाब से: <strong>Alirajpur, Jhabua, Barwani</strong> – यहाँ की कुल आबादी में ST का proportion सबसे ज़्यादा है.[file:1]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          Article 342 के तहत MP में शुरू में कितनी जनजातियाँ अधिसूचित थीं, 2003 के बाद कितनी रह गईं, और किस राज्य में सबसे ज़्यादा अधिसूचित ST हैं?
+          <span class="badge-type">Article + Data</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          MP में Article 342 के तहत शुरू में <strong>46</strong> जनजातियाँ अधिसूचित थीं; 2003 में 3 हटाई गईं,
+          अब <strong>43</strong> अधिसूचित जनजातियाँ बचती हैं.[file:1][web:25]
+          सबसे ज़्यादा अधिसूचित ST वाली राज्य <strong>Odisha</strong> है – लगभग 62 जनजातियाँ.[file:1][web:25]
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION: Active Recall – Articles -->
+    <section class="card" style="margin-top:var(--space-4);">
+      <h2 class="section-title">Active Recall Set 2 – Important Articles (SC/ST & जनजातियाँ)</h2>
+
+      <details class="qa">
+        <summary>
+          Article 46 किस बारे में है, और exam में इसे कैसे याद रखोगे?
+          <span class="badge-type">Art 46 – DPSP</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Article 46, Part IV (Directive Principles) में है – यह राज्य को निर्देश देता है कि
+          <strong>कमजोर वर्गों, विशेषकर SC/ST के शैक्षिक व आर्थिक हितों को बढ़ावा दे</strong> और
+          उन्हें सामाजिक अन्याय व शोषण से बचाए.[web:17][web:19]
+          <br><br>
+          <strong>Mnemonic:</strong> <em>“4 + 6 = 10 → 10वीं class = शिक्षा”</em>  
+          यानी <strong>भाग 4 + Article 46 = शिक्षा + आर्थिक उन्नति</strong> – SC/ST ki education & economy.
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          Article 15(4) क्या allow करता है, और यह किस Constitutional Amendment से जोड़ा गया?
+          <span class="badge-type">Art 15(4)</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Article 15(4) राज्य को यह शक्ति देता है कि वो <strong>socially व educationally backward classes, SC और ST</strong>
+          के उन्नयन के लिये विशेष प्रावधान (जैसे शैक्षणिक संस्थानों में आरक्षण) बना सके.[web:23]
+          यह clause <strong>First Constitutional Amendment, 1951</strong> से जोड़ा गया था.[file:1][web:23]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          Article 338A किस संस्था से संबंधित है और उसका मुख्य काम क्या है?
+          <span class="badge-type">Art 338A</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Article 338A के तहत <strong>National Commission for Scheduled Tribes (NCST)</strong> बनाई गई है.[web:22][web:27]
+          इसका काम ST से जुड़े संवैधानिक व कानूनी safeguard की <strong>जाँच‑पड़ताल, निगरानी और सरकार को सलाह</strong> देना है, और
+          reports के ज़रिये सुधार सुझाना है.[web:22][web:27]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          Article 342 क्या प्रोवाइड करता है? “कौन ST है, कौन नहीं” यह कैसे तय होता है?
+          <span class="badge-type">Art 342</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Article 342 के तहत <strong>President</strong> किसी राज्य/केन्द्रशासित प्रदेश के लिये, Governor से परामर्श के बाद,
+          <strong>public notification के ज़रिये यह specify करते हैं कि कौन‑सी tribes/tribal communities उस राज्य में
+          Scheduled Tribes मानी जाएँगी</strong>.[web:25][web:30]
+          बाद में Parliament कानून के ज़रिये सूची में tribe को जोड़/हटा सकती है.[web:25][web:30]
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          Article 330 और 332 का tribal context में क्या महत्व है?
+          <span class="badge-type">Art 330 &amp; 332</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          Article 330 – Lok Sabha में SC/ST के लिये <strong>आरक्षित सीटें</strong>।  
+          Article 332 – State Legislative Assembly में SC/ST के लिये <strong>आरक्षित सीटें</strong>।[web:24][web:29]
+          ये articles political representation के ज़रिये जनजातीय हितों की रक्षा सुनिश्चत करते हैं.
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>
+          संविधान में संशोधन (जैसे ST के लिये नये प्रावधान जोड़ना) किस Article के तहत होता है?
+          <span class="badge-type">Art 368</span>
+        </summary>
+        <div class="answer">
+          <strong>Answer:</strong>
+          संविधान संशोधन की detailed प्रक्रिया <strong>Article 368 (Part XX)</strong> में दी गई है – यहीं से
+          Amendment Bill, विशेष बहुमत, President की assent आदि पूरी प्रक्रिया होती है.[file:1][web:21]
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION: Self‑quiz mode instructions -->
+    <section class="card" style="margin-top:var(--space-4);">
+      <h2 class="section-title">Self‑Quiz Mode – खुद से test लेने का तरीका</h2>
+      <ol style="font-size:0.9rem; color:var(--text-muted); padding-left:1.1rem;">
+        <li>पहले दिन पूरे page की सभी Q&A एक बार देख लो – बस समझने के लिये।</li>
+        <li>अगले दिनों में हर question को <strong>scroll करते time केवल question पढ़ो</strong>, answer मत खोलो.</li>
+        <li>खुद से answer बोलो / rough copy पर likho; फिर question पर click करके answer verify करो (testing effect).[web:4][web:11][web:14]</li>
+        <li>जो questions गलत हों, उनके summary text के आगे <strong>★</strong> या <strong>❗</strong> लिख दो – ये “weak spots” हैं.</li>
+        <li>Day 3 / Day 7 / Day 14 पर केवल यही ★ वाले questions revise करो – यही spaced repetition + active recall का powerful combo है.[web:5][web:13]</li>
+      </ol>
+    </section>
+
+    <footer>
+      Tum chaaho to isi structure ko copy karke dusre topics (Unit‑4, अन्य polity / MP GK topics) ke liye bhi
+      apne खुद के Q&A sets बना sakte ho – बस facts बदल दो, pattern same rakho (chunking + active recall + spaced repetition).[web:5][web:7][web:13]
+    </footer>
+  </main>
+</body>
+</html>
