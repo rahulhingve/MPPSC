@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPPSC Pre 2024 Unit 7 — पारिस्थितिक तंत्र Revision</title>
+  <meta name="description" content="Exam revision HTML page for Ecosystem Part 2: components, food chain, food web, ecological pyramids, energy flow, Lindeman 10% rule, ecological footprint, ecotone, lentic/lotic habitats and environmental movements." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f1a; --panel:#17182a; --panel2:#1d2035; --text:#f7fbff; --muted:#dbe6ff;
+      --line:rgba(255,255,255,.14); --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff;
+      --hot:#ff4d6d; --warn:#ffd166; --shadow:0 22px 50px rgba(0,0,0,.35); --radius:22px;
+    }
+    body.light{
+      --bg:#f6f8ff; --panel:#ffffff; --panel2:#eef3ff; --text:#121526; --muted:#2f3a57;
+      --line:rgba(18,21,38,.16); --shadow:0 16px 38px rgba(37,55,99,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; font-size:17px; line-height:1.7;
+      letter-spacing:.01em; background:
+        radial-gradient(circle at top left, rgba(0,212,255,.18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(179,136,255,.16), transparent 30rem),
+        var(--bg); color:var(--text);
+    }
+    a{color:var(--cyan); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1120px; margin:0 auto; padding:0 18px 48px}
+    .hero{
+      padding:44px 0 22px; position:relative;
+    }
+    .hero-card{
+      border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      border-radius:32px; padding:32px; box-shadow:var(--shadow); overflow:hidden; position:relative;
+    }
+    .hero-card:before{content:""; position:absolute; inset:-2px; background:linear-gradient(90deg,var(--cyan),var(--orange),var(--green),var(--purple)); opacity:.16; filter:blur(36px); z-index:-1}
+    h1{font-size:clamp(2rem, 5vw, 4rem); line-height:1.08; margin:0 0 16px; letter-spacing:-.04em}
+    h2{font-size:clamp(1.55rem, 3vw, 2.4rem); line-height:1.15; margin:0 0 18px}
+    h3{font-size:1.25rem; margin:0 0 10px}
+    .subtitle{font-size:1.08rem; color:var(--muted); max-width:850px}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 0}
+    .badge{border:1px solid var(--line); background:rgba(255,255,255,.07); padding:7px 12px; border-radius:999px; font-weight:700}
+    .progress-shell{height:14px; background:rgba(255,255,255,.11); border:1px solid var(--line); border-radius:99px; overflow:hidden; margin-top:18px}
+    .progress-bar{height:100%; width:0%; background:linear-gradient(90deg,var(--cyan),var(--green)); transition:width .35s ease}
+    .progress-text{font-weight:800; color:var(--green); margin-top:6px}
+    .sticky-tools{
+      position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+      background:color-mix(in srgb, var(--bg) 82%, transparent); border-bottom:1px solid var(--line);
+      margin:0 -18px 24px; padding:10px 18px;
+    }
+    .tools-row{max-width:1120px; margin:auto; display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    select,.btn,.theme-toggle{
+      color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:10px 12px;
+      font:inherit; font-weight:800; cursor:pointer;
+    }
+    select{min-width:min(100%, 330px)}
+    .theme-toggle{background:linear-gradient(135deg, rgba(0,212,255,.12), rgba(179,136,255,.12))}
+    .layout{display:grid; grid-template-columns:270px minmax(0,1fr); gap:24px; align-items:start}
+    .toc{position:sticky; top:76px; background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .toc h3{margin-bottom:12px}
+    .toc a{display:flex; gap:8px; align-items:center; padding:9px 10px; border-radius:12px; color:var(--muted); font-weight:700}
+    .toc a.active,.toc a:hover{background:rgba(0,212,255,.12); color:var(--text); text-decoration:none}
+    main{min-width:0}
+    section.topic,.master{
+      border:1px solid var(--line); background:linear-gradient(180deg, color-mix(in srgb, var(--panel) 92%, transparent), var(--panel));
+      border-radius:28px; padding:24px; margin:0 0 26px; box-shadow:var(--shadow); scroll-margin-top:86px;
+    }
+    .topic[data-accent="cyan"]{--accent:var(--cyan)}
+    .topic[data-accent="orange"]{--accent:var(--orange)}
+    .topic[data-accent="green"]{--accent:var(--green)}
+    .topic[data-accent="purple"]{--accent:var(--purple)}
+    .topic-title{display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:18px}
+    .topic-title .dot{width:14px;height:14px;border-radius:50%; background:var(--accent); box-shadow:0 0 22px var(--accent)}
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+    .card{
+      background:var(--panel2); border:1px solid var(--line); border-radius:20px; padding:18px; transition:transform .2s ease, border-color .2s ease;
+    }
+    .card:hover{transform:translateY(-3px); border-color:color-mix(in srgb, var(--accent, var(--cyan)) 55%, var(--line))}
+    .def{border-left:5px solid var(--accent, var(--cyan)); background:linear-gradient(90deg, color-mix(in srgb, var(--accent, var(--cyan)) 16%, transparent), transparent); padding:16px; border-radius:16px; margin:16px 0}
+    .hot{border-left:5px solid var(--hot); background:linear-gradient(90deg, rgba(255,77,109,.16), transparent); padding:14px 16px; border-radius:16px; margin:16px 0}
+    .tip{border-left:5px solid var(--warn); background:linear-gradient(90deg, rgba(255,209,102,.16), transparent); padding:14px 16px; border-radius:16px; margin:16px 0}
+    ul{margin:8px 0 0; padding-left:22px}
+    li{margin:6px 0}
+    table{width:100%; border-collapse:collapse; margin:16px 0; overflow:hidden; border-radius:16px}
+    th,td{border:1px solid var(--line); padding:11px 12px; vertical-align:top}
+    th{background:color-mix(in srgb, var(--accent, var(--cyan)) 20%, var(--panel2)); text-align:left}
+    tr:nth-child(even) td{background:rgba(255,255,255,.035)}
+    .visual{background:var(--panel2); border:1px solid var(--line); border-radius:22px; padding:14px; margin:18px 0}
+    .visual img{width:100%; max-width:100%; height:auto; border-radius:16px; display:block; background:#fff; object-fit:contain}
+    .caption{font-size:.88rem; color:var(--muted); margin-top:8px}
+    .fallback{display:none; margin-top:8px; padding:10px; border:1px dashed var(--orange); border-radius:12px}
+    .flow{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:14px 0}
+    .flow span{background:rgba(255,255,255,.08); border:1px solid var(--line); border-radius:14px; padding:9px 12px; font-weight:800}
+    .flow b{color:var(--accent, var(--cyan)); font-size:1.4rem}
+    details{background:var(--panel2); border:1px solid var(--line); border-radius:18px; padding:13px 15px; margin:14px 0}
+    summary{cursor:pointer; font-weight:900; color:var(--text)}
+    .quiz{display:grid; gap:10px; margin-top:12px}
+    .q{border:1px solid var(--line); background:rgba(255,255,255,.045); border-radius:16px; padding:12px}
+    .answer{display:none; margin-top:8px; padding:10px; background:rgba(0,255,136,.10); border:1px solid rgba(0,255,136,.28); border-radius:12px}
+    .q.revealed .answer{display:block}
+    .mini-btn{font:inherit; font-weight:800; border:1px solid var(--line); border-radius:12px; padding:7px 10px; margin-top:8px; background:var(--panel); color:var(--text); cursor:pointer}
+    .complete-row{display:flex; align-items:center; gap:10px; margin-top:16px; padding:12px; background:rgba(0,255,136,.08); border:1px solid rgba(0,255,136,.25); border-radius:16px; font-weight:900}
+    input[type="checkbox"]{width:20px; height:20px; accent-color:#00c878}
+    .checklist{display:grid; gap:10px}
+    .checklist label{display:flex; gap:10px; align-items:flex-start; padding:12px; background:var(--panel2); border:1px solid var(--line); border-radius:14px}
+    .pill{display:inline-flex; align-items:center; gap:7px; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid var(--line); font-size:.9rem; font-weight:800}
+    .timeline{display:grid; gap:10px; margin:14px 0}
+    .timeitem{display:grid; grid-template-columns:110px 1fr; gap:12px; background:var(--panel2); border:1px solid var(--line); border-radius:16px; padding:12px}
+    .year{font-weight:900; color:var(--green)}
+    .pyramid-demo{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:12px 0}
+    .pyr{display:flex; flex-direction:column-reverse; align-items:center; gap:3px; padding:12px; background:rgba(255,255,255,.04); border-radius:18px}
+    .pyr.inv{flex-direction:column}
+    .tier{height:35px; display:flex; align-items:center; justify-content:center; color:#06101a; font-weight:900; border-radius:8px; background:linear-gradient(90deg, var(--cyan), var(--green)); font-size:.8rem}
+    .w1{width:94%}.w2{width:74%}.w3{width:54%}.w4{width:34%}.w5{width:18%}
+    .footer{color:var(--muted); text-align:center; padding:28px 0 8px}
+    .source-note{font-size:.92rem; color:var(--muted)}
+    @media (max-width:920px){
+      .layout{grid-template-columns:1fr}
+      .toc{position:relative; top:auto}
+      .grid,.pyramid-demo{grid-template-columns:1fr}
+      .hero-card,section.topic,.master{padding:18px}
+      .sticky-tools{top:0}
+    }
+    @media print{
+      body{background:#fff!important; color:#000!important; font-size:12pt}
+      .sticky-tools,.toc,.theme-toggle,.mini-btn{display:none!important}
+      section.topic,.master,.hero-card,.card,details{box-shadow:none!important; border:1px solid #999!important; background:#fff!important; color:#000!important}
+      details{display:block}
+      details > *{display:block!important}
+      .answer{display:block!important; border:1px solid #999!important}
+      a{color:#000!important; text-decoration:underline}
+      .visual img{max-height:320px; object-fit:contain}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" id="top">
+      <div class="hero-card">
+        <h1>🌿 पारिस्थितिक तंत्र — Ecosystem Part 2</h1>
+        <p class="subtitle">MPPSC Pre 2024 • Unit 7 Environment • Exam Revision Page. Is page mein class ke educational content ko Hinglish notes, tables, diagrams, quick recall aur persistent checklist ke form mein arrange kiya gaya hai.</p>
+        <div class="badges">
+          <span class="badge">🎯 Target: MPPSC Pre 2024</span>
+          <span class="badge">📚 Unit 7</span>
+          <span class="badge">🧩 10 Major Topics</span>
+          <span class="badge">🔥 Exam Hot Points</span>
+        </div>
+        <div class="progress-shell"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="progress-text" id="progressText">Revision Progress: 0%</div>
+      </div>
+    </header>
+
+    <div class="sticky-tools">
+      <div class="tools-row">
+        <label for="jump"><strong>⚡ Quick Jump:</strong></label>
+        <select id="jump" aria-label="Jump to topic">
+          <option value="#top">Header</option>
+          <option value="#recap">Recap: Ecology vs Ecosystem</option>
+          <option value="#components">Components: Biotic & Abiotic</option>
+          <option value="#photosynthesis">Autotroph, Heterotroph & Photosynthesis</option>
+          <option value="#foodchain">Food Chain</option>
+          <option value="#foodweb">Food Web</option>
+          <option value="#pyramids">Ecological Pyramids</option>
+          <option value="#energy">Energy Flow & 10% Rule</option>
+          <option value="#biomass-number">Biomass & Number Pyramids</option>
+          <option value="#footprint">Ecological Footprint</option>
+          <option value="#misc">Misc Facts & Movements</option>
+          <option value="#masters">Master Revision</option>
+        </select>
+        <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark / ☀️ Light</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <aside class="toc" aria-label="Table of Contents">
+        <h3>🧭 Table of Contents</h3>
+        <a href="#recap">🔁 Recap</a>
+        <a href="#components">🧬 Components</a>
+        <a href="#photosynthesis">☀️ Photosynthesis</a>
+        <a href="#foodchain">🔗 Food Chain</a>
+        <a href="#foodweb">🕸️ Food Web</a>
+        <a href="#pyramids">🔺 Pyramids</a>
+        <a href="#energy">⚡ Energy & 10%</a>
+        <a href="#biomass-number">📊 Biomass/Number</a>
+        <a href="#footprint">👣 Footprint</a>
+        <a href="#misc">🌊 Misc + Movements</a>
+        <a href="#masters">✅ Master Revision</a>
+      </aside>
+
+      <main>
+        <section class="topic" id="recap" data-accent="cyan">
+          <div class="topic-title"><span class="dot"></span><h2>🔁 Recap — Ecology vs Ecosystem</h2></div>
+          <div class="grid">
+            <div class="card">
+              <h3>📌 Ecology / पारिस्थितिकी</h3>
+              <ul>
+                <li>Ecology ek <strong>study / अध्ययन</strong> hai.</li>
+                <li>Isme kisi special जीव-समुदाय ka अपने environment ke saath <strong>interaction / अंतःक्रिया</strong> study hota hai.</li>
+                <li>Word origin: <strong>Oikos</strong> = घर/आवास, <strong>Logos</strong> = अध्ययन.</li>
+                <li>Class recap ke hisaab se Ernest Haeckel ka naam yaad rakhna hai.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🌍 Ecosystem / पारिस्थितिक तंत्र</h3>
+              <ul>
+                <li>Jis area mein ecology ka study hota hai, us area ko ecosystem bola.</li>
+                <li>Teacher ne ecosystem ko <strong>environment ka chhota hissa</strong> aur nature ki <strong>functional unit</strong> bataya.</li>
+                <li>Ecosystems ek doosre se interconnected ho sakte hain.</li>
+                <li>Types recap: <strong>Natural</strong> aur <strong>Artificial</strong>.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> “Ecology study hai, Ecosystem study ka area/functional unit hai” — difference confuse nahi karna.</div>
+          <details>
+            <summary>🧠 Memory Trick</summary>
+            <p><strong>Eco-logy = Logic/Study</strong> aur <strong>Eco-system = System/Area</strong>. “-logy” sunte hi subject/study yaad karo.</p>
+          </details>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FoodWebSimple.svg?width=780" data-file="FoodWebSimple.svg" loading="eager" fetchpriority="high" decoding="async" alt="Simplified ecosystem model showing energy flow and nutrient cycle" />
+            <div class="caption">Image: Wikimedia Commons, Thompsma/Kayau, CC BY-SA 3.0 — simplified ecosystem energy and nutrient flow diagram.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Ecology ka basic meaning kya hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">जीव-समुदाय aur environment ke interaction ka अध्ययन.</div></div>
+            <div class="q"><strong>Q2.</strong> Ecosystem ko class mein nature ki kya unit bola gaya?<br><button class="mini-btn">Answer reveal</button><div class="answer">Nature ki functional unit.</div></div>
+            <div class="q"><strong>Q3.</strong> Oikos aur Logos ka meaning?<br><button class="mini-btn">Answer reveal</button><div class="answer">Oikos = घर/आवास; Logos = अध्ययन.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-recap"> Recap section revised</label>
+        </section>
+
+        <section class="topic" id="components" data-accent="green">
+          <div class="topic-title"><span class="dot"></span><h2>🧬 Ecosystem Components — जैविक & अजैविक</h2></div>
+          <div class="def"><strong>Core Rule:</strong> Environment ke jaise ecosystem ke bhi do components hote hain — <strong>Biotic / जैविक</strong> aur <strong>Abiotic / अजैविक</strong>.</div>
+          <div class="grid">
+            <div class="card">
+              <h3>🌱 Biotic Components / जैविक घटक</h3>
+              <ul>
+                <li>Jisme jaan hoti hai — living components.</li>
+                <li>Biosphere ke living organisms ko ecosystem mein teen roles mein arrange karte hain:</li>
+                <li><strong>Producer / उत्पादक</strong></li>
+                <li><strong>Consumer / उपभोक्ता</strong></li>
+                <li><strong>Decomposer / अपघटन कर्ता</strong></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🪨 Abiotic Components / अजैविक घटक</h3>
+              <ul>
+                <li>Non-living components: physical factors.</li>
+                <li>Environment recap: atmosphere, hydrosphere, lithosphere.</li>
+                <li>Ecosystem explanation: <strong>Inorganic elements</strong>, <strong>Organic elements</strong>, <strong>Climate</strong>.</li>
+                <li>Inorganic = jisme carbon nahi; Organic = jisme carbon quantity ho.</li>
+              </ul>
+            </div>
+          </div>
+          <h3>Biotic Roles Table</h3>
+          <table>
+            <thead><tr><th>Role</th><th>Hinglish Meaning</th><th>Examples from class</th><th>Dependency</th></tr></thead>
+            <tbody>
+              <tr><td>Producer / उत्पादक</td><td>Photosynthesis se apna food banata hai.</td><td>Sabhi green plants/पेड़-पौधे</td><td>Self food making</td></tr>
+              <tr><td>Primary Consumer / प्राथमिक उपभोक्ता</td><td>Herbivore / शाकाहारी</td><td>Goat, cow, deer, rabbit</td><td>Directly producer par dependent</td></tr>
+              <tr><td>Secondary Consumer / द्वितीयक उपभोक्ता</td><td>Carnivore / मांसाहारी</td><td>Lion, cheetah type examples</td><td>Indirectly producer par dependent</td></tr>
+              <tr><td>Tertiary Consumer / तृतीयक उपभोक्ता</td><td>Apex carnivore / सर्वोच्च मांसाहारी</td><td>Vulture, eagle/kite</td><td>Secondary/primary consumers par dependent</td></tr>
+              <tr><td>Decomposer / अपघटन कर्ता</td><td>Dead bodies ko break karke मिट्टी mein milata hai</td><td>Fungi, microorganisms</td><td>Nutrient recycling</td></tr>
+            </tbody>
+          </table>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> Secondary consumer producer par directly nahi, <strong>indirectly</strong> dependent hota hai. Chain: Producer → Primary → Secondary → Tertiary.</div>
+          <details>
+            <summary>🧠 Memory Trick: P-C-D</summary>
+            <p><strong>P-C-D = Plant banaye, Consumer khaye, Decomposer milaye.</strong> Plant food banata hai, consumer consume karta hai, decomposer body ko मिट्टी mein milata hai.</p>
+          </details>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Food_web_diagram.svg?width=780" data-file="Food_web_diagram.svg" loading="lazy" decoding="async" alt="Food web diagram showing producers and consumers in an ecosystem" />
+            <div class="caption">Image: Wikimedia Commons, LadyofHats, CC0/Public Domain — food web diagram showing multiple consumer links.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Ecosystem ke do main components?<br><button class="mini-btn">Answer reveal</button><div class="answer">Biotic / जैविक aur Abiotic / अजैविक.</div></div>
+            <div class="q"><strong>Q2.</strong> Primary consumer ka food habit?<br><button class="mini-btn">Answer reveal</button><div class="answer">Herbivore / शाकाहारी.</div></div>
+            <div class="q"><strong>Q3.</strong> Decomposer ke examples?<br><button class="mini-btn">Answer reveal</button><div class="answer">Fungi aur microorganisms.</div></div>
+            <div class="q"><strong>Q4.</strong> Tertiary consumer mein kya likhna hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">सर्वोच्च मांसाहारी / Apex carnivore.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-components"> Components section revised</label>
+        </section>
+
+        <section class="topic" id="photosynthesis" data-accent="orange">
+          <div class="topic-title"><span class="dot"></span><h2>☀️ Autotroph, Heterotroph & Photosynthesis</h2></div>
+          <div class="grid">
+            <div class="card">
+              <h3>🌿 Autotrophic / स्वपोषी संघटक</h3>
+              <ul>
+                <li>Jo apna food khud banate hain.</li>
+                <li>Photosynthesis / प्रकाश संश्लेषण karte hain.</li>
+                <li>Green plants aur algae type green vegetation.</li>
+                <li>Producer group ko swposhi bhi bol sakte hain.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🦌 Heterotrophic / परपोषी संघटक</h3>
+              <ul>
+                <li>Jo apna food khud nahi banate.</li>
+                <li>Food ke liye doosre organisms par dependent.</li>
+                <li>Consumers aur decomposers is broad sense mein doosron se nutrition lete hain.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="def">
+            <strong>Photosynthesis formula-style recall:</strong>
+            <div class="flow">
+              <span>Sunlight ☀️</span><b>+</b><span>CO₂</span><b>+</b><span>H₂O</span><b>+</b><span>Minerals</span><b>+</b><span>Chlorophyll</span><b>→</b><span>Glucose / Food</span>
+            </div>
+          </div>
+          <ul>
+            <li>Leaves mein <strong>chlorophyll</strong> hota hai.</li>
+            <li>Roots soil se <strong>water + mineral salts</strong> kheenchti hain.</li>
+            <li>Atmosphere se <strong>carbon dioxide</strong> milti hai.</li>
+            <li>Sunlight energy se chemical synthesis hota hai aur <strong>glucose</strong> banta hai.</li>
+          </ul>
+          <div class="tip"><strong>Mnemonic:</strong> <strong>“Su-CO-Wa-Mi-Chlo = Food Glow”</strong> — Sunlight, CO₂, Water, Minerals, Chlorophyll se glucose/food.</div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photosynthesis_en.svg?width=620" data-file="Photosynthesis_en.svg" loading="lazy" decoding="async" alt="Photosynthesis diagram showing sunlight carbon dioxide water oxygen and carbohydrates" />
+            <div class="caption">Image: Wikimedia Commons, At09kg/Wattcle/Nefronus, CC BY-SA 4.0 — photosynthesis process diagram.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Autotroph ka Hindi term?<br><button class="mini-btn">Answer reveal</button><div class="answer">स्वपोषी.</div></div>
+            <div class="q"><strong>Q2.</strong> Photosynthesis mein leaves ka important pigment?<br><button class="mini-btn">Answer reveal</button><div class="answer">Chlorophyll.</div></div>
+            <div class="q"><strong>Q3.</strong> Plants ko food banane ke liye class mein kaun-si 4 main cheezein batayi?<br><button class="mini-btn">Answer reveal</button><div class="answer">Sunlight, CO₂, water, mineral salts — chlorophyll ki presence mein.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-photosynthesis"> Photosynthesis section revised</label>
+        </section>
+
+        <section class="topic" id="foodchain" data-accent="purple">
+          <div class="topic-title"><span class="dot"></span><h2>🔗 Food Chain — खाद्य श्रृंखला</h2></div>
+          <div class="def"><strong>Definition:</strong> Aisi खाने की chain jisme ek organism doosre organism se food/energy leta hai, use <strong>Food Chain / खाद्य श्रृंखला</strong> kehte hain.</div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> First trophic level / प्रथम पोषक स्तर = <strong>Producer / Green plants</strong>. “Primary consumer” mat mark karna.</div>
+          <h3>Correct Sequence</h3>
+          <div class="flow">
+            <span>Producer 🌱</span><b>→</b><span>Primary Consumer 🦌</span><b>→</b><span>Secondary Consumer 🐍</span><b>→</b><span>Tertiary / Apex 🦅</span><b>→</b><span>Decomposer 🍄</span>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>Example 1</h3>
+              <p><strong>Grass → Grasshopper → Frog → Snake → Eagle</strong></p>
+              <p>घास producer hai; टिड्डा primary consumer; मेंढक/snake/carnivore levels; eagle apex.</p>
+            </div>
+            <div class="card">
+              <h3>Example 2</h3>
+              <p><strong>Grass/Tree → Deer → Lion → Vulture/Eagle</strong></p>
+              <p>Herbivore directly producer par depend; carnivore indirectly producer par depend.</p>
+            </div>
+          </div>
+          <details>
+            <summary>Why chain break dangerous?</summary>
+            <p>Teacher ne bola: Food chain se ek bhi link hatane par poora chain disturb hota hai; food web aur ecosystem bhi disturb ho sakta hai. Isliye ecosystem mein har organism ka role important hai.</p>
+          </details>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FoodWebSimple.svg?width=760" data-file="FoodWebSimple.svg" loading="lazy" decoding="async" alt="Food chain and nutrient cycle diagram with energy arrows" />
+            <div class="caption">Image: Wikimedia Commons, Thompsma/Kayau, CC BY-SA 3.0 — energy flow and nutrient movement model.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> First trophic level kaun hota hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">Producer / Green plants.</div></div>
+            <div class="q"><strong>Q2.</strong> Grass → Grasshopper → Frog → Snake → Eagle mein grass ka role?<br><button class="mini-btn">Answer reveal</button><div class="answer">Producer.</div></div>
+            <div class="q"><strong>Q3.</strong> Food chain ka link break hone se kya hoga?<br><button class="mini-btn">Answer reveal</button><div class="answer">Chain aur ecosystem disturb hoga.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-foodchain"> Food chain section revised</label>
+        </section>
+
+        <section class="topic" id="foodweb" data-accent="cyan">
+          <div class="topic-title"><span class="dot"></span><h2>🕸️ Food Web — खाद्य जाल</h2></div>
+          <div class="def"><strong>Definition:</strong> Bahut sari food chains jab आपस में जुड़ती/क्रॉस होती hain, to <strong>Food Web / खाद्य जाल</strong> banta hai.</div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> Food web ka another name class mein <strong>समिश्र खाद्य श्रृंखला / mixed chain</strong> bataya gaya.</div>
+          <div class="grid">
+            <div class="card">
+              <h3>🧩 Web ka idea</h3>
+              <ul>
+                <li>Ek chain: Grass → Mouse → Owl</li>
+                <li>Doosri chain: Grass → Mouse → Hawk</li>
+                <li>Teesri chain: Grass → Rabbit → Fox</li>
+                <li>Jab links mix hote hain, web ban jata hai.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🌊 Aquatic example</h3>
+              <ul>
+                <li>Algae/plants → small fish → big fish → bird</li>
+                <li>Aquatic web mein decomposers bhi nutrient recycle karte hain.</li>
+                <li>Multiple chains ek hi ecosystem mein chal sakti hain.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aquatic_food_web.jpg?width=620" data-file="Aquatic_food_web.jpg" loading="lazy" decoding="async" alt="Aquatic food web diagram showing algae, fish, bacteria and birds" />
+            <div class="caption">Image: Wikimedia Commons, Kestin Schulz, Mariya W. Smit, Lydie Herfort and Holly M. Simon / Missouri Department of Conservation, CC BY-SA 4.0 — aquatic food web example.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Food web kaise banta hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">Multiple food chains ke आपस में जुड़ने/क्रॉस होने se.</div></div>
+            <div class="q"><strong>Q2.</strong> Food web ka doosra naam?<br><button class="mini-btn">Answer reveal</button><div class="answer">समिश्र खाद्य श्रृंखला / mixed food chain.</div></div>
+            <div class="q"><strong>Q3.</strong> Aquatic chain ka class example?<br><button class="mini-btn">Answer reveal</button><div class="answer">Plants/algae → small fish → big fish → bird.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-foodweb"> Food web section revised</label>
+        </section>
+
+        <section class="topic" id="pyramids" data-accent="orange">
+          <div class="topic-title"><span class="dot"></span><h2>🔺 Ecological Pyramids — पारिस्थितिकी पिरामिड</h2></div>
+          <div class="hot"><strong>🔥 Most Important:</strong> Teacher ne “Pyramids” ko session ka सबसे महत्वपूर्ण हिस्सा bola. Energy pyramid par direct MPPSC-style question aa chuka hai.</div>
+          <div class="timeline">
+            <div class="timeitem"><div class="year">1927</div><div><strong>Charles Elton</strong> ne ecological pyramid ki concept di. Isliye “Eltonian pyramid” yaad rakho.</div></div>
+            <div class="timeitem"><div class="year">3 Bases</div><div>Pyramids food chain ko <strong>Number</strong>, <strong>Biomass/Weight</strong>, aur <strong>Energy</strong> ke आधार par dikhate hain.</div></div>
+          </div>
+          <table>
+            <thead><tr><th>Pyramid Type</th><th>Based on</th><th>Shape rule from class</th></tr></thead>
+            <tbody>
+              <tr><td>Number Pyramid / संख्या पिरामिड</td><td>Organisms ki संख्या</td><td>Upright bhi, inverted bhi</td></tr>
+              <tr><td>Biomass Pyramid / जैव भार पिरामिड</td><td>Organisms ka भार/biomass</td><td>Upright bhi, inverted bhi</td></tr>
+              <tr><td>Energy Pyramid / ऊर्जा पिरामिड</td><td>Stored/available energy</td><td><strong>Always upright / सदैव सीधा</strong></td></tr>
+            </tbody>
+          </table>
+          <div class="pyramid-demo">
+            <div class="card">
+              <h3>सीधा Pyramid</h3>
+              <div class="pyr"><div class="tier w1">Producer</div><div class="tier w2">Primary</div><div class="tier w3">Secondary</div><div class="tier w4">Tertiary</div></div>
+            </div>
+            <div class="card">
+              <h3>उल्टा Pyramid</h3>
+              <div class="pyr inv"><div class="tier w1">Many parasites</div><div class="tier w2">Birds</div><div class="tier w4">One Tree</div></div>
+            </div>
+          </div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ecological_Pyramid.svg?width=760" data-file="Ecological_Pyramid.svg" loading="lazy" decoding="async" alt="Ecological energy pyramid showing producers and consumer trophic levels" />
+            <div class="caption">Image: Wikimedia Commons, Swiggity.Swag.YOLO.Bro, CC BY-SA 4.0 — ecological energy pyramid.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Ecological pyramid concept kisne di?<br><button class="mini-btn">Answer reveal</button><div class="answer">Charles Elton, 1927.</div></div>
+            <div class="q"><strong>Q2.</strong> Pyramid ke teen bases?<br><button class="mini-btn">Answer reveal</button><div class="answer">Number, Biomass/Weight, Energy.</div></div>
+            <div class="q"><strong>Q3.</strong> Energy pyramid ka shape?<br><button class="mini-btn">Answer reveal</button><div class="answer">Always upright / सदैव सीधा.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-pyramids"> Pyramids section revised</label>
+        </section>
+
+        <section class="topic" id="energy" data-accent="green">
+          <div class="topic-title"><span class="dot"></span><h2>⚡ Energy Flow & Lindeman 10% Rule</h2></div>
+          <div class="grid">
+            <div class="card">
+              <h3>⚡ Energy Flow Facts</h3>
+              <ul>
+                <li>Energy flow <strong>unidirectional / एक दिशी</strong> hota hai.</li>
+                <li>Flow bottom se top ki ओर: Producer → Consumers.</li>
+                <li>Start <strong>abiotic system</strong> se hota hai: sunlight.</li>
+                <li>Then biotic system: plants, herbivores, carnivores.</li>
+                <li>Solar energy primary source hai.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🔥 Energy Loss</h3>
+              <ul>
+                <li>Energy conversion mein hamesha loss hota hai.</li>
+                <li>Heat ke form mein environment mein release hoti hai.</li>
+                <li>Body organs/digestion/metabolism bhi energy use karte hain.</li>
+                <li>Isliye 100% energy next level tak nahi jaati.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> Energy flow ka direction MCQ: <strong>Abiotic → Biotic</strong>, because sunlight se producer tak flow start hota hai.</div>
+          <h3>Lindeman 10% Rule / ऊर्जा प्रवाह का 10% नियम</h3>
+          <div class="def"><strong>Lindeman / Lindman, 1942:</strong> Har trophic level se next trophic level tak roughly <strong>sirf 10%</strong> energy transfer hoti hai.</div>
+          <div class="flow">
+            <span>Producer 10000 kJ</span><b>→</b><span>Herbivore 1000 kJ</span><b>→</b><span>Carnivore 100 kJ</span><b>→</b><span>Apex 10 kJ</span><b>→</b><span>Next 1 kJ</span>
+          </div>
+          <details>
+            <summary>Class example explained</summary>
+            <p>Teacher ne example diya: agar plants/producers mein 10000 kJ energy hai, to primary consumer ko 1000 kJ, secondary ko 100 kJ, tertiary/apex ko 10 kJ milta hai. Har next step pe 10% only.</p>
+          </details>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ecological_Pyramid.svg?width=760" data-file="Ecological_Pyramid.svg" loading="lazy" decoding="async" alt="Energy pyramid showing 100%, 10%, 1%, 0.1% energy levels" />
+            <div class="caption">Image: Wikimedia Commons, Swiggity.Swag.YOLO.Bro, CC BY-SA 4.0 — energy pyramid showing energy decline across trophic levels.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Energy flow one-way hota hai ya cyclic?<br><button class="mini-btn">Answer reveal</button><div class="answer">One-way / एक दिशी.</div></div>
+            <div class="q"><strong>Q2.</strong> 10% rule kisne diya aur kab?<br><button class="mini-btn">Answer reveal</button><div class="answer">Lindeman/Lindman, 1942.</div></div>
+            <div class="q"><strong>Q3.</strong> 10000 kJ ke baad primary consumer ko kitna?<br><button class="mini-btn">Answer reveal</button><div class="answer">1000 kJ.</div></div>
+            <div class="q"><strong>Q4.</strong> Energy flow start kis system se?<br><button class="mini-btn">Answer reveal</button><div class="answer">Abiotic system — sunlight — se biotic system ki ओर.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-energy"> Energy flow section revised</label>
+        </section>
+
+        <section class="topic" id="biomass-number" data-accent="purple">
+          <div class="topic-title"><span class="dot"></span><h2>📊 Biomass & Number Pyramids</h2></div>
+          <div class="grid">
+            <div class="card">
+              <h3>🌳 Biomass Pyramid — Terrestrial</h3>
+              <ul>
+                <li>Example: one big tree ecosystem.</li>
+                <li>Tree ka biomass sabse zyada.</li>
+                <li>Birds ka total biomass tree se kam.</li>
+                <li>Parasites aur hyperparasites aur kam.</li>
+                <li>Shape: <strong>Upright / सीधा</strong>.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🌊 Biomass Pyramid — Aquatic</h3>
+              <ul>
+                <li>Ocean example: phytoplankton/plants ka biomass least.</li>
+                <li>Crustaceans → small fish → big fish biomass higher.</li>
+                <li>Shape: <strong>Inverted / उल्टा</strong>.</li>
+                <li>Conclusion: biomass pyramid dono shape le sakta hai.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🌳 Number Pyramid — Tree</h3>
+              <ul>
+                <li>One tree → many birds → more parasites → even more hyperparasites.</li>
+                <li>Numbers increase upward.</li>
+                <li>Shape: <strong>Inverted / उल्टा</strong>.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>🌾 Number Pyramid — Grassland</h3>
+              <ul>
+                <li>Grass many → grasshoppers fewer → frogs fewer → snakes fewer → peacock/eagle fewer.</li>
+                <li>Numbers decrease upward.</li>
+                <li>Shape: <strong>Upright / सीधा</strong>.</li>
+              </ul>
+            </div>
+          </div>
+          <table>
+            <thead><tr><th>Question Type</th><th>Correct Exam Logic</th></tr></thead>
+            <tbody>
+              <tr><td>Biomass pyramid overall?</td><td>Upright aur inverted dono ho sakta hai; ecosystem par depend.</td></tr>
+              <tr><td>Terrestrial tree biomass pyramid?</td><td>Upright.</td></tr>
+              <tr><td>Aquatic biomass pyramid?</td><td>Inverted.</td></tr>
+              <tr><td>One tree number pyramid?</td><td>Inverted.</td></tr>
+              <tr><td>Grassland number pyramid?</td><td>Upright.</td></tr>
+              <tr><td>Energy pyramid?</td><td>Always upright.</td></tr>
+            </tbody>
+          </table>
+          <div class="tip"><strong>Mnemonic:</strong> <strong>Energy Ever Upright</strong> = ऊर्जा पिरामिड हमेशा सीधा. Number/Biomass = “Depends on ecosystem.”</div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/FoodWebSimple.svg?width=760" data-file="FoodWebSimple.svg" loading="lazy" decoding="async" alt="Ecosystem energy and nutrient web useful for biomass and number pyramid revision" />
+            <div class="caption">Image: Wikimedia Commons, Thompsma/Kayau, CC BY-SA 3.0 — ecosystem flow model for trophic-level revision.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Aquatic biomass pyramid ka shape?<br><button class="mini-btn">Answer reveal</button><div class="answer">Inverted / उल्टा.</div></div>
+            <div class="q"><strong>Q2.</strong> Tree-based number pyramid ka shape?<br><button class="mini-btn">Answer reveal</button><div class="answer">Inverted.</div></div>
+            <div class="q"><strong>Q3.</strong> Grassland number pyramid ka shape?<br><button class="mini-btn">Answer reveal</button><div class="answer">Upright.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-biomass"> Biomass/number section revised</label>
+        </section>
+
+        <section class="topic" id="footprint" data-accent="cyan">
+          <div class="topic-title"><span class="dot"></span><h2>👣 Ecological Footprint — पारिस्थितिकी पदछाप</h2></div>
+          <div class="def"><strong>Meaning:</strong> मनुष्य ko apni lifestyle smoothly chalane ke liye jitni ecological resources/components ki आवश्यक मात्रा chahiye, use ecological footprint bola.</div>
+          <div class="grid">
+            <div class="card">
+              <h3>Resources in footprint</h3>
+              <ul>
+                <li>Forest products</li>
+                <li>Carbon footprint</li>
+                <li>Crop land</li>
+                <li>Building/built-up land</li>
+                <li>Fisheries</li>
+                <li>Land, ocean, animals, agriculture, transport, industry — lifestyle resources.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Measurement facts</h3>
+              <ul>
+                <li>Mापन: मनुष्य द्वारा उत्सर्जित carbon ki quantity se.</li>
+                <li>Unit: <strong>भूमंडली हेक्टेयर / Global hectare</strong>.</li>
+                <li>Organic matter mein carbon hota hai.</li>
+                <li>Wood/clothes/biological material burn karne par carbon compounds release hote hain.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> Ecological footprint ki unit = <strong>Global hectare / भूमंडली हेक्टेयर</strong>.</div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ecological_footprint.png?width=760" data-file="Ecological_footprint.png" loading="lazy" decoding="async" alt="Ecological footprint world map showing ecological means and overshoot" />
+            <div class="caption">Image: Wikimedia Commons, Global Footprint Network Open Data Platform, CC BY-SA 4.0 — ecological footprint map.</div>
+            <div class="fallback"></div>
+          </div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Ecological footprint ka basic meaning?<br><button class="mini-btn">Answer reveal</button><div class="answer">Lifestyle chalane ke liye required ecological resources ki amount.</div></div>
+            <div class="q"><strong>Q2.</strong> Footprint measurement kis se linked bataya?<br><button class="mini-btn">Answer reveal</button><div class="answer">Human-emitted carbon ki quantity.</div></div>
+            <div class="q"><strong>Q3.</strong> Unit kya hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">Global hectare / भूमंडली हेक्टेयर.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-footprint"> Footprint section revised</label>
+        </section>
+
+        <section class="topic" id="misc" data-accent="orange">
+          <div class="topic-title"><span class="dot"></span><h2>🌊 Misc Facts — Eucalyptus, Lentic/Lotic, Ecotone & Movements</h2></div>
+          <h3>🌳 Eucalyptus — पर्यावरणीय शत्रु</h3>
+          <div class="grid">
+            <div class="card">
+              <ul>
+                <li>Eucalyptus ka tree class mein <strong>पर्यावरणीय शत्रु</strong> bola gaya.</li>
+                <li>Reason: अत्यधिक water uptake / जल ग्रहण शक्ति.</li>
+                <li>Soil water level ko गिरा deta hai.</li>
+                <li>Soil fertility / उर्वरता par negative effect.</li>
+                <li>Australia mein bahutayat, India mein bhi kaafi.</li>
+              </ul>
+            </div>
+            <div class="visual">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Eucalyptus_tree.jpg?width=520" data-file="Eucalyptus_tree.jpg" loading="lazy" decoding="async" alt="Eucalyptus tree photograph" />
+              <div class="caption">Image: Wikimedia Commons, Fir0002, GFDL / CC BY-SA 3.0 — Eucalyptus tree.</div>
+              <div class="fallback"></div>
+            </div>
+          </div>
+          <div class="hot"><strong>🔥 Exam Hot:</strong> “निम्न में पर्यावरणीय शत्रु कौन?” → <strong>Eucalyptus</strong>.</div>
+
+          <h3>💧 Lentic vs Lotic Habitat</h3>
+          <table>
+            <thead><tr><th>Term</th><th>Meaning</th><th>Examples from class</th><th>Memory</th></tr></thead>
+            <tbody>
+              <tr><td>Lotic / लोटिक आवास</td><td>Flowing water habitat</td><td>River, waterfall</td><td>Lo<strong>t</strong>ic = flow kar<strong>t</strong>a water</td></tr>
+              <tr><td>Lentic / लेंटिक आवास</td><td>Standing/stagnant water habitat</td><td>Pond/talab</td><td>Len<strong>t</strong>ic = still/रुका water</td></tr>
+            </tbody>
+          </table>
+
+          <h3>🌉 Ecotone / संक्रमण क्षेत्र</h3>
+          <div class="def"><strong>Ecotone:</strong> Do alag ecosystems ke beech ka transition zone, jahan dono ecosystems ki characteristics mix hoti hain.</div>
+          <div class="flow">
+            <span>Forest 🌳</span><b>⇄</b><span>Transition Zone / Ecotone 🐸</span><b>⇄</b><span>Grassland 🌾</span>
+          </div>
+          <ul>
+            <li>Example: Forest aur grassland ke beech ka mixed area.</li>
+            <li>Example: Land-water boundary jahan frogs/turtles jaise organisms dono systems se relate karte hain.</li>
+            <li>Yahan organisms dono ecosystems mein contribution kar sakte hain.</li>
+          </ul>
+
+          <h3>✊ Environmental Movements</h3>
+          <table>
+            <thead><tr><th>Movement</th><th>Class Fact</th><th>Exam Cue</th></tr></thead>
+            <tbody>
+              <tr><td>Chipko Movement</td><td>Tree cutting rokne ke liye log/women pedon se chipak gaye; Bishnoi society & Amrita Devi Bishnoi important.</td><td>Tree protection</td></tr>
+              <tr><td>Appiko Movement</td><td>South India ka environment conservation movement; Karnataka mein start.</td><td>Karnataka</td></tr>
+              <tr><td>Narmada Bachao Movement</td><td>Narmada par multipurpose dam projects ke ecological impact ke khilaf; MP exam ke liye important.</td><td>Narmada + dams</td></tr>
+              <tr><td>Silent Valley Bachao Movement</td><td>Kerala mein Kunti Puzha river par dam plan cancel karwana objective.</td><td>Kerala + Kunti Puzha</td></tr>
+            </tbody>
+          </table>
+          <div class="tip"><strong>Movement Mnemonic:</strong> <strong>“Chi-App-Nar-Si”</strong> = Chipko, Appiko, Narmada, Silent Valley.</div>
+          <h3>Quick Recall</h3>
+          <div class="quiz">
+            <div class="q"><strong>Q1.</strong> Environmental enemy tree?<br><button class="mini-btn">Answer reveal</button><div class="answer">Eucalyptus.</div></div>
+            <div class="q"><strong>Q2.</strong> Lotic habitat example?<br><button class="mini-btn">Answer reveal</button><div class="answer">River/waterfall — flowing water.</div></div>
+            <div class="q"><strong>Q3.</strong> Ecotone kya hota hai?<br><button class="mini-btn">Answer reveal</button><div class="answer">Two ecosystems ke beech transition/mixed zone.</div></div>
+            <div class="q"><strong>Q4.</strong> Silent Valley movement kis state se linked?<br><button class="mini-btn">Answer reveal</button><div class="answer">Kerala.</div></div>
+          </div>
+          <label class="complete-row"><input type="checkbox" class="progress-check" data-key="sec-misc"> Misc facts section revised</label>
+        </section>
+
+        <section class="master" id="masters">
+          <h2>📘 Master Section — Full Forms & Key Terms</h2>
+          <p class="source-note">Class mein use huye abbreviations/terms ko exam revision ke liye yahan consolidate kiya gaya hai.</p>
+          <table>
+            <thead><tr><th>Term</th><th>Full Form / Meaning</th><th>Hindi-Hinglish Explanation</th></tr></thead>
+            <tbody>
+              <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>MP state civil service exam body.</td></tr>
+              <tr><td>ICT</td><td>Information and Communication Technology</td><td>Unit 8/9 mein upcoming mention hua.</td></tr>
+              <tr><td>MCQ</td><td>Multiple Choice Question</td><td>Objective questions practice.</td></tr>
+              <tr><td>PDF</td><td>Portable Document Format</td><td>Notes/PDF ka class mention.</td></tr>
+              <tr><td>CO₂</td><td>Carbon dioxide</td><td>Photosynthesis mein atmosphere se liya jata hai.</td></tr>
+              <tr><td>H₂O</td><td>Water</td><td>Roots soil se water kheenchti hain.</td></tr>
+              <tr><td>kJ</td><td>Kilojoule</td><td>Energy example: 10000 kJ → 1000 kJ → 100 kJ.</td></tr>
+              <tr><td>Gha</td><td>Global hectare</td><td>Ecological footprint unit.</td></tr>
+            </tbody>
+          </table>
+
+          <h2>🔥 Master Exam Hot Facts</h2>
+          <div class="grid">
+            <div class="card"><strong>1.</strong> Ecosystem ke components = Biotic + Abiotic.</div>
+            <div class="card"><strong>2.</strong> Producer = photosynthesis se food banata hai; first trophic level producer hai.</div>
+            <div class="card"><strong>3.</strong> Consumers: primary herbivore, secondary carnivore, tertiary apex carnivore.</div>
+            <div class="card"><strong>4.</strong> Decomposers = fungi/microorganisms; dead matter break karte hain.</div>
+            <div class="card"><strong>5.</strong> Food web = interlinked food chains = समिश्र खाद्य श्रृंखला.</div>
+            <div class="card"><strong>6.</strong> Ecological pyramid concept: Charles Elton, 1927.</div>
+            <div class="card"><strong>7.</strong> Energy pyramid always upright; MPPSC-style direct question.</div>
+            <div class="card"><strong>8.</strong> Energy flow unidirectional; starts abiotic → biotic through sunlight.</div>
+            <div class="card"><strong>9.</strong> Lindeman 10% rule: 1942; only 10% energy transfers.</div>
+            <div class="card"><strong>10.</strong> Biomass/number pyramids can be upright or inverted depending ecosystem.</div>
+            <div class="card"><strong>11.</strong> Ecological footprint unit: Global hectare.</div>
+            <div class="card"><strong>12.</strong> Eucalyptus = पर्यावरणीय शत्रु due to high water uptake.</div>
+            <div class="card"><strong>13.</strong> Lotic = flowing water, Lentic = stagnant water.</div>
+            <div class="card"><strong>14.</strong> Ecotone = transition zone between two ecosystems.</div>
+            <div class="card"><strong>15.</strong> Movements: Chipko, Appiko, Narmada Bachao, Silent Valley Bachao.</div>
+          </div>
+
+          <h2>✅ Master Revision Checklist</h2>
+          <div class="checklist" id="masterChecklist">
+            <label><input type="checkbox" class="progress-check" data-key="chk-eco-def"> Ecology aur ecosystem ka difference revise kar liya.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-components"> Biotic/Abiotic components revise kar liye.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-producer"> Producer, consumer, decomposer roles yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-consumers"> Primary/secondary/tertiary consumer examples yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-photo"> Photosynthesis inputs: sunlight, CO₂, H₂O, minerals, chlorophyll yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-chain"> Food chain sequence aur first trophic level yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-web"> Food web = samishra food chain yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-elton"> Charles Elton 1927 yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-types"> Number, biomass, energy pyramid types yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-energy-upright"> Energy pyramid always upright yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-energy-flow"> Energy flow one-way aur abiotic → biotic yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-lindeman"> Lindeman 1942 10% rule yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-biomass"> Terrestrial/aquatic biomass pyramid shapes yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-number"> Tree/grassland number pyramid shapes yaad hain.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-footprint"> Ecological footprint definition + global hectare yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-eucalyptus"> Eucalyptus environmental enemy yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-lentic"> Lentic vs Lotic habitat yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-ecotone"> Ecotone transition zone yaad hai.</label>
+            <label><input type="checkbox" class="progress-check" data-key="chk-movements"> Four movements aur locations/objectives revise kar liye.</label>
+          </div>
+
+          <h2>📌 Upcoming Topics</h2>
+          <div class="tip">
+            Transcript ke academic ending ke hisaab se next key topic: <strong>जैव विविधता / Biodiversity</strong>. Teacher ne MCQ practice aur Unit 7 environment portion ko आगे consolidate karne ka bhi mention kiya.
+          </div>
+
+          <h2>📚 Image & Web Attribution Summary</h2>
+          <p class="source-note">Images are loaded from Wikimedia Commons/verified sources with visible captions above. Reliability script below retries Wikimedia files through Special:Redirect/file if a thumbnail fails.</p>
+        </section>
+
+        <footer class="footer">
+          <p><strong>Revision Tip:</strong> Pehle “Exam Hot Facts” revise karo, phir checklist complete karo, phir quizzes ke answers bina dekhe bolo.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const THEME_KEY = "ecoRevisionTheme";
+    const CHECK_PREFIX = "ecoRevisionCheck:";
+    const body = document.body;
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if(savedTheme === "light") body.classList.add("light");
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      body.classList.toggle("light");
+      localStorage.setItem(THEME_KEY, body.classList.contains("light") ? "light" : "dark");
+    });
+
+    document.getElementById("jump").addEventListener("change", (e) => {
+      const target = document.querySelector(e.target.value);
+      if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    document.querySelectorAll(".q .mini-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.closest(".q").classList.toggle("revealed");
+        btn.textContent = btn.closest(".q").classList.contains("revealed") ? "Hide answer" : "Answer reveal";
+      });
+    });
+
+    const checks = Array.from(document.querySelectorAll(".progress-check"));
+    function updateProgress(){
+      const done = checks.filter(c => c.checked).length;
+      const total = checks.length || 1;
+      const pct = Math.round(done * 100 / total);
+      document.getElementById("progressBar").style.width = pct + "%";
+      document.getElementById("progressText").textContent = `Revision Progress: ${pct}% (${done}/${total})`;
+    }
+    checks.forEach(c => {
+      const key = CHECK_PREFIX + c.dataset.key;
+      c.checked = localStorage.getItem(key) === "1";
+      c.addEventListener("change", () => {
+        localStorage.setItem(key, c.checked ? "1" : "0");
+        updateProgress();
+      });
+    });
+    updateProgress();
+
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    const tocLinks = Array.from(document.querySelectorAll(".toc a"));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          tocLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id));
+        }
+      });
+    }, {rootMargin:"-25% 0px -70% 0px", threshold:0});
+    sections.forEach(s => obs.observe(s));
+
+    function preloadAndRepairImages(){
+      document.querySelectorAll("img[data-file]").forEach(img => {
+        const original = img.getAttribute("src");
+        const file = img.dataset.file;
+        const fallbackUrl = "https://commons.wikimedia.org/wiki/Special:Redirect/file/" + encodeURIComponent(file);
+        const fallbackBox = img.parentElement.querySelector(".fallback");
+        const test = new Image();
+        test.onload = () => {};
+        test.onerror = () => {
+          img.src = fallbackUrl;
+          const retry = new Image();
+          retry.onload = () => {};
+          retry.onerror = () => {
+            if(fallbackBox){
+              fallbackBox.style.display = "block";
+              fallbackBox.innerHTML = `Image load issue. Open source file: <a href="${fallbackUrl}" target="_blank" rel="noopener">${file}</a>`;
+            }
+          };
+          retry.src = fallbackUrl;
+        };
+        test.src = original;
+      });
+    }
+    window.addEventListener("load", preloadAndRepairImages);
+
+    window.addEventListener("beforeprint", () => {
+      document.querySelectorAll("details").forEach(d => d.open = true);
+      document.querySelectorAll(".q").forEach(q => q.classList.add("revealed"));
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

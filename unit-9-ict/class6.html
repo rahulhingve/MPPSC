@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Social Networking Sites / Social Media exam revision page in Hinglish, based on class transcript." />
+  <title>Social Networking Sites | Exam Revision HTML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f1a;--surface:#151525;--surface2:#1d1d33;--text:#fbfbff;--muted:#e3e7f4;
+      --line:#343654;--cyan:#00d4ff;--orange:#ff6b35;--green:#00ff88;--purple:#b388ff;--danger:#ff4d6d;
+      --shadow:0 18px 48px rgba(0,0,0,.32);--radius:22px;--max:980px;
+    }
+    html[data-theme="light"]{
+      --bg:#f7f8ff;--surface:#ffffff;--surface2:#eef2ff;--text:#101324;--muted:#263149;--line:#cfd6eb;
+      --shadow:0 14px 36px rgba(13,23,57,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at top left,rgba(0,212,255,.18),transparent 28%),radial-gradient(circle at top right,rgba(179,136,255,.14),transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.7;letter-spacing:.01em}
+    a{color:var(--cyan)}
+    img{max-width:100%;height:auto;border-radius:18px;display:block;background:rgba(255,255,255,.05)}
+    .wrap{max-width:var(--max);margin:auto;padding:18px}
+    .hero{padding:34px 0 22px}
+    .hero-card{background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(179,136,255,.13)),var(--surface);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .hero-card:after{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;background:radial-gradient(circle,rgba(255,107,53,.3),transparent 70%)}
+    h1{font-size:clamp(2rem,6vw,4rem);line-height:1.05;margin:.2em 0;font-weight:800;letter-spacing:-.05em}
+    h2{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:0 0 18px;font-weight:800;letter-spacing:-.03em}
+    h3{font-size:1.28rem;margin:0 0 12px;color:var(--cyan)}
+    h4{font-size:1.05rem;margin:0 0 10px;color:var(--green)}
+    .sub{font-size:1.12rem;color:var(--muted);max-width:760px}.badges{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.badge{border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:999px;padding:7px 12px;font-weight:700}.badge.hot{border-color:rgba(255,107,53,.75);color:#fff;background:rgba(255,107,53,.18)}
+    .topbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+    .nav{max-width:var(--max);margin:auto;padding:10px 18px;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center}
+    select,button,.jump-link{border:1px solid var(--line);background:var(--surface2);color:var(--text);border-radius:14px;padding:10px 12px;font:inherit;font-weight:700;min-height:44px}.theme-toggle{cursor:pointer}.progress-mini{font-weight:800;color:var(--green);white-space:nowrap}
+    .progress-shell{height:12px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;border:1px solid var(--line);margin-top:18px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));transition:.3s ease}
+    .layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}.toc{position:sticky;top:72px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}.toc strong{display:block;margin-bottom:10px}.toc a{display:block;padding:8px 10px;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid transparent}.toc a:hover{background:var(--surface2);border-color:var(--line)}
+    .section{scroll-margin-top:92px;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:22px;margin:0 0 22px;box-shadow:var(--shadow);animation:rise .5s ease both}.section.accent-cyan{border-top:5px solid var(--cyan)}.section.accent-orange{border-top:5px solid var(--orange)}.section.accent-green{border-top:5px solid var(--green)}.section.accent-purple{border-top:5px solid var(--purple)}.section.accent-danger{border-top:5px solid var(--danger)}
+    @keyframes rise{from{opacity:.01;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--surface2);border:1px solid var(--line);border-radius:20px;padding:16px}.card ul,.card ol{margin:8px 0 0;padding-left:22px}.card li{margin:.35em 0}.key{border-left:5px solid var(--cyan)}.warn{border-left:5px solid var(--orange)}.good{border-left:5px solid var(--green)}.hotbox{background:linear-gradient(135deg,rgba(255,107,53,.18),rgba(255,77,109,.11)),var(--surface2);border-color:rgba(255,107,53,.7)}
+    .image-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:22px;padding:12px;margin:16px 0}.caption{font-size:.9rem;color:var(--muted);margin-top:8px}.img-fallback{font-size:.95rem;border:1px dashed var(--orange);padding:10px;border-radius:12px;margin-top:8px;background:rgba(255,107,53,.09)}
+    details{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;padding:12px 14px;margin:12px 0}summary{cursor:pointer;font-weight:800;color:var(--cyan)}details[open] summary{margin-bottom:10px}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);margin:12px 0;background:var(--surface2)}th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{background:rgba(0,212,255,.12);text-align:left;color:var(--text)}tr:last-child td{border-bottom:0}.table-wrap{overflow:auto;border-radius:16px}.nowrap{white-space:nowrap}.small{font-size:.94rem;color:var(--muted)}
+    .timeline{display:grid;gap:10px;margin:16px 0}.titem{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:start}.year{font-weight:900;color:var(--orange);background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.4);border-radius:14px;padding:8px;text-align:center}.event{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:10px 12px}
+    .quiz{display:grid;gap:10px}.q{background:var(--surface2);border:1px solid var(--line);border-radius:18px;padding:14px}.answer{margin-top:10px;padding:10px;border-radius:14px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.35)}.answer-toggle{margin-top:8px;padding:8px 10px;min-height:auto;cursor:pointer;background:rgba(0,212,255,.12)}
+    .checklist label,.topic-check{display:flex;gap:10px;align-items:flex-start;margin:8px 0;padding:10px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line)}input[type="checkbox"]{transform:scale(1.25);margin-top:6px;accent-color:#00d4ff}.done{opacity:.72;text-decoration:line-through}.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}.flow span{background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-weight:800}.flow b{color:var(--orange)}.memory{border-left:5px solid var(--purple);background:linear-gradient(135deg,rgba(179,136,255,.14),rgba(0,212,255,.06)),var(--surface2)}
+    footer{padding:28px 0 45px;color:var(--muted)}
+    @media(max-width:860px){.layout{grid-template-columns:1fr}.toc{position:static}.grid{grid-template-columns:1fr}.nav{grid-template-columns:1fr auto}.progress-mini{grid-column:1/-1}.titem{grid-template-columns:76px 1fr}.section{padding:16px}body{font-size:17px}}
+    @media(max-width:520px){.hero-card{padding:20px}.wrap{padding:12px}.nav{padding:8px 12px}select{width:100%}h1{font-size:2.1rem}.titem{grid-template-columns:1fr}.year{text-align:left}.badges{gap:7px}.badge{font-size:.88rem}}
+    @media print{html,body{background:#fff!important;color:#000!important;font-size:12pt}.topbar,.toc,.theme-toggle,.answer-toggle{display:none!important}.layout{display:block}.section,.hero-card,.card,.event,details,.q{box-shadow:none!important;background:#fff!important;color:#000!important;border-color:#999!important}details{display:block}.answer{display:block!important;color:#000;border-color:#999}.caption,.small{color:#111!important}a{color:#000;text-decoration:underline}.progress-shell{display:none}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <nav class="nav" aria-label="Quick navigation">
+      <select id="quickJump" aria-label="Jump to topic">
+        <option value="#top">Jump: Start</option>
+        <option value="#intro">1. परिचय / Meaning</option>
+        <option value="#stats">2. Data & Examples</option>
+        <option value="#history">3. History Timeline</option>
+        <option value="#types">4. Types of Social Media</option>
+        <option value="#platforms">5. Important Platforms</option>
+        <option value="#rules">6. IT Rules 2021</option>
+        <option value="#proscons">7. Benefits & Harms</option>
+        <option value="#master">Master Revision</option>
+      </select>
+      <button class="theme-toggle" id="themeToggle" type="button">🌙 Dark</button>
+      <div class="progress-mini" id="progressText">0% done</div>
+    </nav>
+  </div>
+
+  <header id="top" class="hero wrap">
+    <div class="hero-card">
+      <div class="badges">
+        <span class="badge">ICT Unit 9</span>
+        <span class="badge">Topic: Social Networking Sites</span>
+        <span class="badge hot">🔥 Exam Revision</span>
+        <span class="badge">7 Major Topics</span>
+      </div>
+      <h1>💬 Social Networking Sites / Social Media</h1>
+      <p class="sub">Hinglish revision page: definition, history, types, important platforms, IT Rules, benefits & harms — sab kuch class transcript ke hisaab se chunked notes, quizzes, tables aur checklist ke saath.</p>
+      <div class="progress-shell" aria-label="Revision progress"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="small"><strong>Study mantra from class:</strong> Last days mein sirf zyada padhna important nahi hai — jo padha hai us par command aur revision maximize karna important hai.</p>
+    </div>
+  </header>
+
+  <div class="wrap layout">
+    <aside class="toc" aria-label="Table of contents">
+      <strong>📌 Table of Contents</strong>
+      <a href="#intro">🧠 परिचय</a>
+      <a href="#stats">📊 Data & Examples</a>
+      <a href="#history">⏳ History Timeline</a>
+      <a href="#types">🗂️ Types</a>
+      <a href="#platforms">🌍 Important Platforms</a>
+      <a href="#rules">⚖️ IT Rules 2021</a>
+      <a href="#proscons">✅ Benefits / ⚠️ Harms</a>
+      <a href="#master">🎯 Master Revision</a>
+    </aside>
+
+    <main>
+      <section id="intro" class="section accent-cyan">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-intro"> <span><strong>Mark complete:</strong> परिचय / Meaning</span></label>
+        <h2>🧠 1. Social Media ka Meaning</h2>
+        <div class="grid">
+          <div class="card key">
+            <h3>Media = Medium</h3>
+            <ul>
+              <li><strong>Media</strong> ka simple meaning hai: <strong>माध्यम</strong>.</li>
+              <li>Detailed meaning: <strong>Means of Communication</strong> यानी जानकारी ko ek place se dusri place tak pahunchane ka माध्यम.</li>
+              <li>Example: Newspaper, TV, Internet, apps — sab information transfer karte hain.</li>
+            </ul>
+          </div>
+          <div class="card key">
+            <h3>Social Networking Site</h3>
+            <ul>
+              <li>Ek <strong>online platform / online मंच</strong> jahan duniya ke log connect kar sakte hain.</li>
+              <li>Users ek dusre se <strong>baat</strong> kar sakte hain.</li>
+              <li>Users <strong>files, photos, videos</strong> share kar sakte hain.</li>
+              <li>Users <strong>community</strong> create kar sakte hain.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card memory">
+          <h3>🔑 Memory Trick</h3>
+          <p><strong>Social Media = Connect + Communicate + Community + Content Share</strong></p>
+          <p>Yaad rakho: <strong>4C Trick</strong> — <strong>C</strong>onnect, <strong>C</strong>ommunicate, <strong>C</strong>ommunity, <strong>C</strong>ontent.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Social_Network_Diagram_%28segment%29.svg" data-filename="Social Network Diagram (segment).svg" loading="eager" fetchpriority="high" decoding="async" alt="A fictional social network diagram showing nodes and connections between people" />
+          <p class="caption">Image: Wikimedia Commons — DarwinPeacock & Maklaan, CC BY 3.0. Concept: social network mein nodes = people, edges = connection.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Social_Network_Diagram_(segment).svg" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <details open>
+          <summary>🔥 Exam Hot Definitions</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Term</th><th>Exam-ready Definition</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Media</strong></td><td>Communication ka medium — information ko ek jagah se dusri jagah transmit karne ka साधन.</td></tr>
+                <tr><td><strong>Social Media</strong></td><td>Online platform jo logon ko connect, communicate, file-share aur community create karne ka मौका देता है.</td></tr>
+                <tr><td><strong>Networking</strong></td><td>Alag-alag लोगों/चीजों ko बड़े पैमाने par आपस में जोड़ना.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> Media ka basic meaning kya hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Media = माध्यम / means of communication.</div></div>
+          <div class="q"><strong>Q2.</strong> Social Networking Site ka 4C formula kya hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Connect, Communicate, Community, Content Share.</div></div>
+          <div class="q"><strong>Q3.</strong> Facebook aur WhatsApp social media kyun hain?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Kyuki ye logon ko online connect, message, file/photo/video sharing aur community creation allow karte hain.</div></div>
+        </div>
+      </section>
+
+      <section id="stats" class="section accent-green">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-stats"> <span><strong>Mark complete:</strong> Data & Examples</span></label>
+        <h2>📊 2. Important Data, Terms & Examples</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📌 Words kisne introduce kiye?</h3>
+            <ul>
+              <li><strong>Social Network</strong> term — <strong>J. A. Barnes</strong> se related bataya gaya.</li>
+              <li><strong>Social Media</strong> term — class mein <strong>Darrell Berry</strong> ke naam se बताया गया.</li>
+              <li>Exam mein direct one-liner aa sakta hai: “Social Networking word kisne diya?”</li>
+            </ul>
+          </div>
+          <div class="card hotbox">
+            <h3>🔥 Examples</h3>
+            <ul>
+              <li>Facebook: duniya mein kahin bhi logon se connect.</li>
+              <li>WhatsApp: mobile number ke through chat/community/file share.</li>
+              <li>Telegram: file-sharing aur channels ke liye popular.</li>
+              <li>LinkedIn: professional networking.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="image-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Social_media.png/960px-Social_media.png" data-filename="Social media.png" loading="lazy" decoding="async" alt="Smartphone screen showing social media applications" />
+          <p class="caption">Image: Wikimedia Commons / Flickr — Jason Howie, CC BY 2.0. Concept: social media apps mobile-first usage ko show karta hai.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Social_media.png" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <details open>
+          <summary>🌍 World & India Data — January 2021 class figures</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Area</th><th>Population / Mobile / Internet / Social Media</th><th>Exam Note</th></tr></thead>
+              <tbody>
+                <tr><td><strong>World</strong></td><td>Population approx <strong>7.83 billion</strong>; mobile connections approx <strong>5+ billion</strong>; internet users approx <strong>4.6 billion</strong>; social media users approx <strong>4.2 billion</strong>.</td><td>Social media ki power dikhane ke liye mains answer mein use kar sakte ho.</td></tr>
+                <tr><td><strong>India</strong></td><td>Population approx <strong>1.3 billion</strong>; mobile connections approx <strong>110 crore / 1.1+ billion</strong>; internet users approx <strong>62–64 crore</strong>; social media users approx <strong>44 crore</strong>.</td><td>Digital divide: sabke paas internet access nahi hai.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>🌐 Famous Global & Indian Platforms</summary>
+          <div class="grid">
+            <div class="card">
+              <h3>World Famous</h3>
+              <p>Facebook, YouTube, WhatsApp, Instagram, Twitter, Facebook Messenger, Telegram, TikTok, LinkedIn, Snapchat.</p>
+            </div>
+            <div class="card">
+              <h3>Indian Platforms</h3>
+              <p>Koo, ShareChat, Roposo, Elyments, Chingari, MX TakaTak type platforms. Koo ko “India ka Twitter” bola gaya.</p>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>🤔 Social Media Use Reasons — Survey figures from class</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Reason</th><th>Approx %</th><th>Recall Hook</th></tr></thead>
+              <tbody>
+                <tr><td>Friends ke touch mein rehna</td><td>42%</td><td>Social connection</td></tr>
+                <tr><td>Current affairs / current events</td><td>41%</td><td>Teacher ne misinformation warning bhi दी</td></tr>
+                <tr><td>Free time fill karna</td><td>39%</td><td>Time-pass</td></tr>
+                <tr><td>Funny content</td><td>37%</td><td>Entertainment</td></tr>
+                <tr><td>General networking / business networking</td><td>34%</td><td>Professionals</td></tr>
+                <tr><td>Photo/video share karna</td><td>32%</td><td>Media sharing</td></tr>
+                <tr><td>Opinion rakhna</td><td>30%</td><td>Expression</td></tr>
+                <tr><td>Product research / purchase updates</td><td>29%</td><td>Shopping/research</td></tr>
+                <tr><td>Naye logon se milna</td><td>27%</td><td>Professional/social discovery</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> India mein Jan 2021 ke aas-paas social media users kitne bataye gaye?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Approx 44 crore.</div></div>
+          <div class="q"><strong>Q2.</strong> Koo ko kya kaha gaya?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>India ka Twitter / Indian microblogging platform.</div></div>
+          <div class="q"><strong>Q3.</strong> Teacher ne current affairs ke liye social media use par kya warning दी?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Misinformation / misleading content aur “WhatsApp University” type problem se सावधान रहना.</div></div>
+        </div>
+      </section>
+
+      <section id="history" class="section accent-orange">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-history"> <span><strong>Mark complete:</strong> History Timeline</span></label>
+        <h2>⏳ 3. Social Media ka History Timeline</h2>
+        <div class="card warn">
+          <h3>🔥 Exam Hot</h3>
+          <p>Teacher ne specifically kaha: <strong>Year har jagah important nahi</strong>, lekin kuch direct questions ban sakte hain — <strong>first social networking site, first instant messenger, LinkedIn, Skype, Facebook, YouTube, Twitter, Pinterest, Quora</strong> type facts याद रखें.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Arpanet_logical_map%2C_march_1977.png" data-filename="Arpanet logical map, march 1977.png" loading="lazy" decoding="async" alt="ARPANET logical map from March 1977 showing early computer network connections" />
+          <p class="caption">Image: Wikimedia Commons — ARPANET / Computer History Museum, Public Domain. Concept: Internet aaya, tabhi online social platforms possible hue.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <div class="flow" aria-label="Evolution flow">
+          <span>1969 ARPANET</span><b>→</b><span>Internet reach</span><b>→</b><span>Web/WWW</span><b>→</b><span>Online services</span><b>→</b><span>Social Media</span>
+        </div>
+
+        <details open>
+          <summary>📜 Complete Timeline: 1969 to 2020</summary>
+          <div class="timeline">
+            <div class="titem"><div class="year">1969</div><div class="event"><strong>ARPANET</strong> ki शुरुआत — social media internet ke कारण possible hua.</div></div>
+            <div class="titem"><div class="year">WWW</div><div class="event"><strong>Tim Berners-Lee</strong> ne World Wide Web ka invention किया; internet commercial/useful bana. India mein <strong>VSNL</strong> ke through internet शुरुआत बताई गई.</div></div>
+            <div class="titem"><div class="year">1997</div><div class="event">🔥 <strong>SixDegrees</strong> — duniya ki first social networking site. 🔥 <strong>AOL Instant Messenger</strong> — first instant messenger.</div></div>
+            <div class="titem"><div class="year">1998</div><div class="event"><strong>OpenDiary</strong> — social blogging network. <strong>PayPal</strong> — online payment system.</div></div>
+            <div class="titem"><div class="year">1999</div><div class="event"><strong>Yahoo Messenger</strong> aur <strong>MSN Messenger</strong> launch; MSN mein message ke saath video/voice calling.</div></div>
+            <div class="titem"><div class="year">2001</div><div class="event"><strong>Windows Messenger</strong> launch.</div></div>
+            <div class="titem"><div class="year">Mar 2002</div><div class="event"><strong>Friendster</strong> — social networking + gaming site.</div></div>
+            <div class="titem"><div class="year">May 2002</div><div class="event">🔥 <strong>LinkedIn</strong> — professional networking/job profile platform.</div></div>
+            <div class="titem"><div class="year">Aug 2003</div><div class="event"><strong>MySpace</strong> started; Facebook se pehle famous social network.</div></div>
+            <div class="titem"><div class="year">2003</div><div class="event">🔥 <strong>Skype</strong> — video calling ke liye बहुत popular.</div></div>
+            <div class="titem"><div class="year">Feb 2004</div><div class="event"><strong>Facebook</strong> launch — “giant of social media”. <strong>Flickr</strong> photo-sharing site bhi launch.</div></div>
+            <div class="titem"><div class="year">2004</div><div class="event"><strong>Orkut</strong> launch; 2014 mein close.</div></div>
+            <div class="titem"><div class="year">2005</div><div class="event"><strong>Bebo</strong>, China ka <strong>Qzone</strong>, June mein <strong>Reddit</strong>; Yahoo ne Flickr acquire किया. 🔥 14 Feb 2005: <strong>YouTube</strong> launch.</div></div>
+            <div class="titem"><div class="year">Oct 2006</div><div class="event"><strong>Google ne YouTube acquire kiya</strong> approx 1.65 billion mein.</div></div>
+            <div class="titem"><div class="year">21 Mar 2006</div><div class="event">🔥 <strong>Twitter</strong> launch — microblogging/micro-message sharing; शुरुआत mein 140 characters.</div></div>
+            <div class="titem"><div class="year">2006</div><div class="event"><strong>VK / VKontakte</strong> — Russia ki social networking site.</div></div>
+            <div class="titem"><div class="year">2007</div><div class="event"><strong>Tumblr</strong> — microblogging site.</div></div>
+            <div class="titem"><div class="year">Oct 2008</div><div class="event"><strong>Spotify</strong> — songs/music platform.</div></div>
+            <div class="titem"><div class="year">2010</div><div class="event"><strong>Pinterest</strong> photo-sharing; <strong>Quora</strong> Q&A; <strong>Path</strong> messaging/photo sharing; October mein <strong>Instagram</strong>.</div></div>
+            <div class="titem"><div class="year">2011</div><div class="event"><strong>Snapchat</strong>; <strong>Google+</strong>; <strong>Twitch</strong> live streaming; <strong>Zoom</strong> video conferencing by Eric Yuan.</div></div>
+            <div class="titem"><div class="year">2012</div><div class="event"><strong>Facebook ne Instagram acquire kiya</strong>; <strong>Tinder</strong> dating app; <strong>Vine</strong> video-sharing.</div></div>
+            <div class="titem"><div class="year">2014</div><div class="event"><strong>Musical.ly</strong> lip-sync/gana videos; <strong>Amazon ne Twitch acquire kiya</strong>; <strong>Google ne Orkut close kiya</strong>.</div></div>
+            <div class="titem"><div class="year">2016</div><div class="event"><strong>Yahoo</strong> ne kuch OS users ke liye services stop karne की बात कही; later Yahoo Messenger close. <strong>TikTok</strong> ByteDance ecosystem se popular hua.</div></div>
+            <div class="titem"><div class="year">2017</div><div class="event"><strong>ByteDance ne Musical.ly acquire kiya</strong>; TikTok extremely popular hua.</div></div>
+            <div class="titem"><div class="year">2020</div><div class="event"><strong>TikTok India mein ban</strong> — teacher ne year/PDF correction note bhi diya; exam mein ban & Section 69A context याद रखें.</div></div>
+            <div class="titem"><div class="year">2019/20</div><div class="event"><strong>Koo</strong> Indian microblogging platform; founders Aprameya Radhakrishna & Mayank Bidawatka. <strong>Chingari</strong> — Subhash Ghosh, Bhilai; TikTok alternative ke रूप में.</div></div>
+          </div>
+        </details>
+
+        <div class="card memory">
+          <h3>🧠 Mnemonic: Firsts याद रखने की Trick</h3>
+          <p><strong>“6-A-O-P-Y-M-W-F-L”</strong></p>
+          <p><strong>6</strong>SixDegrees → <strong>A</strong>OL → <strong>O</strong>penDiary → <strong>P</strong>ayPal → <strong>Y</strong>ahoo/MSN → <strong>M</strong>ySpace → <strong>W</strong>indows → <strong>F</strong>acebook/Flickr → <strong>L</strong>inkedIn.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> Duniya ki first social networking site kaunsi thi?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>SixDegrees, 1997.</div></div>
+          <div class="q"><strong>Q2.</strong> First instant messenger kaunsa tha?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>AOL Instant Messenger, 1997.</div></div>
+          <div class="q"><strong>Q3.</strong> YouTube kab launch hua aur kisne acquire kiya?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>14 February 2005; Google ne October 2006 mein acquire kiya.</div></div>
+          <div class="q"><strong>Q4.</strong> Quora ka main function kya hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Open Q&A platform — questions puchna aur duniya ke users se answers lena/dena.</div></div>
+        </div>
+      </section>
+
+      <section id="types" class="section accent-purple">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-types"> <span><strong>Mark complete:</strong> Types of Social Media</span></label>
+        <h2>🗂️ 4. Social Media ke 6 Main Types</h2>
+        <div class="image-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Social_Network_Visualization.png/1024px-Social_Network_Visualization.png" data-filename="Social Network Visualization.png" loading="lazy" decoding="async" alt="Dense social network visualization with clusters of connected nodes" />
+          <p class="caption">Image: Wikimedia Commons — Martin Grandjean / SlvrKy, CC BY-SA 4.0. Concept: social platforms alag clusters/communities banate hain.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Social_Network_Visualization.png" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card key"><h3>1) Social Networking Sites</h3><p>People ko connect, communicate, messages/photos/videos share karne ka platform. <strong>Examples:</strong> Facebook, LinkedIn, Telegram.</p></div>
+          <div class="card key"><h3>2) Bookmarking Sites</h3><p>Important URLs ko store/bookmark karna. <strong>Examples:</strong> Delicious, StumbleUpon.</p></div>
+          <div class="card key"><h3>3) Social News Sites</h3><p>Users news items, links, articles post karte hain; voting/commenting hoti hai. <strong>Examples:</strong> Reddit type platforms.</p></div>
+          <div class="card key"><h3>4) Media Sharing</h3><p>Photos/videos upload/share. Instagram pehle photo-sharing tha; ab message/video bhi hai. Flickr, Pinterest, YouTube bhi याद रखें.</p></div>
+          <div class="card key"><h3>5) Microblogging</h3><p>Limited words/characters mein message. <strong>Twitter</strong> शुरुआत में 140 characters; Koo bhi microblogging.</p></div>
+          <div class="card key"><h3>6) Blogs & Forums</h3><p>Blog mein thoughts; Forum mein log discussion/comments karte hain. Mains ke 3-marker ke liye important.</p></div>
+        </div>
+
+        <details open>
+          <summary>🔥 Prelims vs Mains Importance</summary>
+          <ul>
+            <li><strong>Prelims:</strong> Types ke direct examples — Pinterest = photo sharing, Quora = Q&A, Twitter/Koo = microblogging.</li>
+            <li><strong>Mains:</strong> Blogs/forums, social media benefits/harms, regulation, fake news, privacy — short answers ke liye important.</li>
+          </ul>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> Bookmarking site kya karti hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Important URLs/websites ko store karti hai taki baad mein access kiya ja sake.</div></div>
+          <div class="q"><strong>Q2.</strong> Twitter ka type kya hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Microblogging / micro-message sharing platform.</div></div>
+          <div class="q"><strong>Q3.</strong> Blog aur Forum mein basic difference?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Blog: kisi user/group ke thoughts. Forum: multiple log discussion/comment karke apne views rakhte hain.</div></div>
+        </div>
+      </section>
+
+      <section id="platforms" class="section accent-cyan">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-platforms"> <span><strong>Mark complete:</strong> Important Platforms</span></label>
+        <h2>🌍 5. World ke Important Social Media Platforms</h2>
+        <div class="card hotbox">
+          <h3>🔥 Sabse Important Factual Topic</h3>
+          <p>Class ke according yahi se factual questions banenge: <strong>site/app name, establishment year/date, founder, HQ, parent company, feature</strong>.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Social_media_icon.png" data-filename="Social media icon.png" loading="lazy" decoding="async" alt="Collage icon of several social media services" />
+          <p class="caption">Image: Wikimedia Commons — Ibrahim.ID, CC BY-SA 4.0. Concept: different social platforms ko ek visual anchor ke रूप में.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Social_media_icon.png" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <details open>
+          <summary>📋 Master Platform Table</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Platform</th><th>Est./Launch</th><th>Founder(s) / Creator(s)</th><th>HQ / Parent</th><th>Key Exam Fact</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Facebook / Meta</strong></td><td>Feb 2004</td><td>Mark Zuckerberg</td><td>Menlo Park, California, USA</td><td>2021 mein name Meta Platforms; subsidiaries: Instagram, Messenger, WhatsApp, Oculus VR.</td></tr>
+                <tr><td><strong>YouTube</strong></td><td>14 Feb 2005</td><td>Jawed Karim, Steve Chen, Chad Hurley</td><td>Parent: Google; YouTube HQ: San Bruno, California</td><td>Video-sharing; Google ne 2006 mein acquire kiya.</td></tr>
+                <tr><td><strong>Instagram</strong></td><td>Oct 2010</td><td>Kevin Systrom, Mike Krieger</td><td>Parent: Facebook/Meta</td><td>Photo-sharing se start; ab photos, videos, messaging. Facebook ne 2012 mein खरीदा.</td></tr>
+                <tr><td><strong>WhatsApp</strong></td><td>3 May 2009</td><td>Brian Acton, Jan Koum</td><td>Parent: Facebook/Meta; California</td><td>Mobile-number based instant messaging/community/file share.</td></tr>
+                <tr><td><strong>Twitter</strong></td><td>21 Mar 2006</td><td>Jack Dorsey (class focus)</td><td>San Francisco, California</td><td>Microblogging; शुरू में 140 characters; later Elon Musk ne acquire किया.</td></tr>
+                <tr><td><strong>Google+</strong></td><td>28 Jun 2011</td><td>Google</td><td>Google</td><td>2 April 2019 ko बंद.</td></tr>
+                <tr><td><strong>Orkut</strong></td><td>2004–2014</td><td>Google ecosystem</td><td>Google</td><td>Many students ki first social media memory; 2014 mein बंद.</td></tr>
+                <tr><td><strong>LinkedIn</strong></td><td>2003</td><td>Reid Hoffman and team</td><td>Sunnyvale, California; Parent: Microsoft</td><td>Professional networking, CV/profile, jobs, companies follow.</td></tr>
+                <tr><td><strong>Rediffmail</strong></td><td>1996</td><td>Ajit Balakrishnan</td><td>Mumbai, India</td><td>Indian email/web platform.</td></tr>
+                <tr><td><strong>Pinterest</strong></td><td>2010</td><td>Ben Silbermann</td><td>San Francisco, California</td><td>Photo-sharing; exam MCQ mein correct answer ho sakta hai.</td></tr>
+                <tr><td><strong>Viber</strong></td><td>2010</td><td>Talmon Marco, Igor Magazinnik</td><td>Japan company context</td><td>WhatsApp type messaging/calling app.</td></tr>
+                <tr><td><strong>Hike</strong></td><td>2012</td><td>Kavin Bharti Mittal</td><td>India</td><td>Popular instant chat; stickers, payments; 2021 mein बंद.</td></tr>
+                <tr><td><strong>Signal</strong></td><td>19 Jul 2014</td><td>Moxie Marlinspike, Brian Acton</td><td>California</td><td>Encrypted messaging; privacy-focused secure chats.</td></tr>
+                <tr><td><strong>Koo</strong></td><td>1 Mar 2020 / 2019-20 class reference</td><td>Aprameya Radhakrishna, Mayank Bidawatka</td><td>Bengaluru, India</td><td>India ka Twitter; Indian microblogging platform; App Innovation Challenge award.</td></tr>
+                <tr><td><strong>Telegram</strong></td><td>2013</td><td>Nikolai Durov, Pavel Durov</td><td>Dubai, UAE</td><td>File-sharing + channels; old channel messages bhi access ho sakte hain.</td></tr>
+                <tr><td><strong>TikTok</strong></td><td>2016/17 ByteDance context</td><td>ByteDance ecosystem</td><td>China parent company</td><td>Musical.ly lip-sync concept; India ban 2020; short videos.</td></tr>
+                <tr><td><strong>Zoom</strong></td><td>2011</td><td>Eric Yuan</td><td>San Jose, California, USA</td><td>Video conferencing; class note: Zoom American company hai, Chinese company नहीं.</td></tr>
+                <tr><td><strong>Wikipedia</strong></td><td>Jan 2001</td><td>Jimmy Wales, Larry Sanger</td><td>San Francisco, California</td><td>Information platform; users edit kar sakte hain.</td></tr>
+                <tr><td><strong>WikiLeaks</strong></td><td>2006</td><td>Julian Assange</td><td>—</td><td>Leaks/disclosures ke liye platform.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details>
+          <summary>🔥 Platform MCQ Patterns</summary>
+          <ul>
+            <li><strong>Pinterest</strong> = photo sharing website.</li>
+            <li><strong>Quora</strong> = Q&A platform.</li>
+            <li><strong>Twitch</strong> = live streaming platform; Amazon ne acquire किया.</li>
+            <li><strong>Zoom</strong> = American video conferencing company, founder Eric Yuan.</li>
+            <li><strong>LinkedIn</strong> = professional networking/job profile.</li>
+            <li><strong>Koo</strong> = India ka Twitter / microblogging.</li>
+            <li><strong>Telegram</strong> = file sharing + channels.</li>
+          </ul>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> LinkedIn kis type ka platform hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Professional social networking / job profile platform.</div></div>
+          <div class="q"><strong>Q2.</strong> Signal app ka key feature kya hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Encrypted, privacy-focused secure messaging.</div></div>
+          <div class="q"><strong>Q3.</strong> Telegram ka HQ aur key use?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Dubai, UAE; file-sharing, channels, old messages access.</div></div>
+          <div class="q"><strong>Q4.</strong> YouTube ke founders kaun bataye gaye?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Jawed Karim, Steve Chen, Chad Hurley.</div></div>
+        </div>
+      </section>
+
+      <section id="rules" class="section accent-danger">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-rules"> <span><strong>Mark complete:</strong> IT Rules 2021</span></label>
+        <h2>⚖️ 6. Information Technology Rules 2021 — Quick Revision</h2>
+        <div class="card warn">
+          <h3>Context</h3>
+          <p>Class mein ye ICT ke previous topic se quick revision ke रूप में आया: Government ne OTT platforms aur social media platforms ko regulate karne ke लिए IT Rules 2021 discuss किए.</p>
+        </div>
+
+        <div class="image-card">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Smartphone%20Use.jpg" data-filename="Smartphone Use.jpg" loading="lazy" decoding="async" alt="A person holding and using a smartphone" />
+          <p class="caption">Image: Wikimedia Commons / Flickr — Océanos y dados, CC0. Concept: mobile/social media use ke saath privacy & regulation issues जुड़ते हैं.</p>
+          <p class="img-fallback" hidden>Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Smartphone_Use.jpg" target="_blank" rel="noopener">Open source page</a>.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card key">
+            <h3>📌 Social Media Intermediary Duties</h3>
+            <ul>
+              <li><strong>180 days</strong> tak user records preserve/collect karna.</li>
+              <li><strong>Cyber security incidents</strong> report karna.</li>
+              <li>Monthly compliance/reporting mechanism.</li>
+              <li>Primary source/originator identify karna — fake news/content tracing context.</li>
+            </ul>
+          </div>
+          <div class="card hotbox">
+            <h3>🔥 Sensitive Content</h3>
+            <ul>
+              <li>Women se related inappropriate content ki complaint par <strong>24 hours</strong> ke अंदर remove karna.</li>
+              <li>Non-compliance par <strong>safe harbour</strong> protection ka लाभ खत्म ho sakta hai.</li>
+              <li>Purpose: social media + OTT regulation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Exam-ready Safe Harbour Note</summary>
+          <p><strong>Safe Harbour</strong> ka मतलब: platform ko user-generated content ke लिए legal protection milti hai, jab tak woh rules follow karta hai. Rules follow na karne par यह protection कमजोर/खत्म हो सकती है.</p>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> IT Rules ke according user records kitne din tak rakhne ki बात class mein बताई गई?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>180 days.</div></div>
+          <div class="q"><strong>Q2.</strong> Women-related inappropriate material complaint par removal timeline?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>24 hours ke अंदर.</div></div>
+          <div class="q"><strong>Q3.</strong> Safe Harbour ka basic meaning?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Platform ko user-generated content ke liye legal protection; rules violate karne par यह benefit खत्म हो सकता है.</div></div>
+        </div>
+      </section>
+
+      <section id="proscons" class="section accent-green">
+        <label class="topic-check"><input type="checkbox" class="topic-done" data-key="done-proscons"> <span><strong>Mark complete:</strong> Benefits & Harms</span></label>
+        <h2>✅ 7. Social Media ke Benefits & Harms</h2>
+        <div class="grid">
+          <div class="card good">
+            <h3>✅ Benefits / लाभ</h3>
+            <ul>
+              <li>Duniya bhar ke logon se जुड़ने ka important साधन.</li>
+              <li>Mainstream se अलग लोगों की आवाज बन सकता है.</li>
+              <li>Business ke लिए important.</li>
+              <li>Employment/job opportunities ke लिए important.</li>
+              <li>Awareness aur current affairs mein help.</li>
+            </ul>
+          </div>
+          <div class="card warn">
+            <h3>⚠️ Harms / हानि</h3>
+            <ul>
+              <li>Excessive use health ko negatively affect karta hai.</li>
+              <li>Depression aur mental health issues ki ओर ले जा सकता है.</li>
+              <li>Cyberbullying ko बढ़ावा.</li>
+              <li>Fake news aur hate speech spread.</li>
+              <li>Hacking, phishing aur privacy loss.</li>
+            </ul>
+          </div>
+        </div>
+
+        <details open>
+          <summary>🧠 Mains Answer Structure</summary>
+          <p><strong>Intro:</strong> Social media online platform hai jo people ko connect karta hai. <br><strong>Body:</strong> 3 benefits + 3 harms + regulation example. <br><strong>Conclusion:</strong> Digital literacy, fact-checking, privacy protection aur balanced use.</p>
+        </details>
+
+        <div class="card memory">
+          <h3>Mnemonic: Benefits vs Harms</h3>
+          <p><strong>Benefits = C-B-J-A</strong> → Connect, Business, Jobs, Awareness.</p>
+          <p><strong>Harms = H-D-C-F-P</strong> → Health, Depression, Cyberbullying, Fake news, Privacy loss.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><strong>Q1.</strong> Social media marginalized people ke लिए कैसे useful ho sakta hai?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Ye unki voice बन सकता है jo society ki mainstream se अलग हैं.</div></div>
+          <div class="q"><strong>Q2.</strong> Social media ke 3 harms बताओ.<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Excessive use/health impact, depression, cyberbullying, fake news/hate speech, hacking/phishing, privacy loss.</div></div>
+          <div class="q"><strong>Q3.</strong> Upcoming class topic kya bataya gaya?<br><button class="answer-toggle">Answer dekho</button><div class="answer" hidden>Cyber Security — hacking, phishing jaise words detail mein cover honge.</div></div>
+        </div>
+      </section>
+
+      <section id="master" class="section accent-purple">
+        <h2>🎯 Master Revision Zone</h2>
+        <details open>
+          <summary>📚 Master Full Forms / Terms</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Term</th><th>Full Form / Meaning</th><th>Hindi-Hinglish Note</th></tr></thead>
+              <tbody>
+                <tr><td>ICT</td><td>Information and Communication Technology</td><td>सूचना एवं संचार प्रौद्योगिकी</td></tr>
+                <tr><td>IT</td><td>Information Technology</td><td>सूचना प्रौद्योगिकी</td></tr>
+                <tr><td>URL</td><td>Uniform Resource Locator</td><td>Website/webpage ka address; bookmarking mein store hota hai.</td></tr>
+                <tr><td>WWW</td><td>World Wide Web</td><td>Tim Berners-Lee invention context; web ko useful banaya.</td></tr>
+                <tr><td>ARPANET</td><td>Advanced Research Projects Agency Network</td><td>Internet evolution ka early network.</td></tr>
+                <tr><td>VSNL</td><td>Videsh Sanchar Nigam Limited</td><td>India mein internet शुरुआत context.</td></tr>
+                <tr><td>OTT</td><td>Over-the-Top</td><td>Online streaming platforms; IT Rules context.</td></tr>
+                <tr><td>VR</td><td>Virtual Reality</td><td>Oculus VR Facebook/Meta subsidiary context.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details open>
+          <summary>🔥 Master Exam Hot Facts</summary>
+          <ul>
+            <li>First social networking site: <strong>SixDegrees, 1997</strong>.</li>
+            <li>First instant messenger: <strong>AOL Instant Messenger, 1997</strong>.</li>
+            <li>Facebook launch: <strong>Feb 2004</strong>; Mark Zuckerberg; HQ Menlo Park, California.</li>
+            <li>YouTube launch: <strong>14 Feb 2005</strong>; founders Jawed Karim, Steve Chen, Chad Hurley; acquired by Google in 2006.</li>
+            <li>Twitter: <strong>microblogging</strong>; start mein 140 characters.</li>
+            <li>LinkedIn: <strong>professional networking</strong>; parent Microsoft.</li>
+            <li>Pinterest: <strong>photo-sharing</strong> website.</li>
+            <li>Quora: <strong>Question-Answer</strong> platform.</li>
+            <li>Twitch: <strong>live-streaming</strong>; Amazon acquired.</li>
+            <li>Zoom: <strong>American company</strong>; founder Eric Yuan; video conferencing.</li>
+            <li>Koo: <strong>India ka Twitter</strong>; Indian microblogging.</li>
+            <li>Telegram: file-sharing + channels; HQ Dubai, UAE.</li>
+            <li>IT Rules: user records 180 days; women-related inappropriate content removal within 24 hours; safe harbour compliance.</li>
+          </ul>
+        </details>
+
+        <details open>
+          <summary>✅ Master Revision Checklist</summary>
+          <p class="small">Checkbox tick karte jao — progress localStorage mein save hogi.</p>
+          <div class="checklist" id="masterChecklist">
+            <label><input type="checkbox" data-key="chk-media"> <span>Media = means of communication.</span></label>
+            <label><input type="checkbox" data-key="chk-4c"> <span>Social media 4C: connect, communicate, community, content share.</span></label>
+            <label><input type="checkbox" data-key="chk-barnes"> <span>Social Network term: J. A. Barnes; Social Media term: Darrell Berry as per class.</span></label>
+            <label><input type="checkbox" data-key="chk-world"> <span>World Jan 2021 figures: 7.83B population, 4.6B internet, 4.2B social media.</span></label>
+            <label><input type="checkbox" data-key="chk-india"> <span>India figures: 110 crore mobile, 62–64 crore internet, 44 crore social media.</span></label>
+            <label><input type="checkbox" data-key="chk-six"> <span>SixDegrees = first social networking site, 1997.</span></label>
+            <label><input type="checkbox" data-key="chk-aol"> <span>AOL Instant Messenger = first instant messenger, 1997.</span></label>
+            <label><input type="checkbox" data-key="chk-youtube"> <span>YouTube = 14 Feb 2005; Google acquired in 2006.</span></label>
+            <label><input type="checkbox" data-key="chk-twitter"> <span>Twitter/Koo = microblogging; Twitter start mein 140 characters.</span></label>
+            <label><input type="checkbox" data-key="chk-pinterest"> <span>Pinterest/Flickr/Instagram = photo/media sharing context.</span></label>
+            <label><input type="checkbox" data-key="chk-quora"> <span>Quora = Q&A platform.</span></label>
+            <label><input type="checkbox" data-key="chk-linkedin"> <span>LinkedIn = professional networking/job profile; Microsoft parent.</span></label>
+            <label><input type="checkbox" data-key="chk-telegram"> <span>Telegram = channels + file storage/sharing; HQ Dubai.</span></label>
+            <label><input type="checkbox" data-key="chk-zoom"> <span>Zoom = American company; Eric Yuan; video conferencing.</span></label>
+            <label><input type="checkbox" data-key="chk-it"> <span>IT Rules 2021: 180 days records, 24-hour removal for women-related content complaints, safe harbour.</span></label>
+            <label><input type="checkbox" data-key="chk-benefits"> <span>Benefits: connect, voice, business, jobs, awareness.</span></label>
+            <label><input type="checkbox" data-key="chk-harms"> <span>Harms: health/depression, cyberbullying, fake news/hate speech, hacking/phishing, privacy loss.</span></label>
+            <label><input type="checkbox" data-key="chk-upcoming"> <span>Upcoming topic from class: Cyber Security.</span></label>
+          </div>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <footer class="wrap">
+    <div class="card">
+      <h3>📌 Upcoming Topic</h3>
+      <p>Teacher ne end mein bataya: next class/video mein <strong>Cyber Security</strong> detail mein cover hoga — hacking, phishing jaise terms wahan पढ़ेंगे.</p>
+      <p><strong>Revision tip:</strong> Timeline + Platform table + IT Rules + Benefits/Harms ko 3 rounds mein revise karo: 10 min skim → 10 min quiz → 5 min checklist.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const root=document.documentElement;
+      const saved=localStorage.getItem('sns-theme')||'dark';
+      root.dataset.theme=saved;
+      const themeBtn=document.getElementById('themeToggle');
+      function updateThemeBtn(){themeBtn.textContent=root.dataset.theme==='dark'?'🌙 Dark':'☀️ Light';}
+      updateThemeBtn();
+      themeBtn.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('sns-theme',root.dataset.theme);updateThemeBtn();});
+
+      document.getElementById('quickJump').addEventListener('change',e=>{const el=document.querySelector(e.target.value); if(el) el.scrollIntoView({behavior:'smooth',block:'start'});});
+
+      document.querySelectorAll('.answer-toggle').forEach(btn=>{
+        btn.addEventListener('click',()=>{const ans=btn.nextElementSibling; const hidden=ans.hasAttribute('hidden'); if(hidden){ans.removeAttribute('hidden');btn.textContent='Answer hide karo';btn.setAttribute('aria-expanded','true');}else{ans.setAttribute('hidden','');btn.textContent='Answer dekho';btn.setAttribute('aria-expanded','false');}});
+      });
+
+      const checks=[...document.querySelectorAll('input[type="checkbox"][data-key], .topic-done')];
+      const progressFill=document.getElementById('progressFill');
+      const progressText=document.getElementById('progressText');
+      checks.forEach(ch=>{const key=ch.dataset.key; ch.checked=localStorage.getItem(key)==='1'; mark(ch); ch.addEventListener('change',()=>{localStorage.setItem(key,ch.checked?'1':'0'); mark(ch); updateProgress();});});
+      function mark(ch){const label=ch.closest('label'); if(label) label.classList.toggle('done',ch.checked);}
+      function updateProgress(){const total=checks.length; const done=checks.filter(c=>c.checked).length; const pct=total?Math.round(done/total*100):0; progressFill.style.width=pct+'%'; progressText.textContent=pct+'% done';}
+      updateProgress();
+
+      const imgs=[...document.querySelectorAll('img[data-filename]')];
+      imgs.forEach(img=>{
+        const preload=new Image();
+        preload.decoding='async';
+        preload.onload=()=>{};
+        preload.onerror=()=>retry(img);
+        preload.src=img.currentSrc || img.src;
+        img.addEventListener('error',()=>retry(img));
+      });
+      function retry(img){
+        if(!img.dataset.retried){
+          img.dataset.retried='1';
+          img.src='https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(img.dataset.filename);
+        } else {
+          const fb=img.closest('.image-card')?.querySelector('.img-fallback');
+          if(fb) fb.hidden=false;
+        }
+      }
+      window.addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+    })();
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

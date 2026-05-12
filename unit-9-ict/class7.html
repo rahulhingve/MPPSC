@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Security Exam Revision | Hinglish Notes</title>
+<meta name="description" content="Cyber Security revision HTML based on class transcript: definitions, threats, hacking, malware, cyber safety, cryptography, blockchain, Indian institutions, quizzes and checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0f1a;--panel:#17182a;--card:#1f2136;--text:#f7fbff;--muted:#d7e1ef;
+  --cyan:#00d4ff;--orange:#ff6b35;--green:#00ff88;--purple:#b388ff;--red:#ff4d6d;
+  --line:rgba(255,255,255,.14);--shadow:0 18px 50px rgba(0,0,0,.28);
+}
+[data-theme="light"]{
+  --bg:#f6f8ff;--panel:#ffffff;--card:#ffffff;--text:#111827;--muted:#334155;
+  --line:rgba(15,23,42,.16);--shadow:0 14px 40px rgba(15,23,42,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top left,rgba(0,212,255,.14),transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.75;letter-spacing:.01em}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+button,select,input{font:inherit}
+.wrapper{max-width:1160px;margin:auto;padding:20px}
+.hero{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(179,136,255,.10)),var(--panel);box-shadow:var(--shadow);padding:32px;margin:18px 0 22px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto -10% -35% auto;width:420px;height:420px;background:radial-gradient(circle,rgba(0,255,136,.18),transparent 65%)}
+.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.06);font-weight:800;color:var(--green)}
+h1{font-size:clamp(2rem,5vw,4.4rem);line-height:1.05;margin:16px 0 12px;letter-spacing:-.05em}
+.subtitle{max-width:850px;color:var(--muted);font-size:1.08rem}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badge{padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:800}
+.progress-wrap{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange));height:5px}
+#progressBar{height:5px;background:var(--purple);width:0%}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+nav.toc{position:sticky;top:12px;border:1px solid var(--line);border-radius:24px;background:rgba(23,24,42,.9);backdrop-filter:blur(12px);padding:16px;box-shadow:var(--shadow);max-height:calc(100vh - 28px);overflow:auto}
+[data-theme="light"] nav.toc{background:rgba(255,255,255,.92)}
+.toc h2{font-size:1.05rem;margin:0 0 10px}
+.toc a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:14px;color:var(--text);font-weight:700;font-size:.92rem}
+.toc a:hover,.toc a.active{background:rgba(0,212,255,.12);text-decoration:none}
+.controls{display:grid;gap:10px;margin-bottom:12px}
+.theme-btn,.small-btn,.jump{width:100%;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);padding:9px 10px;font-weight:800}
+section.topic{scroll-margin-top:20px;border:1px solid var(--line);border-radius:28px;background:rgba(23,24,42,.74);box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden}
+[data-theme="light"] section.topic{background:rgba(255,255,255,.82)}
+.topic-head{padding:24px;background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(255,107,53,.08));border-bottom:1px solid var(--line)}
+.topic h2{margin:0;font-size:clamp(1.45rem,3vw,2.25rem);line-height:1.2}
+.topic .hint{margin:6px 0 0;color:var(--muted)}
+.topic-body{padding:22px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;transition:transform .2s ease, border-color .2s ease}
+.card:hover{transform:translateY(-2px);border-color:rgba(0,212,255,.45)}
+.card h3{margin:0 0 8px;font-size:1.1rem}
+.card ul{margin:8px 0 0;padding-left:20px}
+.hot{border-left:6px solid var(--orange);background:linear-gradient(90deg,rgba(255,107,53,.16),transparent),var(--card)}
+.def{border-left:6px solid var(--cyan);background:linear-gradient(90deg,rgba(0,212,255,.14),transparent),var(--card)}
+.safe{border-left:6px solid var(--green);background:linear-gradient(90deg,rgba(0,255,136,.12),transparent),var(--card)}
+.warn{border-left:6px solid var(--red);background:linear-gradient(90deg,rgba(255,77,109,.12),transparent),var(--card)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+th,td{padding:11px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{background:rgba(0,212,255,.13);font-weight:900}
+.timeline{position:relative;padding-left:20px}
+.timeline:before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--cyan),var(--orange))}
+.tl{position:relative;margin:0 0 12px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+.tl:before{content:"";position:absolute;left:-22px;top:18px;width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(0,255,136,.15)}
+details{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:12px 14px;margin:10px 0}
+summary{cursor:pointer;font-weight:900;color:var(--cyan)}
+.quiz .q{border:1px solid var(--line);border-radius:18px;padding:12px 14px;background:var(--card);margin:9px 0}
+.reveal{margin-top:8px;border:0;border-radius:12px;background:rgba(0,212,255,.16);color:var(--text);padding:6px 10px;font-weight:800;cursor:pointer}
+.ans{display:none;margin-top:8px;color:var(--green);font-weight:700}
+.figure{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:12px;margin:14px 0}
+.figure img{max-width:100%;height:auto;display:block;margin:auto;border-radius:16px;background:#fff}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:8px}
+.fallback{display:none;border:1px dashed var(--orange);padding:10px;border-radius:14px;margin-top:8px}
+.diagram{display:grid;gap:10px;margin:14px 0}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{border:1px solid var(--line);border-radius:999px;background:var(--card);padding:8px 12px;font-weight:900}
+.arrow{font-weight:900;color:var(--orange)}
+.checklist label{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:16px;padding:10px 12px;background:var(--card);margin:8px 0}
+.checklist input{margin-top:7px;transform:scale(1.2)}
+.footer{padding:22px;border:1px solid var(--line);border-radius:24px;background:var(--panel);margin-bottom:40px}
+.mobile-jump{display:none;position:sticky;top:5px;z-index:45;margin-bottom:14px}
+mark{background:rgba(255,107,53,.28);color:var(--text);border-radius:8px;padding:1px 6px}
+kbd{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:2px 6px}
+@media (max-width:920px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{display:none}
+  .mobile-jump{display:block}
+  .grid{grid-template-columns:1fr}
+  .wrapper{padding:12px}
+  .hero{padding:24px}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:12pt}
+  .progress-wrap,.toc,.mobile-jump,.controls,.reveal{display:none!important}
+  section.topic,.hero,.card,details,.figure,.footer{box-shadow:none;border:1px solid #999;background:#fff;color:#000}
+  details{display:block}
+  details[open],details{page-break-inside:avoid}
+  details > *{display:block!important}
+  .ans{display:block!important;color:#000}
+  a{color:#000;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<div class="progress-wrap"><div id="progressBar"></div></div>
+<div class="wrapper">
+  <header class="hero">
+    <span class="kicker">🎯 Exam Revision HTML</span>
+    <h1>Cyber Security — ICT Unit Revision</h1>
+    <p class="subtitle">Hinglish notes based on the class transcript: cyber definitions, threats, hacking, malware, attack terms, safety tools, cryptography, blockchain, antivirus, Indian cyber-security institutions, current facts, quizzes and master checklist.</p>
+    <div class="badges">
+      <span class="badge">🧩 14 Major Topics</span>
+      <span class="badge">🔥 Exam Hot Points</span>
+      <span class="badge">🧠 Recall Quizzes</span>
+      <span class="badge">✅ Persistent Checklist</span>
+      <span class="badge">🌗 Dark/Light Mode</span>
+    </div>
+  </header>
+
+  <div class="mobile-jump">
+    <select class="jump" id="mobileJump" aria-label="Jump to topic"></select>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <div class="controls">
+        <button class="theme-btn" id="themeToggle">🌗 Toggle Theme</button>
+        <select class="jump" id="quickJump" aria-label="Quick jump"></select>
+      </div>
+      <h2>📚 Table of Contents</h2>
+      <div id="tocLinks"></div>
+    </nav>
+
+    <main>
+      <section class="topic" id="s1" data-title="Basics & Definitions">
+        <div class="topic-head"><h2>💻 1. Basics & Definitions — Cyber ka Meaning</h2><p class="hint">Cyber = internet/computer/ICT se linked koi bhi device ya activity.</p></div>
+        <div class="topic-body">
+          <figure class="figure">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cybersecurity.png" data-file="Cybersecurity.png" loading="eager" fetchpriority="high" decoding="async" alt="Padlock over circuit board representing cyber security">
+            <figcaption>Image: Wikimedia Commons/Pixabay, creator jaydeep_, CC0 1.0. Concept: cyber security = digital systems ki protection.</figcaption>
+            <div class="fallback">Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Cybersecurity.png" target="_blank">Open source image page</a></div>
+          </figure>
+          <div class="grid">
+            <div class="card def"><h3>🔑 Cyber</h3><p>Internet, computer, ICT tools ya communication network se judi hui koi bhi cheez <b>Cyber</b> कहलाती है. Mobile bhi cyber world ka part hai.</p></div>
+            <div class="card def"><h3>🌐 Cyber Space</h3><p>Duniya bhar ki connected devices ka web/network = <b>Cyber Space</b>. Simple language: Internet ka poora digital environment.</p></div>
+            <div class="card warn"><h3>⚠️ Cyber Threat / Cyber Crime</h3><p>Internet ke through illegal activity, damage, data theft, unauthorized access ya system change = <b>Cyber Threat / Cyber Crime</b>.</p></div>
+            <div class="card safe"><h3>🛡️ Cyber Security</h3><p>Cyber crimes ko रोकने ke liye use hone wali techniques, tools aur processes = <b>Cyber Security</b>.</p></div>
+          </div>
+          <div class="card hot"><b>🔥 Exam Hot:</b> Definition-based questions direct aate hain: Cyber, Cyber Space, Cyber Crime, Cyber Security ka difference clear रखो.</div>
+          <div class="quiz">
+            <h3>🧠 Quick Recall</h3>
+            <div class="q">Q1. Cyber ka simplest meaning kya hai?<br><button class="reveal">Answer</button><div class="ans">Internet/computer/ICT se linked koi bhi device, activity ya system.</div></div>
+            <div class="q">Q2. Cyber Security ka main aim kya hai?<br><button class="reveal">Answer</button><div class="ans">Unauthorized access, damage, data theft aur cyber crimes ko रोकना.</div></div>
+            <div class="q">Q3. Internet ka digital environment kya कहलाता है?<br><button class="reveal">Answer</button><div class="ans">Cyber Space.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s2" data-title="Types of Cyber Threats">
+        <div class="topic-head"><h2>⚔️ 2. Cyber Threats ke 4 Types</h2><p class="hint">Same base: cyber attack; context changes: spying, attack, terrorism, war.</p></div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card"><h3>🕵️ Cyber Espionage / Cyber Jasoosi</h3><p>Software ke through secretly information collect karna. Example: <b>Keylogger</b> user ke keyboard inputs chura sakta hai.</p></div>
+            <div class="card"><h3>💥 Cyber Attack</h3><p>Computer, information system ya network ko target karke damage/disable/access karna.</p></div>
+            <div class="card"><h3>☠️ Cyber Terrorism</h3><p>Cyber tools ka use terrorism promote karne, infrastructure hack karne ya confidential data/money steal karne ke liye.</p></div>
+            <div class="card"><h3>🌍 Cyber Warfare</h3><p>Do countries ke beech cyber attacks. Important infrastructure jaisi banking, railway/IRCTC, traffic systems par attack serious issue ban sakta hai.</p></div>
+          </div>
+          <table>
+            <tr><th>Type</th><th>Core Idea</th><th>Exam Keyword</th></tr>
+            <tr><td>Cyber Espionage</td><td>Secret monitoring & data stealing</td><td>Spyware, Keylogger</td></tr>
+            <tr><td>Cyber Attack</td><td>System/network target karna</td><td>Unauthorized attack</td></tr>
+            <tr><td>Cyber Terrorism</td><td>Terror purpose ke liye cyber use</td><td>Terrorism + cyber tools</td></tr>
+            <tr><td>Cyber Warfare</td><td>Countries ke beech cyber conflict</td><td>Critical infrastructure</td></tr>
+          </table>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Do deshon ke beech large-scale cyber attacks ko kya kahenge?<br><button class="reveal">Answer</button><div class="ans">Cyber Warfare.</div></div>
+            <div class="q">Q. Secretly data collect karna kis category me aayega?<br><button class="reveal">Answer</button><div class="ans">Cyber Espionage / Cyber Jasoosi.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s3" data-title="Hacking & Hackers">
+        <div class="topic-head"><h2>🎩 3. Hacking & Hacker Types</h2><p class="hint">Hacking = unauthorized access to computer/network. Hacker = jo ye kaam karta hai.</p></div>
+        <div class="topic-body">
+          <div class="card def"><h3>Definition</h3><p><b>Hacking</b>: kisi computer, mobile ya network me bina permission ke enter karna, operate karna, data steal karna ya surveillance karna.</p></div>
+          <table>
+            <tr><th>Hacker Type</th><th>Hinglish Meaning</th><th>Exam Clue</th></tr>
+            <tr><td>Black Hat</td><td>Malicious intention; data/money theft, damage</td><td>सबसे खतरनाक</td></tr>
+            <tr><td>White Hat / Ethical Hacker</td><td>Organization ke saath system security strong karta hai</td><td>Good hacker</td></tr>
+            <tr><td>Grey Hat</td><td>Black + White ka mix; kabhi good, kabhi harmful</td><td>Mixed nature</td></tr>
+            <tr><td>Script Kiddie</td><td>Khud ka tool/code nahi; dusron ke tools use karta hai</td><td>Beginner style</td></tr>
+            <tr><td>Hacktivist</td><td>Political/social agenda ke liye hacking</td><td>Agenda + activism</td></tr>
+            <tr><td>Red Hat</td><td>Black hats ko stop/finish karne wale; often freelance/group</td><td>Cyber vigilante</td></tr>
+            <tr><td>Green Hat</td><td>New learners; hacking seekh rahe hote hain</td><td>Beginner learner</td></tr>
+            <tr><td>Blue Hat</td><td>External experts invited to test system security</td><td>Special invite/testing</td></tr>
+            <tr><td>Phreaker</td><td>Mobile/telephone hacking karne wale</td><td>Phone hacking</td></tr>
+          </table>
+          <div class="diagram card">
+            <h3>🧠 Memory Trick</h3>
+            <p><b>Black = Bad</b>, <b>White = Wise</b>, <b>Grey = बीच का खेल</b>, <b>Blue = बुलाया गया tester</b>, <b>Green = growing learner</b>, <b>Red = रोकने वाला fighter</b>.</p>
+          </div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Ethical hackers ko aur kya kahte hain?<br><button class="reveal">Answer</button><div class="ans">White Hat Hackers.</div></div>
+            <div class="q">Q. Dusre ke tools se hacking karne wala hacker?<br><button class="reveal">Answer</button><div class="ans">Script Kiddie.</div></div>
+            <div class="q">Q. Mobile/telephone hacking se related term?<br><button class="reveal">Answer</button><div class="ans">Phreaker.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s4" data-title="Hacking Tools">
+        <div class="topic-head"><h2>🔧 4. Hacking Tools — Rootkit, Keylogger, Scanner</h2><p class="hint">Tools samajhna important hai kyunki direct term-based questions aa sakte hain.</p></div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card warn"><h3>🧬 Rootkit</h3><p>Software tool jo hacker ko system control karne ki permission/ability deta hai.</p></div>
+            <div class="card warn"><h3>⌨️ Keylogger</h3><p>Keyboard par press hone wali keys record karke attacker ko bhejta hai. Password theft me dangerous.</p></div>
+            <div class="card"><h3>🧪 Vulnerability Scanner</h3><p>System ki कमजोरी find karta hai. White Hat security test ke liye use kar sakte hain; Black Hat misuse kar sakta hai.</p></div>
+            <div class="card"><h3>📌 Examples</h3><p>Transcript me examples: <b>Nmap / Network Mapper</b>, <b>Nessus</b>, <b>NetStumbler</b>.</p></div>
+          </div>
+          <div class="flow" aria-label="hacking tool flow"><span class="pill">System</span><span class="arrow">→</span><span class="pill">Scanner finds weakness</span><span class="arrow">→</span><span class="pill">Rootkit/Keylogger misuse</span><span class="arrow">→</span><span class="pill">Data/Control risk</span></div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Keyboard input record karne wala tool?<br><button class="reveal">Answer</button><div class="ans">Keylogger.</div></div>
+            <div class="q">Q. System weakness find karne wala tool?<br><button class="reveal">Answer</button><div class="ans">Vulnerability Scanner.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s5" data-title="Malware Basics">
+        <div class="topic-head"><h2>🦠 5. Malware, Virus, Worm, Trojan, Ransomware</h2><p class="hint">Malware = malicious software umbrella term.</p></div>
+        <div class="topic-body">
+          <figure class="figure">
+            <img src="https://freesvg.org/download/12616" data-alt-src="https://publicdomainvectors.org/en/free-clipart/Malware-warning-symbol-vector-image/12616.html" loading="lazy" decoding="async" alt="Public domain malware warning symbol">
+            <figcaption>Image: FreeSVG/OpenClipart, RonKaminsky, Public Domain/CC0. Concept: malware warning symbol.</figcaption>
+            <div class="fallback">Image load nahi hui? <a href="https://freesvg.org/index.php/malware-warning-symbol-vector-image" target="_blank">Open source image page</a></div>
+          </figure>
+          <div class="card def"><h3>📌 Malware</h3><p><b>Malware = Malicious Software</b>. Har harmful software jo computer ko damage, steal, lock ya spy karne ke liye bana ho, malware umbrella me aata hai.</p></div>
+          <table>
+            <tr><th>Term</th><th>Meaning</th><th>Key Difference</th></tr>
+            <tr><td>Virus</td><td>Program ke saath attach hokar damage karta hai</td><td>Host program chahiye; transcript ke hisaab se self-replicate nahi karta</td></tr>
+            <tr><td>Worm</td><td>Apni copies banata rehta hai</td><td>Memory भर देता hai; remote control bhi possible</td></tr>
+            <tr><td>Trojan Horse</td><td>Useful-looking software ke रूप me hidden harmful code</td><td>Greek Trojan Horse analogy</td></tr>
+            <tr><td>Ransomware</td><td>Data lock/encrypt karke ransom मांगता hai</td><td>CryptoLocker, WannaCry, NotPetya examples</td></tr>
+            <tr><td>Adware</td><td>Advertisements show/generate karta hai</td><td>Risk: ads ke saath malware attach ho sakta hai</td></tr>
+            <tr><td>Spyware</td><td>User/system ki secret monitoring</td><td>Keylogger example</td></tr>
+          </table>
+          <div class="card hot"><b>🔥 Exam Hot:</b> Malware ke andar Virus, Worm, Trojan Horse, Ransomware, Adware, Spyware — inka difference याद रखो.</div>
+          <details><summary>Virus facts from class</summary>
+            <ul>
+              <li>Virus word ka first use class me <b>Fred Cohen</b> se linked bataya gaya.</li>
+              <li>Class me taught full form: <b>VIRUS — Vital Information Resources Under Siege</b>.</li>
+              <li>Virus internet downloads, infected files, pen drive/mobile, junk email attachments ke through aa sakta hai.</li>
+            </ul>
+          </details>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Malware ka full form?<br><button class="reveal">Answer</button><div class="ans">Malicious Software.</div></div>
+            <div class="q">Q. Data lock karke paise मांगने wala malware?<br><button class="reveal">Answer</button><div class="ans">Ransomware.</div></div>
+            <div class="q">Q. Apni copies banata rehta hai — virus ya worm?<br><button class="reveal">Answer</button><div class="ans">Worm.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s6" data-title="Virus Types">
+        <div class="topic-head"><h2>🧬 6. Computer Virus ke Types</h2><p class="hint">Affected area ke basis par classification: boot, file, macro, resident etc.</p></div>
+        <div class="topic-body">
+          <table>
+            <tr><th>Virus Type</th><th>Kya affect karta hai?</th><th>Examples / Exam Clue</th></tr>
+            <tr><td>Boot Sector Virus</td><td>Computer booting/startup process</td><td>Computer ON/OFF/boot issue</td></tr>
+            <tr><td>File Infector / Program Virus</td><td>.exe, .org, .ovl, .drv, .sys type files</td><td>Sunday, Cascade</td></tr>
+            <tr><td>Multipartite Virus</td><td>Program + Boot dono</td><td>Invade, Flip, Tequila</td></tr>
+            <tr><td>Stealth Virus</td><td>Detection se bachne ki कोशिश</td><td>Frodo, Whale, Joshi</td></tr>
+            <tr><td>Polymorphic Virus</td><td>Code/ रूप बार-बार बदलता hai</td><td>COVID-like analogy; identify difficult</td></tr>
+            <tr><td>Macro Virus</td><td>Documents: Word, PowerPoint etc.</td><td>File ke saath travel karta hai</td></tr>
+            <tr><td>Overwrite Virus</td><td>Data delete/infect karta hai</td><td>File open nahi hoti</td></tr>
+            <tr><td>File System / Cluster / Directory Virus</td><td>File directory/path badal deta hai</td><td>Memory management issue</td></tr>
+            <tr><td>Resident Virus</td><td>RAM me stay karke OS ke saath active hota hai</td><td>RAM + Operating System</td></tr>
+          </table>
+          <div class="card hot"><b>🔥 Exam Hot:</b> “Code change karta hai” = Polymorphic. “RAM me रहता है” = Resident. “Booting affect” = Boot Sector. “Document files” = Macro Virus.</div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. RAM me छुपकर OS ke saath active hone wala virus?<br><button class="reveal">Answer</button><div class="ans">Resident Virus.</div></div>
+            <div class="q">Q. लगातार अपना रूप/code बदलने वाला virus?<br><button class="reveal">Answer</button><div class="ans">Polymorphic Virus.</div></div>
+            <div class="q">Q. Document files ko affect karne wala virus?<br><button class="reveal">Answer</button><div class="ans">Macro Virus.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s7" data-title="Famous Viruses">
+        <div class="topic-head"><h2>🗂️ 7. Famous Viruses / Malware Timeline</h2><p class="hint">Year + Name + Fact = exam-friendly revision.</p></div>
+        <div class="topic-body">
+          <div class="timeline">
+            <div class="tl"><b>1971 — Creeper</b>: Class me duniya ka first computer virus bataya; Bob Thomas se linked.</div>
+            <div class="tl"><b>Brain / C-Brain</b>: Personal computers/IBM PCs ko target karne wala early PC virus; Amjad Farooq Alvi & Basit Farooq Alvi se linked.</div>
+            <div class="tl"><b>CryptoLocker</b>: Data encrypt/lock karke cryptocurrency me payment मांगता tha; Operation Tovar mention.</div>
+            <div class="tl"><b>I Love You (2000)</b>: Email ke through spread; Guinness Book me wide-spread virus ke रूप me mention.</div>
+            <div class="tl"><b>MyDoom (2004)</b>: Email-based worm; memory/replication related damage.</div>
+            <div class="tl"><b>Storm Worm</b>: Interesting/clickbait news story ke through user ko click करवाता था.</div>
+            <div class="tl"><b>Michelangelo</b>: 6 March ko activate; boot system affect karta tha.</div>
+            <div class="tl"><b>Disk Washer</b>: Hard disk data delete/erase karne se linked.</div>
+            <div class="tl"><b>MacMag</b>: Macintosh/Apple systems se linked; peace message display.</div>
+            <div class="tl"><b>Jerusalem</b>: 1987, Jerusalem me identified; Friday ko active hone ka point.</div>
+          </div>
+          <details><summary>Other names mentioned in class</summary>
+            <p>Dark Avenger, Kilo, Philip, MacBug/MacMag, Scores, Cascade, Data Crime, Columbus Crime, Internet Virus, Patch.com, Extension.com, Marijuana, Melissa, Brain; Agent Smith, Pegasus spyware, Stuxnet, Gravity RAT, Monkeys, Gravyard, Crox, Attack etc.</p>
+          </details>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. First computer virus as taught in class?<br><button class="reveal">Answer</button><div class="ans">Creeper — 1971, Bob Thomas.</div></div>
+            <div class="q">Q. 6 March ko activate hone wala virus?<br><button class="reveal">Answer</button><div class="ans">Michelangelo.</div></div>
+            <div class="q">Q. Pegasus kis type se linked hai?<br><button class="reveal">Answer</button><div class="ans">Spyware / Jasoosi software.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s8" data-title="Cyber Attack Terms">
+        <div class="topic-head"><h2>⚠️ 8. Cyber Attack Terms — 35 Words Revision</h2><p class="hint">Direct one-liner questions yahin se ban sakte hain.</p></div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card"><h3>👁️ Cyber Stalking</h3><p>Online kisi ko follow/harass karna, activity monitor karna, disturbing messages/emails bhejna.</p></div>
+            <div class="card"><h3>🧠 Intellectual Property Theft</h3><p>Idea, patent, movie, software, creative work ya digital content ki चोरी.</p></div>
+            <div class="card"><h3>💸 Salami Attack</h3><p>Bahut chhoti amount multiple accounts se steal karna; customer ko jaldi notice nahi hota.</p></div>
+            <div class="card"><h3>📨 Email Bombing</h3><p>Ek email ID/server par लगातार bahut saare emails bhejna; bots use ho sakte hain.</p></div>
+            <div class="card"><h3>🎣 Phishing</h3><p>Fake website/link se ID-password, banking info निकालना. SBI-like fake website example.</p></div>
+            <div class="card"><h3>🎭 Spoofing</h3><p>Kisi legitimate person/business jaisa दिखकर personal info या पैसा लेना.</p></div>
+            <div class="card"><h3>🌊 DoS / DDoS</h3><p>Server par excessive requests bhejkar service down karna; distributed level par DDoS.</p></div>
+            <div class="card"><h3>🤖 Bot</h3><p>Program jo ek command/task ko बार-बार repeat karta hai; bombing/DoS me use.</p></div>
+            <div class="card"><h3>💣 Logic Bomb</h3><p>System me hidden rehta hai; certain condition match hone par activate hota hai.</p></div>
+            <div class="card"><h3>🧱 Firewall</h3><p>Network/device security wall jo harmful traffic ko block/filter karta hai.</p></div>
+            <div class="card"><h3>🧩 Social Engineering</h3><p>Psychological convincing art; user ko manipulate karke info/action लेना.</p></div>
+            <div class="card"><h3>🔐 Brute Force Attack</h3><p>Password/PIN/OTP guess ya capture karke account access ki कोशिश.</p></div>
+            <div class="card"><h3>💉 SQL Injection</h3><p>Structured Query Language code inject karke web/database access lene ki technique.</p></div>
+            <div class="card"><h3>🖱️ Clickjacking</h3><p>User ko disguised/invisible web element par click karwana; fake download buttons example.</p></div>
+            <div class="card"><h3>🎬 Deepfake</h3><p>Audio/video/image ko kisi real person jaisa बनाकर misinformation/blackmail.</p></div>
+            <div class="card"><h3>🧾 CAPTCHA / reCAPTCHA</h3><p>Human vs bot identify karne ke liye challenge-response test; “I am not a robot” version reCAPTCHA.</p></div>
+          </div>
+          <div class="card hot"><b>🔥 Exam Hot:</b> CAPTCHA full form: <b>Completely Automated Public Turing test to tell Computers and Humans Apart</b>. Class me 2003, Luis von Ahn & Manuel Blum mention; Google reCAPTCHA later.</div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Chhoti-chhoti amount multiple accounts se nikalna?<br><button class="reveal">Answer</button><div class="ans">Salami Attack.</div></div>
+            <div class="q">Q. Server ko requests se down karna?<br><button class="reveal">Answer</button><div class="ans">DoS / DDoS Attack.</div></div>
+            <div class="q">Q. Fake download button se user ko click karwana?<br><button class="reveal">Answer</button><div class="ans">Clickjacking.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s9" data-title="Cyber Safety Tools">
+        <div class="topic-head"><h2>🛡️ 9. Cyber Security Measures & Safety Tools</h2><p class="hint">Threats ko samajhne ke baad protection: updates, antivirus, firewall, browser safety.</p></div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card safe"><h3>✅ Software Update</h3><p>Bugs/security holes ko fix karta hai. Bug fixing = debugging; fix/update package = patch.</p></div>
+            <div class="card safe"><h3>📧 Unsolicited Emails Avoid</h3><p>Unknown links, attachments, junk emails, suspicious websites open nahi karne.</p></div>
+            <div class="card safe"><h3>🦺 Antivirus + Updates</h3><p>Antivirus install karna enough nahi; daily/regular update hona chahiye.</p></div>
+            <div class="card safe"><h3>🌐 Browser Safety</h3><p>Net banking me original URL check karo; sensitive login ke liye incognito/private mode helpful.</p></div>
+            <div class="card safe"><h3>💰 Ransom Pay Avoid</h3><p>Ransomware me फिरौती pay na karne ki advice class me दी गई.</p></div>
+            <div class="card safe"><h3>👶 Child-lock type tool</h3><p>Class me “Crosser/Crossware” type software mention: harmful internet content ko children tak aane se रोकने wala.</p></div>
+          </div>
+          <div class="flow"><span class="pill">Update</span><span class="arrow">+</span><span class="pill">Firewall</span><span class="arrow">+</span><span class="pill">Antivirus</span><span class="arrow">+</span><span class="pill">Safe Browsing</span><span class="arrow">=</span><span class="pill">Better Security</span></div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Software weaknesses ko fix karne ki process?<br><button class="reveal">Answer</button><div class="ans">Debugging; fixes ko patches kaha ja sakta hai.</div></div>
+            <div class="q">Q. Network ke beech protective wall?<br><button class="reveal">Answer</button><div class="ans">Firewall.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s10" data-title="Cryptography">
+        <div class="topic-head"><h2>🔐 10. Cryptography, Encryption & Decryption</h2><p class="hint">Plain text ko unreadable form me convert karna = encryption; वापस readable banana = decryption.</p></div>
+        <div class="topic-body">
+          <figure class="figure">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Public_key_encryption.svg" data-file="Public_key_encryption.svg" loading="lazy" decoding="async" alt="Public key encryption process diagram">
+            <figcaption>Image: Wikimedia Commons, Davidgothberg, Public Domain. Concept: asymmetric/public-key encryption.</figcaption>
+            <div class="fallback">Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Public_key_encryption.svg" target="_blank">Open source image page</a></div>
+          </figure>
+          <div class="grid">
+            <div class="card def"><h3>✍️ Cryptography</h3><p>Secret message writing/secure communication ka discipline. Class me Thomas Browne, 1658 mention.</p></div>
+            <div class="card"><h3>🔒 Encryption</h3><p>Plain text ko complex/unreadable form me बदलना. Output ko class me cyber/cipher text bataya.</p></div>
+            <div class="card"><h3>🔓 Decryption</h3><p>Encrypted text ko वापस plain text me convert karna.</p></div>
+            <div class="card"><h3>🕵️ Cryptanalysis</h3><p>Secret messages ko समझने/analyse karne ki practice.</p></div>
+          </div>
+          <table>
+            <tr><th>Key Type</th><th>Meaning</th><th>Example clue</th></tr>
+            <tr><td>Symmetric Key</td><td>Encryption key aur decryption key same</td><td>Same chabi dono side</td></tr>
+            <tr><td>Asymmetric Key</td><td>Encryption/decryption keys different</td><td>Public/private key model</td></tr>
+            <tr><td>Steganography</td><td>Information ko hide karna</td><td>Cryptography message ko transform karti hai; steganography hide karti hai</td></tr>
+          </table>
+          <div class="flow"><span class="pill">Plain Text</span><span class="arrow">→ Encryption Key →</span><span class="pill">Cipher/Cyber Text</span><span class="arrow">→ Decryption Key →</span><span class="pill">Plain Text</span></div>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Same key use ho to kya कहलाता है?<br><button class="reveal">Answer</button><div class="ans">Symmetric Key.</div></div>
+            <div class="q">Q. Plain text ko unreadable form banana?<br><button class="reveal">Answer</button><div class="ans">Encryption.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s11" data-title="Blockchain & Crypto">
+        <div class="topic-head"><h2>⛓️ 11. Blockchain & Cryptocurrency</h2><p class="hint">Blockchain = data store karne ki secure, linked, decentralized technique.</p></div>
+        <div class="topic-body">
+          <figure class="figure">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Blockchain_workflow.png" data-file="Blockchain_workflow.png" loading="lazy" decoding="async" alt="Blockchain workflow diagram showing linked blocks">
+            <figcaption>Image: Wikimedia Commons, B140970324, CC BY-SA 4.0. Concept: blocks linked in blockchain workflow.</figcaption>
+            <div class="fallback">Image load nahi hui? <a href="https://commons.wikimedia.org/wiki/File:Blockchain_workflow.png" target="_blank">Open source image page</a></div>
+          </figure>
+          <div class="grid">
+            <div class="card def"><h3>📦 Block ke 3 Parts</h3><ul><li>Data / Information</li><li>Hash = block ka unique code/DNA</li><li>Previous Hash = pichle block ka code</li></ul></div>
+            <div class="card safe"><h3>🔗 Secure kyun?</h3><p>Ek block change karoge to uska hash change hoga, phir next blocks ke previous hash mismatch/change honge — poori chain disturbed.</p></div>
+            <div class="card"><h3>🌐 Decentralized</h3><p>Kisi ek central authority ke paas complete control nahi; network members ke paas copies/shared record hota hai.</p></div>
+            <div class="card"><h3>💱 Cryptocurrency</h3><p>Digital/online currency jo blockchain par based hoti hai; central bank regulate nahi karta, market/network ke हिसाब se चलती है.</p></div>
+          </div>
+          <details open><summary>Examples & Uses from class</summary>
+            <p><b>Bitcoin</b> first cryptocurrency; class me Satoshi Nakamoto, 2008 mention. Other examples: Ethereum, Ripple, Bitcoin Cash, EOS, Litecoin, Cardano, Stellar, NEO, IOTA, Libra. Uses: crypto, IoT, real estate, payment transfer, voting, banking, online music, law enforcement.</p>
+          </details>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Block me pichle block ka code kya कहलाता है?<br><button class="reveal">Answer</button><div class="ans">Previous Hash.</div></div>
+            <div class="q">Q. Bitcoin se linked naam?<br><button class="reveal">Answer</button><div class="ans">Satoshi Nakamoto.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s12" data-title="Antivirus">
+        <div class="topic-head"><h2>🧪 12. Antivirus Software</h2><p class="hint">Malware/virus se protect karne wala software; firewall + scanning + update important.</p></div>
+        <div class="topic-body">
+          <div class="grid">
+            <div class="card def"><h3>Definition</h3><p>Antivirus ek software hai jo computer/mobile ko virus aur malware se बचाता है, scan karta hai, firewall support deta hai aur updates se naye threats handle karta hai.</p></div>
+            <div class="card hot"><h3>🔥 Exam Fact</h3><p>Class me antivirus concept/term 1987 me <b>Bernard Robert Fix</b> se linked bataya gaya.</p></div>
+          </div>
+          <table>
+            <tr><th>Antivirus Examples</th><th>Class Notes</th></tr>
+            <tr><td>Bitdefender</td><td>Major antivirus example</td></tr>
+            <tr><td>Kaspersky</td><td>Major antivirus example</td></tr>
+            <tr><td>Comodo</td><td>Major antivirus example</td></tr>
+            <tr><td>Avira</td><td>Major antivirus example</td></tr>
+            <tr><td>Avast</td><td>Major antivirus example</td></tr>
+            <tr><td>AVG</td><td>Major antivirus example</td></tr>
+            <tr><td>Quick Heal</td><td>Indian context me commonly known</td></tr>
+            <tr><td>Net Protector</td><td>Example from class</td></tr>
+          </table>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. Antivirus ko update kyun karna chahiye?<br><button class="reveal">Answer</button><div class="ans">Naye malware signatures/threats ko detect aur block karne ke liye.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s13" data-title="India Cyber Security">
+        <div class="topic-head"><h2>🇮🇳 13. India me Cyber Security — Laws, Policies, Institutions</h2><p class="hint">Factual topic: year, full form, ministry, function याद रखो.</p></div>
+        <div class="topic-body">
+          <div class="card hot"><b>🔥 Exam Hot:</b> Full forms + years directly पूछे जा सकते हैं: CERT-In, I4C, CCTNS, MeitY, NCIIPC, NASSCOM, NIC.</div>
+          <table>
+            <tr><th>Institution / Law</th><th>Year / Fact</th><th>Key Role</th></tr>
+            <tr><td>Information Technology Act, 2000</td><td>Class: 17 Oct 2000 लागू; 2008 amendment; 13 chapters, 94 sections, 4 schedules</td><td>India ka cyber/e-commerce legal framework</td></tr>
+            <tr><td>National Cyber Security Policy</td><td>2013</td><td>Sensitive information protection, awareness, NCIIPC, CERT-In role</td></tr>
+            <tr><td>CERT-In</td><td>19 Jan 2004; HQ Delhi; MeitY</td><td>National nodal agency for cyber incidents</td></tr>
+            <tr><td>I4C</td><td>2020; Ministry of Home Affairs</td><td>Indian Cyber Crime Coordination Centre</td></tr>
+            <tr><td>Budapest Convention</td><td>2001; लागू 2004; India member nahi</td><td>International convention on cybercrime</td></tr>
+            <tr><td>National Cyber Crime Reporting Portal</td><td>2019</td><td>Online cyber complaints, especially women/children related crimes</td></tr>
+            <tr><td>Cyber Swachhta Kendra</td><td>Digital India initiative; CERT-In operated</td><td>Bot/malware analysis, awareness, cleanup support</td></tr>
+            <tr><td>CCTNS</td><td>2009</td><td>Crime & Criminal Tracking Network and Systems; police record/database network</td></tr>
+            <tr><td>Cyber Surakshit Bharat</td><td>MeitY + industry collaboration</td><td>Awareness, education, capability building</td></tr>
+            <tr><td>NASSCOM</td><td>1 March 1988; non-profit; HQ New Delhi</td><td>Software/service industry body</td></tr>
+            <tr><td>Digital India Corporation</td><td>8 Sept 2007; MeitY company</td><td>Digital India implementation support</td></tr>
+            <tr><td>NIC</td><td>1976; HQ New Delhi; MeitY</td><td>Govt databases, e-governance network support</td></tr>
+          </table>
+          <details><summary>I4C ke 7 components from class</summary>
+            <ul>
+              <li>National Cyber Crime Threat Analysis Unit</li>
+              <li>National Cyber Crime Reporting Portal</li>
+              <li>Joint Cyber Crime Investigation Team platform</li>
+              <li>National Cyber Crime Forensic Laboratory</li>
+              <li>National Cyber Crime Training Centre</li>
+              <li>Cyber Crime Ecosystem Management Unit</li>
+              <li>National Cyber Research and Innovation Centre</li>
+            </ul>
+          </details>
+          <div class="quiz"><h3>🧠 Quick Recall</h3>
+            <div class="q">Q. India me cyber incidents ki national nodal agency?<br><button class="reveal">Answer</button><div class="ans">CERT-In — Indian Computer Emergency Response Team.</div></div>
+            <div class="q">Q. National Cyber Security Policy ka year?<br><button class="reveal">Answer</button><div class="ans">2013.</div></div>
+            <div class="q">Q. Budapest Convention kis topic se related hai?<br><button class="reveal">Answer</button><div class="ans">Cybercrime.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="s14" data-title="Current Affairs & Full Forms">
+        <div class="topic-head"><h2>📰 14. Current Affairs + Master Full Forms</h2><p class="hint">Lecture ke end me short factual current notes दिए गए थे.</p></div>
+        <div class="topic-body">
+          <details open><summary>Current Affairs mentioned in class</summary>
+            <ul>
+              <li>12th Indian Security Conference — 28 Aug 2019, New Delhi.</li>
+              <li>ISEA — Information Security Education and Awareness project.</li>
+              <li>NCIIPC — National Critical Information Infrastructure Protection Centre.</li>
+              <li>NTRO — National Technical Research Organisation (class me 2005/2004 mention).</li>
+              <li>iSPIRT — Indian Software Product Industry Round Table; software product think tank.</li>
+              <li>NIXI — National Internet Exchange of India; class me 2003 mention.</li>
+              <li>Shopper malware & Dropper malware — smartphones/mobile infection context.</li>
+              <li>SAI — Indian Army secure messaging app; secure voice/video/text service for soldiers.</li>
+              <li>17 May — World Telecommunication and Information Society Day.</li>
+              <li>Karnataka Government — Learning Management System mention.</li>
+              <li>CHAMPIONS portal — MSME ministry, 12 May 2020.</li>
+              <li>c0c0n 2021 — Kerala Police annual cyber security conference; late Gen. Bipin Rawat inauguration mention.</li>
+              <li>Deep Dive online training program by MeitY; Norton Cyber Safety Insights report; Param Siddhi AI; Colonial Pipeline attack; Maharashtra Cyber Safe initiative; GIMS — Government Instant Messaging System.</li>
+            </ul>
+          </details>
+          <h3>📚 Master Full Forms Table</h3>
+          <table>
+            <tr><th>Short Form</th><th>Full Form</th><th>Hindi/Hinglish Meaning</th></tr>
+            <tr><td>ICT</td><td>Information and Communication Technology</td><td>सूचना और संचार प्रौद्योगिकी</td></tr>
+            <tr><td>IT</td><td>Information Technology</td><td>सूचना प्रौद्योगिकी</td></tr>
+            <tr><td>VIRUS</td><td>Vital Information Resources Under Siege</td><td>Class me taught full form</td></tr>
+            <tr><td>SQL</td><td>Structured Query Language</td><td>Database query language</td></tr>
+            <tr><td>DNS</td><td>Domain Name System</td><td>Domain name ko IP se map karta hai</td></tr>
+            <tr><td>CAPTCHA</td><td>Completely Automated Public Turing test to tell Computers and Humans Apart</td><td>Human vs bot पहचान</td></tr>
+            <tr><td>CERT-In</td><td>Indian Computer Emergency Response Team</td><td>Cyber incident response nodal agency</td></tr>
+            <tr><td>MeitY</td><td>Ministry of Electronics and Information Technology</td><td>इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी मंत्रालय</td></tr>
+            <tr><td>I4C</td><td>Indian Cyber Crime Coordination Centre</td><td>Cyber crime coordination</td></tr>
+            <tr><td>CCTNS</td><td>Crime and Criminal Tracking Network and Systems</td><td>Police/criminal records network</td></tr>
+            <tr><td>NCIIPC</td><td>National Critical Information Infrastructure Protection Centre</td><td>Critical information infra protection</td></tr>
+            <tr><td>NASSCOM</td><td>National Association of Software and Service Companies</td><td>Software/service industry association</td></tr>
+            <tr><td>DIC</td><td>Digital India Corporation</td><td>Digital India support company</td></tr>
+            <tr><td>NIC</td><td>National Informatics Centre</td><td>Govt IT/e-governance support</td></tr>
+            <tr><td>ISEA</td><td>Information Security Education and Awareness</td><td>Security education/awareness</td></tr>
+            <tr><td>NTRO</td><td>National Technical Research Organisation</td><td>Technical intelligence agency</td></tr>
+            <tr><td>iSPIRT</td><td>Indian Software Product Industry Round Table</td><td>Software product think tank</td></tr>
+            <tr><td>NIXI</td><td>National Internet Exchange of India</td><td>Internet exchange body</td></tr>
+            <tr><td>SAI</td><td>Secure Application for Internet / Army secure messaging context</td><td>Indian Army messaging app from lecture context</td></tr>
+            <tr><td>GIMS</td><td>Government Instant Messaging System</td><td>Govt messenger prototype</td></tr>
+          </table>
+          <h3>✅ Master Revision Checklist</h3>
+          <p id="checkCount" class="badge">0 completed</p>
+          <div class="checklist" id="checklist">
+            <label><input type="checkbox"> Cyber, Cyber Space, Cyber Threat, Cyber Security definitions revise kar li.</label>
+            <label><input type="checkbox"> Cyber Espionage, Cyber Attack, Cyber Terrorism, Cyber Warfare difference yaad hai.</label>
+            <label><input type="checkbox"> Hacking definition aur 9 hacker types yaad hain.</label>
+            <label><input type="checkbox"> Rootkit, Keylogger, Vulnerability Scanner, Nmap/Nessus/NetStumbler revise.</label>
+            <label><input type="checkbox"> Malware umbrella: Virus, Worm, Trojan, Ransomware, Adware, Spyware difference clear.</label>
+            <label><input type="checkbox"> Virus types: Boot, File Infector, Multipartite, Stealth, Polymorphic, Macro, Overwrite, File System, Resident.</label>
+            <label><input type="checkbox"> Famous virus timeline: Creeper, Brain, CryptoLocker, I Love You, MyDoom, Storm Worm, Michelangelo, Disk Washer, MacMag, Jerusalem.</label>
+            <label><input type="checkbox"> Attack terms: Phishing, Spoofing, Salami, DoS/DDoS, Bot, Logic Bomb, SQL Injection, Clickjacking, Deepfake.</label>
+            <label><input type="checkbox"> CAPTCHA full form and reCAPTCHA meaning yaad hai.</label>
+            <label><input type="checkbox"> Cyber safety: updates, patches, antivirus, firewall, incognito, suspicious email avoid.</label>
+            <label><input type="checkbox"> Cryptography: encryption/decryption, plaintext/ciphertext, symmetric/asymmetric key, steganography.</label>
+            <label><input type="checkbox"> Blockchain: data, hash, previous hash; decentralized; crypto examples.</label>
+            <label><input type="checkbox"> Antivirus examples and Bernard Robert Fix fact revise.</label>
+            <label><input type="checkbox"> India: IT Act 2000, NCSP 2013, CERT-In 2004, I4C 2020, NCRP 2019, CCTNS 2009.</label>
+            <label><input type="checkbox"> Full forms table ek baar aur revise kar li.</label>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <h2>📌 Upcoming Topic</h2>
+        <p>Class ke end me next lecture ka topic <b>Artificial Intelligence</b> बताया गया.</p>
+        <h3>🎯 Revision Tip</h3>
+        <p>Is page ko 3 rounds me revise karo: pehle tables, phir Quick Recall answers, phir Master Checklist. Jo checkbox blank rahe, wahi weak area hai.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement;
+  const saved=localStorage.getItem('revTheme')||'dark';
+  if(saved==='light') root.setAttribute('data-theme','light');
+  const themeBtn=document.getElementById('themeToggle');
+  themeBtn.addEventListener('click',()=>{
+    const isLight=root.getAttribute('data-theme')==='light';
+    root.setAttribute('data-theme',isLight?'dark':'light');
+    localStorage.setItem('revTheme',isLight?'dark':'light');
+  });
+
+  const topics=[...document.querySelectorAll('section.topic')];
+  const toc=document.getElementById('tocLinks');
+  const jump=document.getElementById('quickJump');
+  const mobileJump=document.getElementById('mobileJump');
+  topics.forEach((s,i)=>{
+    const title=s.dataset.title||s.querySelector('h2').textContent;
+    const a=document.createElement('a');
+    a.href='#'+s.id; a.textContent=(i+1)+'. '+title; a.dataset.target=s.id;
+    toc.appendChild(a);
+    const opt=new Option((i+1)+'. '+title,'#'+s.id);
+    jump.add(opt.cloneNode(true)); mobileJump.add(opt);
+  });
+  function go(val){ if(val) location.hash=val; }
+  jump.addEventListener('change',e=>go(e.target.value));
+  mobileJump.addEventListener('change',e=>go(e.target.value));
+
+  const links=[...toc.querySelectorAll('a')];
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(a=>a.classList.toggle('active',a.dataset.target===entry.target.id));
+      }
+    });
+  },{rootMargin:'-30% 0px -65% 0px',threshold:0});
+  topics.forEach(s=>obs.observe(s));
+
+  const bar=document.getElementById('progressBar');
+  function progress(){
+    const st=document.documentElement.scrollTop||document.body.scrollTop;
+    const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    bar.style.width=(h?st/h*100:0)+'%';
+  }
+  document.addEventListener('scroll',progress,{passive:true}); progress();
+
+  document.querySelectorAll('.reveal').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const ans=btn.nextElementSibling;
+      ans.style.display=ans.style.display==='block'?'none':'block';
+      btn.textContent=ans.style.display==='block'?'Hide Answer':'Answer';
+    });
+  });
+
+  const checks=[...document.querySelectorAll('#checklist input[type="checkbox"]')];
+  const count=document.getElementById('checkCount');
+  checks.forEach((c,i)=>{
+    c.checked=localStorage.getItem('revCheck'+i)==='1';
+    c.addEventListener('change',()=>{
+      localStorage.setItem('revCheck'+i,c.checked?'1':'0'); updateChecks();
+    });
+  });
+  function updateChecks(){
+    const done=checks.filter(c=>c.checked).length;
+    count.textContent=done+' / '+checks.length+' completed';
+  }
+  updateChecks();
+
+  // Image reliability: preload, retry common redirect fallback, show source fallback link if still broken.
+  document.querySelectorAll('img').forEach(img=>{
+    const pre=new Image();
+    pre.decoding='async';
+    pre.onload=()=>{};
+    pre.onerror=()=>{};
+    pre.src=img.currentSrc || img.src;
+    img.addEventListener('error',()=>{
+      if(!img.dataset.retried){
+        img.dataset.retried='1';
+        if(img.dataset.file){
+          img.src='https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(img.dataset.file);
+          return;
+        }
+        if(img.dataset.altSrc){
+          img.src=img.dataset.altSrc;
+          return;
+        }
+      }
+      const fb=img.parentElement.querySelector('.fallback');
+      if(fb) fb.style.display='block';
+      img.style.display='none';
+    });
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
