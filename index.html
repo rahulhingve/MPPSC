@@ -56,7 +56,7 @@
 
         .controls {
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(150px, 1fr));
             gap: 12px;
             margin: 18px 0;
         }
@@ -221,6 +221,28 @@
             return (ext || '').replace('.', '').toUpperCase();
         }
 
+        function getPyqPaper(file) {
+            if (!file || file.folder !== 'pyq') return '';
+            const text = `${file.path} ${file.name}`.toLowerCase();
+
+            if (/paper[\s-]*i\b/.test(text) || text.includes('(gs)') || text.includes('general studies')) {
+                return 'paper1';
+            }
+
+            if (/paper[\s-]*ii\b/.test(text) || text.includes('(csat)') || text.includes('general aptitude')) {
+                return 'paper2';
+            }
+
+            return '';
+        }
+
+        function getPyqPaperLabel(file) {
+            const paper = getPyqPaper(file);
+            if (paper === 'paper1') return 'Paper 1 GS';
+            if (paper === 'paper2') return 'Paper 2 CSAT';
+            return '';
+        }
+
         function openTarget(file) {
             const ext = file.ext.toLowerCase();
             if (ext === '.md' || ext === '.txt') {
@@ -273,11 +295,16 @@
         <div class="wrap">
           <div class="hero">
             <h1>MPPSC Revision Launcher</h1>
-            <p>Open any class file from one place, filter by subject folder, class number, type, or keyword.</p>
+            <p>Open any class file from one place, filter by subject folder, PYQ paper, class number, type, or keyword.</p>
 
             <div class="controls">
               <input id="search" placeholder="Search subject, class, keyword..." />
               <select id="folder"><option value="">All folders</option></select>
+              <select id="pyqPaper">
+                <option value="">All PYQ papers</option>
+                <option value="paper1">Paper 1 - GS</option>
+                <option value="paper2">Paper 2 - CSAT</option>
+              </select>
               <select id="type">
                 <option value="">All types</option>
                 <option value=".html">HTML</option>
@@ -304,6 +331,7 @@
 
             const searchInput = document.getElementById('search');
             const folderSelect = document.getElementById('folder');
+            const pyqPaperSelect = document.getElementById('pyqPaper');
             const typeSelect = document.getElementById('type');
             const classSearch = document.getElementById('classSearch');
             const grid = document.getElementById('grid');
@@ -336,6 +364,7 @@
             function render() {
                 const s = searchInput.value.trim().toLowerCase();
                 const folder = folderSelect.value;
+                const pyqPaper = pyqPaperSelect.value;
                 const type = typeSelect.value;
                 const cls = classSearch.value.trim().toLowerCase();
 
@@ -343,6 +372,7 @@
                     const hay = `${f.path} ${f.name} ${f.folder} ${f.classNumber || ''}`.toLowerCase();
                     if (s && !hay.includes(s)) return false;
                     if (folder && f.folder !== folder) return false;
+                    if (pyqPaper && getPyqPaper(f) !== pyqPaper) return false;
                     if (type && f.ext !== type) return false;
                     if (cls && String(f.classNumber || '').toLowerCase() !== cls) return false;
                     return true;
@@ -365,6 +395,7 @@
             <div>
               <span class="pill">${normalizeType(f.ext)}</span>
               <span class="pill">${escapeHtml(f.folder)}</span>
+              ${getPyqPaperLabel(f) ? `<span class="pill">${escapeHtml(getPyqPaperLabel(f))}</span>` : ''}
               ${f.classNumber ? `<span class="pill">Class ${escapeHtml(f.classNumber)}</span>` : ''}
             </div>
             <h3>${escapeHtml(f.name)}</h3>
@@ -394,7 +425,7 @@
                 });
             }
 
-            [searchInput, folderSelect, typeSelect, classSearch].forEach(el => {
+            [searchInput, folderSelect, pyqPaperSelect, typeSelect, classSearch].forEach(el => {
                 el.addEventListener('input', render);
                 el.addEventListener('change', render);
             });
