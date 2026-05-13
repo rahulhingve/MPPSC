@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP Geography Revision | Class 7 | मध्य प्रदेश की पर्वत श्रृंखलाएं</title>
+  <meta name="description" content="Hinglish exam revision HTML for MP Geography Class 7: Mountain ranges of Madhya Pradesh, Vindhyachal and Satpura." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --surface: #171827;
+      --surface-2: #202235;
+      --text: #f8fbff;
+      --muted: #d8e2ff;
+      --border: rgba(255,255,255,.14);
+      --cyan: #00d4ff;
+      --orange: #ff6b35;
+      --green: #00ff88;
+      --purple: #b388ff;
+      --yellow: #ffd166;
+      --danger: #ff4d6d;
+      --shadow: 0 18px 55px rgba(0,0,0,.38);
+      --radius: 24px;
+      --max: 900px;
+    }
+    [data-theme="light"] {
+      --bg: #f6f8ff;
+      --surface: #ffffff;
+      --surface-2: #edf2ff;
+      --text: #111827;
+      --muted: #30405f;
+      --border: rgba(15,23,42,.16);
+      --shadow: 0 18px 45px rgba(26,38,71,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0,212,255,.16), transparent 30vw),
+        radial-gradient(circle at 90% 10%, rgba(179,136,255,.17), transparent 34vw),
+        linear-gradient(135deg, var(--bg), var(--bg));
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: .01em;
+      min-height: 100vh;
+    }
+    a { color: var(--cyan); }
+    img { max-width: 100%; height: auto; display: block; border-radius: 18px; background: var(--surface-2); }
+    .page {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr) 250px;
+      gap: 20px;
+      width: min(1480px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 70px;
+    }
+    .toc, .map-side {
+      position: sticky;
+      top: 14px;
+      align-self: start;
+      max-height: calc(100vh - 28px);
+      overflow: auto;
+      border: 1px solid var(--border);
+      background: rgba(23,24,39,.88);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    [data-theme="light"] .toc, [data-theme="light"] .map-side { background: rgba(255,255,255,.9); }
+    .toc h2, .map-side h2 { font-size: 1rem; margin: 0 0 10px; }
+    .toc a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-size: .93rem;
+    }
+    .toc a:hover, .toc a.active { border-color: var(--cyan); background: rgba(0,212,255,.12); }
+    .toc small, .map-side small { color: var(--muted); display: block; }
+    .main { max-width: var(--max); margin: 0 auto; width: 100%; }
+    .hero {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(0,212,255,.14), rgba(179,136,255,.13)), var(--surface);
+      box-shadow: var(--shadow);
+      border-radius: 32px;
+      padding: clamp(24px, 5vw, 46px);
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero:after {
+      content: "MP GK";
+      position: absolute;
+      right: -18px;
+      bottom: -30px;
+      font-weight: 900;
+      font-size: clamp(3rem, 12vw, 7rem);
+      color: rgba(255,255,255,.04);
+      letter-spacing: .08em;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.08);
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    h1 { font-size: clamp(2.2rem, 8vw, 4.8rem); line-height: 1.05; margin: 0 0 12px; position: relative; z-index: 1; }
+    .subline { font-size: 1.15rem; color: var(--muted); max-width: 760px; position: relative; z-index: 1; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; position: relative; z-index: 1; }
+    .badge {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0,255,136,.12);
+      border: 1px solid rgba(0,255,136,.35);
+      color: var(--text);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .topbar {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: rgba(23,24,39,.92);
+      backdrop-filter: blur(16px);
+      padding: 10px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    [data-theme="light"] .topbar { background: rgba(255,255,255,.92); }
+    .progress-wrap { height: 10px; background: rgba(255,255,255,.12); border-radius: 999px; overflow: hidden; border: 1px solid var(--border); }
+    .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green)); transition: width .25s; }
+    .jump { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    select, button {
+      font: inherit;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 9px 11px;
+    }
+    button { cursor: pointer; font-weight: 800; }
+    .section {
+      margin: 20px 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      background: rgba(23,24,39,.88);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      animation: lift .45s ease both;
+      scroll-margin-top: 100px;
+    }
+    [data-theme="light"] .section { background: rgba(255,255,255,.92); }
+    @keyframes lift { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .section h2 {
+      font-size: clamp(1.65rem, 4vw, 2.35rem);
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .section h3 { font-size: 1.25rem; margin: 0 0 10px; }
+    .time {
+      display: inline-block;
+      color: var(--yellow);
+      background: rgba(255,209,102,.12);
+      border: 1px solid rgba(255,209,102,.3);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .85rem;
+      margin-bottom: 8px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+      border-radius: 22px;
+      padding: 16px;
+      transition: transform .18s, border-color .18s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: rgba(0,212,255,.45); }
+    .card ul, .card ol { padding-left: 1.2rem; margin: 8px 0 0; }
+    .card li { margin: 6px 0; }
+    .accent-cyan { border-top: 5px solid var(--cyan); }
+    .accent-orange { border-top: 5px solid var(--orange); }
+    .accent-green { border-top: 5px solid var(--green); }
+    .accent-purple { border-top: 5px solid var(--purple); }
+    .def, .exam, .memory, .upcoming {
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--cyan);
+      background: rgba(0,212,255,.10);
+      border-radius: 20px;
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+    .exam { border-left-color: var(--orange); background: rgba(255,107,53,.12); }
+    .memory { border-left-color: var(--green); background: rgba(0,255,136,.10); }
+    .upcoming { border-left-color: var(--purple); background: rgba(179,136,255,.12); }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; margin: 12px 0; font-size: .96rem; }
+    th, td { padding: 11px 12px; border: 1px solid var(--border); vertical-align: top; }
+    th { background: rgba(0,212,255,.13); text-align: left; }
+    tr:nth-child(even) td { background: rgba(255,255,255,.035); }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255,255,255,.04);
+      margin: 12px 0;
+      overflow: hidden;
+    }
+    summary {
+      padding: 13px 15px;
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+    details .inside { padding: 0 15px 15px; }
+    .figure {
+      margin: 14px 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 10px;
+      background: rgba(255,255,255,.045);
+    }
+    figcaption {
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .fallback-link {
+      display: none;
+      margin-top: 8px;
+      font-size: .9rem;
+      background: rgba(255,77,109,.12);
+      color: var(--text);
+      border: 1px solid rgba(255,77,109,.45);
+      padding: 8px;
+      border-radius: 12px;
+    }
+    .diagram {
+      overflow-x: auto;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(0,0,0,.18);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre;
+      color: var(--green);
+    }
+    .quiz .q {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      margin: 10px 0;
+      background: rgba(255,255,255,.04);
+    }
+    .answer {
+      display: none;
+      margin-top: 8px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      background: rgba(0,255,136,.12);
+      color: var(--text);
+    }
+    .q.revealed .answer { display: block; }
+    .checklist label {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin: 8px 0;
+      background: rgba(255,255,255,.035);
+    }
+    input[type="checkbox"] { transform: translateY(5px) scale(1.2); accent-color: var(--green); }
+    .mini {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .pill {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.055);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    footer { color: var(--muted); text-align: center; padding: 28px 10px 10px; }
+    @media (max-width: 1180px) {
+      .page { grid-template-columns: 1fr; width: min(940px, calc(100% - 22px)); }
+      .toc, .map-side { position: static; max-height: none; }
+      .toc nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+      .map-side { order: 3; }
+    }
+    @media (max-width: 720px) {
+      body { font-size: 17px; }
+      .grid { grid-template-columns: 1fr; }
+      .topbar { grid-template-columns: 1fr; top: 6px; }
+      .jump { display: grid; grid-template-columns: 1fr; }
+      .section { padding: 16px; border-radius: 22px; }
+      .hero { padding: 24px; border-radius: 24px; }
+      .toc nav { grid-template-columns: 1fr; }
+    }
+    @media print {
+      * { color: #111 !important; background: #fff !important; box-shadow: none !important; }
+      body { font-size: 12pt; }
+      .page { display: block; width: 100%; padding: 0; }
+      .toc, .topbar, .map-side { position: static; border: 1px solid #bbb; page-break-inside: avoid; }
+      .section { page-break-inside: avoid; border: 1px solid #bbb; margin: 12px 0; }
+      details:not([open]) .inside { display: block; }
+      details summary { list-style: none; }
+      .answer { display: block !important; border: 1px solid #bbb; }
+      a:after { content: " (" attr(href) ")"; font-size: 9pt; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="toc" aria-label="Table of contents">
+      <h2>🧭 Revision Navigation</h2>
+      <small>Video-flow ke same order me jump karein.</small>
+      <nav id="tocLinks">
+        <a href="#intro">00:02 Topic Intro</a>
+        <a href="#definition">00:03 Mountain Definition</a>
+        <a href="#overview">00:10 Two Major Ranges</a>
+        <a href="#vindhya">00:12 Vindhyachal</a>
+        <a href="#kaimur">00:18 Kaimur Range</a>
+        <a href="#bhander">00:20 Bhander + Vindh Range</a>
+        <a href="#satpura">00:35 Satpura</a>
+        <a href="#maikal">00:39 Maikal Range</a>
+        <a href="#mahadeo">00:44 Mahadeo Range</a>
+        <a href="#rajpipla">00:49 Rajpipla Range</a>
+        <a href="#other">00:56 Other Hills</a>
+        <a href="#master">Master Revision</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero" id="intro">
+        <div class="eyebrow">🎯 Class 7 • MP Geography • Exam Revision</div>
+        <h1>मध्य प्रदेश की पर्वत श्रृंखलाएं<br><span style="color:var(--cyan)">Mountain Ranges of MP</span></h1>
+        <p class="subline">
+          Ye page video ke flow ko follow karta hai: pehle basic definition, phir Vindhyachal, phir Satpura, aur end me extra hills + master checklist.
+          Promotional/sharing wali baatein skip ki gayi hain; educational content preserve kiya gaya hai.
+        </p>
+        <div class="badges">
+          <span class="badge">Major Topics: 11</span>
+          <span class="badge">Quick Recall: हर major section</span>
+          <span class="badge">Theme + Checklist Save</span>
+          <span class="badge">Mobile Friendly</span>
+        </div>
+      </header>
+
+      <div class="topbar" aria-label="Sticky study controls">
+        <div>
+          <div class="mini" id="progressText">Revision progress: 0%</div>
+          <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+        <div class="jump">
+          <select id="jumpMenu" aria-label="Jump to topic">
+            <option value="#intro">Intro</option>
+            <option value="#definition">Mountain Definition</option>
+            <option value="#overview">Two Major Ranges</option>
+            <option value="#vindhya">Vindhyachal</option>
+            <option value="#kaimur">Kaimur</option>
+            <option value="#bhander">Bhander + Vindh</option>
+            <option value="#satpura">Satpura</option>
+            <option value="#maikal">Maikal</option>
+            <option value="#mahadeo">Mahadeo</option>
+            <option value="#rajpipla">Rajpipla</option>
+            <option value="#other">Other Hills</option>
+            <option value="#master">Master Revision</option>
+          </select>
+          <button id="themeBtn" type="button">🌗 Theme</button>
+        </div>
+      </div>
+
+      <section class="section accent-cyan" id="definition">
+        <span class="time">00:03:36–00:10:48</span>
+        <h2>⛰️ पर्वत किसे कहते हैं? Mountain ka basic concept</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>🔎 Definition in Hinglish</h3>
+            <ul>
+              <li><b>पर्वत / Mountain</b> ऐसी स्पष्ट उच्च भूमि hai jo surrounding land se upar uthi hoti hai.</li>
+              <li>Isme <b>एक या एक से अधिक शिखर / peaks</b> ho sakte hain.</li>
+              <li>Upar ka भाग / pinnacle <b>संकुचित या सकरा</b> hota hai.</li>
+              <li>Iska <b>ढाल / slope तीव्र / intense</b> hota hai.</li>
+              <li>Prelims me definition likhne ko nahi aayegi, par concept dimaag me clear rehna chahiye.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🧱 पठार vs पर्वत</h3>
+            <table>
+              <tr><th>Point</th><th>Plateau / पठार</th><th>Mountain / पर्वत</th></tr>
+              <tr><td>Top</td><td>ऊपरी हिस्सा समतल-सपाट</td><td>ऊपरी हिस्सा narrow / peak-like</td></tr>
+              <tr><td>Slope</td><td>Comparatively gentle</td><td>तीव्र slope</td></tr>
+              <tr><td>Height</td><td>Usually 400–600 m around</td><td>600 m se jyada; 1000 m, 1500 m, 6000 m, 8000 m tak bhi</td></tr>
+              <tr><td>Example in class</td><td>Malwa plateau example discussion</td><td>Satpura range: Dhupgarh, Chauragarh peaks</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="diagram" role="img" aria-label="Mountain vs plateau ASCII diagram">Plateau:     _________             Mountain:        /\   peak
+            /         \                            /  \
+___________/           \_________        _________/    \________
+Top flat + broad                          Top narrow + steep slope</div>
+        <div class="exam">🔥 <b>Exam Hot:</b> MP me mountain ranges padhte hue height, type, peak, range-part, district aur special places ko exam point-of-view se yaad rakho.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Mountain ka top kaisa hota hai?<button type="button" class="reveal">Answer</button><div class="answer">संकुचित / सकरा; peak ya pinnacle jaisa.</div></div>
+          <div class="q"><b>Q.</b> Plateau aur mountain me main visual difference?<button type="button" class="reveal">Answer</button><div class="answer">Plateau ka upper part flat hota hai; mountain ka peak narrow aur slope तीव्र hota hai.</div></div>
+          <div class="q"><b>Q.</b> Teacher ne definition prelims ke liye kya warning di?<button type="button" class="reveal">Answer</button><div class="answer">Definition likhne ko nahi aayegi, par concept clear hona chahiye.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-green" id="overview">
+        <span class="time">00:10:48–00:11:33</span>
+        <h2>🗺️ MP me do major mountain ranges</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>1️⃣ Vindhyachal Range</h3>
+            <p>Teacher ne pehle Vindhyachal ko cover kiya kyunki ye <b>old / प्राचीन पर्वत श्रृंखला</b> hai.</p>
+          </div>
+          <div class="card">
+            <h3>2️⃣ Satpura Range</h3>
+            <p>Vindhyachal ke baad Satpura ko cover kiya gaya. Dono ko detail me samjhaya gaya: parts, peaks, district-wise hints, aur exam facts.</p>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district map for locating mountain ranges, districts and hills" loading="eager" fetchpriority="high" decoding="async">
+          <figcaption>Image: SLBC Madhya Pradesh district map, used as a study reference map as allowed in the uploaded prompt.</figcaption>
+          <a class="fallback-link" href="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" target="_blank" rel="noopener">Open MP map image</a>
+        </figure>
+        <div class="memory">🧠 <b>Memory Hook:</b> “MP ke mountain me V-S” → <b>V</b>indhyachal pehle, <b>S</b>atpura baad me.</div>
+      </section>
+
+      <section class="section accent-orange" id="vindhya">
+        <span class="time">00:12:04–00:18:16</span>
+        <h2>🏔️ Vindhyachal Mountain Range — पुरानी और अवशिष्ट पर्वत श्रृंखला</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 Extent / विस्तार</h3>
+            <ul>
+              <li>Narmada valley aur Son valley ki <b>northern boundary</b> ke around samjhai gayi.</li>
+              <li>Western MP se lekar east me Bihar/Jharkhand tak ka reference diya gaya.</li>
+              <li>Parasnath hills tak iska touch/extension bataya gaya.</li>
+              <li>Rajasthan-Gujarat side par Aravalli range ka relation explain kiya gaya.</li>
+              <li>Teacher ne warn kiya: present me ye continuous nahi hai; kahin-kahin dikhta hai aur kahin dhans gaya / missing jaisa hai.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🪨 Type / प्रकार</h3>
+            <ul>
+              <li><b>प्राचीन पर्वत श्रृंखला</b> — old mountain range.</li>
+              <li><b>अवशिष्ट पर्वत / Residual Mountain</b> — chattanon ke टूटने / अपर्दन se bana-bacha hua form.</li>
+              <li>Aravalli ko duniya ki sabse purani mountain range bataya; Vindhyachal ko usse related old region ke roop me explain kiya.</li>
+              <li>Old mountains ka form time ke saath 낮ा/झुका hua dikh sakta hai; teacher ne “वृद्धावस्था” analogy di.</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="figure">
+          <img data-file="Vindhyas as seen from Bhimbetka.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Vindhyas%20as%20seen%20from%20Bhimbetka.jpg?width=900" alt="Vindhya hills as seen from Bhimbetka in Madhya Pradesh" loading="eager" fetchpriority="high" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Utcursch, “Vindhyas as seen from Bhimbetka.jpg”, CC BY-SA 4.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Vindhyas_as_seen_from_Bhimbetka.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <details>
+          <summary>🔬 Teacher's analogy: purana mountain kyon toot/dhans sakta hai?</summary>
+          <div class="inside">
+            <p>Teacher ne plate movement, earthquake aur samay ke saath mountain ke old hone ka idea diya. Jitna purana mountain, utna uska peak comparatively lower/eroded ho sakta hai. Example me Himalaya ko newer folded mountain aur Aravalli ko old range ke roop me contrast kiya.</p>
+            <p>Unhone relatable line di: “समय के साथ दूरियां बढ़ जाती हैं” — Aravalli aur Vindhyachal pehle touch/connected samjhe ja sakte the, ab beech me gap/distance aa gayi.</p>
+          </div>
+        </details>
+
+        <table>
+          <tr><th>Vindhyachal ka part</th><th>Hindi Name</th><th>Flow me place</th><th>Key districts / places</th></tr>
+          <tr><td>Eastern Part</td><td>कैमूर श्रेणी</td><td>सबसे पहले</td><td>Singrauli se Katni/Damoh side; Trikuta hill, Maihar</td></tr>
+          <tr><td>Middle Part</td><td>भांडेर श्रेणी</td><td>दूसरा</td><td>Damoh se Raisen-Sehore; Sagar, Panna, Chhatarpur, Bhimbetka, Salkanpur</td></tr>
+          <tr><td>Western Part</td><td>विंध श्रेणी</td><td>तीसरा</td><td>Indore-Dhar side; Kakri Bardi, Janapav, Asrafi/Mandu</td></tr>
+        </table>
+        <div class="exam">🔥 <b>Exam Hot:</b> Vindhyachal = Residual mountain + old range + three-part division: Kaimur, Bhander, Vindh.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Vindhyachal kis type ka mountain bataya gaya?<button type="button" class="reveal">Answer</button><div class="answer">अवशिष्ट पर्वत / Residual Mountain.</div></div>
+          <div class="q"><b>Q.</b> Vindhyachal ko pehle kyon padhaya gaya?<button type="button" class="reveal">Answer</button><div class="answer">Kyunki teacher ke flow me ye sabse purana mountain hai.</div></div>
+          <div class="q"><b>Q.</b> Vindhyachal ke 3 parts?<button type="button" class="reveal">Answer</button><div class="answer">Kaimur, Bhander, Vindh range.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-cyan" id="kaimur">
+        <span class="time">00:18:16–00:29:56</span>
+        <h2>🧭 Kaimur Range — Eastern Vindhyachal</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📌 Location + length clues</h3>
+            <ul>
+              <li>Eastern part ko <b>Kaimur Range / कैमूर श्रेणी</b> bola gaya.</li>
+              <li>MP context me Singrauli side se start samjhaya.</li>
+              <li>Katni/Damoh ke paas tak ka eastern stretch bataya.</li>
+              <li>Overall range ka extension Jharkhand/Parasnath hills tak reference me aaya.</li>
+              <li>Total length teacher ne approx <b>1066–1086 km</b> ke range me batayi.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛩️ Trikuta + Sharda Mata</h3>
+            <ul>
+              <li><b>Trikuta hill / त्रिकुटा पहाड़ी</b> Maihar ke paas batayi.</li>
+              <li>Isi par <b>Sharda Mata Temple</b> ka reference diya gaya.</li>
+              <li>Exam me Sharda Mata / Trikuta hill puchhe to Vindhyachal/Kaimur connection yaad rakho.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="def">
+          <b>Watershed / जल-द्विभाजक:</b> Kaimur ko Yamuna aur Son river ke beech watershed ka kaam karne wala bataya. Ken aur Betwa jaise rivers Yamuna me milti hain, par Son Ganga se milti hai — beech me Kaimur/Vindhyachal barrier samjha.
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🌞 “Vindhya” naam ka explanation</h3>
+            <ul>
+              <li>Teacher ne Sanskrit word <b>वेद/वैध</b> se “बाधा डालना” wali explanation di.</li>
+              <li>Story: Vindhyachal itna uncha tha ki surya ki kirnon me बाधा daalta tha.</li>
+              <li><b>Agastya Rishi</b> ne isko roka/samjhaya — mythological reference.</li>
+              <li>MP me Singrauli side se surya ki kirne enter hoti hain — is flow me mention hua.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌧️ Average rainfall Q-type warning</h3>
+            <ul>
+              <li>Teacher ne bataya: bade region me rainfall fixed nahi hoti.</li>
+              <li>Exam me exact rainfall ke bajay region-based ya comparative question aa sakta hai.</li>
+              <li>Example: Satpura ke eastern part vs western part me rainfall comparison type question.</li>
+              <li>Average rainfall nature ke hisab se change ho sakti hai; padhai me region context important hai.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exam">🔥 <b>Exam Hot:</b> Kaimur = Eastern Vindhyachal + Trikuta/Maihar + Yamuna-Son watershed.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Trikuta hill kis range me batayi gayi?<button type="button" class="reveal">Answer</button><div class="answer">Kaimur range / Eastern Vindhyachal.</div></div>
+          <div class="q"><b>Q.</b> Kaimur kin rivers ke beech watershed ka kaam karti hai?<button type="button" class="reveal">Answer</button><div class="answer">Yamuna aur Son river ke beech.</div></div>
+          <div class="q"><b>Q.</b> Vindhya naam ke myth me kaun se Rishi aaye?<button type="button" class="reveal">Answer</button><div class="answer">Agastya Rishi.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-purple" id="bhander">
+        <span class="time">00:20:14–00:34:32</span>
+        <h2>🪨 Bhander Range + Western Vindh Range</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>2️⃣ Bhander Range / भांडेर श्रेणी</h3>
+            <ul>
+              <li>Vindhyachal ka <b>middle part</b>.</li>
+              <li>Approx <b>Damoh se Raisen-Sehore</b> tak.</li>
+              <li>Sagar, Panna, Chhatarpur jaise Bundelkhand ke areas isme include kiye.</li>
+              <li>Bhimbetka caves ko Bhander region me connect kiya.</li>
+              <li>Salkanpur / Bijasan / Bindwasini Mata temple, Sehore side ko Bhander connection diya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🏔️ Goodwill Peak / सद्भावना शिखर</h3>
+            <ul>
+              <li>Damoh ke Sangrampur me batayi.</li>
+              <li>Names: <b>Goodwill Peak</b>, <b>Sadbhavna Shikhar</b>, <b>Kalumar</b>, <b>Kumble Choti</b>.</li>
+              <li>Height: approx <b>752 m</b>.</li>
+              <li>Teacher ne ise MP ke context me <b>Vindhyachal ki highest peak</b> ke roop me yaad rakhne ko kaha.</li>
+              <li>Sigar peak (Malwa plateau, 881 m) ko lekar confusion bataya, par current exam answer ke liye Goodwill/Kalumar ko mark karne ko kaha.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="figure">
+          <img data-file="20 dancers with musician, some in group, few separate, a pre-historic rock cave painting near Bhopal India.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/20%20dancers%20with%20musician%2C%20some%20in%20group%2C%20few%20separate%2C%20a%20pre-historic%20rock%20cave%20painting%20near%20Bhopal%20India.jpg?width=850" alt="Bhimbetka prehistoric rock painting near Bhopal, connected in class with Bhander region" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Bhimbetka rock painting category/file, free-license file as listed on Commons.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/Category:Bhimbetka_rock_paintings" target="_blank" rel="noopener">Open Bhimbetka image category</a>
+        </figure>
+
+        <div class="grid">
+          <div class="card">
+            <h3>3️⃣ Western Vindh / विंध श्रेणी</h3>
+            <ul>
+              <li>Vindhyachal ka western part.</li>
+              <li>Teacher ne kaha: kuch log is third part ko mention nahi karte, kyunki distance badh gayi / old range toot-gayi type situation hai.</li>
+              <li>Still revision ke liye isko likhna hai.</li>
+              <li>Major peaks/places: <b>Kakri Bardi</b>, <b>Janapav</b>, <b>Asrafi hill</b>.</li>
+              <li>Kakri Bardi aur Janapav: Indore side; Asrafi hill: Mandu/Dhar side.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛩️ Temple reminders</h3>
+            <ul>
+              <li>Sharda Mata temple → Vindhyachal/Kaimur connection.</li>
+              <li>Salkanpur Bindwasini/Bijasan Mata temple → Bhander connection.</li>
+              <li>Teacher personally Salkanpur ka mention karte hain: 1100–1300+ stairs type high climb.</li>
+              <li>Hindi Granth Academy type note: kuch sources Narmada origin ko Vindhyachal se jodte hain because Maikal once touched/was part of Vindhyachal, but ab Satpura me include karke padhenge.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="memory">🧠 <b>Memory Trick:</b> Vindhyachal parts = <b>Ka-Bha-Vi</b> → <b>Ka</b>imur, <b>Bha</b>nder, <b>Vi</b>ndh.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Bhander Range approx kahan se kahan tak?<button type="button" class="reveal">Answer</button><div class="answer">Damoh se Raisen-Sehore tak.</div></div>
+          <div class="q"><b>Q.</b> Goodwill Peak ke local names?<button type="button" class="reveal">Answer</button><div class="answer">Sadbhavna Shikhar, Kalumar, Kumble Choti.</div></div>
+          <div class="q"><b>Q.</b> Janapav aur Kakri Bardi kis western section me aaye?<button type="button" class="reveal">Answer</button><div class="answer">Western Vindh Range / Vindhyachal western part.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-green" id="satpura">
+        <span class="time">00:35:12–00:39:23</span>
+        <h2>🌲 Satpura Mountain Range — Block Mountain</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 Basic facts</h3>
+            <ul>
+              <li>Satpura ki length approx <b>900 km</b> batayi gayi.</li>
+              <li>Vindhyachal se <b>newer</b> hai, par Himalaya jaisa “new folded mountain” nahi.</li>
+              <li>Narmada aur Tapti rivers ke beech mountain range samjhaya.</li>
+              <li>Narmada valley ke end/edge ke baad Satpura start hone ka visual diya gaya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🧱 Type: Block Mountain</h3>
+            <ul>
+              <li><b>Block Mountain / भ्रंशोत्थ पर्वत / अवरुद्ध पर्वत</b>.</li>
+              <li>Rift/fault valley ke through mountain block ho jaye to block mountain.</li>
+              <li>Teacher ne “block karna / रोकना / अवरुद्ध करना” se concept samjhaya.</li>
+              <li>Narmada rift/valley relation ke through Satpura ko explain kiya.</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="figure">
+          <img data-file="Satpura ranges from Maharashtra.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Satpura%20ranges%20from%20Maharashtra.jpg?width=900" alt="Landscape of the Satpura Range used as visual anchor for Satpura mountain range" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Benison P Baby, “Satpura ranges from Maharashtra.jpg”, CC BY-SA 4.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Satpura_ranges_from_Maharashtra.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <table>
+          <tr><th>Satpura Part</th><th>Hindi Name</th><th>Position</th><th>Key idea</th></tr>
+          <tr><td>Eastern</td><td>मेकाल श्रेणी</td><td>Amarkantak/Anuppur to Seoni side</td><td>Half-moon shape; Narmada origin; minerals</td></tr>
+          <tr><td>Middle</td><td>महादेव श्रेणी</td><td>Seoni-Chhindwara-Pandhurna-Betul-Narmadapuram</td><td>Dhupgarh, Chauragarh, Pachmarhi</td></tr>
+          <tr><td>Western</td><td>राजपीपला श्रेणी</td><td>Khandwa-Burhanpur-Barwani to Gujarat side</td><td>Most dissected; Burhanpur pass</td></tr>
+        </table>
+        <div class="memory">🧠 <b>Memory Trick:</b> Satpura parts = <b>Me-Ma-Ra</b> → <b>Me</b>kal, <b>Ma</b>hadeo, <b>Ra</b>jpipla.</div>
+      </section>
+
+      <section class="section accent-cyan" id="maikal">
+        <span class="time">00:39:23–00:44:07</span>
+        <h2>🌙 Maikal Range — Eastern Satpura</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 Extent</h3>
+            <ul>
+              <li>Satpura ka <b>Eastern Part</b>.</li>
+              <li>Amarkantak/Anuppur se start karke Seoni tak ka region.</li>
+              <li>Beech me Mandla, Dindori, Balaghat, Seoni side ko include kiya.</li>
+              <li>Balaghat me <b>Lanji Hills</b> / Lanji fort area ko Maikal ka part bataya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🛕 Amarkantak + Narmada</h3>
+            <ul>
+              <li><b>Amarkantak</b> = Satpura aur Vindhyachal ka meeting point.</li>
+              <li>Amarkantak height approx <b>1057 m</b> / 1000 m se more batayi.</li>
+              <li>Yahin se Maa Narmada ka origin samjhaya.</li>
+              <li>Ek <b>Taksh / Tarksh mountain/peak</b> ka mention bhi kiya gaya.</li>
+              <li>Maikal ko <b>Half-moon shaped / अर्ध चंद्राकार</b> bataya.</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="figure">
+          <img data-file="Amarkantak.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Amarkantak.jpg?width=780" alt="Amarkantak area, associated with Maikal range and Narmada origin in the class" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Sonu monu, “Amarkantak.jpg”, CC BY-SA 3.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Amarkantak.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🏞️ Other Maikal clues</h3>
+            <ul>
+              <li><b>Kirar Valley</b> isi region me batayi.</li>
+              <li><b>Achanakmar-Amarkantak</b> area aur biosphere reserve reference aaya.</li>
+              <li>Lanji Hills ko Balaghat me note karna hai.</li>
+              <li>Teacher ne kaha: ye <b>minerals</b> wala important part hai — maximum minerals ka hint diya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🧠 Shape memory</h3>
+            <p>Maikal ko half-moon / अर्धचंद्राकार yaad karne ke liye: “Maikal = Moon-like curve”. Map me Amarkantak se Seoni tak curve imagine karo.</p>
+          </div>
+        </div>
+        <div class="exam">🔥 <b>Exam Hot:</b> Amarkantak = Satpura + Vindhyachal meeting point; Narmada origin; Maikal eastern Satpura.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Maikal kis range ka part hai?<button type="button" class="reveal">Answer</button><div class="answer">Satpura ka Eastern Part.</div></div>
+          <div class="q"><b>Q.</b> Maikal ka shape?<button type="button" class="reveal">Answer</button><div class="answer">Half-moon shaped / अर्ध चंद्राकार.</div></div>
+          <div class="q"><b>Q.</b> Amarkantak ko kya meeting point bola?<button type="button" class="reveal">Answer</button><div class="answer">Satpura aur Vindhyachal ka meeting point.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-orange" id="mahadeo">
+        <span class="time">00:44:07–00:49:04</span>
+        <h2>🌄 Mahadeo Range — Middle Satpura</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 District flow</h3>
+            <ul>
+              <li>Satpura ka <b>Middle Part</b>.</li>
+              <li>Seoni ke baad Chhindwara, Pandhurna, Betul, Narmadapuram region.</li>
+              <li>Betul se Narmadapuram tak <b>Kalibhit Hills</b> ka mention.</li>
+              <li>Is section me height zyada highlight ki gayi.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🏔️ Dhupgarh — Highest Peak</h3>
+            <ul>
+              <li><b>Dhupgarh</b> ko MP aur Satpura dono ki highest peak bataya.</li>
+              <li>Height teacher ne <b>1350 m</b> batayi; common sources 1352 m bhi likhte hain, par class notes me 1350 m retain kiya gaya.</li>
+              <li>Alternative names: <b>Harvats Koot / हरवत्स कूट</b> aur image discussion me <b>Nagphani</b> name bhi aaya.</li>
+              <li>Question me “Harvats Koot” aaye to Dhupgarh samajhna.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="figure">
+          <img data-file="Mount Dhupgarh, Pachmarhi.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Dhupgarh%2C%20Pachmarhi.jpg?width=900" alt="Mount Dhupgarh at Pachmarhi, highest peak of Madhya Pradesh and Satpura as discussed in class" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Kmohankar, “Mount Dhupgarh, Pachmarhi.jpg”, CC BY-SA 4.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Mount_Dhupgarh,_Pachmarhi.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <div class="grid">
+          <div class="card">
+            <h3>⛩️ Chauragarh + Nandigarh</h3>
+            <ul>
+              <li><b>Chauragarh</b> / Chauragarh Mahadev ka mention.</li>
+              <li><b>Nandigarh</b> peak bhi batayi.</li>
+              <li>Ye sab Pachmarhi/Narmadapuram context me aaye.</li>
+              <li>Chauragarh Mahadev temple me bahut saare trishul visual reference diya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🏞️ Pachmarhi</h3>
+            <ul>
+              <li>Pachmarhi = Narmadapuram district.</li>
+              <li>Pachmarhi ko <b>Heaven of Tourism / पर्यटकों का स्वर्ग</b> bataya.</li>
+              <li>Narmadapuram ODOP me <b>tourism / पर्यटन</b> ka reference diya.</li>
+              <li>Kalibhit Hills: Betul se Narmadapuram tak.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="figure">
+          <img data-file="Chauragarh, Pachmarhi.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Chauragarh%2C%20Pachmarhi.jpg?width=850" alt="Chauragarh in Pachmarhi, linked with Mahadeo Range in the class" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, M Starlord, “Chauragarh, Pachmarhi.jpg”, CC BY-SA 4.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Chauragarh,_Pachmarhi.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <div class="exam">🔥 <b>Exam Hot:</b> Dhupgarh/Harvats Koot = MP + Satpura ki highest peak; Pachmarhi = Heaven of Tourism; Kalibhit = Betul–Narmadapuram.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> MP ki highest peak?<button type="button" class="reveal">Answer</button><div class="answer">Dhupgarh / Harvats Koot, Mahadeo Range, Satpura.</div></div>
+          <div class="q"><b>Q.</b> Pachmarhi kis district me hai?<button type="button" class="reveal">Answer</button><div class="answer">Narmadapuram.</div></div>
+          <div class="q"><b>Q.</b> Kalibhit Hills kaha tak batayi?<button type="button" class="reveal">Answer</button><div class="answer">Betul se Narmadapuram tak.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-purple" id="rajpipla">
+        <span class="time">00:49:04–00:55:44</span>
+        <h2>🧱 Rajpipla Range — Western Satpura</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 Western Satpura</h3>
+            <ul>
+              <li>Khandwa ke aas-paas se Burhanpur, Barwani side tak flow.</li>
+              <li>Aage Gujarat tak extension bataya; south side Maharashtra ka reference.</li>
+              <li>Satpura ka <b>western part</b> = Rajpipla Range.</li>
+              <li>Isko Satpura ka <b>sabse zyada kata-fata / dissected part</b> bola.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🚪 Burhanpur Pass / दर्रा</h3>
+            <ul>
+              <li><b>Burhanpur Pass / Burhanpur Darra</b> = MP ka ek matra pass.</li>
+              <li>Pass = mountain ke ek side se dusri side jane ka रास्ता.</li>
+              <li>Location: Burhanpur district.</li>
+              <li>Question me “MP ka ekmatra darra” aaye to Burhanpur Pass.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🏰 Fort / hill regions</h3>
+            <ul>
+              <li><b>Gawilgarh</b>: Khandwa-Betul ke beech ka region; Maharashtra connection bhi bataya gaya.</li>
+              <li><b>Bijagarh</b> aur <b>Asirgarh</b>: Burhanpur.</li>
+              <li>Nadi/pahad district boundary se restrict nahi hote — jo district me padta hai, uska reference bhi ban sakta hai.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛰️ Barwani side</h3>
+            <ul>
+              <li><b>Akhrani</b> aur <b>Barwani hills</b> ka mention.</li>
+              <li><b>Chulgiri Hill</b>: Rajpipla ki highest range/peak context me batayi.</li>
+              <li><b>Bawangaja Barwani</b> Chulgiri se linked.</li>
+              <li>Barwani district me note karna hai.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exam">🔥 <b>Exam Hot:</b> Rajpipla = western Satpura + most dissected + Burhanpur Pass = MP ka ek matra pass + Chulgiri/Bawangaja Barwani.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Satpura ka sabse kata-fata part?<button type="button" class="reveal">Answer</button><div class="answer">Rajpipla Range.</div></div>
+          <div class="q"><b>Q.</b> MP ka ekmatra pass?<button type="button" class="reveal">Answer</button><div class="answer">Burhanpur Pass / Burhanpur Darra.</div></div>
+          <div class="q"><b>Q.</b> Bijagarh aur Asirgarh kaha?<button type="button" class="reveal">Answer</button><div class="answer">Burhanpur region.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-green" id="other">
+        <span class="time">00:56:29–01:05:23</span>
+        <h2>📌 Other Important Hills / Extra Revision Points</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>🦅 Gidraj / Gidraaj Mountain</h3>
+            <ul>
+              <li><b>Gidraj Parvat</b> Satna district me bataya.</li>
+              <li>Teacher ne kaha ye alag-alag areas me bache hue mountains/hills hain.</li>
+              <li>Old linkage me inko Vindhyachal se connect karne ki baat aayi, par distance badhne se alag bhi bataye ja sakte hain.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🏰 Gwalior region</h3>
+            <ul>
+              <li>Gwalior me hill/fort context aaya.</li>
+              <li>Gwalior Fort ka terrain visual reminder ke liye use karo: MP ke northern rocky uplands ko locate karne me help karta hai.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="figure">
+          <img data-file="Gwalior Fort - Morning View.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gwalior%20Fort%20-%20Morning%20View.jpg?width=850" alt="Gwalior Fort on rocky hill terrain as a visual anchor for Gwalior hill context" loading="lazy" decoding="async">
+          <figcaption>Image: Wikimedia Commons, Abhidwi, “Gwalior Fort - Morning View.jpg”, CC BY-SA 4.0.</figcaption>
+          <a class="fallback-link" href="https://commons.wikimedia.org/wiki/File:Gwalior_Fort_-_Morning_View.jpg" target="_blank" rel="noopener">Open source image</a>
+        </figure>
+
+        <h3>🏙️ Bhopal District Hills</h3>
+        <table>
+          <tr><th>Hill</th><th>Class me linked fact</th></tr>
+          <tr><td>Neori Hills</td><td>Bhopal ki major hills me list kiya.</td></tr>
+          <tr><td>Katara Hills</td><td>Bhopal ki major hills me list kiya.</td></tr>
+          <tr><td>Shyamla Hills</td><td>CM House / मुख्यमंत्री निवास; Van Vihar National Park nearby context.</td></tr>
+          <tr><td>Arera Hills</td><td>MP Assembly / Vidhan Sabha, Secretariat / Vallabh Bhawan.</td></tr>
+          <tr><td>Idgah Hills</td><td>Bhopal ki major hills me list kiya.</td></tr>
+        </table>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🪨 Other hill questions</h3>
+            <ul>
+              <li><b>Kavadia Hills</b> → Dewas district.</li>
+              <li><b>Sigar Peak</b> → Indore.</li>
+              <li><b>Siddh Baba Choti</b> → Bhander range context; teacher ne exact location online me unclear hone ki baat kahi.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>📌 Upcoming Topic</h3>
+            <p>Teacher ne next class ka topic <b>Rivers</b>, especially <b>Narmada River</b>, bataya. Revision ke end me Narmada origin/Amarkantak link ko strong rakho.</p>
+          </div>
+        </div>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <div class="q"><b>Q.</b> Kavadia Hills kaha hai?<button type="button" class="reveal">Answer</button><div class="answer">Dewas district.</div></div>
+          <div class="q"><b>Q.</b> Shyamla Hills par kya important hai?<button type="button" class="reveal">Answer</button><div class="answer">CM House / मुख्यमंत्री निवास; Van Vihar nearby context.</div></div>
+          <div class="q"><b>Q.</b> Arera Hills par kya important hai?<button type="button" class="reveal">Answer</button><div class="answer">MP Assembly / Vidhan Sabha, Secretariat / Vallabh Bhawan.</div></div>
+        </div>
+      </section>
+
+      <section class="section accent-cyan" id="master">
+        <span class="time">Master Revision</span>
+        <h2>🎯 Master Revision Tables + Checklist</h2>
+
+        <h3>📊 One-shot comparison: Vindhyachal vs Satpura</h3>
+        <table>
+          <tr><th>Point</th><th>Vindhyachal</th><th>Satpura</th></tr>
+          <tr><td>Order in class</td><td>Pehle, kyunki old range</td><td>Baad me</td></tr>
+          <tr><td>Type</td><td>Residual / Avashisht Mountain</td><td>Block / Fault / Rift-related Mountain</td></tr>
+          <tr><td>Major parts</td><td>Kaimur, Bhander, Vindh</td><td>Maikal, Mahadeo, Rajpipla</td></tr>
+          <tr><td>Highest peak in class context</td><td>Goodwill/Sadbhavna/Kalumar/Kumble, 752 m</td><td>Dhupgarh/Harvats Koot, 1350 m</td></tr>
+          <tr><td>Key religious places</td><td>Sharda Mata, Salkanpur Bindwasini/Bijasan</td><td>Amarkantak, Chauragarh Mahadev</td></tr>
+          <tr><td>Key exam hook</td><td>Kaimur watershed: Yamuna-Son</td><td>Burhanpur Pass: MP ka ekmatra pass</td></tr>
+        </table>
+
+        <h3>🔤 Full Forms / Short Forms mentioned</h3>
+        <table>
+          <tr><th>Short form</th><th>Full form</th><th>Hindi/Hinglish meaning</th></tr>
+          <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+          <tr><td>GK</td><td>General Knowledge</td><td>सामान्य ज्ञान</td></tr>
+          <tr><td>ODOP</td><td>One District One Product</td><td>जिले की एक प्रमुख उत्पाद/क्षेत्र पहचान; class me Narmadapuram tourism context</td></tr>
+          <tr><td>CM House</td><td>Chief Minister House</td><td>मुख्यमंत्री निवास, Shyamla Hills</td></tr>
+        </table>
+
+        <h3>🔥 Exam Hot Facts — एक जगह</h3>
+        <div class="pill-list">
+          <span class="pill">MP = 2 major ranges</span>
+          <span class="pill">Vindhyachal = Residual</span>
+          <span class="pill">Satpura = Block Mountain</span>
+          <span class="pill">Kaimur = Eastern Vindhya</span>
+          <span class="pill">Bhander = Middle Vindhya</span>
+          <span class="pill">Vindh = Western Vindhya</span>
+          <span class="pill">Maikal = Eastern Satpura</span>
+          <span class="pill">Mahadeo = Middle Satpura</span>
+          <span class="pill">Rajpipla = Western Satpura</span>
+          <span class="pill">Dhupgarh = Highest MP</span>
+          <span class="pill">Burhanpur Pass = only pass</span>
+          <span class="pill">Amarkantak = meeting point</span>
+          <span class="pill">Pachmarhi = Heaven of Tourism</span>
+          <span class="pill">Kavadia Hills = Dewas</span>
+        </div>
+
+        <h3>✅ Master Revision Checklist</h3>
+        <p class="mini" id="checkCount">0 items completed</p>
+        <div class="checklist" id="checklist">
+          <label><input type="checkbox"> Mountain definition: elevated land + one/more peaks + narrow top + steep slope.</label>
+          <label><input type="checkbox"> Plateau vs mountain: plateau top flat, mountain top narrow/peak-like.</label>
+          <label><input type="checkbox"> MP me two major mountain ranges: Vindhyachal and Satpura.</label>
+          <label><input type="checkbox"> Vindhyachal is old / prachin mountain range.</label>
+          <label><input type="checkbox"> Vindhyachal type: Residual / Avashisht Mountain.</label>
+          <label><input type="checkbox"> Vindhyachal parts: Kaimur, Bhander, Vindh.</label>
+          <label><input type="checkbox"> Kaimur = Eastern Vindhyachal; Trikuta hill and Sharda Mata temple.</label>
+          <label><input type="checkbox"> Kaimur works as watershed between Yamuna and Son.</label>
+          <label><input type="checkbox"> Vindhya name myth: obstruction to sunlight; Agastya Rishi reference.</label>
+          <label><input type="checkbox"> Bhander = Damoh to Raisen-Sehore; includes Panna, Chhatarpur, Sagar side.</label>
+          <label><input type="checkbox"> Bhimbetka caves and Salkanpur/Bindwasini linked with Bhander region.</label>
+          <label><input type="checkbox"> Goodwill/Sadbhavna/Kalumar/Kumble peak: Damoh Sangrampur, 752 m, Vindhyachal highest in class context.</label>
+          <label><input type="checkbox"> Western Vindh: Kakri Bardi, Janapav, Asrafi hill; Indore-Dhar/Mandu side.</label>
+          <label><input type="checkbox"> Satpura is a Block Mountain / Bhranshotth / Avaruddh mountain.</label>
+          <label><input type="checkbox"> Satpura lies between Narmada and Tapti rivers; approx 900 km length.</label>
+          <label><input type="checkbox"> Satpura parts: Maikal, Mahadeo, Rajpipla.</label>
+          <label><input type="checkbox"> Maikal = Eastern Satpura; half-moon shaped.</label>
+          <label><input type="checkbox"> Amarkantak = Satpura-Vindhyachal meeting point; Narmada origin; ~1057 m.</label>
+          <label><input type="checkbox"> Lanji Hills in Balaghat, Kirar Valley, Achanakmar-Amarkantak, minerals in Maikal.</label>
+          <label><input type="checkbox"> Mahadeo range includes Seoni, Chhindwara, Pandhurna, Betul, Narmadapuram.</label>
+          <label><input type="checkbox"> Dhupgarh/Harvats Koot/Nagphani = highest peak of MP and Satpura; class height 1350 m.</label>
+          <label><input type="checkbox"> Chauragarh, Nandigarh, Kalibhit Hills; Pachmarhi = Heaven of Tourism.</label>
+          <label><input type="checkbox"> Rajpipla = Western Satpura; most dissected/kata-fata part.</label>
+          <label><input type="checkbox"> Burhanpur Pass/Darra = MP ka ekmatra pass.</label>
+          <label><input type="checkbox"> Gawilgarh, Bijagarh, Asirgarh, Akhrani, Barwani, Chulgiri/Bawangaja.</label>
+          <label><input type="checkbox"> Bhopal hills: Neori, Katara, Shyamla, Arera, Idgah.</label>
+          <label><input type="checkbox"> Shyamla Hills = CM House; Arera Hills = Assembly, Secretariat/Vallabh Bhawan.</label>
+          <label><input type="checkbox"> Kavadia Hills = Dewas; Sigar Peak = Indore; Gidraj Parvat = Satna.</label>
+          <label><input type="checkbox"> Upcoming topic: Rivers, especially Narmada River.</label>
+        </div>
+
+        <div class="upcoming">📌 <b>Upcoming Topic from video:</b> Rivers / नदियां, specially Narmada River, next class.</div>
+      </section>
+
+      <footer>
+        <p>Study Tip: Pehle table revise karo, phir checklist tick karo, phir sirf incorrect quiz answers repeat karo. 3 rounds = strong recall.</p>
+      </footer>
+    </main>
+
+    <aside class="map-side" aria-label="Sticky map reference">
+      <h2>🗺️ Sticky MP Map</h2>
+      <small>Districts locate karne ke liye desktop par sticky reference.</small>
+      <figure class="figure">
+        <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh map sticky reference for districts mentioned in the lecture" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>Source: SLBC Madhya Pradesh map reference URL from uploaded prompt.</figcaption>
+      </figure>
+      <div class="mini">
+        Locate: Singrauli, Maihar/Satna, Damoh, Raisen, Sehore, Indore, Dhar, Anuppur, Balaghat, Seoni, Narmadapuram, Burhanpur, Barwani, Dewas.
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('mprev-theme');
+      if(savedTheme) root.setAttribute('data-theme', savedTheme);
+
+      const themeBtn = document.getElementById('themeBtn');
+      themeBtn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', current);
+        localStorage.setItem('mprev-theme', current);
+      });
+
+      document.getElementById('jumpMenu').addEventListener('change', (e) => {
+        document.querySelector(e.target.value)?.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+
+      const progressBar = document.getElementById('progressBar');
+      const progressText = document.getElementById('progressText');
+      const updateScrollProgress = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? Math.round((scrollTop / max) * 100) : 0;
+        progressBar.style.width = pct + '%';
+        progressText.textContent = 'Revision progress: ' + pct + '%';
+      };
+      window.addEventListener('scroll', updateScrollProgress, {passive:true});
+      updateScrollProgress();
+
+      const links = [...document.querySelectorAll('#tocLinks a')];
+      const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const setActive = () => {
+        let current = sections[0]?.id;
+        for(const sec of sections){
+          if(sec.getBoundingClientRect().top < 150) current = sec.id;
+        }
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+      };
+      window.addEventListener('scroll', setActive, {passive:true});
+      setActive();
+
+      document.querySelectorAll('.reveal').forEach(btn => {
+        btn.addEventListener('click', () => btn.closest('.q').classList.toggle('revealed'));
+      });
+
+      const checklist = document.getElementById('checklist');
+      const checkboxes = [...checklist.querySelectorAll('input[type="checkbox"]')];
+      const count = document.getElementById('checkCount');
+      function updateChecks(){
+        let done = 0;
+        checkboxes.forEach((cb, i) => {
+          if(cb.checked) done++;
+          localStorage.setItem('mprev-check-' + i, cb.checked ? '1' : '0');
+        });
+        count.textContent = done + ' / ' + checkboxes.length + ' items completed';
+      }
+      checkboxes.forEach((cb, i) => {
+        cb.checked = localStorage.getItem('mprev-check-' + i) === '1';
+        cb.addEventListener('change', updateChecks);
+      });
+      updateChecks();
+
+      // Image reliability: preload, retry Wikimedia Special:Redirect/file fallback, then show visible source link.
+      document.querySelectorAll('img').forEach((img) => {
+        const source = img.currentSrc || img.src;
+        const file = img.dataset.file;
+        let retried = false;
+        const showFallback = () => {
+          const holder = img.closest('figure');
+          const link = holder?.querySelector('.fallback-link');
+          if(link) link.style.display = 'block';
+        };
+        const test = new Image();
+        test.onload = () => {};
+        test.onerror = () => {
+          if(file && !retried){
+            retried = true;
+            img.src = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + encodeURIComponent(file);
+          } else {
+            showFallback();
+          }
+        };
+        test.src = source;
+        img.addEventListener('error', () => {
+          if(file && !retried){
+            retried = true;
+            img.src = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + encodeURIComponent(file);
+          } else {
+            showFallback();
+          }
+        });
+      });
+    })();
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

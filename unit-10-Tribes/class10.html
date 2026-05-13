@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gond Janjati Revision HTML — MP Tribes Class</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0f1a;--panel:#17172a;--panel2:#202039;--text:#f7fbff;--muted:#d8e2ee;--line:#383854;--cyan:#00d4ff;--orange:#ff6b35;--green:#00ff88;--purple:#b388ff;--hot:#ff3d67;--shadow:0 16px 45px rgba(0,0,0,.35);--radius:24px;}
+:root.light{--bg:#f7f9fc;--panel:#ffffff;--panel2:#eef4ff;--text:#10131f;--muted:#273142;--line:#ccd7e5;--shadow:0 12px 28px rgba(16,19,31,.12);}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at 10% 0%,rgba(0,212,255,.14),transparent 30%),radial-gradient(circle at 90% 5%,rgba(179,136,255,.16),transparent 34%),var(--bg);color:var(--text);font-size:17px;line-height:1.7;letter-spacing:.01em;}
+a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}.shell{max-width:1180px;margin:auto;padding:20px}.hero{border:1px solid var(--line);border-radius:32px;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(255,107,53,.10)),var(--panel);padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero h1{font-size:clamp(2rem,5vw,4rem);line-height:1.05;margin:8px 0 14px;font-weight:900}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.07);padding:7px 12px;border-radius:999px;font-weight:800;margin:4px 8px 4px 0}.meta{color:var(--muted);max-width:850px}.layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:22px;margin-top:22px}.toc{position:sticky;top:14px;align-self:start;border:1px solid var(--line);border-radius:var(--radius);background:rgba(23,23,42,.88);backdrop-filter:blur(14px);padding:14px;box-shadow:var(--shadow);max-height:calc(100vh - 28px);overflow:auto}.light .toc{background:rgba(255,255,255,.9)}.toc h2{font-size:1rem;margin:0 0 10px}.toc a{display:block;padding:9px 10px;border-radius:14px;color:var(--text);font-size:.92rem}.toc a:hover,.toc a.active{background:var(--panel2);text-decoration:none}.toolbar{display:grid;gap:10px;margin-bottom:12px}.btn,select{width:100%;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 12px;border-radius:14px;font-weight:800;cursor:pointer}.progress-wrap{margin-top:16px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;height:14px;overflow:hidden}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange));transition:.25s}.content{min-width:0}.section{border:1px solid var(--line);border-radius:32px;background:rgba(23,23,42,.72);padding:24px;margin-bottom:24px;box-shadow:var(--shadow);scroll-margin-top:20px}.light .section{background:rgba(255,255,255,.86)}.section h2{font-size:clamp(1.45rem,3vw,2.2rem);line-height:1.2;margin:0 0 14px;display:flex;gap:10px;align-items:flex-start}.time{display:inline-flex;background:rgba(0,212,255,.14);color:var(--cyan);border:1px solid rgba(0,212,255,.32);border-radius:999px;padding:4px 10px;font-size:.8rem;font-weight:900;margin-bottom:10px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));padding:18px;animation:rise .55s ease both}.card h3{margin-top:0;font-size:1.14rem}.card.cyan{border-top:4px solid var(--cyan)}.card.orange{border-top:4px solid var(--orange)}.card.green{border-top:4px solid var(--green)}.card.purple{border-top:4px solid var(--purple)}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}.hot{background:linear-gradient(135deg,rgba(255,61,103,.18),rgba(255,107,53,.08));border:1px solid rgba(255,61,103,.42);border-radius:20px;padding:14px 16px;margin:14px 0}.def{background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,212,255,.07));border:1px solid rgba(0,255,136,.32);border-radius:20px;padding:14px 16px;margin:14px 0}.note{background:rgba(179,136,255,.10);border:1px solid rgba(179,136,255,.36);border-radius:18px;padding:12px 14px}.image-card{margin:14px 0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--panel2)}.image-card img{display:block;width:100%;max-width:100%;height:auto;object-fit:cover}.image-card figcaption{font-size:.83rem;color:var(--muted);padding:10px 12px;border-top:1px solid var(--line)}table{border-collapse:collapse;width:100%;overflow:hidden;border-radius:18px;border:1px solid var(--line);margin:14px 0;background:rgba(255,255,255,.035)}th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}th{background:var(--panel2);color:var(--text)}.pillrow{display:flex;flex-wrap:wrap;gap:8px}.pill{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:var(--panel2);font-weight:800}.quiz{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}.qa{border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin:8px 0;background:rgba(255,255,255,.04)}.qa summary{font-weight:800;cursor:pointer}.timeline{position:relative;margin:14px 0;padding-left:22px;border-left:3px solid var(--cyan)}.tl{position:relative;margin:0 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04)}.tl:before{content:"";position:absolute;left:-30px;top:18px;width:13px;height:13px;background:var(--cyan);border-radius:50%;box-shadow:0 0 0 4px var(--panel)}.checklist label{display:flex;gap:10px;align-items:flex-start;padding:9px;border-bottom:1px solid var(--line)}.checklist input{margin-top:8px;transform:scale(1.25)}.mini-diagram{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0a0a13;color:#e6fbff;border:1px solid var(--line);border-radius:18px;padding:14px;overflow:auto}.light .mini-diagram{background:#edf5ff;color:#10131f}.sticky-jump{position:fixed;right:18px;bottom:18px;z-index:20;display:none;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:var(--shadow)}.sticky-jump select{width:220px}@media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:relative;top:0;max-height:none}.grid{grid-template-columns:1fr}.sticky-jump{display:flex}.shell{padding:12px}.section{padding:18px;border-radius:24px}}@media print{body{background:#fff;color:#000;font-size:12pt}.toc,.sticky-jump,.btn,.progress-wrap{display:none!important}.layout{display:block}.section,.hero,.card,.qa{box-shadow:none;border:1px solid #999;background:#fff;color:#000;break-inside:avoid}.qa[open] p,.qa p{display:block}details{open:true}.image-card{break-inside:avoid}a{color:#000;text-decoration:underline}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="hero">
+  <span class="badge">🎯 Exam Revision Page</span><span class="badge">Hinglish Notes</span><span class="badge">Transcript Flow 1:1</span>
+  <h1>गोंड जनजाति Revision HTML<br><span style="color:var(--cyan)">MP Tribes Class Notes</span></h1>
+  <p class="meta">यह page uploaded transcript के sequence में बनाया गया है: पहले Bhil revision, फिर Gond PYQs, फिर origin, distribution, social-economic-cultural-religious facts, birth-death rituals और अंत में master revision checklist.</p>
+  <div class="progress-wrap" aria-label="scroll progress"><div class="progress" id="scrollProgress"></div></div>
+  <p id="progressText" class="meta">Revision progress: 0%</p>
+</header>
+<div class="sticky-jump"><select id="floatingJump" aria-label="Jump to topic"></select><button class="btn" id="topBtn" style="width:auto">↑ Top</button></div>
+<div class="layout">
+<aside class="toc">
+  <div class="toolbar"><button class="btn" id="themeBtn">🌙 Toggle Theme</button><select id="jumpMenu" aria-label="Quick jump"></select></div>
+  <h2>🧭 Table of Contents</h2>
+  <nav id="tocNav">
+<a href="#s0">00:00 Intro + Bhil Revision</a>
+<a href="#s1">PYQ Pattern: Gond</a>
+<a href="#s2">Origin + Gondwana</a>
+<a href="#s3">Basic Facts + Distribution</a>
+<a href="#s4">Physical Features + Gotra</a>
+<a href="#s5">Sub-tribes</a>
+<a href="#s6">Social System</a>
+<a href="#s7">House, Food, Dress</a>
+<a href="#s8">Economic Life</a>
+<a href="#s9">Religious Beliefs</a>
+<a href="#s10">Birth & Death Rituals</a>
+<a href="#s11">Master Full Forms</a>
+<a href="#s12">Exam Hot Facts</a>
+<a href="#s13">Master Checklist</a>
+<a href="#s14">Upcoming / Footer</a>
+  </nav>
+</aside>
+<main class="content">
+
+<section id="s0" class="section" data-title="Intro + Bhil Revision">
+<span class="time">00:00:31 – 00:04:33</span>
+<h2>🔁 Intro + कल की Bhil Revision + आज का Topic</h2>
+<figure class="image-card "><img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-file-src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district map reference for Gond tribe distribution" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: SLBC Madhya Pradesh public district map reference, used as classroom map aid.</figcaption></figure>
+<div class="grid">
+<article class="card cyan"><h3>Class शुरू होने से पहले recap</h3><ul><li>Teacher ने बताया कि previous classes में <b>भील जनजाति complete</b> हो चुकी है.</li><li>मध्य प्रदेश का सामान्य परिचय, भौगोलिक विस्तार, जनजातियों का सामान्य परिचय, भौगोलिक विस्तार और जनजातियों से related constitutional provisions भी पढ़े जा चुके हैं.</li><li>आज का मुख्य topic: <b>गोंड / गौंड जनजाति</b> — Madhya Pradesh की दूसरी सबसे बड़ी जनजाति.</li><li>Teacher ने कहा कि series playlist में previous classes मिल जाएंगी; promotional/app/course बातें revision notes में skip की गई हैं.</li></ul></article>
+<article class="card orange"><h3>Bhil Revision Facts जो teacher ने पूछे</h3><ul><li>🔥 <b>भीलों का गांधी</b> — मामा बालेश्वर / Mama Baleshwar.</li><li><b>झाबुआ का गांधी</b> — महेश शर्मा जी.</li><li><b>हलमा परंपरा</b> — भील समाज में एक-दूसरे की सहायता करने की परंपरा.</li><li><b>झगड़ा / भांजगड़ा प्रथा</b> — dispute/settlement से related point.</li><li><b>दापा प्रथा</b> — वर पक्ष द्वारा वधु पक्ष को दहेज/वधूमूल्य जैसा देना.</li><li>भील प्रमुख देवता: <b>राजा पंथा, बाव देव, गल देव</b>.</li><li>दीपावली में <b>जश्मा देवी</b> की पूजा; कुल देवी: <b>आमजा माता / केलड़ा माता</b>; लोक देवी: <b>पड़वी देवी</b>; खड़िया माता मंदिर: <b>झाबुआ</b>.</li></ul></article>
+</div>
+<div class="hot"><b>🔥 Exam Hot:</b> Teacher ने Bhil facts को quick-fire revision के रूप में दोहराया, इसलिए names + traditions को one-liner format में revise करना है.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. आज की class का main topic क्या है?</summary><p>गोंड / गौंड जनजाति — MP की दूसरी सबसे बड़ी जनजाति.</p></details><details class="qa"><summary>2. हलमा परंपरा किससे related है?</summary><p>भील लोगों में एक-दूसरे की सहायता करने की परंपरा.</p></details><details class="qa"><summary>3. भीलों का गांधी और झाबुआ का गांधी कौन?</summary><p>भीलों का गांधी — मामा बालेश्वर; झाबुआ का गांधी — महेश शर्मा जी.</p></details><details class="qa"><summary>4. दापा प्रथा क्या है?</summary><p>वर पक्ष द्वारा वधु पक्ष को दहेज/वधूमूल्य जैसा देना.</p></details></div>
+</section>
+
+<section id="s1" class="section" data-title="PYQ Pattern Gond">
+<span class="time">00:04:33 – 00:16:25</span>
+<h2>🔥 PYQ Pattern: Gond Janjati से Questions कैसे आते हैं?</h2>
+<div class="def"><b>Teacher की strategy:</b> किसी भी जनजाति को detail में पढ़ने से पहले उससे related <b>Previous Year Questions</b> देखो, ताकि exam के focus areas समझ आएं.</div>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gond%20art%20IMG%208707.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Gond%20art%20IMG%208707.jpg?width=900" alt="Gond art with dots, dashes, curved lines and nature patterns" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, Sumita Roy Dutta, “Gond art IMG 8707.jpg”, CC BY-SA 4.0.</figcaption></figure>
+<table>
+<thead><tr><th>PYQ / Topic</th><th>Transcript में बताया गया answer / learning</th><th>Exam Focus</th></tr></thead>
+<tbody>
+<tr><td>CPE 2021: Gond अपने आपको क्या मानती है?</td><td><b>कोईतोर / Koitor</b> — “हमारा कोई तोड़ नहीं” वाली memory link दी गई.</td><td>Self-name याद रखना.</td></tr>
+<tr><td>सबसे बड़ी जनजाति समूह जो सभी जिलों में निवास करती है</td><td>Overall MP की सबसे बड़ी tribe <b>भील</b> है; पर सभी/लगभग सभी जिलों में रहने वाली बड़ी tribe group के रूप में teacher ने <b>गोंड</b> बताया.</td><td>Question wording पूरा पढ़ना.</td></tr>
+<tr><td>Gond concentration</td><td>East + South/South-East MP; कारण: <b>Vindhya-Satpura, वन, वर्षा, agriculture dependence</b>.</td><td>Map-based question.</td></tr>
+<tr><td>Ghotul / घोटुल</td><td>बैरियर एल्विन की book <b>The Muria and Their Ghotul</b>; village के बाहर hut/house, elder की देखरेख में लड़के-लड़कियाँ रहते, dance/food/learning, विचार मिलें तो विवाह भी.</td><td>Youth dormitory / joint residence / marriage-social institution nuance.</td></tr>
+<tr><td>नोह डोरा अलंकरण</td><td>दीवार पर मिट्टी से बनने वाला अलंकरण; <b>गोंड महिलाएँ</b> करती हैं.</td><td>Tribal art/craft.</td></tr>
+<tr><td>Gond Painting / Dindori</td><td>डिंडोरी के <b>पाटनगढ़</b> गांव में Gond painters; Dindori Gond art को <b>GI Tag 2023</b>.</td><td>Current affairs + art.</td></tr>
+<tr><td>Artists</td><td>आनंद सिंह श्याम, जंगर सिंह श्याम, भज्जू सिंह श्याम, दुर्गाबाई व्योम — Gond art से related. <b>दुर्गाबाई व्योम</b>: Digna/Gond art; Padma Shri 2022.</td><td>Personality + art matching.</td></tr>
+<tr><td>Sub-tribe matching</td><td><b>पटलिया</b> Bhil sub-tribe; <b>अगरिया, प्रधान</b> Gond sub-tribe. आयोग ने कुछ options गलत माने थे — teacher ने सावधानी बताई.</td><td>Matched list questions.</td></tr>
+<tr><td>लोहा सुर देवता</td><td><b>अगरिया</b> Gond sub-tribe लोहे का काम करती है और <b>लोहा सुर</b> को देवता मानती है.</td><td>Occupation + deity.</td></tr>
+<tr><td>Matching: भगोरिया, घोटुल, बेवर, कर्मा</td><td>भगोरिया हाट—Bhil; घोटुल—Muria/Gond; बेवर/Bewar—Baiga shifting cultivation; कर्मा dance—Gond/Baiga/eastern tribes; Karma को Guinness record में भी include बताया.</td><td>Culture matching.</td></tr>
+<tr><td>Tribe-place matching</td><td>Mandla—Baiga; Jhabua—Bhil; Jabalpur—Bharia/Badiya; Betul—Korku.</td><td>District association.</td></tr>
+<tr><td>Garha Mandla final ruler</td><td><b>शंकर शाह</b>; शंकर शाह और रघुनाथ शाह को 18 September 1857 में अंग्रेजों ने तोप से उड़ाया क्योंकि वे rebels की सहायता कर रहे थे.</td><td>1857 + Gondwana history.</td></tr>
+</tbody></table>
+<div class="hot"><b>🔥 Exam Hot:</b> Koitor, Ghotul, Noh-Dora, Patangarh-Dindori-GI tag, Agaria-Lohasur, Shankar Shah/Raghunath Shah are high-value points.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gond अपने आपको क्या कहलाना पसंद करते हैं?</summary><p>कोईतोर / Koitor.</p></details><details class="qa"><summary>2. नोह डोरा अलंकरण किस tribe से related है?</summary><p>Gond tribe; महिलाएँ दीवारों पर मिट्टी से बनाती हैं.</p></details><details class="qa"><summary>3. अगरिया किसका काम करती है और देवता कौन?</summary><p>लोहे का काम; लोहा सुर देवता.</p></details><details class="qa"><summary>4. घोटुल में teacher ने क्या समझाया?</summary><p>गाँव के बाहर संयुक्त आवास/युवा संगठन जहाँ लड़के-लड़कियाँ elder की देखरेख में सीखते, रहते, नाचते और विचार मिलें तो विवाह कर सकते हैं.</p></details><details class="qa"><summary>5. Dindori Gond art को GI Tag कब मिला?</summary><p>2023.</p></details></div>
+</section>
+
+<section id="s2" class="section" data-title="Origin + Gondwana">
+<span class="time">00:16:25 – 00:20:28</span>
+<h2>🏛️ Origin, Migration और Gondwana Samrajya</h2>
+<div class="grid">
+<article class="card cyan"><h3>Origin पर historians के views</h3><ul><li>कुछ historians के अनुसार Gond लोग <b>Proto-Australoid</b> प्रजाति से related हैं.</li><li>Teacher ने बताया कि अधिकतर/कई विद्वान इन्हें <b>Dravidian origin</b> का मानते हैं.</li><li>इनका संबंध South side / Andhra Pradesh side से बताया गया और फिर धीरे-धीरे North India / Mahakaushal side आने की बात कही.</li><li>Class में Aryan arrival का context भी आया: Indus/Harappan decline के बाद Vedic civilization शुरू, लगभग <b>1500 BCE</b> के आसपास Aryans का arrival.</li></ul></article>
+<article class="card purple"><h3>Mahakaushal में settlement</h3><ul><li>Gond लोग North India की तरफ आए और history में <b>Mahakaushal side</b> बस गए.</li><li>यहाँ उन्होंने एक नए साम्राज्य की नींव डाली — <b>Gondwana Samrajya</b>.</li><li>Teacher ने ruler-population analogy दी: जहाँ जिस caste/tribe के rulers ने rule किया, वहाँ उसी community के लोग अधिक मिलते हैं.</li></ul></article>
+</div>
+<div class="timeline">
+<div class="tl"><b>Founder:</b> यादव राव मड़ावी / Yadvarao Madavi — Gondwana Samrajya के founder बताए गए.</div>
+<div class="tl"><b>Branches:</b> गढ़ा-मंडला, खेड़ला/Kherla, देवगढ़ Gond branches.</div>
+<div class="tl"><b>Important rulers:</b> संग्राम शाह, दलपत शाह, रानी दुर्गावती, मधुकर शाह, हृदय शाह, नरेंद्र शाह, नरहरी शाह.</div>
+<div class="tl"><b>1857:</b> शंकर शाह और रघुनाथ शाह ने 1857 revolt में योगदान दिया; 18 Sep 1857 को अंग्रेजों ने तोप से उड़ाया.</div>
+</div>
+<div class="mini-diagram">South/Andhra side → North India → Mahakaushal → Gondwana Samrajya → Garha-Mandla / Kherla / Deogarh branches</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gondwana Samrajya के founder teacher ने किसे बताया?</summary><p>यादव राव मड़ावी.</p></details><details class="qa"><summary>2. Gondwana की branches कौन-कौन सी बताई गईं?</summary><p>गढ़ा-मंडला, खेड़ला/Kherla, देवगढ़.</p></details><details class="qa"><summary>3. 1857 में Gond history से कौन से नाम याद रखने हैं?</summary><p>शंकर शाह और रघुनाथ शाह.</p></details><details class="qa"><summary>4. शंकर शाह और रघुनाथ शाह को कब और कैसे मारा गया?</summary><p>18 September 1857; अंग्रेजों ने तोप के गोले से उड़ाया.</p></details></div>
+</section>
+
+<section id="s3" class="section" data-title="Basic Facts + Distribution">
+<span class="time">00:20:28 – 00:28:48</span>
+<h2>🗺️ Basic Facts: नाम, संख्या, district distribution</h2>
+<figure class="image-card "><img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-file-src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district map reference for Gond tribe distribution" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: SLBC Madhya Pradesh public district map reference, used as classroom map aid.</figcaption></figure>
+<div class="grid">
+<article class="card green"><h3>Basic identity facts</h3><ul><li>Gond tribe MP की <b>दूसरी सबसे बड़ी जनजाति</b> है.</li><li>कुल जनजातीय population में लगभग <b>33% / 33.25%</b> Gond बताए गए.</li><li>Teacher ने total ST population को लगभग <b>1,53,16,784</b> कहा और Gond share roughly one-third बताया.</li><li>याद रखने के लिए number से ज्यादा <b>33%</b> focus करने को कहा गया.</li></ul></article>
+<article class="card orange"><h3>Gond word का meaning</h3><ul><li><b>Gond</b> शब्द को Telugu word <b>Kond</b> से link कराया गया.</li><li><b>Kond = पहाड़ी</b>. इसलिए Gond = पहाड़ों पर रहने वाली tribe.</li><li>Memory link: “कौन पहाड़ी पर चढ़ा? Gond चढ़ा.”</li><li>MP में ये लोग Vindhyachal और Satpura पर्वत/घाटियों/वनों में रहते हैं.</li></ul></article>
+<article class="card purple"><h3>Self-name: Koitor</h3><ul><li>Gond लोग स्वयं को <b>कोईतोर / Koitor</b> कहलाना पसंद करते हैं.</li><li>Mnemonic: “God जैसा मजबूत — कोई तोड़ नहीं — कोईतोर.”</li><li>यह point PYQ में आया है, इसलिए exact term याद रखना है.</li></ul></article>
+<article class="card cyan"><h3>Distribution in India + MP</h3><ul><li>MP, Chhattisgarh, Rajasthan, Maharashtra, Andhra Pradesh side, West Bengal side आदि में Gond मिलते हैं.</li><li>MP के लगभग <b>प्रत्येक जिले</b> में Gond मिलते हैं.</li><li>Concentration: <b>पूर्व, दक्षिण, दक्षिण-पूर्व</b> MP.</li><li>Important districts/areas: <b>Chhindwara, Betul, Seoni, Balaghat, Mandla, Dindori, Shahdol, Narmadapuram/Hoshangabad</b>.</li></ul></article>
+</div>
+<div class="hot"><b>🔥 Exam Hot:</b> Chhindwara में Gond सबसे ज्यादा बताए गए — लगभग 6 lakh Gond. Chhindwara Gond population relatively educated भी बताई गई.</div>
+<table><thead><tr><th>Map Memory</th><th>Reason teacher ने दिया</th></tr></thead><tbody><tr><td>East + South-East MP</td><td>Vindhya-Satpura, forest cover, rainfall, agriculture support.</td></tr><tr><td>Chhindwara</td><td>Highest Gond concentration in MP; link: “Chhindwara/Kamal Nath God से seat मांग रहे हैं” memory story.</td></tr><tr><td>Jabalpur/eastern areas</td><td>Teacher ने कहा eastern tribes generally अधिक साक्षर / पढ़ी-लिखी हैं.</td></tr></tbody></table>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gond शब्द किस word से link किया गया?</summary><p>Telugu “Kond” — meaning hill/पहाड़ी.</p></details><details class="qa"><summary>2. MP में Gond tribe rank?</summary><p>दूसरी सबसे बड़ी जनजाति.</p></details><details class="qa"><summary>3. Gond कुल ST population का कितने percent लगभग?</summary><p>लगभग 33% / 33.25%.</p></details><details class="qa"><summary>4. सबसे ज्यादा Gond किस district में?</summary><p>Chhindwara.</p></details></div>
+</section>
+
+<section id="s4" class="section" data-title="Physical Features + Gotra">
+<span class="time">00:28:48 – 00:30:49</span>
+<h2>🧬 Physical Features + Gotra व्यवस्था</h2>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Women%20in%20tribal%20village%2C%20Umaria%20district%2C%20India.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Women%20in%20tribal%20village%2C%20Umaria%20district%2C%20India.jpg?width=900" alt="Women in a Gond adivasi village in Umaria district, Madhya Pradesh" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, Yann, “Women in tribal village, Umaria district, India.jpg”, CC BY-SA 4.0 / GFDL.</figcaption></figure>
+<div class="grid">
+<article class="card cyan"><h3>शारीरिक विशेषताएँ</h3><ul><li>कद सामान्यतः <b>छोटा</b> बताया गया.</li><li>मुँह <b>चौड़ा</b> और नाक <b>चपटी/फैली</b> बताई गई.</li><li>बाल <b>काले और घुँघराले</b> होते हैं.</li><li>महिलाएँ सामान्यतः पुरुषों से छोटी बताई गईं.</li><li>Features को Proto-Australoid/Dravidian discussion से link करके याद कराया गया.</li></ul></article>
+<article class="card green"><h3>Gotra system</h3><ul><li>Gond society में gotra व्यवस्था important है.</li><li>Gondों में gotra को <b>कुर / Kur</b> कहते हैं.</li><li><b>सम-गोत्री विवाह नहीं होता</b> — same gotra में marriage avoid की जाती है.</li><li>Mnemonic: “Gotra में कुर-कुर बात करते हैं.”</li></ul></article>
+</div>
+<div class="hot"><b>🔥 Exam Hot:</b> Gotra = <b>Kur</b>; self-name = <b>Koitor</b>; same gotra marriage नहीं.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gondों में gotra को क्या कहते हैं?</summary><p>कुर / Kur.</p></details><details class="qa"><summary>2. क्या same gotra marriage होता है?</summary><p>नहीं, सम-गोत्री विवाह नहीं होता.</p></details><details class="qa"><summary>3. Gond physical features में teacher ने क्या-क्या बताया?</summary><p>छोटा कद, चौड़ा मुँह, चपटी/फैली नाक, काले-घुँघराले बाल.</p></details></div>
+</section>
+
+<section id="s5" class="section" data-title="Sub-tribes">
+<span class="time">00:30:49 – 00:41:44</span>
+<h2>🧩 Gond उपजातियाँ: व्यवसाय + निवास/स्थिति के आधार पर</h2>
+<div class="def"><b>Memory hook:</b> Teacher ने सारी occupational sub-tribes को “God/भगवान के दर्शन” वाली story से link कराया — सबसे आगे Agaria, VIP Pradhan, tantric Ojha, 16 Monday Solhas, black dancer Koila Bhutas.</div>
+<table><thead><tr><th>व्यवसाय आधारित उपजाति</th><th>काम / पहचान</th><th>Memory link</th></tr></thead><tbody>
+<tr><td><b>अगरिया / Agaria</b></td><td>लोहे का काम; <b>लोहा सुर</b> देवता; धधकती भट्टी से link.</td><td>आगे रहने वाला मजबूत “iron” person.</td></tr>
+<tr><td><b>प्रधान / Pradhan</b></td><td>पुजारी / पंडिताई काम.</td><td>VIP / priest आगे रहता है.</td></tr>
+<tr><td><b>ओझा / Ojha</b></td><td>तांत्रिक क्रिया, झाड़-फूँक.</td><td>ओझा = tantric/healer.</td></tr>
+<tr><td><b>सोलहास / Solhas</b></td><td>लकड़ी का काम.</td><td>16 सोमवार व्रत + लकड़ी gift.</td></tr>
+<tr><td><b>कोयला भूतास / Koila Bhutas</b></td><td>नाचने-गाने का काम.</td><td>काला भूत डरा नहीं रहा, dance कर रहा है.</td></tr>
+<tr><td><b>नागरे / Nagarchi</b></td><td>Teacher ने occupational list में mention किया; exact detail class में विस्तार से नहीं दी.</td><td>Nag/नगाड़ा sound से याद.</td></tr>
+</tbody></table>
+<div class="grid">
+<article class="card purple"><h3>निवास / status आधारित sub-groups</h3><ul><li><b>राजगोंड</b> — भूस्वामी/landowners, राजा-जमींदार type; झुकने की जरूरत नहीं.</li><li><b>धुरगोंड</b> — साधारण Gond; “धरे के धरे रह गए” memory link.</li><li><b>मड़िया/मुड़िया Gond</b> — बहुत पिछड़े बताए; Ghotul प्रथा famous.</li><li><b>खातुलवार/तुलवार</b> — बहुत पिछड़े; दूसरे के खेतों में काम करने वाली image से link कराया.</li></ul></article>
+<article class="card orange"><h3>PYQ connection</h3><ul><li>Agaria और Pradhan को Gond sub-tribe के रूप में remember करना है.</li><li>Patelia को Bhil sub-tribe बताया गया — Gond में confuse नहीं करना.</li><li>Agaria-Lohasur PYQ already asked.</li><li>Muria/Madia को Ghotul से जोड़कर याद रखना है.</li></ul></article>
+</div>
+<div class="hot"><b>🔥 Exam Hot:</b> Agaria = iron work + Lohasur; Ojha = tantric; Koila Bhutas = singing/dancing; Rajgond = landowner.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. कौन सी Gond sub-tribe लोहे का काम करती है?</summary><p>अगरिया.</p></details><details class="qa"><summary>2. अगरिया का देवता कौन?</summary><p>लोहा सुर.</p></details><details class="qa"><summary>3. तांत्रिक क्रिया कौन करता है?</summary><p>ओझा.</p></details><details class="qa"><summary>4. नाचने-गाने वाली sub-tribe?</summary><p>कोयला भूतास.</p></details><details class="qa"><summary>5. भूस्वामी Gond कौन?</summary><p>राजगोंड.</p></details></div>
+</section>
+
+<section id="s6" class="section" data-title="Social System">
+<span class="time">00:41:44 – 00:52:45</span>
+<h2>👥 Social System: परिवार, पंचायत, village roles</h2>
+<div class="grid">
+<article class="card cyan"><h3>Family + tradition</h3><ul><li>Gond society में <b>पितृसत्तात्मक / पुरुष प्रधान</b> व्यवस्था है.</li><li>परिवार में सबसे बुजुर्ग पुरुष मुखिया होता है.</li><li>दूसरे स्थान पर बुजुर्ग महिला होती है — जैसे दादा absent हों तो दादी की बात चलेगी.</li><li>ये लोग अपनी संस्कृति, परंपरा, रहन-सहन और जंगल/नियमों को लेकर काफी कट्टर बताए गए.</li><li>Teacher ने Article <b>243M</b> और <b>PESA</b> का reference दिया: scheduled areas में special provisions; scheduled area President declare करता है; मध्य भारत के 10 states का mention.</li></ul></article>
+<article class="card green"><h3>Atithi satkar</h3><ul><li>Gond people अतिथि-सत्कार अच्छा करते हैं.</li><li>अपने घर के साथ-साथ <b>अतिथि के लिए अलग साफ-सुथरा कमरा</b> रखते हैं.</li><li>Teacher ने modern city contrast दिया: “अतिथि तुम कब जाओगे?” जबकि यहाँ guest room ready.</li></ul></article>
+</div>
+<table><thead><tr><th>Village/Panchayat Role</th><th>काम / पहचान</th><th>Mnemonic</th></tr></thead><tbody>
+<tr><td><b>भोई / मुकदम / माजी / देशमुख / गोटिया</b></td><td>गाँव/पंचायत का मुखिया. कई जगह वंशानुगत.</td><td>God याद कर रहा मुखिया; भोई + मुकदम + गोटिया + माजी + देशमुख.</td></tr>
+<tr><td><b>कोटवार</b></td><td>मुखिया की सहायता; प्रशासन, हाट-बाजार, चोरी-चकारी, police station ले जाने जैसे काम.</td><td>कोट पहनकर व्यवस्था देखने वाला.</td></tr>
+<tr><td><b>देवान / Diwan</b></td><td>गुप्त सूचना मुखिया को देता है.</td><td>God का दीवाना सब secret बता देता है.</td></tr>
+<tr><td><b>लिखाई / Likhai</b></td><td>पंचायत में सबसे बुजुर्ग व्यक्ति; लिखने/record से related.</td><td>बगल में बैठा बूढ़ा सब लिख रहा है.</td></tr>
+<tr><td><b>पंडा / गुनिया / बरुआ</b></td><td>गाँव में तांत्रिक क्रिया / रोग-दोष / झाड़-फूँक से related व्यक्ति.</td><td>“किसने गुनाह किया?” tantric से पता लगाएगा.</td></tr>
+</tbody></table>
+<div class="hot"><b>🔥 Exam Hot:</b> Gond village chief names: <b>मुकदम, गोटिया, भोई, माजी, देशमुख</b>. Helper: <b>कोटवार</b>. Secret info: <b>देवान</b>. Tantric healer: <b>पंडा/गुनिया/बरुआ</b>.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gond society patriarchal है या matriarchal?</summary><p>पितृसत्तात्मक / पुरुष प्रधान.</p></details><details class="qa"><summary>2. गाँव/पंचायत chief के नाम?</summary><p>भोई, मुकदम, माजी, देशमुख, गोटिया.</p></details><details class="qa"><summary>3. मुखिया की सहायता कौन करता है?</summary><p>कोटवार.</p></details><details class="qa"><summary>4. गुप्त सूचना कौन देता है?</summary><p>देवान.</p></details><details class="qa"><summary>5. तांत्रिक क्रिया करने वाले के नाम?</summary><p>पंडा, गुनिया, बरुआ.</p></details></div>
+</section>
+
+<section id="s7" class="section" data-title="House Food Dress">
+<span class="time">00:52:45 – 00:59:18</span>
+<h2>🏠 घर, टोला, भोजन और पहनावा</h2>
+<div class="grid">
+<article class="card cyan"><h3>House + settlement</h3><ul><li>Gond houses सामान्यतः <b>झोपड़ी / मिट्टी / घास-फूस</b> से बने होते हैं.</li><li>Gond महिलाएँ दीवारों पर <b>नोह-डोरा अलंकरण</b> करती हैं.</li><li><b>डिगना कला</b> भी Gond art से related बताई गई.</li><li>ये लोग टोली के रूप में रहते हैं; Gond मोहल्ला = <b>टोला</b>.</li><li>Contrast: Bhil मोहल्ला = <b>फलिया</b>.</li><li>टोला का प्रमुख = <b>मुकदम</b>.</li></ul></article>
+<article class="card green"><h3>Food rhythm: 3 meals</h3><ul><li>Favourite भोजन: <b>पेज / Pej</b> — मोटे अनाज/छाछ जैसी preparation से link.</li><li>मूल भोजन: <b>कोदो-कुटकी</b>. Teacher ने Balaghat-Mandla-Dindori-Singrauli-Sidhi belt और ODOP context बताया.</li><li>Gond लोग vegetarian और non-vegetarian दोनों हो सकते हैं.</li><li>दिन में तीन बार भोजन: सुबह <b>बासी</b>, दिन में <b>पेज</b>, रात में <b>बियारी</b>.</li><li><b>महुआ</b> को ये <b>देव अन्न</b> कहते हैं.</li></ul></article>
+</div>
+<div class="grid">
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kodra%20(kodo%20millet).jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Kodra%20(kodo%20millet).jpg?width=900" alt="Kodo millet grain used as coarse millet food reference" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, “Kodra (kodo millet).jpg”, open file from Kodo Millet category; verify license on file page if reusing outside study notes.</figcaption></figure>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Madhuca%20longifolia%203.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Madhuca%20longifolia%203.jpg?width=900" alt="Mahua flowers of Madhuca longifolia, called Dev Ann in lesson" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, “Madhuca longifolia 3.jpg”, open file from Madhuca longifolia flowers category; verify license on file page if reusing outside study notes.</figcaption></figure>
+</div>
+<table><thead><tr><th>भोजन समय</th><th>नाम</th><th>Memory link</th></tr></thead><tbody><tr><td>सुबह</td><td>बासी</td><td>रात का बचा/सुबह का खाना.</td></tr><tr><td>दिन</td><td>पेज</td><td>पढ़ाई वाला page + खाने वाला Pej.</td></tr><tr><td>रात्रि</td><td>बियारी</td><td>रात का भोजन.</td></tr></tbody></table>
+<div class="grid">
+<article class="card orange"><h3>Dress: पुरुष</h3><ul><li>पुरुष <b>लंगोटी</b> पहनते हैं.</li><li>सिर पर <b>पगड़ी</b> बाँधते हैं.</li></ul></article>
+<article class="card purple"><h3>Dress: महिलाएँ</h3><ul><li>महिलाएँ <b>आभूषण</b> पहनने की शौकीन होती हैं.</li><li><b>गोदना / tattoo art</b> की शौकीन बताई गईं.</li></ul></article>
+</div>
+<div class="hot"><b>🔥 Exam Hot:</b> Gond मोहल्ला = Tola; Bhil मोहल्ला = Faliya. Mahua = Dev Ann. Morning Basi, daytime Pej, night Biyari.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gond मोहल्ला क्या कहलाता है?</summary><p>टोला.</p></details><details class="qa"><summary>2. Gond का favourite भोजन?</summary><p>पेज.</p></details><details class="qa"><summary>3. Mahua को Gond लोग क्या कहते हैं?</summary><p>देव अन्न.</p></details><details class="qa"><summary>4. महिलाएँ किस कला/रुचि से related बताई गईं?</summary><p>आभूषण और गोदना.</p></details></div>
+</section>
+
+<section id="s8" class="section" data-title="Economic Life">
+<span class="time">00:59:18 – 01:06:29</span>
+<h2>🌾 Economic Life: Agriculture, Jhum, Crops</h2>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/An%20example%20of%20slash%20and%20burn%20agriculture%20practice%20Thailand.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/An%20example%20of%20slash%20and%20burn%20agriculture%20practice%20Thailand.jpg?width=900" alt="Slash and burn shifting cultivation visual example" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, mattmangum, “An example of slash and burn agriculture practice Thailand.jpg”, CC BY 2.0.</figcaption></figure>
+<div class="grid">
+<article class="card green"><h3>Main occupation</h3><ul><li>Gond people mainly <b>कृषि</b> करते हैं.</li><li>ये पहाड़ी/वन क्षेत्र में रहकर agriculture करते हैं.</li><li><b>हल</b> को अपना प्रतीक मानते हैं.</li><li>शिकार, पशुपालन और forest produce collection भी करते हैं.</li></ul></article>
+<article class="card orange"><h3>Jhum agriculture</h3><ul><li>Gondों की shifting / Jhum agriculture को <b>बारी / दहिया</b> कहा गया.</li><li>Mnemonic: God को याद करके <b>बारी-बारी</b> से कृषि और दही खाया — Bari/Dahiya.</li><li>Baiga की jhum agriculture को Bewar/Bewar बताया गया था; confuse न करें.</li></ul></article>
+<article class="card cyan"><h3>Forest produce selling</h3><ul><li>आँवला, महुआ, मछली/जंगल resources, चावल, आम, जामुन/fruit वगैरह collect करके बेचते हैं.</li><li>Teacher ने highway/market example दिया: जनजातीय लोग जंगल/आसपास से सामान लाकर road/market में बेचते हैं और खर्चा-पानी चलाते हैं.</li></ul></article>
+<article class="card purple"><h3>Harvahi खेती</h3><ul><li>गरीब Gond / धुर Gond के पास बैल न होने से <b>हरवाही खेती</b> करने की बात बताई गई.</li><li>“हरी-हरी हवा” memory link से Harvahi याद कराया गया.</li></ul></article>
+</div>
+<table><thead><tr><th>Crop category</th><th>Teacher explanation</th><th>Examples</th></tr></thead><tbody><tr><td><b>उन्हाली</b></td><td>उन्हाला/गर्मी में काटी जाने वाली crops; March around harvesting example.</td><td>गेहूँ, चना, मसूर, सरसों — Rabi crops.</td></tr><tr><td><b>सियारी</b></td><td>सियाला/season link; teacher ने Kharif examples दिए.</td><td>धान, गन्ना, मूंगफली, कपास.</td></tr><tr><td><b>चौमासा</b></td><td>बारिश season term को memory में रखा.</td><td>Season vocabulary only.</td></tr></tbody></table>
+<div class="note"><b>Teacher note:</b> उन्होंने कहा “trick नहीं, links/visualization से पढ़ाता हूँ”; इसलिए फसल terms को season visuals से याद करो — उन्हाला = गर्मी, सियाला = सर्दी, चौमासा = बारिश.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gond jhum agriculture क्या कहलाती है?</summary><p>बारी / दहिया.</p></details><details class="qa"><summary>2. Gondों का मुख्य occupation?</summary><p>कृषि.</p></details><details class="qa"><summary>3. उन्हाली crops में क्या-क्या?</summary><p>गेहूँ, चना, मसूर, सरसों जैसी Rabi crops.</p></details><details class="qa"><summary>4. सियारी crops में teacher ने क्या examples दिए?</summary><p>धान, गन्ना, मूंगफली, कपास.</p></details><details class="qa"><summary>5. हरवाही खेती क्यों?</summary><p>गरीब Gondों के पास बैल न होने से.</p></details></div>
+</section>
+
+<section id="s9" class="section" data-title="Religious Beliefs">
+<span class="time">01:06:29 – 01:14:52</span>
+<h2>🛕 Religious Beliefs: Bada Dev, Linga Dev, Koya Punem</h2>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Madhuca%20longifolia%203.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Madhuca%20longifolia%203.jpg?width=900" alt="Mahua flowers of Madhuca longifolia, called Dev Ann in lesson" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, “Madhuca longifolia 3.jpg”, open file from Madhuca longifolia flowers category; verify license on file page if reusing outside study notes.</figcaption></figure>
+<div class="grid">
+<article class="card cyan"><h3>Religious nature</h3><ul><li>Gond लोग धर्म के प्रति <b>कट्टर</b> बताए गए.</li><li>तंत्र-मंत्र, जादू-टोना और Totem beliefs को मानते हैं.</li><li>इनकी उत्पत्ति <b>लिंगा देव</b> से मानी जाती है.</li><li>लिंगा देव की पूजा/धार्मिक path को teacher ने <b>कोया पुनेम / Koya Punem</b> बताया.</li><li>Baiga को ये <b>पुरोहित</b> मानते हैं; औषधि/बीमारी context में बुलाते हैं.</li></ul></article>
+<article class="card green"><h3>Bada Dev</h3><ul><li><b>बड़ा देव</b> Gondों के प्रमुख/सर्वशक्तिमान देवता बताए गए.</li><li>Bhil प्रमुख देवता Raja Pantha; Baiga में आगे Budha Dev पढ़ेंगे — Gond में answer <b>Bada Dev</b>.</li><li>बड़ा देव को भगवान शंकर रूप माना गया.</li><li>इनकी सवारी <b>सफेद घोड़ा</b> बताई गई.</li><li>Tola/village में पूर्व दिशा की तरफ देवरा/स्थान बनाने की बात कही गई.</li></ul></article>
+</div>
+<table><thead><tr><th>देवता / देवी</th><th>Role</th><th>Memory link</th></tr></thead><tbody>
+<tr><td><b>लिंगा देव</b></td><td>Gond अपनी उत्पत्ति इनसे मानते हैं; Koya Punem से related.</td><td>“लिंगा देव जैसा कोई नहीं — Koya Punem.”</td></tr>
+<tr><td><b>बड़ा देव</b></td><td>प्रमुख, सर्वशक्तिमान देवता; सफेद घोड़ा सवारी.</td><td>Gond major deity = Bada Dev.</td></tr>
+<tr><td><b>दूल्हा देव</b></td><td>शादी-विवाह सूत्र में बाँधने वाले देव.</td><td>Dulha = marriage.</td></tr>
+<tr><td><b>ठाकुर देव</b></td><td>ग्राम देवता / गाँव की रक्षा; गाँव के बाहर वृक्ष पर रहने का belief.</td><td>ठाकुर साहब गाँव के बाहर.</td></tr>
+<tr><td><b>खेरमाई देवी</b></td><td>गाँव की रक्षा करने वाली देवी; स्थान: <b>महुआ का वृक्ष</b>.</td><td>माई कहे “अब खैर नहीं” — village protection.</td></tr>
+<tr><td><b>नारायण देव</b></td><td>घर की दहलीज पर रहते और विपदाएँ रोकते हैं.</td><td>Narayan घर की threshold पर.</td></tr>
+<tr><td><b>सर्प देव / पीपल / पंडा-पंडित</b></td><td>Additional religious beliefs; रोग-दोष निवारण context.</td><td>Rog-dosh relief.</td></tr>
+<tr><td><b>राता माई, शारदा माई, खैर माता</b></td><td>अन्य देवियाँ mention हुईं; teacher ने कहा Khairmai और Bada Dev सबसे important.</td><td>Secondary list.</td></tr>
+<tr><td><b>देवरी</b></td><td>Gond पुजारी को देवरी कहा जाता है.</td><td>देवरे में रहने वाला पुजारी.</td></tr>
+</tbody></table>
+<div class="hot"><b>🔥 Exam Hot:</b> Gond प्रमुख देवता = <b>बड़ा देव</b>; उत्पत्ति = <b>लिंगा देव</b>; पूजा/path = <b>कोया पुनेम</b>; village goddess = <b>खेरमाई</b>; priest = <b>देवरी</b>.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. Gondों के प्रमुख देवता कौन?</summary><p>बड़ा देव.</p></details><details class="qa"><summary>2. बड़ा देव की सवारी?</summary><p>सफेद घोड़ा.</p></details><details class="qa"><summary>3. Gond अपनी उत्पत्ति किससे मानते हैं?</summary><p>लिंगा देव.</p></details><details class="qa"><summary>4. Koya Punem किससे related है?</summary><p>लिंगा देव की पूजा/path से.</p></details><details class="qa"><summary>5. गाँव की रक्षा करने वाली देवी?</summary><p>खेरमाई देवी; स्थान — महुआ वृक्ष.</p></details><details class="qa"><summary>6. Gond पुजारी को क्या कहते हैं?</summary><p>देवरी.</p></details></div>
+</section>
+
+<section id="s10" class="section" data-title="Birth & Death Rituals">
+<span class="time">01:14:52 – 01:24:17</span>
+<h2>🍼⚱️ Birth & Death Sanskar: ध्रुव तारा, दशमानी, पाटो</h2>
+<figure class="image-card "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Polaris%20star%20and%20companion.jpg?width=900" data-file-src="https://commons.wikimedia.org/wiki/Special:FilePath/Polaris%20star%20and%20companion.jpg?width=900" alt="Telescope view of Polaris star used for Dhruv Tara ritual recall" loading="eager" decoding="async" fetchpriority="high"><figcaption>Image: Wikimedia Commons, NVN271, “Polaris star and companion.jpg”, CC BY-SA 4.0.</figcaption></figure>
+<div class="grid">
+<article class="card cyan"><h3>Birth beliefs</h3><ul><li>Gond belief: <b>बड़ा देव</b> आदमी को जन्म देते हैं और वही उठा भी लेते हैं.</li><li>Childbirth सामान्यतः घरों/गाँवों में ही होता है, teacher ने प्रसूता और cloth-bound place का example दिया.</li><li>शिशु के जन्म के <b>छठे दिन ध्रुव तारा</b> दिखाया जाता है — बच्चा हृष्ट-पुष्ट रहे और बीमारी से मुक्त रहे.</li><li>जन्म के <b>12वें दिन नामकरण</b> होता है.</li></ul></article>
+<article class="card orange"><h3>Death rites</h3><ul><li>Gondों में मृतक को <b>दफनाया भी जाता है और जलाया भी जाता है</b>.</li><li>पहले अधिकतर burial का practice बताया गया; अब cremation भी चल रही है.</li><li>Rich/Rajgond या स्वाभाविक/पूरी उम्र death में जलाने की बात; गरीब/धुरगोंड या बीमारी death में दफनाने की बात.</li><li>मृत्यु के 10 दिन बाद <b>दशमानी / दशगात्र</b> प्रथा होती है.</li></ul></article>
+</div>
+<table><thead><tr><th>Ritual / term</th><th>Meaning in class</th><th>Memory</th></tr></thead><tbody>
+<tr><td><b>दशमानी / दशगात्र</b></td><td>मृत्यु के 10 दिन बाद होने वाली प्रथा.</td><td>10 दिन = Dasmani.</td></tr>
+<tr><td><b>पाटो प्रथा</b></td><td>दशमानी में विधवा पत्नी को पंचों के सामने चूड़ियाँ पहनाई जाती हैं; पाटे पर बैठाने की visual memory.</td><td>Pata/पाटा पर widow seated.</td></tr>
+<tr><td><b>मोर दान</b></td><td>मृत्यु पर दिया गया दान; प्रधान/पुरोहित context.</td><td>मोर दान में मिल गया.</td></tr>
+<tr><td><b>दसोंदी</b></td><td>मोर दान लेने वाला व्यक्ति.</td><td>दशमानी में दान लेने वाला.</td></tr>
+<tr><td><b>खौल पाता / खल पाता</b></td><td>अंतिम संस्कार में गाए जाने वाले मृत्यु गीत.</td><td>“वह अच्छा खेल पाता था” memory link.</td></tr>
+</tbody></table>
+<div class="hot"><b>🔥 Exam Hot:</b> छठे दिन ध्रुव तारा, 12वें दिन नामकरण, 10वें दिन दशमानी/दशगात्र, पाटो प्रथा में चूड़ियाँ, खौल पाता मृत्यु गीत.</div>
+<div class="quiz"><h4>🧠 Quick Recall</h4><details class="qa"><summary>1. जन्म के छठे दिन क्या दिखाया जाता है?</summary><p>ध्रुव तारा.</p></details><details class="qa"><summary>2. जन्म के कितने दिन बाद नामकरण?</summary><p>12वें दिन.</p></details><details class="qa"><summary>3. मृत्यु के 10 दिन बाद कौन सी प्रथा?</summary><p>दशमानी / दशगात्र.</p></details><details class="qa"><summary>4. पाटो प्रथा में क्या होता है?</summary><p>विधवा को पंचों के सामने चूड़ियाँ पहनाई जाती हैं.</p></details><details class="qa"><summary>5. मृत्यु गीत का नाम?</summary><p>खौल पाता / खल पाता.</p></details></div>
+</section>
+
+<section id="s11" class="section" data-title="Master Full Forms">
+<span class="time">Master Section</span>
+<h2>🔤 Master Full Forms + Terms</h2>
+<table><thead><tr><th>Short form / term</th><th>Full form / meaning</th><th>Hinglish note</th></tr></thead><tbody>
+<tr><td>PYQ</td><td>Previous Year Question</td><td>पुराने exam questions; topic priority समझने के लिए.</td></tr>
+<tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>MP state services exam context.</td></tr>
+<tr><td>GI Tag</td><td>Geographical Indication Tag</td><td>Dindori Gond painting को 2023 में GI tag बताया गया.</td></tr>
+<tr><td>PESA</td><td>Panchayats (Extension to Scheduled Areas) Act</td><td>अनुसूचित क्षेत्रों में पंचायत provisions.</td></tr>
+<tr><td>ST</td><td>Scheduled Tribe</td><td>जनजाति category context.</td></tr>
+<tr><td>ODOP</td><td>One District One Product</td><td>कोदो-कुटकी context में district product discussion आया.</td></tr>
+<tr><td>Koya Punem</td><td>Gondi religious path / worship term</td><td>लिंगा देव से related.</td></tr>
+<tr><td>Koitor</td><td>Self-name of Gond</td><td>Gond स्वयं को कोईतोर कहते हैं.</td></tr>
+</tbody></table>
+</section>
+<section id="s12" class="section" data-title="Exam Hot Facts"><span class="time">Master Section</span><h2>🔥 Master Exam Hot Facts</h2><div class="hot"><b>One-shot revision:</b> नीचे सारे high-yield facts हैं.</div><ul><li><b>🔥</b> Gond = MP की दूसरी सबसे बड़ी जनजाति; share लगभग 33% / 33.25%.</li><li><b>🔥</b> Gond शब्द Telugu “Kond” से link; Kond = hill/पहाड़ी.</li><li><b>🔥</b> Gond स्वयं को Koitor कहते हैं.</li><li><b>🔥</b> Gond MP के लगभग सभी जिलों में मिलते हैं; concentration east + south/south-east; highest Chhindwara.</li><li><b>🔥</b> Gotra को Kur कहते हैं; same gotra marriage नहीं.</li><li><b>🔥</b> Agaria = iron work + Lohasur देवता.</li><li><b>🔥</b> Ojha = तांत्रिक क्रिया; Koila Bhutas = नाचना-गाना; Pradhan = पंडिताई.</li><li><b>🔥</b> Rajgond = landowners; Muria/Madia = पिछड़ा group + Ghotul connection.</li><li><b>🔥</b> Village chief names: Mukaddam, Gotia, Bhoi, Maji, Deshmukh.</li><li><b>🔥</b> Kotwar assists chief; Diwan gives secret information; Likhai = elder/writer; Panda/Guniya/Barua = tantric/healer.</li><li><b>🔥</b> Tola = Gond मोहल्ला; Faliya = Bhil मोहल्ला.</li><li><b>🔥</b> Pej = favorite food; Kodo-Kutki = staple; Mahua = Dev Ann.</li><li><b>🔥</b> Morning Basi, day Pej, night Biyari.</li><li><b>🔥</b> Jhum agriculture of Gond = Bari/Dahiya; Baiga = Bewar.</li><li><b>🔥</b> Unhali crops = wheat/gram/lentil/mustard; Siyari = paddy/sugarcane/groundnut/cotton.</li><li><b>🔥</b> Bada Dev = main Gond deity; white horse; Linga Dev = origin; Koya Punem = worship/path.</li><li><b>🔥</b> Khermai = village-protecting goddess; place = Mahua tree; Gond priest = Devari.</li><li><b>🔥</b> Birth: 6th day Dhruv Tara; 12th day naming.</li><li><b>🔥</b> Death: cremation + burial; 10th day Dasmani/Dashgatra; Pato Pratha; Mordan; Dasondi; Khoul Pata death song.</li><li><b>🔥</b> Dindori Patangarh = Gond painters; Dindori Gond art GI tag 2023; Durgabai Vyom Padma Shri 2022.</li><li><b>🔥</b> Shankar Shah & Raghunath Shah = 1857, cannon execution by British on 18 Sept 1857.</li></ul></section><section id="s13" class="section" data-title="Master Checklist"><span class="time">Master Section</span><h2>✅ Master Revision Checklist</h2><p class="meta">Checkboxes browser में save होंगे. Tick करते जाओ और progress देखो.</p><p><b id="checkCounter">0/0 completed</b></p><div class="checklist"><label><input type="checkbox" id="chk1"> <span>मैंने Bhil revision facts: Mama Baleshwar, Mahesh Sharma, Halma, Dapa, Jashma Devi revise कर लिया.</span></label><label><input type="checkbox" id="chk2"> <span>मैं जानता/जानती हूँ Gond MP की दूसरी सबसे बड़ी जनजाति है.</span></label><label><input type="checkbox" id="chk3"> <span>मैं 33% / 33.25% Gond share याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk4"> <span>मैं Gond शब्द = Kond = पहाड़ी याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk5"> <span>मैं Koitor self-name याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk6"> <span>मैं Chhindwara highest Gond concentration याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk7"> <span>मैं east/south-east MP concentration और reasons याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk8"> <span>मैं Proto-Australoid vs Dravidian views याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk9"> <span>मैं Gondwana founder Yadvarao Madavi याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk10"> <span>मैं Gondwana branches Garha-Mandla, Kherla, Deogarh याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk11"> <span>मैं Sangram Shah, Dalpat Shah, Rani Durgavati, Madhukar Shah, Shankar Shah, Raghunath Shah timeline revise कर चुका/चुकी हूँ.</span></label><label><input type="checkbox" id="chk12"> <span>मैं Ghotul concept और Verrier Elwin book याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk13"> <span>मैं Noh Dora और Digna art Gond से जोड़ता/जोड़ती हूँ.</span></label><label><input type="checkbox" id="chk14"> <span>मैं Dindori Patangarh Gond art और GI tag 2023 याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk15"> <span>मैं Durgabai Vyom + Padma Shri 2022 याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk16"> <span>मैं gotra = Kur और same gotra marriage नहीं याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk17"> <span>मैं Agaria = iron + Lohasur याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk18"> <span>मैं Pradhan = priest, Ojha = tantric, Solhas = wood, Koila Bhutas = dance/song याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk19"> <span>मैं Rajgond, Durgond, Madia/Muria, Khatulwar/Tulwar groups याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk20"> <span>मैं Gond society patriarchal है, यह याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk21"> <span>मैं village chief names Mukaddam/Gotia/Bhoi/Maji/Deshmukh याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk22"> <span>मैं Kotwar, Diwan, Likhai roles याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk23"> <span>मैं Panda/Guniya/Barua tantric roles याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk24"> <span>मैं Tola = Gond मोहल्ला और Faliya = Bhil मोहल्ला याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk25"> <span>मैं Pej, Kodo-Kutki, Mahua Dev Ann याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk26"> <span>मैं Basi-Pej-Biyari meal timing याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk27"> <span>मैं Gond dress: men langoti/pagdi, women ornaments/godna याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk28"> <span>मैं Bari/Dahiya = Gond jhum agriculture याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk29"> <span>मैं Unhali और Siyari crop examples याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk30"> <span>मैं Harvahi खेती का कारण याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk31"> <span>मैं Bada Dev main deity और white horse याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk32"> <span>मैं Linga Dev + Koya Punem याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk33"> <span>मैं Khairmai Devi + Mahua tree याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk34"> <span>मैं Devari = Gond priest याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk35"> <span>मैं birth ritual: 6th day Dhruv Tara, 12th day naming याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk36"> <span>मैं death ritual: Dasmani/Dashgatra, Pato, Mordan, Dasondi, Khoul Pata याद रखता/रखती हूँ.</span></label><label><input type="checkbox" id="chk37"> <span>मैं Shankar Shah/Raghunath Shah 18 Sep 1857 fact याद रखता/रखती हूँ.</span></label></div></section>
+<section id="s14" class="section" data-title="Upcoming / Footer">
+<span class="time">01:24:17 – 01:26:37</span>
+<h2>📌 Upcoming Topic + Final Revision Tips</h2>
+<div class="grid">
+<article class="card purple"><h3>Upcoming Topic</h3><ul><li>Teacher ने कहा कि Gond Janjati को अगले class में finish करने की कोशिश करेंगे.</li><li>इसलिए next class में likely remaining festivals/dances/art/customs continue हो सकते हैं.</li></ul></article>
+<article class="card cyan"><h3>Extra class note</h3><ul><li>End में 20/21 March पर सूर्य विषुवत रेखा पर लंबवत चमकता है और इसके बाद उत्तर भारत/MP में गर्मी बढ़ने लगती है — यह geography side-note था.</li><li>Promotional course/app details intentionally skip किए गए.</li></ul></article>
+</div>
+<div class="def"><b>Revision method:</b> पहले Master Exam Hot Facts पढ़ो → फिर Quick Recall answers खुद बोलो → फिर checklist टिक करो → अगले दिन सिर्फ red 🔥 points revise करो.</div>
+<footer class="meta">Created as a single offline-saveable HTML file with inline CSS/JS, online open-image references, theme toggle, progress indicator, accordions, quizzes and persistent checklist.</footer>
+</section>
+</main></div></div>
+<script>
+const root=document.documentElement;const savedTheme=localStorage.getItem('theme');if(savedTheme==='light')root.classList.add('light');
+const themeBtn=document.getElementById('themeBtn');themeBtn.addEventListener('click',()=>{root.classList.toggle('light');localStorage.setItem('theme',root.classList.contains('light')?'light':'dark');});
+const sections=[...document.querySelectorAll('.section')];const navLinks=[...document.querySelectorAll('#tocNav a')];const jump=document.getElementById('jumpMenu');const fjump=document.getElementById('floatingJump');
+sections.forEach(s=>{const opt=document.createElement('option');opt.value='#'+s.id;opt.textContent=s.querySelector('h2')?.innerText.replace(/\s+/g,' ').slice(0,80)||s.id;jump.appendChild(opt.cloneNode(true));fjump.appendChild(opt);});
+[jump,fjump].forEach(sel=>sel.addEventListener('change',e=>{location.hash=e.target.value;}));document.getElementById('topBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+function onScroll(){const y=scrollY;let active=null;sections.forEach(s=>{if(s.offsetTop-100<=y)active=s.id;});navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+active));const h=document.documentElement;const pct=Math.max(0,Math.min(100,(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100));document.getElementById('scrollProgress').style.width=pct+'%';document.getElementById('progressText').textContent='Revision progress: '+Math.round(pct)+'%';}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const checks=[...document.querySelectorAll('.checklist input[type="checkbox"]')];function updateChecks(){let done=0;checks.forEach(c=>{if(c.checked)done++;localStorage.setItem('gond_rev_'+c.id,c.checked?'1':'0');});document.getElementById('checkCounter').textContent=`${done}/${checks.length} completed`;}
+checks.forEach(c=>{c.checked=localStorage.getItem('gond_rev_'+c.id)==='1';c.addEventListener('change',updateChecks);});updateChecks();
+// Robust image loading: preload, retry through Special:FilePath if possible, show fallback link if still broken.
+document.querySelectorAll('img').forEach(img=>{const original=img.getAttribute('src');const test=new Image();test.decoding='async';test.onload=()=>{};test.onerror=()=>{let fileName=decodeURIComponent((original.split('/Special:FilePath/')[1]||'').split('?')[0]||'');if(fileName){img.src='https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(fileName)+'?width=900';setTimeout(()=>{if(!img.complete||img.naturalWidth===0){showFallback(img,original)}},2500);}else{showFallback(img,original)}};test.src=original;img.onerror=()=>showFallback(img,original);});
+function showFallback(img,url){const fig=img.closest('figure');if(fig&&!fig.querySelector('.fallback')){const p=document.createElement('p');p.className='fallback';p.style.padding='10px 12px';p.innerHTML='⚠️ Image load नहीं हुई. <a target="_blank" rel="noopener" href="'+url+'">Open image/source</a>';fig.appendChild(p);}}
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

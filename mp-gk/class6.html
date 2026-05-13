@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP GK Class 6 Revision — मध्य प्रदेश का भौगोलिक/भौतिक विभाजन</title>
+  <meta name="description" content="MP GK Class 6 revision HTML: Madhya Pradesh physical divisions, Malwa Plateau, Narmada-Son Valley, Satpura-Maikal Range, Eastern/Baghelkhand Plateau." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --surface: #17172a;
+      --surface-2: #202039;
+      --text: #f7fbff;
+      --muted: #dbe7ff;
+      --dim: #bfcbe7;
+      --border: rgba(255,255,255,.14);
+      --cyan: #00d4ff;
+      --orange: #ff6b35;
+      --green: #00ff88;
+      --purple: #b388ff;
+      --yellow: #ffe66d;
+      --danger: #ff477e;
+      --shadow: 0 18px 45px rgba(0,0,0,.28);
+      --radius: 20px;
+      --max: 920px;
+      --side: 300px;
+      --font: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    [data-theme="light"] {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3fb;
+      --text: #0f172a;
+      --muted: #26364f;
+      --dim: #506176;
+      --border: rgba(15,23,42,.14);
+      --shadow: 0 18px 45px rgba(38, 54, 79, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background:
+        radial-gradient(circle at top left, rgba(0,212,255,.16), transparent 32rem),
+        radial-gradient(circle at 70% 10%, rgba(179,136,255,.14), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: .01em;
+    }
+    a { color: var(--cyan); }
+    img { max-width: 100%; height: auto; display: block; }
+    .scroll-progress {
+      position: fixed; z-index: 1000; top: 0; left: 0; height: 5px;
+      width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green), var(--orange));
+      box-shadow: 0 0 20px rgba(0,212,255,.5);
+    }
+    .topbar {
+      position: sticky; top: 5px; z-index: 800;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .topbar-inner {
+      max-width: 1280px; margin: auto; padding: .65rem 1rem;
+      display: grid; grid-template-columns: 1fr auto auto; gap: .7rem; align-items: center;
+    }
+    .jump {
+      min-width: 230px; width: 100%;
+      border: 1px solid var(--border); border-radius: 999px; padding: .6rem .9rem;
+      background: var(--surface-2); color: var(--text); font: inherit;
+    }
+    .btn {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(0,212,255,.14), rgba(179,136,255,.14));
+      color: var(--text);
+      border-radius: 999px;
+      padding: .6rem .9rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: var(--font);
+      transition: transform .18s ease, border-color .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--cyan); }
+    .layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--side) minmax(0, var(--max));
+      gap: 1.1rem;
+      padding: 1rem;
+    }
+    aside {
+      position: sticky;
+      top: 76px;
+      align-self: start;
+      max-height: calc(100vh - 92px);
+      overflow: auto;
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+    .toc h2 { margin: .2rem 0 .7rem; font-size: 1.05rem; }
+    .toc a {
+      display: flex; align-items: center; gap: .5rem;
+      color: var(--muted); text-decoration: none; padding: .58rem .65rem;
+      border-radius: 14px; border: 1px solid transparent;
+      font-weight: 600;
+    }
+    .toc a:hover, .toc a.active {
+      background: rgba(0,212,255,.1); border-color: rgba(0,212,255,.28); color: var(--text);
+    }
+    .toc .dot { width: .65rem; height: .65rem; border-radius: 999px; background: var(--cyan); box-shadow: 0 0 15px var(--cyan); flex: 0 0 auto; }
+    .map-panel { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
+    .map-panel img { border-radius: 16px; border: 1px solid var(--border); background: #fff; }
+    .cap { font-size: .84rem; color: var(--dim); margin-top: .45rem; line-height: 1.4; }
+    main { min-width: 0; }
+    header.hero {
+      background:
+        linear-gradient(135deg, rgba(0,212,255,.16), rgba(179,136,255,.14)),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(1.2rem, 4vw, 2.2rem);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero:before {
+      content: "";
+      position: absolute; inset: -60% auto auto 60%;
+      width: 24rem; height: 24rem; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,53,.2), transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; gap: .5rem; align-items: center;
+      background: rgba(0,255,136,.12);
+      color: var(--green);
+      border: 1px solid rgba(0,255,136,.32);
+      border-radius: 999px; padding: .35rem .7rem; font-weight: 800;
+    }
+    h1 { font-size: clamp(2rem, 6vw, 4.1rem); line-height: 1.05; margin: .9rem 0 .8rem; letter-spacing: -.03em; }
+    h2 { font-size: clamp(1.55rem, 4vw, 2.35rem); line-height: 1.18; margin: 0 0 1rem; }
+    h3 { font-size: 1.28rem; margin: 0 0 .6rem; }
+    h4 { font-size: 1.08rem; margin: .2rem 0 .45rem; }
+    .subhead { color: var(--muted); max-width: 70ch; font-size: 1.08rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 0; }
+    .badge {
+      border: 1px solid var(--border); background: rgba(255,255,255,.06);
+      border-radius: 999px; padding: .45rem .75rem; color: var(--muted); font-weight: 700;
+    }
+    .section {
+      margin: 1.2rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      animation: rise .5s ease both;
+      scroll-margin-top: 90px;
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .section-header {
+      display: flex; flex-direction: column; gap: .35rem;
+      padding: 1rem; border-radius: 22px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, transparent), transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+      margin-bottom: 1rem;
+    }
+    .time { color: var(--accent); font-weight: 800; font-size: .92rem; letter-spacing: .05em; text-transform: uppercase; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+    .card, details, .quiz, .exam, .definition, .mnemonic {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    }
+    .card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+    .full { grid-column: 1 / -1; }
+    ul, ol { padding-left: 1.15rem; margin: .4rem 0; }
+    li { margin: .25rem 0; }
+    strong { color: var(--yellow); }
+    .hilite {
+      display: inline; padding: .08rem .35rem; border-radius: 8px;
+      background: rgba(255,230,109,.12); color: var(--yellow); font-weight: 800;
+    }
+    .exam { border-color: rgba(255,107,53,.38); background: linear-gradient(135deg, rgba(255,107,53,.13), var(--surface-2)); }
+    .definition { border-color: rgba(0,212,255,.35); background: linear-gradient(135deg, rgba(0,212,255,.10), var(--surface-2)); }
+    .mnemonic { border-color: rgba(0,255,136,.35); background: linear-gradient(135deg, rgba(0,255,136,.10), var(--surface-2)); }
+    details { padding: 0; overflow: hidden; }
+    summary {
+      cursor: pointer; padding: .9rem 1rem; font-weight: 800;
+      background: rgba(255,255,255,.04); list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    details .details-body { padding: .2rem 1rem 1rem; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 16px; margin: .7rem 0; }
+    th, td { border: 1px solid var(--border); padding: .65rem .7rem; vertical-align: top; }
+    th { background: rgba(0,212,255,.13); text-align: left; color: var(--text); }
+    tr:nth-child(even) td { background: rgba(255,255,255,.025); }
+    .visual {
+      overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .visual img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover;
+      background: #fff;
+    }
+    .visual .cap { padding: .65rem .8rem .8rem; margin: 0; }
+    .diagram {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap; line-height: 1.55; font-size: .94rem;
+      border: 1px dashed color-mix(in srgb, var(--accent) 50%, var(--border));
+      background: rgba(0,0,0,.12);
+      border-radius: 18px; padding: 1rem;
+      color: var(--muted);
+      overflow: auto;
+    }
+    .quiz-item {
+      border: 1px solid var(--border); border-radius: 16px; padding: .8rem; margin: .6rem 0;
+      background: rgba(255,255,255,.035);
+    }
+    .answer {
+      display: none; margin-top: .55rem; padding: .65rem; border-radius: 12px;
+      background: rgba(0,255,136,.1); border: 1px solid rgba(0,255,136,.22);
+      color: var(--text);
+    }
+    .quiz-item.revealed .answer { display: block; }
+    .mini-btn {
+      margin-top: .45rem; border: 1px solid var(--border); border-radius: 999px;
+      padding: .35rem .65rem; background: rgba(255,255,255,.06); color: var(--text); cursor: pointer;
+      font-weight: 700; font-family: var(--font);
+    }
+    .checklist label {
+      display: flex; gap: .65rem; align-items: flex-start;
+      padding: .65rem .7rem; border: 1px solid var(--border); border-radius: 14px; margin: .45rem 0;
+      background: rgba(255,255,255,.035);
+    }
+    .checklist input { margin-top: .35rem; width: 1.1rem; height: 1.1rem; accent-color: var(--green); }
+    .progress-box {
+      display: grid; grid-template-columns: 1fr auto; gap: .6rem; align-items: center;
+      margin: .8rem 0; padding: .75rem; border: 1px solid var(--border); border-radius: 18px; background: var(--surface-2);
+    }
+    .meter { height: .85rem; border-radius: 999px; background: rgba(255,255,255,.09); overflow: hidden; }
+    .meter span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--green), var(--cyan)); }
+    .cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+    .stat {
+      border: 1px solid var(--border); border-radius: 18px; padding: .8rem;
+      background: rgba(255,255,255,.045);
+    }
+    .stat b { display: block; font-size: 1.5rem; color: var(--accent); }
+    .fallback {
+      display:none; padding:.7rem; background: rgba(255,71,126,.12); border: 1px solid rgba(255,71,126,.3);
+      color: var(--text);
+    }
+    footer { margin: 1.2rem 0 3rem; color: var(--muted); text-align: center; }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; padding: .8rem; }
+      aside { position: static; max-height: none; }
+      .toc .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .2rem; }
+      .topbar-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { font-size: 17px; }
+      .grid, .cols-3 { grid-template-columns: 1fr; }
+      .toc .links { grid-template-columns: 1fr; }
+      .section { padding: .8rem; border-radius: 22px; }
+      .card, details, .quiz, .exam, .definition, .mnemonic { padding: .85rem; }
+      th, td { font-size: .94rem; padding: .55rem; }
+    }
+    @media print {
+      :root, [data-theme="light"], body { --bg: #fff; --surface:#fff; --surface-2:#fff; --text:#000; --muted:#111; --dim:#333; --border:#999; }
+      body { background: #fff; font-size: 12pt; }
+      .topbar, aside, .scroll-progress, .btn, .mini-btn { display: none !important; }
+      .layout { display: block; max-width: none; }
+      .section, .card, details, .quiz, .exam, .definition, .mnemonic, header.hero { box-shadow: none; break-inside: avoid; }
+      details { border: 1px solid #999; }
+      details:not([open]) .details-body { display:block; }
+      summary { border-bottom: 1px solid #999; }
+      .answer { display:block; }
+      a { color:#000; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <nav class="topbar" aria-label="Quick navigation">
+    <div class="topbar-inner">
+      <select class="jump" id="jumpMenu" aria-label="Jump to topic">
+        <option value="#top">Jump to topic...</option>
+        <option value="#overview">00:03 Overview: Physical Divisions</option>
+        <option value="#malwa">00:07 Malwa Plateau</option>
+        <option value="#narmada">00:27 Narmada-Son Valley</option>
+        <option value="#satpura">00:43 Satpura-Maikal Range</option>
+        <option value="#eastern">01:03 Eastern / Baghelkhand Plateau</option>
+        <option value="#master">Master Revision</option>
+      </select>
+      <button class="btn" id="themeToggle">🌙 Dark / ☀️ Light</button>
+      <button class="btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </nav>
+
+  <div class="layout" id="top">
+    <aside class="toc" aria-label="Table of contents">
+      <h2>🗂️ Table of Contents</h2>
+      <div class="links">
+        <a href="#overview"><span class="dot"></span> Overview</a>
+        <a href="#malwa"><span class="dot"></span> Malwa Plateau</a>
+        <a href="#narmada"><span class="dot"></span> Narmada-Son Valley</a>
+        <a href="#satpura"><span class="dot"></span> Satpura-Maikal</a>
+        <a href="#eastern"><span class="dot"></span> Eastern Plateau</a>
+        <a href="#master"><span class="dot"></span> Master Revision</a>
+      </div>
+
+      <div class="map-panel">
+        <h3>🗺️ Sticky MP Map Reference</h3>
+        <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district reference map for revision" loading="eager" fetchpriority="high" decoding="async" data-fallback="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif">
+        <p class="cap">Image: SLBC Madhya Pradesh reference map. Use while revising district placement. License/source: official public web reference page.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <span class="eyebrow">MP GK • Lecture 6 • Revision HTML</span>
+        <h1>🌄 मध्य प्रदेश का भौगोलिक / भौतिक विभाजन</h1>
+        <p class="subhead">
+          Hinglish revision page for side-by-side video study: <strong>Physical / Natural / Geographic Divisions of MP — Part 2</strong>. Promotional greetings/ad parts skip kiye gaye hain; educational flow transcript ke order mein रखा गया है.
+        </p>
+        <div class="badges">
+          <span class="badge">🎯 Exam: MPPSC + MP GK Exams</span>
+          <span class="badge">📌 Major Topics: 5</span>
+          <span class="badge">🔥 Exam Hot Facts Included</span>
+          <span class="badge">✅ Persistent Checklist</span>
+        </div>
+      </header>
+
+      <section id="overview" class="section" style="--accent: var(--cyan)">
+        <div class="section-header">
+          <span class="time">00:03:10 – 00:07:59</span>
+          <h2>🧭 Class Flow Recap: Physical Division / भौतिक विभाजन</h2>
+          <p>Teacher ne topic ko कई नामों से बताया: <strong>Physiographic Division, Physical Division, Physical Natural Division, Geographic Division</strong> — Hindi में <strong>भौतिक विभाजन</strong>.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🎯 Topic Identity</h3>
+            <ul>
+              <li>आज का topic: <strong>मध्य प्रदेश का भौगोलिक विभाजन</strong>.</li>
+              <li>Lecture number: <strong>MP GK Lecture 6</strong>.</li>
+              <li>यह <strong>Part 2</strong> है — previous lecture ka recap भी दिया गया.</li>
+              <li>Teacher ने बोला: new student ko tension nahi, यहाँ से भी समझ आएगा.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🔢 3 Main vs 7 Total Divisions</h3>
+            <ul>
+              <li><span class="hilite">मुख्य रूप से</span> MP को <strong>3 भागों</strong> में समझाया गया.</li>
+              <li><span class="hilite">कुल / total</span> MP को <strong>7 divisions</strong> में divide किया गया.</li>
+              <li>Rule: question में “मुख्य/main” आए तो <strong>3</strong>; “कुल/total” आए तो <strong>7</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🗂️ 3 Main Divisions</h3>
+            <ol>
+              <li><strong>मध्य उच्च प्रदेश</strong> — Central Highland.</li>
+              <li><strong>सतपुड़ा-मैकल / सतपुड़ा पर्वत श्रंखला</strong> — Satpura Mountain Range.</li>
+              <li><strong>पूर्वी पठार</strong> — Eastern Plateau.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>✅ Already Covered in Previous Lecture</h3>
+            <ol>
+              <li><strong>मध्य भारत पठार</strong> — Madhya Bharat Plateau.</li>
+              <li><strong>बुंदेलखंड का पठार</strong> — Bundelkhand Plateau.</li>
+              <li><strong>रीवा-पन्ना पठार</strong> — Rewa-Panna Plateau.</li>
+            </ol>
+            <p>आज fourth division से class आगे बढ़ती है: <strong>मालवा का पठार</strong>.</p>
+          </div>
+
+          <div class="visual full">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/India_Madhya_Pradesh_physical.svg" alt="Physical map of Madhya Pradesh showing plateaus, valleys and hills" loading="eager" fetchpriority="high" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:India_Madhya_Pradesh_physical.svg">
+            <p class="cap">Image: Wikimedia Commons, “India Madhya Pradesh physical.svg”, creator Goran tek-en, CC BY-SA 4.0. This physical map helps connect plateau/valley/hill names with the lecture flow.</p>
+          </div>
+
+          <div class="definition full">
+            <h3>📌 याद रखने वाली Core बात</h3>
+            <p><strong>MP mainly plateau-dominated state</strong> है. इसलिए teacher ने बार-बार plateau, valley और mountain range के relation ko map से link करके समझाया.</p>
+          </div>
+        </div>
+
+        <div class="quiz full">
+          <h3>⚡ Quick Recall — Overview</h3>
+          <div class="quiz-item"><b>Q1.</b> MP ke physical divisions को main कितने parts में बताया गया?<button class="mini-btn">Answer</button><div class="answer">Main रूप से 3 parts.</div></div>
+          <div class="quiz-item"><b>Q2.</b> कुल divisions कितने हैं?<button class="mini-btn">Answer</button><div class="answer">Total 7 divisions.</div></div>
+          <div class="quiz-item"><b>Q3.</b> “मध्य उच्च प्रदेश” ka English term क्या बताया गया?<button class="mini-btn">Answer</button><div class="answer">Central Highland.</div></div>
+        </div>
+      </section>
+
+      <section id="malwa" class="section" style="--accent: var(--orange)">
+        <div class="section-header">
+          <span class="time">00:07:59 – 00:26:27</span>
+          <h2>🌋 4th Division: मालवा का पठार / Plateau of Malwa</h2>
+          <p>यह Central Highland ke अंदर चौथा division है. Teacher ने इसे MP ka <strong>सबसे बड़ा पठार / natural region</strong> बताया.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🪨 Formation: Deccan Trap + Basalt</h3>
+            <ul>
+              <li>Malwa Plateau ko <strong>Deccan Plateau / Peninsular Plateau</strong> ka <strong>northern part</strong> बताया गया.</li>
+              <li>Deccan Trap ki <strong>basalt rocks</strong> से इसका निर्माण बताया गया.</li>
+              <li>Volcano / ज्वालामुखी से निकलने वाला hot liquid material = <strong>lava</strong>.</li>
+              <li>Lava ठंडा होकर <strong>hard rock</strong> बनता है.</li>
+              <li>Grey lava rock → <strong>Granite</strong>; black lava rock → <strong>Basalt</strong>.</li>
+              <li>Basalt ka black color <strong>iron / लोहे की अधिकता</strong> और <strong>titaniferous magnetite</strong> se समझाया गया.</li>
+            </ul>
+          </div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Deccan_traps.png" alt="Map and geological representation of Deccan Traps lava region" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Deccan_traps.png">
+            <p class="cap">Image: Wikimedia Commons, “Deccan traps.png”, CC BY-SA 4.0. Use this for Deccan Trap–lava–basalt connection.</p>
+          </div>
+
+          <div class="card">
+            <h3>📏 Height, Area, Share</h3>
+            <ul>
+              <li>Average altitude: <strong>500 m – 800 m</strong>.</li>
+              <li>Area: teacher ne <strong>88,222 sq km</strong> बताया.</li>
+              <li>MP area share: around <strong>28.6%</strong>.</li>
+              <li><strong>MP ka सबसे बड़ा natural region / सबसे बड़ा पठार</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🗺️ District Flow</h3>
+            <ul>
+              <li>Major/full Malwa districts: <strong>Ratlam, Agar Malwa, Ujjain, Rajgarh, Vidisha, Bhopal, Raisen, Dewas, Indore, Shajapur, Dhar, Jhabua, Alirajpur</strong>.</li>
+              <li>Some parts: <strong>Sagar, Ashoknagar, Mandsaur, Neemuch, Guna</strong>.</li>
+              <li>Teacher ka exam logic: दो region में आते districts पर question usually नहीं बनेगा; clear/full district पर question आएगा.</li>
+              <li>Examples: <strong>Bhopal, Vidisha, Rajgarh</strong> → Malwa Plateau में पढ़ना.</li>
+            </ul>
+          </div>
+
+          <div class="visual full">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Malwa_Map.jpg" alt="Historical map showing Malwa region in central India" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Malwa_Map.jpg">
+            <p class="cap">Image: Wikimedia Commons, “Malwa Map.jpg”, historical map from Public Schools Historical Atlas / public-domain style map page. It helps locate Malwa in central India.</p>
+          </div>
+
+          <div class="card">
+            <h3>🌳 Vegetation / वनस्पति</h3>
+            <ul>
+              <li>Malwa में बहुत dense special vegetation नहीं बताई गई क्योंकि rainfall relatively कम है.</li>
+              <li>Main type: <strong>Mixed Forest / मिश्रित वन</strong>.</li>
+              <li>Examples: <strong>सागौन, साल, बाँस, तेंदू पत्ता</strong> — mixed forest form में.</li>
+              <li>Teacher ने clarify किया: साल का main region Mandla side है; सागौन Narmadapuram/Raisen side में important है.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌡️ Climate: Fahiyan Example</h3>
+            <ul>
+              <li>Chinese traveller <strong>Fahiyan</strong> ka example: coat/sigri laya tha, लेकिन climate अच्छा लगा.</li>
+              <li>Fahiyan ने Malwa climate को <strong>विश्व की सर्वश्रेष्ठ समशीतोष्ण जलवायु</strong> कहा.</li>
+              <li>समशीतोष्ण = समान रूप से शीत + समान रूप से उष्णता.</li>
+              <li>Summer avg: <strong>38°C – 42°C</strong>.</li>
+              <li>Winter avg: <strong>12°C – 18°C</strong>.</li>
+              <li>Rainfall: <strong>75 cm – 125 cm</strong> variation; Rajasthan side कम, Narmadapuram side ज्यादा.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌊 Rivers / नदियाँ</h3>
+            <ul>
+              <li><strong>Chambal</strong> — Malwa aur Madhya Bharat दोनों context में.</li>
+              <li><strong>Shipra</strong> — Maa Shipra.</li>
+              <li><strong>Parvati</strong>.</li>
+              <li><strong>Kali Sindh</strong>.</li>
+              <li><strong>Shivna</strong>.</li>
+              <li><strong>Newaj</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛏️ Minerals / खनिज</h3>
+            <ul>
+              <li>Malwa में minerals बहुत ज्यादा नहीं हैं.</li>
+              <li><strong>Rock Phosphate</strong> — Jhabua/Dhar side; fertilizer / उर्वरक बनाने में use.</li>
+              <li><strong>Asbestos</strong>.</li>
+              <li><strong>Limestone / चूना पत्थर</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌱 Soil + Crops</h3>
+            <ul>
+              <li>Soil: <strong>Black Soil / काली मृदा</strong>.</li>
+              <li>Black color reason: <strong>iron + titaniferous magnetite</strong>.</li>
+              <li>Crops: <strong>Wheat, Soybean, Cotton, Opium</strong>.</li>
+              <li><strong>Basket of Wheat / गेहूं की डलिया</strong> — Malwa Plateau.</li>
+              <li>Soybean = <strong>oilseed / तिलहनी फसल</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛰️ Peaks + Tropic of Cancer</h3>
+            <ul>
+              <li>Highest peak of Malwa Plateau: <strong>Sigar Peak / सिगार चोटी</strong>.</li>
+              <li>Location: <strong>Indore district</strong>.</li>
+              <li>Height: <strong>881 m</strong>.</li>
+              <li>Other peaks: <strong>Janapav, Goman Apu, Dhajji</strong>.</li>
+              <li><strong>Tropic of Cancer / कर्क रेखा</strong> Malwa Plateau ko <strong>दो बराबर भागों</strong> में divide करती है.</li>
+            </ul>
+          </div>
+
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tropic_of_cancer_nadia_wb_india.jpg" alt="Tropic of Cancer marker used as visual anchor for Kark Rekha concept" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Tropic_of_cancer_nadia_wb_india.jpg">
+            <p class="cap">Image: Wikimedia Commons, creator Susantab, CC BY-SA 3.0. Visual anchor for Tropic of Cancer / कर्क रेखा.</p>
+          </div>
+          <div class="exam">
+            <h3>🔥 Exam Hot — Malwa</h3>
+            <ul>
+              <li>Main vs total division: <strong>3 vs 7</strong>.</li>
+              <li>Malwa = <strong>largest natural region / largest plateau</strong> of MP.</li>
+              <li>Malwa formed from <strong>basalt rocks of Deccan Trap</strong>.</li>
+              <li><strong>Fahiyan</strong> linked with world’s best temperate climate of Malwa.</li>
+              <li><strong>Basket of Wheat</strong> = Malwa Plateau.</li>
+              <li><strong>Sigar Peak</strong> = highest peak of Malwa Plateau, 881 m, Indore.</li>
+              <li><strong>Kark Rekha</strong> divides Malwa into two equal parts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <details open>
+          <summary>🧠 Malwa Memory Trick</summary>
+          <div class="details-body">
+            <p><strong>“Ma-La-Ba-Se-Ka”</strong> याद रखो: <strong>Ma</strong>lwa → <strong>La</strong>va → <strong>Ba</strong>salt → <strong>Se</strong> black soil → <strong>Ka</strong>li मृदा. Crops के लिए: <strong>“Ge-So-Ka-Af”</strong> = गेहूं, सोयाबीन, कपास, अफीम.</p>
+          </div>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall — Malwa</h3>
+          <div class="quiz-item"><b>Q1.</b> Malwa Plateau kis rock se bana बताया गया?<button class="mini-btn">Answer</button><div class="answer">Basalt rocks of Deccan Trap.</div></div>
+          <div class="quiz-item"><b>Q2.</b> Malwa Plateau ko wheat ke context में क्या कहा गया?<button class="mini-btn">Answer</button><div class="answer">Basket of Wheat / गेहूं की डलिया.</div></div>
+          <div class="quiz-item"><b>Q3.</b> Sigar Peak kaha hai aur height कितनी?<button class="mini-btn">Answer</button><div class="answer">Indore district; 881 m.</div></div>
+          <div class="quiz-item"><b>Q4.</b> Malwa climate ko best किसने कहा?<button class="mini-btn">Answer</button><div class="answer">Chinese traveller Fahiyan.</div></div>
+        </div>
+      </section>
+
+      <section id="narmada" class="section" style="--accent: var(--green)">
+        <div class="section-header">
+          <span class="time">00:27:33 – 00:43:32</span>
+          <h2>🌊 5th Division: नर्मदा-सोन घाटी / Narmada-Son Valley</h2>
+          <p>Teacher ने इसे <strong>Rift Valley / Fault Valley / भ्रंश घाटी</strong> बताया — hard rocks की खड़ी दीवारों और pressure explanation के साथ.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🪨 What is Rift / Fault Valley?</h3>
+            <ul>
+              <li>Narmada-Son Valley = <strong>Rift Valley / Fault Valley / भ्रंश घाटी</strong>.</li>
+              <li>Hard rocks / कठोर पत्थरों की खड़ी दीवारों से बनी valley.</li>
+              <li>MP ka सबसे निचला स्थान भी इसी context में बताया गया.</li>
+              <li><strong>Patalkot Valley</strong> — Tamia tehsil, Chhindwara.</li>
+              <li>Patalkot = <strong>Bharia tribe</strong> ka निवास स्थल.</li>
+              <li>Average height/depth: <strong>300 m – 400 m</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🧱 Rock Structure</h3>
+            <ul>
+              <li>Western part: <strong>Deccan Trap / Basalt rocks</strong>.</li>
+              <li>Eastern part: <strong>Vindhyan rocks + Gondwana rock groups</strong>.</li>
+              <li>Mainly <strong>Narmada River</strong> flow करती है; east side se <strong>Son River</strong> originate/flow context दिया गया.</li>
+              <li>इसीलिए नाम: <strong>Narmada-Son Valley</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="visual full">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Marble_Rocks_-_Jabalpur.jpg" alt="Marble Rocks along Narmada River near Jabalpur as Narmada valley visual" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Marble_Rocks_-_Jabalpur.jpg">
+            <p class="cap">Image: Wikimedia Commons, “Marble Rocks - Jabalpur.jpg”, license as stated on Wikimedia file page. Visual anchor for Narmada valley and Jabalpur marble/white marble context.</p>
+          </div>
+
+          <div class="card">
+            <h3>📏 Area + Ranking</h3>
+            <ul>
+              <li>Area: approx <strong>86,000 sq km</strong>.</li>
+              <li>Malwa ke baad <strong>दूसरा बड़ा भूभाग</strong>.</li>
+              <li>Teacher ne Anuppur ko समझाया: यह तीन जगह divide हो सकता है — Baghelkhand, Narmada-Son, Satpura-Maikal.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🗺️ Districts</h3>
+            <ul>
+              <li>Major: <strong>Mandla, Dindori, Jabalpur, Narsinghpur, Khargone, Khandwa</strong>.</li>
+              <li>Narmadapuram ka lower part Narmada valley side; upper part Malwa side.</li>
+              <li>Some parts: <strong>Devas, Barwani, Sehore, Jhabua, Narmadapuram</strong>.</li>
+              <li>Exam note: mixed districts पर confused नहीं होना — exam usually clear district देगा.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌳 Vegetation</h3>
+            <ul>
+              <li><strong>Teakwood / सागौन</strong> — Narmadapuram side.</li>
+              <li><strong>Tendu Patta / Ebony</strong> — Jabalpur side context.</li>
+              <li><strong>Sal tree</strong> — Mandla-Dindori belt में valley spread होने के कारण.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌡️ Climate</h3>
+            <ul>
+              <li>Climate: <strong>Hot and moderately cold</strong>.</li>
+              <li>Teacher ने इसे <strong>Monsoon type climate / मानसूनी जलवायु</strong> बताया.</li>
+              <li>Monsoon climate rainfall पर depend करती है: rain ज्यादा तो coldness थोड़ी ज्यादा.</li>
+              <li>Summer: <strong>40°C – 42°C</strong>.</li>
+              <li>Winter: <strong>12°C – 18°C</strong>.</li>
+              <li>Rainfall: <strong>57 cm – 140 cm</strong> — west/Rajasthan side कम, east/Mandla side heavy.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌊 Rivers + Soil + Crops</h3>
+            <ul>
+              <li>Main river: <strong>Narmada</strong>.</li>
+              <li>Son को चाहें तो mention कर सकते हैं, but main valley में Narmada emphasized.</li>
+              <li>Tawa ka origin Satpura-Maikal से है; इसलिए teacher ने Tawa को आगे Satpura में रखना prefer किया.</li>
+              <li>Soil: <strong>Layered Black / Dark Black / गहरी काली मृदा</strong>.</li>
+              <li>Reason: valley depth में दोनों sides से काली मिट्टी layers बनाती जाती है.</li>
+              <li>Crops: <strong>Wheat, Paddy, Gram</strong> — गेहूं, धान, चना.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>⛏️ Minerals</h3>
+            <ul>
+              <li><strong>Coal / कोयला</strong> — Sawar-Tawa region context.</li>
+              <li><strong>Fire clay / अग्नि-सह मिट्टी</strong>.</li>
+              <li><strong>White Marble / सफेद संगमरमर</strong> — Jabalpur district context.</li>
+            </ul>
+          </div>
+
+          <div class="definition full">
+            <h3>🧠 Teacher’s Pressure Explanation: Fault Valley kaise banti hai?</h3>
+            <div class="diagram">Vindhya Range (ऊपर / North)
+        भारी पत्थर + दबाव
+              ↓
+       बीच का हिस्सा धंसता है
+              ↓
+   भ्रंश / Fault / Rift Valley बनती है
+              ↑
+        भारी पत्थर + दबाव
+Satpura Range (नीचे / South)
+
+इस depression में Narmada River flow करती है.</div>
+          </div>
+
+          <div class="exam full">
+            <h3>🔥 Exam Hot — Narmada-Son Valley</h3>
+            <ul>
+              <li><strong>Rift/Fault/भ्रंश घाटी</strong> शब्द याद रखें.</li>
+              <li><strong>Patalkot</strong> — Tamia, Chhindwara; MP lowest-place context; Bharia tribe.</li>
+              <li>West rocks: <strong>Deccan Trap</strong>; East rocks: <strong>Vindhyan + Gondwana</strong>.</li>
+              <li>Malwa ke baad <strong>दूसरा बड़ा region</strong>.</li>
+              <li>Soil: <strong>Layered/Dark Black</strong> because valley में layers बनती हैं.</li>
+              <li>Minerals: <strong>Coal, Fire Clay, White Marble</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall — Narmada-Son</h3>
+          <div class="quiz-item"><b>Q1.</b> Narmada-Son Valley ko किस type की valley कहा?<button class="mini-btn">Answer</button><div class="answer">Rift Valley / Fault Valley / भ्रंश घाटी.</div></div>
+          <div class="quiz-item"><b>Q2.</b> Patalkot kaha hai?<button class="mini-btn">Answer</button><div class="answer">Tamia tehsil, Chhindwara; Bharia tribe निवास स्थल.</div></div>
+          <div class="quiz-item"><b>Q3.</b> Narmada-Son Valley ki soil क्यों dark black है?<button class="mini-btn">Answer</button><div class="answer">Valley depth में दोनों sides से काली मिट्टी की layers जमा होती हैं.</div></div>
+          <div class="quiz-item"><b>Q4.</b> White marble किस district context में बताया गया?<button class="mini-btn">Answer</button><div class="answer">Jabalpur.</div></div>
+        </div>
+      </section>
+
+      <section id="satpura" class="section" style="--accent: var(--purple)">
+        <div class="section-header">
+          <span class="time">00:43:32 – 01:03:39</span>
+          <h2>⛰️ 6th Division: सतपुड़ा-मैकल श्रेणी / Satpura-Maikal Range</h2>
+          <p>Narmada aur Tapti ke beech फैली range. Teacher ne clear बताया: Satpura Range को <strong>3 parts</strong> में divide किया जाता है.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🧭 Location + 3 Parts</h3>
+            <ul>
+              <li>ऊपर/North side: <strong>Narmada River</strong>.</li>
+              <li>नीचे/South side: <strong>Tapti River</strong>.</li>
+              <li>Satpura Range = Narmada और Tapti के बीच.</li>
+              <li>Eastern part: <strong>Maikal Range</strong>.</li>
+              <li>Middle/Central part: <strong>Mahadev Range</strong>.</li>
+              <li>Western part: <strong>Rajpipla Range</strong>.</li>
+            </ul>
+          </div>
+          <div class="definition">
+            <h3>📊 Simple Flow</h3>
+            <div class="diagram">West ──────────────── East
+Rajpipla → Mahadev → Maikal
+
+Narmada River  ↑
+Satpura Range  ⛰️
+Tapti River    ↓</div>
+          </div>
+
+          <div class="card">
+            <h3>🪨 Rocks + Mineral Wealth</h3>
+            <ul>
+              <li>Formation: <strong>Deccan + Archaean era rocks</strong>.</li>
+              <li>Archaean group context में <strong>Dharwar rocks</strong> बताई गई.</li>
+              <li>Western side: Deccan Trap rocks.</li>
+              <li>Balaghat side: Archaean/Dharwar rocks.</li>
+              <li>Because of this, Satpura region = <strong>MP ka mineral-rich region</strong>.</li>
+              <li>Metallic minerals: manganese, copper, iron, bauxite etc.</li>
+            </ul>
+          </div>
+          <div class="visual">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mount_Dhupgarh,_Pachmarhi.jpg" alt="Mount Dhupgarh at Pachmarhi, highest peak of Madhya Pradesh and Satpura" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Mount_Dhupgarh,_Pachmarhi.jpg">
+            <p class="cap">Image: Wikimedia Commons, “Mount Dhupgarh, Pachmarhi.jpg”, free license as listed on Wikimedia file page. Visual anchor for Dhupgarh/Satpura highest peak.</p>
+          </div>
+
+          <div class="card">
+            <h3>🌳 Vegetation</h3>
+            <ul>
+              <li><strong>Sal tree</strong> — Mandla/Balaghat side context.</li>
+              <li><strong>Teakwood / सागौन</strong>.</li>
+              <li><strong>Tendu Patta / Ebony</strong>.</li>
+              <li><strong>Bamboo / बाँस</strong> — Balaghat side context.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌡️ Climate + Rainfall</h3>
+            <ul>
+              <li>Climate: <strong>Hot and normal/moderately cold</strong>.</li>
+              <li>Teacher corrected: “अधिक ठंडा” नहीं, <strong>सामान्य ठंडा</strong>.</li>
+              <li>Climate type: <strong>Monsoon type climate</strong>.</li>
+              <li>Summer avg: <strong>40°C – 45°C</strong>.</li>
+              <li>Winter avg: <strong>10°C – 12°C</strong>.</li>
+              <li>Rainfall: <strong>60 cm – 140 cm</strong> — west में कम, Balaghat/Lanji hills side ज्यादा.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>📏 Height, Highest Peak, Area</h3>
+            <ul>
+              <li>Average altitude: <strong>600 m – 1000 m</strong>.</li>
+              <li>Highest peak of MP + Satpura: <strong>Dhupgarh</strong>.</li>
+              <li>Height: teacher ne <strong>1350 m</strong> बताया.</li>
+              <li>Location: <strong>Pachmarhi, Narmadapuram</strong>.</li>
+              <li>Also called: <strong>Nagfani Parvat</strong>; comment में <strong>Harwat Scoot</strong> type reference भी mention हुआ.</li>
+              <li>Area: <strong>34,000 sq km</strong>; state share: <strong>11.20%</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🗺️ Districts</h3>
+            <ul>
+              <li>Clear/full districts: <strong>Balaghat, Seoni, Chhindwara, Pandhurna, Betul, Burhanpur, Barwani</strong>.</li>
+              <li>Some part: <strong>Khandwa, Narmadapuram, Anuppur, Mandla</strong>.</li>
+              <li>Anuppur को teacher ने 3-part common district बताया: north Baghelkhand, west Narmada-Son, south Maikal/Satpura.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌊 Rivers</h3>
+            <ul>
+              <li><strong>Tawa</strong> — Kali Bheet hills / Satpura context.</li>
+              <li><strong>Wainganga</strong>.</li>
+              <li><strong>Shakkar</strong> — Amarwara, Chhindwara context.</li>
+              <li><strong>Wardha</strong>.</li>
+              <li><strong>Tapti</strong> — originates around Betul.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌱 Soil + Crops</h3>
+            <ul>
+              <li>Main soil: <strong>छिछली काली मृदा / shallow black soil</strong>.</li>
+              <li>Some parts: <strong>Laterite soil</strong> भी मिल सकती है.</li>
+              <li>Crops: <strong>Millets, Ragi, Kodo-Kutki, Rice/Paddy, Corn, Ganja, Cotton</strong>.</li>
+              <li>Teacher ने Burhanpur side ganja और Khargone/Khandwa side cotton का practical example दिया.</li>
+            </ul>
+          </div>
+
+          <div class="card full">
+            <h3>⛏️ Minerals — सबसे rich division</h3>
+            <ul>
+              <li><strong>Copper / तांबा</strong>.</li>
+              <li><strong>Manganese</strong> — metallic mineral.</li>
+              <li><strong>Coal / कोयला</strong>.</li>
+              <li><strong>Iron / लोहा</strong>.</li>
+              <li><strong>Bauxite</strong>.</li>
+              <li>Teacher ने साफ कहा: <strong>mineral wealth / खनिज भंडार के लिए Satpura-Maikal सबसे important</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="exam full">
+            <h3>🔥 Exam Hot — Satpura-Maikal</h3>
+            <ul>
+              <li>Satpura Range lies between <strong>Narmada and Tapti</strong>.</li>
+              <li>3 parts: <strong>Maikal (East), Mahadev (Middle), Rajpipla (West)</strong>.</li>
+              <li>Most mineral-rich region: <strong>Satpura-Maikal / Satpura Mountain Range</strong>.</li>
+              <li>MP highest peak: <strong>Dhupgarh, 1350 m, Pachmarhi, Narmadapuram</strong>.</li>
+              <li>Area: <strong>34,000 sq km; 11.20%</strong>.</li>
+              <li>Soil: <strong>shallow black + some laterite</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <details open>
+          <summary>🧠 Satpura Memory Tricks</summary>
+          <div class="details-body">
+            <p><strong>“Ra-Ma-Mai”</strong> west to east: <strong>Ra</strong>jpipla → <strong>Ma</strong>hadev → <strong>Mai</strong>kal. Rivers के लिए: <strong>“Ta-Wa-Sha-Wa-Ta”</strong> = Tawa, Wainganga, Shakkar, Wardha, Tapti.</p>
+          </div>
+        </details>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall — Satpura-Maikal</h3>
+          <div class="quiz-item"><b>Q1.</b> Satpura Range किन दो rivers के बीच है?<button class="mini-btn">Answer</button><div class="answer">Narmada and Tapti.</div></div>
+          <div class="quiz-item"><b>Q2.</b> Satpura ke 3 parts west-to-east बताओ.<button class="mini-btn">Answer</button><div class="answer">Rajpipla → Mahadev → Maikal.</div></div>
+          <div class="quiz-item"><b>Q3.</b> MP ka highest peak कौन सा है?<button class="mini-btn">Answer</button><div class="answer">Dhupgarh, 1350 m, Pachmarhi/Narmadapuram.</div></div>
+          <div class="quiz-item"><b>Q4.</b> Minerals ke लिए सबसे rich region कौन सा बताया?<button class="mini-btn">Answer</button><div class="answer">Satpura-Maikal / Satpura Mountain Range region.</div></div>
+        </div>
+      </section>
+
+      <section id="eastern" class="section" style="--accent: var(--cyan)">
+        <div class="section-header">
+          <span class="time">01:03:39 – 01:15:24</span>
+          <h2>🪨 7th Division: पूर्वी पठार / Eastern Plateau / बघेलखंड पठार</h2>
+          <p>Teacher ने स्पष्ट किया कि इसे अलग division इसलिए रखा गया क्योंकि यह <strong>India ke Eastern Plateau</strong> ka हिस्सा माना जाता है.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🧭 Why separate from Central Highland?</h3>
+            <ul>
+              <li>Question: अगर plateau है तो Central Highland में क्यों नहीं रखा?</li>
+              <li>Answer: क्योंकि यह <strong>भारत के पूर्वी पठार / Eastern Plateau of India</strong> ka हिस्सा माना गया.</li>
+              <li>इसीलिए MP physical division में इसे अलग रखा गया: <strong>Eastern Plateau / Baghelkhand Plateau</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🪨 Formation Rocks</h3>
+            <ul>
+              <li>Geological point of view से formation:</li>
+              <li><strong>Vindhyan rocks / विंध्य शैल समूह</strong>.</li>
+              <li><strong>Gondwana rocks / गोंडवाना शैल समूह</strong>.</li>
+              <li>Teacher ने map diagram में दोनों rock groups locate कराए.</li>
+            </ul>
+          </div>
+
+          <div class="visual full">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Coal_Handling_Plant_Dudhichua_Coal_Mine_Singrauli.jpg" alt="Coal handling plant in Singrauli showing coal mineral importance of Baghelkhand and eastern plateau region" loading="lazy" decoding="async" data-fallback="https://commons.wikimedia.org/wiki/File:Coal_Handling_Plant_Dudhichua_Coal_Mine_Singrauli.jpg">
+            <p class="cap">Image: Wikimedia Commons, “Coal Handling Plant Dudhichua Coal Mine Singrauli.jpg”, CC BY-SA 4.0. Visual anchor for Singrauli/eastern plateau coal importance.</p>
+          </div>
+
+          <div class="card">
+            <h3>🌳 Vegetation</h3>
+            <ul>
+              <li>Main: <strong>mixed species vegetation / मिश्रित प्रजाति वनस्पति</strong>.</li>
+              <li>Examples: <strong>Khair, Babool, Sal, Teak, Tendu Patta, Karonda, Palas</strong>.</li>
+              <li>Vindhyan/Gondwana belt ke हिसाब से vegetation mixed है.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌡️ Climate</h3>
+            <ul>
+              <li>Climate: <strong>normal heat + normal cold</strong>.</li>
+              <li>Malwa jaise temperate feel, but summer temperature Malwa se थोड़ा अधिक.</li>
+              <li>Summer avg: <strong>38°C – 40°C</strong>.</li>
+              <li>Winter avg: <strong>10°C – 12°C</strong>.</li>
+              <li>Rainfall: teacher ने end में <strong>125 cm</strong> लिखने को कहा; edge areas में 75 cm around mention हुआ.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>📏 Height, Area, Rank</h3>
+            <ul>
+              <li>Average altitude: <strong>400 m – 600 m</strong>.</li>
+              <li>Area: <strong>21,577 sq km</strong>.</li>
+              <li>State share: <strong>6.99% / approx 7%</strong>.</li>
+              <li><strong>MP ka सबसे छोटा natural region / प्राकृतिक भूभाग</strong>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🗺️ Districts</h3>
+            <ul>
+              <li><strong>Singrauli</strong>.</li>
+              <li><strong>Sidhi</strong>.</li>
+              <li><strong>Shahdol</strong>.</li>
+              <li><strong>Umaria</strong>.</li>
+              <li><strong>Katni</strong>.</li>
+              <li><strong>Some part of Anuppur</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🌊 Rivers + Soil</h3>
+            <ul>
+              <li>Rivers: <strong>Son</strong>, <strong>Johila</strong>.</li>
+              <li>Soil: <strong>Red-Yellow Soil / लाल-पीली मृदा</strong>.</li>
+              <li>Teacher ने crop logic red-yellow soil से link किया.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>🌱 Crops</h3>
+            <ul>
+              <li>Main crop: <strong>Paddy / धान</strong>.</li>
+              <li><strong>Kodo-Kutki</strong> — Singrauli/Anuppur side context.</li>
+              <li><strong>Wheat</strong> भी होता है, लेकिन main emphasis धान + कोदू-कुटकी पर.</li>
+            </ul>
+          </div>
+
+          <div class="card full">
+            <h3>⛏️ Minerals</h3>
+            <ul>
+              <li>Main mineral: <strong>Coal / कोयला</strong> — Singrauli, Johila, Korar, Sohagpur etc. coal regions context.</li>
+              <li><strong>Limestone / चूना पत्थर</strong> — Katni ko “चूना नगरी” context से link किया.</li>
+              <li><strong>Iron ore / लौह अयस्क</strong>.</li>
+              <li><strong>Bauxite</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="exam full">
+            <h3>🔥 Exam Hot — Eastern / Baghelkhand Plateau</h3>
+            <ul>
+              <li>Reason for separate division: <strong>India’s Eastern Plateau ka part</strong>.</li>
+              <li>Formation: <strong>Vindhyan + Gondwana rocks</strong>.</li>
+              <li>Smallest natural region of MP: <strong>Eastern/Baghelkhand Plateau</strong>.</li>
+              <li>Area: <strong>21,577 sq km</strong>; share: <strong>6.99% / approx 7%</strong>.</li>
+              <li>Soil: <strong>Red-Yellow</strong>; crops: <strong>Paddy, Kodo-Kutki, Wheat</strong>.</li>
+              <li>Coal + Limestone important; <strong>Katni = limestone/chuna context</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quiz">
+          <h3>⚡ Quick Recall — Eastern Plateau</h3>
+          <div class="quiz-item"><b>Q1.</b> Eastern/Baghelkhand Plateau ko अलग division क्यों रखा?<button class="mini-btn">Answer</button><div class="answer">क्योंकि यह भारत के Eastern Plateau का हिस्सा माना जाता है.</div></div>
+          <div class="quiz-item"><b>Q2.</b> इसका area/share क्या बताया गया?<button class="mini-btn">Answer</button><div class="answer">21,577 sq km; 6.99% / approx 7%.</div></div>
+          <div class="quiz-item"><b>Q3.</b> MP का सबसे छोटा natural region कौन सा है?<button class="mini-btn">Answer</button><div class="answer">Eastern Plateau / Baghelkhand Plateau.</div></div>
+          <div class="quiz-item"><b>Q4.</b> Main soil and crops?<button class="mini-btn">Answer</button><div class="answer">Red-Yellow soil; Paddy, Kodo-Kutki, Wheat.</div></div>
+        </div>
+      </section>
+
+      <section id="master" class="section" style="--accent: var(--green)">
+        <div class="section-header">
+          <span class="time">01:15:24 – End + Master Revision</span>
+          <h2>🎯 Master Revision Zone</h2>
+          <p>यह section पूरे lecture ke facts ko fast revise करने के लिए बनाया गया है.</p>
+        </div>
+
+        <div class="cols-3">
+          <div class="stat"><b>7</b>Total physical divisions</div>
+          <div class="stat"><b>3</b>Main physical divisions</div>
+          <div class="stat"><b>4</b>Major regions covered in this class</div>
+        </div>
+
+        <h3>📚 Master Comparison Table</h3>
+        <table>
+          <thead>
+            <tr><th>Region</th><th>Rock/Formation</th><th>Climate</th><th>Soil</th><th>Key Crops</th><th>Minerals</th><th>Exam Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Malwa Plateau</td>
+              <td>Deccan Trap basalt</td>
+              <td>Temperate; 38–42°C summer, 12–18°C winter, 75–125 cm rain</td>
+              <td>Black soil</td>
+              <td>Wheat, soybean, cotton, opium</td>
+              <td>Rock phosphate, asbestos, limestone</td>
+              <td>Largest natural region; Basket of Wheat; Sigar Peak; Kark Rekha divides into 2 equal parts</td>
+            </tr>
+            <tr>
+              <td>Narmada-Son Valley</td>
+              <td>West: Deccan Trap; East: Vindhyan + Gondwana</td>
+              <td>Monsoon; hot + moderately cold; 57–140 cm rain</td>
+              <td>Layered/dark black</td>
+              <td>Wheat, paddy, gram</td>
+              <td>Coal, fire clay, white marble</td>
+              <td>Rift/fault valley; Patalkot lowest-place context</td>
+            </tr>
+            <tr>
+              <td>Satpura-Maikal</td>
+              <td>Deccan + Archaean/Dharwar</td>
+              <td>Monsoon; 40–45°C summer, 10–12°C winter, 60–140 cm rain</td>
+              <td>Shallow black + some laterite</td>
+              <td>Millets, ragi, kodo-kutki, rice, corn, ganja, cotton</td>
+              <td>Copper, manganese, coal, iron, bauxite</td>
+              <td>Most mineral-rich; Dhupgarh highest peak; Maikal-Mahadev-Rajpipla</td>
+            </tr>
+            <tr>
+              <td>Eastern/Baghelkhand Plateau</td>
+              <td>Vindhyan + Gondwana</td>
+              <td>Normal heat/cold; rainfall about 125 cm</td>
+              <td>Red-yellow</td>
+              <td>Paddy, kodo-kutki, wheat</td>
+              <td>Coal, limestone, iron, bauxite</td>
+              <td>Smallest natural region; part of India's Eastern Plateau</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>🔤 Master Full Forms / Terms</h3>
+        <table>
+          <thead><tr><th>Term</th><th>Expansion / Meaning</th><th>Hinglish Note</th></tr></thead>
+          <tbody>
+            <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+            <tr><td>MP GK</td><td>Madhya Pradesh General Knowledge</td><td>MP exams ke लिए state-specific GK</td></tr>
+            <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>Lecture target exams में mention हुआ</td></tr>
+            <tr><td>MCQ</td><td>Multiple Choice Question</td><td>Teacher ने objective practice के लिए बोला</td></tr>
+            <tr><td>PYQ</td><td>Previous Year Question</td><td>पुराने papers के questions</td></tr>
+            <tr><td>Rift/Fault Valley</td><td>भ्रंश घाटी</td><td>Pressure से बीच का हिस्सा धंसना</td></tr>
+            <tr><td>Deccan Trap</td><td>Lava/basalt rock province</td><td>Malwa and Satpura rock explanation में used</td></tr>
+            <tr><td>Tropic of Cancer</td><td>कर्क रेखा</td><td>Malwa Plateau को दो बराबर parts में divide करती है</td></tr>
+          </tbody>
+        </table>
+
+        <h3>🔥 Master Exam Hot Facts</h3>
+        <div class="exam">
+          <ul>
+            <li>MP physical divisions: <strong>3 main, 7 total</strong>.</li>
+            <li>Central Highland ke पहले three divisions already covered: <strong>Madhya Bharat, Bundelkhand, Rewa-Panna</strong>.</li>
+            <li>Malwa Plateau: <strong>largest natural region</strong>, Deccan Trap basalt, black soil, Basket of Wheat.</li>
+            <li>Fahiyan: Malwa climate को world’s best temperate climate बताया.</li>
+            <li>Malwa highest peak: <strong>Sigar Peak, 881 m, Indore</strong>.</li>
+            <li>Kark Rekha Malwa को <strong>दो बराबर parts</strong> में divide करती है.</li>
+            <li>Narmada-Son Valley: <strong>Rift/Fault/भ्रंश घाटी</strong>; Patalkot in Tamia, Chhindwara; Bharia tribe.</li>
+            <li>Narmada-Son = Malwa ke baad <strong>second largest</strong> भूभाग.</li>
+            <li>Satpura Range: between <strong>Narmada and Tapti</strong>; 3 parts = Maikal, Mahadev, Rajpipla.</li>
+            <li>Satpura-Maikal = <strong>maximum mineral-rich region</strong>.</li>
+            <li>Dhupgarh = <strong>MP + Satpura highest peak</strong>, 1350 m, Pachmarhi/Narmadapuram.</li>
+            <li>Eastern/Baghelkhand Plateau = <strong>smallest natural region</strong>, 21,577 sq km, approx 7%.</li>
+          </ul>
+        </div>
+
+        <h3>✅ Master Revision Checklist</h3>
+        <div class="progress-box">
+          <div class="meter"><span id="checkMeter"></span></div>
+          <b id="checkText">0%</b>
+        </div>
+        <div class="checklist" id="checklist">
+          <label><input type="checkbox">मैंने 3 main aur 7 total divisions का rule याद कर लिया.</label>
+          <label><input type="checkbox">मैं Central Highland ke previous 3 divisions बोल सकता/सकती हूँ.</label>
+          <label><input type="checkbox">मैं Malwa ka formation: Deccan Trap basalt explain कर सकता/सकती हूँ.</label>
+          <label><input type="checkbox">मैं basalt-black soil-iron-titaniferous magnetite link याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Malwa ke districts और partial districts revise कर चुका/चुकी हूँ.</label>
+          <label><input type="checkbox">मैं Fahiyan climate example याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Malwa crops: wheat, soybean, cotton, opium याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Sigar Peak, Janapav, Goman Apu, Dhajji points revise कर चुका/चुकी हूँ.</label>
+          <label><input type="checkbox">मैं Narmada-Son ko Rift/Fault Valley समझा सकता/सकती हूँ.</label>
+          <label><input type="checkbox">मैं Patalkot, Tamia, Chhindwara, Bharia tribe याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Narmada-Son rocks: west Deccan, east Vindhyan/Gondwana याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं layered/dark black soil का valley explanation याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Satpura ke 3 parts: Maikal, Mahadev, Rajpipla बोल सकता/सकती हूँ.</label>
+          <label><input type="checkbox">मैं Dhupgarh: 1350 m, Pachmarhi/Narmadapuram याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Satpura-Maikal ko mineral-rich region याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Eastern Plateau ke rocks: Vindhyan + Gondwana याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Eastern/Baghelkhand को smallest natural region याद रखता/रखती हूँ.</label>
+          <label><input type="checkbox">मैं Eastern Plateau crops/minerals: paddy, kodo-kutki, coal, limestone revise कर चुका/चुकी हूँ.</label>
+          <label><input type="checkbox">मैं 55 districts की practice map पर करूँगा/करूँगी.</label>
+          <label><input type="checkbox">मैं PYQ/MCQ practice करूँगा/करूँगी.</label>
+        </div>
+
+        <details open>
+          <summary>📌 Homework + Upcoming Topic</summary>
+          <div class="details-body">
+            <ul>
+              <li><strong>Homework:</strong> पूरा revision + 55 districts याद करना.</li>
+              <li><strong>Practice:</strong> कोई भी PYQ/old paper MCQ book लेकर objective questions solve करना.</li>
+              <li><strong>Method:</strong> यहाँ descriptive पढ़ो, फिर objective लगाओ; doubt हो तो teacher answer देंगे.</li>
+              <li><strong>Upcoming Topic:</strong> Next lecture में <strong>MP की पर्वत श्रृंखलाएं / Mountain Ranges of MP</strong>.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <footer>
+        <p>Study tip: पहले प्रत्येक section का Quick Recall करो, फिर Master Checklist tick करो, फिर बिना देखे districts map पर बोलो. जय हिंद 🇮🇳</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const root = document.body;
+    const savedTheme = localStorage.getItem('mpgk-theme');
+    if (savedTheme) root.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('mpgk-theme', next);
+    });
+
+    const progress = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const pct = max ? (scrollY / max) * 100 : 0;
+      progress.style.width = pct + '%';
+    }, {passive:true});
+
+    document.getElementById('jumpMenu').addEventListener('change', e => {
+      const target = document.querySelector(e.target.value);
+      if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+
+    document.querySelectorAll('.quiz-item .mini-btn').forEach(btn => {
+      btn.addEventListener('click', () => btn.closest('.quiz-item').classList.toggle('revealed'));
+    });
+
+    const checks = Array.from(document.querySelectorAll('#checklist input[type="checkbox"]'));
+    checks.forEach((box, i) => {
+      const key = 'mpgk-class6-check-' + i;
+      box.checked = localStorage.getItem(key) === '1';
+      box.addEventListener('change', () => {
+        localStorage.setItem(key, box.checked ? '1' : '0');
+        updateCheckProgress();
+      });
+    });
+    function updateCheckProgress(){
+      const done = checks.filter(c => c.checked).length;
+      const pct = checks.length ? Math.round(done / checks.length * 100) : 0;
+      document.getElementById('checkMeter').style.width = pct + '%';
+      document.getElementById('checkText').textContent = pct + '%';
+    }
+    updateCheckProgress();
+
+    const sections = Array.from(document.querySelectorAll('main .section'));
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-30% 0px -65% 0px', threshold: 0 });
+    sections.forEach(s => observer.observe(s));
+
+    // Image reliability: preload, retry via fallback, then show visible fallback link.
+    document.querySelectorAll('img').forEach(img => {
+      const initial = img.getAttribute('src');
+      const fallback = img.dataset.fallback || initial;
+      const pre = new Image();
+      pre.decoding = 'async';
+      pre.onload = () => {};
+      pre.onerror = () => {
+        if (fallback && fallback !== initial) {
+          img.src = fallback;
+          const retry = new Image();
+          retry.onload = () => {};
+          retry.onerror = () => showFallback(img, fallback);
+          retry.src = fallback;
+        } else {
+          showFallback(img, fallback);
+        }
+      };
+      pre.src = initial;
+      img.addEventListener('error', () => showFallback(img, fallback), {once:true});
+    });
+    function showFallback(img, href) {
+      const box = document.createElement('div');
+      box.className = 'fallback';
+      box.style.display = 'block';
+      box.innerHTML = '⚠️ Image load nahi hui. <a target="_blank" rel="noopener" href="' + href + '">Source image/link open करें</a>.';
+      img.insertAdjacentElement('afterend', box);
+    }
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
