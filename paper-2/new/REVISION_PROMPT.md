@@ -84,10 +84,15 @@ Apply these **cognitive science methods** to help students remember longer:
 - Add a **"Quick Recall" quiz section** at the end of each major topic — simple Q&A format.
 - Add a **Master Revision Checklist** at the very end with all key facts as checkboxes.
 
-### 4. Mnemonics & Memory Tricks (याद रखने की ट्रिक)
-- Create **mnemonics** for lists (e.g., computer generations, input devices).
-- If the teacher gives any trick, include it prominently.
-- Create your own Hindi/English mnemonics where helpful.
+
+
+### 4 🔗 Link Method — चीज़ों को जोड़कर याद करो (Association Chains)
+- **Isolated facts भूल जाते हैं — linked facts याद रहते हैं।** हर important list, sequence, या group of facts के लिए एक **Association Chain / Link Story** बनाओ जो items को एक-दूसरे से जोड़े।
+- **कैसे बनाएँ:** पहले item को दूसरे से, दूसरे को तीसरे से — एक **mini-story या vivid mental scene** बनाओ जिसमें सब items logically या visually connected हों। जितना ज़्यादा unusual/funny/visual होगा, उतना याद रहेगा।
+  - Example: अगर MP के 5 जिले याद करने हैं (भोपाल, इंदौर, जबलपुर, ग्वालियर, उज्जैन) → *"भोपाल की झील में इंदौर का पोहा तैर रहा था, जबलपुर का धुआंधार उसे ग्वालियर के किले तक बहा ले गया, जहाँ उज्जैन का महाकाल उसे खा गया!"* 🔗
+- **Format in HTML:** हर link-story को एक special **"🔗 Link Story — ऐसे याद करो"** styled box/card में रखो with a chain-link icon and distinct background color (e.g., subtle indigo/teal gradient)।
+- **कहाँ use करो:** जहाँ भी 3 या ज़्यादा related items एक साथ याद करने हों — lists, sequences, categories, names, dates, या steps — वहाँ एक Link Story ज़रूर बनाओ।
+- **Combine with Mnemonics:** अगर mnemonic + link story दोनों बन सकते हैं, तो दोनों दो। कुछ students को acronym याद रहता है, कुछ को story — दोनों options दो।
 
 ### 5. Comparison Tables
 - Whenever two or more things are compared (e.g., RAM vs ROM, Analog vs Digital), use a **comparison table**.
@@ -233,6 +238,7 @@ Before giving the HTML, verify:
 - [ ] Every inventor/year/fact is included
 - [ ] Every exam tip is marked with 🔥
 - [ ] Quiz sections are present for each topic
+- [ ] 🔗 Link Stories (association chains) are created for every list/sequence of 3+ related items
 - [ ] Free/open online images are added for every major topic **and relevant sub-topics**
 - [ ] Each image has descriptive alt text, responsive sizing, robust preload/retry loading, source, creator if available, and license caption
 - [ ] No random placeholder or unverified copyrighted image is used

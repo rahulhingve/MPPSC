@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Class 9 — E-Commerce Revision (MPPSC Paper-2, Unit 9)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- THEME TOKENS ---------- */
+  :root {
+    --bg: #0f0f1a;
+    --bg-2: #161628;
+    --card: #1c1c33;
+    --card-2: #232342;
+    --border: #2c2c4a;
+    --text: #f1f1fb;
+    --text-soft: #d4d4e6;
+    --muted: #a4a4c2;
+    --cyan: #00d4ff;
+    --orange: #ff6b35;
+    --green: #00ff88;
+    --purple: #b388ff;
+    --yellow: #ffd166;
+    --red: #ff5470;
+    --hot: #ff3860;
+    --link-bg: linear-gradient(135deg, #1b2a4a 0%, #163048 100%);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+  [data-theme="light"] {
+    --bg: #f6f7fb;
+    --bg-2: #ffffff;
+    --card: #ffffff;
+    --card-2: #f0f2fa;
+    --border: #d8dcec;
+    --text: #15172b;
+    --text-soft: #2a2c45;
+    --muted: #5a5c75;
+    --cyan: #007ea7;
+    --orange: #e85d2c;
+    --green: #1f8a4c;
+    --purple: #6a3fc0;
+    --yellow: #b88800;
+    --red: #c43355;
+    --hot: #d6204a;
+    --link-bg: linear-gradient(135deg, #e3f2ff 0%, #e1fbf3 100%);
+    --shadow: 0 6px 18px rgba(20, 30, 60, 0.08);
+  }
+
+  /* ---------- BASE ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'Outfit', 'Inter', sans-serif; line-height: 1.3; letter-spacing: 0.005em; }
+  h1 { font-size: 2.1rem; margin: 0 0 .35rem 0; }
+  h2 { font-size: 1.55rem; margin: 0 0 .8rem 0; }
+  h3 { font-size: 1.2rem; margin: 0 0 .6rem 0; }
+  h4 { font-size: 1.05rem; margin: 0 0 .4rem 0; }
+  p { margin: 0 0 .8rem 0; color: var(--text-soft); }
+  ul, ol { margin: .3rem 0 .8rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: .35rem; color: var(--text-soft); }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { background: var(--card-2); padding: 2px 6px; border-radius: 4px; font-size: .92em; }
+
+  /* ---------- LAYOUT ---------- */
+  .container { max-width: 880px; margin: 0 auto; padding: 1rem 1.1rem 6rem; }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: linear-gradient(180deg, var(--bg) 70%, transparent 100%);
+    backdrop-filter: blur(8px);
+    padding: .65rem 0 .55rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 880px; margin: 0 auto; padding: 0 1.1rem;
+    display: flex; align-items: center; gap: .55rem; flex-wrap: wrap;
+  }
+  .brand { font-weight: 800; font-size: 1.02rem; letter-spacing: .02em; }
+  .brand .b-emoji { margin-right: 6px; }
+  .topbar-spacer { flex: 1; }
+  .pill {
+    background: var(--card-2); color: var(--text-soft);
+    padding: .25rem .55rem; border-radius: 999px; font-size: .78rem;
+    border: 1px solid var(--border);
+  }
+  .progress-wrap {
+    width: 100%; margin-top: .45rem;
+    background: var(--card-2); border-radius: 999px; height: 6px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green)); transition: width .3s; }
+
+  .jump-select, .theme-btn {
+    background: var(--card); color: var(--text); border: 1px solid var(--border);
+    padding: .35rem .55rem; border-radius: 8px; font-size: .85rem; cursor: pointer;
+    font-family: inherit;
+  }
+  .jump-select { min-width: 160px; max-width: 220px; }
+  .theme-btn:hover { border-color: var(--cyan); }
+
+  /* ---------- HEADER ---------- */
+  .header {
+    background: linear-gradient(135deg, rgba(0, 212, 255, .14), rgba(179, 136, 255, .14));
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.4rem 1.2rem; margin: 1rem 0 1.4rem;
+  }
+  .header h1 { color: var(--text); }
+  .header .sub { color: var(--muted); font-size: .98rem; margin-top: .2rem; }
+  .badges { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+  .badge {
+    background: var(--card); border: 1px solid var(--border); padding: .3rem .7rem;
+    border-radius: 999px; font-size: .82rem; color: var(--text-soft);
+  }
+  .badge.hot { background: rgba(255, 56, 96, .15); border-color: rgba(255, 56, 96, .35); color: var(--hot); }
+
+  /* ---------- TOC ---------- */
+  .toc {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1rem 1.1rem; margin-bottom: 1.6rem;
+  }
+  .toc h3 { color: var(--cyan); margin-bottom: .6rem; }
+  .toc ol { padding-left: 1.2rem; columns: 1; }
+  @media (min-width: 600px) { .toc ol { columns: 2; column-gap: 1.2rem; } }
+  .toc li { margin-bottom: .35rem; }
+  .toc a { color: var(--text); }
+  .toc a:hover { color: var(--cyan); }
+  .toc .done { color: var(--green); }
+
+  /* ---------- SECTION ---------- */
+  section.topic {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 1.3rem 1.2rem; margin-bottom: 1.6rem; box-shadow: var(--shadow);
+    scroll-margin-top: 110px;
+  }
+  section.topic h2 .icn { margin-right: 8px; }
+  .video-mark {
+    display: inline-block; font-family: 'Outfit', sans-serif; font-size: .78rem;
+    color: var(--muted); background: var(--card-2); padding: .15rem .55rem;
+    border-radius: 6px; border: 1px solid var(--border); margin-bottom: .8rem;
+  }
+
+  /* ---------- CARDS ---------- */
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: .8rem; margin: .8rem 0; }
+  @media (min-width: 700px) { .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+  .mini-card {
+    background: var(--card-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: .85rem 1rem;
+  }
+  .mini-card h4 { color: var(--cyan); margin-bottom: .35rem; }
+
+  /* ---------- DEFINITION BOX ---------- */
+  .def {
+    background: linear-gradient(135deg, rgba(0, 212, 255, .12), rgba(0, 255, 136, .08));
+    border-left: 4px solid var(--cyan); border-radius: 10px;
+    padding: .9rem 1rem; margin: .8rem 0;
+  }
+  .def b { color: var(--cyan); }
+
+  /* ---------- HOT / EXAM ---------- */
+  .hot-box {
+    background: linear-gradient(135deg, rgba(255, 56, 96, .14), rgba(255, 107, 53, .1));
+    border-left: 4px solid var(--hot); border-radius: 10px;
+    padding: .85rem 1rem; margin: .8rem 0;
+  }
+  .hot-box b { color: var(--hot); }
+  .hot-tag {
+    display: inline-block; background: var(--hot); color: #fff;
+    font-size: .72rem; font-weight: 700; padding: 2px 7px; border-radius: 6px;
+    margin-right: 4px; vertical-align: middle;
+  }
+
+  /* ---------- LINK STORY ---------- */
+  .link-story {
+    background: linear-gradient(135deg, rgba(179, 136, 255, .15), rgba(0, 212, 255, .08));
+    border: 1px dashed var(--purple); border-radius: 12px;
+    padding: .9rem 1rem; margin: .9rem 0;
+  }
+  .link-story .ls-head {
+    color: var(--purple); font-weight: 700; margin-bottom: .35rem; display: flex; align-items: center; gap: 6px;
+  }
+  .link-story em { color: var(--text); font-style: italic; }
+
+  /* ---------- TABLES ---------- */
+  .tbl-wrap { overflow-x: auto; margin: .6rem 0 1rem; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: .94rem; min-width: 480px; }
+  th, td { padding: .55rem .7rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--card-2); color: var(--cyan); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(0, 212, 255, .05); }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline { position: relative; margin: .8rem 0 1rem; padding-left: 1.4rem; border-left: 2px solid var(--purple); }
+  .tl-item { position: relative; margin-bottom: .9rem; }
+  .tl-item::before {
+    content: ""; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--purple); position: absolute; left: -1.85rem; top: .45rem;
+    box-shadow: 0 0 0 3px var(--bg);
+  }
+  .tl-year { color: var(--orange); font-weight: 700; font-size: 1rem; }
+  .tl-text { color: var(--text-soft); }
+
+  /* ---------- IMAGE BLOCK ---------- */
+  .img-block { margin: 1rem 0; text-align: center; }
+  .img-block img {
+    max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--card-2);
+  }
+  .img-block figcaption {
+    font-size: .8rem; color: var(--muted); margin-top: .35rem;
+  }
+  .img-fallback {
+    display: none; padding: 1rem; background: var(--card-2); border: 1px dashed var(--border);
+    border-radius: 10px; color: var(--muted); font-size: .9rem;
+  }
+  .img-block.failed img { display: none; }
+  .img-block.failed .img-fallback { display: block; }
+
+  /* ---------- QUIZ ---------- */
+  .quiz {
+    background: var(--card-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: .9rem 1rem; margin-top: 1rem;
+  }
+  .quiz h4 { color: var(--green); margin-bottom: .5rem; }
+  .qa { margin-bottom: .55rem; }
+  .qa .q { font-weight: 600; color: var(--text); }
+  .qa .a {
+    margin-top: .25rem; padding: .45rem .65rem; background: var(--bg-2);
+    border-left: 3px solid var(--green); border-radius: 6px;
+    color: var(--text-soft); display: none;
+  }
+  .qa.show .a { display: block; }
+  .qa .toggle {
+    background: var(--card); color: var(--cyan); border: 1px solid var(--border);
+    padding: .25rem .55rem; border-radius: 6px; font-size: .78rem; cursor: pointer;
+    margin-left: .3rem; font-family: inherit;
+  }
+  .qa .toggle:hover { background: var(--cyan); color: var(--bg); }
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.1rem 1.2rem; margin-top: 1.5rem;
+  }
+  .check-row {
+    display: flex; align-items: flex-start; gap: .55rem; padding: .35rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .check-row:last-child { border-bottom: none; }
+  .check-row input[type="checkbox"] {
+    margin-top: 6px; width: 17px; height: 17px; accent-color: var(--green); cursor: pointer;
+  }
+  .check-row label { flex: 1; cursor: pointer; color: var(--text-soft); }
+  .check-row input:checked + label { color: var(--muted); text-decoration: line-through; }
+  .checklist-progress { color: var(--green); font-weight: 600; margin-bottom: .8rem; }
+
+  /* ---------- FOOTER ---------- */
+  footer { color: var(--muted); font-size: .9rem; text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+  /* ---------- COLLAPSIBLE ---------- */
+  details { margin: .5rem 0; }
+  details > summary {
+    cursor: pointer; padding: .5rem .75rem; background: var(--card-2);
+    border: 1px solid var(--border); border-radius: 8px; font-weight: 600;
+    color: var(--cyan); list-style: none;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::before { content: "▸ "; transition: transform .2s; display: inline-block; }
+  details[open] > summary::before { content: "▾ "; }
+  details > div, details > p { padding: .5rem .25rem; }
+
+  /* ---------- PRINT ---------- */
+  @media print {
+    body { background: #fff; color: #000; font-size: 12pt; }
+    .topbar, .jump-select, .theme-btn, .toc, .quiz .toggle { display: none !important; }
+    section.topic { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    .qa .a { display: block !important; }
+    details > div, details > p { display: block !important; }
+    details > summary::before { content: ""; }
+    .img-block img { max-width: 350px; }
+    a { color: #000; text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="b-emoji">🛒</span> Class 9 — E-Commerce</div>
+    <span class="pill">8 Topics</span>
+    <span class="topbar-spacer"></span>
+    <select class="jump-select" id="jumpSelect" aria-label="Jump to section">
+      <option value="">⚡ Jump to topic…</option>
+      <option value="t1">1️⃣ परिचय (Intro)</option>
+      <option value="t2">2️⃣ इतिहास (History)</option>
+      <option value="t3">3️⃣ प्रकार (Types)</option>
+      <option value="t4">4️⃣ तकनीक (Tech)</option>
+      <option value="t5">5️⃣ Tools — Storefront vs Marketplace</option>
+      <option value="t6">6️⃣ World Companies</option>
+      <option value="t7">7️⃣ India Companies</option>
+      <option value="t8">8️⃣ अन्य तथ्य (Other Facts)</option>
+      <option value="master-fullforms">📚 All Full Forms</option>
+      <option value="master-hot">🔥 Exam Hot Facts</option>
+      <option value="master-checklist">✅ Master Checklist</option>
+    </select>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙 Theme</button>
+  </div>
+  <div class="topbar-inner" style="padding-top:.4rem;">
+    <div class="progress-wrap" aria-label="Reading progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ============== HEADER ============== -->
+<div class="header">
+  <h1>🛒 ई-कॉमर्स (E-Commerce) — Class 9 Revision</h1>
+  <div class="sub">MPPSC Paper-2 • इकाई 9 • Computer + Internet Awareness • Hinglish Notes</div>
+  <div class="badges">
+    <span class="badge">📺 ~75 min video</span>
+    <span class="badge">📚 8 Major Topics</span>
+    <span class="badge hot">🔥 Exam Important</span>
+    <span class="badge">📅 Pre-Election Test 2026</span>
+  </div>
+</div>
+
+<!-- ============== TOC ============== -->
+<nav class="toc" id="toc">
+  <h3>📑 विषय सूची (Table of Contents)</h3>
+  <ol>
+    <li><a href="#t1">परिचय — E-Commerce क्या है?</a></li>
+    <li><a href="#t2">पृष्ठभूमि — History of E-Commerce</a></li>
+    <li><a href="#t3">प्रकार — Types of E-Commerce</a></li>
+    <li><a href="#t4">तकनीके — Technologies in E-Commerce</a></li>
+    <li><a href="#t5">Tools — Storefront vs Marketplace</a></li>
+    <li><a href="#t6">दुनिया की प्रमुख E-Commerce कंपनियाँ</a></li>
+    <li><a href="#t7">भारत की प्रमुख E-Commerce कंपनियाँ</a></li>
+    <li><a href="#t8">अन्य तथ्य + Current Affairs</a></li>
+    <li><a href="#master-fullforms">📚 Master — Full Forms</a></li>
+    <li><a href="#master-hot">🔥 Master — Exam Hot Facts</a></li>
+    <li><a href="#master-checklist">✅ Master Revision Checklist</a></li>
+  </ol>
+</nav>
+
+<!-- ============================================================ -->
+<!-- TOPIC 1 — INTRODUCTION                                        -->
+<!-- ============================================================ -->
+<section class="topic" id="t1">
+  <span class="video-mark">🎬 Video: 00:00 – 12:00</span>
+  <h2><span class="icn">1️⃣</span> परिचय — E-Commerce क्या है? (Introduction)</h2>
+
+  <p>पिछली class में हमने <b>Artificial Intelligence (कृत्रिम बुद्धिमत्ता)</b> को discuss किया था। अब इस class में हम पढ़ेंगे एक छोटा पर बहुत <b>important</b> topic — <b>E-Commerce</b>, जिसका full form है <b>Electronic Commerce</b>।</p>
+
+  <div class="def">
+    <b>📌 Definition:</b> जब भी हम <b>Internet का उपयोग करके वस्तुओं (Goods) या सेवाओं (Services) को खरीदते या बेचते हैं</b>, तो उसे <b>E-Commerce</b> कहा जाता है।
+    <br><br>
+    <em>"It is the medium by which trade is possible over the Internet."</em>
+  </div>
+
+  <h3>🔍 शब्दों को तोड़कर समझें (Word Breakdown)</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>⚡ E (Electronic)</h4>
+      <p>ऐसी कोई भी चीज जिसका संबंध <b>Internet या Computer</b> से हो।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🛍️ Commerce (वाणिज्य)</h4>
+      <p>व्यापार — जहाँ <b>Goods और Services</b> को buy/sell किया जाता है।</p>
+    </div>
+  </div>
+
+  <figure class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/E-commerce_icon.svg/512px-E-commerce_icon.svg.png" alt="E-commerce shopping cart icon — online shopping symbol" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="img-fallback">🛒 [Image: E-commerce icon — online shopping cart with browser]</div>
+    <figcaption>Image: Wikimedia Commons — E-commerce icon · Public Domain / CC0</figcaption>
+  </figure>
+
+  <h3>🎯 E-Commerce का आधार (Foundation)</h3>
+  <p>अगर <b>Internet नहीं होगा तो E-Commerce नहीं होगा।</b> Internet के साथ-साथ चाहिए: Personal Computer 💻, Mobile Phone 📱 — और हजारों तरह की चीजें।</p>
+
+  <h3>🛒 E-Commerce में 3 प्रकार के products बिकते हैं</h3>
+  <div class="card-grid">
+    <div class="mini-card">
+      <h4>📦 1. Physical Goods (भौतिक वस्तुएं)</h4>
+      <p>ऐसी चीजें जिन्हें हम <b>छू (touch) सकते हैं</b>। Example: Parle-G बिस्कुट, कपड़े, mobile phones — Amazon/Flipkart से order करना।</p>
+    </div>
+    <div class="mini-card">
+      <h4>💾 2. Digital Goods (डिजिटल वस्तुएं)</h4>
+      <p>आजकल बहुत trend में हैं — <b>E-books, PDFs, Audio books, Software</b>। ये Mobile/Computer में store होते हैं, as-such use नहीं कर सकते। Amazon की <b>Audible</b> ऐसा ही audio-book platform है।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🛠️ 3. Services (सेवाएं)</h4>
+      <p>Online <b>Consultancy</b> — Legal consult, Doctor consult, Software/Website development, Freelance services। ये सब भी E-Commerce का हिस्सा हैं।</p>
+    </div>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span> <b>याद रखिए:</b> E-Commerce में <b>सिर्फ वस्तुओं (goods) की बिक्री ही नहीं</b>, <b>सेवाओं (services) की बिक्री भी</b> शामिल है। Freelance करने वाले लोग भी E-Commerce का हिस्सा माने जाते हैं।
+  </div>
+
+  <h3>🌍 क्यों इतना popular है E-Commerce?</h3>
+  <ul>
+    <li>दुनिया में <b>आबादी बढ़ रही है</b> और साथ-साथ <b>Internet connection</b> भी।</li>
+    <li>Online platforms पर <b>options बहुत ज्यादा</b> मिलते हैं — कई चीजें शहरों में नहीं मिलतीं वो यहाँ मिल जाती हैं।</li>
+    <li>कई बार <b>Discounted price</b> पर मिलती हैं।</li>
+    <li>India में Amazon, Flipkart, Myntra, ShopClues जैसी websites ने <b>shopping pattern बदला</b> है, market competition भी change किया।</li>
+  </ul>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span> <b>Indian E-Commerce Market</b> 2026 तक <b>$200 Billion</b> तक पहुँचने की expected है। भारत में <b>100+ करोड़ लोगों</b> के पास mobile phones हैं, जिनमें से <b>लगभग 64-70 करोड़ लोग Internet</b> से जुड़े हैं।
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 1</h4>
+    <div class="qa">
+      <span class="q">Q1. E-Commerce का full form क्या है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Electronic Commerce</b> — Internet के माध्यम से वस्तुओं/सेवाओं की खरीद-बिक्री।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. E-Commerce में कितने प्रकार के products बेचे जा सकते हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>तीन (3)</b> — Physical Goods, Digital Goods, Services</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. E-Commerce का foundation/आधार क्या है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Internet</b> — Internet नहीं तो E-Commerce नहीं।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. भारत के E-Commerce market की 2026 तक predicted value?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>$200 Billion (अमेरिकी डॉलर)</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 2 — HISTORY                                             -->
+<!-- ============================================================ -->
+<section class="topic" id="t2">
+  <span class="video-mark">🎬 Video: 12:00 – 17:00</span>
+  <h2><span class="icn">2️⃣</span> पृष्ठभूमि — E-Commerce का इतिहास (Background)</h2>
+
+  <p>बहुत छोटा-सा इतिहास है — सिर्फ <b>10-12 चीजें</b> याद रखनी हैं। Sir के अनुसार बाकी important नहीं है।</p>
+
+  <figure class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/ARPANET_logical_map%2C_march_1977.png/640px-ARPANET_logical_map%2C_march_1977.png" alt="ARPANET logical map 1977 — origin of Internet" loading="eager" decoding="async" />
+    <div class="img-fallback">🌐 [Image: ARPANET Logical Map 1977]</div>
+    <figcaption>Image: Wikimedia Commons — ARPANET Logical Map (1977) · Public Domain</figcaption>
+  </figure>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1969 — ARPANET</div>
+      <div class="tl-text">Internet की शुरुआत मानी जाती है — <b>Internet का first demonstration</b>। बिना internet, e-commerce नहीं हो सकता।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1979 — Michael Aldrich</div>
+      <div class="tl-text"><b>Electronic Shopping</b> का अविष्कार। Concept रखा और छोटे scale पर ऐसी website बनाने की कोशिश की। इन्हें कई बार <b>"Father of E-Commerce"</b> भी कहा जाता है।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1981 — Thomson Holidays UK</div>
+      <div class="tl-text"><b>पहला B2B (Business-to-Business)</b> online shopping system। यह सिर्फ व्यापारियों के लिए था, customer के लिए नहीं।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1984 — Gateshead</div>
+      <div class="tl-text"><b>पहला B2C (Business-to-Consumer)</b> online shopping system। अब customer भी online shopping कर सकते थे।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1990 — Tim Berners-Lee</div>
+      <div class="tl-text"><b>पहला Web Browser</b> का code लिखा। <em>(Sir ने कहा यह point ज्यादा important नहीं)</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1992 — Book Stacks Unlimited</div>
+      <div class="tl-text">किताबों का marketplace शुरू हुआ — किताबें खरीदी जा सकती थीं।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1994 — NetMarket</div>
+      <div class="tl-text"><b>पहली सुरक्षित online खरीद</b> हुई। Sting की एक किताब (Ten Summoner's Tales) <b>credit card से खरीदी गई</b>।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1995 — eBay & Amazon</div>
+      <div class="tl-text"><b>E-Commerce Giants</b> की शुरुआत — इन्होंने पूरे e-commerce के नजरिए को बदल दिया।</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1998 — PayPal</div>
+      <div class="tl-text">एक <b>online payment platform</b> जिसके through आप <b>international level</b> पर payment कर सकते हैं।</div>
+    </div>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — ऐसे याद करो (E-Commerce History Chain)</div>
+    <em>"<b>1969 में ARPANET</b> ने internet की धारा बहाई, फिर <b>1979 में Michael Aldrich</b> ने उस धारा में <b>electronic shopping की नाव</b> उतारी। <b>1981 में Thomson Holidays</b> ने उस नाव में सिर्फ <b>व्यापारी (B2B)</b> बैठाए, <b>1984 में Gateshead</b> ने <b>आम ग्राहक (B2C)</b> को भी जगह दी। <b>1990 में Tim Berners-Lee</b> ने नाव में <b>browser का इंजन</b> लगाया। <b>1995 में eBay-Amazon</b> ने उस नाव को <b>जहाज</b> बनाया, और <b>1998 में PayPal</b> ने <b>international currency</b> भर दी!"</em> 🚢
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span>
+    <ul>
+      <li><b>Father of E-Commerce</b> = <b>Michael Aldrich (1979)</b></li>
+      <li><b>First B2B platform</b> = <b>Thomson Holidays UK (1981)</b></li>
+      <li><b>First B2C platform</b> = <b>Gateshead (1984)</b></li>
+      <li><b>eBay & Amazon</b> = <b>1995</b></li>
+      <li><b>PayPal</b> = <b>1998</b></li>
+    </ul>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 2</h4>
+    <div class="qa">
+      <span class="q">Q1. ARPANET की शुरुआत कब हुई?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>1969</b> में — Internet की शुरुआत मानी जाती है।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. "Father of E-Commerce" किसे कहा जाता है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Michael Aldrich (1979)</b> — Electronic shopping का concept दिया।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. पहला B2B online shopping system किसने शुरू किया?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Thomson Holidays UK</b> — 1981 में।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. PayPal कब बनी?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>1998</b> में — International payments के लिए।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 3 — TYPES                                               -->
+<!-- ============================================================ -->
+<section class="topic" id="t3">
+  <span class="video-mark">🎬 Video: 17:00 – 25:45</span>
+  <h2><span class="icn">3️⃣</span> प्रकार — Types of E-Commerce</h2>
+
+  <p>लगभग <b>9 तरीकों</b> से E-Commerce को divide किया जाता है। यह division इस आधार पर होता है कि <b>व्यापार किन दो लोगों या संस्थाओं</b> के बीच में हो रहा है।</p>
+
+  <figure class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Online_shopping.jpg/640px-Online_shopping.jpg" alt="Online shopping concept image — buying through internet" loading="eager" decoding="async" />
+    <div class="img-fallback">🛍️ [Image: Online shopping concept]</div>
+    <figcaption>Image: Wikimedia Commons — Online Shopping · CC BY-SA</figcaption>
+  </figure>
+
+  <h3>📋 7 मुख्य प्रकार (Main Types)</h3>
+
+  <div class="card-grid cols-2">
+
+    <div class="mini-card">
+      <h4>🏢 1. B2B — Business to Business</h4>
+      <p>एक <b>व्यापारी दूसरे व्यापारी के साथ</b> व्यापार करता है। सामान्यतः <b>थोक (wholesale)</b> में होता है।</p>
+      <p><b>उदाहरण:</b> Steel.com, General Electric</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>👨‍💼➡️👤 2. B2C — Business to Consumer</h4>
+      <p>व्यापारी सीधे <b>ग्राहक (consumer)</b> को चीज बेचता है। <b>सबसे popular model</b>।</p>
+      <p><b>उदाहरण:</b> Amazon, Flipkart, Myntra</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>👥 3. C2C — Consumer to Consumer</h4>
+      <p>एक <b>ग्राहक दूसरे ग्राहक को</b> कोई चीज बेचता या खरीदता है — सेकंड-हैंड चीजें।</p>
+      <p><b>उदाहरण:</b> OLX, eBay, Quikr</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>👤➡️🏢 4. C2B — Consumer to Business</h4>
+      <p>एक <b>ग्राहक</b> अपनी चीज़ या सेवा <b>व्यापारी को</b> बेचता है।</p>
+      <p><b>उदाहरण:</b> TripAdvisor</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>🏛️➡️🏢 5. G2B — Government to Business</h4>
+      <p>सरकार अपनी <b>सेवाएं सीधे व्यापारियों/उद्यमियों</b> को देती है। Single Window Clearance जैसी सुविधाएं।</p>
+      <p><b>उदाहरण:</b> Government portals for traders</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>🏛️➡️👤 6. G2C — Government to Citizen</h4>
+      <p><b>"Basic foundation of E-Governance"</b> — सरकार अपनी सेवाएं <b>नागरिकों</b> को online उपलब्ध कराती है।</p>
+      <p><b>उदाहरण:</b> MP Online, IRCTC, UMANG, FASTag</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>🤝 7. P2P — Peer to Peer</h4>
+      <p>दो लोगों के बीच <b>सीधा व्यापार</b>, <b>कोई मध्यस्थ (mediator) नहीं</b>। Amazon की तरह commission-free model। Google Shopping ऐसा challenge पेश कर रहा है।</p>
+    </div>
+  </div>
+
+  <h3>📊 Summary Table — सब एक जगह</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>प्रकार (Type)</th><th>Full Form</th><th>Description</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>B2B</td><td>Business to Business</td><td>2+ कंपनियों के बीच</td><td>Steel.com, General Electric</td></tr>
+        <tr><td>B2C</td><td>Business to Consumer</td><td>व्यापारी ➝ ग्राहक</td><td>Amazon, Flipkart, Myntra</td></tr>
+        <tr><td>C2C</td><td>Consumer to Consumer</td><td>ग्राहक ➝ ग्राहक</td><td>OLX, eBay</td></tr>
+        <tr><td>C2B</td><td>Consumer to Business</td><td>ग्राहक ➝ व्यापारी</td><td>TripAdvisor</td></tr>
+        <tr><td>G2B</td><td>Government to Business</td><td>सरकार ➝ व्यापारी</td><td>Single Window Clearance</td></tr>
+        <tr><td>G2C</td><td>Government to Citizen</td><td>सरकार ➝ नागरिक</td><td>MP Online, IRCTC, UMANG, FASTag</td></tr>
+        <tr><td>P2P</td><td>Peer to Peer</td><td>दो लोगों के बीच — कोई mediator नहीं</td><td>Direct deals (no Amazon-like middleman)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — ऐसे याद करो (7 Types Chain)</div>
+    <em>"<b>दो Business दोस्त (B2B)</b> मिले, फिर एक दोस्त ने <b>एक Customer (B2C)</b> को सामान बेचा। उस Customer ने अपनी पुरानी चीज <b>दूसरे Customer (C2C)</b> को OLX पर बेच दी। दूसरे Customer ने अपनी सर्विस <b>एक Business (C2B)</b> को TripAdvisor पर दी। तभी <b>Government आई और Business (G2B)</b> को सेवाएं दीं, फिर <b>Citizen (G2C)</b> को MP Online पर सेवा दी। आखिर में दो Peers ने बिना बिचौलिए के <b>direct deal (P2P)</b> कर ली!"</em>
+    <br><br>
+    <b>Mnemonic:</b> <b>"BB-BC-CC-CB-GB-GC-PP"</b> — दो Business → Business-Customer → दो Customer → Customer-Business → दो Government → दो Peers
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span> Sir ने clearly कहा — सवाल आ सकता है: <b>"Amazon किस प्रकार का E-Commerce है?"</b> या <b>"OLX किस प्रकार का है?"</b> — इसलिए ये examples अच्छे से रट लो:
+    <br>• Amazon, Flipkart, Myntra → <b>B2C</b>
+    <br>• OLX, eBay → <b>C2C</b>
+    <br>• MP Online, IRCTC, UMANG, FASTag → <b>G2C</b>
+    <br>• TripAdvisor → <b>C2B</b>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 3</h4>
+    <div class="qa">
+      <span class="q">Q1. OLX किस प्रकार की e-commerce website है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>C2C (Consumer to Consumer)</b> — दो ग्राहक आपस में पुरानी चीज खरीदते-बेचते हैं।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. MP Online और IRCTC किस प्रकार में आते हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>G2C (Government to Citizen)</b> — E-Governance का basic foundation।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. P2P E-Commerce में क्या ख़ास होता है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>कोई मध्यस्थ (mediator) नहीं होता</b> — सीधा व्यापार होता है।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. E-Governance का "basic foundation" क्या माना जाता है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>G2C (Government to Citizen)</b> model।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 4 — TECHNOLOGIES                                        -->
+<!-- ============================================================ -->
+<section class="topic" id="t4">
+  <span class="video-mark">🎬 Video: 25:45 – 31:30</span>
+  <h2><span class="icn">4️⃣</span> तकनीकें — Technologies in E-Commerce</h2>
+
+  <p>E-Commerce में <b>4 प्रमुख तकनीकें</b> use होती हैं:</p>
+
+  <div class="card-grid cols-2">
+
+    <div class="mini-card">
+      <h4>📡 1. EDI — Electronic Data Interchange</h4>
+      <p>जब <b>दो कंपनियाँ एक-दूसरे के साथ सूचनाओं का आदान-प्रदान</b> Internet/Electronic माध्यम से करती हैं — उसे EDI कहते हैं।</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>📧 2. Email — Electronic Mail</h4>
+      <p>यह हम पहले अच्छे से पढ़ चुके हैं। Internet पर business communication का सबसे basic tool।</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>📋 3. EBB — Electronic Bulletin Board</h4>
+      <p>एक <b>Dashboard</b> जहाँ पर <b>सूचनाएं लगातार आती रहती हैं</b>। आप कोई सूचना बड़े संस्थान को भेज सकते हैं। <em>"Online communication system where one can share, request and discuss information."</em></p>
+    </div>
+
+    <div class="mini-card">
+      <h4>💸 4. EFT — Electronic Fund Transfer</h4>
+      <p>Internet के माध्यम से <b>पैसा भेजना</b>। आज सबसे ज्यादा use होने वाली तकनीक — Net Banking, UPI (Paytm, Google Pay, PhonePe सब इसी पर आधारित)।</p>
+    </div>
+  </div>
+
+  <figure class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/UPI-Logo-vector.svg/512px-UPI-Logo-vector.svg.png" alt="UPI logo — Unified Payments Interface for Electronic Fund Transfer in India" loading="eager" decoding="async" />
+    <div class="img-fallback">💳 [Image: UPI Logo — Unified Payments Interface]</div>
+    <figcaption>Image: Wikimedia Commons — UPI Logo · NPCI / Public Domain</figcaption>
+  </figure>
+
+  <h3>⚖️ कानूनी ढांचा (Legal Framework)</h3>
+  <div class="def">
+    <b>📜 IT Act 2000 (सूचना प्रौद्योगिकी अधिनियम 2000):</b> भारत में जो भी E-Commerce है, वो <b>IT Act 2000 के द्वारा regulate</b> होता है। Cyber Security, Internet — सब चीजें इसी से regulate होती हैं।
+    <br><br>
+    <b>👨‍⚖️ Consumer Protection Act:</b> E-Commerce में जो उपभोक्ता हैं, उनके लिए <b>उपभोक्ता संरक्षण अधिनियम</b> काम करता है — हाल ही में <b>2020 से लागू</b> संशोधन (हम Topic 8 में details पढ़ेंगे)।
+  </div>
+
+  <h3>🔤 कुछ Important Terms (Vocabulary)</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>🛍️ Retailer (खुदरा व्यापारी)</h4>
+      <p>जो ग्राहक को सीधे चीज़ बेचता है।</p>
+    </div>
+    <div class="mini-card">
+      <h4>📦 Wholesaler (थोक व्यापारी)</h4>
+      <p>थोक में सामान बेचने वाला।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🚚 Drop Shipping</h4>
+      <p>उस उत्पाद को बेचना जिसका <b>निर्माता कोई और</b> है और <b>delivery कोई और</b> करने वाला है। Example — Amazon पर Saffola का तेल order करो: तेल Saffola ने बनाया, deliver Amazon ने किया।</p>
+    </div>
+    <div class="mini-card">
+      <h4>💾 Digital Product</h4>
+      <p>ऐसे products जिन्हें हम <b>download</b> कर सकते हैं — E-books, PDFs, Software।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🔄 Subscription</h4>
+      <p>किसी exclusive content को access करने के लिए जो <b>शुल्क (fee)</b> देना पड़ता है। Example — Unacademy Plus, Netflix, Prime Video।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🏭 ERP — Enterprise Resource Planning</h4>
+      <p>Sir ने कहा — <b>important नहीं</b>, बस <b>full form</b> देख लीजिए।</p>
+    </div>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — ऐसे याद करो (4 Technologies)</div>
+    <em>"<b>EDI</b> ने दो कंपनियों के बीच डेटा का पुल बनाया, <b>Email</b> ने उस पुल पर चिट्ठियाँ दौड़ाईं, <b>EBB</b> ने पुल पर बड़ा बुलेटिन-बोर्ड लगा दिया, और <b>EFT</b> ने पुल पर पैसे की नदी बहा दी!"</em>
+    <br><br>
+    <b>Mnemonic:</b> <b>"DEBE"</b> — <b>D</b>ata, <b>E</b>mail, <b>B</b>ulletin, <b>E</b>FT
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span>
+    <ul>
+      <li><b>EDI</b> = Electronic Data Interchange</li>
+      <li><b>EBB</b> = Electronic Bulletin Board</li>
+      <li><b>EFT</b> = Electronic Fund Transfer</li>
+      <li><b>ERP</b> = Enterprise Resource Planning <em>(सिर्फ full form)</em></li>
+      <li><b>India में E-Commerce regulator law</b> = <b>IT Act 2000</b></li>
+    </ul>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 4</h4>
+    <div class="qa">
+      <span class="q">Q1. EDI का full form क्या है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Electronic Data Interchange</b></div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. India में E-Commerce को कौन-सा कानून regulate करता है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>IT Act 2000 (सूचना प्रौद्योगिकी अधिनियम 2000)</b></div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. UPI based payment apps कौन-सी technology पर आधारित हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>EFT (Electronic Fund Transfer)</b> — Paytm, Google Pay, PhonePe सब इसी पर।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. Drop Shipping का मतलब?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a">ऐसा product बेचना जिसे <b>निर्माता कोई और बनाता है, deliver कोई और करता है</b>। Example: Amazon पर Saffola तेल।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 5 — TOOLS                                               -->
+<!-- ============================================================ -->
+<section class="topic" id="t5">
+  <span class="video-mark">🎬 Video: 32:00 – 38:30</span>
+  <h2><span class="icn">5️⃣</span> Tools — Storefront vs Marketplace</h2>
+
+  <p>E-Commerce के Tools को <b>दो भागों</b> में बाँटा जा सकता है — <b>Online Storefront</b> और <b>Online Marketplace</b>।</p>
+
+  <h3>📊 मुख्य अंतर — Storefront vs Marketplace</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th></th><th>🏪 Online Storefront</th><th>🏬 Online Marketplace</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>क्या करता है?</b></td>
+          <td>सामान्य लोगों को Online Shopping <b>setup बनाने की सुविधा</b> देता है।</td>
+          <td>खुद चीजें बेचता है, खुद का <b>पूरा setup</b> रखता है।</td>
+        </tr>
+        <tr>
+          <td><b>Setup</b></td>
+          <td>आप इस platform का use करके <b>अपनी दुकान</b> बनाते हैं।</td>
+          <td>खुद का <b>Payment Gateway</b>, खुद का Software Development Team, खुद का Warehouse।</td>
+        </tr>
+        <tr>
+          <td><b>Revenue Model</b></td>
+          <td>हर sale पर एक <b>छोटा कमीशन/शुल्क</b> चार्ज करता है।</td>
+          <td>Sellers से commission लेता है + खुद product sell करता है।</td>
+        </tr>
+        <tr>
+          <td><b>उदाहरण</b></td>
+          <td>Instamojo, Shopify, BigCommerce, WooCommerce, Magento, Demandware</td>
+          <td>Amazon, Flipkart, eBay</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="def">
+    <b>💡 Real Example by Sir:</b> मान लीजिए मेरी कंपनी है <b>"शुभम गुप्ता बिस्कुट"</b> — Amazon जैसा platform बनाने की मेरी औकात नहीं। तो Online Storefront (जैसे Instamojo) मेरी मदद करते हैं — मैं उस पर अपना छोटा सा store बना लेता हूँ। साथ में <b>Razorpay</b> जैसा Payment Gateway पैसा receive करता है — एक छोटा हिस्सा कमीशन ले लेता है।
+  </div>
+
+  <h3>🏪 Major Storefront Tools</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>🇮🇳 Instamojo</h4>
+      <ul>
+        <li><b>भारत की</b> कंपनी</li>
+        <li>स्थापना: <b>2012</b></li>
+        <li>Founders: <b>Sampad Swain, Akash Gehani</b></li>
+        <li>Headquarters: <b>Bengaluru</b></li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🇨🇦 Shopify</h4>
+      <ul>
+        <li>स्थापना: <b>2006</b></li>
+        <li>Headquarters: <b>Canada</b></li>
+        <li>Blog को online store में बदलते हैं</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🇺🇸 BigCommerce</h4>
+      <p>B2B Commerce के लिए। Social Media platforms पर selling की सुविधा।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🛍️ WooCommerce</h4>
+      <p>Blog/WordPress को online store में बदलता है।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🏷️ Magento</h4>
+      <p>स्थापना: <b>2011</b> (एक popular open-source storefront platform)।</p>
+    </div>
+    <div class="mini-card">
+      <h4>☁️ Demandware</h4>
+      <p>एक <b>Cloud-based</b> e-commerce solution provider।</p>
+    </div>
+    <div class="mini-card">
+      <h4>🔵 Oracle Commerce</h4>
+      <p><b>B2B + B2C</b> commerce solution provider।</p>
+    </div>
+    <div class="mini-card">
+      <h4>📱 Drupal Commerce</h4>
+      <p>Drupal platform के through online store बनाने की सुविधा।</p>
+    </div>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — ऐसे याद करो (Storefront Tools)</div>
+    <em>"<b>Instamojo</b> भारत में मोजे बेच रहा था, <b>Shopify</b> कनाडा से shop लेके आया, <b>BigCommerce</b> ने B2B का बड़ा करार किया, <b>WooCommerce</b> ने वूफ़ बोलकर Blog बेच दिया, <b>Magento</b> 2011 में 'मैगी-नो' बोलते हुए आया, और <b>Demandware</b> cloud पर demand लेके बैठा है!"</em>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span> Sir ने कहा — सवाल आ सकता है: <b>"Instamojo क्या है?"</b> Answer: यह एक <b>Storefront tool</b> है — खुद चीज नहीं बेचता, लोगों को platform provide करता है।
+    <br><br>
+    Real-life analogy by Sir: <b>Class Plus</b> — टीचर्स के लिए app बनाकर देती है, खुद teaching नहीं करती। इसी तरह Instamojo।
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 5</h4>
+    <div class="qa">
+      <span class="q">Q1. Storefront और Marketplace में मुख्य अंतर?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Storefront</b> — सामान्य लोगों को platform देता है (Instamojo)। <b>Marketplace</b> — खुद का पूरा setup रखता है, खुद बेचता है (Amazon, Flipkart)।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. Instamojo कब और कहाँ बनी?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>2012</b> में, <b>Bengaluru, भारत</b> में। Founders: Sampad Swain और Akash Gehani।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. Shopify कहाँ की कंपनी है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Canada</b> की — स्थापना <b>2006</b> में।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. Demandware क्या है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a">एक <b>Cloud-based E-Commerce Solution Provider</b> (Storefront tool)।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 6 — WORLD COMPANIES                                     -->
+<!-- ============================================================ -->
+<section class="topic" id="t6">
+  <span class="video-mark">🎬 Video: 38:30 – 42:30</span>
+  <h2><span class="icn">6️⃣</span> दुनिया की प्रमुख E-Commerce Companies</h2>
+
+  <p><b>Sir का कहना:</b> सवाल यही पूछा जाता है — <b>स्थापना कब हुई, Founder कौन है, Headquarter कहाँ है?</b></p>
+
+  <h3>🏆 Major World E-Commerce Marketplaces</h3>
+
+  <div class="card-grid cols-2">
+
+    <div class="mini-card">
+      <h4>🛒 Amazon (दुनिया की सबसे बड़ी)</h4>
+      <ul>
+        <li><b>स्थापना:</b> 5 जुलाई 1994</li>
+        <li><b>Founder:</b> Jeff Bezos (जैफ बेजोस)</li>
+        <li><b>CEO:</b> Andy Jassy (अंडी जैसी)</li>
+        <li><b>Headquarter:</b> Washington DC, अमेरिका</li>
+        <li><b>India HQ:</b> Bengaluru</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🛍️ eBay</h4>
+      <ul>
+        <li><b>स्थापना:</b> 3 सितंबर 1995</li>
+        <li><b>Headquarter:</b> California, अमेरिका</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇨🇳 JD.com (360buy)</h4>
+      <ul>
+        <li><b>स्थापना:</b> 18 जून 1998</li>
+        <li><b>Headquarter:</b> Beijing, चीन</li>
+        <li><b>Type:</b> चीनी E-Commerce Company</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇨🇳 Alibaba</h4>
+      <ul>
+        <li><b>स्थापना:</b> 4 अप्रैल 1999</li>
+        <li><b>Founder:</b> Jack Ma (जैक मा)</li>
+        <li><b>Headquarter:</b> Hangzhou, चीन</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇯🇵 Rakuten</h4>
+      <ul>
+        <li><b>देश:</b> Japan</li>
+        <li><b>Founder:</b> Hiroshi Mikitani</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇧🇷 B2W</h4>
+      <ul>
+        <li><b>देश:</b> Brazil 🇧🇷</li>
+        <li><b>स्थापना:</b> 2006</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇩🇪 Zalando</h4>
+      <ul>
+        <li><b>देश:</b> Germany 🇩🇪</li>
+        <li><b>स्थापना:</b> 2008</li>
+      </ul>
+    </div>
+
+    <div class="mini-card">
+      <h4>🇺🇸 Groupon</h4>
+      <ul>
+        <li><b>देश:</b> America 🇺🇸</li>
+        <li><b>स्थापना:</b> 2008</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>📊 Quick Reference Table</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Year</th><th>Founder</th><th>HQ / Country</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Amazon</b></td><td>5 जुलाई 1994</td><td>Jeff Bezos</td><td>Washington DC, USA</td></tr>
+        <tr><td><b>eBay</b></td><td>3 सितंबर 1995</td><td>—</td><td>California, USA</td></tr>
+        <tr><td><b>JD.com (360buy)</b></td><td>18 जून 1998</td><td>—</td><td>Beijing, China</td></tr>
+        <tr><td><b>Alibaba</b></td><td>4 अप्रैल 1999</td><td>Jack Ma</td><td>Hangzhou, China</td></tr>
+        <tr><td><b>Rakuten</b></td><td>—</td><td>Hiroshi Mikitani</td><td>Japan</td></tr>
+        <tr><td><b>B2W</b></td><td>2006</td><td>—</td><td>Brazil</td></tr>
+        <tr><td><b>Zalando</b></td><td>2008</td><td>—</td><td>Germany</td></tr>
+        <tr><td><b>Groupon</b></td><td>2008</td><td>—</td><td>USA</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — World Companies Match Game</div>
+    <em>"<b>Jeff Bezos</b> ने 1994 में <b>Amazon</b> का जंगल लगाया Washington में। एक साल बाद <b>eBay</b> California में आया। 1998-99 में चीन के <b>JD.com (Beijing)</b> और <b>Jack Ma का Alibaba (Hangzhou)</b> आए। फिर <b>Japan में Rakuten</b>, <b>Brazil में B2W (2006)</b>, <b>Germany में Zalando (2008)</b>, और <b>USA में Groupon (2008)</b> — सब e-commerce के sport में उतरे!"</em>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT — Match the Column</span> सर ने सीधा बताया — <b>Match the Column</b> टाइप का सवाल आ सकता है, country बतानी होगी:
+    <ul>
+      <li>B2W → 🇧🇷 <b>Brazil</b></li>
+      <li>Rakuten → 🇯🇵 <b>Japan</b></li>
+      <li>Zalando → 🇩🇪 <b>Germany</b></li>
+      <li>Groupon → 🇺🇸 <b>America</b></li>
+      <li>Alibaba, JD.com → 🇨🇳 <b>China</b></li>
+      <li>Amazon, eBay → 🇺🇸 <b>USA / Worldwide</b></li>
+    </ul>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 6</h4>
+    <div class="qa">
+      <span class="q">Q1. Amazon की स्थापना कब और किसने की?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>5 जुलाई 1994, Jeff Bezos</b> ने — Headquarter Washington DC, USA।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. Alibaba के founder कौन हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Jack Ma</b> — 1999 में, Hangzhou (China) में।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. Zalando कहाँ की कंपनी है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Germany</b> — 2008 में स्थापित।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. Rakuten के founder कौन हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Hiroshi Mikitani</b> — Japan की कंपनी।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 7 — INDIA COMPANIES                                     -->
+<!-- ============================================================ -->
+<section class="topic" id="t7">
+  <span class="video-mark">🎬 Video: 42:30 – 49:30</span>
+  <h2><span class="icn">7️⃣</span> भारत की प्रमुख E-Commerce Companies</h2>
+
+  <h3>🇮🇳 First Indian E-Commerce — FabMart</h3>
+  <div class="def">
+    <b>FabMart.com / WebMart.com</b> (बाद में <b>IndiaPlaza.com</b> के नाम से जानी गई)
+    <ul>
+      <li><b>स्थापना:</b> 1999</li>
+      <li><b>Founder:</b> <b>K. Vaitheeswaran</b> — इन्हें <b>"Father of Indian E-Commerce"</b> कहा जाता है</li>
+      <li><b>Note:</b> Successful नहीं रही, पर भारत की <b>पहली E-Commerce कंपनी</b> थी</li>
+    </ul>
+  </div>
+
+  <h3>📋 IndiaMART (1996)</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>🏢 IndiaMART</h4>
+      <ul>
+        <li><b>स्थापना:</b> 1996</li>
+        <li><b>Founders:</b> Dinesh Agarwal, Brijesh Agarwal</li>
+        <li><b>HQ:</b> Noida</li>
+        <li><b>Note:</b> 96 में बनी पर बाद में online हुई। B2B/wholesale model — sellers को directly call किया जाता है।</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🏆 Flipkart — भारत की सबसे बड़ी E-Commerce Company</h3>
+  <figure class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flipkart_logo.svg/512px-Flipkart_logo.svg.png" alt="Flipkart logo — India's largest e-commerce company" loading="eager" decoding="async" />
+    <div class="img-fallback">🛍️ [Image: Flipkart Logo]</div>
+    <figcaption>Image: Wikimedia Commons — Flipkart Logo · Fair Use / Trademark</figcaption>
+  </figure>
+
+  <div class="def">
+    <ul>
+      <li><b>स्थापना:</b> November 2007</li>
+      <li><b>Founders:</b> <b>Sachin Bansal & Binny Bansal</b></li>
+      <li><b>Legal HQ:</b> <b>Singapore</b> 🇸🇬</li>
+      <li><b>Operational HQ:</b> <b>Bengaluru</b></li>
+      <li><b>CEO (current):</b> Kalyan Krishnamurthy</li>
+      <li><b>Walmart Acquisition:</b> <b>August 2018</b> — Walmart ने <b>81.3% shares</b> खरीदे</li>
+      <li><b>Other Investors:</b> Tiger Management, Microsoft, Accel</li>
+    </ul>
+  </div>
+
+  <h3>🏢 Flipkart की Subsidiaries</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card"><h4>👗 Myntra</h4><p>Fashion/कपड़े (अब आयुर्वेदिक से लेकर हर चीज़)</p></div>
+    <div class="mini-card"><h4>💳 PhonePe</h4><p>Payment system (UPI based)</p></div>
+    <div class="mini-card"><h4>📚 eKart</h4><p>Logistics arm</p></div>
+    <div class="mini-card"><h4>♻️ 2Gud</h4><p>Second-hand items platform</p></div>
+    <div class="mini-card"><h4>💎 Jabong.com</h4><p>(Acquired, बाद में बंद कर दिया गया)</p></div>
+  </div>
+
+  <h3>👗 Myntra — Subsidiary of Flipkart</h3>
+  <div class="def">
+    <ul>
+      <li><b>स्थापना:</b> 2007</li>
+      <li><b>HQ:</b> Bengaluru</li>
+      <li><b>Founders:</b> Mukesh Bansal, Vineet Saxena, Ashutosh Lawania</li>
+      <li><b>Acquisition:</b> <b>2014 में Flipkart ने खरीद लिया</b></li>
+      <li><b>शुरुआत:</b> कपड़ों के लिए, अब हर तरह की चीज़</li>
+    </ul>
+  </div>
+
+  <h3>📋 अन्य प्रमुख Indian E-Commerce Companies</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Company</th><th>Year</th><th>Founders</th><th>HQ</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>FabMart / IndiaPlaza</b></td><td>1999</td><td>K. Vaitheeswaran</td><td>—</td><td>India's 1st e-commerce; <b>Father of Indian E-Commerce</b></td></tr>
+        <tr><td><b>IndiaMART</b></td><td>1996</td><td>Dinesh & Brijesh Agarwal</td><td>Noida</td><td>B2B wholesale</td></tr>
+        <tr><td><b>Flipkart</b></td><td>Nov 2007</td><td>Sachin & Binny Bansal</td><td>Singapore (legal) / Bengaluru (op)</td><td>Walmart ने 2018 में acquired</td></tr>
+        <tr><td><b>Myntra</b></td><td>2007</td><td>Mukesh Bansal, Vineet Saxena, Ashutosh Lawania</td><td>Bengaluru</td><td>2014 में Flipkart ने acquired</td></tr>
+        <tr><td><b>YeBhi.com</b></td><td>2009</td><td>Danish Ahmed, Manmohan Agarwal, Nitin Agarwal, Raju Jain</td><td>Gurugram, Haryana</td><td>—</td></tr>
+        <tr><td><b>Snapdeal</b></td><td>2010</td><td>Kunal Bahl, Rohit Bansal</td><td>—</td><td>—</td></tr>
+        <tr><td><b>Paytm Mall</b></td><td>2017 (mall launch)</td><td>Vijay Shekhar Sharma</td><td>Noida, UP</td><td>Paytm की e-commerce arm</td></tr>
+        <tr><td><b>Jabong.com</b></td><td>2012</td><td>—</td><td>Gurugram, Haryana</td><td>Flipkart ने acquired, फिर बंद</td></tr>
+        <tr><td><b>ShopClues</b></td><td>2011</td><td>Sanjay Sethi, Radhika Aggarwal, Sandeep Aggarwal</td><td>Gurugram</td><td>—</td></tr>
+        <tr><td><b>JioMart</b></td><td>2019</td><td>Mukesh Ambani</td><td>—</td><td>Reliance का platform</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🏥 Niche E-Commerce Platforms</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card"><h4>💊 1mg</h4><p>Medicines — <b>Tata कंपनी का platform</b></p></div>
+    <div class="mini-card"><h4>👶 FirstCry</h4><p>Babies/Kids products</p></div>
+    <div class="mini-card"><h4>💊 PharmEasy</h4><p>Medicines — Aamir Khan ad करते हैं</p></div>
+    <div class="mini-card"><h4>💊 Medlife</h4><p>Medicines</p></div>
+    <div class="mini-card"><h4>🛒 Grofers (अब Blinkit)</h4><p>Groceries</p></div>
+    <div class="mini-card"><h4>👗 AJIO</h4><p>Reliance का fashion store</p></div>
+    <div class="mini-card"><h4>🛍️ Tata CLiQ</h4><p>Tata का platform</p></div>
+    <div class="mini-card"><h4>💄 Nykaa</h4><p>Beauty/Cosmetics</p></div>
+    <div class="mini-card">
+      <h4>🆕 Tata Neu</h4>
+      <p>हाल ही में launch हुआ — Tata की सभी कंपनियों के products एक जगह। पूरी तरह से open source नहीं है, धीरे-धीरे develop किया जाएगा।</p>
+    </div>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — Indian E-Commerce Founders</div>
+    <em>"<b>Vaitheeswaran</b> 1999 में <b>IndiaPlaza</b> लेकर आए (India का पहला), उनसे पहले <b>1996 में Dinesh अग्रवाल</b> ने <b>IndiaMART</b> wholesale खोला। 2007 में <b>दो Bansal भाइयों — Sachin और Binny</b> — ने <b>Flipkart</b> Bengaluru में लगाया। उसी साल <b>Mukesh Bansal</b> ने <b>Myntra</b> लाँच किया। 2010 में <b>Kunal Bahl + Rohit Bansal</b> ने <b>Snapdeal</b> शुरू किया, और <b>Vijay Shekhar Sharma</b> ने <b>Paytm</b> को 2017 में Mall बना दिया। 2019 में <b>Mukesh अंबानी</b> ने <b>JioMart</b> लॉन्च कर मार्केट में धमाका किया!"</em>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span>
+    <ul>
+      <li><b>Father of Indian E-Commerce</b> = <b>K. Vaitheeswaran (1999)</b> — FabMart</li>
+      <li><b>India की पहली e-commerce</b> = <b>FabMart / IndiaPlaza (1999)</b></li>
+      <li><b>Flipkart Founders</b> = <b>Sachin Bansal & Binny Bansal (2007)</b></li>
+      <li><b>Walmart ने Flipkart 2018 में acquired</b> (81.3% shares)</li>
+      <li><b>Flipkart Legal HQ</b> = <b>Singapore</b>, Operational HQ = <b>Bengaluru</b></li>
+      <li><b>Myntra को Flipkart ने 2014 में acquired किया</b></li>
+      <li><b>JioMart (2019)</b> — Mukesh अंबानी</li>
+    </ul>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 7</h4>
+    <div class="qa">
+      <span class="q">Q1. भारत की पहली E-Commerce कंपनी कौन है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>FabMart / IndiaPlaza.com (1999)</b> — Founder K. Vaitheeswaran (Father of Indian E-Commerce)।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. Flipkart का Legal Headquarter कहाँ है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Singapore</b> में (Operational HQ — Bengaluru)।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. Walmart ने Flipkart कब acquired किया और कितने % shares लिए?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>August 2018</b> में, <b>81.3% shares</b>।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. Myntra के founders और acquisition?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a">Founders: <b>Mukesh Bansal, Vineet Saxena, Ashutosh Lawania (2007)</b>। <b>2014 में Flipkart ने acquired किया</b>।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q5. JioMart की शुरुआत कब हुई?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>2019</b> में — Founder <b>Mukesh अंबानी</b>।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPIC 8 — OTHER FACTS & CURRENT AFFAIRS                       -->
+<!-- ============================================================ -->
+<section class="topic" id="t8">
+  <span class="video-mark">🎬 Video: 49:30 – 1:14:40</span>
+  <h2><span class="icn">8️⃣</span> अन्य तथ्य + Current Affairs</h2>
+
+  <p>इस आख़िरी section में हम <b>~10 important points</b> पढ़ेंगे जिसमें <b>Current Affairs</b> भी शामिल हैं।</p>
+
+  <!-- 8.1 GeM -->
+  <h3>🏛️ 8.1 — GeM (Government e-Marketplace)</h3>
+  <div class="def">
+    <b>📌 Definition:</b> सरकार के द्वारा शुरू किया गया एक ऐसा online platform जहाँ <b>सरकार चीजों की खरीदारी</b> करती है। इससे <b>corruption में कमी</b> आई है और सरकार को <b>better price</b> मिल जाते हैं।
+  </div>
+  <ul>
+    <li><b>शुरुआत:</b> <b>9 अगस्त 2016</b></li>
+    <li><b>Ministry:</b> <b>वाणिज्य और उद्योग मंत्रालय (Ministry of Commerce & Industry)</b></li>
+    <li><b>Developed by:</b> <b>Directorate General of Supplies and Disposals (DGS&D)</b></li>
+    <li><b>उद्देश्य:</b> सरकार सामान्य ज़रूरत की चीजें इस platform से खरीदती है</li>
+  </ul>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span>
+    <b>Q: GeM कब बनाया गया? किस मंत्रालय ने बनाया?</b>
+    <br>A: 9 अगस्त 2016, वाणिज्य और उद्योग मंत्रालय द्वारा।
+    <br><b>Q: GeM को किसने develop किया?</b>
+    <br>A: Directorate General of Supplies and Disposals (DGS&D)।
+  </div>
+
+  <!-- 8.2 Consumer Protection Act 2019 -->
+  <h3>📜 8.2 — Consumer Protection Act 2019 (उपभोक्ता संरक्षण अधिनियम)</h3>
+  <div class="def">
+    <b>Background:</b> Consumer Protection Act <b>1986</b> में आया था। इसमें <b>20 जुलाई 2020</b> को <b>संशोधन (amendment)</b> करके <b>Consumer Protection Act 2019</b> लागू किया गया — जिसमें E-Commerce से जुड़े provisions जोड़े गए।
+  </div>
+
+  <h4>🔹 मुख्य Provisions:</h4>
+  <ul>
+    <li>एक <b>केंद्रीय उपभोक्ता संरक्षण परिषद (Central Consumer Protection Council)</b> बनाई जाएगी</li>
+    <li>E-Commerce कंपनियों को अपने platform पर <b>Refund, Exchange, Warranty, Guarantee, Shipment और उत्पत्ति का विवरण</b> देना अनिवार्य होगा (Expiry भी लिखी होगी)</li>
+    <li>E-Commerce platform को <b>48 घंटे के भीतर शिकायत स्वीकार</b> करनी होगी</li>
+    <li>शिकायत प्राप्त करने के <b>1 महीने के अंदर निपटारा</b> करना होगा</li>
+  </ul>
+
+  <h4>🔹 New E-Commerce Rules:</h4>
+  <ul>
+    <li>E-Commerce संस्थाओं का <b>पंजीकरण (Registration)</b> ज़रूरी</li>
+    <li>Flash Sales को <b>सीमित (limit)</b> करना होगा</li>
+    <li><b>अनुपालन अधिकारी (Compliance Officer)</b> की नियुक्ति ज़रूरी</li>
+    <li>घरेलू विक्रेताओं को उचित अवसर देने के लिए <b>आयातित विकल्प</b> भी पेश करने होंगे</li>
+    <li><b>Cyber Security</b> से संबंधित नियमों का पालन</li>
+    <li>नियम न माने तो <b>दंडनीय कार्यवाही (Punishable Action)</b></li>
+  </ul>
+
+  <!-- 8.3 E-Commerce Policy -->
+  <h3>📋 8.3 — भारत की E-Commerce Policy (1 फरवरी 2019)</h3>
+  <div class="def">
+    <b>लागू:</b> <b>1 February 2019</b>
+    <br><b>उद्देश्य:</b> छोटे व्यापारियों को बचाना और price difference को कम करना। FDI के विशेष प्रकार के प्रवेश को रोकना।
+  </div>
+  <ul>
+    <li>विक्रेताओं के माध्यम से उत्पादों की बिक्री होगी</li>
+    <li>FDI का विशेष प्रवेश रोका जाएगा</li>
+    <li>E-Commerce retailer vendor की <b>Inventory का मालिक</b> नहीं होगा</li>
+    <li><b>Cashback, Extended Warranty</b> जैसे offers निश्चित होंगे</li>
+    <li><b>Big Billion Days, Flash Sales</b> को regulate करने की कोशिश</li>
+  </ul>
+
+  <div class="def">
+    <b>क्यों ज़रूरी?</b> Sir के अनुसार — छोटे व्यापारियों को E-Commerce से बहुत problem हो रही है क्योंकि वे इतनी कम कीमत पर सामान नहीं बेच सकते। उनका <b>survival</b> मुश्किल हो रहा है। सरकार E-Commerce ban नहीं कर रही, बस <b>price difference</b> कम करने की कोशिश में है।
+  </div>
+
+  <!-- 8.4 Mobile Wallets -->
+  <h3>💼 8.4 — Mobile Wallets (बहुत Important Concept)</h3>
+  <div class="def">
+    <b>📌 Definition:</b> Mobile Wallet एक <b>Internet वाला बटुआ</b> है — एक <b>Virtual Wallet</b> जिसमें आप पैसे रख देते हैं और जब चाहें use करते हैं।
+    <br><br>
+    <b>Examples:</b> PhonePe, Google Pay, Paytm, Zomato Wallet
+  </div>
+
+  <h4>🎯 तीन प्रकार के Mobile Wallets:</h4>
+  <div class="card-grid">
+
+    <div class="mini-card">
+      <h4>🔒 1. Closed Wallet</h4>
+      <p><em>"Issued by a company to a consumer for buying goods and services exclusively from that company."</em></p>
+      <p><b>मतलब:</b> उसी company की services पर ही use कर सकते हैं। Cash नहीं निकाल सकते।</p>
+      <p><b>Example:</b> <b>Zomato Wallet</b> — सिर्फ Zomato पर ही use हो सकता है। मुकेश अंकल की दुकान से चावल नहीं ले सकते Zomato wallet से!</p>
+    </div>
+
+    <div class="mini-card">
+      <h4>🔓 2. Semi-Closed Wallet</h4>
+      <p><em>"Can be used to buy goods/services including financial services at clearly identified merchant locations and establishments which have specific contract with issuer to accept payment instructions."</em></p>
+      <p><b>मतलब:</b> उस company की services + जिनके पास उसका scanner/contract है, वहाँ भी use कर सकते हैं। पर <b>Cash नहीं निकाल सकते</b> (पहले bank transfer करना पड़ेगा)।</p>
+      <p><b>Example:</b> <b>Paytm, PhonePe, Google Pay</b></p>
+    </div>
+
+    <div class="mini-card">
+      <h4>🌐 3. Open Wallet</h4>
+      <p><b>मतलब:</b> कहीं भी payment + <b>Cash निकाल सकते हैं</b>। कोई बंदिश नहीं।</p>
+      <p><b>Example:</b> <b>YONO (SBI का application)</b> — Cash withdrawal भी कर सकते हैं।</p>
+    </div>
+  </div>
+
+  <h3>📊 Comparison Table — 3 Wallets</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>🔒 Closed</th><th>🔓 Semi-Closed</th><th>🌐 Open</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>Use कहाँ?</b></td><td>सिर्फ उसी company में</td><td>Company + Linked merchants</td><td>कहीं भी</td></tr>
+        <tr><td><b>Cash निकाल सकते?</b></td><td>❌ नहीं</td><td>❌ नहीं (पहले bank transfer ज़रूरी)</td><td>✅ हाँ</td></tr>
+        <tr><td><b>Example</b></td><td>Zomato Wallet</td><td>Paytm, PhonePe, Google Pay</td><td>YONO (SBI)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="link-story">
+    <div class="ls-head">🔗 Link Story — 3 Wallets याद करो</div>
+    <em>"<b>Closed Wallet</b> = एक बंद कमरा (Zomato) — अंदर ही खर्च करो। <b>Semi-Closed</b> = कमरे + linked दोस्तों के घर (Paytm, PhonePe) — पर cash निकालने को बैंक जाना पड़ेगा। <b>Open Wallet</b> = खुला मैदान (YONO) — जहाँ चाहो जाओ, ATM से cash भी निकालो!"</em>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span>
+    <ul>
+      <li>Mobile Wallet के <b>3 types</b> — Closed, Semi-Closed, Open</li>
+      <li><b>Closed</b> → Zomato Wallet</li>
+      <li><b>Semi-Closed</b> → Paytm, PhonePe, Google Pay</li>
+      <li><b>Open</b> → YONO (SBI)</li>
+    </ul>
+  </div>
+
+  <!-- 8.5 ONDC -->
+  <h3>🌐 8.5 — ONDC (Open Network for Digital Commerce) — बहुत Important!</h3>
+  <div class="def">
+    <b>📌 What is ONDC?</b> Government of India द्वारा शुरू किया जा रहा एक <b>Open Source E-Commerce Platform</b> है। यह एक <b>revolutionary step</b> है।
+    <br><br>
+    <b>Sir की request:</b> इस topic को <b>main exam के लिए अलग से लिखिए</b>। August तक details आ जाएँगी।
+  </div>
+
+  <h4>🎯 ONDC क्यों ज़रूरी है?</h4>
+  <ul>
+    <li>अभी India में दो बड़े E-Commerce platforms हैं — <b>Amazon और Flipkart</b></li>
+    <li>यहाँ कुछ sellers को promote किया जाता है, छोटे sellers को promotion नहीं मिलता</li>
+    <li>इनकी प्रक्रियाएँ बहुत complex और <b>गोपनीय (confidential)</b> हैं</li>
+    <li><b>Charges बहुत ज्यादा</b> हैं</li>
+    <li>ONDC इन सब problems का solution करेगा</li>
+  </ul>
+
+  <h4>🔧 ONDC कैसे काम करेगा?</h4>
+  <ul>
+    <li>एक <b>Open Source E-Commerce Platform</b> होगा</li>
+    <li>जैसे <b>UPI</b> काम करता है — एक app से सब को payment भेज सकते हैं (PhonePe वाले से Google Pay वाले तक)</li>
+    <li>वैसे ही ONDC एक <b>Integrated E-Commerce Platform</b> होगा — कहीं भी buy और sell कर सकते हैं</li>
+    <li>अभी <b>Pilot Project</b> शुरू हुआ है</li>
+    <li>August में <b>बड़े स्तर पर launch</b> किया जाएगा</li>
+  </ul>
+
+  <h4>🏛️ Implementing Body:</h4>
+  <ul>
+    <li><b>DPIIT — Department for Promotion of Industry and Internal Trade</b> (Ministry of Commerce के तहत)</li>
+    <li><b>Quality Council of India (QCI)</b> को परियोजना सौंपी गई है</li>
+  </ul>
+
+  <h4>🎯 ONDC के मुख्य फायदे:</h4>
+  <ul>
+    <li>सभी E-Commerce कंपनियों को <b>एक जैसी प्रक्रियाओं</b> का पालन करना होगा (अनिवार्य रूप से लागू होने पर)</li>
+    <li>Open Source होने का मतलब — <b>code पारदर्शी (transparent)</b> होगा</li>
+    <li>दूसरे लोग भी code में संशोधन कर सकेंगे</li>
+    <li>छोटे विक्रेताओं को बेहतर avसर मिलेंगे</li>
+  </ul>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT — Most Asked Questions on ONDC</span>
+    <ul>
+      <li><b>Q1:</b> भारत सरकार E-Commerce platform को एकीकृत करने के लिए कौन-सा platform ला रही है? → <b>ONDC (Open Network for Digital Commerce)</b></li>
+      <li><b>Q2:</b> ONDC किसके द्वारा बनाया जा रहा है? → <b>DPIIT (Department for Promotion of Industry and Internal Trade)</b>, वाणिज्य मंत्रालय के तहत।</li>
+      <li><b>Q3:</b> यह किस प्रकार का platform होगा? → <b>Open Source Platform</b>, सभी E-Commerce platforms को integrate करेगा।</li>
+    </ul>
+  </div>
+
+  <!-- 8.6 CVV -->
+  <h3>💳 8.6 — CVV</h3>
+  <div class="def">
+    <b>CVV</b> = <b>Card Verification Value</b>
+    <br>Credit/Debit Card के पीछे लिखा हुआ <b>3-digit नंबर</b>। बस full form याद रखें।
+  </div>
+
+  <!-- 8.7 SARAS Collection -->
+  <h3>🛍️ 8.7 — SARAS Collection on GeM (4 May 2020)</h3>
+  <div class="def">
+    <b>तारीख:</b> 4 May 2020
+    <br><b>Launched by:</b> Union Ministry of Rural Development & Panchayati Raj
+    <br><b>Platform:</b> Government e-Marketplace (GeM) पर
+    <br><b>उद्देश्य:</b> <b>Self-Help Groups (SHGs)</b> द्वारा बनाए गए दैनिक उपयोगी सामान को promote करना
+  </div>
+
+  <!-- 8.8 Project Zero -->
+  <h3>🎯 8.8 — Project Zero (Amazon)</h3>
+  <ul>
+    <li><b>By:</b> Amazon</li>
+    <li><b>उद्देश्य:</b> Customer को बेहतर सेवाएँ देना (counterfeit/fake products को रोकना)</li>
+    <li><b>Exam Q:</b> Project Zero किस कंपनी ने launch किया? → <b>Amazon</b></li>
+  </ul>
+
+  <!-- 8.9 Mrignayanee -->
+  <h3>🎨 8.9 — Mrignayanee (मध्य प्रदेश सरकार)</h3>
+  <ul>
+    <li>MP सरकार के <b>Mrignayanee Showroom</b> के products अब <b>E-Commerce websites</b> पर भी मिलेंगे</li>
+    <li>यह showroom <b>cultural चीजों को promote</b> करता है</li>
+  </ul>
+
+  <!-- 8.10 Razorpay -->
+  <h3>💳 8.10 — Razorpay (Indian Online Payment Gateway)</h3>
+  <div class="def">
+    <ul>
+      <li><b>Founded:</b> 2014</li>
+      <li><b>Founders:</b> Shashank Kumar & Harshil Mathur (जयपुर के स्टारटअप OASIS से)</li>
+      <li><b>HQ:</b> Bengaluru</li>
+      <li>International payment भी accept करता है</li>
+      <li><b>Successful Indian startup</b></li>
+    </ul>
+  </div>
+
+  <!-- 8.11 PayPal -->
+  <h3>🌍 8.11 — PayPal</h3>
+  <div class="def">
+    <ul>
+      <li><b>Founded:</b> 1998</li>
+      <li><b>HQ:</b> California, USA</li>
+      <li><b>Type:</b> American Multinational Financial Technology Company</li>
+      <li>खासतौर पर <b>International Transactions</b> के लिए use होता है</li>
+    </ul>
+  </div>
+
+  <!-- 8.12 BharatPe -->
+  <h3>🇮🇳 8.12 — BharatPe</h3>
+  <div class="def">
+    <ul>
+      <li><b>Founded:</b> 20 March 2018</li>
+      <li><b>Founders:</b> Ashneer Grover & Shashvat Nakrani</li>
+      <li><b>HQ:</b> New Delhi</li>
+      <li><b>USP:</b> एक ऐसा <b>QR Scanner</b> बनाया जिससे आप किसी भी UPI app (PhonePe, Google Pay, Paytm) से payment कर सकते हैं</li>
+    </ul>
+  </div>
+
+  <!-- 8.13 Decacorn -->
+  <h3>🦄 8.13 — Decacorn (बहुत Important Term!)</h3>
+  <div class="def">
+    <b>📌 Definition:</b> <b>Decacorn</b> = ऐसी कंपनी जिसका <b>Valuation $10 Billion से ऊपर</b> हो।
+    <br><br>
+    <b>Note:</b> आपने <b>Unicorn</b> शब्द सुना होगा (1+ Billion valuation)। ऐसा ही एक शब्द है <b>Decacorn (10+ Billion)</b>।
+  </div>
+
+  <h4>🇮🇳 भारत की 4 Decacorn कंपनियाँ:</h4>
+  <ol>
+    <li><b>Swiggy</b> (अभी-अभी cross किया है)</li>
+    <li><b>Paytm</b></li>
+    <li><b>OYO</b></li>
+    <li><b>BYJU'S</b></li>
+  </ol>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 EXAM HOT</span> Sir ने specifically कहा — <b>Decacorn शब्द याद रखिए</b>। यह बहुत important word है।
+    <br>$10 Billion+ valuation = Decacorn। <b>India में 4 कंपनियाँ:</b> Swiggy, Paytm, OYO, BYJU'S।
+  </div>
+
+  <!-- 8.14 DPIIT Helpline -->
+  <h3>📞 8.14 — DPIIT E-Commerce Helpline</h3>
+  <ul>
+    <li><b>उद्योग और आंतरिक व्यापार संवर्धन विभाग (DPIIT)</b> ने हाल ही में <b>E-Commerce के लिए Helpline Number</b> launch किया</li>
+    <li><b>उद्देश्य:</b> Sellers की मदद करना ताकि वे आसानी से अपने product को E-Commerce पर बेच सकें</li>
+    <li>E-Commerce supply chain के <b>सुचारू संचालन</b> में मदद</li>
+    <li>यह वही विभाग है जिसने <b>ONDC</b> भी launch किया है</li>
+    <li><b>Ministry:</b> Ministry of Commerce के तहत</li>
+  </ul>
+
+  <!-- 8.15 Flipkart Shopsy + Cleartrip -->
+  <h3>🆕 8.15 — Flipkart Updates</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>🛒 Shopsy by Flipkart</h4>
+      <p>Flipkart ने online कारोबार के लिए नया app launch किया — <b>Shopsy</b>। This is the application of Flipkart.</p>
+    </div>
+    <div class="mini-card">
+      <h4>✈️ Cleartrip Acquisition</h4>
+      <p>Flipkart ने हाल ही में <b>Cleartrip का अधिग्रहण (acquisition)</b> किया — Cleartrip एक <b>tourism company</b> थी।</p>
+    </div>
+  </div>
+
+  <!-- 8.16 Drone Delivery -->
+  <h3>🚁 8.16 — Amazon Drone Delivery (USA)</h3>
+  <ul>
+    <li><b>Federal Aviation Administration (FAA)</b> ने Amazon को <b>Drone द्वारा Package Delivery</b> की मंज़ूरी दी</li>
+    <li>America में कई जगह पर Amazon drone से deliver कर रहा है</li>
+    <li>यह नया initiative America से शुरू हुआ है</li>
+  </ul>
+
+  <!-- 8.17 Google Shopping -->
+  <h3>🔍 8.17 — Google Shopping (No Commission!)</h3>
+  <div class="def">
+    Google ने घोषणा की कि वह <b>विक्रेताओं और छोटे विक्रेताओं को</b> अपने <b>E-Commerce platform "Google Shopping"</b> पर <b>बिना कोई कमीशन लिए बेचने देगा</b>।
+    <br><br>
+    यह Flipkart और Amazon के लिए <b>बहुत बड़ा challenge</b> होगा। हालांकि कुछ समय बाद revenue model adopt करना ही पड़ेगा।
+  </div>
+
+  <!-- 8.18 Amazon Rekognition -->
+  <h3>🚫 8.18 — Amazon Rekognition Ban (11 June 2020)</h3>
+  <ul>
+    <li><b>तारीख:</b> 11 June 2020</li>
+    <li>Amazon ने <b>पुलिस द्वारा अपने software "Rekognition" के उपयोग पर प्रतिबंध</b> लगा दिया</li>
+    <li><b>Rekognition</b> = Amazon का एक software (facial recognition)</li>
+    <li>Different reasons हैं, बस याद रखिए — Rekognition Amazon का software है</li>
+  </ul>
+
+  <!-- 8.19 K-FON -->
+  <h3>🌐 8.19 — K-FON (30 May 2020)</h3>
+  <ul>
+    <li><b>तारीख:</b> 30 May 2020</li>
+    <li><b>केरल सरकार</b> ने announce किया — राज्य की महत्वाकांक्षी परियोजना <b>K-FON (Kerala Fiber Optic Network)</b> को <b>December 2020</b> तक पूरी तरह लागू किया जाएगा</li>
+    <li><b>याद रखें:</b> K-FON = <b>Kerala Fiber Optical Network</b></li>
+  </ul>
+
+  <!-- 8.20 Local Shops on Amazon -->
+  <h3>🏪 8.20 — Amazon "Local Shops" Program</h3>
+  <ul>
+    <li><b>Amazon India</b> ने <b>Lockdown</b> की स्थिति में local/घुर विक्रेताओं को <b>आवश्यक सामान</b> बेचने के लिए E-Commerce platform का use करने की सुविधा दी</li>
+    <li>Program नाम: <b>"Local Shops"</b></li>
+    <li>Sir ने कहा — Important नहीं है, बस Amazon का एक initiative था</li>
+  </ul>
+
+  <!-- Master Quiz for Topic 8 -->
+  <div class="quiz">
+    <h4>⚡ Quick Recall Quiz — Topic 8</h4>
+    <div class="qa">
+      <span class="q">Q1. GeM की शुरुआत कब हुई?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>9 अगस्त 2016</b> — वाणिज्य और उद्योग मंत्रालय द्वारा।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q2. Consumer Protection Act में संशोधन कब हुआ?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>20 जुलाई 2020</b> को — Consumer Protection Act <b>2019</b> लागू हुआ।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q3. Mobile Wallets के तीन प्रकार बताएँ।</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>1. Closed (Zomato)</b>, <b>2. Semi-Closed (Paytm/PhonePe)</b>, <b>3. Open (YONO)</b></div>
+    </div>
+    <div class="qa">
+      <span class="q">Q4. ONDC का full form और किस विभाग ने बनाया?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Open Network for Digital Commerce</b> — DPIIT (Department for Promotion of Industry and Internal Trade), वाणिज्य मंत्रालय के तहत।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q5. Decacorn किसे कहते हैं? भारत की 4 Decacorn कंपनियाँ कौन-सी हैं?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Decacorn</b> = $10 Billion+ valuation वाली कंपनी। India: <b>Swiggy, Paytm, OYO, BYJU'S</b>।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q6. CVV का full form?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Card Verification Value</b></div>
+    </div>
+    <div class="qa">
+      <span class="q">Q7. K-FON क्या है?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Kerala Fiber Optical Network</b> — केरल सरकार की महत्वाकांक्षी परियोजना।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q8. Razorpay के founders और स्थापना वर्ष?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Shashank Kumar & Harshil Mathur</b> — <b>2014</b> में, HQ Bengaluru।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q9. BharatPe की स्थापना और founders?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>20 March 2018, Ashneer Grover & Shashvat Nakrani</b> — HQ New Delhi।</div>
+    </div>
+    <div class="qa">
+      <span class="q">Q10. Project Zero किस कंपनी ने launch किया?</span>
+      <button class="toggle" onclick="this.parentElement.classList.toggle('show')">Show Answer</button>
+      <div class="a"><b>Amazon</b> ने भारत में।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MASTER — FULL FORMS                                           -->
+<!-- ============================================================ -->
+<section class="topic" id="master-fullforms">
+  <h2>📚 Master — All Full Forms (Alphabetical)</h2>
+  <p>एक जगह सारे full forms — exam में सबसे ज्यादा पूछे जाते हैं!</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Abbreviation</th><th>Full Form</th><th>Hindi</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>ARPANET</b></td><td>Advanced Research Projects Agency Network</td><td>1969 में Internet की शुरुआत</td></tr>
+        <tr><td><b>B2B</b></td><td>Business to Business</td><td>व्यापारी से व्यापारी</td></tr>
+        <tr><td><b>B2C</b></td><td>Business to Consumer</td><td>व्यापारी से ग्राहक</td></tr>
+        <tr><td><b>C2B</b></td><td>Consumer to Business</td><td>ग्राहक से व्यापारी</td></tr>
+        <tr><td><b>C2C</b></td><td>Consumer to Consumer</td><td>ग्राहक से ग्राहक</td></tr>
+        <tr><td><b>CVV</b></td><td>Card Verification Value</td><td>Card के पीछे का 3-digit नंबर</td></tr>
+        <tr><td><b>DGS&D</b></td><td>Directorate General of Supplies and Disposals</td><td>GeM को develop किया</td></tr>
+        <tr><td><b>DPIIT</b></td><td>Department for Promotion of Industry and Internal Trade</td><td>ONDC व Helpline launch किया</td></tr>
+        <tr><td><b>EBB</b></td><td>Electronic Bulletin Board</td><td>Online dashboard for information</td></tr>
+        <tr><td><b>EDI</b></td><td>Electronic Data Interchange</td><td>दो कंपनियों में data exchange</td></tr>
+        <tr><td><b>EFT</b></td><td>Electronic Fund Transfer</td><td>Internet से पैसा भेजना</td></tr>
+        <tr><td><b>ERP</b></td><td>Enterprise Resource Planning</td><td>(सिर्फ full form)</td></tr>
+        <tr><td><b>FAA</b></td><td>Federal Aviation Administration</td><td>Amazon Drone delivery approval</td></tr>
+        <tr><td><b>FDI</b></td><td>Foreign Direct Investment</td><td>विदेशी निवेश</td></tr>
+        <tr><td><b>G2B</b></td><td>Government to Business</td><td>सरकार से व्यापारी</td></tr>
+        <tr><td><b>G2C</b></td><td>Government to Citizen</td><td>सरकार से नागरिक (E-Governance foundation)</td></tr>
+        <tr><td><b>GeM</b></td><td>Government e-Marketplace</td><td>सरकारी खरीद का platform (2016)</td></tr>
+        <tr><td><b>IT Act</b></td><td>Information Technology Act 2000</td><td>India में E-Commerce regulator</td></tr>
+        <tr><td><b>K-FON</b></td><td>Kerala Fiber Optical Network</td><td>केरल सरकार की परियोजना</td></tr>
+        <tr><td><b>ONDC</b></td><td>Open Network for Digital Commerce</td><td>India का open-source e-commerce platform</td></tr>
+        <tr><td><b>P2P</b></td><td>Peer to Peer</td><td>दो लोगों में सीधा व्यापार</td></tr>
+        <tr><td><b>QCI</b></td><td>Quality Council of India</td><td>ONDC project को सौंपा गया</td></tr>
+        <tr><td><b>SARAS</b></td><td>SARAS Collection on GeM</td><td>SHGs के products promotion</td></tr>
+        <tr><td><b>SHG</b></td><td>Self Help Group</td><td>स्वयं सहायता समूह</td></tr>
+        <tr><td><b>UPI</b></td><td>Unified Payments Interface</td><td>Mobile payment system</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MASTER — HOT FACTS                                            -->
+<!-- ============================================================ -->
+<section class="topic" id="master-hot">
+  <h2>🔥 Master — Exam Hot Facts (एक जगह सब)</h2>
+  <p>Sir ने जो भी "एग्जाम में आता है", "पूछा जाता है", "इंपोर्टेंट है" कहा — सब यहाँ:</p>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 KEY FACTS</span>
+    <ul>
+      <li><b>Father of E-Commerce (World)</b> = Michael Aldrich (1979)</li>
+      <li><b>Father of Indian E-Commerce</b> = K. Vaitheeswaran (1999, FabMart)</li>
+      <li><b>India का पहला E-Commerce</b> = FabMart / IndiaPlaza.com (1999)</li>
+      <li><b>पहला B2B</b> = Thomson Holidays UK (1981)</li>
+      <li><b>पहला B2C</b> = Gateshead (1984)</li>
+      <li><b>India में E-Commerce Regulator Law</b> = IT Act 2000</li>
+      <li><b>Consumer Protection Act</b> 1986 → संशोधन 20 July 2020 → CPA 2019 लागू</li>
+      <li><b>शिकायत स्वीकार:</b> 48 घंटे | <b>निपटारा:</b> 1 महीने में</li>
+      <li><b>India E-Commerce Policy</b> = 1 Feb 2019</li>
+    </ul>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 COMPANIES</span>
+    <ul>
+      <li><b>Amazon</b> = Jeff Bezos, 5 जुलाई 1994, Washington DC</li>
+      <li><b>eBay</b> = 3 सितंबर 1995, California</li>
+      <li><b>Alibaba</b> = Jack Ma, 4 अप्रैल 1999, Hangzhou (China)</li>
+      <li><b>Flipkart</b> = Sachin & Binny Bansal, Nov 2007, Legal HQ Singapore, Op HQ Bengaluru</li>
+      <li><b>Walmart ने Flipkart 2018 में acquired</b> (81.3% shares)</li>
+      <li><b>Myntra</b> = Mukesh Bansal (2007) → Flipkart ने 2014 में acquired</li>
+      <li><b>JioMart</b> = Mukesh अंबानी, 2019</li>
+      <li><b>Razorpay</b> = Shashank Kumar + Harshil Mathur, 2014, Bengaluru</li>
+      <li><b>BharatPe</b> = Ashneer Grover + Shashvat Nakrani, 20 March 2018, New Delhi</li>
+      <li><b>PayPal</b> = 1998, California</li>
+      <li><b>Instamojo</b> = Sampad Swain + Akash Gehani, 2012, Bengaluru</li>
+    </ul>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 GOVERNMENT INITIATIVES</span>
+    <ul>
+      <li><b>GeM</b> = 9 August 2016, Ministry of Commerce & Industry, Developed by DGS&D</li>
+      <li><b>SARAS Collection</b> on GeM = 4 May 2020, Rural Development Ministry</li>
+      <li><b>ONDC</b> = DPIIT द्वारा, Ministry of Commerce, Quality Council of India को सौंपा</li>
+      <li><b>K-FON</b> = Kerala Fiber Optical Network, 30 May 2020</li>
+    </ul>
+  </div>
+
+  <div class="hot-box">
+    <span class="hot-tag">🔥 TERMS</span>
+    <ul>
+      <li><b>Decacorn</b> = $10 Billion+ valuation company. India: Swiggy, Paytm, OYO, BYJU'S</li>
+      <li><b>Mobile Wallets:</b> Closed (Zomato), Semi-Closed (Paytm/PhonePe), Open (YONO)</li>
+      <li><b>Drop Shipping</b> = निर्माता कोई और, delivery कोई और (Amazon model)</li>
+      <li><b>Project Zero</b> = Amazon launched in India</li>
+      <li><b>Rekognition</b> = Amazon का facial recognition software (police use बंद किया 11 June 2020)</li>
+      <li><b>Shopsy</b> = Flipkart का नया app</li>
+      <li><b>Cleartrip</b> = Flipkart ने acquired (tourism company)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MASTER — REVISION CHECKLIST                                   -->
+<!-- ============================================================ -->
+<section class="topic" id="master-checklist">
+  <h2>✅ Master Revision Checklist</h2>
+  <div class="checklist-progress" id="checklistProgress">Progress: 0 / 0</div>
+  <div class="checklist" id="checklist">
+    <!-- Topic 1 -->
+    <div class="check-row"><input type="checkbox" id="c1"/><label for="c1"><b>T1:</b> E-Commerce = Electronic Commerce — Internet से goods/services की खरीद-बिक्री</label></div>
+    <div class="check-row"><input type="checkbox" id="c2"/><label for="c2"><b>T1:</b> 3 types of products: Physical, Digital, Services</label></div>
+    <div class="check-row"><input type="checkbox" id="c3"/><label for="c3"><b>T1:</b> Indian E-Commerce 2026 तक $200 Billion expected</label></div>
+    <!-- Topic 2 -->
+    <div class="check-row"><input type="checkbox" id="c4"/><label for="c4"><b>T2:</b> 1969 = ARPANET (Internet शुरुआत)</label></div>
+    <div class="check-row"><input type="checkbox" id="c5"/><label for="c5"><b>T2:</b> 1979 = Michael Aldrich (Father of E-Commerce)</label></div>
+    <div class="check-row"><input type="checkbox" id="c6"/><label for="c6"><b>T2:</b> 1981 = First B2B (Thomson Holidays UK)</label></div>
+    <div class="check-row"><input type="checkbox" id="c7"/><label for="c7"><b>T2:</b> 1984 = First B2C (Gateshead)</label></div>
+    <div class="check-row"><input type="checkbox" id="c8"/><label for="c8"><b>T2:</b> 1995 = eBay & Amazon launched</label></div>
+    <div class="check-row"><input type="checkbox" id="c9"/><label for="c9"><b>T2:</b> 1998 = PayPal (international payments)</label></div>
+    <!-- Topic 3 -->
+    <div class="check-row"><input type="checkbox" id="c10"/><label for="c10"><b>T3:</b> 7 types: B2B, B2C, C2C, C2B, G2B, G2C, P2P</label></div>
+    <div class="check-row"><input type="checkbox" id="c11"/><label for="c11"><b>T3:</b> Amazon, Flipkart, Myntra = B2C</label></div>
+    <div class="check-row"><input type="checkbox" id="c12"/><label for="c12"><b>T3:</b> OLX, eBay = C2C</label></div>
+    <div class="check-row"><input type="checkbox" id="c13"/><label for="c13"><b>T3:</b> MP Online, IRCTC, UMANG, FASTag = G2C (E-Governance foundation)</label></div>
+    <!-- Topic 4 -->
+    <div class="check-row"><input type="checkbox" id="c14"/><label for="c14"><b>T4:</b> 4 technologies: EDI, Email, EBB, EFT</label></div>
+    <div class="check-row"><input type="checkbox" id="c15"/><label for="c15"><b>T4:</b> India में E-Commerce regulator = IT Act 2000</label></div>
+    <div class="check-row"><input type="checkbox" id="c16"/><label for="c16"><b>T4:</b> EFT पर ही UPI (Paytm, GPay, PhonePe) काम करता है</label></div>
+    <!-- Topic 5 -->
+    <div class="check-row"><input type="checkbox" id="c17"/><label for="c17"><b>T5:</b> Storefront vs Marketplace difference</label></div>
+    <div class="check-row"><input type="checkbox" id="c18"/><label for="c18"><b>T5:</b> Storefront examples: Instamojo, Shopify, BigCommerce, Magento</label></div>
+    <div class="check-row"><input type="checkbox" id="c19"/><label for="c19"><b>T5:</b> Marketplace examples: Amazon, Flipkart, eBay</label></div>
+    <div class="check-row"><input type="checkbox" id="c20"/><label for="c20"><b>T5:</b> Instamojo = 2012, Bengaluru, Sampad Swain + Akash Gehani</label></div>
+    <!-- Topic 6 -->
+    <div class="check-row"><input type="checkbox" id="c21"/><label for="c21"><b>T6:</b> Amazon = 5 जुलाई 1994, Jeff Bezos, Washington DC</label></div>
+    <div class="check-row"><input type="checkbox" id="c22"/><label for="c22"><b>T6:</b> Alibaba = 4 अप्रैल 1999, Jack Ma, Hangzhou, China</label></div>
+    <div class="check-row"><input type="checkbox" id="c23"/><label for="c23"><b>T6:</b> JD.com = 1998, Beijing, China</label></div>
+    <div class="check-row"><input type="checkbox" id="c24"/><label for="c24"><b>T6:</b> B2W = Brazil, Zalando = Germany, Groupon = USA, Rakuten = Japan</label></div>
+    <!-- Topic 7 -->
+    <div class="check-row"><input type="checkbox" id="c25"/><label for="c25"><b>T7:</b> India का पहला E-Commerce = FabMart/IndiaPlaza (1999), K. Vaitheeswaran</label></div>
+    <div class="check-row"><input type="checkbox" id="c26"/><label for="c26"><b>T7:</b> IndiaMART = 1996, Dinesh Agarwal, Noida (B2B)</label></div>
+    <div class="check-row"><input type="checkbox" id="c27"/><label for="c27"><b>T7:</b> Flipkart = Nov 2007, Sachin + Binny Bansal</label></div>
+    <div class="check-row"><input type="checkbox" id="c28"/><label for="c28"><b>T7:</b> Flipkart Legal HQ = Singapore, Op HQ = Bengaluru, CEO = Kalyan Krishnamurthy</label></div>
+    <div class="check-row"><input type="checkbox" id="c29"/><label for="c29"><b>T7:</b> Walmart ने 2018 में Flipkart के 81.3% shares खरीदे</label></div>
+    <div class="check-row"><input type="checkbox" id="c30"/><label for="c30"><b>T7:</b> Myntra = 2007, Mukesh Bansal, Flipkart ने 2014 में acquired</label></div>
+    <div class="check-row"><input type="checkbox" id="c31"/><label for="c31"><b>T7:</b> Snapdeal = 2010, Kunal Bahl + Rohit Bansal</label></div>
+    <div class="check-row"><input type="checkbox" id="c32"/><label for="c32"><b>T7:</b> JioMart = 2019, Mukesh अंबानी</label></div>
+    <div class="check-row"><input type="checkbox" id="c33"/><label for="c33"><b>T7:</b> 1mg = Tata का medicine platform</label></div>
+    <!-- Topic 8 -->
+    <div class="check-row"><input type="checkbox" id="c34"/><label for="c34"><b>T8:</b> GeM = 9 अगस्त 2016, Ministry of Commerce, DGS&D ने develop</label></div>
+    <div class="check-row"><input type="checkbox" id="c35"/><label for="c35"><b>T8:</b> CPA संशोधन = 20 जुलाई 2020 → CPA 2019 लागू</label></div>
+    <div class="check-row"><input type="checkbox" id="c36"/><label for="c36"><b>T8:</b> शिकायत 48 घंटे में स्वीकार + 1 महीने में निपटारा</label></div>
+    <div class="check-row"><input type="checkbox" id="c37"/><label for="c37"><b>T8:</b> India E-Commerce Policy = 1 Feb 2019</label></div>
+    <div class="check-row"><input type="checkbox" id="c38"/><label for="c38"><b>T8:</b> 3 Mobile Wallets: Closed (Zomato), Semi-Closed (Paytm), Open (YONO)</label></div>
+    <div class="check-row"><input type="checkbox" id="c39"/><label for="c39"><b>T8:</b> ONDC = Open Network for Digital Commerce, DPIIT द्वारा</label></div>
+    <div class="check-row"><input type="checkbox" id="c40"/><label for="c40"><b>T8:</b> ONDC को Quality Council of India (QCI) को सौंपा गया</label></div>
+    <div class="check-row"><input type="checkbox" id="c41"/><label for="c41"><b>T8:</b> CVV = Card Verification Value</label></div>
+    <div class="check-row"><input type="checkbox" id="c42"/><label for="c42"><b>T8:</b> SARAS Collection = 4 May 2020, Rural Development Ministry</label></div>
+    <div class="check-row"><input type="checkbox" id="c43"/><label for="c43"><b>T8:</b> Project Zero = Amazon</label></div>
+    <div class="check-row"><input type="checkbox" id="c44"/><label for="c44"><b>T8:</b> Razorpay = 2014, Shashank Kumar + Harshil Mathur, Bengaluru</label></div>
+    <div class="check-row"><input type="checkbox" id="c45"/><label for="c45"><b>T8:</b> PayPal = 1998, California (international transactions)</label></div>
+    <div class="check-row"><input type="checkbox" id="c46"/><label for="c46"><b>T8:</b> BharatPe = 20 March 2018, Ashneer Grover + Shashvat Nakrani, New Delhi</label></div>
+    <div class="check-row"><input type="checkbox" id="c47"/><label for="c47"><b>T8:</b> Decacorn = $10 Billion+ valuation. India: Swiggy, Paytm, OYO, BYJU'S</label></div>
+    <div class="check-row"><input type="checkbox" id="c48"/><label for="c48"><b>T8:</b> Flipkart ने Cleartrip acquired + Shopsy app launched</label></div>
+    <div class="check-row"><input type="checkbox" id="c49"/><label for="c49"><b>T8:</b> Amazon Drone Delivery — FAA ने मंज़ूरी दी (USA)</label></div>
+    <div class="check-row"><input type="checkbox" id="c50"/><label for="c50"><b>T8:</b> Google Shopping — कोई commission नहीं</label></div>
+    <div class="check-row"><input type="checkbox" id="c51"/><label for="c51"><b>T8:</b> Amazon Rekognition = Police use ban (11 June 2020)</label></div>
+    <div class="check-row"><input type="checkbox" id="c52"/><label for="c52"><b>T8:</b> K-FON = Kerala Fiber Optical Network (30 May 2020)</label></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER                                                        -->
+<!-- ============================================================ -->
+<footer>
+  <p><b>📌 Upcoming Topic:</b> कल का lecture — <b>E-Governance</b> (दोपहर 2:00 बजे) — बड़ा topic, बहुत महत्वपूर्ण।</p>
+  <p>📺 Side-by-side study tip: इस HTML page को एक tab में और YouTube video को दूसरे tab में रखें — flow एक जैसा है।</p>
+  <p>✨ Class 9 — E-Commerce | MPPSC Paper-2 Unit 9 | Revision Notes</p>
+</footer>
+
+</div> <!-- /container -->
+
+<!-- ============== JAVASCRIPT ============== -->
+<script>
+  // ---- Theme toggle with localStorage persistence ----
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    var stored = localStorage.getItem('class9-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', stored);
+    btn.textContent = stored === 'light' ? '🌞 Light' : '🌙 Dark';
+    btn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('class9-theme', next);
+      btn.textContent = next === 'light' ? '🌞 Light' : '🌙 Dark';
+    });
+  })();
+
+  // ---- Jump menu ----
+  (function () {
+    var sel = document.getElementById('jumpSelect');
+    sel.addEventListener('change', function () {
+      var v = sel.value;
+      if (!v) return;
+      var el = document.getElementById(v);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      sel.value = '';
+    });
+  })();
+
+  // ---- Reading progress bar ----
+  (function () {
+    var bar = document.getElementById('progressBar');
+    function update() {
+      var h = document.documentElement;
+      var st = h.scrollTop || document.body.scrollTop;
+      var sh = (h.scrollHeight || document.body.scrollHeight) - h.clientHeight;
+      var p = sh > 0 ? (st / sh) * 100 : 0;
+      bar.style.width = p + '%';
+    }
+    document.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // ---- Checklist persistence ----
+  (function () {
+    var box = document.getElementById('checklist');
+    var prog = document.getElementById('checklistProgress');
+    if (!box) return;
+    var inputs = box.querySelectorAll('input[type="checkbox"]');
+    function refresh() {
+      var done = 0;
+      inputs.forEach(function (i) { if (i.checked) done++; });
+      prog.textContent = 'Progress: ' + done + ' / ' + inputs.length + ' (' + Math.round(done / inputs.length * 100) + '%)';
+    }
+    inputs.forEach(function (input) {
+      var saved = localStorage.getItem('class9-' + input.id);
+      if (saved === 'true') input.checked = true;
+      input.addEventListener('change', function () {
+        localStorage.setItem('class9-' + input.id, input.checked);
+        refresh();
+      });
+    });
+    refresh();
+  })();
+
+  // ---- Image robust loading: detect failures, show fallback ----
+  (function () {
+    var imgs = document.querySelectorAll('.img-block img');
+    imgs.forEach(function (img) {
+      // Force preload check
+      var probe = new Image();
+      probe.onload = function () { /* ok */ };
+      probe.onerror = function () {
+        var block = img.closest('.img-block');
+        if (block) block.classList.add('failed');
+      };
+      probe.src = img.src;
+      // Also handle direct error event
+      img.addEventListener('error', function () {
+        var block = img.closest('.img-block');
+        if (block) block.classList.add('failed');
+      });
+    });
+  })();
+
+  // ---- TOC active state highlighting (when scrolling) ----
+  (function () {
+    var sections = document.querySelectorAll('section.topic[id]');
+    var tocLinks = document.querySelectorAll('.toc a');
+    if (!sections.length || !tocLinks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          tocLinks.forEach(function (l) {
+            if (l.getAttribute('href') === '#' + id) l.classList.add('done');
+            else l.classList.remove('done');
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function (s) { observer.observe(s); });
+  })();
+</script>
+
+</body>
+</html>

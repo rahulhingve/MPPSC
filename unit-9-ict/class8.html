@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 8 — Artificial Intelligence (कृत्रिम बुद्धिमता) | MPPSC Paper 2 Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --bg-elev: #181828;
+    --bg-card: #1f1f33;
+    --text: #f0f0fa;
+    --text-soft: #c9c9e0;
+    --muted: #8a8aa8;
+    --border: #2c2c46;
+    --cyan: #00d4ff;
+    --orange: #ff6b35;
+    --green: #00ff88;
+    --purple: #b388ff;
+    --yellow: #ffd166;
+    --pink: #ff5cad;
+    --hot: #ff3860;
+    --link-bg: linear-gradient(135deg, #2c1f4a 0%, #1a3a4a 100%);
+    --shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  [data-theme="light"] {
+    --bg: #f5f6fb;
+    --bg-elev: #ffffff;
+    --bg-card: #ffffff;
+    --text: #15152b;
+    --text-soft: #2a2a3f;
+    --muted: #5d5d7a;
+    --border: #d8d8e8;
+    --cyan: #006d8a;
+    --orange: #c4471c;
+    --green: #058a47;
+    --purple: #6a3fb5;
+    --yellow: #b27600;
+    --pink: #b53472;
+    --hot: #c1123e;
+    --link-bg: linear-gradient(135deg, #efe8ff 0%, #e1f5fa 100%);
+    --shadow: 0 4px 18px rgba(20,20,50,0.08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 24px 18px 96px;
+  }
+  /* Header */
+  header.hero {
+    background: linear-gradient(135deg, rgba(0,212,255,0.18), rgba(179,136,255,0.18));
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 26px 22px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  header.hero h1 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 28px;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  header.hero p { margin: 4px 0; color: var(--text-soft); }
+  .meta-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .badge.cyan { color: var(--cyan); border-color: var(--cyan); }
+  .badge.orange { color: var(--orange); border-color: var(--orange); }
+  .badge.green { color: var(--green); border-color: var(--green); }
+  .badge.purple { color: var(--purple); border-color: var(--purple); }
+
+  /* Progress */
+  .progress-wrap {
+    margin-top: 14px;
+    background: var(--bg-elev);
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+    transition: width 0.4s ease;
+  }
+  .progress-label {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Sticky controls */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    padding: 10px 0;
+    margin: 0 -18px 16px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sticky-bar select, .sticky-bar button {
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .sticky-bar select { flex: 1; min-width: 200px; }
+  .sticky-bar button:hover { border-color: var(--cyan); }
+
+  /* TOC */
+  nav.toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 22px;
+  }
+  nav.toc h3 { margin: 0 0 12px; font-size: 18px; }
+  nav.toc ol { padding-left: 22px; margin: 0; }
+  nav.toc li { padding: 5px 0; }
+  nav.toc a {
+    color: var(--cyan);
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--cyan); }
+
+  /* Sections */
+  section.topic {
+    margin-bottom: 32px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: var(--shadow);
+  }
+  section.topic > h2 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 24px;
+    margin: 0 0 6px;
+    line-height: 1.3;
+  }
+  section.topic > .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+  .ts {
+    display: inline-block;
+    background: var(--bg-card);
+    color: var(--cyan);
+    font-size: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 7px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .card h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .card ul { margin: 6px 0 0; padding-left: 22px; }
+  .card li { margin: 6px 0; }
+  .card.def {
+    border-left: 4px solid var(--cyan);
+    background: linear-gradient(90deg, rgba(0,212,255,0.08), transparent 60%);
+  }
+  .card.tip {
+    border-left: 4px solid var(--yellow);
+    background: linear-gradient(90deg, rgba(255,209,102,0.08), transparent 60%);
+  }
+  .card.hot {
+    border-left: 4px solid var(--hot);
+    background: linear-gradient(90deg, rgba(255,56,96,0.10), transparent 60%);
+  }
+  .card.story {
+    border-left: 4px solid var(--purple);
+    background: var(--link-bg);
+  }
+  .card.upcoming {
+    border-left: 4px solid var(--green);
+    background: linear-gradient(90deg, rgba(0,255,136,0.07), transparent 60%);
+  }
+
+  /* Image */
+  figure.imgwrap {
+    margin: 12px 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+  }
+  figure.imgwrap img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    background: #0a0a14;
+  }
+  figcaption {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-top: 1px solid var(--border);
+  }
+  figcaption a { color: var(--cyan); }
+
+  /* Tables */
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  .tbl th, .tbl td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .tbl th {
+    background: rgba(0,212,255,0.10);
+    color: var(--cyan);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .tbl tr:last-child td { border-bottom: none; }
+
+  /* Timeline */
+  .timeline { position: relative; margin: 12px 0; padding-left: 24px; }
+  .timeline:before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan), var(--purple));
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .tl-item:before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    background: var(--cyan);
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--cyan);
+  }
+  .tl-year { font-weight: 800; color: var(--orange); margin-right: 6px; }
+
+  /* Quiz */
+  details.quiz {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin: 8px 0;
+  }
+  details.quiz summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  details.quiz summary::-webkit-details-marker { display: none; }
+  details.quiz summary:before {
+    content: 'Q ▶';
+    color: var(--cyan);
+    margin-right: 8px;
+    font-size: 13px;
+  }
+  details.quiz[open] summary:before { content: 'Q ▼'; }
+  details.quiz p {
+    margin: 8px 0 0;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .checklist li {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin: 6px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .checklist input[type="checkbox"] {
+    margin-top: 5px;
+    accent-color: var(--green);
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .checklist li.done {
+    opacity: 0.55;
+    text-decoration: line-through;
+  }
+
+  /* Hot tag */
+  .hot-tag {
+    color: var(--hot);
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .pill {
+    display: inline-block;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+    color: var(--text-soft);
+    margin: 2px 4px 2px 0;
+  }
+
+  code, kbd {
+    background: var(--bg-elev);
+    color: var(--orange);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  hr.div {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 18px 0;
+  }
+
+  footer {
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    header.hero h1 { font-size: 22px; }
+    section.topic > h2 { font-size: 20px; }
+    .wrap { padding: 14px 12px 80px; }
+    .sticky-bar { margin: 0 -12px 14px; padding: 8px 12px; }
+  }
+
+  /* Print */
+  @media print {
+    body { background: white; color: black; font-size: 12pt; }
+    .sticky-bar, nav.toc, footer { display: none; }
+    section.topic, .card, figure.imgwrap, .tbl { break-inside: avoid; box-shadow: none; }
+    details.quiz[open] { background: white; }
+    details.quiz summary { color: black; }
+    details.quiz p { color: #006400; }
+    a { color: black; text-decoration: underline; }
+  }
+</style>
+</head>
+<body data-theme="dark">
+<div class="wrap">
+
+<!-- HEADER -->
+<header class="hero">
+  <h1>🤖 Artificial Intelligence (कृत्रिम बुद्धिमता) — Class 8</h1>
+  <p>MPPSC Prelims · Paper 2 · Unit 9 · ICT Series — Topic 6 of 9</p>
+  <p style="font-size: 14px;">📺 Source: Unacademy Abhiyaan · CG Live · Hinglish Revision Page</p>
+  <div class="meta-badges">
+    <span class="badge cyan">7 Major Topics</span>
+    <span class="badge orange">🔥 Exam Hot</span>
+    <span class="badge green">Hinglish</span>
+    <span class="badge purple">Mnemonic + Link Stories</span>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-label" id="progressLabel">Revision progress: 0%</div>
+</header>
+
+<!-- STICKY NAV -->
+<div class="sticky-bar">
+  <select id="jumpMenu" aria-label="Jump to topic">
+    <option value="">⚡ Jump to topic…</option>
+    <option value="t1">1️⃣ परिचय (Introduction)</option>
+    <option value="t2">2️⃣ इतिहास (History)</option>
+    <option value="t3">3️⃣ प्रकार (Types of AI)</option>
+    <option value="t4">4️⃣ अनुप्रयोग (Applications)</option>
+    <option value="t5">5️⃣ उदाहरण (Examples)</option>
+    <option value="t6">6️⃣ भारत में AI</option>
+    <option value="t7">7️⃣ करंट अफेयर्स</option>
+    <option value="m-fullforms">📚 All Full Forms</option>
+    <option value="m-hot">🔥 Master Exam Hot Facts</option>
+    <option value="m-checklist">✅ Master Checklist</option>
+  </select>
+  <button id="themeToggle" aria-label="Toggle theme">🌗 Theme</button>
+  <button id="resetCheck" aria-label="Reset checklist">↺ Reset</button>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <h3>📋 Table of Contents — आज क्या पढ़ेंगे</h3>
+  <ol>
+    <li><a href="#t1">परिचय — AI, ML, DL, Big Data, Singularity</a></li>
+    <li><a href="#t2">AI का इतिहास (1935 — 2022)</a></li>
+    <li><a href="#t3">AI के प्रकार (6 Types)</a></li>
+    <li><a href="#t4">AI के अनुप्रयोग (Applications)</a></li>
+    <li><a href="#t5">AI के प्रमुख उदाहरण (Examples)</a></li>
+    <li><a href="#t6">भारत में AI — नीति, संस्थान, स्टार्टअप, अनुप्रयोग</a></li>
+    <li><a href="#t7">करंट अफेयर्स (17 Important News)</a></li>
+    <li><a href="#m-fullforms">📚 Master Full Forms Table</a></li>
+    <li><a href="#m-hot">🔥 Master Exam Hot Facts</a></li>
+    <li><a href="#m-checklist">✅ Master Revision Checklist</a></li>
+  </ol>
+</nav>
+
+<!-- ============== TOPIC 1: INTRODUCTION ============== -->
+<section class="topic" id="t1">
+  <h2>1️⃣ परिचय — Artificial Intelligence (कृत्रिम बुद्धिमता)</h2>
+  <p class="subtitle"><span class="ts">00:00–00:23</span> क्लास overview, AI क्यों चर्चा में, और AI से जुड़े शब्दों का परिचय।</p>
+
+  <div class="card">
+    <h3>🎯 आज की क्लास का Roadmap (Sir का बताया हुआ)</h3>
+    <ul>
+      <li><b>Topic 6 of 9</b> — Unit 9 (ICT) में अब तक 5 topics: ICT, Computer, Internet, Cyber Security, Social Networking Sites।</li>
+      <li>आज का topic: <b>Artificial Intelligence (आर्टिफिशियल इंटेलिजेंस)</b> — बहुत चर्चा का विषय।</li>
+      <li>AI नया नहीं है — शुरुआत <b>1950 के दशक</b> में हो चुकी थी।</li>
+      <li>आज AI इसलिए चाहिए क्योंकि <b>data बहुत बढ़ गया है</b> — useful data निकालने के लिए AI जैसी तकनीक चाहिए।</li>
+    </ul>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/GPT4chip.png/640px-GPT4chip.png"
+         alt="Concept image — Artificial Intelligence chip with neural connections"
+         loading="eager" fetchpriority="high" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/GPT4chip.png">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:GPT4chip.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Creator: PantheraLeo1359531 · License: CC BY 4.0 — Conceptual AI chip representation.</figcaption>
+  </figure>
+
+  <div class="card def">
+    <h3>📖 Definition — AI क्या है?</h3>
+    <p><b>Artificial</b> = कृत्रिम · <b>Intelligence</b> = बुद्धिमता।</p>
+    <p>AI is a <b>branch of computer science</b> which is based on developing human-like intellectual abilities, learning &amp; decision making in machines.</p>
+    <p>हिंदी में: ऐसी मशीनें बनाना जो <b>इंसान की तरह व्यवहार</b> कर सकें — task करें, emotions समझें, इंसानों की needs के हिसाब से कम करें।</p>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 Father of AI — मोस्ट इंपॉर्टेंट</h3>
+    <ul>
+      <li><b>John McCarthy (जॉन मकार्थी)</b> — Father of Artificial Intelligence।</li>
+      <li>उन्होंने पहले बार <b>"Artificial Intelligence"</b> शब्द दिया (1956 में)।</li>
+      <li>उन्होंने <b>LISP</b> नाम की programming language बनाई जो AI में use होती है।</li>
+    </ul>
+  </div>
+
+  <hr class="div">
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:20px;">🧠 AI से जुड़े शब्द (Key Terms) — विस्तार से</h3>
+
+  <div class="card">
+    <h3>1. 🌐 Big Data (बिग डाटा)</h3>
+    <ul>
+      <li>Internet पर जमा किया गया <b>संपूर्ण data</b> = Big Data।</li>
+      <li>हर दिन हजारों लोग YouTube videos, Instagram, Facebook, tweets, photos, Google searches, online shopping करते हैं — यह सब data Big Data कहलाता है।</li>
+      <li><b>2020 तक:</b> ~40 ZB ≈ <b>43 trillion GB</b> data generate हो चुका है।</li>
+      <li>Term <b>John Mashey</b> ने popularize किया।</li>
+      <li><b>4 Vs / 5 Vs / 6 Vs</b> से Big Data define होता है — Volume, Velocity, Variety आदि।</li>
+    </ul>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/BigData_2267x1146_white.png/640px-BigData_2267x1146_white.png"
+         alt="Big Data concept — large volumes of varied data flowing into analytics"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/BigData_2267x1146_white.png">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:BigData_2267x1146_white.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Creator: Camelia.boban · License: CC BY-SA 3.0 — Big Data conceptual diagram.</figcaption>
+  </figure>
+
+  <div class="card">
+    <h3>2. ⛏️ Data Mining</h3>
+    <p>एक बहुत बड़े data में से <b>useful / काम का data निकालने</b> की प्रक्रिया।</p>
+    <p>📌 Sir का analogy: तांबे की खान से तांबा निकालना — पहले बहुत सा material निकलेगा, फिर उसमें से तांबा extract होगा। ठीक उसी तरह Big Data रूपी खदान से useful data निकालना = Data Mining।</p>
+  </div>
+
+  <div class="card">
+    <h3>3. ✨ Clean Data</h3>
+    <p>ऐसा data जो ना सिर्फ <b>useful</b> हो बल्कि बहुत <b>व्यवस्थित (sequenced, formatted)</b> हो — एक निश्चित format में हो।</p>
+    <p>Raw data अक्सर incomplete होता है, उसका कोई format नहीं होता। Clean data = arrange कर के filter किया हुआ usable data।</p>
+  </div>
+
+  <div class="card">
+    <h3>4. 🤖 Machine Learning (ML)</h3>
+    <ul>
+      <li>AI की <b>एक branch / sub-set</b>।</li>
+      <li>एक <b>computer program</b> जो particular task को बार-बार automatic repeat करता है — एक बार program कर दिया तो वो उसी हिसाब से data filter करेगा।</li>
+      <li>Sir के examples: Amazon/Flipkart पर एक चीज़ search करो → वही ad बार-बार दिखेगा। "Alexa, turn on the light" — वॉइस command पर light चलाना।</li>
+      <li>ML में <b>programmer की ज़रूरत</b> होती है — input और output के बीच में एक program लगाना पड़ता है।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>5. 🧠 Deep Learning (DL)</h3>
+    <ul>
+      <li>Machine Learning की भी एक <b>branch / sub-set</b>।</li>
+      <li>ऐसे computers बनाना जो बिल्कुल <b>इंसान के ब्रेन के neurons की तरह</b> काम करें।</li>
+      <li>अलग से program नहीं बनाना पड़ता — मशीन खुद समझ जाएगी कि इंसान को क्या चाहिए।</li>
+      <li>Sir का example: सिर्फ "है Alexa turn on the light" से नहीं, बल्कि "लाइट चालू कर दो", "उजाला कर दो" — कोई भी भाषा/शब्द हो, मशीन समझ ले। Roshni slow/कम भी automatic adjust करे।</li>
+      <li>Robot मूवी का robot Chitti = Deep Learning का example (खुद सीखता है, decide करता है)।</li>
+    </ul>
+  </div>
+
+  <div class="card def">
+    <h3>📊 ML vs DL — Diagram (Sir का खींचा हुआ)</h3>
+    <p><b>Machine Learning:</b> Input → 🧑‍💻 Programmer (program) → Output</p>
+    <p><b>Deep Learning:</b> Input → 🤖 (खुद-ब-खुद, no programmer) → Output</p>
+    <p style="margin-top:8px;color:var(--text-soft);font-style:italic;">"AI ⊃ Machine Learning ⊃ Deep Learning" — relation याद रखो।</p>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/AI-ML-DL.svg/640px-AI-ML-DL.svg.png"
+         alt="Diagram showing AI containing Machine Learning, ML containing Deep Learning"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/AI-ML-DL.svg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:AI-ML-DL.svg" target="_blank" rel="noopener">Wikimedia Commons</a> · Creator: Avimanyu786 · License: CC BY-SA 4.0 — AI ⊃ ML ⊃ DL relationship.</figcaption>
+  </figure>
+
+  <div class="card">
+    <h3>6. ⚡ Technological Singularity</h3>
+    <ul>
+      <li>एक <b>theoretical concept</b> — मानना है कि <b>2025 तक</b> हम ऐसी मशीनें बना लेंगे जो इंसान से भी ज़्यादा smart होंगी।</li>
+      <li>वो समय जब <b>मशीनें इंसानों पर rule</b> करने लगें।</li>
+      <li>📽️ Sir के films references: <b>Matrix, Transformers</b>, और एक film जिसमें alien बाहर से आता है — सभी में machine vs human concept।</li>
+      <li>Diagram (Sir): इंसान → इंसान ने मशीन बनाई → मशीन इंसान के बराबर → मशीन इंसान से आगे = <b>Singularity</b>।</li>
+    </ul>
+  </div>
+
+  <div class="card story">
+    <h3>🔗 Link Story — AI से जुड़े शब्दों को ऐसे याद करो</h3>
+    <p style="font-style:italic;">
+    "<b>Big Data</b> की एक विशाल खदान थी, जिसमें <b>Data Mining</b> वाले मज़दूर खुदाई कर रहे थे। उन्होंने जो हीरे निकाले उसे <b>Clean Data</b> कहा गया। <b>Machine Learning</b> robot उन हीरों को programmer के हाथ से एक formula में बदलता था। पास में एक <b>Deep Learning</b> robot बैठा था जो <i>बिना किसी programmer</i> के खुद हीरे साफ़ करना सीख रहा था। एक दिन उसने इतनी तरक्की कर ली कि वह इंसानों से भी आगे निकल गया — और उस पल को सब <b>Technological Singularity</b> कहने लगे!"
+    </p>
+    <p style="margin-top:8px;font-size:14px;color:var(--muted);">Big Data → Mining → Clean Data → ML → DL → Singularity (chain order)</p>
+  </div>
+
+  <div class="card tip">
+    <h3>💡 Mnemonic — AI Inner Set</h3>
+    <p><b>"BIG Data Cleans, Mining, ML, DL, Singularity"</b> — <code>B-D-C-M-M-D-S</code></p>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 Exam Hot Points (Sir ने highlight किया)</h3>
+    <ul>
+      <li><b>John McCarthy</b> = Father of AI · 1956 में AI शब्द दिया · LISP language बनाई।</li>
+      <li><b>Big Data</b> term — <b>John Mashey</b> ने popularize किया।</li>
+      <li>2020 तक data ≈ <b>43 trillion GB</b>।</li>
+      <li><b>Singularity</b> 2025 की theoretical prediction — मशीनें इंसान से smart।</li>
+      <li><b>AI ⊃ ML ⊃ DL</b> hierarchy।</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 1</h3>
+  <details class="quiz"><summary>Q1. AI के पिता (Father of AI) कौन हैं?</summary><p>👉 John McCarthy — उन्होंने 1956 में AI शब्द दिया और LISP language बनाई।</p></details>
+  <details class="quiz"><summary>Q2. AI ⊃ ML ⊃ DL — किसके अंदर क्या आता है?</summary><p>👉 Artificial Intelligence सबसे बड़ा set, उसके अंदर Machine Learning, और ML के अंदर Deep Learning।</p></details>
+  <details class="quiz"><summary>Q3. ML और DL में सबसे बड़ा अंतर?</summary><p>👉 ML में programmer का program चाहिए, DL में मशीन खुद इंसान के ब्रेन की तरह सीखती है।</p></details>
+  <details class="quiz"><summary>Q4. Technological Singularity क्या है?</summary><p>👉 वो समय (theoretical 2025) जब मशीनें इंसानों से ज़्यादा smart होंगी और उन पर rule करने लगेंगी।</p></details>
+  <details class="quiz"><summary>Q5. Big Data term किसने popularize किया?</summary><p>👉 John Mashey ने।</p></details>
+</section>
+
+<!-- ============== TOPIC 2: HISTORY ============== -->
+<section class="topic" id="t2">
+  <h2>2️⃣ AI का इतिहास (History of AI)</h2>
+  <p class="subtitle"><span class="ts">00:23–00:37</span> 1935 से 2020 तक AI का development — Sir ने chronology में पढ़ाया।</p>
+
+  <div class="card">
+    <h3>📅 क्यों ज़रूरी है यह timeline?</h3>
+    <p>Sir ने जोर दिया — एग्जाम में <b>year + person + invention</b> से प्रश्न आते हैं। हर साल और नाम याद रखना ज़रूरी।</p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-year">1935</span> <b>Alan Turing</b> ने <b>abstract computing machine</b> की बात की जिसमें <b>infinity (अनंत) storage capacity</b> होगी। AI के लिए जरूरी क्योंकि AI को बहुत सारा data store करना पड़ता है।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1950</span> <b>Alan Turing</b> ने <b>Turing Test</b> प्रस्तुत किया — <span class="hot-tag">🔥 AI की official शुरुआत मानी जाती है।</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1951</span> <b>Christopher Strachey</b> ने AI के लिए पहला program लिखा (हालांकि सफल नहीं था)।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1956</span> <b>John McCarthy</b> ने <b>"Artificial Intelligence"</b> term coin किया — define किया <i>"the science and engineering of making intelligent machines"</i>। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1960</span> <b>John McCarthy</b> ने <b>LISP</b> programming language develop की — आज भी AI में use होती है। <span class="hot-tag">🔥 इसी कारण McCarthy = Father of AI</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1973</span> France के <b>Alain Colmerauer</b> ने <b>PROLOG</b> language बनाई। PROLOG full form = <b>PROgramming in LOGic</b>।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1973</span> <b>Edinburgh University</b> के Assembly Robotics group ने Scottish robot <b>Freddy</b> बनाया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1981</span> <b>Japan</b> ने <b>Fifth Generation Project</b> शुरू किया — super computing/super machines develop करने का mission। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1981+</span> <b>Britain</b> ने <b>Alvey</b> project · <b>European Union</b> ने <b>ESPRIT</b> project launch किया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1983</span> कुछ निजी संस्थाओं ने मिलकर <b>MCC — Microelectronics &amp; Computer Technology</b> संस्थान बनाया, जिसका काम AI develop करना।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1990</span> <b>MIT (Massachusetts Institute of Technology)</b> की <b>Dr. Cynthia Breazeal</b> ने <b>Kismet</b> नामक <i>emotional robot</i> बनाया जो emotions feel कर सकता था। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">1997</span> <b>Deep Blue</b> (IBM का AI-based chess program) ने उस समय के world champion <b>Garry Kasparov</b> को हराया। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2010</span> <b>Microsoft</b> ने <b>Xbox</b> gaming device launch की।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2010</span> <b>DeepMind</b> — एक British company, headquarters <b>London</b>, स्थापित।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2011</span> <b>Apple</b> ने <b>Siri</b> voice assistant launch किया (4 अक्टूबर 2011)। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2014</span> <b>Google</b> ने DeepMind को खरीदा, नाम बदलकर <b>Google DeepMind</b> रखा — Google की AI unit। <span class="hot-tag">🔥 बहुत-बहुत महत्वपूर्ण</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2014</span> <b>Amazon</b> ने <b>Alexa</b> voice assistant launch किया (6 नवंबर 2014)।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2016</span> <b>Google</b> ने <b>AlphaGo</b> से कोरियाई player Lee Sedol को हराया (Sir ने कहा "important नहीं है")।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2016</span> <b>Google</b> ने <b>Google Assistant</b> launch किया। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2016</span> <b>Hanson Robotics</b> (Hong Kong) के <b>David Hanson</b> ने <b>Sophia</b> humanoid robot प्रस्तुत किया। Saudi Arabia ने इसे citizenship दी। भारत के Indore में भी आई। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2017</span> विश्व का पहला robot police officer <b>RoboCop</b> बनाया गया, <b>Dubai Police force</b> में शामिल। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2017</span> <b>Microsoft</b> ने real-time AI के लिए <b>Project Brainwave</b> शुरू किया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2017</span> <b>Samsung</b> ने <b>Bixby</b> voice assistant launch किया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2020</span> <b>Microsoft</b> ने <b>Turing Natural Language Generation 2 (T-NLG)</b> launch किया।
+    </div>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sophia_at_the_AI_for_Good_Global_Summit_2018_%2827254369347%29_%28cropped%29.jpg/640px-Sophia_at_the_AI_for_Good_Global_Summit_2018_%2827254369347%29_%28cropped%29.jpg"
+         alt="Sophia humanoid robot by Hanson Robotics"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sophia_at_the_AI_for_Good_Global_Summit_2018_(27254369347)_(cropped).jpg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:Sophia_at_the_AI_for_Good_Global_Summit_2018_(27254369347)_(cropped).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · ITU Pictures · CC BY 2.0 — Sophia humanoid robot (Hanson Robotics, 2016).</figcaption>
+  </figure>
+
+  <div class="card story">
+    <h3>🔗 Link Story — AI History को ऐसे याद करो</h3>
+    <p style="font-style:italic;">
+    "1935 में <b>Alan Turing</b> ने एक 'अनंत memory' वाली मशीन का सपना देखा। 1950 में उन्होंने <b>Turing Test</b> रखा। 1956 में <b>John McCarthy</b> ने उस सपने को नाम दिया — '<b>Artificial Intelligence</b>' — और 1960 में <b>LISP</b> भाषा बनाकर उसमें जान डाल दी। 1973 में Edinburgh के <b>Freddy</b> robot ने पहली चाल चली। 1981 में <b>Japan</b> ने Fifth Generation की उड़ान भरी, Britain ने <b>Alvey</b>, EU ने <b>ESPRIT</b> कहा। 1990 में MIT की <b>Kismet</b> ने पहली बार emotion feel किया, 1997 में <b>Deep Blue</b> ने Kasparov को मात दी। 2011 में <b>Siri</b> बोली, 2014 में Google ने <b>DeepMind</b> खरीदा, उसी साल <b>Alexa</b> आई। 2016 में <b>Google Assistant</b> + <b>Sophia</b> + <b>Bixby</b> (2017) ने AI को घर-घर पहुँचाया। 2017 में <b>RoboCop</b> Dubai में डंडा घुमाने लगा!"
+    </p>
+  </div>
+
+  <div class="card tip">
+    <h3>💡 Mnemonic — Voice Assistants Order</h3>
+    <p><b>"Siri Alexa Google Bixby"</b> = <code>2011 → 2014 → 2016 → 2017</code></p>
+    <p><b>याद रखो:</b> Apple → Amazon → Google → Samsung (alphabetical company नहीं — release order)।</p>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 History से Exam Hot Facts</h3>
+    <ul>
+      <li><b>1956</b> — McCarthy ने AI शब्द coined किया।</li>
+      <li><b>1960</b> — McCarthy ने LISP language बनाई।</li>
+      <li><b>1973</b> — PROLOG (Alain Colmerauer, France) · Freddy robot (Edinburgh)।</li>
+      <li><b>1990</b> — Kismet emotional robot (MIT, Dr. Cynthia Breazeal)।</li>
+      <li><b>1997</b> — Deep Blue ने Garry Kasparov को हराया।</li>
+      <li><b>2010</b> — DeepMind स्थापित (London)। <b>2014</b> — Google ने खरीदी = Google DeepMind।</li>
+      <li><b>Siri 2011</b>, <b>Alexa 2014</b>, <b>Google Assistant 2016</b>।</li>
+      <li><b>Sophia (2016)</b> — Hanson Robotics, David Hanson।</li>
+      <li><b>RoboCop (2017)</b> — Dubai Police force में पहला robot police।</li>
+      <li><b>Project Brainwave</b> — Microsoft (2017, real-time AI)।</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 2</h3>
+  <details class="quiz"><summary>Q1. PROLOG language किसने बनाई और full form क्या है?</summary><p>👉 1973 में Alain Colmerauer (France) ने। Full form = PROgramming in LOGic।</p></details>
+  <details class="quiz"><summary>Q2. Kismet emotional robot किसने बनाया?</summary><p>👉 MIT की Dr. Cynthia Breazeal ने 1990 में।</p></details>
+  <details class="quiz"><summary>Q3. Google ने DeepMind कब खरीदा और क्यों?</summary><p>👉 2014 में, AI में leader बनने के लिए। नाम बदलकर Google DeepMind रखा (2010 में London में स्थापित)।</p></details>
+  <details class="quiz"><summary>Q4. Deep Blue ने किसे हराया?</summary><p>👉 1997 में world chess champion Garry Kasparov को।</p></details>
+  <details class="quiz"><summary>Q5. Sophia किस company ने बनाया, कौन से देश ने citizenship दी?</summary><p>👉 Hanson Robotics (Hong Kong), David Hanson ने 2016 में बनाया। Saudi Arabia ने citizenship दी।</p></details>
+  <details class="quiz"><summary>Q6. विश्व का पहला robot police officer कौन और कहाँ?</summary><p>👉 RoboCop, 2017, Dubai Police force में शामिल।</p></details>
+</section>
+
+<!-- ============== TOPIC 3: TYPES OF AI ============== -->
+<section class="topic" id="t3">
+  <h2>3️⃣ AI के प्रकार (Types of AI) — 6 मुख्य प्रकार</h2>
+  <p class="subtitle"><span class="ts">00:37–00:45</span> Sir ने कहा — AI के बहुत प्रकार हैं, हम 6 मुख्य पढ़ेंगे जिनसे प्रश्न आ सकते हैं।</p>
+
+  <div class="card def">
+    <h3>📋 6 Main Types — एक नज़र में</h3>
+    <ol>
+      <li><b>Purely Reactive AI</b> (Reactive AI) — पुरी रिएक्टिव</li>
+      <li><b>Limited Memory AI</b> — सीमित स्मृति</li>
+      <li><b>Theory of Mind AI</b> — Brain Theory</li>
+      <li><b>Self-Conscious / Self-Aware AI</b> — आत्म चेतन</li>
+      <li><b>Narrow / Weak AI</b> — कमजोर AI</li>
+      <li><b>Super / Strong AI</b> — सशक्त AI</li>
+    </ol>
+    <p style="font-size:13px;color:var(--muted);">⚠️ <b>English नाम याद रखिए</b> — Hindi translation हर जगह अलग है (Sir का instruction)।</p>
+  </div>
+
+  <table class="tbl">
+    <thead><tr><th>Type</th><th>Memory</th><th>Behavior / Example</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>1. Purely Reactive AI</b></td>
+        <td>❌ Past experience store नहीं करता</td>
+        <td>Pre-programmed काम करता है। जैसा program किया, वैसा करेगा।</td>
+      </tr>
+      <tr>
+        <td><b>2. Limited Memory AI</b></td>
+        <td>✅ Past experience को सीमित समय के लिए store</td>
+        <td><b>Driverless Car</b> 🚗 — आसपास की cars/objects का data limited time के लिए store।</td>
+      </tr>
+      <tr>
+        <td><b>3. Theory of Mind AI</b></td>
+        <td>—</td>
+        <td>लोगों की <b>भावनाओं, विश्वासों, क्रियाकलापों</b> को समझेगा। मनुष्यों की तरह सामाजिक रूप से बात कर सकेगा।</td>
+      </tr>
+      <tr>
+        <td><b>4. Self-Conscious AI</b></td>
+        <td>—</td>
+        <td>खुद से सोच सकेगा, <b>खुद की बुद्धि विकसित</b> करेगा। यही Singularity का base है। AI का <b>future</b>।</td>
+      </tr>
+      <tr>
+        <td><b>5. Narrow / Weak AI</b></td>
+        <td>—</td>
+        <td><b>एक समय पर एक task</b>। Examples: <b>Siri, Alexa, Google Assistant</b>।</td>
+      </tr>
+      <tr>
+        <td><b>6. Super / Strong AI</b></td>
+        <td>—</td>
+        <td><b>Multi-tasking</b> — एक साथ कई काम। Humanoids में use होता है।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card hot">
+    <h3>🔥 Sir का मूल अंतर — Self-Conscious AI</h3>
+    <p>आज की मशीन और इंसान में फर्क यही है कि <b>मशीन सोच नहीं सकती</b>। जब उन्हें सोचने की क्षमता दे देंगे, तो वे इंसानों को पीछे छोड़ देंगी। <b>"Self-conscious AI = the future of AI = Singularity का door"</b></p>
+  </div>
+
+  <div class="card">
+    <h3>🚗 Limited Memory — Driverless Car का example</h3>
+    <p>आजू-बाजू से कोई कार जा रही है — driverless car उस data को <b>limited time</b> के लिए store करती है ताकि सही decision ले सके। जैसे ही immediate need खत्म, data forget हो जाता है।</p>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Waymo_self-driving_car_side_view.gk.jpg/640px-Waymo_self-driving_car_side_view.gk.jpg"
+         alt="Waymo driverless car side view — example of Limited Memory AI"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/Waymo_self-driving_car_side_view.gk.jpg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:Waymo_self-driving_car_side_view.gk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Grendelkhan · CC BY-SA 4.0 — Driverless car (Limited Memory AI example).</figcaption>
+  </figure>
+
+  <div class="card story">
+    <h3>🔗 Link Story — 6 Types को क्रम में याद करो</h3>
+    <p style="font-style:italic;">
+    "एक AI विद्यालय में 6 बच्चे पढ़ते थे। पहला <b>Reactive Ravi</b> कुछ याद नहीं रखता था। दूसरा <b>Limited-Memory Lalita</b> थोड़ी देर के लिए याद रखती थी और driverless car चलाती थी। तीसरा <b>Theory-of-Mind Tina</b> सबकी भावनाएं समझती थी। चौथी <b>Self-Conscious Sara</b> खुद सोचने लगी और सिंगुलैरिटी की रानी बन गई। पांचवां <b>Narrow Naveen</b> एक समय पर सिर्फ एक काम करता था (जैसे Siri/Alexa)। और छठा <b>Super Suraj</b> एक साथ दस काम कर सकता था!"
+    </p>
+    <p style="font-size:14px;color:var(--muted);">क्रम: Reactive → Limited Memory → Theory of Mind → Self-Conscious → Narrow/Weak → Super/Strong</p>
+  </div>
+
+  <div class="card tip">
+    <h3>💡 Mnemonic — 6 Types</h3>
+    <p><b>"Reactive Limit Theory Self Narrow Super"</b> = <code>R-L-T-S-N-S</code></p>
+    <p>याद रखो: <b>"रिएक्टिव लिमिट थ्योरी सेल्फ नैरो सुपर"</b></p>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 Narrow vs Super — सबसे ज़्यादा पूछा जाने वाला</h3>
+    <table class="tbl">
+      <thead><tr><th>Narrow / Weak AI</th><th>Super / Strong AI</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>एक समय पर <b>एक task</b></td>
+          <td><b>Multi-tasking</b> — कई task एक साथ</td>
+        </tr>
+        <tr>
+          <td>Siri, Alexa, Google Assistant</td>
+          <td>Humanoid robots (e.g., Sophia type)</td>
+        </tr>
+        <tr>
+          <td>आज सबसे common</td>
+          <td>अभी develop हो रहा है</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 3</h3>
+  <details class="quiz"><summary>Q1. Driverless car किस AI type का example है?</summary><p>👉 Limited Memory AI — limited time के लिए past data store करता है।</p></details>
+  <details class="quiz"><summary>Q2. Siri, Alexa, Google Assistant — कौन सा AI type?</summary><p>👉 Narrow / Weak AI — एक समय पर एक task।</p></details>
+  <details class="quiz"><summary>Q3. Self-Conscious AI और Singularity में क्या रिश्ता है?</summary><p>👉 जब AI खुद सोचने लगेगा (Self-Conscious), तब Singularity आएगी।</p></details>
+  <details class="quiz"><summary>Q4. Theory of Mind AI क्या समझेगा?</summary><p>👉 लोगों की भावनाएं, विश्वास, क्रियाकलाप — मनुष्यों की तरह सामाजिक interaction।</p></details>
+  <details class="quiz"><summary>Q5. Multi-tasking AI को क्या कहते हैं?</summary><p>👉 Super / Strong AI — humanoids में use होता है।</p></details>
+</section>
+
+<!-- ============== TOPIC 4: APPLICATIONS ============== -->
+<section class="topic" id="t4">
+  <h2>4️⃣ AI के अनुप्रयोग (Applications)</h2>
+  <p class="subtitle"><span class="ts">00:45–00:48</span> मुख्य परीक्षा के लिए ज़्यादा important। AI कहाँ-कहाँ use हो रहा है।</p>
+
+  <div class="card def">
+    <h3>🌐 AI is Multi-Dimensional</h3>
+    <p>Sir का statement: "जितनी भी चीज़ें net से जुड़ी हुई हैं, उन हर जगह AI use हो सकता है।"</p>
+  </div>
+
+  <table class="tbl">
+    <thead><tr><th>क्षेत्र / Field</th><th>AI का योगदान</th></tr></thead>
+    <tbody>
+      <tr><td>📚 <b>Education</b></td><td>Better content, content delivery to people</td></tr>
+      <tr><td>🏥 <b>Health Care</b></td><td>Surgery करने वाले robots — आज maximum surgery robots से ही होती है</td></tr>
+      <tr><td>💻 <b>IT Industry</b></td><td>User-friendly software, robot manufacturing, better data mining</td></tr>
+      <tr><td>🛡️ <b>Cyber Security</b></td><td>Automatic threat detection, response</td></tr>
+      <tr><td>🎮 <b>Gaming Industry</b></td><td>बहुत बड़ा contribution — smart NPCs, adaptive games</td></tr>
+      <tr><td>🌾 <b>Agriculture</b></td><td>Smart Agriculture पूरी तरह AI-based होती है</td></tr>
+      <tr><td>🚗 <b>Driverless Car</b></td><td>Limited Memory AI</td></tr>
+      <tr><td>🗣️ <b>Digital / Voice Assistants</b></td><td>Siri, Alexa, Google Assistant आदि</td></tr>
+      <tr><td>🌍 <b>Translation / अनुवाद</b></td><td>Auto language translation</td></tr>
+      <tr><td>👤 <b>Facial Recognition</b></td><td>Face unlock, biometrics</td></tr>
+      <tr><td>💊 <b>Drug Manufacturing</b></td><td>दवाई बनाने में research</td></tr>
+      <tr><td>💰 <b>Finance / Legal</b></td><td>Risk analysis, contract review</td></tr>
+      <tr><td>🏭 <b>Manufacturing</b></td><td>Robot-based assembly lines</td></tr>
+      <tr><td>🏙️ <b>Smart City</b></td><td>Traffic, lighting, civic services</td></tr>
+      <tr><td>🏠 <b>Smart Home / IoT</b></td><td>IoT तभी काम करता है जब AI जुड़ा हो — इंसान के behavior पर AI काम करता है</td></tr>
+      <tr><td>📷 <b>Camera / Mobile Phones</b></td><td>Auto-mode, scene detection, blur background</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card hot">
+    <h3>🔥 Sir का insight — IoT vs AI</h3>
+    <p><b>IoT</b> सिर्फ चीज़ों को internet से जोड़ता है (इंसान की command पर काम)। <b>AI</b> इंसान के <i>behavior</i> पर काम करता है — जैसा इंसान चाहेगा वैसा automatic करेगा। दोनों मिलकर smart home/smart city बनाते हैं।</p>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Da_Vinci_Surgical_System_at_Addenbrooke%27s_Hospital_03.jpg/640px-Da_Vinci_Surgical_System_at_Addenbrooke%27s_Hospital_03.jpg"
+         alt="Da Vinci Surgical System — robot-assisted surgery, AI in healthcare"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/Da_Vinci_Surgical_System_at_Addenbrooke's_Hospital_03.jpg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Surgical_System_at_Addenbrooke%27s_Hospital_03.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Cmglee · CC BY-SA 3.0 — Robot-assisted surgical system (AI in healthcare).</figcaption>
+  </figure>
+
+  <div class="card story">
+    <h3>🔗 Link Story — Applications को ऐसे याद करो</h3>
+    <p style="font-style:italic;">
+    "एक <b>Smart City</b> में सुबह AI alarm बजा (Smart Home/IoT)। कैमरे ने face पहचान लिया (<b>Facial Recognition</b>)। Driverless Car ने School छोड़ा (<b>Education</b> + <b>Driverless</b>)। बच्चे की दादी का operation Robot ने किया (<b>Healthcare</b>)। पिताजी ने Alexa से translate करवाया (<b>Translation</b>) और Banking app में fraud पकड़ा (<b>Finance</b>+<b>Cyber Security</b>)। शाम को Smart Farm की रिपोर्ट आई (<b>Agriculture</b>) और रात को Game खेला (<b>Gaming</b>)!"
+    </p>
+  </div>
+
+  <div class="card tip">
+    <h3>💡 Mnemonic — Top Applications</h3>
+    <p><b>"E-Health-IT-Cyber-Game-Agri-Drive-Voice-Translate-Face-Drug-Finance-Manufacture-City-Home"</b></p>
+    <p>Short: <b>"Education, Health, IT, Cyber, Gaming, Agri + Smart Things"</b></p>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 4</h3>
+  <details class="quiz"><summary>Q1. Smart Agriculture किस technology पर based है?</summary><p>👉 Artificial Intelligence पर।</p></details>
+  <details class="quiz"><summary>Q2. IoT और AI में क्या रिश्ता है?</summary><p>👉 IoT internet से जोड़ता है, AI behavior के हिसाब से काम करता है — दोनों मिलकर smart home/city बनाते हैं।</p></details>
+  <details class="quiz"><summary>Q3. आज healthcare में AI कहाँ use हो रहा है?</summary><p>👉 Surgery (robots), drug manufacturing, facial/biometric recognition।</p></details>
+</section>
+
+<!-- ============== TOPIC 5: EXAMPLES ============== -->
+<section class="topic" id="t5">
+  <h2>5️⃣ AI के प्रमुख उदाहरण (Important Examples)</h2>
+  <p class="subtitle"><span class="ts">00:48–00:52</span> Voice assistants, smart cars, maps आदि — Sir ने कहा "यहाँ से सवाल आने की संभावना ज़्यादा है"।</p>
+
+  <table class="tbl">
+    <thead><tr><th>Example</th><th>Company</th><th>Launch Date</th><th>क्या है</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>🍎 Siri</b></td>
+        <td>Apple</td>
+        <td>4 अक्टूबर 2011</td>
+        <td>Voice assistant — "Hey Siri, call home" type commands</td>
+      </tr>
+      <tr>
+        <td><b>🚗 Tesla Car</b></td>
+        <td>Tesla (Elon Musk), 1 जुलाई 2003</td>
+        <td>2003 (कंपनी)</td>
+        <td>Battery cars + Driverless cars — innovation पर काम</td>
+      </tr>
+      <tr>
+        <td><b>📱 Google Net</b></td>
+        <td>Google</td>
+        <td>—</td>
+        <td>Alexa-type AI device (Google Lens-like)</td>
+      </tr>
+      <tr>
+        <td><b>🗣️ Google Assistant</b></td>
+        <td>Google</td>
+        <td>2016</td>
+        <td>Voice assistant — Google services के लिए</td>
+      </tr>
+      <tr>
+        <td><b>🛒 Alexa</b></td>
+        <td>Amazon</td>
+        <td>6 नवंबर 2014</td>
+        <td>Voice assistant — Echo devices</td>
+      </tr>
+      <tr>
+        <td><b>🗺️ Google Maps</b></td>
+        <td>Google</td>
+        <td>8 फरवरी 2005</td>
+        <td>शुरू में सिर्फ mapping service, अब AI से location improve, restaurants/hotels/tourist places info</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <h3>🌟 अन्य AI Examples (Sir ने list किया)</h3>
+    <ul>
+      <li><b>Face Detection / Recognition</b> — Mobile face unlock</li>
+      <li><b>Auto Correction</b> — Typing में spelling auto-fix</li>
+      <li><b>Translation</b> — Google Translate</li>
+      <li><b>Robot निर्माण</b></li>
+      <li><b>Olipty Auto Assessment</b> (transcript में mention)</li>
+      <li><b>Google Home / Smart Homes</b></li>
+      <li><b>Fingerprint Scanning</b></li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 Sir ने highlight किया — यहाँ से सवाल</h3>
+    <ul>
+      <li>Siri क्या है? कब launch हुआ? (Apple, 2011)</li>
+      <li>Google Assistant क्या है? कब? (Google, 2016)</li>
+      <li>Bixby क्या है? (Samsung का voice assistant, 2017)</li>
+      <li>Alexa किसका है? (Amazon, 2014)</li>
+    </ul>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Amazon_Echo_2nd_Generation.jpg/640px-Amazon_Echo_2nd_Generation.jpg"
+         alt="Amazon Echo (Alexa) smart speaker"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/Amazon_Echo_2nd_Generation.jpg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:Amazon_Echo_2nd_Generation.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Frmorrison · CC BY-SA 4.0 — Amazon Echo (2nd gen) — Alexa-powered smart speaker.</figcaption>
+  </figure>
+
+  <div class="card story">
+    <h3>🔗 Link Story — Voice Assistants Timeline</h3>
+    <p style="font-style:italic;">
+    "<b>2011</b> में Apple ने पहले-पहल <b>Siri</b> को बोलना सिखाया। <b>2014</b> में Amazon की <b>Alexa</b> घर-घर पहुँची। <b>2016</b> में Google ने <b>Google Assistant</b> को मैदान में उतारा। और <b>2017</b> में Samsung ने <b>Bixby</b> को साथ कर दिया। चारों मिलकर आज दुनिया की voice को command में बदल रहे हैं।"
+    </p>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 5</h3>
+  <details class="quiz"><summary>Q1. Tesla कंपनी कब बनी? कौन owner है?</summary><p>👉 1 जुलाई 2003 में, Elon Musk। Battery cars और Driverless cars बनाती है।</p></details>
+  <details class="quiz"><summary>Q2. Google Maps कब launch हुआ?</summary><p>👉 8 फरवरी 2005।</p></details>
+  <details class="quiz"><summary>Q3. Alexa launch date?</summary><p>👉 6 नवंबर 2014 (Amazon)।</p></details>
+</section>
+
+<!-- ============== TOPIC 6: AI IN INDIA ============== -->
+<section class="topic" id="t6">
+  <h2>6️⃣ भारत में AI — सबसे महत्वपूर्ण Topic 🇮🇳</h2>
+  <p class="subtitle"><span class="ts">00:52–01:29</span> Sir का statement — "ये सबसे important है, prelims + mains दोनों के लिए।"</p>
+
+  <div class="card def">
+    <h3>📋 Sir ने 4 भागों में बाँटा (और बाद में Examples जोड़ा)</h3>
+    <ol>
+      <li><b>6.1</b> — भारत में AI का विकास (Development)</li>
+      <li><b>6.2</b> — नीतियाँ (Policies) और संस्थान (Institutions)</li>
+      <li><b>6.3</b> — Startups</li>
+      <li><b>6.4</b> — Applications (अनुप्रयोग) — व्योम मित्र, लक्ष्मी, etc.</li>
+    </ol>
+  </div>
+
+  <hr class="div">
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--cyan);">📜 6.1 — भारत में AI का विकास (Development)</h3>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-year">1986</span> <b>CAIR — Centre for Artificial Intelligence and Robotics</b> स्थापित। DRDO के तहत। मुख्यालय <b>Bengaluru</b>। यह <b>भारत की Nodal Agency</b> है AI के लिए। <span class="hot-tag">🔥 बहुत-बहुत-बहुत महत्वपूर्ण</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2017</span> केंद्र सरकार ने <b>7-Point Strategy on AI</b> पेश की।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2018</span> <b>Ministry of Commerce &amp; Industry</b> ने <b>Artificial Intelligence Task Force</b> शुरू किया। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2018-19 Budget</span> NITI Aayog + MeitY को कहा गया <b>National AI Program (NAIP)</b> बनाने को। दोनों के adhikar पर dispute हुआ → <b>K. RaghuVan / Raghavan Committee</b> गठित। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2018</span> NITI Aayog ने <b>AIforAll</b> (AI पर जो) — <b>National Strategy for AI</b> document जारी किया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2019</span> NITI Aayog ने Cloud Computing Platform <b>AIRAWAT</b> launch किया। Full form: <b>AI Research, Analytics &amp; Knowledge Assimilation Platform</b>। <span class="hot-tag">🔥 Full form ज़रूर याद रखें</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2019</span> राष्ट्रीय स्तर पर AI program की rooprekha के लिए <b>Rajiv Kumar (NITI Aayog उपाध्यक्ष)</b> की अध्यक्षता में समिति गठित।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">June 2020</span> भारत ने <b>GPAI — Global Partnership on Artificial Intelligence</b> join किया। यह <b>OECD</b> द्वारा promote होता है। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">May 2020</span> MeitY + <b>NASSCOM</b> ने <b>National AI Portal</b> launch किया → <code>www.ai.gov.in</code>। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">Oct 2020</span> NITI Aayog + MeitY ने <b>RAISE 2020</b> launch किया। Full form: <b>Responsible AI for Social Empowerment 2020</b>। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2020</span> <b>तेलंगाना सरकार</b> ने 2020 को <b>"Year of Artificial Intelligence"</b> घोषित किया। <span class="hot-tag">🔥 बहुत important</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">2020</span> <b>Kerala Police</b> ने <b>February 2019</b> में Robot को police duty में hire किया।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">G20 Osaka 2019</span> PM <b>नरेंद्र मोदी</b> ने <b>"5 I" Concept</b> दिया — <b>Indigenous, Inclusive, Innovative, Investment, International Cooperation</b>। <span class="hot-tag">🔥</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">Recent</span> <b>IIT Delhi</b> में <b>School of AI</b> शुरू। <b>IIT Hyderabad</b> ने AI-based <b>BTech program</b> शुरू।
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">Recent</span> पूर्व क्रिकेटर <b>Kapil Dev</b> ने AI-based company <b>Harmonizer India</b> में invest किया। <span class="hot-tag">🔥 कंपनी का नाम पूछा जा सकता है</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-year">Recent</span> Google की <b>DeepMind</b> ने <b>British National Health Service (NHS)</b> के साथ मिलकर भारत में काम शुरू किया।
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--orange);">🏛️ 6.2 — मुख्य संस्थान &amp; नीतियाँ (Institutions &amp; Policies)</h3>
+
+  <div class="card hot">
+    <h3>🇮🇳 1. AIforAll (AI पर जो) — भारत की AI नीति</h3>
+    <ul>
+      <li>तैयार किया: <b>NITI Aayog</b> ने।</li>
+      <li>उद्देश्य: भारत को AI का <b>"Garage"</b> (Garage = development &amp; maintenance hub) बनाना।</li>
+      <li>Key concept: <b>Responsible AI</b> — ऐसा AI जो ज़िम्मेदार हो।</li>
+      <li>NITI Aayog ने इसे बनाते समय बड़ी कंपनियों से सुझाव माँगे थे।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🇮🇳 2. NAIP — National Artificial Intelligence Program</h3>
+    <ul>
+      <li>2018-19 बजट में घोषित।</li>
+      <li>NITI Aayog + Ministry of Electronics &amp; Information Technology (MeitY) मिलकर बनाएँगे।</li>
+      <li>दोनों के बीच जूरिस्डिक्शन dispute → <b>K. Raghavan समिति</b> गठित जो दोनों के बीच मतभेद मिटाने का काम करती है।</li>
+      <li>इसी के तहत NITI Aayog ने <b>AIRAWAT</b> launch किया।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>☁️ 3. AIRAWAT — मोस्ट इंपॉर्टेंट Full Form</h3>
+    <p><b>AIRAWAT</b> = <b>A</b>rtificial <b>I</b>ntelligence <b>R</b>esearch, <b>A</b>nalytics and Knowledge <b>A</b>ssimilation Plat<b>w</b>or<b>m</b> (Platform)।</p>
+    <p>NITI Aayog का <b>Cloud Computing Platform</b> — दुनिया के किसी भी कोने से access किया जा सकता है। 2018-19 बजट का extension।</p>
+  </div>
+
+  <div class="card">
+    <h3>📋 4. 7-Point Strategy on AI (Oct 2017)</h3>
+    <p>केंद्र सरकार की AI को बढ़ाने के लिए साथ सूत्री रणनीति। मुख्य points:</p>
+    <ol>
+      <li>Developing methods for <b>Human-Machine Interaction</b> (मानव-मशीन की बातचीत)</li>
+      <li>AI में Research &amp; Development के साथ <b>Competent Workforce</b> बनाना</li>
+      <li>AI System की <b>Security सुनिश्चित</b> करना</li>
+      <li>AI के <b>नैतिक, कानूनी, सामाजिक</b> निहितार्थों को समझना (इसी से <b>Responsible AI</b> concept निकला)</li>
+      <li>+ अन्य points (mains के लिए विस्तार)</li>
+    </ol>
+    <p><b>📌 Sir का Note:</b> "Prelims के लिए ये बहुत detailed नहीं पूछा जाएगा, mains में आ सकता है।"</p>
+  </div>
+
+  <div class="card">
+    <h3>🏭 5. AI Task Force</h3>
+    <ul>
+      <li>शुरू किया: <b>Ministry of Commerce &amp; Industry (वाणिज्य और उद्योग मंत्रालय)</b> ने। <span class="hot-tag">🔥 यहाँ से सवाल</span></li>
+      <li>उद्देश्य: आर्थिक, राजनीतिक, कानूनी प्रक्रियाओं में AI को अपनाकर भारत को <b>AI-युक्त अर्थव्यवस्था</b> बनाना।</li>
+      <li>Implementation और practical use पर focus।</li>
+      <li>Workforce development भी इसी का part।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>🏆 6. CAIR — मोस्ट इंपॉर्टेंट संस्थान</h3>
+    <p><b>CAIR</b> = <b>C</b>entre for <b>A</b>rtificial <b>I</b>ntelligence and <b>R</b>obotics</p>
+    <ul>
+      <li>स्थापना: <b>1986</b></li>
+      <li>संगठन: <b>DRDO</b> के तहत</li>
+      <li>मुख्यालय: <b>Bengaluru</b></li>
+      <li>भूमिका: <b>भारत की Nodal Organization</b> for AI</li>
+    </ul>
+    <p><b>CAIR के तहत 4 important institutes / projects:</b></p>
+    <table class="tbl">
+      <thead><tr><th>नाम</th><th>Full form / Use</th></tr></thead>
+      <tbody>
+        <tr><td><b>AINCO</b></td><td>AI Technology for Net-Centric Operations</td></tr>
+        <tr><td><b>KRIDA</b></td><td><b>K</b>nowledge <b>R</b>esources &amp; <b>I</b>ntelligent <b>D</b>ecision <b>A</b>nalysis (Sir ने highlight किया) <span class="hot-tag">🔥</span></td></tr>
+        <tr><td><b>Robosen</b></td><td>Mobile robot system — सशस्त्र सेना, अर्ध सैनिक बल, पुलिस के लिए surveillance</td></tr>
+        <tr><td><b>NETRA</b></td><td>Software to intercept online communication</td></tr>
+        <tr><td><b>SECOS</b></td><td>Secure Operating System</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card hot">
+    <h3>🌐 7. National AI Portal — www.ai.gov.in</h3>
+    <ul>
+      <li>Launch: <b>May 2020</b></li>
+      <li>द्वारा: <b>MeitY + NASSCOM</b></li>
+      <li>One-stop digital platform for AI-related developments in India।</li>
+      <li>Class 8 to 12 के central/state schools के teachers को online training भी इसी पर।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>🌍 8. GPAI — Global Partnership on Artificial Intelligence</h3>
+    <ul>
+      <li>एक <b>international agreement / forum</b> — दुनिया भर में AI को आगे बढ़ाने के लिए।</li>
+      <li>Promote करता है: <b>OECD</b> (Organisation for Economic Cooperation and Development)।</li>
+      <li>भारत ने <b>June 2020</b> में join किया।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📜 9. RAISE 2020</h3>
+    <p><b>R</b>esponsible <b>AI</b> for <b>S</b>ocial <b>E</b>mpowerment <b>2020</b>।</p>
+    <p>Launched by: NITI Aayog + MeitY, October 2020, New Delhi में first-of-its-kind summit।</p>
+    <p>उद्देश्य: AI ऐसा develop हो जो मानव विकास में सहायक हो, disaster ना बने।</p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 10. PM Modi का "5 I" Concept (G20 Osaka 2019)</h3>
+    <p>एक ऐसी Digital + AI Economy बनानी है जो हो:</p>
+    <ol>
+      <li><b>I</b>ndigenous (स्वदेशी)</li>
+      <li><b>I</b>nclusive (सबको साथ लेकर)</li>
+      <li><b>I</b>nnovative (नए innovations)</li>
+      <li><b>I</b>nvestment (Infrastructure में)</li>
+      <li><b>I</b>nternational Cooperation</li>
+    </ol>
+  </div>
+
+  <hr class="div">
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--green);">🚀 6.3 — भारत के AI Startups</h3>
+
+  <div class="card">
+    <h3>🇮🇳 भारत के प्रमुख AI Startups (Sir ने नाम याद रखने को कहा)</h3>
+    <ul>
+      <li><b>Active.AI</b> — Banking sector में AI</li>
+      <li><b>Indra Sistemas</b> — Logos &amp; objects पहचानने वाले उपकरण</li>
+      <li><b>Artivatic</b> — <b>Deep Learning</b> पर काम</li>
+      <li><b>MultiVertic Data Lab</b></li>
+      <li><b>Arya.AI</b></li>
+      <li><b>Fluid.AI</b></li>
+      <li><b>Mor.AI / Murph AI</b></li>
+      <li><b>SikhTemple</b></li>
+    </ul>
+    <p style="font-size:13px;color:var(--muted);">📌 Sir का instruction: "सिर्फ कंपनियों के नाम याद रखो, पूरी detail पढ़ने की जरूरत नहीं।"</p>
+  </div>
+
+  <hr class="div">
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:20px;color:var(--purple);">🤖 6.4 — भारत में AI के अनुप्रयोग (Applications)</h3>
+
+  <div class="card hot">
+    <h3>1. 🛰️ Vyommitra (व्योम मित्र)</h3>
+    <ul>
+      <li><b>Half humanoid robot</b> (आधे काम इंसान की तरह कर सकता है)</li>
+      <li>विकसित: <b>ISRO</b> द्वारा (2020 में present)</li>
+      <li>उद्देश्य: <b>Gaganyaan Mission</b> — भारत का पहला human space mission (5 दिन अंतरिक्ष में)</li>
+      <li>22 जनवरी 2020 को Bengaluru में <b>ISRO + International Academy of Astronautics + Astronautical Society of India</b> के पहले सम्मेलन में पेश।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>2. 🏦 Lakshmi (लक्ष्मी) — पहला Banking Robot</h3>
+    <ul>
+      <li><b>भारत का पहला banking robot</b></li>
+      <li>Bank: <b>City Union Bank</b>, Kumbakonam, <b>Tamil Nadu</b></li>
+      <li>Launch: <b>नवंबर 2016</b></li>
+      <li>125+ common questions का जवाब दे सकता है (cheque कहाँ डालना है, ATM कैसे मिलेगा आदि)।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>3. 🚂 Ask Disha</h3>
+    <ul>
+      <li>द्वारा: <b>IRCTC</b></li>
+      <li>Launch: <b>2018</b> में English में, बाद में Hindi में भी।</li>
+      <li>Chatbot/AI assistant — common train booking questions के जवाब।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>4. 🚦 Indore Traffic Robot</h3>
+    <ul>
+      <li><b>भारत का पहला Traffic Control Robot</b></li>
+      <li>स्थान: <b>Indore (मध्य प्रदेश)</b>, श्री-9 और Ring Road पर</li>
+      <li>एक बार program करने के बाद स्वतः अपना कार्य करता है।</li>
+      <li>Features: Timer + Light system + Camera जो <b>RLVDS — Red Light Violation Detection System</b> से attached।</li>
+    </ul>
+  </div>
+
+  <figure class="imgwrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Traffic_lights.jpg/640px-Traffic_lights.jpg"
+         alt="Traffic light system — Indore traffic robot context"
+         loading="lazy" decoding="async"
+         data-fallback="https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_lights.jpg">
+    <figcaption>Image: <a href="https://commons.wikimedia.org/wiki/File:Traffic_lights.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Mschlindwein · CC BY-SA 3.0 — Traffic lights (Indore Traffic Robot reference image).</figcaption>
+  </figure>
+
+  <div class="card">
+    <h3>🌍 World में अन्य AI Cops</h3>
+    <ul>
+      <li><b>Sophia</b> — Hanson Robotics (Hong Kong)</li>
+      <li><b>RoboCop</b> — Dubai Police (2017)</li>
+      <li><b>EAL (E.A.L.)</b> — <b>E</b>lectronic <b>A</b>ssistant <b>L</b>ife-like = New Zealand का पहला AI police officer</li>
+    </ul>
+  </div>
+
+  <div class="card story">
+    <h3>🔗 Link Story — भारत के AI Apps याद करो (V-L-A-I)</h3>
+    <p style="font-style:italic;">
+    "<b>व्योम मित्र</b> ISRO के साथ अंतरिक्ष की उड़ान भर रहा था, नीचे Tamil Nadu में <b>लक्ष्मी</b> bank के counter पर ग्राहकों के सवाल हल कर रही थी। trains में IRCTC की <b>Ask Disha</b> टिकट बुक करवा रही थी, और Indore के चौराहे पर <b>Traffic Robot</b> चालान काट रहा था!"
+    </p>
+    <p style="font-size:14px;color:var(--muted);">क्रम: <b>V</b>yommitra → <b>L</b>akshmi → <b>A</b>sk Disha → <b>I</b>ndore Traffic Robot = <b>VLAI</b></p>
+  </div>
+
+  <div class="card story">
+    <h3>🔗 Link Story — भारत की AI नीतियाँ (PNAR-RG)</h3>
+    <p style="font-style:italic;">
+    "<b>NITI Aayog</b> मामा ने AIforAll (<b>AIPaJo</b>) नाम का जादुई पिटारा बनाया जिसे भारत का AI Garage कहा गया। फिर उसने MeitY भैया के साथ मिलकर <b>NAIP</b> (राष्ट्रीय कार्यक्रम) शुरू करने की कोशिश की लेकिन झगड़ा हुआ तो <b>K. Raghavan</b> चाचा को बुलाया गया। बाद में मामा-भैया ने मिलकर <b>AIRAWAT</b> नाम का बादल (cloud) बनाया, फिर <b>RAISE 2020</b> का जलसा रखा। उसी साल भारत ने OECD के <b>GPAI</b> क्लब में entry मारी, और <b>NASSCOM</b> चाचा के साथ <b>www.ai.gov.in</b> portal launch कर दिया!"
+    </p>
+  </div>
+
+  <div class="card hot">
+    <h3>🔥 भारत में AI से Mega Exam Hot List</h3>
+    <ul>
+      <li>भारत की AI नीति = <b>AIforAll (AIPaJo)</b> by NITI Aayog</li>
+      <li>Nodal Agency = <b>CAIR</b> (1986, DRDO, Bengaluru)</li>
+      <li>NITI Aayog cloud platform = <b>AIRAWAT</b> (AI Research, Analytics &amp; Knowledge Assimilation Platform)</li>
+      <li>National Program = <b>NAIP</b> (NITI + MeitY) — Raghavan समिति</li>
+      <li>National Portal = <b>www.ai.gov.in</b> (May 2020, MeitY + NASSCOM)</li>
+      <li><b>RAISE 2020</b> = Responsible AI for Social Empowerment</li>
+      <li>Telangana ने 2020 को <b>"Year of AI"</b> घोषित किया</li>
+      <li>India ने <b>June 2020</b> में <b>GPAI</b> join किया (OECD-promoted)</li>
+      <li>PM Modi का <b>5 I</b> = Indigenous, Inclusive, Innovative, Investment, International Cooperation (G20 Osaka 2019)</li>
+      <li>Kapil Dev → <b>Harmonizer India</b> AI startup में invest</li>
+      <li>AI Task Force = <b>Ministry of Commerce &amp; Industry</b></li>
+      <li>India का पहला banking robot = <b>Lakshmi</b> (City Union Bank, Kumbakonam, TN, Nov 2016)</li>
+      <li>India का पहला traffic robot = <b>Indore</b> (RLVDS-attached)</li>
+      <li>ISRO का half-humanoid = <b>Vyommitra</b> (Gaganyaan के लिए)</li>
+      <li>IRCTC chatbot = <b>Ask Disha</b> (2018)</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 6</h3>
+  <details class="quiz"><summary>Q1. भारत की AI नीति का नाम क्या है?</summary><p>👉 AIforAll (AI पर जो) — NITI Aayog द्वारा।</p></details>
+  <details class="quiz"><summary>Q2. CAIR क्या है? कब, कहाँ, किसके तहत?</summary><p>👉 Centre for AI &amp; Robotics, 1986, Bengaluru, DRDO के तहत — भारत की Nodal Agency।</p></details>
+  <details class="quiz"><summary>Q3. AIRAWAT का full form?</summary><p>👉 AI Research, Analytics &amp; Knowledge Assimilation Platform — NITI Aayog का cloud platform।</p></details>
+  <details class="quiz"><summary>Q4. RAISE 2020 का full form और किसने launch किया?</summary><p>👉 Responsible AI for Social Empowerment 2020 — NITI Aayog + MeitY ने October 2020 में।</p></details>
+  <details class="quiz"><summary>Q5. किस राज्य सरकार ने 2020 को "Year of AI" घोषित किया?</summary><p>👉 तेलंगाना सरकार।</p></details>
+  <details class="quiz"><summary>Q6. AI Task Force किस मंत्रालय का है?</summary><p>👉 वाणिज्य और उद्योग मंत्रालय (Ministry of Commerce &amp; Industry)।</p></details>
+  <details class="quiz"><summary>Q7. भारत ने GPAI कब join किया? कौन promote करता है?</summary><p>👉 June 2020 में, OECD द्वारा promoted।</p></details>
+  <details class="quiz"><summary>Q8. KRIDA का full form?</summary><p>👉 Knowledge Resources &amp; Intelligent Decision Analysis।</p></details>
+  <details class="quiz"><summary>Q9. भारत का पहला banking robot कौन और कहाँ?</summary><p>👉 Lakshmi, City Union Bank, Kumbakonam (Tamil Nadu), November 2016।</p></details>
+  <details class="quiz"><summary>Q10. PM मोदी का 5I concept कहाँ दिया गया?</summary><p>👉 G20 Osaka Summit 2019 — Indigenous, Inclusive, Innovative, Investment, International Cooperation।</p></details>
+  <details class="quiz"><summary>Q11. ISRO का half-humanoid robot और उसका mission?</summary><p>👉 Vyommitra — Gaganyaan mission (भारत का पहला human space mission) के लिए।</p></details>
+  <details class="quiz"><summary>Q12. IRCTC ने कौन सा AI assistant launch किया?</summary><p>👉 Ask Disha (2018, पहले English में, बाद में Hindi में भी)।</p></details>
+</section>
+
+<!-- ============== TOPIC 7: CURRENT AFFAIRS ============== -->
+<section class="topic" id="t7">
+  <h2>7️⃣ Current Affairs (समसामयिकी) — 17 Important News</h2>
+  <p class="subtitle"><span class="ts">01:29–01:38</span> Sir ने 17 important news mention किए (कुछ ICT-related भी जोड़े)।</p>
+
+  <div class="card">
+    <h3>📰 1. Blue Sky Analytics (Gurgaon)</h3>
+    <ul>
+      <li>Gurgaon-based startup ने <b>Copernicus Masters Award</b> (a.k.a. <b>"Space Oscar Award"</b>) जीता।</li>
+      <li>भारत में <b>परली (parali) जलन</b> और खेत की आग की निगरानी के लिए AI-based application बनाया।</li>
+      <li>Significance: परली jalan से दिल्ली में सर्दियों में बहुत प्रदूषण फैलता है।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 2. NEST Division — विदेश मंत्रालय</h3>
+    <ul>
+      <li><b>Ministry of External Affairs</b> ने नई division शुरू की: <b>NEST</b></li>
+      <li>Full form: <b>N</b>ew &amp; <b>E</b>merging <b>S</b>trategic <b>T</b>echnologies <span class="hot-tag">🔥 Full form पूछा जा सकता है</span></li>
+      <li>उद्देश्य: नई strategic technologies से कैसे deal करना है।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 3. Intel Tiger Lake</h3>
+    <ul>
+      <li>American multinational <b>Intel</b> ने <b>Tiger Lake</b> CPU unveil किया।</li>
+      <li>Intel की next-generation CPU, <b>10 nanometer processor</b> पर बनी।</li>
+      <li>ICT से connect होकर पूछा जा सकता है।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 4. Google's Tangi App</h3>
+    <ul>
+      <li><b>31 जनवरी 2020</b> को Google ने भारतीयों के बीच <b>news literacy</b> बढ़ाने के लिए <b>$1 million</b> grant घोषित।</li>
+      <li>एक नया application launch किया: <b>Tangi</b>।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>📰 5. New Zealand Police का AI Officer EAL</h3>
+    <ul>
+      <li>NZ Police ने अपना पहला <b>AI Police Officer EAL</b> unveil किया।</li>
+      <li>Full form: <b>E</b>lectronic <b>A</b>ssistant <b>L</b>ife-like <span class="hot-tag">🔥</span></li>
+      <li>NZ का पहला AI-based police officer।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 6. Microsoft Noida Center</h3>
+    <ul>
+      <li>Microsoft ने घोषणा की कि <b>Noida</b> में अपना <b>तीसरा</b> Engineering &amp; Innovation Hub Center launch करेगी।</li>
+      <li>पहले <b>Bengaluru और Hyderabad</b> में पहले से centers हैं।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>📰 7. RAISE 2020 (Repeat — पहले डिटेल में पढ़ा है)</h3>
+    <p>Responsible AI for Social Empowerment 2020 — NITI Aayog + MeitY, New Delhi में। पहली अपनी तरह की summit।</p>
+  </div>
+
+  <div class="card">
+    <h3>📰 8. CDC's CLARA Bot</h3>
+    <ul>
+      <li><b>US Center for Disease Control &amp; Prevention</b> ने <b>CLARA</b> नाम का AI bot pesh किया।</li>
+      <li>उद्देश्य: <b>COVID-19 के लक्षणों का पता</b> लगाने में मदद।</li>
+      <li><b>📌 Important:</b> COVID-19 के लिए कौन सा app चर्चित था? = CLARA।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 9. राष्ट्रीय परीक्षण अभ्यास App</h3>
+    <ul>
+      <li>द्वारा: <b>Ministry of Human Resource Development (MHRD)</b></li>
+      <li>उद्देश्य: <b>Competitive exams</b> की तैयारी में मदद।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 10. WhatsApp Chat Bot for COVID Fake News</h3>
+    <ul>
+      <li>Government of India ने earlier एक WhatsApp chat bot लॉन्च किया।</li>
+      <li>उद्देश्य: COVID-19 से related <b>fake news</b> को रोकना।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>📰 11. Captain Arjun Robot (RPF)</h3>
+    <ul>
+      <li><b>Railway Protection Force (RPF)</b> ने <b>Captain Arjun</b> नाम का robot launch किया।</li>
+      <li>उद्देश्य: <b>Railway Stations पर screening + निगरानी (monitoring)</b>।</li>
+      <li>📌 भारत में AI/Robot apps की list में add करना: <b>Vyommitra, Lakshmi, Ask Disha, Indore Traffic Robot, Captain Arjun</b>।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 12. Spice Range Portal</h3>
+    <ul>
+      <li><b>Spices Board of India</b> ने <b>Spice Range Portal</b> launch किया।</li>
+      <li>विदेशी या देश के लोग एक जगह पर भारत के किसी भी कोने से <b>spices बुक/खरीद</b> सकते हैं।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 13. India-Japan AI &amp; 5G Agreement</h3>
+    <ul>
+      <li><b>October 2020</b> में India + Japan ने <b>AI और 5G technology</b> पर समझौता किया।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 14. Google India + Prasar Bharati</h3>
+    <ul>
+      <li><b>Google India</b> ने <b>Prasar Bharati</b> के साथ <b>Independence Day celebration</b> में AI utilize करने के लिए हाथ मिलाया।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 15. Tribal Affairs + Microsoft (17 May 2021)</h3>
+    <ul>
+      <li><b>Ministry of Tribal Affairs</b> + <b>Microsoft</b> ने <b>tribal schools के digital transformation</b> के लिए समझौता किया।</li>
+    </ul>
+  </div>
+
+  <div class="card hot">
+    <h3>📰 16. Axis Bank — Voice Bot</h3>
+    <ul>
+      <li><b>Axis Bank</b> ने अपना <b>Voice Bot</b> launch किया।</li>
+      <li>City Union Bank की <b>लक्ष्मी</b> की तरह — fixed type के Q&amp;A handle करता है।</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📰 17. AI Saksham + MyGov Corona Helpdesk</h3>
+    <ul>
+      <li><b>AI Saksham</b> &amp; <b>MyGov Corona Helpdesk</b> ने <b>Global Leader Summit AI &amp; Emerging Technology</b> उत्सव में दो awards जीते — "सर्वश्रेष्ठ नवाचार" श्रेणी।</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Outfit',sans-serif;font-size:18px;">🧪 Quick Recall Quiz — Topic 7</h3>
+  <details class="quiz"><summary>Q1. परली जलन की निगरानी के लिए AI app बनाने वाली Gurgaon company?</summary><p>👉 Blue Sky Analytics — Copernicus Masters Award (Space Oscar) जीता।</p></details>
+  <details class="quiz"><summary>Q2. NEST का full form?</summary><p>👉 New &amp; Emerging Strategic Technologies — Ministry of External Affairs की division।</p></details>
+  <details class="quiz"><summary>Q3. EAL किस देश का AI police officer है?</summary><p>👉 New Zealand — Electronic Assistant Life-like।</p></details>
+  <details class="quiz"><summary>Q4. CDC ने COVID-19 के लिए कौन सा AI bot launch किया?</summary><p>👉 CLARA।</p></details>
+  <details class="quiz"><summary>Q5. RPF का AI robot क्या है और क्या काम करता है?</summary><p>👉 Captain Arjun — railway stations पर screening और निगरानी।</p></details>
+  <details class="quiz"><summary>Q6. Intel का 10nm processor का नाम?</summary><p>👉 Tiger Lake।</p></details>
+</section>
+
+<!-- ============== MASTER FULL FORMS ============== -->
+<section class="topic" id="m-fullforms">
+  <h2>📚 Master Full Forms — Alphabetical</h2>
+  <p class="subtitle">सभी full forms एक जगह — exam के एक दिन पहले एक बार पढ़ लेना।</p>
+
+  <table class="tbl">
+    <thead><tr><th>Acronym</th><th>Full Form</th><th>Context</th></tr></thead>
+    <tbody>
+      <tr><td><b>AI</b></td><td>Artificial Intelligence</td><td>Branch of computer science</td></tr>
+      <tr><td><b>AINCO</b></td><td>AI Technology for Net-Centric Operations</td><td>CAIR का institute</td></tr>
+      <tr><td><b>AIPaJo / AIforAll</b></td><td>National Strategy for AI</td><td>NITI Aayog की AI नीति</td></tr>
+      <tr><td><b>AIRAWAT</b></td><td>AI Research, Analytics &amp; Knowledge Assimilation Platform</td><td>NITI Aayog का cloud platform</td></tr>
+      <tr><td><b>CAIR</b></td><td>Centre for Artificial Intelligence and Robotics</td><td>1986, DRDO, Bengaluru — Nodal Agency</td></tr>
+      <tr><td><b>CDC</b></td><td>Centers for Disease Control and Prevention</td><td>USA — CLARA AI bot</td></tr>
+      <tr><td><b>CPU</b></td><td>Central Processing Unit</td><td>Intel Tiger Lake</td></tr>
+      <tr><td><b>DL</b></td><td>Deep Learning</td><td>ML की sub-branch</td></tr>
+      <tr><td><b>DRDO</b></td><td>Defence Research &amp; Development Organisation</td><td>CAIR का parent</td></tr>
+      <tr><td><b>EAL</b></td><td>Electronic Assistant Life-like</td><td>NZ Police का AI officer</td></tr>
+      <tr><td><b>ESPRIT</b></td><td>European Strategic Programme on Research in Information Tech</td><td>EU project (after Japan's Fifth Gen)</td></tr>
+      <tr><td><b>GPAI</b></td><td>Global Partnership on Artificial Intelligence</td><td>OECD-promoted, India joined June 2020</td></tr>
+      <tr><td><b>IRCTC</b></td><td>Indian Railway Catering and Tourism Corporation</td><td>Ask Disha chatbot</td></tr>
+      <tr><td><b>ISRO</b></td><td>Indian Space Research Organisation</td><td>Vyommitra, Gaganyaan</td></tr>
+      <tr><td><b>KRIDA</b></td><td>Knowledge Resources &amp; Intelligent Decision Analysis</td><td>CAIR का institute</td></tr>
+      <tr><td><b>LISP</b></td><td>List Processing (programming language)</td><td>1960, John McCarthy — for AI</td></tr>
+      <tr><td><b>MeitY</b></td><td>Ministry of Electronics and Information Technology</td><td>NAIP, Portal, RAISE</td></tr>
+      <tr><td><b>ML</b></td><td>Machine Learning</td><td>AI की sub-branch</td></tr>
+      <tr><td><b>NAIP</b></td><td>National Artificial Intelligence Program</td><td>NITI + MeitY, Raghavan समिति</td></tr>
+      <tr><td><b>NASSCOM</b></td><td>National Association of Software and Service Companies</td><td>National AI Portal में MeitY के साथ</td></tr>
+      <tr><td><b>NEST</b></td><td>New &amp; Emerging Strategic Technologies</td><td>Ministry of External Affairs की नई division</td></tr>
+      <tr><td><b>NETRA</b></td><td>(intercept online communication)</td><td>CAIR का software</td></tr>
+      <tr><td><b>NHS</b></td><td>National Health Service (Britain)</td><td>Google DeepMind partnership</td></tr>
+      <tr><td><b>OECD</b></td><td>Organisation for Economic Cooperation and Development</td><td>GPAI promoter</td></tr>
+      <tr><td><b>PROLOG</b></td><td>PROgramming in LOGic</td><td>1973, Alain Colmerauer (France)</td></tr>
+      <tr><td><b>RAISE 2020</b></td><td>Responsible AI for Social Empowerment 2020</td><td>NITI + MeitY, Oct 2020, New Delhi</td></tr>
+      <tr><td><b>RLVDS</b></td><td>Red Light Violation Detection System</td><td>Indore Traffic Robot</td></tr>
+      <tr><td><b>RPF</b></td><td>Railway Protection Force</td><td>Captain Arjun robot</td></tr>
+      <tr><td><b>SECOS</b></td><td>Secure Operating System</td><td>CAIR का OS</td></tr>
+      <tr><td><b>T-NLG</b></td><td>Turing Natural Language Generation</td><td>Microsoft, 2020</td></tr>
+      <tr><td><b>5 I</b></td><td>Indigenous, Inclusive, Innovative, Investment, International Cooperation</td><td>PM Modi G20 Osaka 2019</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============== MASTER HOT FACTS ============== -->
+<section class="topic" id="m-hot">
+  <h2>🔥 Master Exam Hot Facts — एक जगह सब</h2>
+  <p class="subtitle">Sir ने जिन-जिन जगहों पर "यह पूछा जाता है / important है / याद रखिए" कहा।</p>
+
+  <div class="card hot">
+    <h3>🎯 Most-Asked Single-line Facts</h3>
+    <ol>
+      <li><b>Father of AI</b> = John McCarthy (1956 में AI शब्द, 1960 में LISP)।</li>
+      <li><b>PROLOG</b> = Alain Colmerauer (France, 1973) — PROgramming in LOGic।</li>
+      <li><b>Kismet emotional robot</b> = Dr. Cynthia Breazeal, MIT, 1990।</li>
+      <li><b>Deep Blue</b> ने <b>Garry Kasparov</b> को हराया (1997)।</li>
+      <li><b>DeepMind</b> = London-based, 2010, Google ने <b>2014</b> में खरीदा → Google DeepMind।</li>
+      <li><b>Siri</b> 2011, <b>Alexa</b> 2014, <b>Google Assistant</b> 2016, <b>Bixby</b> 2017।</li>
+      <li><b>Sophia</b> = Hanson Robotics (Hong Kong), David Hanson, 2016 — Saudi citizenship।</li>
+      <li><b>RoboCop</b> = Dubai Police, 2017 — दुनिया का पहला robot police।</li>
+      <li><b>Project Brainwave</b> = Microsoft, 2017 (real-time AI)।</li>
+      <li><b>Big Data</b> term — <b>John Mashey</b>।</li>
+      <li><b>CAIR</b> = 1986, DRDO, Bengaluru — भारत की AI nodal agency।</li>
+      <li><b>KRIDA</b> = Knowledge Resources &amp; Intelligent Decision Analysis।</li>
+      <li><b>AIRAWAT</b> = NITI Aayog cloud platform — AI Research, Analytics &amp; Knowledge Assimilation Platform।</li>
+      <li><b>NAIP</b> dispute → <b>K. Raghavan</b> समिति।</li>
+      <li><b>RAISE 2020</b> = Responsible AI for Social Empowerment, Oct 2020, NITI+MeitY।</li>
+      <li><b>National AI Portal</b> = www.ai.gov.in (May 2020, MeitY + NASSCOM)।</li>
+      <li><b>GPAI</b> = OECD-promoted, India joined June 2020।</li>
+      <li><b>Telangana</b> ने 2020 को "Year of AI" घोषित किया।</li>
+      <li>PM Modi का <b>5 I Concept</b> = G20 <b>Osaka 2019</b>।</li>
+      <li><b>Kapil Dev</b> ने <b>Harmonizer India</b> (AI startup) में invest किया।</li>
+      <li><b>AI Task Force</b> = वाणिज्य और उद्योग मंत्रालय।</li>
+      <li><b>Lakshmi</b> = India's first banking robot, City Union Bank, Kumbakonam (TN), Nov 2016 (125+ Q&amp;A)।</li>
+      <li><b>Ask Disha</b> = IRCTC, 2018।</li>
+      <li><b>Indore Traffic Robot</b> = India का पहला, RLVDS-attached।</li>
+      <li><b>Vyommitra</b> = ISRO, half humanoid, Gaganyaan के लिए (Bengaluru, 22 Jan 2020)।</li>
+      <li><b>Captain Arjun</b> = RPF railway robot।</li>
+      <li><b>EAL</b> = NZ police AI officer।</li>
+      <li><b>CLARA</b> = US CDC's COVID-19 symptom AI bot।</li>
+      <li><b>Tiger Lake</b> = Intel का 10nm CPU।</li>
+      <li><b>NEST</b> = New &amp; Emerging Strategic Technologies, Ministry of External Affairs।</li>
+      <li><b>Blue Sky Analytics</b> (Gurgaon) — Copernicus Masters Award (Space Oscar)।</li>
+    </ol>
+  </div>
+
+  <div class="card upcoming">
+    <h3>📌 Sir ने जो "Upcoming Topics" बताए</h3>
+    <ul>
+      <li>अगली class: <b>E-Commerce</b> (Topic 7)</li>
+      <li>उसके अगले दिन: <b>e-Governance</b> (Topic 8) — National AI Portal वहाँ detail में show होगा।</li>
+      <li>अगले Topic में Robotics — Vyommitra, RoboCop आदि और detail में।</li>
+      <li>आज total <b>2 classes</b> हैं — पहली AI (यह), दूसरी E-Commerce।</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============== MASTER CHECKLIST ============== -->
+<section class="topic" id="m-checklist">
+  <h2>✅ Master Revision Checklist</h2>
+  <p class="subtitle">हर fact को tick करते जाओ — आपकी revision progress उपर bar में update होगी। (अगली बार खोलने पर भी yaad रहेगा)</p>
+
+  <ul class="checklist" id="checklist">
+    <!-- Topic 1 -->
+    <li><input type="checkbox" data-key="c1"> AI = ऐसी मशीनें जो इंसान की तरह व्यवहार/सोच/decision कर सकें।</li>
+    <li><input type="checkbox" data-key="c2"> John McCarthy = Father of AI · 1956 में AI शब्द · 1960 में LISP language।</li>
+    <li><input type="checkbox" data-key="c3"> Big Data = internet पर जमा संपूर्ण data · 2020 तक ~43 trillion GB · term John Mashey ने popularize किया।</li>
+    <li><input type="checkbox" data-key="c4"> Data Mining = Big Data में से useful data निकालना (तांबे की खान का analogy)।</li>
+    <li><input type="checkbox" data-key="c5"> Clean Data = useful + व्यवस्थित + format वाला data।</li>
+    <li><input type="checkbox" data-key="c6"> ML = AI की sub-branch, programmer का program चाहिए।</li>
+    <li><input type="checkbox" data-key="c7"> DL = ML की sub-branch, ब्रेन के neurons की तरह, खुद सीखता है।</li>
+    <li><input type="checkbox" data-key="c8"> Technological Singularity = 2025 तक मशीनें इंसान से smart, इंसानों पर rule (Matrix, Transformers की तरह)।</li>
+    <li><input type="checkbox" data-key="c9"> AI ⊃ ML ⊃ DL hierarchy।</li>
+
+    <!-- Topic 2 -->
+    <li><input type="checkbox" data-key="c10"> 1935 — Alan Turing — abstract computing machine with infinity storage।</li>
+    <li><input type="checkbox" data-key="c11"> 1950 — Alan Turing Test।</li>
+    <li><input type="checkbox" data-key="c12"> 1951 — Christopher Strachey ने पहला AI program लिखा।</li>
+    <li><input type="checkbox" data-key="c13"> 1956 — John McCarthy — AI शब्द।</li>
+    <li><input type="checkbox" data-key="c14"> 1960 — McCarthy — LISP।</li>
+    <li><input type="checkbox" data-key="c15"> 1973 — PROLOG (Alain Colmerauer, France) · Freddy robot (Edinburgh)।</li>
+    <li><input type="checkbox" data-key="c16"> 1981 — Japan: Fifth Generation · Britain: Alvey · EU: ESPRIT।</li>
+    <li><input type="checkbox" data-key="c17"> 1983 — MCC संस्थान (निजी संस्थाओं द्वारा)।</li>
+    <li><input type="checkbox" data-key="c18"> 1990 — Kismet emotional robot (MIT, Dr. Cynthia Breazeal)।</li>
+    <li><input type="checkbox" data-key="c19"> 1997 — Deep Blue ने Garry Kasparov को हराया।</li>
+    <li><input type="checkbox" data-key="c20"> 2010 — DeepMind स्थापित (London) · Microsoft Xbox launch।</li>
+    <li><input type="checkbox" data-key="c21"> 2011 — Apple Siri (4 अक्टूबर)।</li>
+    <li><input type="checkbox" data-key="c22"> 2014 — Google ने DeepMind खरीदा = Google DeepMind · Amazon Alexa (6 नवंबर)।</li>
+    <li><input type="checkbox" data-key="c23"> 2016 — Google Assistant · Sophia (Hanson Robotics, David Hanson)।</li>
+    <li><input type="checkbox" data-key="c24"> 2017 — RoboCop (Dubai) · Project Brainwave (Microsoft) · Samsung Bixby।</li>
+    <li><input type="checkbox" data-key="c25"> 2020 — Microsoft T-NLG।</li>
+
+    <!-- Topic 3 -->
+    <li><input type="checkbox" data-key="c26"> 6 Types of AI: Reactive, Limited Memory, Theory of Mind, Self-Conscious, Narrow/Weak, Super/Strong।</li>
+    <li><input type="checkbox" data-key="c27"> Driverless Car = Limited Memory AI।</li>
+    <li><input type="checkbox" data-key="c28"> Siri/Alexa/Google Assistant = Narrow/Weak AI (एक समय एक task)।</li>
+    <li><input type="checkbox" data-key="c29"> Super AI = multi-tasking, humanoids में।</li>
+
+    <!-- Topic 4 -->
+    <li><input type="checkbox" data-key="c30"> AI applications: Education, Health, IT, Cyber, Gaming, Agriculture, Driverless, Voice Assistants, Translation, Facial Recognition, Drugs, Finance, Legal, Manufacturing, Smart City, Smart Home/IoT।</li>
+    <li><input type="checkbox" data-key="c31"> IoT = internet से जोड़ना, AI = behavior पर काम — दोनों मिलकर smart home।</li>
+
+    <!-- Topic 5 -->
+    <li><input type="checkbox" data-key="c32"> Siri (Apple) — 4 Oct 2011 · Alexa (Amazon) — 6 Nov 2014 · Google Assistant 2016।</li>
+    <li><input type="checkbox" data-key="c33"> Tesla = Elon Musk, 1 July 2003, battery + driverless cars।</li>
+    <li><input type="checkbox" data-key="c34"> Google Maps — 8 Feb 2005।</li>
+
+    <!-- Topic 6 -->
+    <li><input type="checkbox" data-key="c35"> AIforAll (AI पर जो) = NITI Aayog की AI policy, "Garage of AI"।</li>
+    <li><input type="checkbox" data-key="c36"> CAIR = 1986, DRDO, Bengaluru — भारत की AI Nodal Agency।</li>
+    <li><input type="checkbox" data-key="c37"> CAIR के तहत: AINCO, KRIDA, Robosen, NETRA, SECOS।</li>
+    <li><input type="checkbox" data-key="c38"> KRIDA = Knowledge Resources &amp; Intelligent Decision Analysis।</li>
+    <li><input type="checkbox" data-key="c39"> AIRAWAT = AI Research, Analytics &amp; Knowledge Assimilation Platform — NITI Aayog cloud (2019)।</li>
+    <li><input type="checkbox" data-key="c40"> NAIP = NITI + MeitY · Raghavan समिति dispute solve करने के लिए।</li>
+    <li><input type="checkbox" data-key="c41"> 7-Point Strategy on AI = Oct 2017 — workforce, security, ethics।</li>
+    <li><input type="checkbox" data-key="c42"> AI Task Force = Ministry of Commerce &amp; Industry।</li>
+    <li><input type="checkbox" data-key="c43"> National AI Portal = www.ai.gov.in (May 2020, MeitY + NASSCOM)।</li>
+    <li><input type="checkbox" data-key="c44"> GPAI = OECD-promoted · India joined June 2020।</li>
+    <li><input type="checkbox" data-key="c45"> RAISE 2020 = Responsible AI for Social Empowerment (NITI+MeitY, Oct 2020)।</li>
+    <li><input type="checkbox" data-key="c46"> Telangana ने 2020 को "Year of AI" घोषित किया।</li>
+    <li><input type="checkbox" data-key="c47"> PM Modi 5I = Indigenous, Inclusive, Innovative, Investment, International Cooperation (G20 Osaka 2019)।</li>
+    <li><input type="checkbox" data-key="c48"> IIT Delhi = School of AI · IIT Hyderabad = AI BTech program।</li>
+    <li><input type="checkbox" data-key="c49"> Kapil Dev → Harmonizer India (AI company) में invest।</li>
+    <li><input type="checkbox" data-key="c50"> Kerala Police ने Feb 2019 में robot hire किया।</li>
+    <li><input type="checkbox" data-key="c51"> Vyommitra = ISRO half humanoid · Gaganyaan के लिए · 22 Jan 2020 Bengaluru में present।</li>
+    <li><input type="checkbox" data-key="c52"> Lakshmi = India's first banking robot, City Union Bank, Kumbakonam (TN), Nov 2016, 125+ Q&amp;A।</li>
+    <li><input type="checkbox" data-key="c53"> Ask Disha = IRCTC chatbot (2018, English+Hindi)।</li>
+    <li><input type="checkbox" data-key="c54"> Indore Traffic Robot = India का पहला traffic control robot, RLVDS-attached।</li>
+    <li><input type="checkbox" data-key="c55"> EAL = New Zealand police AI officer (Electronic Assistant Life-like)।</li>
+    <li><input type="checkbox" data-key="c56"> Indian Startups: Active.AI, Indra Sistemas, Artivatic (Deep Learning), MultiVertic, Arya.AI, Fluid.AI, Mor.AI, SikhTemple।</li>
+
+    <!-- Topic 7 -->
+    <li><input type="checkbox" data-key="c57"> Blue Sky Analytics (Gurgaon) — Copernicus Masters / Space Oscar — परली jalan AI।</li>
+    <li><input type="checkbox" data-key="c58"> NEST = New &amp; Emerging Strategic Technologies (Ministry of External Affairs)।</li>
+    <li><input type="checkbox" data-key="c59"> Intel Tiger Lake = 10nm next-gen CPU।</li>
+    <li><input type="checkbox" data-key="c60"> Google Tangi App + $1M news literacy grant (31 Jan 2020)।</li>
+    <li><input type="checkbox" data-key="c61"> CDC's CLARA = COVID-19 symptom AI bot।</li>
+    <li><input type="checkbox" data-key="c62"> Microsoft Noida = तीसरा engineering hub (पहले Bengaluru, Hyderabad)।</li>
+    <li><input type="checkbox" data-key="c63"> राष्ट्रीय परीक्षण अभ्यास App = MHRD।</li>
+    <li><input type="checkbox" data-key="c64"> WhatsApp chat bot = COVID fake news control (GOI)।</li>
+    <li><input type="checkbox" data-key="c65"> Captain Arjun = RPF railway robot (screening + निगरानी)।</li>
+    <li><input type="checkbox" data-key="c66"> Spice Range Portal = Spices Board of India।</li>
+    <li><input type="checkbox" data-key="c67"> India + Japan AI/5G समझौता (Oct 2020)।</li>
+    <li><input type="checkbox" data-key="c68"> Google India + Prasar Bharati = Independence Day AI।</li>
+    <li><input type="checkbox" data-key="c69"> Tribal Affairs + Microsoft (17 May 2021) — tribal schools digital।</li>
+    <li><input type="checkbox" data-key="c70"> Axis Bank Voice Bot launched।</li>
+    <li><input type="checkbox" data-key="c71"> AI Saksham + MyGov Corona Helpdesk = Global Leader Summit awards (2 awards)।</li>
+  </ul>
+</section>
+
+<footer>
+  <p>📚 <b>MPPSC Paper 2 · Unit 9 · ICT Topic 6 — Artificial Intelligence (Class 8)</b></p>
+  <p>📺 Source: Unacademy Abhiyaan video transcript · 🎓 Teacher: CG Live</p>
+  <p>📌 Next class: E-Commerce (Topic 7) → e-Governance (Topic 8)</p>
+  <p style="margin-top:10px;font-size:13px;">💡 Revision Tip — पहले इस page को video देखते समय side-by-side खोलो, दूसरी बार सिर्फ checklist + Hot Facts पढ़ो, तीसरी बार सिर्फ quizzes attempt करो। Active recall = best!</p>
+</footer>
+
+</div><!-- /.wrap -->
+
+<script>
+(function(){
+  // ===== Theme toggle =====
+  var STORAGE_THEME = 'class8_theme';
+  var STORAGE_CHECK = 'class8_checks_v1';
+  var body = document.body;
+  var toggle = document.getElementById('themeToggle');
+  var saved = localStorage.getItem(STORAGE_THEME);
+  if (saved) body.setAttribute('data-theme', saved);
+  toggle.addEventListener('click', function(){
+    var cur = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', cur);
+    localStorage.setItem(STORAGE_THEME, cur);
+  });
+
+  // ===== Jump menu =====
+  var jump = document.getElementById('jumpMenu');
+  jump.addEventListener('change', function(){
+    if (!this.value) return;
+    var el = document.getElementById(this.value);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    this.value = '';
+  });
+
+  // ===== Checklist persistence + progress =====
+  var saved_checks = {};
+  try { saved_checks = JSON.parse(localStorage.getItem(STORAGE_CHECK) || '{}'); } catch(e) { saved_checks = {}; }
+  var boxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+  var bar = document.getElementById('progressBar');
+  var lbl = document.getElementById('progressLabel');
+
+  function updateProgress(){
+    var done = 0;
+    boxes.forEach(function(b){ if (b.checked) done++; });
+    var pct = Math.round((done / boxes.length) * 100);
+    bar.style.width = pct + '%';
+    lbl.textContent = 'Revision progress: ' + pct + '% (' + done + '/' + boxes.length + ')';
+  }
+
+  boxes.forEach(function(b){
+    var key = b.getAttribute('data-key');
+    if (saved_checks[key]) {
+      b.checked = true;
+      b.closest('li').classList.add('done');
+    }
+    b.addEventListener('change', function(){
+      saved_checks[key] = b.checked;
+      localStorage.setItem(STORAGE_CHECK, JSON.stringify(saved_checks));
+      b.closest('li').classList.toggle('done', b.checked);
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  // ===== Reset checklist =====
+  document.getElementById('resetCheck').addEventListener('click', function(){
+    if (!confirm('सारी checkboxes को uncheck करना है?')) return;
+    boxes.forEach(function(b){
+      b.checked = false;
+      b.closest('li').classList.remove('done');
+    });
+    localStorage.removeItem(STORAGE_CHECK);
+    saved_checks = {};
+    updateProgress();
+  });
+
+  // ===== Image reliability — preload + retry with Wikimedia Special:Redirect =====
+  var imgs = document.querySelectorAll('img[data-fallback]');
+  imgs.forEach(function(img){
+    var triedFallback = false;
+    img.addEventListener('error', function(){
+      if (triedFallback) {
+        // Last resort: replace with a styled placeholder block + link
+        var fb = img.getAttribute('data-fallback');
+        var fig = img.closest('figure');
+        if (fig) {
+          var ph = document.createElement('div');
+          ph.style.cssText = 'padding:30px 14px;text-align:center;color:#888;font-size:14px;';
+          ph.innerHTML = '🖼️ Image unavailable. <br><a href="' + fb + '" target="_blank" rel="noopener" style="color:var(--cyan);">Open source page →</a>';
+          fig.replaceChild(ph, img);
+        }
+        return;
+      }
+      triedFallback = true;
+      var fb = img.getAttribute('data-fallback');
+      if (fb) img.src = fb;
+    });
+    // Force preload
+    if (img.complete && img.naturalWidth === 0) {
+      img.dispatchEvent(new Event('error'));
+    }
+  });
+})();
+</script>
+</body>
+</html>
