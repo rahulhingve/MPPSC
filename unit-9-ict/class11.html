@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🤖 Robotics — MPPSC Paper-2 Class 11 Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #0f0f1a;
+  --bg-2: #161628;
+  --card: #1c1c30;
+  --card-2: #232342;
+  --border: #2e2e4d;
+  --text: #f1f1fa;
+  --muted: #c8c8dc;
+  --accent: #00d4ff;
+  --accent-2: #ff6b35;
+  --accent-3: #00ff88;
+  --accent-4: #b388ff;
+  --accent-5: #ffd166;
+  --hot: #ff4d6d;
+  --link-bg: linear-gradient(135deg, #1a3a4a, #2a1a4a);
+  --shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+[data-theme="light"] {
+  --bg: #f7f7fb;
+  --bg-2: #eef0f7;
+  --card: #ffffff;
+  --card-2: #f1f3fb;
+  --border: #d8dbeb;
+  --text: #161629;
+  --muted: #4a4a66;
+  --accent: #0077b6;
+  --accent-2: #d2691e;
+  --accent-3: #2a9d8f;
+  --accent-4: #6a4cff;
+  --accent-5: #b8860b;
+  --hot: #d62828;
+  --link-bg: linear-gradient(135deg, #d6f0f5, #e8e0ff);
+  --shadow: 0 6px 18px rgba(20,20,40,0.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+  transition: background .3s, color .3s;
+}
+.container { max-width: 860px; margin: 0 auto; padding: 24px 18px 80px; }
+header.hero {
+  padding: 32px 22px 26px;
+  background: linear-gradient(135deg, rgba(0,212,255,.12), rgba(179,136,255,.12));
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+header.hero h1 { font-family: 'Outfit', sans-serif; font-size: 30px; margin: 0 0 8px; line-height: 1.2; }
+header.hero .sub { color: var(--muted); margin-bottom: 14px; font-size: 15px; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.badge {
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--card-2); border: 1px solid var(--border);
+  font-size: 13px; color: var(--muted);
+}
+.progress-wrap { margin-top: 14px; background: var(--card-2); border-radius: 999px; height: 12px; overflow: hidden; border: 1px solid var(--border); }
+.progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-3)); transition: width .4s; }
+.progress-text { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+/* Sticky controls */
+.sticky-bar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--bg-2); border: 1px solid var(--border);
+  margin: -10px 0 18px; padding: 10px 12px; border-radius: 14px;
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  box-shadow: var(--shadow);
+}
+.sticky-bar select, .sticky-bar button {
+  font: inherit; padding: 8px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  cursor: pointer;
+}
+.sticky-bar select { flex: 1; min-width: 200px; }
+.sticky-bar button:hover { background: var(--card-2); }
+.sticky-bar .pill { font-size: 13px; color: var(--muted); }
+
+/* TOC */
+.toc {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 18px 22px; border-radius: 18px; margin-bottom: 22px;
+}
+.toc h3 { margin: 0 0 10px; font-size: 18px; }
+.toc ol { padding-left: 22px; margin: 0; }
+.toc ol li { margin: 6px 0; }
+.toc ol li a { color: var(--accent); text-decoration: none; }
+.toc ol li a:hover { text-decoration: underline; }
+
+/* Sections */
+section.topic {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 22px; margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 90px;
+}
+section.topic h2 {
+  font-family: 'Outfit', sans-serif;
+  margin: 0 0 6px; font-size: 24px; line-height: 1.25;
+  border-left: 5px solid var(--accent);
+  padding-left: 12px;
+}
+section.topic .ts { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+section.topic h3 { font-size: 18px; margin: 18px 0 8px; color: var(--accent-4); }
+section.topic p { margin: 8px 0; }
+
+/* Cards */
+.card-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+.mini-card {
+  background: var(--card-2); border: 1px solid var(--border);
+  padding: 14px 16px; border-radius: 14px;
+}
+.mini-card h4 { margin: 0 0 6px; font-size: 16px; color: var(--accent-3); }
+.mini-card ul { margin: 6px 0 0; padding-left: 20px; }
+.mini-card ul li { margin: 4px 0; }
+
+/* Definition / quote box */
+.def-box {
+  background: linear-gradient(135deg, rgba(0,212,255,.10), rgba(0,255,136,.08));
+  border-left: 5px solid var(--accent);
+  padding: 14px 16px; border-radius: 12px; margin: 12px 0;
+}
+.def-box strong { color: var(--accent); }
+
+/* Hot exam points */
+.hot {
+  background: linear-gradient(135deg, rgba(255,77,109,.12), rgba(255,107,53,.10));
+  border-left: 5px solid var(--hot);
+  padding: 14px 16px; border-radius: 12px; margin: 12px 0;
+}
+.hot h4 { margin: 0 0 6px; color: var(--hot); }
+
+/* Link story */
+.link-story {
+  background: var(--link-bg);
+  border: 1px dashed var(--accent-4);
+  padding: 14px 16px; border-radius: 14px; margin: 12px 0;
+}
+.link-story h4 { margin: 0 0 6px; color: var(--accent-4); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; margin: 10px 0; border-radius: 12px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; min-width: 480px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 15px; }
+th { background: var(--card-2); color: var(--accent); font-weight: 700; }
+tbody tr:hover { background: var(--card-2); }
+
+/* Image block */
+.image-block { margin: 14px 0; text-align: center; }
+.image-block img {
+  max-width: 100%; height: auto; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-2);
+}
+.image-block .caption {
+  font-size: 12px; color: var(--muted); margin-top: 6px;
+}
+.image-fallback { display: none; padding: 10px; background: var(--card-2); border: 1px dashed var(--border); border-radius: 10px; font-size: 13px; }
+
+/* Timeline */
+.timeline { border-left: 3px solid var(--accent); padding-left: 18px; margin: 12px 0; }
+.timeline .item { position: relative; padding: 8px 0 14px; }
+.timeline .item::before {
+  content: ""; width: 12px; height: 12px; background: var(--accent); border-radius: 50%;
+  position: absolute; left: -25px; top: 14px;
+}
+.timeline .year { color: var(--accent-2); font-weight: 700; }
+
+/* Quiz */
+.quiz {
+  background: var(--card-2); border: 1px solid var(--border);
+  padding: 14px 16px; border-radius: 14px; margin-top: 14px;
+}
+.quiz h4 { margin: 0 0 10px; color: var(--accent-5); }
+.quiz details { margin: 6px 0; padding: 10px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+.quiz summary { cursor: pointer; font-weight: 600; }
+.quiz details[open] summary { color: var(--accent-3); }
+.quiz .ans { margin-top: 8px; color: var(--muted); }
+
+/* Checklist */
+.checklist label {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 8px 10px; border-radius: 10px; cursor: pointer;
+  border: 1px solid transparent;
+}
+.checklist label:hover { background: var(--card-2); }
+.checklist input { margin-top: 4px; transform: scale(1.2); accent-color: var(--accent-3); }
+.checklist label.done { text-decoration: line-through; color: var(--muted); border-color: var(--accent-3); background: rgba(0,255,136,.06); }
+
+/* Tags */
+.tag { display: inline-block; padding: 3px 10px; background: var(--card-2); border: 1px solid var(--border); border-radius: 999px; font-size: 13px; margin: 2px 4px 2px 0; color: var(--accent); }
+.tag.hot { color: var(--hot); border-color: var(--hot); }
+.tag.green { color: var(--accent-3); border-color: var(--accent-3); }
+.tag.purple { color: var(--accent-4); border-color: var(--accent-4); }
+
+footer { text-align: center; color: var(--muted); font-size: 14px; padding: 30px 10px; }
+
+/* Print */
+@media print {
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .sticky-bar, .toc, header.hero .badges, .progress-wrap { display: none !important; }
+  section.topic { break-inside: avoid; border: 1px solid #888; box-shadow: none; }
+  .quiz details { open: true; }
+  .quiz details > .ans { display: block !important; }
+}
+</style>
+</head>
+<body data-theme="dark">
+<div class="container">
+
+<header class="hero">
+  <h1>🤖 Robotics — रोबोटिक्स पूर्ण रिवीजन</h1>
+  <div class="sub">MPPSC Paper-2 • Unit 9 • Class 11 (Second Last Lecture) • Bilingual Hinglish Notes</div>
+  <div class="badges">
+    <span class="badge">📚 9 Major Topics</span>
+    <span class="badge">🔥 30+ Exam Hot Points</span>
+    <span class="badge">🔗 Link Stories Included</span>
+    <span class="badge">📝 Quiz + Checklist</span>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="progress-text" id="progressText">Revision Progress: 0%</div>
+</header>
+
+<div class="sticky-bar">
+  <select id="jumpSelect" aria-label="Quick jump to topic">
+    <option value="">⚡ Quick Jump — किसी भी टॉपिक पर जाएं</option>
+    <option value="t1">1. परिचय (Introduction)</option>
+    <option value="t2">2. इतिहास (Brief History)</option>
+    <option value="t3">3. घटक (Components)</option>
+    <option value="t4">4. रोबोटिक्स के नियम (3 Laws)</option>
+    <option value="t5">5. रोबोट के प्रकार (Types)</option>
+    <option value="t6">6. अनुप्रयोग (Applications)</option>
+    <option value="t7">7. विश्व के प्रमुख रोबोट</option>
+    <option value="t8">8. भारत में रोबोटिक्स</option>
+    <option value="full-forms">📑 All Full Forms</option>
+    <option value="hot-master">🔥 All Exam Hot Facts</option>
+    <option value="checklist">✅ Master Checklist</option>
+  </select>
+  <button id="themeToggle" aria-label="Toggle theme">🌙 Dark</button>
+  <span class="pill" id="livePct">0%</span>
+</div>
+
+<nav class="toc" id="toc">
+  <h3>📑 Table of Contents</h3>
+  <ol>
+    <li><a href="#t1">रोबोटिक्स का परिचय (Introduction)</a></li>
+    <li><a href="#t2">रोबोट का संक्षिप्त इतिहास (Brief History)</a></li>
+    <li><a href="#t3">रोबोट के घटक (Components of Robot)</a></li>
+    <li><a href="#t4">रोबोटिक्स के 3 नियम (3 Laws of Robotics)</a></li>
+    <li><a href="#t5">रोबोट के प्रकार (Types of Robots)</a></li>
+    <li><a href="#t6">रोबोट के अनुप्रयोग (Applications)</a></li>
+    <li><a href="#t7">विश्व के प्रमुख रोबोट (Major Robots Worldwide)</a></li>
+    <li><a href="#t8">भारत में रोबोटिक्स (Robotics in India)</a></li>
+    <li><a href="#full-forms">सभी Full Forms (Master Table)</a></li>
+    <li><a href="#hot-master">🔥 Exam Hot Facts Master List</a></li>
+    <li><a href="#checklist">✅ Master Revision Checklist</a></li>
+  </ol>
+</nav>
+
+<!-- ========== TOPIC 1: INTRODUCTION ========== -->
+<section class="topic" id="t1">
+  <h2>1️⃣ रोबोटिक्स का परिचय — Introduction</h2>
+  <div class="ts">⏱ Video Reference: 00:00 — 13:11</div>
+
+  <p>आज हम <strong>Unit 9</strong> का second-last lecture पढ़ रहे हैं। पिछली class में <em>E-Governance</em> था, अब हम Robotics को 8 भागों में cover करेंगे — परिचय, इतिहास, घटक, नियम, प्रकार, अनुप्रयोग, प्रमुख रोबोट, भारत में रोबोटिक्स।</p>
+
+  <h3>🤖 Robot क्या है?</h3>
+  <div class="def-box">
+    <strong>Robot:</strong> एक ऐसी <em>computer + mechanical machine</em> है जो मानव द्वारा किए जाने वाले कार्यों को <strong>स्वचालित (automatic)</strong> तरीके से सम्पन्न करती है।
+    <br><em>"Robot is a computer/mechanical machine which can perform physical tasks done by humans in an automatic manner."</em>
+  </div>
+  <p>Computer सिर्फ digital tasks करता है (पानी नहीं ला सकता) — Robot computer का <strong>अगला चरण</strong> है जो <em>physical tasks</em> भी करता है। Examples: industry में nut-bolt कसना, घर में झाड़ू-पोछा (Roomba), Indore का Robot चौराहा (traffic signal), Sophia, ISRO का Vyommitra (half-humanoid)।</p>
+
+  <h3>🔬 Robotics क्या है?</h3>
+  <div class="def-box">
+    <strong>Robotics:</strong> रोबोट का <em>वैज्ञानिक अध्ययन</em> — "The Scientific Study of Robots". इसमें Robot का hardware, software, computer system, AI — सब कुछ पढ़ा जाता है।
+  </div>
+
+  <h3>🌍 शब्दों की उत्पत्ति (Word Origin)</h3>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>📜 "Robot" शब्द</h4>
+      <ul>
+        <li>भाषा: <strong>Slav (Czech)</strong> भाषा का शब्द</li>
+        <li>मूल शब्द: <em>Robota</em> = बंधा मजदूर / मजदूर (Forced Labour)</li>
+        <li>लेखक: <strong>Karel Čapek</strong> (Czech Republic)</li>
+        <li>नाटक: <strong>R.U.R.</strong> (Rossum's Universal Robots), <strong>1920</strong></li>
+        <li>यहीं पहली बार "Robot" शब्द का प्रयोग हुआ</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>📜 "Robotics" शब्द</h4>
+      <ul>
+        <li>लेखक: <strong>Isaac Asimov</strong> (American science-fiction writer)</li>
+        <li>Short Story: <strong>"Runaround"</strong>, <strong>1942</strong></li>
+        <li>इसी story में Robotics के 3 Laws भी दिए</li>
+        <li>Story collection: <em>I, Robot</em> (फिल्म 2004 — Will Smith)</li>
+        <li>India में Robot (Rajinikanth) और Robot 2.0</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Capek_RUR.jpg/400px-Capek_RUR.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Capek_RUR.jpg/400px-Capek_RUR.jpg"
+         alt="Karel Čapek's R.U.R. play poster — first use of word 'Robot'"
+         loading="eager" fetchpriority="high" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — Cover of R.U.R. by Karel Čapek (1920), Public Domain</div>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points</h4>
+    <ul>
+      <li><strong>Robot शब्द किसने दिया?</strong> — Karel Čapek (Czech), नाटक R.U.R. (1920)</li>
+      <li><strong>Robotics शब्द किसने दिया?</strong> — Isaac Asimov, story "Runaround" (1942)</li>
+      <li>"Robot" Slav भाषा से आया → <em>Robota</em> = बंधा मजदूर</li>
+      <li>I, Robot Asimov की story collection है (फिल्म भी 2004 में)</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — परिचय याद करने का तरीका</h4>
+    <p>"<strong>1920</strong> में <strong>Czech</strong> का एक मजदूर (<em>Robota</em>) <strong>Karel Čapek</strong> के नाटक <strong>R.U.R.</strong> में आया, फिर <strong>1942</strong> में America के <strong>Isaac Asimov</strong> ने उसको <em>Runaround</em> में science (<strong>Robotics</strong>) सिखा दी और तीन कानून भी थमा दिए!" 🔗</p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: Robot शब्द का अर्थ क्या है?</summary><div class="ans">बंधा मजदूर / Forced labour (Czech "Robota" से)</div></details>
+    <details><summary>Q2: Robotics शब्द कब और किस किताब में आया?</summary><div class="ans">1942 में Isaac Asimov की short story "Runaround" में</div></details>
+    <details><summary>Q3: R.U.R. का full form?</summary><div class="ans">Rossum's Universal Robots</div></details>
+  </div>
+</section>
+
+<!-- ========== TOPIC 2: HISTORY ========== -->
+<section class="topic" id="t2">
+  <h2>2️⃣ रोबोट का संक्षिप्त इतिहास — Brief History</h2>
+  <div class="ts">⏱ Video Reference: 13:12 — 24:30</div>
+
+  <div class="timeline">
+    <div class="item"><span class="year">1920</span> — Czech लेखक <strong>Karel Čapek</strong> ने नाटक <em>Rossum's Universal Robots (R.U.R.)</em> में पहली बार "Robot" शब्द का प्रयोग किया।</div>
+    <div class="item"><span class="year">1927</span> — <strong>Westinghouse Engineer</strong> ने <em>Televox</em> नामक telephone-operated industrial switching machine बनाई — Robot का प्रोटोटाइप।</div>
+    <div class="item"><span class="year">1928</span> — Japan में <em>Gakutensoku</em> robot बना — facial expressions बदल सकता था।</div>
+    <div class="item"><span class="year">1942</span> — <strong>Isaac Asimov</strong> ने "Runaround" में <em>Robotics</em> शब्द दिया + Robotics के 3 नियम बताए। 🔥</div>
+    <div class="item"><span class="year">1954 ⭐</span> — <strong>George Devol</strong> + <strong>Joseph Engelberger</strong> ने पहली Robot company <strong>Unimation</strong> बनाई। पहला industrial robot <strong>Unimate</strong> — General Motors की New Jersey factory में लगा।
+      <br>👉 George Devol = <em>Grandfather of Robotics</em>
+      <br>👉 Joseph Engelberger = <em>Father of Robotics</em>
+      <br>👉 Unimation ने बाद में <strong>PUMA</strong> robot भी बनाया।</div>
+    <div class="item"><span class="year">1972</span> — Japan की <strong>Waseda University</strong> ने <em>WABOT-1</em> बनाया — विश्व का पहला <strong>Android Robot</strong>। 🔥</div>
+    <div class="item"><span class="year">1973</span> — Germany ने <em>Famulus</em> robot बनाया जो 360° घूम सकता था।</div>
+    <div class="item"><span class="year">1974</span> — Michael Freeman ने <em>Leachim</em> teacher robot बनाया।</div>
+    <div class="item"><span class="year">1978</span> — Unimation ने <strong>PUMA</strong> बनाया। Full Form: <em>Programmable Universal Machine for Assembly</em>। 🔥</div>
+    <div class="item"><span class="year">2008</span> — <em>Femisapien</em> — स्त्री की shape जैसा robot।</div>
+    <div class="item"><span class="year">2016 ⭐</span> — Hong Kong की <strong>Hanson Robotics</strong> (founder: <strong>David Hanson</strong>) ने <strong>Sophia</strong> बनाई — विश्व का पहला AI-based humanoid robot। बाद में Saudi Arabia ने Sophia को नागरिकता दी।</div>
+    <div class="item"><span class="year">2020 ⭐</span> — <strong>Xenobot</strong> बना — विश्व का पहला <em>Living Robot</em>। Africa के Sahara desert के मेंढक <strong>Xenopus laevis</strong> की <em>stem cells</em> का use किया गया। ये अब expand भी कर सकता है (genetic robot की दिशा में)।</div>
+  </div>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/UNIMATE_at_the_Henry_Ford_Museum.jpg/400px-UNIMATE_at_the_Henry_Ford_Museum.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/UNIMATE_at_the_Henry_Ford_Museum.jpg/400px-UNIMATE_at_the_Henry_Ford_Museum.jpg"
+         alt="Unimate — first industrial robot at General Motors (1961)"
+         loading="eager" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — Unimate (first industrial robot), CC BY-SA 4.0</div>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points — History</h4>
+    <ul>
+      <li>Father of Robotics → <strong>Joseph Engelberger</strong>; Grandfather → <strong>George Devol</strong></li>
+      <li>पहला Industrial Robot — <strong>Unimate</strong> (1954, General Motors NJ)</li>
+      <li>पहला Android Robot — <strong>WABOT-1</strong> (1972, Waseda University, Japan)</li>
+      <li>PUMA Full Form — Programmable Universal Machine for Assembly (1978) 🔥 <em>(पिछले साल पूछा गया था)</em></li>
+      <li>पहला AI Humanoid Robot — <strong>Sophia</strong> (2016, Hanson Robotics)</li>
+      <li>पहला Living Robot — <strong>Xenobot</strong> (2020, Xenopus laevis frog stem cells)</li>
+      <li>नागरिकता पाने वाला पहला Robot — Sophia (Saudi Arabia)</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — History की Chain</h4>
+    <p>"<strong>1920</strong> में Karel ने 'Robot' शब्द दिया, <strong>1942</strong> में Asimov ने 'Robotics' दिया, <strong>1954</strong> में Devol + Engelberger ने Unimation factory में Unimate को नौकरी दी, <strong>1972</strong> में WABOT जापान में पहला Android बना, <strong>2016</strong> में Sophia को Saudi citizenship मिली, <strong>2020</strong> में Sahara का मेंढक Xenobot बनकर ज़िंदा हो गया!" 🐸🤖</p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: PUMA का Full Form?</summary><div class="ans">Programmable Universal Machine for Assembly (1978, Unimation)</div></details>
+    <details><summary>Q2: पहला Android Robot कौन सा था?</summary><div class="ans">WABOT-1 (1972, Waseda University, Japan)</div></details>
+    <details><summary>Q3: Xenobot किस मेंढक की stem cells से बना?</summary><div class="ans">Xenopus laevis (Sahara desert, Africa)</div></details>
+    <details><summary>Q4: Sophia को नागरिकता किस देश ने दी?</summary><div class="ans">Saudi Arabia (पहला robot जिसे citizenship मिली)</div></details>
+  </div>
+</section>
+
+<!-- ========== TOPIC 3: COMPONENTS ========== -->
+<section class="topic" id="t3">
+  <h2>3️⃣ रोबोट के घटक — Components of Robot</h2>
+  <div class="ts">⏱ Video Reference: 24:31 — 44:00</div>
+
+  <p>Robot बहुत parts से मिलकर बनता है। 10 मुख्य घटक:</p>
+
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>1️⃣ Power Source — पावर स्रोत 🔋</h4>
+      <ul>
+        <li>Robot की <em>battery</em> = power supply</li>
+        <li>आज main use: <strong>Lithium-ion</strong> battery</li>
+        <li>पुरानी: Lead-acid (inverter में अब भी)</li>
+        <li>अन्य: Ni-Cd, Ni-Metal, Solar, Hydraulic, Pneumatic, Flywheel, Organic Garbage, Nuclear batteries</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>2️⃣ Actuator — प्रवर्तक / मसल्स 💪</h4>
+      <ul>
+        <li>Robot की <em>मांसपेशियां</em> (Muscles)</li>
+        <li>Energy को movement में convert करते हैं</li>
+        <li>Electric motor, linear actuator आदि</li>
+        <li>हिंदी नाम: <strong>प्रवर्तक</strong></li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>3️⃣ Sensors — सेंसर 👁️👃👂</h4>
+      <ul>
+        <li>Robot की <em>आँख, नाक, कान</em></li>
+        <li>Environment की information receive करते हैं</li>
+        <li>Types:
+          <ul>
+            <li><strong>Tilt sensor</strong> (Inclinometer) — slope/angle</li>
+            <li><strong>Proximity sensor</strong> — Infrared + Ultrasonic, बिना touch किए object detect</li>
+            <li><strong>Force sensor</strong> — mechanical load → electrical signal</li>
+            <li><strong>Vision sensor</strong> — देखने में मदद</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>4️⃣ Manipulator — प्रचालक (Robot Arm) 🦾</h4>
+      <ul>
+        <li>Robot का पूरा <strong>हाथ (Arm)</strong> = Manipulator</li>
+        <li>Joints होते हैं — हमारे हाथ की तरह</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>5️⃣ End Effector — पंजा ✋</h4>
+      <ul>
+        <li>Robot का <strong>पंजा / उँगलियाँ</strong></li>
+        <li>Final task यहीं perform होता है</li>
+        <li>Manipulator (arm) + End Effector (hand) मिलकर full कार्य करते हैं</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>6️⃣ Locomotion — गतिशीलता 🚗</h4>
+      <ul>
+        <li>Robot को एक जगह से दूसरी जगह ले जाने वाला hardware/software</li>
+        <li>Static robots = एक जगह स्थिर (Indore Robot चौराहा)</li>
+        <li>Mobile robots = wheels, legs, wings, ball — सबको locomotion कहते हैं</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>7️⃣ Controller — नियंत्रक 🧠</h4>
+      <ul>
+        <li>Robot का <strong>दिमाग (Brain)</strong></li>
+        <li>Memory, transistors, chips से बनता है</li>
+        <li>आजकल इसमें <em>AI</em> use हो रहा है (Machine Learning + Deep Learning)</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>8️⃣ Environment Interaction 🌍</h4>
+      <ul>
+        <li>Robot का environment समझना — driverless car के लिए जरूरी</li>
+        <li>Space में भेजे जाने वाले robots के लिए essential</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>9️⃣ Human-Robot Interaction 🗣️</h4>
+      <ul>
+        <li>Robot इंसानों से connect करे — emotions, expressions, social awareness</li>
+        <li>Reference: Chitti (Robot movie), Black Mirror series</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🔟 Robotic Programming + AI 🤖</h4>
+      <ul>
+        <li>Robot के लिए software/programs तैयार करना</li>
+        <li>AI से Robot मानव जैसा बनता है (ML + Deep Learning)</li>
+        <li>Goal: Robot खुद से सीखे, हर बार command न देनी पड़े</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>📐 अन्य महत्वपूर्ण शब्द (Other Key Terms)</h3>
+  <div class="def-box">
+    <strong>DOF — Degree of Freedom:</strong> Robot कितने प्रकार की movements कर सकता है। ज़्यादा DOF = ज़्यादा flexible robot।<br>
+    <strong>Link:</strong> Robot के अलग-अलग parts/joints को जोड़ने वाला हिस्सा।
+  </div>
+
+  <h3>🧰 कुछ Robot के नाम (Quick Reference Table)</h3>
+  <p>Sir ने PPT में ये नाम भी दिए — exam में directly पूछ सकता है कि किस robot का use कहाँ होता है:</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Robot/Device</th><th>Type / Use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Versatran</strong></td><td>Human-controlled robotic arm (manipulator material)</td></tr>
+      <tr><td><strong>Firebee</strong></td><td>Drone — most widely used military target drone</td></tr>
+      <tr><td><strong>Lightning Bug</strong></td><td>Image-sensing surveillance drone (Vietnam War में use)</td></tr>
+      <tr><td><strong>Unimate</strong></td><td>पहला Industrial Robot</td></tr>
+      <tr><td><strong>Shakey</strong></td><td>पहला AI Robot (object को sense कर सकता था)</td></tr>
+      <tr><td><strong>Sigma</strong></td><td>पहला Robotic Arm — commercial assembly के लिए</td></tr>
+      <tr><td><strong>FAST</strong></td><td>बहुत तेज़ गति से काम करने वाला</td></tr>
+      <tr><td><strong>Predator</strong></td><td>Remotely Piloted Aircraft + video feed; Iraq War में attack/strike के लिए</td></tr>
+      <tr><td><strong>Quadcopter</strong></td><td>Drone — photography में बहुत use</td></tr>
+      <tr><td><strong>Mars Rover (Sojourner)</strong></td><td>पहला Mars rover, 1997</td></tr>
+      <tr><td><strong>Roomba</strong></td><td>Vacuum cleaner robot (झाड़ू / sweeping)</td></tr>
+      <tr><td><strong>Amazon Robotics</strong></td><td>Amazon warehouse में सामान उठाने वाले robots</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points — Components</h4>
+    <ul>
+      <li>Robot का "Brain" = <strong>Controller</strong>; "Muscles" = <strong>Actuator</strong>; "Arm" = <strong>Manipulator</strong>; "Hand/पंजा" = <strong>End Effector</strong></li>
+      <li>Power Source = <strong>Battery</strong> (आजकल Lithium-ion)</li>
+      <li>Tilt Sensor = Inclinometer; Proximity = IR + Ultrasonic</li>
+      <li>DOF = Degree of Freedom (robot की movement की range)</li>
+      <li>"रोबोट के पंजे को क्या कहा जाता है?" → <strong>End Effector</strong></li>
+      <li>"रोबोट का हाथ" → <strong>Manipulator</strong></li>
+      <li>Lightning Bug — Vietnam War surveillance drone</li>
+      <li>Sojourner — पहला Mars rover (1997)</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — Components Chain (P-A-S-M-E-L-C-E-H-AI)</h4>
+    <p>"<strong>P</strong>ower (battery) से <strong>A</strong>ctuator (मसल्स) चलते हैं, <strong>S</strong>ensors (आँख-कान) से वो देखता है, <strong>M</strong>anipulator (हाथ) में <strong>E</strong>nd Effector (पंजा) लगा है, <strong>L</strong>ocomotion (पैर/पहिए) से चलता है, सब को <strong>C</strong>ontroller (दिमाग) चलाता है, <strong>E</strong>nvironment और <strong>H</strong>uman से बातें करता है, और <strong>AI</strong> + Programming उसे smart बनाते हैं।" 🤖</p>
+    <p style="margin-top:8px"><strong>Mnemonic:</strong> "<em>PASMEL CEH-AI</em>" — पावर-एक्ट्यूएटर-सेंसर-मैनिप्युलेटर-एंडइफ़ेक्टर-लोकोमोशन | कंट्रोलर-एनवायरनमेंट-ह्यूमन-AI</p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: रोबोट के "मसल्स" को क्या कहते हैं?</summary><div class="ans">Actuator (प्रवर्तक)</div></details>
+    <details><summary>Q2: रोबोट के पंजे (हाथ का अंतिम भाग) को क्या कहते हैं?</summary><div class="ans">End Effector</div></details>
+    <details><summary>Q3: Proximity sensor किन तकनीकों से चलता है?</summary><div class="ans">Infrared (IR) + Ultrasonic</div></details>
+    <details><summary>Q4: निम्नलिखित में कौन Robot का घटक नहीं है? (Concept Q)</summary><div class="ans">Power, Actuator, Sensor, Manipulator, End Effector, Locomotion, Controller, Environment Interaction, HRI, AI/Programming + Memory — इसके अलावा कुछ भी "घटक" नहीं माना जाएगा।</div></details>
+  </div>
+</section>
+
+
+<!-- ========== TOPIC 4: 3 LAWS OF ROBOTICS ========== -->
+<section class="topic" id="t4">
+  <h2>4️⃣ रोबोटिक्स के तीन नियम — 3 Laws of Robotics</h2>
+  <div class="ts">⏱ Video Reference: 44:00 — 47:30</div>
+
+  <p>Isaac Asimov ने 1942 में अपनी short story <strong>"Runaround"</strong> में रोबोट के तीन नियम बताए (बाद में इसे <em>I, Robot</em> collection में रखा गया):</p>
+
+  <div class="card-grid">
+    <div class="def-box">
+      <strong>Law 1 — पहला नियम:</strong> Robot कभी भी इंसानों को नुकसान नहीं पहुँचा सकता। अगर पहुँचाए तो उसे नष्ट कर देना चाहिए।<br>
+      <em>"A robot may not injure a human being."</em>
+    </div>
+    <div class="def-box">
+      <strong>Law 2 — दूसरा नियम:</strong> Robot हमेशा इंसानों के आदेशों का पालन करेगा (पहले नियम से conflict न हो तब)।<br>
+      <em>"A robot must obey the orders given to it by humans."</em>
+    </div>
+    <div class="def-box">
+      <strong>Law 3 — तीसरा नियम:</strong> अगर Robot ये दोनों बातें न माने तो उसे <strong>नष्ट</strong> कर देना चाहिए (अपनी रक्षा भी पहले-दूसरे नियम के बाद)।<br>
+      <em>"If a robot does not follow above two laws, it should be destroyed."</em>
+    </div>
+  </div>
+
+  <h3>📚 Isaac Asimov की किताबें (अन्य)</h3>
+  <ul>
+    <li>Foundation (Series)</li>
+    <li>I, Robot — short story collection</li>
+    <li>The Last Question</li>
+    <li>The Stars Like Dust</li>
+    <li>Foundation and Empire</li>
+    <li>The End of Eternity</li>
+    <li>The Naked Sun</li>
+    <li>The Caves of Steel</li>
+    <li>The Complete Stories</li>
+  </ul>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points — 3 Laws</h4>
+    <ul>
+      <li>3 Laws of Robotics — <strong>Isaac Asimov</strong>, story <strong>Runaround</strong> (1942)</li>
+      <li>Concept बहुत simple: इंसान को harm नहीं + आदेश मानें + वरना नष्ट</li>
+      <li>आज भी हर Robot company इन्हीं laws को follow करती है</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — Laws याद करने का तरीका</h4>
+    <p>"मेरे robot का <strong>HOD</strong> है — <strong>H</strong>arm नहीं, <strong>O</strong>bey आदेश, <strong>D</strong>estroy अगर न माने!" 😄</p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: Robotics के 3 Laws किसने दिए?</summary><div class="ans">Isaac Asimov, story Runaround (1942), book — I, Robot</div></details>
+    <details><summary>Q2: पहला Law क्या कहता है?</summary><div class="ans">Robot मानव को harm नहीं कर सकता</div></details>
+  </div>
+</section>
+
+<!-- ========== TOPIC 5: TYPES OF ROBOTS ========== -->
+<section class="topic" id="t5">
+  <h2>5️⃣ रोबोट के प्रकार — Types of Robots</h2>
+  <div class="ts">⏱ Video Reference: 47:30 — 1:09:50</div>
+
+  <p>Robots को 3 आधारों पर classify किया जाता है:</p>
+
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>📐 1. तकनीक के आधार पर (11 प्रकार)</h4>
+      <ul>
+        <li>Humanoid Robot</li>
+        <li>Nano Robot</li>
+        <li>Computer Robot</li>
+        <li>Automation Robot</li>
+        <li>Autonomous Robot</li>
+        <li>Tele-operated Robot</li>
+        <li>Pre-programmed Robot</li>
+        <li>Augmenting Robot</li>
+        <li>Mobile Spherical Robot</li>
+        <li>Swarm Robot</li>
+        <li>Micro Robot</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🛠️ 2. अनुप्रयोग के आधार पर (6 प्रकार)</h4>
+      <ul>
+        <li>Industrial</li>
+        <li>Domestic (घरेलू)</li>
+        <li>Medical</li>
+        <li>Defence</li>
+        <li>Service</li>
+        <li>Space</li>
+      </ul>
+      <h4 style="margin-top:10px">🚶 3. गतिशीलता (Locomotion) के आधार पर</h4>
+      <ul>
+        <li>Stationary (स्थिर)</li>
+        <li>Wheeled</li>
+        <li>Legged</li>
+        <li>Swimming</li>
+        <li>Flying (UAV/Drones)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🤖 तकनीक के आधार पर 10+ प्रकार — Detail</h3>
+
+  <h3>① Humanoid Robot — मानवरूपी रोबोट</h3>
+  <p>Robot जो इंसान की तरह दिखे + इंसान जैसा सोचे। Concept: Chitti (Robot movie), Matrix, I-Robot। आज Sophia जैसे robots इंसानों की भावनाओं को समझ रहे हैं। 2045 तक की predicted limit = <strong>Technological Singularity</strong> (machines इंसानों से एडवांस हो जाएंगी)।</p>
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sophia_at_the_AI_for_Good_Global_Summit_2018_%2840823369221%29_%28cropped%29.jpg/360px-Sophia_at_the_AI_for_Good_Global_Summit_2018_%2840823369221%29_%28cropped%29.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sophia_at_the_AI_for_Good_Global_Summit_2018_%2840823369221%29_%28cropped%29.jpg/360px-Sophia_at_the_AI_for_Good_Global_Summit_2018_%2840823369221%29_%28cropped%29.jpg"
+         alt="Sophia humanoid robot by Hanson Robotics" loading="lazy" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — Sophia (Hanson Robotics, 2016), CC BY 2.0</div>
+  </div>
+  <p><strong>Examples:</strong> Atlas (Boston Dynamics, USA), PETMAN (push-ups, exercise), TOPIO (Vietnam, table tennis), Robonaut 1/2 (NASA — ISS), Kirobo (Japan — ISS), Skybot (Russia — ISS), Saimon, Dreamer, Sophia, Jia Jia, Erica, Junko Chihira, Ocean One, Nao, Pepper. 🔥</p>
+
+  <h3>② Augmenting Robot — संवर्धित रोबोट</h3>
+  <p>मानव की क्षमता बढ़ाने वाले robots। सबसे बड़ा example — <strong>Prosthetic Limbs</strong> (अंग प्रत्यारोपण के लिए artificial hand/leg)। 🔥</p>
+
+  <h3>③ Tele-operated Robot — दूर से संचालित</h3>
+  <p>दूर से control होते हैं + extreme conditions (पानी के अंदर, दूसरे ग्रह पर) में use। Examples: Drones, Submarines, Landers, Rovers।</p>
+
+  <h3>④ Pre-programmed Robot — पूर्व-प्रोग्राम</h3>
+  <p>एक निश्चित task के लिए program किए जाते हैं और बार-बार वही करते हैं। Factories में बहुत use।</p>
+
+  <h3>⑤ Autonomous vs Automation Robots</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Autonomous Robot</th><th>Automation Robot</th></tr></thead>
+    <tbody>
+      <tr><td>Human surveillance की <strong>ज़रूरत नहीं</strong></td><td>Human surveillance <strong>ज़रूरी</strong> है</td></tr>
+      <tr><td>Example: <em>Roomba</em> vacuum cleaner</td><td>Example: Factory के pre-programmed robots</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>⑥ Mobile Spherical Robot (MSR)</h3>
+  <p>एक गोल आकृति में मूव करने वाले robots (बहुत important नहीं)।</p>
+
+  <h3>⑦ Swarm Robot — स्वर्ण रोबोट</h3>
+  <p>10–15 robots मिलकर समूह में काम करते हैं — एक puzzle की तरह सब parts मिलकर task complete करते हैं। 🔥</p>
+
+  <h3>⑧ Nano Robot — नैनो रोबोट</h3>
+  <p><strong>Size:</strong> 0.1 से 10 micrometer। Medical field में सबसे बड़ा potential — पूरी medical field बदल सकती है। 🔥</p>
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>Nano Robot के Parts</h4>
+      <ul>
+        <li><strong>Bio Chip</strong> — biological material wala chip</li>
+        <li><strong>NewBots / Nubots</strong> — DNA based</li>
+        <li>Bacteria-based nano robots</li>
+        <li>Virus-based nano robots</li>
+        <li>3D printing nano robots — कटी उँगली दोबारा print कर सकें</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>⑨ Micro Robot</h4>
+      <ul>
+        <li>Size: 1 mm से कम</li>
+        <li>Nano से बड़े, micro-level के काम</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🚶 Locomotion के आधार पर — Detail</h3>
+
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>🛞 Wheeled Robots</h4>
+      <ul>
+        <li><strong>Single Wheel / Ball Robot</strong> — पहला 2005, Prof. Royals द्वारा</li>
+        <li><strong>Omni Wheel</strong> — कई पहिए मिलकर एक</li>
+        <li><strong>Kabot</strong> — एक पहिए वाला wooden rolling robot</li>
+        <li><strong>Scarab</strong> — चार पहिए, NASA rover</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🦿 Legged Robots</h4>
+      <ul>
+        <li><strong>Hopping</strong> — Monopod (1 leg)</li>
+        <li><strong>ASIMO</strong> — Bipedal (2 legs), Honda 🔥</li>
+        <li><strong>QRIO</strong> — Bipedal, Sony</li>
+        <li><strong>SpiderBot</strong> — Tripedal (3 legs), RoMeLa</li>
+        <li><strong>BigDog</strong> — Quadrupedal (4 legs), army में use 🔥</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>🐟 Swimming Robots</h4>
+      <ul><li>Important नहीं — बस name याद रखें</li></ul>
+    </div>
+    <div class="mini-card">
+      <h4>🪽 Flying Robots</h4>
+      <ul>
+        <li><strong>UAV (Unmanned Aerial Vehicle)</strong> = Drone 🔥</li>
+        <li>Solar-powered: Puffin, Penguin, Jelly</li>
+        <li><strong>Ornithopter</strong> — पक्षी की तरह उड़ने वाले 🔥</li>
+        <li>DelFly (Delft Univ.), RoboBee — माइक्रो ornithopters</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg/400px-Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg/400px-Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg"
+         alt="Honda ASIMO bipedal humanoid robot" loading="lazy" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — Honda ASIMO, CC BY 2.0</div>
+  </div>
+
+  <h3>💻 Virtual Robot — आभासी रोबोट</h3>
+  <p>ये बाहर physical नहीं — सिर्फ <em>software/program</em>। Example: <strong>Chatbots</strong>। पहली chatbot — <strong>ELIZA</strong>। India में <em>MyGov Corona Helpdesk</em> chatbot को award भी मिला (E-Governance में पढ़ा था)।</p>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points — Types</h4>
+    <ul>
+      <li>Atlas + PETMAN = <strong>Boston Dynamics</strong> (USA) — Humanoid</li>
+      <li>TOPIO — Vietnam company, table tennis</li>
+      <li>Robonaut + Kirobo + Skybot — सब International Space Station पर भेजे गए humanoids</li>
+      <li>Prosthetic limbs → <strong>Augmenting Robot</strong></li>
+      <li>Roomba → <strong>Autonomous Robot</strong> (no human surveillance)</li>
+      <li>Nano Robot size — 0.1 से 10 micrometer; medical field में future</li>
+      <li>BigDog — <strong>Quadrupedal</strong> robot, army use</li>
+      <li>ASIMO — Honda का Bipedal robot</li>
+      <li>QRIO — Sony का Bipedal robot</li>
+      <li>SpiderBot — Tripedal, RoMeLa</li>
+      <li>Drone = UAV (Unmanned Aerial Vehicle)</li>
+      <li>Ornithopter — पक्षी जैसे उड़ने वाले (DelFly, RoboBee)</li>
+      <li>पहली Chatbot — ELIZA</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — Legged Robots की Chain (1-2-3-4 पैर)</h4>
+    <p>"<strong>1</strong> पैर वाला Hopping कूदा, <strong>2</strong> पैरों वाली Honda <strong>ASIMO</strong> ने Sony की <strong>QRIO</strong> को नमस्ते किया, <strong>3</strong> पैरों वाली <strong>SpiderBot</strong> मकड़ी RoMeLa में दौड़ी, और <strong>4</strong> पैरों वाला <strong>BigDog</strong> Army के साथ मार्च कर गया!" 🦿</p>
+    <p style="margin-top:8px"><strong>Mnemonic — "AQSB":</strong> <em>ASIMO (2) → QRIO (2) → SpiderBot (3) → BigDog (4)</em></p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: कृत्रिम पैर लगाने के लिए कौन से robot use होते हैं?</summary><div class="ans">Augmenting Robot (Prosthetic limbs)</div></details>
+    <details><summary>Q2: BigDog कितने पैर वाला robot है?</summary><div class="ans">Quadrupedal (4 पैर) — army में use</div></details>
+    <details><summary>Q3: ASIMO किस कंपनी का है?</summary><div class="ans">Honda (Japan), Bipedal humanoid</div></details>
+    <details><summary>Q4: Drone का दूसरा नाम?</summary><div class="ans">UAV — Unmanned Aerial Vehicle</div></details>
+    <details><summary>Q5: पक्षी जैसे उड़ने वाले robots को क्या कहते हैं?</summary><div class="ans">Ornithopter (DelFly, RoboBee)</div></details>
+  </div>
+</section>
+
+<!-- ========== TOPIC 6: APPLICATIONS ========== -->
+<section class="topic" id="t6">
+  <h2>6️⃣ रोबोट के अनुप्रयोग — Applications</h2>
+  <div class="ts">⏱ Video Reference: 1:09:50 — 1:23:30</div>
+
+  <p>Robot का use ख़ासकर 7 क्षेत्रों में: Industry, Medical, Domestic, Military, Disaster Management, Space, Other। हम पाँच मुख्य देखेंगे।</p>
+
+  <h3>🏭 ① Industry — सबसे बड़ा field</h3>
+  <p>पहला industrial robot <strong>Unimate</strong> (1954, GM New Jersey)। 4 prominent types:</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Robot Type</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pick & Place Robot</strong></td><td>एक जगह से उठाकर दूसरी जगह रखना</td></tr>
+      <tr><td><strong>Point-to-Point Robot</strong></td><td>Welding, Drilling</td></tr>
+      <tr><td><strong>Continuous Path Robot</strong></td><td>Spray painting, Sheet cutting</td></tr>
+      <tr><td><strong>Assembly Operation Robot</strong></td><td>Assembly line में</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>🏥 ② Medical / चिकित्सा</h3>
+  <ul>
+    <li><strong>Robotic Prosthetic</strong> — अंग प्रत्यारोपण (हाथ, पैर)</li>
+    <li><strong>Robotic Exoskeleton</strong> — लकवाग्रस्त अंगों से काम</li>
+    <li><strong>Robotic Surgery</strong> — आँख की सर्जरी, रोबोटिक उपकरण</li>
+    <li><strong>Robotic Nurse</strong> — मरीज की देखभाल, dawai/khana पहुँचाना। Examples: <em>Hello Mio</em> (Mello University), <em>Help Mate</em> (Transition Research Corp.), <strong>RIBA</strong> 🔥</li>
+    <li><strong>CyberKnife</strong> — विकिरण थेरेपी (radiation therapy) उपकरण 🔥</li>
+    <li><strong>Da Vinci Surgical System</strong> — सर्जरी में 🔥</li>
+    <li><strong>HOSPI</strong> — Hospital delivery robot, Panasonic</li>
+  </ul>
+
+  <h3>🚀 ③ Space — अंतरिक्ष</h3>
+  <p>दूसरे ग्रहों पर रिसर्च = robots से ही संभव। 3 main categories:</p>
+  <ul>
+    <li><strong>Orbiter</strong> — ग्रह की कक्षा में चक्कर लगाते हैं</li>
+    <li><strong>Lander</strong> — ग्रह पर उतरने वाले (e.g. <em>Vikram</em> — Chandrayaan-2)</li>
+    <li><strong>Rover</strong> — surface पर घूमकर data collect (e.g. <em>Pragyan</em> — Chandrayaan-2; <em>Sojourner</em> — Mars 1997)</li>
+  </ul>
+  <p><strong>अन्य Space Robots:</strong> Robonaut (NASA, ISS), SpiderNaut (NASA, मकड़ी जैसी), Space Probe, Lunar Robotic Rover, <em>Mars Orbiter Rover</em> (2004–2010), <em>InSight</em> & <em>MightyEagle</em> (NASA prototype)। European Union ने पहली बार किसी <strong>धूमकेतु (comet)</strong> पर robot उतारा।</p>
+
+  <h3>🌪 ④ Disaster Management</h3>
+  <ul>
+    <li><strong>Bluefin-21</strong> — submarine robot, MH 370 की खोज (हिंद महासागर) में use 🔥</li>
+    <li>हैदराबाद Science Society के वैज्ञानिकों ने भूकंप के मलबे में फँसे लोगों को निकालने वाला robot बनाया</li>
+    <li><strong>ATLAS</strong> — DRDO ने भी ATLAS नाम का robot बनाया (humanoid Atlas से अलग)</li>
+    <li><strong>SENSOR + Mobile Robot</strong> — disaster management के लिए</li>
+  </ul>
+
+  <h3>🪖 ⑤ Military / सैन्य</h3>
+  <p>Drones के अलावा DRDO के <strong>Daksh, Daksh Mini, NBC Recce, Confined Space Recce</strong>, और <strong>BigDog</strong> जैसे robots use होते हैं। Detail Topic 8 में।</p>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cyberknife_VSI.JPG/400px-Cyberknife_VSI.JPG"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cyberknife_VSI.JPG/400px-Cyberknife_VSI.JPG"
+         alt="CyberKnife radiation therapy robot system" loading="lazy" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — CyberKnife VSI, CC BY-SA 3.0</div>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Points — Applications</h4>
+    <ul>
+      <li>Pick & Place / Point-to-Point Robot = <strong>Industrial Robot</strong></li>
+      <li>Da Vinci Surgical System — Surgery robot</li>
+      <li>CyberKnife — Radiation therapy device</li>
+      <li>RIBA — Robotic Nurse</li>
+      <li>HOSPI — Panasonic का hospital delivery robot</li>
+      <li>Bluefin-21 — MH 370 खोज में हिंद महासागर</li>
+      <li>Sojourner — पहला Mars Rover (1997)</li>
+      <li>Chandrayaan-2: Lander = <em>Vikram</em>, Rover = <em>Pragyan</em></li>
+      <li>EU = धूमकेतु पर पहली बार robot उतारा (Rosetta — Topic 7)</li>
+    </ul>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: Spray painting के लिए कौन सा industrial robot?</summary><div class="ans">Continuous Path Robot</div></details>
+    <details><summary>Q2: MH 370 की खोज में किस robot का use हुआ?</summary><div class="ans">Bluefin-21 submarine robot</div></details>
+    <details><summary>Q3: Chandrayaan-2 का lander और rover?</summary><div class="ans">Lander = Vikram; Rover = Pragyan</div></details>
+  </div>
+</section>
+
+<!-- ========== TOPIC 7: MAJOR ROBOTS WORLDWIDE ========== -->
+<section class="topic" id="t7">
+  <h2>7️⃣ विश्व के प्रमुख रोबोट — Major Robots Worldwide</h2>
+  <div class="ts">⏱ Video Reference: 1:23:30 — 1:31:30</div>
+
+  <h3>👑 Sophia — सबसे ज़रूरी</h3>
+  <ul>
+    <li>Maker: <strong>Hanson Robotics</strong>, Hong Kong (Founder: <strong>David Hanson</strong>)</li>
+    <li>Activated: <strong>14 Feb 2016</strong></li>
+    <li>पहली AI-based Humanoid Robot</li>
+    <li>Saudi Arabia ने Sophia को नागरिकता दी (पहला robot citizen)</li>
+    <li>चेहरा Hollywood actress <strong>Audrey Hepburn</strong> जैसा</li>
+    <li>India आगमन: <strong>2017</strong> — Mumbai Tech Festival; <strong>4 Oct 2019</strong> — Indore (51st Round Square International Conference) 🔥</li>
+    <li><strong>62 facial expressions</strong> बना सकती है</li>
+  </ul>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sophia_%28robot%29_2018_%28cropped%29.jpg/360px-Sophia_%28robot%29_2018_%28cropped%29.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sophia_%28robot%29_2018_%28cropped%29.jpg/360px-Sophia_%28robot%29_2018_%28cropped%29.jpg"
+         alt="Sophia AI humanoid robot — Hanson Robotics" loading="lazy" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — Sophia (2018), CC BY 2.0</div>
+  </div>
+
+  <h3>🧰 अन्य Important Robots</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Robot</th><th>Maker / देश</th><th>Specialty</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ASIMO</strong> 🔥</td><td>Honda, Japan (2000)</td><td>Bipedal humanoid; Full Form: <em>Advanced Step in Innovative Mobility</em>; अब Tokyo museum में</td></tr>
+      <tr><td><strong>Atlas</strong></td><td>Boston Dynamics, USA</td><td>Humanoid</td></tr>
+      <tr><td><strong>PETMAN</strong></td><td>Boston Dynamics</td><td>Push-ups, exercise, walk</td></tr>
+      <tr><td><strong>Spot / Robot Dog</strong> 🔥</td><td>Google (Boston Dynamics)</td><td>4 पैरों वाला, घर/बाहरी काम</td></tr>
+      <tr><td><strong>Wakamaru</strong></td><td>Mitsubishi Heavy Industries, Japan</td><td>Natural communication</td></tr>
+      <tr><td><strong>SAM</strong> 🔥</td><td>New Zealand</td><td>विश्व का पहला <em>Virtual Politician</em> (NZ voters की इच्छा से प्रेरित)</td></tr>
+      <tr><td><strong>NB</strong> / NL</td><td>New Zealand</td><td>(Virtual)</td></tr>
+      <tr><td><strong>MightyEagle</strong></td><td>NASA</td><td>Prototype robotic lander</td></tr>
+      <tr><td><strong>Nico</strong> 🔥</td><td>Yale Univ.</td><td>पहला robot जो खुद को mirror में पहचान सकता है</td></tr>
+      <tr><td><strong>Pepper</strong></td><td>SoftBank Robotics</td><td>Half-humanoid; मानव की भावनाएँ पढ़ सकता है</td></tr>
+      <tr><td><strong>Cobot</strong> 🔥</td><td>—</td><td>Full Form: <em>Collaborative Robot</em> — बड़े robots की सहायता</td></tr>
+      <tr><td><strong>SCARA</strong></td><td>—</td><td>Full Form: <em>Selective Compliance Assembly Robot Arm</em>; industrial</td></tr>
+      <tr><td><strong>Soft Robotics</strong></td><td>—</td><td>नई शाखा — सब parts मुलायम</td></tr>
+      <tr><td><strong>Rex</strong> 🔥</td><td>—</td><td>Robotic Exoskeleton — विश्व का पहला <em>Bionic Man</em>; आधुनिक prosthetics से बना</td></tr>
+      <tr><td><strong>IBN Sina</strong> 🔥</td><td>UAE University</td><td>विश्व का पहला robot जो <em>अरबी भाषा</em> बोलता है</td></tr>
+      <tr><td><strong>Rosetta</strong></td><td>European Union</td><td>पहला robot जो <em>धूमकेतु (comet)</em> पर उतरा</td></tr>
+      <tr><td><strong>Ornithopters</strong></td><td>विभिन्न</td><td>DelFly, SwabNet, SmartBird, RoboBee — पक्षी जैसे उड़ने वाले</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Master — World Robots</h4>
+    <ul>
+      <li><strong>ASIMO Full Form:</strong> Advanced Step in Innovative Mobility — Honda 2000</li>
+      <li><strong>Spot:</strong> Google का 4 पैरों वाला Robot Dog</li>
+      <li><strong>SAM:</strong> विश्व का पहला Virtual Politician (New Zealand)</li>
+      <li><strong>IBN Sina:</strong> अरबी भाषा बोलने वाला पहला robot (UAE)</li>
+      <li><strong>Nico:</strong> mirror में खुद को पहचानने वाला पहला robot (Yale)</li>
+      <li><strong>Cobot Full Form:</strong> Collaborative Robot</li>
+      <li><strong>SCARA Full Form:</strong> Selective Compliance Assembly Robot Arm</li>
+      <li><strong>Rex:</strong> पहला Bionic Man — Robotic Exoskeleton</li>
+      <li><strong>Sophia:</strong> Indore आई 4 Oct 2019 (51st Round Square Conference)</li>
+      <li>Ornithopters: DelFly, RoboBee — पक्षी जैसे उड़ने वाले</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — World Robots की Chain</h4>
+    <p>"<strong>Sophia</strong> Saudi की नागरिक बन गई, फिर <strong>ASIMO</strong> Honda कार से Tokyo museum पहुँची, रास्ते में <strong>Atlas</strong> Boston में push-up मार रहा था <strong>PETMAN</strong> के साथ, Google के <strong>Spot</strong> 🐕 ने <strong>Wakamaru</strong> को नमस्ते कहा, फिर <strong>SAM</strong> ने New Zealand में election लड़ा, <strong>IBN Sina</strong> ने UAE में अरबी में भाषण दिया, और <strong>Rosetta</strong> धूमकेतु पर उतर गई!" ☄️</p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: Sophia कब और कहाँ Indore आई थी?</summary><div class="ans">4 October 2019, 51st Round Square International Conference</div></details>
+    <details><summary>Q2: ASIMO का full form?</summary><div class="ans">Advanced Step in Innovative Mobility</div></details>
+    <details><summary>Q3: कौन सा robot अरबी भाषा बोलता है?</summary><div class="ans">IBN Sina (UAE University)</div></details>
+    <details><summary>Q4: Spot Robot किसने बनाया?</summary><div class="ans">Google (Boston Dynamics) — Robot Dog, 4 पैर</div></details>
+    <details><summary>Q5: पहला Virtual Politician?</summary><div class="ans">SAM — New Zealand</div></details>
+  </div>
+</section>
+
+
+<!-- ========== TOPIC 8: ROBOTICS IN INDIA ========== -->
+<section class="topic" id="t8">
+  <h2>8️⃣ भारत में रोबोटिक्स — Robotics in India</h2>
+  <div class="ts">⏱ Video Reference: 1:31:30 — 1:56:30</div>
+
+  <h3>📌 परिचय (Introduction)</h3>
+  <ul>
+    <li>India में Robot का प्रमुख use 3 क्षेत्रों में: <strong>Medical Science, Military (Army), Space</strong></li>
+    <li>विश्व में सबसे ज़्यादा Robot use करने वाला देश: <strong>China</strong> 🔥</li>
+    <li>India में Robot की सबसे बड़ी संस्था: <strong>CAIR</strong> (DRDO)</li>
+    <li>विश्व में सबसे बड़ी Robotics संस्था: <strong>IFR</strong></li>
+  </ul>
+
+  <h3>🏛️ भारत के मुख्य रोबोटिक्स संस्थान</h3>
+
+  <div class="card-grid cols-2">
+    <div class="mini-card">
+      <h4>① IFR — International Federation of Robotics 🔥</h4>
+      <ul>
+        <li>स्थापना: <strong>1987</strong></li>
+        <li>मुख्यालय: <strong>Frankfurt, Germany</strong></li>
+        <li>Non-profit organization</li>
+        <li>विश्व की सबसे बड़ी robotics संस्था</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>② DRDO 🔥</h4>
+      <ul>
+        <li>Full Form: <em>Defence Research and Development Organisation</em></li>
+        <li>स्थापना: <strong>1958</strong></li>
+        <li>मुख्यालय: <strong>New Delhi</strong></li>
+        <li>रक्षा मंत्रालय (Ministry of Defence) के तहत</li>
+        <li>Motto: "बलस्य मूलं विज्ञानम्"</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>③ CAIR 🔥</h4>
+      <ul>
+        <li>Full Form: <em>Centre for Artificial Intelligence and Robotics</em></li>
+        <li>स्थापना: <strong>October 1986</strong> (Aroka Pillaraj के सहयोग से)</li>
+        <li>मुख्यालय: <strong>Bengaluru</strong></li>
+        <li>DRDO के तहत — भारत में Robotics + AI का सबसे बड़ा institute</li>
+        <li>Nov 2000 में <em>CCCN</em> (Command, Control & Communication Network) और <em>CAEDR</em> (Electronics & Radar Development) को CAIR में merge किया गया</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>④ IIRA 🔥</h4>
+      <ul>
+        <li>Full Form: <em>Indian Council for Robotics and Automation</em> (कई जगह All India Council for Robotics & Automation)</li>
+        <li>स्थापना: <strong>2014</strong></li>
+        <li>मुख्यालय: <strong>New Delhi</strong></li>
+        <li>Non-profit</li>
+        <li>हर साल <strong>Technocian</strong> EXPO आयोजित करती है (AI + Robotics conference)</li>
+        <li>ATEF Ventures + IIRA = <strong>GIC (Global Innovation Centre)</strong></li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>⑤ IRC — Indian Robotics Community</h4>
+      <ul>
+        <li>स्थापना: <strong>10 July 2011</strong></li>
+        <li>हर साल <strong>AIR (Advances in Robotics)</strong> conference आयोजित करती है</li>
+        <li>2021 में Kanpur में virtual आयोजन</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h4>📌 अन्य भारतीय Players</h4>
+      <ul>
+        <li>Central Machine Tool Institute</li>
+        <li>IIT Madras</li>
+        <li>Indian Science Institute, Bengaluru</li>
+        <li>Hyderabad Science Society</li>
+        <li>कई नए Robotics startups</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🛡️ DRDO द्वारा बनाए गए Robots</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Robot</th><th>Use / Description</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Daksh</strong> 🔥</td><td>Full Form: <em>Remotely Operated Vehicle</em>; Explosive device की पहचान — bomb detection</td></tr>
+      <tr><td><strong>Daksh Mini</strong></td><td>Daksh का छोटा version</td></tr>
+      <tr><td><strong>CSR</strong></td><td>Confined Space Remotely Operated Vehicle</td></tr>
+      <tr><td><strong>SROV / Daksh Scout</strong></td><td>Surveillance Remotely Operated Vehicle</td></tr>
+      <tr><td><strong>NETRA</strong> 🔥</td><td>Unmanned Aerial Vehicle (UAV) / Light-weight Drone — CAIR ने DRDO के साथ बनाया</td></tr>
+      <tr><td><strong>UXOR</strong></td><td>Unexploded Ordinance Handling Robot — bomb handling</td></tr>
+      <tr><td><strong>ChatuRBot</strong></td><td>Bengaluru robotics company के साथ DRDO ने मिलकर बनाया</td></tr>
+      <tr><td><strong>MUNTRA</strong> 🔥</td><td>Family of Unmanned Armed Vehicles — DRDO का unmanned बख्तरबंद टैंक (व्हील robot)</td></tr>
+      <tr><td><strong>Robo Sen (CAIR)</strong></td><td>Petrolling robot</td></tr>
+      <tr><td><strong>Hot Slab Handling Robot (CAIR)</strong></td><td>Naval Material Research Lab के लिए</td></tr>
+      <tr><td><strong>Snake Robot (CAIR)</strong></td><td>Disaster Management के लिए</td></tr>
+      <tr><td><strong>DRDO AURA / Project AURA</strong></td><td>मानवरहित लड़ाकू विमान (Unmanned Combat Aerial Vehicle); ADA + Aeronautical Development Establishment + Gas Turbine Research Establishment + Defence Electronics Application Lab Dehradun ने मिलकर बनाया</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>DRDO ने अपनी छठी <em>Young Scientist Lab</em> Bengaluru में बनाई है।</p>
+
+  <h3>🇮🇳 भारत के प्रमुख रोबोट</h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Robot</th><th>Maker / Origin</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MANAV</strong> 🔥</td><td>Diwakar Vaish + team (IIT Mumbai/A-SET Training), Dec 2014</td><td>India का पहला Humanoid Robot</td></tr>
+      <tr><td><strong>MITRA</strong> 🔥</td><td>Invento Robotics, Bengaluru (Founder: Balaji Vishwanath)</td><td>Swadeshi humanoid robot</td></tr>
+      <tr><td><strong>ISKAR</strong></td><td>Sastra (Robotics Pvt Ltd), Kochi</td><td>3D painting + अनाज पीसना</td></tr>
+      <tr><td><strong>GreedBot, Robot Greg</strong></td><td>Ahmedabad startup</td><td>घर के काम कर सकते हैं</td></tr>
+      <tr><td><strong>LAKSHMI</strong> 🔥</td><td>City Union Bank, Kumbakonam, Tamil Nadu</td><td>India का पहला Banking Robot</td></tr>
+      <tr><td><strong>RoboCop</strong></td><td>Hyderabad police</td><td>Police robot (Dubai के RoboCop जैसा)</td></tr>
+      <tr><td><strong>RADA</strong></td><td>Vistara Airlines (Tata + Singapore Airlines JV)</td><td>Kempegowda Airport में लगा; Singapore Airport Terminal 3 पर भी</td></tr>
+      <tr><td><strong>(BEL Robot)</strong></td><td>Bharat Electronics Limited</td><td>India में बना सबसे लंबा humanoid; <em>Pick & Place</em> robot</td></tr>
+      <tr><td><strong>RASHMI</strong> 🔥</td><td>Prof. Ranjit Srivastav</td><td>विश्व की पहली <em>Hindi-speaking</em> + India की पहली <em>Lip-sync</em> Humanoid; Launch: 1 Aug 2018</td></tr>
+      <tr><td><strong>BRABO</strong> 🔥</td><td>TAL Manufacturing, 2017</td><td>First Made-in-India Industrial Robot</td></tr>
+      <tr><td><strong>PROTOTAIM</strong> 🔥</td><td>Mayank Varshad, Jabalpur</td><td>COVID-19: मरीज को सामान पहुँचाना</td></tr>
+      <tr><td><strong>PRITHVI</strong></td><td>Delhi students</td><td>COVID में डॉक्टर-मरीज video conferencing</td></tr>
+      <tr><td><strong>MSR / SHR / DMR</strong></td><td>Santosh Phulwale, Mumbai</td><td>COVID-19 के 3 robots — Multipurpose Service Robot, Service Humanoid Robot, Disaster Management Robot</td></tr>
+      <tr><td><strong>BHEEM (Drone)</strong> 🔥</td><td>IIT Kharagpur students</td><td>Super-powerful drone</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>📰 अन्य तथ्य (Other Facts)</h3>
+  <ul>
+    <li>Kerala के heart specialists ने India में पहली बार <strong>3D printing surgery</strong> की</li>
+    <li>MP के <strong>Ujjain</strong> में देश की पहली <em>Robotic Controlled Observatory</em> बनेगी 🔥</li>
+    <li>India की पहली Robotic Surgery — <strong>2010-11</strong>, AIIMS New Delhi</li>
+    <li><strong>Subterranean Orange</strong> — Gurugram robotics company</li>
+    <li><strong>Genrobotics, Jain Robotics</strong> — Indian companies</li>
+  </ul>
+
+  <div class="image-block">
+    <img data-fallback="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DRDO_Daksh.jpg/400px-DRDO_Daksh.jpg"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DRDO_Daksh.jpg/400px-DRDO_Daksh.jpg"
+         alt="DRDO Daksh — bomb detection robot"
+         loading="lazy" decoding="async" />
+    <div class="caption">Image: Wikimedia Commons — DRDO Daksh ROV, CC BY-SA 4.0</div>
+  </div>
+
+  <div class="hot">
+    <h4>🔥 Exam Hot Master — India</h4>
+    <ul>
+      <li><strong>India का पहला Humanoid Robot:</strong> MANAV (Diwakar Vaish, Dec 2014)</li>
+      <li><strong>India का पहला Banking Robot:</strong> LAKSHMI (City Union Bank, Kumbakonam, TN)</li>
+      <li><strong>India का पहला Industrial Robot (Made in India):</strong> BRABO (TAL Manufacturing, 2017)</li>
+      <li><strong>विश्व का पहला Hindi-speaking Robot:</strong> RASHMI (Prof. Ranjit Srivastav, 1 Aug 2018)</li>
+      <li><strong>BHEEM Drone:</strong> IIT Kharagpur</li>
+      <li><strong>NETRA:</strong> DRDO/CAIR का drone</li>
+      <li><strong>MUNTRA:</strong> DRDO का unmanned बख्तरबंद टैंक</li>
+      <li><strong>Daksh:</strong> Bomb detection (Remotely Operated Vehicle)</li>
+      <li><strong>CAIR:</strong> 1986, Bengaluru, DRDO under</li>
+      <li><strong>IFR:</strong> 1987, Frankfurt Germany — non-profit</li>
+      <li><strong>DRDO:</strong> 1958, New Delhi</li>
+      <li><strong>विश्व में सबसे ज़्यादा Robot उपयोग करने वाला देश:</strong> China</li>
+      <li><strong>India की पहली Robotic Surgery:</strong> 2010-11 AIIMS Delhi</li>
+      <li><strong>देश की पहली Robotic Observatory:</strong> Ujjain (MP)</li>
+      <li>COVID-19 robots: PROTOTAIM (Jabalpur), PRITHVI (Delhi), MSR/SHR/DMR (Mumbai)</li>
+    </ul>
+  </div>
+
+  <div class="link-story">
+    <h4>🔗 Link Story — India के Firsts याद करने का तरीका</h4>
+    <p>"<strong>MANAV</strong> ने पहले Humanoid बनकर भारत में जन्म लिया, फिर Tamil Nadu के Kumbakonam में <strong>LAKSHMI</strong> ने bank खोला, TAL company के <strong>BRABO</strong> ने factory चलाई, Allahabad में Prof Ranjit की <strong>RASHMI</strong> हिंदी में बोलने लगी, और IIT Kharagpur के छात्रों ने <strong>BHEEM</strong> drone उड़ा दिया!" 🚀</p>
+    <p style="margin-top:8px"><strong>DRDO Robots Mnemonic — "<em>D-N-M-U-C</em>":</strong> <em>Daksh</em> (bomb), <em>Netra</em> (drone), <em>Muntra</em> (tank), <em>UXOR</em> (ordinance), <em>ChatuRBot</em></p>
+  </div>
+
+  <div class="quiz">
+    <h4>🧠 Quick Recall Quiz</h4>
+    <details><summary>Q1: India का पहला Humanoid Robot कौन सा है?</summary><div class="ans">MANAV (Diwakar Vaish द्वारा, Dec 2014)</div></details>
+    <details><summary>Q2: NETRA क्या है? किसने बनाया?</summary><div class="ans">UAV / Drone — DRDO का CAIR institute</div></details>
+    <details><summary>Q3: CAIR का full form?</summary><div class="ans">Centre for Artificial Intelligence and Robotics — 1986, Bengaluru</div></details>
+    <details><summary>Q4: AIR (Advances in Robotics) कौन आयोजित करता है?</summary><div class="ans">Indian Robotics Community (IRC) — स्थापना 10 July 2011</div></details>
+    <details><summary>Q5: Technocian conference किसकी?</summary><div class="ans">IIRA (Indian Council for Robotics & Automation) — 2014, New Delhi</div></details>
+    <details><summary>Q6: BRABO कब और किसने बनाया?</summary><div class="ans">TAL Manufacturing, 2017 — पहला Made-in-India Industrial Robot</div></details>
+    <details><summary>Q7: COVID-19 के दौरान Jabalpur में किसने robot बनाया?</summary><div class="ans">Mayank Varshad — PROTOTAIM</div></details>
+  </div>
+</section>
+
+<!-- ========== MASTER FULL FORMS ========== -->
+<section class="topic" id="full-forms">
+  <h2>📑 सभी Full Forms — Master Table</h2>
+  <p>Exam में सबसे ज़्यादा यही पूछा जाता है — हर full form को रट लेना है।</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Abbreviation</th><th>Full Form</th><th>हिंदी अर्थ / Note</th></tr></thead>
+    <tbody>
+      <tr><td><strong>R.U.R.</strong></td><td>Rossum's Universal Robots</td><td>1920 का Karel Čapek नाटक</td></tr>
+      <tr><td><strong>PUMA</strong></td><td>Programmable Universal Machine for Assembly</td><td>1978, Unimation</td></tr>
+      <tr><td><strong>WABOT</strong></td><td>WAseda roBOT</td><td>1972 का पहला Android</td></tr>
+      <tr><td><strong>ASIMO</strong></td><td>Advanced Step in Innovative Mobility</td><td>Honda 2000</td></tr>
+      <tr><td><strong>SCARA</strong></td><td>Selective Compliance Assembly Robot Arm</td><td>Industrial robotic arm</td></tr>
+      <tr><td><strong>COBOT</strong></td><td>Collaborative Robot</td><td>बड़े robots का सहायक</td></tr>
+      <tr><td><strong>UAV</strong></td><td>Unmanned Aerial Vehicle</td><td>Drone का पर्याय</td></tr>
+      <tr><td><strong>MSR (MP)</strong></td><td>Mobile Spherical Robot</td><td>गोल आकार</td></tr>
+      <tr><td><strong>MSR (COVID)</strong></td><td>Multipurpose Service Robot</td><td>Santosh Phulwale</td></tr>
+      <tr><td><strong>SHR</strong></td><td>Service Humanoid Robot</td><td>Santosh Phulwale</td></tr>
+      <tr><td><strong>DMR</strong></td><td>Disaster Management Robot</td><td>Santosh Phulwale</td></tr>
+      <tr><td><strong>DOF</strong></td><td>Degree of Freedom</td><td>Robot की movement range</td></tr>
+      <tr><td><strong>HRI</strong></td><td>Human-Robot Interaction</td><td>—</td></tr>
+      <tr><td><strong>AI</strong></td><td>Artificial Intelligence</td><td>कृत्रिम बुद्धिमत्ता</td></tr>
+      <tr><td><strong>ML</strong></td><td>Machine Learning</td><td>AI की एक शाखा</td></tr>
+      <tr><td><strong>DRDO</strong></td><td>Defence Research and Development Organisation</td><td>1958, New Delhi</td></tr>
+      <tr><td><strong>CAIR</strong></td><td>Centre for Artificial Intelligence and Robotics</td><td>1986, Bengaluru, DRDO</td></tr>
+      <tr><td><strong>IFR</strong></td><td>International Federation of Robotics</td><td>1987, Frankfurt Germany</td></tr>
+      <tr><td><strong>IIRA</strong></td><td>Indian (All India) Council for Robotics and Automation</td><td>2014, New Delhi</td></tr>
+      <tr><td><strong>IRC</strong></td><td>Indian Robotics Community</td><td>10 July 2011</td></tr>
+      <tr><td><strong>AIR</strong></td><td>Advances in Robotics</td><td>IRC का annual conference</td></tr>
+      <tr><td><strong>RPA</strong></td><td>Robotic Process Automation</td><td>—</td></tr>
+      <tr><td><strong>GIC</strong></td><td>Global Innovation Centre</td><td>IIRA + ATEF Ventures</td></tr>
+      <tr><td><strong>NETRA</strong></td><td>(DRDO Drone — UAV)</td><td>CAIR + DRDO</td></tr>
+      <tr><td><strong>MUNTRA</strong></td><td>Mission Unmanned Tracked</td><td>DRDO unmanned tank family</td></tr>
+      <tr><td><strong>UXOR</strong></td><td>Unexploded Ordinance Handling Robot</td><td>DRDO</td></tr>
+      <tr><td><strong>SROV</strong></td><td>Surveillance Remotely Operated Vehicle</td><td>Daksh Scout</td></tr>
+      <tr><td><strong>BRABO</strong></td><td>(Industrial Robot Brand)</td><td>TAL Manufacturing 2017</td></tr>
+      <tr><td><strong>BEL</strong></td><td>Bharat Electronics Limited</td><td>Pick & Place robot</td></tr>
+      <tr><td><strong>RIBA</strong></td><td>Robot for Interactive Body Assistance</td><td>Robotic Nurse</td></tr>
+      <tr><td><strong>HOSPI</strong></td><td>Hospital Delivery Robot</td><td>Panasonic</td></tr>
+      <tr><td><strong>ISS</strong></td><td>International Space Station</td><td>Robonaut, Kirobo, Skybot यहाँ भेजे गए</td></tr>
+      <tr><td><strong>ADA / ADE / GTRE / DEAL</strong></td><td>(AURA project के लिए DRDO labs)</td><td>Aeronautical Development Agency / Establishment, Gas Turbine Research Estab., Defence Electronics App. Lab</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ========== EXAM HOT MASTER ========== -->
+<section class="topic" id="hot-master">
+  <h2>🔥 Exam Hot Facts — Master List</h2>
+  <p>एक नज़र में सब "previously asked + likely to be asked" तथ्य:</p>
+
+  <h3>📜 Origins & History</h3>
+  <ul>
+    <li>Robot शब्द — Karel Čapek, R.U.R. नाटक, 1920, Czech Republic, Slav भाषा</li>
+    <li>Robotics शब्द — Isaac Asimov, story Runaround, 1942</li>
+    <li>3 Laws of Robotics — Isaac Asimov</li>
+    <li>Father of Robotics — Joseph Engelberger</li>
+    <li>Grandfather of Robotics — George Devol</li>
+    <li>पहली Robot Company — Unimation (1954)</li>
+    <li>पहला Industrial Robot — Unimate (GM, New Jersey)</li>
+    <li>PUMA — 1978, Unimation, Programmable Universal Machine for Assembly</li>
+    <li>पहला Android Robot — WABOT-1 (1972, Waseda Univ., Japan)</li>
+    <li>पहला AI Humanoid — Sophia (2016, Hanson Robotics)</li>
+    <li>पहला Living Robot — Xenobot (2020, Xenopus laevis)</li>
+    <li>नागरिकता पाने वाला पहला Robot — Sophia (Saudi Arabia)</li>
+  </ul>
+
+  <h3>🏗 Components Terms</h3>
+  <ul>
+    <li>Brain → Controller; Muscles → Actuator; Eyes/Ears → Sensor</li>
+    <li>Arm → Manipulator; Hand/पंजा → End Effector</li>
+    <li>Movement → Locomotion</li>
+    <li>DOF → Degree of Freedom</li>
+    <li>Tilt sensor = Inclinometer; Proximity = IR + Ultrasonic</li>
+  </ul>
+
+  <h3>🤖 Famous Robots</h3>
+  <ul>
+    <li>ASIMO — Honda, Bipedal — Advanced Step in Innovative Mobility</li>
+    <li>Atlas, PETMAN — Boston Dynamics</li>
+    <li>Spot/Robot Dog — Google, Quadrupedal</li>
+    <li>BigDog — Quadrupedal, Army</li>
+    <li>QRIO — Sony Bipedal; SpiderBot — RoMeLa Tripedal</li>
+    <li>Sophia — 4 Oct 2019 Indore (51st Round Square Conference)</li>
+    <li>SAM — पहला Virtual Politician (NZ)</li>
+    <li>IBN Sina — पहला अरबी बोलने वाला robot (UAE)</li>
+    <li>Nico — पहला mirror से खुद को पहचानने वाला (Yale)</li>
+    <li>Rex — पहला Bionic Man (Robotic Exoskeleton)</li>
+    <li>Rosetta — पहला धूमकेतु पर उतरा (EU)</li>
+    <li>Sojourner — पहला Mars Rover (1997)</li>
+    <li>Roomba — Vacuum cleaner (Autonomous)</li>
+    <li>Bluefin-21 — MH 370 खोज, हिंद महासागर</li>
+    <li>ELIZA — पहली Chatbot</li>
+    <li>Predator — Iraq War surveillance/strike drone</li>
+    <li>Lightning Bug — Vietnam War surveillance drone</li>
+    <li>Firebee — military target drone</li>
+  </ul>
+
+  <h3>🇮🇳 India</h3>
+  <ul>
+    <li>India में सबसे बड़ी Robotics संस्था — CAIR (DRDO, Bengaluru, 1986)</li>
+    <li>विश्व में सबसे ज़्यादा robots — China</li>
+    <li>MANAV — पहला Indian humanoid (Diwakar Vaish, 2014)</li>
+    <li>MITRA — Invento Robotics Bengaluru (Balaji Vishwanath)</li>
+    <li>LAKSHMI — पहला Banking Robot (City Union Bank, Kumbakonam, TN)</li>
+    <li>BRABO — पहला Made-in-India Industrial Robot (TAL, 2017)</li>
+    <li>RASHMI — पहला Hindi-speaking + India का पहला Lip-sync (Prof. Ranjit Srivastav, 1 Aug 2018)</li>
+    <li>BHEEM Drone — IIT Kharagpur</li>
+    <li>NETRA — DRDO/CAIR drone</li>
+    <li>MUNTRA — DRDO unmanned बख्तरबंद tank</li>
+    <li>Daksh — Bomb detection</li>
+    <li>RADA — Vistara, Bengaluru airport</li>
+    <li>RoboCop — Hyderabad police</li>
+    <li>India की पहली Robotic Surgery — 2010-11, AIIMS Delhi</li>
+    <li>देश की पहली Robotic Observatory — Ujjain (MP)</li>
+    <li>India का पहला 3D printing surgery — Kerala</li>
+    <li>COVID Robots: PROTOTAIM (Jabalpur), PRITHVI (Delhi), MSR-SHR-DMR (Mumbai)</li>
+    <li>IIRA — 2014, New Delhi (Technocian Expo)</li>
+    <li>IRC — 10 July 2011 (AIR conference)</li>
+    <li>IFR — 1987, Frankfurt Germany</li>
+    <li>DRDO — 1958, New Delhi</li>
+    <li>DRDO का छठा Young Scientist Lab — Bengaluru</li>
+  </ul>
+</section>
+
+<!-- ========== MASTER CHECKLIST ========== -->
+<section class="topic" id="checklist">
+  <h2>✅ Master Revision Checklist</h2>
+  <p>हर fact को tick करते जाएं — अपनी revision progress track करें (auto-save in browser)।</p>
+  <div class="checklist" id="checklist">
+    <label><input type="checkbox" data-id="c1"/> "Robot" शब्द — Karel Čapek, R.U.R. (1920), Czech</label>
+    <label><input type="checkbox" data-id="c2"/> "Robotics" शब्द — Isaac Asimov, Runaround (1942)</label>
+    <label><input type="checkbox" data-id="c3"/> Father of Robotics — Joseph Engelberger</label>
+    <label><input type="checkbox" data-id="c4"/> Grandfather of Robotics — George Devol</label>
+    <label><input type="checkbox" data-id="c5"/> पहली Robot Company — Unimation (1954)</label>
+    <label><input type="checkbox" data-id="c6"/> पहला Industrial Robot — Unimate (GM New Jersey)</label>
+    <label><input type="checkbox" data-id="c7"/> PUMA = Programmable Universal Machine for Assembly (1978)</label>
+    <label><input type="checkbox" data-id="c8"/> पहला Android — WABOT-1 (1972, Waseda Japan)</label>
+    <label><input type="checkbox" data-id="c9"/> पहला AI Humanoid — Sophia (2016, Hanson Robotics)</label>
+    <label><input type="checkbox" data-id="c10"/> Sophia ने Saudi Arabia की नागरिकता ली</label>
+    <label><input type="checkbox" data-id="c11"/> Sophia भारत में: 2017 Mumbai, 4 Oct 2019 Indore</label>
+    <label><input type="checkbox" data-id="c12"/> पहला Living Robot — Xenobot (2020, Xenopus laevis)</label>
+    <label><input type="checkbox" data-id="c13"/> 3 Laws of Robotics — Asimov की Runaround में</label>
+    <label><input type="checkbox" data-id="c14"/> Robot के 10 घटक — PASMEL CEH-AI</label>
+    <label><input type="checkbox" data-id="c15"/> Brain = Controller, Muscles = Actuator</label>
+    <label><input type="checkbox" data-id="c16"/> Arm = Manipulator, Hand = End Effector</label>
+    <label><input type="checkbox" data-id="c17"/> Tilt = Inclinometer; Proximity = IR + Ultrasonic</label>
+    <label><input type="checkbox" data-id="c18"/> ASIMO = Advanced Step in Innovative Mobility (Honda)</label>
+    <label><input type="checkbox" data-id="c19"/> Spot/Robot Dog — Google (4 पैर)</label>
+    <label><input type="checkbox" data-id="c20"/> BigDog — Quadrupedal, Army</label>
+    <label><input type="checkbox" data-id="c21"/> QRIO — Sony, Bipedal</label>
+    <label><input type="checkbox" data-id="c22"/> SpiderBot — RoMeLa, Tripedal</label>
+    <label><input type="checkbox" data-id="c23"/> SAM — पहला Virtual Politician (NZ)</label>
+    <label><input type="checkbox" data-id="c24"/> IBN Sina — पहला अरबी बोलने वाला (UAE)</label>
+    <label><input type="checkbox" data-id="c25"/> Nico — पहला mirror-recognising robot (Yale)</label>
+    <label><input type="checkbox" data-id="c26"/> Rex — पहला Bionic Man (Exoskeleton)</label>
+    <label><input type="checkbox" data-id="c27"/> Rosetta — पहला धूमकेतु पर (EU)</label>
+    <label><input type="checkbox" data-id="c28"/> Sojourner — पहला Mars Rover (1997)</label>
+    <label><input type="checkbox" data-id="c29"/> Drone = UAV; पक्षी जैसे = Ornithopter</label>
+    <label><input type="checkbox" data-id="c30"/> ELIZA — पहली Chatbot</label>
+    <label><input type="checkbox" data-id="c31"/> Bluefin-21 — MH 370 खोज</label>
+    <label><input type="checkbox" data-id="c32"/> Roomba — Autonomous vacuum cleaner</label>
+    <label><input type="checkbox" data-id="c33"/> Industrial: Pick & Place, Point-to-Point, Continuous Path, Assembly</label>
+    <label><input type="checkbox" data-id="c34"/> Da Vinci — surgical; CyberKnife — radiation</label>
+    <label><input type="checkbox" data-id="c35"/> RIBA — Robotic Nurse; HOSPI — Panasonic</label>
+    <label><input type="checkbox" data-id="c36"/> Chandrayaan-2: Vikram (lander) + Pragyan (rover)</label>
+    <label><input type="checkbox" data-id="c37"/> Robonaut/Kirobo/Skybot — ISS भेजे गए</label>
+    <label><input type="checkbox" data-id="c38"/> विश्व में सबसे ज़्यादा Robot use — China</label>
+    <label><input type="checkbox" data-id="c39"/> IFR — 1987, Frankfurt Germany</label>
+    <label><input type="checkbox" data-id="c40"/> DRDO — 1958, New Delhi</label>
+    <label><input type="checkbox" data-id="c41"/> CAIR — 1986, Bengaluru, DRDO under</label>
+    <label><input type="checkbox" data-id="c42"/> IIRA — 2014, New Delhi (Technocian Expo)</label>
+    <label><input type="checkbox" data-id="c43"/> IIRA + ATEF = GIC (Global Innovation Centre)</label>
+    <label><input type="checkbox" data-id="c44"/> IRC — 10 July 2011 (AIR conference)</label>
+    <label><input type="checkbox" data-id="c45"/> Daksh — DRDO bomb detection</label>
+    <label><input type="checkbox" data-id="c46"/> NETRA — DRDO/CAIR drone</label>
+    <label><input type="checkbox" data-id="c47"/> MUNTRA — DRDO unmanned बख्तरबंद tank</label>
+    <label><input type="checkbox" data-id="c48"/> AURA — DRDO unmanned combat aircraft project</label>
+    <label><input type="checkbox" data-id="c49"/> MANAV — India का पहला Humanoid (Diwakar Vaish, 2014)</label>
+    <label><input type="checkbox" data-id="c50"/> MITRA — Invento Robotics, Bengaluru (Balaji Vishwanath)</label>
+    <label><input type="checkbox" data-id="c51"/> LAKSHMI — पहला Banking Robot (Kumbakonam, TN)</label>
+    <label><input type="checkbox" data-id="c52"/> BRABO — पहला Made-in-India Industrial Robot (TAL, 2017)</label>
+    <label><input type="checkbox" data-id="c53"/> RASHMI — पहला Hindi-speaking robot (Ranjit Srivastav, 1 Aug 2018)</label>
+    <label><input type="checkbox" data-id="c54"/> BHEEM Drone — IIT Kharagpur</label>
+    <label><input type="checkbox" data-id="c55"/> India की पहली Robotic Surgery — 2010-11 AIIMS Delhi</label>
+    <label><input type="checkbox" data-id="c56"/> देश की पहली Robotic Observatory — Ujjain (MP)</label>
+    <label><input type="checkbox" data-id="c57"/> COVID Robots — PROTOTAIM (Jabalpur), PRITHVI (Delhi), MSR/SHR/DMR (Mumbai)</label>
+    <label><input type="checkbox" data-id="c58"/> SCARA = Selective Compliance Assembly Robot Arm</label>
+    <label><input type="checkbox" data-id="c59"/> COBOT = Collaborative Robot</label>
+    <label><input type="checkbox" data-id="c60"/> Technological Singularity — 2045 तक machines इंसानों से एडवांस</label>
+  </div>
+</section>
+
+<footer>
+  <p>📌 <strong>Upcoming Topic (अगली class):</strong> Electronics — small section + MP Current Affairs (2 जून, 6:00–12:00 baje)</p>
+  <p>🎯 Revise daily 15 min • Take quiz without looking • Tick checklist after each round</p>
+  <p>Made for self-revision alongside the YouTube lecture flow • Bilingual Hinglish notes</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  // ===== Theme toggle =====
+  const html = document.body;
+  const themeBtn = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('robo_theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
+  themeBtn.textContent = savedTheme === 'dark' ? '🌙 Dark' : '☀️ Light';
+  themeBtn.addEventListener('click', () => {
+    const cur = html.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('robo_theme', next);
+    themeBtn.textContent = next === 'dark' ? '🌙 Dark' : '☀️ Light';
+  });
+
+  // ===== Quick jump =====
+  const sel = document.getElementById('jumpSelect');
+  sel.addEventListener('change', () => {
+    if (sel.value) {
+      const el = document.getElementById(sel.value);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      sel.value = '';
+    }
+  });
+
+  // ===== Checklist persistence =====
+  const checklist = document.getElementById('checklist');
+  const boxes = checklist.querySelectorAll('input[type=checkbox]');
+  const saved = JSON.parse(localStorage.getItem('robo_check') || '{}');
+  boxes.forEach(b => {
+    if (saved[b.dataset.id]) {
+      b.checked = true;
+      b.parentElement.classList.add('done');
+    }
+    b.addEventListener('change', () => {
+      saved[b.dataset.id] = b.checked;
+      localStorage.setItem('robo_check', JSON.stringify(saved));
+      b.parentElement.classList.toggle('done', b.checked);
+      updateProgress();
+    });
+  });
+
+  // ===== Progress bar =====
+  function updateProgress(){
+    const total = boxes.length;
+    const done = Array.from(boxes).filter(b=>b.checked).length;
+    const pct = Math.round((done/total)*100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `Revision Progress: ${pct}%  (${done}/${total})`;
+    document.getElementById('livePct').textContent = pct + '%';
+  }
+  updateProgress();
+
+  // ===== Image reliability — preload + fallback =====
+  document.querySelectorAll('.image-block img').forEach(img => {
+    const fb = img.getAttribute('data-fallback');
+    img.addEventListener('error', function once(){
+      // Try fallback once
+      if (fb && img.src !== fb) {
+        img.src = fb;
+      } else {
+        // Show fallback message
+        const div = document.createElement('div');
+        div.className = 'image-fallback';
+        div.style.display = 'block';
+        div.textContent = '⚠️ Image could not load. Search "' + (img.alt || 'Robot image') + '" online.';
+        img.replaceWith(div);
+      }
+      img.removeEventListener('error', once);
+    }, {once:true});
+  });
+})();
+</script>
+
+</body>
+</html>
