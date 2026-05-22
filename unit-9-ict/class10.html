@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎯 Class 10 — E-Governance (ई-गवर्नेंस) | MPPSC Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f1a;
+    --bg-2: #15152a;
+    --card: #1c1c33;
+    --card-2: #232342;
+    --text: #f1f3ff;
+    --muted: #b8bce0;
+    --cyan: #00d4ff;
+    --orange: #ff6b35;
+    --green: #00ff88;
+    --purple: #b388ff;
+    --yellow: #ffd166;
+    --pink: #ff5e9f;
+    --red: #ff5470;
+    --border: #2e2e55;
+    --hot: #ff3860;
+    --link: #6ee7ff;
+    --shadow: 0 8px 24px rgba(0,0,0,0.45);
+  }
+  [data-theme="light"] {
+    --bg: #f6f7fb;
+    --bg-2: #ffffff;
+    --card: #ffffff;
+    --card-2: #eef1fa;
+    --text: #1a1f3a;
+    --muted: #4a5170;
+    --cyan: #007cad;
+    --orange: #d4451e;
+    --green: #008b4f;
+    --purple: #6a3ee0;
+    --yellow: #b8841a;
+    --pink: #c8307b;
+    --red: #c81d3f;
+    --border: #d3d8ee;
+    --hot: #d61f4d;
+    --link: #0a6e9c;
+    --shadow: 0 6px 18px rgba(20,30,80,0.10);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 880px; margin: 0 auto; padding: 16px 18px 80px; }
+
+  /* HEADER */
+  .header {
+    padding: 28px 22px;
+    background: linear-gradient(135deg, rgba(0,212,255,0.18), rgba(179,136,255,0.18));
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .header h1 { margin: 0 0 6px; font-size: 28px; font-weight: 800; line-height: 1.25; }
+  .header .sub { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .badge {
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text); padding: 6px 12px; border-radius: 999px;
+    font-size: 13px; font-weight: 600;
+  }
+  .badge.hot { background: rgba(255,56,96,0.14); color: var(--hot); border-color: rgba(255,56,96,0.4); }
+  .badge.cyan { background: rgba(0,212,255,0.14); color: var(--cyan); border-color: rgba(0,212,255,0.4); }
+  .badge.green { background: rgba(0,255,136,0.14); color: var(--green); border-color: rgba(0,255,136,0.4); }
+  .badge.purple { background: rgba(179,136,255,0.14); color: var(--purple); border-color: rgba(179,136,255,0.4); }
+
+  .progress-wrap {
+    margin-top: 14px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 10px 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .progress-bar { flex: 1; height: 10px; background: var(--bg-2); border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green)); transition: width 0.4s ease; }
+  .progress-label { font-size: 13px; color: var(--muted); font-weight: 600; min-width: 90px; text-align: right; }
+
+  /* TOP NAV */
+  .topnav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(15,15,26,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 14px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;
+    margin: -16px -18px 16px;
+  }
+  [data-theme="light"] .topnav { background: rgba(246,247,251,0.94); }
+  .nav-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .jump-select {
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 12px; border-radius: 10px;
+    font-size: 14px; font-family: inherit; font-weight: 600;
+    cursor: pointer; min-width: 200px;
+  }
+  .nav-btn {
+    background: var(--card); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 600;
+    cursor: pointer; font-family: inherit;
+  }
+  .nav-btn:hover { background: var(--card-2); }
+
+  /* TOC */
+  .toc {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 18px 20px; margin-bottom: 22px;
+  }
+  .toc h2 { margin: 0 0 12px; font-size: 18px; }
+  .toc ol { margin: 0; padding-left: 22px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--text); }
+  .toc a:hover { color: var(--cyan); }
+
+  /* SECTIONS */
+  section.topic {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 18px; padding: 22px;
+    margin-bottom: 22px; box-shadow: var(--shadow);
+    border-left: 5px solid var(--cyan);
+    scroll-margin-top: 80px;
+  }
+  section.topic.t-orange { border-left-color: var(--orange); }
+  section.topic.t-green { border-left-color: var(--green); }
+  section.topic.t-purple { border-left-color: var(--purple); }
+  section.topic.t-pink { border-left-color: var(--pink); }
+  section.topic.t-yellow { border-left-color: var(--yellow); }
+  section.topic.t-red { border-left-color: var(--red); }
+  section.topic h2 {
+    margin: 0 0 6px; font-size: 22px; line-height: 1.35;
+  }
+  section.topic .topic-meta { color: var(--muted); font-size: 13px; margin-bottom: 14px; font-weight: 500; }
+  section.topic h3 { margin: 18px 0 8px; font-size: 17px; color: var(--cyan); }
+  section.topic p { margin: 8px 0; }
+
+  /* CARDS */
+  .card {
+    background: var(--card-2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 16px; margin: 12px 0;
+  }
+  .card.def {
+    border-left: 4px solid var(--green);
+    background: linear-gradient(135deg, rgba(0,255,136,0.08), transparent);
+  }
+  .card.hot {
+    border-left: 4px solid var(--hot);
+    background: linear-gradient(135deg, rgba(255,56,96,0.10), transparent);
+  }
+  .card.tip {
+    border-left: 4px solid var(--yellow);
+    background: linear-gradient(135deg, rgba(255,209,102,0.08), transparent);
+  }
+  .card.link-story {
+    border-left: 4px solid var(--purple);
+    background: linear-gradient(135deg, rgba(179,136,255,0.12), rgba(0,212,255,0.06));
+  }
+  .card .label {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+    background: var(--bg-2); color: var(--text);
+  }
+  .card.def .label { background: rgba(0,255,136,0.18); color: var(--green); }
+  .card.hot .label { background: rgba(255,56,96,0.18); color: var(--hot); }
+  .card.tip .label { background: rgba(255,209,102,0.18); color: var(--yellow); }
+  .card.link-story .label { background: rgba(179,136,255,0.20); color: var(--purple); }
+
+  ul.points, ol.points { margin: 10px 0; padding-left: 22px; }
+  ul.points li, ol.points li { margin: 6px 0; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin: 12px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 15px; min-width: 480px;
+    background: var(--card-2);
+  }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: var(--bg-2); color: var(--cyan); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(0,212,255,0.05); }
+
+  /* TIMELINE */
+  .timeline { position: relative; margin: 14px 0; padding-left: 26px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px;
+    width: 3px; background: linear-gradient(var(--cyan), var(--purple));
+    border-radius: 2px;
+  }
+  .timeline-item { position: relative; margin: 12px 0; }
+  .timeline-item::before {
+    content: ""; position: absolute; left: -22px; top: 8px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--cyan); box-shadow: 0 0 0 4px rgba(0,212,255,0.2);
+  }
+  .timeline-item .year { font-weight: 700; color: var(--orange); margin-right: 8px; }
+
+  /* IMAGE BLOCK */
+  .img-block {
+    margin: 14px 0;
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 10px; text-align: center;
+  }
+  .img-block img {
+    max-width: 100%; height: auto; border-radius: 8px;
+    background: #fff;
+  }
+  .img-caption {
+    font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5;
+  }
+  .img-fallback {
+    display: none; padding: 10px; color: var(--muted); font-size: 13px;
+    background: var(--card); border-radius: 8px;
+  }
+
+  /* QUIZ */
+  details.quiz {
+    background: var(--card-2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 16px; margin: 8px 0;
+    border-left: 4px solid var(--orange);
+  }
+  details.quiz summary {
+    cursor: pointer; font-weight: 600; color: var(--orange);
+    list-style: none;
+  }
+  details.quiz summary::-webkit-details-marker { display: none; }
+  details.quiz summary::before { content: "❓ "; }
+  details.quiz[open] summary::before { content: "✅ "; }
+  details.quiz .answer { margin-top: 10px; padding: 10px 12px; background: var(--bg-2); border-radius: 8px; color: var(--green); font-weight: 500; }
+
+  details.acc {
+    background: var(--card-2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 14px; margin: 8px 0;
+  }
+  details.acc summary { cursor: pointer; font-weight: 600; color: var(--cyan); }
+  details.acc summary:hover { color: var(--purple); }
+
+  /* CHECKLIST */
+  .checklist {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px 20px;
+  }
+  .checklist label {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 6px 8px; border-radius: 8px;
+    cursor: pointer; font-size: 15px;
+    transition: background 0.2s;
+  }
+  .checklist label:hover { background: var(--card-2); }
+  .checklist input[type="checkbox"] {
+    width: 18px; height: 18px; margin-top: 3px; accent-color: var(--green);
+    flex-shrink: 0;
+  }
+  .checklist input:checked + span { text-decoration: line-through; color: var(--muted); }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .pill {
+    background: var(--bg-2); color: var(--text); border: 1px solid var(--border);
+    padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  }
+  .pill.cyan { color: var(--cyan); border-color: rgba(0,212,255,0.4); }
+  .pill.orange { color: var(--orange); border-color: rgba(255,107,53,0.4); }
+  .pill.green { color: var(--green); border-color: rgba(0,255,136,0.4); }
+  .pill.purple { color: var(--purple); border-color: rgba(179,136,255,0.4); }
+
+  .ts {
+    display: inline-block; background: var(--bg-2); color: var(--muted);
+    padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600;
+    margin-right: 6px; font-family: monospace;
+  }
+
+  .footer {
+    text-align: center; padding: 30px 16px;
+    color: var(--muted); font-size: 14px; line-height: 1.7;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+    .topnav, .progress-wrap, .nav-btn { display: none !important; }
+    section.topic, .card, .toc, .checklist { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; page-break-inside: avoid; }
+    details.quiz, details.acc { background: #fff !important; }
+    details.quiz[open] .answer, details:not([open]) > *:not(summary) { display: block !important; }
+    details summary { display: list-item !important; }
+    a { color: #000 !important; text-decoration: underline; }
+    .img-block { background: #fff !important; }
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 12px 12px 60px; }
+    .topnav { margin: -12px -12px 14px; }
+    .header h1 { font-size: 22px; }
+    section.topic { padding: 18px 16px; }
+    .jump-select { min-width: 160px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="nav-left">
+    <select class="jump-select" id="jumpSelect" aria-label="Jump to section">
+      <option value="">📍 जल्दी कूदो (Quick Jump)</option>
+      <option value="t-intro">1. परिचय (Introduction)</option>
+      <option value="t-history">2. पृष्ठभूमि (Background/History)</option>
+      <option value="t-objectives">3. उद्देश्य (Objectives)</option>
+      <option value="t-pillars">4. स्तंभ (4 Pillars)</option>
+      <option value="t-stages">5. चरण (4 Stages + 5 Concepts)</option>
+      <option value="t-types">6. प्रकार (G2G, G2C, G2B, G2E)</option>
+      <option value="t-india">7. भारत के मुख्य प्रोजेक्ट्स</option>
+      <option value="t-mp">8. MP के ई-गवर्नेंस प्रोजेक्ट्स</option>
+      <option value="t-other">9. अन्य तथ्य (Models &amp; Current Affairs)</option>
+      <option value="t-fullforms">📚 Master Full Forms</option>
+      <option value="t-hot">🔥 Master Exam Hot Facts</option>
+      <option value="t-checklist">✅ Master Revision Checklist</option>
+    </select>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" id="themeToggle" aria-label="Toggle theme">🌓 Theme</button>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="header">
+  <h1>🎯 ई-गवर्नेंस (E-Governance) — Class 10</h1>
+  <div class="sub">MPPSC Paper-2 • यूनिट-9 • शुभम गुप्ता सर के Unacademy Lecture पर आधारित Revision</div>
+  <div class="badges">
+    <span class="badge cyan">9 मुख्य Topics</span>
+    <span class="badge purple">60+ Portals/Apps</span>
+    <span class="badge green">Hinglish</span>
+    <span class="badge hot">🔥 Exam-Ready</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">0 / 0 ✅</div>
+  </div>
+</header>
+
+<!-- TOC -->
+<div class="toc" id="toc">
+  <h2>📑 Table of Contents</h2>
+  <ol>
+    <li><a href="#t-intro">परिचय (Introduction) — E-Governance + SMART</a></li>
+    <li><a href="#t-history">पृष्ठभूमि (Brief History &amp; Timeline)</a></li>
+    <li><a href="#t-objectives">उद्देश्य (Objectives)</a></li>
+    <li><a href="#t-pillars">4 स्तंभ (Pillars of E-Governance)</a></li>
+    <li><a href="#t-stages">4 चरण + 5 Supporting Concepts</a></li>
+    <li><a href="#t-types">प्रकार (G2G, G2C, G2B, G2E)</a></li>
+    <li><a href="#t-india">भारत के मुख्य E-Governance Projects</a></li>
+    <li><a href="#t-mp">मध्य प्रदेश के E-Governance Initiatives</a></li>
+    <li><a href="#t-other">अन्य तथ्य — Models, CogX, Current Affairs</a></li>
+    <li><a href="#t-fullforms">📚 Master Full-Forms Table</a></li>
+    <li><a href="#t-hot">🔥 Master Exam Hot Facts</a></li>
+    <li><a href="#t-checklist">✅ Master Revision Checklist</a></li>
+  </ol>
+</div>
+
+<!-- ===================================================== -->
+<!-- TOPIC 1 — परिचय (Introduction) -->
+<!-- ===================================================== -->
+<section class="topic" id="t-intro">
+  <h2>1️⃣ परिचय (Introduction) — E-Governance क्या है?</h2>
+  <div class="topic-meta"><span class="ts">00:00–00:14</span> Video flow: टॉपिक की शुरुआत, Disclaimer + SMART definition</div>
+
+  <div class="card">
+    <p>📺 इस इकाई-9 में अब केवल <b>3 टॉपिक</b> बचे थे — <b>E-Governance, Robotics, Electronics</b>. आज की क्लास में सर ने <b>E-Governance</b> पढ़ाया, अगले दिन Robotics।</p>
+    <p>⚠️ <b>Disclaimer:</b> इस टॉपिक में बहुत सारे <b>facts</b> (60+ portals, websites, apps) हैं — घबराना नहीं। सर बताते जाएँगे कि सबसे ज़्यादा <b>important 25–30</b> कौनसे हैं।</p>
+  </div>
+
+  <div class="card def">
+    <span class="label">📖 Definition</span>
+    <p><b>E-Governance</b> = सरकार की सेवाओं को <b>इंटरनेट / ICT उपकरणों</b> के माध्यम से नागरिकों तक पहुँचाना।</p>
+    <p>"<b>When government services are delivered to citizens through ICT / Internet, it is called e-Governance.</b>"</p>
+    <p>📝 शब्द <b>दो भागों</b> से बना: <span class="pill cyan">e</span> (Electronic / Internet / ICT equipment) + <span class="pill orange">Governance</span> (शासन का संचालन)।</p>
+  </div>
+
+  <div class="card hot">
+    <span class="label">🔥 Exam Hot</span>
+    <p>E-Governance को <b>"शासन के क्षेत्र में बहुत बड़ी क्रांति"</b> या <b>"सुशासन के क्षेत्र में क्रांति"</b> कहा जाता है — <i>"IT is the revolution in the field of Good Governance."</i></p>
+  </div>
+
+  <h3>🌟 SMART Governance — Full Form (बहुत Important!)</h3>
+  <p>E-Governance को <b>SMART Governance</b> भी कहा जाता है। SMART = साज-धज वाला smart नहीं — ये <b>acronym</b> है:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Letter</th><th>Full Form</th><th>हिंदी अर्थ</th></tr></thead>
+      <tbody>
+        <tr><td><b>S</b></td><td>Simple</td><td>सरल</td></tr>
+        <tr><td><b>M</b></td><td>Moral</td><td>नैतिक</td></tr>
+        <tr><td><b>A</b></td><td>Accountable</td><td>उत्तरदायी / जवाबदेह</td></tr>
+        <tr><td><b>R</b></td><td>Responsive</td><td>उत्तरदायी / त्वरित</td></tr>
+        <tr><td><b>T</b></td><td>Transparent</td><td>पारदर्शी</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — ऐसे याद करो</span>
+    <p>📖 "एक <b>Simple</b> सा <b>Moral</b> कहानीकार था जो हमेशा <b>Accountable</b> रहता था, हर सवाल पर <b>Responsive</b> था, और उसकी हर बात <b>Transparent</b> थी — यही था SMART प्रशासन!" 🎭</p>
+  </div>
+
+  <h3>🧩 E-Governance की 3 शाखाएँ</h3>
+  <ul class="points">
+    <li><b>e-Administration</b> — सभी प्रशासनिक क्रियाकलाप (administrative functions) में Internet का उपयोग। भारत में इसका आधार बना <b>NIC Net</b> (NIC ने सभी जिलों को Internet से जोड़ा)।</li>
+    <li><b>e-Services</b> — सरकार की सुविधाएँ Internet के माध्यम से लोगों तक। बेहतरीन उदाहरण = <b>जन-धन योजना + DBT</b> (सब्सिडी सीधे beneficiary के खाते में)।</li>
+    <li><b>e-Democracy</b> — सूचना + अधिकार लोगों तक पहुँचाकर लोकतंत्र को मज़बूत करना।</li>
+  </ul>
+
+  <div class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Digital-india-logo.png/640px-Digital-india-logo.png"
+         alt="Digital India Logo — Government of India e-Governance flagship initiative"
+         loading="eager" fetchpriority="high" decoding="async"
+         onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:Redirect/file/Digital-india-logo.png?width=640';this.dataset.retry='1';if(this.dataset.retry==='2')this.style.display='none',this.nextElementSibling.style.display='block';this.dataset.retry=this.dataset.retry==='1'?'2':'1';">
+    <div class="img-fallback">⚠️ Image could not load. <a href="https://commons.wikimedia.org/wiki/File:Digital-india-logo.png" target="_blank" rel="noopener">View on Wikimedia Commons</a></div>
+    <div class="img-caption">Image: Digital India logo — Government of India / Wikimedia Commons (Public Domain / Government work). Concept anchor for E-Governance + Digital India.</div>
+  </div>
+
+  <h3>❓ Quick Recall Quiz</h3>
+  <details class="quiz"><summary>Q1. SMART Governance में 'A' का क्या अर्थ है?</summary>
+    <div class="answer">✅ <b>Accountable</b> (उत्तरदायी / जवाबदेह)।</div>
+  </details>
+  <details class="quiz"><summary>Q2. E-Governance को क्या कहा जाता है?</summary>
+    <div class="answer">✅ "<b>शासन / सुशासन के क्षेत्र में क्रांति</b>" (Revolution in the field of Good Governance)।</div>
+  </details>
+  <details class="quiz"><summary>Q3. E-Governance की तीन शाखाएँ कौन-सी हैं?</summary>
+    <div class="answer">✅ <b>e-Administration, e-Services, e-Democracy</b>.</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 2 — पृष्ठभूमि (Background/History) -->
+<!-- ===================================================== -->
+<section class="topic t-orange" id="t-history">
+  <h2>2️⃣ पृष्ठभूमि (Brief History) — E-Governance का इतिहास</h2>
+  <div class="topic-meta"><span class="ts">00:14–00:24</span> Video flow: ARPANET से लेकर 2016 तक का timeline</div>
+
+  <div class="card">
+    <p>🕰️ E-Governance की शुरुआत वहीं से होती है जहाँ से <b>Internet</b> की — यानी <b>1969 में ARPANET</b> से। ARPANET में अमेरिका के Defense Department के सभी computers को LAN से जोड़ा गया था।</p>
+  </div>
+
+  <h3>📅 Timeline — कब क्या हुआ</h3>
+  <div class="timeline">
+    <div class="timeline-item"><span class="year">1969</span> <b>ARPANET</b> launch — Internet + e-Governance की शुरुआत (USA Defense)।</div>
+    <div class="timeline-item"><span class="year">1970</span> भारत में <b>Department of Electronics</b> की स्थापना।</div>
+    <div class="timeline-item"><span class="year">1976</span> 🔥 <b>National Informatics Centre (NIC)</b> की स्थापना — <b>"Informatics"</b>, "Information" नहीं! ये भारत में E-Governance का infrastructure देती है।</div>
+    <div class="timeline-item"><span class="year">1987</span> <b>राष्ट्रीय उपग्रह आधारित कंप्यूटर नेटवर्क</b> + <b>जिला सूचना प्रणाली कार्यक्रम (DISP)</b> शुरू।</div>
+    <div class="timeline-item"><span class="year">1988</span> <b>NASSCOM</b> की स्थापना।</div>
+    <div class="timeline-item"><span class="year">1999</span> 🔥 <b>Ministry of IT</b> का गठन।</div>
+    <div class="timeline-item"><span class="year">9 जून 2000</span> 🔥 <b>IT Act 2000</b> लागू — Internet + e-Governance को regulate करने वाला सबसे important act।</div>
+    <div class="timeline-item"><span class="year">2002</span> <b>National Institute for Smart Government (NISG)</b> की स्थापना — <b>हैदराबाद</b> में।</div>
+    <div class="timeline-item"><span class="year">2006</span> 🔥 <b>National e-Governance Plan (NeGP)</b> launch — शुरू में 26 Mission Mode Projects, अब <b>31 MMP</b>।</div>
+    <div class="timeline-item"><span class="year">2006</span> 🔥 <b>Common Service Centre (CSC)</b> की policy। (पहला सेंटर 16 जुलाई 2009 को चला, पर इसे 2006 से ही गिना जाता है।)</div>
+    <div class="timeline-item"><span class="year">1 जुलाई 2015</span> 🔥 <b>Digital India</b> कार्यक्रम launch।</div>
+    <div class="timeline-item"><span class="year">2016</span> 🔥 <b>MeitY</b> को <b>Ministry of Communications</b> से अलग किया गया। नया नाम: <b>Ministry of Electronics &amp; Information Technology</b>।</div>
+  </div>
+
+  <div class="card hot">
+    <span class="label">🔥 Exam Hot Points</span>
+    <ul class="points">
+      <li><b>NIC = National Informatics Centre</b>, NOT Information Centre — option में confuse मत होना!</li>
+      <li><b>IT Act 2000</b> — 9 जून 2000 को आया।</li>
+      <li><b>NeGP</b> शुरू में 26 MMP, अब <b>31 MMP</b>।</li>
+      <li><b>2016 में MeitY को Ministry of Communications से अलग</b> किया गया (पहले एकसाथ "Ministry of Electronics, Communications &amp; IT" था)।</li>
+    </ul>
+  </div>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — Timeline याद करो</span>
+    <p>🎬 <b>"1969 में ARPANET ने Internet को जन्म दिया, 1970 में भारत ने Electronics Dept खोला, 1976 में NIC आया, 1999 में IT मंत्रालय बना, 2000 में IT Act आया, 2006 में NeGP + CSC ने गाँव-गाँव क्रांति लाई, और 2015 में Digital India ने सबको जोड़ा!"</b> 🇮🇳</p>
+  </div>
+
+  <h3>❓ Quick Recall Quiz</h3>
+  <details class="quiz"><summary>Q1. NIC की स्थापना कब हुई और इसका सही full form क्या है?</summary>
+    <div class="answer">✅ <b>1976</b> में, <b>National Informatics Centre</b> (Informatics, Information नहीं)।</div>
+  </details>
+  <details class="quiz"><summary>Q2. IT Act कब लागू हुआ?</summary>
+    <div class="answer">✅ <b>9 जून 2000</b>।</div>
+  </details>
+  <details class="quiz"><summary>Q3. MeitY को Ministry of Communications से कब अलग किया गया?</summary>
+    <div class="answer">✅ <b>2016</b> में।</div>
+  </details>
+  <details class="quiz"><summary>Q4. National e-Governance Plan कब launch हुआ और अभी कितने MMP हैं?</summary>
+    <div class="answer">✅ Launch <b>2006</b> में, शुरू में 26 MMP, अब <b>31 MMP</b>।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 3 — उद्देश्य (Objectives) -->
+<!-- ===================================================== -->
+<section class="topic t-green" id="t-objectives">
+  <h2>3️⃣ उद्देश्य (Objectives) — E-Governance के लक्ष्य</h2>
+  <div class="topic-meta"><span class="ts">00:24–00:25</span> Video flow: मुख्य परीक्षा के लिए important — संक्षिप्त चर्चा</div>
+
+  <div class="card">
+    <p>📝 ये टॉपिक मुख्य परीक्षा के लिए ज़्यादा important है — preliminary के लिए सामान्य उद्देश्य ही याद रखना है।</p>
+  </div>
+
+  <ul class="points">
+    <li>🏛️ शासन को <b>सुशासन</b> की ओर ले जाना (Convert Government into Good Governance) — सबसे बड़ा उद्देश्य।</li>
+    <li>📲 लोगों तक <b>आसानी से सुविधाएँ</b> पहुँचाना।</li>
+    <li>🛡️ <b>भ्रष्टाचार कम</b> करना — Internet से चीज़ें transparent होती हैं।</li>
+    <li>👁️‍🗨️ <b>पारदर्शिता (Transparency)</b> + <b>जवाबदेही (Accountability)</b> बढ़ाना।</li>
+    <li>📚 सूचनाओं के माध्यम से <b>लोगों को सशक्त (empower)</b> करना — e-Democracy का आधार।</li>
+    <li>⚙️ शासन की <b>दक्षता (efficiency)</b> में सुधार।</li>
+    <li>💼 <b>व्यापार और उद्योग</b> को बेहतर बनाना।</li>
+  </ul>
+
+  <details class="quiz"><summary>Q. e-Democracy में सबसे important क्या है?</summary>
+    <div class="answer">✅ <b>सूचना (Information)</b> और उससे भी ज़्यादा <b>बोलने की आज़ादी (Freedom of Speech)</b>।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 4 — स्तंभ (Pillars) -->
+<!-- ===================================================== -->
+<section class="topic t-purple" id="t-pillars">
+  <h2>4️⃣ स्तंभ (4 Pillars of E-Governance)</h2>
+  <div class="topic-meta"><span class="ts">00:25–00:27</span> Video flow: 4 आधार जिन पर पूरा e-Governance model खड़ा है</div>
+
+  <div class="card def">
+    <span class="label">📖 Concept</span>
+    <p><b>Pillars = वो आधार जिन पर पूरा e-Governance model काम करता है।</b> अलग-अलग scholars ने मिलकर 4 pillars तय किए हैं।</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>स्तंभ (Pillar)</th><th>व्याख्या</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>People (लोग)</b> 👥</td><td>जिनके लिए e-Governance बनाना है, और जो इसे चलाएँगे।</td></tr>
+        <tr><td>2</td><td><b>Process (भीम / प्रक्रिया)</b> 🔄</td><td>वो process / procedure जिसे follow करना होगा।</td></tr>
+        <tr><td>3</td><td><b>Technology (प्रौद्योगिकी)</b> 💻</td><td>बिना technology के e-Governance का base नहीं बन सकता।</td></tr>
+        <tr><td>4</td><td><b>Resources (संसाधन)</b> 💰</td><td>इन सबके लिए आवश्यक resources।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — 4 Pillars</span>
+    <p>🏛️ "<b>People</b> चाहिए जिनके लिए हम <b>Process</b> बनाएँ, उस process को चलाने के लिए <b>Technology</b> चाहिए, और टेक्नोलॉजी खरीदने के लिए <b>Resources</b> चाहिए — चारों मिलकर ही Building बनती है!"</p>
+  </div>
+
+  <details class="quiz"><summary>Q. E-Governance के कितने और कौन-से pillars होते हैं?</summary>
+    <div class="answer">✅ <b>4 Pillars</b> — People, Process, Technology, Resources।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 5 — चरण (Stages) -->
+<!-- ===================================================== -->
+<section class="topic t-pink" id="t-stages">
+  <h2>5️⃣ चरण (4 Stages) + 5 Supporting Concepts</h2>
+  <div class="topic-meta"><span class="ts">00:27–00:32</span> Video flow: pillars के बाद e-Governance को आगे कैसे बढ़ाएँ</div>
+
+  <div class="card">
+    <p>🏗️ <b>Pillars</b> = बिल्डिंग की <b>नींव</b>। <b>Stages</b> = अब इस बिल्डिंग को <b>आगे कैसे बढ़ाएँ</b> + लोगों तक कैसे पहुँचाएँ। मूल रूप से <b>4 चरण</b> हैं (कुछ models में 5–6 भी मिलते हैं, पर मूल रूप से 4)।</p>
+  </div>
+
+  <h3>🎯 4 मुख्य चरण (Stages)</h3>
+  <ol class="points">
+    <li><b>Computerization (कंप्यूटरीकरण)</b> — सरकारी offices + नागरिकों तक computer पहुँचाना। CSC जैसे केंद्र इसी requirement से बने।</li>
+    <li><b>Networking (नेटवर्किंग)</b> — Computers को आपस में जोड़ना — भारत जैसे बड़े देश में Internet से ही संभव। इसी कारण <b>Digital India</b> चल रहा है।</li>
+    <li><b>Online Presence</b> — Content तैयार करना + वेबसाइटों का सही management।</li>
+    <li><b>Online Interactivity</b> — लोगों की शिकायतें सुनना + सेवाएँ पहुँचाना।</li>
+  </ol>
+
+  <h3>🪜 5 Supporting Concepts (इन्हें support करते हैं)</h3>
+  <ol class="points">
+    <li><b>Simple Information Dissemination (One-Way Communication)</b> — सिर्फ जानकारी देना। उदाहरण: ज़्यादातर सरकारी मंत्रालय की websites।</li>
+    <li><b>Two-Way Communication</b> — लोगों के सुझाव/शिकायतें भी सुनना। उदाहरण: <b>mygov.in</b> (बहुत अच्छा example)।</li>
+    <li><b>Financial Transactions</b> — पेमेंट की सुविधा। उदाहरण: <b>MP Online</b>।</li>
+    <li><b>Integration</b> — विभिन्न systems को जोड़ना।</li>
+    <li><b>Political Participation</b> — Voting, election tracking, political funds में e-Governance का प्रयोग। (<b>नोट:</b> इसका मतलब "नेता e-Governance को promote करें" नहीं है!)</li>
+  </ol>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — 4 Stages</span>
+    <p>💡 "<b>C</b>ompu पहले आया (Computerization), फिर <b>N</b>etwork मिला (Networking), Website <b>O</b>nline हुई (Online Presence), और लोगों से बात <b>O</b>nline होने लगी (Online Interactivity) — <b>CNOO</b> 🐦 cuckoo की तरह बोलो!"</p>
+  </div>
+
+  <details class="quiz"><summary>Q1. e-Governance के 4 stages कौन से हैं?</summary>
+    <div class="answer">✅ Computerization → Networking → Online Presence → Online Interactivity।</div>
+  </details>
+  <details class="quiz"><summary>Q2. mygov.in किस communication का उदाहरण है?</summary>
+    <div class="answer">✅ <b>Two-Way Communication</b>।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 6 — प्रकार (Types) -->
+<!-- ===================================================== -->
+<section class="topic t-yellow" id="t-types">
+  <h2>6️⃣ प्रकार (Types of E-Governance) — G2G, G2C, G2B, G2E</h2>
+  <div class="topic-meta"><span class="ts">00:32–00:38</span> Video flow: ye वही 4 types हैं जो e-Commerce में पढ़े थे</div>
+
+  <div class="card def">
+    <span class="label">📖 4 Types</span>
+    <p>e-Governance के 4 main types हैं — पहचानने के लिए <b>"From → To"</b> देखो।</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Full Form</th><th>क्या होता है</th><th>मुख्य उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td><b>G2G</b></td><td>Government to Government</td><td>सरकार से सरकार के बीच जानकारी/सेवाओं का आदान-प्रदान</td><td>🔥 <b>PRAGATI</b>, <b>Khajane</b> (Karnataka), <b>Smart Government</b> (AP)</td></tr>
+        <tr><td><b>G2C</b> ⭐</td><td>Government to Citizen</td><td>सरकार → नागरिकों को सेवाएँ। <b>सबसे important</b> क्योंकि हम इसी को use करते हैं।</td><td>🔥 <b>MP Online</b>, <b>mygov.in</b>, MP जनसंपर्क website, <b>SWAYAM</b>, <b>Bhoomi</b>, <b>Gyandoot</b>, <b>Lokvani</b></td></tr>
+        <tr><td><b>G2B</b></td><td>Government to Business</td><td>सरकार → व्यापार/उद्योग को सुविधाएँ</td><td>🔥 <b>GST Portal</b>, <b>MCA-21</b>, <b>e-Procurement</b> (Gujarat, AP), <b>e-Biz</b></td></tr>
+        <tr><td><b>G2E</b></td><td>Government to Employee</td><td>सरकार → अपने employees को</td><td>🔥 Online Salary, <b>Bhavishya</b> (Pension portal)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card hot">
+    <span class="label">🔥 Exam Hot — सर ने बताया</span>
+    <ul class="points">
+      <li>"<b>Pragati किस प्रकार के e-Governance का उदाहरण है?</b>" → <b>G2G</b>।</li>
+      <li>"<b>Bhoomi Project किस प्रकार का है?</b>" → <b>G2C</b> (Online delivery of land records, Karnataka)।</li>
+      <li>"<b>Khajane किस प्रकार का है?</b>" → <b>G2G</b> (Treasury management, Karnataka)।</li>
+      <li>"<b>MCA-21 किस प्रकार का है?</b>" → <b>G2B</b>।</li>
+      <li>"<b>Bhavishya किस प्रकार का है?</b>" → <b>G2E</b> (Pension)।</li>
+    </ul>
+  </div>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — 4 Types का scene</span>
+    <p>🎭 "एक ऑफिस में <b>G2G</b> साहब अपनी schemes track कर रहे थे (PRAGATI), <b>G2C</b> की लाइन में आम जनता MP Online पर खड़ी थी, <b>G2B</b> की दुकान पर businessmen GST भर रहे थे, और <b>G2E</b> के window से employees pension ले रहे थे — चारों एक ही e-Governance बिल्डिंग में!"</p>
+  </div>
+
+  <h3>📋 Examples Summary Table</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td><b>G2G</b></td><td>PRAGATI, Khajane (Karnataka — Treasury), Smart Government (AP)</td></tr>
+        <tr><td><b>G2B</b></td><td>MCA-21, e-Procurement (Gujarat, AP), e-Biz</td></tr>
+        <tr><td><b>G2C</b></td><td>Bhoomi Project (Karnataka — Online Delivery of Land Records), Gyandoot (MP — धार ज़िला), Lokvani (UP — सीतापुर)</td></tr>
+        <tr><td><b>G2E</b></td><td>Online Salary, Bhavishya (Pension portal)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details class="quiz"><summary>Q1. Pragati किस प्रकार का e-Governance है?</summary>
+    <div class="answer">✅ <b>G2G</b> (Government to Government)।</div>
+  </details>
+  <details class="quiz"><summary>Q2. MCA-21 किस प्रकार का उदाहरण है?</summary>
+    <div class="answer">✅ <b>G2B</b> (Companies Act के तहत registered companies को services)।</div>
+  </details>
+  <details class="quiz"><summary>Q3. Gyandoot किस state का project है?</summary>
+    <div class="answer">✅ <b>मध्य प्रदेश</b> — <b>धार ज़िला</b> (G2C, 2000 में शुरू)।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 7 — भारत में मुख्य e-Governance Projects -->
+<!-- ===================================================== -->
+<section class="topic t-red" id="t-india">
+  <h2>7️⃣ भारत में मुख्य E-Governance Projects (सबसे बड़ा &amp; Factual टॉपिक)</h2>
+  <div class="topic-meta"><span class="ts">00:38–02:03</span> Video flow: 12 भागों में विभाजित — Digital India से लेकर सभी portals/apps तक</div>
+
+  <div class="card">
+    <p>📋 इस section में सर ने <b>लगभग 60+ portals/websites/apps</b> discuss किए हैं। 12 sub-parts में विभाजित कर पढ़ाया है। नीचे video के <b>exact same flow</b> में दिए गए हैं।</p>
+  </div>
+
+  <!-- 7.1 Digital India -->
+  <h3>🇮🇳 7.1 Digital India Programme — सबसे important</h3>
+  <div class="card def">
+    <span class="label">⭐ KEY FACTS</span>
+    <ul class="points">
+      <li><b>Launch:</b> 1 जुलाई 2015</li>
+      <li><b>Ministry:</b> MeitY (Ministry of Electronics &amp; IT)</li>
+      <li><b>Theme:</b> 🔥 <b>"Power to Empower"</b></li>
+      <li><b>Pillars:</b> <b>9 (नौ)</b> — पूछा जा सकता है!</li>
+      <li>📌 हाल ही में <b>Digital India 2.0</b> भी शुरू किया गया है।</li>
+    </ul>
+  </div>
+
+  <div class="img-block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Digital-india-logo.png/640px-Digital-india-logo.png"
+         alt="Digital India logo — Government of India flagship programme launched 1 July 2015"
+         loading="eager" decoding="async"
+         onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:Redirect/file/Digital-india-logo.png';">
+    <div class="img-caption">Image: Digital India logo — Government of India / Wikimedia Commons (Public Domain — Government work).</div>
+  </div>
+
+  <h4>9 Pillars of Digital India</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Pillar</th><th>क्या करता है</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Broadband Highways</td><td>Broadband हर जगह — <b>Bharat Net</b> इसी के तहत।</td></tr>
+        <tr><td>2</td><td>Universal Access to Mobile Phones</td><td>~120 करोड़ mobile users, ~68 करोड़ Internet users।</td></tr>
+        <tr><td>3</td><td>Public Internet Access Programme</td><td>Public Wi-Fi hotspots, free Wi-Fi।</td></tr>
+        <tr><td>4</td><td>e-Governance: Reforming Govt through Tech</td><td>Government services online।</td></tr>
+        <tr><td>5</td><td>🔥 <b>e-Kranti — Electronic Delivery of Services</b></td><td>सरकार की सेवाओं को internet से लोगों तक — <b>most important pillar</b>!</td></tr>
+        <tr><td>6</td><td>Information for All</td><td>सभी को सूचना।</td></tr>
+        <tr><td>7</td><td>Electronics Manufacturing — Net Zero Imports</td><td>India में ही ICT hardware बनाना (China/Vietnam से import कम करना)।</td></tr>
+        <tr><td>8</td><td>IT for Jobs</td><td>—</td></tr>
+        <tr><td>9</td><td>Early Harvest Programmes</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card hot">
+    <span class="label">🔥 Exam Hot</span>
+    <p>"वह कौन-सा pillar है जो सरकारी सेवाओं को Internet से लोगों तक ले जाता है?" — Answer: <b>e-Kranti</b>।</p>
+  </div>
+
+  <h4>Digital India के तहत प्रमुख कार्यक्रम</h4>
+  <ul class="points">
+    <li>🔥 <b>JAM Trinity</b> = <b>J</b>an Dhan + <b>A</b>adhaar + <b>M</b>obile। (ये वो जैम नहीं जो ब्रेड पर लगाते हैं! 😄)</li>
+    <li><b>UPI</b> — सबसे बड़ा revolution, online payments को सरल बनाया।</li>
+    <li>Phone Pe, Paytm, Bharat Pe जैसे startups।</li>
+    <li><b>QR Code Payments</b> — फेरी वाले व्यापारी तक पहुँच गया।</li>
+    <li><b>DBT (Direct Benefit Transfer)</b> — सब्सिडी सीधे खाते में।</li>
+    <li><b>CSC (Common Service Centre)</b>, <b>UMANG App</b> (एक app में सारी services), <b>MyGov</b>, <b>National AI Portal</b>, <b>Responsible AI for Youth</b>, <b>Ayushman Bharat</b>, <b>e-Hospital</b>, <b>PM Kisan</b>, <b>e-NAM</b> (मंडियों को जोड़ना), <b>Soil Health Card</b>, <b>SWAYAM</b>, <b>Swayam Prabha</b>, <b>National Scholarship Portal</b>, <b>e-Pathshala</b> (NCERT books)।</li>
+    <li><b>COVID era apps:</b> <b>Aarogya Setu</b>, <b>CoWIN</b> (vaccination — बहुत important rahaa), <b>e-Sanjeevani</b>।</li>
+  </ul>
+
+  <div class="card tip">
+    <span class="label">📌 Current Affairs</span>
+    <p>15 जनवरी 2022 को PM Modi ने Startup conference में आने वाले 10 सालों को <b>"Tech-ade" (Technology Decade)</b> नाम दिया। 🔥 याद रखना!</p>
+  </div>
+
+  <details class="quiz"><summary>Q. Digital India का theme क्या है?</summary>
+    <div class="answer">✅ <b>"Power to Empower"</b>।</div>
+  </details>
+  <details class="quiz"><summary>Q. JAM Trinity में क्या-क्या शामिल है?</summary>
+    <div class="answer">✅ <b>J</b>an Dhan + <b>A</b>adhaar + <b>M</b>obile।</div>
+  </details>
+
+  <!-- 7.2 NIC -->
+  <h3>🏢 7.2 National Informatics Centre (NIC)</h3>
+  <ul class="points">
+    <li><b>स्थापना:</b> 1976</li>
+    <li><b>Full Form:</b> 🔥 <b>National Informatics Centre</b> (Informatics ✅, Information ❌)</li>
+    <li><b>Ministry:</b> MeitY</li>
+    <li>भारत में जितना भी सरकार का e-Governance का काम होता है, उसका <b>infrastructure NIC</b> देती है।</li>
+    <li><b>NIC Net</b> = National Informatics Centre Network — भारत के सभी जिलों को आपस में जोड़ने का काम।</li>
+    <li><b>Current DG:</b> <b>नीता वर्मा</b></li>
+  </ul>
+
+  <!-- 7.3 NDLM -->
+  <h3>📚 7.3 राष्ट्रीय डिजिटल साक्षरता अभियान (NDLM)</h3>
+  <ul class="points">
+    <li>2020 में शुरू — <b>Digital Literacy</b> को बढ़ावा देने के लिए।</li>
+    <li>उद्देश्य: <b>Digital Divide</b> (डिजिटल खाई) को कम करना।</li>
+    <li>नया कार्यक्रम: <b>New India Literacy Programme</b> — 2022 से 2027 तक।</li>
+    <li><b>Cyber Crime</b> भी साथ बढ़ रहा है — इसलिए जागरूकता ज़रूरी।</li>
+  </ul>
+
+  <!-- 7.4 NeGP -->
+  <h3>🏛️ 7.4 राष्ट्रीय ई-गवर्नेंस योजना (National e-Governance Plan / NeGP)</h3>
+  <div class="card def">
+    <ul class="points">
+      <li><b>Launch:</b> 18 मई 2006, भारत सरकार द्वारा</li>
+      <li><b>Implementer:</b> <b>MeitY</b> (Ministry of Electronics &amp; IT)</li>
+      <li><b>बनाया:</b> Department of Electronics &amp; IT (MeitY का विभाग) + 🔥 <b>DARPG (Department of Administrative Reforms &amp; Public Grievances)</b></li>
+      <li><b>उद्देश्य:</b> भारत को digital country बनाना; सरकारी सुविधाएँ online।</li>
+      <li><b>Mission Mode Projects (MMP):</b> शुरू में 26, अभी <b>31</b>।</li>
+      <li><b>MMP क्या है?</b> ऐसी योजना जिसमें <b>सब कुछ defined</b> हो — कब शुरू, कब खत्म, कौन लागू करेगा, कैसे, कहाँ।</li>
+    </ul>
+  </div>
+
+  <h4>NeGP के तहत प्रमुख initiatives</h4>
+  <ul class="points">
+    <li><b>State Data Centre (SDC)</b> — MP का Bhopal में बन रहा है।</li>
+    <li><b>State Wide Area Network (SWAN)</b> — एक राज्य के सभी जिलों को राजधानी से जोड़ना।</li>
+    <li><b>CSC (Common Service Centre)</b></li>
+    <li><b>National e-Governance Service Delivery Gateway (NSDG)</b></li>
+    <li><b>State e-Governance Service Delivery Gateway (SSDG)</b></li>
+    <li><b>Mobile e-Governance Service Delivery Gateway (MSDG)</b></li>
+  </ul>
+
+  <!-- 7.5 NCeG -->
+  <h3>🎤 7.5 National Conference on e-Governance (NCeG) + 🏆 Awards</h3>
+  <ul class="points">
+    <li>हर साल <b>DARPG + DeitY + State Government</b> मिलकर conference organize करते हैं।</li>
+    <li>इसी conference में हर साल <b>National e-Governance Awards</b> दिए जाते हैं।</li>
+    <li>Awards <b>6 categories</b> में, और <b>3 बातों</b> (G2G, G2C, G2B) पर आधारित।</li>
+    <li>🔥 <b>24वाँ Conference (Latest):</b> <b>Hyderabad</b> में, Theme — <b>"India Tech-ade: Digital Governance in a Post-Pandemic World"</b>।</li>
+    <li><b>23वाँ:</b> 2020, Mumbai, Theme — "डिजिटल तकनीक के उपयोग से शासन में परिवर्तन"। 2021 में COVID की वजह से नहीं हुआ।</li>
+    <li><b>National e-Governance Award देता कौन है?</b> 🔥 <b>DARPG</b> (Department of Administrative Reforms &amp; Public Grievances)।</li>
+  </ul>
+
+  <!-- 7.6 NKN -->
+  <h3>🎓 7.6 National Knowledge Network (NKN)</h3>
+  <ul class="points">
+    <li>शुरू: <b>2010</b>, Implementer: <b>NIC</b></li>
+    <li>उद्देश्य: भारत के सभी <b>educational + research institutes</b> को high-speed Internet से जोड़ना।</li>
+    <li>Initially <b>1200 institutes</b> को जोड़ने की बात।</li>
+    <li>हाल ही में <b>Bhutan</b> को भी जोड़ा गया, और PM ने <b>SAARC देशों</b> तक ले जाने की घोषणा की।</li>
+    <li>नेटवर्क लाइनें: <b>BSNL (पीली)</b>, <b>Powergrid (हरी)</b>, <b>RailTel (नीली)</b>।</li>
+    <li>Benefits: Multi-casting, streaming, grid, digital library।</li>
+  </ul>
+
+  <!-- 7.7 CSC -->
+  <h3>🏪 7.7 Common Service Centre (CSC) — सबसे important!</h3>
+  <div class="card hot">
+    <span class="label">🔥 Most Important Project</span>
+    <ul class="points">
+      <li><b>Launch (Policy):</b> 2006, MeitY की scheme — पहला सेंटर <b>जुलाई 2009</b> से। याद रखो: <b>2006</b>।</li>
+      <li><b>Model:</b> 🔥 <b>PPP (Public-Private Partnership)</b></li>
+      <li><b>Implementing Company:</b> 🔥 <b>CSC e-Governance Services India Limited</b></li>
+      <li>इन्हें <b>Kiosk Centre</b> भी कहा जाता है।</li>
+      <li>विशेष रूप से <b>ग्रामीण क्षेत्र</b> के लिए (70% आबादी गाँव में रहती है)।</li>
+      <li>2015 में <b>CSC 2.0</b> launch।</li>
+    </ul>
+  </div>
+
+  <h4>3-Tier Model of CSC</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tier</th><th>Entity</th><th>काम</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>State Designated Agency (SDA)</b></td><td>राज्य में CSC का implementation।</td></tr>
+        <tr><td>2</td><td><b>Service Centre Agency (SCA)</b></td><td>VLE को hire करती है, राज्य में पूरी implementation।</td></tr>
+        <tr><td>3</td><td><b>CSC Operator / Village Level Entrepreneur (VLE)</b></td><td>हर गाँव में CSC operate करता है।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details class="quiz"><summary>Q. CSC किस model पर काम करता है?</summary>
+    <div class="answer">✅ <b>PPP (Public-Private Partnership)</b> — implementing company: <b>CSC e-Governance Services India Ltd</b>।</div>
+  </details>
+
+  <!-- 7.8 Bharat Net -->
+  <h3>🌐 7.8 Bharat Net Project</h3>
+  <ul class="points">
+    <li><b>शुरू:</b> 2011 (पुराना नाम)</li>
+    <li>🔥 <b>पुराना नाम:</b> <b>National Optical Fibre Network (NOFN)</b></li>
+    <li><b>नया नाम:</b> Bharat Net (2015 में बदला गया)</li>
+    <li><b>Implementer:</b> <b>Bharat Broadband Network Limited (BBNL)</b> — कंपनी 2012 में बनी।</li>
+    <li><b>उद्देश्य:</b> भारत की <b>2.5 लाख+ ग्राम पंचायतों</b> को high-speed broadband से जोड़ना।</li>
+    <li>अभी तक: ~5.30 लाख km optical fibre, ~4000 Wi-Fi hotspots, ~36000 km dark fibre बिछाया गया।</li>
+  </ul>
+
+  <details class="quiz"><summary>Q. Bharat Net Project का पुराना नाम क्या था?</summary>
+    <div class="answer">✅ <b>National Optical Fibre Network (NOFN)</b> — 2015 में नाम Bharat Net हुआ।</div>
+  </details>
+
+  <!-- 7.9 Other Major Projects -->
+  <h3>📂 7.9 अन्य प्रमुख Projects (Government-wise + State-wise)</h3>
+
+  <details class="acc" open>
+    <summary>🗺️ State Government Projects</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Project</th><th>राज्य/विभाग</th><th>क्या करता है</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>🔥 <b>Bhoomi</b></td><td>Karnataka</td><td>Online delivery of land records</td><td>G2C</td></tr>
+          <tr><td>🔥 <b>Khajane</b></td><td>Karnataka</td><td>Treasury management (राज्य वित्त)</td><td>G2G</td></tr>
+          <tr><td><b>e-Seva</b></td><td>Andhra Pradesh</td><td>MP Online जैसा — सभी services online</td><td>G2C</td></tr>
+          <tr><td><b>Smart Government</b></td><td>Andhra Pradesh</td><td>—</td><td>G2G</td></tr>
+          <tr><td>🔥 <b>Gyandoot</b></td><td>MP — धार ज़िला (2000)</td><td>ग्रामीण आबादी को relevant info; Award भी मिला</td><td>G2C</td></tr>
+          <tr><td><b>FRIENDS</b></td><td>Kerala</td><td>Tax भरने में आसानी (Full form: Fast Reliable Instant Efficient Network for Disbursement of Services — सिर्फ "Friends" याद रखो!)</td><td>G2C</td></tr>
+          <tr><td><b>e-Mitra</b></td><td>Raजस्थान</td><td>—</td><td>G2C</td></tr>
+          <tr><td><b>Lokvani</b></td><td>UP — सीतापुर (Nov 2004)</td><td>—</td><td>G2C</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="acc" open>
+    <summary>🏛️ Central / Department Projects</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Project</th><th>विभाग</th><th>काम</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>🔥 <b>e-Court</b></td><td>Ministry of Law &amp; Justice</td><td>न्यायिक services online + court documents digitize</td><td>G2C</td></tr>
+          <tr><td>🔥 <b>e-District</b></td><td>Department of IT</td><td>जिला स्तर पर जन्म/मृत्यु/जाति/आय/वृद्धावस्था/विधवा pension certs</td><td>G2C</td></tr>
+          <tr><td>🔥 <b>MCA-21</b></td><td>Ministry of Corporate Affairs</td><td>Companies Act में registered companies को services</td><td>G2B</td></tr>
+          <tr><td>🔥 <b>e-Office</b></td><td>DARPG</td><td>Paperless office को बढ़ावा</td><td>G2G</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="acc">
+    <summary>🔐 DigiLocker — "Your documents anytime, anywhere"</summary>
+    <ul class="points">
+      <li>Cloud-based personal storage — <b>10 MB तक</b> documents।</li>
+      <li>हाल ही में <b>e-Pension Payment Order</b> को DigiLocker से जोड़ा गया।</li>
+      <li>e-Sign करने पर documents online use कर सकते हैं।</li>
+      <li>उद्देश्य: नकली documents रोकना + authenticity बढ़ाना।</li>
+      <li>💡 Tip: Personal level पर भी Google Drive / OneDrive में अपने documents store ज़रूर करें — physical loss से बचाव।</li>
+    </ul>
+  </details>
+
+  <details class="acc">
+    <summary>🏛️ अन्य Important Portals</summary>
+    <ul class="points">
+      <li><b>National Digital Library</b> — 10 नवंबर 2006 को <b>IIT Kharagpur</b> से launch, 2018 में re-launch।</li>
+      <li><b>MyGov.in</b> — 26 जुलाई 2014 को launch — Two-Way Communication, सरकार की schemes पर विचार रखें।</li>
+      <li><b>Digital Payments:</b> <b>UPI</b> (Unified Payments Interface) — 11 अप्रैल 2016, NPCI द्वारा। <b>BHIM</b> (Bharat Interface for Money) — 30 दिसंबर 2016, NPCI। <b>FASTag</b> — 2014।</li>
+      <li>🔥 <b>UMANG App</b> — Nov 2017 — <b>Unified Mobile Application for New-age Governance</b>। सरकार के अलग-अलग apps एक platform पर।</li>
+      <li>🔥 <b>e-NAM</b> — 14 अप्रैल 2016 — <b>Electronic National Agriculture Market</b> — कृषि मंडियाँ online।</li>
+      <li><b>Darpan</b> — Digital Advancement of Rural Post Office for A New India (Post Office)।</li>
+      <li><b>Jeevan Pramaan</b> — Aadhaar-based biometric authentication for pensioners।</li>
+      <li>🔥 <b>PRAGATI</b> — 2015 — <b>Pro-Active Governance And Timely Implementation</b>। केंद्र की schemes का implementation track करता है (G2G)।</li>
+      <li><b>PMG-DISHA</b> — प्रधानमंत्री ग्रामीण डिजिटल साक्षरता अभियान।</li>
+      <li><b>Meghraj</b> — GI Cloud (Government India Cloud)।</li>
+      <li>🔥 <b>SWAYAM</b> — 9 जुलाई 2017 — <b>Study Webs of Active Learning for Young Aspiring Minds</b>, MHRD। Online classes (NCERT-based)। साथ में <b>SWAYAM Prabha</b> = DTH के through education + GSAT-15 satellite।</li>
+      <li><b>e-Biz</b> — Infosys + DIPP द्वारा — investors की सुविधा (G2B)।</li>
+      <li>🔥 <b>DIKSHA</b> — <b>Digital Infrastructure for Knowledge Sharing</b> — Teachers की training के लिए।</li>
+      <li><b>NeSDA</b> — National e-Governance Service Delivery Assessment — Aug 2018 — सभी web portals का evaluation।</li>
+      <li><b>Samagra Shiksha</b> — Integrated Scheme for School Education।</li>
+      <li><b>e-Sanjeevani</b> — Tele-medicine, Health Ministry — COVID में बहुत काम आया।</li>
+      <li><b>e-Gram Sangrah</b> — बुनकरों के लिए।</li>
+      <li>🔥 <b>PM SVANidhi (स्वनिधि)</b> — Ministry of Housing &amp; Urban Affairs — छोटे दुकानदार + फेरीवालों को आर्थिक सहायता (Street Vendor's AtmaNirbhar Nidhi)।</li>
+      <li>🔥 <b>Bhavishya</b> — Ministry of Personnel/Pension — online pension sanction &amp; payment tracking (G2E)।</li>
+      <li><b>PFMS</b> — Public Financial Management System।</li>
+    </ul>
+  </details>
+
+  <details class="acc">
+    <summary>🎟️ e-RUPI — Revolutionary Step (Important!)</summary>
+    <div class="card hot">
+      <p>⚠️ <b>e-RUPI डिजिटल currency NहीT है</b> — ये एक <b>voucher-based digital payment system</b> है (कैशलेस + contactless)।</p>
+      <p><b>कैसे काम करता है (PDS example):</b> मान लो BPL को 10 kg गेहूँ मिलता है। अभी सिर्फ राशन की दुकान पर मिल सकता है — दुकान बंद = कोई गेहूँ नहीं। e-RUPI में voucher (SMS/QR) मोबाइल पर आएगा — किसी भी दुकान पर जाओ, voucher दिखाओ, गेहूँ पाओ। दुकानदार बाद में authority से पैसे ले लेगा।</p>
+      <p><b>क्यों revolutionary?</b> PDS में leakage + corruption बहुत है — e-RUPI इसे रोक सकता है।</p>
+      <p><b>Developer:</b> <b>NPCI</b> on UPI platform, in collaboration with <b>Department of Financial Services, Ministry of Health &amp; Family Welfare, National Health Authority</b>।</p>
+    </div>
+  </details>
+
+  <h3>📱 7.10 Important Mobile Apps (Current Affairs — बहुत Important)</h3>
+  <div class="card hot">
+    <span class="label">🔥 इन 8 apps से प्रश्न आने की प्रबल संभावना</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>App</th><th>किसके लिए / किसने launch किया</th></tr></thead>
+      <tbody>
+        <tr><td>🔥 <b>Ombudsperson App</b></td><td>Ministry of Rural Development &amp; Panchayati Raj — <b>MNREGA</b> के बेहतर implementation + complaints के लिए। Feb 2022।</td></tr>
+        <tr><td><b>Night Navigation App</b></td><td>Assam में <b>ब्रह्मपुत्र नदी</b> पर नौका सेवाओं के लिए।</td></tr>
+        <tr><td>🔥 <b>SAI App</b> (ASIGMA)</td><td>Indian Army का अपना <b>indigenous instant messaging app</b> (Army Secure Indigenous Messaging Application) — WhatsApp के बजाय।</td></tr>
+        <tr><td><b>Quit Tobacco App</b></td><td>WHO द्वारा — तंबाकू छोड़ने को promote करता है।</td></tr>
+        <tr><td><b>NICER</b></td><td>Full Form: 🔥 <b>National Institute of Critical Education and Research</b>।</td></tr>
+        <tr><td><b>Azadi Ka Amrit Mahotsav App</b></td><td>Ministry of Culture — आज़ादी के 75 साल का celebration।</td></tr>
+        <tr><td><b>e-Amrit Portal</b></td><td>Electric Vehicles के लिए।</td></tr>
+        <tr><td>🔥 <b>GARUDA App</b></td><td><b>Election Commission of India</b> — 22 Oct 2021, सभी polling booths की digital mapping। (MP election commission ने <b>"चुनाव App"</b> launch की थी।)</td></tr>
+        <tr><td><b>Wetlands of India Portal</b></td><td>Wetlands की जानकारी।</td></tr>
+        <tr><td><b>Jal Jeevan Mission</b></td><td>—</td></tr>
+        <tr><td><b>Fit India Mobile App</b></td><td>Fitness को बढ़ावा।</td></tr>
+        <tr><td><b>e-Shram Portal</b></td><td>Ministry of Labour।</td></tr>
+        <tr><td>🔥 <b>PROOF App</b></td><td>J&amp;K — LG <b>मनोज सिन्हा</b> ने 16 Aug 2021 को launch — Full form: <b>Photographic Record Of On-site Facility</b>। J&amp;K की schemes का implementation track (PRAGATI जैसा)।</td></tr>
+        <tr><td>🔥 <b>MANAS App</b></td><td>11 अप्रैल 2021 — Principal Scientific Advisor <b>K. VijayRaghavan</b> ने launch — सभी आयु समूहों के <b>Mental Health</b> की देखभाल। Full form: <b>Mental Health and Normalcy Augmentation System</b>।</td></tr>
+        <tr><td>🔥 <b>SPARSH Portal</b></td><td>Ministry of Defence — 8 जुलाई 2021 — <b>Defence pension</b> मंजूरी &amp; वितरण।</td></tr>
+        <tr><td><b>e-Santa Portal</b></td><td>Aquaculture से जुड़ा।</td></tr>
+        <tr><td><b>PAiSA Portal</b></td><td>छोटे व्यापारियों को सस्ता loan।</td></tr>
+        <tr><td><b>m-Yoga App</b></td><td>WHO — Mobile Yoga।</td></tr>
+        <tr><td><b>Jan Dhan Darshak App</b></td><td>Banking सुविधाओं के लिए।</td></tr>
+        <tr><td><b>m-Speed App</b></td><td>Internet speed test (fast.com / Ookla की तरह)।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>🦠 7.11 COVID-Era Apps</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>App</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>🔥 <b>CoWIN</b></td><td>Full form: <b>COVID Vaccine Intelligence Network</b>। 12 भाषाओं में, Min of Health &amp; Family Welfare द्वारा। 🔥 Tagline: <b>"Win over COVID"</b>।</td></tr>
+        <tr><td>🔥 <b>Aarogya Setu</b></td><td>2 अप्रैल 2020, 12 भाषाओं में, COVID nियंत्रण &amp; निर्देश। Tagline: <b>"मैं सुरक्षित, हम सुरक्षित, भारत सुरक्षित"</b>।</td></tr>
+        <tr><td>🔥 <b>e-VIN</b></td><td>Full form: <b>Electronic Vaccine Intelligence Network</b>। सभी cold chain points पर vaccine का real-time stock। MoH&amp;FW।</td></tr>
+        <tr><td><b>MERIT</b></td><td>Electricity के लिए।</td></tr>
+        <tr><td><b>TAMRA Portal</b></td><td>तांबा (copper)।</td></tr>
+        <tr><td><b>KOL Portal</b></td><td>Coal।</td></tr>
+        <tr><td><b>Coal Mitra</b></td><td>—</td></tr>
+        <tr><td><b>PENCIL</b></td><td>Platform for Effective Enforcement for No Child Labour।</td></tr>
+        <tr><td><b>MyGov Corona Helpdesk Chatbot</b></td><td>🔥 <b>CogX 2020 Awards:</b> 2 awards मिले — Best Innovation for COVID-19, People's Choice for COVID-19 Overall Winner। Jio Haptik Technologies + WhatsApp ने बनाया।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details class="acc">
+    <summary>📌 अन्य apps/portals (homework — पढ़ना ज़रूरी है)</summary>
+    <p>MP का Samagra Portal, e-Parliament, DISHA App, Shagun App (schools), CRTI Hamraj, e-Sadan, Priya Soft (Patwari exam में आ सकता है — Panchayati Raj Institutions Accounting Software), Mandi Board।</p>
+  </details>
+
+  <details class="quiz"><summary>Q. CoWIN की tagline क्या है?</summary>
+    <div class="answer">✅ <b>"Win over COVID"</b>।</div>
+  </details>
+  <details class="quiz"><summary>Q. PROOF App कहाँ launch किया गया?</summary>
+    <div class="answer">✅ <b>J&amp;K</b> — LG मनोज सिन्हा द्वारा (J&amp;K की schemes का implementation track करता है)।</div>
+  </details>
+  <details class="quiz"><summary>Q. UMANG का full form?</summary>
+    <div class="answer">✅ <b>Unified Mobile Application for New-age Governance</b> (Nov 2017)।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 8 — मध्य प्रदेश के e-Governance Initiatives -->
+<!-- ===================================================== -->
+<section class="topic" id="t-mp" style="border-left-color: var(--orange);">
+  <h2>8️⃣ मध्य प्रदेश के E-Governance Initiatives</h2>
+  <div class="topic-meta"><span class="ts">02:03–02:23</span> Video flow: 4 भागों में — Mission Mode + Departmental + Other + MP e-Gov Awards</div>
+
+  <div class="img-block">
+    <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif"
+         alt="Madhya Pradesh political map showing all districts — reference for MP e-Governance projects (Bhopal, Khandwa, Hoshangabad, Betul, Dhar)"
+         loading="eager" decoding="async" width="540" height="387"
+         onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';">
+    <div class="img-fallback">⚠️ MP Map could not load. Reference: <a href="https://www.slbcmadhyapradesh.in/" target="_blank" rel="noopener">SLBC MP</a></div>
+    <div class="img-caption">Image: Madhya Pradesh map — SLBC MP. Useful reference for MP e-Governance project locations.</div>
+  </div>
+
+  <div class="card">
+    <h3>📜 MP IT Policy</h3>
+    <ul class="points">
+      <li>पहली IT नीति: <b>1999</b></li>
+      <li>वर्तमान IT नीति: <b>MP IT Policy 2016</b></li>
+      <li>उद्देश्य: 🔥 <b>"Improve the life of common man leveraging the strength of e-Governance"</b></li>
+      <li>Goals: फॉर्म online भरवाना, investment attract करना, अच्छे professionals तैयार करना, <b>Resource-based economy → Knowledge-based economy</b> में बदलना।</li>
+    </ul>
+    <p>📝 <b>Policy vs Scheme:</b> Policy एक vision है (कई goals के साथ); Scheme उस vision को पूरा करने के लिए उठाए गए कदम।</p>
+  </div>
+
+  <!-- 8.1 Mission Mode Projects -->
+  <h3>🎯 8.1 Mission Mode Projects (6) — MP</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Project</th><th>क्या करता है</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>🔥 <b>e-District</b></td><td>Lok Seva Guarantee Adhiniyam के तहत — district admin के लिए electronic system; CSC + MP Online kiosks से services।</td></tr>
+        <tr><td>2</td><td>🔥 <b>State Service Delivery Gateway (SSDG)</b> = State Portal</td><td>CSC के द्वारा services। 6 विभागों से 41 services।<br><b>नोट:</b> SSDG MP-only नहीं — हर राज्य में होता है। MP में सबसे अच्छा example = <b>MP Online</b>।</td></tr>
+        <tr><td>3</td><td>🔥 <b>e-Treasury</b></td><td>MP की treasury + budget management (Karnataka के Khajane जैसा — G2G)।</td></tr>
+        <tr><td>4</td><td><b>Land Records</b></td><td>—</td></tr>
+        <tr><td>5</td><td><b>e-Tendering</b></td><td>नीलामी online — पारदर्शिता बढ़ी।</td></tr>
+        <tr><td>6</td><td><b>Commercial Tax</b></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 8.2 Departmental Projects -->
+  <h3>🏢 8.2 Departmental Projects — MP</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Project</th><th>विवरण</th></tr></thead>
+      <tbody>
+        <tr><td>🔥 <b>MP-TAAS</b></td><td>Full form: <b>MP Tribal Affairs Automation System</b> (Automation, Automatic नहीं!)। Department of Tribal Affairs। Beneficiaries online apply कर सकते हैं।</td></tr>
+        <tr><td><b>MGNREGA Soft</b></td><td>—</td></tr>
+        <tr><td>🔥 <b>e-Uparjan</b></td><td>Department of Food, Civil Supply &amp; Consumer Protection। Farmer database + MSP procurement।</td></tr>
+        <tr><td>🔥 <b>SMS-Based Monitoring System</b></td><td><b>Betul ज़िला</b> में — MNREGA की दैनिक निगरानी (Zila Panchayat Betul)।</td></tr>
+        <tr><td><b>IRCTC SMS</b></td><td>MP Tourism — मोबाइल technology से Law &amp; Order maintenance।</td></tr>
+        <tr><td>🔥 Mobile Tech for L&amp;O</td><td><b>खंडवा</b> में।</td></tr>
+        <tr><td>🔥 <b>Vatsalya Project</b></td><td><b>होशंगाबाद</b> ज़िला — बाल स्वास्थ्य की निगरानी।</td></tr>
+        <tr><td>🔥 <b>Paperless News</b></td><td><b>खंडवा</b> में।</td></tr>
+        <tr><td>🔥 <b>Geo-Search &amp; Geo-Forest</b></td><td>भारत में पहली बार किसी राज्य ने किया!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card link-story">
+    <span class="label">🔗 Link Story — MP ज़िले याद रखो</span>
+    <p>🗺️ "<b>धार में ज्ञान बँटा (Gyandoot), बैतूल में SMS से MNREGA देखा, खंडवा में मोबाइल से कानून और paperless न्यूज़ चली, होशंगाबाद में बच्चों का वात्सल्य रखा गया, और भोपाल में MP का Data Centre बना।</b>" 📍</p>
+  </div>
+
+  <h4>🌳 Geo-Forest &amp; Geo-Search (बहुत Important)</h4>
+  <ul class="points">
+    <li><b>Geo-Forest</b> — MP वन विभाग — जंगलों की mapping + database। MP में सबसे ज़्यादा वन हैं।</li>
+    <li><b>Geo-Search</b> — पंचायत &amp; ग्रामीण विकास मंत्रालय — हर गाँव की detail mapping (location, सड़कें, रेलवे, वन, जल निकाय)। Click करते ही गाँव की पूरी जानकारी।</li>
+    <li>🔥 <b>MP देश का पहला राज्य</b> है जिसने ऐसा portal बनाया!</li>
+  </ul>
+
+  <!-- 8.3 Other Projects -->
+  <h3>🛠️ 8.3 अन्य Projects — MP</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Project</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>🔥 <b>SWAN</b></td><td>State Wide Area Network — 23 अगस्त 2008 — सभी ज़िला आयुक्तालयों + ब्लॉक मुख्यालयों को राज्य की राजधानी से जोड़ता है। हर राज्य में होता है।</td></tr>
+        <tr><td>🔥 <b>MP Online</b></td><td>जुलाई 2006 में <b>MP Govt + TCS</b> ने मिलकर बनाया। Form, fees, बिजली बिल — सब कुछ।</td></tr>
+        <tr><td><b>Centre of Excellence (CoE)</b></td><td>MP के सरकारी विभागों को IT services।</td></tr>
+        <tr><td>🔥 <b>MP Data Centre</b></td><td><b>भोपाल</b> में — <b>HCL Infosystems</b> द्वारा बनाया जा रहा है।</td></tr>
+        <tr><td><b>e-Daksh</b></td><td>~8000 govt employees को IT training (DST प्रोजेक्ट)।</td></tr>
+        <tr><td><b>HeadStart</b></td><td>Computer-aided learning — teachers + students के लिए।</td></tr>
+        <tr><td>🔥 <b>Panch Lekha</b></td><td>Panchayati Raj Institutions Accounting System Software, 2005 से। Patwari exam में पूछा जा सकता है!</td></tr>
+        <tr><td><b>Prakhar</b></td><td>Basic Services Amenities Management System।</td></tr>
+        <tr><td><b>Mandi Board</b></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 8.4 MP e-Governance Awards -->
+  <h3>🏆 8.4 MP E-Governance Awards</h3>
+  <ul class="points">
+    <li><b>10 अलग श्रेणियों</b> में दिए जाते हैं।</li>
+    <li>देने वाला: <b>विज्ञान और प्रौद्योगिकी विभाग, मध्य प्रदेश</b>।</li>
+    <li>हर साल — जैसे राष्ट्रीय स्तर पर NCeG में मिलते हैं।</li>
+  </ul>
+
+  <details class="quiz"><summary>Q1. MP-TAAS का full form?</summary>
+    <div class="answer">✅ <b>MP Tribal Affairs Automation System</b> (Automation — Automatic नहीं!)।</div>
+  </details>
+  <details class="quiz"><summary>Q2. MP का Data Centre कहाँ बन रहा है, और किसके द्वारा?</summary>
+    <div class="answer">✅ <b>Bhopal</b> में, <b>HCL Infosystems</b> द्वारा।</div>
+  </details>
+  <details class="quiz"><summary>Q3. SMS-based MNREGA monitoring किस ज़िले में?</summary>
+    <div class="answer">✅ <b>Betul (बैतूल)</b>।</div>
+  </details>
+  <details class="quiz"><summary>Q4. Vatsalya Project किस ज़िले में, और किसके लिए?</summary>
+    <div class="answer">✅ <b>होशंगाबाद</b> — बाल स्वास्थ्य (Child Health)।</div>
+  </details>
+  <details class="quiz"><summary>Q5. MP Online कब और किसके साथ launch किया गया?</summary>
+    <div class="answer">✅ <b>जुलाई 2006</b>, MP Government + <b>TCS</b>।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- TOPIC 9 — अन्य तथ्य -->
+<!-- ===================================================== -->
+<section class="topic t-purple" id="t-other">
+  <h2>9️⃣ अन्य तथ्य — Models, CogX, Current Affairs</h2>
+  <div class="topic-meta"><span class="ts">02:23–02:27</span> Video flow: e-Governance के models + CogX awards + summary</div>
+
+  <h3>🌍 CogX — Important Conference</h3>
+  <div class="card">
+    <ul class="points">
+      <li><b>CogX</b> = AI/Cognition पर हर साल <b>London</b> में आयोजित विश्व सम्मेलन।</li>
+      <li>15,000+ लोग भाग लेते हैं — सरकारें, व्यापारी, उद्योग, अनुसंधान।</li>
+      <li>🔥 <b>MyGov Corona Helpdesk Chatbot</b> को CogX में <b>2 awards:</b> Best Innovation for COVID-19 + People's Choice for COVID-19 Overall Winner।</li>
+      <li>Maker: <b>Jio Haptik Technologies + WhatsApp</b>।</li>
+      <li><b>MyGov</b> को <b>2014</b> में launch किया गया था।</li>
+    </ul>
+  </div>
+
+  <h3>📐 Models of E-Governance</h3>
+  <p>बहुत सारे models हैं, सब याद करना मुश्किल — basic 5 जान लो। (Gardner Model + LEEK Model — notes में पढ़ लेना।)</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Model</th><th>क्या करता है</th></tr></thead>
+      <tbody>
+        <tr><td><b>Broadcasting Model</b></td><td>सभी तक एक साथ जानकारी।</td></tr>
+        <tr><td><b>Critical Flow Model</b></td><td>कुछ specific लोगों तक information।</td></tr>
+        <tr><td><b>Comparative Analysis Model</b></td><td>Best practices को identify कर promote करता है — किसी क्षेत्र में अच्छी योजना देखकर वहाँ implement करना।</td></tr>
+        <tr><td><b>e-Advocacy / Mobilization / Lobbying Model</b></td><td>Virtual communities बनाकर real-time communication।</td></tr>
+        <tr><td><b>Interactive Service Model</b></td><td>Two-way communication।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card tip">
+    <span class="label">📌 पिछले साल पूछा गया</span>
+    <p><b>Gardner Model</b> पर पिछले साल प्रश्न आया था। Notes में सभी models के बारे में पढ़ लेना।</p>
+  </div>
+
+  <h3>📊 E-Governance के लाभ &amp; चुनौतियाँ (मुख्य परीक्षा के लिए)</h3>
+  <p>Class में सर ने यह self-study के लिए छोड़ा है। मुख्य लाभ: पारदर्शिता, efficiency, accessibility। मुख्य चुनौतियाँ: digital divide, cyber security, infrastructure।</p>
+
+  <details class="quiz"><summary>Q. MyGov Corona Helpdesk Chatbot किस conference में award जीता?</summary>
+    <div class="answer">✅ <b>CogX 2020</b> (London) — 2 awards मिले।</div>
+  </details>
+</section>
+
+<!-- ===================================================== -->
+<!-- MASTER FULL FORMS -->
+<!-- ===================================================== -->
+<section class="topic t-yellow" id="t-fullforms">
+  <h2>📚 Master Full Forms (Alphabetical)</h2>
+  <p>परीक्षा में सबसे ज़्यादा पूछे जाने वाले — सब memorize करो!</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Acronym</th><th>Full Form</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td><b>ARPANET</b></td><td>Advanced Research Projects Agency Network</td><td>1969 (USA)</td></tr>
+        <tr><td><b>BBNL</b></td><td>Bharat Broadband Network Limited</td><td>Bharat Net implementer (2012)</td></tr>
+        <tr><td><b>BHIM</b></td><td>Bharat Interface for Money</td><td>30 Dec 2016, NPCI</td></tr>
+        <tr><td><b>CSC</b></td><td>Common Service Centre</td><td>2006, PPP model</td></tr>
+        <tr><td><b>CoWIN</b></td><td>COVID Vaccine Intelligence Network</td><td>Tagline: Win over COVID</td></tr>
+        <tr><td><b>DARPG</b></td><td>Department of Administrative Reforms &amp; Public Grievances</td><td>e-Office, NCeG awards</td></tr>
+        <tr><td><b>DBT</b></td><td>Direct Benefit Transfer</td><td>—</td></tr>
+        <tr><td><b>DIKSHA</b></td><td>Digital Infrastructure for Knowledge Sharing</td><td>Teacher training</td></tr>
+        <tr><td><b>DARPAN</b></td><td>Digital Advancement of Rural Post Office for A New India</td><td>Post Office</td></tr>
+        <tr><td><b>e-NAM</b></td><td>Electronic National Agriculture Market</td><td>14 April 2016</td></tr>
+        <tr><td><b>e-VIN</b></td><td>Electronic Vaccine Intelligence Network</td><td>MoH&amp;FW</td></tr>
+        <tr><td><b>FRIENDS</b></td><td>Fast Reliable Instant Efficient Network for Disbursement of Services</td><td>Kerala (full form याद नहीं रखना ज़रूरी)</td></tr>
+        <tr><td><b>JAM</b></td><td>Jan Dhan + Aadhaar + Mobile</td><td>Trinity</td></tr>
+        <tr><td><b>MANAS</b></td><td>Mental Health and Normalcy Augmentation System</td><td>Mental Health (2021)</td></tr>
+        <tr><td><b>MeitY</b></td><td>Ministry of Electronics &amp; Information Technology</td><td>2016 में अलग हुआ</td></tr>
+        <tr><td><b>MMP</b></td><td>Mission Mode Project</td><td>NeGP — अब 31</td></tr>
+        <tr><td><b>NeGP</b></td><td>National e-Governance Plan</td><td>18 May 2006</td></tr>
+        <tr><td><b>NeSDA</b></td><td>National e-Governance Service Delivery Assessment</td><td>Aug 2018</td></tr>
+        <tr><td><b>NCeG</b></td><td>National Conference on e-Governance</td><td>—</td></tr>
+        <tr><td><b>NDLM</b></td><td>National Digital Literacy Mission</td><td>2020</td></tr>
+        <tr><td><b>NIC</b></td><td>National Informatics Centre</td><td><b>Informatics</b> — Information ❌</td></tr>
+        <tr><td><b>NICER</b></td><td>National Institute of Critical Education and Research</td><td>—</td></tr>
+        <tr><td><b>NISG</b></td><td>National Institute for Smart Government</td><td>2002, Hyderabad</td></tr>
+        <tr><td><b>NKN</b></td><td>National Knowledge Network</td><td>2010</td></tr>
+        <tr><td><b>NOFN</b></td><td>National Optical Fibre Network</td><td>Bharat Net का पुराना नाम</td></tr>
+        <tr><td><b>NPCI</b></td><td>National Payments Corporation of India</td><td>UPI, BHIM, e-RUPI</td></tr>
+        <tr><td><b>NSDG / SSDG / MSDG</b></td><td>National / State / Mobile Service Delivery Gateway</td><td>NeGP</td></tr>
+        <tr><td><b>PFMS</b></td><td>Public Financial Management System</td><td>—</td></tr>
+        <tr><td><b>PRAGATI</b></td><td>Pro-Active Governance And Timely Implementation</td><td>2015, G2G</td></tr>
+        <tr><td><b>PROOF</b></td><td>Photographic Record Of On-site Facility</td><td>J&amp;K, Aug 2021</td></tr>
+        <tr><td><b>SDG</b></td><td>State Service Delivery Gateway (here)</td><td>—</td></tr>
+        <tr><td><b>SMART</b></td><td>Simple, Moral, Accountable, Responsive, Transparent</td><td>SMART Governance</td></tr>
+        <tr><td><b>SPARSH</b></td><td>System for Pension Administration (Raksha)</td><td>Defence pension, 8 July 2021</td></tr>
+        <tr><td><b>SWAN</b></td><td>State Wide Area Network</td><td>23 Aug 2008</td></tr>
+        <tr><td><b>SWAYAM</b></td><td>Study Webs of Active Learning for Young Aspiring Minds</td><td>9 July 2017, MHRD</td></tr>
+        <tr><td><b>UMANG</b></td><td>Unified Mobile Application for New-age Governance</td><td>Nov 2017</td></tr>
+        <tr><td><b>UPI</b></td><td>Unified Payments Interface</td><td>11 April 2016, NPCI</td></tr>
+        <tr><td><b>MP-TAAS</b></td><td>MP Tribal Affairs Automation System</td><td>Automation ✅</td></tr>
+        <tr><td><b>SAI / ASIGMA</b></td><td>Army Secure Indigenous Messaging Application</td><td>Indian Army</td></tr>
+        <tr><td><b>PM-DISHA</b></td><td>PM Gramin Digital Saksharta Abhiyan</td><td>—</td></tr>
+        <tr><td><b>PM SVANidhi</b></td><td>PM Street Vendor's AtmaNirbhar Nidhi</td><td>—</td></tr>
+        <tr><td><b>PRIA Soft</b></td><td>Panchayati Raj Institutions Accounting Software</td><td>Patwari में पूछा जा सकता है</td></tr>
+        <tr><td><b>MCA</b></td><td>Ministry of Corporate Affairs</td><td>MCA-21</td></tr>
+        <tr><td><b>NASSCOM</b></td><td>National Association of Software and Service Companies</td><td>1988</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- MASTER EXAM HOT FACTS -->
+<!-- ===================================================== -->
+<section class="topic" id="t-hot" style="border-left-color: var(--hot);">
+  <h2>🔥 Master Exam Hot Facts (एक जगह सबकुछ)</h2>
+  <p>सर ने जो भी "यह पूछा जाता है / याद रखिए / important है" कहा — सब यहाँ:</p>
+
+  <ol class="points">
+    <li><b>SMART Full Form:</b> Simple, Moral, Accountable, Responsive, Transparent।</li>
+    <li><b>NIC = National Informatics Centre</b> (Informatics — Information ❌), स्थापना 1976।</li>
+    <li><b>IT Act:</b> 9 जून 2000।</li>
+    <li><b>NISG:</b> 2002, हैदराबाद।</li>
+    <li><b>NeGP:</b> 18 मई 2006 — शुरू में 26 MMP, अब 31।</li>
+    <li><b>CSC:</b> 2006 (पहला सेंटर 16 जुलाई 2009) — PPP model — implementing company: <b>CSC e-Governance Services India Ltd</b>।</li>
+    <li><b>Digital India:</b> 1 जुलाई 2015 — MeitY — 9 pillars — Theme: <b>Power to Empower</b>।</li>
+    <li><b>e-Kranti</b> = Digital India का most important pillar (electronic delivery of services)।</li>
+    <li><b>2016:</b> MeitY को Ministry of Communications से अलग किया गया।</li>
+    <li><b>Bharat Net पुराना नाम:</b> National Optical Fibre Network (NOFN); Implementer: BBNL।</li>
+    <li><b>NKN:</b> 2010, NIC; अब Bhutan + SAARC तक विस्तार।</li>
+    <li><b>UPI:</b> 11 अप्रैल 2016, NPCI; <b>BHIM:</b> 30 दिसंबर 2016।</li>
+    <li><b>UMANG:</b> Nov 2017 — Unified Mobile Application for New-age Governance।</li>
+    <li><b>e-NAM:</b> 14 अप्रैल 2016 — Electronic National Agriculture Market।</li>
+    <li><b>PRAGATI:</b> 2015 — Pro-Active Governance And Timely Implementation — G2G।</li>
+    <li><b>SWAYAM:</b> 9 जुलाई 2017, MHRD — Study Webs of Active Learning for Young Aspiring Minds।</li>
+    <li><b>DigiLocker:</b> 10 MB तक, e-Pension Payment Order से जुड़ा।</li>
+    <li><b>e-RUPI:</b> Voucher-based digital payment system (NOT digital currency!) — NPCI।</li>
+    <li><b>National Digital Library:</b> 10 Nov 2006, IIT Kharagpur से launch।</li>
+    <li><b>MyGov.in:</b> 26 जुलाई 2014 — Two-Way Communication।</li>
+    <li><b>"Tech-ade":</b> 15 जनवरी 2022 को PM Modi ने अगले 10 साल को नाम दिया।</li>
+    <li><b>NCeG 24वाँ:</b> Hyderabad — Theme: India Tech-ade: Digital Governance in a Post-Pandemic World।</li>
+    <li><b>National e-Governance Awards:</b> DARPG देता है — 6 categories।</li>
+    <li><b>SWAN:</b> 23 अगस्त 2008 — State Wide Area Network।</li>
+    <li><b>MP Online:</b> जुलाई 2006 — MP Govt + TCS।</li>
+    <li><b>MP Data Centre:</b> Bhopal में, HCL Infosystems द्वारा।</li>
+    <li><b>MP-TAAS:</b> MP Tribal Affairs Automation System (Automation, Automatic ❌)।</li>
+    <li><b>Gyandoot:</b> MP — धार ज़िला, 2000 — G2C।</li>
+    <li><b>Vatsalya:</b> होशंगाबाद — बाल स्वास्थ्य।</li>
+    <li><b>SMS-Based MNREGA Monitoring:</b> Betul।</li>
+    <li><b>Geo-Forest + Geo-Search:</b> भारत में पहला राज्य = MP!</li>
+    <li><b>MP IT Policy 2016 Aim:</b> "Improve the life of common man leveraging the strength of e-Governance"।</li>
+    <li><b>CoWIN tagline:</b> "Win over COVID"।</li>
+    <li><b>Aarogya Setu tagline:</b> "मैं सुरक्षित, हम सुरक्षित, भारत सुरक्षित"।</li>
+    <li><b>MyGov Corona Helpdesk Chatbot:</b> CogX 2020 — 2 awards (Jio Haptik + WhatsApp)।</li>
+    <li><b>Bhoomi (Karnataka):</b> Online delivery of land records — G2C।</li>
+    <li><b>Khajane (Karnataka):</b> Treasury management — G2G।</li>
+    <li><b>e-Court</b> = Ministry of Law &amp; Justice; <b>e-District</b> = Dept of IT; <b>MCA-21</b> = Ministry of Corporate Affairs (G2B); <b>e-Office</b> = DARPG।</li>
+    <li><b>FRIENDS</b> = Kerala; <b>e-Mitra</b> = Rajasthan; <b>Lokvani</b> = UP (सीतापुर); <b>e-Seva</b> = Andhra Pradesh।</li>
+    <li><b>GARUDA App</b> = Election Commission of India (22 Oct 2021) — polling booth digital mapping।</li>
+    <li><b>PROOF App</b> = J&amp;K (LG मनोज सिन्हा, 16 Aug 2021) — Photographic Record Of On-site Facility।</li>
+    <li><b>MANAS App</b> = Mental Health (11 April 2021, K. VijayRaghavan)।</li>
+    <li><b>SPARSH</b> = Defence pension (8 July 2021)।</li>
+    <li><b>SAI / ASIGMA</b> = Indian Army का अपना instant messenger।</li>
+    <li><b>Ombudsperson App</b> = MNREGA के लिए (Feb 2022)।</li>
+    <li><b>e-Amrit</b> = Electric Vehicles।</li>
+    <li><b>Panch Lekha</b> = MP — PRI accounting software (2005)।</li>
+    <li><b>NASSCOM:</b> 1988।</li>
+  </ol>
+</section>
+
+<!-- ===================================================== -->
+<!-- MASTER REVISION CHECKLIST -->
+<!-- ===================================================== -->
+<section class="topic t-green" id="t-checklist">
+  <h2>✅ Master Revision Checklist (Save your progress!)</h2>
+  <p>हर item ✓ पर click करो — आपकी progress automatic save होगी (localStorage)। ऊपर header में progress bar update होगी।</p>
+
+  <div class="checklist" id="masterChecklist">
+    <h3>📘 Concepts</h3>
+    <label><input type="checkbox" data-key="c1"><span>SMART Governance का full form (Simple, Moral, Accountable, Responsive, Transparent) याद है</span></label>
+    <label><input type="checkbox" data-key="c2"><span>e-Governance की 3 शाखाएँ (e-Administration, e-Services, e-Democracy) याद हैं</span></label>
+    <label><input type="checkbox" data-key="c3"><span>4 Pillars (People, Process, Technology, Resources) याद हैं</span></label>
+    <label><input type="checkbox" data-key="c4"><span>4 Stages (Computerization, Networking, Online Presence, Online Interactivity) याद हैं</span></label>
+    <label><input type="checkbox" data-key="c5"><span>4 Types (G2G, G2C, G2B, G2E) के examples याद हैं</span></label>
+
+    <h3>📅 Important Dates</h3>
+    <label><input type="checkbox" data-key="d1"><span>1969 — ARPANET</span></label>
+    <label><input type="checkbox" data-key="d2"><span>1976 — NIC की स्थापना</span></label>
+    <label><input type="checkbox" data-key="d3"><span>1999 — Ministry of IT</span></label>
+    <label><input type="checkbox" data-key="d4"><span>9 जून 2000 — IT Act</span></label>
+    <label><input type="checkbox" data-key="d5"><span>2002 — NISG, हैदराबाद</span></label>
+    <label><input type="checkbox" data-key="d6"><span>18 मई 2006 — NeGP launch</span></label>
+    <label><input type="checkbox" data-key="d7"><span>2006 — CSC policy (पहला सेंटर 2009)</span></label>
+    <label><input type="checkbox" data-key="d8"><span>2010 — NKN</span></label>
+    <label><input type="checkbox" data-key="d9"><span>1 जुलाई 2015 — Digital India</span></label>
+    <label><input type="checkbox" data-key="d10"><span>2016 — MeitY को Communications से अलग</span></label>
+
+    <h3>🇮🇳 Central Projects/Apps</h3>
+    <label><input type="checkbox" data-key="p1"><span>Digital India — 9 pillars + Theme "Power to Empower" + e-Kranti most important</span></label>
+    <label><input type="checkbox" data-key="p2"><span>JAM Trinity = Jan Dhan + Aadhaar + Mobile</span></label>
+    <label><input type="checkbox" data-key="p3"><span>UPI (11 April 2016, NPCI), BHIM (30 Dec 2016, NPCI)</span></label>
+    <label><input type="checkbox" data-key="p4"><span>UMANG full form + launch date</span></label>
+    <label><input type="checkbox" data-key="p5"><span>SWAYAM full form + MHRD + 9 July 2017</span></label>
+    <label><input type="checkbox" data-key="p6"><span>e-NAM = Electronic National Agriculture Market (14 April 2016)</span></label>
+    <label><input type="checkbox" data-key="p7"><span>PRAGATI = Pro-Active Governance and Timely Implementation (G2G, 2015)</span></label>
+    <label><input type="checkbox" data-key="p8"><span>DigiLocker (10 MB), MyGov (26 July 2014)</span></label>
+    <label><input type="checkbox" data-key="p9"><span>Bharat Net पुराना नाम = NOFN, BBNL implements</span></label>
+    <label><input type="checkbox" data-key="p10"><span>CSC = PPP model, implementer = CSC e-Governance Services India Ltd</span></label>
+    <label><input type="checkbox" data-key="p11"><span>e-RUPI = voucher-based, NOT digital currency</span></label>
+
+    <h3>🗺️ State Projects (Examples)</h3>
+    <label><input type="checkbox" data-key="s1"><span>Bhoomi = Karnataka (G2C)</span></label>
+    <label><input type="checkbox" data-key="s2"><span>Khajane = Karnataka (G2G — Treasury)</span></label>
+    <label><input type="checkbox" data-key="s3"><span>e-Seva = Andhra Pradesh</span></label>
+    <label><input type="checkbox" data-key="s4"><span>FRIENDS = Kerala (Tax)</span></label>
+    <label><input type="checkbox" data-key="s5"><span>e-Mitra = Rajasthan</span></label>
+    <label><input type="checkbox" data-key="s6"><span>Lokvani = UP (सीतापुर)</span></label>
+
+    <h3>🏞️ MP Specific (बहुत Important!)</h3>
+    <label><input type="checkbox" data-key="mp1"><span>MP IT Policy 2016 का aim</span></label>
+    <label><input type="checkbox" data-key="mp2"><span>6 MMP (e-District, SSDG, e-Treasury, Land Records, e-Tendering, Commercial Tax)</span></label>
+    <label><input type="checkbox" data-key="mp3"><span>MP-TAAS = MP Tribal Affairs Automation System</span></label>
+    <label><input type="checkbox" data-key="mp4"><span>Gyandoot = धार ज़िला (2000)</span></label>
+    <label><input type="checkbox" data-key="mp5"><span>Vatsalya = होशंगाबाद (Child Health)</span></label>
+    <label><input type="checkbox" data-key="mp6"><span>SMS-based MNREGA = Betul</span></label>
+    <label><input type="checkbox" data-key="mp7"><span>Paperless News + Mobile L&amp;O = खंडवा</span></label>
+    <label><input type="checkbox" data-key="mp8"><span>Geo-Forest + Geo-Search = MP देश में पहला</span></label>
+    <label><input type="checkbox" data-key="mp9"><span>SWAN (23 Aug 2008)</span></label>
+    <label><input type="checkbox" data-key="mp10"><span>MP Online = जुलाई 2006, MP Govt + TCS</span></label>
+    <label><input type="checkbox" data-key="mp11"><span>MP Data Centre = Bhopal, HCL Infosystems</span></label>
+    <label><input type="checkbox" data-key="mp12"><span>Panch Lekha = PRI accounting (2005)</span></label>
+
+    <h3>📱 Current Affairs Apps</h3>
+    <label><input type="checkbox" data-key="ca1"><span>Ombudsperson App — MNREGA</span></label>
+    <label><input type="checkbox" data-key="ca2"><span>SAI/ASIGMA — Indian Army</span></label>
+    <label><input type="checkbox" data-key="ca3"><span>GARUDA — Election Commission (Polling booth mapping)</span></label>
+    <label><input type="checkbox" data-key="ca4"><span>PROOF — J&amp;K (Photographic Record Of On-site Facility)</span></label>
+    <label><input type="checkbox" data-key="ca5"><span>MANAS — Mental Health</span></label>
+    <label><input type="checkbox" data-key="ca6"><span>SPARSH — Defence pension</span></label>
+    <label><input type="checkbox" data-key="ca7"><span>e-Amrit — Electric Vehicles</span></label>
+    <label><input type="checkbox" data-key="ca8"><span>CoWIN tagline = "Win over COVID"</span></label>
+    <label><input type="checkbox" data-key="ca9"><span>Aarogya Setu tagline = "मैं सुरक्षित, हम सुरक्षित, भारत सुरक्षित"</span></label>
+    <label><input type="checkbox" data-key="ca10"><span>MyGov Corona Chatbot — CogX 2020 (2 awards)</span></label>
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+<footer class="footer">
+  <p>📌 <b>Upcoming Topics (अगली Classes):</b> Robotics (कल रात 9 बजे) • Electronics (छोटा topic — जल्दी हो जाएगा)</p>
+  <p>📌 <b>Bonus:</b> 2 तारीख को MP Mega Current Affairs Video (~5 घंटे) — Jan 2021 से May 2022 तक।</p>
+  <p>💡 <b>Revision Tips:</b><br>
+  ✅ Pomodoro: 25 min पढ़ो → 5 min break → repeat<br>
+  ✅ Active Recall: हर section के बाद बिना देखे यादगार facts लिखो<br>
+  ✅ Spaced Repetition: 1 दिन → 3 दिन → 7 दिन → 14 दिन<br>
+  ✅ Quiz boxes दोबारा खोलो — answers देखे बिना बताओ</p>
+  <p style="margin-top:14px;">📚 Source: Class 10 — Unacademy Abhiyaan / शुभम गुप्ता सर। MPPSC Paper 2, Unit 9.</p>
+  <p style="opacity:0.6;">Revision HTML built for side-by-side study with the YouTube video. 🎯</p>
+</footer>
+
+</div>
+
+<script>
+  // ============= THEME TOGGLE =============
+  (function() {
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    btn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nxt);
+      localStorage.setItem('theme', nxt);
+    });
+  })();
+
+  // ============= JUMP NAV =============
+  (function() {
+    const sel = document.getElementById('jumpSelect');
+    sel.addEventListener('change', (e) => {
+      const v = e.target.value;
+      if (v) {
+        const el = document.getElementById(v);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        sel.value = '';
+      }
+    });
+  })();
+
+  // ============= CHECKLIST + PROGRESS =============
+  (function() {
+    const checklist = document.getElementById('masterChecklist');
+    const fill = document.getElementById('progressFill');
+    const label = document.getElementById('progressLabel');
+    if (!checklist) return;
+
+    const boxes = checklist.querySelectorAll('input[type="checkbox"]');
+    const total = boxes.length;
+    const STORAGE_KEY = 'class10_egov_checklist_v1';
+    let state = {};
+    try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { state = {}; }
+
+    function update() {
+      let done = 0;
+      boxes.forEach(b => { if (b.checked) done++; });
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+      fill.style.width = pct + '%';
+      label.textContent = done + ' / ' + total + ' ✅';
+    }
+
+    boxes.forEach(b => {
+      const k = b.dataset.key;
+      if (state[k]) b.checked = true;
+      b.addEventListener('change', () => {
+        state[k] = b.checked;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        update();
+      });
+    });
+    update();
+  })();
+
+  // ============= IMAGE PRELOAD + RETRY =============
+  (function() {
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+      // Force preload
+      if (img.complete && img.naturalWidth === 0) {
+        // already failed — trigger error handler
+        const ev = new Event('error');
+        img.dispatchEvent(ev);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
