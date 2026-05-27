@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>इलेक्ट्रॉनिकी - Unit 9 Revision | MPPSC Paper-2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16213e;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --accent-pink: #ff6ec7;
+            --border-color: #2d2d44;
+        }
+
+        body.light-mode {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 17px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        header .meta {
+            color: #ffffff;
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .quick-nav {
+            position: sticky;
+            top: 80px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 30px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-nav select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .card h3 {
+            color: var(--accent-orange);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(179, 136, 255, 0.1));
+            border: 2px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .exam-hot {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 110, 199, 0.15));
+            border-left: 5px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .exam-hot:before {
+            content: "🔥 EXAM HOT";
+            display: block;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .link-story {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.15), rgba(0, 255, 136, 0.15));
+            border: 2px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .link-story:before {
+            content: "🔗 Link Story — ऐसे याद करो";
+            display: block;
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--accent-cyan);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .quiz {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 15px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .quiz-answer {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .quiz-answer.show {
+            display: block;
+        }
+
+        .image-block {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--border-color);
+        }
+
+        .image-caption {
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .checklist {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .checklist-item {
+            padding: 12px;
+            margin: 8px 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section-header {
+                font-size: 1.5em;
+            }
+            
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .theme-toggle, .quick-nav {
+                display: none;
+            }
+            
+            .quiz-answer {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Light Mode</button>
+
+    <div class="container">
+        <header>
+            <h1>💻 इलेक्ट्रॉनिकी (Electronics)</h1>
+            <div class="meta">
+                📚 MPPSC Paper-2 | Unit 9 | Class 12<br>
+                🎯 Total Topics: 5 Main Sections
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </header>
+
+        <div class="quick-nav">
+            <select onchange="jumpToSection(this.value)">
+                <option value="">📍 Quick Jump to Topic...</option>
+                <option value="intro">1. इलेक्ट्रॉनिकी का परिचय</option>
+                <option value="types">2. इलेक्ट्रॉनिकी के प्रकार</option>
+                <option value="history">3. इलेक्ट्रॉनिकी का इतिहास</option>
+                <option value="india">4. भारत में इलेक्ट्रॉनिकी</option>
+                <option value="components">5. इलेक्ट्रॉनिकी के मुख्य अवयव</option>
+                <option value="fullforms">📋 Master Full Forms</option>
+                <option value="examhot">🔥 Exam Hot Facts</option>
+                <option value="checklist">✅ Master Checklist</option>
+            </select>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="section" id="intro">
+            <div class="section-header">
+                💡 1. इलेक्ट्रॉनिकी का परिचय (Introduction to Electronics)
+            </div>
+
+            <div class="card">
+                <h3>🔬 इलेक्ट्रॉनिकी क्या है?</h3>
+                <p><strong>Electronics</strong> वह विज्ञान है जो <strong>इलेक्ट्रॉन के प्रवाह (Flow of Electrons)</strong> को नियंत्रित करने वाले उपकरणों का अध्ययन करता है।</p>
+                <ul>
+                    <li><strong>Definition:</strong> वे सभी घटक जो इलेक्ट्रॉन के प्रवाह को नियंत्रित कर सकें = Electronics</li>
+                    <li><strong>Key Point:</strong> Electronics में हम उन devices का अध्ययन करते हैं जो electron flow को control करते हैं</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Bohr_atom_model.svg/500px-Bohr_atom_model.svg.png" 
+                     alt="Atom structure showing electrons, protons and neutrons" 
+                     loading="eager" 
+                     fetchpriority="high"
+                     decoding="async">
+                <div class="image-caption">
+                    परमाणु संरचना: केंद्र में Proton और Neutron, बाहर Electrons<br>
+                    Image: Wikimedia Commons, Public Domain
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>⚛️ परमाणु की बेसिक समझ (Atomic Basics)</h3>
+                <ul>
+                    <li><strong>Proton (प्रोटॉन):</strong> परमाणु के केंद्र में, धनात्मक आवेश (+)</li>
+                    <li><strong>Neutron (न्यूट्रॉन):</strong> परमाणु के केंद्र में, उदासीन (neutral)</li>
+                    <li><strong>Electron (इलेक्ट्रॉन):</strong> परमाणु के बाहर कक्षाओं में, ऋणात्मक आवेश (-)</li>
+                    <li><strong>महत्वपूर्ण:</strong> आमतौर पर 8 electrons मिलकर एक कक्षा पूरी करते हैं</li>
+                    <li>अगर बाहरी कक्षा में 8 से कम electrons हैं, तो वह atom दूसरे atoms के साथ react करता है</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚡ Electrical vs Electronics — अंतर समझो!</h3>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Electrical (विद्युत)</th>
+                        <th>Electronics (इलेक्ट्रॉनिकी)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Power Level</strong></td>
+                        <td>बड़े पैमाने की ऊर्जा<br>(Kilowatt, Megawatt)</td>
+                        <td>छोटे पैमाने की ऊर्जा<br>(Volt में)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Materials Used</strong></td>
+                        <td>Conductors (चालक)<br>जैसे: Copper, Silver</td>
+                        <td>Semiconductors (अर्धचालक)<br>जैसे: Silicon, Germanium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Control</strong></td>
+                        <td>सिर्फ flow को control करना</td>
+                        <td>Flow + Direction दोनों को control करना</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>Bulb, Fan, Motor, Transformer</td>
+                        <td>Transistor, Diode, IC, Microprocessor</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-hot">
+                <strong>प्रश्न पूछा जाता है:</strong> Electrical और Electronics में क्या अंतर है?<br>
+                <strong>Answer:</strong> Electrical बड़ी power के लिए conductors use करता है, Electronics छोटी power के लिए semiconductors use करता है और direction भी control करता है।
+            </div>
+
+            <div class="card">
+                <h3>🎯 इलेक्ट्रॉनिकी का आधार — Semiconductors (अर्धचालक)</h3>
+                <p><strong>Electronics का Foundation = Semiconductors</strong></p>
+                <ul>
+                    <li><strong>Conductor (सुचालक):</strong> जिनसे विद्युत धारा आसानी से प्रवाहित हो सके (जैसे: Copper, Silver, Gold)</li>
+                    <li><strong>Insulator (कुचालक):</strong> जिनसे विद्युत धारा प्रवाहित नहीं हो सके (जैसे: Rubber, Plastic, Wood)</li>
+                    <li><strong>Semiconductor (अर्धचालक):</strong> जो पूर्ण रूप से ना तो conductor हैं, ना ही insulator — बीच में हैं!</li>
+                    <li>Semiconductors में conductor और insulator दोनों के गुण होते हैं</li>
+                    <li><strong>Examples:</strong> Silicon (सबसे ज्यादा use होता है), Germanium, Cadmium Sulfide, Gallium Arsenide</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 बहुत Important:</strong> Electronics का आधार = Semiconductors (अर्धचालक)<br>
+                सबसे ज्यादा use होने वाला semiconductor = <strong>Silicon (सिलिकॉन)</strong>
+            </div>
+
+            <div class="card">
+                <h3>🔑 इलेक्ट्रॉनिकी की आवश्यकता क्यों पड़ी?</h3>
+                <ul>
+                    <li>पहले से Electrical equipment थे, लेकिन वे बहुत बड़ी power के लिए काम करते थे</li>
+                    <li>छोटे devices के लिए semiconductors की जरूरत पड़ी</li>
+                    <li>Semiconductors से Diode, Transistor, IC, Microprocessor बनाए जाते हैं</li>
+                    <li>Power consumption कम होता है semiconductors में</li>
+                </ul>
+            </div>
+
+            <div class="quiz">
+                <h3>📝 Quick Recall Quiz</h3>
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q1. Electronics की परिभाषा क्या है? (Click to reveal)
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> वे सभी घटक जो इलेक्ट्रॉन के प्रवाह को नियंत्रित कर सकें, उसे Electronics कहते हैं।
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q2. Electronics का आधार क्या है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Semiconductors (अर्धचालक) — जैसे Silicon, Germanium
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q3. Electrical और Electronics में मुख्य अंतर?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Electrical बड़ी power (KW, MW) के लिए conductors use करता है, Electronics छोटी power (Volts) के लिए semiconductors use करता है और electron flow की direction भी control करता है।
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q4. सबसे ज्यादा use होने वाला semiconductor कौन सा है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Silicon (सिलिकॉन)
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Types of Electronics -->
+        <div class="section" id="types">
+            <div class="section-header">
+                🔢 2. इलेक्ट्रॉनिकी के प्रकार (Types of Electronics)
+            </div>
+
+            <div class="card">
+                <h3>📡 1. Analog Electronics (एनालॉग इलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li><strong>Signal Type:</strong> Continuous Waves (सतत तरंगें)</li>
+                    <li>यहां continuous signals का प्रयोग होता है</li>
+                    <li>जैसे: Radio waves, Audio signals</li>
+                    <li>पुरानी technology में ज्यादा use होता था</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💾 2. Digital Electronics (डिजिटल इलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li><strong>Signal Type:</strong> Binary System (0 और 1)</li>
+                    <li>यहां discrete signals का प्रयोग होता है — सिर्फ 0 या 1</li>
+                    <li>Modern computers, smartphones सब digital electronics पर काम करते हैं</li>
+                    <li>ज्यादा accurate और reliable</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚖️ Analog vs Digital — Comparison</h3>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Analog</th>
+                        <th>Digital</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Signal</strong></td>
+                        <td>Continuous (सतत)</td>
+                        <td>Discrete (0 और 1)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accuracy</strong></td>
+                        <td>कम</td>
+                        <td>ज्यादा</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>Old Radio, Cassette Player</td>
+                        <td>Computer, Smartphone, Digital Watch</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>🔬 3. Microelectronics (माइक्रोइलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li>बहुत छोटे electronic components का अध्ययन और निर्माण</li>
+                    <li>यहां microscopic level पर काम होता है</li>
+                    <li><strong>Examples:</strong> Integrated Circuits (IC), Microprocessor, Transistor</li>
+                    <li>Modern electronics का base है microelectronics</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🎛️ 4. Circuit Design (सर्किट डिजाइन)</h3>
+                <ul>
+                    <li>Electronic circuits को design करने की process</li>
+                    <li>बड़े systems से लेकर individual transistors तक सब कुछ</li>
+                    <li>हर electronic device में circuit design होता है</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💡 5. Optoelectronics (ऑप्टोइलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li><strong>Optics + Electronics</strong> का combination</li>
+                    <li><strong>काम:</strong> प्रकाशीय तरंगों को विद्युत ऊर्जा में बदलना और विद्युत ऊर्जा को प्रकाशीय तरंगों में बदलना</li>
+                    <li><strong>Examples:</strong> LED, Solar Cells, Optical Fiber, Laser Diodes</li>
+                    <li>Optical Fiber communication में बहुत important</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/RBG-LED.jpg/500px-RBG-LED.jpg" 
+                     alt="LED lights - example of optoelectronics" 
+                     loading="eager"
+                     decoding="async">
+                <div class="image-caption">
+                    LED (Light Emitting Diode) — Optoelectronics का example<br>
+                    Image: Wikimedia Commons, CC BY-SA 3.0
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔊 6. Audio Electronics (ऑडियो इलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li><strong>काम:</strong> ध्वनि तरंगों को विद्युत ऊर्जा में बदलना और विद्युत ऊर्जा को ध्वनि तरंगों में बदलना</li>
+                    <li><strong>Examples:</strong> Amplifier, Loudspeaker, Tape Recorder, CD Player, Radio Receiver, Microphone</li>
+                    <li>Music systems, PA systems में use होता है</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⚡ 7. Power Electronics (पावर इलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li>नियंत्रित circuit के माध्यम से विद्युत ऊर्जा को विद्युत भार में बदलना</li>
+                    <li><strong>Examples:</strong> Television, Computer, Battery Charger, Rectifier, Inverter</li>
+                    <li>AC को DC में या DC को AC में convert करना</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🔬 8. Nanoelectronics (नैनोइलेक्ट्रॉनिकी)</h3>
+                <ul>
+                    <li>Nano level (बहुत-बहुत छोटे level) पर electronic devices का निर्माण</li>
+                    <li>Future technology है</li>
+                    <li>1 nanometer = 10<sup>-9</sup> meter</li>
+                </ul>
+            </div>
+
+            <div class="link-story">
+                <strong>Electronics के Types याद करने का Link Story:</strong><br>
+                "एक <strong>Analog</strong> radio से <strong>Digital</strong> music सुनते हुए, एक <strong>Micro</strong>scopic scientist ने <strong>Circuit</strong> design किया। उसने <strong>Opto</strong> (light) से <strong>Audio</strong> (sound) बनाया, फिर <strong>Power</strong> supply से <strong>Nano</strong> robot चलाया!" 🔗
+            </div>
+
+            <div class="quiz">
+                <h3>📝 Quick Recall Quiz</h3>
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q1. Analog और Digital Electronics में क्या अंतर है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Analog में continuous signals (सतत तरंगें) use होती हैं, Digital में binary signals (0 और 1) use होते हैं।
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q2. Optoelectronics क्या है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> प्रकाशीय तरंगों को विद्युत ऊर्जा में और विद्युत ऊर्जा को प्रकाशीय तरंगों में बदलने वाली electronics। Example: LED, Solar Cell, Optical Fiber
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q3. Audio Electronics के examples बताओ।
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Amplifier, Loudspeaker, Tape Recorder, CD Player, Radio Receiver, Microphone
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: History of Electronics -->
+        <div class="section" id="history">
+            <div class="section-header">
+                📜 3. इलेक्ट्रॉनिकी का इतिहास (History of Electronics)
+            </div>
+
+            <div class="card">
+                <h3>⚡ 1883 — Thomas Alva Edison</h3>
+                <ul>
+                    <li><strong>खोज:</strong> इलेक्ट्रॉन निर्वात (Vacuum) में भी प्रवाहित हो सकते हैं</li>
+                    <li>यह बहुत important था क्योंकि इसी से Vacuum Tube बनाई गई</li>
+                    <li>पुराने TV और Computer में Vacuum Tube का use होता था</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vacuum_tube_-_diode.jpg/400px-Vacuum_tube_-_diode.jpg" 
+                     alt="Vacuum tube diode structure" 
+                     loading="eager"
+                     decoding="async">
+                <div class="image-caption">
+                    Vacuum Tube — पुराने computers और TVs में use होता था<br>
+                    Image: Wikimedia Commons, Public Domain
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔥 Vacuum Tube कैसे काम करती थी?</h3>
+                <ul>
+                    <li>एक sealed glass tube में दो rods होते थे — <strong>Anode (ऊपर)</strong> और <strong>Cathode (नीचे)</strong></li>
+                    <li>जब Cathode को गर्म किया जाता था (heat दी जाती थी), तो electrons निकलते थे</li>
+                    <li>ये electrons Anode की ओर move करते थे → Current flow होता था</li>
+                    <li><strong>समस्या:</strong> बहुत ज्यादा heat होती थी, power consumption ज्यादा था, size बड़ा था</li>
+                    <li><strong>Solution:</strong> बाद में Semiconductors आए जो बिना heat के काम करते हैं!</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📻 1893 — Nikola Tesla</h3>
+                <ul>
+                    <li><strong>आविष्कार:</strong> Radio Communication (रेडियो संचार)</li>
+                    <li>Wireless communication की शुरुआत</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>☢️ 1895 — William Roentgen</h3>
+                <ul>
+                    <li><strong>खोज:</strong> X-Ray (एक्स-रे)</li>
+                    <li>Medical field में revolutionary खोज</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 बहुत Important — याद रखो!</strong><br>
+                <strong>1897 — J.J. Thomson ने Electron की खोज की</strong><br>
+                यह सबसे important है क्योंकि Electronics का पूरा base ही Electron है!
+            </div>
+
+            <div class="card">
+                <h3>⚛️ 1897 — J.J. Thomson</h3>
+                <ul>
+                    <li><strong>खोज:</strong> Electron (इलेक्ट्रॉन)</li>
+                    <li>एक अंग्रेज भौतिक विज्ञानी थे</li>
+                    <li>Electronics की नींव यहीं से पड़ी!</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Exam में पूछा जाता है:</strong><br>
+                <strong>1904 — John Ambrose Fleming ने दुनिया की पहली Vacuum Tube बनाई</strong>
+            </div>
+
+            <div class="card">
+                <h3>💡 1904 — John Ambrose Fleming</h3>
+                <ul>
+                    <li>एक British Engineer थे</li>
+                    <li><strong>आविष्कार:</strong> दुनिया की पहली Vacuum Tube</li>
+                    <li>इसे Diode भी कहते हैं (दो terminals — Anode और Cathode)</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 बहुत Important:</strong><br>
+                <strong>1906 — Lee De Forest ने Amplifier (Triode) का आविष्कार किया</strong><br>
+                Triode = तीन terminals वाली vacuum tube
+            </div>
+
+            <div class="card">
+                <h3>🔊 1906 — Lee De Forest</h3>
+                <ul>
+                    <li><strong>आविष्कार:</strong> Amplifier या Triode</li>
+                    <li>Triode में तीन terminals होते हैं</li>
+                    <li>यह signals को amplify (बढ़ाता) करता है</li>
+                    <li>Radio, TV में बहुत use हुआ</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⚛️ 1920 — Ernest Rutherford</h3>
+                <ul>
+                    <li><strong>खोज:</strong> Proton (प्रोटॉन)</li>
+                    <li>परमाणु के केंद्र में धनात्मक कण</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>⚛️ 1932 — James Chadwick</h3>
+                <ul>
+                    <li><strong>खोज:</strong> Neutron (न्यूट्रॉन)</li>
+                    <li>परमाणु के केंद्र में उदासीन कण</li>
+                </ul>
+            </div>
+
+            <div class="link-story">
+                <strong>Electron, Proton, Neutron की खोज याद करने का Link Story:</strong><br>
+                "1897 में <strong>Thomson</strong> ने <strong>Electron</strong> खोजा (E for Electron, T for Thomson)। फिर 1920 में <strong>Rutherford</strong> ने <strong>Proton</strong> खोजा (R-P connection)। आखिर में 1932 में <strong>Chadwick</strong> ने <strong>Neutron</strong> खोजा (C-N connection)!" 🔗
+            </div>
+
+            <div class="card">
+                <h3>💻 1946 — पहला Computer</h3>
+                <ul>
+                    <li>Vacuum Tube का प्रयोग करके पहला general-purpose computer बनाया गया</li>
+                    <li>नाम: ENIAC (Electronic Numerical Integrator and Computer)</li>
+                    <li>बहुत बड़ा था, बहुत गर्म होता था, बहुत power consume करता था</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 सबसे Important — Exam में 100% पूछा जाता है:</strong><br>
+                <strong>1947-48 — William Shockley ने Transistor का आविष्कार किया</strong><br>
+                <strong>स्थान:</strong> Bell Laboratory (बेल प्रयोगशाला)<br>
+                यह Electronics में सबसे बड़ी क्रांति थी!
+            </div>
+
+            <div class="card">
+                <h3>🎛️ 1947-48 — William Shockley</h3>
+                <ul>
+                    <li><strong>आविष्कार:</strong> Transistor (ट्रांजिस्टर)</li>
+                    <li><strong>स्थान:</strong> Bell Laboratory में काम करते थे</li>
+                    <li><strong>क्रांति:</strong> Vacuum Tube को replace किया</li>
+                    <li>Transistor छोटा, सस्ता, कम power consume करता है, heat नहीं करता</li>
+                    <li>Modern electronics की शुरुआत यहीं से हुई</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Transistorer_%28cropped%29.jpg/500px-Transistorer_%28cropped%29.jpg" 
+                     alt="Different types of transistors" 
+                     loading="eager"
+                     decoding="async">
+                <div class="image-caption">
+                    Transistors — Modern electronics का heart<br>
+                    Image: Wikimedia Commons, CC BY-SA 2.0
+                </div>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Important:</strong><br>
+                <strong>1958 — Robert Noyce और Jack Kilby ने पहला Integrated Circuit (IC) बनाया</strong>
+            </div>
+
+            <div class="card">
+                <h3>🔲 1958 — Robert Noyce और Jack Kilby</h3>
+                <ul>
+                    <li><strong>आविष्कार:</strong> दुनिया का पहला Integrated Circuit (IC)</li>
+                    <li>IC में हजारों transistors एक छोटी chip पर होते हैं</li>
+                    <li>यह और भी बड़ी क्रांति थी</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🖥️ 1971 — Intel Corporation</h3>
+                <ul>
+                    <li><strong>आविष्कार:</strong> Microprocessor (माइक्रोप्रोसेसर)</li>
+                    <li>पहला microprocessor: Intel 4004</li>
+                    <li>Computer की brain — सारी processing यहीं होती है</li>
+                    <li>इसके बाद computers तेजी से develop हुए</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📊 Electronics का Evolution — Timeline</h3>
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Inventor</th>
+                        <th>Invention</th>
+                    </tr>
+                    <tr>
+                        <td>1883</td>
+                        <td>Thomas Alva Edison</td>
+                        <td>Electrons can flow in vacuum</td>
+                    </tr>
+                    <tr>
+                        <td>1893</td>
+                        <td>Nikola Tesla</td>
+                        <td>Radio Communication</td>
+                    </tr>
+                    <tr>
+                        <td>1895</td>
+                        <td>William Roentgen</td>
+                        <td>X-Ray</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1897</strong></td>
+                        <td><strong>J.J. Thomson</strong></td>
+                        <td><strong>Electron की खोज 🔥</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>1904</strong></td>
+                        <td><strong>John Ambrose Fleming</strong></td>
+                        <td><strong>पहली Vacuum Tube 🔥</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>1906</strong></td>
+                        <td><strong>Lee De Forest</strong></td>
+                        <td><strong>Amplifier/Triode 🔥</strong></td>
+                    </tr>
+                    <tr>
+                        <td>1920</td>
+                        <td>Ernest Rutherford</td>
+                        <td>Proton की खोज</td>
+                    </tr>
+                    <tr>
+                        <td>1932</td>
+                        <td>James Chadwick</td>
+                        <td>Neutron की खोज</td>
+                    </tr>
+                    <tr>
+                        <td>1946</td>
+                        <td>—</td>
+                        <td>पहला Computer (ENIAC) — Vacuum Tube से</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1947-48</strong></td>
+                        <td><strong>William Shockley</strong></td>
+                        <td><strong>Transistor 🔥🔥🔥</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>1958</strong></td>
+                        <td><strong>Robert Noyce & Jack Kilby</strong></td>
+                        <td><strong>Integrated Circuit (IC) 🔥</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>1971</strong></td>
+                        <td><strong>Intel</strong></td>
+                        <td><strong>Microprocessor 🔥</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="quiz">
+                <h3>📝 Quick Recall Quiz</h3>
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q1. Electron की खोज किसने और कब की?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> J.J. Thomson ने 1897 में
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q2. Transistor का आविष्कार किसने किया?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> William Shockley ने 1947-48 में Bell Laboratory में
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q3. पहला Integrated Circuit किसने बनाया?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Robert Noyce और Jack Kilby ने 1958 में
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q4. Amplifier/Triode का आविष्कार किसने किया?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Lee De Forest ने 1906 में
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q5. Proton और Neutron की खोज किसने की?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Proton — Ernest Rutherford (1920), Neutron — James Chadwick (1932)
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Electronics in India -->
+        <div class="section" id="india">
+            <div class="section-header">
+                🇮🇳 4. भारत में इलेक्ट्रॉनिकी (Electronics in India)
+            </div>
+
+            <div class="card">
+                <h3>🚀 भारत में इलेक्ट्रॉनिकी का विकास</h3>
+                <ul>
+                    <li><strong>Pioneers:</strong> Homi Jehangir Bhabha (होमी जहांगीर भाभा) और Vikram Sarabhai (विक्रम साराभाई)</li>
+                    <li>इन दोनों ने भारत में Electronics और Space research को आगे बढ़ाया</li>
+                    <li>भारत के atomic energy और space program के जनक माने जाते हैं</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Important:</strong> भारत में Electronics का विकास <strong>Homi Jehangir Bhabha</strong> और <strong>Vikram Sarabhai</strong> ने किया
+            </div>
+
+            <div class="card">
+                <h3>🏢 मुख्य संस्थान और स्थापना वर्ष</h3>
+                <ul>
+                    <li><strong>1970:</strong> भारत में Electronics विभाग (Department of Electronics) की स्थापना</li>
+                    <li><strong>26 जून 1974:</strong> Central Electronics Limited (CEL) की स्थापना — गाजियाबाद में (बाद में HQ नई दिल्ली)</li>
+                    <li><strong>1990:</strong> STQC (Standardization Testing and Quality Certification) — भारत में electronic products का प्रमाणीकरण करता है</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Full Form याद रखो:</strong><br>
+                <strong>STQC = Standardization Testing and Quality Certification</strong><br>
+                यह electronic products को certify करता है
+            </div>
+
+            <div class="card">
+                <h3>🔬 1994 — SAMEER</h3>
+                <ul>
+                    <li><strong>Full Form:</strong> Society for Applied Microwave Electronics Engineering and Research</li>
+                    <li><strong>स्थापना:</strong> 1994 में भारत सरकार और TATA ने मिलकर बनाया</li>
+                    <li><strong>काम:</strong> Microwave electronics और electromagnetic research</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Full Form पूछा जाता है:</strong><br>
+                <strong>SAMEER = Society for Applied Microwave Electronics Engineering and Research</strong>
+            </div>
+
+            <div class="card">
+                <h3>🏭 1985-1990 — सातवीं पंचवर्षीय योजना</h3>
+                <ul>
+                    <li>इस योजना में Electronics उद्योग को बढ़ावा देने की बात कही गई</li>
+                    <li>Electronics industry को promote करने पर focus</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Exam में पूछा जाता है:</strong><br>
+                किस पंचवर्षीय योजना में Electronics उद्योग को बढ़ावा देने की बात कही गई?<br>
+                <strong>Answer: सातवीं पंचवर्षीय योजना (1985-1990)</strong>
+            </div>
+
+            <div class="card">
+                <h3>🔧 1990 — C-MET</h3>
+                <ul>
+                    <li><strong>Full Form:</strong> Centre for Materials for Electronics Technology</li>
+                    <li><strong>स्थान:</strong> पुणे (मुख्यालय), हैदराबाद और त्रिशूर में भी labs हैं</li>
+                    <li><strong>काम:</strong> Electronic materials का development, Integrated electronics packaging, Nanomaterials, Renewable energy</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Full Form:</strong><br>
+                <strong>C-MET = Centre for Materials for Electronics Technology</strong><br>
+                स्थान: पुणे (मुख्यालय)
+            </div>
+
+            <div class="card">
+                <h3>🖥️ 1 अप्रैल 1993 — EHTP</h3>
+                <ul>
+                    <li><strong>Full Form:</strong> Electronics Hardware Technology Park</li>
+                    <li>Electronics hardware को promote करने के लिए</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🎓 6 नवंबर 1994 — NIELIT</h3>
+                <ul>
+                    <li><strong>Full Form:</strong> National Institute of Electronics and Information Technology</li>
+                    <li><strong>स्थान:</strong> नई दिल्ली</li>
+                    <li>IT और Electronics में training और education देता है</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📋 2000 — ELTDB</h3>
+                <ul>
+                    <li><strong>Full Form:</strong> Electronics Technology Development Board</li>
+                    <li>Electronics technology को develop करने के लिए board</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 बहुत Important:</strong><br>
+                <strong>2019 — राष्ट्रीय इलेक्ट्रॉनिकी नीति (National Electronics Policy 2019)</strong><br>
+                19 फरवरी 2019 को लाई गई, 2012 की नीति को replace किया
+            </div>
+
+            <div class="card">
+                <h3>📜 राष्ट्रीय इलेक्ट्रॉनिकी नीति</h3>
+                <ul>
+                    <li><strong>पहली नीति:</strong> 2012 में आई थी</li>
+                    <li><strong>वर्तमान नीति:</strong> 2019 में आई (19 फरवरी 2019)</li>
+                    <li>भारत को electronics manufacturing hub बनाने का लक्ष्य</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🏢 भारत के मुख्य Electronics संस्थान — Summary Table</h3>
+                <table>
+                    <tr>
+                        <th>संस्थान</th>
+                        <th>Full Form</th>
+                        <th>स्थान</th>
+                        <th>स्थापना वर्ष</th>
+                    </tr>
+                    <tr>
+                        <td><strong>CEL</strong></td>
+                        <td>Central Electronics Limited</td>
+                        <td>गाजियाबाद → नई दिल्ली (HQ)</td>
+                        <td>26 जून 1974</td>
+                    </tr>
+                    <tr>
+                        <td><strong>STQC</strong></td>
+                        <td>Standardization Testing and Quality Certification</td>
+                        <td>—</td>
+                        <td>1990</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SAMEER</strong></td>
+                        <td>Society for Applied Microwave Electronics Engineering and Research</td>
+                        <td>मुंबई</td>
+                        <td>1994</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C-MET</strong></td>
+                        <td>Centre for Materials for Electronics Technology</td>
+                        <td>पुणे (HQ), हैदराबाद, त्रिशूर</td>
+                        <td>1990</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIELIT</strong></td>
+                        <td>National Institute of Electronics and Information Technology</td>
+                        <td>नई दिल्ली</td>
+                        <td>6 नवंबर 1994</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BEL</strong></td>
+                        <td>Bharat Electronics Limited</td>
+                        <td>बेंगलुरु</td>
+                        <td>1954 (नवरत्न कंपनी)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SCL</strong></td>
+                        <td>Semiconductor Laboratory</td>
+                        <td>मोहाली (ISRO की lab)</td>
+                        <td>—</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="link-story">
+                <strong>भारत के Electronics संस्थानों को याद करने का Link Story:</strong><br>
+                "1974 में <strong>CEL</strong> (Central) गाजियाबाद में बना, फिर 1990 में <strong>STQC</strong> ने quality check करना शुरू किया। 1994 में <strong>SAMEER</strong> (Society) और <strong>NIELIT</strong> (National Institute) दोनों बने। पुणे में <strong>C-MET</strong> (Centre for Materials) ने materials research शुरू की। बेंगलुरु में <strong>BEL</strong> (Bharat Electronics) नवरत्न बनी, और मोहाली में ISRO की <strong>SCL</strong> (Semiconductor Lab) खुली!" 🔗
+            </div>
+
+            <div class="card">
+                <h3>🎯 अन्य महत्वपूर्ण तथ्य</h3>
+                <ul>
+                    <li><strong>CEL:</strong> दुनिया का सबसे बड़ा Single Crystalline Silicon Solar Cell producer</li>
+                    <li><strong>BEL:</strong> 1954 में बना, 9 units हैं, नवरत्न उद्योग में आता है, aerospace applications के लिए products बनाता है</li>
+                    <li><strong>SCL:</strong> ISRO के लिए semiconductor technology develop करती है</li>
+                    <li><strong>MMMUT News:</strong> मदन मोहन मालवीय प्रौद्योगिकी विश्वविद्यालय के छात्र मंगलदीप गुप्ता ने एक digital circuit बनाया जो computer की speed और security बढ़ाता है</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💼 PLI Scheme (Production Linked Incentive)</h3>
+                <ul>
+                    <li><strong>शुरुआत:</strong> मार्च 2020</li>
+                    <li><strong>उद्देश्य:</strong> भारत में manufacturing को बढ़ावा देना</li>
+                    <li>Electronics manufacturing को promote करने के लिए incentives</li>
+                </ul>
+            </div>
+
+            <div class="quiz">
+                <h3>📝 Quick Recall Quiz</h3>
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q1. भारत में Electronics का विकास किसने किया?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Homi Jehangir Bhabha और Vikram Sarabhai
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q2. STQC का full form और काम क्या है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Standardization Testing and Quality Certification — Electronic products का प्रमाणीकरण करता है
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q3. किस पंचवर्षीय योजना में Electronics उद्योग को बढ़ावा दिया गया?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> सातवीं पंचवर्षीय योजना (1985-1990)
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q4. वर्तमान राष्ट्रीय इलेक्ट्रॉनिकी नीति कब आई?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> 2019 में (19 फरवरी 2019)
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q5. C-MET कहाँ स्थित है और इसका full form क्या है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> पुणे में स्थित है। Full Form: Centre for Materials for Electronics Technology
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Components of Electronics -->
+        <div class="section" id="components">
+            <div class="section-header">
+                🔧 5. इलेक्ट्रॉनिकी के मुख्य अवयव (Main Components)
+            </div>
+
+            <div class="card">
+                <h3>🎯 Semiconductors (अर्धचालक) — Electronics का Backbone</h3>
+                <p><strong>सबसे Important Topic — ध्यान से पढ़ो!</strong></p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>📚 तीन प्रकार के Materials</h3>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Definition</th>
+                        <th>Outer Shell Electrons</th>
+                        <th>Examples</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Conductor<br>(सुचालक)</strong></td>
+                        <td>विद्युत धारा आसानी से प्रवाहित होती है</td>
+                        <td>1, 2, या 3 electrons<br>(ये electrons दान कर देते हैं)</td>
+                        <td>Copper, Silver, Gold, Aluminum</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Insulator<br>(कुचालक)</strong></td>
+                        <td>विद्युत धारा प्रवाहित नहीं होती</td>
+                        <td>5, 6, 7, या 8 electrons<br>(ये electrons लेते हैं)</td>
+                        <td>Rubber, Plastic, Wood, Glass</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semiconductor<br>(अर्धचालक)</strong></td>
+                        <td>ना पूर्ण conductor, ना पूर्ण insulator<br>दोनों के बीच में</td>
+                        <td>आमतौर पर 4 electrons</td>
+                        <td>Silicon, Germanium, Gallium Arsenide</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 सबसे ज्यादा use होने वाला Semiconductor:</strong> <strong>Silicon (सिलिकॉन)</strong><br>
+                Silicon की बाहरी कक्षा में <strong>4 electrons</strong> होते हैं
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/SiliconCroda.jpg/500px-SiliconCroda.jpg" 
+                     alt="Silicon crystal - most used semiconductor" 
+                     loading="eager"
+                     decoding="async">
+                <div class="image-caption">
+                    Silicon Crystal — सबसे ज्यादा use होने वाला semiconductor<br>
+                    Image: Wikimedia Commons, Public Domain
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔬 Semiconductors के प्रकार</h3>
+                <p>Semiconductors दो प्रकार के होते हैं:</p>
+                <ul>
+                    <li><strong>1. Intrinsic Semiconductor (नैज अर्धचालक):</strong> Pure semiconductor, बिना किसी impurity के</li>
+                    <li><strong>2. Extrinsic Semiconductor (बाह्य अर्धचालक):</strong> जिसमें बाहर से impurity मिलाई गई हो</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>✨ 1. Intrinsic Semiconductor (नैज अर्धचालक)</h3>
+                <ul>
+                    <li><strong>Pure semiconductor</strong> — कोई बाहरी impurity नहीं</li>
+                    <li>Example: Pure Silicon या Pure Germanium</li>
+                    <li>Silicon के हर atom की बाहरी कक्षा में 4 electrons होते हैं</li>
+                    <li>एक Silicon atom चारों दिशाओं में 4 bonds बना सकता है</li>
+                    <li><strong>जब गर्म किया जाता है:</strong> कुछ electrons अपनी जगह छोड़ देते हैं → खाली जगह बनती है जिसे <strong>Hole (विवर)</strong> कहते हैं</li>
+                    <li><strong>Hole:</strong> हमेशा positive charge होता है (+)</li>
+                    <li>Free electron negative charge होता है (-)</li>
+                    <li>Electron की movement से current flow होता है</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Important Terms:</strong><br>
+                <strong>Hole (विवर):</strong> जब electron अपनी जगह छोड़ता है तो खाली जगह बनती है = Hole<br>
+                Hole हमेशा <strong>Positive (+)</strong> charge होता है
+            </div>
+
+            <div class="card">
+                <h3>🧪 2. Extrinsic Semiconductor (बाह्य अर्धचालक)</h3>
+                <ul>
+                    <li>जब pure semiconductor में <strong>बाहर से impurity मिलाई जाती है</strong></li>
+                    <li>Impurity मिलाने की process को <strong>Doping (डोपिंग)</strong> कहते हैं</li>
+                    <li>Doping से electron flow को control किया जा सकता है</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 याद रखो:</strong><br>
+                <strong>Doping (डोपिंग):</strong> Semiconductor में बाहर से impurity मिलाने की process
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚡ Extrinsic Semiconductors के दो प्रकार</h3>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Impurity</th>
+                        <th>Valence Electrons</th>
+                        <th>Charge Carrier</th>
+                        <th>Charge</th>
+                    </tr>
+                    <tr>
+                        <td><strong>P-Type</strong></td>
+                        <td>Trivalent<br>(3 संयोजी)</td>
+                        <td>3 electrons<br>(जैसे: Boron, Aluminum)</td>
+                        <td>Holes (विवर)</td>
+                        <td>Positive (+)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>N-Type</strong></td>
+                        <td>Pentavalent<br>(5 संयोजी)</td>
+                        <td>5 electrons<br>(जैसे: Phosphorus, Arsenic)</td>
+                        <td>Electrons</td>
+                        <td>Negative (-)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Exam में पूछा जाता है:</strong><br>
+                <strong>P-Type semiconductor कब बनता है?</strong> जब 3 संयोजी (Trivalent) impurity मिलाई जाए<br>
+                <strong>N-Type semiconductor कब बनता है?</strong> जब 5 संयोजी (Pentavalent) impurity मिलाई जाए
+            </div>
+
+            <div class="card">
+                <h3>🔴 P-Type Semiconductor</h3>
+                <ul>
+                    <li>Silicon (4 electrons) में <strong>Trivalent impurity</strong> (3 electrons वाला) मिलाया जाता है</li>
+                    <li>Example: Boron, Aluminum, Gallium</li>
+                    <li>Silicon के 4 electrons में से सिर्फ 3 electrons bond बनाते हैं</li>
+                    <li>1 जगह खाली रह जाती है = <strong>Hole</strong> बनता है</li>
+                    <li>Holes की संख्या ज्यादा होती है → <strong>Positive charge</strong></li>
+                    <li><strong>P = Positive</strong></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🔵 N-Type Semiconductor</h3>
+                <ul>
+                    <li>Silicon (4 electrons) में <strong>Pentavalent impurity</strong> (5 electrons वाला) मिलाया जाता है</li>
+                    <li>Example: Phosphorus, Arsenic, Antimony</li>
+                    <li>Silicon के 4 electrons के साथ 4 bonds बन जाते हैं</li>
+                    <li>1 electron extra रह जाता है = <strong>Free electron</strong></li>
+                    <li>Free electrons की संख्या ज्यादा होती है → <strong>Negative charge</strong></li>
+                    <li><strong>N = Negative</strong></li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pn-junction-equilibrium.png/500px-Pn-junction-equilibrium.png" 
+                     alt="PN Junction diagram showing P-type and N-type semiconductors" 
+                     loading="eager"
+                     decoding="async">
+                <div class="image-caption">
+                    PN Junction — P-Type और N-Type semiconductor को जोड़ने पर<br>
+                    Image: Wikimedia Commons, Public Domain
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔗 PN Junction (PN संधि)</h3>
+                <ul>
+                    <li>जब <strong>P-Type</strong> और <strong>N-Type</strong> semiconductor को आपस में जोड़ा जाता है</li>
+                    <li>इसे <strong>PN Junction</strong> या <strong>PN संधि</strong> कहते हैं</li>
+                    <li>P-side में holes (+) होते हैं, N-side में electrons (-) होते हैं</li>
+                    <li>Electrons naturally holes की ओर move करते हैं (negative → positive)</li>
+                    <li>कुछ समय बाद बीच में एक <strong>Depletion Boundary</strong> बन जाती है</li>
+                    <li>Depletion boundary के कारण current flow रुक जाता है</li>
+                    <li>अब current चलाने के लिए <strong>Battery</strong> की जरूरत पड़ती है</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 Important Term:</strong><br>
+                <strong>Depletion Boundary:</strong> PN Junction में बीच में बनने वाली boundary जो current flow को रोकती है
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔋 Forward और Reverse Biasing</h3>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Battery Connection</th>
+                        <th>Current Flow</th>
+                        <th>Hindi Name</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Forward Biasing</strong></td>
+                        <td>Battery का (+) terminal → P-Type से<br>Battery का (-) terminal → N-Type से</td>
+                        <td>✅ होता है</td>
+                        <td>अग्र अभिनति</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reverse Biasing</strong></td>
+                        <td>Battery का (+) terminal → N-Type से<br>Battery का (-) terminal → P-Type से</td>
+                        <td>❌ नहीं होता</td>
+                        <td>पश्च अभिनति</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-hot">
+                <strong>🔥 बहुत Important — Exam में पूछा जाता है:</strong><br>
+                <strong>Forward Biasing:</strong> Battery का positive (+) को P-Type से और negative (-) को N-Type से connect करो → Current flow होगा<br>
+                <strong>Reverse Biasing:</strong> उल्टा connection → Current flow नहीं होगा
+            </div>
+
+            <div class="card">
+                <h3>📝 अन्य Important Components (संक्षिप्त में)</h3>
+                <p><strong>Note:</strong> Teacher ने कहा है कि बाकी components (Diode, Transistor, IC, Microprocessor, Resistor, Capacitor, Inductor, Fuse, Inverter, Rectifier, Logic Gates, Amplifier, Superconductivity) को आप notes से पढ़ लो। ये basic topics हैं और एक बार read करने से समझ आ जाएंगे।</p>
+                <ul>
+                    <li><strong>Diode:</strong> PN Junction से बनता है, एक दिशा में current flow करने देता है</li>
+                    <li><strong>Transistor:</strong> Signal को amplify करता है, switch की तरह काम करता है</li>
+                    <li><strong>Integrated Circuit (IC):</strong> हजारों transistors एक chip पर</li>
+                    <li><strong>Microprocessor:</strong> Computer की brain, सारी processing यहीं होती है</li>
+                    <li><strong>Resistor:</strong> Current को resist करता है</li>
+                    <li><strong>Capacitor:</strong> Charge store करता है</li>
+                    <li><strong>Inductor:</strong> Magnetic field में energy store करता है</li>
+                    <li><strong>Fuse:</strong> Circuit को overload से protect करता है</li>
+                    <li><strong>Inverter:</strong> DC को AC में convert करता है</li>
+                    <li><strong>Rectifier:</strong> AC को DC में convert करता है</li>
+                    <li><strong>Logic Gates:</strong> Digital circuits में use होते हैं (AND, OR, NOT, etc.)</li>
+                    <li><strong>Amplifier:</strong> Signal को बढ़ाता है</li>
+                </ul>
+            </div>
+
+            <div class="quiz">
+                <h3>📝 Quick Recall Quiz</h3>
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q1. Semiconductor क्या होता है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> ऐसे पदार्थ जो ना पूर्ण conductor हैं, ना पूर्ण insulator — बीच में हैं। Example: Silicon, Germanium
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q2. Doping क्या है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> Pure semiconductor में बाहर से impurity मिलाने की process को Doping कहते हैं
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q3. P-Type semiconductor कैसे बनता है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> जब Silicon में Trivalent (3 संयोजी) impurity मिलाई जाए, जैसे Boron, Aluminum
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q4. N-Type semiconductor कैसे बनता है?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> जब Silicon में Pentavalent (5 संयोजी) impurity मिलाई जाए, जैसे Phosphorus, Arsenic
+                </div>
+
+                <div class="quiz-question" onclick="toggleAnswer(this)">
+                    Q5. Forward Biasing में current flow होता है या नहीं?
+                </div>
+                <div class="quiz-answer">
+                    <strong>Answer:</strong> हाँ, होता है। Battery का (+) को P-Type से और (-) को N-Type से connect करने पर current flow होता है
+                </div>
+            </div>
+        </div>
+
+        <!-- Master Section: Full Forms -->
+        <div class="section" id="fullforms">
+            <div class="section-header">
+                📋 Master Section — All Full Forms
+            </div>
+
+            <div class="highlight-box">
+                <table>
+                    <tr>
+                        <th>Abbreviation</th>
+                        <th>Full Form</th>
+                        <th>Hindi Meaning</th>
+                    </tr>
+                    <tr>
+                        <td><strong>IC</strong></td>
+                        <td>Integrated Circuit</td>
+                        <td>एकीकृत परिपथ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LED</strong></td>
+                        <td>Light Emitting Diode</td>
+                        <td>प्रकाश उत्सर्जक डायोड</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AC</strong></td>
+                        <td>Alternating Current</td>
+                        <td>प्रत्यावर्ती धारा</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DC</strong></td>
+                        <td>Direct Current</td>
+                        <td>दिष्ट धारा</td>
+                    </tr>
+                    <tr>
+                        <td><strong>STQC</strong></td>
+                        <td>Standardization Testing and Quality Certification</td>
+                        <td>मानकीकरण परीक्षण और गुणवत्ता प्रमाणन</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SAMEER</strong></td>
+                        <td>Society for Applied Microwave Electronics Engineering and Research</td>
+                        <td>अनुप्रयुक्त माइक्रोवेव इलेक्ट्रॉनिक्स इंजीनियरिंग और अनुसंधान सोसायटी</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C-MET</strong></td>
+                        <td>Centre for Materials for Electronics Technology</td>
+                        <td>इलेक्ट्रॉनिक्स प्रौद्योगिकी के लिए सामग्री केंद्र</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CEL</strong></td>
+                        <td>Central Electronics Limited</td>
+                        <td>केंद्रीय इलेक्ट्रॉनिक्स लिमिटेड</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EHTP</strong></td>
+                        <td>Electronics Hardware Technology Park</td>
+                        <td>इलेक्ट्रॉनिक्स हार्डवेयर प्रौद्योगिकी पार्क</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIELIT</strong></td>
+                        <td>National Institute of Electronics and Information Technology</td>
+                        <td>राष्ट्रीय इलेक्ट्रॉनिक्स और सूचना प्रौद्योगिकी संस्थान</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ELTDB</strong></td>
+                        <td>Electronics Technology Development Board</td>
+                        <td>इलेक्ट्रॉनिक्स प्रौद्योगिकी विकास बोर्ड</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BEL</strong></td>
+                        <td>Bharat Electronics Limited</td>
+                        <td>भारत इलेक्ट्रॉनिक्स लिमिटेड</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SCL</strong></td>
+                        <td>Semiconductor Laboratory</td>
+                        <td>अर्धचालक प्रयोगशाला</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PLI</strong></td>
+                        <td>Production Linked Incentive</td>
+                        <td>उत्पादन से जुड़ा प्रोत्साहन</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ENIAC</strong></td>
+                        <td>Electronic Numerical Integrator and Computer</td>
+                        <td>पहला general-purpose computer (1946)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ISRO</strong></td>
+                        <td>Indian Space Research Organisation</td>
+                        <td>भारतीय अंतरिक्ष अनुसंधान संगठन</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Master Section: Exam Hot Facts -->
+        <div class="section" id="examhot">
+            <div class="section-header">
+                🔥 Master Section — All Exam Hot Facts
+            </div>
+
+            <div class="exam-hot">
+                <strong>1. Electronics की परिभाषा:</strong> वे सभी घटक जो इलेक्ट्रॉन के प्रवाह को नियंत्रित कर सकें
+            </div>
+
+            <div class="exam-hot">
+                <strong>2. Electronics का आधार:</strong> Semiconductors (अर्धचालक) — विशेषकर Silicon
+            </div>
+
+            <div class="exam-hot">
+                <strong>3. Electrical vs Electronics:</strong><br>
+                • Electrical: बड़ी power (KW, MW), Conductors use करता है<br>
+                • Electronics: छोटी power (Volts), Semiconductors use करता है, direction भी control करता है
+            </div>
+
+            <div class="exam-hot">
+                <strong>4. Analog vs Digital:</strong><br>
+                • Analog: Continuous signals<br>
+                • Digital: Binary signals (0 और 1)
+            </div>
+
+            <div class="exam-hot">
+                <strong>5. 1897 — J.J. Thomson ने Electron की खोज की</strong> (सबसे important!)
+            </div>
+
+            <div class="exam-hot">
+                <strong>6. 1904 — John Ambrose Fleming ने पहली Vacuum Tube बनाई</strong>
+            </div>
+
+            <div class="exam-hot">
+                <strong>7. 1906 — Lee De Forest ने Amplifier/Triode का आविष्कार किया</strong>
+            </div>
+
+            <div class="exam-hot">
+                <strong>8. 1920 — Ernest Rutherford ने Proton की खोज की</strong>
+            </div>
+
+            <div class="exam-hot">
+                <strong>9. 1932 — James Chadwick ने Neutron की खोज की</strong>
+            </div>
+
+            <div class="exam-hot">
+                <strong>10. 1947-48 — William Shockley ने Transistor का आविष्कार किया</strong> (Bell Laboratory में) — सबसे बड़ी क्रांति!
+            </div>
+
+            <div class="exam-hot">
+                <strong>11. 1958 — Robert Noyce और Jack Kilby ने पहला Integrated Circuit (IC) बनाया</strong>
+            </div>
+
+            <div class="exam-hot">
+                <strong>12. 1971 — Intel ने Microprocessor बनाया</strong> (Intel 4004)
+            </div>
+
+            <div class="exam-hot">
+                <strong>13. भारत में Electronics का विकास:</strong> Homi Jehangir Bhabha और Vikram Sarabhai
+            </div>
+
+            <div class="exam-hot">
+                <strong>14. STQC Full Form:</strong> Standardization Testing and Quality Certification (Electronic products का प्रमाणीकरण)
+            </div>
+
+            <div class="exam-hot">
+                <strong>15. SAMEER Full Form:</strong> Society for Applied Microwave Electronics Engineering and Research (1994, मुंबई)
+            </div>
+
+            <div class="exam-hot">
+                <strong>16. C-MET Full Form:</strong> Centre for Materials for Electronics Technology (पुणे)
+            </div>
+
+            <div class="exam-hot">
+                <strong>17. सातवीं पंचवर्षीय योजना (1985-1990):</strong> Electronics उद्योग को बढ़ावा
+            </div>
+
+            <div class="exam-hot">
+                <strong>18. राष्ट्रीय इलेक्ट्रॉनिकी नीति 2019:</strong> 19 फरवरी 2019 को लाई गई
+            </div>
+
+            <div class="exam-hot">
+                <strong>19. सबसे ज्यादा use होने वाला Semiconductor:</strong> Silicon (4 electrons बाहरी कक्षा में)
+            </div>
+
+            <div class="exam-hot">
+                <strong>20. Doping:</strong> Semiconductor में बाहर से impurity मिलाने की process
+            </div>
+
+            <div class="exam-hot">
+                <strong>21. P-Type Semiconductor:</strong> Trivalent (3 संयोजी) impurity मिलाने पर — Holes (+) ज्यादा
+            </div>
+
+            <div class="exam-hot">
+                <strong>22. N-Type Semiconductor:</strong> Pentavalent (5 संयोजी) impurity मिलाने पर — Electrons (-) ज्यादा
+            </div>
+
+            <div class="exam-hot">
+                <strong>23. PN Junction:</strong> P-Type और N-Type को जोड़ने पर बनता है
+            </div>
+
+            <div class="exam-hot">
+                <strong>24. Forward Biasing:</strong> Battery का (+) → P-Type, (-) → N-Type = Current flow होता है
+            </div>
+
+            <div class="exam-hot">
+                <strong>25. Reverse Biasing:</strong> उल्टा connection = Current flow नहीं होता
+            </div>
+
+            <div class="exam-hot">
+                <strong>26. Hole (विवर):</strong> Electron की खाली जगह, हमेशा Positive (+) charge
+            </div>
+
+            <div class="exam-hot">
+                <strong>27. Vacuum Tube की समस्या:</strong> बहुत heat, ज्यादा power consumption, बड़ा size
+            </div>
+
+            <div class="exam-hot">
+                <strong>28. Transistor की क्रांति:</strong> छोटा, सस्ता, कम power, कम heat
+            </div>
+
+            <div class="exam-hot">
+                <strong>29. CEL:</strong> दुनिया का सबसे बड़ा Single Crystalline Silicon Solar Cell producer
+            </div>
+
+            <div class="exam-hot">
+                <strong>30. BEL:</strong> 1954 में बना, नवरत्न कंपनी, 9 units, aerospace applications
+            </div>
+        </div>
+
+        <!-- Master Checklist -->
+        <div class="section" id="checklist">
+            <div class="section-header">
+                ✅ Master Revision Checklist
+            </div>
+
+            <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                नीचे दिए गए सभी points को tick करो जैसे-जैसे तुम उन्हें याद करते जाओ। तुम्हारी progress automatically save होती रहेगी!
+            </p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1" onchange="saveProgress()">
+                    <label for="check1">Electronics की परिभाषा — इलेक्ट्रॉन के प्रवाह को नियंत्रित करने वाले घटक</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check2" onchange="saveProgress()">
+                    <label for="check2">Electronics का आधार — Semiconductors (Silicon सबसे ज्यादा use)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check3" onchange="saveProgress()">
+                    <label for="check3">Electrical vs Electronics का अंतर</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4" onchange="saveProgress()">
+                    <label for="check4">Analog Electronics — Continuous signals</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check5" onchange="saveProgress()">
+                    <label for="check5">Digital Electronics — Binary signals (0 और 1)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check6" onchange="saveProgress()">
+                    <label for="check6">Optoelectronics — प्रकाश ↔ विद्युत ऊर्जा</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check7" onchange="saveProgress()">
+                    <label for="check7">Audio Electronics — ध्वनि ↔ विद्युत ऊर्जा</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check8" onchange="saveProgress()">
+                    <label for="check8">1897 — J.J. Thomson ने Electron की खोज की</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check9" onchange="saveProgress()">
+                    <label for="check9">1904 — John Ambrose Fleming ने पहली Vacuum Tube बनाई</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check10" onchange="saveProgress()">
+                    <label for="check10">1906 — Lee De Forest ने Amplifier/Triode बनाया</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check11" onchange="saveProgress()">
+                    <label for="check11">1920 — Ernest Rutherford ने Proton की खोज की</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check12" onchange="saveProgress()">
+                    <label for="check12">1932 — James Chadwick ने Neutron की खोज की</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check13" onchange="saveProgress()">
+                    <label for="check13">1947-48 — William Shockley ने Transistor बनाया (Bell Laboratory)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check14" onchange="saveProgress()">
+                    <label for="check14">1958 — Robert Noyce और Jack Kilby ने पहला IC बनाया</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check15" onchange="saveProgress()">
+                    <label for="check15">1971 — Intel ने Microprocessor बनाया</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check16" onchange="saveProgress()">
+                    <label for="check16">भारत में Electronics — Homi Bhabha और Vikram Sarabhai</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check17" onchange="saveProgress()">
+                    <label for="check17">STQC = Standardization Testing and Quality Certification</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check18" onchange="saveProgress()">
+                    <label for="check18">SAMEER = Society for Applied Microwave Electronics Engineering and Research</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check19" onchange="saveProgress()">
+                    <label for="check19">C-MET = Centre for Materials for Electronics Technology (पुणे)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check20" onchange="saveProgress()">
+                    <label for="check20">सातवीं पंचवर्षीय योजना (1985-90) — Electronics उद्योग को बढ़ावा</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check21" onchange="saveProgress()">
+                    <label for="check21">राष्ट्रीय इलेक्ट्रॉनिकी नीति 2019 — 19 फरवरी 2019</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check22" onchange="saveProgress()">
+                    <label for="check22">Conductor — 1,2,3 electrons (दान करते हैं)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check23" onchange="saveProgress()">
+                    <label for="check23">Insulator — 5,6,7,8 electrons (लेते हैं)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check24" onchange="saveProgress()">
+                    <label for="check24">Semiconductor — आमतौर पर 4 electrons (Silicon)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check25" onchange="saveProgress()">
+                    <label for="check25">Intrinsic Semiconductor — Pure, बिना impurity के</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check26" onchange="saveProgress()">
+                    <label for="check26">Extrinsic Semiconductor — बाहर से impurity मिलाई गई</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check27" onchange="saveProgress()">
+                    <label for="check27">Doping — Semiconductor में impurity मिलाने की process</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check28" onchange="saveProgress()">
+                    <label for="check28">P-Type — Trivalent (3 संयोजी) impurity, Holes (+) ज्यादा</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check29" onchange="saveProgress()">
+                    <label for="check29">N-Type — Pentavalent (5 संयोजी) impurity, Electrons (-) ज्यादा</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check30" onchange="saveProgress()">
+                    <label for="check30">PN Junction — P-Type और N-Type को जोड़ने पर</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check31" onchange="saveProgress()">
+                    <label for="check31">Hole (विवर) — Electron की खाली जगह, Positive (+) charge</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check32" onchange="saveProgress()">
+                    <label for="check32">Depletion Boundary — PN Junction में बीच की boundary</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check33" onchange="saveProgress()">
+                    <label for="check33">Forward Biasing — (+) → P, (-) → N = Current flow होता है</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check34" onchange="saveProgress()">
+                    <label for="check34">Reverse Biasing — उल्टा connection = Current flow नहीं</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check35" onchange="saveProgress()">
+                    <label for="check35">Vacuum Tube — Anode (ऊपर) और Cathode (नीचे), heat से काम करती थी</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check36" onchange="saveProgress()">
+                    <label for="check36">CEL — Central Electronics Limited (गाजियाबाद → नई दिल्ली)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check37" onchange="saveProgress()">
+                    <label for="check37">BEL — Bharat Electronics Limited (बेंगलुरु, नवरत्न)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check38" onchange="saveProgress()">
+                    <label for="check38">SCL — Semiconductor Laboratory (मोहाली, ISRO की lab)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check39" onchange="saveProgress()">
+                    <label for="check39">NIELIT — National Institute of Electronics and IT (नई दिल्ली)</label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="check40" onchange="saveProgress()">
+                    <label for="check40">PLI Scheme — Production Linked Incentive (मार्च 2020)</label>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: var(--bg-secondary); border-radius: 12px; text-align: center;">
+                <h3 style="color: var(--accent-green); margin-bottom: 10px;">🎯 Your Progress</h3>
+                <p id="progressText" style="font-size: 1.2em; font-weight: 600;">0 / 40 completed (0%)</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="section">
+            <div class="section-header">
+                📌 Upcoming Topics & Revision Tips
+            </div>
+
+            <div class="card">
+                <h3>📚 Upcoming Topics (Teacher ने mention किया)</h3>
+                <ul>
+                    <li>Full Forms की detailed class</li>
+                    <li>500 MCQs practice session</li>
+                    <li>19 जून के बाद — History का course (Paper 3)</li>
+                    <li>International Current Affairs class (रात 9 बजे)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💡 Revision Tips</h3>
+                <ul>
+                    <li><strong>Video के साथ पढ़ो:</strong> YouTube video को एक tab में चलाओ, इस HTML को दूसरे tab में खोलो — side by side revision करो</li>
+                    <li><strong>Link Stories use करो:</strong> जो भी link stories दी गई हैं, उन्हें जोर-जोर से बोलकर याद करो</li>
+                    <li><strong>Quiz solve करो:</strong> हर section के बाद quiz है, उसे जरूर solve करो</li>
+                    <li><strong>Checklist complete करो:</strong> Master Checklist में सभी points को tick करो</li>
+                    <li><strong>Full Forms रट लो:</strong> Exam में बहुत पूछे जाते हैं</li>
+                    <li><strong>Exam Hot Facts पर focus:</strong> 🔥 वाले सभी points exam में आते हैं</li>
+                    <li><strong>Tables याद करो:</strong> Comparison tables को screenshot लेकर phone में save करो</li>
+                    <li><strong>Spaced Repetition:</strong> आज पढ़ो, कल revise करो, फिर 3 दिन बाद, फिर 1 हफ्ते बाद</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="text-align: center;">
+                <h3 style="color: var(--accent-cyan);">🎯 All the Best for MPPSC! 🎯</h3>
+                <p style="font-size: 1.1em; margin-top: 15px;">
+                    यह revision page आपके लिए बनाया गया है। इसे बार-बार पढ़ो, practice करो, और exam में धमाल मचाओ! 💪
+                </p>
+                <p style="margin-top: 15px; color: var(--text-secondary);">
+                    Teacher का code: <strong>CG LIVE</strong> (Unacademy Plus/Iconic subscription के लिए)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                button.textContent = '🌙 Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add('light-mode');
+                button.textContent = '☀️ Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️ Dark Mode';
+            }
+            
+            // Load checklist progress
+            loadProgress();
+            updateProgressBar();
+        });
+
+        // Jump to section
+        function jumpToSection(sectionId) {
+            if (sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        // Toggle quiz answers
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('show');
+        }
+
+        // Save checklist progress
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            const progress = {};
+            
+            checkboxes.forEach((checkbox, index) => {
+                progress[`check${index + 1}`] = checkbox.checked;
+            });
+            
+            localStorage.setItem('checklistProgress', JSON.stringify(progress));
+            updateProgressBar();
+        }
+
+        // Load checklist progress
+        function loadProgress() {
+            const saved = localStorage.getItem('checklistProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                Object.keys(progress).forEach(key => {
+                    const checkbox = document.getElementById(key);
+                    if (checkbox) {
+                        checkbox.checked = progress[key];
+                    }
+                });
+            }
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            const total = checkboxes.length;
+            let checked = 0;
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) checked++;
+            });
+            
+            const percentage = Math.round((checked / total) * 100);
+            
+            // Update progress bar
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+            }
+            
+            // Update progress text
+            const progressText = document.getElementById('progressText');
+            if (progressText) {
+                progressText.textContent = `${checked} / ${total} completed (${percentage}%)`;
+            }
+        }
+
+        // Image loading with retry and fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                // Preload images
+                const preloadImg = new Image();
+                preloadImg.src = img.src;
+                
+                // Handle image load errors
+                img.addEventListener('error', function() {
+                    console.warn('Image failed to load:', img.src);
+                    
+                    // Try alternate Wikimedia URL if it's a Wikimedia image
+                    if (img.src.includes('wikimedia.org') && !img.dataset.retried) {
+                        img.dataset.retried = 'true';
+                        const filename = img.src.split('/').pop();
+                        img.src = `https://commons.wikimedia.org/wiki/Special:Redirect/file/${filename}`;
+                    } else {
+                        // Show fallback message
+                        const caption = img.nextElementSibling;
+                        if (caption && caption.classList.contains('image-caption')) {
+                            caption.innerHTML += '<br><span style="color: var(--accent-orange);">⚠️ Image could not be loaded. Please check your internet connection.</span>';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
