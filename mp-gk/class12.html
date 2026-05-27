@@ -1,0 +1,1114 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP GK Class 12 Revision — Madhya Pradesh ke Jalprapat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0f0f1a; --panel:#171827; --card:#1d2033; --text:#f8fbff; --muted:#d9e1ee;
+      --soft:#2d324d; --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.35); --radius:22px;
+    }
+    :root.light {
+      --bg:#f6f8ff; --panel:#ffffff; --card:#ffffff; --text:#101525; --muted:#374151;
+      --soft:#d9e2f2; --shadow: 0 16px 40px rgba(20,35,70,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(0,212,255,.18), transparent 33rem),
+        radial-gradient(circle at top right, rgba(179,136,255,.16), transparent 28rem),
+        var(--bg);
+      color:var(--text); font-size:17px; line-height:1.7; letter-spacing:.01em;
+    }
+    a { color:var(--cyan); }
+    .progress-wrap { position:fixed; top:0; left:0; right:0; height:5px; background:rgba(255,255,255,.08); z-index:1000; }
+    #progressBar { height:100%; width:0; background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange)); transition:width .15s linear; }
+    header.hero {
+      max-width:1180px; margin:0 auto; padding:54px 20px 24px;
+      display:grid; grid-template-columns: 1.35fr .65fr; gap:22px; align-items:stretch;
+    }
+    .hero-card, .stats-card, .nav-panel, .topic, .master, .map-panel {
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)), var(--panel);
+      border:1px solid rgba(255,255,255,.12); box-shadow:var(--shadow); border-radius:var(--radius);
+    }
+    .hero-card { padding:34px; position:relative; overflow:hidden; }
+    .hero-card:before { content:""; position:absolute; inset:auto -15% -35% auto; width:280px; height:280px; border-radius:50%; background:rgba(0,212,255,.22); filter:blur(30px); }
+    .hero h1 { margin:0; font-size:clamp(2rem, 5vw, 4.6rem); line-height:1.05; letter-spacing:-.05em; }
+    .hero p { color:var(--muted); max-width:850px; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 0; }
+    .badge { border:1px solid rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.06); font-weight:700; }
+    .stats-card { padding:24px; display:grid; gap:14px; }
+    .stat { padding:16px; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(255,255,255,.04); }
+    .stat b { font-size:1.55rem; display:block; }
+    .layout { max-width:1180px; margin:0 auto; padding:0 20px 50px; display:grid; grid-template-columns:290px minmax(0,1fr); gap:22px; }
+    aside { position:sticky; top:16px; align-self:start; display:grid; gap:14px; max-height:calc(100vh - 30px); overflow:auto; }
+    .nav-panel { padding:16px; }
+    .nav-panel h2 { font-size:1rem; margin:0 0 10px; }
+    .toc { display:grid; gap:6px; }
+    .toc a { color:var(--text); text-decoration:none; padding:10px 12px; border-radius:14px; border:1px solid transparent; font-weight:700; font-size:.92rem; }
+    .toc a:hover, .toc a.active { border-color:rgba(0,212,255,.45); background:rgba(0,212,255,.1); }
+    .controls { position:sticky; top:0; z-index:99; max-width:1180px; margin:0 auto 18px; padding:10px 20px; }
+    .controls-inner { display:flex; gap:10px; align-items:center; justify-content:space-between; background:rgba(15,15,26,.82); backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:10px; }
+    :root.light .controls-inner { background:rgba(255,255,255,.88); }
+    select, button, input[type="search"] {
+      font:inherit; color:var(--text); background:var(--card); border:1px solid rgba(255,255,255,.16); border-radius:14px; padding:10px 12px;
+    }
+    button { cursor:pointer; font-weight:800; }
+    .quick-select { flex:1; min-width:0; }
+    main { display:grid; gap:24px; }
+    .topic, .master { padding:24px; scroll-margin-top:85px; border-top:5px solid var(--accent, var(--cyan)); }
+    .section-top { display:flex; gap:16px; justify-content:space-between; align-items:flex-start; }
+    .time-pill { display:inline-block; margin:0 0 8px; color:#08111a; background:var(--accent); border-radius:999px; padding:4px 10px; font-weight:900; font-size:.82rem; }
+    h2 { margin:.1rem 0 .4rem; font-size:clamp(1.45rem, 3vw, 2.25rem); line-height:1.15; letter-spacing:-.03em; }
+    h3 { margin:0 0 10px; font-size:1.12rem; }
+    .section-summary { color:var(--muted); font-weight:600; margin-top:0; }
+    .done-pill { white-space:nowrap; border:1px solid rgba(255,255,255,.15); padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.04); font-weight:800; font-size:.9rem; }
+    .visual-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin:14px 0; }
+    .image-card { margin:0; overflow:hidden; border:1px solid rgba(255,255,255,.13); background:rgba(255,255,255,.04); border-radius:18px; }
+    .image-card img { display:block; width:100%; height:245px; object-fit:cover; background:#0b0d14; }
+    .image-card figcaption { padding:10px 12px; font-size:.82rem; color:var(--muted); line-height:1.45; }
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:14px; }
+    .card { padding:18px; background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:18px; transition:.2s ease transform, .2s ease border-color; }
+    .card:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .card ul { padding-left:1.25rem; margin:0; }
+    .hot-card { background:linear-gradient(180deg, rgba(255,107,53,.14), rgba(255,255,255,.03)), var(--card); }
+    .link-card { background:linear-gradient(135deg, rgba(0,212,255,.16), rgba(179,136,255,.16)), var(--card); }
+    .quiz { margin-top:14px; padding:18px; background:rgba(0,0,0,.13); border:1px solid rgba(255,255,255,.12); border-radius:18px; }
+    details.qa, .transcript-flow { border:1px solid rgba(255,255,255,.14); border-radius:15px; padding:10px 12px; margin:8px 0; background:rgba(255,255,255,.04); }
+    details.qa summary, .transcript-flow summary { cursor:pointer; font-weight:900; }
+    details.qa p { color:var(--green); font-weight:800; margin:8px 0 0; }
+    .transcript-flow { margin-top:18px; }
+    .ts-grid { display:grid; gap:10px; margin-top:12px; }
+    .ts-block { display:grid; grid-template-columns:92px 1fr; gap:12px; padding:12px; border-radius:14px; background:rgba(0,0,0,.16); border:1px solid rgba(255,255,255,.08); }
+    .ts { color:var(--green); font-weight:900; font-family:ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .ts-block p { margin:0; color:var(--muted); }
+    .diagram { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin:16px 0; }
+    .diagram div { padding:12px; border-radius:16px; background:rgba(0,212,255,.1); border:1px dashed rgba(0,212,255,.4); text-align:center; font-weight:900; }
+    .table-tools { display:flex; gap:10px; flex-wrap:wrap; margin:10px 0; }
+    .table-wrap { overflow:auto; border-radius:16px; border:1px solid rgba(255,255,255,.12); }
+    table { width:100%; border-collapse:collapse; min-width:760px; background:var(--card); }
+    th,td { padding:12px 14px; text-align:left; border-bottom:1px solid rgba(255,255,255,.1); vertical-align:top; }
+    th { position:sticky; top:0; background:rgba(0,212,255,.16); color:var(--text); z-index:1; }
+    tr:hover td { background:rgba(255,255,255,.04); }
+    .check-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px; }
+    .check-item { display:flex; gap:10px; align-items:flex-start; padding:12px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); }
+    .check-item input { margin-top:6px; }
+    .check-item span { font-weight:650; }
+    .mini-progress { height:14px; border-radius:999px; background:rgba(255,255,255,.1); overflow:hidden; margin:12px 0; }
+    #checkProgress { height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--cyan)); }
+    .map-panel { padding:12px; }
+    .map-panel img { width:100%; height:auto; display:block; border-radius:14px; }
+    .map-panel p { font-size:.82rem; color:var(--muted); margin:8px 0 0; }
+    .callout { border-left:5px solid var(--orange); padding:14px 16px; border-radius:14px; background:rgba(255,107,53,.12); font-weight:750; }
+    footer { max-width:1180px; margin:0 auto; padding:30px 20px 60px; color:var(--muted); }
+    .image-fallback { padding:14px; color:var(--muted); font-weight:700; }
+    @media (max-width: 900px) {
+      header.hero { grid-template-columns:1fr; padding-top:38px; }
+      .layout { grid-template-columns:1fr; }
+      aside { position:relative; top:auto; max-height:none; order:2; }
+      .controls-inner { flex-wrap:wrap; }
+      .quick-select { flex-basis:100%; }
+      .section-top { flex-direction:column; }
+      .ts-block { grid-template-columns:1fr; }
+      .diagram { grid-template-columns:1fr 1fr; }
+    }
+    @media print {
+      :root { --bg:#fff; --panel:#fff; --card:#fff; --text:#000; --muted:#111; }
+      body { background:#fff; color:#000; font-size:12pt; }
+      .progress-wrap,.controls,aside,.done-pill,button { display:none!important; }
+      header.hero,.layout { display:block; max-width:none; padding:0; }
+      .topic,.master,.hero-card,.stats-card { box-shadow:none; border:1px solid #000; break-inside:avoid; margin:12px 0; }
+      details { display:block; }
+      details > summary { display:none; }
+      details:not([open]) > *:not(summary) { display:block; }
+      .image-card img { max-height:220px; object-fit:contain; }
+      a { color:#000; text-decoration:underline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-wrap"><div id="progressBar"></div></div>
+
+  <header class="hero">
+    <div class="hero-card">
+      <h1>💧 MP GK Class 12<br>Madhya Pradesh ke Jalprapat</h1>
+      <p>Video transcript se banaya gaya exam revision page — same sequence, Hinglish notes, Quick Recall, mnemonics, image blocks, master table, checklist aur exact timestamp flow ke saath.</p>
+      <div class="badge-row">
+        <span class="badge">⏱️ Coverage: 00:00:17 → 01:17:17</span>
+        <span class="badge">🎬 Timestamp chunks: 103</span>
+        <span class="badge">🏞️ Waterfall entries: 51</span>
+        <span class="badge">🌗 Theme toggle</span>
+      </div>
+    </div>
+    <div class="stats-card">
+      <div class="stat"><b>9</b> major video-flow sections</div>
+      <div class="stat"><b>51</b> waterfall/location rows</div>
+      <div class="stat"><b>100%</b> timestamp chunks embedded</div>
+      <div class="stat"><b>Next</b> Nadi Jodo Pariyojana</div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <select id="jumpSelect" class="quick-select" aria-label="Jump to section">
+        <option value="">Jump to topic…</option>
+        <option value="#intro">00:00:17–00:06:49 — Intro + Class Setup</option>
+<option value="#definition">00:06:49–00:09:28 — जलप्रपात की Definition / Waterfall Concept</option>
+<option value="#narmada">00:09:28–00:21:52 — Narmada River ke Major Waterfalls</option>
+<option value="#chambal">00:21:52–00:26:17 — Chambal River ke Waterfalls</option>
+<option value="#pachmarhi">00:26:17–00:30:37 — Pachmarhi / Narmadapuram ke Parvatiya Jharne</option>
+<option value="#rewa">00:30:37–00:42:01 — Rewa + Mauganj Waterfalls</option>
+<option value="#districts1">00:42:01–00:56:45 — Other Districts I: Datia to Narsinghpur</option>
+<option value="#districts2">00:56:45–01:14:24 — Other Districts II: Damoh, Balaghat, Dindori, Chhindwara, Indore, Dewas...</option>
+<option value="#wrap">01:14:24–01:17:17 — Wrap-up + Upcoming Topic</option>
+        <option value="#master-table">Master Waterfall Table</option>
+        <option value="#master-checklist">Master Checklist</option>
+      </select>
+      <button id="themeBtn" type="button">🌗 Toggle Theme</button>
+      <button id="expandBtn" type="button">Open all details</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside>
+      <nav class="nav-panel">
+        <h2>📚 Table of Contents</h2>
+        <div class="toc"><a href="#intro"><span>🎬</span> Intro + Class Setup</a>
+<a href="#definition"><span>💧</span> जलप्रपात की Definition / Waterfall Concept</a>
+<a href="#narmada"><span>🏞️</span> Narmada River ke Major Waterfalls</a>
+<a href="#chambal"><span>🌊</span> Chambal River ke Waterfalls</a>
+<a href="#pachmarhi"><span>🌿</span> Pachmarhi / Narmadapuram ke Parvatiya Jharne</a>
+<a href="#rewa"><span>⛰️</span> Rewa + Mauganj Waterfalls</a>
+<a href="#districts1"><span>🗺️</span> Other Districts I: Datia to Narsinghpur</a>
+<a href="#districts2"><span>📌</span> Other Districts II: Damoh, Balaghat, Dindori, Chhindwara, Indore, Dewas...</a>
+<a href="#wrap"><span>✅</span> Wrap-up + Upcoming Topic</a></div>
+      </nav>
+      <div class="map-panel">
+        <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh map reference" loading="eager" decoding="async" fetchpriority="high">
+        <p>Sticky MP map reference for district/location memory.</p>
+      </div>
+    </aside>
+
+    <main>
+      <section class="master" id="how-to" style="--accent:#00d4ff">
+        <h2>🧭 How to use this page</h2>
+        <div class="diagram">
+          <div>1. Topic order follow karo</div>
+          <div>2. Key notes revise karo</div>
+          <div>3. Quick Recall attempt karo</div>
+          <div>4. Master checklist tick karo</div>
+        </div>
+        <p class="callout">Note: Exact transcript blocks har section ke end par diye gaye hain, taaki video ke saath side-by-side study karte time koi timestamp gap na rahe.</p>
+      </section>
+
+      
+<section id="intro" class="topic" style="--accent:#00d4ff">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:00:17–00:06:49</p>
+      <h2>🎬 Intro + Class Setup</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="intro"> Mark done</label>
+  </div>
+  <p class="section-summary">Teacher class start, MP GK Class 12, topic announce: Madhya Pradesh ke Jalprapat / Waterfalls of MP. Promotional/live-chat content ko exam notes mein light rakha gaya hai, but timestamp transcript blocks preserve flow.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" target="_blank" rel="noopener">
+        <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-file="" data-page="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh district map reference" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <figcaption>Map reference: SLBC Madhya Pradesh, MP-NewMap-55.gif (as provided in revision prompt). <a href="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Class ka main topic: Madhya Pradesh ke Jalprapat / Waterfalls of MP.</li>
+<li>Teacher says is topic se exam mein question aata rehta hai.</li>
+<li>Initial doubt: Tawa river flow/direction — river direction ko origin point, meeting point, aur broad drainage direction ke respect mein samjho.</li>
+<li>Teacher advises same-class doubts comment box mein poochna to avoid class-flow disruption.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Waterfalls of MP is exam-relevant; teacher says any exam mein isse related question aa sakta hai.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>Video ke saath map ko imagine karo: river origin → broad direction → meeting point. Direction questions mein wording ko pehle pakdo.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Class 12 ka core topic kya hai?</summary><p>Madhya Pradesh ke Jalprapat / Waterfalls of MP.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Teacher river direction doubts mein kya advice dete hain?</summary><p>Origin, meeting point aur broad drainage direction ke respect mein direction samjho.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Doubt asking ke liye teacher ne kya prefer kiya?</summary><p>Same class/comment box, taaki live class flow disturb na ho.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (9 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:00:17</span><p>नमस्कार दोस्तों सभी का बहुत-बहुत स्वागत है एमपी एग्जाम वाला में जल्दी से सभी लोग लाइव जुड़ जाइए और शेयर कर दीजिए क्लास को सबसे पहले क्लास को शेयर करते हैं सभी लोग जो भी जड़ चुके हैं जल्दी से मैं भी बस शेयर कर रहा हूं आपकी क्लास को आप सभी भी जल्दी से शेयर कर दें क्लास को फिर हमारी क्लास स्टार्ट हो रही है ठीक है चलिए तो सभी का बहुत-बहुत स्वागत है विनीश रानी कृष्णकांत सिखा विपिन आकृति प्रियंका बृजेश योगेश दीपक पारस बजवी दीपक चलिए शिखा गौतम आकृति अंजना रानी सुमित दीपक चलिए सभी लोग जुड़ गए हैं अब स्टार्ट करते हैं अपना सेशन सबसे पहला काम</p></div>
+<div class="ts-block"><span class="ts">00:01:21</span><p>आपको क्या करना है फिर से एक जोरदार क्लास के लिए आप तैयार रहे क्योंकि कंटेंट आपको ऐसा फिर से मिलेगा कि जिसमें मजा जाएगा आज ठीक है और नैसर्गिक सौंदर्य होता में दिखाने वाला हूं सब कुछ आप बस आखिरी तक बने रहना आपको समझ में आ जाएगा कि आज किस प्रकार से यह पूरा लेक्चर डिजाइन है ठीक है एमपी जीी के सॉरी बिल्कुल शुरुआत से आपको यहां पे इसमें दिया जाएगा मध्य प्रदेश के जलप्रपात वॉटरफॉल्स ऑफ एमपी जिससे एक क्वेश्चन आपका आता ही रहता है किसी भी एग्जाम कोई भी एग्जाम हो इससे संबंधित चीजों को भी मैं आपको बताऊंगा बहुत सारे नए-नए जलप्रपात भी</p></div>
+<div class="ts-block"><span class="ts">00:02:02</span><p>आपको अब देखने को मिलते हैं मध्य प्रदेश के अंतर्गत तो चलिए सबसे पहले शेयर कर दें सभी लोग जहां भी आपके ग्रुप या जो भी हैं और जो लोग जुड़ चुके हैं वो एक लाइक कर दें सेशन को और जो बाद में देखते हैं वो भी लाइक कर दिया करें ठीक है तो ये क्लास नंबर हमारा 12वी नंबर की क्लास है ठीक है इसके अंतर्गत आप देखेंगे कि जो हमारा शेड्यूल है पूरा youtube4 क्लासेस चलाई जा रही हैं सुबह-सुबह धुआधार करंट अफेयर के साथ आपको मिलते हैं आशीष तर 8 बजे हिस्ट्री की शानदार क्लास के साथ डीप नॉलेज के साथ पवन सर मिलते हैं 12:00 बजे इंग्लिश स्पेशल</p></div>
+<div class="ts-block"><span class="ts">00:02:36</span><p>स्टार्ट हुआ है अभी तो यह सपना मैम आपको 7:00 बजे मिलेंगी और 8 बजे आपको लगातार लंबे समय से कंटिन्यू चल रही है हमारी youtu8be सर क्लास में अगेन जो लोग जुड़ते जा रहे हैं सबका स्वागत है चलिए शेयर कर दें और सेशन को लाइक कर दीजिए सभी के सभी फिर हम स्टार्ट करेंगे जय हिंद अन्नू केशरी मल वेरी गुड इवनिंग वर्षा वेरी गुड इवनिंग विपिन भाई वेरी गुड इवनिंग चलिए कहां गया भ कहां गया ऐसे कहां चला गया कहीं चला गया क्या योगेश विनी मतलब इतने बड़े होकर कैसी बातें करते हो तुम लोग देसी बालक नमस्कार भाई चलिए योगेश कहां है भाई तवा का फ्लो बताओ</p></div>
+<div class="ts-block"><span class="ts">00:03:57</span><p>फटाफट तवा का फ्लो पूरी क्लास खत्म हो गई तवा को अलग से पढ़ा दिया नर्मदा को अलग से पढ़ा दिया और यह बच्चा अभी क्या पूछ रहा है कि तवा नदी का फ्लो किस तरफ है भाई साहब नीचे से ऊपर किया था तो ऊपर डायरेक्शन कौन सी होगी उत्तर दिशा होगी ना यार मतलब ये कौन सा सेंस है मुझे नहीं पता आप डायग्राम का के लिए बनाया था मैंने इसीलिए बताया बनाया था कि आपको उनकी डायरेक्शन दिखती जाए तो आपको कोई भी डायरेक्शन है इतना आप सभी ने पढ़ा डायरेक्शन अभी तक आपको क्लियर नहीं है क्या ठीक है चलिए यहां पर अगर हम बात करें तो वॉटरफॉल्स देखने वाले हैं हम वॉटरफॉल्स</p></div>
+<div class="ts-block"><span class="ts">00:04:37</span><p>ऑफ एमपी क्योंकि उत्तरी अपवाह तंत्र में जाकर के वो डुबकियां लगा रही है नदी अब ऐसा तो है नहीं है कि बिल्कुल वो स्केल रख के और फिर नाप के गई है कि बिल्कुल सीधा जाना है ऊपर को ऐसी ऐसी नदियां है वो तो जाती है लेकिन एक विद रिस्पेक्ट टू अगर हम एक डायरेक्शन के हिसाब से देखें तो यहां पर क्या हो जाता है कि कोई भी नदी है अगर वो एसी जा रही है कैसी जा रही एसी जा रही है तो इसका मतलब यह हो जाएगा कि क्या उत्तर नहीं जा रही है ठीक है अगर कोई नदी ऐसी लहराती हुई जा रही है तो आप क्या उत्तरी अपवाह तंत्र में उत्तर की दिशा में</p></div>
+<div class="ts-block"><span class="ts">00:05:11</span><p>तो जा ही रही है ना भले से वो यहां पर उसने पूर्व डायरेक्शन की ओर मूव किया है ठीक है तो आपको उनके हिसाब से आंसर लगाना पड़ेगा कि उसने कहां बोला है क्या मिलन बिंदु पर उसकी दिशा कौन सी है है ना या फिर प्रारंभिक बिंदु के तौर पर जहां उसका ओरिजन हो रहा है उस बिंदु पर दिशा किशोर है ऐसे क्वेश्चन आते हैं अब अगर मान लो एसी भी है कोई भी डायरेक्शन इसकी तो अगर हम देखें तो इसमें इसके हिसाब से इसके ओरिजन पॉइंट के हिसाब से देखो तो ये कौन सी डायरेक्शन होगी कौन सी डायरेक्शन होगी ये कौन सी डायरेक्शन होगी रिजन पॉइंट के</p></div>
+<div class="ts-block"><span class="ts">00:05:41</span><p>हिसाब से देखो नीचे जा रही है क्या जा तो ऊपर ही रही है भले से इस तरफ मूव हुई है फिर जा रही हो ठीक है तो ये कॉमन सेंस होता है अगर इतनी माइनर पॉइंट्स भी आपको समझ में नहीं आ रहे हैं तो फिर आप यह समझिए कि आगे की लड़ाई तो बहुत खतरनाक होने वाली है क्योंकि ये एमपीपीएससी है चलिए मध्य प्रदेश के जलप्रपात मध्य प्रदेश के जलप्रपात देखेंगे हम वाटर फॉल्स ऑफ एमपी और जिस क्लास का डाउट रहा करें उसी क्लास में पूछा करें तो ज्यादा सही रहेगा और यह क्लास जो है बिल्कुल वैसे ही है जो कि आपको बाद में भी बिल्कुल काम आएंगी और</p></div>
+<div class="ts-block"><span class="ts">00:06:17</span><p>कोई रिकॉर्डेड देखता है तो उसके काम में आएंगी इसलिए अगर उसी क्लास का डाउट उसी में या कमेंट बॉक्स में करके आप डाउट पूछा करें वहां मैं सबके रिप्लाई देता हूं कमेंट बॉक्स इसके लिए ही है अगर वहां पर आपका कोई क्वेश्चन है वहां छोड़िए मैं आपको 5 मिनट में वहां आंसर दूंगा कहां पे कमेंट बॉक्स में ये लाइव चैट है वहां पे आप क्वेश्चन पूछिए मेरे से वहां मिलेगा आपको तुरंत उत्तर यहां पे क्लास का फ्लो मैं खराब नहीं करूंगा आप नदियों वाले चैप्टर में नदियों का डाउट पूछ लिया करें जहां पे जब डाउट है वहां पे पूछ ले नहीं</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="definition" class="topic" style="--accent:#00ff88">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:06:49–00:09:28</p>
+      <h2>💧 जलप्रपात की Definition / Waterfall Concept</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="definition"> Mark done</label>
+  </div>
+  <p class="section-summary">Waterfall ka basic concept: river/nala/rainwater jab high place/mountain se neeche girta hai, to waterfall banta hai. Ye flowing-water erosional landform aur water source bhi hota hai.</p>
+  <div class="visual-grid"></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>जलप्रपात = किसी नदी/नाला/वर्षा जल का ऊँचे पर्वत/ऊँचाई से नीचे गिरना.</li>
+<li>Place jahan river falls from height is called waterfall.</li>
+<li>Sources: river water, rain water, mountain stream — teeno context class mein aaye.</li>
+<li>Flowing water neeche land/rock par erosion karta hai; therefore it is an erosional landform.</li>
+<li>Waterfall natural feature hai, nature ke through banta hai.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Definition + erosional landform + water source — conceptual MCQ ban sakta hai.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>ऊपर पर्वत, बीच में बहता जल, नीचे कटाव: Height → Fall → Erosion → Waterfall.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Waterfall ka simplest definition?</summary><p>River/nala/rainwater ka height se neeche girna.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Waterfall kis type ka landform hai?</summary><p>Flowing-water erosional landform.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Teacher ne waterfall ke possible water sources kya bataye?</summary><p>River water aur rainwater/mountain water.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (4 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:06:49</span><p>उस टाइम पूछ पाए हैं आप कमेंट बॉक्स में पूछे यहां पे देखें हम जलप्रपात तो चलिए हम स्टार्ट करते हैं वॉटरफॉल्स ऑफ एमपी या मध्य प्रदेश सबसे पहली बात अगर हम देखें तो ये जलप्रपात जलप्रपात क्या होता है किसी नदी का ऊंचे पहाड़ से नीचे गिरना तो कोई नदी भी हो सकती है या वर्षा का जल वाटर फॉल्स जैसे अभी क्या चल रही है अभी चल रहा है बरसात का दौर या फिर रेनफॉल का टाइम चल रहा है अभी तो आप देख रहे होंगे विभिन्न प्रकार के जलप्रपात में पानी आ चुका है तो या तो यहां पर अगर मैं बात कर रहा हूं कि किसी नदी का ऊंचे पहाड़ से</p></div>
+<div class="ts-block"><span class="ts">00:07:27</span><p>नीचे गिरना कोई भी रिवर है ठीक है यह पहाड़ पर्वत श्रंखला मध्य प्रदेश के अंतर्गत छोटी-छोटी बहुत सारी और बड़ी भी हैं तो यहां पर क्या होता है मान लीजिए यह है कोई पर्वत और पर्वत से वर्षा का जल भी हो सकता है और कोई नदी का उद्गम भी हो सकता है दो चीजें हो सकती हैं ये या तो कोई वर्षा का जल हो सकता है तो हम इसमें बोल देंगे कि पर्वतीय नदी है या तो वर्षा का जल हो सकता है या किसी नदी का जल भी हो सकता है नदी का जल भी हो सकता है तो दोनों चीजें हो सकती हैं यहां पे या तो क्या हो सकता है बेटा या तो क्या हो सकता है ये</p></div>
+<div class="ts-block"><span class="ts">00:08:01</span><p>वर्षा का जल हो सकता है या किसी नदी का जल हो सकता है जो कि यहां ऊंचाई से नीचे की ओर गिर रहा हो तो किसी नदी का ऊंचे पहाड़ से नीचे गिरना या वह जगह जहां नदी ऊंचाई से नीचे की ओर गिरती है उसे जलप्रपात कहते हैं ठीक है तो जलप्रपात क्या है सिंपली जब कोई भी या तो नदी या नाला या फिर वर्षा का जल किसी पर्वत या किसी ऊंचाई वाले स्थान से नीचे की र और गिरता है तो वह क्या बनता है एक जल प्रपात बनता है यह एक प्रमुख प्रवाही जल ठीक है प्रवाही जल मतलब बेहता हुआ जल कृत अपदम स्थल स्वरूप और जल स्रोत है ये क्या है ऊपर से गिरता है तो अपर्दन होगा नीचे</p></div>
+<div class="ts-block"><span class="ts">00:08:46</span><p>कटाव होगा जहां पर पानी गिरेगा पत्थर तक कट जाता है तो ये क्या है यह एक प्रवाही जल बेहता हुआ जल कृत अपदम स्थल रूप है अपदम स्थल रूप का मतलब जहां पर वो गिरेगा वहां पर पे क्या हो जाएगा अपर्दन हो जाएगा और यह एक क्या है जल स्रोत है जल प्रपात प्रकृति के द्वारा निर्मित होते हैं तो वटर फॉल्स द फॉल ऑफ रिवर फ्रॉम द हाई माउंटेन और द प्लेस वेयर द रिवर फॉल्स इज कॉल्ड वाटरफॉल तो वाटरफॉल क्या है तो व्हेन द फॉल ऑफ रिवर ठीक है नदी किसी नदी का गिरना फ्रॉम हाई माउंटेन ठीक है हाई माउंटेन और द प्लेस वेयर द रिवर फॉल्स</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="narmada" class="topic" style="--accent:#b388ff">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:09:28–00:21:52</p>
+      <h2>🏞️ Narmada River ke Major Waterfalls</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="narmada"> Mark done</label>
+  </div>
+  <p class="section-summary">Narmada ke source Amarkantak se start karke Bhedaghat, Harda, Handia-Barwaha aur Maheshwar/Khargone tak ke waterfalls covered.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Waterfall_in_Amarkantak.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Waterfall%20in%20Amarkantak.jpg?width=900" data-file="Waterfall in Amarkantak.jpg" data-page="https://commons.wikimedia.org/wiki/File:Waterfall_in_Amarkantak.jpg" alt="Amarkantak waterfall representing Narmada source-area waterfalls" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Aditya thaokar, CC BY-SA 4.0 / compatible Commons license page. <a href="https://commons.wikimedia.org/wiki/File:Waterfall_in_Amarkantak.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Dhuandhar_waterfall.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dhuandhar%20waterfall.jpg?width=900" data-file="Dhuandhar waterfall.jpg" data-page="https://commons.wikimedia.org/wiki/File:Dhuandhar_waterfall.jpg" alt="Dhuandhar waterfall at Jabalpur on the Narmada River" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Dr shivam jar, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Dhuandhar_waterfall.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Amarkantak area: Kapildhara, Dugdh Dhara, Durga Dhara, Panchdhara, Shambhu Dhara — mostly 2–4 km interval mein.</li>
+<li>Kapildhara: Kapil Muni ashram/आराधना स्थल; Meghdoot mention; approx 18 m.</li>
+<li>Dugdh Dhara: paani doodh jaisa safed dikhta hai.</li>
+<li>Dhuandhar: Bhedaghat, Jabalpur; smoke-like mist; white marble rocks; Bander Kundani spot.</li>
+<li>Dardi: Handia, Harda. Mandhar/Mandhan: Handia-Barwaha ke madhya; Sahastradhara: Maheshwar, Khargone.</li>
+<li>Sahastradhara memory: Kartaviryarjuna legend — Narmada hazaar dhaaron mein vibhakt hui.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Bander Kundani location near Dhuandhar/Bhedaghat was asked by Vyapam per teacher.</li>
+<li>🔥 Sahastradhara = Maheshwar, Khargone; Narmada splits into many streams.</li>
+<li>🔥 Narmada trick: “मधु ने दुख दर्द सहा” for main Narmada falls.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 Narmada Link Story: Amarkantak mein Kapil Muni doodh jaisi Dugdh Dhara dekhte hain, Durga ji ke mandir ke paas Panch dhara Shambhu ji ke ling ko chhoo kar Bhedaghat ke Dhuandhar smoke mein badalti hai, phir Dardi-Mandhar dard sahte hue Sahastradhara ki hazaar dhaaron mein toot jaati hai.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Kapildhara kis river par hai?</summary><p>Narmada River, Amarkantak area.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Dhuandhar kis jagah se linked hai?</summary><p>Bhedaghat, Jabalpur; Narmada aur marble rocks.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Sahastradhara kis district/region mein bataya gaya?</summary><p>Maheshwar, Khargone.</p></details>
+        
+
+        <details class="qa"><summary>Q4. Teacher ki Narmada trick kya thi?</summary><p>मधु ने दुख दर्द सहा.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (16 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:09:28</span><p>जहां पर नदी गिरती है कॉल्ड वाटरफॉल दिस इज द मेजर फ्लोइंग वाटर फॉर्म्ड एरोजनल लैंड फॉर्म तो ये क्या करते हैं एरोजनल लैंड फॉर्म करते हैं बिकॉज ये हाइट से नीचे की ओर गिरते हैं और नीचे यहां पर पृथ्वी का जो इरोजन करते हैं चाहे चट्टान हो चाहे वहां पर मिट्टी हो ठीक है वाटर सोर्स वाटर फॉल इज बनने वाले प्रमुख जलप्रपात नर्मदा नदी पर मेजर वाटर फॉल्स बिल्ट ऑन नर्मदा रिवर यहां पर अगर मैं सबसे पहले बात करूं तो एक क्षेत्र है कौन सा है सर अमरकंटक अमरकंटक ठीक है अमरकंटक क्षेत्र मिल जाएगा आपको अमरकंटक क्षेत्र में जहां से नर्मदा</p></div>
+<div class="ts-block"><span class="ts">00:10:21</span><p>नदी का ओरिजन होता है यहां पर आपको मेनली जो वाटरफॉल मिलेंगे वो कौन से वाटरफॉल होंगे तो आपको सबसे पहले मिलेगा कपिलधारा कपिलधारा कपिलधारा ठीक है कपिलधारा जलप्रपात सबसे पहले यह पेन नहीं दिख रहा होगा बस एक ही लिखूंगा मैं दूसरे में अगले कलर से लिख दूंगा कपिलधारा जलप्रपात य कपिलधारा वाटरफॉल अब कपिलधारा वाटरफॉल वहां पर बनता है क्योंकि यहां पर कहा गया है कि कपिल मुनि का आश्रम है नर्मदा में अमरकंटक के पास जिसका उल्लेख मेघदूत में भी किया गया है और एक नैसर्गिक सौंदर होता के लिए जाना जाता है यहां पर क्या है बेटा यहां पर</p></div>
+<div class="ts-block"><span class="ts">00:11:04</span><p>कपिलधारा जलप्रपात आपको देखने को मिलेगा जो कि 18 मीटर ऊंचा एक जलप्रपात है इसकी हाइट सबकी हाइट आपको याद नहीं करनी है ना कर पाओगे मैं ही कल के दिन आपसे कल पूछ दूं तो बहुटी की हाइट के अलावा आप दूसरे वाटरफॉल की भी नहीं बता पाओगे और ना आज तक आई है ये भी मैं बता देता हूं जिनकी याद करनी है वो मैं आपको बता दूंगा डोंट वरी तो कपल कपिलधारा जलप्रपात वहां बनता है जहां पर कपिल मुनि का आश्रम है ये किस पर देख रहे हैं हम नर्मदा नदी पर इसके अलावा दुग्ध धारा दुग्ध धारा जलप्रपात तो यह सफेद दूध की तरह यहां पर द दूध बहता हुआ</p></div>
+<div class="ts-block"><span class="ts">00:11:44</span><p>दिखेगा आपको दुग्ध धारा जलप्रपात दुग्ध धारा जलप्रपात हो जाएगा यहां पे दुग्ध धारा जलप्रपात ठीक है इसके अलावा यहां पर मिलेगा दुर्गा धारा ठीक है तो दुर्गा माता का मंदिर है इसलिए यहां पर इसका नाम दुर्गा धारा है ठीक है पंचधारा पांच धाराओं में जल गिरता हुआ नीचे की ओर बिखर जाता है इसलिए इसका नाम यहां पे पंचधारा है एक संभू धारा भी है अगर आपको लिखना हो तो संभू धारा शंभू धारा शंभू धारा भी है यहां पर तो यहां भगवान शंकर जी का एक छोटा सा शिवलिंग आपको देखने को मिलेगा तो कपिल धारा दुग्ध धारा दुर्गा धारा पंचधारा शंभू धारा ये</p></div>
+<div class="ts-block"><span class="ts">00:12:29</span><p>सबके सब आपको अमरकंटक में दो से 4 किलोमीटर के अंतराल पर देखने को मिल जाएंगे ठीक है ये वाले जो जलप्रपात हैं ये आपको कहां पर मिल जाएंगे तो ये दो दो चारचार किलोमीटर के अंतर पर अमरकंटक में देखने को मिलेंगे ठीक है एक बार अगर हम देखें तो ये कौन सा जलप्रपात है आपकी स्क्रीन पर तो आप देखेंगे कि कपिलधारा जलप्रपात है पूरी आप क्लास देखेंगे तो आपको समझ में आएगा कि इनमें कितना टाइम लगा होगा बिल्कुल उसी प्रकार से सेट करी है मैंने दो तीन घंटे बैठे क्लास कि जैसे-जैसे नदी आती जाएगी उनके ही वॉटरफॉल्स की सारी पिक्चर्स फिर अगली जगह</p></div>
+<div class="ts-block"><span class="ts">00:13:05</span><p>की अगली वॉटरफॉल्स की पिक्चर्स ठीक है तो वो सारी एक तरीके से सेट है आपके लिए तो आपको यह जब आखिरी एंड होगा क्लास तो आपको समझ में आ जाएगा कि आज हमें पूरा क्या मिला है और मैंने इसलिए बोला है कि कोई भी डाउट रहता है आप जितने लोगों ने वहां पर डाउट जो भी कर रहे हैं मैं 5 मिनट के अंदर जवाब दूंगा यह मान के चलिए बस आप वहां करें तो कमेंट अपना क्वेश्चन ठीक है अननेसेसरी की बात करने से अच्छा है कि वहां प अपना क्वेश्चन छोड़ दें है ना और मैं आंसर दूंगा मैं इतना बोल रहा हूं पाच मिनट के अंदर आंसर मिलेगा वहां पे ठीक है</p></div>
+<div class="ts-block"><span class="ts">00:13:36</span><p>तो कोई डाउट है तो आप वहां पर पूछ सकते हैं मेरे से कमेंट बॉक्स में कपिलधारा जलप्रपात ये कपिल मुनि की क्या है आश्रम यहां पर था कपिल मुनि की आराधना स्थल ही बोल सकते हो आप ठीक है इस प्रकार के उन जंगलों के अंतर्गत जहां पर्वतों से ऊपर नीचे की ओर पानी पानी गिरता है वो नर्मदा नदी का वहां पर आपको कपिलधारा जलप्रपात मिल जाएगा इसके अलावा दुग्ध मिलेगा आपको दुग्ध धारा दुर्गा धारा पंचधारा शंभू धारा यह सब आपको अमरकंटक में मिलेंगे जब नर्मदा नदी और आगे बहती आती है पूरे नर्मदा रिवर पर देख रहे हैं हम तो यहां पर एक स्थान</p></div>
+<div class="ts-block"><span class="ts">00:14:14</span><p>पड़ता है इसका नाम क्या है इसका नाम है सर भेड़ा घाट जबलपुर भेड़ा घाट जबलपुर आपको यहां पर देखने को मिलेगा भेड़ा घाट भेड़ाघाट जबलपुर देखने को यहां पर मिल जाएगा अब यहां पर क्या है कौन सा जल प्रपात है तो यहां एक वाटरफॉल मिलेगा आपको जिसका नाम है धुआधार धुआधार जलप्रपात धुआधार जलप्रपात एक सुंदर जलप्रपात है धुआधार जल प्रपात और अगर हम बात करें तो यहां पर एक स्थान और भी है जिसको हम बंदर कुंदनी के नाम से जानते हैं व्यापम ने तो इसको पूछ लिया है कि बंदर कुंदनी कहां पर है तो बंदर कुंदनी वहां पर है जहां पर छोटे-छोटे बच्चे नर्मदा की तेज</p></div>
+<div class="ts-block"><span class="ts">00:15:15</span><p>धार में या धारा में ऊपर से बैठ ऊपर से कूद जाते हैं बिना कुछ एक पल सोचे हुए ठीक है तो आपको धुआधार में बंदर कुंदनी को याद रखना है हम देखेंगे धुआधार जलप्रपात को तो एक प्रकार से यहां जब पानी फैलता है तो धुआं की तरह फैल जाता है चारों ओर और इसीलिए इसका नाम क्या है धुआधार जलप्रपात भेड़ा घाट क्योंकि सफेद संगमरमर की चट्टाने हैं ऊपर से और सफेद संगमरमर की चट्टानों में जब ये सफेद जल गिरता है तो कुछ इस प्रकार से आप यह सफेद संगमरमर की चट्टाने देख रहे होंगे और एक विशाल जलप्रपात का बरसात के दौरान यहां आपको देखने को मिलेगा बिल्कुल बंदर कुंदनी आपको</p></div>
+<div class="ts-block"><span class="ts">00:15:57</span><p>यहां पे मिल जाएगा ठीक है हां धुआ के समान दिखता है क्योंकि एक तो यहां पर ये सफेद संगमरमर की चट्टाने हैं और ऊपर से जल भी आपको सफेद देखने को मिल जाएगा तो सफेद संगमरमर की चट्टान और यहां पर आप देखेंगे कि जो ये बड़े-बड़े स्थल हैं इस तरफ या इस तरफ जहां पे लोग इनमें कूदने से डरते हैं यहां छोटे-छोटे बच्चे क्या होता है उनको 1020 50 दे दो तो वो इसमें छलांग मार देते हैं उस स्थान को बंदर कुंदनी के नाम से जाना जाता है ठीक है फिर इसके बाद हम और आगे बढ़ते हैं तो यहां पर आपको क्या मिलेगा दर्दी जलप्रपात दर्दी जलप्रपात आपको हाडिया में मिलेगा</p></div>
+<div class="ts-block"><span class="ts">00:16:44</span><p>यहां मिलेगा इसमें दर्दी जलप्रपात दर्दी जलप्रपात या फिर हम बात करें तो यह दर्दी जलप्रपात दर्दी वाटरफॉल यह कहां पर है दर्दी वाटरफॉल बेटा ये आपको देखने को जो मिलेगा वो कहां पर है तो डिया डिया पड़ता है हरदा में डिया हरदा ठीक है हाडिया हरदा में आपको ये मिल जाएगा दर्दी जलप्रपात और ये भी नर्मदा पर है और आगे आएंगे आप तो आपको ंडिया बड़वाह के पास डिया बड़वाह के बीच कहा जाता है वो स्थान एक मिलेगा आपको मांधार जलप्रपात मंधन जलप्रपात आपको देखने को मिलेगा और वो डिया बड़वाह के मध्य मिलता है ठीक है सर्च करने पर फोटो कहीं मिलती नहीं है इसकी मंधन</p></div>
+<div class="ts-block"><span class="ts">00:17:34</span><p>जलप्रपात ठीक है मंधन जलप्रपात इसमें लिखा रहता है डिया बड़वाह के मध्य इसमें डिया बड़वाह के मध्य लिख लेना इसके बाद जो सबसे इंपॉर्टेंट आ रहा है आपकी स्क्रीन पर वह है कौन तो वो है यहां शास्त्रधारा जलप्रपात यहां आपको नर्मदा पर जो देखना है अब सहस्त्र धारा जलप्रपात तो ये सहस्त्र धारा जलप्रपात किसके नाम पर पड़ा है तो सहस्त्रधारा जलप्रपात यहां पर जो पड़ा है सहस्त्रधारा जलप्रपात कार्तवीर्यार्जुन अगर लिखना चाहे बाकी सरकार ने तो कोई मतलब नहीं है सरकार को ठीक है यहां पर 8 मीटर के समथिंग ये बताया जाता है सहस्त्र धारा</p></div>
+<div class="ts-block"><span class="ts">00:18:38</span><p>जलप्रपात महेश्वर खरग तो हुआ क्या था कि एक बार जो कार्तवीर्यार्जुन मदा की जो धार थी जब बह रही थी वो हजार धाराओं में विभक्त हो गई इसलिए इसका नाम फिर सहस्त्र धारा जलप्रपात पड़ा है अगर हम सहस्त्र धारा जलप्रपात को देखें तो इस प्रकार से यह कई धाराओं में बढती हुई दिख रही है जो कि सहस्त्र धारा जलप्रपात के नाम से जाना जाता है और यह महेश्वर खरगोन में आपको देखने को मिल जाएगा सहस्त्रधारा जलप्रपात ठीक है अब सहस्त्रधारा जलप्रपात के बाद अगर हम देखें तो अब हम देखेंगे ये पूरे कंप्लीट हो जाते हैं किसके नर्मदा नदी के य इसकी एक ट्रिक भी है य मेरी</p></div>
+<div class="ts-block"><span class="ts">00:19:30</span><p>ट्रिक बिल्कुल भी नहीं है क्योंकि जो मेरी होती है व मैं साफ बोल देता हूं मेरी ट्रिक लाइन के हिसाब से नहीं होती है कभी भी मेरी ट्रिक होती है उनके ही क्वेश्चन के हिसाब से जो क्वेश्चन आते हैं पर यहां पर य ट्रिक भी है मेरी तो बिल्कुल नहीं है लेकिन है जिसको अच्छे लगे तो कर सकते हो मधु ने दुख दर्द सहा ठीक है इस ट्रक के माध्यम से आप इसको कर सकते हैं जैसे मा से हो जाता है यहां मन धार मं धार धू से हो जाता है धुआधार धुआधार धुआधार ठीक है धू से हो जाता है धुआधार इसके बाद अगर हम बात करें दू से हो जाता है दुग्ध धारा</p></div>
+<div class="ts-block"><span class="ts">00:20:12</span><p>दुग्ध धारा का से हो जाता है कपिल धारा ठीक है कपिल धारा कपिल धारा दा से हो जाता है फिर से तो ये हो जाता है दुग्ध धारा हो गया दुर्गा धारा दुर्गा धारा फिर हो जाता है यहां पे दर्दी जलप्रपात दर्दी ठीक है और फिर हो जाता है सहा से सहस्त्र धारा तो ये मेन मेन इसके अंतर्गत सारे कवर हो जाते हैं मधु ने दुख दर्द सहा इस ट्रिक के माध्यम से बाकी आप मैप के थ्रू याद करो मैं मैप लाता हूं उसमें भरता हूं और उनके चित्र आपको दिखाए हैं मैंने तो आप उनके हिसाब से याद करोगे तो ज्यादा अच्छा होगा कि यह सारे लाइन से जितने धारा धारा धारा</p></div>
+<div class="ts-block"><span class="ts">00:21:04</span><p>है वोह सब अवर कटक कंटक में भेड़ा घाट जबलपुर धुआधार आपने देखा ही है दर्दी जो जलप्रपात डिया हरदा में मंधन जलप्रपात डिया और बड़वा के मध्य बोला जाता है और जो सहस्त्रधारा जलप्रपात है यह महेश्वर खरग 8 मीटर जो कार्तवीर्यार्जुन लेन जो बुक्स लिखा रहता है डिया बड़वा तो डिया हरदा में बड़वा खरगोन में उसके बीच में मांधार ओमकारेश्वर तक में पड़ता है इतना तक मैं बोल सकता हूं कि खंडवा के पास पड़ता है ठीक है लेकिन अब उसमें बुक्स में लिखा रहता है डिया बड़वा के मध्य इसलिए कोई किसी को डाउट ना हो इसलिए मैंने लिख दिया ठीक है तो यह कपिलधारा यह धुआधार और</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="chambal" class="topic" style="--accent:#ff6b35">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:21:52–00:26:17</p>
+      <h2>🌊 Chambal River ke Waterfalls</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="chambal"> Mark done</label>
+  </div>
+  <p class="section-summary">Chambal river source-region Indore/Mhow side aur downstream Chulia waterfall covered. Teacher ne Chulia ke dangerous rock/cut area ka vivid analogy diya.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Patal_Pani_Waterfall.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Patal%20Pani%20Waterfall.jpg?width=900" data-file="Patal Pani Waterfall.jpg" data-page="https://commons.wikimedia.org/wiki/File:Patal_Pani_Waterfall.jpg" alt="Patal Pani Waterfall near Mhow/Indore" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Vivek Shrivastava, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Patal_Pani_Waterfall.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Indore side: Patalpani, Jhadi Daha, Tincha/Ticha/Ncha.</li>
+<li>Tincha: Janapav hills ke near, mainly monsoon water; non-monsoon mein thin stream.</li>
+<li>Chulia: Chambal river par; Bhainsrorgarh, Kota, Rajasthan; approx 18 m.</li>
+<li>Teacher nuance: if exam is MP-specific and option Mandsaur is present, context dekhna; otherwise Chulia location Rajasthan/Kota side.</li>
+<li>Chulia ko teacher ne dangerous rock/cut terrain ke roop mein explain kiya.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Chulia = Chambal river; Bhainsrorgarh/Kota Rajasthan; approx 18 m.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 Chambal Story: Patalpani ke pātāl se Chambal nikli, Jhadi Daha ke jhaadiyon se guzri, Tincha hill se tapki, aur Chulia ke khatarnaak chattanon mein chulha-jaisi grooves bana gayi.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Chambal ke Indore side waterfalls?</summary><p>Patalpani, Jhadi Daha, Tincha/Ticha.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Chulia kis river par hai?</summary><p>Chambal.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Chulia ka common location?</summary><p>Bhainsrorgarh, Kota, Rajasthan.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (6 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:21:52</span><p>यह क्या है सहस्त्र धारा ये तीन आपको देखने है फिर हम देखेंगे चंबल नदी पर बनने वाले जल प्रमुख जल प्रपात ठीक है तो सबसे पहले चंबल नदी जहां से निकलती है सबसे ज्यादा जलप्रपात वहीं पर बनाती है तो यह है इंदौर शहर ये है क्या इंदौर शहर इंदौर शहर के अंतर्गत यह कौन से जलप्रपात का निर्माण करती है तो सबसे पहले अगर हम बात करें तो देखिए वो है पाताल पानी पाताल पानी जलप्रपात देखा होगा आपने पाताल पानी पाताल पानी जलप्रपात ठीक है पाताल पानी जलप्रपात मिलेगा आपको जो कि चंबल नदी पर आपको देखने को मिलेगा चंबल नदी इसके अलावा यहां पर आपको झाड़ी</p></div>
+<div class="ts-block"><span class="ts">00:22:33</span><p>दाहा जल प्रपात भी देखने को मिलेगा झाड़ी दाहा झाड़ी दाहा जलप्रपात झाड़ी दाहा जल प्रपात एक आपको यहां टिंचा जल प्रपात मिल जाएगा टिंचा यह सब चंबल नदी पर आप देख रहे हैं टिंचा काम करते हैं इसको और नीचे कर लेते पाताल पानी पाताल पानी जलप्रपात एक आप देखेंगे यहां पर टिंचा जलप्रपात कौन सा देखेंगे टिंचा ये सब किस पर बन रहे हैं टिंचा या इसको ं छा भी कहा जाता है तो वही बात है नछा जलप्रपात ठीक है तिचा जलप्रपात भी आपको यहां देखने को मिलेगा किसमें इंदौर में ही ठीक है तो ये किस पर है पूरे चंबल नदी पर है प्रमुख रूप से चंबल पर है</p></div>
+<div class="ts-block"><span class="ts">00:23:27</span><p>इसके अलावा कुछ बरसात झरने भी वहां पर आपको देखने को मिलेंगे जिनमें से हत्यारी खो जलप्रपात जो है वो आगे बताऊंगा आपको पहले आप देखिए झाड़ी दाहा जलप्रपात पाताल पानी जलप्रपात नछा जलप्रपात जब यह चंबल और आगे बहती है तो यहां पर आप देखेंगे कि एक जलप्रपात का निर्माण होता है एक जलप्रपात का निर्माण होता है उसका नाम क्या है तो उसका नाम है चूलिया चूलिया जलप्रपात चूलिया जलप्रपात अगर आप मध्य प्रदेश के वासी है और ऑप्शन में मंदसौर है तभी लगाना है अदर वाइज अगर चूलिया जलप्रपात की बात करें हम 100% चंबल नदी पर है परंतु यह</p></div>
+<div class="ts-block"><span class="ts">00:24:08</span><p>कहां पर है तो भैंस रोड गढ़ भैंस रोड गढ़ ठीक है भैंस रोड गढ़ राजस्थान में आपको यह देखने को मिल जाएगा कोटा राजस्थान भ सोड़ गढ़ कोटा राजस्थान में यह आपको जलप्रपात मिलेगा जिसका नाम है चूलिया जलप्रपात क्या नाम है इसका च यह जलप्रपात आपको देखने को मिलेगा और ये भी एप्रोक्सीमेटली अगर आपसे बात करें क्योंकि एक इंपॉर्टेंट जलप्रपात है तो 18 मीटर इसकी हाइट आपको देखने को मिलेगी चूलिया जलप्रपात के तौर पे तो झाड़ी दाह पाताल पानी टिंचा और चूलिया जलप्रपात चंबल नदी पर बनने वाले प्रमुख जलप्रपात तो यहां पे देखिए ये है टिंचा</p></div>
+<div class="ts-block"><span class="ts">00:24:49</span><p>जलप्रपात टिंचा कुछ इस प्रकार से टिंचा या तिचा दिखता है ये वाला जो पानी है ऊंचाई से नीचे की ओर गिरता हुआ आपको दिखाई जाएगा इन क्षेत्र के अंतर्गत जो कि जाना पावा वगैरह की पहाड़ियों के पास की ही एक चोटी है वहां से ही यह पानी नीचे की ओर जब बरसात का जल होता है मेनली मेनली वो बरसात का जल होता है बरसात के अलावा भी बहुत पतली सी धार यहां गिरती रहती है यह तिचा हो गया ये क्या है चूलिया जलप्रपात चूलिया जलप्रपात भैंस रोड़ घर कोटा राजस्थान में देखेंगे आप इस प्रकार की चट्टानों में वो क्या है आपको कटा हुआ क्षेत्र मिल जाएगा</p></div>
+<div class="ts-block"><span class="ts">00:25:36</span><p>ठीक है तो यह आपको ध्यान रखना है यह क्या है चूलिया खतरनाक आपको सबसे खतरनाक जो मुझे दिखता है सबसे खतरनाक जो दिखता है वह चूलिया लगता है मेरे को क्योंकि अगर गलती से यहां पर फिसल पाव कहीं भी खड़े होक तुमने पिसाल दिया पांव तो इतने छेद हो जाएंगे सिर में इतने छेद होंगे कि गिन नहीं पाएगा डॉक्टर कि कहां-कहां छेद हो गए हैं इस सिर में है ना क्योंकि बहुत ही खतरनाक दिखता है ठीक है तो यह पहले आपको अभी मैं जो नए हैं ना अभी तक आपने सुने नहीं होंगे वो जलप्रपात मैंने लास्ट में रखे हैं पहले जो आपने एक जनरली जानते हैं जिनको उनको कंप्लीट कर</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="pachmarhi" class="topic" style="--accent:#00ff88">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:26:17–00:30:37</p>
+      <h2>🌿 Pachmarhi / Narmadapuram ke Parvatiya Jharne</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="pachmarhi"> Mark done</label>
+  </div>
+  <p class="section-summary">Pachmarhi ke waterfalls mostly parvatiya/rain-fed jharne hain. Apsara, Rajat, Duchess, Bee Fall/Madhumakkhi/Jamuna Prapat covered.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Bee_Falls_%40_Pachmarhi.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bee%20Falls%20%40%20Pachmarhi.jpg?width=900" data-file="Bee Falls @ Pachmarhi.jpg" data-page="https://commons.wikimedia.org/wiki/File:Bee_Falls_%40_Pachmarhi.jpg" alt="Bee Falls at Pachmarhi" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Ankit Saha, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Bee_Falls_%40_Pachmarhi.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Pachmarhi district context: Narmadapuram.</li>
+<li>Parvatiya jharna: mountain se rainwater collect hokar neeche girna.</li>
+<li>Apsara Waterfall: beauty/apsara naam se memory.</li>
+<li>Rajat Prapat: chandi/doodh jaisa white appearance.</li>
+<li>Bee Fall = Madhumakkhi Jharna = Jamuna Prapat; approx 35 m; very important.</li>
+<li>Bee Fall explanation: honey-producing area, beehives; water droplets/sting-like feel analogy also mentioned.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Bee Fall ka doosra naam Jamuna Prapat asked in exam per teacher.</li>
+<li>🔥 Bee Fall/Madhumakkhi Jharna height approx 35 m.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 Pachmarhi Story: Apsara chandi ke Rajat kapde pehen kar Duchess ban gayi, phir madhumakkhi ke chhatte ke paas Bee Fall/Jamuna Prapat mein 35 m neeche ud gayi.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Pachmarhi kis district mein bataya?</summary><p>Narmadapuram.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Bee Fall ke alternate names?</summary><p>Madhumakkhi Jharna aur Jamuna Prapat.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Rajat Prapat ka visual hook?</summary><p>Silver/chandi/doodh jaisa white fall.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (6 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:26:17</span><p>रहे हैं हम ठीक है और उनकी एक-एक की फोटो और मैंने देखिए आप खुद एचडी फोटोज ढूंढ ढूंढ के लगाई है कि आपको देखने में मजा आ जाए ठीक है बिल्कुल लाइन से प्रॉपर वे में एक अब हम पचमरी के देखेंगे तो देखिए अभी तक तो हमने नदी के हिसाब से देखे लेकिन पछम में ज्यादातर क्या और प्रमुख रूप से पर्वतीय झरने हैं पर्वतीय झरनों का मतलब क्या होता है सर पर्वतीय झरने का मतलब यह है कि किसी ना किसी यहां पर पर्वत से वह पानी बहता हुआ दिखेगा जो कि मेनली वर्षा के दौरान ज्यादा देखने को मिलता है जब वर्षा का जल इकट्ठा होकर नीचे की ओर पर्वत</p></div>
+<div class="ts-block"><span class="ts">00:26:54</span><p>से कोई झरना फूट रहा हो या वर्षा का जल इकट्ठा होके नी नीचे गिर रहा हो ठीक है तो पचमढ़ी चलते हैं हम सबसे पहले फटाफट पचमढ़ी कहां पर है पचमढ़ी यह है पचमढ़ी पछम बोले तो किस जिले में नर्मदापुरम नर्मदापुरम नर्मदापुरम में जाएंगे हम पचमरी पछम की अगर हम बात करें तो सबसे पहला जलप्रपात आपको देखने को मिलेगा कौन सा अप्सरा जलप्रपात अप्सरा वाटरफॉल ठीक है अप्सरा जलप्रपात अप्सरा जलप्रपात यहां आपको मिलेगा फिर आपको एक रजत प्रपात मिलेगा जो सुंदर होने के कारण वहां अप्सरा जल प्रपात आपको देखने को मिलेगा रजत प्रपात तो चांदी</p></div>
+<div class="ts-block"><span class="ts">00:27:37</span><p>एकदम दूध जैसी होती है इसलिए इसको रजत प्रपात कहा जाता है जल प्रपात या प्रपात एक ही बात है डचेस डचेस जलप्रपात मिलेगा आपको डचेस जलप्रपात यहां पर जलप्रपात एक आपको जो मिलने वाला यहां बहुत ज्यादा इंपॉर्टेंट वो है बी फॉल बी फॉल को ही मधुमक्खी झरना भी कहते हैं मधुमक्खी झरना तो बी का मतलब मधुमक्खी ही तो होता है ठीक है ये शहद उत्पादक क्षेत्र है इस क्षेत्र के अंतर्गत शहद के बहुत सारे छत्ते देखने को मिलेंगे तो मधुमक्खी झरना या इसका ही नाम है जमुना प्रपात तो पूछ लिया गया था कि किसका बी फॉल का दूसरा नाम क्या है तो बी फॉल का</p></div>
+<div class="ts-block"><span class="ts">00:28:25</span><p>उसमें बोला गया था कि जमुना प्रपात के नाम से इसको जाना जाता है इसका ही नाम जमुना प्रपात है किसका तो बी फॉल या मधुमक्खी ठीक है अप्सरा जलप्रपात रजत प्रपात डचेस जलप्रपात बी फॉल या फिर मधुमक्खी जलप्रपात के नाम से इसको जाना जाता है और आप देखेंगे कि बी फॉल की जो ऊंचाई बताई गई है या मधुमक्खी झरने की इसकी 35 मीटर बताई गई है क्योंकि सबसे ज्यादा इंपॉर्टेंट और आया हुआ क्वेश्चन है ये आप ध्यान रखें स्टार वाला पॉइंट है बी फॉल जिसका ही दूसरा नाम मधुमक्खी जरना है उसका ही दूसरा नाम जमुना प्रपात है और ये आपकी स्क्रीन पर पहला अरा</p></div>
+<div class="ts-block"><span class="ts">00:29:10</span><p>जलप्रपात तो ये बहुत सुंदर दिखता है चारों ओर से आप पर्वत देख रहे हैं और यह पेड़ की लटकी हुई ब्रांचेस या शाखाएं देख रहे हैं तो एक सुंदर बनने वाला जलप्रपात या झरना है जिसे हम अप्सरा जलप्रपात के नाम से जानते हैं हैं ठीक है अब हम इसमें दूसरा देखते हैं तो अप्सरा दिख गया आपको सुंदर सुंदर ठीक है अब अप्सरा की अगर हम बात करें तो आप देखेंगे कि यह एक वी फॉल है आपकी स्क्रीन पे इसको क्या कहा जाता है वी फॉल बी फॉल बोले तो मधुमक्खी झरना जो कि 35 मीटर ऊंचा बहुत ऊंचा दिखेगा आपको 35 मीटर ऊंचा है ये और इसको ही क्या कहा जाता है यमुना प्रपात</p></div>
+<div class="ts-block"><span class="ts">00:29:56</span><p>इसका ही एक और नाम है है जिसको मधुमक्खी तो बी का मतलब मधुमक्खी ही होता है मधुमक्खी के छत्ते यहां पर बहुत सारे हैं और कुछ लोग बोलते हैं कि ये जो चट्टाने कटी फटी हैं इनमें जब ये जल गिरता है तो वो छिटक के जो पानी की बूंदे बहुत छार पड़ती हैं उनमें क्या होता है ऐसा लगता है जैसे कांटी लग रहे हो हालांकि ये शहद उत्पादक क्षेत्र भी है इसका वीडियो देखोगे आप तो यहां शहद के बहुत सारे वहां पर छत्ते लगे मिल जाएंगे मधुमक्खियों के ठीक है तो ये इस प्रकार का बहुत ही शानदार सुंदर वी फॉल देखने को मिलेगा जिसे जमुना प्रपात के नाम से भी जाना जाता है ठीक है</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="rewa" class="topic" style="--accent:#ff6b35">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:30:37–00:42:01</p>
+      <h2>⛰️ Rewa + Mauganj Waterfalls</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="rewa"> Mark done</label>
+  </div>
+  <p class="section-summary">Rewa-Mauganj section is highly exam-focused: Bahuti highest, Chachai second highest, Keoti, Purwa, Bilhi, Piyavan. Teacher gives multiple mnemonics.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Image_Bahuti_Falls_1.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Image%20Bahuti%20Falls%201.jpg?width=900" data-file="Image Bahuti Falls 1.jpg" data-page="https://commons.wikimedia.org/wiki/File:Image_Bahuti_Falls_1.jpg" alt="Bahuti Falls in Madhya Pradesh" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Bharatbce, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Image_Bahuti_Falls_1.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Keoti_Falls.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Keoti%20Falls.jpg?width=900" data-file="Keoti Falls.jpg" data-page="https://commons.wikimedia.org/wiki/File:Keoti_Falls.jpg" alt="Keoti Falls in Rewa district" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, WillowRook, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Keoti_Falls.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Bahuti/Bahuti: Mauganj, New Garhi tehsil; MP ka highest waterfall; 198 m / 650 ft; river Selar/Sailar; if Selar not in options, choose Bihad because Selar is Bihad tributary.</li>
+<li>Chachai: Rewa, Bihad River; MP ka second highest waterfall; approx 130 m.</li>
+<li>Chachai = MP ka Niagara; Pt. Jawaharlal Nehru said this in 1957 per teacher; Ram Manohar Lohia ki aradhana/sadhana sthali.</li>
+<li>Keoti/Kyoti: Mahana River; approx 98 m; memory hook “cute log mahaan hote hain”.</li>
+<li>Purwa: Tamsa River; approx 70 m; memory hook: Purva direction se Suraj nikalta hai aur tam/andhera har leta hai.</li>
+<li>Bilhi: Gorma River; Piyavan: parvatiya jharna in Rewa.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Bahuti = MP highest waterfall = 198 m / 650 ft.</li>
+<li>🔥 Chachai = MP second highest = 130 m; MP ka Niagara.</li>
+<li>🔥 Keoti = Mahana River = 98 m.</li>
+<li>🔥 Purwa = Tamsa River = 70 m.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 Rewa-Mauganj Story: Bahuti bahut hi ऊँचा hai aur Selar sale laga raha hai; Chachai Niagara banke Bihad mein garajta hai; Cute Keoti mahaan Mahana par hai; Purwa se Suraj nikal kar Tamsa ka andhera mita deta hai; Bilhi Gorma mein, Piyavan pahad se girta hai.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. MP ka highest waterfall?</summary><p>Bahuti/Bahuti, 198 m / 650 ft, Mauganj.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Bahuti kis river par?</summary><p>Selar/Sailar; Selar absent ho to Bihad.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Chachai ki special identity?</summary><p>MP ka Niagara; second highest; 130 m; Bihad River.</p></details>
+        
+
+        <details class="qa"><summary>Q4. Keoti aur Purwa ki rivers?</summary><p>Keoti—Mahana; Purwa—Tamsa.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (15 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:30:37</span><p>तो यह है हमारा ी फॉल अब हम देखेंगे रीवा और मऊगंज तो यहां पर बड़ी लड़ाई है अभी क्योंकि अभी यह हाल ही में बना है कुछ समय पहले रीवा और मऊगंज तो इसके अंतर्गत हम देखेंगे जलप्रपात कुछ जलप्रपात रीवा मऊगंज के पर्वत से बने हैं और कुछ मतलब पर्वतों से पानी बह रहा है और कुछ नदियों पर बने हुए हैं तो चलते हैं हम रीवा और मऊगंज सबसे पहले हम मऊगंज वाला वो देख लेंगे जो सबसे ज्यादा इंपॉर्टेंट है रीवा और मऊगंज में तो आपको जो सबसे ज्यादा इंपॉर्टेंट यहां मिलेगा वो कौन सा मिलेगा वो है आपका मऊगंज जिले के अंतर्गत मऊगंज मऊगंज में</p></div>
+<div class="ts-block"><span class="ts">00:31:17</span><p>कौन है तो सर बहुटी जलप्रपात हम सबसे पहले लिखेंगे बहुटी बहुती बहुती या कहीं-कहीं बहुटी भी लिखा रहता है तो कंफ्यूज मत होना बहुती या फिर बहुटी वही बात है बहुटी बहुत ही ऊंचा है ऐसे ट्रिक याद करना है इसकी बहुत ही हालांकि आपको पता भी होगा बहुत ही जल प्रपात तो बहुत ही बहुत ही ऊंचा है बहुत ही ऊंचा है बहुत ही और इतना ऊंचा है कि ये सबसे ऊंचा है ठीक है मध्य प्रदेश का हाईएस्ट मध्य प्रदेश का सबसे ऊंचा जलप्रपात और यह अब हो चुका है मऊगंज में इसका तो मिलने लगा है प्रमाण क्योंकि गवर्नमेंट वेबसाइट पर अपलोड हो चुका है यह 198 मीटर</p></div>
+<div class="ts-block"><span class="ts">00:32:13</span><p>है ऊंचा और अगर फिट में बात करी जाए तो 650 फिट बताया जाता है इसकी हाइट 100% याद करना ही है रिवर कौन सी है तो बेटा कहीं-कहीं बीहड़ लिखी होगी बट एगजैक्टली सेलर नदी है सेलर नदी आप ध्यान देना सेलर बीहड़ नदी की सहायक नदी है या आपको अगर एग्जाम में सेलर नहीं है तब आपको बीहड़ नदी लगाना है अगर उसमें सेलर है तो 100% आपका आंसर सेलर लगेगा बहुटी बहुत ही ऊंचा है तो बहुत ही बहुत ही ऊंचा है बहुत ज्यादा ऊंचा है ठीक है और यह आपको ध्यान दे देना ही है कि यह सबसे ऊंचा है क्योंकि इसकी ऊंचाई आपको अपने आप में 198 मीटर या</p></div>
+<div class="ts-block"><span class="ts">00:33:05</span><p>फिर 650 फिट दिख रही है और पहले इसको देख ही लेते हैं बहुत ही बहुत ही ऊंचा है तो वर्षा के दौरान जब यह पानी गिरता है तो अपने आप में बहुत सुंदर झरना दिखता है ठीक है बहुत सुंदर झरना ये दिखता है आपकी स्क्रीन पर है बहुटी जलप्रपात ठीक है बहुटी जलप्रपात चलिए अब हम देखते हैं यहां पर चचाई तो चचाई जलप्रपात बाकी के बाकी यह रीवा पर ही देखने को मिलते हैं क्योंकि अभी तक जितना सर्च हो पा रहा है है ना निरंतर मैं अपने छात्रों से भी पूछता जा रहा हूं तो यहां पर एक जलप्रपात मिलेगा चचाई जो कि आपको रीवा जिले में मिलेगा चचाई कहां मिलेगा</p></div>
+<div class="ts-block"><span class="ts">00:33:47</span><p>रीवा में मिलेगा मैं इसको मार्क कर देता हूं चचाई जलप्रपात जो है मध्य प्रदेश का मध्य प्रदेश का मध्य प्रदेश का दूसरा सबसे ऊंचा जलप्रपात ठीक है तो दूसरा सबसे ऊंचा जलप्रपात 130 मीटर इसकी हाइट बताई जाती है यह किस नदी पर है तो नदी आपको बीहड़ याद रखना है बीहड़ नदी बीहड़ नदी बीहड़ नदी पर आपको यह मिल जाएगा ठीक है इसके अलावा और कौन से हैं सर यहां पर तो आपने एक सुना होगा हो केवटी जलप्रपात केवटी जलप्रपात केवटी या कहीं कहीं कटी लिखा रहता है कटी ठीक है क्यूटी जलप्रपात क्यूटी जलप्रपात ये किस नदी पर है तो देखिए क्यूट लोग बहुत महान होते हैं क्यूट</p></div>
+<div class="ts-block"><span class="ts">00:34:52</span><p>लोग बहुत महान होते हैं जो क्यूट लोग होते हैं ना क्योटी वो बहुत महान होते ठीक है और यहां पर आप देखोगे बहुती सेलर तो सेल कैसे याद होगा य इसको याद ना होता हो तो बहुती सेल सेल होती है ना किसी की भी बोले ग्रांड सेल चल रही है अभी अजन पे या कहीं भी नाम ले दिया मैंने ठीक है कोई बात नहीं किसी पे भी बड़ी सेल चल रही है तो सेलर सेल कहां चल रही है बहुत ही चल रही है बहुत ही ज्यादा सेल चल रही है अभी ठीक है एंड ऑफ द सीजन चल रहा है तो बहुत ही सेल सेल से बहुत ही याद रखना कि बहुत सेल चल रही है बहुत तेज और जो क्यूट लोग होते हैं</p></div>
+<div class="ts-block"><span class="ts">00:35:30</span><p>वह बहुत महान होते हैं क्योंकि इनमें कंफ्यूजन होता है एक जैसी बहुत सारी नदियां है महाना हुई बीहड़ हुई सेलर हुई ओदा हुई बहुत सारी आ जाती है तो यहां पर लोगों को कंफ्यूजन क्रिएट हो जाता है ठीक है क्योटी जलप्रपात की हाइट 98 मीटर बताई जाती है कितनी 98 मीटर 98 मीटर इसकी हाइट बताई जाती है तो क्यूट लोग बहुत महान होते हैं अपने आप में बहुत महान बनते हैं ठीक है चलिए पूर्वा जलप्रपात पूर्वा तो पूर्वा जलप्रपात देखते हैं हम पूर्वा पूर्व से कौन निकलता है पूर्व से कौन निकलता है पूर्वा जलप्रपात पूर्व से कौन निकलता है</p></div>
+<div class="ts-block"><span class="ts">00:36:14</span><p>जल्दी बताइए सूरज निकलते हैं पूर्व दिसाई से तो निकलता है सूरज तो इसकी नदी क्या होगी नदी ऐसी होगी जो अंधेरे को हर लेगी तमसा अस्तो मा तमसो गमय होता है ना जो अस्तो मा तमसो गमय क्या है अस्तो मा सद गमय तमसो मा ज्योतिर गमय ठीक है तमसो मा ज्योतिर गमय मतलब मुझे अंधेरे से उजाले की ओर ले जाओ ऐसा कुछ है ना तो यह पूर्वा जलप्रपात है पूर्व दिशा से क्या निकलता है सूरज और वो तमसा को यानी तम मतलब होता है अंधेरा अंधेरे को हर लेता है तो ये याद रखना है आपको 70 मीटर रीवा 70 मीटर के समथिंग आपको इसकी हाइट मिल जाएगी तो अस्तो</p></div>
+<div class="ts-block"><span class="ts">00:36:53</span><p>मा सद गमय तमसो मा ज्योतिर्गमय मतलब पूर्व से निकलता है सूरज वो अंधेरे को हर लेता है तमसा जैसे मैंने याद करा था मैं अपनी बता रहा हूं ठीक है तो एक यहां पे ये चचाई हो जाएगा चचाई की अगर हम बात करें इसको मध्य प्रदेश का नियाग्रा कहते हैं किसको चचाई मध्य प्रदेश का बोल रहा हूं मैं भारत का नहीं बोल रहा हूं भारत का नियाग्रा चित्रकूट है नियाग्रा क्या है सर नियाग्रा एक यूएसए के अंतर्गत अमेरिका में सबसे सुंदर जलप्रपात है दुनिया का तो मध्य प्रदेश का नियाग्रा है ये ठीक है मध्य प्रदेश का नियाग्रा और किसने कहा कहा था</p></div>
+<div class="ts-block"><span class="ts">00:37:28</span><p>तो यह कहा था 1957 में जब घूमने आए 1957 में किसने कहा था यह पीटी नेहरू ने कहा था पंडित जवाहरलाल नेहरू ने कहा था अब नेहरू जी है कुछ भी कह दिया तो अब आपको मानना पड़ जाएगा नेहरू जी है कह दिया तो बिल्कुल मानना पड़ेगा क्योंकि हमारे पूर्व प्रधानमंत्री हैं अगर हम चचाई की बात करें और तो यह तो ठीक है कि मध्य प्रदेश का नग्र है ये लेकिन चचाई में राम मनोहर लोहिया की आराधना स्थली भी साधना स्थली बोल सकते हो आप यहां राम मनोहर लोहिया राम मनोहर लोहिया जी आदरणीय इनकी साधना स्थली कही जाती है लोहिया राम मनोहर लोहिया की</p></div>
+<div class="ts-block"><span class="ts">00:38:08</span><p>आराधना स्थली भी इसको कहा जाता है आराधना स्थली ठीक है आराधना स्थली भी राम मनोहर लोहिया की इसको कहा जाता है जो कि चचाई जलप्रपात है तो चचाई केवटी पूर्वा ठीक है चचाई केवटी और पूर्व जलप्रपात अभी तक हमने इसमें देखा है और बहुटी देख लिया ठीक है इसके बाद हम देखेंगे बिलही जलप्रपात जो कि गोरमा नदी पर है कहां पर है रीवा जिले के अंतर्गत रीवा जिले के अंतर्गत जो आप देखोगे बिलही जलप्रपात बिलही जलप्रपात और बिलही जलप्रपात जो है गोरमा नदी पर है गोरमा नदी गोरमा नदी अरे सर इसको जलप्रपात का देश क्यों नहीं घोषित कर दिया जाता है गोरमा नदी बिल्कुल भैया</p></div>
+<div class="ts-block"><span class="ts">00:38:53</span><p>ये रीवा के अंतर्गत एक और आपको देखने को मिलेगा हालांकि वो पर्वतीय झरना है और उसका नाम क्या है तो उसका नाम है सर यहां पर पिया वन जलप्रपात क्या है पिया वन जलप्रपात ये एक पर्वतीय झरना है पियावल जलप्रपात क्या है एक पर्वतीय झरना है ठीक है यह आपको एक पर्वत पर बहता हुआ पानी दिख जाएगा जो वर्षा के दौरान नीचे की ओर गिरता है ठीक है क्लियर क्लियर है ना अच्छा इसमें अगर और भी लिखना हो बहुटी को तो नईगढ़ी तहसील है ना य क्या है मऊगंज में है यह ध्यान देना है आपको मऊगंज यह बिल्कुल 100% मऊगंज में है और अगर मैं बात करूं तो मऊगंज में भी कहां पर है तो</p></div>
+<div class="ts-block"><span class="ts">00:39:45</span><p>नईगढ़ी तहसील थी एक अगर आपने ध्यान हो नईगढ़ी तहसील नगड़ी तहसील में आपको ये मिल जाएगा बहुटी जलप्रपात तो सेल कैसी चल रही है एंड ऑफ द सीजन च है तो बहुत ही तेज चल रही है ठीक है दूसरा तो यहां पर मैंने बोला था कि क्यूट लोग बहुत ही महान होते हैं और पूर्व दिशा से क्या निकलता है सूरज तो वो तम या अंधेरे को हर ले हर लेता है ठीक है और अगर हम बात करें लोही गोरमा पर है पिया वन जलप्रपात पर्वतीय रीवा में है और चचाई जलप्रपात को मध्य प्रदेश का ध्यान देना ये मध्य प्रदेश का लिखा हुआ है ना कि भारत का भारत का नियाग्रा चित्रकूट</p></div>
+<div class="ts-block"><span class="ts">00:40:25</span><p>जलप्रपात इंद्रावती नदी और छत्तीसगढ़ में आपको देखने को मिल जाएगा तो अभी तक क्लियर है चीजें अभी तक क्लियर है ना चीजें कोई समस्या किसी को कोई दिक्कत चलिए अब आगे बढ़ते हैं हम यह बहुती है यह चचाई दिखेगा ये आपका क्या है पूर्व जल प्रपात बहुत ही सुंदर जलप्रपात है यह पूर्वा जलप्रपात है पूर्वा जलप्रपात पूर्वा जलप्रपात यह भारत मध्य प्रदेश सरकार का पेज है इनक्रेडिबल इंडिया नीचे यहां लिखा हुआ है पूर्वा जलप्रपात बहुत ही सुंदर दिखता है पूर्वा जलप्रपात भी मुझे तो यहां के सारे जलप्रपात लगभग एक से दिखते हैं अगर मैं सही से बोलू ठीक</p></div>
+<div class="ts-block"><span class="ts">00:41:23</span><p>है ठीक है रिवील नो दिक्कत नो परेशानी नो आफर मंसूरी बिल्कुल ठीक है तो इतनी चीजें आपको याद रखना है इसमें जितनी मैंने आपको बता दी है ठीक है जितनी मैंने आपको बता दी है फुल इंफॉर्मेशन है इसके अंतर्गत ये चचाई है यह केवटी है यह पूर्वा है यह बिलही है यह पिया वन है और यह नईगढ़ी तहसील में बहुत ही जलप्रपात मऊगंज जिले में आपको देखने को मिल जाएगा ठीक है यहां पर जितनी जितनी इंफॉर्मेशन इनसे अभी तक खोजी गई है वो सब आपकी स्क्रीन में लिखी हुई है ठीक है तो ये इस प्रकार से यहां हो जाएंगे अब चलेंगे हम अन्य जल प्रपात में</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="districts1" class="topic" style="--accent:#b388ff">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:42:01–00:56:45</p>
+      <h2>🗺️ Other Districts I: Datia to Narsinghpur</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="districts1"> Mark done</label>
+  </div>
+  <p class="section-summary">District-wise quick movement: Datia, Shivpuri, Sagar, Chhatarpur, Panna, Katni, Narsinghpur. This is high-yield because many less-common waterfalls are included.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Raneh_Falls.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Raneh%20Falls.jpg?width=900" data-file="Raneh Falls.jpg" data-page="https://commons.wikimedia.org/wiki/File:Raneh_Falls.jpg" alt="Raneh Falls on the Ken River in Chhatarpur" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Syedzohaibullah, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Raneh_Falls.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Pandav_Falls.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pandav%20Falls.jpg?width=900" data-file="Pandav Falls.jpg" data-page="https://commons.wikimedia.org/wiki/File:Pandav_Falls.jpg" alt="Pandav Falls at Panna" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Sushil Panthri, Commons license page. <a href="https://commons.wikimedia.org/wiki/File:Pandav_Falls.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Datia: Sankua/Sunkua on Sindh River; Sankua mela also mentioned.</li>
+<li>Shivpuri: Pawa and Sultangarh on Sindh River; teacher discusses Parvati confusion and says Sindh.</li>
+<li>Sagar: Bhalkund and Rahatgarh on Bina River; if Bina absent choose Betwa, because Bina is Betwa tributary.</li>
+<li>Chhatarpur: Raneh on Ken + Khaddar; called MP ka Mini Niagara.</li>
+<li>Panna: Pandav on Ken; Bachur rainwater; Brihaspati Kund natural pit/rainwater; Kovaseh on Kilkila.</li>
+<li>Katni: Chechpur/Chejpur type parvatiya jharna (transcript spelling unclear).</li>
+<li>Narsinghpur: Hathi Nala and Tone Ghat; Tone Ghat called Chhota Dhuandhar.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Sankua = Datia = Sindh River.</li>
+<li>🔥 Raneh = MP Mini Niagara = Ken + Khaddar.</li>
+<li>🔥 Rahatgarh/Bhalkund = Bina; if Bina not option, Betwa.</li>
+<li>🔥 Tone Ghat = Chhota Dhuandhar, Narsinghpur.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 District Story: Datia ke Sann-kua se Sindh nikli, Shivpuri mein Pawa-Sultan ke paas ruki, Sagar mein Bina ne Rahat aur Bhal diya, Chhatarpur ka Raneh Mini Niagara bana, Panna mein Pandav-Bachur-Brihaspati-Kovaseh mile, Katni se Chechpur nikla, aur Narsinghpur mein Hathi Nala ne Tone Ghat ko Chhota Dhuandhar bana diya.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Sankua/Sunkua waterfall kis district mein?</summary><p>Datia, Sindh River.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Raneh kis naam se famous?</summary><p>MP ka Mini Niagara.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Pandav waterfall kis district/river se linked?</summary><p>Panna, Ken River.</p></details>
+        
+
+        <details class="qa"><summary>Q4. Tone Ghat ko kya kaha gaya?</summary><p>Chhota Dhuandhar.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (19 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:42:01</span><p>तो हम सबसे पहले देखते हैं यहां पर दतिया चलते हैं दतिया कहां पर है तो दतिया सर यहां पर है दतिया दतिया में कौन सा जलप्रपात आपको देखने को मिलता है तो सर सनकुआ जलप्रपात सन कुआ सनकुआ जलप्रपात या वाटरफॉल है सनकुआ तो सनकुआ की अगर मैं बात करूं ये किस नदी पर है जल्दी से बताइए सनकुआ जल प्रपात सनकुआ जलप्रपात सर जो नदी है वो है सिंध नदी सिंध नदी पर आपको सिंध रिवर पर ये मिलेगा सिंध नदी ठीक है सिंध नदी इंग्लिश वाले होंगे तो वो लिख सकते हैं यहां पर कोई दिक्कत नहीं है बाकी आप बोलो तो मैं लिख देता हूं जगह कम पड़ जाती</p></div>
+<div class="ts-block"><span class="ts">00:42:37</span><p>है इसलिए ऐसा में ठीक है सनक वाटरफॉल रिवर यहां पर कौन सी हो जाएगी तो रिवर हो जाएगी सिंध ठीक है ये सिंध रिवर यहां प हो जाएगी इसके बाद हम देखें तो इसको पहले फोटो दिखा देता हूं मैं कि जो सन जलप्रपात है वो दिखता कैसा है सनकुआ तो सन कुआ का मेला भी लगता है यह देखिए यह है वो सन कुआ का जलप्रपात मुझे तोय बहता हुआ थोड़ा सा ही ऊंचाई से गिरता हुआ दिख रहा है बहुत ज्यादा तो मुझे नहीं दिख रहा है पर यह सनकुआ जलप्रपात है जो आपकी स्क्रीन पर है ठीक है इसको ही कहते हैं सनकुआ का जलप्रपात ठीक है सिर रिवर बिल्कुल दतिया ठीक है इसको अपने को याद रखना है</p></div>
+<div class="ts-block"><span class="ts">00:43:33</span><p>इसमें क्या है कि जब कुए में सन्नाटा होता है सन कुआ कोई कुआ है आप जाओ और उसमें आपको भरी दुपरिया में सन्नाटा दिख जाए तो तुम अपनी दतिया दबा लेते हो दबा लेते हो कि नहीं कि भैया ये का है ये क्या है तो सनकुआ जलप्रपात या सनकुआ का मेला जो आपको याद रखना है बेटा वो याद रखना है कहां दतिया के अंतर्गत अब हम आगे बढ़ते हैं तो अब आपको मेला भी बोला है मैंने और जलप्रपात भी दोनों चीजें क्योंकि उसके नाम से लगता है ठीक है इसमें कोई दिक्कत नहीं है अब हम देखते हैं यहां पर शिवपुरी में तो शिवपुरी में आपको पावा जलप्रपात और</p></div>
+<div class="ts-block"><span class="ts">00:44:09</span><p>सुल्तानगढ़ जलप्रपात मिलेंगे कौन से मिलेंगे बेटा तो पावा जलप्रपात पावा जलप्रपात किस नदी पर है तो पावा जलप्रपात जो नदी है वह सिंध नदी है सिंध नदी पर है ठीक है पावा जलप्रपात सिंध नदी इसके अलावा एक और जलप्रपात आपको यहां पर मिलेगा उसका नाम है सुल्तानगढ़ ठीक है सुल्तानगढ़ जलप्रपात सुल्तानगढ़ सुल्तानगढ़ जलप्रपात किस नदी पर है तो ये भी आपको सिंध नदी पर देखने को मिलेगा नदी कौन सी है तो शिवपुरी में सिंध नदी प्रवाहित होती है सिंध नदी ठीक है चलिए तो ये भी याद रखना है आपको अब अगर मैं आगे बढूं तो आपको यहां पर क्या मिलेगा</p></div>
+<div class="ts-block"><span class="ts">00:44:54</span><p>सागर और सागर में कौन से जलप्रपात है तो सागर में आप देखेंगे सागर जिले में एक आपको मिलेगा भालकुंड जलप्रपात भालकुंड जलप्रपात किस पर है भालकुंड जलप्रपात तो बताइए भालकुंड जलप्रपात किस नदी पर है इसके अलावा एक मिलेगा आपको राहतगढ़ राहतगढ़ जलप्रपात तो देखिए राहतगढ़ जलप्रपात और भालकुंड जलप्रपात तो बेसिकली बीना रिवर बहती है यहां पर उसपे है बट कहीं कहीं आपको बेतवा भी मिल जाएगा क्योंकि बेतवा की सहायक बीना नदी है है कि नहीं है तो आपको यहां पर जो देखने को मिलेगा वो बीना रिवर पर मिलेगा मेनली और बीना अगर ऑप्शन में नहीं है नदी</p></div>
+<div class="ts-block"><span class="ts">00:45:39</span><p>के तौर पर नदी बीना और अगर बीना नहीं मिल रही है आपको ठीक है और अगर बीना नहीं मिल रही है दोनों के दोनों जो नदी जिस पर है यहां लिख दूं नदी तो बीना नदी ठीक है और अगर बीना नहीं मिल रही है तो फिर आपको बेत होगी ऑप्शन में क्योंकि वेतवा की सहायक है बीना सेम यहां पर है कि नदी के तौर पर आपको जो देखने को मिलेगा वो बीना नदी ठीक है और बीना नदी नहीं हो ऑप्शन में तो फिर बेतवा वहां पर 100% आपको देखने को मिल जाएगा ठीक है तो यह देख लेना है फिर हम देखेंगे कहां पर हम छतरपुर चलेंगे छतरपुर देखते हैं छतरपुर में कौन से आपको जलप्रपात मिलते हैं स ये है</p></div>
+<div class="ts-block"><span class="ts">00:46:24</span><p>छतरपुर जिला छतरपुर जिले में जो आपको देखने को मिलेगा वो कौन सा मिलेगा तो वो आपको यहां पर लिख द यहां लिख देता हूं हा मेनली आपको जो मिलेगा रनेह जलप्रपात रनेह जलप्रपात को मध्य प्रदेश का मिनी नग्र कहा जाता है मध्य प्रदेश का मिनी नियाग्रा मध्य प्रदेश का नियाग्रा और मध्य प्रदेश का मिनी नियाग्रा ठीक है तो रने जल प्रपात यह किस पर बनता है तो केन प्लस खद्दर नदी खद्दर मैंने केन नदी पढ़ाई थी उसकी सहायक नदी आपको केनवा खद्दर नदी बताई थी और यह मध्य प्रदेश का मिनी नियाग्रा के नाम से जाना जाता है किस नाम से जाना जाता है</p></div>
+<div class="ts-block"><span class="ts">00:47:09</span><p>बेटा तो मध्य प्रदेश का मिनी नियाग्रा ठीक है मध्य प्रदेश का मिनी नग्र तो यहां पर फिर मिलता है पन्ना पन्ना में आपको जो देखने को मिलेगा मोस्ट आई एमपी दो तीन वाटरफॉल आपको देखने को मिलेंगे जैसे सबसे पहले पन्ना में जो मिलेगा पांडा फल पांडव जलप्रपात पांडव जलप्रपात ठीक है पांडव जलप्रपात की अगर मैं आपसे बात करूं तो पांडव जलप्रपात जो है यह आपको केन नदी पर मिल जाएगा केन नदी पांडव पांडवों ने यहां पर अज्ञातवास था इसके अलावा आपको यहां पर एक और जो देखने को मिलेगा वो मेनली बचूर जल प्रपात लेकिन वो एक पर्वतीय झरना है वर्षा</p></div>
+<div class="ts-block"><span class="ts">00:47:54</span><p>का जल बचूर बचूर जलप्रपात अगर आपने जन संपर्क को फॉलो करते हैं तो बचूर जलप्रपात मिलेगा वर्षा जल के द्वारा बनने वाला सेम यहां पर आपको एक और मिलेगा बृहस्पति कुंड बृहस्पति कुंड बृहस्पति कुंड एक प्राकृतिक गड्ढा है जिसमें वर्षा का जल एकत्र होके गिरता है ठीक है वर्षा का जल इसको अपन और जगह लिखेंगे रने वाले को वर्षा का जल इसके अलावा और क्या है सर तो यहां पर आप और जो जलप्रपात देखने को मिलेगा जैसे वर्षा का बृहस्पति कुंड हो गया पांडा फॉल हो गया या बकूर हो गया इसके अलावा भी आपको यहां पर जो देखने को मिलेगा वो</p></div>
+<div class="ts-block"><span class="ts">00:48:40</span><p>आपको कौवा सेह जलप्रपात मिलेगा कोवा सेह कोवा सेह कोवा सेह कोवा सेह कोवा सेह जलप्रपात जो है ये किस पर बनता है तो यह किलकिला नदी पर बनता है किस नदी पर किलकिला नदी किलकिला किलकिला नदी पर आपको यह देखने को मिल जाएगा किलकिला नदी पर इस पन्ना के अंतर्गत ठीक है अब छतरपुर का मैं यही लिख देता हूं कहां पर यही लिख देता हूं छतरपुर में जो देखने को मिलता है वो रनेह और रनेह जलप्रपात जो है रनेह जलप्रपात आपको जो देखने को मिलेगा किस नदी पर मिलता है तो केन और खद्दर और मध्य प्रदेश का मिनी नग्र इसको कहा जाता है केन प्लस खद्दर क्योंकि</p></div>
+<div class="ts-block"><span class="ts">00:49:26</span><p>बहुत सुंदर जलप्रपात है यह जिसके एक रीजन यह भी है कि किसको किन नदी को बहुत सबसे सुंदर नदी कहा जाता है मध्य प्रदेश का मिनी नियाग्रा क्योंकि इसको देखोगे अभी फोटो दिखाऊंगा तो आपको लगेगा भी यहां पर अगर मैं आगे चलू तो एक और आपको कटनी में मिल जाएगा कटनी के अंतर्गत आपको एक पर्वतीय झरना मिलेगा कटनी में और उसका नाम है चेच परुलकर जलप्रपात चपर जल प्रपात आपको यहां पर मिल जाएगा चेसपोेक डाल देता हूं जो जिले हैं कटनी जैसे जो यह पन्ना जिससे आपको अलग दिख जाएगा यहां सागर पर अपन ने लगा ही लिया यह शिवपुरी और ये दतिया इन डिस्ट्रिक्ट के अंतर्गत अभी हमने</p></div>
+<div class="ts-block"><span class="ts">00:50:30</span><p>देखे हैं तो कटनी में चेजुर देखा हमने अब हम नरसिंहपुर में देखने जा रहे हैं यहां पर आपको मिलेगा कौन सा जलप्रपात तो हाथी नाला जलप्रपात हाथी नाला जलप्रपात एक पर्वतीय झरना है हाथी नाला जलप्रपात तो सुना है जन संपर्क ने डाला था अगर आपने फॉलो किया हो मैं तो बस कलेक्शन में लगा हूं तो मैं हर दिन कुछ जो भी मिलता है ऐड कर देता हूं हाथी ना जलप्रपात एक पर्वतीय झरना है पर्वतीय इसी प्रकार एक यहां पर टोन घाट भी मिलता है टोन घाट जलप्रपात तो क्या आपको पता है टोन घाट जलप्रपात कहां है तो नरसिंहपुर में है टोन घाट जलप्रपात</p></div>
+<div class="ts-block"><span class="ts">00:51:12</span><p>एक पर्वतीय झरना है पर्वतीय झरना है ठीक है टोन घाट जलप्रपात को क्या कहा जाता है तो टोन घाट जलप्रपात को छोटा धुआधार कहा जाता है सरकार की वेबसाइट पर लिखा हुआ है छोटा धुआधार जलप्रपात क्या कहा जाता है इसको छोटा धुआधार जलप्रपात छोटा धुआधार इसको ही कहा जाता है तो यह आपको और याद रखना है क्या रखना है याद नरसिंहपुर के अंतर्गत जो प्रमुख ली दो जलप्रपात है एक का नाम है हाथी नाला जलप्रपात और एक है टोन घाट जलप्रपात ठीक है आथ नाला जलप्रपात और एक पर्वतीय है और इसके अलावा टोन घाट है जिसको छोटा धुआधार के नाम से जाना जाता</p></div>
+<div class="ts-block"><span class="ts">00:52:03</span><p>है ठीक है हां जो भी प्रेजेंट हो सेशन को लाइक जरूर करें यह आप समझते जा रहे होंगे मैंने ब्रैकेट में डाल दिया किसको डिस्ट्रिक्ट्स को तो यहां पर आपको दिख जाएगा कि किस प्रकार से जो जिलों के अंतर्गत जो जलप्रपात आ रहे हैं वो अपन ने अलग-अलग लिखे हुए हैं जैसे आपने बचूर जलप्रपात नहीं देखा होगा जबकि बखूर जलप्रपात जनसंपर्क ने डाला था हाथी नाला जनसंपर्क ने डाला था ठीक है ऐसे बहुत सारे जलप्रपात जो हैं आपको यहां पर इसमें देखने को मिलेंगे और आपके काम के बेहद है क्योंकि इनमें से कोई भी उठके आ जाएगा और हम ढूंढते रहेंगे कि बकूर कहां गया सन सनकुआ</p></div>
+<div class="ts-block"><span class="ts">00:52:45</span><p>जलप्रपात सनकुआ के बाद ये राहतगढ़ जलप्रपात है राहतगढ़ जो कि बीना नदी पर बन रहा है जो बेतवा की सहायक है और यह सागर जिले में आपको राहतगढ़ राह देता हुआ मिल [संगीत] जाएगा अब यार सिंध नदी पर मिलता है बाकी अगर इसमें कोई डाउट होगा तो अपन और देख लेंगे यार क्योंकि उस क्षेत्र का वैसे तो मैं हूं भी नहीं और इतना ज्यादा चर्चित जलप्रपात नहीं है सुल्तानगढ़ बाकी सिंध देखने को मिलता है ठीक है अगर ऐसा होगा क्योंकि अगर हम बात करें पार्वती की तो पार्वती नदी शिवपुरी की ओर तो जाती ही नहीं है उसकी बाउंड्री से बाहर निकल जाती</p></div>
+<div class="ts-block"><span class="ts">00:53:31</span><p>है समझना आप बात [संगीत] को ठीक है पार्वती नदी का मिलन कहां पर हो रहा था बताइए आप तो सवाई माधवपुर के पास हो रहा था ना जो गुना की बाउंड्री से जाकर निकल गई थी गुना को अंदर नहीं गई थी गुना को छूती हुई ऐसी बाहर निकली थी अब ऐसा तो नहीं कि जहां पर थोड़ा सा टच हो रहा है शिवपुरी उससे वहां से वहां पर बना रही हो तो बेटा उसको थोड़ा सा देख ले बाकी पार्वती नदी मेनली शिवपुरी से होकर तो नहीं जाती है वैसे बीच में से होकर अच्छा बहुत बढ़िया अच्छा तुम दुबई से हो तो मैं क्या कर लू दुबई से नहीं तुम तो थाईलैंड से हो मैं</p></div>
+<div class="ts-block"><span class="ts">00:54:15</span><p>क्या करू नॉर्थ कोरिया वाला कोई आया तो बताना अच्छा योगेश जी बोल रहे चंबल नदी में य भाई साहब चंबल कब से कब से जाने लगी सागर जिले में चंबल तुमने नदियां पड़ी है मेरे से कि मजाक कर रहे [संगीत] हो चंबल नंदी तुमने एक बुक देखी होगी उस बुक का मैं नाम नहीं ले सकता ऑनलाइन हूं इस प्लेटफार्म पर उस बुक में लिखा है है ना और उसको टीप लिया है आ 10 लोगों ने तो उन्होने भी बता दिया चंबल नदी चंबल नदी भाई साहब सागर जिले में चंबल नदी कब से चली गई है समझना बात को इसके बाद रने जलप्रपात इसको क्या कहा जाता है रने जलप्रपात को मैंने बताया है</p></div>
+<div class="ts-block"><span class="ts">00:55:14</span><p>मिनी नियाग्रा मिनी नियाग्रा कहा जाता है इसको मिनी नियाग्रा और यह केनवा खद्दर नदी पर है केन प्लस खद्दर आप देख सकते हो कितनी सुंदर हालांकि अभी इतना पानी नहीं गिरा ये पानी गिर जाता है ना यहां पर एक कटोरा सा बन गया है ऐसा कटोरा सा बन गया है ठीक है कटोरा सा बन गया है जहां पर पानी निरंतर यह गिरता रहा है बहुत घना जंगल यहां पर वृक्ष लगे हुए हैं चलिए ठीक है चलिए इस क्लास को हम कंटिन्यू रखेंगे किसी को कोई वैसा भी डाउट आता है क्योंकि ये जो रिकॉर्डेड देखोगे और आप भी जब दोबारा देखो इस क्लास को तो आपका और किसी का भी टाइम खराब नहीं होना चाहिए</p></div>
+<div class="ts-block"><span class="ts">00:56:07</span><p>कमेंट बॉक्स है उसमें आप क्वेश्चन मेरे से पूछे जिसको जो पूछना है बेधड़क पूछे वहां आंसर दिया जाएगा पर एक प्रॉपर मैनर से पूछना है यह बस ध्यान रखना है क्योंकि थोड़ा राया हुआ व्यक्ति तो हूं मैं है कि नहीं है गुस्सेल आदमी पर कुछ करता है अगर कोई व्यक्ति तो फिर उसकी गुस्सा झेलना भी बनता है बस थोड़ी देर के लिए है कि नहीं तो क्वेश्चन थोड़े से सोच समझ के भी पूछना कि कौन सा क्या है तो क्वेश्चन वहां पूछ सकते हो आप अभी कंटिन्यू करेंगे हम जो भी डाउट है कोई भी वहां आंसर आपका दिया जाएगा फिर आता हैय पांडव जलप्रपात जो</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="districts2" class="topic" style="--accent:#00d4ff">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">00:56:45–01:14:24</p>
+      <h2>📌 Other Districts II: Damoh, Balaghat, Dindori, Chhindwara, Indore, Dewas...</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="districts2"> Mark done</label>
+  </div>
+  <p class="section-summary">Final stretch has many rarely-discussed names: Bhadbhada, Maldhar, Gangu Para, Dagan, Lilahi/Dhanora, Batka Khapa, Kukdi Khapa, Nidan/Katangi, Ganga Mahadev, Hatyaari Khoh, Sheetla Mata, Amargarh, Mahadev Pani, Shankar Khoh/Jamner, Kedarnath.</p>
+  <div class="visual-grid"></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Damoh/Hatta: Bhadbhada on Sonar river; not Bhopal Bhadbhada/dog training centre.</li>
+<li>Balaghat: Maldhar on Dev River; Gangu Para on Wainganga/Ban-Ganga pronunciation.</li>
+<li>Dindori: Dagan/Duggan on Budhner/Budnet River.</li>
+<li>Chhindwara: Lilahi/Dhanora, Batka Khapa, Kukdi Khapa — all on Kanhan River.</li>
+<li>Katangi/Nidan: Sher River; Jabalpur-Damoh/Katangi region; option nuance preserved.</li>
+<li>Dhar: Ganga Mahadev, approx 50 ft, Dwapar Yug/Pandav Shivling sthapana; parvatiya jharna.</li>
+<li>Indore: Hatyaari Khoh and Sheetla Mata, rain/mountain-fed; teacher preserves movie-jump analogy in transcript.</li>
+<li>Sehore near Bhopal: Amargarh; Raisen: Mahadev Pani.</li>
+<li>Dewas/Kheoni Sanctuary: Shankar Khoh/Jamner on Jamner River; teacher warns not Seoni. Guna: Kedarnath optional mention.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>🔥 Shankar Khoh/Jamner = Dewas, Kheoni Sanctuary, Jamner River — not Seoni.</li>
+<li>🔥 Ganga Mahadev = Dhar, approx 50 ft, Pandav/Shivling sthapana memory.</li>
+<li>🔥 Lilahi/Dhanora + Batka Khapa + Kukdi Khapa = Chhindwara/Kanhan.</li>
+<li>🔥 Bhadbhada in this class = Hatta, Damoh, Sonar River — not Bhopal.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>🔗 Final Chain: Damoh ka Bhadbhada Sonar mein chamka, Balaghat ka Maldhar Dev se mila aur Gangu Para Wainganga mein gaya; Dindori ka Dagan Budhner se gira; Chhindwara ke Lilahi-Dhanora, Batka Khapa, Kukdi Khapa Kanhan mein kood pade; Sher ne Nidan/Katangi ko Jabalpur-Damoh tak pahunchaya; Dhar ka Ganga Mahadev 50 ft se gira; Indore mein Hatyaari Khoh aur Sheetla Mata, Sehore mein Amargarh, Raisen mein Mahadev Pani, Dewas mein Shankar Khoh/Jamner, aur Guna mein Kedarnath final bell bajata hai.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Shankar Khoh/Jamner kis district mein bataya?</summary><p>Dewas, Kheoni Sanctuary, Jamner River; not Seoni.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Ganga Mahadev waterfall?</summary><p>Dhar district, approx 50 ft, Pandav/Shivling memory.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Lilahi/Dhanora kis river par?</summary><p>Kanhan River, Chhindwara.</p></details>
+        
+
+        <details class="qa"><summary>Q4. Amargarh ka district?</summary><p>Sehore, near Bhopal but not Bhopal district.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (23 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">00:56:45</span><p>मैंने बताया था अभी पांडव जलप्रपात अपने आप में एक बहुत सुंदर जलप्रपात है इस प्रकार से आपको वहां देखने को मिलेगा इनक्रेडिबल इंडिया अतुल्य भारत ठीक है द हार्ट ऑफ इनक्रेडिबल इंडिया ये आप देखेंगे भदभदा अब भदभदा कहां पर है तो भदभदा वैसे हटा दमोह में है तो यहां पर जगह नहीं है यहां पर जगह नहीं है बहुत ज्यादा भर जाएगा तो अपन एक काम करते हैं या तो वही उसी में लिख देते हैं ठीक है यह कहां पर है भदभदा जलप्रपात तो ये हटा हटा कहां पर पड़ता है दमो ठीक है भदभदा जलप्रपात जो कहां पर है ये है हटा हटा कहां पर पड़ता है हटा हटा</p></div>
+<div class="ts-block"><span class="ts">00:57:22</span><p>पड़ता है दमोह जिले के अंतर्गत दमोह ठीक है दमोह जिले में सोनार नदी पर बताया जाता है ये कि सोनार नदी पर ये बना हुआ है सोनार या फिर सोनार या फिर सोनार भी उसको कहा जाता है बनता है प्राकृतिक झरना है इस प्रकार से भदभदा भी आपको देखने को मिल जाएगा भदभदा जलप्रपात ठीक है भदभदा जलप्रपात आपकी स्क्रीन पर है नेक्स्ट आगे बढ़े हम अब मध्य प्रदेश के अन्य जलप्रपात में अगर अब हम देखें तो हम देखते हैं क्या कहां पर तो डगन जलप्रपात को देख लेते हैं या फिर हम सबसे पहले बालाघाट देख लेते हैं बालाघाट बालाघाट की अगर हम बेटा बात करें</p></div>
+<div class="ts-block"><span class="ts">00:58:01</span><p>तो बालाघाट में कल मैंने आपको बताया था मलधार जलप्रपात मलधार बताया था अगर याद हो मलधार जलप्रपात किस नदी पर है तो मलधार जलप्रपात जो है वो देव नदी पर है किस नदी पर है बेटा देव नदी पर आपको मलधार जलप्रपात कल मैंने बताया था और क्या बताया था गंगु पारा याद है गंगु पारा गंगु पारा जलप्रपात किस नदी पर था तो बन गंगा बीन गंगा चलिए सबसे पहले आपको मैं फोटो दिखा देता हूं मलधार जलप्रपात की तो नहीं लेकिन गंगु पारा की फोटो देखते हैं यह कौन सा है जलप्रपात तो बहुत सुंदर जलप्रपात है जिसका नाम है गंगु पारा हां बहुत सारे स्टूडेंट क्या कर</p></div>
+<div class="ts-block"><span class="ts">00:58:47</span><p>देंगे भोपाल कर देंगे तो भदभदा वो वाला भदभदा नहीं है जहां पर स्वान ट्रेनिंग या फिर डॉग ट्रेनिंग सेंटर है यह भू नहीं है मलधार जलप्रपात और कौन मिलेगा आपको बेटा गंगु पारा जलप्रपात क्लियर है ठीक है इसके बाद हम आगे बढ़ेंगे तो इसको देख ले जल्दी से ठीक है चले एक आपको डिंडोरी में मिलेगा डिंडोरी कहां है तो डिंडोरी यहां पर है डिंडोरी में मिलेगा आपको डग डगन जलप्रपात मिल जाएगा आपको डोना जलप्रपात और डग जलप्रपात किस नदी पर है तो डिंडोरी डग डग डिंडोरी एक जैसा ही नाम आ रहा है डिंडोरी डगन ये तो भूलना ही नहीं चाहिए बुदनेट नदी बुदनेट</p></div>
+<div class="ts-block"><span class="ts">00:59:39</span><p>बुदनेट नदी पर आपको यह देखने को मिलेगा डग टिंडोरी इसके बाद हम और इस तरफ आते हैं तो अब आ गया छिंदवाड़ा छिंदवाड़ा में कौन सा मिल जाएगा आपको छिंदवाड़ा तो छिंदवाड़ा के अंतर्गत बेटा जो मिलेगा आपको वो जलप्रपात मिलेंगे कौन से तो देखिए यहां पर सब सबसे पहला आप देखेंगे लिलाही या फिर लिलाही या फिर इसका ही नाम है धनोरा लिलाही या धनोरा जल प्रपात ठीक है जलप्रपात ये किस नदी पर है तो एक नदी याद है कल पढ़ाई थी मैंने कि गजनी बन गए हो भूल गए हो सब तो गजनी मत बन जाना लिलाही धनोरा धनोरा जलप्रपात जो है वो किस पर है कन्हान नदी पर कन्हान नदी</p></div>
+<div class="ts-block"><span class="ts">01:00:22</span><p>लिलाही और घ नोरा धनोरा ठीक है इसके अलावा और कौन है सर यहां पर तो देखिए लला धनोरा के अलावा बटका खापा कुकड़ी खापा बटका खापा बटका खापा और कुकड़ी खापा और कुकड़ी खापा बटका खापा और कुकड़ी खापा ये भी आपको किस पर मिलेंगे बेटा तो ये भी आपको किस पर कन्हान नदी पर मिलेंगे कन्हान नदी पर ये भी मिलेंगे कन्हान नदी पर बटका खापा और कुकड़ी खापा दोनों के दोनों आपको देखने को मिल जाएंगे बड़ बटका खापा और कुकड़ी खापा ठीक है चलिए अब एक आपको जबलपुर में दमो जबलपुर के पास एक मिलेगा आपको दमो और जबलपुर के बीच में आता है वो बट ज्यादातर आपको जबलपुर ही बोलना</p></div>
+<div class="ts-block"><span class="ts">01:01:23</span><p>बोलते हैं वहां पर लोग जबलपुर कटंगी बोल क्षेत्र बोलते हैं जबलपुर कटंगी क्षेत्र तो जबलपुर के अंतर्गत ही आपको लगाना है अगर दोनों है ऑप्शन में तो जबलपुर लगा के आना है फिर कटंगी जलप्रपात कटंगी जलप्रपात या फिर इसको आप बोल सकते हो निदान जलप्रपात निदान जलप्रपात ठीक है कटंगी जलप्रपात या इसका ही नाम है निदान जलप्रपात जो कि किस नदी पर है तो शेर नदी पर है नदी जो मिलेगी आपको शेर नदी ठीक है शेर नदी पर निदान या फिर कटंगी जलप्रपात आपको देखने को मिलेगा जबलपुर दमोह मिलता है मेन अगर दोनों ही है तो फिर आपको दमोह लगा के आना है इतना डिफरेंस मैं</p></div>
+<div class="ts-block"><span class="ts">01:02:12</span><p>आपको बता सकता हूं इसमें ठीक है हम चलिए तो इतनी चीजें अभी तक आपने देखी हैं कोई डाउट किसी प्रकार का अब हम चलते हैं आगे हाथी नाला जलप्रपात तो हाथी नाला मैं आपको बता चुका हूं हाथी नाला कहां पर है यह है एक पर्वतीय झरना हाथी नाला और हाथी नाला नरसिंहपुर में है हाथी नाला ये किसने दिया था जन संपर्क ने मैक्सिमम लोगों को नहीं पता होगा हाथी नाला कहां है जो यहां का होगा या आसपास का होगा उसको पता है बट ये नरसिंहपुर में हाथी नाला जलप्रपात और टोन घाट जलप्रपात आपको देखने को मिलेगा ठीक है लिलाही या धनोरा लिलाही या</p></div>
+<div class="ts-block"><span class="ts">01:03:01</span><p>धनोरा कहां पर देखा है हमने अभी तो यह छिंदवाड़ा में लिलाही वा धनोरा देखने को मिला है हमें छिंदवाड़ा जिले के अंतर्गत लिलाही सॉरी लिलाही या धनोरा लिलाही या फिर धनोरा जलप्रपात आपको छिंदवाड़ा जिले में देखने को मिलेगा ठीक है तो हाथी नाला देख लिया आपने हाथी नाला गंगु पारा ठीक है नाला नरसिंहपुर य लास्ट वाले जलप्रपात तो हमने आज ही सुने बिल्कुल चांद मंसूरी आप आए हो एमपी एग्जाम वाला में तो कंटेंट के लिए एमपी एग्जाम वाला हमेशा जाना जाएगा और जाना जाता रहा है तो हम सभी बिल्कुल जो बेस्ट से बेस्ट होगा इससे ज्यादा आपको</p></div>
+<div class="ts-block"><span class="ts">01:03:51</span><p>कुछ नहीं देखना है और ना कहीं परेशान होना है बस एक बार को अच्छे से देख लेना उसके बाद हम देखते हैं अब उसमें ना भर के मैं सीधा आपको इनको बताता जाता हूं जैसे गंगा महादेव जलप्रपात गंगा महादेव जलप्रपात आप देखेंगे कि गंगा महादेव जलप्रपात जो है ये लगभग 50 फीट तो ऊंचा है 50 फीट ऊंचा है ये 50 फीट ऊंचा ये जनसंपर्क की जानकारी है इसलिए मैं इसको लिख रहा हूं ठीक है कि जितना मैक्सिमम मिल जाएगा उतना मैं आपके लिए लिख दूंगा यह जो जलप्रपात है यह पानी जो गिर रहा है गंगा महादेव जलप्रपात इसमें अगर मैं बात करूं तो यहां द्वापर</p></div>
+<div class="ts-block"><span class="ts">01:04:28</span><p>युग में द्वापर युग द्वापर युग कौन सा युग था तो जब भगवान कृष्ण ने जन्म लिया था द्वापर युग में यहां पांडवों ने पांडवों ने पांडवों ने शिवलिंग की स्थापना की थी शिवलिंग स्थापना अब यह कहां पर है गंगा महादेव तो यह काफी लोगों को पता भी हो गया होगा मैंने भी इसको कई बार पढ़ा भी दिया है ठीक है गंगा महादेव गंगा महादेव जलप्रपात जो है ये धार जिले में है कहां पर है आर पार जिला धार तो धार जिले में आपको गंगा महादेव जलप्रपात मिल जाएगा 50 फीट ऊंचा बताया जाता है ये द्वापर युग में यहां पांडवों ने एक शिवलिंग की स्थापना की थी</p></div>
+<div class="ts-block"><span class="ts">01:05:12</span><p>इस प्रकार से आपको यहां पर यह मैदान यह क्षेत्र मिल जाएगा जहां पर एक बहुत ही सुंदर जलप्रपात बनता है ठीक है और ये पर्वत से गिरने वाला एक झरना है किससे पर्वती है न देना आप नदी ढूंढने लगो पर्वतीय धरना है ये ठीक है कोई नदी आप ढूंढते रहोगे नहीं मिलेगी फिर क्या आता है हत्यारी खोह हत्यारी खो जलप्रपात यह भी जनसंपर्क ने ही दिया था हत्यारी खोह तो हत्यारी खोह जलप्रपात कहां पर है हत्यारी खोह जलप्रपात एक वर्षा द्वारा निर्मित या पर्वतीय झरना है वर्षा द्वारा निर्मित होता है ये हत्यारी खोह हत्यारी खोह की बात करें हम</p></div>
+<div class="ts-block"><span class="ts">01:05:55</span><p>तो हत्यारी खोह आपको जो मिलेगा इंदौर में मिलेगा हत्यारी खोह जलप्रपात कहां पर मिलेगा आपको इंदौर हत्यारी खोह ठीक है हत्यारी खोह जलप्रपात आपको इंदौर में मिलेगा हत्यारी खोह हां यहां पर हत्या हो जाती है ऊपर से लोग गिर जाते हैं जैसे वो मूवीं में हुआ करता था कि ऐसे ऐसे चलते चलते दिखाई देती थी वो हीरोइन दिखाई देती थी हीरोइन दिखाएगी फिर जलप्रपात हीरोइन दिखाएगी फिर जलप्रपात पता नहीं क्या होता था मैं सोचता था ये क्या हो रहा है ये क्या कर रहे हैं कूदना है तो सीधे कूदो ना और दिखाओ हमको कि कैसी जा रही है वो कौन से पत्थर में</p></div>
+<div class="ts-block"><span class="ts">01:06:33</span><p>उसका सिर फूटा है हमको बड़ा उत्सुकता होती थी बचपन में कि दिखाओ कैसी कंदी है कैसे कूदा जाता है वो किसी से गुस्सा हुए तो अपना मूड भी बचपन में हो जाता था कि अपन भी किसी पापा से गुस्सा होंगे तो ऐसे कोई जल प्रपात ढूंढते हैं अपने आसपास है क्या कोई जहां से कंद पाए मतलब मरने का स्थान ढूंढ लेते थे ऐसा सोचा करते थे बचपन में आज सोचता हूं तो बड़ी हंसी आती है कि बताओ तो मूवी देख के क्योंकि उस टाइम टीवी चलती थी संडे को इंतजार रहता था दिल्ली दूरदर्शन प एक मूवी आती थी मुश्किल से 4:00 बजे शाम को रविवार को है ना पूरे</p></div>
+<div class="ts-block"><span class="ts">01:07:06</span><p>हफ्ते भर ऐसे निकल जाते थे और फिर उसमें क्या होता था वो देखते थे कि भैया ऐसे मतलब सुसाइड करा जाता है ऐसे कूदा जाता है उस मूवीं में देख के फिर वो झरना दिखता था फिर वो हीरोइन दिखती थी हीरोइन दिखती थी झरना दिखता था मैं सोचता था सीधे कूदे थे दिखाओ ना हमको देखना है कैसी गिरी है ये कहां पर उसके सिर में चोट आई है कहां पानी में डूबी फिर सोचता था अरे बच गई बाद में जाके कहीं किनारे में बच भी जाती थी मैंने कहा वाह भाई गजब गजब है ठीक है तो यह क्या है इंदौर इंदौर के अंतर्गत है हत्यारी खो जलप्रपात शीतला माता जलप्रपात शीतला माता जलप्रपात</p></div>
+<div class="ts-block"><span class="ts">01:07:43</span><p>भी एक पर्वतीय झरना या वर्षा के जल के दौरान यह बनने वाला यहां सीता माता का शीतला माता का मंदिर है तो वर्षा जल के दवारा द्वारा यह बनता है ठीक है यहां पर अगर मैं बात करूं वर्षा का जल वर्षा का जल यहां इकट्ठा होकर नीचे की ओर गिरता है और अगर हम इसमें देखें तो यह क्या है इंदौर के अंतर्गत शीतला माता वाटरफॉल आपको देखने को मिलेगा कौन सा वाटरफॉल तो शीतला माता जलप्रपात आपको देखने को यहां मिल जाएगा इंदौर के अंतर्गत ठीक है तो अभी हमने हत्यारी खोह अलग से देखा है और शीतला माता वाटरफॉल आपकी स्क्रीन पर है ठीक है बचपन की बात है</p></div>
+<div class="ts-block"><span class="ts">01:08:42</span><p>बचपन हां अगर मैं ऐसे जल प्रपात से नीचे कंद गया तो एक मैं यह सोचता हूं कि मेरा ज्ञान व्यर्थ हो जाएगा है कि नहीं फ तुम लोगों तक ये ज्ञान कैसे पहुंचेगा चलिए तो यह शीतला माता जल प्रपात है वर्षा का जल से बनता है इंदौर अब एक आपने देखा होगा अमरगढ़ जलप्रपात तो ये वही जलप्रपात है जो आज तक आपने देखे नहीं सुने नहीं अमरगढ़ जलप्रपात जो है ये आप देखेंगे अगेन एक पर्वतीय झरना है पर्वतीय झरना है ठीक है वर्षा के जल के दौरान ये पर्वतीय झरना है और यह जो अमरगढ़ जलप्रपात है सिहोर में मिलेगा और भोपाल के समीप आप गगल करोगे तो</p></div>
+<div class="ts-block"><span class="ts">01:09:32</span><p>भोपाल भोपाल मिलेगा तो मैं लगेगा कि यह सर तो बना के निकल लिए क्या नहीं भोपाल के समीप है ध्यान देना है आपको जैसे आपको भोजपुर मंदिर भोपाल के समीप भोपाल के समीप लिखा रहता वो जिला पड़ता है वहा रायसन इस यहां पर सीहोर के अंतर्गत आपको यह देखने को मिलेगा ठीक है अब आगे देखते हैं अमरगढ़ जलप्रपात देख लिया हमने अभी आपको क्या देखा शीतला माता इसके पहले हत्यारी खो देखा हमने जो बहुत ही हत्यारी थी इसके यहां पर हम देखें देखा हमने गंगा महादेव जल प्रपात आप खुद देखिए एक एक फोटो लाइन से लगाई गई है एचडी फोटो ढूंढ ढूंढ के</p></div>
+<div class="ts-block"><span class="ts">01:10:08</span><p>आपके लिए कि आपको मजा आ जाए आप लोग पता नहीं पढ़ते ही नहीं हो पढ़ रहे हो कि नहीं पढ़ रहे हो फिर आता है महादेव पानी तो अभी देखा था हमने पाताल पानी गंगा महादेव देख लिया अब आ गया महादेव पानी ठीक है महादेव पानी हां बिल्कुल पुष्पेंद्र इच्छा हो तो आ जाओ टू को तुम लोगों ने एकदम मनोरंजन का साधन बना लिया है है कि नहीं तो थोड़ा सा बेटा ध्यान से पढ़ना यह कहां पर है रायसन ास डिस्ट्रिक के अंतर्गत आपको महादेव पानी देखने को मिलेगा एक पर्वतीय झरना है अब हम देखते हैं यहां पर कुछ और भी जो रिमेनिंग बचे हुए हैं उनको और हम देख लेते</p></div>
+<div class="ts-block"><span class="ts">01:11:21</span><p>हैं जल्दी से इसमें और भी फोटो है क्या अभी जी नहीं अब जो रिमेनिंग बचे हुए हैं उ को हम जल्दी से और कवर कर लेते हैं कौन से रिमेनिंग बचे हुए हैं कोई ऐसा ना रह जाए जो मैं आपके लिए लाया हूं और वो रह जाए ठीक है जैसे शकर शकर खो जल प्रपात तो यह बड़ा दिक्कत है वो कौन है और कुछ लोगों ने भी जहां भी आप देखोगे अलग-अलग तरीके से बता दिया है तो भाई साहब शंकर खोह जलप्रपात जो है या शंकर खो जलप्रपात यह आपको कहां मिलेगा तो आपको जो मिलेगा ये नी के अंतर्गत खिवनी अभ्यारण्य कहां पर है नी अभ्यारण्य तो लोगों ने यहां पर किसी बुक</p></div>
+<div class="ts-block"><span class="ts">01:12:02</span><p>वाले ने सिवनी कर दिया तो बहुत सारे लोगों ने इसको सिवनी सिनी सिवनी जितनी बुक छप रही है नहीं सब में सिनी सिनी सिनी कर रहे हैं भा सब खनी था अभ्यारण और यह तुम्हें पता होना चाहिए कहां पर है तो शंकर खोज जामनेर जलप्रपात के नाम से भी यह जाना जाता है ठीक है तो यह भी कंफ्यूज नहीं होना जामनेर नदी पर है और ये किस जिले में है तो ये देवास में मिलेगा आपको देवास में शकर खोह जलप्रपात मोस्ट आई एमपी है फॉर योर एग्जाम किनी अभ्यारण्य जामनेर नदी पर ये आपको देखने को मिलेगा ठीक है यहां पर आप ध्यान देना यह सिवनी इनी नहीं है गलती</p></div>
+<div class="ts-block"><span class="ts">01:12:40</span><p>से सिवनी मत कर देना नहीं सब खराब हो जाएगा ठीक है चलिए तो अब यहां पर यह सारे जलप्रपात होते हैं समाप्त एक और है अगर आपको लिखना हो केदारनाथ जलप्रपात तो केदारनाथ आपको जो मिलेगा वह मिलेगा कहां पर गुना के अंतर्गत बताया जाता है व कि केदारनाथ जल प्रपात केदारनाथ जल प्रपात और लिखना हो तो लिख लो आप गुना गुना ठीक है तो अब यहां पर होते हैं यह समाप्त उम्मीद करता हूं आपको मैक्सिमम डाटा मिला होगा और ऐसे ऐसे जलप्रपात मिले होंगे कैसे कैसे कि आप देखेंगे महादेव पानी आप देखेंगे अमरगढ़ आप देखेंगे शीतला माता आप देखेंगे हत्यारी</p></div>
+<div class="ts-block"><span class="ts">01:13:45</span><p>खो आप देखेंगे गंगा महादेव इसके बाद आपको यहां पर मिलेगा लिलाही या धनोरा फिर आप हाथी नाला फिर देखा आपने गंगु पारा फिर आपको आगे जाके मिला क्या भदभदा भदभदा के बाद मिला आपको पांडव पांडव के बाद मिला आपको रने रने के बाद या पहले राहतगढ़ राहतगढ़ के पहले सनकुआ सनकुआ के पहले फिर आपको ये देखने को मिला पूर्वा फिर ये चचाई फिर ये आपको बहुती फिर ये आप आएंगे और आगे तो ये देखिए वी फॉल वी फॉल के बाद अप्सरा जलप्रपात अप्सरा जलप्रपात के पहले चूलिया जलप्रपात चूलिया के पहले टिंचा टिंचा के पहले आपने देखा सहस्त्रधारा सहस्त्रधारा</p></div></div>
+    </details>
+    
+</section>
+
+
+<section id="wrap" class="topic" style="--accent:#ff6b35">
+  <div class="section-top">
+    <div>
+      <p class="time-pill">01:14:24–01:17:17</p>
+      <h2>✅ Wrap-up + Upcoming Topic</h2>
+    </div>
+    <label class="done-pill"><input type="checkbox" class="section-done" data-id="wrap"> Mark done</label>
+  </div>
+  <p class="section-summary">Teacher recaps many waterfalls in reverse/flow order and announces next class topic: Nadi Jodo Pariyojana / River Link Project.</p>
+  <div class="visual-grid">
+    <figure class="image-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Chitrakoot_Falls.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chitrakoot%20Falls.jpg?width=900" data-file="Chitrakoot Falls.jpg" data-page="https://commons.wikimedia.org/wiki/File:Chitrakoot_Falls.jpg" alt="Chitrakoot Falls on Indravati River in Chhattisgarh" loading="lazy" decoding="async">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Rosy95das, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Chitrakoot_Falls.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure></div>
+  <div class="cards-grid">
+    <article class="card">
+      <h3>🧠 Key Notes</h3>
+      <ul><li>Teacher says many waterfalls are collected in one place; students should rewatch/revise.</li>
+<li>He recaps: Kapildhara, Dhuandhar, Sahastradhara, Tincha, Chulia, Apsara, Bee Fall, Bahuti, Chachai, Purwa, Sankua, Rahatgarh, Raneh, Pandav, Bhadbhada, Gangu Para, Hathi Nala, Lilahi/Dhanora, Ganga Mahadev, Hatyaari Khoh, Sheetla Mata, Amargarh, Mahadev Pani, etc.</li>
+<li>Upcoming topic: Nadi Jodo Pariyojana / River Link Project in Madhya Pradesh.</li>
+<li>Student action: revise table + checklist + quick recalls.</li></ul>
+    </article>
+    <article class="card hot-card">
+      <h3>🔥 Exam Hot</h3>
+      <ul><li>📌 Upcoming Topic: नदी जोड़ो परियोजना / River Link Project.</li></ul>
+    </article>
+    <article class="card link-card">
+      <h3>🔗 Link Story — ऐसे याद करो</h3>
+      <p>Revision end mein reverse recall karo: last se first naam bolna — Kedarnath → Shankar Khoh → Mahadev Pani → ... → Kapildhara.</p>
+    </article>
+  </div>
+  <div class="quiz">
+    <h3>🎯 Quick Recall</h3>
+    
+        <details class="qa"><summary>Q1. Next class topic kya announced hua?</summary><p>Nadi Jodo Pariyojana / River Link Project.</p></details>
+        
+
+        <details class="qa"><summary>Q2. Revision ka best way?</summary><p>Waterfall table + river-district pairs + mnemonic/link stories + checklist.</p></details>
+        
+
+        <details class="qa"><summary>Q3. Teacher ne students ko doubts ke liye kya kaha?</summary><p>Comment box mein proper manner se doubt poochna.</p></details>
+        
+  </div>
+  
+    <details class="transcript-flow">
+      <summary>🎬 Exact timestamp flow (5 chunks) — open for transcript fidelity</summary>
+      <div class="ts-grid"><div class="ts-block"><span class="ts">01:14:24</span><p>के पहले आपने देखा धुआधार धुआधार के बाद देखा आपने कपिल धारा सॉरी ऐसे करके हमने आप देख लेना इकट्ठे एक जगह इतने कहीं नहीं मिलेंगे आपको जो मैंने पूरे कवर कर दिए तो आपको आज की क्लास कैसी लगी और क्या आपने कुछ नया सीखा या आपको वाकई में इससे फायदा हुआ है तो आप जरूर हमें बताएं ठीक है फिर कल एक नया चैप्टर होगा पूरा मैप भरू मैं तरीके से कौन सा चैप्टर होगा कल तो कल होगा नदी जोड़ो परियोजना रिवर लिंक प्रोजेक्ट और वो जितने रिवर लिंक प्रोजेक्ट है मध्य प्रदेश के सारे कल कंप्लीट होंगे तो अगेन कल 8 पीएम पर क्या होने वाला है नदी जोड़ो परियोजना नदी</p></div>
+<div class="ts-block"><span class="ts">01:15:13</span><p>जोड़ो परियोजना रिवर लिंक प्रोजेक्ट नदी जोड़ो परियोजना ठीक है तो इसमें आपको जरूर आना है क्योंकि आपको समझ में आ जाएगा क्वालिटी अगेन कि जिस प्रकार आपको दिमाग में बैठाया जाएगा वहीं का वहीं ठीक है तो सबसे पहले सेशन को लाइक करें क्योंकि हम लोग निरंतर मेहनत कर रहे हैं तो प्लीज एक लाइक जो बाद में देखें अभी देख रहे हो जरूर कर दिया करें हमारे मोटिवेशन के लिए और शेयर कर देना है आपको जिससे क्लास निरंतर क्लास यहां पर लोगों तक पहुंचती रहे जिससे हमें लगता रहे कि बिल्कुल कंटिन्यू आगे बढ़ाना है इसको ठीक है और कमेंट में कोई डाउट है तो 100% पूछिए आप</p></div>
+<div class="ts-block"><span class="ts">01:15:56</span><p>510 मिनट में मैं आपको जैसे ही मतलब मैं देखूंगा मैं देखता रहता हूं हर आधा घंटे के आसपास कि अगर आपको कोई डाउट है तो आंसर दे पाऊं यहां आप कमेंट बॉक्स होगा अभी लाइव चैट में मत शुरू होना क्योंकि कमेंट बॉक्स अलग से होता है इसमें कमेंट करके अपना डाउट भेज सकते हो और क्लास कैसी लगी जैसे निरंतर लोग कर रहे हैं उन सभी का शुक्रिया क्योंकि उनने हमारे प्रयासों को सराहा है और जेनन कमेंट दो आपको तो जो लगा है जो वाकई में रिव्यू किया है आपने आप उसको वहां कमेंट करिए ये मैं बिल्कुल नहीं बोलूंगा कि आप वाह वाहिया करिए बट आपने जो</p></div>
+<div class="ts-block"><span class="ts">01:16:31</span><p>फील किया है कुछ लगा है आपको इस क्लास में तो आप वहां पर एक रिव्यू के तौर पर अपना मैसेज कमेंट जरूर करें जो कि हमारे लिए बहुत महत्त्वपूर्ण है ठीक है तो चलिए कल मिलते हैं हम 8 पीएम पर एक नए धुआधार सेशन के साथ लाइक शेयर एंड कमेंट बॉक्स में कमेंट जरूर करें जो अभी लाइव है और जो बाद में देखते हैं ठीक है चलिए तो एंड करें क्लास को अंजना अर्जुन कोमल लक्ष्मण डिंपल केसरी मल स्वाति आकृति न्यूमो घनश्याम दीपक स्वाति सर आप बहुत अच्छा पढ़ाते हैं जी धन्यवाद तो यह आपको रिव्यू के तौर पर कमेंट बॉक्स में जरूर छोड़ना जिसको जो फील</p></div>
+<div class="ts-block"><span class="ts">01:17:17</span><p>किया है मैं बस इतना कह रहा हूं क्योंकि नया कोई स्टूडेंट आएगा वो देखेगा तो एक उसको क्लास में एंट्री जरूर दिलाओ फिर वह नहीं जाएगा इतना मैं बोल सकता हूं शिवानी योगेश धन्यवाद भाई अंजना शिवानी मिनी चलिए तो अब एंड करते हैं हम कृष्णकांत भाई धन्यवाद मिनी जी धन्यवाद बिल्कुल आज आपने ट्रिक के साथ अच्छा बताया थैंक्स सर धन्यवाद आप सभी जुड़े और सुनते रहे मुझे ठीक है घनश्याम बिल्कुल चलिए तो हम एंड करते हैं एक वैल्युएबल कमेंट करके जो भी आपने रिव्यू है वो दे करके जरूर जाए मिलते हैं कल 8 बजे जय हिंद जय भारत</p></div></div>
+    </details>
+    
+</section>
+
+
+      <section class="master" id="master-table" style="--accent:#00ff88">
+        <h2>📊 Master Waterfall Table — One-shot Revision</h2>
+        <p>Search box se naam, river, district ya memory hook filter karo.</p>
+        <div class="table-tools">
+          <input type="search" id="tableSearch" placeholder="Search: Bahuti, Narmada, Rewa, Mini Niagara..." aria-label="Search waterfall table">
+        </div>
+        <div class="table-wrap">
+          <table id="waterfallTable">
+            <thead><tr><th>#</th><th>Waterfall</th><th>River / Source</th><th>Place / District</th><th>Exam Note / Memory Hook</th></tr></thead>
+            <tbody><tr><td>1</td><td>Kapildhara</td><td>Narmada</td><td>Amarkantak</td><td>Kapil Muni ashram; Meghdoot mention; approx 18 m; source-area falls.</td></tr>
+<tr><td>2</td><td>Dugdh Dhara</td><td>Narmada</td><td>Amarkantak</td><td>Doodh jaisi safed dhara — milk-like memory hook.</td></tr>
+<tr><td>3</td><td>Durga Dhara</td><td>Narmada</td><td>Amarkantak</td><td>Durga Mata temple connection.</td></tr>
+<tr><td>4</td><td>Panchdhara</td><td>Narmada</td><td>Amarkantak</td><td>Paanch dharaon mein jal girta/bikharata hai.</td></tr>
+<tr><td>5</td><td>Shambhu Dhara</td><td>Narmada</td><td>Amarkantak</td><td>Shivling / Shankar ji connection.</td></tr>
+<tr><td>6</td><td>Dhuandhar</td><td>Narmada</td><td>Bhedaghat, Jabalpur</td><td>Smoke-like mist; white marble rocks; Bander Kundani spot asked by Vyapam.</td></tr>
+<tr><td>7</td><td>Dardi</td><td>Narmada</td><td>Handia, Harda</td><td>Narmada-route waterfall.</td></tr>
+<tr><td>8</td><td>Mandhar / Mandhan</td><td>Narmada</td><td>Handia–Barwaha / Omkareshwar side</td><td>Books often write Handia-Barwaha; teacher notes Khandwa/Omkareshwar side nuance.</td></tr>
+<tr><td>9</td><td>Sahastradhara</td><td>Narmada</td><td>Maheshwar, Khargone</td><td>Approx 8 m; Kartaviryarjuna legend; Narmada split into thousand streams.</td></tr>
+<tr><td>10</td><td>Patalpani</td><td>Chambal</td><td>Indore / Mhow side</td><td>Near Chambal source-region; major Indore waterfall.</td></tr>
+<tr><td>11</td><td>Jhadi Daha</td><td>Chambal</td><td>Indore</td><td>Chambal-side waterfall.</td></tr>
+<tr><td>12</td><td>Tincha / Ticha</td><td>Chambal</td><td>Indore</td><td>Mostly monsoon water; near Janapav hill region.</td></tr>
+<tr><td>13</td><td>Chulia</td><td>Chambal</td><td>Bhainsrorgarh, Kota, Rajasthan</td><td>Approx 18 m; on Chambal; if exam forces MP option teacher mentions Mandsaur nuance.</td></tr>
+<tr><td>14</td><td>Apsara</td><td>Mountain/rain-fed</td><td>Pachmarhi, Narmadapuram</td><td>Beautiful Pachmarhi waterfall; name linked with beauty.</td></tr>
+<tr><td>15</td><td>Rajat Prapat</td><td>Mountain/rain-fed</td><td>Pachmarhi</td><td>Rajat = silver; bright/milky fall.</td></tr>
+<tr><td>16</td><td>Duchess</td><td>Mountain/rain-fed</td><td>Pachmarhi</td><td>Pachmarhi waterfall.</td></tr>
+<tr><td>17</td><td>Bee Fall / Madhumakkhi / Jamuna Prapat</td><td>Mountain/rain-fed</td><td>Pachmarhi</td><td>35 m; honey/beehive region; alternative name asked in exam.</td></tr>
+<tr><td>18</td><td>Bahuti / Bahuti</td><td>Selar/Sailar (Bihad tributary)</td><td>Mauganj, New Garhi tehsil</td><td>MP&#x27;s highest waterfall; 198 m / 650 ft; if Selar absent choose Bihad.</td></tr>
+<tr><td>19</td><td>Chachai</td><td>Bihad</td><td>Rewa</td><td>MP&#x27;s second highest; 130 m; MP ka Niagara; Pt. Nehru in 1957; Ram Manohar Lohia site.</td></tr>
+<tr><td>20</td><td>Keoti / Kyoti</td><td>Mahana</td><td>Rewa</td><td>98 m; memory hook: cute log mahaan hote hain.</td></tr>
+<tr><td>21</td><td>Purwa</td><td>Tamsa</td><td>Rewa</td><td>70 m; memory hook: purva se suraj, tam ko har leta hai.</td></tr>
+<tr><td>22</td><td>Bilhi</td><td>Gorma</td><td>Rewa</td><td>Rewa district waterfall.</td></tr>
+<tr><td>23</td><td>Piyavan / Piawan</td><td>Mountain/rain-fed</td><td>Rewa</td><td>Parvatiya jharna.</td></tr>
+<tr><td>24</td><td>Sankua / Sunkua</td><td>Sindh</td><td>Datia</td><td>Sankua waterfall and mela; memory hook: sannaata in kua → Datia dabana.</td></tr>
+<tr><td>25</td><td>Pawa</td><td>Sindh</td><td>Shivpuri</td><td>Sindh river waterfall.</td></tr>
+<tr><td>26</td><td>Sultangarh</td><td>Sindh</td><td>Shivpuri</td><td>Teacher preserves Sindh answer; notes Parvati confusion.</td></tr>
+<tr><td>27</td><td>Bhalkund</td><td>Bina (Betwa tributary)</td><td>Sagar</td><td>If Bina absent in option, Betwa because Bina is Betwa tributary.</td></tr>
+<tr><td>28</td><td>Rahatgarh</td><td>Bina (Betwa tributary)</td><td>Sagar</td><td>Same Bina/Betwa option nuance.</td></tr>
+<tr><td>29</td><td>Raneh</td><td>Ken + Khaddar</td><td>Chhatarpur</td><td>MP ka Mini Niagara; canyon/bowl-like formation; beautiful Ken-region waterfall.</td></tr>
+<tr><td>30</td><td>Pandav</td><td>Ken</td><td>Panna</td><td>Pandavon ka agyatvas connection.</td></tr>
+<tr><td>31</td><td>Bachur / Bachoor</td><td>Rain-fed</td><td>Panna</td><td>Jan Sampark-mentioned; varsha jal.</td></tr>
+<tr><td>32</td><td>Brihaspati Kund</td><td>Rain-fed natural pit</td><td>Panna</td><td>Prakritik gaddha; rainwater collects and falls.</td></tr>
+<tr><td>33</td><td>Kovaseh / Kauwa Seh</td><td>Kilkila</td><td>Panna</td><td>Kilkila river waterfall.</td></tr>
+<tr><td>34</td><td>Chechpur / Chejpur (transcript spelling)</td><td>Mountain/rain-fed</td><td>Katni</td><td>Parvatiya jharna; exact spelling should be cross-checked with local source.</td></tr>
+<tr><td>35</td><td>Hathi Nala</td><td>Mountain/rain-fed</td><td>Narsinghpur</td><td>Jan Sampark-mentioned; parvatiya jharna.</td></tr>
+<tr><td>36</td><td>Tone Ghat</td><td>Mountain/rain-fed</td><td>Narsinghpur</td><td>Called Chhota Dhuandhar on govt website per teacher.</td></tr>
+<tr><td>37</td><td>Bhadbhada</td><td>Sonar/Sonar</td><td>Hatta, Damoh</td><td>Natural waterfall; not Bhopal&#x27;s Bhadbhada/Dog Training Centre.</td></tr>
+<tr><td>38</td><td>Maldhar</td><td>Dev</td><td>Balaghat</td><td>Teacher recalls previous class: Dev river.</td></tr>
+<tr><td>39</td><td>Gangu Para</td><td>Wainganga / Ban-Ganga pronunciation</td><td>Balaghat</td><td>Balaghat waterfall; teacher warns not Bhopal.</td></tr>
+<tr><td>40</td><td>Dagan / Duggan</td><td>Budhner/Budnet</td><td>Dindori</td><td>Dindori-Dagan memory hook.</td></tr>
+<tr><td>41</td><td>Lilahi / Dhanora</td><td>Kanhan</td><td>Chhindwara</td><td>Same waterfall/name set; on Kanhan River.</td></tr>
+<tr><td>42</td><td>Batka Khapa</td><td>Kanhan</td><td>Chhindwara</td><td>Kanhan river waterfall.</td></tr>
+<tr><td>43</td><td>Kukdi Khapa</td><td>Kanhan</td><td>Chhindwara</td><td>Kanhan river waterfall.</td></tr>
+<tr><td>44</td><td>Katangi / Nidan</td><td>Sher</td><td>Jabalpur–Damoh/Katangi region</td><td>Also called Nidan; teacher notes option nuance between Jabalpur and Damoh.</td></tr>
+<tr><td>45</td><td>Ganga Mahadev</td><td>Mountain/rain-fed</td><td>Dhar</td><td>Approx 50 ft; Dwapar yug/Pandav Shiva-ling sthapana memory.</td></tr>
+<tr><td>46</td><td>Hatyaari Khoh</td><td>Rain/mountain-fed</td><td>Indore</td><td>Jan Sampark-mentioned; teacher&#x27;s movie/suicide-jump analogy preserved in transcript blocks.</td></tr>
+<tr><td>47</td><td>Sheetla Mata</td><td>Rain/mountain-fed</td><td>Indore</td><td>Sheetla Mata temple area; rainwater fall.</td></tr>
+<tr><td>48</td><td>Amargarh</td><td>Rain/mountain-fed</td><td>Sehore near Bhopal</td><td>Do not mark Bhopal district; like Bhojpur near Bhopal but district elsewhere.</td></tr>
+<tr><td>49</td><td>Mahadev Pani</td><td>Mountain/rain-fed</td><td>Raisen</td><td>Parvatiya jharna.</td></tr>
+<tr><td>50</td><td>Shankar Khoh / Jamner</td><td>Jamner</td><td>Dewas, Kheoni Sanctuary</td><td>Most IMP; not Seoni; confusion warning.</td></tr>
+<tr><td>51</td><td>Kedarnath</td><td>—</td><td>Guna</td><td>Optional mention at end.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="master" id="full-forms" style="--accent:#b388ff">
+        <h2>🔤 Master Full Forms / Terms</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Term</th><th>English</th><th>Hindi/Hinglish meaning</th></tr></thead>
+            <tbody><tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+<tr><td>MP GK</td><td>Madhya Pradesh General Knowledge</td><td>मध्य प्रदेश सामान्य ज्ञान</td></tr>
+<tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>मध्य प्रदेश लोक सेवा आयोग</td></tr>
+<tr><td>PYQ</td><td>Previous Year Question</td><td>पिछले वर्ष का प्रश्न</td></tr>
+<tr><td>USA</td><td>United States of America</td><td>Niagara comparison context</td></tr>
+<tr><td>HD</td><td>High Definition</td><td>Teacher says HD photos used for visual memory</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="master" id="hot-facts" style="--accent:#ff6b35">
+        <h2>🔥 Master Exam Hot Facts</h2>
+        <ul><li>🔥 Waterfall = height se girta river/nala/rain water; erosional landform + water source.</li>
+<li>🔥 Narmada-Amarkantak cluster: Kapildhara, Dugdh Dhara, Durga Dhara, Panchdhara, Shambhu Dhara.</li>
+<li>🔥 Dhuandhar = Narmada, Bhedaghat/Jabalpur; smoke-like mist; Bander Kundani.</li>
+<li>🔥 Sahastradhara = Narmada, Maheshwar/Khargone; Kartaviryarjuna story; thousand streams.</li>
+<li>🔥 Chambal cluster: Patalpani, Jhadi Daha, Tincha; Chulia on Chambal at Bhainsrorgarh/Kota Rajasthan.</li>
+<li>🔥 Pachmarhi: Bee Fall = Madhumakkhi Jharna = Jamuna Prapat; approx 35 m.</li>
+<li>🔥 Bahuti = MP highest waterfall; Mauganj/New Garhi; Selar/Sailar River; 198 m / 650 ft.</li>
+<li>🔥 Chachai = MP second highest; Bihad River; 130 m; MP ka Niagara; 1957 Nehru mention.</li>
+<li>🔥 Keoti = Mahana River; 98 m. Purwa = Tamsa River; 70 m.</li>
+<li>🔥 Raneh = Chhatarpur; Ken + Khaddar; MP ka Mini Niagara.</li>
+<li>🔥 Pandav = Panna; Ken River; Pandav agyatvas memory.</li>
+<li>🔥 Sankua = Datia; Sindh River; Sankua mela.</li>
+<li>🔥 Bhalkund/Rahatgarh = Sagar; Bina River; if Bina option absent, Betwa.</li>
+<li>🔥 Tone Ghat = Narsinghpur; Chhota Dhuandhar.</li>
+<li>🔥 Shankar Khoh/Jamner = Dewas, Kheoni Sanctuary, Jamner River — not Seoni.</li>
+<li>🔥 Upcoming: Nadi Jodo Pariyojana / River Link Project.</li></ul>
+      </section>
+
+      <section class="master" id="master-checklist" style="--accent:#00d4ff">
+        <h2>✅ Master Revision Checklist</h2>
+        <p>Tick progress browser mein save hoga (localStorage). Revision complete karte jao.</p>
+        <div class="mini-progress"><div id="checkProgress"></div></div>
+        <p id="checkCount" class="badge">0 checked</p>
+        <div class="check-grid"><label class="check-item"><input type="checkbox" class="master-check" data-i="0"> <span>Kapildhara — Narmada — Amarkantak</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="1"> <span>Dugdh Dhara — Narmada — Amarkantak</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="2"> <span>Durga Dhara — Narmada — Amarkantak</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="3"> <span>Panchdhara — Narmada — Amarkantak</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="4"> <span>Shambhu Dhara — Narmada — Amarkantak</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="5"> <span>Dhuandhar — Narmada — Bhedaghat, Jabalpur</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="6"> <span>Dardi — Narmada — Handia, Harda</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="7"> <span>Mandhar / Mandhan — Narmada — Handia–Barwaha / Omkareshwar side</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="8"> <span>Sahastradhara — Narmada — Maheshwar, Khargone</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="9"> <span>Patalpani — Chambal — Indore / Mhow side</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="10"> <span>Jhadi Daha — Chambal — Indore</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="11"> <span>Tincha / Ticha — Chambal — Indore</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="12"> <span>Chulia — Chambal — Bhainsrorgarh, Kota, Rajasthan</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="13"> <span>Apsara — Mountain/rain-fed — Pachmarhi, Narmadapuram</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="14"> <span>Rajat Prapat — Mountain/rain-fed — Pachmarhi</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="15"> <span>Duchess — Mountain/rain-fed — Pachmarhi</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="16"> <span>Bee Fall / Madhumakkhi / Jamuna Prapat — Mountain/rain-fed — Pachmarhi</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="17"> <span>Bahuti / Bahuti — Selar/Sailar (Bihad tributary) — Mauganj, New Garhi tehsil</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="18"> <span>Chachai — Bihad — Rewa</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="19"> <span>Keoti / Kyoti — Mahana — Rewa</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="20"> <span>Purwa — Tamsa — Rewa</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="21"> <span>Bilhi — Gorma — Rewa</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="22"> <span>Piyavan / Piawan — Mountain/rain-fed — Rewa</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="23"> <span>Sankua / Sunkua — Sindh — Datia</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="24"> <span>Pawa — Sindh — Shivpuri</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="25"> <span>Sultangarh — Sindh — Shivpuri</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="26"> <span>Bhalkund — Bina (Betwa tributary) — Sagar</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="27"> <span>Rahatgarh — Bina (Betwa tributary) — Sagar</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="28"> <span>Raneh — Ken + Khaddar — Chhatarpur</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="29"> <span>Pandav — Ken — Panna</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="30"> <span>Bachur / Bachoor — Rain-fed — Panna</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="31"> <span>Brihaspati Kund — Rain-fed natural pit — Panna</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="32"> <span>Kovaseh / Kauwa Seh — Kilkila — Panna</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="33"> <span>Chechpur / Chejpur (transcript spelling) — Mountain/rain-fed — Katni</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="34"> <span>Hathi Nala — Mountain/rain-fed — Narsinghpur</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="35"> <span>Tone Ghat — Mountain/rain-fed — Narsinghpur</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="36"> <span>Bhadbhada — Sonar/Sonar — Hatta, Damoh</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="37"> <span>Maldhar — Dev — Balaghat</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="38"> <span>Gangu Para — Wainganga / Ban-Ganga pronunciation — Balaghat</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="39"> <span>Dagan / Duggan — Budhner/Budnet — Dindori</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="40"> <span>Lilahi / Dhanora — Kanhan — Chhindwara</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="41"> <span>Batka Khapa — Kanhan — Chhindwara</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="42"> <span>Kukdi Khapa — Kanhan — Chhindwara</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="43"> <span>Katangi / Nidan — Sher — Jabalpur–Damoh/Katangi region</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="44"> <span>Ganga Mahadev — Mountain/rain-fed — Dhar</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="45"> <span>Hatyaari Khoh — Rain/mountain-fed — Indore</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="46"> <span>Sheetla Mata — Rain/mountain-fed — Indore</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="47"> <span>Amargarh — Rain/mountain-fed — Sehore near Bhopal</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="48"> <span>Mahadev Pani — Mountain/rain-fed — Raisen</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="49"> <span>Shankar Khoh / Jamner — Jamner — Dewas, Kheoni Sanctuary</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="50"> <span>Kedarnath — — — Guna</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="51"> <span>Bahuti highest: 198 m / 650 ft.</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="52"> <span>Chachai second highest: 130 m; MP ka Niagara.</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="53"> <span>Bee Fall = Jamuna Prapat = Madhumakkhi Jharna.</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="54"> <span>Raneh = MP Mini Niagara.</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="55"> <span>Shankar Khoh/Jamner = Dewas, not Seoni.</span></label>
+<label class="check-item"><input type="checkbox" class="master-check" data-i="56"> <span>Next topic noted: River Link Project.</span></label></div>
+      </section>
+
+      <section class="master" id="verification" style="--accent:#00ff88">
+        <h2>🧾 Coverage Verification</h2>
+        <ul>
+          <li>First timestamp covered: <b>00:00:17</b></li>
+          <li>Last timestamp covered: <b>01:17:17</b></li>
+          <li>Total transcript chunks embedded: <b>103</b></li>
+          <li>No topic reordered: sections follow transcript flow from intro → definition → Narmada → Chambal → Pachmarhi → Rewa/Mauganj → other districts → wrap-up.</li>
+          <li>Promotional/live-chat parts are not treated as exam content, but they are preserved inside timestamp blocks for full flow reference.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p><b>📌 Upcoming Topic:</b> नदी जोड़ो परियोजना / River Link Project.</p>
+    <p>Built as a single HTML file with inline CSS/JS, open web images, persistent theme, persistent checklist, print styles, and transcript fidelity blocks.</p>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('mpwf-theme');
+    if (savedTheme === 'light') root.classList.add('light');
+
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('mpwf-theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    document.getElementById('jumpSelect').addEventListener('change', (e) => {
+      if (e.target.value) location.hash = e.target.value;
+    });
+
+    function updateScrollProgress() {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      document.getElementById('progressBar').style.width = Math.max(0, Math.min(100, pct)) + '%';
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive:true });
+    updateScrollProgress();
+
+    const tocLinks = [...document.querySelectorAll('.toc a')];
+    const sections = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin:'-35% 0px -60% 0px', threshold:0 });
+    sections.forEach(s => observer.observe(s));
+
+    document.querySelectorAll('.section-done').forEach(cb => {
+      const key = 'mpwf-section-' + cb.dataset.id;
+      cb.checked = localStorage.getItem(key) === '1';
+      cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+    });
+
+    const checks = [...document.querySelectorAll('.master-check')];
+    function updateChecklist() {
+      let done = 0;
+      checks.forEach(cb => { if (cb.checked) done++; });
+      const pct = checks.length ? (done / checks.length) * 100 : 0;
+      document.getElementById('checkProgress').style.width = pct + '%';
+      document.getElementById('checkCount').textContent = `${done} / ${checks.length} checked`;
+    }
+    checks.forEach(cb => {
+      const key = 'mpwf-master-' + cb.dataset.i;
+      cb.checked = localStorage.getItem(key) === '1';
+      cb.addEventListener('change', () => {
+        localStorage.setItem(key, cb.checked ? '1' : '0');
+        updateChecklist();
+      });
+    });
+    updateChecklist();
+
+    document.getElementById('tableSearch').addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      document.querySelectorAll('#waterfallTable tbody tr').forEach(tr => {
+        tr.style.display = tr.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+
+    let expanded = false;
+    document.getElementById('expandBtn').addEventListener('click', () => {
+      expanded = !expanded;
+      document.querySelectorAll('details').forEach(d => d.open = expanded);
+      document.getElementById('expandBtn').textContent = expanded ? 'Close all details' : 'Open all details';
+    });
+
+    // Image reliability: preload and retry Wikimedia images through Special:Redirect/file.
+    document.querySelectorAll('img[data-file]').forEach(img => {
+      let triedRedirect = false;
+      img.addEventListener('error', () => {
+        const file = img.dataset.file;
+        const page = img.dataset.page;
+        if (file && !triedRedirect) {
+          triedRedirect = true;
+          img.src = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/' + encodeURIComponent(file);
+          return;
+        }
+        const box = document.createElement('div');
+        box.className = 'image-fallback';
+        box.innerHTML = 'Image could not load. <a target="_blank" rel="noopener" href="' + page + '">Open source image</a>';
+        img.replaceWith(box);
+      });
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

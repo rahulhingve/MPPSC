@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MP GK Revision — Major Rivers & Narmada River</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0f1a; --panel:#17182a; --panel2:#1f2136; --text:#f8fbff; --muted:#dbe8ff;
+  --line:rgba(255,255,255,.14); --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff;
+  --shadow:0 20px 70px rgba(0,0,0,.35); --radius:24px;
+}
+body.light {
+  --bg:#f6f8fc; --panel:#ffffff; --panel2:#eef3fb; --text:#101322; --muted:#33415c;
+  --line:rgba(20,30,60,.14); --shadow:0 20px 60px rgba(20,30,60,.12);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0,212,255,.14), transparent 35%),
+    radial-gradient(circle at top right, rgba(179,136,255,.14), transparent 32%),
+    var(--bg);
+  color:var(--text); font-size:17px; line-height:1.7; letter-spacing:.01em;
+}
+a { color:var(--cyan); text-decoration:none; }
+img { max-width:100%; height:auto; border-radius:18px; display:block; background:var(--panel2); }
+.wrapper { display:grid; grid-template-columns:290px minmax(0, 880px) 230px; gap:22px; max-width:1460px; margin:0 auto; padding:18px; }
+.topbar {
+  position:sticky; top:0; z-index:100; backdrop-filter:blur(18px);
+  background:rgba(15,15,26,.82); border-bottom:1px solid var(--line);
+}
+body.light .topbar { background:rgba(246,248,252,.86); }
+.topbar-inner { max-width:1460px; margin:0 auto; padding:10px 18px; display:flex; gap:10px; align-items:center; justify-content:space-between; }
+.progress-shell { height:9px; background:var(--panel2); border-radius:999px; overflow:hidden; flex:1; max-width:420px; border:1px solid var(--line); }
+#readingProgress, #revisionProgress { height:100%; width:0%; background:linear-gradient(90deg,var(--cyan),var(--green)); transition:.2s; }
+#revisionProgress { background:linear-gradient(90deg,var(--orange),var(--purple)); }
+button, select {
+  border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:999px; padding:9px 12px;
+  font-weight:800; cursor:pointer;
+}
+select { max-width:260px; }
+.hero {
+  grid-column:2; background:linear-gradient(135deg, rgba(0,212,255,.16), rgba(179,136,255,.16)), var(--panel);
+  border:1px solid var(--line); border-radius:32px; padding:34px; box-shadow:var(--shadow); margin-top:10px;
+}
+.hero h1 { font-size:clamp(2.1rem,5vw,4.4rem); line-height:1.05; margin:.2rem 0 1rem; letter-spacing:-.05em; }
+.hero p { color:var(--muted); max-width:780px; }
+.badges { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+.badge { padding:8px 12px; border-radius:999px; background:rgba(0,212,255,.14); border:1px solid var(--line); font-weight:800; }
+.sidebar, .map-panel { position:sticky; top:74px; align-self:start; max-height:calc(100vh - 92px); overflow:auto; }
+.sidebar { grid-column:1; grid-row:1 / span 50; background:var(--panel); border:1px solid var(--line); border-radius:24px; padding:16px; box-shadow:var(--shadow); }
+.sidebar h2, .map-panel h3 { margin-top:0; font-size:1rem; }
+.toc { display:flex; flex-direction:column; gap:8px; }
+.toc a { color:var(--text); padding:9px 10px; border-radius:14px; border:1px solid transparent; font-weight:700; line-height:1.35; }
+.toc a:hover, .toc a.active { border-color:var(--cyan); background:rgba(0,212,255,.12); }
+.map-panel { grid-column:3; grid-row:1 / span 50; background:var(--panel); border:1px solid var(--line); border-radius:24px; padding:14px; box-shadow:var(--shadow); }
+.map-panel p, figcaption { color:var(--muted); font-size:.82rem; line-height:1.5; }
+main { grid-column:2; }
+.topic {
+  margin:24px 0; padding:26px; background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 13%, transparent), transparent 180px), var(--panel);
+  border:1px solid var(--line); border-radius:30px; box-shadow:var(--shadow); scroll-margin-top:88px;
+}
+.section-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; border-bottom:1px solid var(--line); padding-bottom:14px; }
+.topic h2 { font-size:clamp(1.55rem,3vw,2.35rem); line-height:1.2; margin:8px 0 4px; letter-spacing:-.03em; }
+.time-chip { display:inline-flex; font-weight:900; border:1px solid var(--line); background:rgba(255,255,255,.07); padding:4px 10px; border-radius:999px; color:var(--accent); }
+.summary { color:var(--muted); font-size:1.05rem; }
+.done-label { white-space:nowrap; padding:6px 10px; background:var(--panel2); border-radius:999px; border:1px solid var(--line); font-weight:800; }
+.card-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; margin-top:18px; }
+.card, .mini-card {
+  background:linear-gradient(180deg, rgba(255,255,255,.05), transparent), var(--panel2);
+  border:1px solid var(--line); border-radius:22px; padding:18px; transition:transform .2s ease, border-color .2s ease;
+}
+.card:hover { transform:translateY(-3px); border-color:var(--accent); }
+.card h3 { margin:0 0 8px; color:var(--accent); }
+.card li { margin:.35rem 0; }
+.img-card { margin:18px 0; padding:12px; background:var(--panel2); border:1px solid var(--line); border-radius:24px; }
+.img-card img.error { border:2px solid var(--orange); min-height:120px; }
+.img-fallback { display:block; margin-top:8px; color:var(--orange); font-weight:800; }
+table { width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:18px; border:1px solid var(--line); margin:18px 0; }
+th, td { padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { background:rgba(0,212,255,.14); text-align:left; }
+tr:last-child td { border-bottom:0; }
+.flow-diagram { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:18px 0; }
+.flow-node { padding:12px 14px; border-radius:18px; background:var(--panel2); border:1px solid var(--line); font-weight:900; }
+.flow-node.hot { background:linear-gradient(135deg, rgba(255,107,53,.28), rgba(179,136,255,.22)); }
+.arrow { font-size:1.5rem; font-weight:900; color:var(--accent); }
+.link-story, .story-card, .pattern-box, .estuary-diagram, .quiz, .master {
+  margin:18px 0; padding:20px; border-radius:24px; border:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(179,136,255,.16), rgba(0,212,255,.09)), var(--panel2);
+}
+.link-story h4, .story-card h4 { margin-top:0; color:var(--purple); }
+.cards.two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.pattern-box { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.pattern-box div { background:rgba(255,255,255,.06); padding:12px; border-radius:16px; border:1px solid var(--line); }
+.pattern-box b, .pattern-box span { display:block; }
+.pattern-box span { color:var(--muted); }
+.estuary-diagram { min-height:220px; position:relative; overflow:hidden; display:grid; place-items:center; }
+.estuary-diagram .river-line { position:absolute; top:20px; left:50%; transform:translateX(-50%); border-left:8px solid var(--cyan); padding-left:12px; height:92px; font-weight:900; color:var(--cyan); }
+.estuary-diagram .sea-line { position:absolute; bottom:30px; left:5%; right:5%; height:60px; border-radius:999px; background:linear-gradient(90deg, rgba(0,212,255,.18), rgba(255,107,53,.24)); display:grid; place-items:center; font-weight:900; }
+.estuary-diagram .meet { z-index:2; background:var(--panel); border:1px solid var(--line); border-radius:999px; padding:12px 16px; font-weight:900; }
+.quiz details { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:12px 14px; margin:10px 0; }
+.quiz summary { cursor:pointer; font-weight:900; }
+.hot-list li { margin:.55rem 0; }
+.check-item { display:flex; gap:10px; align-items:flex-start; padding:12px; margin:8px 0; border-radius:16px; background:var(--panel2); border:1px solid var(--line); }
+input[type="checkbox"] { accent-color:#00d4ff; width:1.1rem; height:1.1rem; margin-top:.35rem; }
+.transcript-block { margin:12px 0; padding:14px; border-radius:18px; background:var(--panel2); border:1px solid var(--line); }
+.transcript-block summary { cursor:pointer; font-weight:900; color:var(--green); }
+.transcript-block p { margin:.7rem 0; color:var(--muted); }
+.stamp { color:var(--orange); font-weight:900; margin-right:8px; }
+.footer { color:var(--muted); padding:30px 0 70px; }
+.notice { border:1px solid var(--orange); background:rgba(255,107,53,.12); padding:14px; border-radius:18px; }
+@media (max-width:1150px) {
+  .wrapper { grid-template-columns:1fr; max-width:920px; }
+  .sidebar, .map-panel, .hero, main { grid-column:1; grid-row:auto; position:static; max-height:none; }
+  .sidebar { order:2; }
+  .map-panel { display:none; }
+}
+@media (max-width:720px) {
+  body { font-size:17px; }
+  .topbar-inner { flex-wrap:wrap; }
+  .card-grid, .cards.two, .pattern-box { grid-template-columns:1fr; }
+  .hero, .topic { padding:20px; border-radius:24px; }
+  .section-head { flex-direction:column; }
+  select { width:100%; max-width:none; }
+}
+@media print {
+  body { background:#fff !important; color:#111 !important; }
+  .topbar, .sidebar, .map-panel, button, select { display:none !important; }
+  .wrapper, main, .hero { display:block; max-width:none; padding:0; }
+  .topic, .card, .img-card, .quiz, .master, .link-story { box-shadow:none; border:1px solid #999; background:#fff !important; color:#111 !important; page-break-inside:avoid; }
+  details { display:block; }
+  details > * { display:block; }
+  details summary { display:block; }
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <button id="themeBtn" type="button">🌙 Dark</button>
+    <select id="jumpMenu" aria-label="Jump to topic">
+      <option value="">Jump to topic…</option>
+      <option value="#intro">🎯 Class Scope</option><option value="#drainage-vs-river">🌊 Drainage System vs River</option><option value="#six-systems">🧭 Madhya Pradesh ke 6 Drainage Systems</option><option value="#mp-rivers">🏞️ MP Rivers</option><option value="#narmada-origin">🛕 Narmada Origin</option><option value="#mythology-story">📜 Skanda Purana, Reva Khand &amp; Narmada–Son–Johila Story</option><option value="#tapti-mahi-story">🌅 Tapti &amp; Mahi Story Hooks + Narmada Confluence</option><option value="#narmada-facts">📊 Narmada Core Facts</option><option value="#drainage-patterns">🗺️ Drainage Area, Rift Valley &amp; Drainage Patterns</option><option value="#estuary">🌊 Estuary / Jwar at Confluence</option><option value="#tributaries-districts">🔱 Tributaries, Districts, Navel Point &amp; Movements</option><option value="#upcoming">📌 Closing + Upcoming Topics</option>
+      <option value="#master">🔥 Master Revision</option>
+      <option value="#transcript">🧾 Full Transcript Archive</option>
+    </select>
+    <div class="progress-shell" title="Reading progress"><div id="readingProgress"></div></div>
+    <div class="progress-shell" title="Revision checklist progress"><div id="revisionProgress"></div></div>
+  </div>
+</div>
+<div class="wrapper">
+  <aside class="sidebar">
+    <h2>📚 Table of Contents</h2>
+    <nav class="toc" id="toc">
+      <a href="#intro" data-section="intro"><span>🎯</span> Class Scope</a><a href="#drainage-vs-river" data-section="drainage-vs-river"><span>🌊</span> Drainage System vs River</a><a href="#six-systems" data-section="six-systems"><span>🧭</span> Madhya Pradesh ke 6 Drainage Systems</a><a href="#mp-rivers" data-section="mp-rivers"><span>🏞️</span> MP Rivers</a><a href="#narmada-origin" data-section="narmada-origin"><span>🛕</span> Narmada Origin</a><a href="#mythology-story" data-section="mythology-story"><span>📜</span> Skanda Purana, Reva Khand &amp; Narmada–Son–Johila Story</a><a href="#tapti-mahi-story" data-section="tapti-mahi-story"><span>🌅</span> Tapti &amp; Mahi Story Hooks + Narmada Confluence</a><a href="#narmada-facts" data-section="narmada-facts"><span>📊</span> Narmada Core Facts</a><a href="#drainage-patterns" data-section="drainage-patterns"><span>🗺️</span> Drainage Area, Rift Valley &amp; Drainage Patterns</a><a href="#estuary" data-section="estuary"><span>🌊</span> Estuary / Jwar at Confluence</a><a href="#tributaries-districts" data-section="tributaries-districts"><span>🔱</span> Tributaries, Districts, Navel Point &amp; Movements</a><a href="#upcoming" data-section="upcoming"><span>📌</span> Closing + Upcoming Topics</a>
+      <a href="#master">🔥 Master Revision</a>
+      <a href="#transcript">🧾 Transcript Archive</a>
+    </nav>
+  </aside>
+  <aside class="map-panel">
+    <h3>🗺️ Sticky MP Map</h3>
+    
+<figure class="img-card">
+  <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-retry="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh state map reference for MP rivers" loading="eager" fetchpriority="high" decoding="async">
+  <figcaption>Image: SLBC Madhya Pradesh public map reference, used as MP geography side reference.</figcaption>
+</figure>
+    <p>Use this as side reference while revising districts, origins, and flow directions.</p>
+  </aside>
+  <header class="hero">
+    <div class="badges">
+      <span class="badge">MPPSC Pre 2025</span>
+      <span class="badge">Lecture 8</span>
+      <span class="badge">Major Rivers</span>
+      <span class="badge">Narmada Focus</span>
+      <span class="badge">12 Topic Blocks</span>
+    </div>
+    <h1>MP GK Revision Page<br>Major Rivers & Narmada River</h1>
+    <p>Hinglish revision notes generated from the uploaded transcript. Flow follows the video timestamps from <b>00:00:36</b> to <b>01:24:23</b>. Promo/live-chat parts are not mixed into core notes, but the full transcript archive is preserved at the end for timestamp fidelity.</p>
+    <div class="notice"><b>Study rule:</b> First revise cards → attempt Quick Recall → tick Master Checklist → open Transcript Archive only when you need exact teacher wording.</div>
+  </header>
+  <main>
+    
+<section class="topic" id="intro" style="--accent:#00d4ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:00:36–00:06:19</span>
+      <h2>🎯 Class Scope — MPPSC Pre 2025: Major Rivers of Madhya Pradesh</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="intro"> Done</label>
+  </div>
+  <p class="summary">Teacher ne live intro/promotion ke baad clear kiya ki yeh Lecture 8 hai: MP GK special series, topic Major Rivers of Madhya Pradesh, focus Narmada River. Starting live-share/like chat ko study notes se separate rakha gaya hai.</p>
+  
+<figure class="img-card">
+  <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-retry="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh state map reference for MP rivers" loading="eager" fetchpriority="high" decoding="async">
+  <figcaption>Image: SLBC Madhya Pradesh public map reference, used as MP geography side reference.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Class ka target</h3><ul><li>MPPSC Pre 2025 + MP GK</li><li>Lecture Number: 8</li><li>Topic: Major Rivers / प्रमुख नदियां</li><li>Main focus: Narmada River / नर्मदा नदी</li><li>Teacher ne bola: jitni baar Narmada पढ़ोगे, नया data मिलेगा.</li></ul></article><article class="card"><h3>Study-mode note</h3><ul><li>Yeh page video flow ke same order me hai.</li><li>Live chat/promo parts ko ‘Transcript Archive’ me preserve kiya gaya hai.</li><li>Exam-oriented facts ko 🔥 se mark kiya gaya hai.</li><li>Narmada ke mythological + geographical dono angles cover hain.</li></ul></article></div>
+  
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Lecture 8 ka main topic kya tha?</summary>
+          <p>Major Rivers of Madhya Pradesh, especially Narmada River.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Series kis exam target se linked thi?</summary>
+          <p>MPPSC Pre 2025 / MP GK special series.</p>
+        </details></div>
+</section>
+<section class="topic" id="drainage-vs-river" style="--accent:#00ff88">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:07:00–00:14:45</span>
+      <h2>🌊 Drainage System vs River — अपवाह तंत्र और नदी</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="drainage-vs-river"> Done</label>
+  </div>
+  <p class="summary">Teacher ne pehle definitions di, kyunki class Pre + Mains level ki hai. Narmada example se samjhaya: Narmada alone = river; Narmada + 41 tributaries = Narmada drainage system.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Narmada%20river%20map.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Narmada%20river%20map.jpg" alt="Map showing route of the Narmada River" loading="eager" fetchpriority="high" decoding="async">
+  <figcaption>Image: Wikimedia Commons, User:Uwe Dedering, “Narmada river map.jpg”, CC BY-SA 3.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Drainage System / अपवाह तंत्र</h3><ul><li>Jab koi river apne source/origin point se independently flow kare.</li><li>Ek definite direction me apni tributaries / सहायक नदियों ke saath chale.</li><li>Apne confluence point par sea/ocean/lake me mile.</li><li>Us river + tributaries se jo total network/area banta hai, wahi drainage system/drainage area hai.</li><li>Example: Narmada + 41 tributaries = Narmada Drainage System.</li></ul></article><article class="card"><h3>River / नदी</h3><ul><li>River = Earth surface par flow karne wali water stream / जलधारा.</li><li>Origin mountain, plateau ya glacier se ho sakta hai.</li><li>MP me glacier/himnad nahi hai — rivers mostly पर्वत/पठार se originate hoti hain.</li><li>River kisi other river, sea ya lake se mil sakti hai.</li><li>Example: Betwa river hai, but independent drainage system nahi, kyunki Betwa Yamuna me milti hai.</li></ul></article><article class="card"><h3>Key Difference</h3><ul><li>Drainage system ke liye river ka independent confluence required hai.</li><li>River kisi doosri river se mil jaye to woh khud ka independent drainage system nahi banati.</li><li>Narmada river independent hai; Betwa Yamuna me milti hai.</li><li>🔥 Exam phrasing: River aur drainage system ko confuse mat karna.</li></ul></article></div>
+  
+<div class="flow-diagram">
+  <div class="flow-node">Origin / उद्गम</div><div class="arrow">→</div>
+  <div class="flow-node">Main River</div><div class="arrow">+</div>
+  <div class="flow-node">Tributaries</div><div class="arrow">→</div>
+  <div class="flow-node">Sea/Lake</div><div class="arrow">=</div>
+  <div class="flow-node hot">Drainage System</div>
+</div>
+<table>
+<tr><th>Term</th><th>Hinglish Meaning</th><th>Narmada Example</th></tr>
+<tr><td>River</td><td>एक मुख्य जलधारा</td><td>Narmada alone</td></tr>
+<tr><td>Tributary</td><td>सहायक नदी</td><td>Narmada ki 41 tributaries</td></tr>
+<tr><td>Drainage System</td><td>Main river + tributaries + total area/network</td><td>Narmada + 41 tributaries</td></tr>
+</table>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada drainage system me kya-kya include hai?</summary>
+          <p>Narmada river + uski 41 tributaries + unka drainage area.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Betwa drainage system kyon nahi?</summary>
+          <p>Betwa Yamuna me milti hai, independent sea/lake confluence nahi banati.</p>
+        </details></div>
+</section>
+<section class="topic" id="six-systems" style="--accent:#ff6b35">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:15:27–00:20:45</span>
+      <h2>🧭 Madhya Pradesh ke 6 Drainage Systems</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="six-systems"> Done</label>
+  </div>
+  <p class="summary">MP ke drainage systems ko teacher ne 2 directions me samjhaya: Bay of Bengal side aur Arabian Sea side. Direct exam answer: 6 systems.</p>
+  
+  <div class="card-grid"><article class="card"><h3>Bay of Bengal side / बंगाल की खाड़ी की ओर</h3><ul><li>1) Ganga–Yamuna Drainage System — MP ka सबसे बड़ा अपवाह तंत्र.</li><li>2) Godavari Drainage System — MP ki दक्षिण की नदियां jaise Wardha, Wainganga, Kanhan etc. ultimately Godavari system me jaati hain.</li><li>3) Mahanadi Drainage System — MP ka सबसे छोटा अपवाह तंत्र.</li></ul></article><article class="card"><h3>Arabian Sea side / अरब सागर की ओर</h3><ul><li>4) Narmada Drainage System — MP me second largest drainage system, but Narmada river MP ki largest river hai.</li><li>5) Tapti Drainage System — Tapti independent flow karti hai.</li><li>6) Mahi Drainage System — Mahi bhi independent flow karke Arabian Sea me milti hai.</li></ul></article><article class="card"><h3>🔥 Exam Hot</h3><ul><li>MP ke drainage systems = 6. Agar kahin 5 likha ho, teacher ke according 6 mark karna.</li><li>Largest river ≠ largest drainage system.</li><li>MP ka largest drainage system = Ganga–Yamuna.</li><li>MP ka smallest drainage system = Mahanadi.</li><li>Narmada River largest hai, par drainage system second largest hai.</li></ul></article></div>
+  
+<div class="link-story">
+  <h4>🔗 Link Story — 6 systems याद करो</h4>
+  <p><b>Ganga-Yamuna</b> ne सबसे बड़ा umbrella खोला, uske neeche <b>Godavari</b> दक्षिण se aayi, फिर छोटी बच्ची <b>Mahanadi</b> आई. Arabian side par <b>Narmada</b> queen चली, पीछे <b>Tapti</b> sister aur <b>Mahi</b> admirer अरब सागर की ओर निकल गए.</p>
+</div>
+<table>
+<tr><th>Rank/Type</th><th>Drainage System</th><th>Exam Note</th></tr>
+<tr><td>Largest in MP</td><td>Ganga–Yamuna</td><td>River name MP me directly flow na kare, system count hota hai.</td></tr>
+<tr><td>Second largest</td><td>Narmada</td><td>Narmada river MP ki largest river.</td></tr>
+<tr><td>Smallest</td><td>Mahanadi</td><td>MP contribution small.</td></tr>
+</table>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. MP me drainage systems kitne hain?</summary>
+          <p>6.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. MP ka sabse bada drainage system?</summary>
+          <p>Ganga–Yamuna drainage system.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. MP ka sabse chhota drainage system?</summary>
+          <p>Mahanadi drainage system.</p>
+        </details></div>
+</section>
+<section class="topic" id="mp-rivers" style="--accent:#b388ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:21:31–00:25:20</span>
+      <h2>🏞️ MP Rivers — Nadiyon ka Mayka &amp; Peninsular Rivers</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="mp-rivers"> Done</label>
+  </div>
+  <p class="summary">Teacher ne MP ko ‘Nadiyon ka Mayka’ kaha kyunki adhikansh rivers MP ke mountains/plateaus se janm leti hain. MP me approximately 207 recognized small-big rivers batayi gayi.</p>
+  
+<figure class="img-card">
+  <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" data-retry="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh state map reference for MP rivers" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: SLBC Madhya Pradesh public map reference, used as MP geography side reference.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Recognized rivers</h3><ul><li>MP me मान्यता प्राप्त छोटी-बड़ी लगभग 207 rivers batayi gayi.</li><li>Teacher ne kaha random local streams ko count nahi karna; government-recognized rivers ke context me baat hai.</li><li>MP has one of the largest number of rivers in India — class wording: &#x27;भारत की सबसे ज्यादा नदियां&#x27;.</li></ul></article><article class="card"><h3>Nadiyon ka Mayka</h3><ul><li>Mayka = janm sthal / birth place.</li><li>MP ki adhikansh rivers yahin ke पर्वत/पठार se originate hoti hain.</li><li>Examples: Narmada, Tapti, Betwa, Wainganga, Wardha, Chambal, Shipra, Parvati, Sindh etc.</li><li>Baad me ye kisi aur state/river/sea me mil sakti hain — par janm MP me hota hai.</li></ul></article><article class="card"><h3>Peninsular Rivers</h3><ul><li>MP rivers are Peninsular Rivers / प्रायद्वीपीय नदियां.</li><li>South India ka northern part = MP, teacher ke explanation me.</li><li>Peninsula = teen taraf water se घिरा landmass: west Arabian Sea, south Indian Ocean, east Bay of Bengal.</li><li>Isliye MP se originate hone wali rivers ko Peninsular rivers context me samjha.</li></ul></article></div>
+  
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. MP ko Nadiyon ka Mayka kyon kahte hain?</summary>
+          <p>Kyunki adhikansh rivers ka janm MP ke mountains/plateaus se hota hai.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Class me MP ki recognized rivers approx kitni batayi gayi?</summary>
+          <p>लगभग 207.</p>
+        </details></div>
+</section>
+<section class="topic" id="narmada-origin" style="--accent:#00d4ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:26:02–00:29:14</span>
+      <h2>🛕 Narmada Origin — Son Desh Tirth to Amarkantak</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="narmada-origin"> Done</label>
+  </div>
+  <p class="summary">Teacher ne Narmada ke origin ko detailed chain me diya: Son Desh Tirth, Taksh Parvat, Mai ki Bagiya, Maikal Range, Narmada Kund, Amarkantak, Anuppur.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Narmada_Kund,_Amarkantak.JPG?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Narmada_Kund,_Amarkantak.JPG" alt="Narmada Kund at Amarkantak, the traditional origin site of Narmada River" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, Pankaj Oudhia, “Narmada Kund, Amarkantak.JPG”, CC BY-SA 3.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Origin chain</h3><ul><li>Origin: Son Desh Tirth / सोण देश तीर्थ.</li><li>Associated points: Taksh Parvat, Mai ki Bagiya, Maikal Range, Narmada Kund.</li><li>Location: Amarkantak, Anuppur district.</li><li>Mains answer me full chain likhne ki advice di gayi.</li><li>Old sources me Vindhya/Bhind Parvat type references mil sakte hain; teacher ne explain kiya ki pehle Maikal ko Vindhya ka part maana jaata tha.</li></ul></article><article class="card"><h3>Amarkantak geography context</h3><ul><li>Amarkantak Vindhyachal aur Satpura ke milan-sthal ke roop me explain hua.</li><li>Maikal Range se janm hone ke kaaran Narmada ka naam Mekal Suta bhi hai.</li><li>Narmada Kund ko origin site ke roop me mark kiya gaya.</li></ul></article></div>
+  
+<div class="link-story">
+  <h4>🔗 Link Story — Origin chain ऐसे याद करो</h4>
+  <p><b>Son Desh</b> me <b>Taksh Parvat</b> par Maa ki <b>Mai ki Bagiya</b> hai; us bagiya ke peeche <b>Maikal Range</b>, usme <b>Narmada Kund</b>, aur poora address: <b>Amarkantak, Anuppur</b>.</p>
+</div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada ka origin chain kya hai?</summary>
+          <p>Son Desh Tirth → Taksh Parvat → Mai ki Bagiya → Maikal Range → Narmada Kund → Amarkantak → Anuppur.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Mekal Suta ka meaning?</summary>
+          <p>Maikal/Mekal ki daughter; Narmada ka ek naam.</p>
+        </details></div>
+</section>
+<section class="topic" id="mythology-story" style="--accent:#ff6b35">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:29:14–00:47:40</span>
+      <h2>📜 Skanda Purana, Reva Khand &amp; Narmada–Son–Johila Story</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="mythology-story"> Done</label>
+  </div>
+  <p class="summary">Teacher ne Skanda Purana ke Reva Khand, Reva naam, Sonbhadra, Johila, Chelhari Umaria, Dashrath Ghat, Shiv-putri/Shankari, Mekal Suta, Chirkumari aur east-to-west myth ko story form me samjhaya.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Narmada%20river%20map.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Narmada%20river%20map.jpg" alt="Map showing route of the Narmada River" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, User:Uwe Dedering, “Narmada river map.jpg”, CC BY-SA 3.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Skanda Purana reference</h3><ul><li>Skanda Purana ke Reva Khand me Narmada ko Reva kaha gaya.</li><li>🔥 Exam Hot: Reva Khand kis Purana me? — Skanda Purana.</li><li>Narmada ka ek naam Reva hai.</li><li>Story section memory hook ke liye use kiya gaya.</li></ul></article><article class="card"><h3>Son, Johila aur Son Desh Tirth</h3><ul><li>Son River ka origin Sonmuda se bataya gaya.</li><li>Son Desh Tirth combined area hai jahan se Narmada, Son aur Johila ka origin context aata hai.</li><li>Johila ko story me dासी ke roop me explain kiya.</li><li>Chelhari, Umaria me Son aur Johila ke मिलन को story hook banaya.</li><li>Dashrath Ghat, Chelhari Umaria: teacher ne bataya Ram ji ne Dashrath ji ki asthiyan yahan visarjit ki.</li></ul></article><article class="card"><h3>Narmada ke mythological names</h3><ul><li>Mekal Suta — Mekal/Maikal ki daughter.</li><li>Shivputri / Shankari — Shiva se sambandhit.</li><li>Chirkumari / Chir Kuwari — jisne anant kaal tak vivah na karne ka pran liya.</li><li>Reva — Skanda Purana reference.</li><li>Story me Narmada ne Son-Johila milan ke baad west direction choose ki.</li></ul></article><article class="card"><h3>East-to-West flow: Pauranik explanation</h3><ul><li>Story ke according Narmada gusse me Son-Johila ka milan nahi dekhna chahti.</li><li>Isliye east ki taraf Bay of Bengal nahi gayi; उल्टी दिशा यानी west me Arabian Sea ki taraf nikli.</li><li>41 tributaries ne story hook me ‘Didi tum sangharsh karo, hum tumhare saath hain’ kaha.</li><li>Waterfalls ki कल-कल sound ko Samaveda se compare kiya gaya.</li><li>Samaveda ka sambandh music/sangeet se bataya.</li></ul></article></div>
+  
+<div class="story-card">
+  <h4>🎬 Story Flow — Teacher ka memory hook</h4>
+  <ol>
+    <li>Mekal Raja ki daughter Narmada ka swayamvar hota hai.</li>
+    <li>Condition: Gulbakawali ka pushp laane wale rajkumar se vivah.</li>
+    <li>Sonbhadra pushp laata hai, vivah तय hota hai.</li>
+    <li>Narmada apni दासी Johila ko Son ke paas sandesh lekar bhejti hai.</li>
+    <li>Son Johila ko hi Narmada samajh leta hai; Johila apni identity chhupa leti hai.</li>
+    <li>Chelhari Umaria me Son-Johila ka मिलन ho jata hai.</li>
+    <li>Narmada Chirkumari ka pran leti hai aur east ki jagah west flow karti hai.</li>
+  </ol>
+</div>
+<div class="link-story">
+  <h4>🔗 Names याद करने की chain</h4>
+  <p><b>Reva</b> ने <b>Mekal Suta</b> banke <b>Shivputri/Shankari</b> se ashirwad liya, phir <b>Chirkumari</b> बनकर west ki ओर चल दी.</p>
+</div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Reva Khand kis Purana me hai?</summary>
+          <p>Skanda Purana.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Chirkumari ka meaning kya hai?</summary>
+          <p>Anant kaal tak vivah na karne wali.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. Narmada waterfalls ki sound ki तुलना किससे की गई?</summary>
+          <p>Samaveda se.</p>
+        </details></div>
+</section>
+<section class="topic" id="tapti-mahi-story" style="--accent:#b388ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:47:40–00:57:45</span>
+      <h2>🌅 Tapti &amp; Mahi Story Hooks + Narmada Confluence</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="tapti-mahi-story"> Done</label>
+  </div>
+  <p class="summary">Teacher ne Tapti aur Mahi ko Narmada ke context me story hook se yaad karaya. Tapti: Multai Betul origin, Surya-putri/Shani ki behen, 724 km. Mahi: Minda village, Sardarpur Dhar, Vindhya range, Tropic of Cancer ko do baar cross karne ka hook.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tapti_river_(6).jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tapti_river_(6).jpg" alt="Tapti River view" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, Anup Sadi, “Tapti river (6).jpg”, open Wikimedia file page.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Tapti River hook</h3><ul><li>Tapti ka origin: Multai, Betul.</li><li>Tapti ko Surya-putri aur Shani ki behen bataya.</li><li>Length: 724 km (class data).</li><li>Narmada se chhoti hai.</li><li>Story hook: Tapti Narmada ko rokne gayi, par khud independent flow kar gayi.</li></ul></article><article class="card"><h3>Mahi River hook</h3><ul><li>Mahi origin: Minda village, Sardarpur, Dhar.</li><li>Vindhya range context bataya.</li><li>Mahi independent flow karke Arabian Sea/Gulf side me milti hai.</li><li>Teacher ne Mahi ke Tropic of Cancer / Kark Rekha ko do baar cross karne ka memory hook diya.</li><li>Story hook: Mahi Narmada ko rokna chahta hai, par Narmada nahi rukti.</li></ul></article><article class="card"><h3>Narmada Confluence</h3><ul><li>Narmada ka milan sthal: Arabian Sea.</li><li>Specific: Gulf of Khambhat / Gulf of Cambay.</li><li>Location: Bharuch, Gujarat.</li><li>Teacher ne Mains ke liye ‘Cambay ki Khadi’ likhne par emphasize kiya.</li><li>🔥 Exam Hot: Khambhat + Cambay dono naam yaad rakho.</li></ul></article></div>
+  
+<div class="cards two">
+  <div class="mini-card"><h4>Tapti</h4><p>Multai Betul → Surya-putri → Shani ki behen → 724 km → Arabian Sea.</p></div>
+  <div class="mini-card"><h4>Mahi</h4><p>Minda, Sardarpur Dhar → Kark Rekha ko 2 baar cross → Arabian Sea/Gulf side.</p></div>
+</div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Tapti ka origin kaha bataya?</summary>
+          <p>Multai, Betul.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Mahi ka origin hook?</summary>
+          <p>Minda village, Sardarpur, Dhar.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. Narmada ka confluence?</summary>
+          <p>Arabian Sea, Gulf of Khambhat/Cambay, Bharuch Gujarat.</p>
+        </details></div>
+</section>
+<section class="topic" id="narmada-facts" style="--accent:#00ff88">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">00:59:24–01:02:27</span>
+      <h2>📊 Narmada Core Facts — Length, Names, Flow</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="narmada-facts"> Done</label>
+  </div>
+  <p class="summary">Is section me Narmada ke factual data diye gaye: total length 1312 km, MP length 1077 km, border stretches, pure Gujarat stretch, east-to-west flow, mythological names, other titles.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_Narmada_river,_Maheshwar.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunset_over_Narmada_river,_Maheshwar.jpg" alt="Narmada River at Maheshwar" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, Rashi Kalra, “Sunset over Narmada river, Maheshwar.jpg”, CC BY-SA 2.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Length &amp; flow data</h3><ul><li>Total length: 1312 km.</li><li>Length in MP: 1077 km.</li><li>34 km: MP–Maharashtra border par flow.</li><li>40 km: MP–Gujarat border par flow.</li><li>161 km: purely Gujarat me flow.</li><li>Flow direction: East to West / पूर्व से पश्चिम.</li></ul></article><article class="card"><h3>Names according to mythology</h3><ul><li>Nibuda / निबुडा.</li><li>Sakhari / साखरी.</li><li>Somodevi / सोमो देवी.</li><li>Som Prakash / सोम प्रकाश.</li><li>Shivputri, Mekal Suta, Chirkumari, Shankari, Reva.</li><li>🔥 MPPSC me names se question ban sakta hai.</li></ul></article><article class="card"><h3>Other names/titles</h3><ul><li>Namadas / Namade/Narbada type old reference; teacher ne Ptolemy context bataya.</li><li>Giver of Pleasure / खुशी का दाता.</li><li>Life Line of MP / मध्य प्रदेश की जीवन रेखा.</li><li>Madhya Pradesh ki Ganga.</li><li>Heart Line of India / भारत की हृदय रेखा.</li></ul></article></div>
+  
+<table>
+<tr><th>Fact</th><th>Data from class</th></tr>
+<tr><td>Total length</td><td>1312 km</td></tr>
+<tr><td>MP length</td><td>1077 km</td></tr>
+<tr><td>MP–Maharashtra border</td><td>34 km</td></tr>
+<tr><td>MP–Gujarat border</td><td>40 km</td></tr>
+<tr><td>Pure Gujarat</td><td>161 km</td></tr>
+<tr><td>Direction</td><td>East to West</td></tr>
+</table>
+<div class="link-story"><h4>🔗 Length chain</h4><p><b>1312</b> की queen Narmada MP me <b>1077</b> chalti hai, border par <b>34</b> Maharashtra se हाथ मिलाती, <b>40</b> Gujarat se, phir <b>161</b> Gujarat me अकेली chalti hai.</p></div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada ki total length?</summary>
+          <p>1312 km.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. MP me Narmada ki length?</summary>
+          <p>1077 km.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. Narmada ka ek title batao.</summary>
+          <p>Life Line of MP / Heart Line of India / Madhya Pradesh ki Ganga.</p>
+        </details></div>
+</section>
+<section class="topic" id="drainage-patterns" style="--accent:#00d4ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">01:02:27–01:08:17</span>
+      <h2>🗺️ Drainage Area, Rift Valley &amp; Drainage Patterns</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="drainage-patterns"> Done</label>
+  </div>
+  <p class="summary">Teacher ne Narmada ka drainage area, MP drainage area, Vindhya-Satpura rift valley, dendritic/bush/net patterns, radial origin pattern aur bars pattern samjhaya.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dhuandhar_Falls,Jabalpur.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dhuandhar_Falls,Jabalpur.jpg" alt="Dhuandhar Falls on the Narmada River near Jabalpur" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, “Dhuandhar Falls,Jabalpur.jpg”, open Wikimedia file page.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Drainage area data</h3><ul><li>Total drainage area: 98,796 sq km.</li><li>MP drainage area: 85,149 sq km (class transcript data).</li><li>Drainage area = Narmada + tributaries ka network area.</li><li>Teacher ne map/diagram ke through samjhaya ki river system ka total area अपवाह क्षेत्र hota hai.</li></ul></article><article class="card"><h3>Rift valley / भ्रंश घाटी</h3><ul><li>Narmada Vindhyachal aur Satpura ke beech ke fault/rift me flow karti hai.</li><li>Fault/Rift = भ्रंश.</li><li>Narmada-Son valley context me teacher ne pahle explain kiya tha.</li><li>Narmada Satpura ke north side ke sahare flow karti hai.</li></ul></article><article class="card"><h3>Drainage pattern names</h3><ul><li>Vriksh-numa / Dendritic feel: main stem Narmada, branches tributaries.</li><li>Jhaadi-numa / Bush-like: river network bush jaisa dikhta hai.</li><li>Jali-numa / Net-like: network/jal bikhra hua hota hai.</li><li>Origin par Radial Pattern: river origin se chaar directions me spread hoti hai.</li><li>Complete combined flow: Salakhen / Bars Pattern.</li><li>Tributaries approx 90° / right angle par Narmada me milti hain.</li></ul></article></div>
+  
+<div class="pattern-box">
+  <div><b>Origin Pattern</b><span>Radial — उद्गम par chaaro directions me spread.</span></div>
+  <div><b>Full System Pattern</b><span>Bars/Salakhen — tributaries 90° par join hoti hain.</span></div>
+  <div><b>Visual Feel</b><span>Vriksh + Jhaadi + Jali</span></div>
+</div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada kis do ranges ke beech rift valley me flow karti hai?</summary>
+          <p>Vindhya/Vindhyachal aur Satpura.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Origin par kaunsa pattern?</summary>
+          <p>Radial pattern.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. Complete flow ka pattern?</summary>
+          <p>Bars/Salakhen pattern.</p>
+        </details></div>
+</section>
+<section class="topic" id="estuary" style="--accent:#ff6b35">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">01:08:17–01:11:45</span>
+      <h2>🌊 Estuary / Jwar at Confluence</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="estuary"> Done</label>
+  </div>
+  <p class="summary">Teacher ne Estuary/Jwar ki Mains-level definition explain ki: river ka cold, fresh, sweet water sea ke extremely salty water se 90° angle par ek jagah bina bikhre mile to estuary/jwar formation hota hai.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Narmada%20river%20map.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Narmada%20river%20map.jpg" alt="Map showing route of the Narmada River" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, User:Uwe Dedering, “Narmada river map.jpg”, CC BY-SA 3.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Estuary formation</h3><ul><li>Narmada apne मुहाने/confluence par estuary/jwar/tide banati hai.</li><li>River independently definite direction me flow karti hai.</li><li>Tributaries ke saath cold, fresh, sweet water lekar confluence point ki ओर badhti hai.</li><li>Sea ka water extremely salty hota hai.</li><li>Jab river water 90° angle par ek jagah bina disperse hue sea water me milta hai, estuary/jwar formation samjhaya gaya.</li></ul></article><article class="card"><h3>Exam wording</h3><ul><li>Estuary = एश्चुरी / ज्वार / Tide context.</li><li>Mains answer me definition likhne laayak point.</li><li>Teacher ne emphasize kiya ki sirf ‘estuary’ yaad karna kaafi nahi; meaning bhi samjho.</li><li>🔥 Narmada forms estuary at confluence.</li></ul></article></div>
+  
+<div class="estuary-diagram" aria-label="CSS diagram of estuary formation">
+  <div class="river-line">Fresh River Water ↓</div>
+  <div class="sea-line">Salty Sea Water</div>
+  <div class="meet">90° Meet = Estuary / Jwar</div>
+</div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada mouth par kya banati hai?</summary>
+          <p>Estuary / Jwar / Tide.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Estuary explanation me angle kya bataya?</summary>
+          <p>90° angle.</p>
+        </details></div>
+</section>
+<section class="topic" id="tributaries-districts" style="--accent:#b388ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">01:11:45–01:17:39</span>
+      <h2>🔱 Tributaries, Districts, Navel Point &amp; Movements</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="tributaries-districts"> Done</label>
+  </div>
+  <p class="summary">Final study portion me tributary counts, right/left side rivers, Tawa as largest tributary, Narmada ka Navel/Nabhi Kund at Nemawar Dewas, 17 districts, Namami Devi Narmade, Narmada Putra and Narmada Bachao Andolan cover hua.</p>
+  
+<figure class="img-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunset_over_Narmada_river,_Maheshwar.jpg?width=900" data-retry="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunset_over_Narmada_river,_Maheshwar.jpg" alt="Narmada River at Maheshwar" loading="lazy" fetchpriority="auto" decoding="async">
+  <figcaption>Image: Wikimedia Commons, Rashi Kalra, “Sunset over Narmada river, Maheshwar.jpg”, CC BY-SA 2.0.</figcaption>
+</figure>
+  <div class="card-grid"><article class="card"><h3>Tributary count</h3><ul><li>Total tributaries: 41.</li><li>Right/North side: 19 rivers.</li><li>Left/South side: 22 rivers.</li><li>39 tributaries MP me milti hain.</li><li>2 tributaries Gujarat me milti hain.</li><li>🔥 Tawa = Narmada ki largest tributary; left/south side se aati hai.</li></ul></article><article class="card"><h3>Right/North side examples</h3><ul><li>Hiran.</li><li>Balai / Balai-type transcript wording.</li><li>Ranj / TinDoh / Jamner / Kolar.</li><li>Man, Oonti/Unti, Hathni etc.</li><li>Note: transcript speech-to-text me kuch river names distorted ho sakte hain; teacher ke board/source se verify karna useful rahega.</li></ul></article><article class="card"><h3>Left/South side examples</h3><ul><li>Dudhi.</li><li>Chhoti Tawa.</li><li>Kaveri (Narmada ki small tributary; South India wali Kaveri nahi).</li><li>Tawa — largest tributary.</li><li>Ganjal, Sher, Shakkar, Gaar.</li></ul></article><article class="card"><h3>Nabhi Kund &amp; districts</h3><ul><li>Nemawar, Dewas = Narmada ka Navel / Nabhi Kund.</li><li>Narmada 17 districts se flow karti hai (district boundary context included).</li><li>List: Anuppur, Dindori, Mandla, Balaghat, Jabalpur, Seoni, Narsinghpur, Narmadapuram, Raisen, Sehore, Harda, Dewas, Khandwa, Khargone, Dhar, Barwani, Alirajpur.</li></ul></article><article class="card"><h3>Programs, persons, movements</h3><ul><li>Namami Devi Narmade program: plantation/वृक्षारोपण se related, Narmada river banks par.</li><li>Narmada Putra: Amritlal Vegad/Bagad — Gujarati साहित्यकार और चित्रकार.</li><li>Books/works mentioned: Amritasya Narmada, Narmada Tum Kitni Sundar Ho.</li><li>Narmada Bachao Andolan: Medha Patkar, Baba Amte, Arundhati Roy.</li><li>Reason: dam height/water storage badhne se villages, farms, houses submergence/rehabilitation issue.</li></ul></article></div>
+  
+<table>
+<tr><th>Category</th><th>Count/Names</th><th>Memory Hook</th></tr>
+<tr><td>Total tributaries</td><td>41</td><td>“Didi tum sangharsh karo” group</td></tr>
+<tr><td>Right/North</td><td>19</td><td>Upar/right side</td></tr>
+<tr><td>Left/South</td><td>22</td><td>Neeche/left side, Tawa largest</td></tr>
+<tr><td>MP joining</td><td>39</td><td>Most tributaries MP me</td></tr>
+<tr><td>Gujarat joining</td><td>2</td><td>Last part Gujarat side</td></tr>
+</table>
+<div class="link-story"><h4>🔗 District chain — 17 districts याद करो</h4><p><b>Anuppur</b> se <b>Dindori</b> nikli, <b>Mandla</b> ne <b>Balaghat</b> ko बुलाया, <b>Jabalpur</b> ke saath <b>Seoni</b>-<b>Narsinghpur</b> chale; <b>Narmadapuram</b> me <b>Raisen</b>-<b>Sehore</b>-<b>Harda</b> मिले; phir <b>Dewas</b>, <b>Khandwa</b>, <b>Khargone</b>, <b>Dhar</b>, <b>Barwani</b>, <b>Alirajpur</b> tak Narmada chalti gayi.</p></div>
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Narmada ki total tributaries?</summary>
+          <p>41.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Largest tributary?</summary>
+          <p>Tawa.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q3. Narmada ka Nabhi Kund kaha?</summary>
+          <p>Nemawar, Dewas.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q4. Narmada Bachao Andolan ki pramukh neta?</summary>
+          <p>Medha Patkar; along with Baba Amte and Arundhati Roy mentioned.</p>
+        </details></div>
+</section>
+<section class="topic" id="upcoming" style="--accent:#00d4ff">
+  <div class="section-head">
+    <div>
+      <span class="time-chip">01:17:39–01:24:23</span>
+      <h2>📌 Closing + Upcoming Topics</h2>
+    </div>
+    <label class="done-label"><input type="checkbox" class="section-done" data-section="upcoming"> Done</label>
+  </div>
+  <p class="summary">Closing part me teacher ne comments/review/like/share request ki aur next class ke topics bataye: Chambal, Son, Betwa, Tapti.</p>
+  
+  <div class="card-grid"><article class="card"><h3>Closing notes</h3><ul><li>Namami Devi Narmade program ke date/detail ko comment box me answer karne ko homework-style prompt diya.</li><li>Teacher ne daily 8 PM live class mention ki.</li><li>Promotional/live engagement content ko revision notes me separate rakha gaya hai.</li></ul></article><article class="card"><h3>📌 Upcoming Topic</h3><ul><li>Next class: Chambal.</li><li>Son.</li><li>Betwa.</li><li>Tapti.</li><li>Full description with new points.</li></ul></article></div>
+  
+  <div class="quiz"><h3>⚡ Quick Recall</h3>
+        <details class="quiz-item">
+          <summary>Q1. Next class me kaunse topics bataye gaye?</summary>
+          <p>Chambal, Son, Betwa, Tapti.</p>
+        </details>
+        <details class="quiz-item">
+          <summary>Q2. Daily class time kya mention hua?</summary>
+          <p>8 PM.</p>
+        </details></div>
+</section>
+
+    <section class="topic master" id="master" style="--accent:#ff6b35">
+      <div class="section-head">
+        <div><span class="time-chip">Master Section</span><h2>🔥 Master Revision Zone</h2></div>
+      </div>
+      <h3>Full Forms & Important Terms</h3>
+      <table><tr><th>Term</th><th>Hindi/Hinglish</th><th>Meaning</th></tr><tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>Madhya Pradesh civil/state exam context</td></tr><tr><td>MP GK</td><td>Madhya Pradesh General Knowledge</td><td>MP राज्य सामान्य ज्ञान</td></tr><tr><td>Drainage System</td><td>अपवाह तंत्र</td><td>Main river + tributaries + drainage area/network</td></tr><tr><td>Tributary</td><td>सहायक नदी</td><td>Main river me milne wali नदी</td></tr><tr><td>Confluence Point</td><td>मिलन स्थल</td><td>River ka sea/lake/other river se मिलना</td></tr><tr><td>Arabian Sea</td><td>अरब सागर</td><td>Narmada, Tapti, Mahi side confluence</td></tr><tr><td>Bay of Bengal</td><td>बंगाल की खाड़ी</td><td>Ganga-Yamuna/Godavari/Mahanadi side systems</td></tr><tr><td>Gulf of Khambhat/Cambay</td><td>खंभात/कैंबे की खाड़ी</td><td>Narmada ka confluence near Bharuch, Gujarat</td></tr><tr><td>Tropic of Cancer</td><td>कर्क रेखा</td><td>Mahi story hook: two crossings</td></tr><tr><td>Estuary</td><td>एश्चुरी/ज्वार</td><td>River mouth par fresh-salty water meeting zone</td></tr><tr><td>Radial Pattern</td><td>रेडियल पैटर्न</td><td>Origin se chaar directions me flow spread</td></tr><tr><td>Bars Pattern</td><td>सलाखें पैटर्न</td><td>Tributaries right-angle feel ke saath join</td></tr></table>
+      <h3>Exam Hot Facts</h3>
+      <ol class="hot-list"><li>🔥 MP ke drainage systems = 6.</li><li>🔥 Largest MP drainage system = Ganga–Yamuna.</li><li>🔥 Smallest MP drainage system = Mahanadi.</li><li>🔥 Narmada River MP ki largest river, par drainage system second largest.</li><li>🔥 Narmada + 41 tributaries = Narmada drainage system.</li><li>🔥 Skanda Purana ke Reva Khand me Narmada ko Reva kaha gaya.</li><li>🔥 Narmada origin chain: Son Desh Tirth → Taksh Parvat → Mai ki Bagiya → Maikal Range → Narmada Kund → Amarkantak → Anuppur.</li><li>🔥 Narmada confluence: Arabian Sea, Gulf of Khambhat/Cambay, Bharuch Gujarat.</li><li>🔥 Total length: 1312 km; MP length: 1077 km.</li><li>🔥 Drainage area: 98,796 sq km; MP drainage area in class: 85,149 sq km.</li><li>🔥 Narmada flows in rift/fault valley between Vindhya and Satpura.</li><li>🔥 Origin pattern: Radial; complete flow: Bars/Salakhen pattern.</li><li>🔥 Tributaries: 41 total; 19 right/north; 22 left/south; 39 MP; 2 Gujarat.</li><li>🔥 Tawa is the largest tributary of Narmada and comes from left/south side.</li><li>🔥 Nemawar, Dewas = Narmada ka Nabhi Kund.</li><li>🔥 Narmada flows through 17 districts in the class list.</li><li>🔥 Namami Devi Narmade program is related to plantation on Narmada banks.</li><li>🔥 Narmada Bachao Andolan: Medha Patkar, Baba Amte, Arundhati Roy.</li></ol>
+      <h3>Master Revision Checklist</h3>
+      <p id="checkCount" class="summary">Tick points as you revise. Your progress is saved in this browser.</p>
+      <div class="checklist"><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-0"> <span>MP ke drainage systems = 6.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-1"> <span>Largest MP drainage system = Ganga–Yamuna.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-2"> <span>Smallest MP drainage system = Mahanadi.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-3"> <span>Narmada River MP ki largest river, par drainage system second largest.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-4"> <span>Narmada + 41 tributaries = Narmada drainage system.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-5"> <span>Skanda Purana ke Reva Khand me Narmada ko Reva kaha gaya.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-6"> <span>Narmada origin chain: Son Desh Tirth → Taksh Parvat → Mai ki Bagiya → Maikal Range → Narmada Kund → Amarkantak → Anuppur.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-7"> <span>Narmada confluence: Arabian Sea, Gulf of Khambhat/Cambay, Bharuch Gujarat.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-8"> <span>Total length: 1312 km; MP length: 1077 km.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-9"> <span>Drainage area: 98,796 sq km; MP drainage area in class: 85,149 sq km.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-10"> <span>Narmada flows in rift/fault valley between Vindhya and Satpura.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-11"> <span>Origin pattern: Radial; complete flow: Bars/Salakhen pattern.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-12"> <span>Tributaries: 41 total; 19 right/north; 22 left/south; 39 MP; 2 Gujarat.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-13"> <span>Tawa is the largest tributary of Narmada and comes from left/south side.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-14"> <span>Nemawar, Dewas = Narmada ka Nabhi Kund.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-15"> <span>Narmada flows through 17 districts in the class list.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-16"> <span>Namami Devi Narmade program is related to plantation on Narmada banks.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-17"> <span>Narmada Bachao Andolan: Medha Patkar, Baba Amte, Arundhati Roy.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-18"> <span>River vs Drainage System difference samjha.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-19"> <span>Peninsular rivers ka concept samjha.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-20"> <span>Tapti origin Multai Betul aur length 724 km yaad.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-21"> <span>Mahi origin Minda village Sardarpur Dhar yaad.</span></label><label class="check-item"><input type="checkbox" class="master-check" data-key="chk-22"> <span>Upcoming topics: Chambal, Son, Betwa, Tapti.</span></label></div>
+    </section>
+
+    <section class="topic" id="transcript" style="--accent:#00ff88">
+      <div class="section-head">
+        <div><span class="time-chip">00:00:36–01:24:23</span><h2>🧾 Full Timestamp Transcript Archive</h2></div>
+      </div>
+      <p class="summary">This archive preserves every timestamp block from the uploaded transcript, including intro/outro/live engagement material, so no minute silently disappears. Use search in browser (Ctrl/⌘+F) to find exact teacher wording.</p>
+      <details class="transcript-block"><summary>00:00:36–00:04:58 (7 timestamp chunks)</summary><p><span class="stamp">00:00:36</span> तो नमस्कार दोस्तों सभी का बहुत-बहुत स्वागत है एमपी एग्जाम वाला में और एमपी जीके बा विकास सर क्लास में भी आप सभी का बहुत-बहुत स्वागत है हमारी क्लास स्टार्ट हो चुकी है आप सभी जल्दी से शेयर कर दें और आपको पता ही है कि आज एक धमाकेदार स्पेशल क्लास है और वह भी रिवर्स से संबंधित और नदियों की ठीक है तो यह हमारा बिल्कुल एकदम मुफ्त पेड से ज्यादा आपको देख रहे होंगे कि यहां पर कंटेंट जहां भी आपने कभी पेड कहीं पर भी लिया होगा वहां देख रहे होंगे कि इतना कंटेंट और व्यवस्थित तरीके से आपको सब कुछ इसमें मिल रहा है ठीक है और कुछ लोगों को इसमें</p><p><span class="stamp">00:01:14</span> भरोसा भी नहीं हो रहा है कि सच में सर बहुत सारे लोग बार-बार मेरे से मैसेज कॉल कई साथ वाले जो काम करते थे वो तक पहुंच चुके हैं कि सच में पूरा फ्री क्या बात है है ना तो बिल्कुल फ्री है पूरा कंप्लीट और आप देख ही रहे होंगे जो लोग निरंतर देख रहे हैं शेयर कर दें मैं यहां पर बहुत सारी संख्या चाहता हूं क्या यह इ अन्य जगह आपने देखा होगा कि जो कंटेंट बुक्स में देख रहे होंगे या कहीं भी तो उसमें बहुत ज्यादा मिस मैच आपको देखने को मिलता है पर यहां पर आपको एक ऑथेंटिक चीजें मिल रही होंगी बट्स आप सभी शेयर कर दें क्या यह</p><p><span class="stamp">00:01:48</span> क्लास इतने लाइव डिजर्व करती है बताओ आप कहां पर कमी है कहीं पर कमी हम रख नहीं रहे हैं तो आप सभी भी कमी मत रखिए खूब दबा के शेयर कर दीजिए जहां-जहां कर सकते हैं क्योंकि यही बस एक हमारा मोटिवेशन और मेरा खासकर क्योंकि जितने ज्यादा लाइव होंगे उतना ज्यादा अच्छा मुझे लगेगा और मेरा मोटिवेशन रहेगा ना चीजों को उतने और ज्यादा एक्स्ट्रा चाहे चीज टाइम में हो चाहे कुछ में भी हो व सब करते जाएंगे अपन बस आप सभी शेयर जल्दी से करें कुनाल उमा दीपक स्टडी नोट्स स्वाती राखी विनी आकृति रिया तिवारी प्रिया मिश्रा मेघा यादव</p><p><span class="stamp">00:02:27</span> पीहू आकृति सुमित प्रिय का बृजेश संस्कृति प्रवीण कोमल पप्पू वैभव प्रकाश वेद भरत कृष्णकांत नजराना वर्षा श्रेया आईटीआई हब नमस्कार जया सुखदेव अंजना आकृति अक्षिता सु पटेल पप्पू जी चलिए सभी लोग जुड़ते जा रहे हैं दिया रूप वर्मा भाई क्योंकि हम भी यही चाहते ना यार कि जब हम इतनी मेहनत कर रहे हैं है ना तो ज्यादा से ज्यादा लोगों तक पहुंचे चीजें और हमारा मोटिवेशन क्या है यही तो हमारा मोटिवेशन है सच बात है वोह तो है ना कमांडो वर्षा कृष्णकांत हर हर महादेव रिया मिश्रा ममका कोमल चलिए तो अब हम स्टार्ट करते हैं अब</p><p><span class="stamp">00:03:34</span> मैं आपका कोई अगर डाउट रहता है तो लास्ट में लेंगे क्योंकि अगर आप जैसे जो लोग रिकॉर्डेड देखते हैं कई लोगों के ऑफिस है कहीं किसी की और एप्लीकेशन प भी अपने एग्जाम वाला प क्लास रहती है वो बेचारे बच्चे बोलते हैं सर तो वो क्या है कि अपन बाद में भी देखते हैं तो सिर्फ मैं स्टार्टिंग में आपसे बात करूंगा और आखिरी में जो प्रॉपर डिस्क्रिप्टिव क्लास होती है वो ऐसी ही होती है और आप सभी भी एक बात का ध्यान रखिए बस लेक्चर को एंजॉय कीजिए फुली एकदम कंटेंट और यही याद होने वाला कंटेंट होगा और कंटेंट ऑथेंटिक प्रूफ के</p><p><span class="stamp">00:04:07</span> साथ बिल्कुल एकदम सटीक व्यवस्थित कंटेंट आपको मिलने वाला है ठीक है तो बिल्कुल पीडीएफ आपको तो जल्दी से शेयर कर दें जो भी प्रेजेंट हो चुके हैं ठीक है और जो अभी प्रेजेंट है वो लाइक करें और जो बाद में देखते हैं वो भी एक लाइक करके जाया करें क्या इतनी अच्छी क्लास लाइक्स भी डिजर्व नहीं करती तो जितने लोग लाइव है उतने लोग भी लाइक क्यों नहीं करते इसका रीजन मुझे आज तक समझ में नहीं आया क्लास में कहां कमी है आप खुद बताएं तो जितने लोग लाइव होते हैं उतने लोग भी अगर लाइक नहीं करेंगे तो क्या बस यही है कि अपना काम बनता और बस निकल</p><p><span class="stamp">00:04:58</span> लिए तो ऐसा कुछ है तो यह चीजें करते रहा करें हम लोगों के छोटे-छोटे मोटिवेशन है और हमारे टारगेट दिमाग के हमें अच्छा लगता है जितने ज्यादा लोग लाइव लाइक ये सी चीजें दिखती हैं चलिए तो ये एमपीपीएससी प्री 2025 एमपी जीी के स्पेशल सीरीज चल रही है हमारी जिसका लेक्चर नंबर एट है बिल्कुल एकदम शुरुआत से स्टार्टिंग से मध्य प्रदेश की प्रमुख नदियां और जिसमें रहेंगी नर्मदा नदी आज फिर से एक बार और जितनी बार आप पढ़ो उतनी बार नया कुछ मिलेगा यह मेरा दावा है किसी ने पढ़ रखा है तो आप हमेशा देखेंगे कि ऑलरेडी पुराने स्टूडेंट्स है वह निरंतर</p></details><details class="transcript-block"><summary>00:05:38–00:09:59 (8 timestamp chunks)</summary><p><span class="stamp">00:05:38</span> हमें फिर से यहां पर आप देखेंगे कि लाइव आते हैं क्यों क्योंकि उनको पता है कुछ फिर से नया मिलने वाला है तो लेक्चर नंबर वन चलिए स्टार्ट करते हैं अनू आशीष जय श्री कृष्णा प्रिया त्रिपाठी वेरी गुड इवनिंग आशीष भाई अ अच्छा आशीष भाई ऐसा हां यार देखा तो होगा यार तुमने वहां प कहीं भी यहां वहां सब जगह ऐसे ही मध्य प्रदेश में हूं मैं ठीक है चलिए राख पीहू चलो तो ये सारी चीजें आप करते रहा करें हमारा मोटिवेशन है और खासकर मुझे तो ऐसा लगने लगता है तो एमपी जीके बाय विकास सर क्लास में अगेन आपका स्वागत है अब हम स्टार्ट करते हैं</p><p><span class="stamp">00:06:19</span> बिल्कुल प्रॉपर वे में चलिए तो आप किसी भी एग्जाम को कर रहे हो ये काम की है बेहद क्लास और खासकर अभी एमपीपीएससी की सीरीज हमारी चल रही है वो भी डिस्क्रिप्टिव क्लास लेक्चर नंबर एट मेजर रिवर्स ऑफ मध्य प्रदेश खासकर कवर होगी इसमें नर्मदा रिवर तो स्टार्ट करते हैं हम ठीक है तो मेजर रिवर्स है इसमें मेजर रिवर्स यानी प्रमुख नदियां प्रमुख नदियां और अगर इसमें मैं आपसे बात करूं तो सबसे मेनली आपको नर्मदा रिवर पढ़ाऊंगा मैं यहां पे नर्मदा रिवर या फिर नर्मदा नदी ठीक है नर्मदा नदी का हम जिक्र अब करने वाले हैं तो चलिए हम</p><p><span class="stamp">00:07:00</span> स्टार्ट करते हैं सबसे पहले हम एक चीज को समझ लेते हैं यहां पे कि दो चीजें आपने देखी होंगी है ना मध्य प्रदेश का अपवाद तंत्र और नदियां तो आपने पढ़ भी रखा है मेरे से लेकिन फिर से एक बार जो लोग इस डेफिनेशन को मेरे से पढ़ चुके हैं ये बिल्कुल बहुत ही ऑथेंटिक मैंने तीन चार पांच लाइन इकट्ठी उठा उठा के फिर उनको इकट्ठा बनाया है तो एक अच्छी डेफिनेशन आपके लिए तो आप ये तक बोल सकते हैं कि सर प्री तो ठीक है ठीक है साथ में मेंस चल रहा है आपका प्री प्लस मेंस क्लासेस चल रही है बहुत बड़ी बात कह द है मैंने आप आप समझना उस बात को ठीक है क्योंकि अगर यही</p><p><span class="stamp">00:07:35</span> चीज सिर्फ प्री में पढ़ाई जाती या फिर किसी भी व्यापक एग्जाम में तो वो फैक्ट्स आते हैं प्री ऑब्जेक्टिव टाइप होता है तो मैं सीधा फैक्ट लिख सकता था अपवाद तंत्र कितने होते हैं फिर मैं यहां से शुरू नहीं करता फिर मैं कहां से शुरू करता मध्य प्रदेश के अपवाद तंत्र लिखता छह प्रकार के होते शुरू हो जाता लेकिन आप इसमें नोटिस करेंगे ध्यान से देखेंगे तो प्री प्लस मेंस जैसी क्लासेस ही अब तक मैंने विद डेफिनेशन के स्टार्ट की हैं ठीक है तो बहुत ध्यान से समझिए सबसे पहले हम शब्द को समझेंगे अपवाह तंत्र या ड्रेनेज सिस्टम तो</p><p><span class="stamp">00:08:09</span> व्हाट इज ड्रेनेज सिस्टम आपके दिमाग में आना चाहिए कि ड्रेनेज सिस्टम क्या होता है तो देखिए जब कोई नदी अब कोई भी नदी है फॉर एग्जांपल नर्मदा रिवर क्योंकि अब वो सबसे बड़ी नदी है मैं हर बार बोलूंगा ही नर्मदा नदी ठीक है तो नर्मदा नदी है कोई नदी हो गई ठीक है नर्मदा हो गई अपने उद्गम ठीक है अर कंटक से निकलती है अमरकंटक से उद्गम होकर ठीक है उधर से निकली पूर्व दिशा से ऐसी फिर क्या हुआ स्वतंत्र रूप से मतलब अपने आप में बहती चली जा रही है स्वतंत्र रूप से अपनी सहायक नदियों तो 41 उस की जो ट्रिब्यूटरीज है या फिर सहायक नदियां इसको</p><p><span class="stamp">00:08:45</span> इधर से भी दाएं से भी लेती है बाए से भी लेती है और फिर आगे बढ़ती है तो अपनी सहायक नदियों को साथ लेकर एक निश्चित दिशा तो एक पर्टिकुलर डायरेक्शन में कि भैया ईस्ट टू वेस्ट जाना है इसको मतलब निश्चित दिशा में बहती हुई अपने मिलन स्थान मिलन स्थान है खंबा की खाड़ी अरब सागर तो नदी निकली है अपने उद्गम से ओरिजन पॉइंट से इसने ली है दोनों ओर से रिवर्स को और अपने मिलन स्थान की ओर आगे बढ़ती है तो किसी समुद्र किसी भी समुद्र झील में जाकर के वो मिलेगी या किसी अन्य नदी से तब मिल गई तो वो फिर उसका अपवाह तंत्र नहीं होगा ठीक है</p><p><span class="stamp">00:09:23</span> अगर यही कोई नदी है नर्मदा किसी अन्य नदी से या फिर गंगा यमुना या किसी और से भी जाकर मिल जाती तो हम उस अपवाह तंत्र नहीं बोलते स्वतंत्र रूप से होनी चाहिए उसका खुद का अपवाह होना चाहिए ना कि वो किसी दूसरे से मिल जाए ठीक है तो या तो वो समुद्र जैसे कि खंभात की खाड़ी अरब सागर में मिल जाती है झील में भी मिल सकती है तो वह अपना अपवाह तंत्र का निर्माण करती है तथा जो इकट्ठा इसने और अपनी 41 सहायक नदियों ने बनाया उस पूरे क्षेत्र को अपवाह कहा जाता है ठीक है वन अ रिवर ओरिजनेटिंग फ्रॉम इट्स सोर्स या ओरिजन पॉइंट तो कोई</p><p><span class="stamp">00:09:59</span> भी रिवर अपने ओरिजिन पॉइंट से ओरिजनेट हुई फ्लोज इंडिपेंडेंटली और स्वतंत्र रूप से मस्त मोला बहती हुई एक इन अ डेफिनेट डायरेक्शन ईस्ट डायरेक्शन टू वेस्ट डायरेक्शन अलोंग विद इट्स ट्रिब्यूटरीज या इसकी जो सहायक नदियां होंगी उसको लेकर के मीट्स एन ओशियन तो ये किसी ओशियन से या फिर किसी सी से समुद्र से मिल सकती है और अ लेक किसी झील में भी मिल सकती है इट्स कॉन्फ्लूएंट पॉइंट ठीक है लेक एट इट्स कॉन्फ्लूएंट पॉइंट अपने मिलन स्थल पर फॉर्म्स अ ड्रेनेज सिस्टम ये क्या करती है ड्रेनेज सिस्टम बनाती है एंड दिस एंटायस एरिया फॉर एग्जांपल तो एग्जांपल के</p></details><details class="transcript-block"><summary>00:10:39–00:14:45 (7 timestamp chunks)</summary><p><span class="stamp">00:10:39</span> तौर पर हम अगर बात करें तो नर्मदा अपवाह तंत्र नर्मदा अपवाह तंत्र या फिर नर्मदा ड्रेनेज सिस्टम नर्मदा नर्मदा ड्रेनेज सिस्टम नर्मदा ड्रेनेज सिस्टम तो आप सबसे पहले तो मुझे यह बताइए कि यह चीज आपको समझ में आ गई या नहीं आई तो नर्मदा का अपवाह तंत्र हम तब बोलेंगे जब इसमें होगी नर्मदा नर्मदा होगी इसमें प्लस इसकी कितनी होंगी तो प्लस इसकी 41 ट्रिब्यूटरीज या सहायक नदियां ठीक है तो सहायक नदियां या ट्रिब्यूटरीज या फिर इसको हम हिंदी में सहायक नदियां बोल देंगे तो हम उसको ही अपवाह तंत्र बोलेंगे कि सिर्फ नर्मदा एक</p><p><span class="stamp">00:11:28</span> नदी है बट नर्मदा प्लस 41 सहायक नदियां एक ड्रेनेज सिस्टम है समझ में आ गया समझ में आ गया ठीक है तो नर्मदा एक नदी है जबकि नर्मदा और उसकी 41 सहायक आई कोई भी आप देखेंगे नर्मदा रिवर को फॉर एग्जांपल यहां से नर्मदा अमरकंटक से अमरकंटक से ओरिजनेट हुई अमरकंटक से ये क्या हुई ओरिजनेट हुई नर्मदा फ्लो होती हुई ईस्ट टू वेस्ट एक पर्टिकुलर डायरेक्शन में ईस्ट टू वेस्ट कहां जाती है अरेबियन सी अरब सागर ठीक है अरब सागर या अरेबियन सी में जाती है और यह क्या करती है तो अपने साथ अपनी 41 सहायक नदियों को ट्रिब्यूटरीज को लेती हुई कहां पर बढ़ती है तो ईस्ट टू</p><p><span class="stamp">00:12:15</span> वेस्ट डायरेक्शन में कुछ ऐसी चली जाती है तो इस पूरे टोटल इसको हम अपवाद क्षेत्र कहेंगे ड्रेनेज एरिया और जो यह ड्रेनेज एरिया बना रही है अपनी संयुक्त सहायक नदियों के साथ उसको एक उस सिस्टम को ने सिस्टम कहेंगे क्लियर है फिर सर नदी किसको कहते हैं तो नदी देख लेते हैं ठीक है नदी की अगर हम बात करें देखिए यहां पे अगर हम देखें तो नर्मदा एक ड्रेनेज सिस्टम है क्या बेतवा एक ड्रेनेज सिस्टम है तो जी नहीं बेतवा किसी दूसरी नदी से मिल जाती है कंडीशन यहां ये थी कि किसी अन्य नदी से नहीं मिलनी चाहिए तब वह ड्रेनेज सिस्टम या</p><p><span class="stamp">00:12:52</span> अपवाह तंत्र बनाएगी ठीक है अब हम देख लेते हैं नदी फिर क्या है रिवर तो रिवर की डेफिनेशन तो मैंने जैसा बोला कि प्री प्लस मेंस चल रही है क्लास नहीं तो मैं क्यों बताता नदी क्या होती है है ना ऐसा थोड़ी क्वेश्चन आएगा उसमें तो ये आएगा कि मध्य प्रदेश की सबसे बड़ी नदी छोटी नदी सबसे बड़ा अपवाह छोटा अपवाह कितने प्रकार के अपवाह फैक्चर क्वेश्चन आते हैं ऑब्जेक्टिव टाइप है पर प्री प्लस मेंस जैसी क्लास है तो आपको अगर कोई अपवाह तंत्र भी पूछे तो आप बता देना नदी की कोई डेफिनेशन पूछे तो कोई जलधारा कोई भी स्ट्रीम है कोई जलधारा</p><p><span class="stamp">00:13:24</span> किसी पर्वत तो नर्मदा नदी कहां से निकलती है अमरकंटक की चोटी से मे काल श्रेणी सतपुड़ा पर्वत पठार हिमनद ठीक है या तो वो किसी पर्वत से निकली हो किसी पठार से ओरिजनेट हो सकती है किसी हिमनद या ग्लेशियर बट एमपी में कोई भी ग्लेशियर हिमनद नहीं है से उद्गम होकर ओरिजनेट होकर किसी एक दिशा में बहती हुई किसी अन्य नदी देखो यहां पर वहां पर ये शब्द नहीं था यहां पर है कि किसी अन्य नदी से मिल सकती है हां जरूरी नहीं है कि अन्य नदी से ही मिले समुद्र से भी मिल सकती है झील से मिल सकती है ी ऐसी उसको क्या है झील से जाकर</p><p><span class="stamp">00:14:02</span> मिलती है उसको हम नदी कहते हैं व्हेन अ स्ट्रीम ऑफ वाटर ओरिजनेट्स फ्रॉम अ माउंटेन प्लेट और अ ग्लेशियर एंड फ्लोज इन वन डायरेक्शन एंड मीट्स अनदर रिवर सी और लेक इट इज कॉल्ड अ रिवर नदी भूतल पर प्रवाहित एक जलधारा है तो क्या है रिवर रिवर इज अ स्ट्रीम ऑफ वाटर फ्लोइंग ऑन द सरफेस ऑफ अर्थ तो अर्थ के सरफेस पर ही तो ये फ्लो करती है और नदी आपसे किस शब्द से आया है तो एक संस्कृत वर्ड होता है जिसका मेन होता है नद्या या जो होता है नद्या उससे आया है तो रिवर इज अ स्ट्रीम ऑफ वाटर फ्लोइंग ऑन द सरफेस ऑफ अर्थ रिवर्स कम रिवर कम फ्रॉम द संस्कृत</p><p><span class="stamp">00:14:45</span> वर्ड नद्या नद्या से ये बना है उदाहरण के तौर पे वहां मैंने बोला था कि वहां मैं बेतवा का एग्जांपल नहीं दे सकता था बट यहां नर्मदा भी लिखूंगा मैं और बेतवा भी एक रिवर है बट बेतवा एक ड्रेनेज सिस्टम नहीं है बिकॉज ये किसी दूसरी नदी से मिली है जिसका नाम है यमुना तो सबसे पहले बताइए समझ में आ गया पहली बात बताएं समझ में आ गया या नहीं आया आ गया होगा बहुत आसान तरीके से मैंने बताया है अब मध्य प्रदेश के अपवाह तंत्र तो मध्य प्रदेश में छह अपवाह तंत्र है आपका आंसर हो जाएगा ये सीधा पहले तो कि मध्य प्रदेश में जो टाइप्स है वो</p></details><details class="transcript-block"><summary>00:15:27–00:19:59 (7 timestamp chunks)</summary><p><span class="stamp">00:15:27</span> कितने टाइप्स है तो सिक्स टाइप्स है आप देखने को मिलेंगे ठीक है अच्छा अब हम अगर बात करें तो आपको दो तरीके से देखने को मिलेंगे एक तो आपको कहां पर दिखेगा अरब सागर की ओर या अरेबियन सी की ओर जाता हुआ एक सेकंड ठीक है एक तो आपको अरेबियन सी की ओर मिलेगा ड्रेनेज सिस्टम का हिस्सा दूसरा आपको बंगाल की खाड़ी वाला हिस्सा मिलेगा बंगाल की खाड़ी ठीक है तो बंगाल की खाड़ी या बे ऑफ बंगाल ड्रेनेज सिस्टम की ओ जो ड्रेनेज सिस्टम जाते हैं बे ऑफ बंगाल की ओर इनको हम दो तरीके से देख सकते हैं बट आपको टाइप डायरेक्ट आंसर छह ही लगाना है ठीक है ये</p><p><span class="stamp">00:16:32</span> मैं सिर्फ समझाने के लिए बता रहा हूं आपको कि इसमें जो छह ड्रेनेज सिस्टम है छह ड्रेनेज सिस्टम में से सबसे पहला अगर मैं बात करूं तो उस तरफ भी लिखना हो तो आप उस तरफ लिख सकते हो पहला वहां पर लिख लेते हैं क्योंकि वो सबसे बड़ा है नंबर एक की अगर हम बात करें तो नंबर एक पर आप देखेंगे यहां पर गंगा यमुना अपवाह तंत्र ठीक है गंगा यमुना अपवाह तंत्र गंगा यमुना अपवा तंत्र या गंगा यमुना ड्रेनेज सिस्टम तो कुछ लोग बोलेंगे कि सर आप मध्य प्रदेश के अपवाद तंत्र बोल रहे हो गंगा यमुना लिख रहे हो तो गंगा यमुना कब से बहने लगी मध्य प्रदेश में सर है ना तो भाई</p><p><span class="stamp">00:17:24</span> साहब एक बात ध्यान रखना मैंने नदी नहीं लिखा है मैंने लिखा है अपवाद तंत्र तो गंगा यमुना में मिलने वाली हमारी बहुत सारी नदियां जो हैं उत्तर की ओर जाकर के गंगा यमुना में डुबकियां लगा लेती हैं तो हमें अपवाह तंत्र के हिसाब से तो बोलना है कि मध्य प्रदेश में गंगा यमुना अपवाह तंत्र है दूसरा हम देखें तो यहां पे आपको मिलेगा वो गोदावरी अपवाह तंत्र गोदावरी अपवाह तंत्र सर फिर से गोदावरी तो हमारे यहां पर बहती ही नहीं है तो भैया मैंने ऐसा कब कहा है कि नदी मैं तो अपवाह तंत्र की बात कर रहा हूं हमारी जो दक्षिण की ओर</p><p><span class="stamp">00:17:58</span> प्रवाहित नदिया वर्धा वेन गंगा है ना यह सारी पश रिवर्स हुई कन्हान रिवर्स हुई यह सब जाकर गोदावरी में ही तो डुकिया लगाती हैं और ये बंगाल की खाड़ी की ओर जाकर के डुबकियां लगाता है यह वाली अपवाह तंत्र की सारी नदियां ठीक है तो गोदावरी गोदावरी गोदावरी ड्रेनेज सिस्टम अगर मैं बात करूं सबसे बड़ा ड्रेनेज सिस्टम कौन सा है तो आप बोलोगे सर नर्मदा नदी मध्य प्रदेश की सबसे बड़ी है तो भाई साहब लेकिन नर्मदा का अपवाह तंत्र सबसे बड़ा नहीं है सबसे बड़ा अपवाह तंत्र दुनिया मतलब भारत में भी देखा जाए तो भारत के अंतर्गत सबसे बड़ा गंगा का है और अगर</p><p><span class="stamp">00:18:41</span> कहीं गंगा आ गई तो गंगा आ गई तो फिर आप कैसे बोल दोगे किसी और को तो आप बोलेंगे इसको सबसे बड़ा मध्य प्रदेश का सबसे बड़ा अपवाद तंत्र नदी के तौर पर नर्मदा नदी सबसे बड़ी है पर ड्रेनेज सिस्टम के तौर पर सबसे बड़ा ड्रेनेज सिस्टम जो है वो कौन सा है कौन सा है बेटा तो वो है हमारा ये गंगा यमुना अपवाद तंत्र ठीक है गंगा यमुना अपवाद तंत्र सबसे बड़ा है अब हमने यहां पर दो देख लिए अब हम तीसरा देखेंगे बंगाल की खाड़ी की ओर डुबकी मारने वाली तो वो है महानदी महानदी अपवाह तंत्र अब देखिए महानदी अपवाह तंत्र की अगर हम बात करें तो</p><p><span class="stamp">00:19:20</span> महानदी में हमारी मुश्किल से एकाद छोटी सी नदी मिलती है ठीक है इका छोटी सी नदी मिलती है इसलिए हम क्या बोलेंगे महान अपवाह तंत्र जो है मध्य प्रदेश का वो सबसे छोटा अपवाह तंत्र है महानदी ड्रेनेज सिस्टम महानदी ड्रेनेज सिस्टम महानदी ड्रेनेज सिस्टम ठीक है तो महानदी ड्रेनेज सिस्टम सबसे छोटा बोल सकते हो आप इसको सबसे छोटा ठीक है सबसे छोटा अपवाह तंत्र हो जाएगा ये हमारा इस तरफ आते हम फटाफट यहां पर आपको जो मिलेगी सबसे पहले नर्मदा नर्मदा अपवाह तंत्र नर्मदा अपवाह तंत्र ठीक है नर्मदा अपवाह तंत्र की अगर मैं बात कर</p><p><span class="stamp">00:19:59</span> यह दूसरा सबसे बड़ा है नर्मदा नर्मदा ड्रेनेज सिस्टम ठीक है नर्मदा ड्रेनेज सिस्टम यह दूसरा बड़ा है दूसरा बड़ा ठीक है नदी सबसे बड़ी है नर्मदा पर ड्रेनेज सिस्टम के तौर पर दूसरा सबसे बड़ा है फिर हम देखेंगे यहां पर ताप्ती ताप्ती अपवाह तंत्र ताप्ती अपवाह तंत्र की अगर हम बात करें तो ताप्ती भी स्वतंत्र रूप से बहती है किसी अन्य नदी से नहीं मिल है इसलिए इसने भी अपना ड्रेनेज सिस्टम बनाया हुआ है आपता ड्रेनेज ड्रेनेज सिस्टम ठीक है ताती ड्रेनेज सिस्टम और यहां प लास्ट हम लिखेंगे माही अपवाह तंत्र तो अब छह हो गए होंगे</p></details><details class="transcript-block"><summary>00:20:45–00:24:42 (7 timestamp chunks)</summary><p><span class="stamp">00:20:45</span> आपकी स्क्रीन पर माही अपवाह तंत्र या फिर माही ड्रेनेज सिस्टम माही ड्रेनेज सिस्टम माही भी स्वतंत्र रूप से बहती है किसी और से नहीं मिलती है अरब सागर में जाकर के डुकिया लगा है तो यह आपको की स्क्रीन पर तीन इस तरफ जा रही है तीन आपको यह जो है नदियां हमारे किस ओर जा रही है तो बे ऑफ बंगाल की ओर ठीक है और बाकी आप देखेंगे कि यह जो तीन है यह अरेबियन सी की ओर जाते हैं ड्रेनेज सिस्टम ठीक है अब आगे चले हो गया क्लियर तो शेयर करते चलिए ड्रेनेज सिस्टम आंसर हमारा छह है ध्यान देना पांच लिखा होगा कहीं तो मत मानना आप छह आंसर लगा के आना अब हम</p><p><span class="stamp">00:21:31</span> देखेंगे यहां पे नदी की डेफिनेशन देख ली हमने अब हम मध्य प्रदेश की नदियों पे आते हैं सीधे तो रिवर्स ऑफ मध्य प्रदेश मध्य प्रदेश में छोटी बड़ी मान्यता प्राप्त ठीक है बहुत सारी रिवर्स हैं कोई भी बोलेगा नहीं नहीं सर दो हमारे घर के पीछे से निकलती हैं उनका नाम नहीं बताया आपने कोई बोलेगा नहीं नहीं सर एक तो हमारे बिल्कुल कमरे के बगल से निकल जाती है है ना तो उनको ऐसे नहीं आपको काउंट करना है यहां पर आपको सरकार के द्वारा मान्यता प्राप्त ठीक है मान्यता प्राप्त ठीक है वरना ऐसे मैं तो गिनवाला इतना कि नदियां ही पढ़ते</p><p><span class="stamp">00:22:05</span> रहेंगे दो-तीन साल तक अपन तो यहां पे क्या है बेटा कि मान्यता प्राप्त छोटी बड़ी लगभग 200 साप भारत की सबसे ज्यादा नदियां बहती हैं ठीक है मध्य प्रदेश हैज अ लार्जेस्ट नंबर ऑफ रिवर्स ऑफ इंडिया ठीक है तो मध्य प्रदेश में भारत की सबसे ज्यादा नदियां है छोटी और बड़ी अबाउट लगभग 207 207 छोटी बड़ी नदियां आपको यहां देखने को मिलेंगी ठीक है अच्छा अब मध्य प्रदेश को क्या कहा जाता है तो मध्य प्रदेश को नदियों का मायका कहा जाता है एमपी इज कॉल्ड द मदरलैंड ऑफ रिवर्स य मायका क्या होता है तो भाई साहब एक जिसका विवाह हो गया है उसको पूछो मायका क्या होता है उससे</p><p><span class="stamp">00:22:53</span> पूछो मायका क्या होता है और मायके के लोग तो मायके का कोई भी व्यक्ति भी दूर कर दिख जाए ना है ना किसी महिला को जहां पर उसका मायका हो तो वो इतनी प्रसन्न होती है ये हमारे मायके के हमारे दूर के भैया है इतनी प्रसन्न होती है और अगर गलती से लड़के के साइड वाला कोई हो तो उसे बोलती है नहीं नहीं नहीं बहुत दूर के हैं अपने इतने सगे नहीं है वो दूर के है और अपनी अगर कोई हो मायके का आदमी और वो दूर दराज का भी हो तो अरे नहीं नहीं हमारे रिश्तेदार है वो है ना अच्छे से बात किया करो उनसे तो ऐसा होता है नदियों का मायका सबको प्यारा होता</p><p><span class="stamp">00:23:30</span> है मायका वो जगह होती है जहां पर किसी का भी जन्म होता है तो मध्य प्रदेश की अधिकांश नदियां यहीं के किसी पर्वत पठार से उद्गम हुई है और यहां पर इनका मध्य प्रदेश के ही पर्वत पठार से ये मध्य प्रदेश की अधिकांश रिवर्स ओरिजनेट हुई है चाहे आप नर्मदा ले लो चाहे आप आती ले लो चाहे आप बेत वाले लोग बेनगंगा वर्धा चंबल चिप्रा पार्वती सिंध ये कोई भी रिवर ले लो मध्य प्रदेश के ही किसी क्षेत्र से जन्म लिया है मतलब जहां जन्म हो रहा है वो उसका मायका है किसी और राज्य में ससुराल में जाकर किसी अन्य नदी कोई गंगा से मिल सकता</p><p><span class="stamp">00:24:10</span> है या नदी या समुद्र कोई अरब में जा रहा है तो किसी अन्य नदी या समुद्र में जाकर डुबकी लगा देती है तो यहां पर इसीलिए इसका मेन ध्यान देना है इसलिए कहा जाता है माय का क्योंकि जन्म होता है इसी स्टेट में किसी अन्य स्टेट में किसी अन्य नदी या फिर समुद्र झील से जाकर के मिल जाती हैं तो उसको हम नदियों का मायका इसीलिए कहते हैं मध्य प्रदेश को मध्य प्रदेश की अब आपसे रिवर्स पूछेगा किस टाइप की रिवर्स है तो यहां पर द रिवर्स ऑफ एमपी आर पेनिनसुलर रिवर्स तो ये क्या है प्रायद्वीपीय नदियां हैं बिकॉज आपको पता है मैंने कई बार बता</p><p><span class="stamp">00:24:42</span> चुका हूं कि जो ये दक्षिण भारत है साउथ इंडिया की बात हो रही है साउथ इंडिया तो साउथ इंडिया की अगर हम बात करें साउथ इंडिया के उत्तर में कौन सा स्टेट है तो ये दक्ष प्रायद्वीपीय पठार या दक्षिणी पठार के प्रायद्वीप है जो तीन ओर से किससे घिरा हो पानी से घिरा हुआ भूमि का टुकड़ा तीन ओर से तो वेस्टर्न साइड आपको अरेबियन सी या अरब सागर मिलेगा साउथ में इंडियन ओशियन एंड ईस्ट में आपको बे ऑफ बंगाल या बंगाल की खाड़ी जब तीन ओर से पानी से घिरा होगा क्षेत्र तो उसको हम क्या बोलते हैं प्रायद्वीप और यह प्रायद्वीपीय भारत का ही</p></details><details class="transcript-block"><summary>00:25:20–00:29:14 (6 timestamp chunks)</summary><p><span class="stamp">00:25:20</span> तो उत्तरी हिस्सा है जिसको हम एमपी कहते हैं मध्य प्रदेश तो इस वजह से यहां की जो रिवर्स है जो यहां से ओरिजनेट होती हैं उ उनको क्या कहा जाता है इ प्रायद्वीपीय नदियां है ठीक है क्लियर है ठीक है क्लियर है चलिए नेक्स्ट ये देखेंगे नर्मदा का ही एक दृश्य है ठीक है अब हम चलने वाले हैं नर्मदा की ओर तो नर्मदा यात्रा ठीक है दुनिया की एक ऐसी नदी जिसका परिक्रमा लगाया जाता है वो है कौन सी मां नर्मदा ठीक है तो मा नर्मदा रिवर्स को अब हम देखने वाले हैं ये सारी चीजें अपन बाद में पढ़ेंगे उससे पहले अपन चल देते हैं नर्मदा की ओर या फिर पहले</p><p><span class="stamp">00:26:02</span> इसको देख लेते हैं फटाफट ज्यादा टाइम नहीं लगेगा फिर हम नर्मदा की कहानी की ओर चलेंगे उससे पहले आपको देखेंगे बहुत सारी नई चीजें देखने को आज फिर मिलेंगी जितनी बार पढ़ लोगे मैं उतना बार तुम्हें य इसमें नया डाटा दे दूंगा एक्स्ट्रा दे दूंगा ठीक है तो ओरिजिनल कहां पर होता है तो सोण देश तीर्थ ठीक है सोण देश तो आज तक आपने अमरकंटक बहुत पढ़ा होगा सोण देश तीर्थ नहीं पढ़ा होगा सोण देश तीर्थ से इसका ओरिजिन होता है तो यहां पर मैप में ही भर लेते हैं है ना क्योंकि मुझे मैप से ज्यादा दूर ज्यादा देर तक दूर रहूं ना तो</p><p><span class="stamp">00:26:34</span> घबराहट होने लगती है अच्छा नहीं लगता इसलिए मैप प चलते हैं अपन यहां पर हम देखने वाले हैं सबसे पहले रिवर्स ऑफ एमपी ठीक है तो रिवर्स के अंतर्गत मेनली हम यहां पर जो देखेंगे रिवर्स में रिवर्स ऑफ एमपी मेनली जो रिवर्स देखेंगे वो नर्मदा देखेंगे लेकिन नर्मदा के साथ भी दुखिया की कहानी देख लेते हैं हम नर्मदा ठीक है नर्मदा रिवर के अंतर्गत ठीक है तो अब हम सबसे पहले यहां पर अगर देखें तो ओरिजन पॉइंट के पास चलते हैं ओरिजन पॉइंट के पास चलते हैं ओरिजन पॉइंट कहां पे है ये है इसका ओरिजन पॉइंट समझ लेते हैं कि ये है चलिए ओरिजन पॉइंट ये किसका ओरिजन पॉइंट है</p><p><span class="stamp">00:27:12</span> तो ये नर्मदा का ओरिजन पॉइंट है यहां पे अगर मैं बात करूं तो मैं लिखता हूं नर्मदा का ओरिजिन पॉइंट सोण देश तीर्थ सोण देश तीर्थ ठीक है सोण देश तीर्थ तक्ष पर्वत माई की बगिया मेकाल श्रेणी नर्मदा कुंड अमरकंटक अनूपपुर ठीक है आपको मेंस में लिखने में भी बहुत मदद मिलेगी तो आपने आज तक सोण देश तीर्थ पढ़ा है क्या रक्ष पर्वत मैंने ही बताया होगा जितनी बार बताया होगा माई की बगिया मेकल श्रेणी से इसका क्या होता है ओरिजन होता है और वो है हमारी कौन सी रिवर तो नर्मदा नदी ये है हमारी नर्मदा नदी नर्मदा नदी के बारे में ये इंफॉर्मेशन</p><p><span class="stamp">00:28:34</span> लिखी हुई है एक समय में इसको कहा जाता है और हिंदी ग्रंथ अकादमी ने भी लिखा है कि नर्मदा नदी का उद्गम है ना पुरानी अगर आपके पास हिंदी ग्रंथ अकादमी हो तो उसमें बिंद पर्वत लिखा हुआ है अब आप समझ सकते हैं क्या हुआ करता था कि एक समय बिंद का हिस्सा था मेकल ठीक है लेकिन आज उनके बीच में दूरियां बढ़ गई है और विंध्यांचल और सतपुड़ा के मिलन स्थल को हम अमरकंटक की चोटी के नाम से जानते हैं ठीक है अमरकंटक की चोटी के नाम से जानते हैं तो ये सोण देश तीर्थ तक्ष पर्वत माय की बगिया मेकल श्रेणी नर्मदा कुंड अमरकंटक अनूपपुर ऐसे</p><p><span class="stamp">00:29:14</span> लिखोगे ना तो मेंस में भी लिखा हो तो उसको मजा आ जाएगा अब क्या होता है अब मैं चलता हूं आपको एक कहानी प स्कंद पुराण स्कंद पुराण में चलूंगा मैं आपको ले चलूं तुम्हें स्कंद पुराण में ठीक है तो स्कंद पुराण [संगीत] है स्कंद पुराण में अगर हम जाते हैं तो इसमें एक रेवा खंड है स्कंद पुराण के रेवा खंड अब रेवा खंड एक खंड है इसके अंतर्गत रेवा खंड ठीक है अब रेवा खंड में सबसे पहले तो आपसे अगर कोई यह बोले ना कि आप बताइए कि किस पुराण में नर्मदा को रेवा कहा गया है तो स्कंद पुराण में नर्मदा को रेवा कहा गया है इसकी एक कहानी है तो</p></details><details class="transcript-block"><summary>00:30:01–00:33:58 (7 timestamp chunks)</summary><p><span class="stamp">00:30:01</span> इसमें क्या होता है कि दो रिवर का और यहां से ओरिजन होता है और वो दो रिवर कौन होती हैं तो देखिए एक और यहां से ओरिजनेट होती हुई कुछ एसी चली जा रही होती है एक नदी होती है एक नदी होती है और एक और दूसरी नदी होती है दगाबाज है ना दगा बाजरे दगा बाजरे नदी होती है एक वो होती है इसमें जा कर के मिल जाती है ठीक है तो अगर हम देखें यहां पर इ दोनों का फ्लो आपको इस प्रकार से देखने को मिलेगा यह क्या होता है यह कौन सी रिवर है सर तो यह है स्टोन नदी यह क्या है बेटा सोन नदी है सोन रिवर या सोन नदी ठीक है सोन नदी का भी उद्गम यहीं से पास से होता है और वो</p><p><span class="stamp">00:30:53</span> जगह होती है सोनमुड़ा सोनमुड़ा से इसका उद्गम होता है जिसे हम सोन नदी कहते हैं सोन दश तीर्थ वह संयुक्त क्षेत्र है जहां से नर्मदा और सोन नदी और जोहिला का क्या होता है उद्गम होता है तो यहां पर ये होती है जोहिला ठीक है जोहिला अब हिंदी इंग्लिश में इसमें आप लोग ज्यादा परेशान हर चीज का तो मैं इंग्लिश लिख देता हूं अब मैं जोहिला को यहां बगल में जोहिला लिखूंगा तो वो मैप पूरा फिल हो जाएगा है ना इसलिए कुछ चीजों को अ जैसे हिंदी में ही वो बोर्ड भर गया आपको मैं बोलता जाऊं जनरल चीजें हैं जोहिला जोहिला कौन इंग्लिश में नहीं लिख</p><p><span class="stamp">00:31:31</span> पाएगा मतलब मुझे ये समझ नहीं आया आज तक इतना हर चीज को इंग्लिश लिख देता हूं मैं फिर भी का लिखने कि सर जोहिला को जोहिला इंग्लिश में नहीं लिखा है आपने तो भाई साहब आप लिख लो कोई उसमें नई चीज नहीं है कोई ऐसा वर्ड नहीं है है ना जैसे आपसे बोल दूं मैं अपवाह तंत्र और फिर मैं इंग्लिश ना बताऊं तो आप बोलो कि अरे यार ये अपवाह तंत्र कौन सी चिड़िया का नाम है तो ड्रेनेज सिस्टम जैसे बता देता हूं अब इनका नाम तो हम बोले सर नर्मदा नदी को इंग्लिश में नर्मदा रिवर नहीं लिखा अरे तो एकाद इनको आपको थोड़ा सा लिख लेना है समझना उस</p><p><span class="stamp">00:32:00</span> बात को क्योंकि बोर्ड पूरा भरा है मैं कहां पर लिख दूंगा बोलता जाता हूं मैं उन चीजों को आप साथ में कवर करते चला करें जो मैं बोलता हूं ठीक है तो नेक्स्ट स्टेप प पहुंचते हैं हम ये क्या है यहां पर चेल हारी उमरिया की जगह पड़ती है कौन सी जगह पड़ती है तो ये है चेल हारी उमरिया चेल हारी उमरिया और यहां पर कौन सा घाट पड़ता है तो जहां भगवान राम ने अपने पिताजी दशरथ की अस्थियों का विसर्जन किया था उसको दशरथ घाट के नाम से जाना जाता है दशरथ घाट ठीक है दशरथ घाट चिल हारी उमरिया में दोनों को एक होना है अब मैं यहां पर बताता हूं</p><p><span class="stamp">00:32:43</span> देखिए यहां पर क्या हुआ कि स्कंद पुराण की वह कथा है उसमें क्या कहा गया है उसमें कहा गया है कि नर्मदा नदी का उद्गम कहां से हुआ है तो पुराणों में या कथाओं में एक पर्वत को एक राजा बता बताया जाता है और पर्वत को राजा बताया जाता है मेकल जी को एज अ एक पर्सन शो किया गया आपने जैसे पार्वती जी हिमाचल की बेटी थी तो हिमाचल को पर्वत को एक राजा बताया गया वैसा ही यहां पर कहा जाता है कि शंकर जी की तपस्या की गई उसके बाद यहां पर नर्मदा जी को उन्होंने धरती पर लाया और नर्मदा जी ने उनसे वरदान मांगा था किससे शंकर भगवान से</p><p><span class="stamp">00:33:22</span> कि आप मुझे कोई वरदान दें तो शंकर भगवान ने उनको वरदान दिया था कि गंगा के में डुबकी लगा आने से परंतु नर्मदा तुम्हारे दर्शन मात्र से जो बहुत पापी रहने वाले हैं मध्य प्रदेश के आसपास के कुछ लोग कुछ लोग तो उनके पाप दर्शन के मात्र से ही धुल जाएंगे है ना तो इनके दर्शन मात्र से ही धुल जाते हैं तो आपको ध्यान देना है यहां पर क्या है चेल हारी उमरिया पॉइंट है ये जहां पर दोनों एक दूसरे से एक हो जाती हैं तो यहां जो नर्मदा रिवर है नर्मदा का फ्लो जो है आपको पता है पहले मैं नर्मदा नदी को बना देता हूं ठीक है तो नर्मदा न ले जाता</p><p><span class="stamp">00:33:58</span> हूं मैं चले नर्मदा अपने मिलन की ओर चल रही है नर्मदा अलीराजपुर से बाहर कर देंगे अपन इनको और बाहर कर देंगे महाराष्ट्र और गुजरात के बीच में प्रवाहित करके तो यह कुछ ऐसी चली जाती है ठीक है ये चली जा रही है अब इनका जो फ्लो का डायरेक्शन है वो आपको पता ही है ईस्ट टू वेस्ट है ठीक है ईस्ट टू वेस्ट आपको यह देखने को मिलेगा ठीक है तो यहां पर यह नदी फ्लो होती हुई आगे बढ़ी और ये ईस्ट डायरेक्शन है ईस्ट टू वेस्ट जाती है पूर्व दिशा ठीक है पूर्व से ये इस ओर की ओर चली जाती है अपने मिलन की ओर ठीक है तो अब जब इसका ओरिजन कहां से हुआ मैंने बताया कि मेकल से</p></details><details class="transcript-block"><summary>00:35:14–00:39:59 (9 timestamp chunks)</summary><p><span class="stamp">00:35:14</span> जन्म होने के कारण इसका एक नाम है मेकल सुता ठीक है तो मेकल सुता सुता का मतलब होता है बेटी हिंदी इंग्लिश दोनों में रोमन में ही मेकल सुता लिखना या डॉटर ऑफ मेकल लिख सकते हो आप लेकिन नाम है तो मेकल सुता के नाम से ही इसको आप लिख लेना मेकल सुता इनका नाम है क्योंकि मेकल की ये बेटी हैं अच्छा शंकर जी से उत्पन्न कहीं जाती हैं इसलिए एक नाम इनका शिव पुत्री या शंकरी भी इनको कहा जाता है शिव पुत्री या शकरी ठीक है शिव पुत्री या शकरी भी इनका एक नाम है तो अब क्या होता है कि जब नर्मदा हो जाती है बड़ी नर्मदा का जन्म</p><p><span class="stamp">00:35:55</span> हुआ है मेकल के यहां मेकल राजा परेशान क्योंकि बेटी हो रही है बड़ी तो मेकल राजा जो है मेकल को राजा बताया जाता है मेकल राजा क्या करते हैं अपनी पुत्री नर्मदा का विवाह स्टार्ट करवाते हैं मतलब विवाह स्वयंबर करवाते हैं स्वयंबर को स्टार्ट स्वयंबर में आपने पुरानी वो देखी होंगी रामायण महाभारत जैसे चाहे आप महाभारत को ले लो द्रौपदी वाला सीन या फिर आप रख लो माता सीता कि वहां पर भगवान राम ने धनुष तोड़ा था त माता सीता मिली थी है ना तो इसलिए आजकल जो माता सीता के लिए लोग घ रहे हैं तो माता सीता अब वर्तमान समय में तब</p><p><span class="stamp">00:36:30</span> मिलती है जिसको पीएससी में जो सिलेक्ट हो जाता है तभी वहां पे वहां आपका विवाह बहुत अच्छा होगा तो आज का स्वयंवर ये है कि बिल्कुल वर ही चुना जाता है आज भी वर को देखा जाता है कौन है अब काम का है ना किसने सिलेक्शन ले लिया नहीं लिया तो किसी काम के नहीं हो तुम है ना तो आपको सिलेक्शन ले लेना है फिर आपका स्वयंवर करवाएंगे हम तो स्वयंवर होता है स्वयंवर में होती है एक शर्त कोई भी स्वयंवर हो शर्त वहां धनुष तोड़ने की थी यहां पर गुलबकावली आज गुलबकावली का पुष्प आपको बहुत मिलेगा कहां पर गुलबकावली का पुष्प जो मिलेगा</p><p><span class="stamp">00:37:02</span> आपको वो आप चले जाइए नर्मदा कुंड के पास आपको माई की बगिया में देखने को मिल जाएगा तो ये गुल वकावली का पुष्प होता है गुल वकावली का पुष्प जो लेकर के आएगा राजकुमार उसके साथ नर्मदा का विवाह तय होगा शर्त हो गई अब अच्छे-अच्छे चले आते हैं जैसे रामायण में आते हैं मोटे मोटे कोई धनुष तोड़ता है कहीं कुछ करता है किसी से नहीं टूटता है पर भगवान राम से उठता है वो तो सेम यहां होता है बहुत बड़े-बड़े राजा महाराजी आते हैं यह कहानी क्यों सुनाई जाती है मेरे द्वारा हमेशा इसलिए सुनाई जाती है क्योंकि इससे सब कुछ याद हो जाएगा</p><p><span class="stamp">00:37:34</span> बोर्ड पर तीन चार नदियां एक ही लेक्चर में खत्म हो जाएंगी दिमाग में जिंदगी भर के लिए बच्चों को बैठ के पढ़ा दोगे तो ध्यान से सुनना बस तो इसमें क्या है शर्त होती है शर्त होती है कि गुल बकावली का पुष्प जो लेकर के आएगा बहुत सारे लोग आते हैं नहीं लेके आ पाते हैं पर एक राजकुमार होते हैं राजकुमार जिनका नाम होता है सोन भद्र सोन भद्र तो ये सोने थे बहुत सोना बाबू आदमी जो लोग बोलते हैं ना तो भाई साहब एक चीज और मैं बोल देता हूं मेरा उद्देश्य किसी की भावनाओं को ठेस पहुंचाना कताई नहीं है मैं सिर्फ एक टीचर हूं जिसका</p><p><span class="stamp">00:38:08</span> उद्देश्य बच्चों को क्लास में याद कराना उसका भविष्य उज्जवल करना है मैं ना तो ऐसा कोई शब्द भी यूज नहीं करूंगा बट अब किसी को लगे कि सर सोन भद्र को सोना क्यों बोल दिया तो भाई साहब क्षमा करना है ना राजनीति के लिए ये प्लेटफॉर्म नहीं है यह प्लेटफॉर्म सिर्फ आपको पढ़ाने और याद कराने अपने टारगेट उद्देश्य को आपका टारगेट पूरा कराने का है ठीक है तो सोन भद्र जो है इनको सोना बाबू की तरह देखना है तो ये क्या होते हैं सोना बाबू बहुत सोने सोने होते हैं और यह सोन नदी जो है एक नदी का पुरुष रूप है मैंने हमेशा आपको बताया है आपसे कभी एग्जाम में पूछे यह नदी</p><p><span class="stamp">00:38:45</span> जो है नदी का पुरुष रूप है नद्या है न नद है सॉरी नदी का पुरुष रूप है यह ये राजकुमार है नदी का पुरुष रूप ठीक है नद है नदी का पुलिंग जो होता है हिंदी में आप पढ़े हो तो नद होता है ठीक है तो इसका मेल वर्जन है ये अगर हम बात करें तो इसमें शर्त होती है सोण भत्र लेकर के आ जाते हैं गुलबकावली गुलबकावली का पुष्प जब देख कर के मेकल जी अति प्रसन्न होते हैं कि क्या बात है अब हमारी पुत्री का विवाह फिक्स हो जाएगा मन में लड्डू फूटा बहुत प्रसन्न हुए सब चारों तरफ लड्डू बटने लगे वापस सोन का सोन वापस चले आते हैं बोलते हैं कि अब ठीक है शादी तो</p><p><span class="stamp">00:39:25</span> तय हो गई अब ये बड़े राजकु की बेटी है बहुत सुंदर सुशील संस्कारी है क्योंकि मां नर्मदा है इनको बारंबार प्रणाम है तो इसमें क्या है कि ये ऐसे तो जा नहीं सकती कि ऐसा पर्दा हटाया देख लिया कौन है सोना या कौन है सोन नदी तो ऐसा नहीं था उधर बहुत आज का जमाना नहीं है वो है ना कि आज पहले मिल लेते हैं पापा मम्मी कोल बाद में पता चलता है कि अच्छा ऐसा था वहां पे ऐसा नहीं था है ना उस कथा के अनुसार तो इसमें क्या होता है कि नर्मदा जी का ये वापस चले जाते हैं ये हाल फूल में खुश कि नर्मदा जी संस्कार सुशील के साथ शादी तय हो गई अब</p><p><span class="stamp">00:39:59</span> बढ़िया शेरवानी सवांगा शादी है अपनी तो यह वापस चले गए नर्मदा के मन में यह बहुत ज्यादा वो चल रहा था द्वंद कि कैसा है मैंने एक बार देखा भी नहीं तो ये क्या करते हैं नर्मदा जी सुने बस थे कि सोनभद्र बहुत ही सोने हैं इनको सोने नदी के नाम से भी जाना जाता है सोने नदी के नाम से भी जाना जाता है सोनभद्र को ठीक है सोने रिवर अच्छा सुन रखा था तो अब इनने क्या बोला बोला जोहिला दासी थी जोहिला उनके दरबार की दसी को बुलाया इधर आओ फटाफट आओ कबूतर को दे नहीं सकती थी क्योंकि खत अगर खत एक संदेशा भेजना था किसके पास सोन के पास</p></details><details class="transcript-block"><summary>00:40:36–00:44:33 (8 timestamp chunks)</summary><p><span class="stamp">00:40:36</span> किसको नर्मदा को कि मेरा सोना कैसा है बढ़िया है सुबह शाम चाय पी लेना खाना वाना खाते रहना है ना कमजोर मत हो जाना तंदुस रहना हस्ट पोस्ट रहना ऐसा एक लेटर दिया जाता है ठीक है लेटर कबूतर को दे देते मान लो मेकल जी को पापा को वो लेटर दे दिया तो इतने थप्पड़ मार मार के गाल को लाल कर देते बोलते अच्छा ज्यादा हीरो बन रहे हो हीरोइन बन रही हो है ना तो इसलिए कबूतर को ना दे कर के जोहिला को बुलाया बहुत ही भरोसेमंद दासी थी जिसने धोखा किया भरोसेमंद होते हैं जो वही धोखा देते हैं ठीक है तो जोहिला ने क्या किया यहां पे खत</p><p><span class="stamp">00:41:08</span> लेकर के आगे बढ़ी और वो सोन के पास जा रही थी सोन सुबह से उठ के मंजन ब्रस कर रहे थे देख रहे थे और बोले यार ये कोई चला रहा है ससुराल की तरफ से और जब कोई ससुराल की तरफ से आता है और नई नई शादी फिक्स हुई हो तो ऐसा लगता है कि अरे यही तो हमारा असली घर का आदमी है है ना और फिर इसको लगा कि अरे ये नर्मदा का मन हो गया होगा शायद मिलने का तो नर्म चली आ रही है तो सोन को यहां पर हो जाती है गलतफहमी और ये जोहिला जिसका ईमान हिला समझ जाती है कि ये जो सोन है क्योंकि उस निगाहों से जब देखता है ना कोई अपना तो लगता है कि कुछ तो है दिमाग में</p><p><span class="stamp">00:41:40</span> बोलते हैं ना भाई कुछ तो है तो वैसे ही हुआ तो ये बोली बहन कुछ तो है तो मतलब बोली कि यार सोन नदी सोन जी यहां पर हमें समझ चुके नर्मदा ये लेती है खत को फाड़ के फेंक देती है और फेंक देती है तो ये ये नहीं बताती कि मैं दासी हूं ये तो बोलती कि हां मैं ही नर्मदा हूं मैं ही नर्मदा और चिल्ला चिल्ला के चिल्ला चिल्हारी गांव उमरिया में चिल्ला चिल्ला के दोनों क्या हो जाती हैं चिल्ला चिल्लाकर कहते हैं तो क्या कहते हैं कि हमारी दोनों की उमरिया आज से चेल हारी में एक हो जाए किसकिस की तो ये नर्मदा सॉरी सोन और जोहिला तो सोन</p><p><span class="stamp">00:42:16</span> और जोहिला दोनों की उमरिया एक हो गई कहां पर तो ये चेल हारी उमरिया में इनने चिल्ला चिल्ला के सबको बता दिया जब चिल्ला चिल्ला के बता दिया तो यहां नर्मदा टेंशन में बैठी थी कि आखिर हुआ क्या है जोहिला को इतना टाइम कैसे लग गया शाम हो गई है लौट के नहीं आई पापा को बुलाया पापा इधर आओ बहुत देर हो गई है जोहिला गई थी मैंने ऐसा ऐसा कर दिया तो दिमाग खराब मेकल जी का बोले तुम बहुत ये अपने मन का करने लगी हो तुमने क्यों दिया उसको है ना बोले चलो पतो लगाते हैं तो गए देखने गए देखने लौट के आया बोले वहां दोनों का मिलन हो गया दोनों</p><p><span class="stamp">00:42:48</span> की उमरिया एक हो गई है चिल्हारी में चिल्ला रहे हैं दोनों की हम दोनों एक हैं है ना ठीक है तो मेकल जी वापस आते हैं इनको बताते हैं कि आपने किया है अब आप ही जानो तो नर्मदा जी का दिमाग खराब ये सबसे भरोसेमंद दासी और इसका ईमान हिल गया जो हिला तो ये क्या करती है प्रण लेती है एक नाम यहां से इस प्रण लेने के हिसाब से आएगा चिर कुमारी चिर कुवारी का मतलब होता है अनंत काल तक जिसने विवाह ना किया हो उसको हम चिर कुमारी कहेंगे चिर कुमारी कभी शादी ना करने वाली ठीक है अब इनने कभी शादी ना करने का प्रण लिया ठीक है तो हुआ</p><p><span class="stamp">00:43:22</span> क्या इससे इससे ये साधु सं महात्मा ही बन जाएंगे जब शादी करने का प्रण नहीं लेंगे या फिर सलमान खान टाइप सल्लू भाई अपुन कभी साधनी नहीं करेगा सल्लू भाई ने प्रण ले लिया अब सल्लू भाई ने प्रण लिया तो कुछ सल्लू भाई जैसे होंगे दो चार गांव में मोहल्ले में आपके शहर में घूम रहे होंगे भाई नहीं करेगा तो अपन नहीं करेगा तो ऐसे यहां पे भाई नहीं करेगा तो अपन नहीं करेगा वाली 41 ट्रिब्यूटरीज होती है इसकी क्या होती है ट्रिब्यूटरीज ट्रिब्यूटरीज होती है सहायक नदियां ठीक है कितनी होती है सहायक नदियां होती है 41 तो ये क्या करती हैं 41 नदियां</p><p><span class="stamp">00:43:55</span> आती हैं ठीक है 41 नदियां नाचती गाती दीदी तुम संघर्ष करो हम तुम्हारे साथ हैं तो दीदी बोलती है कि भैया देखो ऐसा है कि इसने किया है धोखा और धोखा हुआ है हमारे साथ तो पौराणिक कथा के अनुसार और वैज्ञानिक आधार दोनों बताऊंगा कि इसकी दिशा पूर्व से पश्चिम क्यों है ईस्ट टू वेस्ट ही क्यों बहती है तो मैं पौराणिक आधार पहले बताता हूं फिर जब मैं उसको समझाऊ तो मैं उसका वैज्ञानिक आधार भी आपको बताऊंगा कि क्यों बहती है अभी तक आपने बस इतना ही सुना होगा पूर्व से पश्चिम क्यों मैं आगे बताऊंगा ठीक है तो पौराणिक आधार के अनुसार देख लेते हैं तो नर्मदा अत्यंत</p><p><span class="stamp">00:44:33</span> गुस्से में थी बिकॉज उनके साथ क्या हो गया था यहां पे छलावा या इनके साथ ये घटना घट गई थी तो ये क्या थी यहां पे गुस्से में बैठी थी अब गुस्से में बैठी थी जब कोई इंसान आपसे गुस्सा हो जाए तो क्या वो आपके साथ चलेगा वो आप जा रहे हो इस तरफ तो वो भगता है उल्टा और दूसरा इने बोला कि मैं ये मिलन जहां पर ये चेल हारी में चिल्ला रहे हैं दोनों मैं ये मिलन नहीं देख पाऊंगी बिल्कुल भी नहीं जोहिला और सोन का मिलन मेरी आंखों से नहीं देखा जाएगा और मैं उस तरफ तो नहीं जाऊंगी मैं बिल्कुल उल्टा जाऊंगी जिसको जाना है पूर्व दिशा</p></details><details class="transcript-block"><summary>00:45:08–00:49:57 (9 timestamp chunks)</summary><p><span class="stamp">00:45:08</span> में बंगाल की खाड़ी में तो जाओ डुबकी लगाओ मैं नहीं जाऊंगी मैं तो अरब सागर की ओर अकेली स्वतंत्र रूप से बहती हुई जाऊंगी जिसको आना होगा मेरे साथ तो चला आएगा तो यहां पर दीदी तुम संघर्ष करो हम तुम्हारे साथ हैं है ना दीदी गुस्से में 41 आए यहां से दीदी एकदम ठुकरा के मेरा प्यार मेरा इंतकाम देखेगी वाले स्टाइल में निकल हैं तो इसमें कहा जाता है नर्मदा का प्रवाह कैसा है तो नर्मदा का प्रवाह जो है तीव्र या फिर इंटेंस है ठीक है जिन वर्ड्स का आपको जरूरी है जानना मैं खुद ही लिख देता हूं इंटेंस या बहुत तीव्र है और कहा जाता</p><p><span class="stamp">00:45:40</span> है कि इनके जो वॉटरफॉल्स है या फिर झरने हैं वाटर फॉल्स ठीक है जो ये वाटर फॉल्स है इनसे कैसी आवाज आती है कलकल की आवाज आती है लगता है मा नर्मदा रो रही हो दुख के कारण जो इसके साथ ये छलावा हुआ तो इनकी आवाज की तुलना सामवेद से की गई है सामवेद किससे संबंधित है तो संगीत से संबंधित वेद है हिस्ट्री आपने पढ़ी होगी सामवेद से इसकी तुलना की गई है ध्यान देना है आपको सामवेद और सामवेद का संबंध संगीत से है ठीक है तो ये जो कलकल की आवाज आती है इनकी तुलना सामवेद से की गई है एमपीपीएससी ऐसे पौराणिक आधार के क्वेश्चन पूछता है तो इस</p><p><span class="stamp">00:46:21</span> कथा से देखना आपके एमबी पीएससी में क्वेश्चन बनने की संभावनाएं ज्यादा है चाहे वो रेवा का नाम पूछ ले कि किस पुराण में है है ना रेवा खंड किस पुराण में है चाहे वो ये चिरकुमार पूछ ले चाहे वो मेकल सुता पूछ ले चाहे वो सोण देश तीर्थ पूछ ले चाहे वो ये वाली चीजें पूछ ले जो मैंने लिख दी है यहां पे ठीक है तो यहां पर क्या होगा दीदी तुम संघर्ष करो ये चीज लिख लेना आप है ना ईस्ट टू वेस्ट है पूर्व दिशा से पश्चिम की ओर इसका प्रवाह है तीव्र है और वाटरफॉल से कलकल की जो आवाज आती है लगता है मां नर्मदा अत्यंत व्याकुल है और जो</p><p><span class="stamp">00:46:55</span> संगीत से जैसी ध्वनि सुनाई देती उसका कंपैरिजन तुलना सामवेद से किया गया है अब ठीक है आगे बढ़ते हैं हम फिर से अब हम यहां पर 41 सहायक नदियां दीदी तुम संघर्ष करो हम तुम्हारे साथ है आती हैं और इसमें से कितनी 19 नदियां ऊपर से आती है दीदी तुम संघर्ष करो वाली ये आई कितनी 41 है यह आ गई यहां पर 19 नदियां ऊपर से आई 22 नदियां नीचे से आई अच्छा 22 नीचे से आ यही लिख मैंने बाकी 39 मध्य प्रदेश से आकर मिलती है दो गुजरात से तो आज तक आपने ये पॉइंट नहीं सुना होगा है ना क्या मैंने बोला कि 39 एमपी से मिलती है और दो इसकी सहायक नदियां गुजरात से आकर</p><p><span class="stamp">00:47:40</span> के मिलती है ठीक है तो टोटल कितनी 41 ट्रिब्यूटरीज है इसकी सहायक नदियां ये यहां से मैं मिटाता हूं क्योंकि आगे सब कुछ लिखा है वहां पे ठीक है तो अब दीदी तुम संघर्ष करो हम तुम्हारे साथ हैं ऐसा करके ये नागे निकल जाती हैं और यह जो नदियां होती हैं बेचारी ये भी सल्लू भाई की तरह जो सल्लू भाई के फैन है तो ये नर्मदा की फैन है सब और चली जाती है तो ये एक नदी होती है यहां से फिर ताप्ती रिवर और ताप्ती को सूर्य की पुत्री कहा जाता है शनि की बहन है ठीक है ताप्ती नदी ताप्ती नदी का उद्गम कहां से होता है तो मुलताई बैतल मुलताई वैत मुलताई क्षेत्र पड़ता है</p><p><span class="stamp">00:48:15</span> वैत में मुलताई वैत ठीक है इंग्लिश वाले लिख लेना मुलताई वैत कोई अलग थोड़ी ना उसम वर्ण मलता वतुल जगह है पती रिवर ठीक है ये क्या है सूर्यपुत्री और शनि की बहन सूर्य की तो यह पुत्री है और शनि की क्या है बहन देख रहे हो शनि की बहन है तो यह क्या करती है ये यहां से ओरिजनेट होती है इसका जन्म होता है नर्मदा से बहुत छोटी है समझ लेना वैसे भी 724 किलोमीटर है तो छोटी होगी और इसका जन्म यहां से होता है सतपुड़ा के क्षेत्र से ही ठीक है तो यहां पर मूसा जी होते हैं समझ लेना मेकल ये मौसी की लड़की है नर्मदा किसकी मौसी की लड़की ताप्ती यह कहानी</p><p><span class="stamp">00:48:53</span> मैंने खुद की ऐड की है उस पुराण में नहीं है तो मैंने पहले ही बोल दिया यहां से क्या होता है कि मोसा जी फोन लगाते हैं उस समय फोन नहीं चलते थे समझो संदेशा पहुंचाते हैं कि दीदी बहुत क्रोध में निकली है और बहुत सारी उनके साथ चली जा रही है ट्रिब्यूटरीज या सहायक नदियां तो दीदी को यहां पे अपने बैतूल के आसपास ताती के आसपास मना लेना अपने घर में बुला लेना तो ये करती है कि ठीक है मना लूंगी छोटी सी थी बाल्यावस्था में क्योंकि यहीं से ओरिजनेट हुई तो यहां से क्या बोलती है ये दीदी रुक जाओ कहां जा रही हो तो दीदी तो</p><p><span class="stamp">00:49:25</span> गुस्से में चली आ रही है वहां से सनकी हुई बोले अब तुम दूर रहना ठीक है भले तुम मौसी की लड़की हो छोटी हो तो इसलिए मैं तुम्हें माफ कर रही हूं मेरे पास मत आना तो ये ताकती बोलती है कि भाई साहब वहां पास नहीं जाना मैं छोटी हूं बड़ी दीदी कोई थप्पड़ पपड़ मार दे दिक्कत हो जाए तो ये क्या करती है ये छोटी रहती है अपनी बाल्यावस्था में रहती है तो ये क्या करती है थोड़ा लड़कपन होता है तो ये कहती है कि ठीक है यार ध्यान दो मोसा जी जब दोबारा बोलेंगे तब देख लेंगे तो ये बैतूल मुलताई के बाद मुंबई में घूमने चली जाती है इसको मजा आता</p><p><span class="stamp">00:49:57</span> है बोले अरे अपन घूमते हैं मुंबई रोकने के लिए गई थी रास्ते भर चली जा रही बीच में आ गया मुंबई तो मुंबई में मस्त ताज बाज होटल देखा जैसे ताज बाज होटल देखा मोसा जी का फिर आया फोन उनको पता चला उसने जब सेल्फी मुंबई से डाली ताप्ती ने मुंबई से सेल्फी डाली तो उने क दिमाग खराब कि मैंने बोला था कि दीदी को रोकना तुम क्या कर रही हो ये तो भाई साहब फिर लौट के आती है तो मध्य प्रदेश के सिर्फ दो जिले से निकलती है कौन कौन ये निकलती है ताप्ती यहां पे हो जाएगा बेटा बुरहानपुर बुरहानपुर ठीक है बुरहानपुर जो है बुरहानपुर शहर और मुलताई</p></details><details class="transcript-block"><summary>00:50:30–00:54:31 (8 timestamp chunks)</summary><p><span class="stamp">00:50:30</span> बैतूल जहां से निकली है दोनों शहरों प ये आपको देखने को मिलेगी दोनों शहरों से निकलती हुई ताप्ती फिर से यहां पर फिर दीदी को रोकते एक बार कि दीदी मान जाओ मौसा जी ने बोला है तो मान नहीं रही हो है ना फिर से मैं लौट के बुरान पुराना पड़ा तो ये थोड़ा सा पास जाने की कोशिश करती है नर्मदा फिर बोले भग दूर तो ये कहती है यार तुम जाओ तुम्हें जो करना है मेरे बस का नहीं है तो ये क्या करती है जब किसी और को मनाना चाहिए था ताप्ती को तब वो मनाती रही नर्मदा को नर्मदा को मनाने से क्या मिलेगा किसी और को मनाती तो शायद इनका इसका मिलन</p><p><span class="stamp">00:51:02</span> किसी और नदी से हो जाता और यह दोनों फिर मिलकर के आगे कोई और अपवाह तंत्र का नाम आता पर जैसे स्वतंत्र रूप से नर्मदा बहती गई इसलिए उसने एक अपवाद तंत्र बनाया वैसे ही ताप्ती भी स्वतंत्र रूप से बहती गई क्योंकि जब किसी और से मिलना था तब वो मनाती रही किसको नर्मदा को तो इसकी जिंदगी भी यहां पर इसने कर दी खराब बस मैं समझाने के लिए बोल रहा हूं है ना तो देखिए यहां पर क्या है अरेबियन सी या अरब सागर उसमें जाकर के ये भी यहां पर डुबकी मार लेगी अरब सागर के अंतर्गत अरब सागर में ठीक है अरब सागर यहां पर क्या होता है यहां पर सीन चल रहा होता है अब</p><p><span class="stamp">00:51:45</span> मैं फिर से क्लाइमैक्स को यहां पर लेकर आता हूं ये वाला सीन जैसे मूवीज में चलता है कि जब थोड़ा सा यहां की कहानी हो जाती है तो वो दूसरे सीन की ओर चल देते हैं ये सीन ठीक है यहां पर क्या चल रहा था यहां पर उनको पता चला कि अरे ये क्या कांड हो गया हमसे ये तो बहुत गलत हो गया बहुत ही गलत हो गया तो बोले अरे यार क्या हो गया यार सिर पकड़ लिया इने जब सिर पकड़ लिया तो फिर क्या होता है बेटा फिर इनको पता चलता है कि अरे ये तो जोहिला थी नर्मदा तो है ही नहीं ये बहुत बड़ा धोखा हुआ है तुमने बताया क्यों नहीं तो ये कहती है कहे</p><p><span class="stamp">00:52:14</span> बताऊं मैं मैं वहां दासी थी यहां पर तुम्हारी रानी बन के बैठी हूं तो बोले अरे तुम दूर हट जाओ मेरे से लेकिन अब क्या हो दोनों का संगम हो गया है वो जमाना था है ना कि आज का जमाना होता तो बोले ठीक है कोई दिक्कत नहीं चलो जाओ लेकिन वो जमाना था बहुत मान मर्यादा संस्कार वाला बोले भैया गलती हो गई गलती हो गई पाप हो गया तो पापों का प प्रश्चित कहां होता है पापों का प्रश्चित कहां होता है भाई साहब पाप हो गया तुमसे कोई तो पाप करने के लिए तुम पाप धोने कहां जाते हो तो लोग बोलते हैं कि हम गंगा में डुबकी लगा लेंगे नर्मदा के दर्शन</p><p><span class="stamp">00:52:46</span> कर लेते पर नर्मदा तो बोलती है दूर रहो तुम हो कौन निकलो यहां से तुम जोहिला के साथ हो गए मैं तुम्हारी शक्ल भी नहीं देखना चाहती इसलिए ये नर्मदा की ओर नहीं गए कि बोले अरे भैया वो खतरनाक है कहीं गुस्से में कुछ मेरे को मार पीट दिया तो गड़बड़ हो जाएगी तो ये गंगा जाते हैं गंगा नदी की ओर गंगा नदी तो इससे याद रखना कि इसको पापों का करना था प्रास बस मैं सिर्फ याद कराने के लिए बोल रहा हूं और कुछ भी नहीं कोई उद्देश्य नहीं है मेरा गंगा नदी में और गंगा नदी ये दीन दुखारी होते हैं तो दीनापुर बिहार में जाकर के दीनापुर</p><p><span class="stamp">00:53:15</span> बिहार में जाकर के किसम मिल जाती है बेटा तो ये मिल जाती है गंगा रिवर में ठीक है किसम मिल जाती है गंगा रिवर में मिल जाती है ये है ना ठीक है अच्छा मैं अगर इस क्लाइमेक्स के बाद फिर से इधर को आऊ तो यहां पर क्या सीन चल रहा होता है एक और होता है कौन होता है वो ये मिंडा गांव में बैठ के मिंडा मिंडा करता रहता होगा और यह मिंडा मिंडा ऐसा करते हुए देखो एक मिंडा में होती सरदारपुर धार हालांकि ये नदी है बस यह कहानी मैंने जोड़ी हुई है तो आप प्लीज अन्यथा ना ले बस मैं याद कराने के चक्कर में हूं कि तुम्हें याद हो जाए माही</p><p><span class="stamp">00:53:50</span> रिवर माही माही माही ये वही है इमरान हाशमी माही माही माही बस मेरा तू माही इस टाइप के तो यहां पर क्या होता है बेटा माही रिवर जो है माही नदी बैठा बैठी रहती है वैसी नदी के कहीं पर किसी का कोई ब्रेकअप हो रहा हो तो इंतजार में रहता है कहां हां भाई उधर तो ये बड़े इंतजार में बोले अरे यह कहानी सबको पता जग जाहिर हो गई बहुत बड़ी नदी है अपने आप में तो ये यहां बैठे बैठे मिंडा गांव सरदारपुर धार विंद पर्वत श्रंखला मिंडा गांव मिंडा सरदारपुर धार ठीक है तो बंडा गांव सरदारपुर धार के अंतर्गत ये बैठे रहते हैं कके बैठे रहते</p><p><span class="stamp">00:54:31</span> हैं बोले वहां से नर्मदा आएगी और अपन उसको रोक लेंगे है ना तो नर्मदा को यहां पर रोकने की कोशिश की जाती है किसके द्वारा माही के द्वारा पर नर्मदा इतनी संस्कारी इतनी साफ स्वक्ष शुद्ध है ना ये प्रण ले चुकी मतलब ले चुकी यहां बोले बोले रुक जाओ बोले अरे मैंने अपने पापा की नहीं मानी मैंने अपनी बहन की नहीं मानी उसको दाट पट के भगा दिया वो दूर भग गई बेचारी उसने भी अकेले रहती रही जिंदगी भर मेरे चक्कर में और तुम यहां पर बोल रहे हो कि बुढ़ापे में यहां पे रोक लोगे मुझे बोले दूर भग जाओ तो मां ही रहता है वैसे ही रहते हैं कुछ लोग</p></details><details class="transcript-block"><summary>00:55:06–00:59:24 (6 timestamp chunks)</summary><p><span class="stamp">00:55:06</span> बोले ये नहीं तो कोई कहीं और घूमते हैं तो ये ऊपर जाते हैं जब ऊपर जाते हैं बोले चलो यार हटाओ का सिर दर्द करो बहुत ही खतरनाक है ये तो बोले बहुत खतरनाक है तो एक बार कर्क रेखा को ये यहां कट मार देते हैं बोले दूर भगते हैं यहां से ये तो एकदम पागलही दिख रही है तो कर्क रेखा या ट्रॉपिक ऑफ कैंसर को यहां पर कर्क रेखा को एक बार इसने कट मार दिया कर्क रेखा या ट्रॉपिक ऑफ कैंसर ठीक है बेटा ट्रॉपिक ऑफ कैंसर तो ट्रॉपिक ऑफ कैंसर को इसने कट मार दिया एक बार ठीक है अब ये ऊपर ू ढांड नहीं गई किसको ढूंढने गई बोले कोई और मिलेगा</p><p><span class="stamp">00:55:37</span> क्यों नहीं तो कोई और सही है ना वैसी कहानी राजस्थान तो ये राजस्थान के बांगड़ के मैदान 5 के मैदान में घूम घाम के जब इसको कोई नहीं मिलता क्योंकि कुछ लोग उनकी ऐसी हरकत होती है ना कि कोई नहीं मिलना चाहता उनसे तो यहां भी घूम घाम के बोले एक बार और ट्राई मार लेते हैं नर्मदा मान जाती है तो बहुत अच्छी बात है फिर लौट के जाते हैं नर्मदा के चक्कर में बस ये मैंने जोड़ी है खुद कहानी याद कराने के लिए कर्क रेखा को दोबारा इसने कट मार दिया ट्रॉपिक ऑफ कैंसर को एक बार और एक बार और मार दिया कट तो भाई साहब यहां पर फिर से नर्मदा के</p><p><span class="stamp">00:56:09</span> पास पहुंचे बोले यार कैसा आदमी है समझ नहीं आता तुमको का समझ नहीं आता कि जब मैंने बोल दिया दूर रहो तो मतलब दूर रहना है दूर का मतलब दूर होता है तो ये बोलते हैं अरे यार कैसी है यार ये है ना कैसी है तो ये क्या होता है ये तो इसने अपने हाथों अपनी जिंदगी खराब कर ली और जाकर के फिर से ये आ जाकर के खंबा की खाड़ी है अरब सागर में इसको भी विलीन हो जाना है ये माही रिवर है ठीक है तो मैं यहां नहीं लिखता हूं क्योंकि मुझे नर्मदा का एक्सप्लेनेशन यहां पे देना है तो ये राजस्थान में घूम घाम के वापस लौट लाट के आके गुजरात में</p><p><span class="stamp">00:56:41</span> अरब सागर में माही अपनी डुबकियां मार लेती है कि बोले ठीक है यार क्या करें है ना होते हैं कुछ मोहल्ले में देखा होगा तुमने खतरनाक वाले ऐसे लोग अच्छा इसका मिलन या कफ्लैश मिलन स्थल क्या है इसका तो मिलन स्थल में कंप्लीट पूरा लिखता हूं बेटा मिलन स्थल किसका मैं नर्मदा की बात कर रहा हूं ठीक है यहां पर क्या होता है यहां पर होता है अरब सागर अरेबियन सी अरब सागर खंभात या फिर कैंबे की खाड़ी तो बहुत सारे लोग खंभात खंभात करते रहते हैं मैंने हमेशा यही बोला है खंभात के अलावा कैमे ध्यान रखना है आपको खंबा सबको पता है मींस</p><p><span class="stamp">00:57:45</span> में आप कैमे की खाड़ी लिखना कैमे की खाड़ी भरूच गुजरात तो गल्फ ऑफ कैमे अरेबियन सी गल्फ ऑफ कैमे अरेबियन सी इंग्लिश में भैया लिख देता हूं अरेबियन सी छोटे अक्षर कर लेता हूं थोड़ा जिससे आपको सॉरी ठीक है तो इसको अपन थोड़ा सा और छोटा कर लेते हैं अरेबियन सी ठीक है अरेबियन सी गल्फ ऑफ खंभात या फिर गल्फ ऑफ कैंबे भरूच गुजरात ठीक है तो यहां पर अरेबियन सी में जाकर के यह समाहित हो जाती है तो इस प्रकार से आपको यह पूरी चीजें इसकी समझ में आ गई होंगी अब मैं चलता हूं अब ले चलूं तुम्हें पूरे डिस्क्रिप्शन की ओर तो इतनी चीजें अभी तक सभी को कन्फर्म है या</p><p><span class="stamp">00:59:24</span> नहीं पहले यह बता दो मुझे जल्दी बताएं ठीक है जल्दी बताएं जल्दी फटाफट इतना समझ में आ गया तो फिर आगे बढ़े हम पक्का बहुत बढ़िया प्रवीण भाई ठीक है न हो गया शिका जी बिल्कुल चले अब हम बात करेंगे नर्मदा की तो कॉन्फ्ल एंस पॉइंट में आपको बता चुका हूं सॉरी ओरिजन पॉइंट है ना दोबारा मैं यहां नहीं लिखने वाला हूं अब मिलन मिलन कहां पर हुआ तो यह भी मैं लिख चुका हूं गल्फ ऑफ कैमे कैंबे की खाड़ी या फिर इसको आप गल्फ ऑफ कैमे बोल सकते हो गल्फ ऑफ कैमे ठीक है गल्फ ऑफ कैमे ठीक है मैं तो उल्टे ही आंसर लिखूंगा मैं खंबा लिखूंगा ही नहीं</p></details><details class="transcript-block"><summary>01:00:34–01:04:24 (7 timestamp chunks)</summary><p><span class="stamp">01:00:34</span> हमेशा गबाद दुनिया को पता है अलग क्या किया आपने अलग ये किया कैमे की ड़ी ठीक है टोटल लेंथ टोटल लेंथ इसकी जो कुल लंबाई है आपको पता है कुल लंबाई इसकी 1312 किलोमीटर 1312 किलोमीटर मध्य प्रदेश में कितनी है ये 1077 केएम इन एमपी जिसमें से 34 किलोमीटर जो है मध्य प्रदेश और महाराष्ट्र की सीम या बॉर्डर पर बहती है ठीक है 34 किमी मध्य प्रदेश और महाराष्ट्र की सीमा में जबकि 40 किमी मध्य प्रदेश और गुजरात की सीमा में और पोरली गुजरात में 161 किमी बहती है फ्लो मैं आपको बता चुका हूं इसका इंटेंस है डायरेक्शन पूर्व से पश्चिम दिशा</p><p><span class="stamp">01:01:13</span> की ओर है हम देख चुके हैं ठीक है पौराणिक कथाओं के अनुसार नाम तो आपने कितने नाम पढ़े हैं मैंने फिर इकट्ठे कर दिए अगली बार पढ़ाऊंगा तो फिर दो चार नाए लेके आऊंगा जबरदस्त वाले यहां से एमपीपीएससी की मोस्ट प्रोबेबली क्वेश्चन यहां से आ सकते हैं अब आपने देखे ही होंगे अभी निरंतर तो नेम्स अकॉर्डिंग टू माइथोलॉजी निबुडा निबुडा सुना है क्या आपने आज तक निबुडा साखरी सुना है क्या सोमो देवी सुना ही होगा सोम प्रकाश भी सुना होगा शिव पुत्री तो अभी मैंने भी बताया कई बार पहले भी मैं बता चुका हूं मेकल सता चिर कुवारी पता है</p><p><span class="stamp">01:01:48</span> आपको शकरी पता है और रेवा रेवा स्कंद पुराण में इनका नाम है तो निबुडा साखरी सोमो देवी वगैरह ये सारे नाम है अन्य नाम भी है इनके अन्य नाम क्या है अदर नेम नाम दासो आपको पता है टॉलमी साहब ने कहा है गिवर ऑफ प्लेजर खुशी का दाता भी इनको कहा जाता है मध्य प्रदेश की जीवन रेखा तो कोई नदियां किसी भी क्षेत्र की जीवन दयनी है और यह संपूर्ण मध्य प्रदेश के मध्य से होकर गुजरती है इसलिए ये पूरे मध्य प्रदेश की और सबसे बड़ी नदी है तो लाइफ लाइन ऑफ एमपी कहा जाता है मध्य प्रदेश की गंगा भारत की हृदय रेखा तो भारत के ठीक बीचोंबीच से लगभग होकर ये गुजर करती है तो</p><p><span class="stamp">01:02:27</span> हार्ट लाइन ऑफ इंडिया भी इसको कहा जाता है क्लियर है अभी हां नेक्स्ट ये हो चुका है अब हम यहां पे अपवाह क्षेत्र की बात करते हैं तो अपवाह क्षेत्र जो है बेटा इसका टोटल कुल अपवाह क्षेत्र जो अपनी सहायक नदियों के साथ ये पूरी अपवाह क्षेत्र ये पूरा होगा ध्यान देना है आपको ये अगर नर्मदा रिवर है यहां जा रही है तो ये पूरा जो संयत इसने नेटवर्क बनाया है ये ये आपको पूरा जो क्षेत्र होगा वो अपवाद क्षेत्र इसका कहलाएगा ठीक है तो ड्रेनेज एरिया 987 96 वर्ग किलोमीटर मध्य प्रदेश में ये 85 149 वर्ग किलोमीटर आपको देखने को</p><p><span class="stamp">01:03:13</span> मिलेगा ठीक है अब ये कहां पर फ्लो करती है तो आपको पता है ऊपर विंध्यांचल है नीचे सतपुड़ा है मैं आपको पढ़ा चुका हूं विंध्यांचल और सतपुड़ा पर्वत दो माउंटेन रेंज है मेनली मध्य प्रदेश में इसके द्वारा बनाया गया भ्रंश ब्रंस या इसको कहते हैं इंग्लिश में फॉल्ट या फिर रिफ्ट ठीक है फॉल्ट या रिफ्ट होता है जो कि वी आकार की घाटी का यहां पर निर्माण होता है ठीक है इस प्रकार से कुछ भ्रंश सतपुड़ा के उत्तर में ठीक है सतपुड़ा के ये उत्तर में आप देखेंगे सतपुड़ा के सहारे प्रवाहित होती हुई आगे बहती है तो भ्रंश घाटी है जो</p><p><span class="stamp">01:03:48</span> भ्रंश घाटी में बहती है ये फॉल्ट और ये भ्रंश किसके द्वारा बनाया गया है मैंने नर्मदा सोन घाटी में आपको बता चुका हूं कि भ्रंश घाटी भ्रंश घाटी क्या होती है ठीक है तो विंध्यांचल और प सतपुड़ा के भ्रंश में ये प्रवाहित होती है ये किस प्रकार का अपवाह तंत्र बनाती है तो आपने सुना है क्या वृक्ष नुमा झाड़ी नुमा जाली नुमा अपवाह तंत्र का निर्माण करती है तो एक वृक्ष की तरह दिखेगी आपको अगर डायग्राम को ध्यान से देखो ये मेन क्या है एक वृक्ष है वृक्ष में पेड़ में स्टेम होता है तना तो तना होता है मुख और उसमें चारों साइड होती</p><p><span class="stamp">01:04:24</span> है दोनों साइड होती है ब्रांच बचेस तो जो 41 सहायक नदियां है ये क्या है इसकी ब्रांचेस हो जाएंगी ये इसकी ब्रांचेस हो जाएंगी अगर हम ब्रांच के तौर पर देखें तो वो उसकी ब्रांचेस हो जाएंगी जो कि वृक्ष का काम करेंगी उसी प्रकार से आपको झाड़ी दिखेगी एक झाड़ अगर मैं इसको पकड़ के अगर मैं इसको पकड़ के और ऐसा खड़ा कर दूं तो तना बीच में हो जाएगा ब्रांचेस चारों तरफ मतलब एक झाड़ी सी दिखेगी जाली नुमा भी तो एक जाल सा बिखरा हुआ दिखेगा पूरे उसमें एक नेटवर्क सा ठीक है मुहाने पर यह क्या करती है अच्छा उद्गम पर क्या बना देती है उद्गम</p></details><details class="transcript-block"><summary>01:05:02–01:09:32 (8 timestamp chunks)</summary><p><span class="stamp">01:05:02</span> पर जहां ओरिजन पॉइंट है उद्गम पर यह रेडियल पैटर्न बनाती है रेडियल ठीक है रेडियल रेडियल पैटर्न ठीक है तो इस इंग्लिश वर्ड जानना जरूरी था तो रेडियल इंग्लिश में लिख दिया मैंने रेडियल हिंदी में रेडियल ऐसा ही होता है तो रेडियल पैटर्न क्या होता है रेडियल पैटर्न वो पैटर्न होता है ध्यान से सुनो ठीक है अब मैं लिखूंगा नहीं उसको क्योंकि प्री की क्लासेस है वैसे भी बट आप लिख भी सकते हो अपने उसमें एक लाइन में मैं बोल देता हूं रेडियल पैटर्न वो पैटर्न होता है जिसमें जहां उद्गम होता है तो उद्गम होता है जिस जब रिवर का तो वो</p><p><span class="stamp">01:05:42</span> चारों दिशाओं में बहुत तेजी से ऐसे ऐसे चारों दिशाओं में बट जाती है ठीक है चारों दिशाओं में जहां पर बट जाती है तो उद्गम पर बोल रहा हूं मैं ध्यान देना आगे पूरा नहीं करती है ये उद्गम पर ये चारों दिशाओं में विभक्त होती है पर इकट्ठी एक जगह आती है ये उधर गई तो वो लट लाट के ऐसी आई वो ऐसी लट लाट के चारों दिशाओं में जब विभक्त होती है तो उद्गम पर ये रेडियल पैटर्न दर्शाती है परंतु परंतु इसका जो प्रवाह परंतु जब इसका जो संयुक्त प्रवाह है संयुक्त प्रवाह पूरा जो संयुक्त प्रवाह है संयुक्त प्रवाह किस प्रकार का पैटर्न</p><p><span class="stamp">01:06:17</span> दर्शाता है तो वो सलाखे पैटर्न दर्शाता है कंप्लीट मैं सिर्फ उद्गम की बात कर रहा हूं रेडियल पैटर्न और कंप्लीट सलाखें या इनको बार्स पैटर्न कहा जाता बार्स पैटर्न को ये शो करती है ठीक है सलाखें पैटर्न को ये बनाती है पूरा संयुक्त सलाख है तो पूर्ण रूप से देखेंगे तो एक तरीके से जो ये ऊपर से रिवर्स इसमें आती है ऐड होने के लिए वो ऐड होने के लिए एक क्या करती हैं एक सलाखे टाइप का बनाएंगी ये नर्मदा रिवर जा रही है ठीक है पूर्व से पश्चिम और इसमें जो 90 डिग्री पर आकर के मिलती है ये ठीक है 90 डिग्री पर आ के यहां पर जो लगभग 90 डिग्री</p><p><span class="stamp">01:06:58</span> का कोण बनाती है जो अदर रिवर्स इसमें इसकी सहायक नदियां मिलने को आ रही है किसकी नर्मदा की ठीक है तो ये लगभग 90 डिग्री के कोण पर आकर के उत्तर या दक्षिण दिशा में जाकर के मिलती है किससे नर्मदा से ठीक है यह चीज समझ में आई पहले तो यह बताओ मेरे को ठीक है पियो पियो भाई अपने पास कहां है पानी अभी हैं ठीक है तो इस बात को आप समझना वृक्ष नमा आंसर आएगा तो वृक्ष की तरह दिखता है बिकॉज एक स्टेम की तरह नर्मदा है बाकी इसकी ब्रांचेस दोनों साइड से जो आती है वो 41 है झाड़ की तरह दिखता है एकदम ठीक है जाली की जाल की तरह फैला है ठीक है ये</p><p><span class="stamp">01:07:43</span> क्या है उद्गम पर यह रेडियल पैटर्न को दर्शाती है रेडियल पैटर्न का मतलब होता है कि जब भी उद्गम ओरिजन से कोई नदी निकलती है तो वो चारों दिशाओं में फैल जाती है वो रेडियल पैटर्न है जब इसका संयुक्त प्रवाह मतलब पूरा प्रवाह देखा जाए तो वहां वो सलाखे या वार्स पैटर्न को दर्शाती है जहां पर आपको ऐसी सलाखें से ऐसी ऊपर से आती हुई नदी नीचे से आती हुई नदी दिख जाएंगी और यहां पर नदियां इसमें जो इसकी सहायक नदियां है वो किस पर मिलती हैं तो वो किस पर मिलती है 90 डिग्री या समकोण पर आकर के इसकी सहायक नदियां 90 डिग्री या राइट एंगल</p><p><span class="stamp">01:08:17</span> जिसको कहते हैं आप समकोण पर आकर सहायक नदियां इसकी आकर उससे मिलती हैं ये कभी पूछा जाए तो ये भी बता देना आप ठीक है 90 डिग्री के कोण पर आकर के इसकी सहायक नदियां इससे मिलती है ठीक है आ गया समझ में फिर ठीक है यह क्या करती है किसका निर्माण करती है तो यह अपने महाने महाना होता है जहां पर यह कॉन्फ्लूएंट पॉइंट जब कहीं समुद्र से मिलती है तो महाना आपको पता है बता चुका हूं मैं कहां है एच या फिर इसको ही ज्वार कहा जाता है ठीक है तो टाइट बोल जाता है उसको ज्वार को तो एरी या टाइड या ज्वार का निर्माण करती है इट फॉर्म्स एन एरी और टाइड एट इट्स</p><p><span class="stamp">01:08:55</span> कॉन्फ्लूएंट पॉइंट तो जहां इसका कॉन्फ्लूएंट पॉइंट है वहां पे ये ज्वार या फिर अश्चुरी का निर्माण करती हैं अब एच क्या होता है तो इसकी डेफिनेशन लिखिए हालांकि ये मेंस के लिए है तो प्री प्लस मेंस जैसा ही सब चल रहा है एरी जब कोई नदी स्वतंत्र रूप से बहती है नर्मदा नदी है पूर्व से पश्चिम की ओर बह रही है किसी निश्चित दिशा में दिशा बता दी मैंने अपनी सहायक नदियों 41 सहायक नदियों को लेकर अपना ठंडा तो नदी में ठंडा ताजा रहता है जल क्योंकि वो बहता रहता है मीठा होता है लेकर अपने मुहाने की ओर खंभात की खाड़ी की ओर आगे बढ़ती है तो जब वह समुद्र के</p><p><span class="stamp">01:09:32</span> अत्यंत खारा तो अरेबियन सी है यहां पे अरब सागर अरब सागर वहां नमक बनता है आपको पता है सबसे ज्यादा खारा पानी वहां आपको देखने को मिलेगा खारे पानी से 90 डिग्री के कोण पर 90 डिग्री बिल्कुल साइंटिफिक मतलब अच्छे प्रूवन वो लिखी है ये डेफिनेशन 90 डिग्री का कोण क्या होता है इस प्रकार से ये समुद्र का धरा समुद्र का तल है और ऊपर से ये गिर रही है मतलब 90 डिग्री मतलब एकदम गिरनी चाहिए 90 डिग्री के कोण पर ऊंचाई से बिना बिखरे चारों तरफ पानी नहीं फेलना चाहिए एक स्थान पर पानी ये गिरना चाहिए बिना बखरे के स्थान पर गिरती है तो</p></details><details class="transcript-block"><summary>01:10:06–01:14:29 (7 timestamp chunks)</summary><p><span class="stamp">01:10:06</span> वहां उस जो बनता है उस क्षेत्र में एक खारा टाइप का मलवा टाइप का उसको हम ए चुरी या ज्वार कहते हैं समझ में आ गया एरी या ज्वार कहते हैं उसको ठीक है बताइए मैं पढ़ाने को तैयार हूं और लोग कोई बड़ा अर्जेंट काम हो गया क्या सर टाइम हो गया जान जा रहे हैं लोग हैं ऐसा मतलब इससे अच्छा तो आधे घंटे का सेशन लेना चाहिए था मुझे आधे घंटे में भी नर्मदा निपटा सकता [संगीत] हूं पर मैं चाहता हूं कि आप अच्छे से अच्छा दे दूं तो समझिए जिसको जाना हो जा सकता है जिसको यहां पर नॉलेज लेना हो वो ले सकता है है ना ये चीजें ऐसी चीज है ना</p><p><span class="stamp">01:11:04</span> आपको कहीं बुक में मिलेगी ना कोई कहीं पर आपने पढ़ा होगा नहीं पढ़ा होगा मैं इतना बता सकता हूं लोग एरी लिख देंगे पर एरी की डेफिनेशन एजेक्ट उनको भी नहीं पता कि आखिर ये कौन सी बला है ए चुरी है ना तो ठीक है ए चुरी एरी क्या होता है या ज्वार व्हेन अ रिवर फ्लोज फ्रीली इन अ सर्टेन डायरेक्शन एंड मूव्स टुवर्ड इ कनफ्लुएंस पॉइंट तो कोई भी रिवर है जब यहां पर इंडिपेंडेंटली फ्लो करेगी और वन क मूव्स टुवर्ड्स इट्स कफ्स पॉइंट अलोंग विद इट्स ट्रिब्यूटरी तो अपनी ट्रिब्यूटरीज के साथ कैरिंग इट्स कोल्ड फ्रेश एंड स्वीट वाटर तो इसमें कोल्ड</p><p><span class="stamp">01:11:45</span> फ्रेश एंड स्वीट वाटर होता है और क्या होता है बेटा यहां पर देन वन इट राइ एट एन एंगल ऑफ 90 डिग्री तो 90 डिग्री के कोण पर जब वो नीचे की ओर गिरता है है ना टू द एक्सट्रीमली सॉल्टी वाटर तो अरेबियन सी में एक्सट्रीमली सॉल्ट वाटर है अधिक खारा पानी है ठीक है ऑफ द सी व्हेन वाटर फॉल्स एट वन प्लेस विदाउट गेटिंग डि डिप्रेस्ड डिस्पर्स सॉरी तो बिना डिस्पर्स हुए बिना बिखरे एक जगह गिरे तो वहां पर एरी का निर्माण होता है इसकी कुल सहायक नदियां कितनी है तो देखिए 41 इसकी ट्रिब्यूटरीज हैं अब बाई ओर से तो ये है हमारी नर्मदा</p><p><span class="stamp">01:12:21</span> रिवर ठीक है अगर हम बात करें बाई और दाईं ओर तो दाई होगा इसका राइट साइड यहां पे होगा राइट या फिर नॉर्थ भी बोल सकते हो आप इसको यहां से आती है 19 नदियां नीचे से आती है 22 ठीक है इसमें आप लेफ्ट और साउथ दक्षिण की ओर से जा रही है और लेफ्ट उल्टा हाथ मेरा ये है तो नीचे से आ रहा है तो मतलब लेफ्ट लेफ्ट और साउथ राइट और नॉर्थ ऐसे वो डायरेक्शन के से क्वेश्चन कर सकता है 22 नदी बाई ओर से 22 में एक होती है तवा जो इसकी सबसे बड़ी है तवा नीचे से आती है ध्यान देना तवा नीचे की ओर से जाकर के इसमें मिलती है ठीक है तो जिसमें 39 मध्य</p><p><span class="stamp">01:13:02</span> प्रदेश में सहायक मिलती है और दो गुजरात से आकर के मिलती हैं 41 में से 39 तो जो है वो कहां से आकर मिलती हैं बेटा तो वो 39 मध्य प्रदेश में मिलती है जबकि दो गुजरात में आकर मिलती हैं टोटल 41 19 फ्रॉम राइट साइड एंड 22 फ्रॉम लेफ्ट साइड इन व्हिच 39 कम्स फ्रॉम मध्य प्रदेश एंड टू फ्रॉम गुजरात दो आती है गुजरात से जिनमें से कुछ प्रमुख रिवर्स लिखी हैं है ना प्रमुख रिवर्स लिखी है तो बेटा आप देख सकते हो कि दाईं ओर से दाई ओर से आने वाली इनमें दाई ओर मतलब होता है सर कि आप ऊपर की बात कर रहे हो राइट और नॉर्थ ठीक है तो</p><p><span class="stamp">01:13:40</span> वहां से हिरण बलई रंज ंदोह जामनेर कोलार मान ऊटी हथनी एट्स ठीक है फ्रॉम राइट हिरण बलाई विरज टिंडोली वारना जामनेर कोलार मान कैमल या फिर ूटी लिखना चाहिए इसको ऊंटी ठीक है ऊंटी ऊंटी रिवर ठीक है और हथनी एट्स बाई ओर से आने वाली मतलब सर नीचे से बात हो रही है सबसे पहले तो सबसे बड़ी सहायक जो इसकी है सबसे बड़ी ठीक है सबसे बड़ी सहायक जो है वो है तवा नदी तो सबसे बड़ी सहायक है इसकी तवा रिवर जो कि आप देखेंगे बाई ओर से या दक्षिण दिशा की ओर से आती है दूधी छोटी तवा कावेरी तवा गंजाल शेर शक्कर गार कावेरी नदी एक पहले हुआ करती थी जो</p><p><span class="stamp">01:14:29</span> ओमकारेश्वर में इससे आक नर्मदा से कहां पे ओमकारेश्वर में अब ये दक्षिण भारत वाली कावेरी नहीं है नर्मदा की एक छोटी सी सहायक है जिसका अब अस्तित्व भी नहीं दिखाई देता कि ये है कहां लेकिन मानते तो हैं ठीक है तो फ्रॉम लेफ्ट दूधी छोटा छोटी तवा ठीक है छोटी तवा छोटी तवा कावेरी तवा गंजाल शेर शक्कर और गार तो ये रिवर्स आपको यहां प देखने को इसमें मिल जाएंगी नेक्स्ट अगर हम बात करें तो अब आपसे नाभी कुंड पूछेगा नाभी आपको पता है आपकी नाभि आपको पता होगी कहां है तो नाभी कुंड किसको कहते हैं नर्मदा को नर्मदा का तो नेमावर देवास</p></details><details class="transcript-block"><summary>01:15:10–01:19:55 (7 timestamp chunks)</summary><p><span class="stamp">01:15:10</span> जो है इज कॉल्ड द नेवल ऑफ नर्मदा तो नर्मदा का ये क्या है नाभी कुंड है नेमावर देवास जिसको नाभी कहा जाता है नर्मदा का तो ये अच्छा पॉइंट है ठीक है वर्तमान के समय के लिए आपके एग्जाम में अब नर्मदा कितने जिलों से बहती है तो 17 डिस्ट्रिक्ट से प्रवाहित होती है या बहती है 17 जिलों से नर्मदा बहती है बिल्कुल ऑथेंटिक यह कौन कहता है हिंदी ग्रंथ अकादमी के अलावा जो हमारे जन संपर्क का वेबसाइट है वो कहता है तो अनूपपुर डिंडोरी मंडला बालाघाट जबलपुर शिवनी नरसिंहपुर अब ये शहर बसे हैं इनके किनारों पर बात यह नहीं हो रही है बात हो</p><p><span class="stamp">01:15:48</span> रही है कि इन जिलों की सीमा से भी होकर निकल जाए तो वो इंक्लूड कर लिया जाएगा तो ठीक है पुर नर्मदापुरम रायसन सिहोर हरदा देवास खंडवा रगु धार बड़वानी अलीराजपुर से होकर बहती है नवामी देवी नर्मदे कार्यक्रम तो नवामी देवी नर्मदे कार्यक्रम जो है वृक्षारोपण या प्लांटेशन से संबंधित है वृक्षारोपण या से संबंधित है किसके किनारे नर्मदा नदी के किनारे नर्मदा किनारे और यह कब से कब तक चलाया गया था कमेंट करें कौन बताता है मैं कई बार बता चुका हूं नर्मदा पुत्र जो है अमृतलाल बगड़ है गुजराती भाषा के एक साहित्यकार और चित्रकार है अमृत लाल</p><p><span class="stamp">01:16:34</span> बेगड़ा लिखा गया है अमृतस नर्मदा अमृतस्य नर्मदा नर्मदा तुम कितनी सुंदर हो नर्मदा तुम कितनी सुंदर हो ठीक है इस प्रकार से आदि ठीक है नेक्स्ट नर्मदा बचाव आंदोलन तो नर्मदा बचाव आंदोलन की अगर मैं बात करूं तो इसकी जो प्रणेता थी मेधा पाटकर मेधा पाटकर मेधा पाटकर इनके अलावा बाबा आमटे बाबा आमटे और और कौन था तो वो थी अरुंधति रॉय तो हुआ क्या था कि नर्मदा पर जो बांध बनाए जा रहे थे उनकी ऊंचाई बढ़ा रहे थे सरकार बढ़ा रही थी जिसके कारण ऊंचाई बढ़ाने से नर्मदा का पानी ज्यादा रोक रहे थे और कई गांव डूब रहे थे तो उन गांव वालों के लिए</p><p><span class="stamp">01:17:39</span> कि उनकी खेती डूब रही थी उनके घर डूब रहे थे उसको बचाने के लिए यह आंदोलन मेधा पाटकर जी के द्वारा मेधा पाटकर की अगवाई में स्टार्ट हुआ था ठीक है हां अब मैंने बोला था यहां नवामी देवी नर्मदे कार्यक्रम मैं कितनी बार बता चुका हूं अभी भी लोगों को याद नहीं है वोह देख रहा हूं ठीक है तो मैं लास्ट क्लास में भी इसको बता चुका हूं चलिए तो यहां पर अब हम इस सेशन को एंड करते हैं नवामी देवी नर्मदे आप सभी कमेंट करना है आपको ठीक है कहां पर कमेंट करना है तो नवावी देवी नर्मदे कमेंट बॉक्स में कमेंट बॉक्स में कमेंट करिए आप ठीक है कौन</p><p><span class="stamp">01:18:40</span> करता है कौन अपने लिए लगा है हम तो हर दिन लगे हैं एक एक चीज को तरीके से खत्म करने में नवामी देवी नर्मदे कमेंट बॉक्स होता है उसमें कमेंट करना है जो काम करेगा जो कमेंट करेगा जिसको लग रहा होगा कि यार हमें करना चाहिए और हमारा रिवीजन भी हो जाएगा तो जरूर करें कमेंट बॉक्स में जाकर के आप सभी कमेंट करें नवामी देवी नर्मदे कार्यक्रम कब से स्टार्ट हुआ ठीक है और जो लोग इवॉल्व होते हैं जो लोग निरंतर बने रहते हैं हम लोगों को भी उसके कमेंट्स दे के आंसर देने में भी अच्छा लगता है है ना तो अगर और भी आपका वहां पर भी मैं रिप्लाई देता हूं ठीक है</p><p><span class="stamp">01:19:24</span> तो हम लोगों को भी भी अच्छा लगता है कि यार ये बच्चा कंटिन्यू मेहनत कर रहा है तो फिर हमें खुद भी अंदर से लगता है कि अगर 2 बजे रात को वो मैसेज कॉल कर दे बहुत सारे लोग मतलब सिलेक्टेड लोग हैं इतने सारे कि वो रोज मतलब पूछते फोन लगाते कहीं ये सर कहीं वो सर कब है सर क्लास मतलब इतना इंतजार करते रहते हैं क्लास का उनका भी बहुत बहुत शुक्रिया कई लोग हमारे पुलिस में सिलेक्टेड लोग हैं जो निरंतर टच में बने हुए हैं स्टूडेंट है बहुत सारे कुछ साथ वाले लोग भी हैं है ना तो आप समझ सकते हो कि इन क्लासेस का कितना महत्व है तो</p><p><span class="stamp">01:19:55</span> अगर फ्री में मिल रहा है तो फ्री की चीज की वैल्यू करो मैं गारंटी ले रहा हूं कोई पेड़ में नहीं पढ़ाए आपको ये मैं मतलब ऑनलाइन बोल रहा हूं खड़े होके जो आपको दिया जा रहा है तो इसकी कदर करो है ना सीरियस होके पढ़ो गप्पे कम करो क्योंकि मैं ऑल टाइम जितना देखता हूं आप बस तो ये इनकी कदर करें जो भी आपको चीजें चाहे यहां प मिल रही हो चाहे जो भी पढ़ा रहा हो और अदर टीचर्स पढ़ा रहे हैं उनकी वैल्यूज करें जो वाकई में आपके लिए काम कर रहे हैं आप उस बात को छांटना पड़ेगा अब अब इस दुनिया की भीड़ में जितनी भीड़ हो गई ना उसमें से तुम्हें चीजों को छांटना</p></details><details class="transcript-block"><summary>01:20:41–01:24:23 (7 timestamp chunks)</summary><p><span class="stamp">01:20:41</span> पड़ेगा जो आपके लिए डेडिकेटेड है आपके लिए काम कर रहे हैं आपके लिए काम की चीज है आपके को वो जानना जरूरी है पढ़ना जरूरी है अच्छा लगता है याद होता है जो भी है उस भीड़ में आपको बड़ा एक बाजार लगा हुआ है उसमें आपको अपने लिए छांटना है अगर आप दूसरे को देख के कते जाओगे कोई मतलब नहीं निकलेगा आप खुद में इतने समझदार हो गए हैं कि अपनी चीजों को अच्छी बुरी चीजों को खुद डिसाइड करें है ना दूसरे को डिसाइड करने का पावर आपने दिया है कि क्यों भाई क्या है क्या चल रहा है कैसा लगा क्या नहीं करा दूसरे से ज्यादा मतलब रहता है खुद को भी</p><p><span class="stamp">01:21:16</span> दूसरे को पावर ये नहीं देनी है खुद के की भी एक समझदारी खुद के पास भी एक ब्रेन है और वो इतना डेवलप हो गया है कि जब अदर चीजें समझ रहा है तो क्या ये चीजें नहीं समझ रहा है तो इस बात को समझिए फ्री क्लास अभी भी बहुत सारे मैसेज आते हैं सर सच में पूरा फ्री अरे आओ तो देखो तो कि वही पूरी पंचायत कर लोगे मेरे से कि मैसेज में कि सर सच में पूरा फ्री सर सच में पूरा बढ़ाओ ग भाई साहब अब क्या इससे ज्यादा कर दूं प्रत्यक्ष को कोई प्रमाण की आवश्यकता नहीं है यह मेरा दावा है इतना ज्यादा कंटेंट आपको मिल रहा है इससे ज्यादा आप कुछ नहीं</p><p><span class="stamp">01:21:48</span> पढ़ने की जरूरत है बस आपको निरंतर बने रहने की और सपोर्ट करने की जरूरत है ठीक है तो इसी के साथ में सेशन को एंड करता हूं आप सभी को समझ में आ गया होगा चीजें है ना कि इस भरे बाजार में कौन आपके काम का है वो आपको डिसाइड करना है तय करना है जहां से भी ज्ञान मिल रहा है आप इसको मनोरंजन का साधन मत बनाइए पढ़िए मन लगा के पढ़िए डेडिकेशन के साथ पढ़िए जो आपके लिए काम कर रहे हैं उनकी वैल्यू करें और ठीक है लाइक करना है सेशन को आपको शेयर कर देना है और कमेंट बॉक्स में कमेंट करके हमेशा की तरह ये मेरा मोटिवेशन है मुझे तो</p><p><span class="stamp">01:22:25</span> तो क्योंकि यही मोटिवेशन है कि बिल्कुल और अच्छे से अच्छा करूं धमाकेदार करूं आपको कमेंट बॉक्स भर देना है कमेंट करके कि क्लास कैसी लगी ठीक है ये लाइव चैट है कमेंट बॉक्स होता है एक वहां पर कमेंट करना है ठीक है तो कमेंट बॉक्स में कमेंट जरूर करें डेली 8 पीएम पर लगातार क्लासेस चल रही हैं बिना सोचे समझे आपको 8 पीएम पर क्लास में अवेलेबल हो जाना है डेली 8 पीएम लाइव ठीक है तो ये क्लास डेली 8 पीएम पर लाइव होती है एमपी एग्जाम वाला इससे ज्यादा और कोई कुछ नहीं कर सकता वाकई में एमपी एग्जाम वाला की ये जो सीरीज है कि कि</p><p><span class="stamp">01:23:05</span> सर बिल्कुल मुफ्त पढ़ा दीजिए तो बहुत बड़ी बात है ठीक है इसलिए उनका भी शुक्रिया पूरी टीम का शुक्रिया जो निरंतर हमें सपोर्ट कर रही है और आपको भी सपोर्ट करना है आपको सपोर्ट के साधन मैंने बता दिए एक कमेंट रिव्यू के तौर पर सभी को डालना है अगर आपको वाकई क्लास से फायदा हुआ याद हुआ कुछ अच्छा सीखा और यही से कुछ याद हुआ तो एक कमेंट करके जरूर बताएं मिलते हैं हम अगले लेक्चर में सभी का शुक्रिया वर्षा अर्जुन आकृति पीहू प्रवीन शुभम प्रकाश वर्षा अर्जुन पाल अंजना योगेश शुभम जी ऑल इन वन आकृति बहुत बढ़िया ऑल इन वन कमेंट बॉक्स में जरूर इसका कमेंट</p><p><span class="stamp">01:23:50</span> करें आप सभी और कैसी लगी क्लास जितने भी लाइव है जिनको हम देख रहे हैं सब लोग एक रिव्यू दे देके जाना है और लाइक जरूर करें सेशन को क्योंकि इतने सारे लोग आते हैं क्या ये इतनी दमदार क्लास एक लाइक भी डिजर्व नहीं करती तो आपको ये काम करते रहने पड़ेंगे क्योंकि मुझे अच्छा लगता है भाई तो ये तो करो आप कम से कम रूप सिंह ड्रीम और आईपीएस वर्षा जी प्रवीण भारती प्रकाश भाई पीहू योगेश चलिए सभी लोगों का शुक्रिया जो भी जुड़े बने रहे निरंतर अगले एक धमाकेदार सेशन के साथ फिर मिलते हैं हम चंबल सोन बेतवा और ताप्ती के साथ अगली</p><p><span class="stamp">01:24:23</span> क्लास में 8 बजे कल फुल डिस्क्रिप्शन के साथ और नई चीजों के साथ जय हिंद जय भारत जी जोरदार थी क्लास तो धन्यवाद यह आपको वहां पर कमेंट करके बताना है</p></details>
+    </section>
+
+    <footer class="footer">
+      <p><b>Image/source note:</b> Online visuals use openly accessible Wikimedia Commons file pages where possible, plus the MP map URL specified in the uploaded prompt. If an image fails, the script below retries and shows a fallback link.</p>
+      <p><b>Created:</b> 2026-05-27 01:37 | Single-file HTML with inline CSS/JS.</p>
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const body = document.body;
+  const btn = document.getElementById('themeBtn');
+  function setTheme(theme){
+    body.classList.toggle('light', theme === 'light');
+    btn.textContent = theme === 'light' ? '☀️ Light' : '🌙 Dark';
+    localStorage.setItem('theme', theme);
+  }
+  setTheme(savedTheme);
+  btn.addEventListener('click', () => setTheme(body.classList.contains('light') ? 'dark' : 'light'));
+
+  const jump = document.getElementById('jumpMenu');
+  jump.addEventListener('change', e => {
+    if(e.target.value) document.querySelector(e.target.value)?.scrollIntoView({behavior:'smooth'});
+    e.target.value='';
+  });
+
+  const reading = document.getElementById('readingProgress');
+  function updateReading(){
+    const h = document.documentElement;
+    const pct = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight) * 100;
+    reading.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', updateReading, {passive:true});
+  updateReading();
+
+  const checks = [...document.querySelectorAll('.master-check')];
+  const sections = [...document.querySelectorAll('.section-done')];
+  const rev = document.getElementById('revisionProgress');
+  const count = document.getElementById('checkCount');
+  function loadChecks(){
+    checks.forEach(ch => ch.checked = localStorage.getItem('rev_' + ch.dataset.key) === '1');
+    sections.forEach(ch => ch.checked = localStorage.getItem('section_' + ch.dataset.section) === '1');
+  }
+  function updateRevision(){
+    const all = checks.concat(sections);
+    const done = all.filter(x => x.checked).length;
+    rev.style.width = (done / Math.max(1, all.length) * 100) + '%';
+    count.textContent = `Tick points as you revise. Saved progress: ${done}/${all.length} complete.`;
+  }
+  checks.forEach(ch => ch.addEventListener('change', () => {
+    localStorage.setItem('rev_' + ch.dataset.key, ch.checked ? '1':'0');
+    updateRevision();
+  }));
+  sections.forEach(ch => ch.addEventListener('change', () => {
+    localStorage.setItem('section_' + ch.dataset.section, ch.checked ? '1':'0');
+    updateRevision();
+  }));
+  loadChecks(); updateRevision();
+
+  const links = [...document.querySelectorAll('#toc a[href^="#"]')];
+  const targets = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, {rootMargin:'-30% 0px -60% 0px', threshold:0.01});
+  targets.forEach(t => obs.observe(t));
+
+  // Image reliability: retry Wikimedia via Special:Redirect and then show fallback link.
+  document.querySelectorAll('img').forEach(img => {
+    let tried = false;
+    img.addEventListener('error', () => {
+      if(!tried && img.dataset.retry){
+        tried = true;
+        img.src = img.dataset.retry;
+      } else {
+        img.classList.add('error');
+        const a = document.createElement('a');
+        a.className = 'img-fallback';
+        a.href = img.src;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'Open image/source link';
+        img.insertAdjacentElement('afterend', a);
+      }
+    });
+  });
+
+  // Preload important images
+  document.querySelectorAll('img').forEach(img => {
+    const pre = new Image();
+    pre.src = img.currentSrc || img.src;
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

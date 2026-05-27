@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP GK Lecture 9 Revision — Chambal, Son, Tapti, Betwa Rivers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --panel: #161625;
+      --panel2: #1d1d32;
+      --text: #f7f9ff;
+      --muted: #d8e0ff;
+      --soft: #aeb9e6;
+      --cyan: #00d4ff;
+      --orange: #ff6b35;
+      --green: #00ff88;
+      --purple: #b388ff;
+      --red: #ff4d7d;
+      --yellow: #ffd166;
+      --border: rgba(255,255,255,.16);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --card: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+    }
+    [data-theme="light"] {
+      --bg: #f7f8ff;
+      --panel: #ffffff;
+      --panel2: #eef1ff;
+      --text: #111827;
+      --muted: #263044;
+      --soft: #4b5563;
+      --border: rgba(15,23,42,.18);
+      --shadow: 0 14px 45px rgba(31,41,55,.13);
+      --card: linear-gradient(145deg, rgba(255,255,255,.98), rgba(239,242,255,.92));
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(0,212,255,.18), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(179,136,255,.16), transparent 28%),
+        radial-gradient(circle at 50% 85%, rgba(0,255,136,.10), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.7;
+      letter-spacing: .01em;
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .progress-top {
+      position: fixed; inset: 0 0 auto 0; height: 5px; background: rgba(255,255,255,.08); z-index: 9999;
+    }
+    .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--cyan), var(--green), var(--orange)); }
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(230px, 290px) minmax(0, 860px) minmax(180px, 260px);
+      gap: 24px;
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    aside.toc, aside.map-ref {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(22,22,37,.82);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    [data-theme="light"] aside.toc, [data-theme="light"] aside.map-ref { background: rgba(255,255,255,.9); }
+    .brand { font-weight: 900; color: var(--cyan); font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; }
+    .toc h2, .map-ref h2 { margin: 4px 0 12px; font-size: 1.1rem; }
+    .toc a {
+      display: block;
+      padding: 9px 10px;
+      color: var(--muted);
+      border-radius: 12px;
+      margin: 4px 0;
+      font-size: .95rem;
+    }
+    .toc a:hover, .toc a.active { background: rgba(0,212,255,.14); color: var(--text); text-decoration: none; }
+    .control-row { display: grid; gap: 10px; margin-top: 14px; }
+    button, select {
+      border: 1px solid var(--border);
+      background: var(--panel2);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    select { width: 100%; }
+    button:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+    main { min-width: 0; }
+    .hero {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(0,212,255,.13), rgba(179,136,255,.12)), var(--panel);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -80px; top: -90px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(0,255,136,.22), transparent 65%);
+      pointer-events: none;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 700;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.05; margin: 12px 0; letter-spacing: -.04em; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.45rem); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.03em; }
+    h3 { font-size: 1.25rem; margin: 0 0 10px; }
+    p { margin: 0 0 14px; color: var(--muted); }
+    .lead { font-size: 1.12rem; color: var(--muted); max-width: 72ch; }
+    .section {
+      margin: 24px 0;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      background: rgba(22,22,37,.72);
+      box-shadow: var(--shadow);
+    }
+    [data-theme="light"] .section { background: rgba(255,255,255,.88); }
+    .accent-cyan { border-top: 5px solid var(--cyan); }
+    .accent-orange { border-top: 5px solid var(--orange); }
+    .accent-green { border-top: 5px solid var(--green); }
+    .accent-purple { border-top: 5px solid var(--purple); }
+    .accent-yellow { border-top: 5px solid var(--yellow); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      animation: rise .45s ease both;
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .card ul, .card ol { margin: 0; padding-left: 1.3rem; color: var(--muted); }
+    .card li { margin: 7px 0; }
+    .fact {
+      border-left: 5px solid var(--cyan);
+      background: rgba(0,212,255,.10);
+      padding: 14px 16px;
+      border-radius: 16px;
+      margin: 14px 0;
+      color: var(--text);
+    }
+    .hot {
+      border-left-color: var(--orange);
+      background: rgba(255,107,53,.13);
+    }
+    .link-story {
+      border: 1px solid rgba(0,255,136,.35);
+      background: linear-gradient(135deg, rgba(0,255,136,.12), rgba(0,212,255,.10));
+      padding: 16px;
+      border-radius: 20px;
+      margin: 16px 0;
+    }
+    .flowline {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      margin: 12px 0;
+    }
+    .node {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(179,136,255,.12);
+      border: 1px solid rgba(179,136,255,.28);
+      color: var(--text);
+      font-weight: 700;
+      font-size: .92rem;
+    }
+    .arrow { color: var(--orange); font-weight: 900; }
+    figure {
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255,255,255,.05);
+    }
+    figure img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    figcaption {
+      padding: 10px 13px;
+      color: var(--soft);
+      font-size: .88rem;
+      border-top: 1px solid var(--border);
+    }
+    .img-fallback {
+      display: none;
+      margin: 8px 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,77,125,.14);
+      color: var(--text);
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 14px 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    th, td {
+      padding: 12px 13px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--muted);
+    }
+    th { color: var(--text); background: rgba(0,212,255,.10); text-align: left; }
+    tr:last-child td { border-bottom: 0; }
+    .time {
+      display: inline-block;
+      font-weight: 900;
+      color: var(--green);
+      background: rgba(0,255,136,.10);
+      border: 1px solid rgba(0,255,136,.25);
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-right: 6px;
+      font-size: .85rem;
+    }
+    .mini-tag {
+      color: var(--soft);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.045);
+      margin: 10px 0;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--text);
+    }
+    details[open] { background: rgba(255,255,255,.07); }
+    .qa details p { padding-top: 10px; }
+    .checklist label {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+      color: var(--muted);
+    }
+    input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--green); flex: 0 0 auto; margin-top: 5px; }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255,255,255,.07);
+      font-weight: 800;
+      font-size: .85rem;
+      margin: 3px;
+    }
+    .map-ref img { border-radius: 16px; border: 1px solid var(--border); }
+    .footer { text-align: center; color: var(--soft); padding: 24px; }
+    .print-note { display: none; }
+    @media (max-width: 1180px) {
+      .shell { grid-template-columns: 1fr; padding: 16px; }
+      aside.toc, aside.map-ref { position: static; max-height: none; }
+      .map-ref { display: none; }
+      .grid, .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      body { font-size: 17px; }
+      .hero, .section { padding: 18px; border-radius: 22px; }
+      table { display: block; overflow-x: auto; }
+    }
+    @media print {
+      body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+      aside, .progress-top, .control-row, button, select { display: none !important; }
+      .shell { display: block; padding: 0; max-width: none; }
+      .hero, .section, .card, details { box-shadow: none; background: #fff !important; color: #000 !important; border-color: #999; }
+      details { display: block; }
+      details > * { display: block; }
+      summary::marker { display: none; }
+      p, li, td { color: #000 !important; }
+      a { color: #000; text-decoration: underline; }
+      .print-note { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-top"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="shell">
+    <aside class="toc">
+      <div class="brand">MP GK Revision</div>
+      <h2>📌 Quick Jump</h2>
+      <a href="#intro">00:00 Intro & Class Aim</a>
+      <a href="#overview">🧭 Master Overview</a>
+      <a href="#chambal">🌊 Chambal River</a>
+      <a href="#son">🏞️ Son River</a>
+      <a href="#tapti">🌅 Tapti River</a>
+      <a href="#betwa">🏛️ Betwa River</a>
+      <a href="#fullforms">🔤 Full Forms</a>
+      <a href="#hotfacts">🔥 Exam Hot Facts</a>
+      <a href="#checklist">✅ Master Checklist</a>
+      <a href="#flowlog">⏱️ Timestamp Flow Log</a>
+      <div class="control-row">
+        <select id="jumpSelect" aria-label="Jump to topic">
+          <option value="#intro">Jump: Intro</option>
+          <option value="#overview">Master Overview</option>
+          <option value="#chambal">Chambal</option>
+          <option value="#son">Son</option>
+          <option value="#tapti">Tapti</option>
+          <option value="#betwa">Betwa</option>
+          <option value="#checklist">Checklist</option>
+          <option value="#flowlog">Timestamp Flow Log</option>
+        </select>
+        <button id="themeBtn" type="button">🌗 Toggle Theme</button>
+        <button id="expandBtn" type="button">📖 Expand All</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero" id="intro">
+        <div class="badge-row">
+          <span class="badge">🎯 MPPSC / MP GK</span>
+          <span class="badge">Lecture 9</span>
+          <span class="badge">Major Rivers Part 2</span>
+          <span class="badge">Transcript range: 00:00:22–01:03:03</span>
+        </div>
+        <h1>🌊 Major Rivers of Madhya Pradesh — Chambal, Son, Tapti & Betwa</h1>
+        <p class="lead">Ye revision page video ke flow ke saath banaya gaya hai: pehle class context, phir Chambal, Son, Tapti aur Betwa exactly teacher ke order mein. Promotional/live-chat parts ko exam notes mein compress kiya gaya hai, lekin timestamp flow log end mein preserve hai.</p>
+        <div class="badge-row">
+          <span class="badge">4 Major Rivers</span>
+          <span class="badge">Ranks: 2nd–5th longest in MP</span>
+          <span class="badge">Maps + Tributaries</span>
+          <span class="badge">🔥 Exam Hot Points</span>
+        </div>
+      </header>
+
+      <section class="section accent-cyan">
+        <h2>🧑‍🏫 00:00–00:04 — Class Context & Study Instruction</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Class ka target</h3>
+            <ul>
+              <li>Teacher ne session ko <b>MP GK / MPPSC Major Rivers Part 2</b> ke रूप में introduce kiya.</li>
+              <li>Previous lecture mein <b>Narmada</b> cover hui thi; is class mein <b>Chambal, Son, Tapti, Betwa</b> cover karni hai.</li>
+              <li>Mapping ke through concepts samjhane par जोर diya gaya.</li>
+              <li>MP GK ko बड़ा दायरा बताया — teacher ke हिसाब se MP part syllabus ka लगभग <b>45%</b> तक touch karta hai.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>How to use this page</h3>
+            <ul>
+              <li>Video side-by-side chalao aur same timestamp section par scroll karo.</li>
+              <li>Har नदी ke लिए: origin → flow → tributaries → confluence → exam facts पढ़ो.</li>
+              <li>🔥 वाले facts PYQ/Exam oriented हैं.</li>
+              <li>End ka checklist tick karte jao; progress save rahegi.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section accent-yellow" id="overview">
+        <h2>🧭 Master Overview — Four Rivers in Video Order</h2>
+        <figure>
+          <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" loading="eager" fetchpriority="high" decoding="async" alt="Madhya Pradesh district reference map for river revision">
+          <figcaption>Reference map: SLBC Madhya Pradesh public map image, used as allowed in the provided revision prompt.</figcaption>
+        </figure>
+        <table>
+          <thead>
+            <tr><th>Video Order</th><th>River</th><th>MP Rank / Length</th><th>Origin</th><th>Confluence / Mouth</th><th>Core Exam Hook</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Chambal</td><td>2nd longest; 965 km</td><td>Janapav / Vanchu Point, Mhow, Vindhya range, Indore</td><td>Yamuna near Panchanad/Muradganj-Auraiya/Itawa region</td><td>MP-Rajasthan natural boundary, ravines, Banas largest tributary</td></tr>
+            <tr><td>2</td><td>Son</td><td>3rd longest; 780 km</td><td>Sonmuda / Son Desh Tirth, Amarkantak, Anuppur</td><td>Ganga at Dinapur/Danapur, Bihar</td><td>Ganga ki southern/right-bank tributary; Johila connection</td></tr>
+            <tr><td>3</td><td>Tapti</td><td>4th longest; 724 km</td><td>Multai, Betul, Satpura-Mahadev range</td><td>Aliya Bet, Gulf of Khambhat, Arabian Sea</td><td>Narmada ke parallel east-to-west; forms estuary</td></tr>
+            <tr><td>4</td><td>Betwa</td><td>5th longest; 590/480 km conflict; MP length 380 km</td><td>Kumra village, Raisen, Vindhya range</td><td>Yamuna at Hamirpur, UP</td><td>Life line of Bundelkhand, Orchha/Keshavdas/Rasik Priya</td></tr>
+          </tbody>
+        </table>
+        <div class="link-story">
+          <h3>🔗 Link Story — Rank 2 to 5 ऐसे याद करो</h3>
+          <p><b>Chambal</b> ke beehad se nikla <b>Son</b> ka sona, usse garam <b>Tapti</b> ki सूर्यपुत्री ne उठाया, aur phir <b>Betwa</b> Bundelkhand ke Orchha घाट par रख दिया. Order याद: <b>Chambal → Son → Tapti → Betwa</b>.</p>
+        </div>
+      </section>
+
+      <section class="section accent-orange" id="chambal">
+        <h2>🌊 00:04–00:28 — Chambal River / चंबल नदी</h2>
+        <div class="badge-row"><span class="badge">MP की 2nd longest river</span><span class="badge">965 km</span><span class="badge">Perennial + Superimposed</span><span class="badge">Western MP lifeline</span></div>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chambal_river_near_Dhaulpur%2C_India.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Chambal_river_near_Dhaulpur%2C_India.jpg?width=900" loading="eager" fetchpriority="high" decoding="async" alt="Chambal river near Dhaulpur, India">
+          <figcaption>Image: Wikimedia Commons, “Chambal river near Dhaulpur, India”, CC BY-SA 4.0 / compatible earlier CC BY-SA licenses.</figcaption>
+        </figure>
+        <div class="grid">
+          <div class="card">
+            <h3>Basic identity</h3>
+            <ul>
+              <li><b>MP की दूसरी सबसे बड़ी/लंबी नदी</b> — Narmada ke बाद.</li>
+              <li>Total length teacher ne <b>965 km</b> बताया.</li>
+              <li><b>MP-Rajasthan border</b> par लगभग <b>251 km</b> बहती hai.</li>
+              <li><b>MP-UP border</b> par लगभग <b>112 km</b> बहती hai.</li>
+              <li>Western MP mein low-rainfall areas ko जीवन देने ke कारण <b>Life Line of Western MP</b> kaha gaya.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Origin & flow</h3>
+            <ul>
+              <li>Origin: <b>Vanchu/Janapav Point, Mhow, Vindhya range, Indore</b> — teacher ne map par “वांचू पॉइंट / जाना पाव” बोला.</li>
+              <li>MP aur Rajasthan ke बीच <b>natural boundary / प्राकृतिक सीमा</b> बनाती hai.</li>
+              <li>Overall flow: <b>North direction</b>; confluence ke पास <b>east direction</b> ki ओर turn.</li>
+              <li>Confluence: Yamuna se milti hai; region ko <b>Panchanad Sangam</b> se जोड़कर समझाया गया.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flowline" aria-label="Chambal river flow">
+          <span class="node">Janapav / Mhow</span><span class="arrow">→</span>
+          <span class="node">MP-Rajasthan Boundary</span><span class="arrow">→</span>
+          <span class="node">Ravines / Morena</span><span class="arrow">→</span>
+          <span class="node">Panchanad / Yamuna</span>
+        </div>
+
+        <details open>
+          <summary>🗂️ Tributaries in teacher’s map flow</summary>
+          <table>
+            <thead><tr><th>Tributary</th><th>Origin / Location clue</th><th>Joins / Exam clue</th></tr></thead>
+            <tbody>
+              <tr><td><b>Shipra</b></td><td>Kakri Vardi, Vindhya range, Indore</td><td>Shipara/Shyopur village region near Ratlam/Mandsaur as described; joins Chambal</td></tr>
+              <tr><td><b>Kali Sindh</b></td><td>Bagli, Dewas</td><td>Near Nonera/Kota, Rajasthan region</td></tr>
+              <tr><td><b>Parvati</b></td><td>Ashta, Sehore, Vindhya range</td><td>Sawai Madhopur, Rajasthan side</td></tr>
+              <tr><td><b>Shivna</b></td><td>Teacher connected it with Mandsaur</td><td>Pashupatinath Temple, Mandsaur, is on Shivna river</td></tr>
+              <tr><td><b>Kuno</b></td><td>Shivpuri plateau</td><td>Joins Chambal in mapped flow</td></tr>
+              <tr><td><b>Banas</b></td><td>Comes from Rajasthan side</td><td><b>सबसे बड़ी सहायक नदी</b> of Chambal</td></tr>
+            </tbody>
+          </table>
+          <div class="link-story">
+            <h3>🔗 Link Story — Chambal tributaries</h3>
+            <p><b>Shipra</b> ने Indore se चिट्ठी भेजी, <b>Kali Sindh</b> Bagli se काली स्याही लाई, <b>Parvati</b> Ashta se पूजा ki थाली लाई, <b>Shivna</b> Pashupatinath ke दर्शन करा गई, <b>Kuno</b> Shivpuri se दौड़ता आया, aur <b>Banas</b> Rajasthan se सबसे बड़ा gift लेकर Chambal में मिल गई.</p>
+          </div>
+        </details>
+
+        <details open>
+          <summary>🔥 Panchanad Sangam & exam confusion</summary>
+          <div class="card">
+            <ul>
+              <li><b>Panchanad Sangam</b> region: teacher ne <b>Muradganj</b> ke पास बताया.</li>
+              <li>Muradganj actual location ko <b>Auraiya district, UP</b> se जोड़कर बताया; nearby <b>Itawa</b> aur <b>Jalaun</b> भी mention huye.</li>
+              <li>🔥 Exam tip: Agar option mein <b>Itawa</b> diya ho, तो conventional/book answer ke तौर par Itawa mark karna.</li>
+              <li>Teacher ne updated possibility bhi batayi: option mein <b>Muradganj / Auraiya / Jalaun</b> आए तो context समझना.</li>
+              <li>🔥 Important correction: <b>Sindh river Chambal ki tributary nahi</b>; Sindh थोड़े distance par Yamuna se अलग मिलती hai. Confusion avoid karo.</li>
+            </ul>
+          </div>
+          <table>
+            <thead><tr><th>Panchanad mein teacher ke अनुसार 5 rivers</th><th>Memory</th></tr></thead>
+            <tbody>
+              <tr><td>Yamuna, Pahuj, Sindh, Kunwari, Chambal</td><td>“Ya-Pa-Si-Ku-Cha” = यमुना ने पहाड़ी सिंधु कन्या को चंबल तक बुलाया</td></tr>
+            </tbody>
+          </table>
+        </details>
+
+        <details>
+          <summary>📘 Superimposed / अध्यारोपित river — definition</summary>
+          <p><b>अध्यारोपित नदी / Superimposed River</b>: teacher ne समझाया कि जब नदी upper soft rocks/soil/मैदान ka erosion karte हुए नीचे hard rocks तक पहुंचकर उन्हीं कठोर चट्टानों में बहती है, उसे अध्यारोपित नदी कहते हैं. Chambal ko इसी category se जोड़कर बताया गया.</p>
+        </details>
+
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chambal_Basin.png?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Chambal_Basin.png?width=900" loading="lazy" decoding="async" alt="Chambal River Basin map">
+          <figcaption>Map: Wikimedia Commons, Heinz OSM, “Chambal River Basin”, based on OpenStreetMap data under ODbL.</figcaption>
+        </figure>
+
+        <details open>
+          <summary>🏜️ Ravines / Beehad / Khad — Morena focus</summary>
+          <div class="grid">
+            <div class="card">
+              <h3>Ravine formation</h3>
+              <ul>
+                <li>Teacher ne बताया ki Chambal division, specially <b>Morena</b>, mein नदी सबसे ज्यादा मोड़ खाती hai.</li>
+                <li>In bends ke कारण soil erosion होता है aur <b>खड्ड / बीहड़</b> बनते हैं.</li>
+                <li>Alluvial soil / जलोढ़ मृदा ka अपर्दन strongest इसी division में, especially Morena में बताया गया.</li>
+                <li>Beehad mud caves <b>bagis / bandits</b> ke hideout ban jaate थे.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Bandit facts</h3>
+              <ul>
+                <li><b>Bandit Queen / Beehadon ki Rani</b>: Phoolan Devi.</li>
+                <li><b>Beehad Sudhar Yojana</b>: 1971, bandits ke surrender ke लिए.</li>
+                <li>🔥 MP mein सर्वाधिक surrender teacher ne <b>CM Arjun Singh</b> ke कार्यकाल mein बताया.</li>
+              </ul>
+            </div>
+          </div>
+          <figure>
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Leopard_chambal_ravines.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Leopard_chambal_ravines.jpg?width=900" loading="lazy" decoding="async" alt="Chambal ravines landscape">
+            <figcaption>Image: Wikimedia Commons, “Leopard chambal ravines”, CC BY-SA 4.0. Used here to visualize Chambal ravines / beehad terrain.</figcaption>
+          </figure>
+        </details>
+
+        <div class="qa">
+          <h3>🧠 Quick Recall — Chambal</h3>
+          <details><summary>Q1. Chambal MP ki kaunsi longest river hai?</summary><p>Second longest, Narmada ke baad.</p></details>
+          <details><summary>Q2. Chambal MP-Rajasthan border par kitna flow karti hai?</summary><p>251 km.</p></details>
+          <details><summary>Q3. Chambal ki largest tributary?</summary><p>Banas.</p></details>
+          <details><summary>Q4. Panchanad ke exam answer mein textbook location kya yaad rakhni hai?</summary><p>Itawa, lekin Muradganj-Auraiya/Jalaun context bhi samajhna hai.</p></details>
+          <details><summary>Q5. Beehad Sudhar Yojana kab?</summary><p>1971.</p></details>
+        </div>
+      </section>
+
+      <section class="section accent-green" id="son">
+        <h2>🏞️ 00:28–00:39 — Son River / सोन नदी</h2>
+        <div class="badge-row"><span class="badge">MP की 3rd longest river</span><span class="badge">780 km</span><span class="badge">Perennial</span><span class="badge">Ganga right/southern bank tributary</span></div>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Son_River%2C_Umaria_district%2C_MP%2C_India.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Son_River%2C_Umaria_district%2C_MP%2C_India.jpg?width=900" loading="lazy" decoding="async" alt="Son River in Umaria district, Madhya Pradesh">
+          <figcaption>Image: Wikimedia Commons, Yann, “Son River, Umaria district, MP, India”, free Commons media; valued image for Son River upper course.</figcaption>
+        </figure>
+        <div class="grid">
+          <div class="card">
+            <h3>Basic identity</h3>
+            <ul>
+              <li><b>MP ki तीसरी सबसे लंबी नदी</b>.</li>
+              <li>Total length: <b>780 km</b>.</li>
+              <li>MP length teacher ne <b>509 km</b> भी बताया, but exam mein primarily total length याद.</li>
+              <li>Barah-maasi/perennial river; Central India / Madhya Pradesh se flow.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Origin, flow & confluence</h3>
+            <ul>
+              <li>Origin: <b>Sonmuda / Son Desh Tirth, Amarkantak, Anuppur</b>.</li>
+              <li>Initial flow: North; फिर <b>Eastern drainage system</b> ki ओर.</li>
+              <li>Confluence: <b>Ganga at Dinapur/Danapur, Bihar</b>, Patna ke समीप.</li>
+              <li>Teacher ne इसे Yamuna ke बाद Ganga ki <b>second-largest southern/right-bank tributary</b> बताया.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flowline">
+          <span class="node">Sonmuda / Amarkantak</span><span class="arrow">→</span>
+          <span class="node">North flow</span><span class="arrow">→</span>
+          <span class="node">East drainage</span><span class="arrow">→</span>
+          <span class="node">Ganga at Danapur</span>
+        </div>
+
+        <details open>
+          <summary>🔤 Other names / पौराणिक names</summary>
+          <table>
+            <thead><tr><th>Name</th><th>Teacher’s clue</th></tr></thead>
+            <tbody>
+              <tr><td>Sone / सोने</td><td>Common alternate name</td></tr>
+              <tr><td>Swarnbhadra / स्वर्ण भद्र</td><td>Gold/Swarna related name</td></tr>
+              <tr><td>Sowa / Suva</td><td>Teacher: Ptolemy/Tolmi ne Sowa कहा</td></tr>
+              <tr><td>Hiranyavah / हिरण्यवाह</td><td>Another name mentioned</td></tr>
+              <tr><td>Nad / नद</td><td>Teacher ne river ka male form बताया</td></tr>
+            </tbody>
+          </table>
+          <div class="link-story">
+            <h3>🔗 Link Story — Son ke names</h3>
+            <p><b>Son</b> ne सोने की थाली में <b>Swarnbhadra</b> रखा, Ptolemy ne उसे <b>Sowa</b> बोल दिया, aur सोने का पानी बहते-बहते <b>Hiranyavah</b> बन gaya.</p>
+          </div>
+        </details>
+
+        <details open>
+          <summary>🗂️ Tributaries & joins</summary>
+          <table>
+            <thead><tr><th>Tributary / Related River</th><th>Important clue</th></tr></thead>
+            <tbody>
+              <tr><td><b>Johila / जोहिला</b></td><td>Very important; joins Son at <b>Chellhari, Umaria, Dashrath Ghat</b>.</td></tr>
+              <tr><td>Chhoti Mahanadi</td><td>Listed as tributary.</td></tr>
+              <tr><td>Banas</td><td>Also listed; note Banas appears with Chambal too.</td></tr>
+              <tr><td>Gopad</td><td>Important to remember.</td></tr>
+              <tr><td>Rihand</td><td>Tributary from the side as described.</td></tr>
+              <tr><td>Kanhar / Kanher</td><td>Teacher said spelling variations allowed; don’t panic.</td></tr>
+              <tr><td>North Koel</td><td>Listed in tributary set.</td></tr>
+              <tr><td>Jarwahi</td><td>Map explanation mein mentioned.</td></tr>
+            </tbody>
+          </table>
+          <div class="link-story">
+            <h3>🔗 Link Story — Son tributaries</h3>
+            <p><b>Johila</b> Dashrath Ghat par खड़ी thi, <b>Chhoti Mahanadi</b> chhoti सी नाव laayi, <b>Banas</b> aur <b>Gopad</b> usme बैठे, <b>Rihand</b> ने चप्पू उठाया, <b>Kanhar/Kanher</b> ने spelling सुधारी, aur <b>North Koel</b> गाना गाते हुए Son mein मिल गई.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>📌 Bansagar Dam note</summary>
+          <p>Teacher ne Son par <b>Bansagar Dam</b> mention kiya, lekin clearly bola ki dams aur waterfalls अलग classes mein separately पढ़ाए जाएंगे, इसलिए यहां river facts पर focus रखना hai.</p>
+        </details>
+
+        <div class="qa">
+          <h3>🧠 Quick Recall — Son</h3>
+          <details><summary>Q1. Son ka origin?</summary><p>Sonmuda / Son Desh Tirth, Amarkantak, Anuppur.</p></details>
+          <details><summary>Q2. Son Ganga se kahaan milti hai?</summary><p>Dinapur/Danapur, Bihar, Patna ke समीप.</p></details>
+          <details><summary>Q3. Johila Son se kahaan milti hai?</summary><p>Chellhari, Umaria, Dashrath Ghat.</p></details>
+          <details><summary>Q4. Ptolemy ne Son ko kya kaha?</summary><p>Sowa / Suva.</p></details>
+        </div>
+      </section>
+
+      <section class="section accent-purple" id="tapti">
+        <h2>🌅 00:39–00:50 — Tapti / Tapi River / ताप्ती नदी</h2>
+        <div class="badge-row"><span class="badge">MP की 4th longest river</span><span class="badge">724 km</span><span class="badge">East → West</span><span class="badge">Narmada parallel</span></div>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tapi_River_1.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Tapi_River_1.jpg?width=900" loading="lazy" decoding="async" alt="Tapi or Tapti River view">
+          <figcaption>Image: Wikimedia Commons, “Tapi River 1”, CC BY-SA 4.0; uploaded as part of Wiki Loves Earth 2016.</figcaption>
+        </figure>
+        <div class="grid">
+          <div class="card">
+            <h3>Basic identity</h3>
+            <ul>
+              <li><b>MP ki चौथी सबसे लंबी नदी</b>.</li>
+              <li>Total length: <b>724 km</b>.</li>
+              <li>MP length: <b>279 km</b>.</li>
+              <li>MP mein sirf <b>Betul aur Burhanpur</b> districts mein बहती hai.</li>
+              <li>Basin: total <b>65,145 km²</b>; MP basin about <b>9,800 km²</b> as teacher mentioned.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Origin & mouth</h3>
+            <ul>
+              <li>Origin: <b>Multai, Betul</b>.</li>
+              <li>Range: <b>Satpura ki Mahadev range</b>.</li>
+              <li>Mouth: <b>Aliya Bet Island, Gulf of Khambhat, Gujarat, Arabian Sea</b>.</li>
+              <li>Direction: <b>East to West</b>, Narmada ke parallel.</li>
+              <li>Forms MP ki <b>southern boundary</b> / MP-Maharashtra side boundary context.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tapi_River_Basin.png?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Tapi_River_Basin.png?width=900" loading="lazy" decoding="async" alt="Tapi River Basin map">
+          <figcaption>Map: Wikimedia Commons, “Tapi River Basin”; Commons file namespace structured data is CC0, unstructured text is CC BY-SA.</figcaption>
+        </figure>
+
+        <details open>
+          <summary>🔤 Names & religious importance</summary>
+          <div class="grid">
+            <div class="card">
+              <h3>Other names</h3>
+              <ul>
+                <li><b>Suryaputri</b> — सूर्य की पुत्री.</li>
+                <li><b>Shani ki behen</b> — teacher ne mythological angle se बताया.</li>
+                <li><b>Tapi</b> — Gujarat side name.</li>
+                <li><b>Tapi Ganga</b> — another name mentioned.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Puranic note</h3>
+              <ul>
+                <li>Teacher ne <b>Skanda Purana</b> aur <b>Vishnu Purana</b> mein Tapti mention बताया.</li>
+                <li>Shani-related belief: जिन पर Shani ka प्रभाव हो, unhe Tapti mein स्नान/डुबकी की बात कही जाती है.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details open>
+          <summary>🗂️ Tributaries & places</summary>
+          <table>
+            <thead><tr><th>Tributaries</th><th>Clue</th></tr></thead>
+            <tbody>
+              <tr><td>Purna</td><td>Important tributary</td></tr>
+              <tr><td>Utawali</td><td>Burhanpur mein milti; Kala Taj Mahal Utawali bank se connected</td></tr>
+              <tr><td>Girna</td><td>Listed by teacher</td></tr>
+              <tr><td>Amravati</td><td>Listed by teacher</td></tr>
+              <tr><td>Arunavati</td><td>Listed by teacher</td></tr>
+              <tr><td>Bori</td><td>Listed by teacher</td></tr>
+              <tr><td>Panjra</td><td>Listed by teacher</td></tr>
+            </tbody>
+          </table>
+          <div class="link-story">
+            <h3>🔗 Link Story — Tapti tributaries</h3>
+            <p><b>Purna</b> ne पूर्ण थाली बनाई, <b>Utawali</b> Burhanpur se बहुत उतावली होकर आई, <b>Girna</b> गिरते-गिरते बची, <b>Amravati</b> ने अमृत दिया, <b>Arunavati</b> सुबह की अरुणिमा लाई, <b>Bori</b> में सामान भरा, aur <b>Panjra</b> में sabko बंद karke Tapti tak le गई.</p>
+          </div>
+          <div class="fact hot">🔥 Places: <b>Asirgarh Fort</b>, <b>Surat city/port</b>, and <b>Burhanpur-Utawali/Kala Taj Mahal</b> connection याद रखना.</div>
+        </details>
+
+        <details open>
+          <summary>🌊 Estuary / ज्वारनदमुख</summary>
+          <p>Teacher ne Tapti ko Narmada ki तरह <b>estuary / ज्वारनदमुख</b> बनाने वाली river बताया. Basic idea: जहां नदी ka fresh water sea ke salty water se mouth par मिलता hai, वहाँ estuarine condition बनती hai. Gulf of Khambhat region isliye याद रखना.</p>
+          <div class="fact">Satpura placement: teacher ne Narmada aur Tapti ke बीच Satpura ko visualize कराया — Narmada ke south aur Tapti ke north side Satpura context se map समझना hai.</div>
+        </details>
+
+        <div class="qa">
+          <h3>🧠 Quick Recall — Tapti</h3>
+          <details><summary>Q1. Tapti ka origin?</summary><p>Multai, Betul, Satpura-Mahadev range.</p></details>
+          <details><summary>Q2. Tapti kis direction mein बहती hai?</summary><p>East to West, Narmada ke parallel.</p></details>
+          <details><summary>Q3. Tapti MP ke किन districts mein बहती hai?</summary><p>Betul and Burhanpur.</p></details>
+          <details><summary>Q4. Tapti mouth?</summary><p>Aliya Bet Island, Gulf of Khambhat, Arabian Sea.</p></details>
+          <details><summary>Q5. Utawali tributary kis city connection se याद?</summary><p>Burhanpur; Kala Taj Mahal Utawali bank se connected.</p></details>
+        </div>
+      </section>
+
+      <section class="section accent-cyan" id="betwa">
+        <h2>🏛️ 00:50–00:59 — Betwa River / बेतवा नदी</h2>
+        <div class="badge-row"><span class="badge">MP की 5th longest river</span><span class="badge">Bundelkhand lifeline</span><span class="badge">North flow</span><span class="badge">Orchha culture</span></div>
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Betwa_river.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/Betwa_river.jpg?width=900" loading="lazy" decoding="async" alt="Betwa river">
+          <figcaption>Image: Wikimedia Commons, Archies2804, “Betwa river”, CC BY-SA 4.0.</figcaption>
+        </figure>
+        <div class="grid">
+          <div class="card">
+            <h3>Basic identity</h3>
+            <ul>
+              <li><b>MP ki पांचवी सबसे लंबी नदी</b>.</li>
+              <li>Teacher ne length conflict बताया: Google/books mein <b>590 km</b> भी मिलता hai, aur TMH/कुछ sources mein <b>480 km</b>.</li>
+              <li>🔥 Exam tip: Agar option mein <b>590</b> ho to teacher ke अनुसार 590 mark karo; otherwise 480 km context samjho.</li>
+              <li>MP length: <b>380 km</b>.</li>
+              <li>Present-day Bundelkhand mein special importance.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Origin & confluence</h3>
+            <ul>
+              <li>Origin: <b>Kumra village, Raisen</b>.</li>
+              <li>Range: <b>Vindhya / Vindhyachal range</b>.</li>
+              <li>Direction: <b>North direction</b>.</li>
+              <li>Confluence: <b>Yamuna at Hamirpur, Uttar Pradesh</b>.</li>
+              <li>Teacher ne नदी को “मां” की संज्ञा और नदी सभ्यता/resource-life connection se समझाया.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/View_from_across_the_Betwa.jpg?width=900" data-fallback="https://commons.wikimedia.org/wiki/Special:FilePath/View_from_across_the_Betwa.jpg?width=900" loading="lazy" decoding="async" alt="Chhatris on the bank of Betwa River at Orchha">
+          <figcaption>Image: Wikimedia Commons, Rohit Agarwal, “Chhatris on the bank of Betwa River”, CC BY-SA 4.0.</figcaption>
+        </figure>
+
+        <details open>
+          <summary>🗂️ Tributaries & names</summary>
+          <table>
+            <thead><tr><th>Category</th><th>Points</th></tr></thead>
+            <tbody>
+              <tr><td>Tributaries</td><td><b>Jamini</b>, <b>Dhasan</b>, <b>Bina</b>. Dhasan: Raisen se निकलती, Jhansi ke पास Palia village region mein joins.</td></tr>
+              <tr><td>Other names</td><td><b>Life Line of Bundelkhand</b>, <b>Vetravati</b>, <b>Taravati</b>, Betwa.</td></tr>
+              <tr><td>MP ki Ganga?</td><td>Teacher: Pollution ke आधार par Betwa ko <b>MP ki Ganga</b> कहा जाता; otherwise Narmada MP ki Ganga hai.</td></tr>
+            </tbody>
+          </table>
+          <div class="link-story">
+            <h3>🔗 Link Story — Betwa tributaries + names</h3>
+            <p><b>Jamini</b> ने जमीन पर रास्ता बनाया, <b>Dhasan</b> Jhansi ke paas धड़ाम se मिली, <b>Bina</b> बिना शोर ke आई; phir Betwa ne Bundelkhand ko life दी aur पुराने नाम <b>Vetravati-Taravati</b> अपने साथ ले गई.</p>
+          </div>
+        </details>
+
+        <details open>
+          <summary>🏛️ Orchha, Keshavdas & temples</summary>
+          <div class="grid">
+            <div class="card">
+              <h3>Kanchana Ghat & Rasik Priya</h3>
+              <ul>
+                <li>🔥 <b>Kanchana/Kanchan Ghat</b> Betwa ka घाट; teacher ne बताया ki Vyapam mein पूछा गया tha.</li>
+                <li><b>Keshavdas</b> ne isi river bank/ghat par <b>Rasik Priya</b> लिखा.</li>
+                <li>Keshavdas: <b>Riti-kaleen poet</b>, Bundelaवंश के कवि.</li>
+                <li>Teacher ne “कठिन काव्य का प्रेत” style reference भी discussion mein लिया.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Orchha temples on Betwa bank</h3>
+              <ul>
+                <li><b>Lakshmi Narayan Temple</b></li>
+                <li><b>Chaturbhuj Temple</b></li>
+                <li><b>Ram Raja Temple, Orchha</b></li>
+                <li>Ram Raja Temple: Lord Ram ko राजा ki तरह माना जाता; police सलामी देती hai — unique temple fact.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <div class="qa">
+          <h3>🧠 Quick Recall — Betwa</h3>
+          <details><summary>Q1. Betwa ka origin?</summary><p>Kumra village, Raisen, Vindhya/Vindhyachal range.</p></details>
+          <details><summary>Q2. Betwa kis river se मिलती hai?</summary><p>Yamuna at Hamirpur, UP.</p></details>
+          <details><summary>Q3. Betwa ki key tributaries?</summary><p>Jamini, Dhasan, Bina.</p></details>
+          <details><summary>Q4. Keshavdas ne kya aur kahaan likha?</summary><p>Rasik Priya, Betwa bank at Kanchana/Kanchan Ghat, Orchha context.</p></details>
+          <details><summary>Q5. Ram Raja Temple ka unique fact?</summary><p>Bhagwan Ram ko राजा की तरह माना जाता; police salami di जाती hai.</p></details>
+        </div>
+      </section>
+
+      <section class="section accent-yellow" id="fullforms">
+        <h2>🔤 Master Full Forms & Terms</h2>
+        <table>
+          <thead><tr><th>Short Form / Term</th><th>Full Form / Meaning</th><th>Hinglish Note</th></tr></thead>
+          <tbody>
+            <tr><td>MP</td><td>Madhya Pradesh</td><td>Class ka state focus.</td></tr>
+            <tr><td>UP</td><td>Uttar Pradesh</td><td>Chambal, Betwa, Yamuna confluence context.</td></tr>
+            <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>Exam target.</td></tr>
+            <tr><td>GK</td><td>General Knowledge</td><td>MP GK unit.</td></tr>
+            <tr><td>PYQ</td><td>Previous Year Question</td><td>Teacher ne “asked in exam/Vyapam” style points highlight kiye.</td></tr>
+            <tr><td>Tributary</td><td>सहायक नदी</td><td>Main river mein मिलती hai.</td></tr>
+            <tr><td>Confluence</td><td>मिलन बिंदु / संगम</td><td>Do ya zyada rivers ka milna.</td></tr>
+            <tr><td>Estuary</td><td>ज्वारनदमुख</td><td>River mouth area where fresh water meets sea water.</td></tr>
+            <tr><td>Perennial</td><td>वर्ष भर बहने वाली</td><td>River flows throughout the year.</td></tr>
+            <tr><td>Superimposed River</td><td>अध्यारोपित नदी</td><td>Soft upper layer cut karke hard lower rocks mein flow.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section accent-orange" id="hotfacts">
+        <h2>🔥 Master Exam Hot Facts</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Chambal Hot</h3>
+            <ul>
+              <li>2nd longest river of MP: 965 km.</li>
+              <li>MP-Rajasthan boundary: 251 km; MP-UP boundary: 112 km.</li>
+              <li>Largest tributary: Banas.</li>
+              <li>Panchanad answer: conventional Itawa; updated Muradganj-Auraiya/Jalaun context.</li>
+              <li>Sindh is not Chambal tributary; it meets Yamuna separately nearby.</li>
+              <li>Beehad Sudhar Yojana: 1971; max surrender in Arjun Singh period.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Son Hot</h3>
+            <ul>
+              <li>3rd longest river of MP: 780 km.</li>
+              <li>Origin: Sonmuda, Amarkantak, Anuppur.</li>
+              <li>Ganga ki southern/right bank tributary after Yamuna.</li>
+              <li>Johila joins at Chellhari, Umaria, Dashrath Ghat.</li>
+              <li>Names: Swarnbhadra, Sowa/Suva by Ptolemy, Hiranyavah.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Tapti Hot</h3>
+            <ul>
+              <li>4th longest river of MP: 724 km.</li>
+              <li>Origin: Multai, Betul, Satpura-Mahadev range.</li>
+              <li>Only Betul and Burhanpur districts in MP.</li>
+              <li>East to West, parallel to Narmada.</li>
+              <li>Mouth: Aliya Bet, Gulf of Khambhat, Arabian Sea.</li>
+              <li>Names: Suryaputri, Shani ki Behen, Tapi, Tapi Ganga.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Betwa Hot</h3>
+            <ul>
+              <li>5th longest river of MP.</li>
+              <li>Length conflict: 590 km vs 480 km; MP length 380 km.</li>
+              <li>Origin: Kumra village, Raisen, Vindhya range.</li>
+              <li>Confluence: Yamuna at Hamirpur, UP.</li>
+              <li>Kanchana Ghat, Keshavdas, Rasik Priya, Orchha temples.</li>
+              <li>MP ki Ganga on pollution basis; otherwise Narmada.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section accent-green checklist" id="checklist">
+        <h2>✅ Master Revision Checklist</h2>
+        <p>Tick karte jao. Ye save rahega using localStorage.</p>
+        <div id="checkCounter" class="fact">0 completed</div>
+        <label><input type="checkbox" data-check="c1"> Chambal = MP की 2nd longest river, 965 km.</label>
+        <label><input type="checkbox" data-check="c2"> Chambal origin = Janapav/Vanchu Point, Mhow, Vindhya, Indore.</label>
+        <label><input type="checkbox" data-check="c3"> Chambal MP-Rajasthan boundary 251 km, MP-UP 112 km.</label>
+        <label><input type="checkbox" data-check="c4"> Chambal largest tributary = Banas.</label>
+        <label><input type="checkbox" data-check="c5"> Panchanad: Yamuna, Pahuj, Sindh, Kunwari, Chambal.</label>
+        <label><input type="checkbox" data-check="c6"> Sindh river directly Chambal ki tributary nahi hai.</label>
+        <label><input type="checkbox" data-check="c7"> Chambal ravines = Morena/Chambal division; Beehad Sudhar Yojana 1971.</label>
+        <label><input type="checkbox" data-check="c8"> Bandit Queen = Phoolan Devi; max surrender = Arjun Singh tenure.</label>
+        <label><input type="checkbox" data-check="s1"> Son = MP की 3rd longest river, 780 km.</label>
+        <label><input type="checkbox" data-check="s2"> Son origin = Sonmuda, Amarkantak, Anuppur.</label>
+        <label><input type="checkbox" data-check="s3"> Son joins Ganga at Dinapur/Danapur, Bihar.</label>
+        <label><input type="checkbox" data-check="s4"> Son names = Sone, Swarnbhadra, Sowa/Suva, Hiranyavah.</label>
+        <label><input type="checkbox" data-check="s5"> Johila joins Son at Chellhari, Umaria, Dashrath Ghat.</label>
+        <label><input type="checkbox" data-check="t1"> Tapti = MP की 4th longest river, 724 km.</label>
+        <label><input type="checkbox" data-check="t2"> Tapti origin = Multai, Betul, Satpura-Mahadev range.</label>
+        <label><input type="checkbox" data-check="t3"> Tapti MP districts = Betul + Burhanpur only.</label>
+        <label><input type="checkbox" data-check="t4"> Tapti mouth = Aliya Bet, Gulf of Khambhat, Arabian Sea.</label>
+        <label><input type="checkbox" data-check="t5"> Tapti names = Suryaputri, Shani ki Behen, Tapi, Tapi Ganga.</label>
+        <label><input type="checkbox" data-check="b1"> Betwa = MP की 5th longest river.</label>
+        <label><input type="checkbox" data-check="b2"> Betwa origin = Kumra village, Raisen, Vindhya range.</label>
+        <label><input type="checkbox" data-check="b3"> Betwa joins Yamuna at Hamirpur, UP.</label>
+        <label><input type="checkbox" data-check="b4"> Betwa tributaries = Jamini, Dhasan, Bina.</label>
+        <label><input type="checkbox" data-check="b5"> Kanchana Ghat + Keshavdas + Rasik Priya + Orchha temples याद.</label>
+      </section>
+
+      <section class="section accent-purple" id="flowlog">
+        <h2>⏱️ Timestamp Verification Flow Log</h2>
+        <p>Ye section transcript fidelity ke लिए है. Academic content ऊपर structured notes mein convert hai; raw timestamp chunks नीचे collapsed हैं ताकि video side-by-side match verify kiya जा सके. Intro/closing promotional/live-chat portions are marked but not expanded into exam notes.</p>
+        
+      <details class="flow-chunk">
+        <summary><span class="time">00:00:22</span> <span class="mini-tag">Intro / live setup</span></summary>
+        <p>तो वेरी गुड इवनिंग टू ऑल ऑफ यू सभी का बहुत-बहुत स्वागत है एमपी एग्जाम वाला और एमपी जीके वाय विकास सर्क में तो जल्दी से सभी लोग शेयर कर दें और फिर हम स्टार्ट कर रहे हैं आज का अपना स्पेशल सेशन तो सभी लोग जल्दी से लाइव जुड़ जाए मैं बस शेयर कर रहा हूं आप भी प्लीज शेयर कर दें जो भी आपके ग्रुप है तो अगेन एक धमाकेदार सेशन जो आपने अभी तक ऐसा नहीं पढ़ा होगा मिलने वाला है आपको पूरा का पूरा कृष्णकांत चांद मंसूरी रिया प्रवीण शिवाली विनीश बालू कृष्णकांत श्रेया स्टडी नोट्स सुनील शर्मा वेरी गुड इवनिंग सभी का स्वागत है तो एक बार शेयर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:01:05</span> <span class="mini-tag">Intro / live setup</span></summary>
+        <p>करते हैं सभी लोग और फिर हम स्टार्ट करते हैं हमेशा की तरह एक धमाकेदार सेशन जोरदार फुल कंटेंट एक्स्ट्रा चीजें यहीं पर याद सब कुछ होगा मैपिंग के थ्रू विपिन पांडे प्रवीण अमित दीपराज भारती इशिता शुभ पटेल चलिए सभी का बहुत-बहुत स्वागत है हर्षिता शकुन सिंह तो सभी लोग जल्दी से जुड़ते चलिए सभी लोगों का बहुत-बहुत स्वागत है दुर्गेश अनू रिवील सुमित सिंह रिया तिवारी आराध्या हर्षिता प्रियंका अंजलि मिश्रा तो चलिए अब हम स्टार्ट करते हैं आपका कोई डाउट है तो प्लीज आप सभी ध्यान से पढ़ना अब है ना क्योंकि सीरियस होक</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:02:20</span> <span class="mini-tag">Intro / live setup</span></summary>
+        <p>जैसी डिस्क्रिप्टिव क्लास है वैसे ही आपको उसी तरीके से इस क्लासेस को लेना है इनकी वैल्यू को समझना है क्योंकि आप देखेंगे कि फुल कंटेंट क्लास है तो आप अच्छे से पढ़िए बस मेरा बोलना यह है ठीक है कोई डाउट होता है अपन लास्ट में डिस्कस करेंगे इसलिए क्योंकि जो लोग रिकॉर्डेड देखते हैं बेचारे बहुत सारे मेरे एमपी एग्जाम वाला पेड वाले बच्चे उनकी दूसरी क्लास लाइव चल रही होती है ए पर तो वो बेचारे देख नहीं पाते तो वो बाद में भी देखते हैं बहुत सारे लोग तो अपन सिर्फ शुरू में आखिरी में डिस्कस करेंगे क्या डिस्कस करेंगे तो अपन</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:02:56</span> <span class="mini-tag">Intro / live setup</span></summary>
+        <p>अपने जो डाउट्स है वो लास्ट में देखेंगे ठीक है चलिए राम राम दीपक भाई राम राम तो अब स्टार्ट कर रहे हैं हम बिल्कुल शुरुआत से आपका पहला काम है आपको क्लास को ज्यादा से ज्यादा लोगों तक शेयर करना है हमें और हमारी टीम के एफर्ट्स जो है एक एक आदमी इसमें मेहनत कर रहा है तो उनको आपको समर्थन करना है और समर्थन आपको इसी तरीके से कर सकते हैं मोटिवेट करने का हमारा यही तरीका है कि आप जितने ज्यादा लोग होंगे जितने ज्यादा लोगों तक हमारे प्रयास पहुंचेंगे उतने हम और तगड़ी चीजों को निरंतर करते रहेंगे एमपीपीएससी प्री एमपी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:03:32</span> <span class="mini-tag">Class context</span></summary>
+        <p>जीके एक बड़ा दायरा है 10 में से पाच यूनिट तक टच कर जाती है पूरी एमपी मतलब लगभग 45 पर तक सिलेबस सिर्फ एमपी भर के आएगा और यहां से बिल्कुल भी बाहर नहीं होगा दूसरी लाइन मेरी ये है ऑथेंटिक कंटेंट के साथ बिल्कुल क्लियर करते हुए एक-एक चीज विद मैपिंग बिल्कुल शुरुआत से चंबल सोन ताप्ती वेतवा आज एक कल हमने बड़ी नदी नर्मदा देखी थी आज हम देखने वाले हैं क्या जो उसके अलावा चार अन्य बड़ी नदियां है चंबल सोन ताप्ती एंड त ववर को ठीक है तो आप सभी निरंतर यूं ही बने रहे और यूं ही सपोर्ट करते रहे हम सभी बहुत अच्छा करने जा रहे हैं तो नौवा लेक्चर है यह</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:04:13</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>हमारा एमपी जीके का एमपीपीएससी मेजर रिवर्स पार्ट टू चंबल सोन ताप्ती एंड वेतवा रिवर ठीक है तो चलिए तो चंबल सोन ताप्ती एंड वेतवा यहां पर कवर करेंगे हम चंबल सन बेतवा और ताप्ती ठीक है तो अब हम नर्मदा को देख चुके थे हमें देखनी है चंबल रिवर चंबल रिवर की अगर हम बात करें सबसे पहले तो चंबल नदी जो है आप सभी को पता है मध्य प्रदेश की दूसरी बड़ी नदी है ठीक है मध्य प्रदेश की य क्या है बेटा दूसरी बड़ी नदी है ठीक है मध्य प्रदेश की दूसरी बड़ी नदी है मध्य प्रदेश की दूसरी ब नदी दूसरी बड़ी नदी इन द सेंस आपको पता है</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:05:04</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>कि सर इसकी जो लेंथ है व नर्मदा के बाद जो नर्मदा 131 है उसके बाद सबसे ज्यादा इसकी लेंथ वो जिस रिवर की है वो है चंबल रिवर ठीक है यह 965 किलोमीटर और अगर हम देखें मध्य प्रदेश व राजस्थान की बॉर्डर में मध्य प्रदेश एंड राजस्थान बॉर्डर में बॉर्डर में 251 किलोमीटर 2 केएम ये बहती है एंड अगर हम देखें बेसिकली मध्य प्रदेश और राजस्थान की बॉर्डर में लगभग बॉर्डर की बात कर रहा हूं मैं बॉर्डर जो सीमा है सीमा में ये लगभग 251 किलोमीटर बहती है इसके अलावा ये मध्य प्रदेश और राजस्थान की सीमा में 112 किलोमीटर के लगभग बहती है मध्य एमपी एंड यूपी बॉर्डर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:05:51</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>एमपी एंड यूपी बॉर्डर में जो बहती है ये वो कितना बहती है तो बेटा आप देखेंगे कि 112 किलोमीटर मध्य प्रदेश और राजस्थान की बॉर्डर में ये मध्य प्रदेश और उत्तर प्रदेश की बॉर्डर में बहती है मध्य प्रदेश और राजस्थान के बीच 251 किलोमीटर बहती है तो दूसरी सबसे बड़ी नदी है चलिए हम पहले इसको मैप में समझेंगे फिर हम आगे बढ़ेंगे बिना मैप थोड़ी देर मैप नहीं देखता तो मुझे अच्छा नहीं लगता घबराहट होती है इसलिए हम मैप पे आ जाते हैं चले तो यहां पे आपको ओरिजन पॉइंट मिलेगा इसका ये ओरिजनेट होती हुई कुछ इस प्रकार से आपको दे जाते हुए मिल जाएगी ठीक है इस प्रकार</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:06:28</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>से ये जाती हुई आपको कौन मिल जाएगी चंबल रिवर आपको मिल जाएगी ठीक है कुछ इस प्रकार से चंबल रिवर बहती हुई आपको दिखेगी और ये क्या है ये कौन सा पॉइंट है तो ये ओरिजन पॉइंट है इसका जहां से ये ओरिजनेट हुई है इसका जो ओरिजन पॉइंट है ओरिजन पॉइंट या फिर उद्गम बिंदु उद्गम इसका उद्गम कहां से होता है सर इसका जो ओरिजन है ये उद्गम होता है बेटा आपको मिलेगा 5च पॉइंट लिख दूंगा मैं वांचू पॉइंट यहां पर लिख लेते हैं वांचू पॉइंट वांचू पॉइंट महू जाना पाव विंद श्रेणी इंदौर ठीक है यहां पर यह आपको ओरिजनेट होती हुई मिल जाएगी यह क्या करती है यह मध्य प्रदेश और</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:07:30</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>राजस्थान के बीच प्राकृतिक सीमा का निर्धारण करती है मध्य प्रदेश व राजस्थान के मध्य राजस्थान के बीच नेचुरल बाउंड्री प्राकृतिक या फिर प्राकृतिक सीमा या फिर नेचुरल बाउंड्री बनाती है क्या बनाती है बेटा नेचुरल बाउंड्री बनाती है नेचुरल बाउंड्री बनाती है ठीक है ये मध्य प्रदेश और राजस्थान के मध्य अब अगर हम देखें तो ये जब ओरिजनेट होती हुई जाती है तो किस डायरेक्शन में जाती है इसका डायरेक्शन आपको पता है कि सर देखिए ये यहां से ओरिजनेट होती हुई कुछ इस डायरेक्शन में पश्चिमी मध्य प्रदेश की जीवन रेखा के नाम से इसको जानते हैं जो पश्चिमी मध्य प्रदेश</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:08:21</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>जहां पे कम बारिश होती है उसको जीवन देने का काम करती है और ये हमारी नदी ऐसी बढ़ती हुई आगे जाती है ऊपर से आ रही होती है कौन तो ऊपर से आ रही होती है यमुना ठीक है ऊपर से चली आ रही है कौन यमुना रिवर यमुना रिवर आगे इस प्रकार से चली आ रही होती है तो ये है यहां पे यमुना इसका फ्लो इस डायरेक्शन में है जबकि इसका फ्लो आपको इस डायरेक्शन में देखने को मिल जाएगा यह है हमारी यमुना रिवर यमुना नदी ठीक है यमुना रिवर ठीक है यमुना रिवर है यहां पे पे अब इसमें अगर हम देखें तो ये इस प्रकार से ऊपर बहती हुई जाती है सबसे पहले हम</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:09:05</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>यहां से देखेंगे इसकी जो सहायक नदियां है एक यहां से निकलती है इसकी सहायक नदियां ट्रिब्यूटरीज जिसको आप कहते हैं और वो सहायक नदियां कहां पर जाकर के लगभग मिल जाती है तोव सहायक नदी जो है आपको यह कौन सी है मां छिप छिप का नाम सुना होगा छिप जी का सुना है कि नहीं सुना है कहीं दूर से तो नहीं आया हो छिप जी ठीक है शिप्रा जी यहां पर आपको उद्गम होती हुई इंदौर के पास से काकरी वर्डी इंदौर से इनको मैं अलग से पढ़ाऊंगा और मैं यहां लिख देता हूं काकरी वर्डी विंद श्रेणी इंदौर से इनका भी उद्गम होता है और यह कहां पर जाकर के</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:09:38</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>मिलती है तो इस पॉइंट का नाम जो आपको देखने को मिलेगा वो मिलेगा क्या तो एक जगह पड़ती है मंदसौर वा मंदसौर व राजस्थान के मध्य राजस्थान के मध्य सॉरी मध्य प्रदेश व रतलाम के मध्य रतलाम डिस्ट्रिक्ट के मध्य रतलाम के मध्य शिपारा शिपारा गांव में ये मिल जाती है किससे मिल जाती है तो वो मिल जाती है हमारी चंबल रिवर से यह पूरी की पूरी चंबल नदी की बात हो रही है ध्यान देना मेन रिवर चंबल है य हेडिंग लिख लो ज्यादा है चंबल नदी चंबल नदी ठीक है ये हमारी चंबन रिवर इसकी बात कर रहे हैं हम तो देखिए ये यहां पे सबसे पहले आपको छपरा देखने को मिलेगी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:10:35</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>छपरा के बाद आपको जब थोड़ा सा और ऊपर की ओर जाएंगे तो फिर आपको एक काली सिंध मिलेगी काली सिंध यहां पर आपको यहां थोड़ा नीचे की ओर है अब जगह नहीं है तो मैं यहीं पर बना देता हूं तो आप कंफ्यूज मत होना ये आपको कुछ इस प्रकार से यहां पर एक काली सिंध मिलेगी काली सिंध बागली काली सिंध जो निकलती है बागली देवास ठीक है बागली देवास के पास आपको ये देखने को मिलेगी बागली देवास और ये कुछ इस प्रकार से बहती हुई जाती है और इस क्षेत्र के आसपास ये इसमें मिल जाती है ये कालीसिंध रिवर कुछ ऊपर की ओर जाती हुई ये नोनेरा जगह पड़ती है नोनेरा नोनेरा</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:11:15</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>कहां पड़ता है सर राजस्थान यहां पर जाकर के ये मिल जाती है कोटा के पास ठीक है कोटा के पास पड़ता है एक जिला नोनेरा नोनेरा जिला नहीं सॉरी स्थान वहां पर ये जाकर के मिल जाती है किससे तो ये मिल जाती है चंबल से फिर आप देखि कि एक रिवर और होगी यहां पर जिसका नाम होता है सर पार्वती पार्वती नदी आपको अब थोड़ा सा मेरे को ये गलती से यहां पर बन गया यहां लिखना था मुझे तो कंफ्यूज तो नहीं हो ग यहां लिख दूं मैं तो चलेगा क्या यहां पर एक नदी और होती है जिसका नाम होता है पार्वती ना पार्वती और यह कहां से निकलती है तो पार्वती नदी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:11:51</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>आष्टा सिहोर विंद श्रेणी ठीक है आस्ता सर विंद श्रेणी से निकलती है ये कुछ इस प्रकार से जाती हुई और तो ये जाकर के एक सवाई माधवपुर क्षेत्र पड़ता है सवाई माधवपुर राजस्थान के पास किससे मिल जाती है तो वो मिल जाती है चंबल से सवाई माधोपुर का क्षेत्र पड़ता है सवाई माधोपुर सवाई माधोपुर सवाई माधोपुर ठीक है ये राजस्थान के पास जाके इससे मिल जाती है एक रिवर और देखेंगे आप जो कि इधर से चली आती है उसका नाम सुनाए क्या आपने किसका नाम सुना है सर हमें तो बताओ तो पहले फिर तो हम बताएं तो देखो आपने नाम सुना होगा किसका यहां पे एक रिवर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:12:30</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>और एसी चली आ रही होती है एसी एसी चली आ रही होती है और वोह भी इसमें जाकर के डुबकी मार लेती है एक न नदी सुनी है क्या आपने जहां पर पशुपतिनाथ का मंदिर है तो कमेंट करके बताइए पशुपतिनाथ का मंदिर किस नदी के किनारे है मंदसौर में यह कौन सा है तो सर मंदसौर है ठीक है यह मंदसौर मंदसौर का क्षेत्र है यहां पे तो यह कौन सी नदी है सर यह है शिवना नदी शिवना नदी राजस्थान की ओर से चली आ रही होती है और शिवना नदी किसमें जाकर के डुबकी मार लेती है मंदसोर में हां पर पशुपतिनाथ का मंदिर है वहां पर जाकर इसमें डुबकी मार लेती है ठीक है फिर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:13:04</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>एक और चली आती है सबसे बड़ी सहायक इसकी अब इसकी सबसे बड़ी सहायक पता है कि आपको कमेंट करो फिर मैं बताता हूं एक शिवपुरी के पठार से शिवपुरी पठार है यहां पे शिवपुरी पठार शिवपुरी का पठार है जहां पे वहां से एक उद्गम होती है रिवर उसका नाम है कू रिवर तो ये शिवपुर में जाके कनू रिवर भी इसमें मिल जाती है ठीक है कनो आप तो सबसे बड़ी सहायक रिवर को कमेंट करिए चंबल नदी की सबसे बड़ी सहायक नदी चंबल नदी की सबसे बड़ी सहायक नदी कौन सी है तो रिवील जी ने कहा है सर कालीसिंध ऐसा बनास ये किसने आंसर दिया बहुत बढ़िया सुरेंद्र चौरसिया एक्सीलेंट अंबर अंबर दे</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:13:43</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>चुका है उससे पहले आंसर बनास बहुत बढ़िया बनास देखिए सोन की भी आपको सहायक मिलेगी लेकिन यह बनास जो है वो कहां से आती है राजस्थान की ओर से एक रिवर आपको आती हुई मिल जाएगी और वो है बनास ठीक है बनास नदी भी आपको यहां पर देखने को मिल जाएगी तो यहां पे ठीक है बनास रिवर आएगी जो इसकी सबसे सॉरी उल्टा बना दिया मैंने ये आती है कौन राजस्थान की ओर से राजस्थान है यहां पे राजस्थान की ओर से आती है वो है बनास बनास इसकी सबसे बड़ी सहायक नदी है ठीक है तो बनास इस प्रकार से ये पूरा चंबल का क्षेत्र आपको मिलेगा सबसे ज्यादा मोड़ इस</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:14:18</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>क्षेत्र में खाती है और यहां पर बीहड़ों का निर्माण करती है ठीक है अगर हम देखें ये मैंने बताया था दूसरी सबसे लंबी नदी है मध्य प्रदेश की 251 किमी ये जहां पर प्राकृतिक सीमा बना रही है राजस्थान और मध्य प्रदेश के बीच तो 251 किमी 251 ये फ्लो करती है मध्य प्रदेश और राजस्थान की सीमा में जबकि मध्य प्रदेश और उत्तर प्रदेश की सीमा में 112 किलोमीटर चलती है अब इस पॉइंट की बात करते हैं इसका देखना आप हर जगह अलग-अलग मिलेगा मैं आपको एग्जैक्ट बताता हूं ये जो पॉइंट है जहां पर मिलती है वो क्षेत्र जो पड़ता है वो आपको मुरादगंज मिलेगा मुरादगंज मुरादगंज</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:14:55</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>के पास पंचनद संगम है पंचनद स संगम ठीक है पंचन संगम अब आपको ध्यान देना है सिंध नदी इसकी सहायक नहीं है सिंध नदी थोड़े से थोड़े से एक से दो किलोमीटर के डिस्टेंस पर जाकर यमुना से मिलती है अलग से तो कंफ्यूज मत होना सिंध नदी अलग से ही आपको लिखना है कि भैया सिंध नदी का अपन अलग से मिलती है जाकर के इसमें नहीं मिलती इसके पास मिलती है इसलिए कुछ लोग कंफ्यूज होकर उसको लिखवा देते हैं पंचनद संगम में जहां पर सॉरी पंचर संगम में जहां पर ये रिवर्स जाके मिलती है इनमें पांच नदियां होती है एक का नाम होता है क्या एक का नाम</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:15:31</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>होता है यहां पे यमुना जहां पर एक क्षेत्र है पूरा ये क्षेत्र है इस क्षेत्र को पंचनद संगम कहा जाता है ये क्षेत्र जो है ये पंचनद संगम है इसमें यमुना होती है इसमें होती है पौज ठीक है इसके अंतर्गत होती है सिंध सिंध रिवर आपको मिल जाएगी पज मिल जाएगी आपको ठीक है यमुना मिल जाएगी इस प्रकार से ये तीन रिवर होने के बाद और कौन सी यहां पर र नदी आएगी जिसके अंतर्गत मिलेगी तो पहुच हो गई सिंध हो गई कुंवारी हो गई ठीक है कुंवारी नदी य पर आपको लिख लेना है कुंवारी नदी कुंवारी रिवर भी इसमें आकर के डुबकी लगा लेती है कुंवारी नदी हो गई चंबल और थी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:16:07</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>तो चंबल लिख लेते हैं और चंबल इस प्रकार से ये पांच नदी मिलती है पंचनाथ संगम मुरादगंज अब मुरादगंज जो जगह पड़ती है वो उरैया जिले में पड़ती है तीन जिले यहां पर आपको देखने को मिलेंगे एक तो इटावा एक इटावा तो ध्यान देखना ये घिसा पिटा आंसर है लेकिन हां हो सकता है कि अभी भी एग्जामिनर भी इसपे ही अड़ा हुआ हो इटावा इटावा के अलावा ये क्षेत्र जो पड़ता है है ठीक है यह क्षेत्र जो मुरादगंज पड़ता है यह बेसिकली ओरैया में है रैया जिला ओरेया ओरेया जिला ठीक है रैया जिला और जालौन जिला जालौन ये तीनों जिले हैं ठीक है इन</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:16:41</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>क्षेत्रों के बीच जाकर ये मुरादगंज स्थान पर मिलती है मुरादगंज एक्चुअल में उरैया जिला के अंतर्गत आता है बहुत अच्छे से चेक किया है मैंने बट ये बुक का आंसर है अभी घिसा पिटा तो अगर ऑप्शन में इटावा है तो अभी आपको इटावा ही लगाना है ठीक है ये जो मुरादगंज क्षेत्र आता है ये उरैया जिले में देखने को मिला है जितना मैंने सर्च किया है आप भी ग में कर सकते हो तो इन क्षेत्रों के बीच में यह जाकर के पंच नत संगम में यमुना नदी से जाकर के मिल जाती है और इन पांच नदियों के मिलने के कारण इस क्षेत्र को पंच नत संगम के नाम से जाना</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:17:16</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>जाता है पर आपको अभी आंसर यही याद रखना है बट मैंने बता दिया कि अगर ऐसी चीजें देखी ना जालन उरैया और मुरादगंज तो मुरादगंज बेसिकली हो सकता है इटावा ना दे उसका मूड हो गया कि अब अपडेटेड देना है तो मुरादगंज दे सकता है मुरादगंज रैया जिले में आता है उत्तर प्रदेश के इसके पास जालन है तो कहीं कहीं आपको जालन लिखा मिल जाएगा और इटावा ठीक है तो अभी बुकों के हिसाब से इटावा है तो इटावा को आपको ध्यान रखना है ठीक है अब हम आगे बढ़ते हैं यह एक अध्यारोपित नदी है अब क्या आपको पता है आपको पूछ ले किस प्रकार की नदी है तो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:17:49</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>यह वर्ष भर बहने वाली नदी वर्ष भर बहने वाली नदी एक पॉइंट ये लिख लेना तो ये पूरे साल फलो होती रहती है वर्ष भर बहने वाली बहने वाली इसके अलावा एक अध्यारोपित नदी या सुपर इपोज रिवर है अध्यारोपित अध्यारोपित रिवर है अध्यारोपित नदी इसका मतलब क्या होता है सर सुपर इंपोज सुपर इपोज रिवर है सुपर इंपोज रिवर तो इसका मतलब होता क्या है वह तो ठीक है क्या होता है अध्यारोपित नदी तो अध्यारोपित नदी जो होती है बेटा वो क्या होती है कि ऊपरी परत का अपरदन ध्यान से सुनना अध्यारोपित नदी बता रहा हूं मैं कि क्यों इसको कहा जा रहा है अध्यारोपित</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:18:34</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>नदी इसलिए है ये क्योंकि जब कोई नदी बहती हुई अपनी ऊपरी परत या चट्टानों का ऊपरी परत का अपर्दन करते हुए निचली कठोर चट्टानों में पहुंच कर बहती है समझना फिर से बोल रहा हूं मैं अध्यारोपित नदी का मतलब क्या है अध्यारोपित नदी या सुपर इंपोज रिवर वो रिवर होती है जो अपनी ऊपरी कोमल चट्टान या फिर मिट्टी हो मैदान हो उसका अपर्दन करते हुए जब कठोर चट्टानों में नीचे बहती है तो उसको अध्यारोपित नदी कहा जाता है समझ में आया क्या बोला मैंने मैंने बोला है बेटा कि कोई भी नदी है अध्यारोपित नदी वो कहलाए गी जो अपनी ऊपरी परत या कोमल चट्टानों को काटते हुए निचले</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:19:16</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>भाग में कठोर चट्टानों तक पहुंच के बहे उसको हम अध्यारोपित नदी कहते हैं समझ में आ गया समझ में आ गया समझ में आ गया हां या ना फटाफट बताएं और हम आगे बढ़ेंगे आ गया समझ में है ना तो अध्यारोपित नदी है यह वर्ष भर बहने वाली नदी है यह ठीक है इतनी चीज आपको समझ में आ गई और यहां पर यह होती है बड़ों का निर्माण तो अब आपको यह पूरा डायग्राम दिमाग में गया है या नहीं छपा है छप गया होगा ठीक है अब हम बात करते हैं इस पर आ जाते हैं ओरिजन पॉइंट मैंने आपको बता दिया कहां से उद्गम होती है तो पिछला पेज देखें है ना ऐसा लिख दूं क्या मैं जैसे किताब</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:20:00</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>में लिखा रहता है पिछला पेज देखें या अगला पेज देखें मिलन मैंने आपको बता ही दिया अगला पेज देखें लिख देता हूं मैं अगला पेज देखें ठीक है इसके लिए भी अगला पेज देखें ठीक है इसको दिवा देता हूं मैं अगला पेज ये मैंने आपको बता दिया कि प्राकृतिक सीमा बनाती है 251 किलोमीटर ये मध्य प्रदेश और राजस्थान की सीमा में बहती है उसी प्रकार से मध्य प्रदेश और उत्तर प्रदेश की बॉर्डर में आपको जो देखने को मिलेगी अब मैं चिल्लाओ चिल्लाओ क्या तेज बोलूं ऐसा स्लो बोल रहा हूं मैं एक्चुअल में और कुछ नहीं है अच्छा तो मध्य प्रदेश</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:20:43</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>और उत्तर प्रदेश की बॉर्डर में 112 किलोमीटर ये बहती है जबकि मध्य प्रदेश और राजस्थान की बॉर्डर में 251 किलोमीटर बहती है ठीक है 251 किलोमीटर और ये मध्य प्रदेश और राजस्थान के बीच में क्या बनाती है तो सॉरी प्राकृतिक सीमा बनाती आ है ये मैंने आपको लिख दिया है नेचुरल बाउंड्री ठीक है वर्ष पर बहने वाली नदी अध्यारोपित नदी है ये अगर हम देखें यहां पे तो प्रवाह कैसा है इसका प्रवाह आपको जो मिलेगा उत्तर दिशा की ओर उत्तर दिशा की ओर दिशा की ओर तो टुवर्ड्स नॉथ डायरेक्शन परंतु कनफ्लुएंस पॉइंट पर या मिलन बिंदु पर मिलन पर पूर्वी दिशा ठीक है तो मिलन पर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:21:29</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>ये क्या हो जाता है पूर्वी डायरेक्शन की ओर जब इसको मिलना होता है किससे मिलना होता है तो ये मिलती है जब यमुना रिवर से तो फिर इसका डायरेक्शन आपको मैंने बताया कि पूर्व दिशा में हो जाता है परंतु अगर हम इसका फ्लो देखें तो उत्तर की ओर जाती हुई मध्य प्रदेश से दिखती जाएगी ठीक है हां एमपी की दूसरी बड़ी नदी है और इसकी अगर सबसे बड़ी सहायक बताऊं तो मैंने आपको ऑलरेडी बता दिया है अदर नेम इसके अन्य नाम क्या है तो कामधेनु कामधेनु के नाम से इसको जाना जाता है एक नाम इसका कामधेनु रती देव की कीर्ति तो रंतिदेव एक राजा हुआ</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:22:04</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>करता था महाभारत कालीन यह शासक है रंतिदेव की कीरति तो रती देव ने क्या किए थे यहां पर रती देव ने बहुत सारे अनुष्ठान यज्ञ किए थे और कई पशुओं की बलि दी थी और पशुओं की बलि के कारण जो रक्त बहा ऐसा कहा जाता है पौराणिक कथाओं के अनुसार कि जो रक्त बहा उससे क्या हुआ है चंबल नदी का निर्माण तो रत कामधेनु रती देव की कीर्ति कामधेनु भी कहा जाता है इसको और रती देव की कीर्ति के नाम से इसको जाना जाता है चरमा वती भी कहा जाता है तो जो उन पशुओं के बलि देने के बाद उनके जो चर्म से रक्त बहा उससे इसका बना है निर्माण हुआ है इसलिए इसको</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:22:44</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>चरमा वती धर्मावती भी कहा जाता है तो ध्यान देना है आपको ये क्या है महाभारत में इसका उल्लेख है महाभारत कालीन ये शासक था ठीक है महाभारत कालीन एक कोई शासक था रंतिदेव इसने यहां पे यज्ञ किए तो इसको यहां से कीर्ति य यश प्राप्त हुआ अन्य नाम प पश्चिमी मध्य प्रदेश की जीवन रेखा पश्चिमी मध्य प्रदेश की जीवन रेखा पश्चिमी मध्य प्रदेश की जीवन रेखा पश्चिमी मध्य प्रदेश की जीवन रेखा ठीक है पश्चिमी मध्य प्रदेश की जीवन रेखा लाइफलाइन ऑफ वेस्टर्न एमपी लाइफ लाइन ऑफ लाइफ लाइन ऑफ लाइफ लाइन ऑफ वेस्टर्न वेस्टर्न एमपी तो मध्य प्रदेश के</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:23:28</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>जो पश्चिमी क्षेत्र है उसकी ये जीवन रेखा कही जाती है इसकी सहायक नदियां मैं आपको ऑलरेडी बता चुका हूं बट आपको इसकी ट्रिब्यूटरीज मेरे से जानना ही है फिर से तो मैं लिख देता हूं बनास बनास जो है इसकी बनास ठीक है हिंदी इंग्लिश में हिंदी में वैसे ही बनास लिखेंगे कोई अलग थोड़ी है बनास बनास ये क्या है सबसे बड़ी सहायक है इसकी सबसे बड़ी कहां से आई है ये बताओ जल्दी से अभी मैंने मैप में भरा है सबसे बड़ी सहायक तो ये राजस्थान की ओर से आई है इसके अलावा आपने देखा मां शिप्रा को शिप्रा जी है इसकी सहायक आपने देखा काली</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:23:57</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>सिंध को जी हां बिल्कुल काली सिंध इसकी सहायक आपने देखा पार्वती को तो पार्वती भी इसकी सहायक पार्वती नदी भी इसकी सहायक आपने देखा शिवना को तो शिवना भी है इसकी सहायक आपने देखा है किसको कनो को तो कनो रिवर भी है इसकी एक सहायक नदी या ट्रिब्यूटरी सबसे बड़ी कोई सहायक बोलेगा तो क्या बोलोगे बनास ठीक है ठीक है बनास रिवर अब हम यहां पे अगर देखें तो ये सबसे दूसरी सबसे बड़ी ये सारी चीजें हो गई अब आपको एक बीहड़ सुधार योजना बताऊंगा मैं ये हमने देख लिया इसमें किसी को कोई डाउट है तो बता देना मैंने बोला है कि अभी आंसर आपको जो लगाना है इटावा लगाना</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:24:33</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>है बट अगर आपको ये क्षेत्र आ जाते हैं मुरादगंज ओरिया जिला उत्तर प्रदेश का एक क्षेत्र है ये पहले इटावा के 46 किमी इटावा से दूर है जहां पर चमल रिवर मिलती है और भिंड के बाद जाकर के अगर आपसे बोले कि किस जिले के बाद जाकर के ये मिलती है तो भिंड जिले को पार करके और फिर जाकर के ये मिलती है किससे यमुना रिवर से ठीक है तो मुरादगंज पंचन संगम अभी के लिए याद रखना अगर ऑप्शन में इटावा है तो आप इटावा ही लगा के आए ठीक है क्योंकि वो हो सकता है पेपर बनाने वाले वैसे ही आधी नींद में रहते हैं है ना लेकिन अगर उसमें फिर इटावा नहीं है तो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:25:10</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>मुरादगंज होगा यह नदी चंबल संभाग को खासकर मुनना में सर्वाधिक मोड़ खाती है अब मैं एक रफ डायग्राम बनाऊंगा कुछ इस प्रकार से मैंने आपको अभी बताया है ये सबसे ज्यादा इन रीजंस में मोड़ खाने के कारण यहां पर इसने खाई सबसे ज्यादा मोड़ मोरेना में इसने क्या किया यहां पे सोइल का इरोजन मोड़ खा ने के कारण यहां खड्ड या फिर बीहड़ ठीक है खड्ड या बीहड़ का निर्माण करती है जो कि दसव या फिर बागियों जो बागी होते हैं ना बीहड़ के वो बागियों के लिए मिट्टी की गुफा जो बन जाती है मिट्टी की गुफा बनाती है इसी संभाग में जलो मृदा का</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:25:45</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>सब सर्वाधिक अपर्दन होता है और सबसे ज्यादा उसमें से मुरेना में ठीक है तो ड्यू टू इट्स मैक्सिमम फ्लो इन चबल डिवीजन स्पेशली इन मोरेना दिस रिवर क्रिएट्स रेवेंस जो कि होते हैं महा खड्ड या खड्ड क्रिएट्स मड केप्स मड केप्स मतलब मिट्टी की गुफाएं फॉर बैट्स तो ये बागी होते हैं जो रिवेल एंड कॉज मैक्सिमम इरोजन ऑफ एलविल सोइल इन दिस डिवीजन तो यहां की सबसे अच्छी मिट्टी एलविल सोइल या जरूड मृदा को ये तहस नहस कर देती है यहां पर अगर हम बात करें बेंडिट क्वीन के नाम से किसे जाना जाता है तो जो ये बेंडिट बनते हैं बेंडिट क्वीन</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:26:21</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>बेंडिट क्वीन कौन है मैंने कई बार बताया बेंडिट क्वीन बीहड़ों की रानी हिंदी बोले तो बीहड़ों की रानी बीहड़ों की रानी कौन है बीहड़ों की रानी तो बीहड़ों की रानी तो वो है फूलन देवी फूलन देवी फूलन देवी बीहड़ों की रानी है अगर मैं यहां पर बात करूं तो ये जो बागियों के लिए बीहड़ सुधार योजना आई थी कब आई थी बताइए बीहड़ सुधार योजना बीहड़ सुधार योजना जो आई थी यहां पर चलाई गई थी बिकॉज यहां पर जो बागी थे वो क्या कर लेते थे तो वो सरकारी कर्मचारी या फिर नेता को पकड़ लेते थे और व उनसे धन लूटते थे तो बीहड़ सुधार योजना 1971 में</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:27:00</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>बीहड़ों के अंतर्गत उन बागियों के समर्पण के लिए चलाई गई थी मध्य प्रदेश में सर्वाधिक मध्य प्रदेश में सर्वाधिक समर्पण किसके कार्यकाल में हुआ तो आपको पता है सर्वाधिक समर्पण जो हुआ है वो वो सबसे ज्यादा समर्पण हुआ है वो अर्जुन सिंह सीएम कौन था उस समय अर्जुन सिंह जी के समय में हुआ है ठीक है अर्जुन सिंह तो ये बात भी आपको ध्यान देनी है अभी जमल रिवर आपको क्लियर हो गई या नहीं जल्दी से बताइए और आपको जो बांच पॉइंट है व विंध्यांचल श्रेणी में ही बताना है ठीक है चले आगे हां फूलन देवी बड़ों की रानी फूलन देवी अब देखते हैं ये है वो खट जो मिट्टी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:27:46</span> <span class="mini-tag">Chambal River</span></summary>
+        <p>की य मड केब्स मैंने बोला था है ना इस प्रकार से वहां पर वो चीजें दिखेंगी एक कोई व्यक्ति बैठा है देख रहे हो तुम बीहड़ों में किसका इंतजार कर रहा है कि बीहड़ की रानी आएगी मैं बैठा हूं ऐसा कुछ देखिए ये पूरे के पूरे मर्ड है और मर्ड केप्स है जो मिट्टी की गुफाए बीहड़ है जहां पर बागी रुकते थे बेंडिट जिनको कहा जाता है बीहड़ सुधार योजना 1971 में यहां पे चलाई गई थी क्लियर है हां क्लियर नेक्स्ट नेक्स्ट चलते हैं हम सोन रिवर सोन रिवर की अगर हम बात करें तो सोन रिवर अगर जो है ये आपको ध्यान देना है सोन रिवर यहां पर जिसकी लेंथ कितनी है बेटा तो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:28:28</span> <span class="mini-tag">Son River</span></summary>
+        <p>सोन की जो लेंथ है वो आपको 780 किलोमीटर मिलेगी तो यह आपको दिखेगी मध्य प्रदेश की तीसरी सबसे लंबी नदी कितनी दिखेगी तीसरी मध्य प्रदेश की तीसरी सबसे लंबी नदी मध्य प्रदेश की तीसरी सबसे लंबी नदी मध्य प्रदेश की तीसरी सबसे लंबी नदी ठीक है तीसरी सबसे लंबी रवि नदी थर्ड लांगेस्ट रिवर ऑफ एमपी थर्ड लांगेस्ट रिवर ऑफ एमपी तो थर्ड लांगेस्ट रिवर ऑफ एमपी कौन है सन नदी सन नदी को कौन नहीं जानता अगर तुम नहीं जाने हो इतने के बाद मेरे पढ़ाने के तो फिर तो या तो मैं निकल जाता हूं गंगा नहाने के लिए है ना और बाबा बन जाता हूं फिर कि नहीं</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:29:29</span> <span class="mini-tag">Son River</span></summary>
+        <p>क्योंकि इतना बार पढ़ा दिया तुमको तुम तो बता दोगे यहां पर अगर देखिए मैं तो सोन और जोहिला को जिस प्रकार से मैंने बताया था कि अमरकंटक के पास की चोटियों से यह सोन मुड़ा से निकल के और ऊपर कहां चली जाती है गंगा में मिलने को चली जाती है तो देखिए इसका अगर हम बात करें पहले इसको पढ़ लेते हैं फिर हम इसको बनाते हैं अच्छे से सन नदी जिसे सोने नदी के नाम से भी जाना जाता है इसका एक और भी नाम है स्वर्ण भद्र जो मैं आगे बताऊंगा या यही लिख लो एक और भी नाम है स्वर्ण भद्र स्वर्ण भद्र भी इसका ही नाम है स्वर्ण भद्र सोने रिवर या फिर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:30:02</span> <span class="mini-tag">Son River</span></summary>
+        <p>इसको सोआ सोआ के नाम से भी जाना जाता है सोआ किसने कहा है इसको टॉलमी टोलमी ने इसको सोवा कहा है टोलमी टोलमी के द्वारा इसको सोवा नदी के नाम से भी जाना जाता है टोलमी ने कहा है कि भाई साहब ये सोवा नदी है सुवा नदी ठीक है हिरण्य वाह और सुवर्ण हिरण वाह और लिख लो हिरवा हिरण्य वाह भी इसका एक नाम है और ये क्या है एक प्रकार से ये नदी का पुरुष रूप नद है मैंने बताया था आपको ण भद्र सोवा टॉलमी और हिरण्य वाह भी इसका एक नाम है ठीक है हां अब अगर हम बात करें तो इसमें आगे पढ़ते हैं हम यह एक बारा मासी नदी है तो जैसे आपको चंबल दिखी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:30:39</span> <span class="mini-tag">Son River</span></summary>
+        <p>वैसे ही बारा मासी नदी ये भी दिख रही है आपको जो मध्य भारत से होकर प्रवाहित होती है मध्य भारत मतलब पठार नहीं लिखा है कुछ लोग मध्य भारत देखते हैं सीधा पठार प कूदते हैं जी नहीं मध्य भारत मतलब मध्य भारत का मतलब मध्य प्रदेश है ठीक है जो मध्य भारत से प्रवाहित होती है सोन नदी यमुना नदी के बाद गंगा की दूसरी सबसे बड़ी दक्षिणी दाहिनी तट ट सहायक नदी है ठीक है तो दाहिने तट से कौन आ करर के मिलती है दाहिने तट से तो गंगा ये ऐसी चली आ रही होती है अब गंगा की डायरेक्शन क्या है ये वाली है इसको जाना है पूर्व डायरेक्शन की</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:31:12</span> <span class="mini-tag">Son River</span></summary>
+        <p>ओर यहां से चली आ रही है और पूर्वी अपवाह तंत्र में जाकर के उसको मिलना है तो आप देखेंगे कि दक्षिणी जो नीचे ऐसा जा रहा है कोई तो नीचे वाला दक्षिणी होगा ना नीचे से आ रही है नीचे से मिल रही है मतलब ये भी ध्यान देना है कि ऐसा भी पूछा जा सकता है कि सोन रिवर गंगा से किस त तट पर मिलती है दक्षिणी तट पर वो ऊपर से जा रही थी ये नीचे से जाके मिल गई तो दक्षिणी तट पर और दूसरी सबसे बड़ी सहायक है जो दक्षिणी तट से मिलने वाली दूसरी बड़ी सहायक मैं ये नहीं कह रहा कि दूसरी बड़ी सहायक लेकिन दक्षिणी तट से मिलने वाली दूसरी बड़ी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:31:43</span> <span class="mini-tag">Son River</span></summary>
+        <p>सहायक है बाकी अन्य जो है वो जो बड़ी है इससे भी वो ऊपर की ओर से मिल रही है ठीक है तो इसको भी आपको ध्यान देना है तो यही चीज लिखिए है द सोन रिवर आल्सो नोन एज सोने रिवर और स्वर्ण भद्र सोवा टॉलमी के द्वारा और हिरण वाह है ना और ये क्या होती है इट इज पेनियल रिवर दैट फ्लोज थ्रू सेंट्रल इंडिया द सून रिवर इन द सेकंड लार्जेस्ट साउदर्न राइट बैंक ट्रिब्यूटरी ऑफ गंगा रिवर आफ्टर यमुना तो इस पॉइंट को भी याद रखना कि यमुना नदी के बाद जो दक्षिण तट से इसकी सबसे बड़ी सहायक है वो है सोन रिवर या हिरण्य वाह या हिरण्य वाह</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:32:21</span> <span class="mini-tag">Son River</span></summary>
+        <p>ठीक है तो इसको ये भी ध्यान रखना है आपको अब अगर मैं बात करूं तो ये शायद आपको नहीं दिखेगा और वो जूम भी नहीं होगा इस इसमें खाली मैप भी है तो इसमें अपन देख लेते हैं इसको कुछ इस प्रकार से मैंने आपको बताया था कि ये इन क्षेत्रों में प्रवाहित होती हुई जाती है इन क्षेत्रों में ऐसे प्रवाहित होती हुई ये किससे मिलने को चली जानी है तो ये आप देखेंगे कि ये जो मिलने को चली जानी है वो चली जानी है गंगा से ठीक है ऊपर से चली जा रही होती है गंगा ये यहां से यमुना थी यमुना मिल से गंगा में मिल गई और फिर गंगा यहां पर इस</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:32:56</span> <span class="mini-tag">Son River</span></summary>
+        <p>प्रकार से हो गई ठीक है इसका जो उद्गम होता है वो कहां से होता है तो यह भी संयुक्त क्षेत्र सोण देश तीर्थ कहलाता है सोण देश तीर्थ यहां भी आप लिख सकते हैं सोण देश तीर्थ सोण देश तीर्थ सोनमुड़ा सोनमुड़ा जगह पड़ती है सोनमुड़ा सोनमुड़ा अमरकंटक उत्तर प्रदेश सॉरी अमरकंटक अनूपपुर अमरकंटक अनूपपुर ठीक है अनूपपुर अनूपपुर और अमरकंटक आपको पता ही है कि कहां कौन सा क्षेत्र जहां बिंद और दोनों एक दूसरे से मिलते हैं एक रिवर और होती है एक रिवर और होती है जिसका नाम होता है चहिला जिसका ईमान हिला था जोहिला वो है जोहिला रिवर तो आप देखेंगे कि</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:33:39</span> <span class="mini-tag">Son River</span></summary>
+        <p>जोहिला रिवर यहां पर इसमें समाहित हो जाती है ये इसके ओरिजन पॉइंट है ठीक है ये इसके रिजन पॉइंट है जोहिला जोहिला आकर के इसमें मिल जाती है किस प्रकार से मिली थी वो मैं लास्ट लेक्चर में आपको बता चुका हूं तो ये ऊपर की ओर जा रही होती है तो प्रारंभिक तौर पर इसका फ्लो होता है उत्तर की ओर परंतु फिर ये मूव कर जा जाती है किस साइड तो ये ईस्ट अगर आपसे बोले किस अपवाह तंत्र का ये हिस्सा है तो आपको बोलना है पूर्वी अपवाह तंत्र का यह हिस्सा है क्योंकि पूर्वी अपवाह तंत्र मतलब गंगा यमुना क्या है पूर्वी अपवाह तंत्र ही तो है तो ये</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:34:11</span> <span class="mini-tag">Son River</span></summary>
+        <p>गंगा में जाकर के मिलेगी कहां पर तो ये दीनापुर ये दीन दुखारी थी इसके साथ धोखा हो गया था दीनापुर बिहार ठीक है दीनापुर बिहार में किससे मिल रही है तो ये गंगा रिवर से मिल रही है और गंगा रिवर की दक्षिण तट से मिलने वाली सबसे क्या है सबसे लंबी नदी है है यहां पर इसमें आ चुकी है कौन इसमें आ चुकी है जोहिला जोहिला इसकी एक सहायक नदी है ये कहां पर तो मैंने कल बताया था आपको कि चेल हारी उमरिया चेल हारी उमरिया जहां दशरथ घाट है ठीक है चेल हारी उमरिया में दशरथ घाट में जाकर के ये मिल जाती है उमरिया दशरथ घाट दशरथ घाट यहां पे आप देखेंगे कि एक</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:34:52</span> <span class="mini-tag">Son River</span></summary>
+        <p>बनास गोपद वगैरह भी इसकी सहायक नदियां हैं तो एक नदी आपको ऊपर से जार वही नदी देखने को मिलेगी जारही दूसरी पेन से यूज करते हैं जारही नदी एक नदी इसमें आकर के समाहित होती है उसका नाम होता है जारही जार वही आएगी जार वही नदी जार वही नदी आपको यहां पर इसमें इंक्लूड होती हुई समाय होती हुई मिल जाएगी दूसरी नीचे से आती है बनास गोपद और रिहंद इस तरफ से जो आती है बनास ठीक है बनास आएगी एक बनास गोपद गोपद ठीक है बनास गोपद और रिहंद वगैरह इसमें आकर के मिल जाएंगे तो एक एकाद और नदी लिखना हो रिहंद वगैरह तो आप इसमें लिख सकते हो तो इस प्रकार से इसमें दो तीन जो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:35:44</span> <span class="mini-tag">Son River</span></summary>
+        <p>इसकी सहायक प्रमुख है जिनमें से एक बनास है बनास आपने अभी चंबल की भी देखी गोपद की भी देख गोपद को भी देख लो और जोहिला ये दो तीन नदी आपको इसकी ट्रिब्यूटरीज के तौर पर याद रखनी है एक आपको गोपद याद रखनी है और चेल हारी उम मरिया में दशरथ घाट में इसका मिलन होता है तो सोन और जोहिला का यह है हमारी सोन रिवर और इसका जो मिलन बिंदु है वो कहां पर मिलती है तो आपको पता है सर गंगा में यह जाकर के डुबकियां लगाती है दीनापुर बिहार में इस प्रकार से आप इसको देख सकते हैं ठीक है और यह सोनमुड़ा के पास से इसका उद्गम होता है ठीक है हां लाहरी उमरिया में इनका मेन</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:36:26</span> <span class="mini-tag">Son River</span></summary>
+        <p>आपको इसकी जो सहायक याद रखनी है वो जोहिला को तो बहुत अच्छे से रखना ही है याद आगे बढ़ते हैं हम तो यहां प वही चीज लिखी है सोन मुड़ा सोन देश तीर्थ अमरकंटक पहाड़ी के समीप अनूपपुर से निकलती है और अंत में बिहार दीनापुर पटना के समीप गंगा में मिल जाती है ये बता दिया मैंने टोटल लेंथ इसकी कितनी है कुल लंबाई तो टोटल लेंथ इसकी 780 है क्योंकि ये दूसरी तीसरी सबसे लंबी है मध्य प्रदेश की और इसकी जो मध्य प्रदेश में लेंथ बताई जाती है वो 509 किलोमीटर बट ये नहीं याद रखना है आपको पूछा जाएगा तो ये पूछा जाएगा इतना नहीं जाता है ना गया</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:37:00</span> <span class="mini-tag">Son River</span></summary>
+        <p>है आज तक पूछा भी जाएगा तो यह पूछा जाएगा तो 780 किलोमीटर बट याद करने के लिए अगर आप कर पाओ इतना डाटा तो उसको भी कर सकते हो ट्रिब्यूटरीज तो जोहिला छोटी महानदी बनास गोपद रिहंद कनहर और उत्तरी कोयल नदी इसकी क्या है सहायक नदियां या फिर ट्रिब्यूटरीज है ठीक है इसके अन्य नाम में आपको बता चुका हूं तो पिछला पेज आगे का पेज देखें ऐसा लिख देता आगे का पेज देखें ठीक है आगे का पेज देखें तो वहां पर मैंने इसके सारे नाम जिनम से सोवा टॉलमी ने कहा है पूर्ण भद हिरण वाह स्वर्ण नदी के नाम से इसको जाना जाता है ठीक है और इस</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:37:46</span> <span class="mini-tag">Son River</span></summary>
+        <p>पर एक बाण सागर बांध भी है बांध के लिए अलग से क्लास लेता हूं ध्यान से सुनना आप बांध के लिए जलप्रपात के लिए इन सबके लिए मैं अलग से क्लास लेता हूं इसलिए मैंने बांधनी बताया है एक का एक के भी जलप्रपात तो कंफ्यूज नहीं होना कि सर ने ये हटा दिए क्या या नहीं पढ़ाएंगे अलग से टॉपिक रहते हैं मेरे मैं मिक्स नहीं करता क्योंकि मैं यहां पढ़ाऊंगा फिर अलग से भी पढ़ाऊंगा मतलब ये खट्टे है ना तो मैं खिचड़ी नहीं करता मैं सेपरेट चलता हूं तो मैंने इसलिए उनको वहां पे अलग रखा हुआ है ठीक है इस बात को आप [संगीत] समझना हां कन्हेर लिख लेना आप उसको कनहर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:38:26</span> <span class="mini-tag">Son River</span></summary>
+        <p>लिखा है जो कन्हेर लिख लेना अब आप उसको कन्हेर कर देना कोई दिक्कत नहीं है है ना कनहर कन्हेर ऐसे ही लिखे रहते हैं वो है ना कहीं तुम्हें कनहर मिल जाएगा कहीं कन्हेर मिल जाएगा हां तो कुछ लोग घबरा जाते हैं घबराना नहीं है मेरे को पता है कहां पर क्या करना है अपने को ठीक है पूरा होगा एक एक तरीके से ठीक है बेतवा नदी अब हम इसको देखेंगे बेतवा को नदी को या आप चाहो तो उस बेतवा से पहले देख लेते हैं हम ताप्ती को क्योंकि ये चौथी लंबी नदी है तो ताप्ती को देख लेते हैं हम ये क्या है मध्य प्रदेश की मध्य प्रदेश की चौथी सबसे लंबी नदी है सबसे लंबी नदी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:39:17</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>है पांच को ध्यान रखना है आपको अच्छे से ठीक है पांच को आपको बहुत अच्छे से याद रखना है यहां पर अगर हम देखें तो इसका ओरिजन पॉइंट आपको पता है क्या ओरिजन पॉइंट ताप्ती तो सबको पता है य दुनिया को पता है आपको भी पता होगा और होना चाहिए कि यह आपको जो मिलता है वो मिलता है अपना मुलताई मुलताई बैतल मुलताई बैतल के पास सेय ओरिजनेट होती है और अगर इसमें आप बोलो तो सर सतपुड़ा श्रेणी भी आप लिख सकते हो सतपुड़ा की महादेव श्रेणी के से ठीक है महादेव श्रेणी के क्षेत्र से महादेव श्रेणी का जो क्षेत्र पड़ता है या रेंज जो पड़ता है ठीक है महादेव</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:39:56</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>श्रेणी ठीक है यहा से इसका ओरिजन होता है मुलताई बैतल से कफ्स पॉइंट आपको पता है कफ्स पॉइंट इसका जो है वो खंबा की खाड़ी में जाक के इसको डुबकियां लगानी है ठीक है तो खंभार की खाड़ी में एलिया बेत द्वीप है एलिया बेत द्वीप ठीक है उसमें लिख लेना एलिया वेद द्वीप खंभात की खाड़ी गुजरात के पास अरब सागर तो अरेबियन सी में जाकर के एलिजाबेथ द्वीप में जाकर ये समाहित होती है किसके अंतर्गत तो यह हो जाती है खंबा की खाड़ी में अरब सागर में ठीक है कुल लंबाई इसकी जो है 724 किलोमीटर है आपको बस यही याद रखनी है बाकी एमपी में करनी हो तो आप 279</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:40:46</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>किलोमीटर को कर सकते हो इसमें आप देखेंगे कि प्रमुख रूप से बैतल व बैतूल व बुरहानपुर जिलों में मात्र दो जिलों में ये बहती है बैतूल व बुरहानपुर ये सिर्फ दो जिलों में ही बहती है बैतूल और बुरहानपुर इसके अन्य नाम क्या है तो देखिए आपने ये तो बहुत लोगों ने पढ़ रखा होगा कि सर सूर्य पुत्री जी हां सूर्य पुत्री मान लिया मैंने शनि की बहन आपने नहीं पढ़ा होगा शनि की ये बहन है ठीक है तापी भी इसका नाम है गुजरात में इसका नाम तापी हो जाता है कहां पर बेटा तो गुजरात में इसका नाम तापी हो जाता है कुछ लोग तापी गंगा के नाम से भी इसको जानते हैं जिनके ऊपर शनि</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:41:24</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>लग जाता है तो उनसे कहा जाता है इसकी जो पौराणिक महत् है कि शनि की बहन मतलब जिनको शनि लगा हुआ है बोले तुम्हारे पीछे शनि लगा हुआ है बोल देते हैं ना लोग तो शनि लगा हुआ है तो इस नदी में जाकर के उनको डुबकियां लगवाई जाती है कि चल दिखाता हूं तेरे को नदी में डुबकिया लगवा लगवा के तो शनि की बहन है मतलब इन खतरनाक तो है सूर्य की पुत्री है ठीक है इसलिए इतना ताप है ताप प्रवाह आपको पता है सर ये पूर्व दिशा से पूर्व से पश्चिम या फिर आप बोल सकते हो सर ईस्ट टू वेस्ट ठीक है ई ए एस टी ईस्ट टू वेस्ट ईस्ट टू वेस्ट डायरेक्शन में ये</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:42:04</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>फ्लो होती है सेम नर्मदा के समानांतर और भी इसमें जोड़ लेना आप वर्ड नर्मदा के समानांतर यहां पर लिख दूं क्या मैं नर्मदा के पैरेलल नर्मदा के समांतर समानांतर या पैरेलल पैरेलल पैरेलल बहती है ये किसके नर्मदा के और मध्य प्रदेश इसकी मध्य प्रदेश व महाराष्ट्र की मध्य प्रदेश की मध्य प्रदेश की लिखो मध्य प्रदेश की दक्षिणी सीमा साउदर्न बाउंड्री फॉर्म करती है बनाती है ठीक है दक्षिणी सीमा मध्य प्रदेश की ये बनाती है इस पॉइंट को भी आपको ध्यान रखना है ठीक है सहायक नदियां कौन-कौन सी है इसकी तो इसकी जो सहायक नदिया है पूर्णा नदी है उतावली नदी जो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:42:59</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>बुरहानपुर में मिलती है इसके अलावा गिरना अमरावती अरुणा वती बोरी पांजरा ये सब इसकी क्या है ट्रिब्यूटरीज है या सहायक नदियां है ठीक है किसकी है ताप्ती की पूर्णा उतावली गिरना अमरावती अरुणा वती बोरी और पांजरा ठीक है ये प्रमुख रूप से आपको ध्यान रखना है ठीक है असीरगढ़ का किला और सूरत का जो बंदरगाह है असीरगढ़ का किला और जो सूरत का बंदरगाह है है सूरत शहर इसी के किनारे बसा है ठीक है सूरत शहर जो है ताप्ती नदी के किनारे ही बसा है तो इन पॉइंट्स को आपको ध्यान रखना है कि मध्य प्रदेश की चौथी सबसे लंबी नदी है इसका ओरिजिन आपको बैतूल</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:43:39</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>मुलताई से सर देखने को मिलेगा ठीक है बैतूल मुलताई से देखने को मिलेगा जो कि सतपुड़ा महादेव का एक हिस्सा है एलिया बेद द्वीप खंबा की खाड़ी अरब सागर में जाकर के गिरती है 724 किलोमीटर की टोटल लेंथ है मध्य प्रदेश में 279 और उसमें से मध्य प्रदेश के बैतुल और बरहानपुर डिस्ट्रिक्ट में बस ये प्रवाहित होती है बाकी ये महाराष्ट्र और गुजरात की ओर आगे बढ़ती है इसका फ्लो जो है वो पूर्व से पश्चिम की ओर है और नर्मदा के समानांतर या पैरेलल बहती है ईस्ट टू वेस्ट और मध्य प्रदेश की ये दक्षिणी सीमा या साउदर्न बाउंड्री बनाती</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:44:14</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>है सॉरी सूर पुत्री शनि की बहन तापी और तापी गंगा के नाम से इसको जाना जाता है अगर हम देखें इसकी ट्रिब्यूटरीज तो पूर्णा उतावली गिरना अमरावती अरुणा वती बोरी और पांजरा है ठीक है आप चाहो तो इसमें भी आप ऐसे मेंशन कर सकते हो बाकी मैंने आपको बता दिया था पिछले लेक्चर में भी तो ये है मां ताप्ती ताप्ती का अपना एक धार्मिक महत्व है क्योंकि सूर्य की पुत्री और शनि की बहन होने के कारण इनका अपना एक धार्मिक महत्व है और शनि इनको लगे होते हैं कहा जाता है कि इनमें डुबकियां लगा लो और आप के शनि का प्रकोप जो है आपके जीवन से कम हो जाएगा</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:44:49</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>ठीक है ये फिर यहां पर महाराष्ट्र आपको देखने को मिलेगा ये यहां पर सतपुड़ा श्रेणी की सतपुड़ा की महादेव श्रेणी से यहां से से उद्गम होती हुई आगे की ओर पूर्व से पश्चिम दिशा की ओर बहती हैं ठीक है यहां पे इसको उतावली नदी मिल जाती है उतावली नदी ठीक है बहुत उतावली होती है इससे मिलने के लिए और इसके किनारे आपको यहां पर काला ताजमहल मिलेगा काला ताजमहल काला ताजमहल कहां पर बेटा तो ये जो दूसरा डिस्ट्रिक्ट है काला ताजमहल यहां बुरहानपुर में मिलेगा ये बुरहानपुर है और उतावली नदी के किनारे में एक्चुअल में वो लेकिन उतावली सहायक है किसकी तो वो सहायक</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:45:25</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>है ताप्ती रिवर की कुछ ऐसी ति बहती हुई आपको एलिया बत द्वीप के पास एलिया बत एलिया बत द्वीप एलिया बत द्वीप ठीक है एलिया द्वीप और अगर हम बात करें तो यह क्या है बेटा खंभात खंभात की खाड़ी खंभात की खाड़ी और यह अरेबियन सी या फिर अरब सागर ठीक है ये अरब सागर हो जाएगा या अरेबियन सी इंग्लिश वाले हैं तो अरेबियन सी लिख लेना ठीक है इस प्रकार से ये ईस्ट टू वेस्ट और ये नर्मदा के पैरेलल रहती है अच्छा एक चीज और याद रखना कि ये किसका निर्माण करती है तो निर्माण जिस प्रकार से नर्मदा निर्माण किसका कर रही थी किस क्या निर्माण करती है</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:46:06</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>ये क्या बनाती है तो ये भी ए चुरी का निर्माण करती है ए चुरी या फिर ज्वार आप कौन धुरंधर है वो जो कमेंट बॉक्स में मैंने कल इसकी डेफिनेशन बताई थी वो पूरी डेफिनेशन एज इट इज लिख देगा तो वो समझिए कि एमपीपीएससी के मेंस के लिए भी वो तैयार हो गया क्योंकि प्री में सिर्फ इतना ही आना था ठीक है लेकिन मैंने इससे भी आगे बताया आपको कि आप तो डेफिनेशन जानो है क्या वह एरी तो यहां पर जहां पर यह मिलन होता है इसका किससे यहां पर अरब सागर से वहां पर यह एच का निर्माण करती है एच की डेफिनेशन कमेंट बॉक्स में एक बार फटाफट तो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:46:42</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>लिख दो देखूं मैं कितना पढ़ रहे हो जल्दी से लिख दो एरी का निर्माण करती है यह ठीक है तो यह थी हमारी ताप्ती नदी ताप्ती नदी की महिमा की जानकारी तो ताप्ती नदी का उल्लेख स्कंद पुराण में भी मिलता है ताप्ती का एक अपना अलग महत्व है स्कंद पुराण और विष्णु पुराण दोनों पुराणों में आपको देखने को मिलेगा विष्णु पुराण में भी इसका जिक्र किया गया है विष्णु पुराण में भी इसका जिक्र है इंफॉर्मेशन अबाउट द ग्लोरी ऑफ ताप्ती रिवर इज फाउंड इन स्कंद पुराण और विष्णु पुराण है ना एंड विष्णु पुराण तुड़ा पर्वत के दक्षिण में ब्रंस</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:47:22</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>कगार तो ये भी आप देखेंगे कि रिफ्ट में जैसे नर्मदा बहती है वैसे ही ये भी भ्रंश में बहती है जहां पर सतपुड़ा का कुछ-कुछ भ्रंश उसके दक्षिणी क्योंकि सतपुड़ा उसके उत्तर में है ठीक है नर्मदा के दक्षिण में सतपुड़ा और ताप्ती के उत्तर में है बीच में सतपुड़ा ऊपर है मां नर्मदा नीचे देखने को मिलेंगे लगभग आपको वहां ताप्ती नदी तो भ्रंश कगार ताप्ती में बहती है द ताप्ती रिवर फ्लोज इन द भ्रंश गॉर्ज टू द साउथ ऑफ सतपुड़ा माउंटेन सतपुड़ा के दक्षिण भाग में ठीक है तो ऐसा भी क्वेश्चन आ सकता है कि सतपुड़ा की किस दिशा में ये प्रवाहित</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:47:55</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>होती है तो ये यहां से से क्वेश्चन बना तो यहां से आंसर भी बनेगा कि सतपुड़ा की दक्षिण में बहती है हमें सब पता है हमें सब पता है ठीक है प्रकाश वेद ने लिखा है बहुत बढ़िया भाई एक ऐसा क्षेत्र होता है जहा समुद्र का खानी खारा पानी नदियों के ताजे पानी से मिलता है और भी तो बहुत कुछ था यार इतनी मैंने ऑथेंटिक आपको डेफिनेशन बताई है उसकी ठीक है तो सतपुड़ा पर्वत के दक्षिण में ये निर्माण यहां लिखा भी था मैंने वहां लिख दिया तो टाइडल या फिर एस्चर का निर्माण करता है ज्वार और एस्चर एक ही बात है प्राप्ति नदी का कु अपवाद</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:48:27</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>क्षेत्र तो तात्क अगर आपको जानना हो तो आप जान सकते हो बाकी नर्मदा का याद रखना सब इनका याद नहीं रखना है फिर भी आपको जानना है तो कुल है 65 145 वर्ग किलोमीटर जबकि मध्य प्रदेश में सिर्फ दो जिलों में बहने के कारण इतना कम देख रहे हैं आप कि 9800 वर्ग किलोमीटर इसका मध्य प्रदेश में आपको देखने को मिलेगा ठीक है अंजना ने लिखा है यह होती है डेफिनेशन और यह देखो यह मेरी बहुत पुरानी छात्र है बहुत मेहनती है यह भी तय है आज से लगभग तीन चार साल पहले से कंटिन्यू मुझे फॉलो कर रही है एक एक शब्द ठीक है मैं भूल जाऊ कोई चीज पर यह</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:49:12</span> <span class="mini-tag">Tapti River</span></summary>
+        <p>इसको याद रहता है तो ऐसे याद करना है है ना बहुत बढ़िया गुड सुपर्ब जब कोई नदी ताजा जब किसी नदी का ताजा मीठा जल तेज प्रवाह से अपने उद्गम से मुहाने की ओर भ्रंश घाटी में बहता है और अपने मुहाने पर बिना खर 90 डिग्री के कोण पर एक ही स्थान पर ऊंचाई से गिरता है तो उसको वहां पर क्या बनता है ए चुरी बहुत बढ़िया सुपर्ब है ना ऐसे बताना है अपने को तो आप मेंस के लिए भी प्रिपेयर हो जाओगे ठीक है तो ये थी हमारी मां ताप की अब हमें जो बात करनी है हम बेतवा नदी की बात करेंगे बेतवा बेतवा नदी की अगर हम बात करें तो इसका भी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:49:51</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>एक पौराणिक महत्व भी है और धार्मिक महत्व भी है और वर्तमान समय में बुंदेलखंड के अंतर्गत एक अपना विशेष महत्व रखती है क्यों तो देखिए आप देखेंगे कि कुमरा गांव रायसेन कुमरा गांव रायसेन कहां पड़ता है तो कुमरा गांव रायसेन कुमरा गांव रायसेन बेटा जो है ये आपका विंद पर्वत श्रेणी के अंतर्गत आपको काउंट करना है विंध पर्वत ठीक है विंध पर्वत में ये आपको मिल जाएगा ठीक है विंध पर्वत में मिलेगा तो अब आपको पता है कि कुमरा गांव से ओरिजनेट होने के बाद जो हमारी मां बेतवा है है ना क्योंकि नदियों को यहां पर मां की संज्ञा दी जाती</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:50:29</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>है हमारे मध्य प्रदेश में बिकॉज आपको पता ही है कि नदियां कितना अहम रोल अदा करती हैं नदियां अपना एक अहम रोल अदा करती हैं हमें जीवन देने के लिए है ना क्योंकि जहां पर भी नदियां होंगी वो अपने आप में समृद्ध क्षेत्र होगा हर चीज में ठीक है और सभ्यताएं उन नदियों के किनारे ही पनपती हैं मतलब जीवन संभव नदियों के किनारे ही है क्योंकि वहां हर चीज की अवेलेबिलिटी है चाहे वृक्षों की बात करें चाहे हम अन्य रिसोर्सेस की बात करें तो ये कुछ इस डायरेक्शन में प्रवाहित होती है भी उत्तर प्रदेश में हमीरपुर जिला उत्तर प्रदेश में</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:51:06</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>जाकर के हमीरपुर हमीरपुर जिला उत्तर प्रदेश में यह मिल जाएंगी यहां पर इनका ओरिजन होता है कुमरा गांव रायसन विंध माउंटेन रेंज ठीक है विंध माउंटेन रेंज से इनका उद्गम होता है तो यहां पर अगर आप चाहे तो लिख सकते हैं बंध पर्वत बंध पर्वत कुमरा गांव कुमरा विलेज इंग्लिश वाले हो तो कुमरा विलेज है ना विंद माउंटेन कुमरा गांव इंग्लिश में लिख देता हूं हिंदी वाले तो लिख लेंगे जब मैं बोलता जाता हूं तो इंग्लिश वाले या फिर एक कोई भाषा वाले नोट कर लिया करो जैसे ओरिजन में यहां पर बोल रहा हूं कुमरा विलेज या विंध्यांचल रेंज विंध रेंज</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:51:50</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>विंध रेंज विंध्याचल रेंज लिख देते विंध्याचल रेंज और कुमरा विलेज कुमरा विलेज रायस ठीक है मिलन कहां होता है इसका कंस पॉइंट कहां पर तो वह आपको हमीरपुर में जाना पड़ेगा हमीरपुर यूपी ठीक है अब इसकी लेंथ में बड़ी लड़ाई है आप गगल करोगे तो आपको 50090 मिल जाएगा एक दो बुकों ने भी गल के हिसाब से ही लिखा है क्योंकि बच्चे करते हैं गल है ना ग करते हैं तो उनको लगता है कि जो बच्चों को दिख गया सबसे पहला आंसर go90 अगर ऑप्शन में 590 है तब इसको लगाना और नहीं है तो फिर 480 किमी अब मैं नापने के लिए नहीं जा सकता कि बोलो तुम नहीं</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:52:47</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>नहीं सर एक बार एक काम करो आज शाम को रात को निकल जाओ पढ़ाने के बाद और आप चले जाओ कहां तक हमीरपुर तक चले जाओ और एक बार नाप के तो आ जाओ तो ऐसा नहीं कर सकता मैं हर जगह तो नापने नहीं जा सकता बट यह google2 टीएमएच वगैरह है उनमें आपको ये 480 मिलेगा लेकिन एक महान बुक आती है मध्य प्रदेश की जिसको काफी लोग फॉलो कर रहे हैं उसने भी दोनों लिख देता हूं जिस दिन नाप लूंगा मैं जाऊंगा जब है ना बेतवा की यात्रा पर परिक्रमा पर तब मैं आपको बता पाऊंगा या कहीं से मिलता है और ऑथेंटिक बाकी मैंने दोनों चीजें लिख दी मध्य प्रदेश में 380</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:53:38</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>किलोमीटर प्रवाह इसका कहां पर है तो नॉर्थ डायरेक्शन या उत्तर की ओर नॉर्थ डायरेक्शन इतना मैं दावा देता हूं कि मैंने अभी तक ये एकदम पूरा हर जगह मध्य प्रदेश के अंतर्गत जितना भी डाटा देखा है मेरे से ज्यादा ऑथेंटिक और चीजें एकएक वेबसाइट एक एक जिला कोई किसी ने नहीं ढूंढा होगा जितनी वेबसाइट में मैंने ाल के ढूंढ के रखा है इतना मैं बोल सकता हूं ठीक है यहां पर अगर हम बात करें बेतवा नदी की सहायक नदियां कौन-कौन सी हैं तो बेतवा नदी की मुख्य सहायक नदियां जो आपको देखने को मिलेंगी एक आपको मिलेगी यहां पे जामिनी नदी जो इसकी एक सहायक नदी है एक आपको इसकी</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:54:17</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>धसान नदी मिलेगी जो इसकी एक सहायक नदी कही जाती है इसके अलावा बीना नदी भी इसकी एक सहायक नदी है अगर आपको बीना लिखना हो तो बीना नदी भी इसकी एक सहायक नदी है बना अगर हम बात करें तो यह आपको जो देखने को मिलेगी झांसी के पास आपको धसान नदी जो है धसान नदी रायसन से निकलती हुई और झांसी के पास एक पलिया गांव पड़ता है पलिया गांव झांसी उत्तर प्रदेश ठीक है तो झांसी के पास ये जाकर के यहां पर एक धसान नदी होती है जो इसमें मिल जाती है धसान ठीक है यहां पे धसान तो जामनी रिवर धसान रिवर और इसकी बीना रिवर जो है ट्रिब्यूटरीज है इसमें अगर हम देखें तो</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:55:03</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>इसके अन्य नाम की अगर हम बात करें तो अन्य नाम नाम में यहां लिख देता हूं वहा जगह नहीं है अदर नेम तो देखिए लाइफ लाइन ऑफ बुंदेलखंड लाइफ लाइन ऑफ बुंदेलखंड तो बुंदेलखंड की जीवन रेखा बुंदेलखंड ठीक है बुंदेलखंड की जीवन रेखा बुंदेलखंड की जीवन रेखा बुंदेलखंड की जीवन रेखा इसके अलावा आपको और भी नाम इसके पता है जैसे वेत्रवती वेत्रवती तरावती भी इसका एक नाम है ठीक है तरावती नदी या बेतवा के नाम से इसको जाना जाता है मध्य प्रदेश की पांचवी सबसे लंबी नदी है मध्य प्रदेश की मध्य प्रदेश की पांचवी पांचवी सबसे लंबी नदी है</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:55:57</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>ठीक है सबसे लंबी नदी है ठीक है नेक्स्ट पॉइंट अगर हम बात करें तो यह मध्य प्रदेश की गंगा मध्य प्रदेश की गंगा प्रदूषण के आधार पर न द बेसिस ऑफ पोल्यूशन प्रदूषण के आधार पर ऑन द बेसिस ऑफ पोल्यूशन अदर वाइज नर्मदा हमारी मध्य प्रदेश की गंगा है ठीक है तो इसको भी आपको नोट डाउन कर लेना है ठीक है तो इतनी चीजें आपको बेतवा में सबसे पहले ध्यान रखनी है कि विंध्यांचल रेंज कुमरा गांव कुमरा विलेज रासन से ये ओरिजनेट होती है हमीरपुर उत्तर प्रदेश में जाके य मिल जाती है किससे मिलती है तो ये चली आ रही है यहां से यमुना रिवर ठीक है तो यमुना नदी लिख लेना</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:56:55</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>आप यमुना रिवर यमुना रिवर से मिलती है यमुना रिवर ठीक है यमुना रिवर से ये मिल जाती है और इसका फ्लो आपको बता ही दिया मैंने कि नॉर्थ डायरेक्शन की ओर है इस प्रकार से ठीक है कोई समस्या हां बिल्कुल केशव दास ने रसिक प्रिया जो बनाई है वो इसके ही तट पर बैठ कर के जो ये तट है आप देखेंगे यहां पर ही बनाई है ये है ओरछा धाम है ना ओरछा ओरछा की अगर हम बात करें तो ओरछा है ये ओरछा और ओरछा में अगर हम देखें तो एक घाट है जो कि व्यापम ने तो पूछा था हो सकता है आपसे पूछे तो अब ये पीएससी से अगर पूछा तो एक घाट है बेतवा का उसका नाम है कंचना घाट या</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:57:37</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>कंचन घाट या कंचना घाट ऐसे घाट लिखा रहता है कंचना घाट आप लिख लेना कंचना घाट है यहां पर केशव दास ने केशव दास ने केशव दास ये केशवदास कौन है रीतिकालीन कवियों में जिनको गिना जाता है वो क्या है बंदेला वंश के यहां पर कवि हैं तो केशव दास ने इसी नदी के किनारे रसिक प्रिया लिखा है और यह सारे जो टेंपल्स है यह सारे जो टेंपल्स है चाहे उसमें लक्ष्मी नारायण मंदिर हो चतुर्भुज मंदिर हो चतुर्भुज मंदिर हो या फिर हम बात करें राम राजा मंदिर हो या फिर हम बात करें राम राजा मंदिर हो तो यह भी इसके बैंक पर है राम राजा मंदिर रछा</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:58:28</span> <span class="mini-tag">Betwa River</span></summary>
+        <p>जहां पर एकमात्र मंदिर जहां पुलिस द्वारा सलामी दी जाती है भगवान राम को राजा की तरह वहां पर माना जाता है ठीक है तो यह भी आपको ध्यान रखना है यह भी आपको ध्यान रखना है बिल्कुल कठिन काव्य का प्रेत बिल्कुल हां बहुत बढ़िया अंजना सुपर्ब है ना ऐसे आंसर्स देने हैं आपको ठीक है तो यहां पर अब हमारी कंप्लीट ई आज की सारी नदियां जिनमें हमने देखा क्या सबसे पहले चंबल सोन प्राप्ती बेतवा इन रिवर्स को हमने देखा आप देख सकते हैं यहां पर हमने चंबल रिवर को अच्छे से कवर किया है फिर आप देखेंगे कि ये भगड़ वगैरह सोन नदी दिखाई है मैंने</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:59:16</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>सारे पॉइंट इसमें कवर है वेतवा प्राप्ति ठीक है इन सबके तो आपको कहीं भी किसी प्रकार की अब कोई समस्या नहीं होने वाली आपके क्वेश्चंस य से बाहर नहीं जाएंगे और क्या आप इससे ज्यादा पढ़ेंगे ठीक है तो यहां पर अब यह सेशन हम करेंगे समाप्त और फिर अपन नेक्स्ट यहां पर फिर हम नेक्स्ट यहां पर अगले सेशन को नदियों के जो बची नदियां है वो अन्य लेक्चर या अगले लेक्चर में अपन कंप्लीट करेंगे जैसे वेन गंगा वर्धा सबको अपन मैप के थ्रू पढ़ने वाले हैं और मैक्सिमम इंफॉर्मेशन के साथ ठीक है तो कैसी लगी क्लास जरूर जरूर हमें बताएं आपको बेसिक</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">00:59:58</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>काम जो मैं देके जाता हूं जैसे अब बहुत अच्छा लगा लोग यहां पर हमारे प्रयासों को सरा रहे हैं तो जो भी लाइव है या जो बाद में देखते हैं इतने सारे लोग देखते हैं इतना लाभ उठाते हैं तो एक लाइक तो अगर अच्छी लगती है क्लास और वाकई आपने खुद से पूछना कि हां है या नहीं है दमदार उसके बाद लाइक करना ठीक है शेयर कर देना कॉपी करके लिंक को जहां भी आपके ग्रुप्स हो जो भी हो हम लोगों के मोटिवेशन और हमारी टीम के लिए मोटिवेशन के लिए आप को ये सारी चीजें निरंतर करते रहना है जिससे हम लोगों को ये पता रहे कि बच्चे बिल्कुल पसंद कर</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">01:00:31</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>रहे हैं तो इसको बिल्कुल कंटिन्यू चलाना चाहिए तो जैसे हमेशा की तरह आप सभी ने अब निरंतर धुआधार तरीके से कमेंट भर देना है कमेंट बॉक्स और कोई आप लोग चाहते हैं सब्जेक्ट तो उसका नाम वहां पे भर दो तो लोगों को लगता है यार उससे कि हां ये जरूरत है बच्चों की तो आप कमेंट बॉक्स में मेरी क्लास का रिव्यू जरूर दें चाहे आप बाद में क्लास देखें रिकॉर्डेड है ना क्योंकि बहुत सारे अपने एमपी एग्जाम वाला के एप्लीकेशन के बच्चे अभी दूसरी जगह भी लाइव होंगे कुछ यहां आ भी गए जबरदस्ती लेकिन वो क्या है जबरदस्ती इन द सेंस कि उनको लगा कि नहीं नहीं ये लेक्चर ले लेते</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">01:01:05</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>हैं तो आप सभी वो बाद में भी देखते हैं तो कोई दिक्कत नहीं बाद में देखो आप चाहे उतने टाइम देखो उनको भी ये सारे काम करने हैं रिव्यू जरूर देना कि क्लास कैसी लगी इंफॉर्मेशन एक साथ प्रॉपर वे में ऑथेंटिक तरीके से मिली है या नहीं ठीक है तो ये आपको कमेंट बॉक्स में हमें जरूर बताना है अभी आप लाइव चैट में है कमेंट बॉक्स अलग से है ठीक है तो यहां पे कमेंट करके हमें बताएं इसके अलावा डेली 8 पीएम पर ये लगातार सेशन चल रहा है तब तक चलेगा जब तक खत्म नहीं होगा सारा सब कुछ और जब तक जब तक आप सभी साथ बने रहेंगे तब तक ये डेली</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">01:01:41</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>लाइव होगी एक चीज मैं और बता देता हूं कि शाम को 7:00 बजे से जो है अब इंग्लिश की धुआधार क्लास चलने वाली है हमारी वंडर वुमन जो है वो आप सबके बीच में आ चुकी हैं तो वो अब डेली 7 पीएम पर लाइव क्लास लेंगी तो ज्यादा से ज्यादा लोग जुड़े और उनको भी मोटिवेट करें उनकी पहली क्लास है तो उनको भी लगना चाहिए कि बिल्कुल मैं सही जगह आई हूं और मैं यहां पर अब बच्चों को जितना नॉलेज है बेस्ट नॉलेज के साथ इंग्लिश सिखा के जाऊंगी है ना क्योंकि इंग्लिश अपने साइड के लोगों को या अपने मध्य प्रदेश के लोग थोड़े से इंग्लिश से भागते हैं है ना</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">01:02:15</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>तो आप भरोसा मानिए एक बार आप सभी आ कर के जरूर देखिए आपको खुद ब खुद समझ में आ जाएगा तो आप 7:00 बजे शाम को भी मैडम की क्लास में जरूर पधारें ठीक है चलिए तो अब हम यहां पर आपका सेशन समाप्त करते हैं बेसिक क्वेश्चन के जो यह मैंने बेसिक क्वेश्चन क्या मैंने जो बेसिक चीजें बोल द है इनके कमेंट्स आपको जरूर करना है ठीक है अच्छा लगता है मुझे मैं देखता हूं एक एक कमेंट देखता हूं कि क्या बोला बच्चों ने क्या नहीं ठीक है तो प्रवीण जी पीहू जी प्रकाश पूजा प्रतीक्षा आकृति चिटी अर्जुन राधु पप्पू योगेश केसरी मल ठीक है सभी लोगों का बहुत-बहुत</p>
+      </details>
+    
+
+      <details class="flow-chunk">
+        <summary><span class="time">01:03:03</span> <span class="mini-tag">Closing / revision instruction</span></summary>
+        <p>शुक्रिया सभी का धन्यवाद स्वाती जी भारतीय सुमित भाई गुंजन प्रतीक्षा अमर शीतल प्रीति शर्मा कितने दिन से क्लास चल रही है तो प्रीति जी क्लास चल रही है न दिन हो गए पूरे प्लेलिस्ट में सारे वीडियो एक लाइन से बिल्कुल स्टार्टिंग से आज तक आप प्लेलिस्ट खोलो मेरी जाकर के पूरे वीडियोस पढ़े वहां पर एकदम इसी तरीके के फुल डिस्क्रिप्शन के साथ ठीक है चलिए शता अमर विनीश शीतल निशु अंजना चलिए धन्यवाद अब हम मिलते हैं अगले लेक्चर में कल 8 बजे शेयर लाइक और कमेंट करना बिल्कुल ना भूले जाने से पहले ठीक है चलिए धन्यवाद</p>
+      </details>
+    
+      </section>
+
+      <footer class="footer">
+        <p><b>Upcoming topics noted by teacher:</b> Dams and waterfalls will be covered separately in another class.</p>
+        <p class="print-note">Print mode: accordions are intended to be readable as expanded content.</p>
+        <p>Revision tip: Pehle overview table याद करो, phir हर river ke origin–direction–tributaries–confluence को बोलकर revise करो.</p>
+      </footer>
+    </main>
+
+    <aside class="map-ref">
+      <h2>🗺️ Sticky MP Map</h2>
+      <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" loading="eager" fetchpriority="high" decoding="async" alt="Sticky reference map of Madhya Pradesh">
+      <p>Use this while reading origin, district, boundary aur confluence clues.</p>
+      <div class="fact">Order: Chambal → Son → Tapti → Betwa</div>
+    </aside>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('revisionTheme') || 'dark';
+    root.setAttribute('data-theme', savedTheme);
+
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', current);
+      localStorage.setItem('revisionTheme', current);
+    });
+
+    document.getElementById('jumpSelect').addEventListener('change', (e) => {
+      const target = document.querySelector(e.target.value);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('expandBtn').addEventListener('click', () => {
+      const details = [...document.querySelectorAll('details')];
+      const shouldOpen = details.some(d => !d.open);
+      details.forEach(d => d.open = shouldOpen);
+      document.getElementById('expandBtn').textContent = shouldOpen ? '📕 Collapse All' : '📖 Expand All';
+    });
+
+    const fill = document.getElementById('progressFill');
+    function updateProgress() {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      fill.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const checks = [...document.querySelectorAll('input[type="checkbox"][data-check]')];
+    const counter = document.getElementById('checkCounter');
+    function refreshChecks() {
+      let done = 0;
+      checks.forEach(c => {
+        const key = 'mpgk9_' + c.dataset.check;
+        c.checked = localStorage.getItem(key) === '1';
+        if (c.checked) done++;
+      });
+      counter.textContent = done + ' / ' + checks.length + ' completed';
+    }
+    checks.forEach(c => {
+      c.addEventListener('change', () => {
+        localStorage.setItem('mpgk9_' + c.dataset.check, c.checked ? '1' : '0');
+        refreshChecks();
+      });
+    });
+    refreshChecks();
+
+    // Image reliability script: preload, retry Commons Special:FilePath fallback, then show fallback link.
+    function preloadImage(img) {
+      const primary = img.getAttribute('src');
+      const fallback = img.dataset.fallback;
+      const tester = new Image();
+      tester.decoding = 'async';
+      tester.onload = () => {};
+      tester.onerror = () => {
+        if (fallback && img.src !== fallback) {
+          img.src = fallback;
+          const second = new Image();
+          second.onerror = () => showFallback(img, fallback);
+          second.src = fallback;
+        } else {
+          showFallback(img, primary);
+        }
+      };
+      tester.src = primary;
+    }
+    function showFallback(img, url) {
+      let box = img.parentElement.querySelector('.img-fallback');
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'img-fallback';
+        img.parentElement.appendChild(box);
+      }
+      box.innerHTML = '⚠️ Image did not load. <a href="' + url + '" target="_blank" rel="noopener">Open source image</a>';
+      box.style.display = 'block';
+    }
+    document.querySelectorAll('img').forEach(preloadImage);
+
+    const sections = [...document.querySelectorAll('main section[id], header[id]')];
+    const links = [...document.querySelectorAll('.toc a[href^="#"]')];
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+    sections.forEach(s => obs.observe(s));
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
