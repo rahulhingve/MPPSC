@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बैगा जनजाति (Baiga Tribe) — MPPSC Paper-2 Revision | Class 13</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0f1a;
+  --card-bg: #1a1a2e;
+  --text: #e8e8f0;
+  --text-muted: #a0a0b8;
+  --accent-cyan: #00d4ff;
+  --accent-orange: #ff6b35;
+  --accent-green: #00ff88;
+  --accent-purple: #b388ff;
+  --accent-pink: #ff6b9d;
+  --accent-yellow: #ffd93d;
+  --border: #2a2a4a;
+  --card-radius: 16px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+[data-theme="light"] {
+  --bg: #f5f5fa;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #555570;
+  --border: #d0d0e0;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px 16px; }
+h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+h2 { font-size: 1.5rem; font-weight: 700; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+h3 { font-size: 1.2rem; font-weight: 600; margin: 20px 0 10px; }
+.header { text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--border); margin-bottom: 30px; }
+.header .badge { display: inline-block; background: var(--accent-cyan); color: #000; padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; }
+.header .subtitle { color: var(--text-muted); font-size: 1rem; }
+.progress-bar-container { background: var(--border); border-radius: 10px; height: 10px; margin-top: 16px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green)); border-radius: 10px; transition: width 0.5s; }
+.progress-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; }
+
+/* Theme Toggle */
+.theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 1000; background: var(--card-bg); border: 1px solid var(--border); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.3rem; box-shadow: var(--shadow); transition: all 0.3s; }
+.theme-toggle:hover { transform: scale(1.1); }
+
+/* Quick Nav */
+.quick-nav { position: fixed; top: 16px; left: 16px; z-index: 1000; }
+.quick-nav select { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; max-width: 200px; cursor: pointer; box-shadow: var(--shadow); }
+
+/* Cards */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+.card.accent-cyan { border-left: 4px solid var(--accent-cyan); }
+.card.accent-orange { border-left: 4px solid var(--accent-orange); }
+.card.accent-green { border-left: 4px solid var(--accent-green); }
+.card.accent-purple { border-left: 4px solid var(--accent-purple); }
+.card.accent-pink { border-left: 4px solid var(--accent-pink); }
+.card.accent-yellow { border-left: 4px solid var(--accent-yellow); }
+
+/* Exam Hot */
+.exam-hot { background: linear-gradient(135deg, #2d1b00, #1a1a2e); border: 1px solid var(--accent-orange); border-radius: var(--card-radius); padding: 16px 20px; margin: 12px 0; }
+[data-theme="light"] .exam-hot { background: linear-gradient(135deg, #fff3e0, #ffffff); }
+
+/* Link Story */
+.link-story { background: linear-gradient(135deg, #1a1a3e, #1e2a4a); border: 1px solid var(--accent-purple); border-radius: var(--card-radius); padding: 16px 20px; margin: 12px 0; }
+[data-theme="light"] .link-story { background: linear-gradient(135deg, #ede7f6, #e8eaf6); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+th, td { padding: 12px 14px; text-align: left; border: 1px solid var(--border); }
+th { background: var(--accent-cyan); color: #000; font-weight: 600; }
+td { background: var(--card-bg); }
+
+/* Collapsible */
+.collapsible { cursor: pointer; padding: 14px 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; font-weight: 600; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+.collapsible:hover { background: var(--border); }
+.collapsible::after { content: '▼'; font-size: 0.8rem; transition: transform 0.3s; }
+.collapsible.active::after { transform: rotate(180deg); }
+.collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 20px; }
+.collapsible-content.show { max-height: 2000px; padding: 14px 20px; }
+
+/* Quiz */
+.quiz-q { margin: 12px 0; padding: 14px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; }
+.quiz-q .question { font-weight: 600; margin-bottom: 8px; }
+.quiz-q .answer { display: none; padding: 10px; background: rgba(0,212,255,0.1); border-radius: 8px; margin-top: 8px; border-left: 3px solid var(--accent-green); }
+.quiz-q .reveal-btn { background: var(--accent-cyan); color: #000; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; }
+.quiz-q .reveal-btn:hover { opacity: 0.8; }
+
+/* Checklist */
+.checklist label { display: flex; align-items: center; gap: 10px; padding: 8px 0; cursor: pointer; font-size: 0.95rem; }
+.checklist input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--accent-green); }
+.checklist .checked { text-decoration: line-through; color: var(--text-muted); }
+
+/* TOC */
+.toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 20px; margin-bottom: 30px; }
+.toc a { display: block; padding: 6px 0; color: var(--accent-cyan); text-decoration: none; font-size: 0.95rem; }
+.toc a:hover { color: var(--accent-green); }
+
+/* Image */
+.img-block { text-align: center; margin: 16px 0; }
+.img-block img { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
+.img-block .caption { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; }
+
+/* Print */
+@media print {
+  body { background: #fff; color: #000; font-size: 14px; }
+  .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+  .theme-toggle, .quick-nav { display: none; }
+  .collapsible-content { max-height: none !important; display: block !important; }
+  .exam-hot, .link-story { border: 1px solid #333; }
+  th { background: #ddd; color: #000; }
+}
+@media (max-width: 600px) {
+  .container { padding: 12px 10px; }
+  h1 { font-size: 1.5rem; }
+  .card { padding: 16px; }
+  .quick-nav select { max-width: 150px; font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+<!-- Theme Toggle -->
+<div class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">🌙</div>
+
+<!-- Quick Navigation -->
+<div class="quick-nav">
+<select onchange="jumpTo(this.value)">
+<option value="">⚡ Jump to Topic</option>
+<option value="sec-revision">📝 पिछली कक्षा Revision</option>
+<option value="sec-constitutional">📜 संवैधानिक प्रावधान</option>
+<option value="sec-pyq">🎯 Previous Year Questions</option>
+<option value="sec-basic">📖 बैगा — सामान्य जानकारी</option>
+<option value="sec-pvtg">⭐ अति विशेष पिछड़ी जनजाति</option>
+<option value="sec-origin">🌿 उत्पत्ति की कथा</option>
+<option value="sec-meaning">🔑 बैगा शब्द का अर्थ</option>
+<option value="sec-location">📍 भौगोलिक वितरण</option>
+<option value="sec-vikas">🏛️ विकास अभिकरण</option>
+<option value="sec-subtribes">👥 उपजातियां</option>
+<option value="sec-social">🏘️ सामाजिक व्यवस्था</option>
+<option value="sec-dress">👗 वस्त्र एवं आभूषण</option>
+<option value="sec-food">🍲 खानपान</option>
+<option value="sec-religion">🙏 धार्मिक विशेषताएं</option>
+<option value="sec-literature">📚 साहित्य</option>
+<option value="sec-fullforms">📋 Full Forms Master</option>
+<option value="sec-hotfacts">🔥 Exam Hot Facts</option>
+<option value="sec-checklist">✅ Master Checklist</option>
+</select>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+<div class="badge">MPPSC Paper-2 | MP जनजातियां</div>
+<h1>🏹 बैगा जनजाति (Baiga Tribe)</h1>
+<p class="subtitle">Class 13 — मध्य प्रदेश की अति विशेष पिछड़ी जनजाति</p>
+<p class="subtitle" style="margin-top:6px;">📚 Topics Covered: 14 | 🔥 Exam Hot Points: 15+</p>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+<p class="progress-text" id="progressText">Revision Progress: 0%</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc" id="toc">
+<h3>📑 Table of Contents</h3>
+<a href="#sec-revision">1. 📝 पिछली कक्षा Revision (भील + गोंड)</a>
+<a href="#sec-constitutional">2. 📜 संवैधानिक प्रावधान — Quick Recall</a>
+<a href="#sec-pyq">3. 🎯 Previous Year Questions (बैगा)</a>
+<a href="#sec-basic">4. 📖 बैगा जनजाति — सामान्य जानकारी</a>
+<a href="#sec-pvtg">5. ⭐ अति विशेष पिछड़ी जनजाति (PVTG)</a>
+<a href="#sec-origin">6. 🌿 उत्पत्ति की कथा</a>
+<a href="#sec-meaning">7. 🔑 बैगा शब्द का अर्थ</a>
+<a href="#sec-location">8. 📍 भौगोलिक वितरण</a>
+<a href="#sec-vikas">9. 🏛️ विकास अभिकरण</a>
+<a href="#sec-subtribes">10. 👥 उपजातियां</a>
+<a href="#sec-social">11. 🏘️ सामाजिक व्यवस्था</a>
+<a href="#sec-dress">12. 👗 वस्त्र एवं आभूषण</a>
+<a href="#sec-food">13. 🍲 खानपान</a>
+<a href="#sec-religion">14. 🙏 धार्मिक विशेषताएं</a>
+<a href="#sec-literature">15. 📚 साहित्य</a>
+<a href="#sec-fullforms">📋 Full Forms Master Table</a>
+<a href="#sec-hotfacts">🔥 Exam Hot Facts</a>
+<a href="#sec-checklist">✅ Master Revision Checklist</a>
+</div>
+
+<!-- SECTION 1: Previous Class Revision -->
+<section id="sec-revision">
+<h2>📝 1. पिछली कक्षा Revision (भील + गोंड)</h2>
+
+<div class="card accent-cyan">
+<h3>🏹 भील जनजाति — Quick Recap</h3>
+<ul>
+<li>MP की <strong>सबसे बड़ी जनजाति</strong></li>
+<li><strong>उपजातियां:</strong> बिलाला, रतिया, पटरिया, गास, उमड़ी, तड़वी भील</li>
+<li><strong>प्रमुख पर्व:</strong> भगोरिया पर्व (फेमस)</li>
+<li><strong>प्रमुख नृत्य:</strong> गहर नृत्य</li>
+<li><strong>हलवारा:</strong> दूसरे की सहायता करने की परंपरा</li>
+<li><strong>विवाह मध्यस्थ:</strong> भांज गड़िया</li>
+<li><strong>वधु मूल्य:</strong> दापालन (दहेज देना)</li>
+<li><strong>प्रमुख देवता:</strong> राजा पंथा</li>
+<li><strong>गांव:</strong> फाल्या | बड़ा गांव: पाल | गांव प्रमुख: गमेती</li>
+<li><strong>मुख्य भोजन:</strong> राबड़ी</li>
+</ul>
+</div>
+
+<div class="card accent-green">
+<h3>🐘 गोंड जनजाति — Quick Recap</h3>
+<ul>
+<li>MP की <strong>दूसरी सबसे बड़ी जनजाति</strong></li>
+<li><strong>उपजातियां:</strong> अगरिया, प्रधान, ओजा, सोलस, कोयला, भूतास, नागरे</li>
+<li><strong>प्रमुख देवता:</strong> बड़ा देव (सवारी: सफेद घोड़ा)</li>
+<li><strong>ग्राम देवता:</strong> ठाकुर देव (गांव की रक्षा)</li>
+<li><strong>वधु मूल्य:</strong> दूध बंद</li>
+<li><strong>विवाह:</strong> लम सेना विवाह</li>
+<li><strong>पर्व:</strong> मड़ई (नृत्य: बाल), लारु काज (नारायण देव के सम्मान में), नवा खानी</li>
+<li><strong>गांव प्रमुख:</strong> मुकदम (सहायक: दीवान)</li>
+<li><strong>मृत्यु गीत:</strong> घोटुल पाटा</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 3: Previous Year Questions -->
+<section id="sec-pyq">
+<h2>🎯 3. Previous Year Questions (बैगा जनजाति)</h2>
+
+<div class="card accent-orange">
+<h3>📋 PYQ Pattern Analysis</h3>
+<p>बैगा जनजाति से Exam में ये topics बार-बार आते हैं:</p>
+<ul>
+<li>✅ उपजातियां (कौन सी बैगा की है / नहीं है)</li>
+<li>✅ साहित्य (द बैगा पुस्तक — लेखक)</li>
+<li>✅ प्रमुख देवता (सृष्टि निर्माता)</li>
+<li>✅ विकास अभिकरण (कहां है / नहीं है)</li>
+</ul>
+</div>
+
+<div class="quiz-q">
+<p class="question">Q1 (DSC 2021): निम्नलिखित में से कौन सी जनजाति बैगा जनजाति की उपजाति <strong>नहीं</strong> है?<br>A) बिजवार B) काटमैना C) नरोदिया D) बड़या</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">✅ <strong>D) बड़या</strong> — बड़या कोरकू जनजाति की उपजाति है, बैगा की नहीं!</div>
+</div>
+
+<div class="quiz-q">
+<p class="question">Q2 (PYQ): "द बैगा" पुस्तक के लेखक कौन हैं?<br>A) बेरियर एल्विन B) हरिश्चंद्र उप्रेती C) नदीम हसन D) टी.वी. नायक</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">✅ <strong>A) बेरियर एल्विन</strong> — 1939 में लिखी। इन्होंने "द मुड़िया एंड देयर घोटुल" (1947) भी लिखी।</div>
+</div>
+
+<div class="quiz-q">
+<p class="question">Q3 (PYQ): बैगा परंपरा के अनुसार सृष्टि के निर्माता कौन हैं?<br>A) इंद्रदेव B) ठाकुर देव C) सोमदेव D) लिंगा देव</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">✅ <strong>B) ठाकुर देव</strong> — ठाकुर देव ने कौवे को भेजा → पृथ्वी बनाई। लिंगा देव = गोंड जनजाति की उत्पत्ति।</div>
+</div>
+
+<div class="quiz-q">
+<p class="question">Q4 (MPPSC Pre 2021): निम्नलिखित में से किस जिले में बैगा विकास अभिकरण <strong>नहीं</strong> है?<br>A) मंडला B) बालाघाट C) शहडोल D) रायसेन</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">✅ <strong>D) रायसेन</strong> — बैगा विकास अभिकरण: बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर (6 जगह)</div>
+</div>
+
+<div class="quiz-q">
+<p class="question">Q5 (MPPSC Pre): बूढ़ा देव मध्य प्रदेश की किस जनजाति के प्रमुख देवता हैं?<br>A) गोंड B) बैगा C) भारिया D) शहरिया</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">✅ <strong>B) बैगा</strong> — बूढ़ा देव = बैगा जनजाति के प्रमुख देवता। साल/साज वृक्ष के नीचे निवास।</div>
+</div>
+</section>
+
+<!-- SECTION 4: Basic Info -->
+<section id="sec-basic">
+<h2>📖 4. बैगा जनजाति — सामान्य जानकारी</h2>
+
+<div class="card accent-cyan">
+<h3>📊 Key Facts at a Glance</h3>
+<table>
+<tr><th>Parameter</th><th>Detail</th></tr>
+<tr><td>Rank (MP में)</td><td><strong>छठी (6th)</strong> सबसे बड़ी जनजाति</td></tr>
+<tr><td>Category</td><td>अति विशेष पिछड़ी जनजाति (PVTG)</td></tr>
+<tr><td>जनसंख्या</td><td>~4,15,000 (MP कुल जनजाति का 2.71%)</td></tr>
+<tr><td>MP कुल जनजाति जनसंख्या</td><td>1,53,16,784</td></tr>
+<tr><td>प्रजाति (Race)</td><td>प्रोटो-ऑस्ट्रेलॉइड (Proto-Australoid) / कुछ विद्वान: द्रविडियन परिवार</td></tr>
+<tr><td>क्षेत्र</td><td>दक्षिण-पूर्वी MP (मंडला, डिंडोरी, बालाघाट, शहडोल, उमरिया, अनूपपुर)</td></tr>
+<tr><td>संबंध</td><td>गोंड जनजाति की उपजाति मानी जाती है (भाई मानते हैं)</td></tr>
+<tr><td>उत्पत्ति</td><td>नागा बैगा + नागी बैगा → बैगा + गोंड</td></tr>
+<tr><td>अर्थ</td><td>पुरोहित / वैद्य / ओझा</td></tr>
+<tr><td>स्वयं को कहते हैं</td><td>जंगल का राजा / प्रकृति पुत्र</td></tr>
+<tr><td>विशेषता</td><td>औषधि ज्ञान (जड़ी-बूटी), भूमि पर हल नहीं चलाते</td></tr>
+</table>
+</div>
+
+<div class="card accent-green">
+<h3>📈 MP जनजाति Ranking (जनसंख्या अनुसार)</h3>
+<table>
+<tr><th>Rank</th><th>जनजाति</th></tr>
+<tr><td>1st</td><td>भील</td></tr>
+<tr><td>2nd</td><td>गोंड</td></tr>
+<tr><td>3rd</td><td>कोल</td></tr>
+<tr><td>4th</td><td>कोरकू</td></tr>
+<tr><td>5th</td><td>शहरिया</td></tr>
+<tr><td>6th</td><td><strong>बैगा</strong> 🎯</td></tr>
+</table>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — ऐसे याद करो (Ranking)</h3>
+<p>🧠 <strong>"भील गोंड कोल कोरकू शहरिया बैगा"</strong></p>
+<p>→ <em>"भीलों ने गोंड को कोल (गोद) में उठाया, कोरकू नाव में बिठाया, शहर से बैग लेकर निकले"</em></p>
+<p>💡 बैगा = 6th = बैग + छह (6 जैसी हॉकी स्टिक बैग में रखी)</p>
+</div>
+
+<div class="img-block">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Baiga_-_Baiga_Chak%2C_Dindori.jpg/640px-Baiga_-_Baiga_Chak%2C_Dindori.jpg" alt="Baiga tribal people in Dindori, Madhya Pradesh" decoding="async" loading="eager" fetchpriority="high">
+<p class="caption">Image: Baiga tribal people, Dindori MP | Wikimedia Commons, CC BY-SA 4.0</p>
+</div>
+</section>
+
+<!-- SECTION 5: PVTG -->
+<section id="sec-pvtg">
+<h2>⭐ 5. अति विशेष पिछड़ी जनजाति (PVTG)</h2>
+
+<div class="card accent-orange">
+<h3>📌 Particularly Vulnerable Tribal Groups (PVTGs)</h3>
+<ul>
+<li>🏛️ <strong>ढेबर आयोग (1960)</strong> — भारत सरकार द्वारा गठित (Art. 339)</li>
+<li>इसी आयोग की अनुशंसा पर कुछ जनजातियों को PVTG घोषित किया गया</li>
+<li>भारत में कुल <strong>75 PVTG</strong> जनजातियां हैं</li>
+<li>मध्य प्रदेश में <strong>3 PVTG</strong> जनजातियां:</li>
+</ul>
+<table>
+<tr><th>जनजाति</th><th>विकास अभिकरण</th><th>स्थान</th></tr>
+<tr><td><strong>बैगा</strong></td><td>6 अभिकरण</td><td>बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</td></tr>
+<tr><td><strong>शहरिया</strong></td><td>4 अभिकरण</td><td>ग्वालियर, शिवपुरी, श्योपुर, गुना</td></tr>
+<tr><td><strong>भारिया</strong></td><td>1 अभिकरण</td><td>छिंदवाड़ा (तामिया)</td></tr>
+</table>
+<p style="margin-top:12px;">📊 कुल <strong>11 विकास अभिकरण</strong> → <strong>15 जिलों</strong> में विस्तार</p>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> बैगा + भारिया + शहरिया = MP की 3 PVTG | ढेबर आयोग 1960 | भारत में 75 PVTG</p>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — बैगा भारिया शहरिया याद करो</h3>
+<p>🧠 <strong>Lockdown 2020-21:</strong> "बैग (बैगा) भर-भर के (भारिया) लोग शहर (शहरिया) से गांव जा रहे थे"</p>
+<p>→ बैगा → भारिया → शहरिया = 3 PVTG ✅</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>🔍 PVTG की पहचान कैसे?</h3>
+<ul>
+<li>रहन-सहन बहुत पिछड़ा</li>
+<li>समाज की मुख्य धारा से बहुत दूर</li>
+<li>स्वास्थ्य सेवाएं आसानी से नहीं पहुंचतीं</li>
+<li>राशन आसानी से नहीं पहुंचता</li>
+<li>जंगलों में बहुत अंदर रहना पसंद करते हैं</li>
+<li>साल वृक्ष की अधिकता वाले क्षेत्रों में निवास</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 6: Origin -->
+<section id="sec-origin">
+<h2>🌿 6. उत्पत्ति की कथा (Origin Story)</h2>
+
+<div class="card accent-purple">
+<h3>📜 रसेल और हीरालाल के अनुसार</h3>
+<ul>
+<li><strong>नागा बैगा</strong> (पुरुष) + <strong>नागी बैगा</strong> (स्त्री) = आदि युगल</li>
+<li>इनसे दो संतानें हुईं:</li>
+<li>→ एक संतान = <strong>बैगा</strong></li>
+<li>→ दूसरी संतान = <strong>गोंड</strong></li>
+<li>इसीलिए बैगा और गोंड एक-दूसरे को <strong>भाई</strong> मानते हैं</li>
+<li>भाईचारे का पर्व: <strong>भग बंदी पर्व</strong> (रक्षाबंधन जैसा)</li>
+</ul>
+</div>
+
+<div class="card accent-green">
+<h3>🐦 कौवा कुंवर की कथा</h3>
+<ul>
+<li>नागा बैगा ने <strong>कौवा कुंवर</strong> को धरती पर भेजा</li>
+<li>कौवा कुंवर ने जीवन की शुरुआत की</li>
+<li>इसीलिए बैगा जनजाति <strong>कौवे को बहुत महत्वपूर्ण</strong> मानती है</li>
+</ul>
+</div>
+
+<div class="card accent-orange">
+<h3>🌍 भूमिका (भूमि पुत्र) की अवधारणा</h3>
+<ul>
+<li>नागा बैगा ने ही <strong>धरती को बनाया</strong> → इसलिए इन्हें <strong>"भूमिका"</strong> कहा जाता है</li>
+<li>बैगा लोग धरती को <strong>अपनी बेटी</strong> की तरह मानते हैं</li>
+<li>⚡ इसीलिए <strong>भूमि पर हल नहीं चलाते</strong> (बेटी कटेगी!)</li>
+<li>यही कारण है कि ये <strong>झूम कृषि</strong> (बेवार/दहिया) करते हैं — हल नहीं चलाते</li>
+</ul>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> बैगा भूमि पर हल नहीं चलाते क्योंकि धरती को बेटी मानते हैं → इसलिए झूम कृषि करते हैं!</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>📚 अन्य विद्वानों के मत</h3>
+<ul>
+<li>कुछ विद्वान: बैगा की उत्पत्ति <strong>मुंडा / कोल</strong> जनजाति से हुई</li>
+<li>ये मध्य उच्च पठार के आसपास पाए जाते हैं</li>
+<li><strong>बेरियर एल्विन:</strong> बैगा = जादूगर / वैद्य / आदि स्वामी</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 7: Meaning -->
+<section id="sec-meaning">
+<h2>🔑 7. बैगा शब्द का अर्थ</h2>
+
+<div class="card accent-yellow">
+<h3>📝 बैगा = ?</h3>
+<table>
+<tr><th>अर्थ</th><th>Explanation</th></tr>
+<tr><td><strong>पुरोहित</strong></td><td>धार्मिक कार्य करने वाला</td></tr>
+<tr><td><strong>वैद्य</strong></td><td>जड़ी-बूटियों से इलाज करने वाला</td></tr>
+<tr><td><strong>ओझा</strong></td><td>तांत्रिक/जादूगर</td></tr>
+</table>
+<p style="margin-top:12px;">💊 बैगा लोगों को जंगल की हर जड़ी-बूटी की जानकारी — बांझपन, बीमारी, सब का इलाज करते हैं</p>
+</div>
+
+<div class="card accent-green">
+<h3>👑 स्वयं को क्या कहते हैं?</h3>
+<ul>
+<li>🌳 <strong>जंगल का राजा</strong> (King of the Forest)</li>
+<li>🌿 <strong>प्रकृति पुत्र</strong> (Son of Nature)</li>
+</ul>
+<p>→ क्योंकि जंगल की एक-एक जड़ी-बूटी और औषधि का ज्ञान है इन्हें</p>
+</div>
+
+<div class="card accent-purple">
+<h3>📖 बेरियर एल्विन के अनुसार (पुस्तक "द बैगा" में)</h3>
+<ul>
+<li>बैगा = <strong>जादूगर</strong> (Magician)</li>
+<li>बैगा = <strong>वैद्य</strong> (Healer)</li>
+<li>बैगा = <strong>आदि स्वामी</strong> (Original Master — आदिकाल से इस क्षेत्र में बसे)</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 8: Location -->
+<section id="sec-location">
+<h2>📍 8. भौगोलिक वितरण (Geographical Distribution)</h2>
+
+<div class="card accent-cyan">
+<h3>🗺️ कहां पाई जाती है?</h3>
+<ul>
+<li>मध्य प्रदेश का <strong>दक्षिण-पूर्वी भाग</strong></li>
+<li>जहां गोंड जनजाति रहती है, वहीं बैगा भी (भाई मानते हैं)</li>
+<li><strong>सर्वाधिक जनसंख्या:</strong> मंडला</li>
+<li><strong>बैगा चक्र (सघनता):</strong> डिंडोरी (89 गांव)</li>
+<li>अन्य जिले: बालाघाट, शहडोल, उमरिया, अनूपपुर, सिवनी</li>
+</ul>
+</div>
+
+<div class="card accent-green">
+<h3>🌲 साल वृक्ष और बैगा का संबंध</h3>
+<ul>
+<li>बैगा लोग <strong>साल (Sal) वृक्ष</strong> की अधिकता वाले क्षेत्रों में रहते हैं</li>
+<li>साल वृक्ष का Scientific Name: <strong>Shorea Robusta</strong></li>
+<li>MP वन क्षेत्र: 94,689 वर्ग km → इसमें 4.2% साल वृक्ष</li>
+<li>साल वृक्ष: 125 cm से अधिक वर्षा + लाल-पीली मिट्टी में</li>
+<li>MP में सबसे ज्यादा: सागवान (1st) → साल (2nd)</li>
+<li>दक्षिण-पूर्वी MP में सबसे ज्यादा वर्षा + लाल-पीली मृदा → साल वृक्ष → बैगा जनजाति</li>
+</ul>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> बैगा सर्वाधिक = मंडला | बैगा चक्र = डिंडोरी (89 गांव) | साल वृक्ष = Shorea Robusta</p>
+</div>
+
+<div class="card accent-orange">
+<h3>🔍 मंडला vs डिंडोरी — Confusion Clear</h3>
+<table>
+<tr><th>Parameter</th><th>मंडला</th><th>डिंडोरी</th></tr>
+<tr><td>सर्वाधिक जनसंख्या</td><td>✅ हां</td><td>—</td></tr>
+<tr><td>बैगा चक्र (सघनता)</td><td>—</td><td>✅ 89 गांव</td></tr>
+<tr><td>साल वृक्ष आच्छादित</td><td>—</td><td>✅ पूरा क्षेत्र</td></tr>
+</table>
+</div>
+</section>
+
+<!-- SECTION 9: Vikas Abhikaran -->
+<section id="sec-vikas">
+<h2>🏛️ 9. विकास अभिकरण (Development Agencies)</h2>
+
+<div class="card accent-purple">
+<h3>📊 MP में PVTG विकास अभिकरण</h3>
+<table>
+<tr><th>जनजाति</th><th>संख्या</th><th>स्थान</th></tr>
+<tr><td>🏹 <strong>बैगा</strong></td><td><strong>6</strong></td><td>बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</td></tr>
+<tr><td>🏠 <strong>शहरिया</strong></td><td><strong>4</strong></td><td>ग्वालियर, श्योपुर, शिवपुरी, गुना</td></tr>
+<tr><td>⛰️ <strong>भारिया</strong></td><td><strong>1</strong></td><td>छिंदवाड़ा (तामिया)</td></tr>
+</table>
+<p style="margin-top:10px;"><strong>Total: 6 + 4 + 1 = 11 विकास अभिकरण → 15 जिलों में विस्तार</strong></p>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — बैगा विकास अभिकरण (6 जगह)</h3>
+<p>🧠 <strong>"बा-मं-डिं-श-उ-अ"</strong> = बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</p>
+<p>→ <em>"बामंडिंग शुआ" — बैग में डंडा लेकर शुआ (सुबह) उठे!"</em></p>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot (MPPSC 2021):</strong> रायसेन में बैगा विकास अभिकरण <strong>नहीं</strong> है! बस 6 जगह याद रखो।</p>
+</div>
+</section>
+
+<!-- SECTION 10: Sub-tribes -->
+<section id="sec-subtribes">
+<h2>👥 10. बैगा जनजाति की उपजातियां (Sub-tribes)</h2>
+
+<div class="card accent-orange">
+<h3>📋 इतिहासकार रसेल के अनुसार — 7+ उपजातियां</h3>
+<table>
+<tr><th>उपजाति</th><th>विशेषता</th></tr>
+<tr><td><strong>बिजवार</strong></td><td>🏆 सबसे विकसित रूप (पैसा + जमीन = जमींदार)</td></tr>
+<tr><td><strong>भरतिया</strong></td><td>अच्छी स्थिति में, भरण-पोषण करने वाला</td></tr>
+<tr><td><strong>नरोदिया</strong></td><td>—</td></tr>
+<tr><td><strong>रेमना</strong></td><td>—</td></tr>
+<tr><td><strong>काटमैना</strong></td><td>लकड़ी (काठ) का काम करने वाली</td></tr>
+<tr><td><strong>कोड़वा</strong></td><td>—</td></tr>
+<tr><td><strong>कुंडी गोड़वा</strong></td><td>—</td></tr>
+<tr><td><strong>गोंडमैना</strong></td><td>निम्नतम स्थिति</td></tr>
+<tr><td><strong>नाहर</strong></td><td>—</td></tr>
+<tr><td><strong>मुंडीपा</strong></td><td>सफाचट मूंछ रखने वाले</td></tr>
+</table>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — उपजातियां ऐसे याद करो!</h3>
+<p>🧠 <strong>कहानी:</strong> बैग लेकर स्कूल जा रहे थे → <strong>नाहर</strong> (नहर) में कूद गए → <strong>रेमना</strong> (रम पी ली) → डूबने लगे तो चिल्लाए "<strong>काटमैना</strong>" (काटो मुझे बाहर!) → भगवान (<strong>गोंडमैना</strong> = God) को याद किया → <strong>मुंडी</strong>पा फंस गई → बाहर निकाले तो कीचड़ से <strong>भर</strong> गया (<strong>भरतिया</strong>) → नौता खिलाया (<strong>नरोदिया</strong>) → घर वालों ने <strong>कोड़े</strong> मारे (<strong>कोड़वा</strong>) → <strong>कुंडी</strong> लगा दी (<strong>कुंडी गोड़वा</strong>) → अंत में बच गया, बीच पे चलेंगे (<strong>बिजवार</strong> = विकसित!)</p>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> बड़या = कोरकू की उपजाति (बैगा की नहीं!) | बिजवार = बैगा का सबसे विकसित रूप</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>⚠️ Confusion Alert — कोरकू vs बैगा</h3>
+<p><strong>बड़या</strong> → कोरकू जनजाति की उपजाति ❌ (बैगा की नहीं!)</p>
+<p><strong>बिजवार, नरोदिया, काटमैना, भरतिया...</strong> → बैगा की उपजातियां ✅</p>
+</div>
+</section>
+
+<!-- SECTION 11: Social Structure -->
+<section id="sec-social">
+<h2>🏘️ 11. सामाजिक व्यवस्था (Social Structure)</h2>
+
+<div class="card accent-green">
+<h3>👨‍👩‍👧‍👦 परिवार व्यवस्था</h3>
+<ul>
+<li>⚡ <strong>पितृसत्तात्मक</strong> (Patriarchal) — पिता की पंचायती चलती है</li>
+<li>👨‍👩‍👧‍👦 <strong>संयुक्त परिवार</strong> (Joint Family) में रहते हैं</li>
+<li>झगड़ा होने पर बेटा अलग → पर आसपास ही रहता है</li>
+<li>पिता चाहे बड़े या छोटे बेटे के साथ रहे — उसकी मर्जी</li>
+<li>👩 स्त्रियों का भी अच्छा सम्मान है</li>
+</ul>
+</div>
+
+<div class="card accent-purple">
+<h3>🏛️ ग्राम प्रशासन (Village Administration)</h3>
+<table>
+<tr><th>पद</th><th>कार्य</th></tr>
+<tr><td><strong>मुकदम</strong></td><td>गांव का मुखिया / सरपंच — सारे निर्णय लेता है</td></tr>
+<tr><td><strong>दीवान</strong></td><td>मुकदम का सहायक</td></tr>
+<tr><td><strong>समर्थ</strong></td><td>राशन/खानपान की पूरी व्यवस्था (आयोजनों में)</td></tr>
+<tr><td><strong>कोटवार</strong></td><td>गांव की सुरक्षा + प्रशासनिक व्यवस्था</td></tr>
+<tr><td><strong>मालगुजार</strong></td><td>Tax/कर वसूली</td></tr>
+<tr><td><strong>देवार / भूमिया / बेवा</strong></td><td>गांव का पुरोहित / पंडा / वैद्य — बिदरी पूजा करता है</td></tr>
+<tr><td><strong>पंच</strong></td><td>आपसी झगड़े और जनजातीय जुर्म सुनता है</td></tr>
+</table>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — ग्राम प्रशासन याद करो</h3>
+<p>🧠 <strong>"मुकदमा देखा → दीवाना हो गया → समर्थ था इसलिए → कोटवार ने पकड़ा → भूमिया ने पूजा की"</strong></p>
+<p>मुकदम → दीवान → समर्थ → कोटवार → देवार/भूमिया/बेवा</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>🏠 गांव संबंधी शब्दावली</h3>
+<table>
+<tr><th>शब्द</th><th>अर्थ</th></tr>
+<tr><td><strong>टोला / पूर्वा</strong></td><td>गांव (बैगा जनजाति में)</td></tr>
+<tr><td><strong>बंगला</strong></td><td>उठने-बैठने का मकान</td></tr>
+<tr><td><strong>फाल्या</strong></td><td>भील जनजाति का गांव</td></tr>
+<tr><td><strong>पाल</strong></td><td>भील का बड़ा गांव</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> गोंड + बैगा दोनों में गांव प्रमुख = मुकदम | भील में = गमेती | बैगा गांव = टोला/पूर्वा</p>
+</div>
+
+<div class="card accent-orange">
+<h3>🔄 तुलना: गोंड vs बैगा vs भील — ग्राम प्रमुख</h3>
+<table>
+<tr><th>जनजाति</th><th>गांव का नाम</th><th>गांव प्रमुख</th><th>सहायक</th></tr>
+<tr><td>भील</td><td>फाल्या / पाल</td><td>गमेती</td><td>—</td></tr>
+<tr><td>गोंड</td><td>—</td><td>मुकदम</td><td>दीवान</td></tr>
+<tr><td>बैगा</td><td>टोला / पूर्वा</td><td>मुकदम</td><td>दीवान</td></tr>
+</table>
+</div>
+
+<div class="card accent-pink">
+<h3>🙏 देवार / भूमिया / बेवा — पुरोहित</h3>
+<ul>
+<li>गांव का <strong>पुरोहित / पंडा</strong> होता है</li>
+<li>पूजा-पाठ, धार्मिक कार्य संभालता है</li>
+<li><strong>बिदरी पूजा</strong> (बादल + धरती माता की पूजा) — यही करवाता है</li>
+<li>बिदरी पर्व गोंड जनजाति में भी मनाया जाता है</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 12: Dress -->
+<section id="sec-dress">
+<h2>👗 12. वस्त्र एवं आभूषण (Dress & Ornaments)</h2>
+
+<div class="card accent-yellow">
+<h3>👔 पुरुषों के वस्त्र</h3>
+<ul>
+<li><strong>पटका</strong> = लंगोटी (पुरुषों का मुख्य वस्त्र)</li>
+</ul>
+<h3>👗 स्त्रियों के वस्त्र</h3>
+<ul>
+<li><strong>कपची</strong> = घुटनों तक की साड़ी</li>
+</ul>
+<h3>💍 आभूषण</h3>
+<ul>
+<li><strong>कंद्र</strong> = बालों में पहनने का आभूषण (स्त्रियां)</li>
+<li><strong>तरकुल</strong> = विवाह के समय पहनने का आभूषण (मंगलसूत्र जैसा)</li>
+</ul>
+</div>
+
+<div class="link-story">
+<h3>🔗 Link Story — वस्त्र याद करो</h3>
+<p>🧠 बैग लेकर लड़े → एक-दूसरे को <strong>पटक</strong> दिया → <strong>पटका</strong> (लंगोटी) खुल गई!</p>
+<p>🧠 स्त्रियां: <strong>कपची</strong> (कप + ची = कप जितनी छोटी साड़ी) + बालों में <strong>कंद्र</strong> (कौन दरी करे = कंद्र)</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>🍺 अन्य सामाजिक तथ्य</h3>
+<ul>
+<li>बैगा लोग <strong>पेज</strong> (शराब/पेय) भी पीते हैं — गोंड जनजाति की तरह</li>
+<li>मांसाहारी + शाकाहारी दोनों</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 13: Food -->
+<section id="sec-food">
+<h2>🍲 13. खानपान (Food Habits)</h2>
+
+<div class="card accent-green">
+<h3>🥘 मुख्य भोजन</h3>
+<ul>
+<li>🍲 <strong>पेज</strong> = मुख्य भोजन (कोदो-कुटकी + छाछ से बना)</li>
+<li>स्वास्थ्य की दृष्टि से बहुत महत्वपूर्ण</li>
+<li>मांसाहारी + शाकाहारी दोनों (गोंड जैसा ही)</li>
+</ul>
+</div>
+
+<div class="card accent-orange">
+<h3>⏰ दिन में तीन बार भोजन</h3>
+<table>
+<tr><th>समय</th><th>नाम</th><th>याद करने का तरीका</th></tr>
+<tr><td>🌅 सुबह</td><td><strong>बासी</strong></td><td>रात का बासी खाना = सुबह का भोजन</td></tr>
+<tr><td>☀️ दोपहर</td><td><strong>पेज</strong></td><td>मुख्य भोजन — कोदो-कुटकी</td></tr>
+<tr><td>🌙 रात</td><td><strong>बियारी</strong></td><td>रात = बियर → बियारी</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> भील = राबड़ी | बैगा/गोंड = पेज | सुबह = बासी, दोपहर = पेज, रात = बियारी</p>
+</div>
+
+<div class="card accent-purple">
+<h3>🔄 तुलना: भोजन</h3>
+<table>
+<tr><th>जनजाति</th><th>मुख्य भोजन</th></tr>
+<tr><td>भील</td><td>राबड़ी (मक्के से)</td></tr>
+<tr><td>गोंड</td><td>पेज</td></tr>
+<tr><td>बैगा</td><td>पेज (कोदो-कुटकी + छाछ)</td></tr>
+</table>
+</div>
+</section>
+
+<!-- SECTION 14: Religion -->
+<section id="sec-religion">
+<h2>🙏 14. धार्मिक विशेषताएं (Religious Features)</h2>
+
+<div class="card accent-purple">
+<h3>🙏 प्रमुख देवता</h3>
+<table>
+<tr><th>देवता</th><th>विशेषता</th></tr>
+<tr><td><strong>बूढ़ा देव</strong></td><td>बैगा जनजाति के <strong>प्रमुख देवता</strong> — पूरी रक्षा करते हैं</td></tr>
+<tr><td><strong>ठाकुर देव</strong></td><td><strong>सृष्टि निर्माता</strong> + ग्राम देवता (गांव की रक्षा)</td></tr>
+<tr><td><strong>खरियार माता</strong></td><td>गांव की रक्षा करने वाली देवी</td></tr>
+</table>
+</div>
+
+<div class="card accent-green">
+<h3>🌳 साज/साल वृक्ष का महत्व</h3>
+<ul>
+<li>बूढ़ा देव <strong>साज/साल वृक्ष के नीचे</strong> निवास करते हैं</li>
+<li>बैगा लोग साज वृक्ष को <strong>अत्यंत पवित्र</strong> मानते हैं</li>
+<li>⚡ <strong>सत्य परीक्षा:</strong> साज के पत्ते हाथ में रखने पर बैगा लड़के कभी झूठ नहीं बोलते!</li>
+<li>यदि प्रेमिका पूछे "किस-किस से प्यार करता है?" → सच बोलना पड़ेगा</li>
+</ul>
+</div>
+
+<div class="card accent-orange">
+<h3>🔄 तुलना: प्रमुख देवता</h3>
+<table>
+<tr><th>जनजाति</th><th>प्रमुख देवता</th><th>विशेष</th></tr>
+<tr><td>भील</td><td><strong>राजा पंथा</strong></td><td>+ वामदेव, गल देव</td></tr>
+<tr><td>गोंड</td><td><strong>बड़ा देव</strong></td><td>सवारी: सफेद घोड़ा</td></tr>
+<tr><td>बैगा</td><td><strong>बूढ़ा देव</strong></td><td>साल वृक्ष के नीचे निवास</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> भील = राजा पंथा | गोंड = बड़ा देव | बैगा = बूढ़ा देव — तीनों अलग-अलग याद रखो!</p>
+</div>
+
+<div class="card accent-cyan">
+<h3>📌 अन्य धार्मिक तथ्य</h3>
+<ul>
+<li><strong>लिंगा देव</strong> = गोंड जनजाति की उत्पत्ति (बैगा की नहीं!)</li>
+<li>लिंगा देव के अनुसार जन्म-मृत्यु होती है</li>
+<li><strong>कौवा</strong> = बैगा के लिए बहुत महत्वपूर्ण (ठाकुर देव ने कौवे को भेजा → पृथ्वी बनी)</li>
+<li><strong>बिदरी पर्व</strong> = बादल + धरती माता की पूजा (देवार/भूमिया करवाता है)</li>
+<li><strong>भग बंदी पर्व</strong> = गोंड-बैगा भाईचारे का पर्व (रक्षाबंधन जैसा)</li>
+</ul>
+</div>
+</section>
+
+<!-- SECTION 15: Literature -->
+<section id="sec-literature">
+<h2>📚 15. साहित्य (Literature)</h2>
+
+<div class="card accent-yellow">
+<h3>📖 बैगा जनजाति से संबंधित पुस्तकें</h3>
+<table>
+<tr><th>पुस्तक</th><th>लेखक</th><th>वर्ष</th><th>विषय</th></tr>
+<tr><td><strong>The Baiga (द बैगा)</strong></td><td>बेरियर एल्विन</td><td>1939</td><td>बैगा जनजाति का अध्ययन</td></tr>
+<tr><td><strong>The Muria and their Ghotul (द मुड़िया एंड देयर घोटुल)</strong></td><td>बेरियर एल्विन</td><td>1947</td><td>मुड़िया जनजाति + घोटुल प्रथा</td></tr>
+<tr><td><strong>The Bhilsa Study (द भीलसा स्टडी)</strong></td><td>टी.वी. नायक</td><td>—</td><td>भील जनजाति</td></tr>
+</table>
+</div>
+
+<div class="card accent-green">
+<h3>👤 बेरियर एल्विन — Key Facts</h3>
+<ul>
+<li>अंग्रेज विद्वान — भारत आकर जनजातियों पर अध्ययन किया</li>
+<li><strong>डिंडोरी</strong> के एक स्कूल में 10-12 साल पढ़ाया</li>
+<li>बैगा जनजाति की महिला <strong>कौशल्या</strong> से विवाह किया</li>
+<li>बैगा को "जादूगर / वैद्य / आदि स्वामी" कहा</li>
+</ul>
+</div>
+
+<div class="card accent-purple">
+<h3>🎵 घोटुल प्रथा & घोटुल पाटा</h3>
+<ul>
+<li><strong>घोटुल प्रथा:</strong> लड़का-लड़की एक-दूसरे को समझने की प्रथा → फिर शादी</li>
+<li><strong>घोटुल पाटा:</strong> गोंड जनजाति का <strong>मृत्यु गीत</strong> (आत्मा के लिए गाया जाता है)</li>
+<li><strong>पंडवानी:</strong> महाभारत कथा गीत (भीम = पावरफुल)</li>
+</ul>
+</div>
+
+<div class="exam-hot">
+<p>🔥 <strong>Exam Hot:</strong> द बैगा = बेरियर एल्विन (1939) | द भीलसा स्टडी = टी.वी. नायक | घोटुल पाटा = मृत्यु गीत (गोंड)</p>
+</div>
+</section>
+
+<!-- SECTION: Full Forms -->
+<section id="sec-fullforms">
+<h2>📋 Full Forms Master Table</h2>
+
+<div class="card accent-cyan">
+<table>
+<tr><th>Abbreviation</th><th>Full Form</th><th>Hindi</th></tr>
+<tr><td>PVTG</td><td>Particularly Vulnerable Tribal Groups</td><td>अति विशेष पिछड़ी जनजातियां</td></tr>
+<tr><td>ST</td><td>Scheduled Tribe</td><td>अनुसूचित जनजाति</td></tr>
+<tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+<tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>मध्य प्रदेश लोक सेवा आयोग</td></tr>
+<tr><td>DSC</td><td>District Selection Committee</td><td>जिला चयन समिति</td></tr>
+<tr><td>Art.</td><td>Article (of Indian Constitution)</td><td>अनुच्छेद</td></tr>
+<tr><td>NE</td><td>North-East (States)</td><td>पूर्वोत्तर राज्य</td></tr>
+</table>
+</div>
+</section>
+
+<!-- SECTION: Exam Hot Facts -->
+<section id="sec-hotfacts">
+<h2>🔥 Exam Hot Facts — एक नज़र में</h2>
+
+<div class="card accent-orange">
+<ol>
+<li>🔥 बैगा = MP की <strong>छठी</strong> सबसे बड़ी जनजाति</li>
+<li>🔥 बैगा + भारिया + शहरिया = MP की <strong>3 PVTG</strong></li>
+<li>🔥 ढेबर आयोग = <strong>1960</strong> (Art. 339)</li>
+<li>🔥 भारत में कुल <strong>75 PVTG</strong></li>
+<li>🔥 बैगा विकास अभिकरण = <strong>6 जगह</strong> (बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर)</li>
+<li>🔥 कुल 11 विकास अभिकरण → 15 जिलों में</li>
+<li>🔥 बैगा सर्वाधिक = <strong>मंडला</strong> | बैगा चक्र = <strong>डिंडोरी</strong> (89 गांव)</li>
+<li>🔥 बैगा = पुरोहित / वैद्य / ओझा</li>
+<li>🔥 बैगा प्रमुख देवता = <strong>बूढ़ा देव</strong></li>
+<li>🔥 सृष्टि निर्माता = <strong>ठाकुर देव</strong></li>
+<li>🔥 भील = राजा पंथा | गोंड = बड़ा देव | बैगा = बूढ़ा देव</li>
+<li>🔥 बैगा भूमि पर <strong>हल नहीं चलाते</strong> (धरती = बेटी)</li>
+<li>🔥 द बैगा = <strong>बेरियर एल्विन (1939)</strong></li>
+<li>🔥 बिजवार = बैगा का <strong>सबसे विकसित</strong> रूप</li>
+<li>🔥 बड़या = <strong>कोरकू</strong> की उपजाति (बैगा की नहीं!)</li>
+<li>🔥 गांव प्रमुख = <strong>मुकदम</strong> | सहायक = <strong>दीवान</strong></li>
+<li>🔥 पुरोहित = <strong>देवार / भूमिया / बेवा</strong></li>
+<li>🔥 पुरुष वस्त्र = <strong>पटका</strong> | स्त्री = <strong>कपची</strong></li>
+<li>🔥 मुख्य भोजन = <strong>पेज</strong> | सुबह = बासी | रात = बियारी</li>
+<li>🔥 Art. 16(4A) = ST प्रमोशन आरक्षण (77वां संशोधन, 1995)</li>
+<li>🔥 साल वृक्ष = <strong>Shorea Robusta</strong> | बूढ़ा देव साल वृक्ष के नीचे</li>
+<li>🔥 गोंड-बैगा भाईचारा पर्व = <strong>भग बंदी</strong></li>
+</ol>
+</div>
+</section>
+
+<!-- SECTION: Master Checklist -->
+<section id="sec-checklist">
+<h2>✅ Master Revision Checklist</h2>
+<p style="color:var(--text-muted);margin-bottom:16px;">Check off items as you revise. Progress is saved automatically! ✨</p>
+
+<div class="card accent-green checklist" id="masterChecklist">
+<label><input type="checkbox" data-id="c1"><span>बैगा = MP की छठी सबसे बड़ी जनजाति</span></label>
+<label><input type="checkbox" data-id="c2"><span>बैगा + भारिया + शहरिया = 3 PVTG (ढेबर आयोग 1960)</span></label>
+<label><input type="checkbox" data-id="c3"><span>भारत में 75 PVTG</span></label>
+<label><input type="checkbox" data-id="c4"><span>बैगा = पुरोहित / वैद्य / ओझा</span></label>
+<label><input type="checkbox" data-id="c5"><span>जंगल का राजा / प्रकृति पुत्र</span></label>
+<label><input type="checkbox" data-id="c6"><span>प्रोटो-ऑस्ट्रेलॉइड प्रजाति (कुछ: द्रविडियन)</span></label>
+<label><input type="checkbox" data-id="c7"><span>गोंड जनजाति की उपजाति मानी जाती है</span></label>
+<label><input type="checkbox" data-id="c8"><span>नागा बैगा + नागी बैगा → बैगा + गोंड (भाई)</span></label>
+<label><input type="checkbox" data-id="c9"><span>भूमि पर हल नहीं चलाते (धरती = बेटी)</span></label>
+<label><input type="checkbox" data-id="c10"><span>कौवा = महत्वपूर्ण (ठाकुर देव ने भेजा)</span></label>
+<label><input type="checkbox" data-id="c11"><span>सर्वाधिक: मंडला | बैगा चक्र: डिंडोरी (89 गांव)</span></label>
+<label><input type="checkbox" data-id="c12"><span>साल वृक्ष (Shorea Robusta) क्षेत्र में निवास</span></label>
+<label><input type="checkbox" data-id="c13"><span>6 बैगा विकास अभिकरण: बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</span></label>
+<label><input type="checkbox" data-id="c14"><span>4 शहरिया: ग्वालियर, श्योपुर, शिवपुरी, गुना</span></label>
+<label><input type="checkbox" data-id="c15"><span>1 भारिया: छिंदवाड़ा (तामिया)</span></label>
+<label><input type="checkbox" data-id="c16"><span>उपजातियां: नरोदिया, भरतिया, रेमना, काटमैना, कोड़वा, कुंडी गोड़वा, गोंडमैना, नाहर, मुंडीपा, बिजवार</span></label>
+<label><input type="checkbox" data-id="c17"><span>बिजवार = सबसे विकसित | बड़या = कोरकू की (बैगा की नहीं!)</span></label>
+<label><input type="checkbox" data-id="c18"><span>पितृसत्तात्मक + संयुक्त परिवार</span></label>
+<label><input type="checkbox" data-id="c19"><span>मुकदम (मुखिया) → दीवान (सहायक) → समर्थ (राशन)</span></label>
+<label><input type="checkbox" data-id="c20"><span>देवार/भूमिया/बेवा = पुरोहित (बिदरी पूजा)</span></label>
+<label><input type="checkbox" data-id="c21"><span>गांव = टोला/पूर्वा | बंगला = उठने-बैठने का मकान</span></label>
+<label><input type="checkbox" data-id="c22"><span>बूढ़ा देव = प्रमुख देवता | ठाकुर देव = सृष्टि निर्माता + ग्राम देवता</span></label>
+<label><input type="checkbox" data-id="c23"><span>साज वृक्ष = पवित्र (हाथ में रखो → झूठ नहीं बोल सकते)</span></label>
+<label><input type="checkbox" data-id="c24"><span>द बैगा = बेरियर एल्विन (1939) | द मुड़िया एंड देयर घोटुल (1947)</span></label>
+<label><input type="checkbox" data-id="c25"><span>द भीलसा स्टडी = टी.वी. नायक (भील)</span></label>
+<label><input type="checkbox" data-id="c26"><span>पुरुष: पटका (लंगोटी) | स्त्री: कपची (साड़ी)</span></label>
+<label><input type="checkbox" data-id="c27"><span>आभूषण: कंद्र (बालों में) | तरकुल (विवाह)</span></label>
+<label><input type="checkbox" data-id="c28"><span>भोजन: पेज (मुख्य) | सुबह=बासी | रात=बियारी</span></label>
+<label><input type="checkbox" data-id="c29"><span>Art.16(4A)=प्रमोशन आरक्षण | Art.275=Grant | Art.342=ST शामिल</span></label>
+<label><input type="checkbox" data-id="c30"><span>Art.244(1)=5वीं अनुसूची | Art.244(2)=6वीं अनुसूची | Art.243D=पंचायत आरक्षण</span></label>
+</div>
+<p class="progress-text" id="checklistProgress">Completed: 0 / 30</p>
+</section>
+
+<!-- Quick Recall Quiz -->
+<section id="sec-quiz-master">
+<h2>🧠 Quick Recall Quiz — Final Test</h2>
+
+<div class="quiz-q">
+<p class="question">Q1: बैगा जनजाति MP की कौन सी सबसे बड़ी जनजाति है?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">छठी (6th) सबसे बड़ी जनजाति</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q2: MP में कितनी PVTG जनजातियां हैं? नाम बताओ।</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">3 — बैगा, भारिया, शहरिया</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q3: बैगा शब्द का अर्थ क्या है?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">पुरोहित / वैद्य / ओझा</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q4: बैगा जनजाति के प्रमुख देवता कौन हैं?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">बूढ़ा देव (साल वृक्ष के नीचे निवास)</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q5: बैगा परंपरा के अनुसार सृष्टि के निर्माता कौन हैं?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">ठाकुर देव</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q6: बैगा जनजाति का सबसे विकसित रूप (उपजाति) कौन सा है?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">बिजवार (जमींदार — पैसा + जमीन)</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q7: बैगा गांव के मुखिया को क्या कहते हैं?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">मुकदम (सहायक: दीवान)</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q8: "द बैगा" पुस्तक किसने और कब लिखी?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">बेरियर एल्विन — 1939</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q9: बैगा लोग भूमि पर हल क्यों नहीं चलाते?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">धरती को अपनी बेटी मानते हैं — बेटी कटेगी!</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q10: बैगा जनजाति सर्वाधिक किस जिले में है? बैगा चक्र कहां है?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">सर्वाधिक: मंडला | बैगा चक्र: डिंडोरी (89 गांव)</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q11: पुरुषों के वस्त्र = ? | स्त्रियों के वस्त्र = ?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">पुरुष: पटका (लंगोटी) | स्त्री: कपची (साड़ी)</div>
+</div>
+<div class="quiz-q">
+<p class="question">Q12: बैगा का मुख्य भोजन? सुबह/दोपहर/रात के भोजन के नाम?</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Show Answer</button>
+<div class="answer">मुख्य: पेज | सुबह: बासी | दोपहर: पेज | रात: बियारी</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center; padding:40px 20px; border-top:2px solid var(--border); margin-top:40px;">
+<h3>📌 Upcoming Topics (अगली कक्षा में)</h3>
+<p style="color:var(--text-muted);">बैगा जनजाति — आर्थिक विशेषताएं (कृषि/झूम), विवाह प्रथाएं, जन्म-मृत्यु संस्कार, भाषा-बोली, प्रमुख नृत्य-पर्व</p>
+<br>
+<p style="color:var(--text-muted);font-size:0.85rem;">📖 Class 13 | MPPSC Paper-2 | MP जनजातियां — बैगा जनजाति (Part 1)</p>
+<p style="color:var(--text-muted);font-size:0.8rem;">Made for Exam Revision 🎯</p>
+</footer>
+
+</div><!-- end container -->
+
+<script>
+// Theme Toggle
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.querySelector('.theme-toggle');
+  if (body.getAttribute('data-theme') === 'light') {
+    body.removeAttribute('data-theme');
+    btn.textContent = '🌙';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    body.setAttribute('data-theme', 'light');
+    btn.textContent = '☀️';
+    localStorage.setItem('theme', 'light');
+  }
+}
+// Load saved theme
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.body.setAttribute('data-theme', 'light');
+    document.querySelector('.theme-toggle').textContent = '☀️';
+  }
+})();
+
+// Quick Nav Jump
+function jumpTo(id) {
+  if (id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Smooth scroll for TOC links
+document.querySelectorAll('.toc a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Checklist with localStorage
+const checklist = document.getElementById('masterChecklist');
+if (checklist) {
+  const boxes = checklist.querySelectorAll('input[type="checkbox"]');
+  // Load saved state
+  boxes.forEach(box => {
+    const id = box.getAttribute('data-id');
+    if (localStorage.getItem('chk_' + id) === 'true') {
+      box.checked = true;
+      box.parentElement.querySelector('span').classList.add('checked');
+    }
+  });
+  updateChecklistProgress();
+
+  boxes.forEach(box => {
+    box.addEventListener('change', function() {
+      const id = this.getAttribute('data-id');
+      localStorage.setItem('chk_' + id, this.checked);
+      const span = this.parentElement.querySelector('span');
+      if (this.checked) span.classList.add('checked');
+      else span.classList.remove('checked');
+      updateChecklistProgress();
+    });
+  });
+}
+
+function updateChecklistProgress() {
+  const boxes = document.querySelectorAll('#masterChecklist input[type="checkbox"]');
+  const checked = document.querySelectorAll('#masterChecklist input[type="checkbox"]:checked');
+  const total = boxes.length;
+  const done = checked.length;
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('checklistProgress').textContent = 'Completed: ' + done + ' / ' + total;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = 'Revision Progress: ' + pct + '%';
+}
+
+// Image error handling and retry
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', function() {
+    const alt = this.alt || 'Image';
+    const src = this.src;
+    const fallback = document.createElement('div');
+    fallback.style.cssText = 'padding:16px;background:var(--card-bg);border:1px dashed var(--border);border-radius:10px;text-align:center;color:var(--text-muted);';
+    fallback.innerHTML = '🖼️ Image could not load: ' + alt + '<br><a href="' + src + '" target="_blank" style="color:var(--accent-cyan);">Open image link ↗</a>';
+    this.parentElement.replaceChild(fallback, this);
+  });
+});
+</script>
+</body>
+</html>
