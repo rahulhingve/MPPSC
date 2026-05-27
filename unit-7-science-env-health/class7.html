@@ -1,0 +1,1267 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>जैव विविधता Biodiversity — Class 7 Revision HTML</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0f0f1a; --panel:#151629; --panel2:#1b1d34; --text:#f7f8ff; --muted:#d7ddff;
+  --line:rgba(255,255,255,.14); --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff; --yellow:#ffd166;
+  --shadow:0 14px 40px rgba(0,0,0,.28); --radius:22px; --max:980px;
+}
+body.light {
+  --bg:#f6f8ff; --panel:#ffffff; --panel2:#f0f3ff; --text:#101323; --muted:#334155;
+  --line:rgba(15,23,42,.14); --shadow:0 12px 32px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:radial-gradient(circle at top left, rgba(0,212,255,.16), transparent 30%), var(--bg);
+  color:var(--text); font-family:Inter,"Noto Sans Devanagari",system-ui,sans-serif; font-size:17px; line-height:1.75; letter-spacing:.01em;
+}
+a{color:var(--cyan); text-decoration:none}
+a:hover{text-decoration:underline}
+.header{
+  padding:34px 18px 24px; border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg, rgba(0,212,255,.18), rgba(179,136,255,.16), rgba(255,107,53,.10));
+}
+.wrap{max-width:var(--max); margin:auto}
+.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center}
+h1{font-size:clamp(2rem, 5vw, 4rem); line-height:1.05; margin:0 0 14px; letter-spacing:-.04em}
+.kicker{font-weight:800; color:var(--green); text-transform:uppercase; letter-spacing:.12em; font-size:.82rem}
+.badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.badge{border:1px solid var(--line); background:rgba(255,255,255,.08); padding:7px 12px; border-radius:999px; font-weight:700}
+.progress-shell{position:fixed; top:0; left:0; right:0; height:6px; background:rgba(255,255,255,.08); z-index:50}
+.progress-bar{height:100%; width:0%; background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange)); transition:width .15s linear}
+.navbar{
+  position:sticky; top:6px; z-index:20; backdrop-filter:blur(16px);
+  background:color-mix(in srgb, var(--bg) 82%, transparent); border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:var(--max); margin:auto; padding:12px 18px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+select,button{
+  background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:13px;
+  padding:10px 12px; font-weight:800; font-family:inherit; cursor:pointer;
+}
+button:hover,select:hover{border-color:var(--cyan)}
+.main{max-width:var(--max); margin:auto; padding:24px 18px 80px}
+.toc{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:18px 0 26px}
+.toc a{display:block; padding:12px 14px; background:var(--panel); border:1px solid var(--line); border-radius:16px; font-weight:800; box-shadow:var(--shadow)}
+section{scroll-margin-top:92px; margin:28px 0}
+.section-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:16px}
+.section-head .num{font-size:1rem; font-weight:900; color:#071018; background:var(--cyan); width:38px; height:38px; border-radius:13px; display:grid; place-items:center; flex:0 0 auto}
+h2{font-size:clamp(1.55rem,3vw,2.35rem); line-height:1.2; margin:0}
+.subtitle{color:var(--muted); margin:.35rem 0 0}
+.card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px}
+.card,.note,.hot,.story,.quiz,.timeline,.table-card,.img-card,.diagram,.flow-card{
+  background:linear-gradient(180deg, color-mix(in srgb, var(--panel) 94%, white 6%), var(--panel));
+  border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+}
+.card h3{margin:.1rem 0 .45rem; font-size:1.2rem}
+ul{padding-left:1.15rem} li{margin:.25rem 0}
+.hot{border-color:rgba(255,107,53,.55); background:linear-gradient(135deg, rgba(255,107,53,.16), rgba(255,209,102,.08), var(--panel))}
+.story{border-color:rgba(179,136,255,.55); background:linear-gradient(135deg, rgba(179,136,255,.22), rgba(0,212,255,.08), var(--panel))}
+.note{border-color:rgba(0,255,136,.44); background:linear-gradient(135deg, rgba(0,255,136,.12), var(--panel))}
+.img-card{padding:12px; overflow:hidden}
+.img-card img{display:block; width:100%; max-height:420px; object-fit:cover; border-radius:16px; background:var(--panel2)}
+.img-card figcaption{font-size:.86rem; color:var(--muted); margin-top:9px; line-height:1.45}
+.term-table,.compare-table{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:16px}
+.term-table th,.term-table td,.compare-table th,.compare-table td{border-bottom:1px solid var(--line); padding:12px; text-align:left; vertical-align:top}
+.term-table th,.compare-table th{background:rgba(0,212,255,.12); color:var(--text)}
+.term-table tr:last-child td,.compare-table tr:last-child td{border-bottom:0}
+details{margin:10px 0}
+summary{cursor:pointer; font-weight:900; display:flex; gap:10px; align-items:center}
+details[open]{animation:pop .25s ease}
+@keyframes pop{from{transform:translateY(3px);opacity:.85}to{transform:translateY(0);opacity:1}}
+.time-pill{display:inline-flex; align-items:center; justify-content:center; min-width:82px; background:rgba(0,212,255,.16); border:1px solid rgba(0,212,255,.35); color:var(--cyan); padding:3px 8px; border-radius:999px; font-weight:900; font-variant-numeric:tabular-nums}
+.answer{display:none; margin-top:8px; padding:10px 12px; background:rgba(0,255,136,.12); border:1px solid rgba(0,255,136,.35); border-radius:14px}
+.reveal.on + .answer{display:block}
+.diagram .earth{height:260px; border-radius:50%; border:2px solid rgba(255,255,255,.22); position:relative; max-width:360px; margin:14px auto; background:radial-gradient(circle, rgba(0,212,255,.16), rgba(0,255,136,.06) 52%, rgba(179,136,255,.08)); overflow:hidden}
+.line{position:absolute; left:0; right:0; height:2px; background:var(--line)}
+.eq{top:50%; background:var(--orange); height:4px}
+.tropic-n{top:31%; background:var(--yellow)} .tropic-s{top:69%; background:var(--yellow)}
+.band{position:absolute; left:0; right:0; top:41%; height:18%; background:rgba(0,255,136,.25); border-top:1px dashed var(--green); border-bottom:1px dashed var(--green)}
+.lbl{position:absolute; left:50%; transform:translateX(-50%); background:rgba(0,0,0,.4); padding:3px 8px; border-radius:999px; font-size:.8rem; white-space:nowrap}
+body.light .lbl{background:rgba(255,255,255,.7)}
+.flow-card p{margin:12px 0 0; color:var(--muted)}
+.flow-card.promo{opacity:.82; border-style:dashed}
+.checklist{display:grid; gap:10px}
+.check{display:flex; gap:10px; align-items:flex-start; padding:12px; border-radius:14px; background:var(--panel); border:1px solid var(--line)}
+.check input{transform:translateY(6px) scale(1.25)}
+.master-progress{font-weight:900;color:var(--green)}
+.footer{border-top:1px solid var(--line); padding:22px 0; color:var(--muted)}
+.small{font-size:.92rem;color:var(--muted)}
+.pill-row{display:flex; gap:8px; flex-wrap:wrap}
+.pill{padding:5px 9px; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid var(--line); font-weight:800; font-size:.88rem}
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media(max-width:780px){
+  .hero-grid,.two-col{grid-template-columns:1fr}
+  .nav-inner{align-items:stretch}
+  select{width:100%}
+  .section-head{gap:10px}
+  body{font-size:17px}
+}
+@media print{
+  body{background:white;color:black;font-size:12pt}
+  .navbar,.progress-shell,button,.toc{display:none!important}
+  .card,.note,.hot,.story,.quiz,.timeline,.table-card,.img-card,.diagram,.flow-card{box-shadow:none;border:1px solid #aaa;break-inside:avoid;background:white;color:black}
+  details{display:block} details > *{display:block} summary{display:block}
+  .answer{display:block!important;border:1px solid #ccc;background:#fff}
+  a{color:black;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<div class="progress-shell"><div class="progress-bar" id="progressBar"></div></div>
+<header class="header">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Exam Revision Page Builder Output</div>
+      <h1>🌿 जैव विविधता<br><span style="color:var(--cyan)">Biodiversity</span></h1>
+      <p class="subtitle">Class transcript based revision page — Hinglish notes, exact video flow, MCQs, diagrams, quizzes, checklist, and image-backed memory hooks.</p>
+      <div class="badges">
+        <span class="badge">Unit 7: विज्ञान + पर्यावरण + स्वास्थ्य</span>
+        <span class="badge">Video flow: 00:00:11 → 00:58:18</span>
+        <span class="badge">86 timestamp blocks covered</span>
+      </div>
+    </div>
+    <div class="note">
+      <h3>🎯 Revision Goal</h3>
+      <p>Video के साथ side-by-side पढ़ने के लिए बनाया गया: पहले concise notes, फिर timestamp-by-timestamp coverage ledger ताकि कोई हिस्सा miss न हो। Promotional/admin class बातें revision focus से अलग mark की गई हैं।</p>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <select id="jumpMenu" aria-label="Jump to topic">
+      <option value="#top">Jump to topic...</option>
+      <option value="#overview">1. Unit positioning</option>
+      <option value="#meaning">2. Meaning + definition</option>
+      <option value="#origin">3. Rosen vs Dasmann</option>
+      <option value="#types">4. Types of biodiversity</option>
+      <option value="#gradient">5. Equator + climate gradient</option>
+      <option value="#amazon">6. Amazon + MCQ</option>
+      <option value="#values">7. Importance / values</option>
+      <option value="#loss">8. Causes of loss</option>
+      <option value="#conservation">9. Conservation</option>
+      <option value="#insitu">10. In-situ vs Ex-situ</option>
+      <option value="#masters">Master tables + checklist</option>
+      <option value="#flow">Full video flow ledger</option>
+    </select>
+    <div class="pill-row">
+      <button id="themeBtn" type="button">🌗 Toggle theme</button>
+      <button id="expandBtn" type="button">📖 Expand all</button>
+      <button id="collapseBtn" type="button">📕 Collapse all</button>
+    </div>
+  </div>
+</nav>
+
+<main class="main" id="top">
+  <section id="toc">
+    <div class="section-head"><div class="num">☰</div><div><h2>Table of Contents</h2><p class="subtitle">Quick jump navigation for mobile and desktop.</p></div></div>
+    <div class="toc">
+      <a href="#overview">🧭 Unit positioning</a>
+      <a href="#meaning">🌱 Definition + examples</a>
+      <a href="#origin">🔥 Biodiversity word origin</a>
+      <a href="#types">🧬 3 types</a>
+      <a href="#gradient">🌍 Equator gradient</a>
+      <a href="#amazon">🌳 Amazon rainforest</a>
+      <a href="#values">🎯 Importance</a>
+      <a href="#loss">⚠️ Loss causes</a>
+      <a href="#conservation">🛡️ Conservation</a>
+      <a href="#insitu">🏞️ In-situ vs Ex-situ</a>
+      <a href="#masters">📋 Master revision</a>
+      <a href="#flow">⏱️ Video flow ledger</a>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="section-head"><div class="num">1</div><div><h2>🧭 Unit 7 Context — आज का topic कहाँ fit होता है?</h2><p class="subtitle">Video opening में teacher ने syllabus focus और earlier topics connect किए।</p></div></div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>📌 आज का topic</h3>
+        <ul>
+          <li>आज का main topic: <b>जैव विविधता / Biodiversity</b>.</li>
+          <li>यह <b>Environment</b> का हिस्सा है; previous classes में <b>Environment</b> और <b>Ecosystem</b> पढ़ा गया।</li>
+          <li>Unit 7 daily 2 PM series में यह important topic बताया गया।</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎯 Unit 7 Focus</h3>
+        <ul>
+          <li>Unit 7: <b>विज्ञान, पर्यावरण एवं स्वास्थ्य</b>.</li>
+          <li>Technology/प्रौद्योगिकी का weightage कम बताया गया; Agriculture product technology और food processing हटने/कम होने की बात कही।</li>
+          <li>Focus: Science + Environment + Health; आगे health, पोषण आहार, अनुवांशिक रोग cover होंगे।</li>
+        </ul>
+      </div>
+      <div class="story">
+        <h3>🔗 Link Story — Unit 7 याद करो</h3>
+        <p>एक बड़ी किताब है <b>Unit 7</b>। उसका पहला पन्ना <b>Science</b>, दूसरा पन्ना <b>Environment</b>, तीसरा पन्ना <b>Health</b> है। Technology का पन्ना बहुत पतला हो गया, इसलिए teacher ने कहा: main focus इन तीनों पर रखो।</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="meaning">
+    <div class="section-head"><div class="num">2</div><div><h2>🌱 Biodiversity Meaning — जैव विविधता का basic idea</h2><p class="subtitle">Environment → Ecosystem → Biosphere में जीवों की variety.</p></div></div>
+    <div class="two-col">
+      <div>
+        <div class="note">
+          <h3>🧠 Environment hierarchy</h3>
+          <p><b>पर्यावरण</b> सबसे बड़ा umbrella है। उसी का छोटा-छोटा हिस्सा <b>पारिस्थितिक तंत्र / Ecosystem</b> है। Environment जैविक और अजैविक घटकों से बनता है।</p>
+          <ul>
+            <li><b>जैविक घटक</b>: जैव मंडल / living world</li>
+            <li><b>अजैविक घटक</b>: जलमंडल, वायुमंडल, स्थलमंडल</li>
+            <li>आज study: <b>जैव मंडल में जीवों की विविधता</b></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>📖 Definition</h3>
+          <p><b>किसी भौगोलिक क्षेत्र के परिवेश में पाए जाने वाले पौधों और प्राणियों के प्रकार, संख्या और उनकी विभिन्नता को जैव विविधता कहते हैं।</b></p>
+          <p>Simple Hinglish: किसी area में कितने प्रकार के plants, animals, birds, insects, microbes आदि हैं और उनमें कितनी variety है — यही biodiversity है।</p>
+        </div>
+      </div>
+      <div>
+        
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Species_diversity.png" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Species%20diversity.png" alt="Species diversity diagram showing relative abundance and number of species" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <figcaption>Image: Wikimedia Commons, Cmonzyyy, open-license page — species diversity diagram. <a href="https://commons.wikimedia.org/wiki/File:Species_diversity.png" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>👥 Human example</h3>
+        <p>Teacher ने समझाया: North India, Jammu-Kashmir, North-East और South India में लोगों की appearance, structure, colour, height आदि में भिन्नता दिखती है। जब मनुष्यों में इतना difference है, अलग-अलग species में तो और भी अधिक होगा।</p>
+      </div>
+      <div class="card">
+        <h3>🐶 Dog + cat + fish examples</h3>
+        <p>कुत्ते की अलग breeds, बिल्ली की अलग breeds, मछलियों की रंग-बिरंगी varieties — एक ही group/species के अंदर भी बहुत विविधता हो सकती है। “मछली जल की रानी है” वाली memory line से fish variety connect की गई।</p>
+      </div>
+      <div class="story">
+        <h3>🔗 Link Story — Diversity picture</h3>
+        <p>एक park में इंसान, कुत्ता, बिल्ली और रंग-बिरंगी मछली picnic कर रहे हैं। हर किसी का रंग, size, breed और style अलग है — यही “जीवों की variety” Biodiversity बन गई।</p>
+      </div>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Meaning</summary>
+      <p><b>Q1.</b> Biodiversity किसमें study की जाती है?</p><button class="reveal" type="button">Answer</button><div class="answer">जैव मंडल / Biosphere में जीवों की विविधता।</div>
+      <p><b>Q2.</b> Definition में कौन-कौन से words must remember हैं?</p><button class="reveal" type="button">Answer</button><div class="answer">भौगोलिक क्षेत्र, पौधे/प्राणी, प्रकार, संख्या, विभिन्नता।</div>
+    </details>
+  </section>
+
+  <section id="origin">
+    <div class="section-head"><div class="num">3</div><div><h2>🔥 Biodiversity शब्द किसने दिया? — Walter G. Rosen vs Raymond F. Dasmann</h2><p class="subtitle">Teacher ने इस distinction पर बहुत जोर दिया क्योंकि MCQ बनता है।</p></div></div>
+    <div class="hot">
+      <h3>🔥 Exam Hot Distinction</h3>
+      <table class="compare-table">
+        <thead><tr><th>Term</th><th>Person</th><th>Year / Book</th><th>Exam point</th></tr></thead>
+        <tbody>
+          <tr><td><b>Biological Diversity</b></td><td>Raymond F. Dasmann</td><td>1968, <i>A Different Kind of Country</i></td><td>पूरा phrase “Biological Diversity” पहले Dasmann से जोड़ा गया।</td></tr>
+          <tr><td><b>Biodiversity</b></td><td>Walter G. Rosen</td><td>Later shortened/converted term</td><td>🔥 “Biodiversity” शब्द सर्वप्रथम किसने प्रयोग किया? — <b>Walter G. Rosen</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>✅ MCQ framing</h3>
+        <ul>
+          <li>Question: <b>“Biodiversity शब्द किसने प्रयोग किया?”</b></li>
+          <li>Answer: <b>Walter G. Rosen</b>.</li>
+          <li>Teacher ने कहा: Biodiversity और Biological Diversity को confuse मत करना।</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>✅ Conversion framing</h3>
+        <ul>
+          <li>Question: Biological Diversity को Biodiversity में किसने बदला?</li>
+          <li>Answer: <b>Walter G. Rosen</b>.</li>
+          <li>Question: Biological Diversity शब्द किससे जुड़ा है?</li>
+          <li>Answer: <b>Raymond F. Dasmann, 1968</b>.</li>
+        </ul>
+      </div>
+      <div class="story">
+        <h3>🔗 Link Story — Dasmann se Rosen tak</h3>
+        <p><b>Dasmann</b> ने लंबा नाम “Biological Diversity” वाली भारी किताब उठाई। <b>Rosen</b> ने कहा “exam में इतना लंबा मत लिखो” और उसे छोटा करके <b>Biodiversity</b> बना दिया।</p>
+      </div>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Word origin</summary>
+      <p><b>Q.</b> Biodiversity word first-use MCQ में answer?</p><button class="reveal" type="button">Answer</button><div class="answer">Walter G. Rosen.</div>
+      <p><b>Q.</b> Raymond F. Dasmann किस term और year से याद रहेगा?</p><button class="reveal" type="button">Answer</button><div class="answer">Biological Diversity, 1968, A Different Kind of Country.</div>
+    </details>
+  </section>
+
+  <section id="types">
+    <div class="section-head"><div class="num">4</div><div><h2>🧬 जैव विविधता के 3 प्रकार</h2><p class="subtitle">Genetic, Species, Community/Ecosystem diversity.</p></div></div>
+    <div class="two-col">
+      <div>
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:DNA_and_Plant_Genetic_diversity_(2).jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DNA%20and%20Plant%20Genetic%20diversity%20%282%29.jpg" alt="DNA concept image connected with plant genetic diversity" loading="lazy" decoding="async" >
+      </a>
+      <figcaption>Image: Wikimedia Commons, CC BY-SA 4.0 — DNA and plant genetic diversity concept. <a href="https://commons.wikimedia.org/wiki/File:DNA_and_Plant_Genetic_diversity_(2).jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    </div>
+      <div>
+        <div class="card">
+          <h3>1️⃣ आनुवांशिक विविधता / Genetic Diversity</h3>
+          <p>एक ही प्रजाति में genes की वजह से जो differences दिखते हैं, वह genetic diversity है। माता-पिता से आने वाली generation तक characters/गुण genes और chromosomes के माध्यम से जाते हैं — इसे heredity/अनुवांशिकता कहा गया।</p>
+          <p>Example: इंसानों के अंदर अलग colour, height, structure; dog breeds; same species में अलग varieties।</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>2️⃣ प्रजातीय विविधता / Species Diversity</h3>
+        <p>एक community या ecosystem में अलग-अलग plant और animal species की विविधता। Example: इंसान अलग species, कुत्ता अलग, बिल्ली अलग, गधा अलग, पेड़-पौधे अलग।</p>
+        <p>Teacher ने कहा: Hotspots में species की भरमार होती है — जैसे equatorial rainforests; आगे Western Ghats, Himalaya भी context में आए।</p>
+      </div>
+      <div class="card">
+        <h3>3️⃣ सामुदायिक / Ecosystem Diversity</h3>
+        <p>दो अलग-अलग ecosystems/communities के जीव-जंतु और वनस्पतियों के बीच पाई जाने वाली diversity।</p>
+        <p>Example: नदी और तालाब — दोनों में मछली/कछुआ हो सकते हैं, पर दोनों communities के organisms में variation होगा।</p>
+      </div>
+      <div class="story">
+        <h3>🔗 Link Story — Gene → Species → Community</h3>
+        <p>पहले एक <b>कुत्ते</b> के genes बदलकर कई breeds बने — Genetic. फिर park में <b>कुत्ता, बिल्ली, इंसान, गधा</b> आ गए — Species. फिर park की तुलना <b>तालाब</b> से कर दी — Community diversity.</p>
+      </div>
+    </div>
+    <div class="table-card">
+      <table class="compare-table">
+        <thead><tr><th>Type</th><th>Focus</th><th>Teacher-style example</th><th>Memory hook</th></tr></thead>
+        <tbody>
+          <tr><td>Genetic</td><td>Same species के genes</td><td>Dog varieties, human variations</td><td>एक species पकड़ो, अंदर की variety देखो</td></tr>
+          <tr><td>Species</td><td>एक ecosystem/community में species count + variety</td><td>Human, dog, cat, donkey, plants</td><td>अलग-अलग species की line</td></tr>
+          <tr><td>Community/Ecosystem</td><td>दो ecosystems/communities की तुलना</td><td>River vs pond organisms</td><td>दो घर, दोनों के रहने वाले अलग</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Types</summary>
+      <p><b>Q.</b> Same species के genes में difference?</p><button class="reveal" type="button">Answer</button><div class="answer">Genetic diversity / आनुवांशिक विविधता।</div>
+      <p><b>Q.</b> River और pond communities में difference?</p><button class="reveal" type="button">Answer</button><div class="answer">Community/Ecosystem diversity / सामुदायिक विविधता।</div>
+    </details>
+  </section>
+
+  <section id="gradient">
+    <div class="section-head"><div class="num">5</div><div><h2>🌍 Biodiversity कहाँ बढ़ती है? — Equator की तरफ</h2><p class="subtitle">Teacher ने climate logic और diagram से समझाया: ज्यादा तापमान + ज्यादा वर्षा = ज्यादा biodiversity.</p></div></div>
+    <div class="card-grid">
+      <div class="hot">
+        <h3>🔥 Main MCQ</h3>
+        <p><b>जैव विविधता में परिवर्तन किस तरफ बढ़ता है?</b></p>
+        <p>Answer: <b>भूमध्य रेखा / Equator की तरफ बढ़ती है</b>. ध्रुवों की तरफ biodiversity कम होती जाती है।</p>
+      </div>
+      <div class="note">
+        <h3>🌦️ दो major conditions</h3>
+        <ul>
+          <li><b>अधिक तापमान</b></li>
+          <li><b>अधिक वर्षा</b></li>
+        </ul>
+        <p>ये दोनों conditions जीवों की उत्पत्ति, वृद्धि और survival के लिए अनुकूल बताई गईं।</p>
+      </div>
+      <div class="card">
+        <h3>🐸 Rain example</h3>
+        <p>बरसात में मच्छर पैदा होते हैं और मेंढक की “टर-टर” आवाज आती है। पानी + गर्मी मिल जाए तो जीवों की variety और growth बढ़ती है।</p>
+      </div>
+    </div>
+    <div class="diagram">
+      <h3>🗺️ Latitude Diagram — याद रखने वाला class diagram</h3>
+      <div class="earth" aria-label="Equator and tropics biodiversity diagram">
+        <div class="band"></div>
+        <div class="line tropic-n"></div><div class="lbl" style="top:25%">23.5°N — कर्क रेखा</div>
+        <div class="line eq"></div><div class="lbl" style="top:51%">0° — भूमध्य/विषुवत रेखा</div>
+        <div class="line tropic-s"></div><div class="lbl" style="top:70%">23.5°S — मकर रेखा</div>
+      </div>
+      <p><b>Class logic:</b> Equator पर सूर्य की किरणें ज्यादा सीधी पड़ती हैं, तापमान अधिक रहता है, evaporation अधिक होता है, clouds बनते हैं, बारिश होती है — इसलिए tropical/equatorial belt में biodiversity ज्यादा होती है।</p>
+      <p><b>5°N से 5°S</b> के आसपास वाली पट्टी को teacher ने सबसे अधिक biodiversity-friendly पट्टी की तरह समझाया।</p>
+    </div>
+    <div class="story">
+      <h3>🔗 Link Story — गर्मी + बारिश = जीवों की party</h3>
+      <p>Equator पर सूरज ने heater on किया, बारिश ने shower on किया, और जंगल में plants, insects, frogs, birds सब party करने लगे — इसलिए biodiversity Equator की तरफ बढ़ती है।</p>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Climate gradient</summary>
+      <p><b>Q1.</b> Biodiversity high होने की दो conditions?</p><button class="reveal" type="button">Answer</button><div class="answer">अधिक तापमान + अधिक वर्षा।</div>
+      <p><b>Q2.</b> ध्रुवों की तरफ biodiversity?</p><button class="reveal" type="button">Answer</button><div class="answer">घटती है, क्योंकि solar radiation/temperature कम और conditions कठोर होती हैं।</div>
+      <p><b>Q3.</b> 0° latitude को क्या कहते हैं?</p><button class="reveal" type="button">Answer</button><div class="answer">Equator / भूमध्य रेखा / विषुवत रेखा।</div>
+    </details>
+  </section>
+
+  <section id="amazon">
+    <div class="section-head"><div class="num">6</div><div><h2>🌳 World’s Highest Biodiversity — Amazonian Rainforest</h2><p class="subtitle">Brazil/Amazon region और tropical belt वाला MCQ.</p></div></div>
+    <div class="two-col">
+      <div>
+        <div class="hot">
+          <h3>🔥 MCQ — पृथ्वी पर सर्वाधिक जैव विविधता</h3>
+          <p><b>Question:</b> पृथ्वी पर सर्वाधिक जैव विविधता किस स्थान पर है?</p>
+          <ul>
+            <li>A. Africa forests</li>
+            <li>B. Australian forests</li>
+            <li>C. Western Ghats</li>
+            <li>D. Amazonian rainforests</li>
+          </ul>
+          <p><b>Correct:</b> D — Amazonian rainforests. Teacher ने clarify किया: भारत में Western Ghats important हैं, पर पूरी Earth में Amazonian rainforest answer है।</p>
+        </div>
+        <div class="card">
+          <h3>🗺️ Tropical belt examples mentioned</h3>
+          <p>Equator के आसपास Indonesia, Maldives, Sri Lanka के nearby island regions, Andaman-Nicobar आदि में biodiversity context बताया गया क्योंकि island/tropical areas में जीवों की variety अधिक हो सकती है।</p>
+        </div>
+      </div>
+      <div>
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20the%20Amazon%20Rainforest.jpg" alt="Aerial view of the Amazon rainforest showing dense tropical forest canopy" loading="lazy" decoding="async" >
+      </a>
+      <figcaption>Image: Wikimedia Commons, originally Flickr/lubasi, CC BY-SA 2.0 — Amazon rainforest aerial view. <a href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Amazon_Rainforest.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    </div>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Amazon</summary>
+      <p><b>Q.</b> World level highest biodiversity MCQ का answer?</p><button class="reveal" type="button">Answer</button><div class="answer">Amazonian rainforest / Amazon rainforest region.</div>
+      <p><b>Q.</b> India level में commonly याद रखने वाले biodiversity-rich region?</p><button class="reveal" type="button">Answer</button><div class="answer">Western Ghats, Himalaya, Andaman-Nicobar जैसे regions context में आए।</div>
+    </details>
+  </section>
+
+  <section id="values">
+    <div class="section-head"><div class="num">7</div><div><h2>🎯 जैव विविधता का महत्व / Values</h2><p class="subtitle">Prelims में headings पूछी जा सकती हैं; mains में detail लिखनी होगी।</p></div></div>
+    <div class="card-grid">
+      <div class="card"><h3>🎭 सांस्कृतिक महत्व</h3><p>Different people/regions की culture अलग होती है — कोई Diwali, Lohri, Eid, Christmas आदि celebrate करता है। Place और people diversity से cultural diversity जुड़ती है।</p></div>
+      <div class="card"><h3>💰 आर्थिक महत्व</h3><p>Diverse climate/resources economic संपन्नता में मदद करते हैं। Better climate agriculture, products और resources को support करता है।</p></div>
+      <div class="card"><h3>🌿 पारिस्थितिक महत्व</h3><p>Ecosystem balance में हर organism role निभाता है। जैव विविधता ecosystem stability और natural balance बनाए रखती है।</p></div>
+      <div class="card"><h3>🔬 वैज्ञानिक महत्व</h3><p>Research, study, species understanding, genes, conservation, medicine आदि के लिए biodiversity important है।</p></div>
+      <div class="card"><h3>🌾 कृषि महत्व</h3><p>Climate और biodiversity crop suitability से जुड़ते हैं। Teacher ने Malwa की सम जलवायु और wheat/crop suitability का example दिया।</p></div>
+      <div class="story"><h3>🔗 Link Story — 5 Values</h3><p>एक गाँव में festival हुआ — <b>Culture</b>. वहाँ market लगा — <b>Economy</b>. पेड़-पौधे oxygen दे रहे — <b>Ecology</b>. Scientist sample ले रहा — <b>Science</b>. किसान crop उगा रहा — <b>Agriculture</b>.</p></div>
+    </div>
+    <div class="hot">
+      <h3>🔥 Exam pattern</h3>
+      <p>Teacher ने बताया: options में सांस्कृतिक, आर्थिक, पारिस्थितिक, वैज्ञानिक, कृषि महत्व आ सकते हैं; इनमें से “कौन सा महत्व है/नहीं है” type question बन सकता है।</p>
+    </div>
+  </section>
+
+  <section id="loss">
+    <div class="section-head"><div class="num">8</div><div><h2>⚠️ जैव विविधता ह्रास के कारण</h2><p class="subtitle">कौन से कारण हैं/नहीं हैं — direct MCQ pattern.</p></div></div>
+    <div class="card-grid">
+      <div class="card"><h3>1️⃣ आवास स्थलों का विनाश/विखंडन</h3><p>Forests काटना, habitat destroy करना — animals के रहने की जगह खत्म होती है। जंगल छोटा हो जाता है और species survival मुश्किल होता है।</p></div>
+      <div class="card"><h3>2️⃣ Agriculture + forestry trends</h3><p>Chemical fertilizers, pesticides, DDT/urea जैसे chemicals soil fertility और छोटे organisms/insects/micro-life को नुकसान पहुँचाते हैं।</p></div>
+      <div class="card"><h3>3️⃣ विदेशी / invasive species</h3><p>कुछ बाहरी/foreign plants दूसरे पौधों को खत्म कर देते हैं या resources absorb कर लेते हैं।</p></div>
+      <div class="card"><h3>4️⃣ संसाधनों का अति-दोहन</h3><p>Forest, groundwater, air, minerals आदि का जरूरत से ज्यादा उपयोग future generations और sustainable development के खिलाफ है।</p></div>
+      <div class="card"><h3>5️⃣ प्रदूषण</h3><p>जल प्रदूषण, वायु प्रदूषण, ध्वनि प्रदूषण, मृदा प्रदूषण — सभी biodiversity को harm करते हैं।</p></div>
+      <div class="card"><h3>6️⃣ वैश्विक जलवायु परिवर्तन</h3><p>Global warming, climate change, altered climate conditions species survival को प्रभावित करते हैं।</p></div>
+      <div class="card"><h3>7️⃣ प्राकृतिक + मानव निर्मित आपदाएँ</h3><p>भूकंप, सुनामी, disasters, gas leak/Bhopal Gas tragedy जैसे examples biodiversity पर negative effect डालते हैं।</p></div>
+      <div class="story"><h3>🔗 Link Story — Biodiversity loss chain</h3><p>पहले जंगल कटा (<b>Habitat loss</b>), फिर खेत में chemical पड़ा (<b>Agriculture trend</b>), फिर eucalyptus आया (<b>Foreign species</b>), फिर इंसान ने पानी-जंगल लूटा (<b>Overuse</b>), pollution फैलाया, climate बदला, disaster आ गया — biodiversity घट गई।</p></div>
+    </div>
+    <div class="two-col">
+      <div>
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Eucalyptus.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Eucalyptus.jpg" alt="Eucalyptus tree used as example of foreign species impact" loading="lazy" decoding="async" >
+      </a>
+      <figcaption>Image: Wikimedia Commons, Fir0002, CC BY-SA 3.0 — Eucalyptus tree. <a href="https://commons.wikimedia.org/wiki/File:Eucalyptus.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    </div>
+      <div class="hot">
+        <h3>🔥 Eucalyptus example</h3>
+        <p>Teacher ने Eucalyptus को “पर्यावरणीय शत्रु” example की तरह बताया: फल/फूल/छाँव कम उपयोग, जड़ें नीचे और फैली हुई, groundwater और minerals absorb करना, आसपास दूसरे plants को grow न होने देना।</p>
+        <p><b>Exam use:</b> Foreign species/invasive species impact समझाने वाला strong example.</p>
+      </div>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — Loss causes</summary>
+      <p><b>Q.</b> Habitat destruction का simple meaning?</p><button class="reveal" type="button">Answer</button><div class="answer">जंगल/आवास खत्म या टुकड़ों में बाँट देना, जिससे species रहने की जगह खो देती हैं।</div>
+      <p><b>Q.</b> Teacher ने किस tree को environmental enemy example कहा?</p><button class="reveal" type="button">Answer</button><div class="answer">Eucalyptus.</div>
+    </details>
+  </section>
+
+  <section id="conservation">
+    <div class="section-head"><div class="num">9</div><div><h2>🛡️ जैव विविधता संरक्षण — क्यों और कैसे?</h2><p class="subtitle">Protect species, habitats, genes, seeds and biological resources.</p></div></div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🌱 Conservation meaning</h3>
+        <p>प्रकृति में उपस्थित विविध जीव-जंतु, प्रजातियों और जैविक संसाधनों को संरक्षण देना ही जैव विविधता संरक्षण है। Goal: species extinct न हों और उनकी संख्या/variety बढ़े।</p>
+      </div>
+      <div class="card">
+        <h3>🏞️ National parks + Zoo logic</h3>
+        <p>National parks इसलिए बनाए जाते हैं ताकि बचे हुए animals को natural/protected conditions मिलें और उनकी species बढ़े। Zoos/chidiya ghar extinct/endangered species को controlled place में protect कर सकते हैं।</p>
+      </div>
+      <div class="card">
+        <h3>🐆 Kuno-Palpur + cheetah example</h3>
+        <p>Teacher ने बताया कि India में cheetah extinct जैसा हो गया था, इसलिए Africa/Namibia से cheetah लाकर Kuno-Palpur में rehabilitation/conservation किया जा रहा है; current affairs में cubs birth का mention भी किया।</p>
+      </div>
+      <div class="card">
+        <h3>🐯 Tiger protection logic</h3>
+        <p>Ecosystem में हर जीव important है — पारिस्थितिक तंत्र balance के लिए tiger जैसी species को बचाना जरूरी है।</p>
+      </div>
+      <div class="card">
+        <h3>🌾 Lahari Bai example</h3>
+        <p>Dindori की Lahari Bai ने मोटे अनाज/बीजों को संभालकर biodiversity/agrobiodiversity conservation का example दिया। प्रधानमंत्री/पुरस्कार/सम्मान context भी teacher ने mention किया।</p>
+      </div>
+      <div class="note">
+        <h3>📌 Correction from class chat</h3>
+        <p>Jodhaiya Bai को Umaria district की painter के रूप में correction/example आया; Lahari Bai correct answer for coarse grain/seed conservation context बताया गया।</p>
+      </div>
+    </div>
+    <div class="story">
+      <h3>🔗 Link Story — Conservation ladder</h3>
+      <p>एक जंगल में tiger बचा, park बना। Cheetah बाहर से आया, Kuno में घर मिला। गाँव में Lahari Bai ने seeds बचाए। सबने मिलकर biodiversity की रक्षा की।</p>
+    </div>
+  </section>
+
+  <section id="insitu">
+    <div class="section-head"><div class="num">10</div><div><h2>🏞️ In-situ vs Ex-situ Conservation</h2><p class="subtitle">स्वस्थाने संरक्षण और बाह्यस्थाने संरक्षण — बहुत important MCQ area.</p></div></div>
+    <div class="table-card">
+      <table class="compare-table">
+        <thead><tr><th>Point</th><th>In-situ / स्वस्थाने</th><th>Ex-situ / बाह्यस्थाने</th></tr></thead>
+        <tbody>
+          <tr><td>Meaning</td><td>जहाँ जीव naturally रहता है, वहीं protect करना</td><td>Original place से बाहर safe place में protect करना</td></tr>
+          <tr><td>Memory</td><td>“उसी घर में सुरक्षा”</td><td>“दूसरे safe घर में सुरक्षा”</td></tr>
+          <tr><td>Examples</td><td>National Park, Wildlife Sanctuary, Biosphere Reserve, Sacred Groves</td><td>Zoo, Botanical Garden, Seed Bank, Gene Bank, Cryopreservation/Cold storage</td></tr>
+          <tr><td>Teacher analogy</td><td>जंगल में ही species को बचाओ और वहीं growth कराओ</td><td>चिड़ियाघर में अलग-अलग जंगलों से animals लाकर protect करना</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="card">
+          <h3>🌳 In-situ examples</h3>
+          <ul>
+            <li>राष्ट्रीय उद्यान / National Parks</li>
+            <li>वन्यजीव अभयारण्य / Wildlife Sanctuaries</li>
+            <li>जैव मंडल आरक्षित क्षेत्र / Biosphere Reserves</li>
+            <li>पवित्र उपवन / Sacred Groves</li>
+          </ul>
+          <p>एक जीव को उसी natural environment में conserve करना — यही in-situ है।</p>
+        </div>
+        <div class="story">
+          <h3>🔗 Link Story — In-situ list</h3>
+          <p>National Park में guard खड़ा है, Sanctuary में deer भाग रहा है, Biosphere Reserve में पूरा ecosystem बच रहा है, और Sacred Grove में गाँव वाले पेड़ को पवित्र मानकर बचा रहे हैं।</p>
+        </div>
+      </div>
+      <div>
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:The_Tiger_in_exsitu_conservation-Mysore_Zoo.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Tiger%20in%20exsitu%20conservation-Mysore%20Zoo.jpg" alt="Tiger kept in a zoo as an ex-situ conservation example" loading="lazy" decoding="async" >
+      </a>
+      <figcaption>Image: Wikimedia Commons, CC BY-SA 4.0 — Tiger in ex-situ conservation at Mysore Zoo. <a href="https://commons.wikimedia.org/wiki/File:The_Tiger_in_exsitu_conservation-Mysore_Zoo.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    </div>
+    </div>
+    <div class="two-col">
+      <div>
+    <figure class="img-card">
+      <a href="https://commons.wikimedia.org/wiki/File:Seed_Bank.jpg" target="_blank" rel="noopener">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seed%20Bank.jpg" alt="Seed bank storage containers representing ex-situ conservation" loading="lazy" decoding="async" >
+      </a>
+      <figcaption>Image: Wikimedia Commons, CC BY-SA 4.0 — Seed bank. <a href="https://commons.wikimedia.org/wiki/File:Seed_Bank.jpg" target="_blank" rel="noopener">Source page</a></figcaption>
+    </figure>
+    </div>
+      <div>
+        <div class="card">
+          <h3>🧊 Ex-situ examples</h3>
+          <ul>
+            <li>चिड़ियाघर / Zoo</li>
+            <li>वनस्पति उद्यान / Botanical Garden</li>
+            <li>बीज बैंक / Seed Bank</li>
+            <li>जीन बैंक / Gene Bank</li>
+            <li>निम्न तापी संरक्षण / Cryopreservation / Low-temperature conservation</li>
+          </ul>
+          <p>Seed bank और gene bank future conservation के लिए valuable genetic material protect करते हैं। Cold storage/fridge analogy से teacher ने low-temperature conservation समझाया।</p>
+        </div>
+      </div>
+    </div>
+    <div class="hot">
+      <h3>🔥 MCQ Pattern</h3>
+      <p>Options में तीन in-situ और एक ex-situ या तीन ex-situ और एक in-situ देकर पूछा जा सकता है। Examples याद रखना सबसे important है।</p>
+    </div>
+    <details class="quiz">
+      <summary>🧪 Quick Recall — In-situ / Ex-situ</summary>
+      <p><b>Q.</b> National Park कौन सा conservation है?</p><button class="reveal" type="button">Answer</button><div class="answer">In-situ / स्वस्थाने।</div>
+      <p><b>Q.</b> Zoo कौन सा conservation है?</p><button class="reveal" type="button">Answer</button><div class="answer">Ex-situ / बाह्यस्थाने।</div>
+      <p><b>Q.</b> Seed Bank और Gene Bank किसमें आते हैं?</p><button class="reveal" type="button">Answer</button><div class="answer">Ex-situ conservation।</div>
+    </details>
+  </section>
+
+  <section id="masters">
+    <div class="section-head"><div class="num">M</div><div><h2>📋 Master Revision Tables</h2><p class="subtitle">Full forms, exam hot facts, and persistent checklist.</p></div></div>
+    <div class="table-card">
+      <h3>🔤 Master Terms / Full Forms</h3>
+      <table class="term-table">
+        <thead><tr><th>Term</th><th>Full / English</th><th>Hindi-Hinglish meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Bio</td><td>Life</td><td>जीवन / जीवों से related</td></tr>
+          <tr><td>Diversity</td><td>Variety / Difference</td><td>विविधता / अलग-अलग रूप</td></tr>
+          <tr><td>Biodiversity</td><td>Biological variety of life</td><td>जीवों/प्रजातियों/genes/ecosystems की विविधता</td></tr>
+          <tr><td>DNA</td><td>Deoxyribonucleic Acid</td><td>Genetic information का molecule (lecture में genes/chromosomes context)</td></tr>
+          <tr><td>Gene</td><td>Unit of heredity</td><td>गुणों को next generation तक ले जाने वाली इकाई</td></tr>
+          <tr><td>Chromosome</td><td>DNA-protein structure</td><td>Genes से बनी heredity structure</td></tr>
+          <tr><td>In-situ</td><td>On-site conservation</td><td>स्वस्थाने — natural place पर संरक्षण</td></tr>
+          <tr><td>Ex-situ</td><td>Off-site conservation</td><td>बाह्यस्थाने — natural place से बाहर संरक्षण</td></tr>
+          <tr><td>MCQ</td><td>Multiple Choice Question</td><td>Objective exam question</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="hot">
+      <h3>🔥 Master Exam Hot Facts</h3>
+      <ul>
+        <li>Biodiversity word — <b>Walter G. Rosen</b>.</li>
+        <li>Biological Diversity — <b>Raymond F. Dasmann, 1968, A Different Kind of Country</b>.</li>
+        <li>Biodiversity types — <b>Genetic, Species, Community/Ecosystem</b>.</li>
+        <li>Biodiversity increases toward — <b>Equator / भूमध्य रेखा</b>.</li>
+        <li>Most biodiversity on Earth — <b>Amazonian rainforest</b>.</li>
+        <li>High biodiversity conditions — <b>high temperature + high rainfall</b>.</li>
+        <li>Important loss causes — habitat destruction, chemicals, invasive species, overuse, pollution, climate change, disasters.</li>
+        <li>In-situ examples — National Park, Sanctuary, Biosphere Reserve, Sacred Groves.</li>
+        <li>Ex-situ examples — Zoo, Botanical Garden, Seed Bank, Gene Bank, Cryopreservation.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>✅ Master Revision Checklist <span class="master-progress" id="checkProgress">0/35 done</span></h3>
+      <div class="checklist">
+        <label class="check"><input type="checkbox" data-key="ck0"> <span>Unit 7 का focus: विज्ञान, पर्यावरण, स्वास्थ्य; Technology का weightage कम बताया गया.</span></label>
+<label class="check"><input type="checkbox" data-key="ck1"> <span>पर्यावरण सबसे बड़ा umbrella है; Ecosystem और Biodiversity उसके हिस्से हैं.</span></label>
+<label class="check"><input type="checkbox" data-key="ck2"> <span>पर्यावरण = जैविक + अजैविक घटक; जैव मंडल में जीवों की विविधता पढ़ी जाती है.</span></label>
+<label class="check"><input type="checkbox" data-key="ck3"> <span>जैव विविधता = किसी भौगोलिक क्षेत्र में पौधों/प्राणियों के प्रकार, संख्या और विभिन्नता.</span></label>
+<label class="check"><input type="checkbox" data-key="ck4"> <span>Human variation, dog breeds, cat breeds, fish varieties — सभी biodiversity को समझाने के examples हैं.</span></label>
+<label class="check"><input type="checkbox" data-key="ck5"> <span>🔥 Biodiversity शब्द सर्वप्रथम Walter G. Rosen से जोड़ा गया.</span></label>
+<label class="check"><input type="checkbox" data-key="ck6"> <span>Raymond F. Dasmann ने 1968 में Biological Diversity शब्द/विचार अपनी पुस्तक A Different Kind of Country में दिया.</span></label>
+<label class="check"><input type="checkbox" data-key="ck7"> <span>Biological Diversity और Biodiversity में exam distinction याद रखें.</span></label>
+<label class="check"><input type="checkbox" data-key="ck8"> <span>जैव विविधता के 3 प्रकार: Genetic, Species, Community/Ecosystem diversity.</span></label>
+<label class="check"><input type="checkbox" data-key="ck9"> <span>Genetic diversity = एक ही species के genes में variation.</span></label>
+<label class="check"><input type="checkbox" data-key="ck10"> <span>Species diversity = एक ecosystem/community में अलग-अलग species की variety.</span></label>
+<label class="check"><input type="checkbox" data-key="ck11"> <span>Community diversity = अलग-अलग ecosystems/communities के organisms/flora-fauna में diversity.</span></label>
+<label class="check"><input type="checkbox" data-key="ck12"> <span>High biodiversity के लिए दो मुख्य conditions: अधिक तापमान + अधिक वर्षा.</span></label>
+<label class="check"><input type="checkbox" data-key="ck13"> <span>बारिश में मच्छर और मेंढक का example biodiversity growth conditions समझाता है.</span></label>
+<label class="check"><input type="checkbox" data-key="ck14"> <span>0° Latitude = Equator/भूमध्य रेखा/विषुवत रेखा.</span></label>
+<label class="check"><input type="checkbox" data-key="ck15"> <span>23.5°N = Tropic of Cancer/कर्क रेखा; 23.5°S = Tropic of Capricorn/मकर रेखा.</span></label>
+<label class="check"><input type="checkbox" data-key="ck16"> <span>🔥 Biodiversity भूमध्य रेखा की तरफ बढ़ती है और ध्रुवों की तरफ घटती है.</span></label>
+<label class="check"><input type="checkbox" data-key="ck17"> <span>उष्ण कटिबंधीय क्षेत्रों में biodiversity अधिक होती है.</span></label>
+<label class="check"><input type="checkbox" data-key="ck18"> <span>विश्व में सर्वाधिक जैव विविधता Amazonian rainforest/Brazil region में बताई गई.</span></label>
+<label class="check"><input type="checkbox" data-key="ck19"> <span>India में Western Ghats, Himalaya, Andaman-Nicobar जैसे क्षेत्रों को biodiversity context में mention किया गया.</span></label>
+<label class="check"><input type="checkbox" data-key="ck20"> <span>जैव विविधता के महत्व: सांस्कृतिक, आर्थिक, पारिस्थितिक, वैज्ञानिक, कृषि.</span></label>
+<label class="check"><input type="checkbox" data-key="ck21"> <span>Loss causes: habitat destruction/fragmentation, agriculture/forestry trend, foreign/invasive species, over-exploitation, pollution, climate change, disasters.</span></label>
+<label class="check"><input type="checkbox" data-key="ck22"> <span>Eucalyptus को lecture में पर्यावरणीय शत्रु example बताया गया क्योंकि यह पानी/minerals अधिक absorb करता है.</span></label>
+<label class="check"><input type="checkbox" data-key="ck23"> <span>Conservation का meaning: जीवों/प्रजातियों/जैविक संसाधनों की विविधता बचाना.</span></label>
+<label class="check"><input type="checkbox" data-key="ck24"> <span>Conservation examples: National parks, Zoos, Kuno-Palpur, cheetah rehabilitation, tiger protection.</span></label>
+<label class="check"><input type="checkbox" data-key="ck25"> <span>Lahari Bai, Dindori — मोटे अनाज/बीज संरक्षण का example.</span></label>
+<label class="check"><input type="checkbox" data-key="ck26"> <span>Jodhaiya Bai, Umaria — class chat में correction/example as painter.</span></label>
+<label class="check"><input type="checkbox" data-key="ck27"> <span>Conservation के 2 प्रकार: In-situ/स्वस्थाने और Ex-situ/बाह्यस्थाने.</span></label>
+<label class="check"><input type="checkbox" data-key="ck28"> <span>In-situ = जीव को उसके natural habitat में protect करना.</span></label>
+<label class="check"><input type="checkbox" data-key="ck29"> <span>Ex-situ = जीव/बीज/जीन आदि को original habitat से बाहर सुरक्षित जगह protect करना.</span></label>
+<label class="check"><input type="checkbox" data-key="ck30"> <span>In-situ examples: National Park, Wildlife Sanctuary, Biosphere Reserve, Sacred Groves.</span></label>
+<label class="check"><input type="checkbox" data-key="ck31"> <span>Ex-situ examples: Zoo, Botanical Garden, Seed Bank, Gene Bank, Cryopreservation/low-temperature conservation.</span></label>
+<label class="check"><input type="checkbox" data-key="ck32"> <span>Cold storage/fridge/dead body storage analogy से निम्न तापी संरक्षण समझाया गया.</span></label>
+<label class="check"><input type="checkbox" data-key="ck33"> <span>🔥 Exam में in-situ/ex-situ examples odd-one-out या correct/incorrect form में आ सकते हैं.</span></label>
+<label class="check"><input type="checkbox" data-key="ck34"> <span>Upcoming: biodiversity conservation areas की details अगली class में; बाद में nutrition, food/diet, genetic diseases, health topics.</span></label>
+      </div>
+    </div>
+    <div class="note">
+      <h3>📌 Upcoming Topics</h3>
+      <p>Teacher ने कहा कि अगली class में biodiversity का remaining portion खत्म करेंगे, फिर health side के topics — पोषण आहार, अनुवांशिक रोग आदि — लिए जाएंगे। In-situ areas जैसे राष्ट्रीय उद्यान, अभयारण्य, biosphere reserve की details आगे होंगी।</p>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="section-head"><div class="num">⏱️</div><div><h2>Full Video Flow Ledger — Timestamp-by-Timestamp Coverage</h2><p class="subtitle">यह section transcript flow को exact order में preserve करता है। Revision notes ऊपर हैं; यह ledger side-by-side video matching के लिए है।</p></div></div>
+    <div class="note">
+      <p><b>How to use:</b> Video pause करो, timestamp ढूँढो, उसी block को खोलो। Promotional/admin class-schedule portions को dashed style में mark किया गया है ताकि exam revision में distract न करें, लेकिन flow gap न रहे।</p>
+    </div>
+    
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:00:11</span><span>Intro + Unit 7 positioning</span></summary>
+        <p>हेलो नमस्कार जय हिंद साथियों स्वागत है आप सभी का श्री रमा अकेडमी में साथियों आज के इस सेशन में हम लोग एक महत्त्वपूर्ण टॉपिक पर चर्चा करेंगे जिसका नाम है जैव विविधता बायोडायवर्सिटी हम लोगों ने पर्यावरण पढ़ा हम लोगों ने पारिस्थितिकी तंत्र पढ़ा और आज हम लोग पर्यावरण का ही हिस्सा होता है बायोडायवर्सिटी जैव विविधता यह हमारे यूनिट नंबर सेवन की सीरीज जो हम 2 बजे डेली लाइव हम लोग पढ़ रहे हैं उसमें यह एक महत्त्वपूर्ण टॉपिक है तो सभी लोग जुड़ जाइए आज के इस महत्त्वपूर्ण टॉपिक में आशा भावना जय हिंद गुड आफ्टरनून सभी को जय हिंद सभी लोग जुड़</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:00:56</span><span>Intro + Unit 7 positioning</span></summary>
+        <p>जाइए आज के लाइव और शानदार सेशन में बिना किसी देरी के जय चलिए और बिना किसी देरी के हम लोग शुरू भी करते हैं हमारा आज का सेशन मैं आपको पहले बता दूं यह हमारा यूनिट नंबर सेवन जिसमें हमारे यूनिट नंबर सेवन का नाम क्या रखा गया है विज्ञान पर्यावरण एवं स्वास्थ्य विज्ञान पर्यावरण एवं स्वास्थ्य प्रौद्योगिकी को हटा दिया गया है हालांकि प्रौद्योगिकी है हमारे सिलेबस में लेकिन उसका जो वेटेज है वो काफी कम कर दिया है कृषि उत्पाद तकनीक हटा दिया खाद्य प्रसंस्करण हटा दिया हमारे पास सिर्फ अंतर प्रौद्योगिकी है इसलिए बहुत ज्यादा</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:01:32</span><span>Intro + Unit 7 positioning</span></summary>
+        <p>प्रौद्योगिकी टेक्नोलॉजी से प्रश्न नहीं पूछेगा है ना जो भी रहेंगे फैक्चर चीजें पूछी जाएंगे तो मींस विज्ञान पर्यावरण और स्वास्थ्य यह मेन टॉपिक पर फोकस करना है और उसमें भी सबसे ज्यादा हमको फोकस करना पड़ेगा स्वास्थ्य पर जो कि हम लोग आगे के सेशंस में करेंगे हमने अभी तक विज्ञान की प्रमुख शाखाओं का प्रारंभिक ज्ञान पढ़ लिया है हमने अभी तक पर्यावरणीय कारक पढ़ लिया है हमने अभी तक पारिस्थितिक तंत्र पढ़ लिया है यह सारे टॉपिक्स हमने जितना हो सकता है डिटेल में उतना हमने कवर किया है इससे बाहर नहीं जाएगा बस हमको अब क्या</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:02:09</span><span>Intro + Unit 7 positioning</span></summary>
+        <p>करना है रिवीजन करना है प्रैक्टिस करना है अब जो हमारा आज का टॉपिक है जैव विविधता इस पर चर्चा करेंगे अब जैव विविधता जब खत्म होगा तो मैं यह पोषण आहार ये अनुवांशिक रोग वगैरह का यह वाला पोर्शन लूंगा मैं ठीक है सभी लोग जुड़ जाइए बहुत बढ़िया गुड आफ्टरनून रीता भावना आशा सभी लोगों का स्वागत है हमारे आज के इस लाइव सेशन में शानदार सेशन में चलिए तो चलिए शुरू करते हैं हमारा जैव विविधता का जो पोर्शन है बायोडायवर्सिटी का जो पोर्शन है सबसे पहले मैं एक बार आपको बता दूं कि पर्यावरण के ही यह सारे हिस्से हैं पर्यावरण एक बृहद रूप है मैंने बोला था</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:02:51</span><span>Biodiversity meaning + examples</span></summary>
+        <p>पर्यावरण सबसे ऊपर है सबसे ऊपर सबसे ऊपर पर्यावरण का ही हिस्सा होता है पारिस्थितिक तंत्र पर्यावरण के अ अर ही हमारा छोटा-छोटा हिस्सा पारिस्थितिक तंत्र कहलाता था क्या पारिस्थितिक तंत्र बहुत अच्छे से समझ में आ गया है तिक तंत्र अब चूंकि हमारे पर्यावरण का मीनिंग था सर जैविक एवं अजैविक घटकों से पर्यावरण का निर्माण यही हमारा था जिसमें जैविक घटक जय मंडल थे सर और अजैविक घटक जलमंडल वायुमंडल और स्थल मंडल थे और स्थल मंडल थे तो सर यह जो जैव मंडल है ना जैव मंडल इसमें ही जीवों में विविधता को आज अध्ययन करना है कितना डावर्स है हमारा जैव मंडल</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:03:43</span><span>Biodiversity meaning + examples</span></summary>
+        <p>जैव विविधता के द्वारा प्रदर्शित की जाती है आई होप क्लियर होगा संतोष जय हिंद सभी लोग जुड़ जाइए क्योंकि आज बहुत इंपॉर्टेंट और बहुत कांसेप्चुअल चीजें भी मैं बताऊंगा ठीक है ना जैव विविधता कहां ज्यादा पाई जाएगी जलवायु को क्या फर्क पड़ता है अब जैसे मैं आपको दिखाई दे रहा हूं तो इस स्ट्रक्चर में इस हाइट में ज्यादातर हमारा इंडिया का यह वाला जो पोर्शन है नॉर्थ इंडिया इस तरीके के लोग दिखते हैं लेकिन जैसे ही हम जम्मूकश्मीर साइड जाते हैं तो स्ट्रक्चर चेंज हो जाता है नॉर्थ ई ईस्ट साइड जाते हैं तो हमारा जो अ रूप रंग है</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:04:21</span><span>Biodiversity meaning + examples</span></summary>
+        <p>वह काफी भिन्नता देखने को मिलती है साउथ में जाते हैं तो काफी भिन्नता देखने को मिलती है तो हम मनुष्यों में जब इतनी विभिन्नता एं हम एक देश में देख पा रहे हैं तो सोचो अलग-अलग प्रजातियों में कितनी विभिन्नता होगी इसी विभिन्नता को ही हम जैव विविधता बोलते हैं जो कि फर्क पड़ता है जलवायु की जो कि फर्क पड़ता है कि वह कितनी हाइट पर एल्टीट्यूड पर है बहुत सारी चीजें यहां पर फैक्टर हैं जिनको हम लोग आज देखने वाले हैं किस तरीके के प्रश्न आते हैं मैं आज यहां पर एमसीक्यू भी कुछ-कुछ बीच-बीच में करवाऊंगी ताकि आपको क्लियरटीडीएस है तो बिना किसी देरी के हम</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:05:01</span><span>Biodiversity meaning + examples</span></summary>
+        <p>लोग समझते हैं यह आप देख पा रहे हो ये इतनी सारी फोटोस हैं ये अलग-अलग विविधता को शो कर रहा है विविधता को शो कर रहा है देख पा रहे हो कितना सुंदर-सुंदर पेड़ पौधे फूल अलग-अलग पक्षी अलग-अलग जीव कीट मकोड़े ना जाने कितनी वैरायटी है करोड़ों अरबों हम खुद नहीं जानते हैं काउंट भी नहीं कर सकते हैं इतनी वैरायटी है हमारे इस सुंदर से पर्यावरण में जीवों की विविधता याद रखिएगा ये सब जैव मंडल के ही हिस्से में आएगा मतलब पर्यावरण बृहद रूप है पर्यावरण का एक हिस्सा पारिस्थितिक तंत्र और पर्यावरण वण का ही एक हिस्सा जैव विविधता जैव मंडल को हम लोग पढ़ रहे हैं</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:05:41</span><span>Biodiversity meaning + examples</span></summary>
+        <p>सर किसी भौगोलिक क्षेत्र के परिवेश में पाए जाने वाले पौधों और प्राणियों के प्रकार संख्या को जैव विविधता कहते हैं या जैव विविधता के रूप में उल्लिखित किया जाता है हमने एक एरिया कवर कर लिया यहां पर जीवों की संख्या में अलग-अलग विविध विधता देखनी देखने को मिल रही है कि सर 100 प्रकार के यहां पर विविधता है एक एग्जांपल के तौर पर मैं आपको बताऊंगा कुत्ते का एग्जांपल है कुत्ते का आप लोग अलग-अलग वैरायटी के कुत्ते आप लोग पालते होंगे या फिर कहीं ना कहीं मूवीज में देखा होगा कि यह इस ब्रीड का कुत्ता है यह तो देसी कुत्ता है यह तो रोड छाप कुत्ता है</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:06:24</span><span>Biodiversity meaning + examples</span></summary>
+        <p>यह हमने इस कंट्री से मंगाया है ना जाने कितनी वैरायटी होती है मैं नाम नहीं ले रहा हूं परंतु तो कुत्ते की इतनी वैरायटी है मींस कुत्ते में अलग-अलग प्रजातियां पाई जा रही हैं ऐसे बिल्ली भी अलग-अलग प्रजाति की बिल्ली हैं कोई भी जानवर हम लाते हैं खरीदते हैं मछलियों में जैसे हमने मछली बोल दिया मछली जल की रानी सबके सबके हाथ लगाओ डर जाती है बाहर निकालो मर जाती है मछली मैंने नाम लिया तो मछली में कितनी वैरायटी है है ना कितने अलग-अलग कलरफुल मछलियां होती हैं तो मींस सर एक एक प्रजाति के अंदर भी बहुत वैरायटी है</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:07:04</span><span>Biodiversity meaning + examples</span></summary>
+        <p>विविधता है एक प्रजाति के अंदर भी बहुत विविधता है ऐसे इंसानों में भी तो मैंने बताया तो यह विविधता जो है इसी को जैव विविधता कहते हैं इसी को जैव विविधता कहते हैं आई होप क्लियर है ठीक या फिर किसी एक निश्चित भौगोलिक क्षेत्र के परिवेश में पाए जाने वाले सजीव जीवों की विभिन्नता हों एवं विभिन्न सजीव जीवों की प्रजातियों स्पीशीज में पाई जाने वाली विभिन्नता को जैव विविधता बायोडायवर्सिटी कहते हैं बहुत आसान है है ना कि सर जीवों में उकी स्पीशीज में प्रजातियों में विभिन्नता देखने को मिलती है वह हमारी जैव विविधता कहलाती है यह तो</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:07:45</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>हो गया इसकी साधारण सी परिभाषा हमको कहां से प्रश्न आएगा हमको प्रश्न आएगा निम्नलिखित में से किसने सर्वप्रथम बायोडायवर्सिटी शब्द अ प्रयोग किया था यह आंसर है वाल्टर जी रोसेन वाल्टर जी रोसेन जो है सर्वप्रथम बायोडायवर्सिटी शब्द का प्रयोग किया था यह आपको याद रखना है वाल्टर जी रोसेन यह क्वेश्चन आपको मैं आज के सेशन में थ्योरी एमसीक्यू एमसीक्यू दोनों में मिला करके लेकर के चलूंगा क्योंकि बहुत बोरिंग ना हो जाए सेशन इसलिए थोड़ा इंटरेस्टिंग वे में आज का सेशन हम लोग लेने वाले हैं ठीक क्योंकि थ्योरी थ्योरी पढ़ने में क्या हो जाता है बोर हो</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:08:26</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>जाता है तो आप क्वेश्चन भी क्वेश्चन के फॉर्म में नोट बनाते चलेंगे कि सर सबसे पहले बायोडायवर्सिटी को किसने शब्द को किसने प्रयोग में लाया तो सर वाल्टर जी रोसेन ने लाया वाल्टर जी रोसेन ने लाया यह आपको याद रखना है सी इज द राइट आंसर ठीक आगे हम लोग देखते हैं आगे हम लोग देखते हैं अह एक नाम और है रेमंड एफ दास मैन रेमंड एफ दास मैन इन्होंने 1968 में जैव विविधता शब्द को अंग्रेजी जी शब्द बायोलॉजिकल डाइवर्सिटी के रूप में अपनी एक पुस्तक अ डिफरेंट काइंड ऑफ कंट्री में दिया था मींस सर अगर वाल्टर जी रोसेन पूछे अगर सर दास मैन पूछे तो हम क्या</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:09:15</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>समझे हम क्या समझे तो आपको क्लियरटीडीएस डाइवर्सिटी इंग्लिश में लिख रहा हूं क्योंकि यह ऐसा का ऐसा ही है और हिंदी में दोनों का मतलब जैव विविधता है यह एक वर्ड याद रखोगे और एक है बायोडायवर्सिटी बायो डाइवर्सिटी जिसको हम लोग पढ़ रहे हैं हम लोग बायोलॉजिकल डायवर्सिटी पूरा नहीं बोलते हम लोग बोलते हैं बायोडायवर्सिटी दोनों का मीनिंग जैव विविधता है तो आपको यह याद रखना है बायोलॉजिकल डायवर्सिटी पहले लाया गया है और यह लाया गया है दास मैन के द्वारा किसके द्वारा दास मैन के द्वारा और इसको कन्वर्ट किया अंग्रेजी शब्द</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:10:08</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>में की एक दूसरे शब्द में कन्वर्जन किया जिनका नाम है वाल्टर जी रोसेन यहां पर देखो यहां पूछा क्या है बायोडायवर्सिटी बायोडायवर्सिटी नॉट बायोलॉजिकल डाइवर्सिटी दोनों शब्द को अलग-अलग व्यक्ति ने यहां पर प्रतिपादित किया है बायोडायवर्सिटी हमको पढ़ना है यही सबसे इंपॉर्टेंट है बाद में तो यहां बायोडायवर्सिटी किसने दिया वाल्टर जी रोसेन ने वाल्टर जी रोसे ने आप लोग इंग्लिश में लिख लोगे है ना इंग्लिश में लिख लोगे अगर आपको हिंदी में लिखना है तो ऐसे लिखोगे बायोलॉजिकल बायो लॉजिकल डाइवर्सिटी पूरा लिख लेना और इसमें</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:10:54</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>बायोडायवर्सिटी हिंदी इंग्लिश में लिख लोगे क्लियर है कितनी बात इतनी बात क्लियर है सर दास मैन आएंगे रेमंड एफ दास मैन इन्होंने 1968 में जैव विविधता का कौन सा वाला वर्जन बायोलॉजिकल डाइवर्सिटी को इन्होंने बताया और बाद में वाल्टर जी रोसेन ने जैव विवेता को अंग्रेजी शब्द बायोलॉजिक बायोलॉजिकल डायवर्सिटी को चेंज करके बायोडायवर्सिटी के रूप में सर्वप्रथम प्रयोग में लाया इन्होंने परिवर्तित किया वाल्टर जी रोसेन ने बायोलॉजिकल डायवर्सिटी को बायोडायवर्सिटी में चेंज किया प्रश्न ऐसे भी भी पूछ सकता है कि किस साइंटिस्ट</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:11:32</span><span>Term origin: Rosen vs Dasmann</span></summary>
+        <p>ने वैज्ञानिक ने बायोलॉजिकल डायवर्सिटी को बायोडायवर्सिटी में चेंज किया परिवर्तित किया तो नाम रहेगा वाल्टर जी रोसेन नाम याद रखना बहुत जरूरी है इसलिए मैं इस परे थोड़ा सा जोर दे रहा हूं अगर आपसे पूछेगा बायोलॉजिकल डायवर्सिटी को चेंज करके परिवर्तित करके बायोडायवर्सिटी को सर्वप्रथम किसने प्रयोग में लाया था तो नाम याद रखोगे वाल्टर जी रोसेन बायोलॉजिकल डाइवर्सिटी को किसने पहले प्रतिपादित किया तो किसने सबसे पहले दिया प्रयोग मिलाया तो दास मैन ने दास मैन ने बहुत शानदार बहुत शानदार जी सर अब हम लोग आगे बढ़ते हैं जैव</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:12:13</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>विविधता की परिभाषा देख ली जैव विविधता के प्रयोग कर्ताओं को भी देख लिया कि प्रथम प्रयोग कर्ता कौन हैं जैव विविधता में दो प्रथम प्रयोग कर्ता बता दिया अब जैव विविधता के प्रकार हमको पढ़ना है कि जैव विविधता के कितने प्रकार है तो जैव विविधता के मुख्यतः तीन प्रकार है तीन प्रकार है पहला अनुवांशिक विविधता जैव विविधता में आनुवांशिक रूप से विविधता देखने को मिलती है अनुवांशिकता क्या होती है यह जब मैं अ अ जब आपको मैं यूनिट सेवन पुराने हिसाब से पढ़ा रहा था तो वहां पर आपके प्रिंसिपल्स बेसिक प्रिंसिपल्स थे वहां पर बायोलॉजी में मैं अनुवांशिकता को</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:12:54</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>बहुत अच्छे से समझाया था हूं क्या होता है सर जो कैरेक्टर्स होते हैं हैं वह माता-पिता से या एक अ जनरेशन से दूसरी जनरेशन में जाने को हम बोलते हैं क्या बोलते हैं अनुवांशिकता ठीक है ना जो जींस के रूप में आगे बढ़ता है जो कि क्रोमोसोम जीनस से क्रोमोसोम बनते हैं और वह क्रोमोसोम की जो संरचना होती है वह आने वाली पीढ़ियों में जाता है तो एक पीढ़ी से दूसरी पीढ़ी में यह गुणों का जाना कैरेक्टर्स का जाना वह कहलाता है अनुवांशिकता अनुवांशिकता में विविधता देखने को मिली कि जब हमने जैसे शादी की बात करते हैं ना दो अलग-अलग व्यक्ति से</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:13:37</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>शादी होती है है ना आप किसी अपने फैमिली में शादी नहीं करते हैं हम लोग जब हिंदू समाज में क्या होता है शादी करते हैं तो लड़की ढूंढने जाते हैं लड़का ढूंढने जाते हैं क्यों उस पूरे फैमिली में नहीं हो सकती ताकि अनुवांशिकता विभिन्नता और देखने को मिले और यहीं पर अगर लड़का मान लो काला है पूरा काला है बोलना नहीं चाहिए काला है तो तो गोरी लड़की ढूंढता है गोरी लड़की ढूंढता है क्यों ढूंढता है कि इसकी आने वाली जो जनरेशन है वो कैसा हो गोरा हो ऐसा ऐसा आपने देखा होगा समाज की विडंबना एं हैं परंतु अब एग्जांपल तो देना पड़ेगा है ना</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:14:13</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>अनुवांशिकता आपको समझना होगा यह अनुवांशिकता विभिन्नता यह पढ़ना है दूसरा है प्रजातीय विभिन्नता और तीसरा है सामुदायिक विभिन्नता तीनों को समझेंगे पहले आप लिख लेंगे जैव विविधता क्या है उसके प्रयोग करता अब जैव विविधता के प्रकार में अनुवांशिक जैव विविधता अनुवांशिक जैव विविधता प्रजातीय जैव विविधता और सामुदायिक जैव विविधता एक-एक करके दोनों तीनों को समझते हैं चलिए सबसे पहले अनुवांशिक विविधता अनुवांशिक विविधता जो मैंने अभी बताया अनुवांशिक रूप से जब विविधता देखने को मिलती है तो व अनुवांशिक जैव विविधता या अनुवांशिक</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:14:59</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>विविधता कहलाता है इसमें जीन विविधता को दर्शाता है जीन विविधता उपस्थित जीन विविधता एक ही प्रजाति में जो उपस्थित जीन होती है उसमें विभिन्नता मतलब इंसानों के अंदर जो अलग-अलग विभिन्नता देखने को मिल रही है वो जीन की वजह से हमारे जीन अलग हैं कोई अलग व्यक्ति है तो उसके जीनस अलग हैं हम बोलते हैं ना हमारे जींस में ही नहीं है यह गुण हमारे जींस में ही नहीं है इसलिए जींस में विभिन्नता की वजह से वा शिक विभिन्नता देखने को मिलती है इसको पकड़ लो बाकी सब सेम है जो मैं बता रहा हूं अगला याद करते हैं प्रजाती विभिन्नता</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:15:38</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>मैंने थोड़ा ज्यादा ज्यादा लिख के दिया है ताकि आप थोड़ा सा उसको रीड करो आप और अच्छा समझो बाकी मैं तो समझा ही रहा हूं थोड़ा सा आप समय दोगे ठीक और एमपी में ज्यादा होता है सब एमपी में ज्यादा होता है ऐसा नहीं है बिल्कुल एमपी में जंगल ज्यादा है परंतु तो इसके पीछे लॉजिक क्या है जलवायु का क्या जलवायु का लॉजिक है अभी हम आगे पढ़ेंगे रिता जी ठीक है ना अभी समझेंगे प्रजाति विभिन्नता सर प्रजाति विविधता से आशय एक समुदाय या परितंत्र में उपस्थित पादप या जंतु प्रजातियों की विभिन्न प्रजातियों से है मतलब एक समुदाय</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:16:23</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>देख लिया हमने एक पूरा समुदाय इस समुदाय में अब हम लोग सभी कुछ देखने वाले हैं जैसे कि जैसे कि हमारे पास कोई भी एक क्षेत्र ले लिया विषुवतीय वर्षा वाले वन जैसे हैं उन्हें जै विविधता हॉटस्पॉट के नाम से हम जाना जाता है क्योंकि यहां पर बहुत सारी वैरायटी के फल फूल वृक्ष पेड़ पौधे जानवर कीट मकोड़े मतलब अलग-अलग वैरायटी है सर मतलब सर प्रजातियों का भरमार है जैसे इंसान एक प्रजाति है कुत्ता एक प्रजाति है बिल्ली एक प्रजाति है भैंस एक प्रजाति है गधा एक प्रजाति है ऐसे प्रजातियों की लाइन लगी पड़ी है अब उसके अंदर हम देखें तो वह</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:17:07</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>अनुवांशिक विविधता होगी कि इन पर्टिकुलर इंसानों में जो अलग-अलग वैरायटी देखने को मिल रही है वह अनुवांशिक विविधता सिर्फ कुत्ते को लेंगे तो वह अनुवांशिक विविधता लेकिन जब हम प्रजाति विविधता देख रहे हैं तो इंसान एक प्रजाति अलग ले लो ये स्पीशीज अलग कुत्ता ले लो अलग बिल्ली ले लो अलग गधा ले लो अलग यह पेड़ अलग पौधे अलग तो इतनी वैरायटी देखने को मिलती है प्रजातियों में लाखों करोड़ों रूप में और ऐसी प्रजातियां हमको हॉट स्पॉट पर ज्यादा देखने को मिलती है जो हॉट स्पॉट होता है क्या होता है अभी समझेंगे हॉट स्पॉट पर</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:17:45</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>ज्यादा देखने को मिलती है वेस्टर्न घाट हिमालया बिल्कुल रीता जी चर्चा कर रहे हैं अभी उस पर भी आ रहे हैं धीरे-धीरे चल रहे हैं गाड़ी को बढ़ा रहे हैं तो आई होप क्लियर है सामुदायिक विविधता सामदा विविधता में हम लोग देखने वाले हैं पूरे एक समुदाय में कितनी विविधता है यहां पर अलग-अलग हमने प्रजाति देख ली और यहां पर हमको एक पूरा पारितंत्र विविधता देखना है यह अलग हो गया पारितंत्र विविधता मतलब सर एक हम इकोसिस्टम जो अभी पिछला टॉपिक पढ़ा हमने पारिस्थितिक तंत्र एक इकोसिस्टम ले लिया समुद्र ले लिया अब समुद्र में जितनी विविधता है उन सब को हम</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:18:24</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>लोग इसके अंतर्गत पढ़ते हैं विशेष एक समुदाय के जीव जंतुओं एव वन पतियों तथा दूसरे समुदाय के जीव-जंतुओं व वनस्पतियों के मध्य पाई जाने वाली विविधता मींस हमने एक नदी ले लिया और एक तालाब ले लिया इसमें जो भी जीव हैं उनमें और इस वाली जो अ पारिस्थितिक तंत्र है उनमें जो रहने वाले जीव हैं इन दो अलग-अलग समुदायों के बीच में जो विविधता देखने को मिलती है उसको बोलते हैं सामुदायिक विविधता मैं एक बार फिर से समझा देता हूं सामुदायिक विविधता क्या है दो इकोसिस्टम ले लिया दो पारिस्थितिक तंत्र ले लिया इसमें जो जीव रह रहे हैं मान लो इसमें मछली ही रह रहा</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:19:04</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>है और यहां पे भी मछली रह रही है तो दोनों के समुदायों में अलग-अलग भिन्नता देखने को मिल रही है यहां पर कछुआ है वहां पर भी कछुआ है लेकिन यह अलग है वह अलग है दो अलग-अलग पारितंत्र के समुदायों में जो देखने वाली विभिन्नता है उसको सामुदायिक विभिन्नता कहते हैं बाकी एक ही समुदाय में यह वाला जो प्रजाति है वह एक ही समुदाय में अलग-अलग प्रजातियों की विभिन्नता देखने को मिल रही है कितना शानदार है समझ में आ गया सर वाह सर मतलब यह वाला क्या है अनुवांशिक विविधता सर आनुवांशिक हमको देखना है एक जीव का हमको पकड़ना है उसके आने वाली सारी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:19:42</span><span>Types: Genetic, Species, Community</span></summary>
+        <p>वैरायटी देखनी है इंसान में ही अलग-अलग वैरायटी देखनी है बहुत बढ़िया कुत्ते में ही अलग-अलग वैरायटी देखनी है वही एक को पकड़ लिया यह वाला इसमें हमको एक पूरा का पूरा इकोसिस्टम पकड़ना है एक पूरा का पूरा इकोसिस्टम पकड़ना है जो हमने पिछले क्लासेस में पढ़ा है अब इस इकोसिस्टम में कितनी अलग-अलग वैरायटी है अलग-अलग जीव हैं अलग-अलग पेड़-पौधे हैं इनमें विभिन्नता जो है वो प्रजाति है अब सामुदायिक में हमने दो पहला और दूसरा दो अलग-अलग पारिस्थितिक तंत्र लिया यहां के जीव और यहां के जीवों में जो विभिन्नता देखने को मिल रही है वह</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:20:18</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>सामुदायिक विभिन्नता है बताओ क्लियर है क्या अगर क्लियर है तो यस सर लिख दो यस सर थम्स अप बना दो यस सर क्लियर है एक बार बता दो ताकि हम लोग आगे बढ़ सके बहुत शानदार क्वेश्चन अब आपके सारे डाउट क्लियर होंगे रीता जी है ना क्वेश्चन जैव विविधता में परिवर्तन होता है कहां परिवर्तन होता है भूमध्य रेखा की तरफ परि बढ़ती है भूमध्य रेखा की तरफ घटती है पृथ्वी पर एक समान रहती है ध्रुवों की तरफ बढ़ती है कहां पर जैव विविधता अधिक होती है यह हमको बताना है पूरी पृथ्वी में और क्या परिवर्तन हो रहा है बताना है कुछ चीजें समझा देता हूं जैव विविधता के लिए</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:21:04</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>तब आपको और अच्छा समझ में आएगा मुझे बताओ जैव विविधता जो है जैव विविधता जो है ये बहुत ज्यादा हो बहुत वैराइटी हो इसके लिए दो कारण दो कारण दो कारण पहला सर तापमान अधिक हो सर तापमान हो दूसरा सर वर्षा हो ये दो कंडीशन जहां मिल गए साथियों यह मान लो यह मान लो वहां पर बायोडायवर्सिटी बहुत ज्यादा होगी वहां पर यह जो तीन विविधता मैंने पढ़ाया अनुवांशिक प्रजाति सामुदायिक यह वहां पर बहुत ज्यादा होगी कहां पर सर ऐसा क्षेत्र जहां पर तापमान अधिक हो सर ऐसा क्षेत्र जहां वर्षा अधिक हो तो यह दो कंडीशन ऐसे कंडीशन हैं जो जैव विविधता को</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:21:55</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>बहुत ज्यादा बढ़ाती है एक एग्जांप ल देता हूं अब देखना मुझे बताओ जब बरसात होती है तभी मच्छर पैदा होते हैं बरसाती मेंढक आप बोलते हो किसी को एग्जांपल देते हो अरे आप तो बरसाती मेंढक हो टर टर मतलब कभी-कभी बोलते हो टर टर ऐसा क्यों बोलते हैं सर जब बरसात आती है तभी मेंढक की आवाज आती है टर टर टर पर बरसात के समय जहां पानी आसपास सब भरा होता है सर जब बरसात होती है तभी मच्छर पैदा होता है हम लोग को यह चीज बार-बार सरकार बोलती है कि जो पानी है कूलर में उसको फेंक दो बार-बार बदलो कहीं पर भी पानी रुकने मत दो रुका हुआ पानी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:22:34</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>जम्स पैदा करता है मच्छर पैदा करता है मतलब पानी बहुत जरूरी है सर किसी जीव को उत्पन्न होने के लिए पानी बहुत जरूरी है सर किसी जीव को उत्पन्न करने के लिए और गलती से पानी भी है और गर्मी आ गया गर्मी आ गया अगर मान लो गलती से गर्मी आ गया और पानी भी है तब और वैरायटी हमको देखने को मिलती है यह दो कंडीशन जीवों को अनुकूल बनाते हैं पैदा करने के लिए उनकी वृद्धि के लिए याद कर लो ये भूगोल में भी आपको पढ़ना है जलवायु में ठीक तो सर ये दो कंडीशन ऐसे कंडीशन है जिससे जैव विविधता बहुत अधिक होती है आओ देखते हैं हमारे पूरे विश्व में कहां पर जैव विविधता बहुत</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:23:22</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>अधिक होगी पूरे विश्व में जैव विविधता कहां पर अधिक होगी तो सर ये हमारी प्यारी सी धरती माता है और इसमें एक लाइन खींच दो बीचोबीच यह बीचो बीचोबीच जिसको रो डिग्री अक्षांश रेखा बोलते हैं अक्षांश रेखा बोलते हैं 0 डिग्री अक्षांश रेखा बहुत प्यार से पढ़ा रहा हूं बहुत प्यार से समझना बहुत इंपॉर्टेंट कांसेप्ट है यहां से क्वेश्चन 101 पर आएगा सर 0 डिग्री अक्षांश रेखा जिसको हम लोग विषुवत रेखा या भूमध्य रेखा कहते हैं विषुवत रेखा या भूमध्य रेखा कहते हैं भूमध्य रेखा कहते हैं बहुत बढ़िया अब समझना सूर्य जो है सूर्य की किरणें जो हैं वह सीधी कहां</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:24:14</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>पड़ती हैं सीधी गर्मी सबसे ज्यादा कहां होती है सर इसी लाइन पर पूरे विश्व में सबसे ज्यादा गर्मी पड़ती है क्योंकि सूर्य की किरणें बिल्कुल सीधी इस वाली क्षेत्र में साल भर पड़ती है मिडिल गौरव रीता भूमध्य रेखा भूमध्य रेखा पर बहुत बढ़िया बहुत बढ़िया तो यहां पर आप समझिए भूमध्य रेखा से एक पट्टी बना रहा हूं ऊपर की तरफ और एक पट्टी बना रहा हूं नीचे की तरफ यह पट्टी ऊपर में लगभग 5 डिग्री मान लू मिनिमम और नीचे भी 5 डिग्री मान लू 5 डिग्री उत्तरी अक्षांश ये क्या है उत्तरी अक्षांश सर ये क्या लिख दे रहे हो समझ नहीं आ रहा है जिन्होंने जियोग्राफी पहले</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:24:55</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>पढ़ा होगा समझ रहे होंगे कि सर हम लोग इस तरीके से पृथ्वी में जो लाइन खींचते हैं यह अक्षांश कहलाती है और जो ऐसी लाइने खींचते हैं इसको देशांतर बोलते हैं और जब हम पृथ्वी को दो इक्वल पार्ट्स में डिवाइड कर देते हैं तो ऊपर वाला उत्तर नीचे वाला दक्षिणी गोलार्ध होता है गोले का आधा भाग गोलार्ध कहलाता है यह गोला गोले का आधा ऊपर अगर हम लोग ऐसी लाइन खींचते हैं तो उत्तरी अक्षांश नीचे खींचते हैं जीरो से तो दक्षिणी अक्षांश ये हमको याद रखना है तो ये 5 डिग्री उत्तरी अक्षांश 5 डिग्री दक्षिणी अक्षांश में मैंने दो लाइने खींच</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:25:35</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>दी और मैंने यह पट्टी बना दी यह पट्टी बना दी साथियों मानो यह पूरे विश्व में सबसे अधिक जैव विविधता वाली पट्टी है सबसे अधिक जैव विविधता वाली पट्टी है यहां पर जैव विविधता इतनी देखने को मिलती है कि मतलब बहुत ज्यादा हा इतनी नी वैरायटी है पेड़ पौधे जीव जंतु बहुत ज्यादा वर्षा प पाती वन इतने वन है यहां पर सबसे ज्यादा एक चीज और एक लाइन और खीचू यहीं पर एक लाइन और खीचू यह एक लाइन है 25 डिग्री का और एक लाइन नीचे भी है 0 डिग्री से 235 डिग्री का सा डिग्री उत्तरी अक्षांश और 25 डिग्री दक्षिणी अक्षांश यह दो इंपॉर्टेंट लाइन है इनको क्या बोला</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:26:34</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>जाता है इनको बोला जाता है कर्क रेखा और मकर रेखा कर्क रेखा और मकर रेखा ॉ ट्रॉपिक ऑफ कैंसर ट्रॉपिक ऑफ कैप्रीकॉर्न ठीक सर आपने ये दोनों लाइन क्यों खींची क्योंकि जो सूर्य है वो साल भर इस रेखा खा के ऊपर नहीं जाता और इस रेखा के नीचे नहीं जाता जब सूर्य इस रेखा की तरफ होता है तो ऊपर वाले गोलार्ध में ठंडी पड़ती है और जब सूर्य ऊपर होता है तो ऊपर गर्मी और नीचे वाले गोलार्ध में ठंडी पड़ता है जैसे अभी ठंडी पड़ रहा है ना हमारे यहां ठंडी पड़ रहा है तो मतलब सूर्य जो है यह दक्षिण गोलार्ध की तरफ है सूर्य की किरणें पूरी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:27:20</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>दक्षिणी गोलार्ध की तरफ पड़ रही हैं लेकिन साल भर इस वाली रेखा में 0 डिग्री में बहुत ज्यादा तापमान साल भर बना रहता है और अगर सूर्य की किरणें इस वाली पट्टी पर साल भर पड़ेगी तो आप बताइए गर्मी होगा ना इस वाले क्षेत्र में सबसे ज्यादा गर्मी होगा और गर्मी होगा तो मुझे बताइए मुझे बताइए गर्मी होने से क्या होगा सर इपोरेन होगा सर वाष्प बन के जल ऊपर जाएगा बादलों का निर्माण करेगा और वर्षा होंगे साल भर वर्षा इस वाली पट्टी पर देखने को मिलता है इस वाली पट्टी पर साल भर वर्षा देखने को मिलता है तो मींस सर आप जो समझा रहे हो क्या समझा रहे हो कि सर इस</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:28:04</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>वाले क्षेत्र में सर्वाधिक तापमान गर्मी होता है और साल भर वर्षा होता है जो कि जीवों के लिए अनुकूल परिस्थिति स्थिति होती है इसलिए यहां पर विश्व के सबसे ज्यादा जैव विविधता वाला क्षेत्र सबसे ज्यादा जै विविधता देखने को मिलता है अब हमारा ऑप्शन देखो सबको समझ में आ गया कांसेप्ट अब ऑप्शन देखो भूमध्य रेखा की तरफ बढ़ता है जैव विविधता में परिवर्तन भूमध्य रेखा की तरफ बढ़ता है मींस बोल रिया है क्या बोल रिया है बताओ कि सर ऊपर से नीचे जा रहे हैं तो भूमध्य रेखा की तरफ जा रहे हैं नीचे से ऊपर जा रहे हैं भूमध्य रेखा की तरफ जा रहे हैं मींस भूमध्य रेखा</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:28:46</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>की तरफ जाओगे तो हमारी जै विता बढ़ता है बिल्कुल करेक्ट है बिल्कुल करेक्ट है बाकी और देखने की जरूरत नहीं है ए इज द रा राइट आंसर बाकी बोल रहा है भूमध्य रेखा की तरफ घटता है घटता नहीं है बढ़ता है पृथ्वी पर एक समान होता है बिल्कुल नहीं होता है पृथ्वी पर एक समान ना बिल्कुल नहीं होता है ये ऊपर तो कोई रहता ही नहीं है इन क्षेत्रों में इन क्षेत्रों में यह नॉर्थ पोल है यह साउथ पोल है उत्तरी गोला उत्तरी ध्रुव दक्षिणी ध्रुव कोई रहता ही नहीं है और ध्रुवों की तरफ बढ़ता है भाई ध्रुवों की तरफ थोड़ी बढ़ेगा बिल्कुल गलत स्वाहा नो ना बिल्कुल</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:29:25</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>ना तो हमारा यह क्वेश्चन आई होप क्लियर है कोई कमेंट ही नहीं कर रहा है कि हां सर समझ में आ रहा है बिल्कुल मजा भी आ रहा है क्लियर है कि नहीं है यह बना लेना डायग्राम के साथ में अब हम लोग बढ़ते हैं आंसर क्या है ए भूमध्य रेखा की तरफ बढ़ता है भूमध्य रेखा अब जलवायु जब आप पढ़ोगे कहां पर जियोग्राफी में तो वहां पर जब पढ़ोगे तो वहां पर आपको बताया जाएगा सर्वाधिक जैव विविधता उष्ण कटिबंधीय क्षेत्रों में पाई जाती है ये हमारा जो क्षेत्र है ये उष्ण कटिबंधीय बंधी फिर शीत कटिबंध इस तरीके से जलवायु क्षेत्र विभाजित है ज्यादा टफ हो</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:30:09</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>गया क्या ज्यादा टफ हो गया क्या बच्चे बिल्कुल निपट गए हैं ऐसा लग रहा है चलिए यह हमारा समझ में आ गया बाकी कम जैव विविधता अ अत्यल्प जैव विविधता वाले क्षेत्र भी आपको समझ में आ जाएगा आप इसको सिर्फ रीड करोगे कि सर कम जैव विविधता जो है वह यहां पर मिलेगी और बहुत कम यहां वाले क्षेत्र में मिलेगी जितना हम पोल्स की तरफ जाएंगे जैता कम होती जाएगी यही चीज लिख दिया मैंने सूर्य की किरणें अत्यल्प होती हैं इस वजह से बाकी कारण मैंने बता दिया गर्म जलवायु अधिक वर्षा पादप तथा प्राणियों के विकास के लिए वृद्धि के लिए अनुकूलतम दशाएं होती हैं तो यह वाला कारण</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:30:51</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>बिल्कुल नोट जरूर कर लेना यह बहुत महत्त्वपूर्ण लाइन है बाकी सारी चीजें मैंने मुंह से बोल दी है चलिए यह देखो वर्ल्ड में सबसे अधिक जो जैव विविधता पाई जाती है वह हमको देखने को मिलता है यह ब्राजील के देश में यहां पर अमेजन की बहुत बड़ा जंगल है अमेजन का बहुत बड़ा जंगल है और विश्व में सबसे ज्यादा जैव विविधता यह अमेजन की जंगलों में देखने को मिलता है ठीक यह देख रहे हो यह हमारा 0 डिग्री अक्षांश रेखा है यह है हमारा 0 डिग्री अक्षांश रेखा इस जीरो डिग्री अक्षांश रेखा के आसपास का जो क्षेत्र है यह वाला यह वाला यह वाला यह</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:31:37</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>वाला यह वाला और यह वाला इस वाली पट्टी में सबसे अधिक जैव विविधता देखने को मिलती है अगर इस पट्टी में गौर करोगे तो देशों को अगर मैं बता दूं तो यहां पर देख पा रहे हो इंडोनेशिया वगैरह जो है जो बड़े-बड़े द्वीपों पर यह बसा हुआ है यहां पर जैव विविधता बहुत ज्यादा होता है अगर हम भारत की बात करें तो यहां पर देखो भारत के नीचे यह आप देख पा रहे हो आपका जो मालदीव है वहां पर आज देखने को मिल रहा है हमारा भारत से झगड़ा परंतु मालद्वीप में भी जैव विविधता क्योंकि सब क्या है आईलैंड्स है टापू है तो वहां पर भी काफी जैव विता देखने को मिलती है हमारा</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:32:16</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>जो यहां पर श्रीलंका के बगल में यहां पर अंडमान निकोबार वहां पर बहुत वैरायटी जैव विविधता मीस सर इस क्षेत्र में बहुत ज्यादा जै विविधता देखने को मिलती है यह बहुत बढ़िया है सर नहीं सर साइंस में इंटरेस्ट कम रहता है सबका इसलिए शायद अच्छा इसलिए ऐसा हो सकता है बाकी समझ में तो आ रहा है ना बहुत अच्छे से समझा रहे हैं और यहां पर देख रहे हो यह वाला एरिया जैव विविधता वाला बहुत ज्यादा क्षेत्र है शानदार अगला क्वेश्चन पृथ्वी पर सर्वाधिक जैव विविधता किस स्थान पर है अफ्रीका वन ऑस्ट्रेलियाई वन पश्चिमी घाट अमेजो नियन</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:32:54</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>वर्षावन कमेंट करके बताओ अभी मैंने पूरा पूरा डिस्कस किया पूरा समझाया एक बार कमेंट करके इसका आंसर दो कि पृथ्वी पर सर्वाधिक जैव विविधता कहां पर है ए बी सी डी जल्दी बताओ जल्दी बताओ वेट कर रहा हूं मैं आंसर दीजिए हां सर मुझे आ रहा है कहां पर होगा सबसे अधिक कहां होगा सर आपने बोला जी0 डिग्री अक्षांश रेखा के आसपास इससे कई लोग कंफ्यूज होंगे अफ्रीका यह अफ्रीका पड़ रहा है अफ्रीका महाद्वीप तो यहां आंसर मारेंगे लेकिन पूरे विश्व में सबसे अधिक जै विविधता पूछ रहा है तो सबसे अधिक जैव विविधता यह ब्राजील वाले देश के अमेजो नियन वन में है अम अमेजन की</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:33:50</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>अमेजन के जंगल बहुत बढ़िया रीता डी तो राइट आंसर अमेजो नियन वर्स वष वन में यह स्पेशली लिखा हुआ है अमेजन की वर्षा वन में आंसर इज डी भारत में पश्चिमी घाट लेकिन पूरे विश्व में पूछ रहा है तो डी आंसर क्या कारण है कारण है सर यहां पर उष्ण कटिबंधीय यहां पर सबसे अधिक जैव विविधता पाई जाती है क्योंकि यहां पर साल भर वर्षा होती है और यहां पर गर्मी भी बहुत होती है गर्म जलवायु बहुत होते हैं ठीक इस वजह से लगभग 28 डिग्री उत्तर और दक्षिण में स्थित इस पूरे के पूरे क्षेत्र में क्या होता है काफी ज्यादा जैव विविधता देखने को मिलता है बाकी चीजें भी पीपीटी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:34:39</span><span>Latitudinal gradient + Amazon MCQs</span></summary>
+        <p>में है आप लोग बाद में रीड करते कर लेना अब कुछ इंपॉर्टेंट मूल्य हैं किसको लेकर के जैव विविधता के महत्व या मूल यह आपको याद रखना है आसा भावना डी बहुत बढ़िया रीता तो बता ही दी थी बाकी लोगों क्लियर है चलिए जैव विविधता का महत्व या फिर जैव विविधता के मूल्य क्या है जैव विविधता के महत्व या मूल्य एक तो आपका सांस्कृतिक महत्व है एक तो आर्थिक महत्व है एक पारिस्थितिक महत्व है वैज्ञानिक महत्व है और कृषि में भी बहुत महत्व है जैव विविधता का मूल्य या फिर महत्व सर एक-एक करके एक-एक करके इन सबको क्या पढ़ना पड़ेगा क्या तो यह पूरा का पूरा यह जो</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:35:21</span><span>Importance / values of biodiversity</span></summary>
+        <p>मेंस का कंटेंट है आपको इसमें पूरा डिटेल में नहीं जाना है पहले बता दूं सिर्फ मैंने यहां पर आपको हेडिंग्स दे दी है कि प्री में आपसे पूछ सकता है क्या कि सांस्कृतिक महत्व आर्थिक महत्व पारिस्थितिक महत्व और चौथा ऑप्शन रहेगा इनमें से कोई नहीं मतलब इनमें से कोई अलग कोई पॉइंट होगा आपको यह सब याद रखना है कि जैव विविधता के महत्व में य सबके महत्व आते हैं ठीक क्या सांस्कृतिक महत्व आप मुझे बताओ अलग-अलग वैरायटी के लोग हैं सबका संस्कृति अलग-अलग है कि नहीं है कोई दिवाली मनाता है कोई लोहड़ी मनाता है कोई कोई ईद मनाता है कोई क्रिसमस मनाता है</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:36:03</span><span>Importance / values of biodiversity</span></summary>
+        <p>सबकी संस्कृति बिल्कुल अलग-अलग है अलग-अलग लोग हैं अलग-अलग जगह पर हैं अलग-अलग दिखाई भी देते हैं अलग-अलग हाइट है अलग-अलग हेल्थ है अलग-अलग स्ट्रक्चर है बॉडी स्ट्रक्चर है अलग-अलग उनमें अब्जॉर्प्शन का अनुकूलता का हर चीज में उनकी वैरायटी देखने को मिलती है तो हम जब संस्कृति देखते हैं इन सभी विविधता में तो सांस्कृतिक महत्व हम दे देख पाते हैं क्यों क्योंकि सर जगह के हिसाब से संस्कृति चेंज होती है अगर आर्थिक महत्व की बात करते हैं तो बिल्कुल आर्थिक महत्व सर जलवायु जितना ज्यादा डावर्स होगा उतना ही आर्थिक रूप से वह क्या होंगे संपन्न</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:36:42</span><span>Importance / values of biodiversity</span></summary>
+        <p>होंगे जिन क्षेत्रों में ज्यादा अच्छा जलवायु होता है जैसे हम लोग मालवा का जलवायु सम सम जलवायु बोलते हैं यहां पर खेती वगैरह भी अच्छी होती है चीजों को अब अब कुछ अब अब मैं चाहूं यहां पर गेहूं करवाना तो नहीं हो पाएगा ना उसके लिए अच्छा खासा पानी चाहिए ठंडा चाहिए ठंडा प्रदेश चाहिए तो जब उत्तरी अ भारत में ठंडी पड़ती है तो अच्छा खासा वहां खेती होती है अभी लास्ट लास्ट में जो नवंबर दिसंबर की जो महीने चलते हैं तो आपको ये समझना होगा जलवायु का बहुत महत्व होता है कृषि में काफी महत्व है जो मैंने बताया वैज्ञानिक बहुत महत्व है पारिस्थितिक</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:37:20</span><span>Importance / values of biodiversity</span></summary>
+        <p>महत्व है आर्थिक रूप से हमको संपन्नता देखने को मिलती है सिर्फ हेडिंग हेडिंग लिख लो बाकी ज्यादा डीप में जाने की जरूरत नहीं है में मैं पढ़ाऊंगा आगे देखते हैं हम लोग जैव विविधता रास के कारण सर ऑप्शन में आपको पूछेगा यह क्वेश्चन भी आ चुका है सीधे बोल देर हूं कि जैव विविधता के ह्रास के कौन से कारण हैं चार ऑप्शन में एक कारण होगा तीन नहीं होंगे या तीन होंगे एक नहीं होगा तो आपसे पूछेगा जैव विविधता रास के कौन सा कारण नहीं है आपको सारे कारण याद होने चाहिए कि जैव विविधता हरासर है मींस जैव विविधता कम हो रहा है जैव विविधता कम</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:37:54</span><span>Causes of biodiversity loss</span></summary>
+        <p>हो रहा है मींस सर जो प्रजातियों में वैरायटी है ना वो कम हो रहा है जैसे शेर वाली प्रजातियां चलती हैं शेर बाघ चीता उनमें कितनी तेंदुए अलग-अलग वैरायटी है लेकिन चीतों का संख्या हमारे भारत में स्वाहा हो चुका है एक तरीके से चीता विलुप्त हो गया है हम क्या करते हैं दूसरे कंट्री से हम चीते को यहां पुनर्वास कर रहे हैं और उनको पाल पोस रहे हैं तो वो क्यों खत्म हुए क्यों हरासू आ ऐसी जैव विविधता क्यों खत्म हो रही है प्रजातियां क्यों खत्म हो रही है उसका मेन कारण है सर उसका मेन कारण है आवास स्थलों का विनाश या विखंडन आवास स्थलों का विनाश या विखंडन का</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:38:33</span><span>Causes of biodiversity loss</span></summary>
+        <p>मतलब है सर जंगलों को काटना जंगल को तबाह करना यह है वनीकरण बोल सकते हैं वनीकरण वनीकरण जंगल को बिल्कुल स्वाह कर दिया तो उनके रहने के जो आवास हैं वो निपट गए अब वो ना तो बाहर ज शहर में आ सकते हैं क्योंकि उनसे बड़े जानवर शहर में रहते हैं हम लोग और जंगल में वो छोटा सा जंगल है उन के लिए कम पड़ रहा है तो यह चीज आपका सबसे इंपॉर्टेंट इसका कारण है दूसरा कृषि एवं वानकी की परिवर्तन परिवर्तित प्रवृत्ति कृषि और वानकी में हमने जो आज ट्रेंड चला रखा है जिसमें हम लोग बड़े मात्रा में केमिकल्स यूज करते हैं खाद जो है वो भी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:39:15</span><span>Causes of biodiversity loss</span></summary>
+        <p>पूरा केमिकल होता है जिससे कि जैव विविधता बहुत ज्यादा खत्म हो रही है केमिकल होने से मिट्टी की उर्वरता भी धीरे-धीरे समाप्त होती है केमिकल होने से जो वहां पर पारिस्थितिक तंत्र में जो नए-नए जीव पनपते हैं छोटे-छोटे कीड़े मकोड़े जो कि हर एक अलग-अलग कार्य के लिए बने होते हैं वो लोग सब स्वाहा हो जाते हैं उस यूरिया डीडीटी उन सबको खा पी के स्वाहा हो जाते हैं तो यह जो चीज है परिवर्तित प्रवृत्ति यह हमारे पर्यावरण को नुकसान पहुंचा रही है जैव विविधता को नुकसान पहुंचा रही है हरासू कारण तीसरा कारण विदेशी प्रजातियों</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:39:52</span><span>Causes of biodiversity loss</span></summary>
+        <p>का प्रभाव विदेशी प्रजाति के प्रभाव का मतलब है कि ऐसे ऐसे पौधे भी होते हैं जिनको हम लोग विदेशी पौधा के नाम से जाना जाते हैं गांव की तरफ उनको लगा देते हैं तो वह दूसरे पौधों को बिल्कुल खत्म कर देते हैं सर एक पौधा आपने लास्ट क्लास में पढ़ाया था यूकेलिप्टस का पौधा यह बड़ा सा यूकेलिप्टस यूकेलिप्टस मुझे बताओ यूकेलिप्टस में लिप्टस में क्या क्या मिलता है हमको कुछ भी नहीं मिलता ना तो फल मिलता है ना तो फूल मिलता है ना तो हमको उससे छाव मिलती है कुछ भी नहीं मि ता है यूके लिप्टिस के पेड़ से बहुत बड़े-बड़े पेड़ होते हैं</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:40:29</span><span>Causes of biodiversity loss</span></summary>
+        <p>पत्ते बिल्कुल ऊपर होते हैं उससे हमको कुछ भी नहीं मिल रहा है ऊपर से यह इसको इस यूकेलिप्टस को पर्यावरणीय शत्रु बोलते हैं पर्यावरणीय शत्रु बोलते हैं बोलते हैं कि नहीं बोलते हैं क्यों बोलते हैं सर इसकी जड़ें जो है वो काफी नीचे तक होती हैं इसकी जड़ें जो है काफी फैली हुई होती हैं देना कुछ नहीं है इसको पर्यावरण को सिर्फ नुकसान पहुंचाना है जो जमीन के पानी है जल स्तर है उसको सर अवशोषित कर लेता है आपस आसपास का जितना मिट्टी है उसके खनिज लवण को अवशोषित कर लेता है जिससे कि यहां पर कोई दूसरा पौधा उगी नहीं पाता यह जिन जिन</p>
+      </details>
+    
+
+      <details class="flow-card promo">
+        <summary><span class="time-pill">00:41:04</span><span>Causes of biodiversity loss</span></summary>
+        <p>क्षेत्रों में होता है यूकेलिप्टस उन क्षेत्रों में दूसरे पौधे उग ही नहीं पाते हैं क्योंकि उनके पोषण के लिए उस धरती में कुछ होते ही नहीं है पानी भी चूस लिया खनिज भी सू लि चूस लिया इसलिए हम इसको बोलते हैं पर्यावरणीय शत्रु ऐसे वैरायटी जो होते हैं जिनको विदेशी प्रजातियां बोलते हैं इनका प्रभाव काफी ज्यादा होता है जिससे कि अन्य जो प्रजाति के पेड़ पौधे हैं जीव हैं उन पर इसका असर पड़ता है महत्त्वपूर्ण कारण है बहुत बढ़िया सर सभी यूनिट की प्लेलिस्ट बनवा दीजिएगा बिल्कुल बनी है क्लास की टाइमिंग भी बता द सभी के रूपेंद्र अभी क्लास की</p>
+      </details>
+    
+
+      <details class="flow-card promo">
+        <summary><span class="time-pill">00:41:44</span><span>Causes of biodiversity loss</span></summary>
+        <p>टाइमिंग तो यही है 2 बजे आपका डेली 2 पीएम पर यूनिट सेवन चलती है यूनिट सेवन चलती है पूरा का पूरा यूनिट सेवन फ्री ऑफ कॉस्ट 2 पीएम पे डे चल रहा है उसके बाद आपका जो इकोनॉमिक्स है यूनिट नंबर सिक्स यूनिट नंबर सिक्स उसका बढ़िया बेस बनाया मैंने है ना यह चल रही है रात को 10 बजे यह बिल्कुल फिक्स है बाकी एमपी की क्लास आगे पीछे हो जाती है उसका पूरा का पूरा प्लेलिस्ट बना हुआ है हिस्ट्री का आप हिस्ट्री पूरा निपटा दो आप वहां जियोग्राफी की प्लेलिस्ट बन रही है जियोग्राफी में चार पांच क्लास और लगेगी उसके बाद बॉफी खत्म हो जाएगा एमपी का एमपी</p>
+      </details>
+    
+
+      <details class="flow-card promo">
+        <summary><span class="time-pill">00:42:29</span><span>Causes of biodiversity loss</span></summary>
+        <p>की क्लास का उसके बाद एमपी की पॉलिटी और एमपी का जितना भी है यूनिट नंबर 10 यूनिट नंबर 10 भी बहुत जल्दी चालू हो रहा है ठीक ये सारी चीजें जल्दी-जल्दी होकर के खत्म हो जाएंगी नए-नए टॉपिक फिर चालू हो जाएंगे पॉलिटी भी कराना है यूनिट एट यूनिट नाइन आईसीटी करंट अफेयर ये सब भी अकॉर्डिंग टू सिलेबस अकॉर्डिंग टू एमपीपीएससी एग्जाम पूरा का पूरा सपरा साफ कराएंगे आपको धीरे-धीरे सारे सब्जेक्ट यूनिट वन से 10 तक पूरा सिलेबस कराएंगे साथ ही साथ 10000 एमसीक्यू 10 यूनिट 10 यूनिट के 100000 एमसीक्यू हर यूनिट से एक एक हजार एमसीक्यू</p>
+      </details>
+    
+
+      <details class="flow-card promo">
+        <summary><span class="time-pill">00:43:07</span><span>Causes of biodiversity loss</span></summary>
+        <p>करवाएंगे यह सारा सारा आपको कराना है बस आप जुड़े रहिए हम क्या कर रहे हैं आपको हर चीज दे तो रहे हैं ठीक बहुत बढ़िया शानदार आइए हम वापस इसको आप लोग नोट कर लेंगे अगला जै विविधता रास के कारण में संसाधनों का अति दोहन सर हम सं साधनों का इतना ज्यादा उपभोग कर रहे हैं जितनी की आवश्यकता भी नहीं है जंगल को जबरदस्ती काटे जा रहे हैं जबकि जंगल होना बहुत जरूरी है पानी जो है अंडरग्राउंड वाटर चूसते जा रहे हैं हम वायु प्रदूषित करते जा रहे हैं मतलब जितना संसाधन है सब लूट लो खा जाओ आने वाली पीढ़ी को दो ही मत जिसका नाम धारणी विकास है हम लोग जो पढ़ना</p>
+      </details>
+    
+
+      <details class="flow-card promo">
+        <summary><span class="time-pill">00:43:47</span><span>Causes of biodiversity loss</span></summary>
+        <p>चाहते हैं उसको बिल्कुल भी ध्यान मत रखो प्रदूषण एक महत्त्वपूर्ण कारण है पूरा का पूरा हम लोग प्रदूषण पढ़ेंगे ही जिसमें जल प्रदूषण वायु प्रदूषण दूषण ध्वनि प्रदूषण मृदा प्रदूषण है ना यह सारी चीजें पड़ते हैं जिसका प्रभाव पड़ता है जैव विविधता पर उसके बाद वैश्विक जलवायु परिवर्तन विश्व स्तर पर जलवायु जो है वह काफी कम होता खराब होता जा रहा है वैश्विक तापन हो रहा है तरह-तरह से हम लोग क्या कर रहे हैं हम आपदाओं को आमंत्रण कर रहे हैं कि आओ आपदाएं आओ भूकंप लाओ ज्वालामुखी लाओ सुनामी लाओ सबके कारण हम ही हैं डेम इतने</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:44:22</span><span>Causes of biodiversity loss</span></summary>
+        <p>बड़े-बड़े बना लेते हैं पीछे पानी इकट्ठा कर लेते हैं और उससे पूरा का पूरा हम लोग क्या है इकोसिस्टम खराब करके रखे हैं और क्या-क्या कर रहे हैं हम लोग पेढ़ी काटते जा रहे हैं हम लोग यहां तक कि भाई पर्वतों को भी नहीं छोड़ रखा है पर्यटन स्थल को हमने पूरा बना रखा है बिल्कुल टूरिस्ट एकदम जाकर के मंदिरों को तो हमने टूरिस्ट प्लेस बना रखा है बिल्कुल जा कर के वहां जाते हैं पूरा उड़ेल के आ जाते हैं कचरा पूरा उड़ेल के आते हैं यहां से खूब सारा कचरा के पैकेट्स लेकर जाते हैं वहां उड़ेल के आते हैं गंगा नदी और यमुना नदी और तमाम नदियां तो ऐसी हो गई है</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:44:54</span><span>Causes of biodiversity loss</span></summary>
+        <p>जैसे पूछो की मतलब नाले से भी ब बड़ी बुरी हालत है उनकी बदतर हालत है तो इन सब चीजों का असर देखने को मिलता है यह प्रदूषण और वैश्विक पर्यावरण अ जलवायु परिवर्तन फिर प्राकृतिक आपदाएं जो मैंने बताया कि आमंत्रण कर रहे हैं प्राकृतिक आपदाएं आओ भूकंप आओ आओ आओ हम इंतजार कर रहे हैं हम मरने के लिए इंतजार कर रहे हैं आओ समझ पा रहे हो आपदाएं कई प्रकार की और मानव निर्मित भी आपदाएं हम लोग लाते हैं कहीं गैस लीख हो गया भोपाल गैस राजदी हो गई कहीं कछू हो गया कहीं कछू हो गया यह सारी आपदाएं ही तो हैं और इससे जैव विविधता</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:45:30</span><span>Causes of biodiversity loss</span></summary>
+        <p>बढ़ेगी कि घटेगी घटेगी स्वाभाविक स बात है तो यह हराश के कुछ इंपॉर्टेंट कारण है इन सभी कारणों को लिख लोगे डिटेल में आपको मेंस में लिखना है ठीक है ना तो अभी सिर्फ हेडिंग हेडिंग लिखोगे ताकि आपको समझ विकसित हो कि सर यह आएगा तो हम कर लेंगे आगे है जैव विविधता के संरक्षण की बात जैव विविधता संरक्षण की बात कर लेते हैं यहां तक सभी को बढ़िया आ गया समझ में जी सर 10 बजे वाली क्लास तो देखता हूं बहुत बढ़िया बेटा सभी लोग सर का साथ दीजिए सर पूरा सिलेबस कराएंगे बिल्कुल कराएंगे टेंशन मत लो थोड़ा सा सपोर्ट करो श्रीर अकेडमी को</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:46:02</span><span>Conservation need + examples</span></summary>
+        <p>थोड़ा बड़ा बनाने की कोशिश करो ताकि हम भी थोड़ा मोटिवेट होकर के और ज्यादा दें हां बेटा लो ले जाओ जै विविधता संरक्षण सर संरक्षण के लिए हमने बहुत सारे काम किए हैं अभी कल की क्लास में सर ने वन्य जीव संरक्षण के बारे में और बहुत सारी तमाम चीजें बताई होंगी राष्ट्रीय उद्यानों के बारे में भी बताया होगा तो वही चीज है संरक्षण करना हमको भी बढ़ चढ़ कर के संरक्षण में भागीदारी सुनिश्चित करनी चाहिए हम बड़े लेवल प नहीं कर सकते लेकिन छोटे लेवल प तो कर ही सकते हैं कोई भी अगर पेड़-पौधे काटे तो उसको जाकर के हम गाली</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:46:35</span><span>Conservation need + examples</span></summary>
+        <p>दे सकते हैं उसके उसको जाकर के हम उसका गला पकड़ सकते हैं कि हाउ डेयर टू कट माय ट्री ऐसे बोलो कि हमारी संपत्ति है ये रोड में लगी है लेकिन हमारी है और अगर वह नहीं मानता है कोई बड़े बाप की औलाद है या कछु भी है तो उसकी शिकायत करो अपने आसपास के किसी स्टेशन पुलिस स्टेशन या फिर जहां आप कर सकते हो ठीक और खुद भी ईमानदारी से इसमें भागीदारी सुनिश्चित करो है ना जैव विविधता संरक्षण के लिए क्या है सर जो जीवों में विविधता है उसको बचाना जीवों में विविधता है उसको बचाना हम बचाते कैसे हैं हम बड़े-बड़े राष्ट्रीय उद्यान बना</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:47:13</span><span>Conservation need + examples</span></summary>
+        <p>रहे हैं सर राष्ट्रीय उद्यान बनाते हैं राष्ट्रीय उद्यान क्यों बनाते हैं ताकि जो बचे हुए जानवर हैं उनको संरक्षण दे सके वो अब मरे ना उनकी प्रजाति और बड़ी बढ़े उसके लिए हम अनुकूल परिस्थितियां दें क्योंकि उनसे बड़े जानवर हम हैं उसके अलावा बड़े-बड़े हम लोग क्या करते हैं जू का निर्माण करते हैं जो प्रजातियां खत्म हो रही है विलुप्त हो रही है उनको वहां संरक्षण दे रहे हैं कुनो पालपुर जैसे उद्यानों का हम निर्माण कर रहे हैं और विदेशों से अफ्रीका से नामीबिया से चीते ला रहे हैं उनका पुनर्वास करके वहां पर उनको संरक्षण दे रहे हैं अभी तीन नए साव</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:47:51</span><span>Conservation need + examples</span></summary>
+        <p>कों का जन्म हुआ है कुनो पालपुर में है ना करंट अफेयर में मैंने लिया था तो हम क्यों क्यों कर रहे हैं ऐसा टाइगर को क्यों बढ़ावा दे रहे हैं क्योंकि भाई हमने पारिस्थितिक तंत्र में पढ़ा है हर एक जीव इंपॉर्टेंट है हर एक जीव इंपॉर्टेंट है तो उसको हमको बचाना है उसको बचाने के लिए हमने बहुत बड़े-बड़े बीज बैंक का निर्माण कर रहे हैं बीज बैंक बीज बैंक हम लोग बहुत सारे क्या बोलते हैं वो जो बोटेनिकल गार्डन है बोटेनिकल गार्डन का भी निर्माण करते हैं बोटेनिकल गार्डन का बोटेनिकल गार्डन का ताकि अलग-अलग वैरायटी के पौधे</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:48:26</span><span>Conservation need + examples</span></summary>
+        <p>पक्षी चिड़िया अलग-अलग जीव वह संरक्षित रह सके उनकी वैरायटी बची रहे ठीक है अभी करंट में मध्य प्रदेश में एक करंट अफेयर था मोटे अनाज को लेकर के मोटे अनाज को लेकर के नाम अचानक से भूल गया कोई हो तो बताओ किसने अभी पूरा उनको सम्मान मिला है और उन्होंने संरक्षण दिया था बहुत सारे मोटे अनाज की वैरायटी बहुत सारे किस्म के मोटे अनाज को उन्होंने संरक्षित किया और किसानों को वह देती हैं तुम ये मोटे अनाज की इस वैरायटी को लो लगाओ उसमें से जो उपज होती है वो एक किलो उसमें से वो ले लेती है और वो बचा बचा करके बहुत सारे अलग-अलग वैरायटी के किस्म</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:49:04</span><span>Conservation need + examples</span></summary>
+        <p>के मोटे अनाजों को उन्होंने अ संभाल रखा है और प्रधानमंत्री के द्वारा और बड़े-बड़े पुरस्कार उनको दिए गए हैं बहुत सम्मानित हो रही हैं लहरी बाई बहुत बढ़िया लहरी भाई है वो बहुत बढ़िया डिंडोरी की है लहरी भाई रीता जी ने बिल्कुल सही बोला है ना वो क्या कर रही हैं वो जैव विविधता को बचा रही हैं किस्म अलग-अलग किस्म धान की गेहूं के मतलब उन्होंने मोटे अनाज के धान गेहूं तो अलग हो गया मोटे अनाज बाजरा मक्का इन सबका अलग-अलग वैरायटी उन्होंने संभाल रखा है तो ये होता है जैव विविधता का संरक्षण ये सही मायने में जैव विविधता</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:49:39</span><span>Conservation need + examples</span></summary>
+        <p>का संरक्षण होता है जो दैया भाई नहीं है लहरी भाई हैं रूपेंद्र बिल्कुल लहरी भाई सही है ना रीता जी हां चलिए तो इनके लिए हमने क्या बनाया प्रकृति में उपस्थित विविध जीव जंतु प्रजातियों एवं अन्य जैविक संसाधनों को संरक्षण प्रदान करना जै विविधता रक्षण है ठीक इसको आप लोग पढ़ सकते हो जैव विविधता संरक्षण की दो विधियां हैं दो विधियां है एक तो इन सी2 एक तो इन सी2 और दूसरा एक्स स2 इन सी2 और दूसरा है एक्स स2 हम जैव विविधता को किस प्रकार से संरक्षित कर सकते हैं इसके लिए दो महत्त्वपूर्ण विधियां हैं एक तो इन सी2 और एक तो एक् स2</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:50:27</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>बिल्कुल बिल्कुल पेंटर है जो दैया भाई उमरिया डिस्ट्रिक्ट से हैं जोदिया भाई उमरिया डिस्ट्रिक्ट से हैं है ना और यहां पर आ जाओ इन सीटू स्व स्थाने संरक्षण और एक है बाह्य स्थाने संरक्षण आपसे सीधे प्रश्न यहां से आएगा बहुत महत्त्वपूर्ण है इस पेज को बहुत अच्छे से पढ़ो सर इन सीटू संरक्षण स्व स्थानीय संरक्षण क्या होता है जो जीव जिस स्थान पर है उसको वहीं पर संरक्षण दे दो वह स्वस्थानी संरक्षण कहलाता है और जो जीव जहां है वहां पर अगर रहा तो वह मर जाएगा तो हम उस जीव को पेड़ पौधे को उठा के दूसरी जगह लाकर के संरक्षित करें उसका</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:51:13</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>पालन पोषण करें वह कहलाता है बाह्य स्थानी संरक्षण एक्स स2 फिर से समझिए फिर से समझिए उदाहरण से समझिए चिड़िया घर चिड़िया घर जो है हम शहर में देखते हैं जैसे अभी यहीं बगल में इंदिरा गांधी चिड़ियाघर है ू है बड़ा सा यहां पर क्या होता है चिड़ियाघर में क्या होता है सर एक सांप वाला सेक्शन होता है सर हिरन हिरन भी होता है सर शेर भी होता है सर भालू भी होता है सर बहुत सारे अलग-अलग वैरायटी के किस्म के यहां पर जीव जंतु होते हैं और सबको खाना भी दिया जाता है सब बढ़िया से रहते हैं सब बढ़िया से बढ़ भी रहे हैं वृद्धि भी कर</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:51:52</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>रहे हैं म मगर वो उनका स्थान नहीं है उनको किसी जंगल से लाए होंगे उनको इस वाले जंगल से लाए हैं इस वाले जंगल से लाए हैं अलग-अलग जंगलों से लेकर के आए हैं और उसको एक जगह संरक्षण दिया इस प्रकार के संरक्षण को जो अलग-अलग जगहों से उठा के दूसरी जगह हमने प्लेस करके उसको सुरक्षित कर करा है संरक्षण दिया है उस प्रकार के संरक्षण को बाह्य स्थाने संरक्षण कहते हैं xc2 और इन c2 जहां पर वह हैं जैसे कि राष्ट्रीय उद्यान बड़े-बड़े जंगल जहां पर है उनको वहीं पर हमने घेराबंदी कर दी उनको हमने वहीं घेराबंदी कर दी कि भैया तुम ना यहीं पर सुरक्षित रहोगे तुम यहीं</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:52:35</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>पर वृद्धि करो यहीं पर अपने उस जीव का क्या करो उत्पादन करो समझ रहे हो ना वहीं पर अपनी जैव विविधता को बढ़ाते रहो तो इस प्रकार के स्थान को हम इन सीटू या फिर स्वस्थानी संरक्षण कहते हैं जैसे कि बड़े-बड़े राष्ट्रीय उद्यान है मध्य प्रदेश में सबसे ज्यादा राष्ट्रीय उद्यान है उस राष्ट्रीय उद्यानों को क्या कहीं उठा के हमने रखा है क्या उनको हमने क्या किया एक संरक्षण दे दिया कि भाई यहां के सारे जीव क्या रहेंगे अब इसी में सुरक्षित रहेंगे उसके अलावा जय श्री राम बेटा जय पाटीदार उसके अलावा वन्यजीव अभ्यारण जितने</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:53:13</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>भी हैं वो भी इन सीटू में आते हैं जैव मंडल आरक्षित क्षेत्र पवित्र उपवन ये जितने भी क्षेत्र हैं वो स्वस्थानी संरक्षण में आते हैं और बाह्य स्थानी संरक्षण में चिड़ियाघर वनस्पति उद्यान उसके बाद बीज बैंक बीज बैंक में क्या होता है अलग-अलग किस्म के बीजों को संरक्षित कर रहे हैं कोल्ड स्टोरेज बना कर के फिर उसके बाद जीन बैंक इसमें पौधों के बीज हैं और इसमें जीन है जींस जीवों के जीन उनको हमने संरक्षित कर रखा है ताकि उस वैरायटी को बचाया जा सके उस पर्टिकुलर पशु या जानवर या कोई भी जीव है उसकी उस वाली पर्टिकुलर प्रजाति को</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:53:55</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>हम लोग बचा सके इसलिए जीन बैंक बनाते हैं उसके अलावा निम्न तापी संरक्षण कोल्ड स्टोरेज का बहुत महत्व है आपने देखा होगा कि जितनी भी सब्जियां हैं वो कोल्ड स्टोरेज में काफी सुरक्षित रहती हैं इसलिए हम लोग हर घर में फ्रिज देखते हैं फ्रिज में क्या क्वालिटी होती है तापमान को कम करना कोई भी वस्तु तापमान कम में रहेगी तो वह ज्यादा समय तक टिकती है इसलिए कोल्ड स्टोरेज निम्न तापी संरक्षण करना होता है और निम्न तापी संरक्षण करने के लिए हम लोग जितनी भी वैरायटी जैव विविधता वाले पौधे पेड़ हैं उनको उसमें रखते हैं आप देखे</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:54:31</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>होगे लास को भी कई दिनों तक हम लोग सड़ने से बचा सकते हैं जो कि ऑलरेडी म मर चुका है तो हमको यह चीज निम्न तापी संरक्षण हर एक बड़े शहर में बनाना चाहिए हर शहर बनाना चाहिए कोरोना काल में यही चीज बहुत कमी पड़ी थी इंडिया में हम जो दवाइयां हम लोग कोरोना में हम लोग यूज कर रहे थे हम जो ऑक्सीजन सिलेंडर यूज कर रहे थे हम जो इंजेक्शन यूज कर रहे थे उन सबको चाहिए कोल्ड स्टोरेज ताकि व सुरक्षित रहे अदर वाइज वो खराब हो रहे थे तो कोल्ड स्टोरेज ना होने की वजह से अवेलेबिलिटी कम हो गई थी जबकि हमारे देश में किसी चीज की कमी</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:55:05</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>नहीं है बात क्लियर है तो ये निम्न तापी संरक्षण बहुत महत्त्वपूर्ण है तो ये जितनी वैरायटी मैंने यहां बताई यह सब बाह्य स्थानीय संरक्षण है मींस जो जहां है उसको उठा के दूसरी जगह संरक्षण देना उसको एक नया प्लेस बढ़िया सुरक्षित प्लेस बना कर के वहां पर संरक्षण देना तो बायोडायवर्सिटी को जैव विविधता को संरक्षण के लिए दो विधियां हमने बनाई है पहली विधि है इन सीटू स्वस्थानी संरक्षण दूसरी विधि है एक् स2 पर पर स्थाने या बाह्य स्थाने इसको पर स्थाने भी बोलते हैं पर स्थानीय संरक्षण और इसमें सारे एग्जांपल रट लोगे क्योंकि ऑप्शन में चार</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:55:47</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>ऑप्शन में तीन रहेगा एक नहीं रहेगा या एक रहेगा तीन नहीं रहेगा आपको बोलना है यस एक्सीटू है इनसीट है या फिर नहीं है यह भी याद रखोगे यह सब के सब स्व स्थाने हैं अब एक-एक करके इन पर चर्चा करेंगे हम लोग कि राष्ट्रीय उद्यान अभ्यारण जैव मंडल आरक्षित क्षेत्र इनमें क्या डिफरेंस है उसके बाद हम देखेंगे पर स्थानीय संरक्षण जो है वह कुछ इस प्रकार से दिखता है बोटेनिकल गार्डन का फोटो मैं लाकर के लगाया हूं यह देखो कितना सुंदर नजारा है अलग-अलग वैरायटी को बचाना है यह देखो आप बोटेनिकल गार्डन यह कितना घेराबंदी कर रखा है और हमने अलग-अलग</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:56:27</span><span>In-situ vs Ex-situ conservation</span></summary>
+        <p>वैरायटी के पौधे बहुत बढ़िया सर पर स्थाने है ना ये एक्सीट है उसके बाद यह देखो यह जीन बैंक है यह जीन बैंक है यह देखो आप कितना बढ़िया है यह बीज बैंक यह वाला यह वाला जो है यह आप देख रहे हो क्रोमोसोम जीन से मिल मिल कर के क्रोमोसोम जीन बैंक और यह बीज बैंक उसके बाद देखो यह कोल्ड स्टोरेज है न्यून तापमान पर कोल्ड स्टोरेज कितना बढ़िया दिख रहा है तो इन सबको एक-एक बार कल रीड कर लेंगे यह आपका बोटेनिकल गार्डन प्यारा सा बोटेनिकल गार्डन संरक्षण दे रहे हैं ठीक है क्या और यह हमारा जू है किड़िया घर तो आई होप आपको आज की क्लास</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:57:06</span><span>Wrap-up + upcoming topics</span></summary>
+        <p>समझ में आई है कि हमारा जैव विविधता वाला जो पोर्शन है उनमें प्रश्न कैसे आएगा हमको पढ़ना कैसे है ठीक है क्या तो आज की क्लास को यहीं तक रखते हैं बाकी चीजों को कल पढ़ते हैं इन सबको हम लोग कल पढ़ते हैं बाकी आपको टेलीग्राम पर पीडीएफ जो है मिल जाएगा आज नहीं मिलेगा कल मिलेगा जय विवेता पूरी खत्म हो जाएगी तो एक पीडीएफ में बाकियों की जो पीडीएफ है वो सब मैं देता जा रहा हूं सब मिल गया है ना किसी को कोई भी हल्ला मचाना हो तो बता देना कि हां सर मि ये वाला नहीं मिला है बाकी के सोशल मीडिया पर जुड़ जाओ ऐप डाउनलोड कर लो हम</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:57:40</span><span>Wrap-up + upcoming topics</span></summary>
+        <p>लोग कल की क्लास में इस टॉपिक को खत्म कर देंगे जैव विविधता को उसके बाद हमारा स्वास्थ्य वाले टॉपिको को लिया लेंगे ठीक है ना ताकि वहां से जो क्वेश्चन बन सकते हैं इंपॉर्टेंट पोर्शन उनको हम लोग खत्म करते चलेंगे ठीक तो आशा करता हूं सभी को समझ में आया आज की क्लास और आप लोगों का सपोर्ट रहा तो हम और अच्छा आपको देने का प्रयास करेंगे और आप लोगों से बस एक ही रिक्वेस्ट है क्लास के बाद अपने सारे के सारे फीडबैक आपको कमेंट सेक्शन में देने हैं जरूरी है हमारे लिए जरूरी है आपके लिए भले ना हो हमारे लिए जरूरी है कि आप अपना</p>
+      </details>
+    
+
+      <details class="flow-card ">
+        <summary><span class="time-pill">00:58:18</span><span>Wrap-up + upcoming topics</span></summary>
+        <p>सही फीडबैक दीजिए ताकि हम उससे आकलन कर सके कि हमें और क्या करें हम और क्या कर सकते हैं आप के लिए और बाकी हम लोग कल मिलते हैं रात को हम लोग की इकोनॉमिक्स की क्लास है और सर की भी क्लास 7:00 बजे आज रखना है जो उन्होंने कल पढ़ाया उसके आगे का सब पढ़ाएंगे एमपी का और जल्दी ही उनसे यूनिट 10 भी करवाऊंगी टेंशन मत लीजिए मिलते हैं नेक्स्ट क्लास में तब तक के लिए आप लोग स्वस्थ रहिए मस्त रहिए जबरदस्त रहिए और प्यार बनाए रखिए धन्यवाद m</p>
+      </details>
+    
+  </section>
+
+  <footer class="footer">
+    <p><b>Revision tip:</b> पहले Master Exam Hot Facts 2 बार पढ़ो, फिर checklist टिक करते हुए self-test करो, फिर video ledger में weak timestamp blocks खोलकर revise करो।</p>
+    <p class="small">Generated from uploaded class transcript and revision-page prompt. External images are linked from open Wikimedia/Commons source pages with visible attribution captions.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const root = document.body;
+  const theme = localStorage.getItem('rev-theme');
+  if(theme === 'light') root.classList.add('light');
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    root.classList.toggle('light');
+    localStorage.setItem('rev-theme', root.classList.contains('light') ? 'light' : 'dark');
+  });
+  document.getElementById('jumpMenu').addEventListener('change', e => {
+    if(e.target.value) location.hash = e.target.value;
+  });
+  const progress = document.getElementById('progressBar');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progress.style.width = Math.max(0, Math.min(100, pct)) + '%';
+  };
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  document.querySelectorAll('.reveal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('on');
+      btn.textContent = btn.classList.contains('on') ? 'Hide answer' : 'Answer';
+    });
+  });
+  document.getElementById('expandBtn').addEventListener('click', () => document.querySelectorAll('details').forEach(d => d.open = true));
+  document.getElementById('collapseBtn').addEventListener('click', () => document.querySelectorAll('details').forEach(d => d.open = false));
+
+  const boxes = [...document.querySelectorAll('.check input')];
+  const counter = document.getElementById('checkProgress');
+  function updateChecks(){
+    let done = 0;
+    boxes.forEach((box, i) => {
+      const key = box.dataset.key || ('ck'+i);
+      if(localStorage.getItem('rev-'+key) === '1') box.checked = true;
+      if(box.checked) done++;
+    });
+    counter.textContent = done + '/' + boxes.length + ' done';
+  }
+  boxes.forEach((box, i) => {
+    const key = box.dataset.key || ('ck'+i);
+    box.addEventListener('change', () => {
+      localStorage.setItem('rev-'+key, box.checked ? '1' : '0');
+      updateChecks();
+    });
+  });
+  updateChecks();
+
+  // Robust image loading: preload and show fallback link instead of silent broken image.
+  document.querySelectorAll('img').forEach(img => {
+    const test = new Image();
+    test.onload = () => {};
+    test.onerror = () => {
+      const figure = img.closest('figure');
+      if(!figure) return;
+      const fallback = document.createElement('div');
+      fallback.className = 'note';
+      fallback.innerHTML = '<b>Image could not load.</b><br><a target="_blank" rel="noopener" href="'+ img.src +'">Open image source directly</a>';
+      img.replaceWith(fallback);
+    };
+    test.src = img.src;
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
