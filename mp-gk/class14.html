@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 MP River Linking Projects | नदी जोड़ो परियोजना - MPPSC Revision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16213e;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b8b8cc;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --accent-yellow: #ffd700;
+            --border-color: #2a2a4a;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        [data-theme="light"] {
+            --bg-primary: #f5f7fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 17px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-cyan);
+            position: relative;
+        }
+        [data-theme="light"] header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
+        header .subtitle { font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 8px; }
+        [data-theme="light"] header .subtitle { color: #fff; }
+        header .badge {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-top: 15px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        .progress-text { font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px; }
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-cyan);
+            color: var(--text-primary);
+            padding: 8px 14px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover { transform: scale(1.1); }
+        /* Quick Nav */
+        .quick-nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: var(--bg-secondary);
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quick-nav select {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .quick-nav label { font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+        /* TOC */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 { font-size: 1.3rem; margin-bottom: 12px; color: var(--accent-cyan); }
+        .toc ul { list-style: none; }
+        .toc li { margin: 8px 0; }
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: block;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .toc a:hover { background: var(--bg-secondary); border-left-color: var(--accent-cyan); }
+        /* Section Cards */
+        .topic-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: var(--bg-card);
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .topic-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .topic-section h3 { font-size: 1.2rem; margin: 15px 0 10px; color: var(--accent-purple); }
+        /* Info Cards */
+        .info-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+            border-left: 4px solid var(--accent-cyan);
+        }
+        .info-card.orange { border-left-color: var(--accent-orange); }
+        .info-card.green { border-left-color: var(--accent-green); }
+        .info-card.purple { border-left-color: var(--accent-purple); }
+        .info-card.yellow { border-left-color: var(--accent-yellow); }
+        /* Exam Hot */
+        .exam-hot {
+            background: linear-gradient(135deg, #1a0a00, #2d1500);
+            border: 1px solid var(--accent-orange);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+        }
+        [data-theme="light"] .exam-hot { background: #fff3e0; }
+        /* Link Story */
+        .link-story {
+            background: linear-gradient(135deg, #0a1628, #1a2a4a);
+            border: 1px solid var(--accent-purple);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+        }
+        [data-theme="light"] .link-story { background: #ede7f6; }
+        .link-story .title { color: var(--accent-purple); font-weight: 700; margin-bottom: 8px; }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+        th { background: var(--bg-secondary); font-weight: 600; color: var(--accent-cyan); }
+        /* Quiz */
+        .quiz-section { margin: 20px 0; }
+        .quiz-q {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 8px 0;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+        .quiz-q:hover { border-color: var(--accent-green); }
+        .quiz-q .answer { display: none; margin-top: 8px; color: var(--accent-green); font-weight: 600; }
+        .quiz-q.show .answer { display: block; }
+        /* Collapsible */
+        .collapsible-header {
+            cursor: pointer;
+            padding: 12px 15px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin: 8px 0;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+        .collapsible-header:hover { border-color: var(--accent-cyan); }
+        .collapsible-header::after { content: '▼'; font-size: 0.8rem; transition: transform 0.3s; }
+        .collapsible-header.active::after { transform: rotate(180deg); }
+        .collapsible-content { display: none; padding: 12px 15px; }
+        .collapsible-content.show { display: block; }
+        /* Checklist */
+        .checklist label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .checklist input[type="checkbox"] { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--accent-green); }
+        /* Images */
+        .img-block { text-align: center; margin: 15px 0; }
+        .img-block img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); }
+        .img-block .caption { font-size: 0.8rem; color: var(--text-secondary); margin-top: 5px; font-style: italic; }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        /* Print */
+        @media print {
+            body { background: #fff; color: #000; font-size: 14px; }
+            .theme-toggle, .quick-nav { display: none; }
+            .topic-section { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+            .collapsible-content { display: block !important; }
+            .quiz-q .answer { display: block !important; color: #333; }
+        }
+        /* Mobile */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.5rem; }
+            .container { padding: 12px; }
+            .topic-section { padding: 15px; }
+            table { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌙</button>
+
+
+<header>
+    <h1>🌊 मध्य प्रदेश की नदी जोड़ो परियोजना</h1>
+    <p class="subtitle">River Linking Projects in Madhya Pradesh</p>
+    <span class="badge">📚 Lecture 13 | MPPSC Special | 4 Topics</span>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p class="progress-text" id="progressText">Revision Progress: 0%</p>
+</header>
+
+<nav class="quick-nav">
+    <label>⚡ Jump:</label>
+    <select id="quickJump" onchange="jumpToSection(this.value)">
+        <option value="">-- Select Topic --</option>
+        <option value="topic1">🌊 नदी जोड़ो परियोजना - परिचय</option>
+        <option value="topic2">🏗️ केन-बेतवा लिंक परियोजना</option>
+        <option value="topic3">💧 नर्मदा-शिप्रा लिंक परियोजना</option>
+        <option value="topic4">🔗 नर्मदा-पार्वती लिंक परियोजना</option>
+        <option value="fullforms">📋 Master Full Forms</option>
+        <option value="hotfacts">🔥 Exam Hot Facts</option>
+        <option value="checklist">✅ Revision Checklist</option>
+    </select>
+</nav>
+
+<div class="container">
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+    <h2>📑 Table of Contents</h2>
+    <ul>
+        <li><a href="#topic1">🌊 Topic 1: नदी जोड़ो परियोजना — परिचय (Introduction)</a></li>
+        <li><a href="#topic2">🏗️ Topic 2: केन-बेतवा लिंक परियोजना (Ken-Betwa Link Project)</a></li>
+        <li><a href="#topic3">💧 Topic 3: नर्मदा-शिप्रा लिंक परियोजना (Narmada-Shipra Link)</a></li>
+        <li><a href="#topic4">🔗 Topic 4: नर्मदा-पार्वती लिंक परियोजना (Narmada-Parvati Link)</a></li>
+        <li><a href="#fullforms">📋 Master Full Forms Table</a></li>
+        <li><a href="#hotfacts">🔥 Exam Hot Facts</a></li>
+        <li><a href="#checklist">✅ Master Revision Checklist</a></li>
+    </ul>
+</div>
+
+
+<!-- ==================== TOPIC 1 ==================== -->
+<section class="topic-section" id="topic1" style="border-top: 4px solid var(--accent-cyan);">
+    <h2>🌊 Topic 1: नदी जोड़ो परियोजना — परिचय</h2>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">River Interlinking Project — Introduction | ⏱️ ~00:01 to ~11:00</p>
+
+    <h3>📖 परिभाषा (Definition)</h3>
+    <div class="info-card">
+        <p><strong>नदी जोड़ो परियोजना (River Interlinking Project)</strong> एक बड़े पैमाने पर प्रस्तावित <strong>सिविल इंजीनियरिंग परियोजना</strong> है।</p>
+        <p>🎯 <strong>उद्देश्य:</strong> भारतीय नदियों को अन्य नदियों या जलाशयों (Reservoirs) से <strong>नहरों (Canals)</strong> के माध्यम से आपस में जोड़ना।</p>
+        <p>💡 <strong>मतलब:</strong> जिस नदी में पानी कम हो, उसमें दूसरी नदी/तालाब का पानी पहुँचाना — जिससे नदी का flow पूरे साल बना रहे।</p>
+    </div>
+
+    <div class="info-card orange">
+        <p><strong>English Definition:</strong> River Interlinking Project is a large-scale proposed civil engineering project aimed at interlinking Indian rivers with other rivers or reservoirs through canals.</p>
+    </div>
+
+    <h3>🏛️ प्रबंधन (Management)</h3>
+    <div class="info-card green">
+        <p>📌 यह परियोजना <strong>जल संसाधन मंत्रालय (Ministry of Water Resources)</strong> के अंतर्गत आती है।</p>
+        <p>📌 प्रबंधन: <strong>राष्ट्रीय जल विकास प्राधिकरण (NWDA)</strong> — National Water Development Agency</p>
+        <p>📌 NWDA की स्थापना: <strong>1982</strong></p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong> NWDA = National Water Development Agency, स्थापना 1982, Ministry of Water Resources के अंतर्गत</p>
+    </div>
+
+    <h3>📜 इतिहास (History)</h3>
+    <div class="info-card purple">
+        <p><strong>🇬🇧 ब्रिटिश काल:</strong> नदियों को जोड़ने का विचार सर्वप्रथम <strong>Sir Arthur Cotton</strong> ने दिया — जो <strong>Madras Presidency के Chief Engineer</strong> थे।</p>
+        <p>💡 विचार: जिन नदियों में पानी ज्यादा है, उनसे कम पानी वाली नदियों में पानी छोड़ा जाए।</p>
+    </div>
+
+    <div class="info-card">
+        <p><strong>🇮🇳 स्वतंत्र भारत:</strong> तत्कालीन केंद्रीय मंत्री <strong>श्री के.एल. राव (K.L. Rao)</strong> ने <strong>गंगा और कावेरी</strong> नदियों को जोड़ने का प्रस्ताव रखा।</p>
+        <p>💡 Logic: गंगा व कावेरी जैसी बड़ी नदियाँ जिनमें पानी अधिक है (वर्ष भर प्रवाहित) — इनका पानी कम पानी वाली नदियों में डालो।</p>
+        <p>⚠️ इसका मतलब ये नहीं कि गंगा और कावेरी को सीधे जोड़ दो — बल्कि इनके आसपास की कम पानी वाली नदियों में पानी भेजो।</p>
+    </div>
+
+    <div class="info-card yellow">
+        <p><strong>🏆 सर्वाधिक महत्वाकांक्षा व प्रयास:</strong> पूर्व प्रधानमंत्री <strong>श्री अटल बिहारी वाजपेयी जी</strong></p>
+        <p>📌 नदी जोड़ो परियोजना उनकी महत्वाकांक्षी परियोजनाओं में से एक थी।</p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot — अमृत क्रांति:</strong></p>
+        <p>• <strong>अमृत क्रांति = 2002</strong> — नदी जोड़ो परियोजनाओं से संबंधित</p>
+        <p>• अटल बिहारी वाजपेयी जी की महत्वाकांक्षी परियोजना</p>
+        <p>• अगर पूछे "अमृत क्रांति का संबंध किससे है?" → <strong>नदी जोड़ो परियोजना (2002)</strong></p>
+    </div>
+
+    <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Indian_Rivers_inter-link_map.svg/800px-Indian_Rivers_inter-link_map.svg.png" alt="India River Interlinking Map showing proposed canal links between major rivers" decoding="async" loading="eager" fetchpriority="high">
+        <p class="caption">Image: Indian Rivers Inter-link Map | Wikimedia Commons, CC BY-SA 3.0</p>
+    </div>
+
+    <h3>⏳ Timeline — नदी जोड़ो परियोजना का इतिहास</h3>
+    <table>
+        <tr><th>समय/व्यक्ति</th><th>घटना</th></tr>
+        <tr><td>Sir Arthur Cotton (British Era)</td><td>नदी जोड़ने का विचार सर्वप्रथम दिया (Chief Engineer, Madras Presidency)</td></tr>
+        <tr><td>K.L. Rao (स्वतंत्र भारत)</td><td>गंगा-कावेरी जोड़ने का प्रस्ताव (केंद्रीय मंत्री)</td></tr>
+        <tr><td>1982</td><td>NWDA (National Water Development Agency) स्थापित</td></tr>
+        <tr><td>अटल बिहारी वाजपेयी</td><td>सर्वाधिक महत्वाकांक्षा व प्रयास</td></tr>
+        <tr><td>2002</td><td>अमृत क्रांति — नदी जोड़ो परियोजना से संबंधित</td></tr>
+    </table>
+
+    <div class="link-story">
+        <p class="title">🔗 Link Story — ऐसे याद करो</p>
+        <p>"<strong>Arthur</strong> ने <strong>Cotton</strong> (कपास) की नदी में पानी डालने का सपना देखा → <strong>K.L. Rao</strong> ने <strong>गंगा-कावेरी</strong> को जोड़ने की <strong>राव</strong> (इच्छा) रखी → <strong>1982</strong> में <strong>NWDA</strong> बना (82 = बाबा) → <strong>अटल</strong> जी ने <strong>अटल</strong> (अडिग) निश्चय किया → <strong>2002</strong> में <strong>अमृत</strong> क्रांति आई (अमृत = अमर पानी)!"</p>
+    </div>
+
+    <!-- Quiz Topic 1 -->
+    <h3>🧠 Quick Recall Quiz</h3>
+    <div class="quiz-section">
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q1:</strong> नदी जोड़ो परियोजना किस मंत्रालय के अंतर्गत है?</p>
+            <p class="answer">✅ जल संसाधन मंत्रालय (Ministry of Water Resources)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q2:</strong> NWDA का Full Form और स्थापना वर्ष?</p>
+            <p class="answer">✅ National Water Development Agency — 1982</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q3:</strong> नदी जोड़ने का विचार सर्वप्रथम किसने दिया?</p>
+            <p class="answer">✅ Sir Arthur Cotton (Chief Engineer, Madras Presidency)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q4:</strong> अमृत क्रांति कब आई और किससे संबंधित है?</p>
+            <p class="answer">✅ 2002 — नदी जोड़ो परियोजना से संबंधित (अटल बिहारी वाजपेयी)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q5:</strong> स्वतंत्र भारत में सबसे पहले किसने नदी जोड़ने का प्रस्ताव रखा?</p>
+            <p class="answer">✅ श्री K.L. Rao (केंद्रीय मंत्री) — गंगा और कावेरी को जोड़ने का प्रस्ताव</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== TOPIC 2 ==================== -->
+<section class="topic-section" id="topic2" style="border-top: 4px solid var(--accent-orange);">
+    <h2>🏗️ Topic 2: केन-बेतवा लिंक परियोजना</h2>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Ken-Betwa Link Project | ⏱️ ~11:30 to ~38:00</p>
+
+    <div class="info-card orange">
+        <p>📌 <strong>मध्य प्रदेश की सबसे पुरानी (प्रथम) नदी जोड़ो परियोजना</strong></p>
+        <p>📌 <strong>बुंदेलखंड की महत्वाकांक्षी परियोजना</strong></p>
+        <p>📌 बेतवा नदी = <strong>बुंदेलखंड की जीवन रेखा</strong> (Life Line of Bundelkhand)</p>
+    </div>
+
+    <h3>🗺️ केन नदी — उद्गम (Origin)</h3>
+    <div class="info-card">
+        <p>📍 <strong>उद्गम:</strong> अहिरगवाँ (अरवा) गांव, रीठी तहसील, <strong>कैमूर श्रेणी, जिला कटनी</strong></p>
+        <p>📍 <strong>प्रवाह दिशा:</strong> उत्तर (North) की ओर</p>
+        <p>📍 <strong>मिलन:</strong> यमुना नदी (Yamuna River) में मिलती है</p>
+    </div>
+
+    <h3>🗺️ बेतवा नदी — उद्गम (Origin)</h3>
+    <div class="info-card">
+        <p>📍 <strong>उद्गम:</strong> कुमरा गांव, <strong>विंध्याचल पर्वत, जिला रायसेन</strong></p>
+        <p>📍 <strong>प्रवाह दिशा:</strong> उत्तर (North) की ओर — केन नदी जैसी ही direction</p>
+        <p>📍 <strong>मिलन:</strong> यमुना नदी में (दोनों नदियाँ यमुना में मिलती हैं)</p>
+        <p>⭐ <strong>बेतवा = बुंदेलखंड की जीवन रेखा</strong> — लेकिन वर्ष भर पानी नहीं रहता (वर्षा जल पर आधारित, ग्लेशियर से उद्गम नहीं)</p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong> बेतवा में दिसंबर के आसपास कई जगह पानी की बूंद नहीं रहती — क्योंकि ये वर्षा जल पर आधारित है, किसी ग्लेशियर से उद्गम नहीं हुआ।</p>
+    </div>
+
+    <h3>🏗️ दौधन बांध (Daudhan Dam)</h3>
+    <div class="info-card green">
+        <p>📌 <strong>बांध का नाम:</strong> दौधन बांध (Daudhan Dam)</p>
+        <p>📌 <strong>स्थान:</strong> पन्ना और छतरपुर की सीमा (Boundary) पर</p>
+        <p>📌 <strong>किस नदी पर:</strong> केन नदी पर</p>
+        <p>📌 <strong>उद्देश्य:</strong> केन नदी का पानी रोककर → नहर के माध्यम से → बेतवा नदी में भेजना</p>
+    </div>
+
+    <div class="info-card">
+        <p>💡 <strong>Logic:</strong> पानी इकट्ठा करना → प्रेशर बनाना → नहर से दूसरी नदी तक भेजना। बिना बांध के नदी को इतनी दूर मोड़ना संभव नहीं।</p>
+    </div>
+
+    <h3>⚠️ पन्ना टाइगर रिजर्व विवाद</h3>
+    <div class="info-card yellow">
+        <p>🐯 <strong>समस्या:</strong> दौधन बांध बनने से पन्ना टाइगर रिजर्व का क्षेत्र डूब रहा था</p>
+        <p>📊 <strong>कुल डूब क्षेत्र:</strong> 9000 हेक्टेयर</p>
+        <p>📊 <strong>पन्ना टाइगर रिजर्व का डूब क्षेत्र:</strong> 5803 हेक्टेयर (कुल 9000 में से)</p>
+        <p>⚖️ <strong>रोक:</strong> पर्यावरण न्यायालय (NGT) से संबंधित संस्था ने इस पर रोक लगा दी</p>
+    </div>
+
+    <h3>📅 नीव व पुनः प्रारंभ</h3>
+    <table>
+        <tr><th>विवरण</th><th>तथ्य</th></tr>
+        <tr><td>नीव (Foundation)</td><td><strong>2005</strong></td></tr>
+        <tr><td>रोक लगी</td><td>पन्ना टाइगर रिजर्व डूबने के कारण</td></tr>
+        <tr><td>समाधान (मोदी सरकार)</td><td>नहर को 10 km शिफ्ट किया — 231 km → <strong>221 km</strong></td></tr>
+        <tr><td>पुनः हस्ताक्षर</td><td><strong>22 मार्च 2021</strong> (विश्व जल दिवस / World Water Day)</td></tr>
+        <tr><td>हस्ताक्षर — MP CM</td><td>शिवराज सिंह चौहान</td></tr>
+        <tr><td>हस्ताक्षर — UP CM</td><td>योगी आदित्यनाथ</td></tr>
+        <tr><td>वर्तमान स्थिति</td><td><strong>निर्माणाधीन</strong> (Under Construction)</td></tr>
+    </table>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong> पुनः हस्ताक्षर = <strong>22 मार्च 2021</strong> = विश्व जल दिवस (World Water Day) — जल का ही काम हो रहा था, जल दिवस पर ही साइन हुए!</p>
+    </div>
+
+    <h3>📐 नहर (Link Canal) विवरण</h3>
+    <div class="info-card">
+        <p>📏 <strong>नहर की लंबाई:</strong> 221 km (पहले 231 km थी, पन्ना टाइगर रिजर्व बचाने के लिए 10 km कम की गई)</p>
+        <p>🕳️ <strong>सुरंग (Tunnel):</strong> 2 km की सुरंग भी बनाई जाएगी (221 km में से)</p>
+        <p>💧 <strong>पानी का प्रवाह:</strong> केन नदी का पानी → बेतवा नदी में जाएगा</p>
+    </div>
+
+    <h3>🏗️ बरुआ सागर बांध</h3>
+    <div class="info-card">
+        <p>📍 <strong>स्थान:</strong> झांसी, उत्तर प्रदेश</p>
+        <p>📌 बेतवा नदी पर दूसरा बांध — जहाँ नहर का पानी पहुँचेगा</p>
+    </div>
+
+    <h3>💰 लागत व वित्तपोषण (Cost & Funding)</h3>
+    <div class="info-card green">
+        <p>💰 <strong>कुल लागत:</strong> ₹44,605 करोड़</p>
+        <p>📊 <strong>वित्तपोषण:</strong></p>
+        <p>&nbsp;&nbsp;• Government of India: <strong>90%</strong></p>
+        <p>&nbsp;&nbsp;• मध्य प्रदेश सरकार: <strong>5%</strong></p>
+        <p>&nbsp;&nbsp;• उत्तर प्रदेश सरकार: <strong>5%</strong></p>
+    </div>
+
+    <h3>📊 लाभान्वित जिले (Beneficiary Districts) — कुल 14</h3>
+    <div class="info-card">
+        <p><strong>🟢 मध्य प्रदेश — 10 जिले:</strong></p>
+        <p>रायसेन, सागर, अशोकनगर, शिवपुरी, छतरपुर, पन्ना, टीकमगढ़, निवाड़ी, दतिया, दमोह</p>
+        <p><strong>🔵 उत्तर प्रदेश — 4 जिले:</strong></p>
+        <p>झांसी, ललितपुर, बांदा, महोबा</p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong> कहीं 13 जिले लिखा मिलेगा — वो पुराना है (निवाड़ी अब अलग जिला बन चुका है)। <strong>सही उत्तर = 14 जिले (MP-10 + UP-4)</strong></p>
+    </div>
+
+    <h3>🎯 लाभ (Benefits)</h3>
+    <table>
+        <tr><th>लाभ</th><th>विवरण</th></tr>
+        <tr><td>🚰 पीने का पानी</td><td><strong>62 लाख परिवारों</strong> को पीने का पानी</td></tr>
+        <tr><td>🌾 सिंचाई</td><td><strong>10.62 लाख हेक्टेयर</strong> भूमि सिंचित</td></tr>
+        <tr><td>⚡ जल विद्युत (Hydroelectricity)</td><td><strong>103 मेगावाट</strong></td></tr>
+        <tr><td>☀️ सौर ऊर्जा (Solar Energy)</td><td><strong>27 मेगावाट</strong></td></tr>
+    </table>
+
+    <div class="link-story">
+        <p class="title">🔗 Link Story — केन-बेतवा के आँकड़े याद करो</p>
+        <p>"<strong>दौधन</strong> बांध <strong>पन्ना-छतरपुर</strong> पर बना → <strong>221</strong> km नहर (जिसमें <strong>2</strong> km सुरंग) → <strong>बरुआ सागर</strong> (झांसी UP) तक गई → <strong>₹44,605 Cr</strong> लागत (90-5-5 formula) → <strong>14</strong> जिले खुश (10 MP + 4 UP) → <strong>62 लाख</strong> परिवार पानी पिएंगे → <strong>10.62 लाख</strong> हेक्टेयर सिंचाई → <strong>103 MW</strong> बिजली + <strong>27 MW</strong> सोलर!"</p>
+        <p>💡 याद करो: <strong>"दौधन 221 बरुआ, 44605 में 14 जिले, 62 लाख पिएंगे, 10.62 सींचेंगे, 103+27 जलाएंगे"</strong></p>
+    </div>
+
+    <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ken-Betwa_river_link.jpg/800px-Ken-Betwa_river_link.jpg" alt="Ken-Betwa River Link Project Map showing canal route between Ken and Betwa rivers through Bundelkhand" decoding="async" loading="eager" fetchpriority="high">
+        <p class="caption">Image: Ken-Betwa River Link Project | Wikimedia Commons, Public Domain</p>
+    </div>
+
+    <!-- Quiz Topic 2 -->
+    <h3>🧠 Quick Recall Quiz</h3>
+    <div class="quiz-section">
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q1:</strong> केन नदी का उद्गम कहाँ से होता है?</p>
+            <p class="answer">✅ अहिरगवाँ (अरवा) गांव, रीठी तहसील, कैमूर श्रेणी, जिला कटनी</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q2:</strong> दौधन बांध कहाँ स्थित है?</p>
+            <p class="answer">✅ पन्ना और छतरपुर की सीमा (Boundary) पर — केन नदी पर</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q3:</strong> केन-बेतवा लिंक नहर कितने km की है और इसमें कितनी सुरंग है?</p>
+            <p class="answer">✅ 221 km (पहले 231 km थी) — इसमें 2 km सुरंग</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q4:</strong> पुनः हस्ताक्षर कब हुए और उस दिन क्या मनाया जाता है?</p>
+            <p class="answer">✅ 22 मार्च 2021 — विश्व जल दिवस (World Water Day)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q5:</strong> इस परियोजना की कुल लागत और funding formula क्या है?</p>
+            <p class="answer">✅ ₹44,605 करोड़ — GOI 90% + MP 5% + UP 5%</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q6:</strong> बेतवा नदी को क्या कहा जाता है?</p>
+            <p class="answer">✅ बुंदेलखंड की जीवन रेखा (Life Line of Bundelkhand)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q7:</strong> पानी किस नदी से किस नदी में जाएगा?</p>
+            <p class="answer">✅ केन नदी का पानी → बेतवा नदी में जाएगा</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== TOPIC 3 ==================== -->
+<section class="topic-section" id="topic3" style="border-top: 4px solid var(--accent-green);">
+    <h2>💧 Topic 3: नर्मदा-शिप्रा लिंक परियोजना</h2>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Narmada-Shipra Link Project | ⏱️ ~38:00 to ~47:00</p>
+
+    <div class="info-card green">
+        <p>📌 <strong>उद्देश्य:</strong> नर्मदा नदी का पानी → शिप्रा (क्षिप्रा) नदी में भेजना</p>
+        <p>📌 <strong>मुख्य कारण:</strong> सिंहस्थ कुंभ मेला (उज्जैन) में शिप्रा नदी में पर्याप्त पानी रहे</p>
+        <p>📌 <strong>स्थिति:</strong> ✅ पूर्ण (Completed) — 2014 में पूर्ण, 2016 सिंहस्थ कुंभ में उपयोग</p>
+    </div>
+
+    <h3>🗺️ नर्मदा नदी</h3>
+    <div class="info-card">
+        <p>📍 <strong>उद्गम:</strong> अमरकंटक</p>
+        <p>📍 <strong>प्रवाह:</strong> पूर्व से पश्चिम (East to West) — खंभात की खाड़ी → अरब सागर</p>
+    </div>
+
+    <h3>🗺️ शिप्रा (क्षिप्रा) नदी</h3>
+    <div class="info-card">
+        <p>📍 <strong>उद्गम:</strong> उज्जैनी गांव, इंदौर</p>
+        <p>📍 <strong>सहायक नदी:</strong> चंबल नदी की सहायक (⚠️ नर्मदा की सहायक नहीं!)</p>
+        <p>📍 <strong>मिलन:</strong> आगे जाकर चंबल नदी में मिलती है</p>
+        <p>📍 <strong>महत्व:</strong> उज्जैन में महाकाल मंदिर — रामघाट पर सिंहस्थ कुंभ में स्नान</p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong> शिप्रा नदी = <strong>चंबल की सहायक</strong> (नर्मदा की नहीं!) — उद्गम उज्जैनी गांव, इंदौर</p>
+    </div>
+
+    <h3>🏗️ बड़वाह बांध (Barwah Dam)</h3>
+    <div class="info-card orange">
+        <p>📍 <strong>स्थान:</strong> बड़वाह, खरगोन के पास</p>
+        <p>📍 <strong>किस नदी पर:</strong> नर्मदा नदी पर</p>
+        <p>📌 <strong>कार्य:</strong> नर्मदा का पानी यहाँ रोका जाता है → फिर पाइपलाइन से शिप्रा तक भेजा जाता है</p>
+    </div>
+
+    <h3>🔧 पाइपलाइन (Pipeline)</h3>
+    <div class="info-card green">
+        <p>📏 <strong>पाइपलाइन की लंबाई:</strong> 115 km</p>
+        <p>📌 <strong>कैसे काम करती है:</strong> बड़वाह बांध से पानी → 115 km पाइपलाइन → प्रेशर से ऊपर चढ़ाया जाता है → उज्जैनी गांव (इंदौर) में शिप्रा नदी के उद्गम पर छोड़ दिया जाता है</p>
+        <p>💡 <strong>पाइपलाइन का डिज़ाइन:</strong> शुरू में चौड़ी → अंत में पतली (संकरी) — जिससे प्रेशर/Force बनता है और पानी ऊपर चढ़ता है</p>
+        <p>📍 <strong>कहाँ दिखती है:</strong> ओमकारेश्वर-खंडवा रोड पर रास्ते में दिखती है</p>
+    </div>
+
+    <h3>📊 मुख्य तथ्य (Key Facts)</h3>
+    <table>
+        <tr><th>विवरण</th><th>तथ्य</th></tr>
+        <tr><td>नीव (Foundation)</td><td><strong>2012</strong> (शिवराज सिंह चौहान)</td></tr>
+        <tr><td>पूर्ण (Completed)</td><td><strong>2014</strong></td></tr>
+        <tr><td>उपयोग/प्रारंभ</td><td><strong>सिंहस्थ कुंभ 2016</strong></td></tr>
+        <tr><td>कुल लागत</td><td><strong>₹432 करोड़</strong></td></tr>
+        <tr><td>पाइपलाइन</td><td><strong>115 km</strong></td></tr>
+        <tr><td>बांध</td><td>बड़वाह बांध (नर्मदा नदी, खरगोन)</td></tr>
+        <tr><td>सिंचाई</td><td><strong>17 लाख एकड़</strong> (⚠️ एकड़ — हेक्टेयर नहीं!)</td></tr>
+        <tr><td>सिंहस्थ कुंभ</td><td>12 वर्ष में एक बार, अगला 2028</td></tr>
+    </table>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong></p>
+        <p>• सिंचाई = <strong>17 लाख एकड़</strong> (एकड़ है, हेक्टेयर नहीं — confuse मत होना!)</p>
+        <p>• सिंहस्थ कुंभ = <strong>12 वर्ष</strong> में एक बार, 2016 में लगा, अगला <strong>2028</strong></p>
+        <p>• नीव 2012 → पूर्ण 2014 → उपयोग 2016 (कुंभ)</p>
+    </div>
+
+    <h3>🔄 प्रक्रिया (Process Flow)</h3>
+    <div class="info-card purple">
+        <p><strong>Step 1:</strong> नर्मदा नदी का पानी बड़वाह बांध (खरगोन) पर रोका जाता है</p>
+        <p><strong>Step 2:</strong> 115 km पाइपलाइन के माध्यम से पानी प्रेशर से ऊपर चढ़ाया जाता है</p>
+        <p><strong>Step 3:</strong> उज्जैनी गांव (इंदौर) में शिप्रा नदी के उद्गम पर पानी छोड़ दिया जाता है</p>
+        <p><strong>Step 4:</strong> शिप्रा नदी में पानी बढ़ता है → देवास → उज्जैन (रामघाट, महाकाल मंदिर)</p>
+        <p><strong>Step 5:</strong> कुंभ मेले में स्नान + 17 लाख एकड़ सिंचाई</p>
+    </div>
+
+    <div class="info-card yellow">
+        <p>⚠️ <strong>समस्या:</strong> कुछ लोग पाइपलाइन में छेद कर देते हैं — यह अत्यंत गलत और अवैध है!</p>
+    </div>
+
+    <div class="link-story">
+        <p class="title">🔗 Link Story — नर्मदा-शिप्रा याद करो</p>
+        <p>"<strong>नर्मदा</strong> माँ <strong>अमरकंटक</strong> से चलीं → <strong>बड़वाह</strong> (खरगोन) में रुकीं → <strong>115 km</strong> पाइप में बैठकर → <strong>उज्जैनी गांव</strong> (इंदौर) पहुँचीं → <strong>शिप्रा</strong> में कूद गईं → <strong>उज्जैन</strong> में <strong>महाकाल</strong> के सामने <strong>कुंभ</strong> स्नान कराया → <strong>₹432 Cr</strong> का बिल आया → <strong>17 लाख एकड़</strong> खेत भी सींच दिए!"</p>
+    </div>
+
+    <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Shipra_river_in_Ujjain.jpg/800px-Shipra_river_in_Ujjain.jpg" alt="Shipra River at Ramghat Ujjain where Simhastha Kumbh Mela takes place" decoding="async" loading="eager">
+        <p class="caption">Image: Shipra River, Ujjain (Ramghat) | Wikimedia Commons, CC BY-SA 4.0</p>
+    </div>
+
+    <!-- Quiz Topic 3 -->
+    <h3>🧠 Quick Recall Quiz</h3>
+    <div class="quiz-section">
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q1:</strong> नर्मदा-शिप्रा लिंक में पाइपलाइन कितने km की है?</p>
+            <p class="answer">✅ 115 km</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q2:</strong> बड़वाह बांध किस नदी पर और किस जिले में है?</p>
+            <p class="answer">✅ नर्मदा नदी पर, खरगोन के पास</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q3:</strong> इस परियोजना की कुल लागत कितनी है?</p>
+            <p class="answer">✅ ₹432 करोड़</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q4:</strong> शिप्रा नदी किसकी सहायक है और उद्गम कहाँ है?</p>
+            <p class="answer">✅ चंबल नदी की सहायक — उद्गम: उज्जैनी गांव, इंदौर</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q5:</strong> इस परियोजना से कितनी सिंचाई होती है?</p>
+            <p class="answer">✅ 17 लाख एकड़ (एकड़ — हेक्टेयर नहीं!)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q6:</strong> नीव कब रखी, पूर्ण कब हुई, उपयोग कब?</p>
+            <p class="answer">✅ नीव: 2012 (शिवराज सिंह) → पूर्ण: 2014 → उपयोग: सिंहस्थ कुंभ 2016</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== TOPIC 4 ==================== -->
+<section class="topic-section" id="topic4" style="border-top: 4px solid var(--accent-purple);">
+    <h2>🔗 Topic 4: नर्मदा-पार्वती लिंक परियोजना</h2>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Narmada-Parvati Link Project | ⏱️ ~47:00 to ~49:00</p>
+
+    <div class="info-card purple">
+        <p>📌 <strong>स्थिति:</strong> ⚠️ सिर्फ घोषणा (Only Announced) — अभी निर्माण शुरू नहीं हुआ</p>
+        <p>📌 <strong>उद्देश्य:</strong> नर्मदा नदी का पानी → पार्वती नदी में भेजना</p>
+        <p>📌 <strong>पार्वती नदी:</strong> चंबल नदी की सहायक (जैसे शिप्रा भी चंबल की सहायक है)</p>
+    </div>
+
+    <h3>📅 घोषणा (Announcement)</h3>
+    <div class="info-card">
+        <p>📅 <strong>घोषणा तिथि:</strong> दिसंबर 2017</p>
+        <p>👤 <strong>घोषणा किसने की:</strong> शिवराज सिंह चौहान (तत्कालीन CM, MP)</p>
+        <p>📍 <strong>घोषणा कहाँ से:</strong> सीहोर से</p>
+    </div>
+
+    <h3>📊 लाभान्वित जिले</h3>
+    <div class="info-card green">
+        <p>🟢 <strong>3 जिले लाभान्वित होंगे:</strong></p>
+        <p>1. <strong>सीहोर</strong> (जहाँ से पार्वती नदी निकलती है)</p>
+        <p>2. <strong>शाजापुर</strong></p>
+        <p>3. <strong>राजगढ़</strong></p>
+    </div>
+
+    <div class="info-card yellow">
+        <p>📌 <strong>उद्देश्य:</strong> इन क्षेत्रों की नदियों को पुनर्जीवित करना — जिससे बराबरी से पानी बना रहे</p>
+        <p>⚠️ <strong>नोट:</strong> बीच में एक बार पैसे भी आए थे लेकिन भ्रष्टाचार की भेंट चढ़ गए (Times of India में खबर आई थी)</p>
+    </div>
+
+    <div class="exam-hot">
+        <p>🔥 <strong>Exam Hot:</strong></p>
+        <p>• नर्मदा-पार्वती = सिर्फ <strong>घोषणा</strong> (दिसंबर 2017, सीहोर से, शिवराज सिंह चौहान)</p>
+        <p>• पार्वती = <strong>चंबल की सहायक</strong></p>
+        <p>• लाभान्वित: <strong>सीहोर, शाजापुर, राजगढ़</strong></p>
+    </div>
+
+    <div class="link-story">
+        <p class="title">🔗 Link Story — नर्मदा-पार्वती याद करो</p>
+        <p>"<strong>शिवराज</strong> जी <strong>सीहोर</strong> गए (दिसंबर <strong>2017</strong>) → बोले <strong>पार्वती</strong> (चंबल की बेटी) को <strong>नर्मदा</strong> माँ का पानी दो → <strong>सीहोर + शाजापुर + राजगढ़</strong> = 3 जिले खुश होंगे → लेकिन अभी सिर्फ <strong>घोषणा</strong> है, काम शुरू नहीं!"</p>
+    </div>
+
+    <!-- Quiz Topic 4 -->
+    <h3>🧠 Quick Recall Quiz</h3>
+    <div class="quiz-section">
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q1:</strong> नर्मदा-पार्वती लिंक की घोषणा कब और कहाँ से हुई?</p>
+            <p class="answer">✅ दिसंबर 2017, सीहोर से (शिवराज सिंह चौहान)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q2:</strong> पार्वती नदी किसकी सहायक है?</p>
+            <p class="answer">✅ चंबल नदी की सहायक</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q3:</strong> इस परियोजना से कौन से जिले लाभान्वित होंगे?</p>
+            <p class="answer">✅ सीहोर, शाजापुर, राजगढ़ (3 जिले)</p>
+        </div>
+        <div class="quiz-q" onclick="this.classList.toggle('show')">
+            <p><strong>Q4:</strong> इस परियोजना की वर्तमान स्थिति क्या है?</p>
+            <p class="answer">✅ सिर्फ घोषणा (Only Announced) — निर्माण शुरू नहीं हुआ</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== MASTER FULL FORMS ==================== -->
+<section class="topic-section" id="fullforms" style="border-top: 4px solid var(--accent-yellow);">
+    <h2>📋 Master Full Forms Table</h2>
+    <table>
+        <tr><th>Short Form</th><th>Full Form (English)</th><th>Hindi Meaning</th></tr>
+        <tr><td>NWDA</td><td>National Water Development Agency</td><td>राष्ट्रीय जल विकास प्राधिकरण (1982)</td></tr>
+        <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+        <tr><td>UP</td><td>Uttar Pradesh</td><td>उत्तर प्रदेश</td></tr>
+        <tr><td>GOI</td><td>Government of India</td><td>भारत सरकार</td></tr>
+        <tr><td>MW</td><td>Megawatt</td><td>मेगावाट (विद्युत इकाई)</td></tr>
+        <tr><td>km</td><td>Kilometer</td><td>किलोमीटर</td></tr>
+        <tr><td>NGT</td><td>National Green Tribunal</td><td>राष्ट्रीय हरित न्यायाधिकरण</td></tr>
+        <tr><td>CM</td><td>Chief Minister</td><td>मुख्यमंत्री</td></tr>
+        <tr><td>PM</td><td>Prime Minister</td><td>प्रधानमंत्री</td></tr>
+    </table>
+</section>
+
+<!-- ==================== EXAM HOT FACTS ==================== -->
+<section class="topic-section" id="hotfacts" style="border-top: 4px solid var(--accent-orange);">
+    <h2>🔥 Exam Hot Facts — एक नज़र में</h2>
+
+    <div class="exam-hot">
+        <p>🔥 NWDA = National Water Development Agency, स्थापना <strong>1982</strong></p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 नदी जोड़ने का विचार सर्वप्रथम = <strong>Sir Arthur Cotton</strong> (Chief Engineer, Madras Presidency)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 स्वतंत्र भारत में प्रथम प्रस्ताव = <strong>K.L. Rao</strong> (गंगा-कावेरी)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 अमृत क्रांति = <strong>2002</strong> = नदी जोड़ो परियोजना (अटल बिहारी वाजपेयी)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 केन-बेतवा: MP की <strong>प्रथम/सबसे पुरानी</strong> नदी जोड़ो परियोजना</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 बेतवा = <strong>बुंदेलखंड की जीवन रेखा</strong></p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 दौधन बांध = <strong>पन्ना-छतरपुर सीमा</strong> पर (केन नदी)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 पन्ना टाइगर रिजर्व डूब: कुल <strong>9000 हेक्टेयर</strong>, PTR का <strong>5803 हेक्टेयर</strong></p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 केन-बेतवा नहर = <strong>221 km</strong> (2 km सुरंग) — पहले 231 km थी</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 पुनः हस्ताक्षर = <strong>22 मार्च 2021</strong> = विश्व जल दिवस</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 केन-बेतवा लागत = <strong>₹44,605 Cr</strong> (GOI 90% + MP 5% + UP 5%)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 लाभान्वित = <strong>14 जिले</strong> (MP-10 + UP-4) — 13 नहीं!</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 केन का पानी → <strong>बेतवा</strong> में जाएगा (उल्टा नहीं!)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 शिप्रा = <strong>चंबल की सहायक</strong> (नर्मदा की नहीं!)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 नर्मदा-शिप्रा: पाइपलाइन <strong>115 km</strong>, लागत <strong>₹432 Cr</strong>, सिंचाई <strong>17 लाख एकड़</strong></p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 नर्मदा-शिप्रा: नीव <strong>2012</strong> → पूर्ण <strong>2014</strong> → उपयोग <strong>सिंहस्थ कुंभ 2016</strong></p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 नर्मदा-पार्वती: सिर्फ <strong>घोषणा</strong> (दिसंबर 2017, सीहोर, शिवराज सिंह)</p>
+    </div>
+    <div class="exam-hot">
+        <p>🔥 पार्वती = <strong>चंबल की सहायक</strong>, लाभान्वित: सीहोर, शाजापुर, राजगढ़</p>
+    </div>
+</section>
+
+<!-- ==================== COMPARISON TABLE ==================== -->
+<section class="topic-section" style="border-top: 4px solid var(--accent-cyan);">
+    <h2>📊 तुलनात्मक तालिका — MP की नदी जोड़ो परियोजनाएँ</h2>
+    <div style="overflow-x: auto;">
+    <table>
+        <tr>
+            <th>विवरण</th>
+            <th>केन-बेतवा</th>
+            <th>नर्मदा-शिप्रा</th>
+            <th>नर्मदा-पार्वती</th>
+        </tr>
+        <tr><td><strong>स्थिति</strong></td><td>निर्माणाधीन</td><td>✅ पूर्ण (2014)</td><td>⚠️ सिर्फ घोषणा</td></tr>
+        <tr><td><strong>नीव/घोषणा</strong></td><td>2005</td><td>2012</td><td>दिसंबर 2017</td></tr>
+        <tr><td><strong>लागत</strong></td><td>₹44,605 Cr</td><td>₹432 Cr</td><td>—</td></tr>
+        <tr><td><strong>बांध</strong></td><td>दौधन (पन्ना-छतरपुर)</td><td>बड़वाह (खरगोन)</td><td>—</td></tr>
+        <tr><td><strong>नहर/पाइपलाइन</strong></td><td>221 km नहर (2 km सुरंग)</td><td>115 km पाइपलाइन</td><td>—</td></tr>
+        <tr><td><strong>पानी कहाँ से → कहाँ</strong></td><td>केन → बेतवा</td><td>नर्मदा → शिप्रा</td><td>नर्मदा → पार्वती</td></tr>
+        <tr><td><strong>सिंचाई</strong></td><td>10.62 लाख हेक्टेयर</td><td>17 लाख एकड़</td><td>—</td></tr>
+        <tr><td><strong>लाभान्वित जिले</strong></td><td>14 (MP-10, UP-4)</td><td>देवास, उज्जैन क्षेत्र</td><td>3 (सीहोर, शाजापुर, राजगढ़)</td></tr>
+        <tr><td><strong>विशेष</strong></td><td>बुंदेलखंड की जीवन रेखा</td><td>सिंहस्थ कुंभ 2016</td><td>पार्वती = चंबल की सहायक</td></tr>
+    </table>
+    </div>
+</section>
+
+<!-- ==================== REVISION CHECKLIST ==================== -->
+<section class="topic-section" id="checklist" style="border-top: 4px solid var(--accent-green);">
+    <h2>✅ Master Revision Checklist</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 15px;">Check off facts as you revise — progress saves automatically! <span id="checkProgress">0/30</span></p>
+
+    <div class="checklist" id="masterChecklist">
+        <label><input type="checkbox" data-id="c1"> नदी जोड़ो = बड़े पैमाने पर सिविल इंजीनियरिंग परियोजना</label>
+        <label><input type="checkbox" data-id="c2"> NWDA = National Water Development Agency (1982)</label>
+        <label><input type="checkbox" data-id="c3"> जल संसाधन मंत्रालय के अंतर्गत</label>
+        <label><input type="checkbox" data-id="c4"> Sir Arthur Cotton = सर्वप्रथम विचार (Madras Presidency)</label>
+        <label><input type="checkbox" data-id="c5"> K.L. Rao = स्वतंत्र भारत में प्रथम प्रस्ताव (गंगा-कावेरी)</label>
+        <label><input type="checkbox" data-id="c6"> अटल बिहारी वाजपेयी = सर्वाधिक महत्वाकांक्षा व प्रयास</label>
+        <label><input type="checkbox" data-id="c7"> अमृत क्रांति = 2002 = नदी जोड़ो परियोजना</label>
+        <label><input type="checkbox" data-id="c8"> केन उद्गम = अरवा गांव, रीठी, कैमूर श्रेणी, कटनी</label>
+        <label><input type="checkbox" data-id="c9"> बेतवा उद्गम = कुमरा गांव, विंध्याचल, रायसेन</label>
+        <label><input type="checkbox" data-id="c10"> बेतवा = बुंदेलखंड की जीवन रेखा</label>
+        <label><input type="checkbox" data-id="c11"> दौधन बांध = पन्ना-छतरपुर सीमा, केन नदी पर</label>
+        <label><input type="checkbox" data-id="c12"> पन्ना टाइगर रिजर्व डूब = 5803/9000 हेक्टेयर</label>
+        <label><input type="checkbox" data-id="c13"> केन-बेतवा नहर = 221 km (2 km सुरंग)</label>
+        <label><input type="checkbox" data-id="c14"> बरुआ सागर बांध = झांसी, UP</label>
+        <label><input type="checkbox" data-id="c15"> पुनः हस्ताक्षर = 22 मार्च 2021 (विश्व जल दिवस)</label>
+        <label><input type="checkbox" data-id="c16"> केन-बेतवा लागत = ₹44,605 Cr (90-5-5)</label>
+        <label><input type="checkbox" data-id="c17"> लाभान्वित = 14 जिले (MP-10 + UP-4)</label>
+        <label><input type="checkbox" data-id="c18"> पीने का पानी = 62 लाख परिवार</label>
+        <label><input type="checkbox" data-id="c19"> सिंचाई = 10.62 लाख हेक्टेयर</label>
+        <label><input type="checkbox" data-id="c20"> जल विद्युत = 103 MW + सौर = 27 MW</label>
+        <label><input type="checkbox" data-id="c21"> केन का पानी → बेतवा में (उल्टा नहीं)</label>
+        <label><input type="checkbox" data-id="c22"> नर्मदा उद्गम = अमरकंटक</label>
+        <label><input type="checkbox" data-id="c23"> शिप्रा = चंबल की सहायक (नर्मदा की नहीं!)</label>
+        <label><input type="checkbox" data-id="c24"> शिप्रा उद्गम = उज्जैनी गांव, इंदौर</label>
+        <label><input type="checkbox" data-id="c25"> बड़वाह बांध = नर्मदा नदी, खरगोन</label>
+        <label><input type="checkbox" data-id="c26"> नर्मदा-शिप्रा पाइपलाइन = 115 km</label>
+        <label><input type="checkbox" data-id="c27"> नर्मदा-शिप्रा: नीव 2012, पूर्ण 2014, उपयोग कुंभ 2016</label>
+        <label><input type="checkbox" data-id="c28"> नर्मदा-शिप्रा लागत = ₹432 Cr, सिंचाई = 17 लाख एकड़</label>
+        <label><input type="checkbox" data-id="c29"> नर्मदा-पार्वती = सिर्फ घोषणा (दिसंबर 2017, सीहोर)</label>
+        <label><input type="checkbox" data-id="c30"> पार्वती = चंबल की सहायक, लाभान्वित: सीहोर, शाजापुर, राजगढ़</label>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <p>📌 <strong>Upcoming Topics (आगामी):</strong> MCQ Series — कल से शुरू (as mentioned by teacher)</p>
+    <p style="margin-top: 10px;">💡 <strong>Revision Tips:</strong> रोज़ 5 मिनट इस page को scan करो | Quiz section daily solve करो | Checklist complete करो</p>
+    <p style="margin-top: 10px;">📖 MPPSC Paper-2 | MP GK Special | Lecture 13 | River Linking Projects</p>
+    <p style="margin-top: 5px; font-size: 0.8rem;">Made for revision purposes only | Content from class transcript</p>
+</footer>
+
+</div><!-- end container -->
+
+
+<script>
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+});
+
+// Quick Jump Navigation
+function jumpToSection(id) {
+    if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Smooth scroll for TOC links
+document.querySelectorAll('.toc a').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Checklist with localStorage
+const checklist = document.getElementById('masterChecklist');
+const checkProgress = document.getElementById('checkProgress');
+const savedChecks = JSON.parse(localStorage.getItem('class14checks') || '{}');
+
+checklist.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const id = cb.dataset.id;
+    if (savedChecks[id]) cb.checked = true;
+    cb.addEventListener('change', () => {
+        savedChecks[id] = cb.checked;
+        localStorage.setItem('class14checks', JSON.stringify(savedChecks));
+        updateProgress();
+    });
+});
+
+function updateProgress() {
+    const total = checklist.querySelectorAll('input[type="checkbox"]').length;
+    const checked = checklist.querySelectorAll('input:checked').length;
+    checkProgress.textContent = `${checked}/${total}`;
+    const pct = Math.round((checked / total) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `Revision Progress: ${pct}%`;
+}
+updateProgress();
+
+// Image error handling with fallback
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+        const alt = this.alt || 'Image';
+        const fallback = document.createElement('div');
+        fallback.style.cssText = 'padding:20px;background:var(--bg-secondary);border:1px dashed var(--border-color);border-radius:8px;text-align:center;color:var(--text-secondary);';
+        fallback.innerHTML = `📷 Image could not load: <em>${alt}</em>`;
+        this.parentNode.replaceChild(fallback, this);
+    });
+});
+</script>
+</body>
+</html>

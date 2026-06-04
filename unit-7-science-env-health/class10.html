@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lecture 10 Revision — पोषण, आहार और पोषक तत्व</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f1a; --panel:#17182a; --card:#1f2136; --text:#f7fbff; --muted:#d7e2ee;
+      --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff; --pink:#ff4fd8;
+      --border:rgba(255,255,255,.14); --shadow:0 14px 40px rgba(0,0,0,.32);
+      --danger:#ff4d6d; --warn:#ffce3a; --ok:#24f59e;
+    }
+    [data-theme="light"]{
+      --bg:#f6f8ff; --panel:#ffffff; --card:#ffffff; --text:#102033; --muted:#334155;
+      --border:rgba(15,23,42,.18); --shadow:0 10px 26px rgba(15,23,42,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(0,212,255,.16),transparent 35%),radial-gradient(circle at 80% 10%,rgba(179,136,255,.16),transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:17px;line-height:1.75;letter-spacing:.01em}
+    a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px}
+    .hero{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:28px;padding:34px;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(179,136,255,.12)),var(--panel);box-shadow:var(--shadow)}
+    .hero h1{font-size:clamp(2rem,5vw,4.3rem);line-height:1.05;margin:0 0 12px;font-weight:900;letter-spacing:-.04em}.hero p{max-width:880px;color:var(--muted);font-size:1.08rem}.badges{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.badge{border:1px solid var(--border);background:rgba(255,255,255,.07);border-radius:999px;padding:6px 12px;font-weight:800;color:var(--text)}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 88%, transparent);border-bottom:1px solid var(--border)}
+    .topbar-inner{max-width:1180px;margin:0 auto;padding:10px 18px;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center}.progress-track{height:10px;background:rgba(255,255,255,.09);border-radius:999px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange));border-radius:999px;transition:width .15s linear}.jump,.btn{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:9px 12px;font-weight:800}.btn{cursor:pointer}.layout{display:grid;grid-template-columns:270px 1fr;gap:22px;margin-top:22px}.toc{position:sticky;top:72px;align-self:start;background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:16px;box-shadow:var(--shadow);max-height:calc(100vh - 92px);overflow:auto}.toc h2{font-size:1rem;margin:0 0 8px;color:var(--cyan)}.toc a{display:block;border-radius:12px;padding:8px 10px;color:var(--text);font-weight:800}.toc a:hover{background:rgba(0,212,255,.13);text-decoration:none}.content{min-width:0}
+    section{scroll-margin-top:86px;margin-bottom:22px}.section{border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)),var(--panel);border-radius:26px;padding:22px;box-shadow:var(--shadow);animation:rise .35s ease both}.accent-cyan{--accent:var(--cyan)}.accent-orange{--accent:var(--orange)}.accent-green{--accent:var(--green)}.accent-purple{--accent:var(--purple)}.accent-pink{--accent:var(--pink)}
+    .section h2{font-size:clamp(1.55rem,3.6vw,2.35rem);margin:0 0 10px;line-height:1.18}.timestamp{display:inline-flex;gap:7px;align-items:center;border:1px solid color-mix(in srgb,var(--accent) 55%, var(--border));background:color-mix(in srgb,var(--accent) 17%, transparent);color:var(--text);font-weight:900;border-radius:999px;padding:5px 11px;font-size:.88rem}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}.card{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--accent);border-radius:20px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.13)}.card h3{margin:0 0 8px;font-size:1.12rem}.card ul{margin:8px 0 0;padding-left:22px}.card li{margin:5px 0}.mini{font-size:.95rem;color:var(--muted)}
+    .flow-note,.exam,.linkstory,.accuracy,.upcoming{border:1px solid var(--border);border-radius:18px;padding:14px 16px;margin:14px 0;background:rgba(255,255,255,.055)}.exam{border-color:rgba(255,107,53,.55);background:linear-gradient(135deg,rgba(255,107,53,.18),rgba(255,206,58,.06))}.linkstory{border-color:rgba(0,255,136,.45);background:linear-gradient(135deg,rgba(0,255,136,.15),rgba(0,212,255,.07))}.accuracy{border-color:rgba(255,206,58,.55);background:linear-gradient(135deg,rgba(255,206,58,.16),rgba(255,255,255,.03))}.upcoming{border-color:rgba(179,136,255,.55);background:linear-gradient(135deg,rgba(179,136,255,.18),rgba(0,212,255,.06))}.flow-note strong,.exam strong,.linkstory strong,.accuracy strong,.upcoming strong{display:block;margin-bottom:6px}
+    .figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}.img-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:12px;overflow:hidden}.img-card img{display:block;max-width:100%;height:auto;border-radius:14px;background:#fff;object-fit:contain;margin:0 auto}.img-card figcaption{font-size:.83rem;line-height:1.45;color:var(--muted);margin-top:8px}.fallback{display:none;margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,77,109,.14);border:1px solid rgba(255,77,109,.35)}
+    table{width:100%;border-collapse:collapse;margin:14px 0;border-radius:16px;overflow:hidden;background:var(--card)}th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}th{background:rgba(0,212,255,.12);font-weight:900}.table-wrap{overflow-x:auto;border-radius:16px}.pill{display:inline-block;border-radius:999px;padding:2px 9px;background:rgba(0,212,255,.14);border:1px solid rgba(0,212,255,.28);font-weight:800;margin:2px}.kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.kpi div{padding:12px;border-radius:18px;background:var(--card);border:1px solid var(--border);text-align:center}.kpi b{display:block;font-size:1.45rem;color:var(--accent)}
+    details{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:12px 14px;margin:12px 0}summary{cursor:pointer;font-weight:900;color:var(--text)}.quiz{display:grid;gap:10px}.q{border:1px solid var(--border);border-radius:16px;padding:12px;background:rgba(255,255,255,.04)}.q button{margin-top:8px}.ans{display:none;margin-top:8px;color:var(--ok);font-weight:800}.checklist label{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--border);background:var(--card);padding:11px;border-radius:14px;margin:8px 0}.checklist input{margin-top:6px;transform:scale(1.2)}.check-progress{font-weight:900;color:var(--green)}
+    .diagram{white-space:pre-wrap;background:#0b1220;color:#e7f6ff;border:1px solid rgba(0,212,255,.22);border-radius:18px;padding:15px;overflow:auto}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tag{display:inline-block;margin:3px;padding:4px 8px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.06);font-weight:700}.footer{padding:28px;text-align:center;color:var(--muted)}
+    @keyframes rise{from{transform:translateY(10px);opacity:.4}to{transform:none;opacity:1}}
+    @media (max-width:940px){.layout{grid-template-columns:1fr}.toc{position:relative;top:auto;max-height:none}.cards,.figure-grid,.grid-3{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar-inner{grid-template-columns:1fr}.jump,.btn{width:100%}}
+    @media print{body{background:#fff!important;color:#000!important;font-size:12pt}.topbar,.toc,.btn{display:none!important}.layout{display:block}.section,.card,details,.flow-note,.exam,.linkstory,.accuracy,.upcoming,.img-card{box-shadow:none!important;border:1px solid #999!important;background:#fff!important;color:#000!important}details[open],details{display:block}details > *{display:block}.ans{display:block!important;color:#000!important}a{color:#000;text-decoration:underline}.img-card img{max-height:280px}.section{page-break-inside:avoid}}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="progress-track" aria-label="Scroll progress"><div class="progress-bar" id="scrollBar"></div></div>
+      <select class="jump" id="jumpMenu" aria-label="Jump to topic">
+        <option value="#top">Jump: Lecture Start</option>
+        <option value="#recap">00:17 Recap & Scope</option>
+        <option value="#diet">03:43 Balanced Diet</option>
+        <option value="#nutrients">07:45 Seven Nutrients</option>
+        <option value="#organic">11:52 Organic/Inorganic</option>
+        <option value="#carb-def">16:13 Carbohydrate Basics</option>
+        <option value="#carb-types">23:15 Carbohydrate Types</option>
+        <option value="#carb-facts">34:20 Exam Facts</option>
+        <option value="#protein">37:27 Protein</option>
+        <option value="#protein-types">43:10 Protein Types</option>
+        <option value="#deficiency">46:52 Deficiency Diseases</option>
+        <option value="#master">Master Revision</option>
+      </select>
+      <button class="btn" id="themeToggle">🌙 Theme</button>
+    </div>
+  </div>
+
+  <main class="wrap" id="top">
+    <header class="hero">
+      <div class="badges">
+        <span class="badge">🎯 MPPSC Pre 2024</span><span class="badge">Unit 7</span><span class="badge">Lecture 10</span><span class="badge">Coverage: 00:17 → 53:04</span>
+      </div>
+      <h1>🥗 पोषण, आहार और पोषक तत्व — Part 2</h1>
+      <p>यह revision page transcript-flow में बनाया गया है: पहले class recap, फिर संतुलित आहार, फिर पोषक तत्वों की classification, उसके बाद Carbohydrate और Protein — exactly उसी sequence में जिसमें teacher ने पढ़ाया। Promotional/app parts को short flow-note में रखा गया है ताकि पढ़ाई का flow न टूटे।</p>
+      <div class="kpi accent-cyan">
+        <div><b>7</b> Nutrients</div><div><b>3</b> Carb Types</div><div><b>3</b> Protein Types</div><div><b>2</b> Deficiency Diseases</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Table of contents">
+        <h2>📌 Flow TOC</h2>
+        <a href="#recap">00:17 — Recap & आज का scope</a>
+        <a href="#diet">03:43 — Balanced Diet</a>
+        <a href="#nutrients">07:45 — Seven Nutrients</a>
+        <a href="#organic">11:52 — Organic vs Inorganic</a>
+        <a href="#carb-def">16:13 — Carbohydrate: definition/function/source</a>
+        <a href="#carb-types">23:15 — Mono/Di/Poly Saccharide</a>
+        <a href="#carb-facts">34:20 — Carb exam facts</a>
+        <a href="#protein">37:27 — Protein basics</a>
+        <a href="#protein-types">43:10 — Protein types</a>
+        <a href="#deficiency">46:52 — Protein deficiency diseases</a>
+        <a href="#master">Master Tables + Checklist</a>
+      </nav>
+
+      <div class="content">
+        <section id="recap" class="section accent-cyan">
+          <span class="timestamp">00:17–03:43</span>
+          <h2>👋 Class Start + Previous Lecture Recap</h2>
+          <div class="flow-note"><strong>🎬 Transcript Flow</strong> Teacher ने session की शुरुआत “जय हिंद” से की और बताया कि यह <b>Unit 7: विज्ञान, पर्यावरण और स्वास्थ्य</b> का Lecture 10 है। आज का target: <b>आहार</b> समझना और <b>पोषक तत्वों</b> की discussion शुरू करना — खासकर <b>Carbohydrate</b> और <b>Protein</b>; Vitamin आदि अगले lecture में।</div>
+          <div class="cards">
+            <article class="card"><h3>🔁 कल क्या पढ़ा था?</h3><ul><li>पोषण क्या है?</li><li>जंतु पोषण और पादप पोषण</li><li>Food, Nutrients, Nutrition में difference</li><li>Absorption/अवशोषण भी nutrition का part है</li></ul></article>
+            <article class="card"><h3>🍽️ तीन basic terms</h3><ul><li><b>Food / आहार:</b> हमने जो खाया — “क्या खाया?”</li><li><b>Nutrients / पोषक तत्व:</b> आहार से मिलने वाले useful elements</li><li><b>Nutrition / पोषण:</b> खाने से लेकर निकालने तक की पूरी process, including absorption</li></ul></article>
+            <article class="card"><h3>🧒 पोषक तत्व क्यों चाहिए?</h3><ul><li>शरीर की वृद्धि</li><li>टूट-फूट की मरम्मत</li><li>विकास</li><li>जैविक क्रियाओं के लिए ऊर्जा</li></ul></article>
+            <article class="card"><h3>🧘 Teacher की study strategy</h3><ul><li>जल्दी-जल्दी पूरा निपटाने के बजाय आराम से पढ़ना है।</li><li>Notes बनाते चलो और समझ develop करो।</li><li>Class के दौरान facts याद करते चलना best है।</li></ul></article>
+          </div>
+          <figure class="img-card">
+            <img loading="eager" fetchpriority="high" decoding="async" data-file="USDA_my_plate.png" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/USDA_my_plate.png?width=900" alt="USDA MyPlate balanced food groups diagram">
+            <figcaption>Image: Wikimedia Commons — USDA MyPlate, US Department of Agriculture, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:USDA_my_plate.png">Source</a></figcaption>
+            <div class="fallback"></div>
+          </figure>
+          <div class="quiz">
+            <div class="q"><b>Quick Recall:</b> Nutrition में absorption आता है या नहीं? <button class="btn reveal">Answer</button><div class="ans">हाँ, teacher ने कहा absorption भी पोषण की process में आता है।</div></div>
+          </div>
+        </section>
+
+        <section id="diet" class="section accent-orange">
+          <span class="timestamp">03:43–07:42</span>
+          <h2>🥗 संतुलित आहार / Balanced Diet</h2>
+          <p>Teacher ने everyday examples दिए: कभी भूख लगती है तो जो मिले खा लेते हैं, कभी gym/diet routine follow करते हैं — सुबह क्या खाना, दोपहर में क्या खाना। इसी planned और requirement-based food को <b>Balanced Diet</b> से जोड़ा।</p>
+          <div class="cards">
+            <article class="card"><h3>✅ Balanced Diet की definition</h3><ul><li>जो शरीर के पोषण के लिए जरूरी हो।</li><li>शरीर की वृद्धि कराए।</li><li>टूट-फूट की मरम्मत करे।</li><li>ऊर्जा प्रदान करे।</li><li>शरीर को जरूरी सारी चीजें दे।</li></ul></article>
+            <article class="card"><h3>⚡ आहार संतुलित कब?</h3><ul><li><b>ऊर्जा देने वाला</b> हो।</li><li><b>शरीर-निर्माण</b> में कार्य करे।</li><li><b>रक्षा प्रदाता</b> हो — bacteria, virus, fungus से लड़ने में help करे।</li><li><b>जल और fiber</b> दे — fruits/vegetables से।</li></ul></article>
+            <article class="card"><h3>🧬 Nutrient-wise role</h3><ul><li>Carbohydrate + Fat → energy-giving</li><li>Protein → body building, repair, growth</li><li>Vitamin + Salts + Minerals → immunity/protection</li><li>Water + Fiber → fruits/vegetables, digestion support</li></ul></article>
+            <article class="card"><h3>🎯 याद रखने वाली line</h3><p>ऐसा food जो <b>energy + निर्माण + रक्षा + water/fiber</b> दे, वही balanced diet है।</p></article>
+          </div>
+          <div class="linkstory"><strong>🔗 Link Story — Balanced Diet याद करो</strong> एक body “गाड़ी” है: <b>Carb/Fat</b> petrol डालते हैं ⚡, <b>Protein</b> body की repair workshop चलाता है 🔧, <b>Vitamins/Minerals</b> security guard बनकर bacteria-virus से लड़ते हैं 🛡️, और <b>Water/Fiber</b> road साफ रखते हैं 🚰.</div>
+          <figure class="img-card">
+            <img loading="lazy" decoding="async" data-file="Eatwell_Plate.png" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Eatwell_Plate.png?width=700" alt="Eatwell plate food groups visual summary">
+            <figcaption>Image: Wikimedia Commons — “Eatwell Plate”, Creator: Lionfish0, CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Eatwell_Plate.png">Source</a></figcaption>
+            <div class="fallback"></div>
+          </figure>
+        </section>
+
+        <section id="nutrients" class="section accent-green">
+          <span class="timestamp">07:45–11:52</span>
+          <h2>🧪 7 पोषक तत्व / Seven Nutrients</h2>
+          <div class="flow-note"><strong>🎬 Transcript Flow</strong> Teacher ने repeatedly कहा कि nutrients number में सिर्फ <b>सात</b> हैं और इन्हें sequence में याद करना है।</div>
+          <div class="grid-3">
+            <div class="card"><h3>1️⃣ Carbohydrate</h3><p>ऊर्जा / instant energy से connected.</p></div>
+            <div class="card"><h3>2️⃣ Protein</h3><p>शरीर निर्माण, growth, repair.</p></div>
+            <div class="card"><h3>3️⃣ Fat / वसा</h3><p>ऊर्जा, लेकिन later lecture में detail.</p></div>
+            <div class="card"><h3>4️⃣ Vitamin</h3><p>रक्षा/immunity; next lecture में detail.</p></div>
+            <div class="card"><h3>5️⃣ Water / जल</h3><p>Inorganic nutrient; body process support.</p></div>
+            <div class="card"><h3>6️⃣ Fiber / रेसे</h3><p>Fruits/vegetables, roughage.</p></div>
+            <div class="card"><h3>7️⃣ Minerals / खनिज</h3><p>Calcium, potassium, sodium, phosphorus, chlorine आदि.</p></div>
+          </div>
+          <div class="exam"><strong>🔥 Exam Hot</strong> “पोषक तत्व कितने प्रकार के हैं?” → <b>7</b>. Teacher ने कहा: कार्बोहाइड्रेट, प्रोटीन, वसा, विटामिन, जल, रेशे/फाइबर, खनिज।</div>
+          <div class="linkstory"><strong>🔗 Link Story — 7 Nutrients</strong> <b>कार्बो</b> ने <b>प्रोटीन</b> को <b>वसा</b> वाली गाड़ी में बैठाया; रास्ते में <b>विटामिन</b> guard ने <b>जल</b> की bottle दी, <b>फाइबर</b> ने road साफ की और <b>खनिज</b> ने गाड़ी के nuts-bolts tight किए।</div>
+          <div class="flow-note"><strong>📌 Class Interaction Included</strong> 10:21–11:52 में student ने पूछा कि YouTube class sufficient है या नहीं। Teacher ने कहा: basic knowledge के लिए more than sufficient है, 10000 MCQ + practice से package complete होगा; base clear होना सबसे important है।</div>
+        </section>
+
+        <section id="organic" class="section accent-purple">
+          <span class="timestamp">11:52–16:13</span>
+          <h2>⚗️ Organic vs Inorganic Nutrients</h2>
+          <p>Teacher ने seven nutrients को दो groups में divide किया: जिनमें carbon हो वे <b>कार्बनिक / Organic</b>, और जिनमें carbon न हो वे <b>अकार्बनिक / Inorganic</b>.</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Type</th><th>Definition</th><th>Examples from lecture</th><th>Memory Hook</th></tr></thead>
+            <tbody>
+              <tr><td><b>Organic / कार्बनिक</b></td><td>जिसमें carbon की मात्रा हो</td><td>Carbohydrate, Lipid/Fat, Protein, Vitamin</td><td>“Carbon है तो Organic है”</td></tr>
+              <tr><td><b>Inorganic / अकार्बनिक</b></td><td>जिसमें carbon न हो</td><td>Water/H₂O, Mineral salts: Calcium, Potassium, Sodium, Phosphorus, Chlorine आदि</td><td>H₂O में carbon नहीं → inorganic</td></tr>
+            </tbody>
+          </table></div>
+          <pre class="diagram">Nutrients / पोषक तत्व
+├── Organic / कार्बनिक → Carbohydrate, Fat/Lipid, Protein, Vitamin
+└── Inorganic / अकार्बनिक → Water (H₂O), Minerals (Ca, K, Na, P, Cl...)</pre>
+          <div class="flow-note"><strong>🔧 Technical Issue Flow</strong> 13:58–14:51 में audio/video/network issue आया। Teacher वापस आए और same point continue किया: water में carbon नहीं है, इसलिए inorganic nutrient है।</div>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> H₂O organic है या inorganic? <button class="btn reveal">Answer</button><div class="ans">Inorganic — क्योंकि carbon नहीं है।</div></div></div>
+        </section>
+
+        <section id="carb-def" class="section accent-cyan">
+          <span class="timestamp">16:13–23:15</span>
+          <h2>🍚 Carbohydrate — Definition, Function, Sources</h2>
+          <div class="exam"><strong>🔥 Exam Hot</strong> Teacher ने कहा: <b>Carbohydrate बहुत important है, यहाँ से question बनेगा ही बनेगा।</b></div>
+          <div class="cards">
+            <article class="card"><h3>🧪 Composition</h3><ul><li>Carbon + Hydrogen + Oxygen</li><li>यह <b>compound / यौगिक</b> है, mixture नहीं।</li><li>क्यों? क्योंकि elements definite ratio में chemically combine होते हैं।</li><li>Ratio: <b>C:H:O = 1:2:1</b></li><li>Example: Glucose = <b>C₆H₁₂O₆</b> → 6:12:6 = 1:2:1</li></ul></article>
+            <article class="card"><h3>⚡ Function</h3><ul><li>Carbohydrate = <b>त्वरित ऊर्जा / Instant Energy</b></li><li>इसे <b>Fuel of Body / शरीर का ईंधन</b> कहा।</li><li>Analogy: जैसे गाड़ी fuel से चलती है, वैसे body carbohydrate से energetic रहती है।</li></ul></article>
+            <article class="card"><h3>🔥 Energy comparison as taught</h3><ul><li>Carbohydrate: ~4.2 kcal/g</li><li>Protein: ~5.5–5.6 kcal/g (teacher said exact later)</li><li>Fat: ~9.3–9.6 kcal/g</li><li>Fat में energy ज्यादा, लेकिन instant नहीं; stored/sanchit energy.</li></ul></article>
+            <article class="card"><h3>🍠 Sources</h3><p><span class="tag">आलू</span><span class="tag">चावल</span><span class="tag">गेहूँ</span><span class="tag">केला</span><span class="tag">शक्कर</span><span class="tag">अंजीर</span><span class="tag">ज्वार</span><span class="tag">बाजरा</span><span class="tag">मक्का</span><span class="tag">गुड़</span><span class="tag">शहद</span></p><p class="mini">Teacher ने brown rice को white rice से energy-wise better बताया।</p></article>
+          </div>
+          <div class="linkstory"><strong>🔗 Link Story — Carb Sources</strong> आलू की बोरी में चावल गिरा, गेहूँ ने केले से शक्कर माँगी, अंजीर ने ज्वार-बाजरा-मक्का की रोटी पर गुड़ और शहद लगा दिया — पूरा carb mela तैयार!</div>
+          <div class="figure-grid">
+            <figure class="img-card"><img loading="lazy" decoding="async" data-file="Glucose_structure.svg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Glucose_structure.svg?width=500" alt="Cyclic glucose structural formula"><figcaption>Image: Wikimedia Commons — Glucose structure, Creator: Acdx, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:Glucose_structure.svg">Source</a></figcaption><div class="fallback"></div></figure>
+            <figure class="img-card"><img loading="lazy" decoding="async" data-file="Foods.jpg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Foods.jpg?width=800" alt="Food items rich in complex carbohydrates fruits grains vegetables"><figcaption>Image: Wikimedia Commons — Foods / complex carbohydrate visual, USDA ARS source, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:Foods.jpg">Source</a></figcaption><div class="fallback"></div></figure>
+          </div>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> शरीर का ईंधन किसे कहा? <button class="btn reveal">Answer</button><div class="ans">Carbohydrate — क्योंकि instant energy देता है।</div></div></div>
+        </section>
+
+        <section id="carb-types" class="section accent-orange">
+          <span class="timestamp">23:15–33:42</span>
+          <h2>🍬 Carbohydrate के तीन प्रकार</h2>
+          <div class="flow-note"><strong>🎬 Transcript Flow</strong> Teacher ने पहले chemistry prefixes समझाए: mono = one, di = two, tri = three, tetra = four, penta = five, hexa = six, poly = many. फिर carbohydrate को 3 types में पढ़ाया।</div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Type</th><th>Meaning</th><th>Nature as taught</th><th>Examples</th><th>Solubility/Taste</th></tr></thead>
+            <tbody>
+              <tr><td><b>Monosaccharide</b></td><td>1 molecule; simple form</td><td>सबसे सरल carbohydrate; body तुरंत absorb करती है; glucose घोल/ORS/IV drip analogy</td><td>Glucose, Fructose, Galactose</td><td>Sweet; main sugar; water-soluble</td></tr>
+              <tr><td><b>Disaccharide</b></td><td>2 monosaccharides मिलकर</td><td>“Semi sugar / अर्ध शर्करा” जैसे बीच का form</td><td>Sucrose, Maltose, Lactose</td><td>कुछ मीठे, कुछ bland; कुछ soluble</td></tr>
+              <tr><td><b>Polysaccharide</b></td><td>Many monosaccharides</td><td>Complex form; breakdown में time लगता है</td><td>Starch, Cellulose, Chitin, Glycogen</td><td>Generally not sweet; insoluble</td></tr>
+            </tbody>
+          </table></div>
+          <div class="cards">
+            <article class="card"><h3>🩺 Mono: instant absorption examples</h3><ul><li>Glucose powder घोलकर पीते ही energy.</li><li>Diarrhea/दस्त में ORS/घोल इसलिए दिया जाता है।</li><li>कई दिन खाना नहीं खाया या सब निकल गया तो bottle/IV से energy दी जाती है।</li></ul></article>
+            <article class="card"><h3>🍯 Monosaccharide examples</h3><ul><li>Glucose</li><li>Fructose</li><li>Galactose</li><li><b>Fructose = सबसे मीठी शर्करा</b> as taught.</li></ul></article>
+            <article class="card"><h3>🧩 Disaccharide Formula Trick</h3><ul><li>Sucrose = Glucose + Fructose</li><li>Maltose = Glucose + Glucose</li><li>Lactose = Glucose + Galactose</li><li>Teacher trick: <b>Su-Ma-Le</b> → Sucrose, Maltose, Lactose</li></ul></article>
+            <article class="card"><h3>🧱 Polysaccharides</h3><ul><li>Starch</li><li>Cellulose</li><li>Chitin</li><li>Glycogen</li><li>Many monosaccharides मिलकर complex carbohydrate बनाते हैं।</li></ul></article>
+          </div>
+          <div class="linkstory"><strong>🔗 Link Story — Mono, Di, Poly</strong> <b>Mono</b> अकेला glucose तुरंत race में भागा; <b>Di</b> ने दो दोस्तों को जोड़ा — sucrose में glucose+fructose, maltose में glucose+glucose, lactose में glucose+galactose; <b>Poly</b> ने पूरी भीड़ बनाकर starch-cellulose-chitin-glycogen की दीवार बना दी।</div>
+          <div class="linkstory"><strong>🧠 Mnemonic</strong> Monosaccharide: <b>G-F-G</b> = Glucose, Fructose, Galactose. Disaccharide: <b>Su-Ma-Le</b> = Sucrose, Maltose, Lactose. Poly: <b>Sta-Ce-Chi-Gly</b> = Starch, Cellulose, Chitin, Glycogen.</div>
+          <figure class="img-card"><img loading="lazy" decoding="async" data-file="Starch_granules_of_potato02.jpg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Starch_granules_of_potato02.jpg?width=800" alt="Microscopic potato starch granules"><figcaption>Image: Wikimedia Commons — Potato starch granules, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Starch_granules_of_potato02.jpg">Source</a></figcaption><div class="fallback"></div></figure>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> Lactose किनसे मिलकर बनता है? <button class="btn reveal">Answer</button><div class="ans">Glucose + Galactose.</div></div><div class="q"><b>Quick Recall:</b> Poly का मतलब? <button class="btn reveal">Answer</button><div class="ans">बहुत सारे / many molecules.</div></div></div>
+        </section>
+
+        <section id="carb-facts" class="section accent-pink">
+          <span class="timestamp">34:20–37:27</span>
+          <h2>🔥 Carbohydrate — Important Exam Facts</h2>
+          <div class="cards">
+            <article class="card"><h3>🍭 Sweetest sugar</h3><p>Teacher ने बताया: <b>Fructose</b> सर्वाधिक मीठी शर्करा है।</p></article>
+            <article class="card"><h3>🍽️ Table sugar point</h3><p>Transcript-flow में teacher ने table sugar को fructose से connect किया।</p></article>
+            <article class="card"><h3>⚡ Highest energy sugar</h3><p>Teacher ने exam fact के रूप में <b>Maltose</b> को सर्वाधिक ऊर्जा देने वाली शर्करा बताया।</p></article>
+            <article class="card"><h3>🥛 Milk sugar</h3><p><b>Lactose</b> = milk sugar, क्योंकि milk/doodh से जुड़ा sugar है।</p></article>
+            <article class="card"><h3>💊 Capsule cover</h3><p>Capsule के ऊपर का cover plastic जैसा दिखता है, लेकिन teacher ने बताया कि वह <b>starch</b> से बना होता है।</p></article>
+            <article class="card"><h3>🍇 Dry fruits / अंजीर</h3><p>Teacher ने अंजीर/dry fruits में sweetness/energy याद रखने को कहा।</p></article>
+          </div>
+          <div class="accuracy"><strong>⚠️ Accuracy Cross-check for Exam Safety</strong> Transcript flow preserve किया गया है, लेकिन standard science में <b>table sugar = sucrose</b> माना जाता है, जबकि <b>fructose</b> सबसे मीठी naturally occurring/simple sugar के रूप में पढ़ी जाती है। Exam में अपने official source/teacher notes के अनुसार answer choose करें। <a href="https://www.ncbi.nlm.nih.gov/books/NBK576428/">NCBI StatPearls source</a> में sucrose को table sugar बताया गया है।</div>
+          <div class="exam"><strong>🔥 Exam Hot Cluster</strong> Fructose → sweetest sugar; Lactose → milk sugar; Capsule cover → starch; Disaccharide formulas → Sucrose = G+F, Maltose = G+G, Lactose = G+Galactose.</div>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> Milk sugar कौन सी? <button class="btn reveal">Answer</button><div class="ans">Lactose.</div></div><div class="q"><b>Quick Recall:</b> Capsule cover किससे बनता है as taught? <button class="btn reveal">Answer</button><div class="ans">Starch.</div></div></div>
+        </section>
+
+        <section id="protein" class="section accent-green">
+          <span class="timestamp">37:27–43:10</span>
+          <h2>🥚 Protein — Basics, Composition, Function, Sources</h2>
+          <div class="cards">
+            <article class="card"><h3>🧪 Composition</h3><ul><li>Carbon</li><li>Hydrogen</li><li>Oxygen</li><li><b>Nitrogen</b> — यह याद रखना जरूरी है।</li><li>Protein भी organic nutrient है क्योंकि carbon है।</li></ul></article>
+            <article class="card"><h3>📌 Important numerical facts</h3><ul><li>Protein में nitrogen की percentage: <b>16%</b></li><li>Protein amino acids से मिलकर बना है।</li><li>Amino acids की संख्या: <b>20</b> as mostly authentic books; teacher ने note किया कि कुछ sources 22 भी बताते हैं, लेकिन exam के लिए 20 याद रखो।</li><li>Human body में protein quantity: <b>15%</b></li></ul></article>
+            <article class="card"><h3>🏗️ Main function</h3><ul><li>Body building / शरीर निर्माण</li><li>Physical growth / वृद्धि</li><li>Cells का निर्माण और growth</li><li>Body structure बनाना</li><li>टूट-फूट की repair</li></ul></article>
+            <article class="card"><h3>🍱 Protein Sources</h3><p><span class="tag">Soybean</span><span class="tag">Dalhan/Pulses</span><span class="tag">Fish</span><span class="tag">Peanut</span><span class="tag">Egg</span><span class="tag">Milk</span><span class="tag">Paneer</span></p><p class="mini">Vegetarian के लिए paneer/dal/soybean; non-vegetarian के लिए fish/egg examples.</p></article>
+          </div>
+          <div class="flow-note"><strong>🥛 Milk caution from teacher</strong> Teacher ने milk को “लगभग सब कुछ” वाला food बताया, लेकिन adulteration/chemical mixing से सावधान रहने को कहा। Packet milk पर भी blind trust न करके source/company देखकर consume करने की सलाह दी।</div>
+          <div class="figure-grid">
+            <figure class="img-card"><img loading="lazy" decoding="async" data-file="Protein-rich_Foods.jpg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Protein-rich_Foods.jpg?width=900" alt="A range of protein rich foods including eggs dairy fish legumes"><figcaption>Image: Wikimedia Commons — “Protein-rich Foods”, Creator: Smastronardo, CC BY-SA 4.0. <a href="https://commons.wikimedia.org/wiki/File:Protein-rich_Foods.jpg">Source</a></figcaption><div class="fallback"></div></figure>
+            <figure class="img-card"><img loading="lazy" decoding="async" data-file="Aminoacids_table.svg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aminoacids_table.svg?width=900" alt="Amino acids table diagram"><figcaption>Image: Wikimedia Commons — Amino acids table, Creator: Mouagip, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:Aminoacids_table.svg">Source</a></figcaption><div class="fallback"></div></figure>
+          </div>
+          <div class="exam"><strong>🔥 Exam Hot</strong> Protein में nitrogen = <b>16%</b>; protein body में = <b>15%</b>; protein amino acids से बना है; amino acids = <b>20</b> याद रखना।</div>
+          <div class="linkstory"><strong>🔗 Link Story — Protein Facts</strong> Protein factory में <b>C-H-O-N</b> चार मजदूर आए। Nitrogen ने 16% का badge लगाया, 20 amino acids bricks लेकर आए, और 15% body wall बनाकर growth + repair कर दी।</div>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> Protein में कौन सा extra element याद रखना है? <button class="btn reveal">Answer</button><div class="ans">Nitrogen.</div></div><div class="q"><b>Quick Recall:</b> Protein का main function? <button class="btn reveal">Answer</button><div class="ans">शरीर निर्माण, growth और repair.</div></div></div>
+        </section>
+
+        <section id="protein-types" class="section accent-purple">
+          <span class="timestamp">43:10–46:52</span>
+          <h2>🧬 Protein के तीन प्रकार</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Type</th><th>Teacher's explanation</th><th>Example / Note</th></tr></thead>
+            <tbody>
+              <tr><td><b>Simple / साधारण Protein</b></td><td>केवल amino acids से मिलकर बना protein.</td><td>“Amino acid + amino acid” वाली simple structure.</td></tr>
+              <tr><td><b>Conjugated / संयुक्त Protein</b></td><td>Amino acid + mineral/other group मिलकर नया protein बनाते हैं.</td><td><b>Hemoglobin</b>: heme pigment/mineral-like group + globin amino acid/protein part.</td></tr>
+              <tr><td><b>Derived / व्युत्पन्न Protein</b></td><td>अलग-अलग groups/varieties से derived proteins.</td><td>Hormone protein, Enzyme protein.</td></tr>
+            </tbody>
+          </table></div>
+          <div class="cards">
+            <article class="card"><h3>🩸 Hemoglobin example</h3><p>Teacher ने hemoglobin को conjugated protein example बताया: <b>Heme</b> + <b>Globin</b> मिलकर hemoglobin बनाते हैं।</p></article>
+            <article class="card"><h3>⚙️ Enzyme + Hormone</h3><p>Derived protein में hormone protein और enzyme protein example दिए गए। Teacher ने याद रखने को कहा कि enzyme भी protein से related नया पोषक/compound type है।</p></article>
+          </div>
+          <figure class="img-card"><img loading="lazy" decoding="async" data-file="Protein_primary_structure.svg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Protein_primary_structure.svg?width=800" alt="Protein primary structure as a chain of amino acids"><figcaption>Image: Wikimedia Commons — Protein primary structure, National Human Genome Research Institute, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:Protein_primary_structure.svg">Source</a></figcaption><div class="fallback"></div></figure>
+          <div class="linkstory"><strong>🔗 Link Story — Protein Types</strong> Simple protein अकेला amino acid brick से बना घर है; Conjugated protein ने mineral वाला gate लगाया — hemoglobin; Derived protein ने घर से factory बना दी — hormone और enzyme!</div>
+        </section>
+
+        <section id="deficiency" class="section accent-orange">
+          <span class="timestamp">46:52–50:07</span>
+          <h2>🚨 Protein Deficiency Diseases</h2>
+          <p>Protein chapter end करने से पहले teacher ने deficiency diseases लिखवाए — mostly बच्चों में।</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Disease</th><th>Age group as taught</th><th>Deficiency</th><th>Visual signs described by teacher</th></tr></thead>
+            <tbody>
+              <tr><td><b>Marasmus / मरास्मस</b></td><td>डेढ़ वर्ष से कम आयु के बच्चे</td><td>Protein + Fat दोनों की कमी</td><td>Skin सिकुड़ी हुई; बच्चा बहुत दुबला/बूढ़ा जैसा दिख सकता है।</td></tr>
+              <tr><td><b>Kwashiorkor / क्वाशियोरकर</b></td><td>डेढ़ वर्ष से बड़े, 5 साल से छोटे बच्चे</td><td>मुख्य रूप से Protein deficiency</td><td>पेट निकला हुआ, head बड़ा, हाथ-पैर पतले; teacher ने photos next class में दिखाने की बात कही।</td></tr>
+            </tbody>
+          </table></div>
+          <div class="exam"><strong>🔥 Exam Hot</strong> Protein deficiency diseases: <b>Marasmus</b> और <b>Kwashiorkor</b>. Age distinction: Marasmus &lt; 1.5 years; Kwashiorkor &gt; 1.5 years and &lt; 5 years as taught.</div>
+          <figure class="img-card"><img loading="lazy" decoding="async" data-file="Starved_girl.jpg" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Starved_girl.jpg?width=500" alt="Educational photo of a child affected by kwashiorkor in a relief camp"><figcaption>Educational sensitive image: Wikimedia Commons — Kwashiorkor case, CDC/Dr. Lyle Conrad, Public Domain. <a href="https://commons.wikimedia.org/wiki/File:Starved_girl.jpg">Source</a></figcaption><div class="fallback"></div></figure>
+          <div class="linkstory"><strong>🔗 Link Story — Marasmus vs Kwashiorkor</strong> “<b>Ma</b>rasmus” में बच्चा “<b>माँ</b> की गोद वाला बहुत छोटा” (&lt;1.5 years) और बहुत सूखा; “<b>K</b>washiorkor” में <b>K</b> = बड़ा kid (1.5–5 years) जिसका पेट बाहर दिखता है।</div>
+          <div class="quiz"><div class="q"><b>Quick Recall:</b> Marasmus किस deficiency से? <button class="btn reveal">Answer</button><div class="ans">Protein + Fat दोनों की कमी, as taught.</div></div><div class="q"><b>Quick Recall:</b> Kwashiorkor किस उम्र group में as taught? <button class="btn reveal">Answer</button><div class="ans">डेढ़ वर्ष से बड़े और 5 साल से छोटे बच्चे।</div></div></div>
+        </section>
+
+        <section id="outro" class="section accent-cyan">
+          <span class="timestamp">50:07–53:04</span>
+          <h2>📌 Outro + Upcoming Topics</h2>
+          <div class="upcoming"><strong>📌 Upcoming Topic</strong> अगले lecture में <b>Fat / वसा</b> और <b>Vitamins</b> पढ़ाए जाएंगे। Teacher ने कहा कि vitamins बहुत important हैं और tricks से याद करवाएंगे।</div>
+          <div class="flow-note"><strong>🎬 Transcript Flow</strong> Student ने Unit 7 YouTube coverage के बारे में पूछा। Teacher ने कहा कि पूरा Unit 7 पढ़ाया जाएगा, including added topics and science branches. रात 10 बजे Unit 6 Economics में interim budget lecture होगा और budget को syllabus/current affairs से जोड़ना सिखाया जाएगा। G20 lecture को आगे बढ़ाया गया क्योंकि interim budget current में आया था।</div>
+          <div class="flow-note"><strong>🧭 Study-method message</strong> Teacher का focus: सिर्फ facts नहीं, बल्कि approach, क्या पढ़ना है, कैसे पढ़ना है, और syllabus से current affairs जोड़ना सीखना।</div>
+        </section>
+
+        <section id="master" class="section accent-green">
+          <span class="timestamp">Master Revision</span>
+          <h2>📚 Master Tables + Revision Checklist</h2>
+          <details open><summary>🧾 Master Full Forms / Terms Table</summary>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Term</th><th>English</th><th>Hindi/Hinglish Meaning</th></tr></thead>
+              <tbody>
+                <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>Exam target context</td></tr>
+                <tr><td>Food</td><td>Food</td><td>आहार — जो खाया गया</td></tr>
+                <tr><td>Nutrients</td><td>Nutrients</td><td>पोषक तत्व — food से मिलने वाले useful elements</td></tr>
+                <tr><td>Nutrition</td><td>Nutrition</td><td>पोषण — खाने से निकालने तक की process</td></tr>
+                <tr><td>Carbohydrate</td><td>Carbohydrate</td><td>C, H, O वाला energy nutrient</td></tr>
+                <tr><td>Protein</td><td>Protein</td><td>C, H, O, N; body-building nutrient</td></tr>
+                <tr><td>H₂O</td><td>Water</td><td>जल — inorganic nutrient</td></tr>
+                <tr><td>ORS</td><td>Oral Rehydration Solution</td><td>घोल/energy support context में teacher ने example जैसा लिया</td></tr>
+                <tr><td>G20</td><td>Group of Twenty</td><td>Upcoming/current affairs context in outro</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+          <details open><summary>🔥 Master Exam Hot Facts</summary>
+            <ul>
+              <li>Balanced diet = energy + body building + protection + water/fiber.</li>
+              <li>7 nutrients = Carbohydrate, Protein, Fat, Vitamin, Water, Fiber, Minerals.</li>
+              <li>Organic nutrients contain carbon: Carbohydrate, Lipid/Fat, Protein, Vitamin.</li>
+              <li>Inorganic nutrients: Water and minerals.</li>
+              <li>Carbohydrate = C, H, O; ratio 1:2:1; glucose C₆H₁₂O₆.</li>
+              <li>Carbohydrate = instant energy / fuel of body.</li>
+              <li>Carb types: Mono, Di, Poly saccharide.</li>
+              <li>Mono examples: Glucose, Fructose, Galactose; fructose = sweetest sugar.</li>
+              <li>Disaccharides: Sucrose = G+F, Maltose = G+G, Lactose = G+Galactose.</li>
+              <li>Polysaccharides: Starch, Cellulose, Chitin, Glycogen.</li>
+              <li>Lactose = milk sugar; capsule cover = starch as taught.</li>
+              <li>Protein contains nitrogen; nitrogen percentage = 16%.</li>
+              <li>Protein is made of amino acids; amino acids = 20 as exam-safe teacher note.</li>
+              <li>Body protein amount = 15% as taught.</li>
+              <li>Protein functions: growth, body structure, cell formation, repair.</li>
+              <li>Protein types: Simple, Conjugated, Derived.</li>
+              <li>Protein deficiency diseases: Marasmus, Kwashiorkor.</li>
+            </ul>
+          </details>
+          <details open><summary>✅ Master Revision Checklist <span class="check-progress" id="checkProgress"></span></summary>
+            <div class="checklist" id="checklist">
+              <label><input type="checkbox"> मैं Food, Nutrients, Nutrition का difference समझता/समझती हूँ।</label>
+              <label><input type="checkbox"> मैं Balanced Diet के 4 pillars याद कर चुका/चुकी हूँ: energy, building, protection, water/fiber.</label>
+              <label><input type="checkbox"> मुझे 7 nutrients sequence में याद हैं।</label>
+              <label><input type="checkbox"> मैं organic vs inorganic nutrients carbon basis पर explain कर सकता/सकती हूँ।</label>
+              <label><input type="checkbox"> मुझे carbohydrate का C:H:O = 1:2:1 ratio और glucose formula C₆H₁₂O₆ याद है।</label>
+              <label><input type="checkbox"> मैं carbohydrate को fuel of body क्यों कहते हैं, vehicle fuel analogy से explain कर सकता/सकती हूँ।</label>
+              <label><input type="checkbox"> मुझे carbohydrate sources: आलू, चावल, गेहूँ, केला, शक्कर, अंजीर, ज्वार, बाजरा, मक्का, गुड़, शहद याद हैं।</label>
+              <label><input type="checkbox"> मैं mono/di/poly saccharide की meaning और examples बता सकता/सकती हूँ।</label>
+              <label><input type="checkbox"> मुझे sucrose, maltose, lactose के monosaccharide combinations याद हैं।</label>
+              <label><input type="checkbox"> मुझे fructose, lactose, starch/capsule cover जैसे exam facts याद हैं।</label>
+              <label><input type="checkbox"> मुझे protein में C,H,O,N और nitrogen 16% याद है।</label>
+              <label><input type="checkbox"> मुझे amino acids = 20 और body protein = 15% याद है।</label>
+              <label><input type="checkbox"> मैं protein functions: growth, cell formation, structure, repair explain कर सकता/सकती हूँ।</label>
+              <label><input type="checkbox"> मुझे protein types: simple, conjugated, derived and hemoglobin example याद है।</label>
+              <label><input type="checkbox"> मुझे Marasmus vs Kwashiorkor age + deficiency differences याद हैं।</label>
+              <label><input type="checkbox"> मुझे next class topics: fat and vitamins याद हैं।</label>
+            </div>
+          </details>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">Made as a single HTML revision page with inline CSS/JS, sticky flow navigation, persistent theme/checklist, quiz reveals, image fallbacks, and print-friendly mode.</footer>
+  </main>
+  <script>
+    const root=document.body;
+    const savedTheme=localStorage.getItem('rev-theme'); if(savedTheme){root.dataset.theme=savedTheme;}
+    document.getElementById('themeToggle').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('rev-theme',root.dataset.theme);});
+    document.getElementById('jumpMenu').addEventListener('change',e=>{const el=document.querySelector(e.target.value); if(el) el.scrollIntoView({behavior:'smooth',block:'start'});});
+    const bar=document.getElementById('scrollBar');
+    function updateScroll(){const h=document.documentElement; const max=h.scrollHeight-h.clientHeight; bar.style.width=(max? (h.scrollTop/max*100):0)+'%';}
+    addEventListener('scroll',updateScroll,{passive:true}); updateScroll();
+    document.querySelectorAll('.reveal').forEach(btn=>btn.addEventListener('click',()=>{const ans=btn.parentElement.querySelector('.ans'); ans.style.display=ans.style.display==='block'?'none':'block'; btn.textContent=ans.style.display==='block'?'Hide':'Answer';}));
+    const checks=[...document.querySelectorAll('#checklist input[type="checkbox"]')];
+    function updateChecks(){let done=checks.filter(c=>c.checked).length; document.getElementById('checkProgress').textContent=`(${done}/${checks.length} done)`; checks.forEach((c,i)=>localStorage.setItem('rev-check-'+i,c.checked?'1':'0'));}
+    checks.forEach((c,i)=>{c.checked=localStorage.getItem('rev-check-'+i)==='1'; c.addEventListener('change',updateChecks);}); updateChecks();
+    function preloadAndWatch(img){
+      const file=img.dataset.file; const fallback=img.closest('figure')?.querySelector('.fallback');
+      const test=new Image(); test.decoding='async'; test.onload=()=>{}; test.onerror=()=>{
+        const alt=`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(file)}?width=900`;
+        if(img.src!==alt){ img.src=alt; }
+        setTimeout(()=>{ if(!img.complete || img.naturalWidth===0){ if(fallback){fallback.style.display='block'; fallback.innerHTML=`Image could not load. <a href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}" target="_blank" rel="noopener">Open source image</a>`;} }},1600);
+      };
+      test.src=img.src;
+      img.onerror=()=>{ if(fallback){fallback.style.display='block'; fallback.innerHTML=`Image could not load. <a href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}" target="_blank" rel="noopener">Open source image</a>`;} };
+    }
+    document.querySelectorAll('img[data-file]').forEach(preloadAndWatch);
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

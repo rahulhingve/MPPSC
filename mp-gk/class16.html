@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MP Agriculture Class 16 Revision — Transcript Flow Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0f1a; --panel:#17172a; --card:#1d1d33; --text:#f7fbff; --muted:#d8e5ef;
+  --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff; --yellow:#ffd166; --red:#ff4d6d;
+  --border:rgba(255,255,255,.16); --shadow:0 14px 34px rgba(0,0,0,.28);
+  --soft:rgba(255,255,255,.07); --toc:#111122;
+}
+body.light{
+  --bg:#f7fbff; --panel:#ffffff; --card:#ffffff; --text:#101624; --muted:#364155;
+  --border:rgba(0,0,0,.13); --shadow:0 12px 26px rgba(18,26,44,.09);
+  --soft:rgba(0,0,0,.05); --toc:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at top left,rgba(0,212,255,.13),transparent 30%),linear-gradient(180deg,var(--bg),var(--bg));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.7;letter-spacing:.02em}
+a{color:var(--cyan)}
+img{max-width:100%;height:auto;border-radius:18px;border:1px solid var(--border);background:var(--soft);display:block}
+header{padding:42px 18px 28px;background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(179,136,255,.13));border-bottom:1px solid var(--border)}
+.wrap{max-width:1180px;margin:0 auto}
+.hero{display:grid;grid-template-columns:1fr;gap:18px}
+h1{font-size:clamp(2rem,5vw,4.3rem);line-height:1.05;margin:.2rem 0;font-weight:900}
+.subtitle{font-size:1.08rem;color:var(--muted);max-width:900px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.badge{border:1px solid var(--border);background:var(--soft);padding:7px 12px;border-radius:999px;font-weight:800}
+.progressShell{height:12px;border-radius:999px;background:var(--soft);overflow:hidden;border:1px solid var(--border)}
+.progressBar{height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--green),var(--yellow));transition:.35s}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,15,26,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+body.light .topbar{background:rgba(255,255,255,.88)}
+.navrow{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 18px}
+select,button{font:inherit;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:13px;padding:9px 12px}
+button{cursor:pointer;font-weight:800}
+main{max-width:1180px;margin:0 auto;padding:24px 18px 80px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px}
+aside{position:sticky;top:72px;align-self:start;background:var(--toc);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:22px;padding:16px;max-height:calc(100vh - 90px);overflow:auto}
+aside h2{font-size:1rem;margin:.2rem 0 10px}
+.toc a{display:block;text-decoration:none;color:var(--text);border:1px solid var(--border);border-radius:13px;padding:8px 10px;margin:8px 0;background:var(--soft);font-size:.93rem}
+.toc a:hover{border-color:var(--cyan)}
+.content{min-width:0}
+section.topic{border:1px solid var(--border);background:linear-gradient(180deg,var(--panel),rgba(29,29,51,.72));border-radius:26px;padding:20px;margin:0 0 26px;box-shadow:var(--shadow);overflow:hidden}
+body.light section.topic{background:linear-gradient(180deg,#fff,#f8fbff)}
+section.topic h2{font-size:clamp(1.45rem,3vw,2.3rem);line-height:1.18;margin:8px 0 4px;font-weight:900}
+.time{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--border);background:var(--soft);border-radius:999px;padding:4px 10px;color:var(--muted);font-size:.86rem;font-weight:800}
+.sectionTop{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.markWrap{display:flex;gap:8px;align-items:center;font-weight:800;color:var(--muted)}
+.cardgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px;box-shadow:0 9px 20px rgba(0,0,0,.12)}
+.card h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.card ul{padding-left:1.2rem;margin:.4rem 0}
+.card li{margin:.35rem 0}
+.def,.hot,.linkstory,.note,.warning{border:1px solid var(--border);border-radius:20px;padding:15px;margin:14px 0;background:var(--soft)}
+.def{border-left:6px solid var(--cyan)}
+.hot{border-left:6px solid var(--orange);background:linear-gradient(135deg,rgba(255,107,53,.12),var(--soft))}
+.linkstory{border-left:6px solid var(--purple);background:linear-gradient(135deg,rgba(179,136,255,.17),rgba(0,212,255,.08))}
+.note{border-left:6px solid var(--green)}
+.warning{border-left:6px solid var(--red)}
+table{width:100%;border-collapse:collapse;margin:12px 0;border-radius:16px;overflow:hidden;background:var(--card)}
+th,td{border:1px solid var(--border);padding:10px;vertical-align:top;text-align:left}
+th{background:linear-gradient(90deg,rgba(0,212,255,.18),rgba(179,136,255,.12));font-weight:900}
+details{border:1px solid var(--border);border-radius:18px;background:var(--card);padding:10px 14px;margin:12px 0}
+summary{font-weight:900;cursor:pointer;color:var(--text)}
+.quiz .q{border:1px solid var(--border);border-radius:16px;padding:12px;margin:9px 0;background:var(--card)}
+.quiz button{margin-top:6px;padding:6px 10px;font-size:.92rem}
+.ans{display:none;margin-top:8px;color:var(--green);font-weight:800}
+.ans.show{display:block}
+.figureGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:10px}
+figcaption{font-size:.84rem;color:var(--muted);margin:8px 2px 2px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.flow span{padding:8px 10px;border:1px solid var(--border);background:var(--soft);border-radius:999px;font-weight:800}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.kpi{border:1px solid var(--border);background:var(--card);border-radius:18px;padding:14px;text-align:center}
+.kpi b{display:block;font-size:1.35rem;color:var(--cyan)}
+.checklist label{display:block;background:var(--card);border:1px solid var(--border);border-radius:15px;margin:8px 0;padding:10px}
+.footer{color:var(--muted);text-align:center;margin:40px 0}
+.mini{font-size:.9rem;color:var(--muted)}
+.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--soft);border:1px solid var(--border);font-size:.86rem;font-weight:800}
+@media (max-width:930px){main{grid-template-columns:1fr}aside{position:static;max-height:none}.cardgrid,.figureGrid,.kpis{grid-template-columns:1fr}.navrow{flex-wrap:wrap}.navrow select{width:100%}}
+@media print{
+  body{background:#fff;color:#000;font-size:12pt}
+  .topbar,aside,button,.markWrap{display:none!important}
+  main{display:block;padding:0}
+  section.topic,.card,details{box-shadow:none;border:1px solid #777;background:#fff;color:#000;break-inside:avoid}
+  details[open], details{display:block}
+  .ans{display:block;color:#000}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <div>
+      <span class="time">Class 16 Transcript Flow • MP GK by Vikas Sir</span>
+      <h1>🌾 Madhya Pradesh Agriculture — Revision HTML</h1>
+      <p class="subtitle">यह page transcript के flow के हिसाब से बनाया गया है: topic वहीं आएगा जहाँ teacher ने पढ़ाया। Promotional greetings/like-share portions को study content से अलग रखा गया है, ताकि revision clean रहे।</p>
+      <div class="badges">
+        <span class="badge">MPPSC Pre 2025</span>
+        <span class="badge">Agriculture in MP</span>
+        <span class="badge">Transcript-only notes</span>
+        <span class="badge">11 major study blocks</span>
+      </div>
+      <div class="progressShell" aria-label="revision progress"><div class="progressBar" id="progressBar"></div></div>
+      <p class="mini" id="progressText">Progress: 0%</p>
+    </div>
+  </div>
+</header>
+
+<div class="topbar">
+  <div class="wrap navrow">
+    <select id="jumpMenu" aria-label="Jump to topic">
+      <option value="">Jump to topic...</option>
+    </select>
+    <div>
+      <button id="expandAll">Expand all</button>
+      <button id="themeToggle">Toggle theme</button>
+    </div>
+  </div>
+</div>
+
+<main>
+<aside>
+  <h2>📌 Table of Contents</h2>
+  <nav class="toc" id="toc"></nav>
+  <div class="note mini">Tip: Section complete checkboxes और checklist progress browser में save रहेगा.</div>
+</aside>
+
+<div class="content">
+
+<section class="topic" id="intro" data-title="00:14–04:35 Intro & Class Setup">
+  <div class="sectionTop">
+    <span class="time">00:14–04:35</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-intro"> Done</label>
+  </div>
+  <h2>🎬 Intro: Lecture ka focus — MP Agriculture</h2>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Class context</h3>
+      <ul>
+        <li>Session: <b>MP GK by Vikas Sir</b>, “Agriculture in MP / मध्य प्रदेश में कृषि”.</li>
+        <li>Lecture number: transcript में <b>Class/Lecture 17 Agriculture</b> mention हुआ.</li>
+        <li>Target: <b>MPPSC Pre 2025</b> और MP GK आने वाले सभी exams.</li>
+        <li>Teacher ने बोला कि topic <b>100% क्या 200% important</b> है.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Study promise</h3>
+      <ul>
+        <li>Coverage: Agriculture related <b>सारा data</b>.</li>
+        <li>Data source focus: <b>Latest Economic Survey / आर्थिक सर्वेक्षण</b>.</li>
+        <li>Advice: notes उठा लो, ध्यान से पढ़ो, अंत में बाकी books/notes से compare करना.</li>
+        <li>Flow: पहले agriculture basics, फिर जहाँ जरूरी होगा Economic Survey data.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warning">Non-study chat, greetings, names, links/share request को revision content में नहीं घुसाया गया है. Main educational flow 04:35 से start होता है.</div>
+</section>
+
+<section class="topic" id="agrarian-state" data-title="04:35–07:24 MP as Agricultural State">
+  <div class="sectionTop">
+    <span class="time">04:35–07:24</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-agrarian"> Done</label>
+  </div>
+  <h2>🌾 मध्य प्रदेश: कृषि प्रधान राज्य</h2>
+  <div class="figureGrid">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Village_life_of_North_India.jpg/960px-Village_life_of_North_India.jpg" data-alt-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Village_life_of_North_India.jpg?width=960" alt="Village life visual for rural livelihood and agriculture" loading="eager" decoding="async" fetchpriority="high">
+      <figcaption>Image: Wikimedia Commons, Shagil Kannur, CC BY-SA 4.0. Visual anchor only; notes are transcript-based.</figcaption>
+    </figure>
+    <figure>
+      <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh map reference for districts and regions" loading="eager" decoding="async" fetchpriority="high">
+      <figcaption>Image: SLBC Madhya Pradesh MP map reference URL mentioned in the prompt; used as region anchor.</figcaption>
+    </figure>
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>2011 Census base</h3>
+      <ul>
+        <li>Teacher ने कहा: अभी latest usable census <b>2011</b> है, इसलिए उसी को base मानना है.</li>
+        <li>MP की लगभग <b>72.4%</b> population villages में रहती है.</li>
+        <li>Gandhi ji की line: <b>“भारत की आत्मा गांव में निवास करती है”</b> memory hook के रूप में बताई.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Direct + indirect livelihood</h3>
+      <ul>
+        <li>Direct livelihood: किसान खुद खेती करता है.</li>
+        <li>Indirect livelihood: खेत मजदूर, छोटे साहूकार, तेल के छोटे कारखाने etc. agriculture से benefit लेते हैं.</li>
+        <li>Teacher का example: गांव में IT company नहीं होती कि खेती न करने वाला सीधे IT job करने लगे — वहाँ main आधार agriculture है.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Nature of MP agriculture</h3>
+      <ul>
+        <li>MP agriculture <b>traditional / पारंपरिक</b> है.</li>
+        <li>सबसे बड़ी दिक्कत: resources होने के बाद भी farming traditional है.</li>
+        <li>MP agriculture <b>highly dependent on rain / वर्षा पर अत्यधिक निर्भर</b> है.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Land & workers facts</h3>
+      <ul>
+        <li>State land का लगभग <b>49%</b> part agriculture में use होता है.</li>
+        <li>Transcript में workers figure <b>13 करोड़ 15 लाख</b> बोला गया, जिनमें <b>31%</b> cultivators/farmers बताए गए.</li>
+        <li>Exam mindset: यह “कृषि प्रधान” line का reason है.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hot">🔥 Exam Hot: 2011 Census → 72.4% rural population; agriculture traditional + rain-dependent; about 49% land under agriculture.</div>
+  <div class="quiz">
+    <h3>Quick Recall</h3>
+    <div class="q">Q. MP की population का कितना हिस्सा villages में बताया गया? <button class="reveal">Answer</button><div class="ans">72.4%</div></div>
+    <div class="q">Q. MP agriculture की दो core problems क्या बताईं? <button class="reveal">Answer</button><div class="ans">Traditional farming और rain dependency.</div></div>
+  </div>
+</section>
+
+<section class="topic" id="land-holding" data-title="07:24–12:45 Land Holding / कृषि जोत">
+  <div class="sectionTop">
+    <span class="time">07:24–12:45</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-land"> Done</label>
+  </div>
+  <h2>🧾 कृषि जोत / Land Holding — Definition + Districts</h2>
+  <div class="def"><b>Definition:</b> किसान जिस भूमि पर खेती करता है या जो भूमि agriculture work के लिए use करता है, वही उसका <b>जोत आकार / land holding size</b> है.</div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Ramu ji example</h3>
+      <ul>
+        <li>Ramu ji के पास total <b>5 hectare</b> land है.</li>
+        <li>उसमें से <b>2 hectare खराब</b> पड़ी है.</li>
+        <li>Ramu ji <b>3 hectare</b> पर agriculture कर रहे हैं.</li>
+        <li>इसलिए Ramu ji का <b>land holding size = 3 hectare</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Objective exam note</h3>
+      <ul>
+        <li>Teacher ने कहा: Pre objective है, long definition लिखनी नहीं; concept समझना है.</li>
+        <li>Land holding / कृषि जोत सुनो तो तुरंत सोचो: <b>खेती के लिए उपयोग की जा रही भूमि</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <table>
+    <tr><th>Point</th><th>District</th><th>Teacher explanation</th></tr>
+    <tr><td>सर्वाधिक कृषि जोत <b>आकार</b> / Maximum agriculture land holding size</td><td><b>Harda</b></td><td>Farmers के पास hectare में ज़्यादा land. Narmada + Malwa soil + wheat production context बताया.</td></tr>
+    <tr><td>न्यूनतम कृषि जोत <b>आकार</b> / Minimum agriculture land holding size</td><td><b>Katni + Neemuch</b></td><td>Neemuch में बंजर/झाड़ियाँ; land हो सकती है पर खेती योग्य use कम. Katni में limestone/mines context.</td></tr>
+  </table>
+  <div class="linkstory"><b>🔗 Link Story — ऐसे याद करो:</b> Harda में Narmada ने बड़ा खेत सींच दिया, फिर Katni की limestone mine और Neemuch की झाड़ियों ने खेती का usable size छोटा कर दिया. Chain: <b>Harda बड़ा → Katni mine → Neemuch झाड़ी</b>.</div>
+  <div class="quiz">
+    <h3>Quick Recall</h3>
+    <div class="q">Q. Land holding size में total land या cultivated/use land? <button class="reveal">Answer</button><div class="ans">Cultivated/use land.</div></div>
+    <div class="q">Q. Maximum agriculture land holding size district? <button class="reveal">Answer</button><div class="ans">Harda.</div></div>
+    <div class="q">Q. Minimum land holding size districts? <button class="reveal">Answer</button><div class="ans">Katni और Neemuch.</div></div>
+  </div>
+</section>
+
+<section class="topic" id="data-caution" data-title="12:45–15:46 Data Caution & Soil Percentages">
+  <div class="sectionTop">
+    <span class="time">12:45–15:46</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-data"> Done</label>
+  </div>
+  <h2>📚 Data Caution: Books, Google aur Soil Data</h2>
+  <div class="warning">
+    Teacher ने साफ कहा कि अलग-अलग books/Google में अलग data मिल सकता है; MP GK में Google से थोड़ा बचना है. उनके अनुसार उन्होंने multiple sources check करके data दिया.
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Black Soil / काली मिट्टी</h3>
+      <ul>
+        <li>Teacher ने कहा: <b>47.5%</b> याद रखना.</li>
+        <li>उन्होंने बोला कि Hindi Granth Academy जैसी book में भी 47.5 लिखा है.</li>
+        <li>अगर कहीं 61% पढ़ा है तो उस data से notes में छेड़खानी मत करो.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Alluvial Soil / जलोढ़ मिट्टी</h3>
+      <ul>
+        <li>Teacher ने कहा: <b>3%</b> याद रखना.</li>
+        <li>MP SI 2017 और MPPSC Assistant Professor exam reference के आधार पर बताया.</li>
+        <li>Line: मिट्टी award नहीं है जो अगले साल बदल जाएगा; soil long-term fix होती है.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Red-Yellow Soil</h3>
+      <ul>
+        <li>Teacher ने कहा: <b>36%</b> red-yellow soil.</li>
+        <li>बाकी दो soils पर proof मिलने पर ही बोलेंगे, अभी ज़्यादा focus नहीं.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>100% logic</h3>
+      <ul>
+        <li>Teacher ने कहा: soils का percentage जोड़कर <b>100%</b> होना चाहिए.</li>
+        <li>कोई data 120% नहीं हो सकता — इसलिए figures में consistency check जरूरी है.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hot">🔥 Exam Hot: Black soil 47.5%, alluvial soil 3%, red-yellow soil 36% — transcript में teacher ने इनको याद रखने को कहा.</div>
+</section>
+
+<section class="topic" id="jot-vs-jot-size" data-title="15:46–21:19 जोत आकार vs जोत वाला जिला + Units">
+  <div class="sectionTop">
+    <span class="time">15:46–21:19</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-jotdiff"> Done</label>
+  </div>
+  <h2>⚖️ “कृषि जोत आकार” vs “कृषि जोत वाला जिला”</h2>
+  <table>
+    <tr><th>Phrase</th><th>Meaning</th><th>Answer in class</th></tr>
+    <tr><td>सर्वाधिक कृषि जोत <b>आकार</b></td><td>एक-एक farmer के पास cultivated land का size</td><td><b>Harda</b></td></tr>
+    <tr><td>सर्वाधिक कृषि जोत वाला जिला</td><td>पूरे district की agriculture योग्य/used land देखी जा रही है; “आकार” word गायब</td><td><b>Ujjain</b></td></tr>
+    <tr><td>न्यूनतम कृषि जोत वाला जिला</td><td>District-level agriculture land कम</td><td><b>Mandla</b></td></tr>
+  </table>
+  <div class="note">
+    Teacher ने “आकार” word को key बताया. आकार है तो individual farmer size; आकार गायब है तो district की total agriculture land context.
+  </div>
+  <div class="kpis">
+    <div class="kpi"><b>Ujjain</b><span>लगभग 80% / 80.20% area खेती में बताया</span></div>
+    <div class="kpi"><b>Mandla</b><span>minimum कृषि जोत वाला district</span></div>
+    <div class="kpi"><b>1 hectare</b><span>= 2.47 acre (MP/Vyapam answer)</span></div>
+    <div class="kpi"><b>1 acre</b><span>= 1.75 bigha (MP हेतु)</span></div>
+  </div>
+  <div class="hot">🔥 Exam Hot: 1 hectare = 2.47 acre; 1 acre = 1.75 bigha — teacher ने specifically MP के लिए बोला, other states/Google से confuse नहीं होना.</div>
+  <div class="linkstory"><b>🔗 Link Story — ऐसे याद करो:</b> “आकार” सुनते ही किसान का खेत नापो — Harda. “आकार” गायब तो पूरा district नापो — Ujjain. फिर Mandla में district-level खेती कम. Unit chain: <b>Hectare बड़ा → acre छोटा → bigha और छोटा</b>.</div>
+</section>
+
+<section class="topic" id="farmer-categories" data-title="21:37–26:27 Farmer Categories by Landholding">
+  <div class="sectionTop">
+    <span class="time">21:37–26:27</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-farmers"> Done</label>
+  </div>
+  <h2>👨‍🌾 कृषि जोत आकार के हिसाब से किसान</h2>
+  <table>
+    <tr><th>Category</th><th>English</th><th>Land holding</th><th>Class note</th></tr>
+    <tr><td>सीमांत किसान</td><td>Marginal Farmer</td><td>&lt; 1 hectare</td><td><b>MP में सबसे ज्यादा</b>; teacher ने 41% बताया.</td></tr>
+    <tr><td>छोटे किसान</td><td>Small Farmer</td><td>1 to 2 hectare</td><td>Percentage याद नहीं करना.</td></tr>
+    <tr><td>उप-मध्यम किसान</td><td>Sub-medium Farmer</td><td>2 to 4 hectare</td><td>Concept याद रखें.</td></tr>
+    <tr><td>मध्यम किसान</td><td>Medium Farmer</td><td>4 to 10 hectare</td><td>Percentage याद नहीं करना.</td></tr>
+    <tr><td>बड़े किसान</td><td>Big/Large Farmer</td><td>&gt; 10 hectare</td><td><b>MP में सबसे कम</b>; teacher ने 1% बताया.</td></tr>
+  </table>
+  <div class="hot">🔥 Exam Hot: Vyapam ने पूछा था — MP में कौन से किसान सबसे ज्यादा हैं? Answer: <b>सीमांत किसान / Marginal farmers</b>. Percentage नहीं पूछा था.</div>
+  <div class="note">Teacher ने दुःख का कारण बताया: MP में बहुत किसान ऐसे हैं जिनके पास अपना काम चलाने के लिए भी जमीन ढंग से नहीं है; Haryana etc. में बड़े जोत आकार का comparison दिया.</div>
+  <div class="linkstory"><b>🔗 Link Story — ऐसे याद करो:</b> सीमांत किसान की सीमा खत्म हो रही है (&lt;1), फिर छोटा खेत 1–2, फिर उप-मध्यम 2–4, मध्यम 4–10, और बड़े किसान 10+ में दूर खड़े हैं — लेकिन MP में बड़े सबसे कम.</div>
+  <div class="quiz">
+    <h3>Quick Recall</h3>
+    <div class="q">Q. Marginal farmer land holding? <button class="reveal">Answer</button><div class="ans">Less than 1 hectare.</div></div>
+    <div class="q">Q. MP में सबसे ज्यादा किसान कौन से? <button class="reveal">Answer</button><div class="ans">सीमांत / Marginal farmers.</div></div>
+    <div class="q">Q. Big farmer threshold? <button class="reveal">Answer</button><div class="ans">More than 10 hectare.</div></div>
+  </div>
+</section>
+
+<section class="topic" id="classification" data-title="26:36–29:58 MP Agriculture Classifications">
+  <div class="sectionTop">
+    <span class="time">26:36–29:58</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-classification"> Done</label>
+  </div>
+  <h2>🗂️ MP Agriculture ka Classification — 3 Angles</h2>
+  <div class="flow">
+    <span>1️⃣ Crops के आधार पर — 7 types</span>
+    <span>2️⃣ Agriculture Department के अनुसार — 5 regions</span>
+    <span>3️⃣ Climate के आधार पर — 11 Agro-climatic zones</span>
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>फसलों के आधार पर</h3>
+      <p>Classification on the basis of crop: transcript में <b>7 types</b> बोला गया. अंदर details इस class में नहीं कराए गए.</p>
+    </div>
+    <div class="card">
+      <h3>कृषि विभाग के अनुसार</h3>
+      <p>Agriculture Department के हिसाब से MP का classification / कृषि प्रक्षेत्र / agriculture regions: <b>5 types</b>.</p>
+    </div>
+    <div class="card">
+      <h3>जलवायु के आधार पर</h3>
+      <p>Agro-climatic zones of MP: <b>11</b>. Teacher ने कहा MPPSC Pre में PYQ आया था.</p>
+    </div>
+    <div class="card">
+      <h3>Pre vs Mains</h3>
+      <p>Pre में mostly संख्या पूछी जाती है; Mains में zones का वर्णन पूछ सकता है. फिर भी teacher ने zones explain किए.</p>
+    </div>
+  </div>
+  <div class="hot">🔥 Exam Hot / PYQ: MP में agro-climatic zones कितने? <b>11</b>. Teacher ने कहा यह MPPSC Pre PYQ था.</div>
+</section>
+
+<section class="topic" id="agro-climatic" data-title="30:04–36:52 11 Agro-Climatic Zones">
+  <div class="sectionTop">
+    <span class="time">30:04–36:52</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-zones"> Done</label>
+  </div>
+  <h2>🗺️ 11 Agro-Climatic Zones of MP</h2>
+  <div class="figureGrid">
+    <figure>
+      <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="MP district map to remember agro-climatic regions" loading="lazy" decoding="async">
+      <figcaption>Image: SLBC Madhya Pradesh map reference; use it for district-region memory.</figcaption>
+    </figure>
+    <figure class="card">
+      <h3>Map study hint</h3>
+      <p>Teacher ने repeatedly बोला कि districts याद होने चाहिए; नहीं तो zones में कौनसा district है, समझना मुश्किल होगा.</p>
+    </figure>
+  </div>
+  <table>
+    <tr><th>No.</th><th>Zone</th><th>Teacher’s location/context</th></tr>
+    <tr><td>1</td><td>Plains of Chhattisgarh / छत्तीसगढ़ का मैदान</td><td>Balaghat के आसपास, Chhattisgarh से लगा हुआ.</td></tr>
+    <tr><td>2</td><td>Hilly Region of Northern Chhattisgarh Plain</td><td>Anuppur, Umaria, Dindori, Mandla वगैरह context.</td></tr>
+    <tr><td>3</td><td>Kaimur Plateau & Satpura Hilly Region</td><td>Kaimur पहाड़ी खत्म होने के बाद ऊँचा/sapat मैदान; Amarkantak side Satpura touch.</td></tr>
+    <tr><td>4</td><td>Bundelkhand Region</td><td>Bundelkhand क्षेत्र.</td></tr>
+    <tr><td>5</td><td>Vindh Mountain Region</td><td>Vindh/Bhander side region.</td></tr>
+    <tr><td>6</td><td>Central Narmada Valley</td><td>मध्य नर्मदा घाटी.</td></tr>
+    <tr><td>7</td><td>Satpura Plateau</td><td>Betul और Chhindwara में; पर्वत समाप्त होने पर plateau context.</td></tr>
+    <tr><td>8</td><td>Plains of Nimar</td><td>Nimar के 4 districts: Khandwa, Khargone, Barwani, Burhanpur.</td></tr>
+    <tr><td>9</td><td>Malwa Plateau</td><td>Malwa का पठार.</td></tr>
+    <tr><td>10</td><td>Hilly Region of Jhabua</td><td>Jhabua + Alirajpur.</td></tr>
+    <tr><td>11</td><td>Central/Gird Region</td><td>Gird क्षेत्र, Lashkar का मैदान, MP का Ganga-Yamuna plain; Central region.</td></tr>
+  </table>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Nimar district names</h3>
+      <ul>
+        <li>Khandwa = Eastern Nimar / पूर्वी निमाड़.</li>
+        <li>Khargone = Western Nimar / पश्चिमी निमाड़.</li>
+        <li>Barwani = Paris of Nimar.</li>
+        <li>Burhanpur = Dakshin/Deccan ka प्रवेश द्वार.</li>
+        <li>Nimar का पूर्व नाम: <b>Anup</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Gird region names</h3>
+      <ul>
+        <li>Gird क्षेत्र.</li>
+        <li>Lashkar का मैदान.</li>
+        <li>MP में पड़ने वाला Ganga-Yamuna plain.</li>
+        <li>Central region / मध्य क्षेत्र.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="linkstory"><b>🔗 Link Story — 11 zones:</b> Balaghat के Chhattisgarh मैदान से north hilly area चढ़ो, Kaimur-Satpura touch करो, Bundelkhand और Vindh पार करो, Narmada valley में उतरो, Satpura plateau से Nimar plains, फिर Malwa plateau, Jhabua hill और अंत में Gird/Central मैदान.</div>
+  <div class="hot">🔥 Exam Hot: Agro-climatic zones = 11; Nimar names and old name Anup को PSC-style question बताया.</div>
+</section>
+
+<section class="topic" id="season-crops" data-title="37:12–51:09 Crops by Season">
+  <div class="sectionTop">
+    <span class="time">37:12–51:09</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-seasons"> Done</label>
+  </div>
+  <h2>🌦️ ऋतुओं के आधार पर फसलों का वर्गीकरण</h2>
+  <div class="hot">🔥 Most Important: Teacher ने कहा season-based crop classification बहुत important है; Vyapam ने बहुत questions पूछे हैं, PSC भी पूछ सकता है.</div>
+  <table>
+    <tr><th>Season crop</th><th>Sowing / बुवाई</th><th>Harvest / कटाई</th><th>Condition</th><th>Examples from transcript</th></tr>
+    <tr><td><b>Kharif / खरीफ</b></td><td>June–July</td><td>September–October</td><td>Sowing: high temperature + moisture. Harvest: dry atmosphere.</td><td>Maize, Soybean, Jowar/Sorghum, Bajra/Pearl millet, Groundnut/Peanuts, Sugarcane, Cotton, Arhar/Tur/Pigeon pea, Sunflower, Til, Paddy, Urad, Moong.</td></tr>
+    <tr><td><b>Rabi / रबी</b></td><td>Correct: October–November. Vyapam PYQ में September–October आया था.</td><td>March–April</td><td>Sowing: low temperature. Harvest: high temperature + dryness.</td><td>Wheat, Barley/Jau, Gram/Chana, Peas/Matar, Mustard, Tobacco, Linseed/Alsi, Masoor/Lentils, Potato, Onion, Garlic.</td></tr>
+    <tr><td><b>Zaid / जायद</b></td><td>March/April से June तक gap period</td><td>Summer period</td><td>खेतों में पानी कम, गर्मी ज्यादा; special field crop नहीं, horticulture/vegetables.</td><td>Cucumber/Kheera/Kakdi, Karela, Bhindi, Torai, Watermelon, Muskmelon, Moong, Urad.</td></tr>
+  </table>
+  <details open>
+    <summary>Kharif details — transcript flow</summary>
+    <ul>
+      <li>Kharif crop को Hindi/English दोनों में Kharif crop कहते हैं.</li>
+      <li>June-July में बारिश शुरू + गर्मी + moisture, इसलिए sowing का best time.</li>
+      <li>September-October में harvest; अगर इस समय पानी गिर जाए तो crop नुकसान में जाती है क्योंकि dryness चाहिए.</li>
+      <li>Sugarcane long-duration crop है; teacher ने कहा कुछ लोग दोनों time में रखते हैं, लेकिन सही से Kharif side में रखा.</li>
+      <li>Urad और Moong Kharif में भी और Zaid में भी रखी जाती हैं — confuse नहीं होना.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Rabi details — transcript flow</summary>
+    <ul>
+      <li>Rabi crop को Hindi/English दोनों में Rabi crop ही कहा.</li>
+      <li>Teacher ने कहा logically October-November sowing है; September में कोई गेहूं बोने नहीं लगता.</li>
+      <li>लेकिन Vyapam के PYQ में September-October option/answer आया था, इसलिए दिमाग में रखना.</li>
+      <li>March-April harvest में अगर बारिश आ जाए तो crop खराब होने लगती है.</li>
+      <li>Potato, onion, garlic year-round मिल सकते हैं, पर bulk/season context यहाँ Rabi में बताया.</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Zaid details — transcript flow</summary>
+    <ul>
+      <li>Zaid में कोई special major crop नहीं; vegetables/horticulture का focus.</li>
+      <li>Teacher ने कहा exam में duration या crop type पूछा जा सकता है.</li>
+      <li>Gajar-mooli जैसी extra अंदर तक जाने की जरूरत नहीं; main examples याद रखें.</li>
+    </ul>
+  </details>
+  <div class="linkstory"><b>🔗 Link Story — Seasons:</b> जून-जुलाई में Kharif खेत में भीगता है, सितंबर-अक्टूबर में सूखकर कटता है; ठंड आते ही Rabi अक्टूबर-नवंबर में बोया जाता है और मार्च-अप्रैल की गर्मी में कटता है; फिर खाली गर्मी में Zaid की सब्जियाँ आ जाती हैं.</div>
+  <div class="quiz">
+    <h3>Quick Recall</h3>
+    <div class="q">Q. Kharif sowing कब? <button class="reveal">Answer</button><div class="ans">June–July.</div></div>
+    <div class="q">Q. Rabi harvesting कब? <button class="reveal">Answer</button><div class="ans">March–April.</div></div>
+    <div class="q">Q. Zaid में main crop type? <button class="reveal">Answer</button><div class="ans">Vegetables / horticulture.</div></div>
+  </div>
+</section>
+
+<section class="topic" id="economic-survey" data-title="51:19–54:26 Economic Survey Data">
+  <div class="sectionTop">
+    <span class="time">51:19–54:26</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-survey"> Done</label>
+  </div>
+  <h2>📊 Economic Survey 2023–24 — Agriculture Production</h2>
+  <div class="note">Teacher ने clarify किया: यहाँ budget नहीं, <b>Economic Survey</b> है. 2023–24 को latest बताया क्योंकि survey complete process के बाद आता है.</div>
+  <div class="kpis">
+    <div class="kpi"><b>+0.20%</b><span>Overall crop production growth</span></div>
+    <div class="kpi"><b>+1.91%</b><span>Food grains / अनाज production</span></div>
+    <div class="kpi"><b>+42%</b><span>Pulses / दलहन growth</span></div>
+    <div class="kpi"><b>+7.32%</b><span>Oilseeds / तिलहन growth</span></div>
+  </div>
+  <table>
+    <tr><th>Category</th><th>Production mentioned</th><th>Transcript note</th></tr>
+    <tr><td>Vegetables / सब्जियाँ</td><td><b>“2426 दो लाख metric ton”</b> as transcribed</td><td>Speech-to-text में number ambiguous है; HTML में transcript wording preserved.</td></tr>
+    <tr><td>Spices / मसाले</td><td><b>53.5 lakh metric ton</b></td><td>Economic Survey से बताया.</td></tr>
+    <tr><td>Fruits / फल</td><td><b>95.5 lakh metric ton</b></td><td>Economic Survey से बताया.</td></tr>
+  </table>
+  <div class="warning">Numbers को transcript-faithful रखा गया है. जहाँ STT ambiguous था, वहाँ external correction नहीं जोड़ा गया.</div>
+</section>
+
+<section class="topic" id="paddy" data-title="54:26–63:35 Paddy / Rice">
+  <div class="sectionTop">
+    <span class="time">54:26–63:35</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-paddy"> Done</label>
+  </div>
+  <h2>🌾 धान / Paddy / Rice</h2>
+  <div class="figureGrid">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Rice_plant_with_grains.jpg/960px-Rice_plant_with_grains.jpg" data-alt-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rice_plant_with_grains.jpg?width=960" alt="Rice plant Oryza sativa with grains" loading="lazy" decoding="async">
+      <figcaption>Image: Wikimedia Commons, Damien Boilley, CC BY 2.0.</figcaption>
+    </figure>
+    <figure class="card">
+      <h3>Teacher’s mental trigger</h3>
+      <p>धान को “Kharif crop” सुनते ही Kharif की सारी conditions apply: sowing June-July, harvest Sept-Oct, high temp + moisture, harvest dryness.</p>
+    </figure>
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Basic identity</h3>
+      <ul>
+        <li>धान = Rice = Paddy crop.</li>
+        <li>Scientific name: <b>Oryza sativa</b> (transcript spelling: ओरेजा सताय/सताइवा).</li>
+        <li>Food grain crop.</li>
+        <li>Kharif crop.</li>
+        <li>Required rainfall: <b>100–125 cm</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Region / soil</h3>
+      <ul>
+        <li>Maximum production: <b>Balaghat</b>.</li>
+        <li>Entire eastern MP: Singrauli, Umaria, Shahdol, Sidhi, Mandla, Dindori, Anuppur, Seoni etc. context.</li>
+        <li>Soil: <b>Red-Yellow soil</b> — teacher ने soil class से connect किया.</li>
+      </ul>
+    </div>
+  </div>
+  <table>
+    <tr><th>Variety / किस्म</th><th>District / note</th></tr>
+    <tr><td>Chinnor / Chinnari rice</td><td>Balaghat; GI tag already asked/mentioned.</td></tr>
+    <tr><td>Jeera Shankar rice</td><td>Seoni ODOP; “Shankar” और Seoni में “Shiv” memory link.</td></tr>
+    <tr><td>Basmati rice</td><td>Raisen ODOP.</td></tr>
+    <tr><td>Ranjit, Sawan, Aman, Hansa, Shushk Samrat</td><td>Other varieties listed.</td></tr>
+  </table>
+  <table>
+    <tr><th>Disease</th><th>Cause</th><th>Effect</th></tr>
+    <tr><td>Khaira रोग</td><td>Zinc / जस्ता deficiency</td><td>Plant dwarf/बौना हो जाता है.</td></tr>
+    <tr><td>Angmari</td><td>Bacterial disease / जीवाणु</td><td>दाना खराब हो जाता है.</td></tr>
+    <tr><td>Stem rot / तना विगल</td><td>Mentioned as another disease</td><td>तना सड़/खराब होता है.</td></tr>
+  </table>
+  <div class="hot">🔥 Exam Hot: धान का Khaira रोग — Zinc deficiency; बहुत important बताया.</div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Production data 2023–24</h3>
+      <ul>
+        <li>Production: transcript में <b>13,705 thousand ton</b> जैसा सुनाई/लिखा गया.</li>
+        <li>Growth: <b>4.41%</b>.</li>
+        <li>Area: <b>4,019 thousand hectare</b>.</li>
+        <li>Area में भी increase बताया गया.</li>
+      </ul>
+    </div>
+    <div class="linkstory">
+      <b>🔗 Link Story — Paddy varieties:</b> Balaghat में Chinnor rice GI tag लेकर निकला, Seoni में Jeera Shankar ने शिव को याद कराया, फिर Raisen में Basmati की खुशबू आई, और पीछे Ranjit-Sawan-Aman-Hansa-Shushk Samrat लाइन में लग गए.
+    </div>
+  </div>
+</section>
+
+<section class="topic" id="maize" data-title="63:35–67:58 Maize / Mक्का">
+  <div class="sectionTop">
+    <span class="time">63:35–67:58</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-maize"> Done</label>
+  </div>
+  <h2>🌽 मक्का / Maize</h2>
+  <div class="figureGrid">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Corn_Zea_mays_Plant_Row_2000px.jpg/960px-Corn_Zea_mays_Plant_Row_2000px.jpg" data-alt-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Corn_Zea_mays_Plant_Row_2000px.jpg?width=960" alt="Maize Zea mays plants in rows" loading="lazy" decoding="async">
+      <figcaption>Image: Wikimedia Commons, Derek Ramsey, GFDL 1.2.</figcaption>
+    </figure>
+    <figure class="card">
+      <h3>Transcript identity</h3>
+      <p>Teacher ने इसे food grain और tribal food grain बताया; भुट्टा वाला visual anchor.</p>
+    </figure>
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Basic identity</h3>
+      <ul>
+        <li>मक्का = Maize.</li>
+        <li>Scientific name: <b>Zea mays</b>.</li>
+        <li>Food grain crop; tribal food grain.</li>
+        <li>Kharif crop — Kharif conditions apply.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Region</h3>
+      <ul>
+        <li>Main answer: <b>Chhindwara</b>.</li>
+        <li>Chhindwara = <b>Makka City / Corn City</b>.</li>
+        <li>Other areas mentioned: Seoni, Narsinghpur, Betul; plus Khargone, Barwani, Dhar side.</li>
+        <li>Exam में main answer Chhindwara याद रखना.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Queen of food grains</h3>
+      <ul>
+        <li>मक्का को <b>अनाजों की रानी / Queen of Food Grains</b> कहा.</li>
+        <li>Reason in class: rich fiber/nutrients; tribal communities strong दिखती हैं क्योंकि मक्के का आटा खाती हैं — teacher’s explanation.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Varieties + Production</h3>
+      <ul>
+        <li>Varieties: <b>Dakkan</b>, <b>Sartaj</b>, transcript में <b>Ush M</b> जैसा बोला/लिखा गया.</li>
+        <li>Production: <b>4,933 thousand ton</b>.</li>
+        <li>Growth: <b>6.75%</b>.</li>
+        <li>Area: <b>1,536 thousand hectare</b>; area भी increased.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hot">🔥 Exam Hot: Mक्का production main district/city — <b>Chhindwara / Corn City</b>.</div>
+</section>
+
+<section class="topic" id="wheat" data-title="68:08–77:11 Wheat / गेहूं">
+  <div class="sectionTop">
+    <span class="time">68:08–77:11</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-wheat"> Done</label>
+  </div>
+  <h2>🌾 गेहूं / Wheat</h2>
+  <div class="figureGrid">
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Wheat_close-up.JPG/960px-Wheat_close-up.JPG" data-alt-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Wheat_close-up.JPG?width=960" alt="Close-up of wheat crop" loading="lazy" decoding="async">
+      <figcaption>Image: Wikimedia Commons, Bluemoose, CC BY-SA 3.0/GFDL.</figcaption>
+    </figure>
+    <figure class="card">
+      <h3>Rabi trigger</h3>
+      <p>गेहूं = Rabi crop, इसलिए Rabi की sowing/harvest/temperature conditions apply. Teacher ने rainfall separately बताया: <b>75–100 cm</b>.</p>
+    </figure>
+  </div>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Basic identity</h3>
+      <ul>
+        <li>Wheat = गेहूं.</li>
+        <li>Scientific name: <b>Triticum aestivum</b>.</li>
+        <li>Rabi crop.</li>
+        <li>Rainfall: <b>75–100 cm</b>, Kharif की अपेक्षा कम.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Regions</h3>
+      <ul>
+        <li>Maximum production: <b>Narmadapuram</b>.</li>
+        <li>Other districts: Harda, Sehore, Raisen, Vidisha.</li>
+        <li>Entire Malwa plateau.</li>
+        <li>Malwa = <b>गेहूं की डालिया / Basket of Wheat</b>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Sharbati wheat</h3>
+      <ul>
+        <li>Sehore में <b>Sharbati wheat</b>.</li>
+        <li>Teacher ने कहा world की best quality wheat.</li>
+        <li>Sharbati wheat को <b>GI tag</b> मिल चुका है.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Varieties</h3>
+      <ul>
+        <li>Sharbati</li>
+        <li>Lokwan</li>
+        <li>Sujata</li>
+        <li>Kalyan Sona</li>
+        <li>Annapurna</li>
+        <li>Macaroni</li>
+      </ul>
+    </div>
+  </div>
+  <table>
+    <tr><th>Disease / Weed</th><th>Cause / Type</th><th>Effect / note</th></tr>
+    <tr><td>Karnal bunt</td><td>Fungal infection / कवक</td><td>दाना hollow/खोखला और black हो जाता है.</td></tr>
+    <tr><td>Loose smut</td><td>Fungal infection</td><td>Plant/tana कमजोर पड़ जाता है.</td></tr>
+    <tr><td>Phalaris minor</td><td>Weed / खरपतवार</td><td>गेहूं का मामा; disease नहीं, खरपतवार है.</td></tr>
+    <tr><td>Kittu रोग + Tundu रोग</td><td>Homework/search task in class</td><td>Teacher ने नाम दिए, detail homework रखा.</td></tr>
+  </table>
+  <div class="note">गेहूं की एक crop को <b>6 बार सिंचाई</b> की requirement बताई गई.</div>
+  <div class="hot">🔥 Exam Hot: Karnal bunt = गेहूं का major fungal disease; Phalaris minor = गेहूं का मामा खरपतवार.</div>
+  <div class="linkstory"><b>🔗 Link Story — Wheat regions:</b> Narmadapuram में सबसे ज्यादा गेहूं उगा, Harda ने Narmada से पानी लिया, Sehore ने Sharbati GI tag पहनाया, Raisen-Vidisha ने Malwa की wheat basket में गेहूं डाल दिया.</div>
+</section>
+
+<section class="topic" id="wrap-up" data-title="77:11–81:42 Wrap-up & Next Class">
+  <div class="sectionTop">
+    <span class="time">77:11–81:42</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-wrap"> Done</label>
+  </div>
+  <h2>📌 Wrap-up: आगे क्या बचेगा?</h2>
+  <div class="cardgrid">
+    <div class="card">
+      <h3>Class ended here</h3>
+      <ul>
+        <li>Teacher ने इस session को यहीं end किया.</li>
+        <li>कहा कि आगे बहुत content बचा है, next class में continue करेंगे.</li>
+        <li>Remaining agriculture topics next session में complete करने की बात कही.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Promotional/outro note</h3>
+      <ul>
+        <li>Like/share/comment/review और class support वाली बातें study content से अलग हैं.</li>
+        <li>Prompt rule के हिसाब से non-educational promotion को revision notes में condense करके रखा गया.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">📌 Upcoming Topic: “Agriculture in MP” का आगे का बचा हुआ portion next session में continue होगा.</div>
+</section>
+
+<section class="topic" id="fullforms" data-title="Master Full Forms / Terms">
+  <div class="sectionTop">
+    <span class="time">Master</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-fullforms"> Done</label>
+  </div>
+  <h2>🔤 Master Full Forms & Terms</h2>
+  <table>
+    <tr><th>Term</th><th>Full / Meaning</th><th>Hindi cue</th></tr>
+    <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+    <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>PSC exam context</td></tr>
+    <tr><td>PYQ</td><td>Previous Year Question</td><td>पहले पूछा गया प्रश्न</td></tr>
+    <tr><td>GI Tag</td><td>Geographical Indication Tag</td><td>भौगोलिक संकेतक tag</td></tr>
+    <tr><td>ODOP</td><td>One District One Product</td><td>एक जिला एक उत्पाद</td></tr>
+    <tr><td>GFDL</td><td>GNU Free Documentation License</td><td>image license caption में used</td></tr>
+    <tr><td>CC BY / CC BY-SA</td><td>Creative Commons Attribution / Attribution-ShareAlike</td><td>image license caption में used</td></tr>
+  </table>
+</section>
+
+<section class="topic" id="exam-hot" data-title="Master Exam Hot Facts">
+  <div class="sectionTop">
+    <span class="time">Master</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-hotfacts"> Done</label>
+  </div>
+  <h2>🔥 Master Exam Hot Facts</h2>
+  <div class="hot">
+    <ul>
+      <li>MP population rural: <b>72.4%</b> (2011 Census base as per class).</li>
+      <li>Agriculture on about <b>49%</b> of state land.</li>
+      <li>Maximum agriculture land holding size: <b>Harda</b>.</li>
+      <li>Minimum agriculture land holding size: <b>Katni + Neemuch</b>.</li>
+      <li>Maximum agriculture land district (no “आकार”): <b>Ujjain</b>.</li>
+      <li>Minimum agriculture land district (no “आकार”): <b>Mandla</b>.</li>
+      <li>1 hectare = <b>2.47 acre</b>; 1 acre = <b>1.75 bigha</b> (MP).</li>
+      <li>Most farmers in MP: <b>Marginal farmers</b> (&lt;1 ha; 41%).</li>
+      <li>Least farmers in MP: <b>Big farmers</b> (&gt;10 ha; 1%).</li>
+      <li>Agro-climatic zones of MP: <b>11</b> — MPPSC Pre PYQ.</li>
+      <li>Kharif sowing: June–July; Rabi harvest: March–April; Zaid: vegetables/horticulture.</li>
+      <li>Paddy max production district: <b>Balaghat</b>; disease Khaira = zinc deficiency.</li>
+      <li>Maize main district/city: <b>Chhindwara / Corn City</b>.</li>
+      <li>Wheat max production: <b>Narmadapuram</b>; Malwa = Wheat Basket; Sehore = Sharbati wheat GI.</li>
+      <li>Wheat Karnal bunt = fungal disease; Phalaris minor = गेहूं का मामा weed.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="topic" id="checklist" data-title="Master Revision Checklist">
+  <div class="sectionTop">
+    <span class="time">Checklist</span>
+    <label class="markWrap"><input type="checkbox" class="mark" data-key="sec-checklist"> Done</label>
+  </div>
+  <h2>✅ Master Revision Checklist</h2>
+  <p class="mini" id="checkText">Checklist progress: 0%</p>
+  <div class="checklist" id="masterChecklist">
+    <label><input type="checkbox"> 2011 Census base और 72.4% rural population याद है.</label>
+    <label><input type="checkbox"> Traditional + rain-dependent agriculture reason याद है.</label>
+    <label><input type="checkbox"> Land holding definition Ramu ji example से clear है.</label>
+    <label><input type="checkbox"> Harda vs Katni/Neemuch for land holding size याद है.</label>
+    <label><input type="checkbox"> “आकार” word difference: individual farmer vs district land याद है.</label>
+    <label><input type="checkbox"> Ujjain/Mandla district-level कृषि जोत facts याद हैं.</label>
+    <label><input type="checkbox"> 1 hectare = 2.47 acre; 1 acre = 1.75 bigha याद है.</label>
+    <label><input type="checkbox"> Marginal, Small, Sub-medium, Medium, Big farmer range याद है.</label>
+    <label><input type="checkbox"> 7 crop basis, 5 agriculture regions, 11 agro-climatic zones classification याद है.</label>
+    <label><input type="checkbox"> 11 agro-climatic zones sequence revise कर लिया.</label>
+    <label><input type="checkbox"> Kharif/Rabi/Zaid timing, condition, examples याद हैं.</label>
+    <label><input type="checkbox"> Economic Survey 2023–24 growth figures revise किए.</label>
+    <label><input type="checkbox"> Paddy scientific name, region, varieties, diseases, production data revise किया.</label>
+    <label><input type="checkbox"> Maize scientific name, Corn City, varieties, production data revise किया.</label>
+    <label><input type="checkbox"> Wheat scientific name, Narmadapuram, Sharbati, diseases, 6 irrigations revise किया.</label>
+  </div>
+</section>
+
+<div class="footer">
+  <p>Built as a transcript-flow revision page. Content notes stay within the supplied transcript; images are visual anchors with visible attribution.</p>
+</div>
+
+</div>
+</main>
+
+<script>
+(function(){
+  const body=document.body;
+  const savedTheme=localStorage.getItem('theme');
+  if(savedTheme==='light') body.classList.add('light');
+  document.getElementById('themeToggle').addEventListener('click',()=>{
+    body.classList.toggle('light');
+    localStorage.setItem('theme',body.classList.contains('light')?'light':'dark');
+  });
+
+  const sections=[...document.querySelectorAll('section.topic')];
+  const toc=document.getElementById('toc');
+  const jump=document.getElementById('jumpMenu');
+  sections.forEach(sec=>{
+    const title=sec.dataset.title || sec.querySelector('h2').innerText;
+    const a=document.createElement('a'); a.href='#'+sec.id; a.textContent=title; toc.appendChild(a);
+    const opt=document.createElement('option'); opt.value=sec.id; opt.textContent=title; jump.appendChild(opt);
+  });
+  jump.addEventListener('change', e=>{ if(e.target.value) document.getElementById(e.target.value).scrollIntoView({behavior:'smooth'}); });
+
+  document.getElementById('expandAll').addEventListener('click',()=>{
+    document.querySelectorAll('details').forEach(d=>d.open=true);
+  });
+
+  document.querySelectorAll('.reveal').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.nextElementSibling.classList.toggle('show'));
+  });
+
+  const marks=[...document.querySelectorAll('.mark')];
+  marks.forEach(m=>{
+    const key=m.dataset.key;
+    m.checked=localStorage.getItem(key)==='1';
+    m.addEventListener('change',()=>{localStorage.setItem(key,m.checked?'1':'0'); updateProgress();});
+  });
+
+  const checks=[...document.querySelectorAll('#masterChecklist input[type=checkbox]')];
+  checks.forEach((c,i)=>{
+    const key='mpagri-check-'+i;
+    c.checked=localStorage.getItem(key)==='1';
+    c.addEventListener('change',()=>{localStorage.setItem(key,c.checked?'1':'0'); updateChecklist(); updateProgress();});
+  });
+
+  function updateChecklist(){
+    const done=checks.filter(c=>c.checked).length;
+    const pct=checks.length?Math.round(done/checks.length*100):0;
+    document.getElementById('checkText').textContent=`Checklist progress: ${pct}% (${done}/${checks.length})`;
+  }
+  function updateProgress(){
+    const total=marks.length+checks.length;
+    const done=marks.filter(m=>m.checked).length+checks.filter(c=>c.checked).length;
+    const pct=total?Math.round(done/total*100):0;
+    document.getElementById('progressBar').style.width=pct+'%';
+    document.getElementById('progressText').textContent=`Progress: ${pct}% (${done}/${total})`;
+  }
+  updateChecklist(); updateProgress();
+
+  document.querySelectorAll('img').forEach(img=>{
+    const src=img.currentSrc || img.src;
+    const test=new Image();
+    test.onerror=()=>{
+      if(img.dataset.altSrc && img.src!==img.dataset.altSrc){ img.src=img.dataset.altSrc; }
+      else{
+        const link=document.createElement('a');
+        link.href=src; link.target='_blank'; link.rel='noopener';
+        link.textContent='Image could not load. Open source image.';
+        link.style.display='block'; link.style.marginTop='8px';
+        img.insertAdjacentElement('afterend',link);
+      }
+    };
+    test.src=src;
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

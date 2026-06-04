@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 19 - भारिया जनजाति (Bhariya Tribe) | MP Janjatiya</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #0f0f1a;
+--card-bg: #1a1a2e;
+--text: #e8e8e8;
+--text-muted: #b0b0b0;
+--accent1: #00d4ff;
+--accent2: #ff6b35;
+--accent3: #00ff88;
+--accent4: #b388ff;
+--accent5: #ff4081;
+--border: #2a2a3e;
+--card-radius: 16px;
+--shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+[data-theme="light"] {
+--bg: #f5f5f5;
+--card-bg: #ffffff;
+--text: #1a1a2e;
+--text-muted: #555;
+--border: #ddd;
+--shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Inter', sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.7;
+font-size: 17px;
+transition: all 0.3s ease;
+}
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header {
+text-align: center;
+padding: 40px 20px;
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+border-bottom: 3px solid var(--accent1);
+}
+[data-theme="light"] header { background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); }
+header h1 { font-size: 2rem; color: var(--accent1); margin-bottom: 10px; }
+header .subtitle { color: var(--text-muted); font-size: 1rem; }
+.badge {
+display: inline-block;
+background: var(--accent2);
+color: #fff;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+margin: 5px;
+}
+/* Progress Bar */
+.progress-container { background: var(--border); border-radius: 10px; height: 8px; margin: 20px 0; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent1), var(--accent3)); border-radius: 10px; transition: width 0.5s; }
+/* Navigation */
+.sticky-nav {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: var(--card-bg);
+border-bottom: 1px solid var(--border);
+padding: 10px 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+.sticky-nav select {
+background: var(--bg);
+color: var(--text);
+border: 1px solid var(--border);
+padding: 8px 12px;
+border-radius: 8px;
+font-size: 0.9rem;
+flex: 1;
+max-width: 400px;
+}
+.theme-toggle {
+background: var(--accent4);
+color: #fff;
+border: none;
+padding: 8px 16px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 0.85rem;
+font-weight: 600;
+}
+/* Cards */
+.topic-section { margin: 30px 0; }
+.topic-header {
+font-size: 1.5rem;
+font-weight: 700;
+padding: 20px;
+border-radius: var(--card-radius) var(--card-radius) 0 0;
+border-left: 4px solid var(--accent1);
+background: var(--card-bg);
+}
+.card {
+background: var(--card-bg);
+border: 1px solid var(--border);
+border-radius: var(--card-radius);
+padding: 20px;
+margin: 15px 0;
+box-shadow: var(--shadow);
+transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-2px); }
+.card h3 { color: var(--accent1); margin-bottom: 12px; font-size: 1.2rem; }
+.card ul { padding-left: 20px; }
+.card ul li { margin: 8px 0; }
+/* Highlight boxes */
+.exam-hot {
+background: linear-gradient(135deg, #1a0000, #2d1f00);
+border: 1px solid var(--accent2);
+border-left: 4px solid var(--accent2);
+padding: 15px 20px;
+border-radius: 10px;
+margin: 15px 0;
+}
+[data-theme="light"] .exam-hot { background: #fff3e0; }
+.exam-hot::before { content: "🔥 Exam Hot: "; font-weight: 700; color: var(--accent2); }
+.definition-box {
+background: linear-gradient(135deg, #0a1628, #1a1a2e);
+border: 1px solid var(--accent4);
+border-left: 4px solid var(--accent4);
+padding: 15px 20px;
+border-radius: 10px;
+margin: 15px 0;
+}
+[data-theme="light"] .definition-box { background: #f3e5f5; }
+.link-story {
+background: linear-gradient(135deg, #0d1b2a, #1b2838);
+border: 1px solid #4dd0e1;
+border-left: 4px solid #4dd0e1;
+padding: 15px 20px;
+border-radius: 10px;
+margin: 15px 0;
+}
+[data-theme="light"] .link-story { background: #e0f7fa; }
+.link-story::before { content: "🔗 Link Story — ऐसे याद करो: "; font-weight: 700; color: #4dd0e1; display: block; margin-bottom: 8px; }
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+th, td { padding: 12px; text-align: left; border: 1px solid var(--border); }
+th { background: var(--accent1); color: #000; font-weight: 600; }
+tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+[data-theme="light"] tr:nth-child(even) { background: #f5f5f5; }
+/* Quiz */
+.quiz-section { margin: 20px 0; }
+.quiz-q { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 15px; margin: 10px 0; }
+.quiz-q p { font-weight: 600; margin-bottom: 8px; }
+.reveal-btn {
+background: var(--accent3);
+color: #000;
+border: none;
+padding: 6px 14px;
+border-radius: 6px;
+cursor: pointer;
+font-weight: 600;
+font-size: 0.85rem;
+}
+.quiz-answer { display: none; margin-top: 10px; padding: 10px; background: rgba(0,255,136,0.1); border-radius: 8px; }
+/* Collapsible */
+.collapsible { cursor: pointer; padding: 15px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; margin: 10px 0; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.collapsible::after { content: "▼"; font-size: 0.8rem; transition: transform 0.3s; }
+.collapsible.active::after { transform: rotate(180deg); }
+.collapsible-content { display: none; padding: 15px; background: var(--card-bg); border: 1px solid var(--border); border-top: none; border-radius: 0 0 10px 10px; margin-top: -10px; }
+/* Checklist */
+.checklist label { display: block; padding: 8px 0; cursor: pointer; }
+.checklist input[type="checkbox"] { margin-right: 10px; transform: scale(1.2); }
+/* Image */
+.img-block { text-align: center; margin: 15px 0; }
+.img-block img { max-width: 100%; height: auto; border-radius: 10px; }
+.img-caption { font-size: 0.8rem; color: var(--text-muted); margin-top: 5px; }
+/* Comparison highlight */
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0; }
+.compare-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 15px; text-align: center; }
+@media (max-width: 600px) {
+.compare-row { grid-template-columns: 1fr; }
+header h1 { font-size: 1.5rem; }
+.sticky-nav { flex-direction: column; }
+.sticky-nav select { max-width: 100%; }
+}
+/* Print */
+@media print {
+body { background: #fff; color: #000; }
+.sticky-nav, .theme-toggle, .reveal-btn { display: none; }
+.collapsible-content { display: block !important; }
+.card { box-shadow: none; border: 1px solid #ccc; }
+}
+/* Animations */
+.card { animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body data-theme="dark">
+
+<header>
+<h1>📚 Class 19 — भारिया जनजाति (Bhariya Tribe)</h1>
+<p class="subtitle">MP Special | Unit 10 — मध्य प्रदेश की जनजातियाँ</p>
+<span class="badge">MPPSC Pre + Mains 2025</span>
+<span class="badge">Teacher: Pramod Sir (KGS)</span>
+<div class="progress-container"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+<p style="font-size:0.85rem;color:var(--text-muted)">Revision Progress: <span id="progressText">0%</span></p>
+</header>
+
+<nav class="sticky-nav">
+<select id="jumpNav" onchange="jumpTo(this.value)">
+<option value="">⚡ Jump to Topic...</option>
+<option value="sec-revision">📝 पिछली कक्षाओं का Revision</option>
+<option value="sec-bhariya-intro">🏔️ भारिया जनजाति — परिचय</option>
+<option value="sec-bhariya-sub">👥 भारिया उपजातियाँ</option>
+<option value="sec-bhariya-patalkot">🌲 पातालकोट</option>
+<option value="sec-bhariya-social">🏘️ सामाजिक व्यवस्था</option>
+<option value="sec-bhariya-vivah">💍 विवाह संस्कार</option>
+<option value="sec-bhariya-dharm">🙏 धार्मिक विश्वास</option>
+<option value="sec-bhariya-parv">🎉 प्रमुख पर्व</option>
+<option value="sec-bhariya-nritya">💃 नृत्य</option>
+<option value="sec-bhariya-bhasha">🗣️ भाषा/बोली</option>
+<option value="sec-bhariya-facts">📌 अन्य महत्वपूर्ण तथ्य</option>
+<option value="sec-mcq">📝 MCQ Practice</option>
+<option value="sec-pvtg">⭐ PVTG — अति विशेष पिछड़ी जनजाति</option>
+<option value="sec-master-checklist">✅ Master Checklist</option>
+</select>
+<button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+</nav>
+
+<div class="container">
+
+<!-- ===== SECTION: REVISION ===== -->
+<section class="topic-section" id="sec-revision">
+<div class="topic-header" style="border-left-color: var(--accent4);">📝 पिछली कक्षाओं का Quick Revision (00:58 - 06:19)</div>
+
+<div class="card">
+<h3>🏆 MP की 5 प्रमुख बड़ी जनजातियाँ (क्रम में)</h3>
+<table>
+<tr><th>#</th><th>जनजाति</th><th>% (approx)</th></tr>
+<tr><td>1</td><td>भील (Bhil)</td><td>~39%</td></tr>
+<tr><td>2</td><td>गोंड (Gond)</td><td>~33%</td></tr>
+<tr><td>3</td><td>कोल (Kol)</td><td>—</td></tr>
+<tr><td>4</td><td>कोरकू (Korku)</td><td>—</td></tr>
+<tr><td>5</td><td>शहरिया (Sahariya)</td><td>—</td></tr>
+</table>
+<p>फिर — बैगा (Baiga), पारदी (Pardi) आदि</p>
+</div>
+
+<div class="link-story">
+भील → गोंड → कोल → कोरकू → शहरिया → बैगा → पारदी — "भील ने गोंड को कोल (कोयला) दिया, कोरकू ने शहर में शहरिया को बैग दिया, पारदी शिकार करने गई!" 🔗
+</div>
+
+<div class="card">
+<h3>🏹 भील जनजाति — Quick Points</h3>
+<ul>
+<li>MP की <strong>सबसे बड़ी जनजाति</strong> (~39%)</li>
+<li>MP के <strong>पश्चिमी हिस्सों</strong> में निवास</li>
+<li><strong>भगोरिया हाट</strong> — भीलों का प्रसिद्ध मेला</li>
+<li>उपजातियाँ: बिलाला, रथिया, पटिया, बैगास, उमड़ी, तड़वी भील</li>
+<li>निवास स्थान: घर = <strong>कू</strong>, बड़ा गाँव = <strong>पाल</strong></li>
+<li>पाल का प्रमुख = <strong>मेती</strong></li>
+<li>प्रमुख देवता = <strong>राजा पंथा</strong></li>
+<li>झूम कृषि = <strong>चिमाता</strong> (पहाड़ी ढलानों पर) / <strong>दज</strong> (समतल मैदानों में)</li>
+<li>विधवा विवाह = <strong>नात विवाह</strong></li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🏔️ शहरिया जनजाति — Quick Points</h3>
+<ul>
+<li>MP के <strong>उत्तर-पश्चिमी हिस्से</strong> — शाहाबाद के जंगलों में</li>
+<li><strong>अति विशेष पिछड़ी जनजाति</strong> (PVTG)</li>
+<li>प्रमुख = <strong>टेल</strong></li>
+<li>अन्य पंच: कोटवार, भोपा, हत नरिया</li>
+<li>निवास स्थान = <strong>शहरा</strong></li>
+<li>अपने आप को कहलवाना पसंद: <strong>खुटिया पटेल</strong></li>
+<li>नृत्य: रागिनी, लहंगी, दुलदुल गोड़ी, तेजाजी</li>
+<li>शहरिया विकास अभिकरण: ग्वालियर, शिवपुरी, गुना, श्योपुर (4 जिले)</li>
+<li>शहरिया का अर्थ: सह + शेर = शेर के साथ रहने वाले / जंगलों में रहने वाले</li>
+<li>विवाह: <strong>झगड़ा विवाह</strong>, खिका विवाह</li>
+<li>उपजातियाँ: सौर, सोर (बंध्य क्षेत्र में = सौसर)</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🌳 गोंड जनजाति — Quick Points</h3>
+<ul>
+<li>MP की <strong>दूसरी सबसे बड़ी</strong> जनजाति (~33%)</li>
+<li>गोंड = कोंड = <strong>पहाड़</strong> (विंध्याचल व सतपुड़ा पहाड़ों पर)</li>
+<li>उपजातियाँ: अगरिया, प्रधान, ओजा, सोलस, कोयला, भूतास, नागर</li>
+<li>नृत्य: रीना, शैला आदि</li>
+<li>निवास स्थान = <strong>टोला / पूर्वा</strong></li>
+<li>पंचायत प्रमुख = <strong>मुकदम</strong></li>
+<li>प्रमुख देवता = <strong>बड़ा देव</strong> (सवारी: सफेद घोड़ा)</li>
+<li>अपने आप को कहलवाना पसंद: <strong>कोई तोर</strong></li>
+<li>युवा गृह = <strong>घोटुल</strong></li>
+<li>झूम कृषि = <strong>बारी / दहिया</strong></li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🌿 बैगा जनजाति — Quick Points</h3>
+<ul>
+<li><strong>अति विशेष पिछड़ी जनजाति</strong> (PVTG)</li>
+<li>उपजातियाँ: बिजवार, नाहर, रेमना, भरतिया, नरोदिया, कोड़वा, कुंडी गोडवा</li>
+<li>नृत्य: परधौनी, रीना, सुआ</li>
+<li>प्रमुख देवता = <strong>बूढ़ा देव</strong> (साज के वृक्ष में निवास)</li>
+<li>उत्पत्ति: <strong>लिंगा देव</strong> से</li>
+<li>बैगा विकास अभिकरण: <strong>6 जिलों</strong> में — बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</li>
+<li>भोजन: सुबह = <strong>बासी</strong>, दिन = <strong>पेज</strong>, रात = <strong>बिहारी</strong></li>
+<li>झूम कृषि = <strong>बेवार / पंडू</strong></li>
+<li>साज के वृक्ष को बहुत पवित्र मानते हैं — इसे हाथ में रखकर कभी झूठ नहीं बोलते</li>
+<li>बेरियर एल्विन ने "The Baiga" पुस्तक लिखी; बैगा महिला कौशल्या से विवाह किया</li>
+</ul>
+</div>
+
+<div class="exam-hot">भील → गोंड → कोल → कोरकू → शहरिया — यह क्रम बहुत पूछा जाता है!</div>
+</section>
+
+<!-- ===== SECTION: BHARIYA INTRO ===== -->
+<section class="topic-section" id="sec-bhariya-intro">
+<div class="topic-header" style="border-left-color: var(--accent2);">🏔️ भारिया जनजाति — परिचय (Bhariya Tribe Introduction) (06:19 - 07:00)</div>
+
+<div class="card">
+<h3>📌 Basic Identity</h3>
+<ul>
+<li><strong>भारिया (Bhariya)</strong> = ज्ञान का अभाव (शाब्दिक अर्थ)</li>
+<li>भार ढोने का काम करती है → इसलिए "भारिया" नाम पड़ा</li>
+<li><strong>अति विशेष पिछड़ी जनजाति</strong> (PVTG — Particularly Vulnerable Tribal Group)</li>
+<li>निवास: <strong>छिंदवाड़ा</strong> के पातालकोट में (MP का दक्षिणी हिस्सा)</li>
+<li><strong>भारिया विकास अभिकरण</strong>: छिंदवाड़ा के <strong>तामिया</strong> में</li>
+</ul>
+</div>
+
+<div class="definition-box">
+<strong>📖 भारिया शब्द का अर्थ:</strong> "ज्ञान का अभाव" — लेकिन ये भार ढोने का काम करती हैं, मराठा शासक रघुजी भोसले का भार ढोती थीं, इसलिए भारिया कहलाईं।
+</div>
+
+<div class="exam-hot">भारिया जनजाति — अति विशेष पिछड़ी जनजाति है। MP में 3 PVTG हैं: बैगा, भारिया, शहरिया।</div>
+
+<div class="card">
+<h3>🔗 विशेष संबंध</h3>
+<ul>
+<li><strong>भगवान शंकर</strong> से अपनी उत्पत्ति मानती है</li>
+<li><strong>गोंड जनजाति</strong> को अपना <strong>बड़ा भाई</strong> मानती है</li>
+<li>गोंडों में विवाह करना बहुत शुभ मानते हैं</li>
+<li>गोंडों जैसी ही रहन-सहन और परंपरा</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🔑 याद करने का तरीका (Visualization)</h3>
+<p>भारिया → <strong>भार ढोने</strong> से लिंक करो! भार ढो रहे हैं → पातालकोट में → छिंदवाड़ा में → गोंड को बड़ा भाई मानते हैं</p>
+</div>
+
+<div class="img-block">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Patalkot_Valley.jpg/800px-Patalkot_Valley.jpg" alt="Patalkot Valley, Chhindwara - Bhariya Tribe homeland" decoding="async" loading="eager" style="max-width:100%;height:auto;border-radius:10px;">
+<p class="img-caption">Patalkot Valley, Chhindwara — भारिया जनजाति का निवास स्थान | Image: Wikimedia Commons, CC BY-SA 4.0</p>
+</div>
+</section>
+
+<!-- ===== SECTION: BHARIYA SUB-CASTES ===== -->
+<section class="topic-section" id="sec-bhariya-sub">
+<div class="topic-header" style="border-left-color: var(--accent3);">👥 भारिया जनजाति की उपजातियाँ (07:11 - 07:29)</div>
+
+<div class="card">
+<h3>📋 उपजातियाँ (Sub-tribes)</h3>
+<table>
+<tr><th>#</th><th>उपजाति</th></tr>
+<tr><td>1</td><td>भूमिया (Bhumiya)</td></tr>
+<tr><td>2</td><td>बुहर (Buhar)</td></tr>
+<tr><td>3</td><td>पंडो (Pando)</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">भारिया जनजाति की उपजातियाँ: भूमिया, बुहर, पंडो — यह question आ चुका है!</div>
+
+<div class="link-story">
+"भूमिया ने बुहर (बुहारी) से पंडो (पांडव) की सफाई की" — भूमिया, बुहर, पंडो = भारिया की उपजातियाँ! 🔗
+</div>
+</section>
+
+<!-- ===== SECTION: PATALKOT ===== -->
+<section class="topic-section" id="sec-bhariya-patalkot">
+<div class="topic-header" style="border-left-color: var(--accent5);">🌲 पातालकोट (Patalkot) (07:29 - 08:05)</div>
+
+<div class="card">
+<h3>🏞️ पातालकोट — Key Facts</h3>
+<ul>
+<li>स्थान: <strong>छिंदवाड़ा</strong> जिले में</li>
+<li>आकार: <strong>घोड़े के नाल (Horseshoe)</strong> के आकार का</li>
+<li>1981 की जनगणना में भारिया की स्थिति बहुत खराब → इन्हें <strong>"जंगलिया का जंगली"</strong> कहा गया</li>
+<li>मराठा शासक <strong>रघुजी भोसले</strong> यहाँ शासन करते थे</li>
+<li>रघुजी भोसले का भार ढोने का काम करती थीं → इसलिए "भारिया" नाम</li>
+<li><strong>दूधी नदी</strong> = पातालकोट की <strong>जीवन रेखा</strong></li>
+</ul>
+</div>
+
+<div class="exam-hot">1981 की जनगणना के अनुसार भारिया जनजाति को "जंगलिया का जंगली" कहा गया — PYQ!</div>
+
+<div class="card">
+<h3>📍 मूल निवास स्थान</h3>
+<p><strong>हीरालाल और रसेल</strong> के अनुसार भारिया का मूल निवास स्थान = <strong>महोबा या बांधवगढ़</strong></p>
+<p>⚠️ ध्यान रखें: पातालकोट में रहती हैं, पर मूल निवास स्थान महोबा/बांधवगढ़ है!</p>
+<p>बांधवगढ़ — उमरिया जिले में, बांधवगढ़ का किला + राष्ट्रीय उद्यान (स्थापना: 1968)</p>
+</div>
+
+<div class="exam-hot">भारिया का मूल निवास स्थान = महोबा या बांधवगढ़ (हीरालाल और रसेल के अनुसार) — Exam Important!</div>
+</section>
+
+<!-- ===== SECTION: SOCIAL SYSTEM ===== -->
+<section class="topic-section" id="sec-bhariya-social">
+<div class="topic-header" style="border-left-color: var(--accent1);">🏘️ सामाजिक व्यवस्था (08:05 - 09:19)</div>
+
+<div class="card">
+<h3>🏠 निवास स्थान — ढाना (Dhana)</h3>
+<ul>
+<li>भारिया जनजाति के निवास स्थान को <strong>ढाना</strong> कहा जाता है</li>
+<li>ढाना का प्रमुख = <strong>पटेल</strong></li>
+</ul>
+</div>
+
+<div class="exam-hot">भारिया जनजाति के निवास स्थान को "ढाना" कहा जाता है — PYQ!</div>
+
+<div class="card">
+<h3>👥 पंचायत व्यवस्था</h3>
+<p>पटेल की सहायता के लिए:</p>
+<ul>
+<li><strong>भूमिका</strong> (Bhumika)</li>
+<li><strong>कोटवार</strong> (Kotwar)</li>
+<li><strong>पडियार</strong> (Padiyar)</li>
+<li><strong>गाँव का सबसे बुजुर्ग व्यक्ति</strong></li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🏛️ प्रत्येक ढाना में क्या होता है?</h3>
+<ul>
+<li><strong>मेघनाथ का खंभा</strong> — हर ढाना में</li>
+<li><strong>भीमसेन का चबूतरा</strong> — कृषि देवता</li>
+<li><strong>मृतक चौतरा (अनगढ़ चबूतरा)</strong> — जहाँ मृतकों को दफनाया जाता है</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>⚰️ अंतिम संस्कार</h3>
+<ul>
+<li>ज्यादातर भारिया लोग मृतकों को <strong>दफनाते</strong> हैं</li>
+<li>जो संपन्न भारिया हैं — वे <strong>जलाते</strong> भी हैं</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🌾 आर्थिक व्यवस्था</h3>
+<ul>
+<li><strong>झूम कृषि</strong> करते हैं</li>
+<li>झूम कृषि का नाम = <strong>दहिया / ढैया</strong></li>
+</ul>
+</div>
+
+<div class="exam-hot">भारिया जनजाति की झूम कृषि = दहिया / ढैया — PYQ!</div>
+
+<div class="link-story">
+"भार ढो-ढो के थक गए, दही खाने बैठ गए खेत में" → भारिया की झूम कृषि = दहिया! 🔗
+</div>
+</section>
+
+<!-- ===== SECTION: MARRIAGE ===== -->
+<section class="topic-section" id="sec-bhariya-vivah">
+<div class="topic-header" style="border-left-color: var(--accent4);">💍 विवाह संस्कार (09:19 - 09:52 & 55:46 - 61:20)</div>
+
+<div class="card">
+<h3>💒 भारिया जनजाति के प्रमुख विवाह</h3>
+<table>
+<tr><th>विवाह प्रकार</th><th>विवरण</th></tr>
+<tr><td><strong>मगनी विवाह</strong></td><td>सबसे महत्वपूर्ण — दारू की बोतल + रोटी/अनाज लेकर जाते हैं। लड़की पसंद आए → शाम तक पानी का लोटा दे दिया = हाँ। नहीं दिया = ना।</td></tr>
+<tr><td><strong>राजी-बाजी विवाह</strong></td><td>दोनों पक्षों की सहमति से</td></tr>
+<tr><td><strong>लम सेना विवाह</strong></td><td>लड़का लड़की के घर जाकर सेवा करता है (लामा नोई = सेवा करने वाला)। वधू मूल्य नहीं दे सकता → सेवा करके इंप्रेस करता है। गोंड, बैगा में भी होता है।</td></tr>
+<tr><td><strong>विधवा विवाह</strong></td><td>विधवा पुनर्विवाह की अनुमति</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">मगनी विवाह — पानी का लोटा = स्वीकृति का प्रतीक। भारिया जनजाति में सबसे important विवाह!</div>
+
+<div class="card">
+<h3>🎬 लम सेना — ऐसे याद करो</h3>
+<p>Movie "रमैया वस्तावैया" — लड़का अमीर है पर लड़की के भाई के यहाँ काम करता है, गोबर उठाता है, दूध निकालता है, सेवा करता है → यही <strong>लम सेना</strong> है!</p>
+<p>लामा नोई = वह व्यक्ति जो सेवा करने आया है</p>
+</div>
+</section>
+
+<!-- ===== SECTION: RELIGIOUS BELIEFS ===== -->
+<section class="topic-section" id="sec-bhariya-dharm">
+<div class="topic-header" style="border-left-color: var(--accent3);">🙏 धार्मिक विश्वास (09:52 - 10:15 & 52:24 - 55:46)</div>
+
+<div class="card">
+<h3>🙏 देवी-देवता</h3>
+<table>
+<tr><th>देवता</th><th>विवरण</th></tr>
+<tr><td><strong>कर्ण देव</strong></td><td>प्रमुख देवता — इनसे अपनी उत्पत्ति मानते हैं</td></tr>
+<tr><td><strong>भीमसेन</strong></td><td>कृषि देवता</td></tr>
+<tr><td><strong>मठरा बाबा</strong></td><td>संकट दूर करने वाले</td></tr>
+<tr><td><strong>बड़ा देव / बूढ़ा देव</strong></td><td>गाँव के देवता (ग्राम देवता)</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>🌳 अन्य धार्मिक विश्वास</h3>
+<ul>
+<li>भारिया जनजाति <strong>वृक्ष की जड़ों की पूजा</strong> करती है (साज के वृक्ष)</li>
+<li><strong>हरदोल पूजा</strong> हर साल करती है</li>
+<li><strong>गुनिया</strong> = जड़ी-बूटियों की जानकारी रखने वाला (शहरिया में = हत नरिया)</li>
+</ul>
+</div>
+
+<div class="exam-hot">भारिया के प्रमुख देवता = कर्ण देव। गोंड = बड़ा देव। बैगा = बूढ़ा देव। भील = राजा पंथा — Comparison PYQ!</div>
+
+<div class="card">
+<h3>⚡ देवताओं की Comparison Table</h3>
+<table>
+<tr><th>जनजाति</th><th>प्रमुख देवता</th><th>याद करने का तरीका</th></tr>
+<tr><td>भील</td><td>राजा पंथा</td><td>भील = राज करेंगे</td></tr>
+<tr><td>गोंड</td><td>बड़ा देव (सवारी: सफेद घोड़ा)</td><td>गोंड = बड़े होते हैं</td></tr>
+<tr><td>बैगा</td><td>बूढ़ा देव (साज वृक्ष में)</td><td>बैग ज्यादा ढोओ → बूढ़े हो जाओगे</td></tr>
+<tr><td>भारिया</td><td>कर्ण देव</td><td>कर्ण देव से उत्पत्ति</td></tr>
+</table>
+</div>
+
+<div class="link-story">
+"भील ने राजा बनकर पंथ चलाया, गोंड बड़ा देव बन गया सफेद घोड़े पर, बैगा बूढ़ा हो गया साज के पेड़ के नीचे, भारिया ने कर्ण देव से जन्म लिया" 🔗
+</div>
+</section>
+
+<!-- ===== SECTION: FESTIVALS ===== -->
+<section class="topic-section" id="sec-bhariya-parv">
+<div class="topic-header" style="border-left-color: var(--accent2);">🎉 प्रमुख पर्व (Festivals) (11:07 - 13:52)</div>
+
+<div class="card">
+<h3>🎊 भारिया जनजाति के प्रमुख पर्व</h3>
+<table>
+<tr><th>पर्व</th><th>विवरण</th></tr>
+<tr><td><strong>बिद्री पूजा</strong></td><td>बादल की पूजा — भार ढोते हैं जमीन पर, जमीन और बादल की पूजा करते हैं</td></tr>
+<tr><td><strong>जवारा</strong></td><td>नवरात्रि के समय मनाया जाता है — गेहूं के जवारे उगाए जाते हैं</td></tr>
+<tr><td><strong>नवा खानी</strong></td><td>नई फसल आने पर फसल की पूजा — गोंड जनजाति में भी होता है</td></tr>
+</table>
+<p>इसके अलावा: होली, दिवाली, दशहरा — सभी हिंदू पर्व भी मनाते हैं</p>
+</div>
+
+<div class="link-story">
+"भार ढो रहे हैं जमीन पर → जमीन + बादल = बिद्री पूजा → जमीन में जवारे उगे = जवारा पर्व → नया-नया खाना = नवा खानी" 🔗
+</div>
+
+<div class="exam-hot">भारिया जनजाति के किस पर्व में फसल की पूजा? = नवा खानी। जवारा = नवरात्रि में गेहूं के जवारे।</div>
+
+<div class="card">
+<h3>🔑 गोंड से समानता</h3>
+<p>भारिया गोंडों को अपना बड़ा भाई मानती है → इसलिए गोंडों जैसी ही परंपरा, रहन-सहन, पर्व देखने को मिलते हैं। नवा खानी पर्व गोंड में भी होता है।</p>
+</div>
+</section>
+
+<!-- ===== SECTION: DANCES ===== -->
+<section class="topic-section" id="sec-bhariya-nritya">
+<div class="topic-header" style="border-left-color: var(--accent5);">💃 भारिया जनजाति के नृत्य (14:06 - 19:05)</div>
+
+<div class="card">
+<h3>💃 प्रमुख नृत्य</h3>
+<table>
+<tr><th>नृत्य</th><th>विशेषता</th></tr>
+<tr><td><strong>भड़म (Bharam)</strong></td><td>🔥 सबसे प्रिय नृत्य! विवाह/शादी पर किया जाता है</td></tr>
+<tr><td><strong>शैथम (Saitham)</strong></td><td>महिला प्रधान नृत्य — महिलाएं डांस करती हैं, बीच में एक पुरुष ढोल बजाता है</td></tr>
+<tr><td><strong>बाथम (Batham)</strong></td><td>मातम/शोक का नृत्य</td></tr>
+<tr><td><strong>कर्मा (Karma)</strong></td><td>नृत्य का राजा — गिनीज बुक ऑफ वर्ल्ड रिकॉर्ड में शामिल। गोंड, बैगा में भी होता है</td></tr>
+<tr><td><strong>शैला (Shaila)</strong></td><td>बघेलखंड साइड की जनजातियों में</td></tr>
+<tr><td><strong>अहिरा (Ahira)</strong></td><td>—</td></tr>
+</table>
+</div>
+
+<div class="exam-hot">भड़म नृत्य = भारिया जनजाति का सबसे प्रिय नृत्य (विवाह पर) — PYQ: "भड़म नृत्य किस जनजाति से संबंधित है?" = भारिया!</div>
+
+<div class="link-story">
+"भार ढो-ढो के एक व्यक्ति की मृत्यु हो गई → बाथम (मातम) छा गया → सालों से काम कर रहा था → शैथम (महिलाएं रोईं) → लोगों को भ्रम हुआ → भड़म → अहिरा नृत्य किया" — बाथम, शैथम, भड़म, कर्मा, शैला, अहिरा = भारिया के नृत्य! 🔗
+</div>
+
+<div class="card">
+<h3>🔑 भड़म नृत्य — ऐसे याद करो</h3>
+<p>एक लड़के को बहुत अच्छी लड़की मिल गई → दूसरे लड़कों को <strong>भ्रम</strong> हुआ कि इसे कैसे मिली! → लड़की कब मिलती है? <strong>विवाह</strong> पर! → भड़म नृत्य = विवाह पर = सबसे प्रिय नृत्य</p>
+</div>
+
+<div class="card">
+<h3>📊 कर्मा नृत्य — Special Facts</h3>
+<ul>
+<li>कर्मा को <strong>"नृत्य का राजा"</strong> कहा गया</li>
+<li><strong>गिनीज बुक ऑफ वर्ल्ड रिकॉर्ड</strong> में शामिल</li>
+<li>गोंड + बैगा + भारिया — तीनों में होता है</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== SECTION: LANGUAGE ===== -->
+<section class="topic-section" id="sec-bhariya-bhasha">
+<div class="topic-header" style="border-left-color: var(--accent1);">🗣️ भाषा / बोली तथा साहित्य (19:05 - 20:60)</div>
+
+<div class="card">
+<h3>🗣️ भारिया जनजाति की बोली</h3>
+<ul>
+<li>प्रमुख बोली: <strong>भरनोटी (Bharnoti)</strong> या <strong>भरिया (Bhariya)</strong></li>
+<li>कोलेर जैसी बोली देखने को मिलती है</li>
+</ul>
+</div>
+
+<div class="exam-hot">भरनोटी बोली किस जनजाति से संबंधित है? = भारिया जनजाति — PYQ!</div>
+
+<div class="link-story">
+"भारिया जनजाति के लोग भर-भर के नोटी (naughty) बातें बोल रहे थे बाबू से" → भरनोटी = भारिया की बोली! 🔗
+</div>
+
+<div class="card">
+<h3>📚 वाचिक परंपरा</h3>
+<ul>
+<li>भारिया की <strong>वाचिक परंपरा</strong> (मौखिक परंपरा) अत्यधिक समृद्ध है</li>
+<li>चुटकुले, गीत, गाथाएं, पहेलियाँ — इनका भंडार है</li>
+<li>मुंह से बोलने वाली परंपरा बहुत मजबूत</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== SECTION: OTHER FACTS ===== -->
+<section class="topic-section" id="sec-bhariya-facts">
+<div class="topic-header" style="border-left-color: var(--accent4);">📌 अन्य महत्वपूर्ण तथ्य (22:46 - 26:11)</div>
+
+<div class="card">
+<h3>🏠 युवा गृह — रंगभंग (Rangbhang)</h3>
+<ul>
+<li>भारिया जनजाति का युवा गृह = <strong>रंगभंग</strong></li>
+<li>युवक-युवतियाँ एक दूसरे के साथ रहते हैं, देखते हैं कि विचार मिल रहे हैं या नहीं</li>
+<li>विचार मिलें → शादी करा दी जाती है</li>
+<li>विचार न मिलें → दूसरे से मिलाते हैं</li>
+</ul>
+</div>
+
+<div class="exam-hot">भारिया जनजाति का युवा गृह = रंगभंग। गोंड/माड़िया = घोटुल। उराव = धूमकोरिया — Comparison PYQ!</div>
+
+<div class="card">
+<h3>⚡ युवा गृह Comparison</h3>
+<table>
+<tr><th>जनजाति</th><th>युवा गृह</th></tr>
+<tr><td>भारिया</td><td><strong>रंगभंग</strong></td></tr>
+<tr><td>गोंड / माड़िया</td><td><strong>घोटुल</strong></td></tr>
+<tr><td>उराव</td><td><strong>धूमकोरिया</strong></td></tr>
+</table>
+<p>📖 बेरियर एल्विन ने "The Muria and their Ghotul" पुस्तक लिखी</p>
+</div>
+
+<div class="link-story">
+"भारिया थक गए भार ढो-ढो के → रंग लगाने चले गए = रंगभंग! गोंड ने घोटुल में घुसकर देखा, उराव ने धूम-धाम (धूमकोरिया) मचाई" 🔗
+</div>
+
+<div class="card">
+<h3>🌾 झूम कृषि — दहिया/ढैया</h3>
+<p>भारिया जनजाति की झूम कृषि = <strong>दहिया या ढैया</strong></p>
+<p>याद करो: भार ढो-ढो के खेती की → दही खाने बैठे → दहिया!</p>
+</div>
+
+<div class="card">
+<h3>⚡ झूम कृषि Comparison</h3>
+<table>
+<tr><th>जनजाति</th><th>झूम कृषि का नाम</th><th>याद करने का तरीका</th></tr>
+<tr><td>भील</td><td>चिमाता (पहाड़ी) / दज (मैदानी)</td><td>—</td></tr>
+<tr><td>गोंड</td><td>बारी / दहिया</td><td>बारी-बारी से</td></tr>
+<tr><td>बैगा</td><td>बेवार / पंडू</td><td>बैग में बेवड़ा पंडू दारू लेकर खेत गया</td></tr>
+<tr><td>भारिया</td><td>दहिया / ढैया</td><td>दही खा रहे थे</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>💅 गुदना (Tattoo)</h3>
+<p>भारिया जनजाति की महिलाएं <strong>गुदना</strong> (टैटू) की शौकीन होती हैं — शरीर पर कलाकारी गुदवाती हैं</p>
+</div>
+</section>
+
+<!-- ===== SECTION: MCQ PRACTICE ===== -->
+<section class="topic-section" id="sec-mcq">
+<div class="topic-header" style="border-left-color: var(--accent2);">📝 MCQ Practice — क्लास में पूछे गए प्रश्न (26:35 - 65:51)</div>
+
+<div class="card">
+<h3>📋 MCQ Quiz — Click to Reveal Answers</h3>
+
+<div class="quiz-section">
+<div class="quiz-q">
+<p>Q1. निम्नलिखित में से कौन सी जनजाति MP की सबसे पिछड़ी (PVTG) जनजाति है?</p>
+<p>A) उराव &nbsp; B) पारदी &nbsp; C) भारिया &nbsp; D) भील</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>C) भारिया</strong> — बैगा, भारिया, शहरिया = MP की 3 PVTG (भारत में कुल 75 PVTG)</div>
+</div>
+
+<div class="quiz-q">
+<p>Q2. "भारिया" का मतलब क्या होता है?</p>
+<p>A) शेर &nbsp; B) जंगल &nbsp; C) पहाड़ &nbsp; D) ज्ञान का अभाव</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) ज्ञान का अभाव</strong> — हालांकि भार ढोने का काम करती है इसलिए भारिया कहलाई</div>
+</div>
+
+<div class="quiz-q">
+<p>Q3. 1981 की जनगणना के अनुसार किस जनजाति को "जंगलिया का जंगली" कहा गया?</p>
+<p>A) बैगा &nbsp; B) भारिया &nbsp; C) शहरिया &nbsp; D) गोंड</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>B) भारिया</strong> — 1981 जनगणना में स्थिति बहुत खराब थी</div>
+</div>
+
+<div class="quiz-q">
+<p>Q4. भारिया का मूल निवास स्थान (हीरालाल और रसेल के अनुसार)?</p>
+<p>A) पातालकोट &nbsp; B) महोबा या बांधवगढ़ &nbsp; C) धार &nbsp; D) झाबुआ</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>B) महोबा या बांधवगढ़</strong> — पातालकोट में रहती हैं पर मूल निवास महोबा/बांधवगढ़</div>
+</div>
+
+<div class="quiz-q">
+<p>Q5. छिंदवाड़ा में पातालकोट किस जनजाति का निवास स्थान है?</p>
+<p>A) बैगा &nbsp; B) गोंड &nbsp; C) भारिया &nbsp; D) कोरकू</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>C) भारिया</strong> — घोड़े के नाल के आकार का, दूधी नदी = जीवन रेखा</div>
+</div>
+
+<div class="quiz-q">
+<p>Q6. इनमें से कौन सा कथन सही है?</p>
+<p>A) भारिया गोंड को बड़ा भाई मानती है &nbsp; B) प्रत्येक ढाना में मेघनाथ खंबा होता है &nbsp; C) पंचायत मुखिया = पटेल &nbsp; D) सभी सही</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) सभी सही</strong></div>
+</div>
+
+<div class="quiz-q">
+<p>Q7. भारिया जनजाति की झूम कृषि को क्या कहते हैं?</p>
+<p>A) चिमाता &nbsp; B) दज &nbsp; C) दहिया/ढैया &nbsp; D) बेवार</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>C) दहिया/ढैया</strong> — चिमाता = भील, बेवार = बैगा</div>
+</div>
+
+<div class="quiz-q">
+<p>Q8. भारिया जनजाति के निवास स्थान को क्या कहा जाता है?</p>
+<p>A) टोला &nbsp; B) शहरा &nbsp; C) पूर्वा &nbsp; D) ढाना</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) ढाना</strong> — टोला/पूर्वा = गोंड, शहरा = शहरिया</div>
+</div>
+
+<div class="quiz-q">
+<p>Q9. भारिया जनजाति के किस पर्व में फसल की पूजा होती है?</p>
+<p>A) नवा खानी &nbsp; B) बिद्री &nbsp; C) होली &nbsp; D) जवारा</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>A) नवा खानी</strong> — नई फसल की पूजा</div>
+</div>
+
+<div class="quiz-q">
+<p>Q10. भारिया जनजाति में प्रमुख नृत्य कौन से हैं? सबसे प्रिय?</p>
+<p>A) बाथम, शैथम, अहिरा, भड़म — प्रिय: भड़म &nbsp; B) रीना, सुआ &nbsp; C) रागिनी, लहंगी &nbsp; D) कोई नहीं</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>A)</strong> — बाथम, शैथम, कर्मा, शैला, भड़म, अहिरा। सबसे प्रिय = भड़म (विवाह पर)</div>
+</div>
+
+<div class="quiz-q">
+<p>Q11. भरनोटी बोली किस जनजाति से संबंधित है?</p>
+<p>A) बैगा &nbsp; B) भारिया &nbsp; C) शहरिया &nbsp; D) गोंड</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>B) भारिया</strong></div>
+</div>
+
+<div class="quiz-q">
+<p>Q12. भारिया जनजाति के युवा गृह को क्या कहा जाता है?</p>
+<p>A) घोटुल &nbsp; B) रंगभंग &nbsp; C) धूमकोरिया &nbsp; D) इनमें से कोई नहीं</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>B) रंगभंग</strong> — घोटुल = गोंड/माड़िया, धूमकोरिया = उराव</div>
+</div>
+
+<div class="quiz-q">
+<p>Q13. भारिया जनजाति की उपजातियाँ कौन सी हैं?</p>
+<p>A) भूमिया &nbsp; B) बुहर &nbsp; C) पंडो &nbsp; D) यह सभी</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) यह सभी</strong> — भूमिया, बुहर, पंडो</div>
+</div>
+
+<div class="quiz-q">
+<p>Q14. भारिया जनजाति में प्रमुख विवाह कौन से हैं?</p>
+<p>A) मगनी &nbsp; B) लम सेना &nbsp; C) राजी-बाजी &nbsp; D) सभी</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) सभी</strong> — मगनी, लम सेना, राजी-बाजी, विधवा विवाह</div>
+</div>
+
+<div class="quiz-q">
+<p>Q15. इनमें से कौन सा कथन सही है?</p>
+<p>A) भारिया वृक्ष की जड़ों की पूजा करती है &nbsp; B) बड़ा देव/बूढ़ा देव ग्राम देवता &nbsp; C) हरदोल पूजा हर साल &nbsp; D) सभी सही</p>
+<button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'">Answer देखें</button>
+<div class="quiz-answer">✅ <strong>D) सभी सही</strong></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== SECTION: PVTG ===== -->
+<section class="topic-section" id="sec-pvtg">
+<div class="topic-header" style="border-left-color: var(--accent3);">⭐ PVTG — अति विशेष पिछड़ी जनजाति (26:60 - 27:26)</div>
+
+<div class="card">
+<h3>📋 Particularly Vulnerable Tribal Groups (PVTG)</h3>
+<ul>
+<li>भारत सरकार द्वारा बनाया गया समूह</li>
+<li>भारत में कुल <strong>75 जनजातियाँ</strong> PVTG हैं</li>
+<li>MP में <strong>3 PVTG</strong>:</li>
+</ul>
+<table>
+<tr><th>#</th><th>जनजाति</th><th>विकास अभिकरण</th></tr>
+<tr><td>1</td><td><strong>बैगा</strong></td><td>6 जिले — बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर</td></tr>
+<tr><td>2</td><td><strong>भारिया</strong></td><td>1 — छिंदवाड़ा (तामिया)</td></tr>
+<tr><td>3</td><td><strong>शहरिया</strong></td><td>4 जिले — ग्वालियर, शिवपुरी, गुना, श्योपुर</td></tr>
+</table>
+<p>कुल विकास अभिकरण = 6 + 1 + 4 = <strong>11</strong></p>
+</div>
+
+<div class="card">
+<h3>📌 अन्य जनजातियाँ — Quick Facts (MCQ में पूछा गया)</h3>
+<ul>
+<li><strong>उराव जनजाति</strong>: दक्षिण भारत से उत्तर भारत आई, ईसाई धर्म स्वीकार करती है, युवा गृह = धूमकोरिया</li>
+<li><strong>पारदी जनजाति</strong>: शिकार का काम करती है</li>
+<li><strong>कीर, मीणा, पार्वती</strong> — अन्य जनजातियाँ</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== SECTION: VERRIER ELWIN ===== -->
+<section class="topic-section" id="sec-elwin">
+<div class="topic-header" style="border-left-color: var(--accent4);">📖 बेरियर एल्विन (Verrier Elwin) (64:34 - 65:51)</div>
+
+<div class="card">
+<h3>📚 बेरियर एल्विन — Important Facts</h3>
+<ul>
+<li>पुस्तक: <strong>"The Muria and their Ghotul"</strong> — घोटुल प्रथा के बारे में</li>
+<li>पुस्तक: <strong>"The Baiga"</strong> — बैगा जनजाति के बारे में</li>
+<li>बैगा जनजाति की महिला <strong>कौशल्या</strong> से विवाह किया</li>
+<li>अंग्रेज थे — जनजातियों पर गहन शोध किया</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== MASTER FULL FORMS ===== -->
+<section class="topic-section" id="sec-fullforms">
+<div class="topic-header" style="border-left-color: var(--accent1);">📖 Full Forms & Meanings</div>
+<div class="card">
+<table>
+<tr><th>Term</th><th>Full Form / Meaning</th></tr>
+<tr><td>PVTG</td><td>Particularly Vulnerable Tribal Groups (अति विशेष पिछड़ी जनजाति समूह)</td></tr>
+<tr><td>भारिया</td><td>ज्ञान का अभाव / भार ढोने वाले</td></tr>
+<tr><td>शहरिया</td><td>सह + शेर = शेर के साथ रहने वाले</td></tr>
+<tr><td>गोंड</td><td>कोंड = पहाड़</td></tr>
+<tr><td>ढाना</td><td>भारिया का निवास स्थान</td></tr>
+<tr><td>टोला/पूर्वा</td><td>गोंड का निवास स्थान</td></tr>
+<tr><td>शहरा</td><td>शहरिया का निवास स्थान (जंगल)</td></tr>
+<tr><td>रंगभंग</td><td>भारिया का युवा गृह</td></tr>
+<tr><td>घोटुल</td><td>गोंड/माड़िया का युवा गृह</td></tr>
+<tr><td>धूमकोरिया</td><td>उराव का युवा गृह</td></tr>
+<tr><td>लामा नोई</td><td>लम सेना करने वाला व्यक्ति</td></tr>
+<tr><td>गुनिया</td><td>जड़ी-बूटियों की जानकारी रखने वाला</td></tr>
+<tr><td>भरनोटी</td><td>भारिया जनजाति की बोली</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ===== MASTER EXAM HOT ===== -->
+<section class="topic-section" id="sec-exam-hot">
+<div class="topic-header" style="border-left-color: var(--accent2);">🔥 Master Exam Hot Facts</div>
+<div class="card">
+<ul>
+<li>🔥 MP की 3 PVTG: बैगा, भारिया, शहरिया</li>
+<li>🔥 भारिया = जंगलिया का जंगली (1981 जनगणना)</li>
+<li>🔥 भारिया का मूल निवास = महोबा/बांधवगढ़ (हीरालाल & रसेल)</li>
+<li>🔥 भारिया निवास स्थान = ढाना, प्रमुख = पटेल</li>
+<li>🔥 भड़म नृत्य = भारिया का सबसे प्रिय नृत्य (विवाह पर)</li>
+<li>🔥 शैथम = महिला प्रधान नृत्य</li>
+<li>🔥 कर्मा = नृत्य का राजा (गिनीज बुक)</li>
+<li>🔥 भरनोटी = भारिया की बोली</li>
+<li>🔥 रंगभंग = भारिया का युवा गृह</li>
+<li>🔥 दहिया/ढैया = भारिया की झूम कृषि</li>
+<li>🔥 मगनी विवाह — पानी का लोटा = स्वीकृति</li>
+<li>🔥 कर्ण देव = भारिया के प्रमुख देवता</li>
+<li>🔥 भीमसेन = कृषि देवता</li>
+<li>🔥 दूधी नदी = पातालकोट की जीवन रेखा</li>
+<li>🔥 पातालकोट = घोड़े के नाल के आकार का</li>
+<li>🔥 भारिया विकास अभिकरण = छिंदवाड़ा (तामिया)</li>
+<li>🔥 गोंड को बड़ा भाई मानती है भारिया</li>
+<li>🔥 प्रत्येक ढाना में मेघनाथ खंबा + भीमसेन चबूतरा + मृतक चौतरा</li>
+<li>🔥 नवा खानी = फसल की पूजा, जवारा = नवरात्रि में गेहूं के जवारे</li>
+<li>🔥 भारिया उपजातियाँ: भूमिया, बुहर, पंडो</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== MASTER CHECKLIST ===== -->
+<section class="topic-section" id="sec-master-checklist">
+<div class="topic-header" style="border-left-color: var(--accent3);">✅ Master Revision Checklist</div>
+<div class="card checklist" id="checklistContainer">
+<p style="margin-bottom:15px;font-weight:600;">Progress: <span id="checkCount">0</span>/30 ✅</p>
+<label><input type="checkbox" data-id="c1"> भारिया = अति विशेष पिछड़ी जनजाति (PVTG)</label>
+<label><input type="checkbox" data-id="c2"> भारिया का अर्थ = ज्ञान का अभाव / भार ढोने वाले</label>
+<label><input type="checkbox" data-id="c3"> निवास = छिंदवाड़ा, पातालकोट</label>
+<label><input type="checkbox" data-id="c4"> पातालकोट = घोड़े के नाल का आकार</label>
+<label><input type="checkbox" data-id="c5"> दूधी नदी = पातालकोट की जीवन रेखा</label>
+<label><input type="checkbox" data-id="c6"> मूल निवास = महोबा/बांधवगढ़ (हीरालाल & रसेल)</label>
+<label><input type="checkbox" data-id="c7"> 1981 जनगणना = जंगलिया का जंगली</label>
+<label><input type="checkbox" data-id="c8"> रघुजी भोसले (मराठा) का भार ढोती थीं</label>
+<label><input type="checkbox" data-id="c9"> गोंड को बड़ा भाई मानती है</label>
+<label><input type="checkbox" data-id="c10"> भगवान शंकर से उत्पत्ति मानती है</label>
+<label><input type="checkbox" data-id="c11"> उपजातियाँ: भूमिया, बुहर, पंडो</label>
+<label><input type="checkbox" data-id="c12"> निवास स्थान = ढाना, प्रमुख = पटेल</label>
+<label><input type="checkbox" data-id="c13"> पंचायत: पटेल + भूमिका + कोटवार + पडियार + बुजुर्ग</label>
+<label><input type="checkbox" data-id="c14"> ढाना में: मेघनाथ खंबा + भीमसेन चबूतरा + मृतक चौतरा</label>
+<label><input type="checkbox" data-id="c15"> मृतकों को दफनाते हैं (संपन्न = जलाते भी)</label>
+<label><input type="checkbox" data-id="c16"> विवाह: मगनी, राजी-बाजी, लम सेना, विधवा</label>
+<label><input type="checkbox" data-id="c17"> मगनी विवाह = पानी का लोटा = स्वीकृति</label>
+<label><input type="checkbox" data-id="c18"> देवता: कर्ण देव (प्रमुख), भीमसेन (कृषि), बड़ा/बूढ़ा देव (ग्राम), मठरा बाबा</label>
+<label><input type="checkbox" data-id="c19"> पर्व: बिद्री (बादल), जवारा (नवरात्रि), नवा खानी (फसल)</label>
+<label><input type="checkbox" data-id="c20"> नृत्य: बाथम, शैथम, कर्मा, शैला, भड़म, अहिरा</label>
+<label><input type="checkbox" data-id="c21"> भड़म = सबसे प्रिय नृत्य (विवाह पर)</label>
+<label><input type="checkbox" data-id="c22"> शैथम = महिला प्रधान नृत्य</label>
+<label><input type="checkbox" data-id="c23"> कर्मा = नृत्य का राजा (गिनीज बुक)</label>
+<label><input type="checkbox" data-id="c24"> बोली = भरनोटी / भरिया</label>
+<label><input type="checkbox" data-id="c25"> वाचिक परंपरा समृद्ध (गीत, गाथा, पहेलियाँ)</label>
+<label><input type="checkbox" data-id="c26"> युवा गृह = रंगभंग</label>
+<label><input type="checkbox" data-id="c27"> झूम कृषि = दहिया / ढैया</label>
+<label><input type="checkbox" data-id="c28"> महिलाएं गुदना (टैटू) की शौकीन</label>
+<label><input type="checkbox" data-id="c29"> भारिया विकास अभिकरण = छिंदवाड़ा (तामिया)</label>
+<label><input type="checkbox" data-id="c30"> MP में 3 PVTG: बैगा, भारिया, शहरिया (कुल 11 विकास अभिकरण)</label>
+</div>
+</section>
+
+<!-- ===== UPCOMING TOPICS ===== -->
+<section class="topic-section">
+<div class="card" style="border-left: 4px solid var(--accent4);">
+<h3>📌 Upcoming Topic (Next Class)</h3>
+<p>अगली क्लास में: <strong>कोरकू जनजाति</strong> (Korku Tribe) पढ़ेंगे</p>
+</div>
+</section>
+
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Theme Toggle
+function toggleTheme() {
+const body = document.body;
+const current = body.getAttribute('data-theme');
+const next = current === 'dark' ? 'light' : 'dark';
+body.setAttribute('data-theme', next);
+localStorage.setItem('theme', next);
+}
+(function() {
+const saved = localStorage.getItem('theme');
+if (saved) document.body.setAttribute('data-theme', saved);
+})();
+
+// Jump Navigation
+function jumpTo(id) {
+if (!id) return;
+const el = document.getElementById(id);
+if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Checklist persistence
+(function() {
+const container = document.getElementById('checklistContainer');
+if (!container) return;
+const checks = container.querySelectorAll('input[type="checkbox"]');
+checks.forEach(cb => {
+const id = cb.getAttribute('data-id');
+if (localStorage.getItem('cl19_' + id) === 'true') cb.checked = true;
+cb.addEventListener('change', function() {
+localStorage.setItem('cl19_' + id, this.checked);
+updateCheckCount();
+updateProgress();
+});
+});
+updateCheckCount();
+updateProgress();
+function updateCheckCount() {
+const total = checks.length;
+const done = container.querySelectorAll('input:checked').length;
+document.getElementById('checkCount').textContent = done;
+}
+function updateProgress() {
+const total = checks.length;
+const done = container.querySelectorAll('input:checked').length;
+const pct = Math.round((done / total) * 100);
+document.getElementById('progressBar').style.width = pct + '%';
+document.getElementById('progressText').textContent = pct + '%';
+}
+})();
+
+// Collapsible sections
+document.querySelectorAll('.collapsible').forEach(btn => {
+btn.addEventListener('click', function() {
+this.classList.toggle('active');
+const content = this.nextElementSibling;
+content.style.display = content.style.display === 'block' ? 'none' : 'block';
+});
+});
+
+// Image error handling
+document.querySelectorAll('img').forEach(img => {
+img.onerror = function() {
+this.style.display = 'none';
+const fallback = document.createElement('p');
+fallback.className = 'img-caption';
+fallback.innerHTML = '⚠️ Image could not load. <a href="' + this.src + '" target="_blank" style="color:var(--accent1)">View source</a>';
+this.parentNode.appendChild(fallback);
+};
+});
+</script>
+</body>
+</html>

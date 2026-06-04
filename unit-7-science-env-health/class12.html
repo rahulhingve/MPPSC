@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कुपोषण / Malnutrition — MPPSC Unit 7 Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0f1a;--panel:#17172a;--card:#1f2036;--text:#f7f8ff;--muted:#cfd3e8;--border:#303354;--cyan:#00d4ff;--orange:#ff6b35;--green:#00ff88;--purple:#b388ff;--red:#ff4d6d;--shadow:0 22px 70px rgba(0,0,0,.35);--radius:22px;}
+[data-theme="light"]{--bg:#f6f8ff;--panel:#ffffff;--card:#ffffff;--text:#111426;--muted:#3d435c;--border:#d8def3;--shadow:0 18px 45px rgba(55,65,100,.14);}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at top left,rgba(0,212,255,.14),transparent 30%),radial-gradient(circle at top right,rgba(179,136,255,.12),transparent 35%),var(--bg);color:var(--text);font-size:17px;line-height:1.7;letter-spacing:.01em;}
+a{color:var(--cyan);text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:18px}
+.hero{padding:36px 18px 18px}
+.hero-card{background:linear-gradient(135deg,rgba(0,212,255,.14),rgba(179,136,255,.14)),var(--panel);border:1px solid var(--border);border-radius:32px;padding:34px;box-shadow:var(--shadow)}
+.hero h1{margin:0 0 12px;font-size:clamp(2rem,5vw,4.2rem);line-height:1.08}
+.subtitle{font-size:1.15rem;color:var(--muted);max-width:820px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.meta span,.badge{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid var(--border);background:rgba(255,255,255,.06);border-radius:999px;color:var(--text);font-weight:700}
+.progress-shell{position:sticky;top:0;z-index:20;background:rgba(15,15,26,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+[data-theme="light"] .progress-shell{background:rgba(246,248,255,.9)}
+.progressbar{height:7px;background:rgba(255,255,255,.08)}
+.progressbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange));transition:width .25s ease}
+.controls{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px 18px}
+.controls select,.controls button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:10px 12px;font-weight:700;min-height:44px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px;align-items:start}
+.toc{position:sticky;top:72px;background:var(--panel);border:1px solid var(--border);border-radius:24px;padding:18px;box-shadow:var(--shadow);max-height:calc(100vh - 92px);overflow:auto}
+.toc h2{font-size:1.05rem;margin:0 0 10px}
+.toc a{display:block;padding:9px 10px;border-radius:12px;color:var(--muted);font-weight:700}
+.toc a:hover{background:rgba(0,212,255,.12);color:var(--text)}
+.topic,.master-section{margin:0 0 26px;padding:24px;background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);animation:fadeUp .5s ease both}
+.section-head{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px}
+.section-head h2,.master-section h2{margin:0;font-size:clamp(1.55rem,3vw,2.3rem);line-height:1.22}
+.complete-btn{border:1px solid var(--border);background:linear-gradient(135deg,rgba(0,255,136,.16),rgba(0,212,255,.12));color:var(--text);border-radius:14px;padding:10px 14px;font-weight:800;cursor:pointer}
+.complete-btn.done{background:linear-gradient(135deg,rgba(0,255,136,.45),rgba(0,212,255,.25));}
+.card,.definition,.exam-hot,.link-story,.flow-note{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin:16px 0;box-shadow:0 12px 24px rgba(0,0,0,.12)}
+.card h3,.definition h3,.exam-hot h3,.link-story h3{margin:0 0 10px;font-size:1.25rem}
+ul{padding-left:1.25rem} li{margin:.4rem 0}
+.accent{background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(179,136,255,.12)),var(--card)}
+.definition{border-left:5px solid var(--cyan)}
+.exam-hot{border-left:5px solid var(--orange);background:linear-gradient(135deg,rgba(255,107,53,.14),transparent),var(--card)}
+.link-story{border-left:5px solid var(--purple);background:linear-gradient(135deg,rgba(179,136,255,.18),rgba(0,212,255,.08)),var(--card)}
+.flow-note{border-left:5px solid var(--green);color:var(--muted)}
+.warning{border-left:5px solid var(--red)}
+.muted{color:var(--muted)}
+.pill-grid{display:flex;flex-wrap:wrap;gap:10px}
+.pill-grid span{display:inline-flex;padding:9px 12px;border-radius:999px;background:rgba(0,212,255,.12);border:1px solid var(--border);font-weight:700}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.stepper{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.stepper div{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:18px;padding:14px;text-align:center}
+.stepper b{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--cyan);color:#001018;margin-bottom:8px}
+.comparison-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border);border-radius:18px}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+th,td{padding:13px 14px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left}
+th{background:rgba(0,212,255,.12);font-weight:800}
+tr:last-child td{border-bottom:0}
+.image-card{margin:18px 0;background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.image-card img{display:block;width:100%;max-height:430px;object-fit:contain;background:#0b0d18}
+.image-card figcaption{padding:12px 16px;color:var(--muted);font-size:.92rem;border-top:1px solid var(--border)}
+.image-card.sensitive img{filter:saturate(.85)}
+.quick-recall{background:linear-gradient(135deg,rgba(0,255,136,.10),rgba(0,212,255,.07)),var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:16px 0}
+.quick-recall h3{margin:0 0 12px}
+.reveal{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.06);color:var(--text);font-weight:800;cursor:pointer}
+.answer{display:none;margin:0 0 12px 0;padding:10px 14px;background:rgba(0,255,136,.10);border:1px solid var(--border);border-radius:14px}
+.answer.show{display:block}
+.checklist{display:grid;gap:10px}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;background:var(--card);border:1px solid var(--border);border-radius:16px;font-weight:650}
+.checklist input{width:20px;height:20px;margin-top:4px;accent-color:#00d4ff}
+.progress-text{font-weight:800;margin:10px 0 16px;color:var(--green)}
+.raw-block{background:var(--card);border:1px solid var(--border);border-radius:18px;margin:12px 0;overflow:hidden}
+.raw-block summary{cursor:pointer;padding:14px 16px;font-weight:800}
+.raw-block pre{white-space:pre-wrap;margin:0;padding:16px;background:rgba(0,0,0,.18);color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9rem;line-height:1.55;max-height:460px;overflow:auto}
+footer{padding:30px;text-align:center;color:var(--muted)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{display:none}.two-col,.stepper{grid-template-columns:1fr}.topic,.master-section{padding:18px}.hero-card{padding:24px}}
+@media print{body{background:white;color:black}.progress-shell,.toc,.complete-btn,.controls{display:none!important}.layout{display:block}.topic,.master-section,.card,.definition,.exam-hot,.link-story,.flow-note{box-shadow:none;border:1px solid #bbb;background:white;color:black;break-inside:avoid}.answer{display:block!important}details.raw-block{open:true}.raw-block pre{max-height:none;color:black;background:white}a{color:black}}
+</style>
+</head>
+<body>
+<div class="progress-shell"><div class="progressbar"><span id="scrollProgress"></span></div><div class="controls"><select id="jump"><option value="">Jump to topic...</option><option value="intro">1. Class Opening + Topic Setup: कुपोषण / Malnutrition</option>
+<option value="nutrition-recap">2. Nutrition Recap → Malnutrition Definition</option>
+<option value="types">3. कुपोषण ke 2 Types: अल्प पोषण aur अति पोषण</option>
+<option value="unicef-who">4. UNICEF + WHO Criteria: Nata Pan, Nirbalta, Kam Wajan</option>
+<option value="constitution">5. भारतीय संविधान mein पोषण: Article 21 aur Article 47</option>
+<option value="carbs">6. Carbohydrate ke कारण कुपोषण</option>
+<option value="protein-functions">7. Protein: Growth, Cell Formation, Repair + Excess Protein</option>
+<option value="kwashiorkor-marasmus">8. Protein कमी: Kwashiorkor aur Marasmus</option>
+<option value="fat">9. Vasa / Fat ke कारण कुपोषण aur Atherosclerosis</option>
+<option value="prevention">10. कुपोषण se बचाव: Balanced Indian Food + Screening</option>
+<option value="mp-schemes">11. Madhya Pradesh Government Schemes related to Malnutrition</option>
+<option value="central-upcoming">12. Central Schemes + Anganwadi + Upcoming Topics</option>
+<option value="full-forms">Full Forms</option><option value="hot-facts">Hot Facts</option><option value="master-checklist">Checklist</option><option value="raw-transcript">Raw Transcript</option></select><button id="themeToggle">🌙 Dark / ☀️ Light</button><button id="expandAll">Expand raw transcript</button></div></div>
+<header class="hero container"><div class="hero-card"><h1>कुपोषण / Malnutrition</h1><p class="subtitle">Transcript-flow revision page for MPPSC Pre 2024 Unit 7, Lecture 12. Content order follows the class from 00:13 to 54:59. Written study content is based on the uploaded transcript only; external images are only visual aids with captions.</p><div class="meta"><span>⏱️ 00:13–54:59</span><span>📚 Unit 7</span><span>🧩 12 flow sections</span><span>✅ Raw transcript included</span></div></div></header>
+<main class="container layout"><aside class="toc"><h2>📌 Table of Contents</h2><a href="#intro">1. Class Opening + Topic Setup: कुपोषण / Malnutrition</a>
+<a href="#nutrition-recap">2. Nutrition Recap → Malnutrition Definition</a>
+<a href="#types">3. कुपोषण ke 2 Types: अल्प पोषण aur अति पोषण</a>
+<a href="#unicef-who">4. UNICEF + WHO Criteria: Nata Pan, Nirbalta, Kam Wajan</a>
+<a href="#constitution">5. भारतीय संविधान mein पोषण: Article 21 aur Article 47</a>
+<a href="#carbs">6. Carbohydrate ke कारण कुपोषण</a>
+<a href="#protein-functions">7. Protein: Growth, Cell Formation, Repair + Excess Protein</a>
+<a href="#kwashiorkor-marasmus">8. Protein कमी: Kwashiorkor aur Marasmus</a>
+<a href="#fat">9. Vasa / Fat ke कारण कुपोषण aur Atherosclerosis</a>
+<a href="#prevention">10. कुपोषण se बचाव: Balanced Indian Food + Screening</a>
+<a href="#mp-schemes">11. Madhya Pradesh Government Schemes related to Malnutrition</a>
+<a href="#central-upcoming">12. Central Schemes + Anganwadi + Upcoming Topics</a>
+<a href="#full-forms">Full Forms</a><a href="#hot-facts">Hot Facts</a><a href="#master-checklist">Checklist</a><a href="#raw-transcript">Raw Transcript</a></aside><article>
+
+<section class="topic" id="intro" data-topic>
+  <div class="section-head"><span class="badge">00:13 – 02:43</span><h2>🎯 1. Class Opening + Topic Setup: कुपोषण / Malnutrition</h2><button class="complete-btn" data-complete="intro">Mark revised</button></div>
+  
+<div class="card"><h3>Video flow exactly yahin se start hota hai</h3><ul>
+<li>Teacher ne greeting ke baad bataya: aaj ka important topic <strong>कुपोषण</strong> hai.</li>
+<li>कुपोषण ko English mein <strong>Malnutrition</strong> bola gaya.</li>
+<li>Class ka target: <strong>MPPSC Pre 2024</strong>, <strong>Unit No. 7</strong>.</li>
+<li>Ye <strong>Lecture No. 12</strong> hai; isse pehle 11 lectures ho chuke hain.</li>
+<li>Previous flow: विज्ञान की प्रमुख शाखाएँ, पर्यावरणीय कारक, पारिस्थितिकी तंत्र, जैव विविधता.</li>
+<li>Last sessions mein <strong>पोषण, आहार, पोषक तत्व</strong> complete hue; teacher ke hisaab se ismein lagbhag 3 lectures lage.</li>
+<li>Teacher ne bataya ki live videos video tab mein nahi, <strong>Live section</strong> ya <strong>Playlist section</strong> mein milenge.</li>
+</ul></div>
+<div class="flow-note">📌 Flow Note: Is opening part mein promotional/share reminders aur live greetings bhi the. Revision page mein educational flow preserve kiya gaya hai, extra promotional content add nahi kiya gaya.</div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Aaj ka main topic kya tha?</button><p class="answer">कुपोषण — Malnutrition.</p><button class="reveal">Q: Ye lecture kis unit ke liye tha?</button><p class="answer">MPPSC Pre 2024, Unit No. 7.</p></div>
+
+</section>
+
+<section class="topic" id="nutrition-recap" data-topic>
+  <div class="section-head"><span class="badge">02:43 – 06:50</span><h2>🧠 2. Nutrition Recap → Malnutrition Definition</h2><button class="complete-btn" data-complete="nutrition-recap">Mark revised</button></div>
+  
+
+<figure class="image-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nutrition-pyramid.jpg?width=720" alt="Nutrition pyramid visual showing groups of foods for balanced nutrition" loading="eager" fetchpriority="high" decoding="async">
+  <figcaption>Image: Wikimedia Commons, <em>Nutrition-pyramid.jpg</em>, CC BY 3.0. Visual use only; written content follows transcript.</figcaption>
+</figure>
+<div class="card"><h3>पहले Nutrition samjho, phir Malnutrition samjho</h3><p>Teacher ne pehle previous lectures se <strong>Nutrition / पोषण</strong> recap karaya. पोषक पदार्थ ya <strong>Nutrients</strong> woh पदार्थ hain jo body ke liye necessary hote hain.</p>
+<ul><li>Body ki <strong>शारीरिक वृद्धि</strong> ke liye.</li><li>Body ko <strong>ऊर्जावान</strong> rakhne ke liye.</li><li>Body mein toot-phoot ho to <strong>repair / मरम्मत</strong> ke liye.</li><li>Jo body ko पोषित kare, wahi पोषक तत्व hai.</li></ul></div>
+<div class="card accent"><h3>7 पोषक तत्व — Teacher ki list</h3><div class="pill-grid"><span>1. Carbohydrate</span><span>2. Vasa / Fat</span><span>3. Protein</span><span>4. Vitamin</span><span>5. Water / Jal</span><span>6. Minerals / Khanij</span><span>7. Fibre / Reshe</span></div></div>
+<div class="card"><h3>Nutrient-wise teacher examples</h3><ul>
+<li><strong>Carbohydrate</strong>: त्वरित ऊर्जा deta hai. Agar teacher khana na khaye to energy nahi milegi, padha nahi payenge, bed par pad jayenge — ye class analogy diya.</li>
+<li><strong>Protein</strong>: body growth aur repair ke liye zaroori.</li>
+<li><strong>Vasa / Fat</strong>: संचित ऊर्जा; fat ki kami se body patli-dubli, सिकुड़ी aur skin dry ho sakti hai.</li>
+<li><strong>Vitamins</strong>: रोग प्रतिरोधक क्षमता se related. Teacher ne Vitamin C, Vitamin D, Vitamin B12 tablets ka example diya.</li>
+<li>Food mein ye nutrients sufficient quantity mein hone chahiye; kisi ek ki kami <strong>deficit</strong> banati hai.</li>
+</ul></div>
+<div class="definition"><h3>Definition — कुपोषण / Malnutrition</h3><p>शरीर को पोषक तत्वों की पूर्ति के लिए भोज्य पदार्थों की आवश्यकता होती है. In पोषक तत्वों ka पर्याप्त मात्रा mein उपस्थित na hona hi <strong>कुपोषण / Malnutrition</strong> कहलाता hai.</p></div>
+<div class="link-story"><h3>🔗 Link Story — 7 Nutrients yaad karo</h3><p><strong>Carb</strong> ne energy wali torch jalai, <strong>Fat</strong> ne battery store ki, <strong>Protein</strong> ne body ki दीवार repair ki, <strong>Vitamin</strong> ne shield pakdi, <strong>Water</strong> ne sabko flow diya, <strong>Mineral</strong> ne machine ke screws tight kiye, aur <strong>Fibre</strong> ne system ko clean road de diya.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Carbohydrate ka main kaam?</button><p class="answer">त्वरित ऊर्जा देना.</p><button class="reveal">Q: Protein body mein kya karta hai?</button><p class="answer">Growth, cell formation, repair / मरम्मत.</p><button class="reveal">Q: Malnutrition ka core meaning?</button><p class="answer">Necessary nutrients ka पर्याप्त मात्रा mein na milna.</p></div>
+
+</section>
+
+<section class="topic" id="types" data-topic>
+  <div class="section-head"><span class="badge">06:58 – 08:53</span><h2>⚖️ 3. कुपोषण ke 2 Types: अल्प पोषण aur अति पोषण</h2><button class="complete-btn" data-complete="types">Mark revised</button></div>
+  
+<div class="comparison-wrap"><table><thead><tr><th>Type</th><th>English</th><th>Teacher Explanation</th><th>Examples in class</th></tr></thead><tbody>
+<tr><td>अल्प पोषण</td><td>Under-nutrition</td><td>Food mein 7 nutrients ki कमी.</td><td>भुखमरी / Starvation, कमजोरी, कम वजन.</td></tr>
+<tr><td>अति पोषण</td><td>Over-nutrition</td><td>Food/nutrients bahut ज्यादा ho jana.</td><td>मोटापा, मधुमेह, रक्त संबंधी विकार.</td></tr>
+</tbody></table></div>
+<div class="card"><h3>Teacher ka simple example</h3><p>Agar protein ya fat wali cheezen bahut zyada khani shuru kar di — jaise <strong>ghee, makkhan, malai</strong> — to body mein charbi badh sakti hai. Is situation ko teacher ne <strong>over-nutrition</strong> bola.</p></div>
+<div class="exam-hot"><h3>🔥 Exam Hot</h3><p>Kuposhण sirf कमी nahi; teacher ne बताया ki deficiency aur excess dono ke base par kुपोषण ko समझना hai: <strong>अल्प पोषण + अति पोषण</strong>.</p></div>
+<div class="link-story"><h3>🔗 Link Story — Under vs Over</h3><p>Ek plate bilkul खाली thi — ye <strong>Under-nutrition</strong>. Dusri plate itni भर गई ki शरीर par charbi chadh gayi — ye <strong>Over-nutrition</strong>. Dono extremes = कुपोषण.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Under-nutrition ka Hindi term?</button><p class="answer">अल्प पोषण.</p><button class="reveal">Q: Over-nutrition se kaun-se examples diye?</button><p class="answer">मोटापा, मधुमेह, रक्त संबंधी विकार.</p></div>
+
+</section>
+
+<section class="topic" id="unicef-who" data-topic>
+  <div class="section-head"><span class="badge">08:59 – 11:25</span><h2>📊 4. UNICEF + WHO Criteria: Nata Pan, Nirbalta, Kam Wajan</h2><button class="complete-btn" data-complete="unicef-who">Mark revised</button></div>
+  
+<div class="card"><h3>Teacher ne UNICEF aur WHO ka point bataya</h3><p>UNICEF aur <strong>WHO / World Health Organization</strong> ne malnutrition ko teen tareekon se define/identify karne ki baat teacher ne batayi:</p><div class="stepper"><div><b>1</b><span>नाटा पन / Stunting</span></div><div><b>2</b><span>निर्बलता / Weakness</span></div><div><b>3</b><span>कम वजन / Low weight</span></div></div></div>
+<div class="card"><h3>Teacher explanation</h3><ul><li>नाटा पन bhi कुपोषण ke under aa sakta hai.</li><li>निर्बलता ka matlab: energy/बल ki कमी; body work karne layak kam ho jati hai.</li><li>कम वजन: under-nutrition ki wajah se body weight kam hota hai.</li><li>Teacher ne fat ka example diya: “10-10 roti khane ke baad bhi body mein lag nahi raha” — matlab food stored energy/fat ke रूप mein जमा nahi ho raha.</li><li>Teacher ne kaha: tension/vikar chhodo, jo kha rahe ho use मन se khao — body mein lagega.</li></ul></div>
+<div class="exam-hot"><h3>🔥 Exam Hot</h3><p>UNICEF + WHO ke malnutrition indicators: <strong>नाटा पन, निर्बलता, कम वजन</strong>.</p></div>
+<div class="link-story"><h3>🔗 Link Story — 3 Indicators</h3><p>Ek बच्चा pehle <strong>नाटा</strong> dikhा, phir सीढ़ी चढ़ते समय <strong>निर्बल</strong> महसूस हुआ, aur weighing machine par gaya to <strong>कम वजन</strong> nikla — teen signal ek hi chain: malnutrition.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: WHO ka Hindi meaning class mein kya bola gaya?</button><p class="answer">विश्व स्वास्थ्य संगठन.</p><button class="reveal">Q: UNICEF-WHO ke 3 indicators?</button><p class="answer">नाटा पन, निर्बलता, कम वजन.</p></div>
+
+</section>
+
+<section class="topic" id="constitution" data-topic>
+  <div class="section-head"><span class="badge">11:28 – 15:14</span><h2>📜 5. भारतीय संविधान mein पोषण: Article 21 aur Article 47</h2><button class="complete-btn" data-complete="constitution">Mark revised</button></div>
+  
+<div class="two-col"><div class="card article"><h3>Article 21</h3><p><strong>जीवन और निजी स्वतंत्रता / जीवन निर्वाह</strong> se related.</p><ul><li>Teacher ne ise मौलिक अधिकार side se explain kiya.</li><li>Life, decision, personal liberty, “accha jeevan” ke context mein bataya.</li><li>Teacher ne bola: पोषित होना bhi hamara अधिकार/स्वतंत्रता ke रूप mein samjha ja sakta hai.</li></ul></div><div class="card article"><h3>Article 47</h3><p><strong>नीति निर्देशक तत्व / DPSP</strong> mein आता hai.</p><ul><li>State ke पोषाहार स्तर ko ऊँचा karna.</li><li>Sabko पोषण mile, is direction mein state responsibility.</li><li>DPSP ko maanna ya na maanna state ki baat hai, lekin concept important hai.</li></ul></div></div>
+<div class="comparison-wrap"><table><thead><tr><th>Point</th><th>Article 21</th><th>Article 47</th></tr></thead><tbody><tr><td>Category</td><td>मौलिक अधिकार side</td><td>DPSP / नीति निर्देशक तत्व</td></tr><tr><td>Core idea</td><td>Life + personal liberty / जीवन निर्वाह</td><td>Nutrition level improve karna</td></tr><tr><td>Teacher memory point</td><td>पोषित होना अधिकार hai</td><td>राज्य में पोषाहार स्तर ऊँचा ho</td></tr></tbody></table></div>
+<div class="exam-hot"><h3>🔥 Exam Hot</h3><p>संविधान mein कुपोषण/पोषण se related teacher ne <strong>Article 21</strong> aur <strong>Article 47</strong> yaad rakhne ko bola.</p></div>
+<div class="link-story"><h3>🔗 Link Story — 21 + 47</h3><p><strong>21</strong> saal ka student bolta hai: “Mera jeevan aur freedom hai.” Phir <strong>47</strong> number ki state bus aati hai aur bolti hai: “Main state nutrition level upar le jaungi.”</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Constitution ke kaun-se 2 articles yaad rakhne hain?</button><p class="answer">Article 21 aur Article 47.</p><button class="reveal">Q: Article 47 kis part ke context mein bataya?</button><p class="answer">DPSP / नीति निर्देशक तत्व.</p></div>
+
+</section>
+
+<section class="topic" id="carbs" data-topic>
+  <div class="section-head"><span class="badge">15:14 – 19:34</span><h2>⚡ 6. Carbohydrate ke कारण कुपोषण</h2><button class="complete-btn" data-complete="carbs">Mark revised</button></div>
+  
+<div class="card"><h3>Vitamin deficiency recap bhi yahin aaya</h3><p>Teacher ne pehle previous lecture ke deficiency diseases yaad dilaye:</p><div class="pill-grid"><span>Vitamin A → रतौंधी</span><span>Vitamin B → बेरी-बेरी</span><span>Vitamin C → Scurvy</span><span>Vitamin D → Rickets</span><span>Vitamin K → रक्त का थक्का न बनना</span><span>Fat कमी → dry skin + stored energy कमी</span><span>Over fat → मोटापा + heart disease</span></div><p class="muted">Note: Transcript mein anemia ka reference bhi aaya; teacher ka focus yahan deficiency diseases ko malnutrition se जोड़ना tha.</p></div>
+<div class="card"><h3>Carbohydrate ka काम</h3><ul><li>Main work: <strong>त्वरित ऊर्जा देना</strong>.</li><li>Carbohydrate nahi khayenge → <strong>deficiency of energy</strong>.</li><li>Teacher analogy: agar teacher khana khaa kar na padhayein to low feel hoga; energy kam hogi.</li><li>Syllabus mein “पोषण, आहार, पोषक तत्व, कुपोषण” ek chain hai — previous lecture ko yahan जोड़ना hai.</li></ul></div>
+<div class="exam-hot"><h3>🔥 Exam Hot — Carbohydrate-related disease names</h3><div class="pill-grid"><span>Diabetes / मधुमेह</span><span>Galactosemia</span><span>Ketosis</span><span>Hunter Syndrome</span><span>Hurler Syndrome</span><span>Pompe Disease</span></div><p>Teacher ne bola: abhi sirf names yaad karo; detail आनुवंशिक रोगों mein aage पढ़ाई जाएगी.</p></div>
+<div class="link-story"><h3>🔗 Link Story — Carb disease names</h3><p><strong>Diabetes</strong> wala patient <strong>Galactosemia</strong> ki galaxy mein gaya, wahan <strong>Ketosis</strong> ki key mili, ek <strong>Hunter</strong> ne <strong>Hurler</strong> ko pakda, aur dono <strong>Pompe</strong> pump ke paas ruk gaye.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Carbohydrate deficiency ka simple meaning?</button><p class="answer">Energy ki कमी.</p><button class="reveal">Q: Carbohydrate topic mein teacher ne kaun-se disease names list kiye?</button><p class="answer">Diabetes, Galactosemia, Ketosis, Hunter Syndrome, Hurler Syndrome, Pompe Disease.</p></div>
+
+</section>
+
+<section class="topic" id="protein-functions" data-topic>
+  <div class="section-head"><span class="badge">19:37 – 26:04</span><h2>💪 7. Protein: Growth, Cell Formation, Repair + Excess Protein</h2><button class="complete-btn" data-complete="protein-functions">Mark revised</button></div>
+  
+<div class="card"><h3>Protein ka main काम</h3><ul><li>Protein body ki <strong>शारीरिक वृद्धि</strong> karta hai.</li><li>Body chhote se bada hota hai; body cells se बनी hai.</li><li>Protein <strong>कोशिकाओं का निर्माण</strong> aur कोशिकाओं ki वृद्धि mein सहायक hai.</li><li>Cells → tissues/ऊतक → organs/अंग → organ systems/अंग तंत्र → पूरा शरीर.</li><li>Body mein injury/toot-phoot ho to protein repair / मरम्मत mein काम करता hai.</li></ul></div>
+<div class="card"><h3>Protein कमी ka result</h3><ul><li>Growth ruk sakti hai.</li><li>Recovery rate down ho sakta hai.</li><li>Body ki टूट-फूट ka repair slow ho sakta hai.</li><li>Muscle formation mein protein ki अहम भूमिका hai.</li></ul></div>
+<div class="exam-hot"><h3>🔥 Important — Protein अधिकता</h3><p>Teacher ne specifically note karaya: agar body mein protein ki अधिकता ho jaye to <strong>पाचन तंत्र संबंधित रोग</strong> aur <strong>वृक / kidney-related कार्यों</strong> par प्रभाव pad sakta hai.</p></div>
+<div class="flow-note">📌 Flow Note: 23:41 – 25:52 ke beech class mein PDF, Telegram, MPPSC mains date/protest aur students ke हित par off-topic discussion aaya. Malnutrition content yahan pause hua, phir protein excess point se class वापस चली.</div>
+<div class="link-story"><h3>🔗 Link Story — Protein chain</h3><p>Protein ne ek <strong>cell</strong> banaya, cells milkar <strong>tissue</strong> ban gaye, tissues ne <strong>organ</strong> banaya, organs ne <strong>system</strong> banaya, aur system ne पूरी body ko grow + repair kar diya.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Protein body mein kaun-se 2 major kaam karta hai?</button><p class="answer">Growth/cell formation aur repair.</p><button class="reveal">Q: Protein अधिकता se kin systems par effect bataya?</button><p class="answer">Digestive system aur kidney/vṛk related functions.</p></div>
+
+</section>
+
+<section class="topic" id="kwashiorkor-marasmus" data-topic>
+  <div class="section-head"><span class="badge">26:04 – 35:21</span><h2>👶 8. Protein कमी: Kwashiorkor aur Marasmus</h2><button class="complete-btn" data-complete="kwashiorkor-marasmus">Mark revised</button></div>
+  
+
+<figure class="image-card sensitive">
+  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Starved_girl.jpg?width=680" alt="Educational image of a child affected by severe malnutrition / kwashiorkor" loading="lazy" decoding="async">
+  <figcaption>Image: Wikimedia Commons, <em>Starved girl.jpg</em>, educational malnutrition reference. Sensitive visual; content is used only to support the transcript topic.</figcaption>
+</figure>
+<div class="card"><h3>Teacher ne bola: Questions yahin se bante hain</h3><p>Protein ki कमी se mainly 2 types ka कुपोषण पढ़ना hota hai:</p><div class="pill-grid"><span>Kwashiorkor / क्वाशियोरकर</span><span>Marasmus / मरास्मस</span></div><p>Teacher ne kaha ye diseases बच्चों mein paayi jaati hain, protein ki बहुत कमी se hoti hain, Africa aur India mein milti hain. Madhya Pradesh ke context mein कुपोषण aur शिशु मृत्यु दर ka point bhi आया.</p></div>
+<div class="exam-hot"><h3>🔥 MP Data Point from lecture</h3><p>Teacher ne economic survey se निकला हुआ data bataya: <strong>1000 बच्चों में 40 बच्चे</strong> कुपोषण/पोषण की कमी se मरते hain. Isliye MP syllabus mein कुपोषण important hai.</p></div>
+<div class="card"><h3>Mother nutrition connection</h3><ul><li>Child ko protein mainly <strong>दूध</strong> se milta hai, aur especially <strong>माँ का दूध</strong>.</li><li>Agar mother पोषित nahi hai, to दूध mein protein/पोषण ki कमी ho sakti hai.</li><li>Isliye pehle mother ko पोषण देना जरूरी hai.</li><li>Agar child born healthy hai to kam protein mein bhi zyada survive kar sakta hai; but if birth se ही कुपोषित hai to risk बढ़ता hai.</li></ul></div>
+<div class="comparison-wrap"><table><thead><tr><th>Point</th><th>Kwashiorkor</th><th>Marasmus</th></tr></thead><tbody>
+<tr><td>Teacher memory clue</td><td>सूजन, पेट बड़ा, पैर सूजन</td><td>बूढ़ा जैसा, पतला-दुबला, skin लटकी</td></tr>
+<tr><td>Age clue in lecture</td><td>6 महीने से 3 वर्ष; याद रखने को डेढ़ वर्ष से बड़ा</td><td>6 महीने से 1 वर्ष; याद रखने को डेढ़ वर्ष से कम</td></tr>
+<tr><td>Main deficiency</td><td>Protein कमी</td><td>Protein + energy/calorie/carbohydrate कमी</td></tr>
+<tr><td>Common signs</td><td>Growth rukna, swelling, hair/skin dryness, कांति हीनता</td><td>Growth rukna, wrinkles, dry/thin body, अत्यधिक कमी, fat नहीं बनना</td></tr>
+<tr><td>Teacher prevention point</td><td>Protein-yukt food / protein milk</td><td>Protein + energy support</td></tr>
+</tbody></table></div>
+<div class="card"><h3>Photo observation in lecture</h3><ul><li>Kwashiorkor photo mein teacher ne swelling catch karaya: पेट फूलना, पैर सूजन.</li><li>Marasmus photo mein teacher ne बूढ़े व्यक्ति जैसा clue diya: झुर्रियां, skin लटकना, पतला-दुबला.</li><li>Dono mein growth rukti hai because protein कमी hai.</li><li>Teacher ne bola screenshot le lo taaki लंबे समय तक याद रहे.</li></ul></div>
+<div class="link-story"><h3>🔗 Link Story — Kwashiorkor vs Marasmus</h3><p><strong>Kwashiorkor</strong> ka “K” = <strong>Katora jaisa फूला पेट</strong>. <strong>Marasmus</strong> ka “M” = <strong>मुरझाया, बूढ़ा, सूखा बच्चा</strong>. K = swelling, M = सूखापन.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Kwashiorkor ka visual clue?</button><p class="answer">सूजन, पेट बड़ा, पैरों में सूजन.</p><button class="reveal">Q: Marasmus mein kya extra कमी hoti hai?</button><p class="answer">Protein ke saath energy/calorie/carbohydrate ki कमी.</p><button class="reveal">Q: Mother nutrition ka relation?</button><p class="answer">Mother पोषित nahi hogi to breast milk mein पोषण/protein कमी ho sakti hai; child कुपोषित ho sakta hai.</p></div>
+
+</section>
+
+<section class="topic" id="fat" data-topic>
+  <div class="section-head"><span class="badge">35:21 – 43:48</span><h2>🫀 9. Vasa / Fat ke कारण कुपोषण aur Atherosclerosis</h2><button class="complete-btn" data-complete="fat">Mark revised</button></div>
+  
+
+<figure class="image-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Atherosclerosis.jpg?width=720" alt="Medical illustration of atherosclerosis showing fatty plaque/blockage inside a blood vessel" loading="lazy" decoding="async">
+  <figcaption>Image: Wikimedia Commons / Blausen.com staff courtesy of Oregon State University, <em>Atherosclerosis.jpg</em>, CC BY-SA 2.0.</figcaption>
+</figure>
+<div class="card"><h3>Vasa ka काम</h3><ul><li>Vasa body mein <strong>संचित ऊर्जा</strong> ka काम karti hai.</li><li>Ye त्वचा ke नीचे आकर बैठती hai.</li><li>Thoda oil release hota hai taaki skin dry na ho.</li><li>Fat कमी → skin dry / रूखापन, body patli, muscles निर्बल.</li></ul></div>
+<div class="card"><h3>Fat excess: teacher ke examples</h3><ul><li>Ghee, makkhan, malai, dalda, oil-rich food, तला-गला food zyada khane se vasa जमा hoti hai.</li><li>Charbi badh sakti hai: पेट, गाल, गर्दन, side fat — teacher ne visual example diya.</li><li>Fat excess se <strong>heart-related diseases</strong>, blockage, circulation problem ho sakti hai.</li><li>Kai baar person bahar se normal दिखता hai, but andar blood vessels/circulation mein blockage ho sakta hai.</li></ul></div>
+<div class="definition"><h3>Atherosclerosis — Lecture meaning</h3><p>Teacher ne बताया ki saturated/animal fat ka excessive सेवन rakt vahiniyon / blood vessels ki inner layer par vasa जमा kar sakta hai. Isse blood flow properly आगे नहीं बढ़ता. Is disease ka naam class mein <strong>Atherosclerosis</strong> bataya gaya.</p></div>
+<div class="comparison-wrap"><table><thead><tr><th>Fat point</th><th>कमी</th><th>अधिकता</th></tr></thead><tbody><tr><td>Body look</td><td>Patla, dry, रूखा</td><td>मोटापा/charbi</td></tr><tr><td>Energy</td><td>Stored energy कमी</td><td>Stored fat excessive</td></tr><tr><td>Risk mentioned</td><td>Muscles निर्बल, skin dry</td><td>Heart disease, blockage, atherosclerosis</td></tr></tbody></table></div>
+<div class="card warning"><h3>Teacher ke diet-advice notes from transcript</h3><ul><li>Maida aur सफेद शक्कर zyada नुकसानदायक bataye.</li><li>Empty stomach sugar/oily/street food na khane ki advice di.</li><li>Teacher ne bola: pehle salad/normal food, thoda gap, phir agar chowmein/burger khana ho to damage kam hoga.</li><li>Meal ke turant baad water na peene ki advice di; body temperature <strong>37°C</strong> ka point bataya.</li><li>Subah warm water peene ka teacher advice aaya, blockage clean hone wali explanation ke saath.</li><li>White poison examples: sugar, salt, refined oil type points.</li></ul><p class="muted">Ye section teacher ke transcript-based classroom notes hain; page extra medical advice add nahi kar raha.</p></div>
+<div class="link-story"><h3>🔗 Link Story — Fat blockage flow</h3><p>Oil wali cheez blood-road par रुक गई, fat-plaque ban gaya, road narrow हुई, blood-flow slow हुआ, aur heart ne signal diya: “Blockage!” — isi chain ko teacher ne atherosclerosis se joda.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Vasa ka main काम?</button><p class="answer">संचित ऊर्जा.</p><button class="reveal">Q: Fat कमी se skin kaise hoti hai?</button><p class="answer">रूखी / dry.</p><button class="reveal">Q: Blood vessel mein fat जमा hone wali disease ka naam?</button><p class="answer">Atherosclerosis.</p></div>
+
+</section>
+
+<section class="topic" id="prevention" data-topic>
+  <div class="section-head"><span class="badge">43:48 – 48:56</span><h2>🥗 10. कुपोषण se बचाव: Balanced Indian Food + Screening</h2><button class="complete-btn" data-complete="prevention">Mark revised</button></div>
+  
+
+<figure class="image-card">
+  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Indian_Thali.jpg?width=720" alt="Indian thali meal with dal, rice, roti and vegetables as balanced Indian food example" loading="lazy" decoding="async">
+  <figcaption>Image: Wikimedia Commons, Paridh, <em>Indian Thali.jpg</em>, CC BY-SA 4.0.</figcaption>
+</figure>
+<div class="card"><h3>Teacher ka simple rule</h3><p>Kuch अलग nahi karna: <strong>time-table सही करो, सही time par खाना खाओ, aur पोषित आहार lo</strong>. Teacher ne Indian food ko world mein best bola kyunki usmein nutrients cover ho jaate hain.</p></div>
+<div class="card accent"><h3>Indian food example: 7 nutrients cover</h3><ul><li><strong>चावल</strong> → Carbohydrate.</li><li><strong>दाल</strong> → Protein.</li><li><strong>सब्जियां</strong> → Vitamins.</li><li><strong>सलाद</strong> → Vitamins.</li><li><strong>पानी</strong> → Water.</li><li>Normal Indian food/roti etc. mein vasa bhi aa jaati hai.</li><li>Teacher ne bola: do time/three time proper खाना khayenge to बहुत बीमारियां nahi hongi.</li></ul></div>
+<div class="card"><h3>Extra food examples from lecture</h3><div class="pill-grid"><span>Soaked chana</span><span>Sprouts</span><span>Moong dal</span><span>Peanuts</span><span>Green chana</span><span>Red chana</span><span>Milk — purity check karke</span></div></div>
+<div class="card"><h3>Nutrient-source list in lecture</h3><ul><li>Bread, rice, potato, starch-rich foods → energy/carbohydrate/calorie.</li><li>Starch = carbohydrate ka polysaccharide form.</li><li>Lactose and calcium/minerals ka point आया.</li><li>Fruits + vegetables → vitamins and minerals.</li><li>Meat, fish, eggs — jo log khate hain, wahan se nutrition.</li><li>Beans/legumes and non-dairy protein sources se bhi body nutrition mil sakta hai.</li></ul></div>
+<div class="exam-hot"><h3>🔥 Prevention point</h3><p>Hospitals mein patients, children, pregnant women, elderly ka malnutrition evaluation hona chahiye. गर्भवती महिलाओं ko adequate nutrition dena most important hai, warna child कुपोषित पैदा ho sakta hai.</p></div>
+<div class="card"><h3>Pregnancy nutrition example</h3><p>Teacher ne ghar ka example diya: jab koi गर्भ धारण karta hai to family fruits, kaju, badam, accha food dena shuru karti hai taaki बच्चा healthy पैदा ho.</p></div>
+<div class="card"><h3>Workout comment</h3><p>Student ne bola workout bhi karna chahiye. Teacher ne agree kiya: daily <strong>10–15 minutes</strong> stretching/exercise se बीमारियां जल्दी नहीं होंगी, plus खान-पान अच्छा rakho.</p></div>
+<div class="link-story"><h3>🔗 Link Story — Indian thali nutrient chain</h3><p>थाली mein <strong>rice</strong> ne energy di, <strong>dal</strong> ne body repair ki, <strong>sabzi-salad</strong> ne vitamin shield di, <strong>water</strong> ne flow banaya, aur <strong>roti/fat</strong> ne stored energy ka backup diya.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Rice se teacher ne kya nutrient link kiya?</button><p class="answer">Carbohydrate.</p><button class="reveal">Q: Dal se?</button><p class="answer">Protein.</p><button class="reveal">Q: Pregnant women ka nutrition kyun important?</button><p class="answer">Unka पोषण child ke पोषण se directly जुड़ता hai; कुपोषित mother se child कुपोषित पैदा ho sakta hai.</p></div>
+
+</section>
+
+<section class="topic" id="mp-schemes" data-topic>
+  <div class="section-head"><span class="badge">48:56 – 50:47</span><h2>🏛️ 11. Madhya Pradesh Government Schemes related to Malnutrition</h2><button class="complete-btn" data-complete="mp-schemes">Mark revised</button></div>
+  
+<div class="card"><h3>Teacher ne schemes ke naam likhwaye</h3><p>MP government ki kuch schemes jo कुपोषण खत्म करने se related batayi gayi:</p><div class="pill-grid"><span>मुख्यमंत्री अन्नपूर्णा योजना</span><span>अटल बालमित्र योजना</span><span>बाल शक्ति योजना</span><span>प्रोजेक्ट मुस्कान</span><span>बालिका समृद्धि योजना</span></div></div>
+<div class="exam-hot"><h3>🔥 Exam Hot</h3><p>Teacher ne bola: योजनाओं ke naam likh lo. Detail yahan nahi, but health policy/programmes topic mein aage aur detail aayegi.</p></div>
+<div class="link-story"><h3>🔗 Link Story — MP schemes yaad karo</h3><p><strong>अन्नपूर्णा</strong> ne खाना दिया, <strong>बालमित्र</strong> bachche ka dost बना, <strong>बाल शक्ति</strong> se बच्चे strong हुए, <strong>मुस्कान</strong> आई, aur <strong>बालिका समृद्धि</strong> se girls ka future bright हुआ.</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: MP ki 5 schemes kaun-si batayi gayi?</button><p class="answer">मुख्यमंत्री अन्नपूर्णा, अटल बालमित्र, बाल शक्ति, प्रोजेक्ट मुस्कान, बालिका समृद्धि.</p></div>
+
+</section>
+
+<section class="topic" id="central-upcoming" data-topic>
+  <div class="section-head"><span class="badge">50:53 – 54:59</span><h2>🏫 12. Central Schemes + Anganwadi + Upcoming Topics</h2><button class="complete-btn" data-complete="central-upcoming">Mark revised</button></div>
+  
+<div class="card"><h3>Central Government / National-side points</h3><ul><li><strong>Mid-Day Meal</strong> school children ko nutrition dene ke liye chalaya gaya.</li><li>Teacher ne misuse ka point casually mention kiya, but purpose nutrition hai.</li><li><strong>Anganwadi centres</strong> ki व्यवस्था: बच्चों ko पोषित karna, vaccination, pregnant women ko nutrition-related material arrange karna.</li><li><strong>राष्ट्रीय पोषण नीति</strong> ka naam आया; teacher ne detail health policy topic mein cover karne ko bola.</li><li>End mein student ne PM Poshan Scheme point bola; teacher ne kaha change kar lenge.</li></ul></div>
+<div class="card"><h3>Upcoming / next flow</h3><ul><li>Health policy aur programmes mein: MP + Central government programmes.</li><li>Communicable diseases / संक्रामक रोग aur prevention.</li><li>Health indicators / स्वास्थ्य सूचक.</li><li>Next class: <strong>Sickle Cell Anemia</strong>.</li><li>Genetic diseases / आनुवंशिक रोग: sirf sickle cell nahi, सारे types detail mein पढ़ने hain.</li><li>Unit 7 ka kaafi part cover ho jayega.</li></ul></div>
+<div class="card"><h3>Closing advice in lecture</h3><p>Teacher ne final mein PDF/Telegram reminder, healthy रहने का प्रयास, जबरदस्त पढ़ाई, mind stable रखने, aur बाधाओं se दूर रहने ka advice diya. Class 10 PM par milne ki बात bhi हुई.</p></div>
+<div class="exam-hot"><h3>🔥 Exam Hot</h3><p>Central-side key names from this transcript: <strong>Mid-Day Meal / PM Poshan context</strong>, <strong>Anganwadi centres</strong>, <strong>National Nutrition Policy</strong>.</p></div>
+<div class="link-story"><h3>🔗 Link Story — Central flow</h3><p>School mein <strong>Mid-Day Meal</strong> mila, bachcha <strong>Anganwadi</strong> gaya, wahan vaccination + nutrition mila, phir teacher ne bola: “National Nutrition Policy aur health programmes detail mein aage padhenge.”</p></div>
+<div class="quick-recall"><h3>Quick Recall</h3><button class="reveal">Q: Mid-Day Meal ka purpose class mein kya bataya?</button><p class="answer">School children ko पोषण देना.</p><button class="reveal">Q: Anganwadi ka main kaam?</button><p class="answer">बच्चों ko पोषित करना, vaccination, pregnant women ko nutrition material arrange karna.</p><button class="reveal">Q: Next class topic?</button><p class="answer">Sickle Cell Anemia + genetic diseases.</p></div>
+
+</section>
+
+<section id="full-forms" class="master-section"><h2>🔤 Master Full Forms / Terms</h2><div class="comparison-wrap"><table><thead><tr><th>Term</th><th>English / Expansion</th><th>Hindi / Class meaning</th></tr></thead><tbody>
+<tr><td>WHO</td><td>World Health Organization</td><td>विश्व स्वास्थ्य संगठन</td></tr>
+<tr><td>UNICEF</td><td>Transcript mein acronym use hua; full form class mein expand nahi hua.</td><td>UNICEF + WHO ne malnutrition indicators bataye.</td></tr>
+<tr><td>MPPSC</td><td>Transcript mein MPPSC Pre 2024 bola gaya; full form class mein expand nahi hua.</td><td>Target exam context.</td></tr>
+<tr><td>DPSP</td><td>Directive Principles of State Policy</td><td>नीति निर्देशक तत्व; Article 47 context.</td></tr>
+<tr><td>Malnutrition</td><td>कुपोषण</td><td>Necessary nutrients ka पर्याप्त मात्रा mein na milna / imbalance.</td></tr>
+<tr><td>Under-nutrition</td><td>अल्प पोषण</td><td>पोषक तत्वों की कमी.</td></tr>
+<tr><td>Over-nutrition</td><td>अति पोषण</td><td>पोषक तत्वों / food ka excess.</td></tr>
+</tbody></table></div></section>
+
+<section id="hot-facts" class="master-section"><h2>🔥 Master Exam Hot Facts</h2><div class="checklist hot-list">
+<label><input type="checkbox"> Malnutrition = पोषक तत्वों ka पर्याप्त मात्रा mein na hona.</label>
+<label><input type="checkbox"> 7 nutrients: carbohydrate, fat, protein, vitamin, water, minerals, fibre.</label>
+<label><input type="checkbox"> Two types: अल्प पोषण + अति पोषण.</label>
+<label><input type="checkbox"> UNICEF + WHO indicators: नाटा पन, निर्बलता, कम वजन.</label>
+<label><input type="checkbox"> Constitution: Article 21 + Article 47.</label>
+<label><input type="checkbox"> Article 21 = life/personal liberty; Article 47 = nutrition level in DPSP.</label>
+<label><input type="checkbox"> Carbohydrate deficiency = energy deficiency; disease names listed: diabetes, galactosemia, ketosis, Hunter, Hurler, Pompe.</label>
+<label><input type="checkbox"> Protein = growth, cell formation, repair.</label>
+<label><input type="checkbox"> Protein excess = digestive system + kidney/vṛk functions affected.</label>
+<label><input type="checkbox"> Protein malnutrition in children: Kwashiorkor + Marasmus.</label>
+<label><input type="checkbox"> Kwashiorkor clue: swelling, enlarged belly, dry hair/skin.</label>
+<label><input type="checkbox"> Marasmus clue: thin, old-looking, wrinkles, protein + energy deficiency.</label>
+<label><input type="checkbox"> MP data in lecture: 1000 बच्चों में 40 deaths from nutrition deficiency/malnutrition context.</label>
+<label><input type="checkbox"> Fat = stored energy; fat deficiency = dry skin + weakness; excess = obesity/heart disease.</label>
+<label><input type="checkbox"> Atherosclerosis = fat deposit/blockage in blood vessels.</label>
+<label><input type="checkbox"> Prevention: balanced Indian diet, proper timing, screening of children/pregnant women/elderly, exercise 10–15 min.</label>
+<label><input type="checkbox"> MP schemes: CM Annapurna, Atal Balmitra, Bal Shakti, Project Muskan, Balika Samriddhi.</label>
+<label><input type="checkbox"> Central: Mid-Day Meal/PM Poshan context, Anganwadi, National Nutrition Policy.</label>
+</div></section>
+
+<section id="master-checklist" class="master-section"><h2>✅ Master Revision Checklist</h2><p class="muted">Tick karte jao. Progress browser mein save rahega.</p><div id="progressText" class="progress-text">0% complete</div><div class="checklist">
+<label><input type="checkbox" data-save="c1"> I can define Nutrition and Malnutrition.</label>
+<label><input type="checkbox" data-save="c2"> I can list all 7 nutrients in order.</label>
+<label><input type="checkbox" data-save="c3"> I know under-nutrition vs over-nutrition examples.</label>
+<label><input type="checkbox" data-save="c4"> I remember UNICEF-WHO 3 signs.</label>
+<label><input type="checkbox" data-save="c5"> I remember Article 21 and Article 47.</label>
+<label><input type="checkbox" data-save="c6"> I can connect carbohydrate to quick energy.</label>
+<label><input type="checkbox" data-save="c7"> I can recall carbohydrate disease names from lecture.</label>
+<label><input type="checkbox" data-save="c8"> I can explain protein growth/repair/cell chain.</label>
+<label><input type="checkbox" data-save="c9"> I can distinguish Kwashiorkor and Marasmus.</label>
+<label><input type="checkbox" data-save="c10"> I can explain mother nutrition → child nutrition link.</label>
+<label><input type="checkbox" data-save="c11"> I can explain fat deficiency and excess.</label>
+<label><input type="checkbox" data-save="c12"> I can define atherosclerosis as taught.</label>
+<label><input type="checkbox" data-save="c13"> I can list prevention foods and screening groups.</label>
+<label><input type="checkbox" data-save="c14"> I can list MP government schemes.</label>
+<label><input type="checkbox" data-save="c15"> I can list central scheme/service names and upcoming topics.</label>
+</div></section>
+
+<section id="raw-transcript" class="master-section"><h2>🧾 Full Raw Transcript Flow Blocks</h2><p class="muted">Ye section transcript ke हर minute-flow ko preserve karta hai. Revision cards upar hain; raw flow yahan collapsible form mein रखा गया hai taaki कोई segment silently miss na ho.</p>
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 00:00 – 04:59</summary>
+      <pre>00:13 हेलो नमस्कार जय हिंद साथियों स्वागत है
+00:16 आप सभी का श्री रमा अकेडमी में साथियों आप
+00:19 लोगों ने थंबनेल देखा कि आज हमारा जो एक
+00:23 महत्त्वपूर्ण टॉपिक कुपोषण पर हम लोग
+00:25 चर्चा करेंगे कुपोषण क्या है इसको इंग्लिश
+00:29 में माल न्यूट्रिशन बोलते हैं इस पर हम
+00:32 लोग का पूरा विस्तार से आज का सेशन होने
+00:34 वाला है तो सभी लोग फटाफट जुड़ जाइए आज के
+00:37 इस लाइव और शानदार सेशन में हम लोग
+00:40 एमपीपीएससी प्री 2024 को टारगेट किए हुए
+00:43 हैं उसका जो यूनिट नंबर सेवन है इसे हम
+00:46 लोग डेली 2 पीएम पर एक क्लास लेते हैं और
+00:50 सिलेबस के अकॉर्डिंग हम लोग टॉपिक वाइज हम
+00:53 लोग यहां पर क्लासेस कर रहे हैं यह हमारा
+00:56 लेक्चर नंबर 12 है इससे पहले हमने 11
+00:59 लेक्चर ले रखे हैं जिसके अंतर्गत नया
+01:02 सिलेबस नया तरीका यह आप लोग समझ रहे हो
+01:04 जिसके अंतर्गत हम लोगों ने विज्ञान की
+01:07 प्रमुख शाखाओं का प्रारंभिक ज्ञान पढ़
+01:09 लिया है कुछ विद्यार्थी कमेंट कर रहे हैं
+01:12 कि सर उनको प्लेलिस्ट नहीं मिल रही है
+01:14 उनको वीडियोस नहीं मिल रहे हैं वह भी मैं
+01:16 आपको सिखा दूंगा कुछ नहीं करना श्री रमा
+01:18 अकेडमी का
+01:30 मैं जितनी भी क्लासेस ले रहा हूं लाइव में
+01:32 आप वीडियोस में जाकर के देखोगे तो नहीं
+01:34 मिलेगा लाइव लाइव वाला सेक्शन या फिर
+01:36 प्लेलिस्ट वाले सेक्शन में आपको देखना
+01:38 होगा हम लोग आज कुपोषण पर चर्चा करेंगे हम
+01:41 लोगों ने पर्यावरणीय कारक पारिस्थितिकी
+01:43 तंत्र और जैव विविधता हम लोग चर्चा कर
+01:45 चुके हैं यहां पर हम लोगों ने लास्ट सेशन
+01:49 में अ पोषण आहार पोषक तत्त्वों को कंप्लीट
+01:52 किया इसमें लगभग तीन लेक्चर लगे हमको इन
+01:56 सभी टॉपिक्स में आज हम लोग कुपोषण पर
+01:58 चर्चा करेंगे इसके पीछे की सारी बैक
+01:60 ग्राउंड समझेंगे तो सभी लोग जुड़ जाइए
+02:03 रूपेंद्र गुड आफ्टरनून गुड आफ्टरनून
+02:05 फैक्ट्स इन हिंदी जय हिंद बेटा सभी लोगों
+02:08 को गुड आफ्टरनून और सभी लोगों का स्वागत
+02:10 है सभी लोगों का स्वागत है शानदार सेशन
+02:13 में तो हम लोग बिना किसी देरी के कुपोषण
+02:16 शुरू करते हैं कुपोषण क्या है उससे पहले
+02:19 मैं आपको थोड़ा समझा
+02:21 दूं सभी लोग जुड़ जाइए और इस सेशन को
+02:24 ज्यादा से ज्यादा ग्रुप्स में और अपने
+02:26 दोस्तों के साथ साझा कर दीजिए और लाइक कर
+02:30 दीजिए ताकि अ वीडियो का जो रीच है वो अन्य
+02:34 विद्यार्थियों तक भी पहुंच सके बस इतना आप
+02:37 लोग कर दीजिए एस जी के गुड आफ्टरनून चलिए
+02:41 शुरू करते हैं हमारा आज का
+02:43 सेशन कुपोषण माल न्यूट्रिशन क्या होता है
+02:47 समझिए सबसे पहले हमको समझना क्या है
+02:49 न्यूट्रिशन क्या होता है पोषण क्या होता
+02:51 है जो कि मैंने तीन लेक्चर में कंप्लीट
+02:54 कराया है पोषण आहार पोषक तत्व ये मैंने
+02:57 कंप्लीट कराया है है ना आप लोगों ने अगर
+02:59 नहीं देखा है तो उसे जाकर के देखिए थोड़ा
+03:02 सा मैं समझा दूं कि सर पोषक पदार्थ पोषक
+03:07 तत्व जो होते हैं न्यूट्रिएंट्स जिसको
+03:10 बोलते हैं हम लोग न्यूट्रिएंट्स सर वे
+03:14 पदार्थ होते हैं जो शरीर के लिए आवश्यक
+03:16 होते हैं हमारे शरीर के लिए आवश्यक किस
+03:20 रूप में तो हमारे शारीरिक वृद्धि के लिए
+03:23 हमारा शरीर क्या करें वृद्धि करे हमारा
+03:26 शरीर अ ऊर्जावान रहे उसके लिए ऊर्जा की
+03:30 जरूरत है उसके लिए हमको न्यूट्रिशन चाहिए
+03:33 हमारे शरीर में टूट फूट होगा उसको रिजवान
+03:36 करना मरम्मत का कार्य करना इसके लिए जरूरी
+03:39 है तो सर हमारे शरीर की वृद्धि शारीरिक
+03:43 टूट फूट हमारे शरीर के जो भी कारक हैं
+03:47 हमारे शरीर के लिए जो हमारे शरीर को क्या
+03:50 कर दे पोषित कर दे वह सब के सब पोषक तत्व
+03:54 होते हैं और पोषक तत्त्वों को मैंने सात
+03:56 प्रकार में समझाया था जो हमारे पोषक तत्व
+03:59 थे मैंने सात प्रकार समझाया था कि पोषक
+04:02 तत्व जो होते हैं वह सात प्रकार के होते
+04:04 हैं नंबर वन कार्बोहाइड्रेट नंबर टू
+04:09 वसा नंबर
+04:12 थ्री
+04:15 प्रोटीन
+04:17 वसा
+04:20 विटामिन यह सारे के सारे पोषक तत्व मैंने
+04:23 आपको पढ़ाए हैं पिछले लेक्चर में और फिर
+04:26 आपका जल और फिर आपका खनिज
+04:30 और फिर आपका रेसे जिसको फाइबर्स बोलते हैं
+04:34 फाइबर लिख देता हूं फाइबर यह सारे पोषक
+04:39 तत्व हमारे शरीर को आवश्यक हैं क्यों
+04:41 आवश्यक है अगर कार्बोहाइड्रेट मिलता है
+04:44 हमको तो हमें ऊर्जा मिलती है ऊर्जा मिलती
+04:48 है त्वरित ऊर्जा मिलती है अगर मैं खाना
+04:50 खाना छोड़ दूं तो मुझे कार्बोहाइड्रेट
+04:52 नहीं मिलेगा मुझे एनर्जी नहीं मिलेगी मैं
+04:54 पढ़ा नहीं पाऊंगा मैं पढ़ जाऊंगा बिस्तर
+04:55 में हमको पोषण चाहिए जब हमको
+04:58 कार्बोहाइड्रेट की कमी होगी तो बीमारियां</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 05:00 – 09:59</summary>
+      <pre>05:00 होंगी उसी को कुपोषण बोल रहे हैं कुपोषण
+05:02 और कुछ नहीं है जो हमने पिछले तीन लेक्चर
+05:05 में पढ़ा है उसका हमारे शरीर में ना होना
+05:08 कुपोषण है हमने कार्बोहाइड्रेट पढ़ा शरीर
+05:12 में कार्बोहाइड्रेट ना पाया जाना या उसकी
+05:15 कमी होना डेफिसिट
+05:17 प्रोटीन की कमी हो जाए हमारे शरीर में तो
+05:19 हमारे शरीर की वृद्धि रुक जाएगी हमारा
+05:22 शरीर विकास नहीं कर पाएगा शरीर की वृद्धि
+05:25 रुक जाएगी टूट फूट अगर होगा शरीर में तो
+05:28 वह रिजवान नहीं होगा उसमें मरम्मत का
+05:30 कार्य नहीं हो पाएगा अगर वसा की कमी हो गई
+05:33 तो हमारे शरीर में संचित ऊर्जा की कमी हो
+05:36 जाएगी और हमारा शरीर ज्यादा दिन सरवाइव
+05:38 नहीं करेगा पतला दुबला सिकुड़ा और स्किन
+05:41 रूखी होने लगेगी अगर विटामिन की कमी होगी
+05:43 तो रोग प्रतिरोधक क्षमता हमारी कम हो
+05:45 जाएगी मींस ये सारे के सारे पोषक तत्व
+05:48 हमारे शरीर को आवश्यक हैं विटामिन भी हमको
+05:51 आवश्यक है मल्टीविटामिन की गोलियां इसीलिए
+05:54 खाते हैं क्योंकि हमको किसी ना किसी
+05:56 विटामिन की कमी होती है या स्पेशली
+05:58 विटामिन सी विटामिन डी विटामिन बी12 इनकी
+06:02 आप टेबलेट्स खाते हो क्यों ताकि आपको पोषण
+06:04 मिल सके अलग से या फिर आप अलग-अलग चीजें
+06:08 खाद्य पदार्थ खाते हो आप अपने खाद्य में
+06:11 जो भोजन आप ग्रहण कर रहे हो उसमें यह सारे
+06:14 पोषक तत्व होंगे अगर नहीं है किसी चीज की
+06:17 कमी हो रही है डेफिसिट
+06:19 होगा और उसी को हम बोलते हैं कुपोषण
+06:23 कुपोषण और कुछ नहीं है हमारे शरीर में
+06:26 हमारे शरीर को जो आवश्यक पोषण चाहिए जो
+06:30 तत्व चाहिए उसका कमी होना उसका ना होना
+06:33 कुपोषण कहलाता है हम यहां पर डेफिनेशन
+06:36 क्लियर कर लिए क्या होता है शरीर को पोषक
+06:40 तत्त्वों की पूर्ति के लिए भोज्य पदार्थों
+06:42 की आवश्यकता होती है इन्हीं पोषक तत्व का
+06:45 पर्याप्त मात्रा में उपस्थित ना होना ही
+06:47 कुपोषण माल न्यूट्रिशन कहलाता है आई होप
+06:50 क्लियर है क्लियर है क्या सभी का स्वागत
+06:53 है रीता गुड आफ्टरनून शिल्पी गुड आफ्टरनून
+06:56 वैशाली गुड
+06:58 आफ्टरनून सिर को उचित मात्रा में पोषक
+07:01 तत्त्वों का बिल्कुल शरीर को बिल्कुल लिख
+07:04 सकते हैं ये मैंने लिखा है कि हमारे शरीर
+07:07 को जो भोजन हम लोग प्राप्त करते हैं उसमें
+07:10 पोषक तत्व को होना आवश्यक है यह पोषक तत्व
+07:12 साथ के साथ इनकी कमी होना ही हमें बोलेंगे
+07:16 कि कुपोषण है या फिर या फिर सर इनका बहुत
+07:20 अधिक मात्रा में हो जाना दो तरीका का
+07:23 कुपोषण ठीक वैसे तो हम डेफिनेशन में लिखते
+07:26 हैं कमी को लेकिन अगर पोषक तत्त्वों का जो
+07:28 कमी या अधिकता के आधार पर हम दो प्रकार से
+07:31 कुपोषण को विभाजित किए हैं एक तो अल्प
+07:34 पोषण है और एक तो अति पोषण है ये चीज भी
+07:36 हमने समझा था अल्प पोषण मतलब अंडर
+07:39 न्यूट्रिशन मतलब हमारे खाने में इन पोषक
+07:42 तत्त्वों की कमी है सात पोषक तत्व
+07:44 कार्बोहाइड्रेट वसा प्रोटीन विटामिन जल और
+07:48 आपका खनिज और रेसे फाइबर्स इनकी कमी होगी
+07:52 तो हमें अल्प पोषण होगा अगर मान लेते हैं
+07:56 कि हमने प्रोटीन वाली चीजें बहुत जबरदस्त
+07:58 खाना शुरू कर दिया या फिर फैट वाली चीजें
+08:00 हमने जबरदस्त दबा के खाना शुरू कर दिया घी
+08:03 मक्खन मलाई बिल्कुल ऐसा खा रहे हैं जैसे
+08:05 लग रहा है खाना खा रहे हैं तो हमारा शरीर
+08:07 क्या होगा फैल जाएगा चर्बी बढ़ जाएगी अति
+08:10 पोषण हो गया उसको ओवर न्यूट्रिशन बोलते
+08:13 हैं ऐसी स्थिति में आपको मोटापा मधुमेह
+08:15 रक्त संबंधी विकार होने लगते हैं तो यह
+08:18 कुपोषण का भी एक कारण है कि सर आपको अति
+08:22 पोषण हो गया आपको अल्प पोषण और अति पोषण
+08:26 पोषण इसमें कुपोषण के दो हमने प्रकार देख
+08:30 लिए बात क्लियर है जय हिंद आशा
+08:32 जी क्लियर है क्या तो हमने समझा इस स्थिति
+08:37 में भुखमरी स्टार्वेशन होता है अगर हमारे
+08:41 में कमी होगी और अगर अधिकता हो गई तो
+08:45 मोटापा हो जाएगा मधुमेह हो जाएगा रक्त
+08:47 संबंधी विकार हो जाएंगे यह कुछ एग्जांपल
+08:49 है यह कुछ एग्जांपल है बात क्लियर है आगे
+08:53 बढ़ जाए सबको समझ में आ गया एक बार थम्स
+08:55 अप बना दो यस सर यस सर ठीक अब हम हम लोग
+08:59 थोड़ा सा देख लेते हैं डाटा यह हमारा
+09:03 यूनिसेफ है जो
+09:08 यूनिसेफ
+09:10 ठीक एक तो यूनिसेफ और विश्व स्वास्थ संगठन
+09:14 डब्ल्यू एओ दोनों की बात करें डब्ल्यू एओ
+09:19 इन लोगों ने मिलके एक चीज बोला कि कुपोषण
+09:24 जो है वह तीन आधार पर इन्होंने बात की
+09:26 इनके द्वारा कुपोषण जो है वह ती तरीके से
+09:30 इन्होंने डिफाइन
+09:31 किया तीन तरीके से कुपोषण को तीन तरीके से
+09:35 एक तो इन्होंने बोला कि अगर आपके अंदर
+09:38 नाटा पन है क्या नाटा
+09:42 पन नाटा पन है तो आपको कुपोषित हो अगर
+09:46 आपके अंदर निर्बलता है
+09:50 निर्बलता तो आप कुपोषित हो अगर आपका वजन
+09:54 कम हो रहा है बहुत ज्यादा कम हो रहा है तो
+09:58 आप कुपो हो तो यूनिसेफ ने और डब्ल्यू एओ</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 10:00 – 14:59</summary>
+      <pre>10:02 ने मिलकर के यहां पर विश्व स्वास्थ संगठन
+10:05 ने इसको क्या बोला इसको बोला कि आप नाटे
+10:09 पन में आपका निर्बलता में और कम वजन में
+10:12 इनमें से कोई कमी है तो आप क्या हो
+10:15 कुपोषित
+10:17 हो यह अलग से लिख लेना आप क्या हो कुपोषित
+10:22 हो लिख
+10:24 लोगे
+10:26 ठीक राहुल जाट वाह सर जी जय हिंद इंकलाब
+10:30 जिंदाबाद गुरुजी अ भगत सिंह बहुत बढ़िया
+10:34 यस सर चलिए आई होप सबको क्लियर है ये हो
+10:37 गया हमारा यूनिसेफ डब्ल्यूएचओ का परिभाषा
+10:40 कि मतलब उन्होंने कुपोषण के लिए बोला कि
+10:42 एक नाटा पन भी कुपोषण में आता है निर्बलता
+10:45 मतलब हमारे अंदर ऊर्जा की कमी है बल नहीं
+10:48 है हम किसी को फोड़ नहीं सकते मतलब कुछ
+10:50 कार्य नहीं कर सकते कम वजन हो रहा है अति
+10:54 पोषण और कम पोषण दो कारण में जो कम पोषण
+10:58 की वजह से य हां पर वजन कम हो रहा है और
+11:00 सबसे अधिक फैट की कमी से कम वजन होता है
+11:03 फैट का शरीर में ना बनना बोलते हैं सर मैं
+11:06 तो दबा के रोटी खा रहा हूं 10 10 रोटी खा
+11:08 जाता हूं या खा जाती हूं शरीर में लगता ही
+11:10 नहीं है शरीर में ना लगने का मतलब है वह
+11:13 आपके फैट के रूप में संचित ऊर्जा के रूप
+11:15 में जमा नहीं हो रहा है समझ में आ रहा है
+11:18 उस स्थिति में क्या करना है उस स्थिति में
+11:20 सारे विकारों को छोड़ना है टेंशन को
+11:23 छोड़ना है जो खा रहे हैं उसको मन से खाना
+11:25 है लगेगा बिल्कुल लगेगा चलिए आगे बढ़ते
+11:28 हैं अब हमारे भारतीय संविधान
+11:31 में कुपोषण को लेकर के दो आपको आर्टिकल
+11:35 याद रखना है भारतीय संविधान
+11:41 में अगर भारतीय संविधान की बात करें हमारे
+11:44 कॉन्स्टिट्यूशन की तो उसमें कुपोषण को
+11:47 लेकर के दो अनुच्छेद हैं दो अनुच्छेद
+11:52 कुपोषण को लेकर के दो अनुच्छेद कोई कमेंट
+11:54 करके बताए कौन-कौन से हो सकते हैं तुक्का
+11:57 मारे कोई तुक्का मारे तो हम वाहवाही करें
+12:01 बचारे
+12:03 का कोई भी नहीं है कोई बात नहीं अगर मैं
+12:07 बात करूं अनुच्छेद 21 की कोई बता रहा है
+12:11 कुछ नहीं बता रहे अनुच्छेद 21
+12:16 की
+12:18 अनुच्छेद
+12:22 21 और अनुच्छेद
+12:28 47
+12:31 47 यह दो अनुच्छेद हमें कुपोषण से संबंधित
+12:36 हमें कुछ बताते हैं कुछ अधिकार दिए हुए
+12:39 हैं यह भाई साहब जो है यह मौलिक अधिकार
+12:42 में से हमारा अधिकार है क्योंकि मौलिक
+12:46 अधिकार हमारा जो आर्टिकल नंबर 12 से लेकर
+12:49 के हमारा 36 तक तो मेन चलता ही है ठीक
+12:53 उसके बाद हमारा नीति निर्देशक तत्व चलता
+12:55 है तो यह वाले जो है 47 वाले नीति
+12:58 निर्देशक तत्व में आते हैं डीपीएसपी में
+13:01 तो हम लोग समझ लेते हैं कि अनुच्छेद 21 जो
+13:03 है यह बोलता है जीवन निर्वाह हम लोग जो
+13:07 जीवन है वह हमारे अकॉर्डिंग जीना है यह
+13:10 हमारे ऊपर है तो जीवन अनुच्छेद 21 क्या
+13:13 बोलता है जीवन निर्वाह से संबंधित है जीवन
+13:17 निर्वाह से संबंधित है तो इसमें हम अच्छा
+13:21 सांस लेने की स्वतंत्रता है हमको अच्छा
+13:25 जीवन साथी चुनने का हमको कहीं पर भी कुछ
+13:28 भी डिसीजन लेने का तो सारी चीजें जो है
+13:32 जीवन से लेकर के वह अनुच्छेद 21 हमको
+13:34 बताता है अनुच्छेद 21 हमको ब बताता है तो
+13:38 अनुच्छेद 21 के तहत हम ये भी बोलते हैं कि
+13:41 सर हमें कुपोषण से वंचित होना है मतलब
+13:44 पोषित होना है पोषित होना है इससे रिलेटेड
+13:48 भी हम बोल सकते हैं अनुच्छेद 21 बोलता है
+13:51 अनुच्छेद 21 में हमारा पोषण को लेकर के हम
+13:54 निजी स्वतंत्रता है जीवन और निजी
+13:56 स्वतंत्रता उसको लेकर के हम बोल सकते हैं
+13:59 जीवन निर्वाह या फिर निजी स्वतंत्रता है
+14:02 तो उसमें पोषित होना भी हमारी स्वतंत्रता
+14:04 है यह हमारा अधिकार
+14:09 है स्वतंत्रता है यह हमारा अधिकार है और
+14:12 जो हमारा अनुच्छेद 47 है 47 यह बोलता है
+14:17 हमारे डीपीएसपी में नीति निर्देशक
+14:18 तत्त्वों में कि जो हमारे जो हमारे राज्य
+14:24 है पोषाहार
+14:28 स्तर हमारे
+14:32 राज्य राज्य में जो पोषाहार है पोषाहार
+14:37 पोषाहार स्तर उसमें सबको पोषण मिले इसके
+14:42 लिए भी बात रखी गई है नीति निर्देशक तत्व
+14:46 को आपको पता है संविधान में इसको मानना ना
+14:49 मानना हर राज्य की बात है हर राज्य मान भी
+14:52 सकता है नहीं भी मान सकता है लेकिन यह
+14:54 हमारा मानना जरूरी है क्योंकि ये मौलिक
+14:56 अधिकार है यही अंतर होता है अभी हम इस पर
+14:59 चर्चा कम करेंगे सिर्फ इतना याद रख रहे</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 15:00 – 19:59</summary>
+      <pre>15:01 संविधान में कुपोषण को लेकर के या पोषण को
+15:04 लेकर के दो हमारे अनुच्छेद 21 और 47 इसको
+15:07 लिख लो इसको लिख लो आगे
+15:14 बढ़े पोषाहार स्तर क्या होगा ऊंचा होगा यह
+15:19 लिख लो आगे बढ़ते हैं हम लोगों ने इतना
+15:22 समझ लिया कि पोषण अगर है शरीर में
+15:26 न्यूट्रीशन है मींस हमारा जो भोजन है उस
+15:29 भोजन में पोषक तत्त्वों की कमी नहीं होगी
+15:31 इन सात पोषक तत्त्वों की तो हम पोषित हैं
+15:34 अगर इनमें से कमी हो रही है तो हमको
+15:36 बीमारी होगी तो हम कुपोषित हैं और
+15:38 बीमारियां वह सब लिखना है जो मैंने
+15:40 बीमारियां आपको तीन लेक्चर में लिखवाया है
+15:43 विटामिन ए की कमी से रतौंधी बी की कमी से
+15:45 बेदी बेदी सी की कमी से
+15:47 आपके स्कर्वी डी की कमी से रिकेट्स यह जो
+15:51 मैंने आपको सारे लिखवाए हैं ठीक उसके बाद
+15:55 एनीमिया आपका ई की वजह से फिर उसके बाद के
+15:57 की वजह से रक्त का थक्का ना बनना यह जितने
+15:60 भी रोग हैं यह सब के सब इसमें आ जाएगा साथ
+16:03 ही साथ यह तो विटामिन था ऐसे ही आपको
+16:06 कार्बोहाइड्रेट का जो मैंने लिखवाया है
+16:08 वसा का मैंने लिखवाया वसा में लिखवाया है
+16:10 कि कमी से हमारा जो है स्किन रूखी रूखी हो
+16:13 जाती है हमारे अंदर संचित ऊर्जा की कमी
+16:16 होती है और अगर ओवर ओवर फैट होने लगा तो
+16:19 मोटापा होता है और हृदय संबंधी रोग होता
+16:22 है तो यह सारी चीजें हमको याद रखना है कि
+16:24 कुपोषण से संबंधित यह सारे के सारे रोग
+16:27 हैं आइए आगे बढ़ते हैं
+16:29 यह आप लोग याद रखोगे अनुच्छेद में पोषक
+16:32 तत्त्वों के कुपोषण संबंधी रोगों का वर्णन
+16:34 निम्नानुसार है हमारे शरीर में हो सकता है
+16:37 कार्बोहाइड्रेट के कारण कुपोषण होगा है ना
+16:40 माल न्यूट्रिशन ड्यू टू कार्बोहाइड्रेट
+16:43 प्रोटीन की कमी से कार्बो हमारा कुपोषण
+16:45 होगा या फिर वसा के कमी से कुपोषण होगा तो
+16:49 तीन आधार पर मैं थोड़ा-थोड़ा एक्सप्लेन
+16:52 करने जा रहा हूं क्योंकि क्वेश्चन यहां से
+16:54 बन सकते हैं क्वेश्चन यहां से बन सकते हैं
+16:57 इन पर थोड़ा सा हम लोग चर्चा करते करते
+16:59 हैं सबसे पहले कार्बोहाइड्रेट के कारण
+17:01 कुपोषण माल न्यूट्रिशन ड्यू टू
+17:04 कार्बोहाइड्रेट शरीर में कार्बोहाइड्रेट
+17:06 का काम क्या है सबसे पहले उसे याद करिए
+17:10 मैंने याद करवाया है जिन भी विद्यार्थियों
+17:12 ने क्लास नहीं देखी है पोषण आहार पोषक
+17:15 तत्त्वों का वो जाकर के देखेगा ठीक है
+17:19 कार्बोहाइड्रेट का मेन काम होता है सर
+17:22 त्वरित ऊर्जा प्रदान करना शरीर में शरीर
+17:25 में त्वरित
+17:26 ऊर्जा प्रदान करना अगर हम कार्बोहाइड्रेट
+17:31 वाली चीजें नहीं खाएंगे तो हमारे को क्या
+17:34 होगा डेफिशियेंसी ऑफ एनर्जी होगी मतलब
+17:37 ऊर्जा में कमी होगी अगर ऊर्जा में कमी
+17:41 होगी अगर हम लोग कार्बोहाइड्रेट नहीं खाते
+17:44 हैं अगर मैं खाना खाके आपको नहीं पढ़ा रहा
+17:47 होता तो एनर्जी की कमी होती लो फील करता
+17:49 मैं और हमें तुरंत ऊर्जा चाहिए खाना खाते
+17:53 से ही हमको एनर्जी मिलती है क्योंकि
+17:55 कार्बोहाइड्रेट की मात्रा उसमें होती है
+17:58 तो हमें ऊर्जा से संबंधित हमको कुछ भी
+18:01 खाना है तो कार्बोहाइड्रेट खाना है यह ऐसा
+18:04 न्यूट्रिएंट्स है ऐसा पोषक तत्व है जो
+18:07 आपके शरीर को तुरंत ऊर्जा देता है तो अगर
+18:10 शरीर में कार्बोहाइड्रेट की कमी हो गई
+18:12 कार्बोहाइड्रेट की अगर कमी हो गई तो मतलब
+18:15 क्या ऊर्जा की कमी हो गई हमको यही समझना
+18:18 है मतलब हमाने हमारे जो पिछले लेक्चर हैं
+18:20 उनको कुपोषण से जोड़ना है इसीलिए सिलेबस
+18:23 में पोषण आहार पोषक तत्व और कुपोषण लिखा
+18:27 है हमको जोड़ना है सबको तो हमको अगर यहां
+18:31 पर समझना है कि सर कार्बोहाइड्रेट की कमी
+18:33 हो गई तो क्या हो गया ऊर्जा की कमी हो गई
+18:36 और ऊर्जा की कमी हो गई तो हम तो कुछ भी
+18:38 करने के लायक नहीं है तो हो गया क्या
+18:41 कार्बोहाइड्रेट के कारण कुपोषण तो इसके
+18:43 कारण जो जो आपको मुख्य रूप से रोग हो सकते
+18:47 हैं वह क्या-क्या हो सकते हैं डायबिटीज
+18:49 मधुमेह याद कर लो गैलेक्टोसेमिया यह याद
+18:53 कर लो कीटोस यह याद कर लो हंटर सिंड्रोम
+18:57 यह याद कर लो हर हर लर सिंड्रोम पॉम्पे
+19:01 रोग आदि रोग हो सकते हैं तो इन रोगों के
+19:04 नाम याद रखना है सिर्फ रोगों के नाम डिटेल
+19:08 में हमको क्या पढ़ना है वोह मैं आपको
+19:09 डिटेल में समझाऊ अनुवांशिक रोगों को डिटेल
+19:12 में पढ़ना है उनका डिटेल में चर्चा करना
+19:14 है अब इनमें डिटेल में चर्चा करूंगा तो
+19:16 लंबी बहुत क्लास हो जाएगी सिर्फ नाम याद
+19:18 करो कार्बोहाइड्रेट की कमी से मधुमेह
+19:21 गैलेक्टोसेमिया कीटोस हंडर सिंड्रोम हंटर
+19:25 सिंड्रोम हर्ल सिंड्रोम पॉम्पे रोग ये
+19:27 सारे रोग ऊर्जा की कमी के कारण हो रहे हैं
+19:30 शरीर में ऊर्जा की कमी के कारण हो रहे हैं
+19:34 बात क्लियर हो गई अब आगे बढ़ते हैं सर
+19:37 प्रोटीन के कारण कुपोषण यहां तक क्लियर है
+19:40 ना सभी
+19:41 को लिख लिए सर आपके साथ ही बहुत बढ़िया
+19:44 बटा पोषा हार 47 बहुत बढ़िया रिता जय हिंद
+19:52 जितेंद्र बिल्कुल
+19:55 दैहिक स्वतंत्रता बिल्कुल शायद 21 बिल्कुल
+19:57 बिल्कुल सभी लोगों को क्लियर है आगे बढ़ते</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 20:00 – 24:59</summary>
+      <pre>20:00 हैं प्रोटीन के कारण कुपोषण सर आपने
+20:03 प्रोटीन जब पढ़ाया था हमको सर आपने हमें
+20:07 पिछले लेक्चर में प्रोटीन पढ़ाया था तो
+20:09 वहां पर प्रोटीन का मुख्य कार्य बताया था
+20:12 कि जो प्रोटीन होता है ना साथियों वो
+20:15 हमारे शरीर को क्या करता है हमारे शरीर
+20:18 में वृद्धि का
+20:21 कार्य शारीरिक वृद्धि का कार्य करता है
+20:26 शारीरिक वृद्धि का कार्य करता है और यह
+20:29 शारीरिक वृद्धि का मीनिंग क्या होता है
+20:31 शारीरिक वृद्धि का मीनिंग होता है यह शरीर
+20:33 का छोटे से बड़ा होना और यह शरीर किससे
+20:36 बना है यह शरीर बना है सर बिल्कुल
+20:38 छोटे-छोटे हमारे कोशिकाओं से तो इसका मतलब
+20:42 सर ये कोशिकाओं को भी वृद्धि करता है क्या
+20:45 बिल्कुल करता है जो हमारा प्रोटीन है वो
+20:48 कोशिकाओं को निर्माण करने में सहायक है
+20:51 कोशिकाओं का निर्माण भी बोल सकते हो
+20:54 निर्माण भी बोल सकते हो और उसका वृद्धि
+20:57 कारक भी बोल सकते हो
+20:59 कोशिकाओं को वृद्धि कराता है और जब
+21:01 कोशिकाएं वृद्धि करेंगी कोशिकाओं का
+21:03 निर्माण होगा नई-नई कोशिकाएं बनेंगी तो
+21:06 हमारा शरीर बड़ा होगा हमारा शरीर वृद्धि
+21:09 करेगा तो इसको शारीरिक वृद्धि हमने नाम दे
+21:11 दिया मान लो शरीर में कहीं कुछ टूट गया
+21:13 कहीं चोट लग गई कुछ भी हो गया तो उसको सही
+21:16 करना है ठीक करना है प्रोटीन सबसे पहले
+21:18 काम करेगा तो शरीर में जो भी टूट फूट होती
+21:21 है कोशिकाएं मरती हैं उनको सही करना होता
+21:24 है हटाना होता है तो शारीरिक टूट फूट में
+21:27 शारीरिक टूट टूट फूट
+21:31 में टूट फूट में मरम्मत का कार्य मरम्मत
+21:35 का कार्य सर यही सब यही सब सिखाया था आपने
+21:39 प्रोटीन में इसका मतलब अगर शरीर में
+21:42 प्रोटीन की कमी हो गई तो हमें हमें शरीर
+21:46 में वृद्धि का रुकावट शरीर शारीरिक वृद्धि
+21:49 जो हो रही है उसमें रुकावट देखने को
+21:50 मिलेगी शारीरिक टूट फूट जो जल्दी-जल्दी
+21:52 हमारा मरम्मत हो जाता है वो धीरे-धीरे
+21:55 होगा जल्दी-जल्दी कुछ भी होगा तो हमको ठीक
+21:57 नहीं होंगे हम जल्दी जल्दी जल्दी हमारा
+21:58 रिकवरी रेट बहुत डाउन हो जाएगा तो यह सारी
+22:01 चीजें प्रॉब्लम आएगी तो इस संबंधित रोगों
+22:04 को हम बोलेंगे प्रोटीन से सं प्रोटीन की
+22:06 कमी से होने वाले रोग हैं और इसी को हम
+22:09 बोल देंगे कि प्रोटीन की कमी से जो हमें
+22:12 पोषण नहीं मिल रहा उसको कुपोषण नाम दे
+22:14 दिया मींस माल न्यूट्रिशन ड्यू टू प्रोटीन
+22:18 अब आप इसको पढ़ सकते हो बहुत आराम से कि
+22:20 सर मांसपेशियों का निर्माण प्रोटीन की अहम
+22:23 भूमिका निभाता है अब ये मांसपेशियां किससे
+22:26 बनी है कोशिकाओं से तो मूल रूप से कोशिका
+22:29 ही सब कुछ है कोशिकाओं से मिलकर के टिशू
+22:32 बनते हैं ऊतकों का निर्माण ऊतकों से अंगों
+22:34 का अंगों से अंग तंत्रों का और अंग
+22:37 तंत्रों से पूरे शरीर का निर्माण होता है
+22:39 तो जो हमारी त्वचा है हमारे त्वचा के नीचे
+22:41 मांसपेशियां हैं सब हमारी कोशिकाओं से बनी
+22:44 है तो इसके निर्माण में हमारा प्रोटीन अहम
+22:46 भूमिका निभाता है पुनर्निर्माण की व्यवधान
+22:48 पुनर्निर्माण मतलब शारीरिक टूट फूट के बाद
+22:51 उसका मरम्मत उसमें भी प्रोटीन कार्य करता
+22:54 है तो प्रोटीन की कमी होगी तो इसमें भी
+22:56 व्यवधान होगा बहुत बढ़िया सर आदि
+22:59 व्याधियों उत्पन्न हो जाती हैं लेकिन अगर
+23:02 यह इंपॉर्टेंट है अगर हमने प्रोटीन
+23:05 आवश्यकता से अधिक ले ली यह तो कमी से हुआ
+23:09 आवश्यकता से अधिक ले ली तो यह सारी चीजें
+23:12 बहुत ज्यादा मात्रा में वृद्धि करेगा तो
+23:14 क्या होगा तो हमें इंपॉर्टेंट है इसको नोट
+23:17 कर लेना अलग से अगर शरीर
+23:20 में प्रोटीन की अधिकता हो गई तो हम
+23:24 बोलेंगे पाचन तंत्र संबंधित रोग होगा वृक
+23:27 संबंध
+23:29 रोक होगा जो वृक के कार्य हैं पाचन तंत्र
+23:31 के कार्य हैं वह प्रभावित होने लगेंगे अगर
+23:34 हमारा प्रोटीन बढ़ गया शरीर में यह इतना
+23:38 बात क्लियर
+23:41 है एमपीपीएससी के 1000 से ज्यादा छात्र 30
+23:44 घंटे से धरने पर बैठे किंतु आयोग द्वारा
+23:46 किसी प्रकार का जवाब नहीं दिया जा रहा
+23:49 है
+23:51 चलिए न्याय दिलाने के लिए सहयोग करें
+23:53 महिमा गौतम लिखकर सर पीडीएफ कहां मिलेगी
+23:57 पीडीएफ विका जी मिलेगा टेलीग्राम पर नीचे
+23:59 आपको टेलीग्राम का चैनल का लिंक दिया होगा
+24:03 जो मैटर चल रहा है मेंस का आगे बढ़ाने का
+24:06 आधे स्टूडेंट वहां पर उसके फेवर में है
+24:10 आधे स्टूडेंट अपोज में है बहुत सारे
+24:13 स्टूडेंट ज्ञापन दे रहे हैं कि डेट ज्यों
+24:16 का त्यों रहे ताकि वह पेपर दे सके टाइम से
+24:20 और उनका जो यह समय सारणी है वह जल्दी
+24:22 जल्दी कंप्लीट हो उनको जल्दी नौकरी मिले
+24:25 आधे बच्चे धरने पर हैं अब यहां पर किसका
+24:28 सपोर्ट किया जाए अभी यहां पर चीजें
+24:31 व्यवस्थित करने की जरूरत है ठीक है बात
+24:34 कौन है महिमा गौतम जी ठीक बिल्कुल हमारा
+24:37 हमेशा से मेरा सपोर्ट स्टूडेंट्स के साथ
+24:40 रहा है लेकिन बहुत सारे स्टूडेंट्स ऐसे
+24:42 हैं कि जिन्होंने बहुत लंबे समय से तैयारी
+24:44 कर रहे हैं सिलेक्शन का वेट कर रहे हैं
+24:47 उनका भी हम बात सुन रहे हैं उन्होंने भी
+24:49 एक ज्ञापन लिखा है कि डेट उसी समय रहे और
+24:53 आधे स्टूडेंट बोल रहे हैं कि डेट बढ़नी
+24:55 चाहिए यह एक कंट्रा ट वाला पॉइंट है इसलिए</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 25:00 – 29:59</summary>
+      <pre>24:60 मैं चाहता हूं कि बच्चों का हित हो बच्चों
+25:03 का हित जिसमें सबसे अधिक होगा मैं उसी को
+25:05 सपोर्ट करता हूं बाकी अभी मैं उन बच्चों
+25:08 के हित के लिए कार्य कर रहा हूं जो नहीं
+25:11 पढ़ पा रहे हैं जो इंदौर में धरना रख रहे
+25:14 हैं वो कहीं ना कहीं कोचिंग कर चुके हैं
+25:16 पढ़ाई कर चुके हैं मेंस देना है लेकिन जो
+25:19 बच्चे अभी जिनको गाइडेंस ही नहीं मिला है
+25:21 प्री ही अभी क्वालीफाई नहीं कर पा रहे हैं
+25:23 वह तो पहले उनको सम उनका समस्या भी तो दूर
+25:25 करना जरूरी है तो सपोर्ट मेरा सबके
+25:28 सभी के साथ रहता है स्टूडेंट्स के साथ
+25:31 रहता है मैं हमेशा स्टूडेंट्स के साथ खड़ा
+25:33 रहूंगा चलिए अभी हम लोग अपना काम करते हैं
+25:36 बहुत बढ़िया बेटा ठीक सब अपनी अपनी जगह
+25:39 सही है गलत कोई नहीं है यहां पर अभी आप
+25:42 देखते हैं कि अगर पाचन तंत्र और वृक के
+25:45 कार्यों में प्रभाव पड़ रहा है मतलब ऐसा
+25:47 हो सकता है प्रोटीन आधिक के रूप में हमारे
+25:50 शरीर में बढ़ गया
+25:52 है ठीक चलिए बहुत शानदार प्री भी भैया
+25:56 टाइम नहीं है प्री के लिए भी 24 अगर 28
+25:58 अप्रैल को पेपर हो गया तो सब निपट जाएंगे
+26:01 सारे निपट जाएंगे चलिए अब हम बात करते हैं
+26:04 प्रोटीन की कमी से मुख्य रूप से दो प्रकार
+26:07 का कुपोषण पढ़ना होता है और इससे क्वेश्चन
+26:10 बनते हैं है ना एक तो क्वाशियोरकर और एक
+26:14 मरा स्मस मराम और क्वाशियोरकर दो ऐसी
+26:18 बीमारियां हैं जो बच्चों में पाई जाती हैं
+26:21 और प्रोटीन की बहुत कमी से यह रोग होता है
+26:24 और बहुत ज्यादा यह अफ्रीका और इंडिया में
+26:27 भी देखने को मिल मिल रहा है मध्य प्रदेश
+26:29 में भी पोषण की वजह से जो बच्चे हैं
+26:32 मृत्यु जो दर है शिशु मृत्यु दर वह मध्य
+26:36 प्रदेश का बहुत बहुत ऊपर है बहुत बढ़िया
+26:39 डाटा दिया हुआ है मतलब मध्य प्रदेश अग्रणी
+26:42 में है शिशु मृदु दर में सोचो कुपोषण में
+26:45 हमारा मध्य प्रदेश बहुत आगे है इसीलिए
+26:47 कुपोषण को हमारे सिलेबस में डाला है ठीक
+26:50 डाटा वगैरह सब दूंगा हमारे साथ जुड़े
+26:52 रहेंगे कुपोषण में जो डाटा है हमारे
+26:55 आर्थिक सर्वेक्षण से ही हमने निकाला है यह
+26:57 40
+26:58 1000 बच्चों में 40 बच्चे मरते हैं कुपोषण
+27:01 की कमी से
+27:03 सोचो कुपोषण से मतलब पोषण की कमी से 40
+27:07 बच्चों की मृत्यु हो जाती है छोटे-छोटे
+27:09 बच्चों की 1000 में से बच्चों जिसमें सबसे
+27:12 अधिक प्रोटीन की कमी होती है अब यहां पर
+27:15 मैं थोड़ा सा आपका दिमाग ओपन करने के लिए
+27:18 कुछ मैं समझा रहा हूं कि प्रोटीन की कमी
+27:20 ऐसा नहीं है कि सिर्फ बच्चों को दे
+27:22 सीधा-सीधा बच्चों को कैसे प्रोटीन मिलता
+27:25 है प्रोटीन सर बच्चों को मिलता है दूध से
+27:28 और भी दूध कैसा होगा मां का दूध होगा
+27:31 किसका दूध होगा मां का दूध होगा देखना
+27:34 बहुत तरीके से समझना साथियों यहां पर अब
+27:37 बच्चे को मां का दूध मिल भी रहा है लेकिन
+27:39 अगर उस दूध में प्रोटीन की कमी हो तो क्या
+27:41 होगा उस दूध में प्रोटीन की कमी होगा क्या
+27:44 होगा तो मतलब जो माता है सबसे पहले तो
+27:47 हमें उसको पोषित करना है सबसे पहले हमारा
+27:51 काम होना चाहिए माता को पोषण देना समझ में
+27:53 आ रहा है अगर माता के शरीर में पोषण नहीं
+27:56 होगा तो वह जो बच्चे को जन्म देने वाली है
+27:59 उसको कैसे पोषित करेगी वह बच्चा कैसे
+28:01 पोषित होगा वह तो कुपोषित ही पैदा होगा तो
+28:04 हमारे दो कारण है यह मुख्य रूप से आपको
+28:06 समझना है ब्रॉडमाइंड समझना है ब्रॉड माइंड
+28:08 करिए कि जो प्रोटीन की कमी हो रही है वह
+28:10 माता के अंदर भी है और बच्चे पैदा होने के
+28:13 बाद तो उसके अंदर तो है ही है अगर बच्चा
+28:16 हेल्दी पैदा होता है तो काफी दिन सरवाइव
+28:19 कर जाता है कम प्रोटीन भी मिलेगा तो भी
+28:21 सरवाइव कर जाएगा बट इंपॉर्टेंट यहां पर
+28:24 माता के दूध में भी है माता को भी हमको
+28:28 देना है माता को भी प्रोटीन देना है आई
+28:31 होप क्लियर
+28:32 है सारे निपट जाएंगे रीता बोल अच्छा
+28:36 बिल्कुल बेटा बिल्कुल आप लोग क्या ऐसा लिख
+28:39 देते हो मैसेज डिलीट करना पड़ता है जब मैं
+28:40 जब तक मैं देखता हूं तब तक मैसेज डिलीट
+28:42 रहता है चलिए कोई बात नहीं तो इसको आप लोग
+28:45 नोट कर लो अब मैं थोड़ा सा क्वाशियोरकर और
+28:47 मराम को समझा देता हूं ताकि आपको क्लियर
+28:51 समझ में आए कि क्वास ओकर क्या है मराम
+28:53 क्या है ठीक सर क्वास ओकर और मराम पहले
+28:57 फोटो तो
+28:58 देखो ये है क्वाशियोरकर और ये है मराम एक
+29:03 पॉइंट पकड़ना एक पॉइंट पकड़ना यह भाई साहब
+29:07 जो हैं इनमें क्या हो रहा है सूजन हो रहा
+29:10 है
+29:11 सूजन पेट फूल जाना पैर का सूजन पैरों में
+29:16 सूजन आ जाना सूजन पकड़ लो पेट बड़ा हो
+29:19 जाना सूजन पकड़ लो और इसमें ऐसा पकड़ लो
+29:22 याद करने के लिए बोल रहा हूं इसमें पकड़
+29:24 लो बूढ़ा हो जा रहा है बूढ़ा बूढ़ा
+29:26 व्यक्ति कैसे हो जाता है है बूढ़ा व्यक्ति
+29:29 हो जाता है कि उसकी झुनिया स्किन लटक जाती
+29:31 है यह आपकी जो त्वचा है वो स्किन जो है वो
+29:34 लटक जाती है और बच्चा बिल्कुल पतला दुबला
+29:37 पतला दुबला बूढ़ा आदमी कैसा होता है पतला
+29:40 हो जाता है और जो उसकी स्किन है स्किन वो
+29:44 कैसी हो जाती है लटक जाती है लटक जाती है
+29:46 अगर यह कमियां है इस तरीके के अगर सिमटम्स
+29:49 हैं तो बच्चा क्या है बच्चा मराम से
+29:52 ग्रसित है और अगर ऐसा है सूजन है कमजोर है
+29:58 प्रोटीन की कमी से तो इसको हुआ है क्वासी</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 30:00 – 34:59</summary>
+      <pre>30:01 ओर करर इसको हुआ है क्या क्वाशियोरकर आई
+30:04 होप क्लियर है ठीक है ना यह आप देख पा रहे
+30:07 हो यह पूरा झुर्रियां यह बच्चा बिल्कुल
+30:10 कुपोषित दिख रहा है और यह दोनों में कमी
+30:12 आना चाहिए ठीक अब देखो इनको डिटेल में
+30:15 इसको पकड़ लिया यह सूजन क्या है जिसमें
+30:18 पेट बड़ा हो गया है सर बड़ा हो गया है और
+30:21 इसमें क्या है पूरी स्किन जो है वो लटक गई
+30:24 है और पतले हो गए हैं बिल्कुल पतले हो गए
+30:26 हैं बिल्कुल पतले हो गए हाथ
+30:28 पैर अब इसको यहां पर नोट करेंगे मैंने एक
+30:33 चीज बताया था डेढ़ वर्ष से छोटा डेढ़ वर्ष
+30:35 से बड़ा तो जो मराम है यह बेसिकली कितना
+30:39 होता है छ माह से एक वर्ष की उम्र में जो
+30:42 मरा स्मस होता है वह क्या होता है लगभग छ
+30:45 माह से लेकर के एक वर्ष तक के वर्षों
+30:48 बच्चों के अंदर यह वाला रोग देखने को
+30:50 मिलता है
+30:51 मराम ठीक मतलब डेढ़ वर्ष से कम ऐसे याद कर
+30:55 लो डेढ़ वर्ष से
+30:58 कम
+31:00 कम यह हमको याद रखना है कि ऐसे बच्चों के
+31:03 अंदर मेरास मस होता है लेकिन जो बच्चे एक
+31:06 वर्ष से अधिक बड़े हो जाते हैं उनमें
+31:08 क्वाशियोरकर होने की संभावना होती है तो
+31:11 क्वाशियोरकर जो है 6 महीने से लेकर के तीन
+31:13 वर्ष तक के उम्र तक के बच्चों में होने
+31:16 की होने की संभावना होती है मतलब लगभग
+31:20 डेढ़ वर्ष से वर्ष से बड़ा ऐसे मैं लिखवा
+31:23 रहा हूं ताकि दिमाग में याद रहे ढ़ डेढ़
+31:26 वर्ष से बड़े बच्चों में ठीक और डेढ़ से
+31:31 तीन वर्ष तक तीन से चार वर्षों के बच्चों
+31:33 के अंदर यह पाया जाता है उसके बाद वह
+31:36 सरवाइव कर गया तो तो व जी जाएगा अदर वाइज
+31:39 व निपट जाएगा व बच्चा जिएगा नहीं
+31:42 ठीक मेराम मतलब सूखा कोसियो मतलब पेट बड़ा
+31:47 हो जाता है मस्तिष्क छोटा हो जाता है
+31:49 बिल्कुल रूपेंद्र सर मुझे के प्री निकालना
+31:53 है प् मुझे गाइडेंस की जरूरत है कैसे
+31:56 क्रैक करूं सर
+31:58 पूरा गाइडेंस हम लोग देते आ रहे हैं इस पर
+32:00 एक लेक्चर हम लोग कल परसों में ले आएंगे
+32:04 कि 2024 के लिए क्या रणनीति रखें हम लोग
+32:08 यूनिट वन से यूनिट 10 को किस प्रकार से हम
+32:11 हैंडल आउट करें कितने क्वेश्चंस लगा ले
+32:14 मिनिमम प्रैक्टिस में तो हमारा क्रैक हो
+32:16 जाएगा इन सभी चीजों पर चर्चा करेंगे और
+32:19 कैसे क्या पढ़ना है कि पढ़ने का क्या
+32:22 तरीका होता है जो मैं एक चीज और आप गौर
+32:25 किया करो कि जो मैं पढ़ाता हूं जो मेरा
+32:27 अप्रोच होता है पढ़ाने का है ना थोड़ा सा
+32:30 आपने देखा होगा बाकी टीचरों से थोड़ा अलग
+32:33 है मैं थोड़ा एक्सप्लेन ज्यादा करता हूं
+32:35 समय लेता हूं है ना बहुत आराम से आराम से
+32:38 खेलता हूं आराम से खेलने का मतलब बहुत
+32:40 आराम से समझाता हूं मेरे को ना तो समय की
+32:42 चिंता है ना तो किसी की क्यों अगर एक बार
+32:44 आपने टॉपिक पे समझ विकसित कर ली मेरा
+32:47 मानना है कोई भी स्टूडेंट अगर टॉपिक पे
+32:49 समझ विकसित कर लिया तो उसको फिर किसी की
+32:52 जरूरत ही नहीं है वो क्वेश्चन भी लगा लेगा
+32:55 वो पढ़ाई भी कर लेगा एक दो टॉपिक छूट भी
+32:57 जाएगा तो वो खुद से पढ़ लेगा यह मानता हूं
+32:59 मैं लेकिन अगर मैं रटवा लगूंगा ना तो वो
+33:02 खुद से कुछ नहीं कर पाएगा वो पूरा
+33:04 डिपेंडेंट मुझ पर हो जाएगा लेकिन मैं सिखा
+33:06 रहा हूं पढ़ना आप सीखो मेरे से यह चीज
+33:10 मेरे अप्रोच को पकड़ा करो कि मैं कैसे
+33:12 चीजों को तोड़ता हूं मैं टॉपिक को पकड़ता
+33:15 हूं उसके शब्दों को पकड़ता हूं उसके
+33:16 मीनिंग को कैसे निकालता हूं इन सब चीजों
+33:18 पर गौर किया करो ठीक है क्या ओके सर थैंक
+33:22 यू चलिए बहुत बढ़िया है आप लोग बहुत बड़े
+33:25 अच्छे बच्चे हो यह हो गया
+33:28 बाकी इसमें शारीरिक वृद्धि रुक जाती है
+33:31 दोनों में शारीरिक वृद्धि रुक जा रही है
+33:33 क्योंकि प्रोटीन की कमी है यह वाला हमको
+33:35 पकड़ के रखना है इसमें शरीर में सूजन बाल
+33:38 और त्वचा में रूखापन यह वाला पॉइंट भी
+33:41 आपको पकड़ के चलना है सूजन भी हो जाता है
+33:44 बाल और त्वचा में बिल्कुल रूखापन हो जाता
+33:46 है यह चीज हमको पकड़ना है कांति हीनता आ
+33:50 जाती है इस रोग के लक्षण हैं इस रोग से
+33:53 अधिकतर ही बच्चे ही पीड़ित होते हैं
+33:55 जिन्हें उचित मात्रा में दूध नहीं नहीं
+33:57 मिल पाता है यह देखो उचित मात्रा में दूध
+33:60 नहीं मिल पाता है और जो दूध मिलता है
+34:02 उसमें प्रोटीन की कमी होती है उसमें
+34:04 प्रोटीन की कमी होती है ठीक क्योंकि मां
+34:07 के दूध में भी इतना पोषक नहीं होता है अगर
+34:10 वह पोषित नहीं होती है गरीब गरीब इसलिए तो
+34:13 इतने बड़े-बड़े अ माताओं को के लिए
+34:15 योजनाएं चलाई जा रही हैं मध्य प्रदेश में
+34:17 खास करके है ना तो इससे बचाव के लिए रोगी
+34:21 को पर्याप्त मात्रा में प्रोटीन युक्त
+34:22 भोजन देना चाहिए अब वो डेढ़ वर्ष का दो
+34:25 वर्ष का बच्चा भोजन क्या खाएगा वो तो दूध
+34:27 ही पिएगा तो प्रोटीन वाला दूध देना चाहिए
+34:30 भोजन तो क्या ही खाएगा बिचारा कोई बात
+34:33 नहीं अब यह वाला आपको समझ में आ गया मराम
+34:35 में प्रोटीन तथा ऊर्जा की कमी होती है
+34:38 प्रोटीन और कार्बोहाइड्रेट दोनों की कमी
+34:40 होती है यह याद रखोगे ऊर्जा माने कैलोरी
+34:43 माने कार्बोहाइड्रेट यह दोनों याद रखना कि
+34:46 प्रोटीन के साथ कार्बोहाइड्रेट की भी कमी
+34:49 है भाइयों यहां पे ठीक कैलोरी ऊर्जा की
+34:53 मात्रा और उसके अंदर फैट नहीं बन पा रहा
+34:55 है फैट ही नहीं बन पा रहा है क्योंकि वो
+34:57 बिल्कुल सूखा सट है शारीरिक वृद्धि रुक</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 35:00 – 39:59</summary>
+      <pre>35:00 जाती है झुर्रियां सूखा पतला हो जाता है
+35:04 अत्यधिक कमी हो जाती है ये सारी चीजें
+35:06 मैंने समझा दी बहुत बढ़िया है कोई बात
+35:08 नहीं ये सब पढ़ना मेरे को समझाना अच्छा
+35:11 लगता है ये आप लोग इसको देख सकते हो
+35:14 स्क्रीनशॉट ले लेना ताकि बाद में भी आपको
+35:17 याद रहेगा लंबे समय तक प्रोटीन की कमी से
+35:21 होने वाले हमने देख लिया अब हम लोग देखते
+35:23 हैं वसा के कारण वसा की कमी है अगर हमारे
+35:26 शरीर में वसा जो कि एक पोषक तत्व है
+35:30 बार-बार मैं पकड़ के ले आता हूं आपको वसा
+35:33 जो कि एक पोषक तत्व है सात में से सात
+35:35 पोषक तत्वों में से एक पोषक तत्व है इसकी
+35:38 अगर कमी होती है तो हमें कुपोषण होगा तो
+35:40 कुपोषण के तीन आधार कार्बोहाइड्रेट
+35:42 प्रोटीन और वसा तो वसा की कमी से हम लोग
+35:45 पढ़ लेते हैं सर वसा के लिए आपने बताया
+35:48 था कि जो वसा है हमारे शरीर में संचित
+35:53 ऊर्जा संचित ऊर्जा का कार्य करती है वसा
+35:57 हमारे शरीर में संचित ऊर्जा का कार्य करती
+35:59 है और यह संचित ऊर्जा हमारी त्वचा के नीचे
+36:02 आकर के बैठ जाता है त्वचा के नीचे आक के
+36:05 बैठ जाता है ऑयल जो है थोड़ा-थोड़ा वो
+36:08 रिलीज करता रहता है ताकि हमारा स्किन जो
+36:10 है वो ड्राई ना हो स्किन हमारा ड्राई ना
+36:13 हो सूखे ना अगर हमारी स्किन सूख रही है
+36:17 बिल्कुल हमारा रूखापन हो रहा है मतलब
+36:21 हमारे शरीर में वसा की कमी हो रही है
+36:23 रूखापन आ रहा है हमारे शरीर में हमारी
+36:26 स्किन बहुत ज्यादा ड्राई हो रही है स्किन
+36:28 हमारी ड्राई हो रही है सूखा है एकदम तो हम
+36:32 बोलेंगे वसा की कमी है अगर हम बिल्कुल
+36:35 पतले हो गए हैं बहुत ज्यादा पतले हो गए
+36:37 हैं मतलब फैट नहीं बन रहा है पतले हो गए
+36:39 हैं मतलब फैट नहीं बन रहा है हमारा शरीर
+36:43 कुपोषित है किससे वसा से वसा नहीं है
+36:46 हमारे शरीर में बहुत बढ़िया अब ये सारी
+36:48 चीजें इसमें आप ऐड करो कि शरीर में
+36:50 मांसपेशियां निर्बल हो जाती हैं त्वचा
+36:53 रोखी हो जाती है तथा वसा अधिकता से मोडा
+36:57 ठीक तो यह सारी चीजें तो हमने पढ़ ली कि
+37:00 वसा की कमी से लेकिन अगर वसा ज्यादा हो
+37:03 जाए
+37:05 हमने घी हमने मक्खन हमने यह सारी चीजें
+37:10 ज्यादा खाने लगे डालडा वाली चीजें डालडा
+37:12 वाली चीजें खा रहे हैं तेल वाली चीजें खा
+37:15 रहे हैं तेल युक्त है ना इन सभी चीजों का
+37:18 हम इन पदार्थों का हम बहुत ज्यादा सेवन
+37:20 करने लगे तो शरीर में वसा जो है व जमा
+37:23 होने लगेगी और चर्बी बढ़ जाएगा आपके
+37:26 मोटे-मोटे पेट हो जाएंगे बगल से बिल्कुल
+37:28 ऐसे लटकने लगेगा आपके गाल ऐसे लटक बिल्कुल
+37:31 ऐसे यहां गर्दन जो है ये आपकी दिखेगी नहीं
+37:33 मोटा-मोटा बिल्कुल मतलब चर्बी से भर गए हो
+37:36 पूरा शरीर तो इसको बोलेंगे कि सर ओवर फैट
+37:39 हो गया है तो ओवर फैट के कारण आपका हृदय
+37:42 की रोग भी अ बीमारियां हृदय संबंधी
+37:45 बीमारियां हो जाती हैं जिसमें ब्लॉकेज
+37:48 होना चालू हो जाता है और हृदय की धड़कने
+37:50 रुक सकती हैं है ना वो सारी चीजें वसा के
+37:53 कारण होती है कई बार ऐसा होता है साथियों
+37:56 कि कि व्यक्ति देखने में बिल्कुल नॉर्मल
+37:59 लग रहा है ऊपर से लेकिन उसका जो खानपान है
+38:03 वह बहुत ज्यादा स्ट्रीट फूड और ऐसी चीजें
+38:06 खाना है जिसमें तेल ज्यादा होता है वह
+38:09 तेलीय पदार्थ को खा रहा है उसका शरीर बहुत
+38:12 ज्यादा नहीं फैला परंतु अंदर से जो उसकी
+38:16 मांसपेशियां है वह बहुत ज्यादा फैलने लग
+38:18 गई है जो
+38:21 उसके परिसंचरण तंत्र है उसके अंदर इस
+38:24 प्रकार के ब्लॉकेज आने लग जाते हैं यह वसा
+38:26 यहां पर क्या हो जाता है यह यहां पर
+38:29 इकट्ठा होने लगता है तो होता क्या है रक्त
+38:32 का प्रवाह अच्छे से हो नहीं पाता है जिससे
+38:35 कि अगर रक्त का प्रवाह नहीं होगा तो हृदय
+38:37 की धड़कने रुक सकती हैं यह हमारे ब्लॉकेज
+38:40 होने चालू हो जाते हैं तो यह क्यों होता
+38:42 है सर वसा की अधिकता की वजह से तो सर ऐसा
+38:46 ना हो हम क्या करें हम बिल्कुल ऊपर से फिट
+38:48 दिख रहे हैं फिर भी हमको ऐसा हो जाता है
+38:51 तो इसके लिए आपको क्या करना है डेली सुबह
+38:54 गर्म पानी पीना है गर्म पानी पीने से जो
+38:57 यह ब्लॉकेज है हमने जो रात में तला गला
+38:60 खाया है या कुछ भी खाया है कभी भी खाया है
+39:02 तो वह हमारे क्या करते हैं परिसंचरण तंत्र
+39:05 को साफ कर देते हैं और हमारे डाइजेशन
+39:07 बिल्कुल वो पेट में ले जाते हैं तो वहां
+39:09 पर ब्लॉकेज वहां पर वसा का यहां पर क्या
+39:12 नहीं होता है ये यहां पर रुक नहीं पाते
+39:14 हैं अगर रुक गए तो वहीं पर वह इकट्ठा हो
+39:17 करके जमने लगेंगे वसा तेल क्या होता है
+39:20 तेल कहीं पर भी रुक जाता है और जमा होने
+39:21 लगता है आपको तो क्लियर पता ही है तो तेल
+39:24 अगर रुक गया तो वहां पर जमा हो जाएगा
+39:26 संचित होने लगे और वह वहां पर क्या कर
+39:28 देगा ब्लॉकेज कर देगा तो हमको गर्म पानी
+39:30 पीने से सब साफ होने लगता है
+39:34 ठीक क्या मैदा हमारे लिए हानिकारक होता है
+39:39 अब देखो डॉक्टर तो नहीं हूं मैं पर इतना
+39:41 मुझे पता है मैंने जितना भी अपना हेल्थ को
+39:45 लेकर के मैं भी थोड़ा हेल्थ कॉन्शियस हूं
+39:47 मैदा थोड़ा सा नुकसानदायक है ज्यादा यूज
+39:51 ना किया करो मैदा जो है हमारे शरीर को
+39:53 फुला है दूसरी चीज और भी शक्कर जो है है
+39:57 चीनी जो है सफेद वाला यह भी हमारे लिए</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 40:00 – 44:59</summary>
+      <pre>39:60 क्या होता है बहुत ज्यादा नुकसान करता है
+40:02 मैं आपको एक तरीका बता रहा हूं अगर ऐसा
+40:04 करोगे क्योंकि पोषण हम लोग पढ़ रहे हैं
+40:06 अगर ऐसा करोगे तो आपको चीजें खाने को यह
+40:09 सब खाओगे भी और बीमार भी नहीं होगे जानते
+40:12 हो क्या अगर आप क्या करो खाली पेट खाली
+40:16 पेट शक्कर वाली चीजें मीठा चीजें खाते हो
+40:19 तो क्या होगा सर शरीर सबसे पहले उसी पोषण
+40:22 को अब्जॉर्ब करेगा जो आपने इनपुट दिया है
+40:25 और खाली पेट में आपका जो डाइजेशन है
+40:28 बिल्कुल एक्टिव मूड में है कि लाओ लाओ
+40:31 डालो पीसो मशीन में मैं पीसू और तुरंत
+40:33 इसको अब्जॉर्ब करूंगा ऐसा होता है है ना
+40:36 तो अगर हम खाली पेट में चीनी खा ले खाली
+40:39 पेट में ऐसे तेल वाले सीधे हम लोग क्या ला
+40:41 रहे हैं समोसा खा लिया सीधे हमने क्या खा
+40:44 लिया चौमिन खा लिया या फिर बर्गर खा लिया
+40:47 तो उसी का डाइजेशन सबसे पहले होगा और
+40:49 तुरंत उसी का आप शोषण होगा तो हमारे शरीर
+40:52 में कौन से न्यूट्रिशन जा रहे हैं
+40:54 न्यूट्रिएंट जा रहे हैं जो तेली युक्त है
+40:56 वो वो जाकर के संचित होने लगेगा जो कि
+40:58 नुकसान करता है तो हमको सबसे पहले खाली
+41:01 पेट में हमको पहले नॉर्मल नॉर्मल खाना
+41:03 खाना चाहिए खाली पेट में एकदम सलाद खाना
+41:06 चाहिए सलाद को खाना के साथ मत खाया करो
+41:09 खाली पेट खाया करो उसके बाद थोड़ा सा गैप
+41:11 दिया करो देन खाना खाया करो तुरंत पानी मत
+41:14 पिया करो क्योंकि वो डाइजेशन गर्मी हमारा
+41:16 शरीर 37 डिग्री पर है 37 डिग्री सेल्सियस
+41:19 पर है हमारा शरीर तो यह मेंटेन रहे भाई हम
+41:22 तुरंत पानी डाल के आग बुझा देते हैं जो
+41:24 डाइजेशन जो मशीन पिस रही है अंदर डाइजेशन
+41:27 सिस्टम पाचन का कार्य चल रहा है वो तुरंत
+41:29 उसमें पानी डाल देते हैं और वो उसका पाचन
+41:31 रुक जाता है जिससे कि हमारे कब्स बनते हैं
+41:34 गैस बनने लगती है भाई पाचन होने दो ना
+41:37 पानी मत पियो थोड़ा वेट कर लो यह दो दो
+41:40 तीन पॉइंट्स याद रखो खाली पेट में सलाद
+41:42 वालाद खा लिया करो दाल चावल खा लिया करो
+41:45 देन फिर जाकर के चौमिन खाओ बर्गर खाओ बहुत
+41:47 नुकसान नहीं करेगा क्योंकि आपका जो पाचन
+41:49 है नीचे वाला वो शुरू हो गया है अच्छी
+41:51 चीजों से आई होप क्लियर है जब भी कुछ गंदा
+41:55 चीज खाने का मन हो गंदा चीज मींस यह तला
+41:59 गला यह सब खाने का मन हो तो ऊपर से पहले
+42:01 सलाद वालाद खा लिया करो उसके बाद आपको
+42:04 नुकसान कम होगा ठीक बहुत अच्छी बात बताया
+42:07 ना वाइट पॉइजन बिल्कुल शक्कर हो गया नमक
+42:11 हो गया यह सब अलग-अलग चीजें हैं तेल हो
+42:14 गया तेल में जो आपका रिफाइन तेल होता है
+42:17 टय पर बहुत आप लोग देखे होगे सर क्या
+42:19 बताने लग गए आप तो यह बताओ छोड़ो यह सब
+42:24 एथेरो स्क्लेरोसिस एक बरी है जो कि हमारे
+42:28 वसा की कमी के कारण होता है संतृप्त वसा
+42:31 मैंने वसा हों के दो टाइप बताए थे संतृप्त
+42:33 वसा और असंतृप्त वसा संतृप्त वसा में वसा
+42:36 की मात्रा ज्यादा होती है असंतृप्त वसा
+42:38 में वसा की मात्रा कम होती है तो यह जंतु
+42:40 वसा के नाम से जाना जाता है इसका जब
+42:42 अत्यधिक हम सेवन करते हैं तो मैं वही चीज
+42:45 बताया हूं रुधिर
+42:47 वाहिनिच्या स्तर पर वसा का जमा होने लगता
+42:49 है मींस ये जो मैंने यहां पर ये एग्जांपल
+42:52 दिया है ना इस इस बीमारी का नाम क्या है
+42:55 इस बीमारी का नाम एथेरो स्ली एथेरो
+42:58 स्क्लेरोसिस है इसमें हमारी जो रुधिर
+43:09 वाहिनिच्या करने वाली वानियां वेसल्स जैसे
+43:13 कि हम लोग धमनी और सिरा के नाम से जानते
+43:16 हैं इसमें खून का प्रवाह होता है तो हमारे
+43:19 इसमें क्या होता है यह वसा का ब्लॉकेज
+43:22 होना चालू हो जाता है इस प्रकार से इस
+43:24 प्रकार से लाइक देश तो खून प्रॉपर्ली आगे
+43:28 बढ़ नहीं पाता है इस बीमारी को हम बोलते
+43:30 हैं एथेरो एथेरो
+43:34 क्लियोस यह नाम याद
+43:37 रखोगे साइंस के टीचर आधे डॉक्टर होते हैं
+43:40 बिल्कुल बेटा चलिए इसको आप लोग याद रखना
+43:43 और हृदय की बीमारी इसी से होती है हृदय की
+43:46 धड़कन रुक जाती है यह पूरा आप लोगों ने
+43:48 समझ लिया होगा कुपोषण से बचाव कैसे करें
+43:51 सर कैसे हम लोग कुपोषण से बच सकते हैं कछु
+43:54 नहीं करना है टाइम टेबल सही करो सही टाइम
+43:56 पे खाना खाओ और जितने पोषक तत्व हैं हमारा
+43:59 भारतीय खाना जो है सबसे बेस्ट है वर्ल्ड
+44:02 में क्योंकि हम चावल खाते हैं ना हम
+44:05 क्या-क्या खाते हैं बचाओ में हम चावल खाते
+44:08 हैं तो कार्बोहाइड्रेट मिल गया हम दाल
+44:11 खाते हैं तो प्रोटीन मिल गया हम सब्जियां
+44:13 खाते हैं तो हमको विटामिन मिल गई सब्जियां
+44:16 खाते हैं तो हमको विटामिन मिल गई सलाद
+44:18 खाते हैं सलाद खाते हैं विटामिन मिल गया
+44:21 पानी तो हम लोग पीते ही हैं तो हमारे लगभग
+44:24 सारे पोषक तत्व हमारे आ जाते हैं और बहुत
+44:27 सारे हमारे खाने में वसा भी वसा भी होती
+44:30 है वसा भी होती है ठीक रोटी खाते हैं हम
+44:34 लोग ये सारी चीजें खाते हैं तो हमारे
+44:37 सातों न्यूट्रिएंट्स जो हैं वो कवर हो
+44:38 जाते हैं सातों न्यूट्रिएंट्स कवर हो जाते
+44:41 हैं तो हमको अपना प्रॉपर खाना भी खाए ना
+44:43 दो टाइम तीन टाइम तो भी हमको बीमारियां
+44:46 नहीं होंगी अलग से और क्या खा सकते हो चने
+44:48 वगैरह भिगा के खाओ चने खा सकते हो और क्या
+44:51 कर सकते हो अंकुरित वाली चीजें जितनी भी
+44:53 है मूंगफली वगैरह भी खा सकते हो है ना हरा
+44:57 चना हो गया लाल वाले चने उसके बाद आपका</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 45:00 – 49:59</summary>
+      <pre>45:00 मूंग दाल वगैरह ये सब भिगा भिगू के खा लो
+45:03 आपको किसी चीज की कमी नहीं होगी एक चीज का
+45:06 थोड़ा सा मैं बोलूंगा दूध को थोड़ा सा देख
+45:08 के पिया करो दूध जो है प्योर नहीं आ रहा
+45:10 है तो इसको थोड़ा सा भैया दूध वाले भैया
+45:12 को देख के पीना तो कुपोषण से बचाव के क्या
+45:15 तरीके हैं कुपोषण से बचाव के तरीके हैं कि
+45:18 सर हमको पोषित आहार चाहिए कार्बोहाइड्रेट
+45:21 के लिए हमको कार्बोहाइड्रेट वाले खाने
+45:23 खाने हैं हमको प्रोटीन की कमी ना हो
+45:25 प्रोटीन वाला खाना खाना है और आपने सब बता
+45:27 दिया सर वसा वाली चीजें भी खानी है
+45:29 विटामिन वाली चीजें भी खानी है यह सब कुछ
+45:32 आपने बता दिया तो ये ब्रेड चावल आलू अन्य
+45:35 स्टार्च युक्त खाद्य पदार्थ स्टार्च यु
+45:37 युक्त खाद्य पदार्थ मतलब जो हमारा पॉली
+45:40 सकरा इड है जो कार्बोहाइड्रेट का तीसरा
+45:42 रूप है कार्बोहाइड्रेट में मोनो
+45:48 सैकइंफो
+45:51 है कार्बोहाइड्रेट का लेकिन बहुत आसानी से
+45:54 हमारे शरीर में घुल जाता आता है और हमें
+45:57 ऊर्जा प्रदान करता है तो हमें इन इन सभी
+45:60 पदार्थों को खाना है पर ब्रेड को बहुत
+46:02 ज्यादा मत खाना ब्रेड भी नुकसान करता है
+46:05 कितने दिन से बना हुआ और होता है अच्छा
+46:07 नहीं होता है यह आहार सबसे बड़ा हिस्सा
+46:10 होता है ऊर्जा और कार्बोहाइड्रेट के लिए
+46:13 जो कि हमें कैलोरी प्रदान करता है इसलिए
+46:15 आपको यह सब खाना है उसके बाद वास्तविक
+46:18 शुगर के महत्त्वपूर्ण स्त्रोत लैक्टोज हो
+46:21 गया कैल्शियम जैसे खनिज पदार्थ हो गए फलों
+46:24 को खाना है सब्जियों को खाना है विटा और
+46:26 खनिजों के लिए मींस सर आपने जो सात पोषक
+46:29 तत्व बताए हैं उनके सभी चीजों को खा लेंगे
+46:32 तो हमारा कुपोषण से बचाव हो जाएगा कुछ लोग
+46:35 मांस मछली अंडे भी खाते हैं तो वो वहां से
+46:38 भी पोषण ले सकते हैं सेम फली खाते हो
+46:41 प्रोटीन के अन्य गैर डेरी स्त्रोत से आप
+46:44 लोग अपने शारीरिक पोषण को प्राप्त कर सकते
+46:46 हो इसके अलावा यह महत्त्वपूर्ण चीज है
+46:49 इसको थोड़ा सा नोट करना इसके अलावा हम लोग
+46:52 क्या कर सकते हैं जो हमारे अस्पताल होते
+46:54 हैं अस्पताल होते हैं वहां पर मरीजों को
+46:57 वहां पर बच्चों को गर्भवती महिलाओं को
+47:00 बुजुर्गों को कुपोषण के लिए मूल्यांकन
+47:03 किया जाना
+47:04 चाहिए यह इंपॉर्टेंट है हमारा जो बुजुर्ग
+47:08 हैं हमारी महिलाएं जो गर्भवती हैं जो
+47:10 हमारे शिशु बच्चे हैं इन सभी का प्रॉपर
+47:13 टेस्ट होना चाहिए कुपोषण का है ना ताकि
+47:16 बच्चों में कुपोषण की रोकथाम की जा सके और
+47:18 गर्भवती महिलाओं को प्राप्त पर्याप्त पोषण
+47:21 दिया जाना चाहिए गर्भवती महिलाओं को पोषण
+47:24 अगर नहीं मिलेगा तो बच्चा जो पैदा होगा वो
+47:27 कुपोषित ही पैदा होगा उसके बाद उसके बच
+47:30 मतलब जन्म लेने के बाद कितना भी पोषण दे
+47:33 दो कितना भी पोषण दे दो वो चीज नहीं हो
+47:36 पाएगी जो एक बच्चे में हो सकती है तो यह
+47:38 सबसे महत्त्वपूर्ण चीज है कि गर्भवती
+47:40 महिलाओं को पोषण देना जरूरी है ताकि जो
+47:43 बच्चे पैदा हो रहे हैं वह कुपोषित पैदा ना
+47:46 हो आप लोगों ने देखा होगा आपके घर में कोई
+47:48 भी जब गर्भवती गर्भ धारण करता है तो उसको
+47:51 अच्छा-अच्छा खाना खिलाने लगते हैं
+47:53 अच्छा-अच्छा उसके लिए फ्रूट लाते हैं काजू
+47:55 बादाम की चीज खिलाना चालू हो जाता है कि
+47:57 बच्चा बिल्कुल काजू जैसा पैदा हो गोरा
+47:59 गोरा और पता नहीं क्याक चीजें चलने लगती
+48:02 है भाई साहब बिल्कुल अलग ही लेवल चलता है
+48:05 तो कुपोषण से बचाओ
+48:08 आओ तो यह सारी चीजें कुपोषण हमारा लगभग
+48:11 खत्म हो गया अब मैं आपको कुछ भारत सरकार
+48:14 के और मध्य प्रदेश सरकार की योजनाएं गिना
+48:17 देता हूं दो चार उन योजनाओं को आप लोग लिख
+48:19 लो योजनाओं के नाम लिख लो ठीक है क्या
+48:23 सर बीमारियों से बचने के लिए थोड़ा
+48:27 वर्कआउट भी करना चाहिए बिल्कुल स्टडी एक्स
+48:29 वाई जड ने बिल्कुल करेक्ट कहा है थोड़ा
+48:31 नहीं आपको डेली 15 मिनट अगर आपने
+48:35 एक्सरसाइज किया गिन के गिन के 15 मिनट
+48:38 बहुत ज्यादा बोल दिया 10 मिनट भी अगर आपने
+48:40 दिन भर का एक्सरसाइज कर लिया तो आपको बहुत
+48:43 जल्दी बीमारियां नहीं होंगी और अपना खान
+48:46 पीन अच्छा करो बाकी आप जितना एक्सरसाइज कर
+48:48 सकते हो करो लेकिन 10 15 मिनट तो अपने आप
+48:50 को स्ट्रेचिंग करो और एक्सरसाइज करो
+48:53 प्रॉपर बस यही हम कह सकते हैं ठीक
+48:56 चलिए थोड़ा सा हम योजनाएं देख लेते हैं
+48:60 कि मध्य प्रदेश सरकार की
+49:03 योजनाएं मध्य प्रदेश
+49:08 सरकार की योजनाएं इन योजनाओं के नाम लिख
+49:12 लो जो कि कुपोषण से संबंधित है कुपोषण को
+49:17 खत्म करने के लिए मध्य प्रदेश की सरकार ने
+49:20 कुछ योजनाएं चलाई है जैसे कि मुख्यमंत्री
+49:23 अनपूर्ण
+49:25 योजना
+49:29 मुख्यमंत्री अन्नपूर्णा
+49:36 योजना ठीक आपको पूरा कुपोषण समझ में आ गया
+49:39 ना अगर आ गया तो यस सर लिख दो कि हां सर
+49:41 कुपोषण पूरा समझ में आ गया मॉर्निंग वक
+49:43 करना जरूरी है बिल्कुल बेटा ठीक ठीक और
+49:47 दूसरा लिखो अटल बालमित्र
+49:50 योजना
+49:52 अटल बालमित्र योजना</pre>
+    </details>
+
+    <details class="raw-block">
+      <summary>🧾 Raw Transcript Flow: 50:00 – 54:59</summary>
+      <pre>50:00 योजना तीसरा लिखो बाल
+50:04 शक्ति योजना यस सर बाल
+50:09 शक्ति
+50:12 योजना बाल शक्ति योजना चौथा लिखो मध्य
+50:16 प्रदेश की सरकार ने एक प्रोजेक्ट मुस्कान
+50:20 और बालिका समृद्धि योजना प्रोजेक्ट
+50:24 मुस्कान
+50:32 बालिका समृद्धि
+50:39 योजना यह सारी
+50:41 चीजें हमारी कुपोषण को खत्म करने के लिए
+50:44 योजनाएं चलाई गई इनको लिख लो जी सर बहुत
+50:47 अच्छे से समझ आ गया है बहुत बढ़िया बेटा
+50:50 ठीक है लिख लो
+50:53 इनको कुछ हमारी सेंट्रल गवर्नमेंट जो है
+50:58 मतलब जो हमारा केंद्र सरकार है उसने भी
+51:02 कुछ योजनाएं चलाई हैं कुछ नहीं बहुत सारी
+51:03 चलाई है एक दो लिख लो केंद्र
+51:07 सरकार की
+51:11 योजनाएं जो कि संबंधित है
+51:14 किससे कुपोषण
+51:19 से आप लोगों ने मिडडे मिल सुना है ना
+51:23 स्कूलों में मिडडे मिल चालू किया गया है
+51:24 मिडडे मिल वो क्यों ताकि जो बच्चे स्कूल
+51:27 जाते हैं उनको पोषण दिया जा सके लेकिन
+51:30 उसका कितना मिसयूज किया गया है वह अलग बात
+51:32 है तो आप पहला लिख लो मिडडे
+51:35 मील
+51:38 मिडडे
+51:39 मील ठीक यह एक योजना चलाई गई मिड डे मील
+51:43 का बाकी पोषण के लिए हर संभव प्रयास किया
+51:46 जा रहा है है ना इसके लिए आंगनबाड़ी
+51:49 केंद्रों का
+51:50 भी
+51:54 आंगनवाड़ी केंद्रों की व्यवस्था की जा रही
+52:02 है ठीक अलग-अलग जगहों पर आंगनबाड़ी
+52:05 आंगनबाड़ी का मेन काम यही है कि जो बच्चे
+52:08 बड़े हो रहे हैं उनको पोषित किया जाए उनको
+52:11 टीकाकरण किया जाए और महिलाएं जो गर्भवती
+52:13 होती हैं उनको भी पोषण के लिए सामग्री
+52:16 वगैरह व्यवस्थित किया जा
+52:18 सके ठीक है
+52:20 ना बहुत
+52:22 बढ़िया और इसी इसी में हम लोग स्वास्थ
+52:26 वाले में सब कुछ पढ़ेंगे साथियों
+52:28 राष्ट्रीय पोषण नीति वगैरह
+52:30 पोषण
+52:32 नीति और बहुत सारी हैं इस पूरी लिस्ट को
+52:38 एक्सप्लेन करना है मुझे कौन से वाले टॉपिक
+52:40 में स्वास्थ्य और स्वास्थ्य नीति में इतना
+52:44 लिख लो आप बाकी मैं आपको वहां पर डिटेल
+52:47 में समझाऊ ही इसलिए इसको क्लास को ज्यादा
+52:49 लंबा करना उचित नहीं है कुपोषण समझना
+52:51 जरूरी था समझ लिया स्वास्थ्य नीति और
+52:54 कार्यक्रम जितने भी कार्यक्रम है मध्य
+52:57 प्रदेश
+52:58 और हमारे सेंट्रल गवर्नमेंट का है ना उनका
+53:01 हम लोग सारे कार्यक्रम पढ़ेंगे संक्रामक
+53:04 रोग उनके रोकथाम स्वास्थ्य सूचक स्वास्थ्य
+53:07 से संबंधित सारी चीजें हम लोग को यहां पर
+53:09 नीति वगैरह सब पढ़ना है तो यहां पर हम
+53:11 चीजों को और डिटेल में पढ़ेंगे बाकी आज
+53:14 कुपोषण कंप्लीट हो गया पोषण आहार पोषक
+53:16 तत्व कुपोषण कंप्लीट कल हम लोग जो क्लास
+53:19 लेंगे सिकल सेल एनीमिया पर लेंगे और इसके
+53:22 बाद जितने भी अनुवांशिक रोग हैं इसको
+53:24 डिटेल में पढ़ है एक बच्चे कमेंट करके
+53:27 पूछा था कि अनुवांशिक रोग में सिर्फ सिकल
+53:29 सेल एनीमिया पढ़ना है कि हमको सारे
+53:31 अनुवांशिक रोग पढ़ने हैं यह अलग से है
+53:34 सारे अनुवांशिक रोग रोग क्या होता है उसके
+53:37 सारे प्रकार अनुवांशिक रोग के सारे प्रकार
+53:39 पढ़ने हैं तो यह सारी चीजें हम लोग कल हम
+53:42 लोग देखेंगे सिकल सेल एनीमिया फिर वो
+53:44 देखेंगे और हमारा बहुत सारा टॉपिक सेवंथ
+53:46 यूनिट का कवर हो जाएगा बहुत सारा हमारा
+53:48 सेवंथ यूनिट का कवर हो जाएगा आई होप आज का
+53:51 लेक्चर सबको समझ में आया है टेलीग्राम से
+53:54 पीडीएफ डाउनलोड कर लेना मैंने लगभग पुराने
+53:56 सारे पीडीएफ
+54:26 स्वस्थ रहने का प्रयास करना जबरदस्त पढ़ाई
+54:28 करना मस्तिष्क आपका बिल्कुल स्टेबल रहे
+54:31 ऐसा कोई कार्य मत करना जिससे कि आप पर कोई
+54:35 बड़ी समस्या आ सके तो इन सब चीजों से इन
+54:37 सब बाधाओं से दूर रहने का प्रयास करना
+54:40 बाकी मिलते हैं हम लोग रात में 10 बजे
+54:47 धन्यवाद बिल्कुल पीएम पोषण स्कीम हो गया
+54:50 है बिल्कुल
+54:53 बेटा बिल्कुल बेटा पीएम स्की हो गया है
+54:56 उसको चेंज कर
+54:59 लेंगे</pre>
+    </details></section>
+</article></main>
+<footer class="container">Made for side-by-side revision with the video transcript. No extra theory has been added beyond the transcript flow; images are only supporting visuals.</footer>
+<script>
+const root=document.documentElement;
+const savedTheme=localStorage.getItem('rev-theme'); if(savedTheme) root.setAttribute('data-theme',savedTheme);
+document.getElementById('themeToggle').addEventListener('click',()=>{const now=root.getAttribute('data-theme')==='light'?'dark':'light'; if(now==='dark') root.removeAttribute('data-theme'); else root.setAttribute('data-theme','light'); localStorage.setItem('rev-theme', now==='dark'?'dark':'light');});
+window.addEventListener('scroll',()=>{const h=document.documentElement; const sc=h.scrollTop/(h.scrollHeight-h.clientHeight); document.getElementById('scrollProgress').style.width=(sc*100).toFixed(1)+'%';});
+document.getElementById('jump').addEventListener('change',e=>{if(e.target.value) document.getElementById(e.target.value).scrollIntoView({behavior:'smooth',block:'start'}); e.target.value='';});
+document.querySelectorAll('.reveal').forEach(btn=>btn.addEventListener('click',()=>{const ans=btn.nextElementSibling; if(ans) ans.classList.toggle('show');}));
+document.querySelectorAll('[data-complete]').forEach(btn=>{const key='rev-done-'+btn.dataset.complete; if(localStorage.getItem(key)==='1'){btn.classList.add('done');btn.textContent='Revised ✓';} btn.addEventListener('click',()=>{const done=btn.classList.toggle('done'); btn.textContent=done?'Revised ✓':'Mark revised'; localStorage.setItem(key,done?'1':'0'); updateProgress();});});
+function updateProgress(){const boxes=[...document.querySelectorAll('input[data-save]')]; boxes.forEach(b=>{const k='rev-check-'+b.dataset.save; if(localStorage.getItem(k)==='1') b.checked=true; b.onchange=()=>{localStorage.setItem(k,b.checked?'1':'0'); updateProgress();};}); const done=boxes.filter(b=>b.checked).length; const pct=boxes.length?Math.round(done/boxes.length*100):0; const txt=document.getElementById('progressText'); if(txt) txt.textContent=`${pct}% complete (${done}/${boxes.length} checked)`;}
+updateProgress();
+document.getElementById('expandAll').addEventListener('click',()=>{document.querySelectorAll('.raw-block').forEach(d=>d.open=true);});
+// Image reliability: show visible fallback link if an external image fails.
+document.querySelectorAll('img').forEach(img=>{const original=img.src; img.onerror=()=>{const fig=img.closest('figure'); const a=document.createElement('a'); a.href=original; a.textContent='Open image source'; a.target='_blank'; a.rel='noopener'; a.className='image-fallback'; img.replaceWith(a); if(fig) fig.classList.add('image-missing');};});
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

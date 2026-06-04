@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class 11 Revision: पोषक तत्व, वसा, विटामिन और खनिज</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f1a; --bg2:#15162a; --card:#1b1d33; --card2:#222541;
+      --text:#f6f8ff; --muted:#dce5ff; --soft:#9fb2df; --border:#33416d;
+      --cyan:#00d4ff; --orange:#ff6b35; --green:#00ff88; --purple:#b388ff; --yellow:#ffd166; --pink:#ff5fa2;
+      --shadow:0 20px 50px rgba(0,0,0,.32); --radius:22px;
+    }
+    [data-theme="light"]{
+      --bg:#f7f9ff; --bg2:#ffffff; --card:#ffffff; --card2:#edf3ff;
+      --text:#11162a; --muted:#24304b; --soft:#4c5f88; --border:#c9d7f5;
+      --shadow:0 14px 34px rgba(20,36,80,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at top left,rgba(0,212,255,.16),transparent 36%),radial-gradient(circle at top right,rgba(179,136,255,.18),transparent 34%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.7;letter-spacing:.1px}
+    a{color:var(--cyan)}
+    .scrollbar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--cyan),var(--green),var(--orange));width:0;z-index:9999}
+    header.hero{padding:52px 18px 30px;max-width:1120px;margin:auto}
+    .hero-card{background:linear-gradient(135deg,rgba(0,212,255,.13),rgba(179,136,255,.15)),var(--card);border:1px solid var(--border);border-radius:30px;padding:34px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .hero-card:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(0,255,136,.28),transparent 68%)}
+    h1{font-size:clamp(2rem,5vw,4rem);line-height:1.12;margin:0 0 14px;font-weight:900;letter-spacing:-1px}
+    h2{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.22;margin:0 0 16px;font-weight:850}
+    h3{font-size:1.25rem;margin:0 0 10px;font-weight:800}
+    .subtitle{font-size:1.05rem;color:var(--muted);max-width:850px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:rgba(255,255,255,.06);border-radius:999px;padding:8px 12px;color:var(--muted);font-weight:700}
+    .layout{max-width:1120px;margin:auto;display:grid;grid-template-columns:285px minmax(0,1fr);gap:22px;padding:0 18px 70px}
+    nav.toc{position:sticky;top:64px;align-self:start;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);max-height:calc(100vh - 86px);overflow:auto}
+    nav.toc a{display:block;text-decoration:none;padding:10px 12px;border-radius:14px;color:var(--muted);font-weight:700;margin:3px 0;border:1px solid transparent}
+    nav.toc a:hover, nav.toc a.active{background:linear-gradient(90deg,rgba(0,212,255,.12),rgba(179,136,255,.10));border-color:var(--border);color:var(--text)}
+    .sticky-tools{position:sticky;top:0;z-index:999;background:rgba(15,15,26,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    [data-theme="light"] .sticky-tools{background:rgba(247,249,255,.88)}
+    .tool-inner{max-width:1120px;margin:auto;padding:10px 18px;display:flex;gap:10px;align-items:center;justify-content:space-between}
+    select,button{font:inherit;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);padding:10px 12px;font-weight:800}
+    button{cursor:pointer;background:linear-gradient(135deg,rgba(0,212,255,.16),rgba(179,136,255,.16))}
+    main{min-width:0}
+    section.topic{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02)),var(--card);border:1px solid var(--border);border-radius:28px;padding:24px;margin:0 0 22px;box-shadow:var(--shadow);scroll-margin-top:88px;position:relative;overflow:hidden}
+    section.topic:before{content:"";position:absolute;inset:0 0 auto;height:6px;background:linear-gradient(90deg,var(--accent,var(--cyan)),transparent)}
+    .stamp{display:inline-flex;align-items:center;gap:8px;color:#07111f;background:var(--accent,var(--cyan));padding:5px 10px;border-radius:999px;font-weight:900;font-size:.82rem;margin-bottom:12px}
+    .flow-note{color:var(--soft);font-weight:700;margin:-4px 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .card{background:var(--card2);border:1px solid var(--border);border-radius:20px;padding:16px;margin:12px 0}
+    .card.accent{border-left:5px solid var(--accent,var(--cyan))}
+    .mini{font-size:.94rem;color:var(--soft)}
+    ul,ol{padding-left:1.3rem;margin:10px 0}
+    li{margin:8px 0}
+    .hot{background:linear-gradient(135deg,rgba(255,107,53,.18),rgba(255,209,102,.09));border:1px solid rgba(255,107,53,.45);border-radius:18px;padding:14px;margin:12px 0}
+    .hot strong{color:var(--yellow)}
+    .linkstory{background:linear-gradient(135deg,rgba(0,255,136,.14),rgba(0,212,255,.10),rgba(179,136,255,.12));border:1px solid rgba(0,212,255,.42);border-radius:20px;padding:16px;margin:14px 0}
+    .definition{background:linear-gradient(135deg,rgba(179,136,255,.17),rgba(0,212,255,.08));border:1px dashed rgba(179,136,255,.65);border-radius:18px;padding:15px;margin:12px 0}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--border);border-radius:18px;margin:14px 0;background:var(--card2)}
+    th,td{padding:12px 13px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left}
+    th{background:rgba(0,212,255,.10);font-weight:900;color:var(--text)}
+    tr:last-child td{border-bottom:0}
+    .table-wrap{overflow:auto;border-radius:18px}
+    details{background:var(--card2);border:1px solid var(--border);border-radius:18px;margin:12px 0;padding:12px 14px}
+    details summary{cursor:pointer;font-weight:900;color:var(--text)}
+    .quiz details{background:rgba(0,255,136,.08)}
+    .visual{margin:16px 0;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:22px;overflow:hidden}
+    .visual img{display:block;width:100%;max-width:100%;height:auto;background:#111;object-fit:cover}
+    .caption{font-size:.85rem;color:var(--soft);padding:10px 12px;border-top:1px solid var(--border)}
+    .fallback{display:none;padding:12px;background:rgba(255,107,53,.12);border-top:1px solid var(--orange)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+    .chip{border:1px solid var(--border);background:rgba(255,255,255,.06);padding:8px 10px;border-radius:999px;font-weight:800;color:var(--muted)}
+    .diagram{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#080b16;color:#e8f0ff;border-radius:18px;border:1px solid var(--border);padding:14px;overflow:auto;line-height:1.5}
+    [data-theme="light"] .diagram{background:#edf3ff;color:#11162a}
+    .checklist label{display:flex;gap:10px;align-items:flex-start;background:var(--card2);border:1px solid var(--border);border-radius:16px;padding:12px;margin:9px 0}
+    input[type="checkbox"]{width:20px;height:20px;accent-color:#00d4ff;flex:0 0 auto;margin-top:4px}
+    .counter{font-weight:900;color:var(--green)}
+    footer{max-width:1120px;margin:auto;padding:0 18px 60px;color:var(--muted)}
+    .print-only{display:none}
+    @media (max-width: 900px){
+      .layout{grid-template-columns:1fr}.toc{display:none}.grid{grid-template-columns:1fr}.tool-inner{align-items:stretch;flex-direction:column}select,button{width:100%}section.topic{padding:18px}.hero-card{padding:24px}
+    }
+    @media print{
+      *{box-shadow:none!important} body{background:#fff;color:#000;font-size:13px}.sticky-tools,.toc,.scrollbar,button,select{display:none!important}.layout{display:block;max-width:100%;padding:0}section.topic,.card,details{break-inside:avoid;border:1px solid #888;background:#fff;color:#000}details[open],details{display:block}details summary{list-style:none}.visual{display:none}.print-only{display:block}a{color:#000}
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="scrollbar" id="scrollbar"></div>
+  <div class="sticky-tools">
+    <div class="tool-inner">
+      <select id="jump" aria-label="Jump to section">
+        <option value="#top">Jump to topic...</option>
+        <option value="#s1">00:12 Intro & class flow</option>
+        <option value="#s2">02:20 Nutrients recap</option>
+        <option value="#s3">06:57 Fat starts</option>
+        <option value="#s4">09:18 Fat energy & functions</option>
+        <option value="#s5">15:45 Fat deficiency/excess/types</option>
+        <option value="#s6">21:24 Vitamins intro</option>
+        <option value="#s7">26:36 Vitamin solubility</option>
+        <option value="#s8">31:23 Vitamin names trick</option>
+        <option value="#s9">37:09 Vitamin diseases & sources</option>
+        <option value="#s10">44:52 Minerals intro</option>
+        <option value="#s11">46:30 Iron</option>
+        <option value="#s12">48:49 Iodine</option>
+        <option value="#s13">50:03 Copper</option>
+        <option value="#s14">50:56 Calcium</option>
+        <option value="#s15">52:09 Sodium & wrap</option>
+        <option value="#master">Master revision</option>
+      </select>
+      <button id="themeBtn" type="button">🌙 Dark / ☀️ Light</button>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="hero-card">
+      <h1>🧬 Class 11 Revision Page<br>पोषक तत्व → वसा → विटामिन → खनिज</h1>
+      <p class="subtitle">MPPSC Pre 2024 targeted Unit 7 flow: Science, Tech, Environment, Health. यह page transcript के sequence में ही बना है: पहले previous class का recap, फिर Fat, Vitamins, Minerals और अंत में upcoming topics.</p>
+      <div class="badges">
+        <span class="badge">🎯 Topic: Nutrients / पोषक तत्व</span>
+        <span class="badge">🕒 Covered: 00:12 से 55:15 तक</span>
+        <span class="badge">🔥 Exam Hot points marked</span>
+        <span class="badge">✅ Checklist progress saved</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <h3>📌 Flow TOC</h3>
+      <a href="#s1">00:12 Intro</a>
+      <a href="#s2">02:20 Nutrients recap</a>
+      <a href="#s3">06:57 Fat: composition</a>
+      <a href="#s4">09:18 Fat functions</a>
+      <a href="#s5">15:45 Fat types & energy</a>
+      <a href="#s6">21:24 Vitamins intro</a>
+      <a href="#s7">26:36 Solubility trick</a>
+      <a href="#s8">31:23 Chemical names trick</a>
+      <a href="#s9">37:09 Diseases & sources</a>
+      <a href="#s10">44:52 Minerals</a>
+      <a href="#s11">46:30 Iron</a>
+      <a href="#s12">48:49 Iodine</a>
+      <a href="#s13">50:03 Copper</a>
+      <a href="#s14">50:56 Calcium</a>
+      <a href="#s15">52:09 Sodium & wrap</a>
+      <a href="#master">Master Revision</a>
+    </nav>
+
+    <main>
+      <section class="topic" id="s1" style="--accent:var(--cyan)">
+        <span class="stamp">00:12–02:20</span>
+        <h2>👋 Intro: आज का session किस पर है?</h2>
+        <p class="flow-note">Teacher ने greeting के बाद बताया कि last session में आहार, पोषक तत्व, carbohydrate और protein detail में हो चुका है; आज mainly Vitamins, Fat और Minerals finish करने हैं.</p>
+        <div class="card accent">
+          <h3>आज का target</h3>
+          <ul>
+            <li>आज Lecture 11 में <b>Vitamin, Nutrition, Diet, Nutrients</b> की discussion आगे बढ़ेगी.</li>
+            <li>Last session: <b>Carbohydrate</b> और <b>Protein</b> detail में types के साथ पढ़े गए.</li>
+            <li>आज बचा हुआ: <b>वसा / Fat</b>, <b>विटामिन / Vitamins</b>, <b>खनिज लवण / Minerals</b>.</li>
+            <li>यह MPPSC Pre 2024 targeted <b>Unit 7</b> का हिस्सा है: Science, Tech, Environment, Health.</li>
+          </ul>
+        </div>
+        <div class="definition">
+          <b>📌 Upcoming Topic:</b> Teacher ने बताया कि अगले session में <b>कुपोषण</b>, फिर <b>Sickle Cell Anemia</b> और <b>अनुवांशिक रोग</b> पढ़े जाएंगे.
+        </div>
+        <div class="hot"><strong>🔥 Exam flow note:</strong> Vitamins से सबसे ज्यादा questions पूछे जाते हैं, इसलिए teacher ने शुरू में ही बोल दिया कि आज vitamins पर special focus रहेगा.</div>
+      </section>
+
+      <section class="topic" id="s2" style="--accent:var(--green)">
+        <span class="stamp">02:20–06:42</span>
+        <h2>🧩 पोषक तत्व recap: 7 nutrients</h2>
+        <p class="flow-note">Teacher ने “मेरी आदत है revision कराने की” कहकर previous class का short recap कराया ताकि weak students भी follow कर सकें.</p>
+        <div class="grid">
+          <div class="card accent">
+            <h3>7 पोषक तत्व</h3>
+            <ol>
+              <li>Carbohydrate</li>
+              <li>Protein</li>
+              <li>Fat / वसा</li>
+              <li>Vitamins</li>
+              <li>Minerals / खनिज</li>
+              <li>Water / जल</li>
+              <li>Fibres / रेशे</li>
+            </ol>
+          </div>
+          <div class="card accent">
+            <h3>Previous class recap</h3>
+            <ul>
+              <li><b>Carbohydrate</b> के types: Monosaccharide, Disaccharide, Polysaccharide.</li>
+              <li><b>Monosaccharide</b> सबसे simple/simple form होता है.</li>
+              <li><b>Disaccharide</b> दो monosaccharides से मिलकर बनता है.</li>
+              <li><b>Polysaccharide</b> कई saccharide units से मिलकर बनता है.</li>
+              <li><b>Protein</b> भी previous class में detail में पढ़ा गया.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Nutrient</th><th>Main काम, जैसा class में बताया</th><th>Exam note</th></tr></thead>
+            <tbody>
+              <tr><td>Carbohydrate</td><td>त्वरित ऊर्जा देता है; glucose simple form है इसलिए जल्दी absorb होता है.</td><td>Immediate energy</td></tr>
+              <tr><td>Protein</td><td>शारीरिक वृद्धि, टूट-फूट की मरम्मत, नई कोशिकाओं का निर्माण और वृद्धि.</td><td>Body building/repair</td></tr>
+              <tr><td>Fat</td><td>ऊर्जा देता है लेकिन <b>संचित ऊर्जा</b> के रूप में.</td><td>Stored energy</td></tr>
+              <tr><td>Vitamin</td><td>रक्षा प्रदान करता है, रोग प्रतिरोधक क्षमता बढ़ाता है.</td><td>Protective nutrient</td></tr>
+              <tr><td>Minerals</td><td>अलग-अलग mineral अलग काम करते हैं: calcium, iron, iodine etc.</td><td>Deficiency diseases important</td></tr>
+              <tr><td>Water</td><td>जल ही जीवन है, सबसे जरूरी चीज.</td><td>Basic life need</td></tr>
+              <tr><td>Fibre</td><td>सब्जियों से मिलता है; teacher ने कहा इस पर ज्यादा questions नहीं बनते.</td><td>Less asked as per class</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — 7 nutrients ऐसे याद करो:</b><br>
+          एक plate में <b>Carbohydrate</b> ने instant energy दी, <b>Protein</b> ने body repair की, <b>Fat</b> ने backup battery बनकर energy जमा की, <b>Vitamin</b> guard बन गया, <b>Minerals</b> ने bones/blood/thyroid संभाला, <b>Water</b> ने सब चलाया और <b>Fibre</b> ने digestion साफ रखा.
+        </div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Carbohydrate का main काम?</summary><p>त्वरित ऊर्जा प्रदान करना.</p></details>
+          <details><summary>Q2. Protein का main काम?</summary><p>शारीरिक वृद्धि, repair, cells का निर्माण/वृद्धि.</p></details>
+          <details><summary>Q3. Vitamin का main काम?</summary><p>रक्षा प्रदान करना और immunity बढ़ाना.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s3" style="--accent:var(--orange)">
+        <span class="stamp">06:57–09:18</span>
+        <h2>🥑 वसा / Fat: composition और protein वाला MCQ</h2>
+        <p class="flow-note">Fat शुरू करते ही teacher ने chemical composition बताया और साथ में protein का nitrogen वाला previous MCQ याद कराया.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/High_Fat_Foods_NCI_Visuals_Online.jpg?width=900" alt="High fat foods: coconut, avocado, peanut butter, olives and cheese" loading="eager" fetchpriority="high" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:High_Fat_Foods_NCI_Visuals_Online.jpg">
+          <div class="caption">Image: Wikimedia Commons / National Cancer Institute Visuals Online, unknown author, Public Domain Mark 1.0. Concept: Fat-rich food examples.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:High_Fat_Foods_NCI_Visuals_Online.jpg">Wikimedia Commons</a></div>
+        </div>
+        <div class="card accent">
+          <h3>Fat में कौन-कौन से elements?</h3>
+          <ul>
+            <li>Fat में <b>Carbon, Hydrogen और Oxygen</b> अलग-अलग ratio/भिन्न-भिन्न अनुपात में जुड़े होते हैं.</li>
+            <li>इसी अलग chemical combination से अलग-अलग types के fats बनते हैं.</li>
+            <li>Teacher ने compare कराया: यही C-H-O carbohydrate में भी था, लेकिन fat में ratio/structure अलग और complex होता है.</li>
+          </ul>
+        </div>
+        <div class="hot">
+          <strong>🔥 Exam Hot:</strong> “Nitrogen युक्त पोषक तत्व कौन सा?” — <b>Protein</b>. Protein में Carbon, Hydrogen, Oxygen और <b>Nitrogen</b> होता है. Fat और carbohydrate में nitrogen नहीं है.
+        </div>
+        <div class="diagram" aria-label="Protein nitrogen concept">
+Protein  = C + H + O + N  → Nitrogen युक्त पोषक तत्व
+Fat      = C + H + O      → Nitrogen नहीं
+Carb     = C + H + O      → Nitrogen नहीं
+        </div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Fat किन elements से बना बताया गया?</summary><p>Carbon, Hydrogen और Oxygen की different quantities/ratios से.</p></details>
+          <details><summary>Q2. Nitrogen युक्त nutrient?</summary><p>Protein.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s4" style="--accent:var(--orange)">
+        <span class="stamp">09:18–15:45</span>
+        <h2>🛢️ Fat: water solubility, energy और body में role</h2>
+        <p class="flow-note">यहाँ teacher ने fat को carbohydrate से compare करके समझाया: carbohydrate simple और तत्काल ऊर्जा; fat complex और stored energy.</p>
+        <div class="grid">
+          <div class="card accent">
+            <h3>Water solubility</h3>
+            <ul>
+              <li><b>Fat जल में अघुलनशील</b> है.</li>
+              <li>Carbohydrate जल में घुलनशील बताया गया.</li>
+              <li>Carbohydrate simple form है; glucose पीते ही तुरंत energy मिलती है.</li>
+              <li>Fat का structure complex है, इसलिए body उसे stored energy की तरह रखती है.</li>
+            </ul>
+          </div>
+          <div class="card accent">
+            <h3>Energy comparison</h3>
+            <ul>
+              <li>Fat, carbohydrate की तुलना में लगभग <b>दोगुनी ऊर्जा</b> मुक्त करता है.</li>
+              <li>1 gram fat के combustion से class में <b>लगभग 9.3 kilocalorie</b> बताया गया.</li>
+              <li>पर body को instant energy carbohydrate से मिलती है; fat reserve में रहता है.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="definition">
+          <b>Key line:</b> Fat शरीर को <b>संचित ऊर्जा</b> देता है, immediate/त्वरित ऊर्जा नहीं.
+        </div>
+        <div class="card accent">
+          <h3>Fat शरीर में क्या करता है?</h3>
+          <ul>
+            <li>Skin के नीचे fat के रूप में जमा होता है.</li>
+            <li>Skin maintenance करता है; skin dry हो तो fat की कमी का संकेत बताया गया.</li>
+            <li>Skin/oil example: 2-3 दिन न नहाने पर hair/scalp में oily layer दिखती है; teacher ने बताया body oil fat से आता है.</li>
+            <li>Body को protection/resistance देता है.</li>
+            <li>Temperature regulation करता है; human body temperature <b>37°C</b> maintain करने में help.</li>
+          </ul>
+        </div>
+        <div class="card accent">
+          <h3>Illness/fasting example</h3>
+          <p>Teacher ने real-life example दिया: बुखार में बच्चा कहता है “मम्मी खाने का मन नहीं कर रहा”; दो दिन कम खाना खाने पर भी body चलती है क्योंकि body जमा fat से energy absorb करती है. इसलिए illness/fasting में पहले stored fat use होता है और व्यक्ति दुबला दिखने लगता है.</p>
+        </div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Fat जल में घुलता है?</summary><p>नहीं, fat जल में अघुलनशील है.</p></details>
+          <details><summary>Q2. Illness में body energy कहाँ से लेती है?</summary><p>जमा हुई fat/stored energy से.</p></details>
+          <details><summary>Q3. Human body temperature class में कितना बताया?</summary><p>37°C.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s5" style="--accent:var(--orange)">
+        <span class="stamp">15:45–21:24</span>
+        <h2>⚖️ Fat deficiency, excess, types और kcal table</h2>
+        <p class="flow-note">Teacher ने पहले deficiency/excess समझाया, फिर saturated और unsaturated fats के types, फिर carbohydrate/protein/fat की energy table दी.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Condition</th><th>Teacher का explanation</th></tr></thead>
+            <tbody>
+              <tr><td>Fat की कमी</td><td>ऊर्जा की कमी, शरीर दुबला-पतला, वजन कम, त्वचा रूखी.</td></tr>
+              <tr><td>Fat की अधिकता</td><td>मोटापा, heart disease, blockage जैसी problems. Teacher ने कहा हर चीज की अधिकता नुकसानदायक होती है.</td></tr>
+              <tr><td>Protein deficiency recap</td><td>Marasmus डेढ़ वर्ष से कम बच्चे में; Kwashiorkor डेढ़ वर्ष से ज्यादा उम्र के बच्चों में. पेट बड़ा, skin ढीली, हाथ पतले.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Comparison_of_dietary_fat_composition.svg?width=900" alt="Comparison chart of dietary fat composition in oils and fats" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Comparison_of_dietary_fat_composition.svg">
+          <div class="caption">Image: Wikimedia Commons, creator Diamboroid, CC BY-SA 4.0. Concept: Oils/fats composition visual anchor.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Comparison_of_dietary_fat_composition.svg">Wikimedia Commons</a></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Fat type</th><th>Hindi/English</th><th>Examples from class</th><th>Note</th></tr></thead>
+            <tbody>
+              <tr><td>Saturated fat</td><td>संतृप्त वसा</td><td>घी, मक्खन, डालडा, नारियल का तेल</td><td>अधिक हो तो नुकसान: obesity, heart problem/blockage.</td></tr>
+              <tr><td>Unsaturated fat</td><td>असंतृप्त वसा</td><td>मूंगफली, सरसों, जैतून का तेल</td><td>Class में कहा: fat की availability कम होती है.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — Saturated examples याद करो:</b><br>
+          <b>घी</b> में <b>मक्खन</b> तैर रहा था, उस पर <b>डालडा</b> की चादर पड़ी और ऊपर से <b>नारियल तेल</b> गिर गया — यह heavy saturated group है. दूसरी तरफ <b>मूंगफली</b> ने <b>सरसों</b> से मिलकर <b>जैतून तेल</b> की हल्की bottle उठा ली — यह unsaturated group है.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>1 gram nutrient</th><th>Energy as taught</th><th>Teacher note</th></tr></thead>
+            <tbody>
+              <tr><td>Carbohydrate</td><td>4.2 kilocalorie</td><td>कहीं-कहीं 4 भी दिखेगा; exam में approx समझना.</td></tr>
+              <tr><td>Protein</td><td>4.1 kilocalorie</td><td>कहीं 4, कहीं 5.x भी books में मिल सकता है; class में 4.1 लिखाया.</td></tr>
+              <tr><td>Fat</td><td>9.3 kilocalorie</td><td>सबसे ज्यादा; double से भी ज्यादा. Stored energy.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Fat = सबसे ज्यादा energy per gram, लेकिन body में immediate नहीं; stored energy के रूप में काम आता है.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Saturated fat के class examples?</summary><p>घी, मक्खन, डालडा, नारियल तेल.</p></details>
+          <details><summary>Q2. Unsaturated fat examples?</summary><p>मूंगफली, सरसों, जैतून का तेल.</p></details>
+          <details><summary>Q3. 1 gram fat से कितनी energy?</summary><p>Class में 9.3 kilocalorie बताया गया.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s6" style="--accent:var(--purple)">
+        <span class="stamp">21:24–26:22</span>
+        <h2>🛡️ Vitamin intro: Organic + protective nutrient</h2>
+        <p class="flow-note">Fat complete करने के बाद teacher vitamin पर आए और सबसे पहले organic/inorganic classification याद कराया.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vitamin_Display.JPG?width=900" alt="Vitamin supplement display as a visual anchor for vitamins" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Vitamin_Display.JPG">
+          <div class="caption">Image: Wikimedia Commons, creator MarkBuckawicki, CC0 1.0. Concept: Vitamins visual anchor.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Vitamin_Display.JPG">Wikimedia Commons</a></div>
+        </div>
+        <div class="grid">
+          <div class="card accent">
+            <h3>Organic / Inorganic recap</h3>
+            <ul>
+              <li>Organic पदार्थ वे होते हैं जिनमें <b>carbon</b> होता है.</li>
+              <li><b>Carbohydrate, Protein, Fat, Vitamin</b> — चारों organic substances हैं.</li>
+              <li><b>Water (H₂O)</b> और <b>Minerals</b> में carbon नहीं, इसलिए ये inorganic हैं.</li>
+            </ul>
+          </div>
+          <div class="card accent">
+            <h3>Vitamin का main काम</h3>
+            <ul>
+              <li>Vitamin = <b>रक्षा प्रदाता</b>.</li>
+              <li>Body में antibodies बनाना और रोग प्रतिरोधक क्षमता develop करना.</li>
+              <li>Teacher ने example दिया: कोई छींक/खांस दे, पानी में bacteria हो — strong immunity हो तो तुरंत बीमारी नहीं पकड़ती.</li>
+              <li>Multi-vitamin में basic vitamins A, B, C, D, E, K और B1-B12 की बात आई.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="definition">
+          <b>Metabolic role:</b> Vitamin शरीर में <b>उपापचय क्रियाओं</b> / metabolic processes हेतु आवश्यक तत्व है.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Point</th><th>As taught</th></tr></thead>
+            <tbody>
+              <tr><td>Naming</td><td>Casimir Funk / Funk ने <b>1912</b> में vitamin का नामकरण दिया.</td></tr>
+              <tr><td>Discovery</td><td>Teacher ने खोज <b>Hopkins / हॉकिंस</b> द्वारा बताई.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Organic पदार्थ वाले MCQ में Carbohydrate, Protein, Fat, Vitamin organic; Water और Minerals inorganic.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Vitamin organic है या inorganic?</summary><p>Organic, क्योंकि इसमें carbon होता है.</p></details>
+          <details><summary>Q2. Vitamin का main function?</summary><p>रक्षा प्रदाता: immunity/रोग प्रतिरोधक क्षमता develop करना.</p></details>
+          <details><summary>Q3. Vitamin naming year?</summary><p>1912, Funk/Casimir Funk.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s7" style="--accent:var(--purple)">
+        <span class="stamp">26:36–31:23</span>
+        <h2>💧 Vitamin classification: जल में घुलनशील vs अघुलनशील</h2>
+        <p class="flow-note">Audio/video pause के बाद teacher ने same point repeat किया: “कीड़ा पानी में नहीं घुलता” trick.</p>
+        <div class="grid">
+          <div class="card accent">
+            <h3>Water soluble</h3>
+            <div class="chips"><span class="chip">Vitamin B</span><span class="chip">Vitamin C</span></div>
+            <p>Teacher ने बोला: B और C जल में घुलनशील vitamins हैं.</p>
+          </div>
+          <div class="card accent">
+            <h3>Water insoluble</h3>
+            <div class="chips"><span class="chip">Vitamin K</span><span class="chip">Vitamin E</span><span class="chip">Vitamin D</span><span class="chip">Vitamin A</span></div>
+            <p>Trick: <b>कीड़ा</b> = K + E + D + A. कीड़ा पानी में नहीं घुलता, इसलिए K-E-D-A vitamins जल में अघुलनशील.</p>
+          </div>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — “कीड़ा” trick:</b><br>
+          एक beaker में पानी भरा है. Teacher ने imaginary <b>कीड़ा</b> पानी में डाला. कीड़ा घुला नहीं. इसलिए <b>K-E-D-A</b> यानी Vitamin K, E, D, A भी water-solubility में अघुलनशील group में याद करो. जो बच गए <b>B और C</b>, वे जल में घुलनशील.
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> “Vitamin K जल में घुलनशील है?” — नहीं. K “कीड़ा” trick में आता है, इसलिए अघुलनशील.</div>
+        <div class="diagram">
+Vitamin list in class: A  B  C  D  E  K
+Water soluble:        B  C
+Water insoluble:      K  E  D  A  → "कीड़ा" पानी में नहीं घुलता
+        </div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Water soluble vitamins?</summary><p>B और C.</p></details>
+          <details><summary>Q2. “कीड़ा” trick किसके लिए?</summary><p>K, E, D, A = जल में अघुलनशील vitamins.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s8" style="--accent:var(--purple)">
+        <span class="stamp">31:23–37:09</span>
+        <h2>🧪 Vitamins के chemical names: “रथ पर एक टॉफी”</h2>
+        <p class="flow-note">Teacher ने A, B, C, D, E, K vitamins line से लिखवाए और chemical names याद कराने के लिए mnemonic दिया.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vitamin_structures.svg?width=900" alt="Chemical structures of vitamins as a concept image" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Vitamin_structures.svg">
+          <div class="caption">Image: Wikimedia Commons, creator Boghog, CC0 1.0. Concept: Vitamins have chemical names/structures.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Vitamin_structures.svg">Wikimedia Commons</a></div>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — “रथ पर एक टॉफी”:</b><br>
+          कल्पना करो दूल्हे की जगह <b>रथ पर एक बड़ी टॉफी</b> आ रही है. “रथ पर एक टॉफी” से sequence याद करो: <b>र</b> = Retinol, <b>थ</b> = Thiamine, <b>ए</b> = Ascorbic Acid, <b>क</b> = Calciferol, <b>ट</b> = Tocopherol, <b>फी</b> = Phylloquinone.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Vitamin</th><th>Chemical name as taught</th><th>Trick part</th></tr></thead>
+            <tbody>
+              <tr><td>Vitamin A</td><td>Retinol / रेटिनोल</td><td>रथ का “र”</td></tr>
+              <tr><td>Vitamin B</td><td>Thiamine / थायमिन</td><td>रथ का “थ”</td></tr>
+              <tr><td>Vitamin C</td><td>Ascorbic Acid / एस्कॉर्बिक अम्ल</td><td>“एक” का “ए”</td></tr>
+              <tr><td>Vitamin D</td><td>Calciferol / कैल्सीफेरोल</td><td>“क”</td></tr>
+              <tr><td>Vitamin E</td><td>Tocopherol / टोकोफेरोल</td><td>“टॉफी” का “ट”</td></tr>
+              <tr><td>Vitamin K</td><td>Phylloquinone / फिलो-क्विनोन</td><td>“फी”</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Vitamin A का chemical name Retinol; C का Ascorbic Acid; D का Calciferol — ये direct पूछे जा सकते हैं.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Vitamin A का chemical name?</summary><p>Retinol.</p></details>
+          <details><summary>Q2. Vitamin C का chemical name?</summary><p>Ascorbic Acid / एस्कॉर्बिक अम्ल.</p></details>
+          <details><summary>Q3. Vitamin K का chemical name?</summary><p>Phylloquinone / फिलो-क्विनोन.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s9" style="--accent:var(--purple)">
+        <span class="stamp">37:09–44:52</span>
+        <h2>🏥 Vitamins की deficiency diseases और sources</h2>
+        <p class="flow-note">Chemical names के बाद teacher ने “कमी होगी तो कौन सा रोग” और “क्या खाएं” वाली table बनवाई.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Vitamin</th><th>Deficiency disease as taught</th><th>Sources / क्या खाएं</th><th>Extra class explanation</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>रतौंधी</td><td>हरी सब्जियां, गाजर, पालक, पपीता</td><td>रतौंधी में दिखाई देने में दिक्कत.</td></tr>
+              <tr><td>B</td><td>बेरी-बेरी</td><td>चावल, अनाज, अंकुरित अनाज</td><td>Teacher ने B1-B12 list later देने की बात कही.</td></tr>
+              <tr><td>C</td><td>Scurvy / स्कर्वी</td><td>खट्टे फल, आंवला, नींबू, संतरा</td><td>खट्टी चीजों से Vitamin C deficiency नहीं होती.</td></tr>
+              <tr><td>D</td><td>Rickets / रिकेट्स</td><td>सूर्य प्रकाश, दूध, अंडा</td><td>Sunlight लेते समय back/spine side से लेना बताया, front से नहीं.</td></tr>
+              <tr><td>E</td><td>बांझपन / एनीमिया जैसा class में लिखा गया</td><td>बादाम, अंकुरित चना</td><td>Teacher ने E deficiency पर fertility-related point बताया.</td></tr>
+              <tr><td>K</td><td>रक्त स्कंदन / blood clotting में समस्या</td><td>खजूर, पपीता, कीवी</td><td>Kiwi से platelets बढ़ते हैं, यह class chat में भी confirm हुआ.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card accent">
+          <h3>Vitamin D sunlight method — teacher का practical tip</h3>
+          <p>Teacher ने कहा: सूर्य की किरणें सामने से लेने की बजाय पीछे/back side से लो ताकि spine/नर्वस सिस्टम area “सिके” और पूरे body में effect फैले. यह class का याद रखने वाला practical explanation था.</p>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — Disease chain:</b><br>
+          <b>A</b> वाला student रात में नहीं देख पाया — <b>रतौंधी</b>. <b>B</b> ने “बेरी-बेरी” berry पकड़ी. <b>C</b> ने citrus खाया नहीं तो <b>Scurvy</b>. <b>D</b> धूप में नहीं गया तो <b>Rickets</b>. <b>E</b> energy/fertility problem में अटक गया. <b>K</b> ने कहा “कट लगा तो clot बनना चाहिए” — blood clotting.
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Vitamin A—रतौंधी, B—बेरीबेरी, C—स्कर्वी, D—रिकेट्स, K—blood clotting/रक्त स्कंदन. Direct matching में पूछे जा सकते हैं.</div>
+        <div class="quiz">
+          <h3>⚡ Quick Recall</h3>
+          <details><summary>Q1. Vitamin A deficiency?</summary><p>रतौंधी.</p></details>
+          <details><summary>Q2. Vitamin C deficiency?</summary><p>Scurvy / स्कर्वी.</p></details>
+          <details><summary>Q3. Vitamin D source सबसे पहले?</summary><p>सूर्य प्रकाश / Sunlight.</p></details>
+          <details><summary>Q4. Blood clotting problem किस vitamin से जुड़ी?</summary><p>Vitamin K deficiency.</p></details>
+        </div>
+      </section>
+
+      <section class="topic" id="s10" style="--accent:var(--cyan)">
+        <span class="stamp">44:52–46:30</span>
+        <h2>⛏️ Minerals / खनिज: inorganic nutrient</h2>
+        <p class="flow-note">Vitamins finish करने के बाद teacher ने minerals heading लगवाई और बताया कि water/fibre पर ज्यादा detail की जरूरत नहीं, main minerals याद करने हैं.</p>
+        <div class="definition">
+          <b>Minerals:</b> Carbon compounds नहीं हैं; ये <b>अकार्बनिक पदार्थ</b> हैं और 7 पोषक तत्वों में एक example हैं.
+        </div>
+        <div class="chips">
+          <span class="chip">Sodium</span><span class="chip">Iron</span><span class="chip">Magnesium</span><span class="chip">Iodine</span><span class="chip">Calcium</span>
+        </div>
+        <div class="card accent">
+          <h3>Teacher ने बताया</h3>
+          <ul>
+            <li>Minerals में अलग-अलग mineral का अलग काम है.</li>
+            <li>Calcium की कमी से bones कमजोर.</li>
+            <li>Iodine की कमी से घेघा रोग.</li>
+            <li>Iron की कमी से anemia.</li>
+            <li>अब list-wise sources, functions और diseases याद करने हैं.</li>
+          </ul>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Organic/inorganic classification में minerals inorganic; deficiency disease matching में minerals important.</div>
+      </section>
+
+      <section class="topic" id="s11" style="--accent:var(--green)">
+        <span class="stamp">46:30–48:49</span>
+        <h2>🩸 Iron / आयरन</h2>
+        <p class="flow-note">Minerals की list में सबसे पहले Iron लिया गया.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Iron_electrolytic_and_1cm3_cube.jpg?width=900" alt="Pure iron chips and cube as visual anchor for iron mineral" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Iron_electrolytic_and_1cm3_cube.jpg">
+          <div class="caption">Image: Wikimedia Commons, Alchemist-hp, Free Art License / other listed licenses. Concept: Iron mineral visual anchor.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Iron_electrolytic_and_1cm3_cube.jpg">Wikimedia Commons</a></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Iron point</th><th>Class content</th></tr></thead>
+            <tbody>
+              <tr><td>Sources</td><td>अमरूद / Guava, केला / Banana, पालक / Spinach.</td></tr>
+              <tr><td>Special note</td><td>लड़कियों में iron deficiency खासकर नहीं होनी चाहिए.</td></tr>
+              <tr><td>Function</td><td>RBC के निर्माण में सहायक.</td></tr>
+              <tr><td>RBC full form</td><td>Red Blood Cell — लाल रक्त कोशिकाएं/कणिकाएं.</td></tr>
+              <tr><td>Blood components recap</td><td>Blood = WBC, RBC, Platelets, Plasma से मिलकर बना; detail later blood circulation में पढ़ेंगे.</td></tr>
+              <tr><td>Deficiency disease</td><td>Anemia / एनीमिया.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Iron → RBC formation → deficiency = Anemia.</div>
+        <div class="quiz"><h3>⚡ Quick Recall</h3><details><summary>Iron की कमी से?</summary><p>Anemia / एनीमिया.</p></details><details><summary>Iron किसके निर्माण में सहायक?</summary><p>RBC formation.</p></details></div>
+      </section>
+
+      <section class="topic" id="s12" style="--accent:var(--cyan)">
+        <span class="stamp">48:49–49:58</span>
+        <h2>🧂 Iodine / आयोडीन</h2>
+        <p class="flow-note">Iron के बाद Iodine लिया गया और salt/goiter/thyroxine connection बताया गया.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Iodised_salt.JPG?width=900" alt="Iodised salt pile as visual anchor for iodine source" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Iodised_salt.JPG">
+          <div class="caption">Image: Wikimedia Commons, creator Drtony999, CC BY-SA 3.0 / GFDL. Concept: आयोडीन का source — नमक.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Iodised_salt.JPG">Wikimedia Commons</a></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Iodine point</th><th>Class content</th></tr></thead>
+            <tbody>
+              <tr><td>Sources</td><td>नमक; भोजन से नमक के through iodine मिल जाता है. शैवाल/Algae में भी iodine अधिक बताया.</td></tr>
+              <tr><td>Function</td><td>Thyroxine / थायरोक्सिन के निर्माण में.</td></tr>
+              <tr><td>Deficiency</td><td>गला/neck बड़ा-मोटा हो जाता है; घेघा रोग / Goiter.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Iodine deficiency = Goiter/घेघा रोग; Iodine → Thyroxine formation.</div>
+        <div class="quiz"><h3>⚡ Quick Recall</h3><details><summary>Iodine deficiency disease?</summary><p>Goiter / घेघा रोग.</p></details><details><summary>Iodine का main function?</summary><p>Thyroxine formation.</p></details></div>
+      </section>
+
+      <section class="topic" id="s13" style="--accent:var(--pink)">
+        <span class="stamp">50:03–50:53</span>
+        <h2>🔶 Copper / कॉपर</h2>
+        <p class="flow-note">Iodine के तुरंत बाद teacher ने Copper के sources, function और disease लिखवाए.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Copper point</th><th>Class content</th></tr></thead>
+            <tbody>
+              <tr><td>Sources</td><td>खजूर, चुकंदर, अनाज.</td></tr>
+              <tr><td>Function</td><td>Hemoglobin / हीमोग्लोबिन के निर्माण में.</td></tr>
+              <tr><td>Deficiency disease</td><td>Thalassemia / थैलेसीमिया नाम का रोग.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Copper → Hemoglobin formation; deficiency = Thalassemia.</div>
+        <div class="quiz"><h3>⚡ Quick Recall</h3><details><summary>Copper का function?</summary><p>Hemoglobin के निर्माण में.</p></details><details><summary>Copper deficiency?</summary><p>Thalassemia.</p></details></div>
+      </section>
+
+      <section class="topic" id="s14" style="--accent:var(--yellow)">
+        <span class="stamp">50:56–52:05</span>
+        <h2>🦴 Calcium / कैल्शियम</h2>
+        <p class="flow-note">Copper के बाद Calcium लिया गया: sources, teeth/bones और disease.</p>
+        <div class="visual">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Calcium.jpg?width=900" alt="Calcium element sample as visual anchor for calcium mineral" loading="lazy" decoding="async" data-source="https://commons.wikimedia.org/wiki/File:Calcium.jpg">
+          <div class="caption">Image: Wikimedia Commons / Chemical Elements - A Virtual Museum, CC BY 3.0. Concept: Calcium mineral.</div>
+          <div class="fallback">Image load नहीं हो रही? Source link: <a href="https://commons.wikimedia.org/wiki/File:Calcium.jpg">Wikimedia Commons</a></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Calcium point</th><th>Class content</th></tr></thead>
+            <tbody>
+              <tr><td>Sources</td><td>दूध, अंडा, खजूर; teacher ने calcium tablets का भी casual mention किया.</td></tr>
+              <tr><td>Function</td><td>दांतों और हड्डियों की मजबूती के लिए जरूरी.</td></tr>
+              <tr><td>Deficiency disease</td><td>हड्डियों का रोग; विशेष नाम: Tetany / टेटनी.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot"><strong>🔥 Exam Hot:</strong> Calcium → teeth/bone strength; deficiency → bones disease/Tetany.</div>
+        <div class="quiz"><h3>⚡ Quick Recall</h3><details><summary>Calcium का function?</summary><p>दांतों और हड्डियों की मजबूती.</p></details><details><summary>Calcium deficiency special disease?</summary><p>Tetany / टेटनी.</p></details></div>
+      </section>
+
+      <section class="topic" id="s15" style="--accent:var(--cyan)">
+        <span class="stamp">52:09–55:15</span>
+        <h2>💪 Sodium / सोडियम और wrap-up</h2>
+        <p class="flow-note">Last mineral Sodium था; इसके बाद teacher ने बताया कि बाकी 1-2 points like potassium later देख लेंगे और revision/practice पर जोर दिया.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Sodium point</th><th>Class content</th></tr></thead>
+            <tbody>
+              <tr><td>Sources</td><td>खाने वाला नमक, दूध, अंडा.</td></tr>
+              <tr><td>Function</td><td>शरीर में मांसपेशियों को मजबूत करना.</td></tr>
+              <tr><td>Deficiency disease</td><td>Diarrhea / डायरिया.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="linkstory">
+          <b>🔗 Link Story — Minerals chain:</b><br>
+          <b>Iron</b> ने RBC train बनाई, <b>Iodine</b> ने salt डालकर thyroid bell बजाई, <b>Copper</b> ने hemoglobin को लाल रंग दिया, <b>Calcium</b> ने bones/teeth की दीवार बनाई, और <b>Sodium</b> ने muscles को strong कर दिया.
+        </div>
+        <div class="card accent">
+          <h3>End-of-class study direction</h3>
+          <ul>
+            <li>Teacher ने कहा: session लंबा हुआ, basic चीजें समझाई गईं.</li>
+            <li>बाकी extra list/points जैसे B1-B12 और कुछ minerals later/PDF में provide होंगे.</li>
+            <li>Revision के साथ practice जरूरी है; topic-wise MCQs लगाने की बात कही.</li>
+            <li>Upcoming: कुपोषण, Sickle Cell Anemia, अनुवांशिक रोग.</li>
+          </ul>
+        </div>
+        <div class="quiz"><h3>⚡ Quick Recall</h3><details><summary>Sodium sources?</summary><p>खाने वाला नमक, दूध, अंडा.</p></details><details><summary>Sodium deficiency?</summary><p>Diarrhea / डायरिया.</p></details></div>
+      </section>
+
+      <section class="topic" id="master" style="--accent:var(--green)">
+        <span class="stamp">Master Section</span>
+        <h2>📚 Master Revision: Full forms, Hot facts, Checklist</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Short form / term</th><th>Full form / meaning as used</th></tr></thead>
+            <tbody>
+              <tr><td>RBC</td><td>Red Blood Cell — लाल रक्त कोशिका/कणिका</td></tr>
+              <tr><td>WBC</td><td>White Blood Cell — blood components list में mention</td></tr>
+              <tr><td>H₂O</td><td>Water — जल, carbon नहीं इसलिए inorganic</td></tr>
+              <tr><td>MCQ</td><td>Multiple Choice Question — objective questions/practice context</td></tr>
+              <tr><td>MPPSC</td><td>MPPSC Pre 2024 targeted context</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hot">
+          <h3>🔥 Master Exam Hot Facts</h3>
+          <ul>
+            <li>Protein = Nitrogen युक्त पोषक तत्व.</li>
+            <li>Carbohydrate = त्वरित ऊर्जा; Fat = संचित ऊर्जा.</li>
+            <li>Fat = water insoluble; carbohydrate = water soluble as taught.</li>
+            <li>1g: Carb 4.2 kcal, Protein 4.1 kcal, Fat 9.3 kcal.</li>
+            <li>Vitamin = रक्षा प्रदाता + immunity + metabolic processes.</li>
+            <li>Organic: Carb, Protein, Fat, Vitamin. Inorganic: Water, Minerals.</li>
+            <li>Water soluble vitamins: B, C. Insoluble: K, E, D, A — “कीड़ा”.</li>
+            <li>Vitamin chemical names: A Retinol, B Thiamine, C Ascorbic Acid, D Calciferol, E Tocopherol, K Phylloquinone.</li>
+            <li>Vitamin diseases: A रतौंधी, B बेरीबेरी, C स्कर्वी, D रिकेट्स, E बांझपन/एनीमिया, K रक्त स्कंदन.</li>
+            <li>Minerals: Iron anemia, Iodine goiter, Copper thalassemia, Calcium tetany/bone disease, Sodium diarrhea.</li>
+          </ul>
+        </div>
+        <div class="card checklist" id="checklist">
+          <h3>✅ Master Revision Checklist <span class="counter" id="counter">0/0</span></h3>
+          <label><input type="checkbox"> मैंने 7 nutrients याद कर लिए.</label>
+          <label><input type="checkbox"> मैंने carbohydrate के mono/di/poly saccharide recap को समझ लिया.</label>
+          <label><input type="checkbox"> मैंने protein = body growth/repair + nitrogen nutrient याद किया.</label>
+          <label><input type="checkbox"> मैंने fat = C,H,O + water insoluble याद किया.</label>
+          <label><input type="checkbox"> मैंने fat = stored energy, skin, temperature, illness/fasting example याद किया.</label>
+          <label><input type="checkbox"> मैंने fat deficiency/excess के symptoms और diseases याद किए.</label>
+          <label><input type="checkbox"> मैंने saturated vs unsaturated fat examples याद किए.</label>
+          <label><input type="checkbox"> मैंने 4.2 / 4.1 / 9.3 kcal values याद कीं.</label>
+          <label><input type="checkbox"> मैंने vitamin = organic + protective + metabolic role याद किया.</label>
+          <label><input type="checkbox"> मैंने Funk 1912 naming और Hopkins/Hawkins discovery point याद किया.</label>
+          <label><input type="checkbox"> मैंने “कीड़ा” trick से K,E,D,A insoluble याद किया.</label>
+          <label><input type="checkbox"> मैंने “रथ पर एक टॉफी” से vitamin chemical names याद किए.</label>
+          <label><input type="checkbox"> मैंने vitamins deficiency diseases table याद की.</label>
+          <label><input type="checkbox"> मैंने vitamin sources table याद की.</label>
+          <label><input type="checkbox"> मैंने vitamin D sunlight/back-side practical tip याद रखा.</label>
+          <label><input type="checkbox"> मैंने minerals को inorganic nutrient याद किया.</label>
+          <label><input type="checkbox"> मैंने iron sources/function/disease याद किया.</label>
+          <label><input type="checkbox"> मैंने iodine sources/function/disease याद किया.</label>
+          <label><input type="checkbox"> मैंने copper sources/function/disease याद किया.</label>
+          <label><input type="checkbox"> मैंने calcium sources/function/disease याद किया.</label>
+          <label><input type="checkbox"> मैंने sodium sources/function/disease याद किया.</label>
+          <label><input type="checkbox"> मैंने upcoming topics: कुपोषण, Sickle Cell Anemia, अनुवांशिक रोग note कर लिए.</label>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="card">
+      <h3>🧠 Revision Tips from class flow</h3>
+      <p>पहले table cover करो, फिर 🔥 Hot facts revise करो, फिर checklist tick करो. Vitamins और minerals के matching questions सबसे scoring हैं.</p>
+      <p class="mini">Note: Promotional/live-chat portions को study content से अलग रखा गया है; lecture flow markers/timestamps preserve किए गए हैं.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const root=document.body, savedTheme=localStorage.getItem('rev-theme')||'dark';
+      root.setAttribute('data-theme', savedTheme);
+      document.getElementById('themeBtn').addEventListener('click',()=>{
+        const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+        root.setAttribute('data-theme',next); localStorage.setItem('rev-theme',next);
+      });
+      const jump=document.getElementById('jump');
+      jump.addEventListener('change',()=>{ if(jump.value) location.hash=jump.value; });
+      const bar=document.getElementById('scrollbar');
+      const onScroll=()=>{ const h=document.documentElement; const p=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100; bar.style.width=p+'%'; };
+      document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+      const links=[...document.querySelectorAll('.toc a')], sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const spy=()=>{ let current=''; sections.forEach(s=>{if(s.getBoundingClientRect().top<130) current='#'+s.id}); links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===current)); };
+      document.addEventListener('scroll',spy,{passive:true}); spy();
+      const boxes=[...document.querySelectorAll('#checklist input[type="checkbox"]')];
+      const counter=document.getElementById('counter');
+      boxes.forEach((b,i)=>{b.checked=localStorage.getItem('rev-check-'+i)==='1'; b.addEventListener('change',()=>{localStorage.setItem('rev-check-'+i,b.checked?'1':'0'); updateCounter();});});
+      function updateCounter(){ const done=boxes.filter(b=>b.checked).length; counter.textContent=done+'/'+boxes.length; }
+      updateCounter();
+      document.querySelectorAll('img').forEach(img=>{
+        const original=img.src;
+        const fallback=img.parentElement.querySelector('.fallback');
+        const test=new Image();
+        test.decoding='async';
+        test.onload=()=>{};
+        test.onerror=()=>{ img.dataset.failed='true'; if(fallback) fallback.style.display='block'; img.alt='Image could not load. Open source link below.'; };
+        test.src=original;
+        img.addEventListener('error',()=>{ if(fallback) fallback.style.display='block'; });
+      });
+    })();
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4a4b658285de48d48c272804f9894927","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
