@@ -1,3 +1,4 @@
+ please create the html page just follow the transcribe for topic and include all things that was covered in trancript dont skip anything                              
 # 🎯 Universal Video Transcript → Revision HTML Converter Prompt
 
 > **Copy-paste this entire prompt to any AI (ChatGPT / Claude / Gemini) along with your video transcript text file.**
