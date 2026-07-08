@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MP Tribes Revision Page: कोल जनजाति (Part 2) + Live MCQs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0f0f1a;
+            --text-color: #e2e8f0;
+            --card-bg: #16162a;
+            --border-color: #2e2e4f;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --link-gradient: linear-gradient(135deg, #1e1b4b, #311042);
+            --contrast-ratio-fix: #ffffff;
+        }
+
+        .light-theme {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --card-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --accent-cyan: #0284c7;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --link-gradient: linear-gradient(135deg, #e0e7ff, #fae8ff);
+            --contrast-ratio-fix: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            letter-spacing: 0.03em;
+            font-size: 17px;
+            padding-bottom: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, rgba(15,15,26,0) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .badge.hot {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        /* Sticky Controls Navigation */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .controls-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quick-nav-select {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 70%;
+            max-width: 400px;
+            cursor: pointer;
+        }
+
+        .theme-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background-color: var(--border-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transition: width 0.2s;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Layout & Cards */
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid var(--accent-cyan);
+            padding-left: 12px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 19px;
+            margin-bottom: 12px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Bullets Styling */
+        ul.custom-list {
+            list-style: none;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul.custom-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 14px;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background-color: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .hot-point {
+            background-color: rgba(0, 255, 136, 0.08);
+            border: 1px dashed var(--accent-green);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        /* 🔗 Link Story / Association Box */
+        .link-story-box {
+            background: var(--link-gradient);
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .link-story-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #b388ff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Tables styling */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(46, 46, 79, 0.5);
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Collapsible Elements & Interactive Quizzes */
+        details {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 14px;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            border-color: var(--accent-cyan);
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quiz-answer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            color: var(--accent-green);
+            background-color: rgba(0, 255, 136, 0.03);
+            border-radius: 4px;
+        }
+
+        /* Visual Media / Image Blocks */
+        .image-block {
+            margin: 25px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #05050a;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .image-caption {
+            padding: 10px 15px;
+            font-size: 13px;
+            color: #8a8a9f;
+            background-color: rgba(22, 22, 42, 0.8);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fallback-link {
+            font-size: 12px;
+            color: var(--accent-cyan);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Checklist Component */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: rgba(46, 46, 79, 0.2);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Timeline Components */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-orange);
+            border: 2px solid var(--bg-color);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #05050a;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 15px;
+            color: #8a8a9f;
+        }
+
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Print Media Stylesheet */
+        @media print {
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+                font-size: 14pt;
+            }
+            .sticky-controls, .theme-btn, .quick-nav-select, details summary::after {
+                display: none !important;
+            }
+            .card, details, .link-story-box, .hot-point, .highlight-box {
+                border: 1px solid #000 !important;
+                background: none !important;
+                page-break-inside: avoid;
+                color: #000 !important;
+            }
+            details {
+                display: block !important;
+            }
+            details[open] {
+                border-color: #000 !important;
+            }
+            .quiz-answer {
+                display: block !important;
+                color: #000 !important;
+                border-top: 1px dashed #000 !important;
+            }
+            .image-block {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER SECTION -->
+    <header>
+        <div class="header-container">
+            <div class="badge-container">
+                <span class="badge">विषय: MP GK (Unit 10)</span>
+                <span class="badge">मध्य प्रदेश की जनजातियाँ</span>
+                <span class="badge hot">🔥 Live Exam Complete Revision</span>
+            </div>
+            <h1 style="font-size: 32px; margin-bottom: 10px;">कोल जनजाति (Kol Tribe) — विस्तृत क्लास व्याख्या</h1>
+            <p style="color: #8a8a9f; font-size: 16px;">पूरे वीडियो का 1:1 सटीक विवरण | No Content Loss | Hinglish Notes</p>
+        </div>
+    </header>
+
+    <!-- 2. STICKY QUICK NAVIGATION CONTROLS -->
+    <div class="sticky-controls">
+        <div class="controls-container">
+            <select class="quick-nav-select" id="quickNav" onchange="navigateToSection(this.value)">
+                <option value="">⚡ Quick Jump To Topic...</option>
+                <option value="#intro">1. क्लास परिचय एवं पिछली कड़ियों का रिवीजन</option>
+                <option value="#part1-recap">2. कोल जनजाति पार्ट-1 सुपरफास्ट रिवीजन</option>
+                <option value="#birth-ritual">3. सांस्कृतिक विशेषताएँ: जन्म संस्कार (बर, जनना, मुंडन)</option>
+                <option value="#death-marriage">4. मृत्यु एवं विवाह संस्कार (कोदई भाजी दंड, मंगनी विवाह)</option>
+                <option value="#dance-festivals">5. पारंपरिक नृत्य एवं उत्सव (दहका, खचरहाई, नागपंचमी)</option>
+                <option value="#language-admin">6. भाषा-बोली, गोदनहार एवं राज्य स्तरीय विकास अभिकरण</option>
+                <option value="#live-mcqs">7. Live MCQs Test Practice (19 विस्तृत प्रश्नोत्तरी)</option>
+                <option value="#master-checklist">8. मास्टर रिवीज़न चेकलिस्ट</option>
+                <option value="#roadmap">9. आगामी क्लास रोडमैप (Roadmap)</option>
+            </select>
+            <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️ Mode</button>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTAINER -->
+    <div class="main-container">
+
+        <!-- SECTION 1: INTRO -->
+        <section id="intro">
+            <h2 class="section-title">💻 1. क्लास परिचय एवं पिछली कड़ियों का रिवीजन</h2>
+            <div class="card">
+                <div class="card-title">📌 लेक्चर प्रोग्रेस ट्रैकर (Timeline Context)</div>
+                <p>मध्य प्रदेश की जनजातियों की सिरीज़ में हमने पहले ही सभी बड़ी जनजातियों को विस्तारपूर्वक कंप्लीट कर लिया है:</p>
+                <ul class="custom-list" style="margin-top: 10px;">
+                    <li><strong>भील जनजाति (Bhil Tribe)</strong>: मध्य प्रदेश की सबसे बड़ी जनजाति।</li>
+                    <li><strong>गोंड जनजाति (Gond Tribe)</strong>: दूसरी सबसे बड़ी जनजाति।</li>
+                    <li><strong>बैगा जनजाति (Baiga Tribe)</strong>: अति विशेष पिछड़ी जनजाति (PVTG)।</li>
+                    <li><strong>भारिया जनजाति (Bhariya Tribe)</strong>: पातालकोट की अत्यंत पिछड़ी जनजाति।</li>
+                    <li><strong>सहरिया जनजाति (Sahariya Tribe)</strong>: उत्तर-पश्चिम क्षेत्र की पिछड़ी जनजाति।</li>
+                    <li><strong>कोरकू जनजाति (Korku Tribe)</strong>: सतपुड़ा बेल्ट की प्रमुख जनजाति।</li>
+                </ul>
+                <blockquote class="highlight-box">
+                    <strong>🎥 वीडियो फ्लो संदर्भ [01:42 - 02:39]:</strong> कल की क्लास में हमने <em>कोल जनजाति का पार्ट-1</em> कंप्लीट किया था। आज इस पार्ट-2 क्लास में कोल जनजाति की शेष सांस्कृतिक, सामाजिक विशेषताओं को समाप्त करके तुरंत इसी क्लास में <strong>Live Test (MCQs)</strong> लगाएंगे।
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PART 1 RECAP -->
+        <section id="part1-recap">
+            <h2 class="section-title">🗂️ 2. कोल जनजाति पार्ट-1 सुपरफास्ट रिवीजन</h2>
+            <div class="card">
+                <div class="card-title">🔑 कोर फैक्ट्स जो टीचर ने तुरंत रिवाइज करवाए</div>
+                <ul class="custom-list">
+                    <li><strong>कोल का शाब्दिक अर्थ:</strong> कोल का मतलब <strong>मानव (Human Body)</strong> होता है।</li>
+                    <li><strong>भौगोलिक वितरण:</strong> मध्य प्रदेश का पूर्वी हिस्सा यानी <strong>बघेलखंड (Baghelkhand)</strong> क्षेत्र।</li>
+                    <li><strong>मूल निवास स्थान:</strong> रीवा (Rewa) जिले का <strong>फरेंदा (Farenda)</strong> या <strong>कुराली (Kurali)</strong> गाँव। रीवा के त्योथर में इनकी प्राचीन गढ़ी भी स्थित है।</li>
+                    <li><strong>आजीविका का साधन:</strong> मुख्य रूप से कृषि कार्य (Agriculture) और कोयले की खानों (Coal Mines) में मजदूरी करना।</li>
+                    <li><strong>पौराणिक उत्पत्ति:</strong> ये स्वयं को रामायण काल की <strong>'सबरी की संतान' (Descendants of Sabari)</strong> मानते हैं।</li>
+                    <li><strong>ऐतिहासिक साक्ष्य:</strong> इस जनजाति का विवरण हड़प्पा सभ्यता, वैदिक सभ्यता, रामायण, महाभारत तथा विभिन्न पुराणों में स्पष्ट रूप से मिलता है।</li>
+                    <li><strong>मैक्समूलर का कथन:</strong> प्रसिद्ध विद्वान मैक्समूलर ने इन्हें <strong>'कोल्हन' (Kolhan)</strong> कहा था। इन्हें 'भूमिया' (Bhumia) नाम से भी जाना जाता है।</li>
+                </ul>
+
+                <div class="table-responsive">
+                    <h3 style="padding: 10px; font-size: 16px; color: var(--accent-orange);">🔥 मध्य प्रदेश की जनजातियों का जनसंख्या क्रम (Top 6)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>रैंक (Rank)</th>
+                                <th>जनजाति (Tribe)</th>
+                                <th>प्रमुख विशेषता / जनसंख्या प्रतिशत</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1st</td><td><strong>भील (Bhil)</strong></td><td>मध्य प्रदेश की सबसे बड़ी जनजाति</td></tr>
+                            <tr><td>2nd</td><td><strong>गोंड (Gond)</strong></td><td>मध्य प्रदेश की दूसरी बड़ी जनजाति</td></tr>
+                            <tr><td>3rd</td><td><strong>कोल (Kol)</strong></td><td><strong>7.6% जनसंख्या</strong> के साथ राज्य की तीसरी सबसे बड़ी जनजाति</td></tr>
+                            <tr><td>4th</td><td><strong>कोरकू (Korku)</strong></td><td>मध्य प्रदेश के दक्षिणी हिस्सों में निवास</td></tr>
+                            <tr><td>5th</td><td><strong>सहरिया (Sahariya)</strong></td><td>गुना, शिवपुरी, श्योपुर क्षेत्र में विस्तृत</td></tr>
+                            <tr><td>6th</td><td><strong>बैगा (Baiga)</strong></td><td>विशेष पिछड़ी जनजाति (PVTG) बेल्ट</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 🔗 Link Story -->
+                <div class="link-story-box">
+                    <div class="link-story-title">🔗 Link Story — जनजातियों का घटता क्रम ऐसे याद करो:</div>
+                    <p style="font-style: italic;">"<strong>भील</strong> बाबा <strong>गोंड</strong> के साथ <strong>कोल</strong> (कोयला) खदान में गए, वहाँ <strong>कोरकू</strong> पीकर <strong>सहरिया</strong> के साथ <strong>बैगा</strong> लेकर भाग गए!"</p>
+                    <small style="color: var(--accent-purple);">[भील → गोंड → कोल → कोरकू → सहरिया → बैगा]</small>
+                </div>
+
+                <div class="card-title" style="margin-top: 20px;">👥 सामाजिक एवं प्रशासनिक ढांचा (Quick Recap)</div>
+                <ul class="custom-list">
+                    <li><strong>पितृसत्तात्मक समाज:</strong> समाज में पुरुषों/पिता का निर्णय ही सर्वोच्च होता है।</li>
+                    <li><strong>घर/झोपड़ी:</strong> इनके घर को <strong>मड़िया (Madiya)</strong> कहा जाता है। घनी आबादी वाले कोल गाँवों को <strong>कोल्हन (Kolhan)</strong> तथा दूर-दूर बिखरे क्षेत्रों को <strong>कोलिन टोला (Kolin Tola)</strong> कहते हैं।</li>
+                    <li><strong>गोहिया (Gohia):</strong> कोल जनजाति की पारंपरिक पंचायत को 'गोहिया' कहा जाता है।</li>
+                    <li><strong>प्रशासनिक पदानुक्रम (Hierarchy):</strong>
+                        <ul>
+                            <li><strong>मुकदम (Mukadam):</strong> ग्राम समितियों से मिलकर बनी मुख्य पंचायत का सर्वोच्च मुखिया।</li>
+                            <li><strong>चौधरी / मेहत / गोटिया (Chaudhary / Mehto / Gotia):</strong> छोटे गाँवों या उप-टोलों का प्रमुख प्रशासनिक अधिकारी।</li>
+                            <li><strong>बरुआ (Barua):</strong> कोलिन समाज का धार्मिक नेता, जो देवताओं के समीप 'भोपे' या ओझा के रूप में कार्य करता है।</li>
+                            <li><strong>भुयार / पंडा / देवार (Bhuyar / Panda / Devar):</strong> बरुआ के नीचे पुरोहित का कार्य, तांत्रिक क्रियाएँ तथा जड़ी-बूटियों से रोगों का इलाज करने वाला व्यक्ति।</li>
+                            <li><strong>तिया / नतिया (Tiya / Natiya):</strong> शादियों या उत्सवों पर पूरे गाँव में घूमकर 'आमंत्रण' (नौता) देने वाला संदेशवाहक।</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="image-block">
+                    <img id="img-coalmine" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Open_cast_coal_mine_at_Dhanbad.jpg" alt="Open cast coal mine representing the occupation of Kol tribe" width="100%" height="auto" loading="eager" fetchpriority="high" decoding="async">
+                    <div class="image-caption">
+                        <span>📸 कोयला खदान (Coal Mine) - जहाँ कोल जनजाति के लोग आजीविका हेतु कार्य करते हैं।</span>
+                        <span>Source: Wikimedia Commons | CC BY-SA 3.0</span>
+                    </div>
+                </div>
+
+                <div class="card-title" style="margin-top: 20px;">🔱 धार्मिक विशेषताएँ (देवता)</div>
+                <ul class="custom-list">
+                    <li><strong>बड़का देव (Badka Dev):</strong> कोल जनजाति के सर्वोच्च देवता, जो ब्रह्मांड की सभी वस्तुओं में व्याप्त हैं (इनकी तुलना सीधे महादेव/शिव से की गई है)। इनका चबूतरा हमेशा गाँव की <strong>पूर्व दिशा</strong> में स्थापित होता है।</li>
+                    <li><strong>ठाकुर देव (Thakur Dev):</strong> ग्राम देवता, जो गाँव पर आने वाली समस्त प्राकृतिक एवं सामाजिक विपदाओं को संभालते हैं।</li>
+                    <li><strong>अहीर बाबा (Ahir Baba):</strong> घर के <strong>उत्तर-पश्चिम हिस्से</strong> में इनका चबूतरा बनाया जाता है।</li>
+                    <li><strong>शारदा माई (Sharda Mai):</strong> मैहर (Maihar) वाली शारदा माता को ये अपनी प्रमुख कुलदेवी मानते हैं।</li>
+                    <li><strong>अन्य देवियाँ:</strong> वन सती देवी (जानवरों व वनों से रक्षा करने वाली) तथा तला माता।</li>
+                    <li><strong>मदाइन / मदान (Madain):</strong> महुआ से बनी पारंपरिक मदिरा को कोल समाज में 'मदाइन' कहा जाता है, जिसका प्रयोग धार्मिक व सामाजिक उत्सवों में अनिवार्य रूप से होता है।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BIRTH RITUALS -->
+        <section id="birth-ritual">
+            <h2 class="section-title">👶 3. सांस्कृतिक विशेषताएँ: जन्म संस्कार (Birth Rituals)</h2>
+            <div class="card">
+                <blockquote class="highlight-box">
+                    <strong>🎥 वीडियो फ्लो संदर्भ [10:17 - 13:41]:</strong> यहाँ से टीचर ने आज की नई क्लास का विषय गहराई से शुरू किया। कोल जनजाति की अनूठी सांस्कृतिक प्रथाओं में जन्म संस्कार अत्यंत महत्वपूर्ण है।
+                </blockquote>
+                
+                <ul class="custom-list">
+                    <li><strong>दाई (Midwife) की भूमिका:</strong> गाँव की बड़ी-बुजुर्ग, अनुभवी महिला या स्थानीय दाई ही प्रसव (Delivery) संपन्न करवाती है।</li>
+                    <li><strong>लड़के के जन्म को प्राथमिकता:</strong> कोल जनजाति में लड़के (लौंडे) के जन्म को अत्यंत <strong>शुभ और मंगलकारी</strong> माना जाता है। समाज की यह मान्यता है कि लड़का ही वंश परंपरा को आगे बढ़ाएगा। <span style="font-style: italic; color:#8a8a9f;">(टीचर का मज़ाक: "पता चले वंश आगे बढ़ाएगा या बाहर बैठकर गांजा फूंकेगा, पर मान्यता यही है!")</span></li>
+                    <li><strong>जनना (Janana):</strong> कोल समाज में प्रसव/बच्चे के जन्म की संपूर्ण प्रक्रिया को स्थानीय शब्दावली में <strong>'जनना'</strong> कहा जाता है।</li>
+                    <li><strong>मदाइन (मदान) का औषधीय उपयोग:</strong> प्रसव के दौरान यदि गर्भवती महिला को अत्यधिक असहनीय प्रसव पीड़ा होती है, तो उसे महुआ की बनी शराब <strong>'मदाइन'</strong> पिलाई जाती है। इससे महिला का मानसिक तनाव कम होता है, चेतना पर नियंत्रण शिथिल होता है और वह दर्द को सहन कर पाती है।</li>
+                </ul>
+
+                <div class="hot-point">
+                    <h4>🔥 EXAM HOT: बर / बर्व संस्कार (Barv Ritual)</h4>
+                    <p>शिशु के जन्म के ठीक <strong>12वें दिन</strong> माता-पिता द्वारा अपने सभी नाते-रिश्तेदारों को घर पर आमंत्रित किया जाता है। इस पावन अवसर पर बच्चे के माता-पिता सामूहिक रूप से <strong>भगवान सत्यनारायण की कथा (Satyanarayan Katha)</strong> का श्रवण करते हैं। इसी 12वें दिन के उत्सव को कोल भाषा में <strong>'बर' या 'बर्व'</strong> कहा जाता है।</p>
+                </div>
+
+                <ul class="custom-list">
+                    <li><strong>मुंडन संस्कार (Mundan Sanskar):</strong> शिशु के जन्म के <strong>3 वर्ष पूर्ण होने पर</strong> उसका मुंडन संस्कार किया जाता है। इसके लिए वर्ष के दो पवित्र दिन निर्धारित हैं — <strong>रामनवमी (Ram Navami) या बसंत पंचमी (Basant Panchami)</strong>।</li>
+                    <li><strong>मुंडन का स्थान:</strong> बच्चे को उनके प्रमुख देवी-देवताओं के स्थान (जैसे शारदा माई मंदिर, वन सती देवी का चबूतरा या बड़का देव के स्थान) पर ले जाकर मुंडन कराया जाता है।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DEATH AND MARRIAGE -->
+        <section id="death-marriage">
+            <h2 class="section-title">💍 4. मृत्यु एवं विवाह संस्कार (Death & Marriage Rituals)</h2>
+            <div class="card">
+                <div class="card-title">💀 मृत्यु संस्कार (Death Rituals) [13:41 - 14:44]</div>
+                <p>कोल जनजाति में शव के निस्तारण के लिए <strong>दफनाने (Burial) तथा जलाने (Cremation) दोनों प्रथाएँ</strong> एक साथ प्रचलित हैं:</p>
+                <ul class="custom-list" style="margin-top: 10px;">
+                    <li>यदि किसी व्यक्ति की मृत्यु <strong>युवावस्था (Unmarried/Young age)</strong> में हो जाती है, तो उसके शव को अनिवार्य रूप से <strong>दफनाया</strong> जाता है।</li>
+                    <li>यदि व्यक्ति विवाहित हो, वयोवृद्ध हो चुका हो, या संपन्न परिवार (पैसे वाली पार्टी) से संबंध रखता हो, तो सम्मानपूर्वक शव का <strong>दाह-संस्कार (जलाया)</strong> किया जाता है।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">👰 विवाह संस्कार (Marriage Rituals) [14:44 - 17:32]</div>
+                <ul class="custom-list">
+                    <li><strong>समगोत्री विवाह वर्जित:</strong> एक ही गोत्र (Clan) के भीतर विवाह संबंध स्थापित करना पूर्णतः प्रतिबंधित है।</li>
+                    <li><strong>बहुविवाह (Polygamy):</strong> कोल जनजाति में बहुविवाह की प्रथा पूर्णतः मान्य और प्रचलित है। विशेष रूप से समाज के जो आर्थिक रूप से संपन्न जमींदार लोग होते हैं, वे एक से अधिक शादियाँ (विवाह) कर सकते हैं।</li>
+                </ul>
+
+                <div class="hot-point" style="border-color: var(--accent-orange); background-color: rgba(255,107,53,0.05);">
+                    <h4>🔥 EXAM HOT: कोदई भाजी की सजा (Kodai Bhaji Penalty)</h4>
+                    <p>यदि कोई विवाहित महिला अपने पहले पति को छोड़कर किसी दूसरे पुरुष के साथ भाग जाती है या रहने लगती है, तो गोहिया (पंचायत) द्वारा उसे गंभीर सामाजिक व आर्थिक दंड दिया जाता है। इस दंड स्वरूप उसे <strong>'कोदई भाजी'</strong> की सजा भुगतनी पड़ती है, जिसके तहत उस महिला को <strong>पूरे गाँव को सामूहिक भोज (दावत)</strong> खिलाना पड़ता है।</p>
+                    <p style="font-size: 14px; margin-top: 5px; color:#ff6b35;"><em>टीचर का विज़नरी पॉइंट: "आर्थिक दंड सबसे बड़ा दंड होता है। पूरे गाँव को खिलाने में हज़ारों रुपये लग जाते हैं, जिससे डरकर समाज में अपराध और अनैतिकता पर लगाम लगी रहती है।"</em></p>
+                </div>
+
+                <div class="table-responsive">
+                    <h3 style="padding: 10px; font-size: 16px; color: var(--accent-cyan);">📋 कोल जनजाति के प्रमुख विवाह के प्रकार</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>विवाह का नाम</th>
+                                <th>विशेषता एवं सामाजिक स्वरूप</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>मंगनी विवाह (Mangni Vivah)</strong></td>
+                                <td>कोल समाज में इसे <strong>सर्वश्रेष्ठ और आदर्श विवाह</strong> माना जाता है। इसमें लड़के के पिता लड़की के घर मदिरा व उपहार लेकर रिश्ता तय करने जाते हैं। यदि लड़की वाले स्वीकार कर लें, तो सामूहिक रूप से मदिरापान किया जाता है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>राजी-बाजी विवाह (Raji-Baji)</strong></td>
+                                <td>इसे पारस्परिक सहमति से होने वाला <strong>प्रेम विवाह (Love Marriage)</strong> भी कहा जाता है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>विधवा पुनर्विवाह (Widow Remarriage)</strong></td>
+                                <td>कोल समाज में विधवा महिलाओं को दोबारा विवाह करने की पूर्ण सामाजिक स्वतंत्रता प्राप्त है।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="font-size: 15px; color: #8a8a9f;">📌 <strong>धार्मिक जुड़ाव:</strong> जब भी कोई विवाह संबंध पक्का होता है, तो पूरा परिवार अपने प्रमुख देवताओं—बड़का देव, ठाकुर देव और अहीर बाबा के स्थानों पर जाकर माथा टेकता है और प्रसन्नता व्यक्त करता है।</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: DANCE AND FESTIVALS -->
+        <section id="dance-festivals">
+            <h2 class="section-title">💃 5. पारंपरिक नृत्य एवं उत्सव (Dances & Festivals)</h2>
+            <div class="card">
+                <div class="card-title">🎵 प्रमुख लोक नृत्य (Tribal Dances) [17:32 - 19:15] & [27:14 - 28:46]</div>
+                <ul class="custom-list">
+                    <li><strong>कोल दहका / कोल देहकी / कोल हाई नृत्य (Kol Dahka):</strong> यह कोल जनजाति का सबसे <strong>पारंपरिक, सुप्रसिद्ध और सबसे प्रिय नृत्य</strong> है। चाहे विवाह का अवसर हो, कोई शुभ उत्सव हो या धार्मिक त्योहार, कोल दहका नृत्य अनिवार्य रूप से किया जाता है।
+                        <br>💡 <em>दहका का अर्थ:</em> स्थानीय भाषा में 'दहका' का तात्पर्य <strong>कोलों का दहकना, गरजना, तीव्र गति से कूदना और अत्यंत ऊर्जा के साथ उत्सव मनाकर एन्जॉय करना</strong> है।
+                    </li>
+                    <li><strong>कहरा नृत्य (Kahara Nritya):</strong> यह नृत्य मध्य प्रदेश के संपूर्ण बघेलखंड क्षेत्र में अत्यंत लोकप्रिय है। कोल जनजाति के अलावा यह 'बारी' (Bari) जाति में भी समान रूप से प्रचलित है। यह नृत्य विशेष रूप से <strong>कहरवा ताल (Kaharva Taal)</strong> पर थिरकते हुए किया जाता है, जिसके कारण इसका नाम 'कहरा नृत्य' पड़ा।</li>
+                </ul>
+
+                <div class="image-block">
+                    <img id="img-khichdi" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Khichdi_and_baingan_bharta.jpg" alt="Indian traditional Khichdi food representing Khicharhai festival" width="100%" height="auto" loading="lazy" decoding="async">
+                    <div class="image-caption">
+                        <span>📸 पारंपरिक खिचड़ी - जो मकर संक्रांति (खचरहाई) के दिन मोटे अनाजों से बनाई जाती है।</span>
+                        <span>Source: Wikimedia Commons | Public Domain</span>
+                    </div>
+                </div>
+
+                <div class="card-title" style="margin-top: 25px;">🎉 प्रमुख पर्व, उत्सव एवं त्यौहार [19:15 - 25:31]</div>
+                <p>कोल जनजाति मुख्य रूप से सनातन हिंदू त्योहारों को अत्यंत श्रद्धा के साथ मनाती है। इनके प्रमुख त्योहारों का क्रमवार विवरण निम्नलिखित है:</p>
+                
+                <ul class="custom-list" style="margin-top: 15px;">
+                    <li><strong>हरियाली अमावस्या (Hariyali Amavasya):</strong> हिंदू कैलेंडर के अनुसार <strong>सावन के महीने (Month of Sawan)</strong> में यह पर्व मनाया जाता है। इस दिन प्रकृति की हरी-भरी चादर देखकर कोल समाज के लोग विशेष भोजन बनाकर अपने देवी-देवताओं को अर्पित करते हैं।</li>
+                    <li><strong>नाग पंचमी (Nag Panchami):</strong> इस दिन काले नाग देवता की विशेष पूजा की जाती है। इस त्योहार की सबसे कठोर और पवित्र शर्त यह है कि <strong>इस दिन कोल जनजाति के लोग अपने खेतों में हल नहीं चलाते (Do not plow fields)</strong> और कृषि कार्य पूरी तरह बंद रखते हैं।</li>
+                    <li><strong>जन्माष्टमी (Janmashtami):</strong> भगवान श्रीकृष्ण के जन्मोत्सव को ये हर्षोल्लास के साथ मनाते हैं।</li>
+                    <li><strong>हरतालिका तीज (Hartalika Teej):</strong> इस दिन कोल समाज की महिलाएँ अपने पतियों की दीर्घायु के लिए अत्यंत कठिन <strong>निर्जला व्रत (Waterless Fast)</strong> रखती हैं और सामूहिक रूप से ताली बजाकर उत्सव गीत गाती हैं।</li>
+                    <li><strong>नवा खानी (Nava Khani):</strong> खेतों में <strong>नई फसल और नया अनाज आने की खुशी में</strong> यह पर्व मनाया जाता है। (याद रखें: 'नवा खानी' पर्व गोंड जनजाति भी मनाती है)।</li>
+                    <li><strong>नवरात्रि / नवदुर्गा (Navratri):</strong> शक्ति की देवी माँ दुर्गा की आराधना का पावन पर्व।</li>
+                    <li><strong>होली और दिवाली (Holi & Diwali):</strong> पारंपरिक दीपों और रंगों का त्योहार।</li>
+                </ul>
+
+                <div class="hot-point">
+                    <h4>🔥 EXAM HOT: खचरहाई पर्व (Khicharhai Festival)</h4>
+                    <p>सनातन हिंदू धर्म के पवित्र त्योहार <strong>मकर संक्रांति (14 जनवरी)</strong> को कोल जनजाति के लोग स्थानीय भाषा में <strong>'खचरहाई' या 'खीचड़हाई'</strong> कहते हैं। इस पावन दिन मोटे अनाजों से एक विशेष 'खिचड़ा' बनाया जाता है। कोल समाज के सभी लोग इस दिन <strong>सोन नदी (Son River) के प्रसिद्ध 'गौ घाट' (Gau Ghat)</strong> पर एकत्रित होते हैं, नदी में पवित्र स्नान करते हैं, और एक-दूसरे से गले मिलकर उत्सव मनाते हैं।</p>
+                </div>
+
+                <!-- 🔗 Link Story -->
+                <div class="link-story-box">
+                    <div class="link-story-title">🔗 Link Story — कोल त्योहारों का क्रम ऐसे याद रखो:</div>
+                    <p style="font-style: italic;">"सावन की <strong>हरियाली अमावस्या</strong> पर जब <strong>नाग</strong> (नागपंचमी) निकला, तो <strong>जन्माष्टमी</strong> के दिन <strong>हरतालिका</strong> ने खुश होकर नई फसल की <strong>नवाखानी</strong> पकाई और मकर संक्रांति पर सबको <strong>खचरहाई</strong> (खिचड़ी) खिला दी!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: LANGUAGE AND ADMINISTRATION -->
+        <section id="language-admin">
+            <h2 class="section-title">🔧 6. भाषा-बोली, गोदनहार एवं राज्य स्तरीय विकास अभिकरण</h2>
+            <div class="card">
+                <ul class="custom-list">
+                    <li><strong>भाषा परिवार (Language Family):</strong> ऐतिहासिक दृष्टि से कोल जनजाति की भाषा <strong>ऑस्ट्रिक (Austric), मुंडा (Munda) अथवा कोलीरियन (Kolarian)</strong> भाषा परिवार से संबंधित मानी जाती है।</li>
+                    <li><strong>वर्तमान बोली — बघेली (Bagheli):</strong> वर्तमान समय में बघेलखंड क्षेत्र में सदियों से निवास करने के कारण ये अपनी मूल मुंडा भाषा को छोड़कर स्थानीय <strong>बघेली बोली</strong> का प्रयोग करते हैं। बघेली बोली वास्तव में हिंदी की 'पूर्वी हिंदी' उपभाषा का ही एक प्रमुख रूप है।</li>
+                </ul>
+
+                <div class="hot-point" style="border-color: var(--accent-purple); background-color: rgba(179,136,255,0.05);">
+                    <h4>🔥 EXAM HOT: गोदनहार स्त्रियाँ (Godanhar - Tattoo Artists)</h4>
+                    <p>कोल जनजाति में जो स्त्रियाँ अन्य महिलाओं के शरीर पर <strong>गोदना (Tattooing)</strong> बनाने का पारंपरिक व कलात्मक कार्य करती हैं, उन्हें समाज में <strong>'गोदनहार' (Godanhar)</strong> कहा जाता है। 
+                    <br><span style="color: #b388ff; font-size:14px;"><em>(टीचर का मज़ाक: "कोल जनजाति के लोग गहरे सांवले/काले रंग के होते हैं, इसलिए जब वे टैटू बनवाते हैं तो वह दिखाई ही नहीं देता! लड़के परेशान रहते हैं कि टैटू कहाँ गया, पर कला जीवित है!")</em></span>
+                    <br>💡 <strong>स्मरण रहे कंपैरिजन:</strong> कोरकू जनजाति में घरों के बाहर भित्ति चित्र या चित्रकारी करने वाली महिलाओं को <strong>'गुदरी' (Gudri)</strong> कहा जाता है, जबकि कोल में टैटू बनाने वाली को 'गोदनहार' कहते हैं।</p>
+                </div>
+
+                <div class="image-block">
+                    <img id="img-tattoo" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Tattooing_in_India.jpg" alt="Traditional Indian tattoo process representing Godanhar art" width="100%" height="auto" loading="lazy" decoding="async">
+                    <div class="image-caption">
+                        <span>📸 भारत का पारंपरिक गोदना (Tattooing Art) - जो जनजातीय पहचान का प्रतीक है।</span>
+                        <span>Source: Wikimedia Commons | CC BY-2.0</span>
+                    </div>
+                </div>
+
+                <div class="hot-point" style="border-color: var(--accent-orange); background-color: rgba(255,107,53,0.05);">
+                    <h4>🔥 SUPER EXAM HOT: राज्य स्तरीय कोल जनजाति विकास अभिकरण</h4>
+                    <p>कोल जनजाति की सामाजिक, शैक्षिक और आर्थिक स्थिति अत्यंत दयनीय और कमजोर होने के कारण, मध्य प्रदेश शासन द्वारा इनके कल्याण और सशक्तिकरण हेतु <strong>'राज्य स्तरीय कोल जनजाति विकास अभिकरण'</strong> का गठन किया गया।</p>
+                    <ul class="custom-list" style="margin-top: 10px;">
+                        <li><strong>गठन की सटीक तिथि:</strong> <strong>6 जून 2011 (6th June 2011)</strong></li>
+                    </ul>
+                    <br>💡 <strong>टीचर की याद करने की सुपर ट्रिक:</strong> <em>"दिमाग में विजुअलाइज़ करो कि 2011 में सरकार ने 2 बड़ी-बड़ी ऊँची बिल्डिंगें बनाईं (1 और 1 यानी 11), और उन दोनों बिल्डिंगों के ऊपर कोल जनजाति के प्यारे लड़कों को ले जाकर बिठा दिया ताकि उनका तेजी से विकास हो सके! तो 2011 भूलना मत!"</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: LIVE MCQS TEST -->
+        <section id="live-mcqs">
+            <h2 class="section-title">📊 7. Live MCQs Test Practice (19 विस्तृत प्रश्नोत्तरी)</h2>
+            <p style="margin-bottom: 20px; color: #8a8a9f;">वीडियो के अंतिम 30 मिनट में टीचर द्वारा लाइव चैट में कराए गए सभी 19 प्रश्नों का संकलन नीचे दिया गया है। <strong>Click to Reveal</strong> पर क्लिक करके उत्तर की जाँच करें।</p>
+
+            <!-- Q1 -->
+            <details>
+                <summary>
+                    <span><strong>Q1.</strong> कोल जनजाति मध्य प्रदेश की कौन से नंबर की सबसे बड़ी जनजाति है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> तीसरी (3rd) सबसे बड़ी जनजाति।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> प्रथम स्थान पर भील, द्वितीय पर गोंड और तृतीय स्थान पर 7.6% जनसंख्या के साथ कोल जनजाति आती है। चौथी कोरकू, पाँचवीं सहरिया और छठवीं बैगा है।</p>
+                </div>
+            </details>
+
+            <!-- Q2 -->
+            <details>
+                <summary>
+                    <span><strong>Q2.</strong> इतिहास का सुप्रसिद्ध 'कोल विद्रोह' (Kol Rebellion) कब संपन्न हुआ था?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> वर्ष 1831-32 में।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> यह विद्रोह <strong>बुद्धू भगत (Buddha Bhagat)</strong> के ओजस्वी नेतृत्व में लड़ा गया था।</p>
+                </div>
+            </details>
+
+            <!-- Q3 -->
+            <details>
+                <summary>
+                    <span><strong>Q3.</strong> कोल विद्रोह के समय ब्रिटिश शासन के दौरान बंगाल का गवर्नर जनरल कौन था?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> लॉर्ड विलियम बेंटिक (Lord William Bentinck)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> टीचर की ट्रिक: "कोल जनजाति के लोग विद्रोह कर रहे थे और विलियम बेंटिक आराम से बैट-बॉल लेकर बैटिंग कर रहा था।" यह वही बेंटिक है जिसने राजा राम मोहन राय के प्रयासों से 1829 में सती प्रथा विरोधी कानून बनाया था।</p>
+                </div>
+            </details>
+
+            <!-- Q4 -->
+            <details>
+                <summary>
+                    <span><strong>Q4.</strong> कोल जनजाति का मूल निवास स्थान (Original Home) किसे माना जाता है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> रीवा जिले का फरेंदा या कुराली गाँव।</p>
+                </div>
+            </details>
+
+            <!-- Q5 -->
+            <details>
+                <summary>
+                    <span><strong>Q5.</strong> भौगोलिक दृष्टि से कोल जनजाति मुख्य रूप से मध्य प्रदेश के किस पठार / क्षेत्र में केंद्रित है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> बघेलखंड का पठार (Baghelkhand Plateau)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> मालवा का पठार राज्य का सबसे बड़ा पठार है (28% एरिया), जबकि बघेलखंड का पठार सबसे छोटा पठार है (मात्र 7% एरिया)। कोल इसी बघेलखंड बेल्ट में सर्वाधिक घनी है।</p>
+                </div>
+            </details>
+
+            <!-- Q6 -->
+            <details>
+                <summary>
+                    <span><strong>Q6.</strong> इंदौर जिले के महू के पास स्थित 'जानापाव की पहाड़ी' (Janapav) से कौन सी प्रसिद्ध नदी निकलती है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> चंबल नदी (Chambal River)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> टीचर ने क्लास के बीच बताया कि जानापाव की पहाड़ी भगवान परशुराम की पावन जन्मस्थली भी मानी जाती है। मालवा की चोटियों का क्रम: सिगार → जानापाव → धारी → गोमनपुरी।</p>
+                </div>
+            </details>
+
+            <!-- Q7 -->
+            <details>
+                <summary>
+                    <span><strong>Q7.</strong> 'रोतेले' (Rotele) और 'रोतिया' (Rotia) निम्नलिखित में से किस जनजाति की प्रमुख उपजातियाँ हैं?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> कोल जनजाति की।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>अन्य जनजातियों का टीचर द्वारा कराया गया क्विक रिवीजन:</strong>
+                        <br>• <strong>भील:</strong> भिलाला, पटल्या, तड़वी, उमड़ी।
+                        <br>• <strong>गोंड:</strong> अगरिया, प्रधान, ओझा, सोलहास, कोयलाभूतास, नागरची।
+                        <br>• <strong>कोरकू:</strong> बोबई, मोसी, रूमा, निहाल, बोडिया, बावरिया, दुलारिया। (ट्रिक: "पिताजी बगल में बैठकर देख रहे थे कि बाबरी को इतना दुलार कर रहा है, हमें तो कभी नहीं किया!")
+                        <br>• <strong>बैगा:</strong> नाहर, रेमना/राय, भरतिया, नरोतिया, कढ़वा, कुंडी गड़वा, बिजवार। (ट्रिक: "हाथ में बैग लेकर नहर पर स्कूल जाना")
+                    </p>
+                </div>
+            </details>
+
+            <!-- Q8 -->
+            <details>
+                <summary>
+                    <span><strong>Q8.</strong> निम्नलिखित में से कौन सी जनजाति स्वयं को पौराणिक 'सबरी की संतान' स्वीकार करती है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> कोल जनजाति।</p>
+                </div>
+            </details>
+
+            <!-- Q9 -->
+            <details>
+                <summary>
+                    <span><strong>Q9.</strong> भील जनजाति के संदर्भ में 'चीमाता' (Chimata) और 'दजैया / दजा' (Dajhiya) क्या हैं?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> पारंपरिक स्थानांतरित कृषि के प्रकार।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> भील जनजाति द्वारा पहाड़ी ढलानों पर की जाने वाली खेती को <strong>'चीमाता'</strong> तथा समतल मैदानी भागों में की जाने वाली खेती को <strong>'दजैया'</strong> कहा जाता है।</p>
+                </div>
+            </details>
+
+            <!-- Q10 -->
+            <details>
+                <summary>
+                    <span><strong>Q10.</strong> भील समाज में 'कु' (Ku) और 'फल्या / फलिया' (Phaliya) शब्दों का क्या अर्थ है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> कु = भीलों के मकान/घर; फलिया = भीलों का निवास स्थान/मोहल्ला।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> भीलों के पूरे गाँव को <strong>'पाल'</strong> तथा उसके सर्वोच्च मुखिया को <strong>'गमेती' (Gameti)</strong> कहा जाता है।</p>
+                </div>
+            </details>
+
+            <!-- Q11 -->
+            <details>
+                <summary>
+                    <span><strong>Q11.</strong> कोल जनजाति की पारंपरिक पंचायत को किस नाम से संबोधित किया जाता है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> गोहिया (Gohia)।</p>
+                </div>
+            </details>
+
+            <!-- Q12 -->
+            <details>
+                <summary>
+                    <span><strong>Q12.</strong> कोल समाज में प्रचलित 'कोदई भाजी' (Kodai Bhaji) का संबंध मूलतः किससे है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> सामाजिक या आर्थिक दंड (Penalty / Punishment) से।</p>
+                </div>
+            </details>
+
+            <!-- Q13 -->
+            <details>
+                <summary>
+                    <span><strong>Q13.</strong> कोल जनजाति के प्रशासनिक ढांचे के संबंध में कौन सा कथन पूर्णतः सत्य है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> सभी कथन सत्य हैं।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📋 <strong>कथन इस प्रकार थे:</strong>
+                        <br>A) चौधरी, मेतो या गोटिया गाँव का प्रशासनिक मुखिया होता है।
+                        <br>B) बरुआ कोलों का सर्वोच्च धार्मिक नेता होता है।
+                        <br>C) भुयार, ओजा, पंडा या देवार जड़ी-बूटियों से रोगों का इलाज करते हैं।
+                        <br>D) नतिया या तिया उत्सवों पर गाँव को आमंत्रण (नौता) देता है।
+                    </p>
+                </div>
+            </details>
+
+            <!-- Q14 -->
+            <details>
+                <summary>
+                    <span><strong>Q14.</strong> जिस गाँव में कोल जनजाति की आबादी अत्यंत सघन या घनी होती है, उस गाँव को क्या कहते हैं?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> कोल्हन (Kolhan)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> जहाँ आबादी दूर-दूर बिखरी होती है, उसे 'कोलिन टोला' कहते हैं, और घनी आबादी को 'कोल्हन' कहा जाता है।</p>
+                </div>
+            </details>
+
+            <!-- Q15 -->
+            <details>
+                <summary>
+                    <span><strong>Q15.</strong> छिंदवाड़ा जिले के 'पातालकोट' (Patalkot) की घाटियों में कौन सी अति विशेष पिछड़ी जनजाति निवास करती है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> भारिया जनजाति (Bhariya Tribe)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>भारिया क्विक रिवीजन:</strong> भारिया का अर्थ 'ज्ञान का अभाव' है। उपजातियाँ: भूमिया, भुइहार, पंडो। नृत्य: भड़म, सेतम, साएतम, कर्मा, शैला। इनका निवास स्थान <strong>'ढाना' (Dhana)</strong> तथा मुखिया <strong>'पटेल'</strong> कहलाता है। 1981 की जनगणना में इन्हें <em>'जंगलियों का जंगली'</em> कहा गया था।</p>
+                </div>
+            </details>
+
+            <!-- Q16 -->
+            <details>
+                <summary>
+                    <span><strong>Q16.</strong> 'शहराना' (Saharana) किस जनजाति के निवास स्थान को कहा जाता है, जिसका मुखिया 'पटेल' होता है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> सहरिया जनजाति (Sahariya Tribe)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>सहरिया क्विक रिवीजन:</strong> ये स्वयं को 'खुटिया पटेल' कहलाना पसंद करते हैं। गुना-शिवपुरी का शाहबाद जंगल इनका मूल स्थान है। उपजातियाँ: सवर, सौर। नृत्य: लहंगी, स्वांग, दुलदुल घोड़ी, रागिनी, तेजाजी। सहरिया सामुदायिक रेडियो केंद्र <strong>श्योपुर (Sheopur)</strong> में स्थित है।</p>
+                </div>
+            </details>
+
+            <!-- Q17 -->
+            <details>
+                <summary>
+                    <span><strong>Q17.</strong> कोल जनजाति के मुख्य 'ग्राम देवता' कौन हैं जो गाँव को समस्त कष्टों से बचाते हैं?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> ठाकुर देव (Thakur Dev)।</p>
+                    <p style="color: var(--text-color); font-size:15px; margin-top:5px;">📊 <strong>व्याख्या:</strong> 'बड़का देव' को महादेव का रूप माना जाता है जिनका चबूतरा पूर्व दिशा में होता है। वन सती देवी वनों से और अहीर बाबा उत्तर-पश्चिम कोने में पूजे जाते हैं।</p>
+                </div>
+            </details>
+
+            <!-- Q18 -->
+            <details>
+                <summary>
+                    <span><strong>Q18.</strong> शिशु के जन्म के 12वें दिन मनाया जाने वाला 'बर' (Barv) संस्कार किस जनजाति का हिस्सा है?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> कोल जनजाति (इसमें माता-पिता सत्यनारायण भगवान की कथा सुनते हैं)।</p>
+                </div>
+            </details>
+
+            <!-- Q19 -->
+            <details>
+                <summary>
+                    <span><strong>Q19.</strong> मध्य प्रदेश शासन द्वारा 'राज्य स्तरीय कोल जनजाति विकास अभिकरण' का गठन कब किया गया था?</span>
+                    <span style="color: var(--accent-cyan);">Click to Reveal ➡️</span>
+                </summary>
+                <div class="quiz-answer">
+                    <p><strong>सही उत्तर:</strong> 6 जून 2011 (6th June 2011) को।</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- SECTION 8: MASTER CHECKLIST -->
+        <section id="master-checklist">
+            <h2 class="section-title">🔑 8. मास्टर रिवीज़न चेकलिस्ट (localStorage Enabled)</h2>
+            <div class="card">
+                <p style="margin-bottom: 15px; font-size: 15px; color: #8a8a9f;">पढ़ाई के बाद खुद को टेस्ट करें। जो फैक्ट याद हो जाए, उस पर टिक मार्क लगाएं। आपकी प्रोग्रेस ऊपर लगे बार में दिखेगी।</p>
+                
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk1" onchange="updateProgress()">
+                    <label for="chk1">कोल का अर्थ 'मानव' होता है और ये राज्य की तीसरी सबसे बड़ी (7.6%) जनजाति हैं।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk2" onchange="updateProgress()">
+                    <label for="chk2">मूल निवास स्थान रीवा का फरेंदा या कुराली गाँव है और ये मुख्यतः बघेलखंड में रहते हैं।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk3" onchange="updateProgress()">
+                    <label for="chk3">ये स्वयं को रामायण कालीन माता 'सबरी की संतान' मानते हैं।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk4" onchange="updateProgress()">
+                    <label for="chk4">कोल पंचायत को 'गोहिया' तथा घने गाँव को 'कोल्हन' कहा जाता है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk5" onchange="updateProgress()">
+                    <label for="chk5">प्रसव प्रक्रिया को 'जनना' तथा प्रसव पीड़ा में दी जाने वाली महुआ शराब को 'मदाइन' कहते हैं।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk6" onchange="updateProgress()">
+                    <label for="chk6">जन्म के 12वें दिन 'बर' संस्कार में भगवान सत्यनारायण की कथा सुनी जाती है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk7" onchange="updateProgress()">
+                    <label for="chk7">3 वर्ष में रामनवमी या बसंत पंचमी को देवी स्थानों पर 'मुंडन संस्कार' होता है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk8" onchange="updateProgress()">
+                    <label for="chk8">विवाहित स्त्री के भागने पर 'कोदई भाजी' के तहत पूरे गाँव को भोज कराने का दंड मिलता है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk9" onchange="updateProgress()">
+                    <label for="chk9">'मंगनी विवाह' कोल समाज में सबसे सर्वश्रेष्ठ और आदर्श विवाह श्रेणी में आता है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk10" onchange="updateProgress()">
+                    <label for="chk10">इनका पारंपरिक और सबसे प्रिय लोकनृत्य 'कोल दहका' (देहकी/हाई) और 'कहरा' है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk11" onchange="updateProgress()">
+                    <label for="chk11">'नागपंचमी' के दिन कोल जनजाति के लोग अपने खेतों में हल नहीं चलाते।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk12" onchange="updateProgress()">
+                    <label for="chk12">मकर संक्रांति को 'खचरहाई' कहते हैं और इस दिन ये सोन नदी के 'गौ घाट' पर मिलते हैं।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk13" onchange="updateProgress()">
+                    <label for="chk13">कोल समाज में गोदना कलाकारी करने वाली स्त्रियों को 'गोदनहार' कहा जाता है।</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk14" onchange="updateProgress()">
+                    <label for="chk14">राज्य स्तरीय कोल जनजाति विकास अभिकरण का गठन 6 जून 2011 को हुआ था।</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: ROADMAP -->
+        <section id="roadmap">
+            <h2 class="section-title">📌 9. आगामी क्लास रोडमैप (Teacher's Future Course Roadmap)</h2>
+            <div class="card" style="border-left: 5px solid var(--accent-purple);">
+                <blockquote class="highlight-box" style="background-color: rgba(179,136,255,0.05); border-color: var(--accent-purple);">
+                    <strong>🎥 वीडियो अंत संदर्भ [62:27 - अंत]:</strong> टीचर ने पूरी सिरीज़ का अग्रिम रोडमैप साझा किया है कि पूरा जनजातीय पाठ्यक्रम कब और कैसे समाप्त होगा। आगामी क्लासेस का ढांचा इस प्रकार रहेगा:
+                </blockquote>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>अन्य प्रमुख छोटी जनजातियाँ:</strong> इसके लिए आगामी <strong>2 क्लासेस</strong> लगेंगी।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>मध्य प्रदेश की घुमंतू जनजातियाँ:</strong> इसके लिए <strong>1 क्लास</strong> निर्धारित है।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>विमुक्त, घुमंतू और अर्ध-घुमंतू जनजातियाँ:</strong> इसके लिए <strong>1 क्लास</strong> होगी।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>स्वतंत्रता आंदोलन में जनजातियों का योगदान:</strong> अत्यंत महत्वपूर्ण टॉपिक, इसमें <strong>2 क्लासेस</strong> लगेंगी।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>प्रमुख जनजातीय व्यक्तित्व (Tribal Personalities):</strong> इसके लिए <strong>2 क्लासेस</strong> होंगी।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>जनजातीय संस्थाएं एवं प्रमुख संग्रहालय (Institutions & Museums):</strong> क्रमशः 1-1 क्लास यानी कुल <strong>2 क्लासेस</strong>।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>मध्य प्रदेश की लोक संस्कृति (Folk Culture):</strong> इसके विस्तार के लिए <strong>3 से 4 क्लासेस</strong> लगेंगी।
+                    </div>
+                    <div class="timeline-item">
+                        <strong>मध्य प्रदेश का लोक साहित्य (Folk Literature):</strong> इसके लिए अंतिम <strong>1 क्लास</strong> होगी।
+                    </div>
+                </div>
+                
+                <p style="font-weight: 600; color: var(--accent-green);">🎯 निष्कर्ष: कुल मिलाकर अभी लगभग 14 से 15 क्लासेस और होंगी, जिसके बाद आगामी 10 मई के आसपास यह पूरा जनजातीय और सांस्कृतिक यूनिट 100% कंप्लीट हो जाएगा!</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 7. FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <p style="margin-bottom: 10px;">🌟 "Isolated facts भूल जाते हैं — linked facts याद रहते हैं।" 🌟</p>
+            <p style="font-size: 13px; color: #64748b;">Designed for Multi-device Exam Revision | MPPSC Pre & Mains Foundation Study Support</p>
+        </div>
+    </footer>
+
+    <!-- INLINE JAVASCRIPT FOR DYNAMIC UTILITIES -->
+    <script>
+        // 1. Theme Toggle Management (localStorage Persistent)
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+                document.getElementById('themeBtn').innerHTML = '🌙 Dark';
+            } else {
+                document.body.classList.remove('light-theme');
+                document.getElementById('themeBtn').innerHTML = '☀️ Light';
+            }
+        }
+
+        function toggleTheme() {
+            if (document.body.classList.contains('light-theme')) {
+                localStorage.setItem('selectedTheme', 'dark');
+                applyTheme('dark');
+            } else {
+                localStorage.setItem('selectedTheme', 'light');
+                applyTheme('light');
+            }
+        }
+
+        // Initialize theme on load
+        const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
+        applyTheme(savedTheme);
+
+        // 2. Sticky Dropdown Jump Navigation
+        function navigateToSection(targetId) {
+            if (targetId) {
+                const element = document.querySelector(targetId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Sync dropdown value with scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const selectMenu = document.getElementById('quickNav');
+            let currentSectionId = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    currentSectionId = "#" + section.getAttribute('id');
+                }
+            });
+
+            if (currentSectionId) {
+                selectMenu.value = currentSectionId;
+            }
+        });
+
+        // 3. Checklist Progress & localStorage Persistence
+        const totalCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+
+        function loadChecklistState() {
+            for (let i = 1; i <= totalCheckboxes; i++) {
+                const checkbox = document.getElementById('chk' + i);
+                if (checkbox) {
+                    const isChecked = localStorage.getItem('chk' + i) === 'true';
+                    checkbox.checked = isChecked;
+                }
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let checkedCount = 0;
+            for (let i = 1; i <= totalCheckboxes; i++) {
+                const checkbox = document.getElementById('chk' + i);
+                if (checkbox) {
+                    localStorage.setItem('chk' + i, checkbox.checked);
+                    if (checkbox.checked) checkedCount++;
+                }
+            }
+            const percentage = (checkedCount / totalCheckboxes) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+
+        // Load checklist cache on startup
+        window.removeAttribute;
+        window.addEventListener('DOMContentLoaded', loadChecklistState);
+
+        // 4. Image Preload & Retry Logic for High Availability
+        function setupImageErrorFallback(imgId, alternateUrl) {
+            const imgElement = document.getElementById(imgId);
+            if (imgElement) {
+                imgElement.addEventListener('error', function() {
+                    console.log('Primary image failed to load. Attempting fallback for ' + imgId);
+                    imgElement.src = alternateUrl;
+                    
+                    // Add a clickable text fallback under the image block if it still breaks
+                    const parentBlock = imgElement.parentElement;
+                    if (parentBlock && !parentBlock.querySelector('.fallback-link')) {
+                        const link = document.createElement('div');
+                        link.className = 'image-caption';
+                        link.style.justifyContent = 'center';
+                        link.innerHTML = `<span class="fallback-link" onclick="window.open('${alternateUrl}', '_blank')">⚠️ Image failed to load dynamically. Click here to open source directly.</span>`;
+                        parentBlock.appendChild(link);
+                    }
+                });
+            }
+        }
+
+        // Configure alternate links for safety
+        setupImageErrorFallback('img-coalmine', 'https://images.unsplash.com/photo-1517089596392-db9a5e9478cc?q=80&w=600');
+        setupImageErrorFallback('img-khichdi', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=600');
+        setupImageErrorFallback('img-tattoo', 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600');
+
+    </script>
+</body>
+</html>

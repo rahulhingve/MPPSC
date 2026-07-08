@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Master Revision Page: शहरिया जनजाति (Sahariya Tribe) - 100% Complete Class Notes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for Dynamic Theme Mapping */
+        :root {
+            --bg-main: #0f0f1a;
+            --bg-card: #16162a;
+            --bg-accent-subtle: rgba(0, 212, 255, 0.08);
+            --border-color: #26264d;
+            --text-main: #f3f3f6;
+            --text-muted: #b5b5c6;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --link-gradient: linear-gradient(135deg, #1e1b4b, #2e1065);
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.5);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.6);
+        }
+
+        .light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-accent-subtle: rgba(14, 165, 233, 0.08);
+            --border-color: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-cyan: #0ea5e9;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --link-gradient: linear-gradient(135deg, #eff6ff, #f3e8ff);
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        /* Base Resets & Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            font-size: 17px;
+            padding-bottom: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* Layout Architecture */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header UI Dashboard */
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #0f0f1a);
+            border-bottom: 2px solid var(--border-color);
+            padding: 30px 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .light-mode header {
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .badge {
+            background-color: var(--border-color);
+            color: var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 1px solid var(--accent-cyan);
+        }
+
+        /* Dynamic Progress Bar Counter */
+        .progress-wrapper {
+            margin-top: 20px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .progress-container {
+            background-color: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            width: 0%;
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        /* Interactive Sticky Navigation controls */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-main);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .quick-nav-select {
+            flex-grow: 1;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .theme-toggle-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        /* Chunked Layout Content Cards */
+        .topic-section {
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 15px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .card-title {
+            font-size: 18px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        /* Lists and Typography optimizations */
+        ul.bullet-points {
+            list-style: none;
+        }
+
+        ul.bullet-points li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul.bullet-points li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 14px;
+        }
+
+        .timestamp-tag {
+            font-family: monospace;
+            background-color: rgba(179, 136, 255, 0.15);
+            color: var(--accent-purple);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        /* Specialty Structural Callout Containers */
+        .exam-hot-box {
+            background-color: rgba(255, 107, 53, 0.08);
+            border: 1px dashed var(--accent-orange);
+            border-radius: 10px;
+            padding: 16px;
+            margin: 15px 0;
+        }
+
+        .exam-hot-title {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .link-story-box {
+            background: var(--link-gradient);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 18px 0;
+        }
+
+        .link-story-title {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .definition-box {
+            background-color: var(--bg-accent-subtle);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 14px;
+            border-radius: 0 10px 10px 0;
+            margin: 15px 0;
+        }
+
+        /* Data Layout Tables optimization */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background-color: var(--border-color);
+            color: var(--accent-cyan);
+            font-weight: 600;
+            padding: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Active Recall Accordion Structures */
+        details.quiz-accordion {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        details.quiz-accordion summary {
+            padding: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        details.quiz-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.quiz-accordion summary::after {
+            content: "👁️ Reveal Answer";
+            font-size: 12px;
+            color: var(--accent-cyan);
+            background-color: var(--border-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        details.quiz-accordion[open] summary::after {
+            content: "🙈 Hide Answer";
+            color: var(--text-muted);
+        }
+
+        .quiz-content {
+            padding: 14px;
+            background-color: rgba(0,0,0,0.15);
+            border-top: 1px solid var(--border-color);
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        /* Optimized Image Containers & fallbacks */
+        .image-block {
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #0b0b13;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 450px;
+            object-fit: contain;
+        }
+
+        .image-caption {
+            background-color: var(--bg-card);
+            padding: 10px 14px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .image-fallback-link {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--accent-cyan);
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+        }
+
+        /* Checkbox Persistence Module Styles */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: var(--accent-green);
+        }
+
+        .checklist-label {
+            cursor: pointer;
+            user-select: none;
+            font-size: 15px;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + .checklist-label {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        /* Print Media High Contrast Override */
+        @media print {
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+                font-size: 14px;
+            }
+            .card, .exam-hot-box, .link-story-box, .definition-box {
+                background: #fff !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+                page-break-inside: avoid;
+                box-shadow: none !important;
+            }
+            .sticky-controls, .theme-toggle-btn, .quick-nav-select, summary::after {
+                display: none !important;
+            }
+            details {
+                display: block !important;
+            }
+            details summary {
+                font-weight: bold;
+            }
+            .quiz-content {
+                display: block !important;
+                color: #000 !important;
+                border-top: 1px solid #000;
+            }
+            .image-block {
+                border: 1px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <header>
+        <div class="header-top">
+            <div>
+                <h1>🎯 शहरिया जनजाति (Sahariya Tribe)</h1>
+                <p style="color: var(--text-muted); font-size: 15px; font-weight: 500; margin-top: 4px;">🎯 MPPSC Tribes Study Suite — Class Revision Page</p>
+                <div class="badge-container">
+                    <span class="badge">Unit 10 Topic</span>
+                    <span class="badge">Part 1 of 2</span>
+                    <span class="badge" id="topics-count-badge">8 Core Sections</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-wrapper">
+            <div class="progress-text">
+                <span>📚 Total Revision Completed</span>
+                <span id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="master-progress-bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky-controls">
+        <select class="quick-nav-select" id="quick-jump-menu" onchange="navigateToSection(this.value)">
+            <option value="" disabled selected>⚡ Instant Section Jumper...</option>
+            <option value="section-recap">1. Previous Class Recap & Const. Review</option>
+            <option value="section-pyq">2. Exam PYQ Analysis (Khutia Patel)</option>
+            <option value="section-intro">3. Basic Introduction & Population</option>
+            <option value="section-names">4. Nomenclature & Etymological Meanings</option>
+            <option value="section-pvtg">5. PVTG Classification & Dhebar Commission</option>
+            <option value="section-myth">6. Mythological Lineage & Ancestry</option>
+            <option value="section-geo">7. Geographical Matrix & Spatial Distribution</option>
+            <option value="section-subtribes">8. Sub-Tribes & Totemic Gotra System</option>
+            <option value="section-social">9. Social Architecture & Village Framework</option>
+            <option value="section-panchayat">10. Traditional Governance & Five-Elder Panchayat</option>
+            <option value="section-health">11. Health, Nutrition & Attire Features</option>
+            <option value="section-economic">12. Economic Profile & Shifting Cultivation</option>
+            <option value="section-religious">13. Religious Matrix & Tribal Pantheon</option>
+            <option value="section-birth">14. Birth Ceremonies & Cultural Customs</option>
+            <option value="section-death">15. Mortuary Rituals & Memorials</option>
+            <option value="section-marriage">16. Tribal Marriage Spectrum & Customs</option>
+            <option value="master-full-forms">📋 Master Section: Constitutional References</option>
+            <option value="master-hot-facts">🔥 Master Section: Exam Hot Spots Compilation</option>
+            <option value="master-checklist">✅ Master Revision Check-Off Grid</option>
+        </select>
+        
+        <button class="theme-toggle-btn" id="theme-toggle-trigger" onclick="togglePageTheme()">
+            🌙 Toggle Theme
+        </button>
+    </div>
+
+    <main>
+        
+        <section id="section-recap" class="topic-section">
+            <h2 style="color: var(--accent-purple);">1. Previous Class Recap & Const. Review</h2>
+            
+            <div class="card">
+                <div class="card-title">📍 Territorial Maps & Constitutional Layout Matrix</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">01:59</span> **Geographical Extensions Matrix:** Teacher highlights previous class summaries covering MP tribal distributions across regional layouts.</li>
+                    <li>**Gond & Baiga (गोंड और बैगा):** Centered across the South-Eastern zones (**दक्षिण पूर्वी एरिया**) of Madhya Pradesh.</li>
+                    <li>**Bhil (भील):** Primarily located within Western territories (**पश्चिमी हिस्सों**) of MP.</li>
+                    <li>**Sahariya (शहरिया):** Heavily clustered along the Northern zones (**उत्तरी हिस्सों**) of MP.</li>
+                    <li><span class="timestamp-tag">02:15</span> **Local Extensions:** Oraon (**उरांव**) tribe occupies regional hubs; Korku (**कोरकू**) spans defined belts. Abujmaria (**अबूझमाड़िया**) spans Chhindwara corridors; Bandariya Korku (**बंदरिया कोरकू**) centers in Hoshangabad tracts.</li>
+                    <li><span class="timestamp-tag">02:31</span> **Article 366(25):** Core legal block that provides the definitive constitutional definition criteria for Scheduled Tribes (**जनजातियों की परिभाषा**).</li>
+                    <li><span class="timestamp-tag">02:42</span> **Article 342:** Invests statutory authority in the **President of India** to notify or schedule a specific tribal community as an ST.</li>
+                    <li><span class="timestamp-tag">03:04</span> **Article 244:** Mandates special administrative execution structures for Scheduled Areas and Tribal Areas (**अनुसूचित क्षेत्रों और जनजातीय क्षेत्रों के लिए विशेष प्रावधान**).</li>
+                    <li><span class="timestamp-tag">03:14</span> **Article 275:** Empowers the Union Government to issue specialized statutory **Grants-in-Aid** to state setups for balancing tribal development infrastructures.</li>
+                    <li><span class="timestamp-tag">03:21</span> **Article 15(4):** Direct educational reservation safeguards for Scheduled Tribes. Added by **1st Constitutional Amendment Act, 1951** following the landmark **Champakam Dorairajan Case (चंपकम दोरैराजन केस)**.</li>
+                    <li><span class="timestamp-tag">03:42</span> **Article 16(4)(A):** Essential protective mandate validating statutory **Reservation in Promotions** (**प्रमोशन में आरक्षण**) specifically for SC/ST candidates.</li>
+                    <li><span class="timestamp-tag">04:05</span> **Article 16(4)(B):** Legal provision validating the structural carrying forward of **Backlog Vacancies (बैकलॉग पद)**.</li>
+                    <li>**Other Articles:** **Article 17** targets abolition of untouchability (**छुआछूत का अंत**), **Article 18** covers titles, and **Articles 23 & 24** prevent forced labor and child exploitation to secure psychological/physical developmental spaces.</li>
+                </ul>
+            </div>
+
+            <details class="quiz-accordion">
+                <summary>❓ Which structural Supreme Court judgment led to the inclusion of Article 15(4)?</summary>
+                <div class="quiz-content">
+                    🎯 **Champakam Dorairajan Case (1951)** — It triggered the enactment of the 1st Constitutional Amendment Act to add educational safeguards for historical backwards!
+                </div>
+            </details>
+        </section>
+
+        <section id="section-pyq" class="topic-section">
+            <h2 style="color: var(--accent-orange);">2. Exam PYQ Analysis (Khutia Patel Title)</h2>
+            
+            <div class="card">
+                <div class="card-title">🔥 PYQ Trend: Honorific Nomenclature Identification</div>
+                <div class="definition-box">
+                    **Previous Year Question (PYQ Tracking):** "निम्नलिखित में से किस जनजाति को आदर के साथ खुटिया पटेल के रूप में संबोधित किया जाता है?" (Which tribe is addressed with honorific respect as Khutia Patel?) <br>
+                    **Correct Examination Key:** **शहरिया जनजाति (Sahariya Tribe)**
+                </div>
+                
+                <p><span class="timestamp-tag">07:33</span> **Teacher's Mythological Lore Explanations for the Title:**</p>
+                <ul class="bullet-points" style="margin-top: 10px;">
+                    <li>**Myth 1 (The Peg of Creation):** When Lord Brahma created humanity, the Sahariya forefather was incredibly simple and gentle. As newer aggressive social groups arrived, the Sahariya person kept moving further back toward the boundary edge until he reached the structural tethering peg (**खूंटा**) of the setup. Hence, he was called **Khutia Patel**.</li>
+                    <li>**Myth 2 (The Settlement Foundation Marker):** When God constructed the world's very first settlement village, the pioneering individual who drove down the primary foundation marker peg (**पहला खूंटा गाड़ा**) was a Sahariya. Because he set the community peg, the title **Khutia Patel** became their hereditary badge of honor.</li>
+                    <li>**Psychological Impact:** Calling a Sahariya individual *"Khutia Patel"* triggers deep-seated ancestral pride (**गौरवान्वित महसूस करते हैं**). Always use it as a mark of cultural respect.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-intro" class="topic-section">
+            <h2 style="color: var(--accent-cyan);">3. Basic Introduction & Population</h2>
+            
+            <div class="card">
+                <div class="card-title">📊 Demographic Weight & Sequential Matrix Breakdown</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">10:44</span> **5th Largest Tribe Rank:** The Sahariya community stands as the **5th largest tribal group** within the state boundaries of Madhya Pradesh.</li>
+                    <li><span class="timestamp-tag">12:24</span> **Demographic Data Points:** They represent approximately **4%** of MP's entire indigenous population registry.</li>
+                    <li>**Absolute Population Grid:** Out of the state's total tribal population of **1,53,16,784 (1 करोड़ 53 लाख 16 हजार 784)**, the Sahariya population accounts for roughly **6.14 Lakh** individuals.</li>
+                </ul>
+
+                <div class="link-story-box">
+                    <div class="link-story-title">🔗 Association Chain: MP's Major Tribes Size Hierarchy</div>
+                    **Story Plan:** "पश्चिम के **भील** का **गोंड** राजा **कोल** माइंस की **नाव (कोरकू)** पर बैठकर **हुक (5 - शहरिया)** से लटककर शहर गया, जहाँ उसने अपने **बैग (6 - बैगा)** को रख दिया।" <br>
+                    * **1. भील (Bhil)** — Largest Tribe (Dominates Western MP)
+                    * **2. गोंड (Gond)** — Second Largest (Dominates South-East MP)
+                    * **3. कोल (Kol)** — Third Largest Grouping
+                    * **4. कोरकू (Korku)** — Fourth Largest (Memory Hook: "नाव" shape mimics 4)
+                    * **5. शहरिया (Sahariya)** — Fifth Largest (Memory Hook: Visualizing a hanging hook **"5"** dragging city folks to villages)
+                    * **6. बैगा (Baiga)** — Sixth Largest (Memory Hook: Carrying a structural balance tool inside a bag)
+                </div>
+            </div>
+
+            <details class="quiz-accordion">
+                <summary>❓ What is the exact state rank of the Sahariya tribe by population size in MP?</summary>
+                <div class="quiz-content">
+                    🎯 **5th Largest Tribe** in Madhya Pradesh, comprising roughly **4%** of the total ST population of the state (~6.14 Lakhs).
+                </div>
+            </details>
+        </section>
+
+        <section id="section-names" class="topic-section">
+            <h2 style="color: var(--accent-green);">4. Nomenclature & Etymological Meanings</h2>
+            
+            <div class="card">
+                <div class="card-title">🧠 Linguistic Roots & Identity Synonyms</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">12:57</span> **Racial and Family Affiliations:** Grouped under the **Dravidian Group Matrix (द्रविड़ समूह)** in most standard literature, while also showing links to the **Kolarian Family (कोलेरियन परिवार)**, matching ethnic profiles found across Chota Nagpur lines.</li>
+                    <li><span class="timestamp-tag">13:38</span> **Alternate Synonyms:** Known in different regions as **Khutia Patel (खुटिया पटेल)**, **Raut (राउत)**, or **Rawat (रावत)**.</li>
+                    <li><span class="timestamp-tag">13:58</span> **Sosia (सोसिया):** Sahariyas living in the **Vindhya Region (विंद्य क्षेत्र)** prefer to call themselves *Sosia*. 
+                    *(Hook Story: When setting a peg at night in the Vindhya mountains, you must breathe softly and quietly—'Saas' / सोसिया).*</li>
+                    <li><span class="timestamp-tag">15:27</span> **Etymology 1 (The Tiger Companions):** Formed from the roots **सह (Sah - Companion)** + **हरिया (Hariya - Tiger)**. This means *"The tribe that lives alongside tigers in the wild"* (**शेर के साथ रहने वाली जनजाति**).</li>
+                    <li><span class="timestamp-tag">16:11</span> **Etymology 2 (The Forest Dwellers):** Derived from the **Persian word "Sahra" (शहरा)**, which explicitly translates to **Jungle / Forest (जंगल)**. Because they live deep in the forests, they are called Sahariya.</li>
+                    <li><span class="timestamp-tag">18:25</span> **Herb Knowledge:** Because they live deep in the forests, they have exceptional knowledge of medicinal forest herbs (**जड़ी-बूटियों की अच्छी खासी जानकारी**).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-pvtg" class="topic-section">
+            <h2 style="color: var(--accent-orange);">5. PVTG Classification & Dhebar Commission</h2>
+            
+            <div class="card">
+                <div class="card-title">🔥 Critical Special Backward Status Classification</div>
+                <div class="definition-box">
+                    **Particularly Vulnerable Tribal Group (PVTG) History:** <br>
+                    * **1960:** The **Dhebar Commission (डेबर आयोग)** was formed.
+                    * **1973:** Based on its findings, the government created a special category for the most vulnerable groups. Today, there are **75 PVTGs** recognized across India.
+                    * **Madhya Pradesh Footprint:** MP has **3 officially notified PVTGs** (**अति विशेष पिछड़ी जनजाति**).
+                </div>
+
+                <div class="link-story-box">
+                    <div class="link-story-title">🔗 Association Chain: The 3 PVTGs of Madhya Pradesh</div>
+                    **Story Plan:** "एक **बैग (Baiga)** इतना **भारी (Bharia)** था कि उसे उठाने के लिए पूरे **शहर (Sahariya)** के लोगों को बुलाना पड़ा!" <br>
+                    * **1. बैगा (Baiga)**
+                    * **2. भारिया (Bharia)**
+                    * **3. शहरिया (Sahariya)** — Characterized by severe socioeconomic isolation, archaic livelihood patterns, and critical nutritional needs.
+                </div>
+
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">20:03</span> **MP Tribal Schedule Reductions:** MP originally had **46** recognized Scheduled Tribes. In **2003**, **3 groups** were removed from the official list, reducing the total to **43 Scheduled Tribes**.</li>
+                    <li>**The Excluded Groups:** **Keer (कीर)**, **Meena (मीणा)**, and **Pardhi (पारधी)**. <br>
+                    *(Hook Story: They were caught eating sweet Kheer behind a curtain—'Parda'—so they were removed from the room).*</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-myth" class="topic-section">
+            <h2 style="color: var(--accent-purple);">6. Mythological Lineage & Ancestry</h2>
+            
+            <div class="card">
+                <div class="card-title">🔱 Ancestral Roots & Epic Connections</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">20:49</span> **Maharishi Valmiki:** The Sahariya community honors Maharishi Valmiki as their **primary ancestral forefather (प्रथम पितृ पुरुष)**. They consider themselves his direct descendants.</li>
+                    <li><span class="timestamp-tag">21:40</span> **Mata Shabari Connection:** They trace their mythic origins to **Shabari** (the epic figure who offered berries to Lord Rama). This deep connection to Shabari is shared with the **Kol** and **Bhil** tribes.</li>
+                    <li><span class="timestamp-tag">22:52</span> **Aitareya Brahmana Reference:** This ancient text explains the complex language of the **Rigveda**. The **Aitareya Brahmana (ऐतरेय ब्राह्मण ग्रंथ)** states that the Sahariya are descendants of **Sage Vishwamitra (विश्वामित्र के वंशज)**.</li>
+                    <li><span class="timestamp-tag">24:20</span> **The Tale of Two Sisters:** A popular tribal legend speaks of two blood sisters: **Bhilni (भीलनी)** and **Siriya (सिरिया)**. The descendants of Bhilni became the Bhil tribe, while Siriya's descendants became the Sahariya. Because of this story, the Sahariya look up to the Bhil tribe as their **elder brothers (बड़ा भाई)**.</li>
+                </ul>
+            </div>
+
+            <details class="quiz-accordion">
+                <summary>❓ Which ancient Brahmana text links the Sahariya tribe as descendants of Sage Vishwamitra?</summary>
+                <div class="quiz-content">
+                    🎯 **Aitareya Brahmana (ऐतरेय ब्राह्मण ग्रंथ)** — It explicitly names them as part of Sage Vishwamitra's ancestral lineage!
+                </div>
+            </details>
+        </section>
+
+        <section id="section-geo" class="topic-section">
+            <h2 style="color: var(--accent-cyan);">7. Geographical Matrix & Spatial Distribution</h2>
+            
+            <div class="card">
+                <div class="card-title">📍 Core Territorial Distribution</div>
+                <p><span class="timestamp-tag">26:14</span> **Regional Focus Area:** The Sahariya tribe is heavily concentrated in the **North-Western Zone (उत्तर पश्चिमी एरिया)** of Madhya Pradesh.</p>
+                
+                <div class="image-block">
+                    <img id="mp-map-img" src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh District Map indicating North-Western tribal concentrations" decoding="async">
+                    <div class="image-caption">🗺️ Image Source: SLBC Madhya Pradesh Reference Map Portal (540 × 387). Highlighting Northern territorial blocks.</div>
+                </div>
+
+                <ul class="bullet-points">
+                    <li>**Primary Forest Habitat:** Their ancestral home centers around the **Shahabad Forests (शाहाबाद के जंगल)** along the Guna (MP) and Kota (Rajasthan) borders.</li>
+                    <li>**Core MP District Footprint:** They live across the entire **Gwalior Division** and nearby northern districts: **Sheopur, Morena, Bhind, Gwalior, Datia, Shivpuri, Guna, and Ashoknagar**. They also span parts of Vidisha and Raisen.</li>
+                    <li><span class="timestamp-tag">27:11</span> **Peak Concentration Hub:** **Shivpuri District** holds the highest concentration (**सर्वाधिक संकेंद्रण**) of Sahariya communities in the state.</li>
+                    <li>**Inter-State Presence:** Beyond Madhya Pradesh, they have a strong presence across Rajasthan, Uttar Pradesh, and parts of Chhattisgarh.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-subtribes" class="topic-section">
+            <h2 style="color: var(--accent-green);">8. Sub-Tribes & Totemic Gotra System</h2>
+            
+            <div class="card">
+                <div class="card-title">🌿 Sub-Castes & Nature-Based Gotras</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">30:10</span> **Sub-Tribe Lineages (उपजाति):** Derived from their legendary connection to Shabari, their primary sub-tribes are **Sab (सब)**, **Sawar (सवर)**, and **Saur (सौर)**. <br>
+                    *(Mnemonic Hook Story: Mother Shabari called out, "Don't make noise (*Shor/सौर*), keep patience (*Sabar/सवर*), and eat together (*Sab/सब*)!").*</li>
+                    <li><span class="timestamp-tag">31:45</span> **Gotra Origins:** Historically, the Sahariya and the Gond tribes had intense rivalries. During past conflicts, when Gond forces advanced, Sahariya groups hid in the forest for safety. Each group adopted the name of the tree or natural object that sheltered them as their **totemic Gotra title**:</li>
+                    <ul>
+                        <li>**Umaria (उमरिया):** Adopted by those who found shelter beneath the branches of the **Umar Tree**.</li>
+                        <li>**Bidodiya (बिडोड़िया):** Adopted by families who hid safely inside the thick **Bidodi Grass**.</li>
+                        <li>**Farua (फरुआ):** Taken by clans who crossed wild river streams to escape.</li>
+                    </ul>
+                    <li><span class="timestamp-tag">32:34</span> **The Kala Peethia Gotra (काल पीठिया / कालीपीठ):** A respected clan within the tribe. According to tradition, this group travels to Odisha to pull the sacred chariot during the **Lord Jagannath Rath Yatra**. The intense physical labor under the sun is said to have turned their backs black, giving them the proud name *Kala Peethia*.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-social" class="topic-section">
+            <h2 style="color: var(--accent-purple);">9. Social Architecture & Village Framework</h2>
+            
+            <div class="card">
+                <div class="card-title">🏠 Domestic Framework & Settlement Planning</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">35:20</span> **Family Structure:** They follow a strict **Patriarchal system (पितृसत्तात्मक)**. They place a high value on the **Joint Family System**, which they traditionally call **Kutumb (कुटुंब)**.</li>
+                    <li><span class="timestamp-tag">35:50</span> **The Tapra Custom (टपरा):** The community values peace and harmony at home. If a married couple and the groom's parents face constant disagreements, the family builds a separate hut called a **Tapra** for the young couple. This tradition helps prevent family feuds and maintains local harmony.</li>
+                    <li><span class="timestamp-tag">37:25</span> **Inverted 'U' Architecture:** Sahariya homes are built in a unique layout. Huts are arranged in an **Inverted 'U' Shape** surrounding a central open courtyard.</li>
+                    <li><span class="timestamp-tag">37:37</span> **Sahrana (शहराना):** This specific cluster of inverted 'U' homes forms their distinct neighborhood or village, officially known as a **Sahrana**.</li>
+                    <li><span class="timestamp-tag">38:15</span> **The Bangla (बंगला):** Every Sahrana features a shared community building at its center, known as a *Bangla*. This round, open-sided structure serves as the village community hall, council house, and guest lodge for welcoming travelers or wedding parties.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-panchayat" class="topic-section">
+            <h2 style="color: var(--accent-orange);">10. Traditional Governance & Five-Elder Panchayat</h2>
+            
+            <div class="card">
+                <div class="card-title">⚖️ The Sahrana Administration Grid</div>
+                <p><span class="timestamp-tag">39:21</span> **The Patel (पटेल):** The supreme chief of the Sahrana is the *Patel*. His position is **hereditary (वंशानुगत)**. The Patel acts as the lead arbitrator for all community disputes, and his decisions are highly respected.</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Council Position</th>
+                                <th>Core Administrative Function & Tribal Execution Duty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Patel (पटेल)**</td>
+                                <td>Supreme Village Headman. Hereditary position. Acts as chief justice and final authority.</td>
+                            </tr>
+                            <tr>
+                                <td>**Pradhan (प्रधान)**</td>
+                                <td>Chief Assistant to the Patel. Manages social gatherings, weddings, and rituals. Collects fines (**दंड वसूलना**) ordered by the panchayat.</td>
+                            </tr>
+                            <tr>
+                                <td>**Barai (बराई)**</td>
+                                <td>The Village Messenger. Announces council decisions and meetings by beating drums (**डौंडी पिटवाना**) to gather residents.</td>
+                            </tr>
+                            <tr>
+                                <td>**Bhopa / Gotia (भोपा / गोटिया)**</td>
+                                <td>Spiritual Advisor and Shaman. Handles traditional rituals, spiritual healing, and stays close to the village shrines.</td>
+                            </tr>
+                            <tr>
+                                <td>**Hathnariya / Guniya (हतनरिया / गुनिया)**</td>
+                                <td>The Traditional Physician. Diagnoses illnesses by reading a patient's wrist pulse (**नाड़ी देखना**) and uses forest herbs for treatment.</td>
+                            </tr>
+                            <tr>
+                                <td>**Village Elder (बुजुर्ग व्यक्ति)**</td>
+                                <td>The senior advisor who provides historical context and wisdom during council debates.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <details class="quiz-accordion">
+                <summary>❓ What are the main responsibilities of the 'Pradhan' and 'Barai' in the Sahariya Panchayat?</summary>
+                <div class="quiz-content">
+                    🎯 **Pradhan:** Acts as the Patel's chief assistant, coordinates social events, and collects fines. <br>
+                    🎯 **Barai:** Serves as the community messenger, using drums (**डौंडी पिटवाना**) to share news and call meetings.
+                </div>
+            </details>
+        </section>
+
+        <section id="section-health" class="topic-section">
+            <h2 style="color: var(--accent-cyan);">11. Health, Nutrition & Attire Features</h2>
+            
+            <div class="card">
+                <div class="card-title">🩺 Nutritional Crisis Indicators & Attire Profile</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">50:24</span> **Staple Diet:** Their traditional diet consists primarily of coarse grains (**मोटा अनाज**), with a strong reliance on **Jowar Roti (ज्वार की रोटी)**.</li>
+                    <li><span class="timestamp-tag">50:40</span> **The Malnutrition Crisis:** The Sahariya community faces severe, widespread malnutrition (**कुपोषण**).</li>
+                    <li>**"Ethiopia of India" (भारत का इथियोपिया):** Because of the exceptionally high rate of malnutrition among Sahariya children, **Sheopur District** is often called the *Ethiopia of India*.</li>
+                    <li><span class="timestamp-tag">51:04</span> **Attire Influences:** Living along the border of Rajasthan has heavily influenced their traditional clothing.</li>
+                    <li>**Women's Attire:** Women traditionally wear a colorful **Ghaghra-Choli (घाघरा चोली)** and have a deep cultural love for traditional tattoos (**गुदना प्रिय**).</li>
+                    <li>**Men's Attire:** Men typically wear a classic **Dhoti-Kurta** paired with a traditional headwrap.</li>
+                    <li><span class="timestamp-tag">52:15</span> **Physical Characteristics:** They are generally described as having a dark complexion (**श्याम वर्ण**) and a medium, lean stature.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-economic" class="topic-section">
+            <h2 style="color: var(--accent-green);">12. Economic Profile & Shifting Cultivation</h2>
+            
+            <div class="card">
+                <div class="card-title">📊 Livelihood Strategies & Forest Economy</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">54:40</span> **Traditional Farming:** They practice traditional **Jhum Cultivation (झूम कृषि)**—a form of slash-and-burn shifting agriculture. Today, many work as small-scale farmers or agricultural laborers on other estates.</li>
+                    <li><span class="timestamp-tag">55:08</span> **Forest Produce Gathering (वनोपज संग्रह):** Collecting minor forest produce is central to their economy. They gather wild fruits, roots, kandmool, tamarind, and **mango seeds (गुठली)** from the forest to sell in local town markets.</li>
+                    <li><span class="timestamp-tag">56:18</span> **Other Livelihoods:** Their economy is supplemented by freshwater fishing and woodcutting.</li>
+                    <li><span class="timestamp-tag">56:32</span> **Herb Trading Experts:** Leveraging their deep knowledge of nature, they gather rare medicinal herbs from deep within the forest to trade in urban centers, creating a reliable source of seasonal income.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-religious" class="topic-section">
+            <h2 style="color: var(--accent-orange);">13. Religious Matrix & Tribal Pantheon</h2>
+            
+            <div class="card">
+                <div class="card-title">🔱 Spiritual Beliefs & Deities</div>
+                <p><span class="timestamp-tag">60:50</span> **Hindu Integration:** The Sahariya community is deeply integrated with Hindu traditions. They closely follow Hindu rituals and worship major deities, including Shiva, Parvati, Surya, Chandra, Brahma, and Vishnu. **Goddess Sita (सीता माता)** is deeply revered as their main protective deity (**आराध्य देवी**).</p>
+                
+                <h3 style="color: var(--accent-cyan); font-size: 16px; margin: 15px 0 5px 0;">🎯 The Sahrana Deities Pantheon:</h3>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">61:30</span> **Thakur Dev (ठाकुर देवता):** The guardian deity of the village. He is believed to live in a sacred tree near the Sahrana, protecting children and elders from harm. The village *Bhopa* usually sets up his shrine nearby. <br>
+                    *(Teacher's Joke: "When your nose ran as a child, you went to a clinic. In a Sahrana, families take the child straight to Thakur Dev's shrine!").*</li>
+                    <li><span class="timestamp-tag">62:30</span> **Bhairav Dev (भैरो देव):** Worshipped by women seeking blessings for childbirth and healthy pregnancies. The healing rituals at his shrine involve the *Bhopa* using sacred peacock feathers (**मोर के पंख**).</li>
+                    <li><span class="timestamp-tag">63:22</span> **Nahar Dev (नाहर देव):** A powerful spirit representing the Tiger. He is worshipped to protect families and livestock from predators in the deep forest.</li>
+                </ul>
+
+                <div class="exam-hot-box">
+                    <div class="exam-hot-title">🔥 Exam Hot Spot: The Legend of Teja Ji Maharaj (तेजा जी महाराज)</div>
+                    <p><span class="timestamp-tag">65:18</span> **Origin:** A legendary folk deity born in Kharnal, Nagaur (Rajasthan), deeply revered across the Sahariya community as the ultimate protector against venomous encounters.</p>
+                    <p>**The Legend of the Solemn Vow:** Teja Ji once saved a sacred snake from a raging brushfire. The snake, seeking release from an ancient curse, insisted on biting him. Teja Ji requested a temporary delay to fulfill a promise: rescuing a local woman's cows from bandits. After a fierce battle, he returned victorious but covered in wounds. Because no uninjured patch of skin remained, **he offered his tongue to the snake**. Struck by his honor, the snake blessed him, decreeing that anyone who invokes Teja Ji's name will be cured of venom.</p>
+                    <p>**Cultural Practices:** If an individual is bitten by a snake, they are taken directly to Teja Ji's shrine (**तेजा जी का देवरा**). Large annual fairs are held in his honor across Guna, Malwa, and Nimar. His main historical temple is located in **Runija, Ujjain**.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-birth" class="topic-section">
+            <h2 style="color: var(--accent-purple);">14. Birth Ceremonies & Cultural Customs</h2>
+            
+            <div class="card">
+                <div class="card-title">👶 Lifecycle Milestone Celebrations</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">69:58</span> **Status of the Girl Child:** The birth of a daughter is considered **highly auspicious (शुभ माना जाता है)** within Sahariya society. They do not practice female infanticide or exhibit gender bias during birth celebrations.</li>
+                    <li><span class="timestamp-tag">70:04</span> **Gailhari Mata Ritual (गैल हरी माता):** She is the primary guardian deity of newborns. To thank her and ensure the child's health, families perform a ritual sacrifice of a chicken (**मुर्गी के बच्चे की बलि**) at her shrine following a safe delivery.</li>
+                    <li><span class="timestamp-tag">70:20</span> **Maternal Care Customs:** During the 6th or 7th month of pregnancy, a woman is traditionally sent to her maternal home (**पिहर पक्ष**) to ensure she receives proper care, rest, and nutrition.</li>
+                    <li><span class="timestamp-tag">71:04</span> **Pahranbi (पहरान भी):** A custom where the expectant mother's family provides ceremonial clothing and gifts to her in-laws. This tradition mirrors the gift-giving customs found in the Bhil tribe.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-death" class="topic-section">
+            <h2 style="color: var(--accent-cyan);">15. Mortuary Rituals & Memorials</h2>
+            
+            <div class="card">
+                <div class="card-title">🪦 Funerary Practices & Ancestral Memorials</div>
+                <ul class="bullet-points">
+                    <li><span class="timestamp-tag">72:13</span> **Dual Customs:** The tribe practices both cremation (**जलाना**) and burial (**दफनाना**), depending on clan traditions and the age of the deceased.</li>
+                    <li><span class="timestamp-tag">72:20</span> **Chhaas Maati (छास माटी):** On the third day following a death, family members gather to collect the ashes and remaining fragments. This specific ritual is called *Chhaas Maati*.</li>
+                    <li><span class="timestamp-tag">72:29</span> **Nukta Pratha (नुक्ता प्रथा):** The traditional community funeral feast held on the 12th or 13th day. 
+                    *(Teacher's Reflection: "While the family is in deep mourning, the community gathers to share sweet Boondi/Nukti—a practice deeply rooted in ancient traditions").*</li>
+                    <li><span class="timestamp-tag">73:42</span> **The Smriti Chinh Peg (स्मृति चिह्न):** To honor the deceased, a permanent wooden peg (**लकड़ी का खूंटा**) is driven into the ground at the exact spot of their passing or burial, creating a lasting memorial space.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-marriage" class="topic-section">
+            <h2 style="color: var(--accent-orange);">16. Tribal Marriage Spectrum & Customs</h2>
+            
+            <div class="card">
+                <div class="card-title">💍 Complete Marriage Customs Guide</div>
+                <p>The Sahariya tribe has a highly distinct and flexible spectrum of marriage customs, adapting gracefully to social changes and personal choice.</p>
+                
+                <div class="table-responsive" style="margin-top: 15px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Marriage Type</th>
+                                <th>Core Customary Rules, Financial Settlement Criteria & Exclusions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Jhagra Vivah<br>(झगड़ा विवाह)**</td>
+                                <td>**Elopement Compensation Custom.** If a married woman falls in love with another man, they may elope. The village panchayat steps in to settle the matter peacefully without violence. The new partner must pay a financial compensation fine (**₹200 to ₹2,000+**) to the first husband. This mandatory restitution payment is called **Jhagra Money**.</td>
+                            </tr>
+                            <tr>
+                                <td>**Vaya Sandhi Vivah<br>(वय संधि विवाह)**</td>
+                                <td>**Adult Courtship Choice.** Takes place during the famous **Sitabari Fair (सीताबाड़ी मेला)** in Rajasthan, widely known as the *Sahariya Kumbh*. Young adults have the freedom to meet, interact, and choose their own life partners.</td>
+                            </tr>
+                            <tr>
+                                <td>**Sah-Palayan Vivah<br>(सह पलायन विवाह)**</td>
+                                <td>**Mutual Elopement.** If a young couple wishes to marry but faces opposition from their parents, they elope together by mutual consent. After a short period away, they return to the Sahrana, where the community formally accepts them as husband and wife.</td>
+                            </tr>
+                            <tr>
+                                <td>**Savar Vivah<br>(सवर विवाह)**</td>
+                                <td>**Simple Arranged Wedding.** A modest, low-cost marriage ceremony arranged, managed, and completed directly by the local Panchayat elders and family members.</td>
+                            </tr>
+                            <tr>
+                                <td>**Sagai Vivah<br>(सगाई विवाह)**</td>
+                                <td>**Formal Engagement Path.** Follows a standard path where a formal engagement ceremony (**सगाई**) is held first, with the wedding finalized and celebrated within the following year.</td>
+                            </tr>
+                            <tr>
+                                <td>**Vidhwa Vivah<br>(विधवा विवाह)**</td>
+                                <td>**Widow Remarriage Rules.** Allows a widow to remarry, with her late husband's younger brother (**देवर**) holding the first right of proposal. However, the custom strictly requires the woman's explicit, unforced consent (**लड़की की अनुमति अनिवार्य**). If she declines the proposal, she is entirely free to marry elsewhere.</td>
+                            </tr>
+                            <tr>
+                                <td>**Kheka Vivah<br>(खेका विवाह)**</td>
+                                <td>**Widow & Bachelor Union.** A unique ceremony for a widow marrying an unmarried man. Before the wedding, the groom must perform a symbolic ritual with a sacred wooden peg (**खेका/खूंटा**), completing seven rounds around it before taking his wedding vows.</td>
+                            </tr>
+                            <tr>
+                                <td>**Jhar Phera Vivah<br>(झार फेरा विवाह)**</td>
+                                <td>**Protective Marriage Custom.** If a family arranges their daughter's wedding with a modest household, but a wealthy family later tries to disrupt the agreement using financial incentives, the original groom's family may protect their commitment by eloping with the bride to complete the wedding rituals immediately.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    📌 **The Sitabari Fair Courtship Ritual:** During the fair, a young man may express his interest by gently tossing a betel leaf (Pan) or a **bundle of traditional Bidi** toward a woman he admires. If she picks it up, it signifies her mutual acceptance and opens the path for marriage negotiations. If she leaves it untouched, it is respected as a polite refusal.
+                </div>
+            </div>
+        </section>
+
+        <section id="master-full-forms" class="topic-section">
+            <h2 style="color: var(--accent-cyan);">📋 Master Section: Constitutional References</h2>
+            <div class="card">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Constitutional Article</th>
+                                <th>Core Statutory Translation & Tribal Protection Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Article 366 (25)**</td>
+                                <td>Defines Scheduled Tribes based on distinct characteristics and social development criteria.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 342**</td>
+                                <td>Empowers the President of India to officially notify and schedule tribal groups.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 244**</td>
+                                <td>Mandates special administrative frameworks for Scheduled and Tribal Areas.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 275**</td>
+                                <td>Provides statutory Grants-in-Aid from the Union to State budgets for tribal welfare.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 15 (4)**</td>
+                                <td>Guarantees educational reservation safeguards; introduced after the 1951 Champakam Judgment.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 16 (4)(A)**</td>
+                                <td>Enables statutory reservation in promotions within state employment pipelines.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 16 (4)(B)**</td>
+                                <td>Protects carry-forward backlog vacancies from being lost in subsequent years.</td>
+                            </tr>
+                            <tr>
+                                <td>**Article 17**</td>
+                                <td>Abolishes the practice of untouchability across all social spheres.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="master-hot-facts" class="topic-section">
+            <h2 style="color: var(--accent-orange);">🔥 Master Section: Exam Hot Spots Compilation</h2>
+            <div class="card" style="border-color: var(--accent-orange);">
+                <ul class="bullet-points">
+                    <li>🔥 **Khutia Patel:** The high-respect honorific title used exclusively for members of the Sahariya tribe.</li>
+                    <li>🔥 **PVTG Trilogy:** Along with the Baiga and Bharia, the Sahariya make up Madhya Pradesh's three officially recognized Particularly Vulnerable Tribal Groups.</li>
+                    <li>🔥 **Ethiopia Counterpart:** Sheopur District's high rate of child malnutrition has led to it being termed the *Ethiopia of India*.</li>
+                    <li>🔥 **Aitareya Lineage:** The Aitareya Brahmana traces the ancestry of the Sahariya tribe back to Sage Vishwamitra.</li>
+                    <li>🔥 **Valmiki Legacy:** The tribe honors Maharishi Valmiki as their primary ancestral forefather (*Pratham Pitru Purusha*).</li>
+                    <li>🔥 **Runija Temple:** The main historical temple dedicated to **Teja Ji Maharaj**, the protector against snake venom, is located in Runija, Ujjain.</li>
+                    <li>🔥 **Jhagra Settlement Fines:** In cases of elopement with a married woman, the customary restitution fine paid to the first husband typically ranges from **₹200 to ₹2,000+**.</li>
+                    <li>🔥 **Nukta Funeral Feast:** The traditional community funeral feast, observed on the 12th or 13th day following a passing, is known as *Nukta*.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="master-checklist" class="topic-section">
+            <h2 style="color: var(--accent-green);">✅ Master Revision Check-Off Grid</h2>
+            <div class="card">
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Use this interactive checklist to track your progress through the core concepts. Your selections are automatically saved!</p>
+                
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-1" onchange="evaluateChecklistProgress()">
+                    <label for="chk-1" class="checklist-label">**Constitutional Core:** Recalled Articles 366(25), 342, 244, 275, 15(4), 16(4)(A), and 16(4)(B).</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-2" onchange="evaluateChecklistProgress()">
+                    <label for="chk-2" class="checklist-label">**The Honorific Title:** Remembered *Khutia Patel* and its mythological origins.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-3" onchange="evaluateChecklistProgress()">
+                    <label for="chk-3" class="checklist-label">**Tribe Rank Hierarchy:** Memorized the population hierarchy (Bhil → Gond → Kol → Korku → *Sahariya* → Baiga).</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-4" onchange="evaluateChecklistProgress()">
+                    <label for="chk-4" class="checklist-label">**Etymology Meanings:** Learned the roots of *Sah-Hariya* (with tigers) and the Persian word *Sahra* (jungle).</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-5" onchange="evaluateChecklistProgress()">
+                    <label for="chk-5" class="checklist-label">**PVTG Baseline Status:** Verified the 1973 categorization and the Baiga-Bharia-Sahariya group.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-6" onchange="evaluateChecklistProgress()">
+                    <label for="chk-6" class="checklist-label">**Epic Ancestry Links:** Recalled links to Valmiki, Mata Shabari, and Sage Vishwamitra (Aitareya Brahmana).</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-7" onchange="evaluateChecklistProgress()">
+                    <label for="chk-7" class="checklist-label">**Geographical Mapping:** Noted their North-Western distribution, the Shahabad forests, and Shivpuri's peak concentration.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-8" onchange="evaluateChecklistProgress()">
+                    <label for="chk-8" class="checklist-label">**Sub-Tribe Castes:** Memorized the *Sab*, *Sawar*, and *Saur* sub-tribes, along with the *Kala Peethia* clan.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-9" onchange="evaluateChecklistProgress()">
+                    <label for="chk-9" class="checklist-label">**Social neighborhood Terms:** Defined the *Kutumb* family, *Tapra* hut, *Sahrana* village, and the central *Bangla* community hall.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-10" onchange="evaluateChecklistProgress()">
+                    <label for="chk-10" class="checklist-label">**The Five Officials:** Mastered the duties of the Patel, Pradhan, Barai, Bhopa, and Hathnariya/Guniya.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-11" onchange="evaluateChecklistProgress()">
+                    <label for="chk-11" class="checklist-label">**Malnutrition Indicator:** Understood why Sheopur is called the *Ethiopia of India* due to high child malnutrition rates.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-12" onchange="evaluateChecklistProgress()">
+                    <label for="chk-12" class="checklist-label">**Livelihood Strategies:** Noted shifting Jhum cultivation, minor forest produce, and trading medicinal herbs.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-13" onchange="evaluateChecklistProgress()">
+                    <label for="chk-13" class="checklist-label">**Pantheon Gods:** Reviewed Thakur Dev, Bhairav Dev, Nahar Dev, and the complete legend of Teja Ji Maharaj.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-14" onchange="evaluateChecklistProgress()">
+                    <label for="chk-14" class="checklist-label">**Birth & Death Terms:** Reviewed *Gailhari Mata*, *Pahranbi* gifts, *Chhaas Maati* ash collection, and *Nukta* feasts.</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk-15" onchange="evaluateChecklistProgress()">
+                    <label for="chk-15" class="checklist-label">**The Marriage Matrix:** Mastered the definitions of Jhagra, Vaya Sandhi, Sah-Palayan, Savar, Sagai, Vidhwa, Kheka, and Jhar Phera marriages.</label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="margin-top: 4px; border-top: 1px solid var(--border-color); padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+        <div class="definition-box" style="text-align: left; background-color: rgba(179, 136, 255, 0.05); border-left-color: var(--accent-purple);">
+            📌 **Upcoming Topics for Part 2:** Traditional Sahariya dances (such as Dul Dul Ghodi, Lahangi), remaining cultural performance features, detailed fact sheets, and a complete practice MCQ session.
+        </div>
+        <p style="margin-top: 15px;">🚀 Active Recall & Spaced Repetition Drive Long-Term Memory. Revise Smartly!</p>
+        <p style="font-size: 12px; margin-top: 5px; color: rgba(181,181,198,0.5);">KGS Tribal Study Hub — Standalone Examination Companion</p>
+    </footer>
+
+</div>
+
+<script>
+    // Theme Management Module using localStorage persistence
+    function applySavedTheme() {
+        const selectedTheme = localStorage.getItem('sahariyaThemeChoice');
+        const bodyNode = document.body;
+        const toggleButton = document.getElementById('theme-toggle-trigger');
+        
+        if (selectedTheme === 'light') {
+            bodyNode.classList.add('light-mode');
+            toggleButton.innerHTML = '☀️ Light Mode';
+        } else {
+            bodyNode.classList.remove('light-mode');
+            toggleButton.innerHTML = '🌙 Dark Mode';
+        }
+    }
+
+    function togglePageTheme() {
+        const bodyNode = document.body;
+        bodyNode.classList.toggle('light-mode');
+        
+        if (bodyNode.classList.contains('light-mode')) {
+            localStorage.setItem('sahariyaThemeChoice', 'light');
+        } else {
+            localStorage.setItem('sahariyaThemeChoice', 'dark');
+        }
+        applySavedTheme();
+    }
+
+    // Direct Anchor Navigation Control
+    function navigateToSection(targetAnchorId) {
+        if (!targetAnchorId) return;
+        const targetElement = document.getElementById(targetAnchorId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Interactive Checkbox Tracking Engine
+    function saveChecklistState() {
+        const checklistInputs = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        const stateObject = {};
+        
+        checklistInputs.forEach(checkbox => {
+            stateObject[checkbox.id] = checkbox.checked;
+        });
+        
+        localStorage.setItem('sahariyaChecklistDataGrid', JSON.stringify(stateObject));
+    }
+
+    function loadChecklistState() {
+        const savedDataString = localStorage.getItem('sahariyaChecklistDataGrid');
+        if (!savedDataString) return;
+        
+        const stateObject = JSON.parse(savedDataString);
+        for (const elementId in stateObject) {
+            const checkbox = document.getElementById(elementId);
+            if (checkbox) {
+                checkbox.checked = stateObject[elementId];
+            }
+        }
+    }
+
+    function evaluateChecklistProgress() {
+        const totalItems = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        const checkedItems = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
+        
+        let calculatedPercentage = 0;
+        if (totalItems.length > 0) {
+            calculatedPercentage = Math.round((checkedItems.length / totalItems.length) * 100);
+        }
+        
+        // Update UI Progress Displays
+        document.getElementById('progress-percentage').innerText = calculatedPercentage + '%';
+        document.getElementById('master-progress-bar').style.width = calculatedPercentage + '%';
+        
+        saveChecklistState();
+    }
+
+    // Map Image Fallback Script
+    function initializeImageValidationPipeline() {
+        const mapImageElement = document.getElementById('mp-map-img');
+        if (!mapImageElement) return;
+
+        // Simple fail check to inject user-friendly fallback link if domain becomes unreachable
+        mapImageElement.onerror = function() {
+            const parentBlock = mapImageElement.parentElement;
+            parentBlock.innerHTML = `
+                <a href="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" target="_blank" class="image-fallback-link">
+                    🗺️ Click to Open Official Reference Map (External SLBC Link)
+                </a>
+                <div class="image-caption" style="border-top:none;">Note: The image could not load automatically due to server restrictions.</div>
+            `;
+        };
+    }
+
+    // Master App Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+        applySavedTheme();
+        loadChecklistState();
+        evaluateChecklistProgress();
+        initializeImageValidationPipeline();
+    });
+</script>
+
+</body>
+</html>

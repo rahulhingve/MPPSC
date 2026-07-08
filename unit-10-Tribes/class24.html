@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Tribes Exam Revision Hub | प्रमोद राणा सर</title>
+    <style>
+        :root {
+            --bg-color: #0f0f1a;
+            --card-bg: #16162a;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2d2d44;
+            --gradient-link: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+        }
+
+        .light-theme {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --accent-cyan: #0284c7;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --border-color: #e2e8f0;
+            --gradient-link: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 17px;
+            letter-spacing: 0.03em;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(22, 22, 42, 0.9) 0%, rgba(15, 15, 26, 0) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 20px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transition: width 0.4s ease;
+        }
+
+        /* Nav Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .content-area {
+            flex: 1;
+            max-width: 800px;
+        }
+
+        .sidebar {
+            width: 350px;
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item a {
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .toc-item a:hover {
+            background-color: var(--border-color);
+            color: var(--accent-cyan);
+        }
+
+        /* Fixed Mobile Dropdown controls */
+        .mobile-nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .jump-dropdown {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 15px;
+            width: 70%;
+        }
+
+        .theme-toggle-btn {
+            background-color: var(--accent-purple);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Content Chunk Cards */
+        .topic-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 20px;
+        }
+
+        .section-header {
+            border-left: 5px solid var(--accent-cyan);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+        }
+
+        .concept-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--accent-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .bullet-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Highlight Boxes */
+        .exam-hot-box {
+            background-color: rgba(255, 107, 53, 0.1);
+            border: 1px dashed var(--accent-orange);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .link-story-box {
+            background: var(--gradient-link);
+            border: 1px solid var(--accent-purple);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--border-color);
+            color: var(--accent-cyan);
+        }
+
+        /* Accordion / Collapsible details */
+        details {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .details-content {
+            padding: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Active Recall Quiz Styles */
+        .quiz-container {
+            background-color: rgba(0, 255, 136, 0.05);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .quiz-item {
+            margin-bottom: 15px;
+        }
+
+        .quiz-answer {
+            display: none;
+            background-color: var(--bg-color);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .reveal-btn {
+            background-color: transparent;
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 2px 8px;
+            font-size: 13px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        /* Image Containers */
+        .image-block {
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            padding: 10px;
+            background-color: var(--card-bg);
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .fallback-link {
+            display: none;
+            padding: 10px;
+            text-align: center;
+            color: var(--accent-orange);
+            font-size: 14px;
+        }
+
+        /* Timeline items */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-cyan);
+        }
+
+        /* Hide sidebar map panel details on small viewports */
+        @media (max-width: 992px) {
+            .sidebar {
+                display: none;
+            }
+            .content-area {
+                max-width: 100%;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-size: 12pt;
+            }
+            .concept-card, details, .quiz-container, .exam-hot-box, .link-story-box {
+                border: 1px solid #ccc !important;
+                background: white !important;
+                color: black !important;
+                page-break-inside: avoid;
+            }
+            .quiz-answer {
+                display: block !important;
+            }
+            .mobile-nav-bar, .sidebar, .theme-toggle-btn, .reveal-btn {
+                display: none !important;
+            }
+            details summary {
+                pointer-events: none;
+            }
+            .details-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="header-badge">MPPSC Prelims & Mains Specific</span>
+        <h1>🎯 MP की अन्य प्रमुख जनजातियाँ (Other Major Tribes)</h1>
+        <p>Bilingual Hinglish High-Fidelity Revision Engine — Class Notes by प्रमोद राणा सर</p>
+        <div class="progress-container">
+            <div class="progress-bar" id="topProgressBar"></div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Content Viewport -->
+        <main class="content-area">
+
+            <!-- INTRODUCTORY FLOW SYNCHRONIZATION -->
+            <section class="topic-section" id="intro-flow">
+                <div class="section-header">
+                    <h2>01. Class Overview & Previous Syllabus Coverage (00:27 - 03:20)</h2>
+                </div>
+                <div class="concept-card">
+                    <p>प्रमोद राणा सर द्वारा मध्य प्रदेश की जनजातियों के व्यवस्थित टॉपिक कवरेज का क्विक रीकैप और आगामी कार्ययोजना:</p>
+                    <br>
+                    <table class="table-responsive">
+                        <thead>
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Completed Core Topics (जो हम पढ़ चुके हैं)</th>
+                                <th>Current & Future Roadmaps (आगे की योजना)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>भौगोलिक विस्तार (Geographical Distribution):</strong> कौन सी जनजाति कहाँ पाई जाती है।</td>
+                                <td><strong>अन्य प्रमुख जनजातियाँ (Remaining Minor Tribes):</strong> आज और कल की क्लास में कम्पलीट करेंगे।</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>संवैधानिक अधिकार (Constitutional Rights):</strong> MP और भारत की जनजातियों के लीगल राइट्स।</td>
+                                <td><strong>घुमंतु जनजातियाँ (Nomadic Tribes):</strong> विमुक्त, घुमंतु और अर्ध-घुमंतु जनजातियों की 2 क्लासेस।</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>प्रमुख जनजातियाँ (Major Tribes Dedicated Modules):</strong> भील (Bhil), गोंड (Gond), बैगा (Baiga), भारिया (Bharia), सहरीया (Sahariya), कोरकू (Korku), कोल (Kol)।</td>
+                                <td><strong>स्वतंत्रता आंदोलन & जनजातीय व्यक्तित्व:</strong> स्वतंत्रता संग्राम में योगदान (1 क्लास) + जनजातीय व्यक्तित्व (2 क्लासेस)।</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>—</td>
+                                <td><strong>संस्थान & संग्रहालय:</strong> जनजातीय अनुसंधान संस्थान (1 क्लास) + संग्रहालय (1 क्लास)।</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>—</td>
+                                <td><strong>लोक संस्कृति & साहित्य:</strong> मध्य प्रदेश की लोक संस्कृति (3-4 क्लासेस) + लोक साहित्य (1 क्लास)।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="exam-hot-box">
+                        🔥 <strong>Exam Planning Strategy Note:</strong> सर ने कन्फर्म किया है कि जून प्रीलिम्स एग्जाम से पहले इसी चैनल (MP Exam KGS) पर एक **महामैराथन क्लास (Marathon Class)** आएगी, जिसमें बेसिक टू एडवांस सभी जनजातियों का क्विक 360° क्विक रिवीजन कराया जाएगा। 10 मई से पहले पूरा सिलेबस कम्पलीट हो जाएगा।
+                    </div>
+                </div>
+            </section>
+
+            <!-- PYQ CRITICAL DISSECTION MODULE -->
+            <section class="topic-section" id="pyq-dissection">
+                <div class="section-header">
+                    <h2>02. Previous Year Questions (PYQ) Dissection (05:31 - 22:05)</h2>
+                </div>
+
+                <!-- PYQ CARD 1: Agariya & Gond Base -->
+                <div class="concept-card">
+                    <div class="card-title">🔍 PYQ Analysis 1 (MPPSC Pre 2016 Focus)</div>
+                    <p><strong>Question Asked:</strong> कौन सी जनजाति <strong>लोहासुर (Lohasur)</strong> को अपना प्रमुख देवता मानती है?</p>
+                    <p><strong>Correct Answer:</strong> अगरिया (Agariya) जनजाति।</p>
+                    
+                    <details>
+                        <summary>💡 Detailed Explanations & Related Core Sub-Tribe Facts</summary>
+                        <div class="details-content">
+                            <ul class="bullet-list">
+                                <li><strong>लोहासुर का निवास:</strong> किंवदंतियों के अनुसार, लोहासुर देवता अगरिया जनजाति की धधकती हुई भट्टियों (Blazing Iron Furnaces) में निवास करते हैं।</li>
+                                <li><strong>गोंड की उपजातियाँ (Gond Sub-tribes):</strong> अगरिया मूलतः गोंड की ही एक उपजाति है। गोंड की अन्य प्रमुख उपजातियाँ हैं: <em>अगरिया, प्रधान, ओझा, सोलाहस, कोयलाभूतास, और नागरची</em>।</li>
+                                <li><strong>गोंड क्विक फैक्ट्स:</strong> मध्य प्रदेश की दूसरी सबसे बड़ी जनजाति है। इनके निवास स्थान को <strong>टोला (Tola)</strong> या <strong>पूर्वा (Purva)</strong> कहते हैं। झूम कृषि को <strong>बारी (Bari)</strong> कहा जाता है। प्रमुख देवता <strong>बड़ादेव (Badadev)</strong> हैं जिनकी सवारी सफेद घोड़ा है। ग्राम देवता <strong>ठाकुरदेव</strong> और गांव की देवी <strong>खेरमाई</strong> हैं। नृत्य: कर्मा, रीना, सजनी।</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- PYQ CARD 2: Bhil & Korku Base -->
+                <div class="concept-card">
+                    <div class="card-title">🔍 PYQ Analysis 2 (Tribe Demographics & Cultural Structures)</div>
+                    <p><strong>Bhil Tribe Breakdown:</strong> मध्य प्रदेश की सबसे बड़ी जनजाति है।</p>
+                    <ul class="bullet-list">
+                        <li><strong>उपजातियाँ:</strong> भिलाला, रथिया, पटिया, बैगास, उमड़ी, तड़वी भील, भगता, मदवी/बदवो।</li>
+                        <li><strong>टर्मिनोलॉजी:</strong> घर = <strong>कु (Ku)</strong>, निवास स्थान = <strong>फालिया (Phaliya)</strong>, गांव = <strong>पाल (Pal)</strong>। पाल के प्रमुख को <strong>गमेती (Gameti)</strong> कहते हैं। प्रमुख देवता = <strong>राजा पंथा (Raja Pantha)</strong>।</li>
+                        <li><strong>भगोरिया पर्व:</strong> तीन भाग - गुलालिया, गोल गधेड़ो, उजाड़िया। विवाह में मध्यस्थ व्यक्ति = <strong>भांजगड़िया (Bhanzgadiya)</strong>। वधु मूल्य प्रथा = <strong>दापा प्रथा (Dapa Pratha)</strong> (इसे बंद करने हेतु 'साथीदार आंदोलन' जारी है)।</li>
+                        <li>🔥 <strong>Exam Hot:</strong> झाबुआ के गांधी = <strong>महेश शर्मा</strong> (पद्मश्री प्राप्तकर्ता)। भीलों का गांधी = <strong>मामा बालेश्वर दयाल</strong>। भील जनजाति में <strong>हलमा प्रथा (Halma Pratha)</strong> प्रचलित है।</li>
+                    </ul>
+                    <hr style="margin:15px 0; border-color: var(--border-color);">
+                    <p><strong>Korku Tribe Breakdown:</strong> मुख्य रूप से खंडवा, बुरहानपुर बेल्ट में केंद्रित।</p>
+                    <ul class="bullet-list">
+                        <li>🔥 <strong>Exam Hot:</strong> 1930 का जंगल सत्याग्रह कोरकू नेता <strong>गंजन सिंह कोरकू</strong> के नेतृत्व में हुआ था।</li>
+                        <li><strong>मूल निवास:</strong> भवरगढ़ और सावलीगढ़ (Bhavargarh & Savaligarh)।</li>
+                        <li><strong>उपजातियाँ:</strong> बोवाई, मोसी, रूमा, नला, बडया, बवारिया, दुलारिया, चांदगड़िया, पठारिया।</li>
+                        <li><strong>प्रशासनिक/सामाजिक संरचना:</strong> महुआ की शराब को <strong>सीडू (Sidu)</strong> कहते हैं। मध्यस्थ व्यक्ति = <strong>थड़ा या थडोरा (Thada)</strong>। पंचायत प्रमुख = <strong>पटेल</strong> और <strong>चौधरी</strong>। अति विशिष्ट धार्मिक/झाड़-फूंक व्यक्ति = <strong>पडियार (Padiyar)</strong> और <strong>भूमका (Bhumka)</strong>। खाने की व्यवस्था = <strong>गेटिया (Gatiya)</strong>। नाचने-गाने की व्यवस्था = <strong>मुकरी (Mukri)</strong>।</li>
+                    </ul>
+                </div>
+
+                <!-- PYQ CARD 3: Muria, Baiga, Sahariya, Bharia & Munda -->
+                <div class="concept-card">
+                    <div class="card-title">🔍 PYQ Analysis 3 (Customs, Youth Dormitories & Radios)</div>
+                    <ul class="bullet-list">
+                        <li><strong>गौड़ नृत्य & मुड़िया (MPPSC Pre 1994, 2014):</strong> गौड़ नृत्य <strong>मुड़िया/माडिया (Muria)</strong> जनजाति से संबंधित है, जो जबलपुर संभाग में पाई जाती है। इनमें **घोटुल प्रथा (Ghotul System)** अत्यंत प्रसिद्ध है। मानवविज्ञानी बैरियर एल्विन ने इस पर <em>"The Muria and their Ghotul"</em> पुस्तक लिखी है।</li>
+                        <li><strong>बैगा जनजाति (Baiga):</strong> दक्षिण-पूर्वी जिलों (मंडला, डिंडोरी - बैगा चक्र) में निवास। उपजातियाँ: रमना, नाहर, भरोदिया, नरोकिया, कोडवा, कुंडी, गोडवा, बिजवार। नृत्य: परधोनी (बारात की अगवानी पर), रीना, बैगानी, सुआ। स्वयं को <strong>पुरोहित (Priests)</strong> कहलाना पसंद करते हैं। इनके विकास अभिकरण बालाघाट, मंडला, डिंडोरी, शहडोल, उमरिया, अनूपपुर में हैं।</li>
+                        <li><strong>शहरीया जनजाति (Sahariya):</strong> उत्तर-पश्चिमी हिस्से (ग्वालियर-चंबल) में निवास। उपजातियाँ: सवर, सौर। पंचायत प्रमुख = <strong>खुटिया पटेल (Khutia Patel)</strong> या रवत। वाल्मीकि को अपना बड़ा भाई मानते हैं। नृत्य: लहंगी, दुलदुल घोड़ी, रागिनी, तेजाजी। निवास स्थान = <strong>शहराना (Saharana)</strong>।</li>
+                        <li><strong>भारिया जनजाति (Bharia):</strong> भारिया का अर्थ 'ज्ञान का अभाव' या 'भार ढोने वाला'। उपजातियाँ: भूमिया, बुइहर, पंडो। निवास स्थान = <strong>ढाना (Dhana)</strong>। नृत्य: भड़म, सेतम, कर्मा, शैला, अहिराई। युवागृह = <strong>रंगभंग (Rangbhang)</strong> (Note: भइया में रंगभंग ऑप्शन गलत सुमेलित था, रंगभंग भारिया का है)।</li>
+                        <li><strong>सामुदायिक रेडियो स्टेशन (Community Radio):</strong> आदिवासियों की बोलियों में संवाद और सूचना प्रसारित करने वाला रेडियो प्लेटफॉर्म <strong>'वन्य' (Vanya)</strong> है, जिसकी स्थापना 1980 में वन्य प्रकाशन द्वारा की गई थी।</li>
+                        <li><strong>प्रकृति पूजा:</strong> आदिवासी वनों के निश्चित पौधों और पशुओं की रक्षा करते हैं क्योंकि वे उनकी धार्मिक रूप से <strong>पूजा (Worship)</strong> करते हैं (जैसे बूढ़ादेव साजा/सास के वृक्ष पर रहते हैं)।</li>
+                        <li><strong>देसला बंगा (Desla Bunga):</strong> दक्षिण-पूर्वी जनजातियों का एक पारंपरिक <strong>बसंत उत्सव (Spring Festival)</strong> है। मंडला जिले में कुल <strong>9 जनजातीय खंड (Tribal Blocks)</strong> पाए जाते हैं।</li>
+                        <li><strong>मुंडा जनजाति (Munda):</strong> इनका युवागृह <strong>गतिओरा (Gitiora)</strong> कहलाता है। (भगवान बिरसा मुंडा का जन्म 15 नवंबर 1875 को झारखंड में हुआ था, मुंडा विद्रोह 1899-1900 में हुआ)।</li>
+                        <li><strong>कवार जनजाति (Kawar):</strong> यह मुख्य रूप से <strong>शहडोल (Sohagpur बेल्ट)</strong>/बघेलखंड साइड पाई जाती है।</li>
+                    </ul>
+
+                    <!-- LINK STORY BOX FOR YOUTH DORMITORIES -->
+                    <div class="link-story-box">
+                        <h3>🔗 Link Story — युवागृह (Youth Dormitories) ऐसे याद करो:</h3>
+                        <p>💡 <em>"उराव का लौंडा <strong>धूम</strong> मचाते हुए (धूमकुरिया) <strong>कोरे</strong> कागज़ की तरह उड़ा, पर रास्ते में <strong>मुंडा</strong> मिला जिसने उसे इतनी <strong>गति</strong> (गतिओरा) से तोड़ा कि उसका <strong>भार</strong> (भारिया) गिर गया और सारा <strong>रंग भंग</strong> (रंगभंग) हो गया, अंत में <strong>माडिया</strong> ने उसे अपने <strong>घोटुल</strong> में शरण दी!"</em></p>
+                    </div>
+                </div>
+
+                <!-- QUICK RECALL QUIZ 1 -->
+                <div class="quiz-container">
+                    <h3>✍️ Quick Recall Quiz (Topic 1 & 2)</h3>
+                    <div class="quiz-item">
+                        <p><strong>Q1.</strong> पन्ना और छतरपुर वाले बेल्ट में खेरवार जनजाति को किस स्थानीय नाम से जाना जाता है?</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('ans1')">Show Answer</button>
+                        <div class="quiz-answer" id="ans1">कोदर या कौंदर (Kodar) नाम से।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <p><strong>Q2.</strong> कोरकू जनजाति में नाचने-गाने का प्रबंध करने वाले विशिष्ट व्यक्ति को क्या कहा जाता है?</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('ans2')">Show Answer</button>
+                        <div class="quiz-answer" id="ans2">मुकरी (Mukri)।</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DETAILED TRIBAL ANALYSIS MODULES -->
+            <section class="topic-section" id="bhilala-tribe">
+                <div class="section-header">
+                    <h2>03. भिलाला जनजाति (Bhilala Tribe) (22:05 - 31:41)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>भौगोलिक स्थिति (Location):</strong> मध्य प्रदेश के पश्चिमी हिस्से (झाबुआ, अलीराजपुर, धार, खरगोन, बड़वानी) में भील जनजाति के साथ ही सह-निवास करती है।</li>
+                        <li><strong>उत्पत्ति एवं इतिहास (Origin):</strong> भील की सबसे बड़ी उपजाति है। इनका मूल निवास स्थान <strong>छत्तीसगढ़ (Chhattisgarh)</strong> माना जाता है। इनका ऐतिहासिक दावा है कि 1576 के हल्दीघाटी युद्ध में इन्होंने अकबर के खिलाफ <strong>महाराणा प्रताप</strong> की सैन्य सहायता की थी। महाराणा प्रताप के प्रमुख भील सेनापति <strong>Rana Punja Bhil (पुंजा भील)</strong> थे।</li>
+                        <li><strong>सामाजिक स्थिति:</strong> भिलाला खुद को जनजाति न मानकर <strong>राजपूत (Rajput) का वंशज</strong> मानते हैं। इनकी कद-काठी और शारीरिक संरचना भी राजपूतों जैसी सुदृढ़ होती है।</li>
+                        <li><strong>उप-वर्ग/उपजातियाँ:</strong> उके (Uke), पटेलिया (Patelya), बालिया (Bhalia)।</li>
+                        <li><strong>विवाह पद्धति (Marriage):</strong> भीलों की तरह ही सेवा विवाह, पलायन विवाह (Elopement), व्यवस्थित विवाह (Arranged), और बलात विवाह प्रचलित हैं।</li>
+                        <li>🔥 <strong>Exam Hot - मध्यस्थ व्यक्ति:</strong> भिलाला विवाह में मध्यस्थ (Mediator) व्यक्ति को <strong>मानगड़िया (Mangadiya)</strong> कहा जाता है (सामान्यतः यह फूफा, जीजा या बहनोई होता है)। *याद रखें: कोरकू में थड़ा और भील में भांजगड़िया होता है।*</li>
+                        <li><strong>परंपराएं & संस्कार:</strong> त्योहारों में दिवासा, राखी, जन्माष्टमी, जुरस, दीपावली (हिंदू पर्व) मनाते हैं। जन्म संस्कार पारंपरिक दाई द्वारा संपन्न होता है।</li>
+                        <li>🔥 <strong>Exam Hot - मृत्यु संस्कार:</strong> किसी व्यक्ति की मृत्यु होने पर भिलाला महिलाओं द्वारा शोक संतप्त होकर <strong>कवाड़ा गीत (Kabada Geet)</strong> गाया जाता है, जो कि अत्यंत दुख और विलाप का पारंपरिक लोकगीत है।</li>
+                    </ul>
+
+                    <div class="link-story-box">
+                        <h3>🔗 Link Story — भिलाला उपजातियाँ ऐसे याद करो:</h3>
+                        <p>💡 <em>"एक <strong>भिलाला</strong> लड़का मेले में गया, उसने लड़की को देखकर कहा तुम्हारी कान की <strong>बालिया (बालिया)</strong> बहुत सुंदर हैं, लड़की बोली <strong>ओके (उके)</strong>, तो दोस्त चिल्लाया- अरे वाह! तूने तो उसे <strong>पटा लिया (पटेलिया)</strong>!"</em></p>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Bhil_Tribe_India.jpg" alt="Tribal representation of Western MP Bhil and Bhilala culture showing traditional jewelry and attire" loading="lazy">
+                        <div class="image-caption">Image Source: Wikimedia Commons | Bhil-Bhilala Traditional Representation</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic-section" id="banjara-tribe">
+                <div class="section-header">
+                    <h2>04. बंजारा जनजाति (Banjara Tribe) - घुमंतु समूह (31:41 - 43:47)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>प्रकृति (Nature):</strong> यह एक पूर्णतः <strong>घुमंतु जनजाति (Nomadic Tribe)</strong> है, जो कबीलाई संस्कृति का कड़ाई से पालन करती है। यद्यपि वर्तमान में इनका स्थायीकरण हो रहा है। मूल व्यवसाय पशुचारण (Pastoralism) है।</li>
+                        <li><strong>मूल निवास & वितरण:</strong> इनका मूल निवास स्थान <strong>राजस्थान (Rajasthan)</strong> है। MP में यह राजस्थान सीमा से लगे पश्चिमी जिलों (झाबुआ, रतलाम, मंदसौर, नीमच, आगर मालवा, राजगढ़, गुना, शिवपुरी, श्योपुर, मुरैना) तथा मालवा-निमाड़ और मंडला के कुछ पॉकेट्स में पाए जाते हैं।</li>
+                        <li>🔥 <strong>Exam Hot - कबीले का मुखिया:</strong> बंजारे एक संगठित कबीले के रूप में चलते हैं, जिसके मुखिया को <strong>नायक (Nayak)</strong> कहा जाता है। कबीले में नायक के निर्णय सर्वोपरि और अंतिम होते हैं। (Trick: नायक फिल्म की तरह एक दिन का डिसीजन)।</li>
+                        <li>🔥 <strong>Exam Hot - निवास स्थान:</strong> बंजारों के अस्थाई टेंट/छप्पर वाले निवास स्थान या कबीले के पड़ाव को <strong>टांडा (Tanda)</strong> कहा जाता है।</li>
+                        <li>🔥 <strong>Exam Hot - विश्व स्तर का आविष्कार:</strong> बंजारा जनजाति को <strong>कंघी (Comb) का आविष्कारक</strong> माना जाता है। मंदसौर और रतलाम के बंजारे <strong>कंघी शिल्प (Comb Craft)</strong> के विशेषज्ञ कारीगर हैं।</li>
+                        <li><strong>धार्मिक झुकाव:</strong> बंजारा समुदाय <strong>सिख धर्म (Sikhism)</strong> से अत्यधिक प्रभावित है। ये गुरु नानक देव और गुरु ग्रंथ साहिब में गहरी श्रद्धा रखते हैं तथा कबीलों में 'उदासी' एवं 'हरदास' का पाठ करते हैं। इनके प्रमुख लोक देवता राजस्थान के <strong>बाबा रामदेव (Jodhpur वाले बाबा रामदेव, कृष्ण-विष्णु अवतार)</strong> हैं। इसके अतिरिक्त कृष्ण, दुर्गा माता की पूजा करते हैं।</li>
+                        <li><strong>नृत्य शैली:</strong> इनके प्रमुख पारंपरिक और सबसे प्रसिद्ध नृत्य <strong>तलवार नृत्य (Talwar Dance)</strong> और <strong>डंडा बेली नृत्य (Danda Beli Dance)</strong> हैं। (Trick: कबीले की रक्षा के लिए नायक तलवार और डंडा लेकर खड़ा रहता है)।</li>
+                        <li><strong>श्रृंगार एवं वेशभूषा:</strong> यह <strong>अति श्रृंगार प्रिय (Extremely Fond of Adornment)</strong> जनजाति है। महिलाएं बाजुओं के ऊपर तक हाथीदांत या प्लास्टिक के बड़े-बड़े चूड़े पहनती हैं। इनके कानों से नाक तक जुड़े पारंपरिक आभूषण को <strong>लूंग (Loong)</strong> कहते हैं। इनकी पारंपरिक कढ़ाईदार पोशाक को <strong>बेस (Beis)</strong> कहा जाता है। ये कुशल <strong>गोदना कलाकार (Tattoo Artists)</strong> भी होते हैं।</li>
+                        <li><strong>ऐतिहासिक भूमिका:</strong> रियासतों के समय बंजारे राजाओं के सम्मान में नृत्य-गीत करते थे और युद्ध कला में निपुण होने के कारण सेना के साथ रसद पहुंचाने तथा युद्धों में भाग लेते थे। ये <strong>उड़द की दाल (Urad Dal)</strong> को अत्यंत शुभ मानते हैं।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic-section" id="agariya-detailed">
+                <div class="section-header">
+                    <h2>05. अगरिया जनजाति (Agariya Tribe) - लोह शिल्पी (43:47 - 51:15)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>वर्गीकरण:</strong> गोंड जनजाति की एक प्रमुख व्यावसायिक उपजाति है।</li>
+                        <li><strong>निवास क्षेत्र:</strong> यह मंडला, डिंडोरी, शहडोल, सीधी आदि गोंड बाहुल्य दक्षिण-पूर्वी बेल्ट में निवास करती है।</li>
+                        <li><strong>पारंपरिक व्यवसाय:</strong> पूर्णतः <strong>लोह शिल्प (Iron Smelting)</strong> और लोहे के औजार बनाने में निपुण। इतिहासकार रसेल और हीरालाल ने इन्हें विश्व के सबसे प्राचीनतम लोह कारीगरों (Oldest Iron Artisans) में से एक माना है।</li>
+                        <li><strong>धार्मिक विश्वास:</strong> इनके सर्वोच्च देवता <strong>लोहासुर (Lohasur)</strong> हैं, जिनका निवास स्थान लोहे को पिघलाने वाली धधकती हुई भट्टियाँ हैं। लोहासुर देवता को प्रसन्न करने के लिए ये <strong>काली मुर्गी (Black Chicken)</strong> की भेंट चढ़ाते हैं।</li>
+                        <li>🔥 <strong>Exam Hot - सामाजिक प्रतीक:</strong> अगरिया समाज में <strong>उड़द की दाल (Urad Dal)</strong> को बेहद पवित्र और शुभ संकेत माना जाता है। अतिथि सत्कार (Guest Hospitality) में तथा विवाह के समय <strong>वधु मूल्य (Bride Price)</strong> चुकाने के लिए उड़द की दाल का ही औपचारिक लेनदेन अनिवार्य रूप से होता है।</li>
+                        <li><strong>उप-विभाजन:</strong> अगरिया मुख्य रूप से दो भागों में बंटे हैं — <em>पथरिया अगरिया</em> और <em>खुटिया अगरिया</em>। ये सूअर का मांस और मोटा अनाज खाते हैं। समाज में विधवा विवाह का प्रचलन बहुत सीमित/नगण्य है। इनमें भी गोदना गुदवाने की गहरी परंपरा है।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic-section" id="panika-tribe">
+                <div class="section-header">
+                    <h2>06. पनिका जनजाति (Panika Tribe) - प्रथम बुनकर (51:15 - 57:52)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>प्रजातीय समूह:</strong> यह <strong>प्रोटो-ऑस्ट्रेलॉइड (Proto-Australoid)</strong> समूह की जनजाति है। छोटा नागपुर क्षेत्र में इन्हें स्थानीय रूप से <strong>'पाने' (Pane)</strong> नाम से जाना जाता है।</li>
+                        <li><strong>वितरण:</strong> मध्य प्रदेश के पूर्वी बघेलखंड क्षेत्र, मुख्यतः <strong>सीधी (Sidhi) और शहडोल (Shahdol)</strong> जिलों में पाए जाते हैं। (Trick: सीधे-साधे लोग पानी की तरह स्वच्छ होते हैं -> सीधी-शहडोल)।</li>
+                        <li>🔥 <strong>Exam Hot - कबीरपंथ जुड़ाव:</strong> पनिका मूलतः <strong>कबीरपंथी (Kabirpanthi)</strong> जनजाति है। लोक मान्यता है कि कबीर दास जी का जन्म नहीं हुआ था, वे जल (पानी) से प्रकट हुए थे। 'पनिका' नाम की एक निःसंतान महिला को वे तालाब के किनारे मिले थे, जिसने कबीर का पालन-पोषण किया। इसी कारण यह जनजाति कबीर के विचारों को मानती है।</li>
+                        <li><strong>कबीरपंथ के नियम:</strong> पनिका दो वर्गों में विभक्त हैं — सामान्य पनिका और कबीरपंथी पनिका। कबीरपंथी पनिका पूरी तरह शाकाहारी होते हैं, वे <strong>मांस एवं मदिरा (Alcohol & Meat) का सेवन बिल्कुल नहीं करते</strong>। वे खुद को 'कबीराहा' कहते हैं। गरीब पनिका हरवाहे (खेतीहर मजदूर) का कार्य करते हैं।</li>
+                        <li>🔥 <strong>Exam Hot - विश्व स्तरीय उपलब्धि:</strong> पनिका को <strong>विश्व की पहली बुनकर जनजाति (First Weaver Tribe of the World)</strong> माना जाता है, जिसने पृथ्वी पर सबसे पहले कपड़े बुनने का कार्य प्रारंभ किया। कपड़ा बुनना इनका मुख्य परंपरागत व्यवसाय है।</li>
+                        <li><strong>उप-शाखाएं:</strong> शक्ति पनिका, साकेत पनिका, कबीरपंथी पनिका।</li>
+                        <li>🔥 <strong>Exam Hot - धर्म गुरु:</strong> कबीरपंथी पनिका के धार्मिक गुरु या मार्गदर्शक को <strong>मैती (Maiti)</strong> कहा जाता है। (Trick: गुरु ने उपदेश दिया कि मेथी की रोटी खाओ और मांस-मदिरा छोड़ो)।</li>
+                        <li><strong>धार्मिक एवं सामाजिक ढांचा:</strong> स्थानीय स्तर पर सीधी क्षेत्र में होने के कारण ये चंडी देवी, सूर्य, इंद्र, हनुमान, दूल्हादेव, बूढ़ी माता, बरही माता और मरही माता की पूजा करते हैं। विवाह में लमसेना विवाह, घुसपैठिया विवाह, प्रेम विवाह और देवर-भाभी विवाह प्रचलित हैं। भोजन में मुख्य रूप से चावल, उड़द, मूंग और पारंपरिक <strong>पेज (Pej)</strong> का सेवन करते हैं। ये कुशल आखेटक (शिकारी) भी होते हैं।</li>
+                    </ul>
+                    
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Handloom_weaving_at_a_village_in_India.jpg" alt="A rural artisan weaving cloth on a traditional Indian handloom, representing Panika weaver culture" loading="lazy">
+                        <div class="image-caption">Image Source: Wikimedia Commons | Traditional Indian Handloom & Weaver Culture</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="topic-section" id="pardhi-tribe">
+                <div class="section-header">
+                    <h2>07. पारधी जनजाति (Pardhi Tribe) - जाल शिकारी (57:52 - 64:12)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>व्युत्पत्ति:</strong> 'पारधी' शब्द मराठी भाषा के शब्द <strong>'पारद' (Parad)</strong> का तद्भव रूप है, जिसका शाब्दिक अर्थ <strong>आखेटक या शिकारी (Hunter)</strong> होता है। यह बहेलिया श्रेणी की एक उपजाति है।</li>
+                        <li><strong>भौगोलिक संकेंद्रण:</strong> मुख्य रूप से <strong>भोपाल संभाग (Bhopal Division)</strong> के जिलों — भोपाल, रायसेन, सीहोर तथा गुना संभाग में पाए जाते हैं।</li>
+                        <li>🔥 <strong>Exam Hot - अनोखा जाल शिकार नियम:</strong> पारधी और सामान्य शिकारी में एक बड़ा धार्मिक अंतर है। पारधियों का अटूट विश्वास है कि <strong>भगवान महादेव (Mahadev)</strong> ने उन्हें बंदूक या गोली से पशुओं को मारने के पाप से बचाया है। महादेव ने स्वयं उन्हें <strong>जाल (Net) बिछाकर</strong> वन्य पशुओं को जीवित पकड़ने की कला सिखाई थी। अतः पारंपरिक पारधी बंदूक का प्रयोग नहीं करते, वे जाल से शिकार करते हैं।</li>
+                        <li><strong>राजपूत कनेक्शन (गोत्र):</strong> पारधी जनजाति के सभी गोत्र और सरनेम राजपूतों से मेल खाते हैं, जैसे — <em>सोलंकी, चौहान, सिसोदिया, राठी</em> आदि। देखने में यह राजपूत जैसे प्रतीत होते हैं।</li>
+                        <li>⚠️ <strong>Statutory/Legal Fact:</strong> केंद्र/राज्य सरकार द्वारा <strong>वर्ष 2003 में कीर, मीणा और पारधी</strong> को मध्य प्रदेश की अनुसूचित जनजाति (ST) की आधिकारिक सूची से विलोपित/हटा दिया गया है। फिर भी सांस्कृतिक रूप से यह पारधी जनजाति के रूप में ही जीवन यापन कर रहे हैं।</li>
+                        <li><strong>8 उप-शाखाएं (8 Sub-branches) एवं उनके विशिष्ट कार्य:</strong>
+                            <ol style="padding-left: 20px; margin-top: 10px;">
+                                <li><strong>भील पारधी:</strong> ये आधुनिक/सामान्य पारधी हैं जो बंदूक से भी पशु-पक्षियों का शिकार कर लेते हैं और पुरानी रूढ़ियों को कम मानते हैं।</li>
+                                <li><strong>चीता पारधी:</strong> ऐतिहासिक रूप से चीतों को जीवित पकड़ने, उन्हें पालने और राजाओं के लिए शिकार हेतु <strong>चीतों को ट्रेनिंग देने</strong> वाले पारधी।</li>
+                                <li><strong>फास पारधी:</strong> शिकार को जाल के फंदे (फांस) में फंसाकर पकड़ने वाले विशेषज्ञ।</li>
+                                <li><strong>गोसाई पारधी:</strong> गोसाईं (भगवा/संन्यासी) वस्त्र धारण करके छद्म रूप से शिकार करने वाले।</li>
+                                <li>🔥 <strong>Exam Hot - सीसी के तेल वाले पारधी:</strong> ये पारधी पुराने समय में <strong>मगरमच्छ (Crocodile) का शिकार कर उसका तेल निकालते थे</strong> और उसे शीशियों में भरकर बाजारों में बेचते थे।</li>
+                                <li><strong>लंगोटी पारधी:</strong> केवल लंगोटी धारण करने वाले पारधी।</li>
+                                <li><strong>टाकिया पारधी:</strong> सामान्य शिकारी जो विशेष रूप से हाका (जानवरों को डराने के लिए आवाज) लगाने का कार्य करते हैं।</li>
+                                <li><strong>बंदर वाले पारधी:</strong> गांवों में घूम-घूम कर बंदरों का नाच नचाने वाले पारधी।</li>
+                                <li>*नोट: इनकी एक उपशाखा <strong>'कारगर' (Kargar)</strong> है जो विशेष रूप से काले रंग के पक्षियों का अचूक शिकार करने के लिए जानी जाती है।*</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic-section" id="uraon-tribe">
+                <div class="section-header">
+                    <h2>08. उराव जनजाति (Uraon Tribe) - द्रविड़ मूल (64:12 - 73:19)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>मूल एवं प्रवासन (Migration):</strong> यह मूलतः <strong>दक्षिण भारत (South India)</strong> की जनजाति है, जो द्रविड़ियन (Dravidian) समूह से संबंधित है। यह दक्षिण से उत्तर की ओर उड़ते-उड़ते (प्रवास करते हुए) आई है। MP में यह पूर्वी हिस्से — <strong>रीवा, सीधी, शहडोल, अनूपपुर और सिंगरोली</strong> बेल्ट में पाई जाती है।</li>
+                        <li>🔥 <strong>Exam Hot - धार्मिक विशेषता:</strong> मध्य प्रदेश की जनजातियों में <strong>सबसे अधिक ईसाई धर्म (Christianity) को स्वीकार करने वाली</strong> जनजाति उराव ही है। उराव समाज दो भागों में बंटा है — एक जो मूल हिंदू देवी-देवताओं को मानते हैं और दूसरे जिन्होंने ईसाई धर्म अपना लिया है और मिशनरियों/पादरी से जुड़े हैं।</li>
+                        <li><strong>सामाजिक & प्रशासनिक व्यवस्था:</strong>
+                            <ul style="padding-left: 20px; margin-top: 5px; list-style-type: circle;">
+                                <li>🔥 <strong>Exam Hot - पंचायत प्रमुख:</strong> उराव जनजाति के कबीले या पंचायत के मुखिया को <strong>महतो (Mahto)</strong> कहा जाता है। (Trick: मुखिया कहता है- मैं हूँ तो क्या गम है -> महतो)।</li>
+                                <li><strong>धार्मिक पुरोहित:</strong> इनके धार्मिक कृत्यों और झाड़-फूंक करने वाले पुरोहित को <strong>बैगा (Baiga)</strong> कहा जाता है।</li>
+                                <li>🔥 <strong>Exam Hot - सर्वोच्च न्यायिक ढांचा:</strong> कई गांवों को मिलाकर एक अंतर-ग्रामीण पंचायत बनती है जिसे <strong>परहा पंचायत (Parha Panchayat)</strong> कहते हैं। इसका सर्वोच्च प्रधान <strong>परहा राजा (Parha Raja)</strong> होता है, जो बड़े आपसी मुकदमों और झगड़ों का निपटारा करता है।</li>
+                            </ul>
+                        </li>
+                        <li>🔥 <strong>Exam Hot - युवागृह:</strong> उराव जनजाति का प्रसिद्ध युवागृह <strong>धूमकुरिया (Dhumkuria)</strong> है, जहाँ कोरे (युवा) लड़के-लड़कियों को सामाजिक, सांस्कृतिक और यौन शिक्षा (Social Education) दी जाती है।</li>
+                        <li>🔥 <strong>Exam Hot - बोली (Dialect):</strong> उराव जनजाति द्वारा बोली जाने वाली विशिष्ट भाषा/बोली को <strong>कुरुख (Kurukh)</strong> कहा जाता है। (Trick: 'क्यूं रे रुक जा' -> कुरुख)।</li>
+                        <li>🔥 <strong>Exam Hot - पूजा स्थल:</strong> इनके विशिष्ट धार्मिक पूजा गृह/स्थल को <strong>बगिया (Bagiya)</strong> कहा जाता है।</li>
+                        <li>🔥 <strong>Exam Hot - पारंपरिक मदिरा:</strong> त्योहारों और उत्सवों के समय उराव लोग विशेष रूप से <strong>चावल से बनी शराब</strong> का सेवन करते हैं जिसे <strong>हंडिया (Handia)</strong> कहा जाता है। इसे मिट्टी के बड़े हंडे में तैयार किया जाता है।</li>
+                        <li><strong>नृत्य शैली:</strong> इनका सबसे प्रमुख और पवित्र नृत्य <strong>सरहुल नृत्य (Sarhul Dance)</strong> है। इसके अतिरिक्त ये कर्मा, गुड़िया और डंडा नृत्य भी करते हैं।</li>
+                        <li><strong>सर्वोच्च देवता:</strong> इनके मुख्य देवता <strong>धर्मेश (Dharmesh)</strong> हैं, जिन्हें साक्षात सूर्य देव (Sun God) का रूप माना जाता है। इसके साथ ही ये महादेव (शिव) की भी पूजा करते हैं।</li>
+                        <li><strong>विवाह:</strong> वधु मूल्य देकर विवाह होता है। प्रमुख प्रकार: बुंदे विवाह, बंबा विवाह, राजी-मर्जी विवाह, और <strong>ढंकु विवाह (Dhanku)</strong> (जिसमें लड़की स्वयं अपने लिए वर चुनती है)। समगोत्रीय विवाह पूर्णतः वर्जित है। विधवा और बहु-विवाह प्रचलित हैं। इनके गोत्रों में 'मिंज', 'लकड़ा', 'करकटा' शामिल हैं। इनका मुख्य कार्य कृषि और मजदूरी है।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic-section" id="kherwar-tribe">
+                <div class="section-header">
+                    <h2>09. खेरवार जनजाति (Kherwar Tribe) - कत्था निर्माता (73:19 - 77:36)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>मूल समूह:</strong> यह <strong>मुंडा समूह (Munda Group)</strong> की एक प्रमुख उपशाखा है। इन्हें 'खेरवा' भी कहा जाता है। विंध्यांचल पर्वतमाला के पूर्वी छोर यानी <strong>कैमूर पहाड़ियों (Kaimur Hills) के खरियागुड़ा (Khariaguda)</strong> क्षेत्र को इनका मूल स्रोत माना जाता है।</li>
+                        <li>🔥 <strong>Exam Hot - स्थानीय नाम:</strong> मध्य प्रदेश के <strong>पन्ना (Panna) और छतरपुर (Chhatarpur)</strong> जिलों वाले बेल्ट में खेरवार जनजाति को स्थानीय रूप से <strong>कोदर या कौंदर (Kodar)</strong> नाम से संबोधित किया जाता है। (Trick: पन्ना-छतरपुर में हीरा निकालते समय दरार पड़ गई -> कोदर)।</li>
+                        <li><strong>वितरण:</strong> मुख्य रूप से उमरिया, सीधी, अनूपपुर, शहडोल और विंध्य क्षेत्र में निवास। उमरिया में लाख का सरकारी कारखाना है।</li>
+                        <li>🔥 <strong>Exam Hot - मुख्य व्यवसाय:</strong> खेरवार जनजाति का मुख्य परंपरागत कार्य <strong>खैर के वृक्ष (Khair Tree) की लकड़ी से कत्था (Catechu) निकालना</strong> है। *याद रखें: मध्य प्रदेश में कत्था बनाने के दो बड़े कारखाने शिवपुरी और बामोर (मुरैना) में स्थित हैं। बामोर मुरैना का प्रमुख औद्योगिक केंद्र है।* इसके अलावा ये वनोपज संग्रहण और मजदूरी करते हैं।</li>
+                        <li>🔥 <strong>Exam Hot - पंचायत प्रमुख:</strong> खेरवार जनजाति की पारंपरिक पंचायत के मुखिया को <strong>महतो मांझी (Mahto Manzhi)</strong> कहा जाता है। *ध्यान दें: उराव में केवल महतो था, खेरवार में महतो मांझी है।*</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic-section" id="kawar-tribe">
+                <div class="section-header">
+                    <h2>10. कवार/कमार जनजाति (Kawar Tribe) - सैन्य समूह (77:36 - 83:44)</h2>
+                </div>
+                <div class="concept-card">
+                    <ul class="bullet-list">
+                        <li><strong>जनसांख्यिकी:</strong> जनसंख्या की दृष्टि से यह मध्य प्रदेश की एक अत्यंत <strong>छोटी जनजाति (Minor Tribe)</strong> है।</li>
+                        <li><strong>निवास क्षेत्र:</strong> यह मुख्य रूप से बघेलखंड के <strong>शहडोल (विशेषकर सोहागपुर बेल्ट)</strong>, अनूपपुर, सीधी और सिंगरोली जिलों में संकेंद्रित है। (Trick: कवर साहब शहडोल के सुहागपुर कोयला क्षेत्र में रहते हैं)।</li>
+                        <li>🔥 <strong>Exam Hot - पौराणिक उत्पत्ति:</strong> कवार जनजाति अपनी उत्पत्ति महाभारत के <strong>कौरवों (Kauravas)</strong> से मानती है। ये स्वयं को राजा दुर्योधन का वंशज घोषित करते हैं।</li>
+                        <li><strong>सामाजिक उप-वर्ग:</strong> इनके कुल 8 उप-वर्ग (Sub-groups) हैं, जिनमें से सबसे प्रमुख वर्ग <strong>'तवर' (Tawar)</strong> है। तवर वर्ग के लोग स्वयं को 'तोमर राजपूत' (Tomar Rajput) मानते हैं। *ऐतिहासिक जुड़ाव: अनंगपाल तोमर ने दिल्ली बसाई थी। ग्वालियर-मुरैना का क्षेत्र 'तवरघर' कहलाता था जहाँ वीर सिंह देव तोमर ने तोमर वंश की स्थापना की। इसी वंश के राजा मानसिंह तोमर और मृगनैनी की प्रेम कहानी प्रसिद्ध है। प्रसिद्ध कोहिनूर हीरा मुगलों ने इसी तोमर वंश के राजा विक्रमजीत सिंह की विधवा पत्नी से प्राप्त किया था।*</li>
+                        <li>🔥 <strong>Exam Hot - विशिष्ट व्यवसाय:</strong> कवार जनजाति के लोग शारीरिक रूप से अत्यंत वीर होते हैं, इसलिए <strong>भारतीय फौज/सेना में जाना (Joining the Military/Army)</strong> यह अपना गौरवशाली परंपरागत कार्य मानते हैं। सैन्य सेवाओं में इनकी अत्यधिक रुचि होती है।</li>
+                        <li><strong>प्रशासनिक संरचना:</strong> इनके धार्मिक प्रधान/पुरोहित को <strong>कुरहा (Kurha)</strong> कहा जाता है। सामान्य ग्राम पंचायत का मुखिया <strong>सरपंच या नोटिया (Notia)</strong> कहलाता है।</li>
+                        <li>🔥 <strong>Exam Hot - अपीलीय न्यायालय (चक पंचायत):</strong> यदि कोई व्यक्ति ग्राम पंचायत के निर्णय से संतुष्ट नहीं होता, तो कवार समाज में 7-8 गांवों को मिलाकर एक बड़ी क्षेत्रीय अपीलीय पंचायत बनाई जाती है जिसे <strong>चक पंचायत (Chak Panchayat)</strong> कहा जाता है।</li>
+                        <li>🔥 <strong>Exam Hot - नृत्य शैली:</strong> कवार जनजाति का सबसे लोकप्रिय और मुख्य पारंपरिक नृत्य <strong>बार नृत्य (Bar Dance)</strong> है। इसे ये बार-बार करते हैं।</li>
+                        <li><strong>अन्य तथ्य:</strong> समाज में समगोत्रीय विवाह पूर्णतः वर्जित है। स्त्रियां चांदी और जस्ते के भारी आभूषण पैरों और गले में पहनती हैं तथा शरीर पर अत्यधिक गोदना (Tattoos) गुदवाती हैं। ये जादू-टोने और अभिचार प्रथाओं में गहरा विश्वास रखते हैं।</li>
+                    </ul>
+                </div>
+
+                <!-- QUICK RECALL QUIZ 2 -->
+                <div class="quiz-container">
+                    <h3>✍️ Quick Recall Quiz (Topic 3 To 10)</h3>
+                    <div class="quiz-item">
+                        <p><strong>Q1.</strong> बंजारा जनजाति के अस्थाई टेंटनुमा निवास स्थान या पड़ाव को क्या कहा जाता है?</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('ans3')">Show Answer</button>
+                        <div class="quiz-answer" id="ans3">टांडा (Tanda)।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <p><strong>Q2.</strong> उराव जनजाति में अंतर-ग्रामीण विवादों को निपटाने वाले सर्वोच्च प्रधान को क्या कहते हैं?</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('ans4')">Show Answer</button>
+                        <div class="quiz-answer" id="ans4">परहा राजा (Parha Raja)।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <p><strong>Q3.</strong> कवार जनजाति का सबसे प्रमुख पारंपरिक नृत्य कौन सा है?</p>
+                        <button class="reveal-btn" onclick="toggleAnswer('ans5')">Show Answer</button>
+                        <div class="quiz-answer" id="ans5">बार नृत्य (Bar Dance)।</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPREHENSIVE REVISION TABLES -->
+            <section class="topic-section" id="master-fullforms">
+                <div class="section-header">
+                    <h2>11. Master Section — Terms, Dialects & Meanings Table</h2>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tribe Name</th>
+                                <th>Key Role / Terminology</th>
+                                <th>Hinglish Translation & Exam Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bhilala</strong></td>
+                                <td>Mangadiya (मानगड़िया)</td>
+                                <td>Marriage Mediator (विवाह में मध्यस्थ फूफा/जीजा/बहनोई)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bhilala</strong></td>
+                                <td>Kabada Geet (कवाड़ा गीत)</td>
+                                <td>Death Sorrow Song (मृत्यु के समय गाया जाने वाला दुख का गीत)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banjara</strong></td>
+                                <td>Nayak (नायक)</td>
+                                <td>Caravan Head / Tribal Chief (कबीले का सर्वोपरि मुखिया)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banjara</strong></td>
+                                <td>Tanda (टांडा)</td>
+                                <td>Nomadic Camp / Settlement (बंजारों का अस्थाई निवास स्थान)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Banjara</strong></td>
+                                <td>Loong (लूंग)</td>
+                                <td>Traditional Nose-to-Ear Ring (महिलाओं का पारंपरिक नाक का आभूषण)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Agariya</strong></td>
+                                <td>Lohasur (लोहासुर)</td>
+                                <td>Iron God living in Furnace (धधकती भट्टी में रहने वाले प्रमुख देवता)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Panika</strong></td>
+                                <td>Maiti (मैती)</td>
+                                <td>Religious Guru / Guide (कबीरपंथी पनिका के धर्म गुरु)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pardhi</strong></td>
+                                <td>Parad (पारद)</td>
+                                <td>Marathi origin term meaning Hunter (आखेटक या शिकारी)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uraon</strong></td>
+                                <td>Mahto (महतो)</td>
+                                <td>Village Headman / Panchayat Chief (ग्राम स्तर का मुखिया)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uraon</strong></td>
+                                <td>Parha Raja (परहा राजा)</td>
+                                <td>Inter-village Supreme Judge (कई गांवों की पंचायत का सर्वोच्च राजा)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uraon</strong></td>
+                                <td>Dhumkuria (धूमकुरिया)</td>
+                                <td>Youth Dormitory for Social Education (पारंपरिक जनजातीय युवागृह)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uraon</strong></td>
+                                <td>Kurukh (कुरुख)</td>
+                                <td>Dravidian Root Tribal Dialect (उराव जनजाति की मुख्य बोली)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uraon</strong></td>
+                                <td>Handia (हंडिया)</td>
+                                <td>Fermented Rice Beer / Liquor (चावल से बनी पारंपरिक मदिरा)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kherwar</strong></td>
+                                <td>Kodar (कोदर)</td>
+                                <td>Local Identity name in Panna/Chhatarpur (स्थानीय कौंदर नाम)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kherwar</strong></td>
+                                <td>Mahto Manzhi (महतो मांझी)</td>
+                                <td>Tribal Council Head (खेरवार पंचायत का प्रमुख)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kawar</strong></td>
+                                <td>Chak Panchayat (चक पंचायत)</td>
+                                <td>7-8 Village Appellate Body (7-8 गांवों की बड़ी अपीलीय पंचायत)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- MASTER EXAM HOT FACTS SUMMARY -->
+            <section class="topic-section" id="master-hotfacts">
+                <div class="section-header">
+                    <h2>12. Master Section — 🔥 Exam Hot Points Flash Repository</h2>
+                </div>
+                <div class="concept-card" style="border-color: var(--accent-orange);">
+                    <ul class="bullet-list">
+                        <li>🔥 <strong>Lohasur Deity Connection:</strong> अगरिया जनजाति लोहासुर को मानती है और धधकती भट्टियों की पूजा करती है।</li>
+                        <li>🔥 <strong>Urad Dal Auspiciousness:</strong> अगरिया समाज में वधु मूल्य और अतिथि सत्कार के लिए <strong>उड़द की दाल</strong> अनिवार्य रूप से उपयोग की जाती है।</li>
+                        <li>🔥 <strong>Comb Invention:</strong> पूरे विश्व में <strong>कंघी का आविष्कार</strong> बंजारा जनजाति ने किया था। मंदसौर/रतलाम इसके केंद्र हैं।</li>
+                        <li>🔥 <strong>Weaving Revolution:</strong> पृथ्वी पर सबसे पहले कपड़ा बुनने का गौरव <strong>पनिका जनजाति</strong> को प्राप्त है, यह विश्व की प्रथम बुनकर जनजाति है।</li>
+                        <li>🔥 <strong>Net Hunting Concept:</strong> पारधी जनजाति बंदूक के बजाय <strong>जाल से जीवित शिकार</strong> करती है क्योंकि महादेव ने उन्हें जीवों की हत्या के पाप से बचाया था।</li>
+                        <li>🔥 <strong>Legal tribal delisting:</strong> वर्ष 2003 में <strong>कीर, मीणा और पारधी</strong> को मध्य प्रदेश की एसटी (ST) सूची से बाहर कर दिया गया है।</li>
+                        <li>🔥 <strong>Christianity Adaptation:</strong> मध्य प्रदेश में सबसे ज्यादा <strong>ईसाई धर्म अपनाने वाली</strong> जनजाति उराव (Uraon) है।</li>
+                        <li>🔥 <strong>Duryodhana Lineage Claim:</strong> कवार जनजाति स्वयं की उत्पत्ति महाभारत के <strong>कौरवों (दुर्योधन)</strong> से मानती है।</li>
+                        <li>🔥 <strong>Army Recruitment Pattern:</strong> कवार जनजाति का परंपरागत और सबसे पसंदीदा कार्य <strong>भारतीय फौज (Military Forces) में सेवा देना</strong> है।</li>
+                        <li>🔥 <strong>Catechu Artisans:</strong> खेरवार जनजाति खैर के पेड़ से <strong>कत्था निकालने</strong> का काम करती है। पन्ना-छतरपुर में इन्हें कोदर कहते हैं।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE PERSISTENT CHECKLIST -->
+            <section class="topic-section" id="checklist-section">
+                <div class="section-header">
+                    <h2>13. Master Revision Checklist & Self Evaluation Tracker</h2>
+                </div>
+                <div class="concept-card">
+                    <p>रिवाइज किए गए टॉपिक्स पर टिक लगाएं। आपका प्रोग्रेस ऊपर लगे बार में लाइव ट्रैक होगा!</p>
+                    <br>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label><input type="checkbox" class="rev-checkbox" id="chk1"> 1. प्रमोद राणा सर का क्लास रोडमैप और मैराथन घोषणा ट्रैक की।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk2"> 2. लोहासुर और अगरिया जनजाति के भट्टियों वाले कॉन्सेप्ट को समझा।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk3"> 3. भील, कोरकू और गोंड की सभी उपजातियों की लिस्ट याद की।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk4"> 4. युवागृहों की कंबाइंड 'धूम-गति-रंगभंग' लिंक स्टोरी कंठस्थ की।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk5"> 5. भिलाला जनजाति के मानगड़िया (मध्यस्थ) और कवाड़ा गीत को समझा।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk6"> 6. बंजारा जनजाति के कबीले के नायक, टांडा और कंघी आविष्कार को जाना।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk7"> 7. बंजारों के तलवार नृत्य, डंडा बेली नृत्य और 'लूंग' आभूषण को नोट किया।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk8"> 8. पनिका जनजाति के कबीरपंथ, शाकाहार नियम और विश्व के पहले बुनकर होने के फैक्ट को याद किया।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk9"> 9. पनिका के धर्म गुरु 'मैती' और बघेलखंड (सीधी-शहडोल) वितरण को समझा।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk10"> 10. पारधी जनजाति की 8 शाखाओं (विशेषकर सीसी के तेल वाले और चीता पारधी) का वर्गीकरण समझा।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk11"> 11. उराव जनजाति के महतो, परहा राजा, धूमकुरिया युवागृह और कुरुख बोली को याद किया।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk12"> 12. उराव जनजाति के सरहुल नृत्य, हंडिया पेय और ईसाई धर्म झुकाव को स्पष्ट किया।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk13"> 13. खेरवार जनजाति के खैर कत्था व्यवसाय और पन्ना-छतरपुर के 'कोदर' नाम को समझा।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk14"> 14. कवार जनजाति की कौरव-दुर्योधन उत्पत्ति, बार नृत्य और फौज में जाने की रूचि को जाना।</label>
+                        <label><input type="checkbox" class="rev-checkbox" id="chk15"> 15. कवारों की 7-8 गांवों वाली 'चक पंचायत' अपीलीय व्यवस्था को कंठस्थ किया।</label>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Fixed Desktop Sidebar with Sticky Reference map -->
+        <aside class="sidebar">
+            <h3 style="color: var(--accent-cyan); margin-bottom: 15px;">📌 Quick Navigation Sidebar</h3>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#intro-flow">1. Syllabus & Class Roadmap</a></li>
+                <li class="toc-item"><a href="#pyq-dissection">2. PYQ Dissection Box</a></li>
+                <li class="toc-item"><a href="#bhilala-tribe">3. भिलाला जनजाति (Bhilala)</a></li>
+                <li class="toc-item"><a href="#banjara-tribe">4. बंजारा जनजाति (Banjara)</a></li>
+                <li class="toc-item"><a href="#agariya-detailed">5. अगरिया जनजाति (Agariya)</a></li>
+                <li class="toc-item"><a href="#panika-tribe">6. पनिका जनजाति (Panika)</a></li>
+                <li class="toc-item"><a href="#pardhi-tribe">7. पारधी जनजाति (Pardhi)</a></li>
+                <li class="toc-item"><a href="#uraon-tribe">8. उराव जनजाति (Uraon)</a></li>
+                <li class="toc-item"><a href="#kherwar-tribe">9. खेरवार जनजाति (Kherwar)</a></li>
+                <li class="toc-item"><a href="#kawar-tribe">10. कवार जनजाति (Kawar)</a></li>
+                <li class="toc-item"><a href="#master-fullforms">11. Terms & Meanings Matrix</a></li>
+                <li class="toc-item"><a href="#master-hotfacts">12. 🔥 Exam Hot Facts Repository</a></li>
+                <li class="toc-item"><a href="#checklist-section">13. Revision Checkpoints Tracker</a></li>
+            </ul>
+            <hr style="margin: 20px 0; border-color: var(--border-color);">
+            <h4 style="color: var(--accent-orange); margin-bottom: 10px;">🗺️ Permanent Map Reference</h4>
+            <div class="image-block" style="margin: 0;">
+                <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Official Madhya Pradesh district map for structural geographic tribal layout tracking" id="sidebarMap">
+                <div class="image-caption" style="font-size: 11px;">Official Reference: SLBC Madhya Pradesh District Layout</div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Fixed Mobile Interface Controller Dropdown and Theme Switcher -->
+    <div class="mobile-nav-bar">
+        <select class="jump-dropdown" onchange="window.location.hash = this.value;">
+            <option value="">Jump To Topic Section...</option>
+            <option value="#intro-flow">1. Syllabus & Class Roadmap</option>
+            <option value="#pyq-dissection">2. PYQ Dissection Box</option>
+            <option value="#bhilala-tribe">3. भिलाला जनजाति (Bhilala)</option>
+            <option value="#banjara-tribe">4. बंजारा जनजाति (Banjara)</option>
+            <option value="#agariya-detailed">5. अगरिया जनजाति (Agariya)</option>
+            <option value="#panika-tribe">6. पनिका जनजाति (Panika)</option>
+            <option value="#pardhi-tribe">7. पारधी जनजाति (Pardhi)</option>
+            <option value="#uraon-tribe">8. उराव जनजाति (Uraon)</option>
+            <option value="#kherwar-tribe">9. खेरवार जनजाति (Kherwar)</option>
+            <option value="#kawar-tribe">10. कवार जनजाति (Kawar)</option>
+            <option value="#master-fullforms">11. Terms & Meanings Matrix</option>
+            <option value="#master-hotfacts">12. 🔥 Exam Hot Facts Repository</option>
+            <option value="#checklist-section">13. Revision Checkpoints Tracker</option>
+        </select>
+        <button class="theme-toggle-btn" onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+
+    <!-- UPCOMING FOOTER MODULE -->
+    <footer style="margin-top: 40px; border-top: 1px solid var(--border-color); padding: 30px 20px; text-align: center; background-color: var(--card-bg); font-size: 15px; color: var(--text-muted);">
+        <p><strong>📌 Upcoming Topics Dashboard:</strong> कल की क्लास में बची हुई <em>बिजवार (Bijhwar) जनजाति</em> (बैगा का विकसित रूप) कम्पलीट करेंगे, तत्पश्चात घुमंतु, विमुक्त जनजातियों का क्रमबद्ध अध्ययन शुरू होगा।</p>
+        <p style="margin-top: 10px; font-size: 13px;">Designed with ❤️ for Civil Services Aspirants. Keep Revising, Keep Winning!</p>
+    </footer>
+
+    <!-- INTERACTIVE ENGINE JAVASCRIPT -->
+    <script>
+        // Active Recall Engine
+        function toggleAnswer(id) {
+            var ans = document.getElementById(id);
+            if (ans.style.display === "block") {
+                ans.style.display = "none";
+            } else {
+                ans.style.display = "block";
+            }
+        }
+
+        // Persistent Theme Storage Architecture
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            if(document.body.classList.contains('light-theme')){
+                localStorage.setItem('themeState', 'light');
+            } else {
+                localStorage.setItem('themeState', 'dark');
+            }
+        }
+
+        // Initialize theme state from memory
+        if(localStorage.getItem('themeState') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+
+        // Progress Calculation Architecture
+        const checkboxes = document.querySelectorAll('.rev-checkbox');
+        const progressBar = document.getElementById('topProgressBar');
+
+        function updateProgress() {
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                if(chk.checked) checkedCount++;
+            });
+            const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+            progressBar.style.width = percentage + '%';
+            
+            // Save state to memory
+            checkboxes.forEach(chk => {
+                localStorage.setItem(chk.id, chk.checked);
+            });
+        }
+
+        checkboxes.forEach(chk => {
+            chk.addEventListener('change', updateProgress);
+            // Reload state from memory
+            const savedState = localStorage.getItem(chk.id);
+            if(savedState === 'true') {
+                chk.checked = true;
+            }
+        });
+        
+        // Run initial configuration load
+        updateProgress();
+
+        // Image Preloading and Self-Healing Validation Script
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.image-block img');
+            images.forEach(img => {
+                // Ensure asynchronous processing doesn't block loading layout profiles
+                img.setAttribute("decoding", "async");
+                
+                // Reliability Error Fallback Handler
+                img.onerror = function() {
+                    console.error("Image failed to render dynamically: " + img.src);
+                    // Locate target parent block
+                    const block = img.closest('.image-block');
+                    if(block) {
+                        const fallback = block.querySelector('.fallback-link');
+                        if(fallback) {
+                            fallback.style.display = "block";
+                            fallback.innerHTML = "⚠️ <strong>Image Error:</strong> URL missing or network timeout. Please click to verify manually: <a href='" + img.src + "' target='_blank' style='color:inherit; text-decoration:underline;'>Direct Asset Link</a>";
+                        }
+                    }
+                    img.style.display = 'none';
+                };
+            });
+        });
+    </script>
+</body>
+</html>

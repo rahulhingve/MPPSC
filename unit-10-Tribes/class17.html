@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPPSC Revision Hub: मध्य प्रदेश में बौद्धिक संपदा अधिकार और GI टैग</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0f0f1a;
+            --bg-card: #16162a;
+            --text-main: #f1f1f7;
+            --text-muted: #a0a0c0;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2a2a4a;
+            --gradient-box: linear-gradient(135deg, #1e1e3f, #2b1b40);
+            --gradient-link: linear-gradient(135deg, #0d2540, #0a3a40);
+        }
+
+        [data-theme="light"] {
+            --bg-main: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-main: #1a1a2e;
+            --text-muted: #555577;
+            --accent-cyan: #0088cc;
+            --accent-orange: #e65100;
+            --accent-green: #008844;
+            --accent-purple: #6a1b9a;
+            --border-color: #d1d5db;
+            --gradient-box: linear-gradient(135deg, #eef2f7, #f3e8ff);
+            --gradient-link: linear-gradient(135deg, #e0f2fe, #ccfbf1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            padding-bottom: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+
+        /* Layout Structure */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .app-container {
+                grid-template-columns: 280px 1fr;
+            }
+            .sidebar-sticky {
+                position: sticky;
+                top: 20px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+
+        /* Header Panel */
+        header {
+            grid-column: 1 / -1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: var(--border-color);
+            color: var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .badge-hot {
+            background: rgba(255,107,53,0.15);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+        }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            margin-top: 20px;
+            background: var(--border-color);
+            border-radius: 8px;
+            height: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            width: 0%;
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        /* Sticky Controllers & Sidebar */
+        .nav-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .theme-toggle-btn {
+            width: 100%;
+            background: var(--accent-purple);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: opacity 0.2s;
+        }
+
+        .theme-toggle-btn:hover { opacity: 0.9; }
+
+        .jump-menu {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            background: var(--bg-main);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        .toc-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .toc-list a:hover, .toc-list a.active {
+            color: var(--accent-cyan);
+            background: var(--border-color);
+            padding-left: 14px;
+        }
+
+        /* Content Cards & Blocks */
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            scroll-margin-top: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Highlighted Box Styles */
+        .info-box {
+            background: var(--gradient-box);
+            border-left: 4px solid var(--accent-purple);
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+        }
+
+        .exam-hot-box {
+            background: rgba(255,107,53,0.08);
+            border: 1px dashed var(--accent-orange);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .link-story-box {
+            background: var(--gradient-link);
+            border: 1px solid rgba(0,212,255,0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Media / Image Display */
+        .image-block {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            max-height: 400px;
+            object-fit: contain;
+            decoding: async;
+        }
+
+        .image-caption {
+            background: rgba(0,0,0,0.7);
+            color: #d1d5db;
+            padding: 8px 12px;
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .map-wrapper {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        /* Interactive Quiz Matrix */
+        .quiz-container {
+            margin-top: 20px;
+        }
+
+        .quiz-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quiz-answer {
+            display: none;
+            padding: 10px;
+            background: rgba(0,255,136,0.08);
+            border-left: 3px solid var(--accent-green);
+            margin-top: 10px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .reveal-btn {
+            background: var(--border-color);
+            color: var(--text-main);
+            border: none;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* Tabular Layouts */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(0,212,255,0.1);
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.01);
+        }
+
+        /* Form Controls & Checklists */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                font-size: 14px;
+            }
+            section, header, .card, .info-box, .exam-hot-box, .link-story-box {
+                background: #fff !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            .nav-panel, .theme-toggle-btn, .reveal-btn, .progress-wrapper, .jump-menu {
+                display: none !important;
+            }
+            .quiz-answer {
+                display: block !important;
+                background: #f3f4f6 !important;
+                border-left: 3px solid #000 !important;
+            }
+            details {
+                display: block !important;
+            }
+            details[open] summary, details summary {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    
+    <!-- HEADER BOX -->
+    <header>
+        <div class="badge">UNIT 6 — MPPSC PRE & MAINS</div>
+        <h1 style="margin-top: 10px; font-size: 2.2rem; color: var(--accent-cyan);">मध्य प्रदेश में बौद्धिक संपदा अधिकारों की प्रगति (IPR) & GI टैग</h1>
+        <p style="color: var(--text-muted); margin-top: 5px;">A Comprehensive Classroom-Fidelity Revision Workbook tailored for High-Yield Retention.</p>
+        
+        <div class="header-meta">
+            <span class="badge badge-hot">🔥 Comprehensive Breakdown</span>
+            <span class="badge">📚 100% Extract Tracking</span>
+            <span class="badge" id="completion-badge">0/24 Checked</span>
+        </div>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="master-progress"></div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION PANEL (STICKY SIDEBAR) -->
+    <div class="sidebar-sticky">
+        <nav class="nav-panel">
+            <button class="theme-toggle-btn" onclick="toggleTheme()">🌓 Switch Theme</button>
+            
+            <label for="quick-nav" style="font-size: 13px; color: var(--text-muted); display:block; margin-bottom:5px; font-weight:600;">QUICK NAVIGATION</label>
+            <select id="quick-nav" class="jump-menu" onchange="location.hash = this.value;">
+                <option value="#sec-intro">1. Introduction to IPR</option>
+                <option value="#sec-types">2. The Six Facets of IPR</option>
+                <option value="#sec-global">3. Global Governance & Rankings</option>
+                <option value="#sec-regional">4. MP Regional Analysis & IPFC</option>
+                <option value="#sec-gi-registry">5. Master GI Tag Ledger</option>
+                <option value="#sec-pending">6. Pending Registry Track</option>
+                <option value="#sec-fullforms">7. Full Forms Matrix</option>
+                <option value="#sec-hothub">8. Exam Hot Hub 🔥</option>
+                <option value="#sec-checklist">9. Master Revision Checklist</option>
+            </select>
+
+            <ul class="toc-list">
+                <li><a href="#sec-intro" class="toc-link">1. Base Concepts of IPR</a></li>
+                <li><a href="#sec-types" class="toc-link">2. Structure & Types</a></li>
+                <li><a href="#sec-global" class="toc-link">3. WIPO Framework</a></li>
+                <li><a href="#sec-regional" class="toc-link">4. MP Tracking & IPFC</a></li>
+                <li><a href="#sec-gi-registry" class="toc-link">5. Comprehensive GI Tags</a></li>
+                <li><a href="#sec-pending" class="toc-link">6. Pending Frameworks</a></li>
+                <li><a href="#sec-fullforms" class="toc-link">7. Comprehensive Abbreviations</a></li>
+                <li><a href="#sec-hothub" class="toc-link">8. High-Yield Hot Facts</a></li>
+                <li><a href="#sec-checklist" class="toc-link">9. Active Recall Grid</a></li>
+            </ul>
+        </nav>
+        
+        <!-- STICKY SIDE PANEL MAP REFERENCE FOR DESKTOP -->
+        <div class="nav-panel" style="padding:10px; text-align:center;">
+            <span style="font-size:12px; font-weight:600; color:var(--accent-cyan); display:block; margin-bottom:5px;">📍 MP GEOGRAPHICAL REFERENCE</span>
+            <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh Reference Grid Map" style="max-width:100%; border-radius:8px; border:1px solid var(--border-color);">
+            <span style="font-size:10px; color:var(--text-muted); display:block; margin-top:3px;">Source: SLBC MP Map Registry</span>
+        </div>
+    </div>
+
+    <!-- MAIN INTERACTIVE SECTION HUB -->
+    <main class="content-main">
+
+        <!-- SECTION 1 -->
+        <section id="sec-intro">
+            <h2 class="section-title"><span>💻</span> 1. Base Concepts & Context of Intellectual Property (बौद्धIC संपदा)</h2>
+            
+            <div class="card">
+                <h3>What is Intellectual Property? (बौद्धिक संपदा क्या है?)</h3>
+                <p>जब किसी संस्था (Institution) या व्यक्ति (Individual) द्वारा अपने <strong>मस्तिष्क/बुद्धि (Intellect) का प्रयोग</strong> करके कोई <strong>रचनात्मक कार्य (Creative Work)</strong> या नया आविष्कार किया जाता है, तो उसे बौद्धिक संपदा (Intellectual Property) कहते हैं।</p>
+            </div>
+
+            <!-- ANALOGY BOX -->
+            <blockquote class="info-box">
+                <strong>💡 Teacher's Pen Analogy (पेन का उदाहरण):</strong><br>
+                "मान लीजिए मैंने अपनी बुद्धि का प्रयोग करके एक अनोखा पेन डिजाइन किया। यह मेरा मूल आईडिया (Original Idea) था। मैंने अपने एक दोस्त को इसके बारे में बताया। उस दोस्त ने चोरी-छिपे मेरे इस आईडिया की पूरी कॉपी कर ली और मुझसे पहले मार्केट में पेन बनाकर आर्थिक लाभ (Economic Profit) कमा लिया। परिणाम? मैं डिमोटिवेट (Demotivated) हो जाऊंगा और भविष्य में कोई नया इनोवेशन (Innovation) नहीं करूंगा। इसी चोरी को रोकने के लिए सरकार <strong>IPR (बौद्धिक संपदा अधिकार)</strong> देती है।"
+            </blockquote>
+
+            <div class="card">
+                <h3>IPR Definition for Mains (मुख्य परीक्षा परिभाषा)</h3>
+                <p>किसी संस्था या व्यक्ति के दिमागी उत्पाद पर रचनात्मकता या नवाचार (Innovation) के संरक्षण हेतु सरकार द्वारा दिए गए <strong>विशेष कानूनी अधिकार (Monopoly Rights)</strong> ही बौद्धिक संपदा अधिकार कहलाते हैं।</p>
+            </div>
+
+            <div class="card">
+                <h3>Economic Categorization of Capital (अर्थव्यवस्था में पूंजी का वर्गीकरण)</h3>
+                <p>बौद्धिक संपदा को अर्थव्यवस्था में पूंजी (Capital) की श्रेणी में माना जाता है। क्लास में पूंजी को 3 प्रमुख भागों में समझाया गया है:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>पूंजी का प्रकार (Type of Capital)</th>
+                            <th>विवरण और उदाहरण (Description & Examples)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. भौतिक पूंजी (Physical Capital)</strong></td>
+                            <td>सड़कें, बुनियादी ढांचा, भवन निर्माण, मशीनरी (Infrastructure, Roads, Machinery).</td>
+                        </tr>
+                    <tr>
+                        <td><strong>2. वित्तीय पूंजी (Financial Capital)</strong></td>
+                        <td>सरकार की आमदनी, मौद्रिक कोष, वित्तीय निवेश (Government Revenues, Funds, Capital Holdings).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. बौद्धिक पूंजी (Intellectual Capital)</strong></td>
+                        <td>मनुष्य के मस्तिष्क की उपज, नवाचार, पेटेंट, कॉपीराइट (Human Intellect, Innovations, IPR Frameworks).</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="exam-hot-box">
+                <h4>🔥 EXAM HOT: Classifications of Intellectual Property Protection</h4>
+                <ul>
+                    <li><strong>निजी बौद्धिक संपदा (Private IP):</strong> यह किसी व्यक्तिगत ओनर या निजी संस्था को एक्सक्लूसिव दिया जाता है। (जैसे: Patent, Copyright, Trademark).</li>
+                    <li><strong>सामूहिक बौद्धिक संपदा (Collective IP):</strong> यह किसी विशेष भौगोलिक क्षेत्र के पूरे समुदाय/संस्था को सामूहिक रूप से प्राप्त होता है। (जैसे: <strong>GI Tag - Geographical Indication</strong>).</li>
+                </ul>
+            </div>
+
+            <!-- QUIZ HUB -->
+            <div class="quiz-container">
+                <h4>🎯 Quick Recall Check</h4>
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: क्या GI टैग किसी एक व्यक्ति की निजी संपत्ति हो सकती है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer">नहीं, GI टैग एक 'सामूहिक बौद्धिक संपदा' (Collective IP) है, जो उस क्षेत्र के सभी पारंपरिक उत्पादकों को मिलता है (जैसे मुरैना के सभी गजक निर्माता)।</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="sec-types">
+            <h2 class="section-title"><span>🛡️</span> 2. The Six Facets of IPR (बौद्धिक संपदा अधिकारों के प्रकार)</h2>
+            
+            <p style="margin-bottom: 15px;">शिक्षक द्वारा व्याख्या किए गए IPR के 6 प्रमुख प्रकार और उनसे संबंधित अधिनियमों का विस्तृत विवरण नीचे दिया गया है:</p>
+
+            <div class="card">
+                <h3>1. पेटेंट (Patent)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> वैज्ञानिक आविष्कारों, नए फार्मूले और मुख्य रूप से <strong>दवाइयों (Medicines/Vaccines)</strong> के लिए दिया जाता है।</li>
+                    <li><strong>उदाहरण:</strong> कोरोना काल में वैक्सीन विकसित करने वाली कंपनियों के बीच सबसे पहले पेटेंट लेने की होड़ मची थी, ताकि वे उस फार्मूले का विशेष आर्थिक लाभ उठा सकें।</li>
+                    <li><strong>अधिनियम:</strong> भारतीय पेटेंट अधिनियम 1970 (Patent Act 1970), जिसमें <strong>2005-06 में बड़ा संशोधन</strong> किया गया था।</li>
+                    <li><strong>अवधि (Validity):</strong> सामान्यतः <strong>20 वर्ष</strong> के लिए मान्य। 20 साल पूरे होने के बाद यह फार्मूला बाजार में पब्लिक डोमेन में आ जाता है और इसकी <strong>जेनेरिक दवाइयां (Generic Medicines)</strong> बनती हैं।</li>
+                    <li><strong>मूल्य अंतर:</strong> पेटेंटेड गोली यदि ₹100 की है, तो जेनेरिक होने के बाद वह मात्र ₹2 की रह जाती है। इसे दोबारा रिन्यू (Renew) नहीं कराया जा सकता।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>2. कॉपीराइट (Copyright)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> कलात्मक कार्यों (Artistic Works), साहित्य (Literature), फिल्मों, चित्रों, डिजिटल सामग्री और संगीत (Music) के संरक्षण के लिए।</li>
+                    <li><strong>अधिनियम:</strong> कॉपीराइट अधिनियम 1957 (Copyright Act 1957), जिसमें <strong>वर्ष 2012 में संशोधन</strong> किया गया।</li>
+                    <li><strong>शिक्षक का याद करने का नुस्खा (Mnemonic Link):</strong> "2012 में प्रलय आने वाली थी, उसी प्रलय के साल में कॉपीराइट एक्ट में संशोधन हुआ!"</li>
+                    <li><strong>अवधि (Validity):</strong> सामान्यतः <strong>60 वर्ष</strong> के लिए वैध होता है। इसे भी थोड़ा बहुत बदलाव करके आगे रिन्यू नहीं कराया जा सकता।</li>
+                    <li><strong>क्लास का व्यावहारिक उदाहरण:</strong> YouTube पर जब आप किसी दूसरे का गाना या सामग्री बिना अनुमति उपयोग करते हैं, तो <strong>Copyright Strike</strong> या <strong>Copyright Claim</strong> आता है। शिक्षक ने बताया कि इस क्लास के नोट्स और कंटेंट पर भी वे कॉपीराइट अधिनियम के तहत कानूनी सुरक्षा ले सकते हैं।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>3. ट्रेडमार्क (Trademark)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> किसी कंपनी या ब्रांड की विशिष्ट पहचान, नाम, प्रतीक, ब्रांड मार्क या लोगो (Logo) को सुरक्षित करने हेतु।</li>
+                    <li><strong>अधिनियम:</strong> ट्रेडमार्क अधिनियम 1999 (Trademark Act 1999)।</li>
+                    <li><strong>क्लास के उदाहरण:</strong> 
+                        <br>• <strong>Khan Global Studies (KGS) का लोगो:</strong> गोल पृथ्वी जिसके केंद्र में भारत का नक्शा है।
+                        <br>• <strong>चार चूड़ियों वाली गाड़ी (Audi):</strong> कार का विशिष्ट चार रिंग वाला लोगो जो सबका सपना होता है।
+                        <br>• <strong>Puma का लोगो:</strong> स्पोर्ट्स ब्रांड की विशिष्ट पहचान। हालांकि बाजार में इसके लोकल कॉपी बिकते हैं, परंतु ट्रेडमार्क स्वामी उनके खिलाफ कानूनी कार्रवाई कर सकता है।
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>4. भौगोलिक संकेतक (Geographical Indication — GI Tag)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> किसी विशिष्ट भौगोलिक क्षेत्र से उत्पन्न होने वाले कृषि, प्राकृतिक या निर्मित उत्पादों की गुणवत्ता और विशिष्टता को प्रमाणित करने के लिए।</li>
+                    <li><strong>अधिनियम:</strong> भौगोलिक संकेतक अधिनियम 1999 (GI Act 1999), जो वर्ष <strong>2003 में प्रभावी</strong> हुआ।</li>
+                    <li><strong>रजिस्ट्री मुख्यालय:</strong> इसका केंद्रीय पंजीयन रजिस्ट्रार कार्यालय <strong>चेन्नई (तमिलनाडु)</strong> में स्थित है।</li>
+                    <li><strong>अवधि (Validity):</strong> <strong>10 वर्ष</strong> के लिए दिया जाता है, परंतु इसे <strong>हर 10 साल में बार-बार रिन्यू (Renew) कराया जा सकता है</strong> (यही इसे पेटेंट और कॉपीराइट से अलग बनाता है)।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>5. औद्योगिक डिजाइन (Industrial Design)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> किसी उत्पाद की बाहरी बनावट, आकार, रेखाओं के विन्यास या दृश्य सौंदर्य (Aesthetics/Design) की सुरक्षा के लिए।</li>
+                    <li><strong>अधिनियम:</strong> डिजाइन अधिनियम 2000 (Design Act 2000)।</li>
+                    <li><strong>क्लास के उदाहरण:</strong> 
+                        <br>• <strong>Pulsar vs KTM:</strong> दोनों बाइक्स की बाहरी डिजाइन बिल्कुल अलग और विशिष्ट है।
+                        <br>• <strong>Rolls Royce, Scorpio, Bolero:</strong> हर गाड़ी की अपनी अनूठी डिजाइन लाइन होती है। यदि कोई कंपनी दूसरी कंपनी की डिजाइन चुराती है, तो अंतरराष्ट्रीय या राष्ट्रीय स्तर पर भारी हर्जाना देना पड़ता है।
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>6. व्यापार गोपनीयता (Trade Secret)</h3>
+                <ul>
+                    <li><strong>उपयोग:</strong> किसी व्यवसाय के गुप्त फार्मूले, रेसिपी, डिवाइस या सूचनाओं का संकलन जो उसे बाजार में प्रतिस्पर्धी बढ़त देते हैं।</li>
+                    <li><strong>क्लास के उदाहरण:</strong> 
+                        <br>• <strong>Coca-Cola का गुप्त फार्मूला:</strong> कोका-कोला की बोतल पर यह जरूर लिखा होता है कि उसमें कार्बोहाइड्रेट या प्रोटीन कितना है, लेकिन वे यह कभी नहीं बताते कि सामग्री को किस अनुपात में और किस विधि से मिलाया गया है।
+                        <br>• <strong>Domino's Pizza की रेसिपी:</strong> पिज्जा के गुप्त मसालों और बनाने की प्रक्रिया को गुप्त रखा जाता है ताकि मार्केट में डुप्लीकेट उत्पाद न बन सकें।
+                    </li>
+                    <li class="badge-hot">🔥 परीक्षा हेतु विशेष तथ्य: व्यापार गोपनीयता (Trade Secret) की जानकारियों को <strong>RTI (Right to Information) के माध्यम से भी उजागर नहीं किया जा सकता</strong>।</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot-box">
+                <h4>🔥 EXAM HOT: Departmental Governance Matrix</h4>
+                <p>क्लास नोट्स के अनुसार, IPR अधिकारों की देखरेख करने वाले प्रशासनिक विभाग इस प्रकार हैं:</p>
+                <ul>
+                    <li><strong>कॉपीराइट (Copyright):</strong> इसे ऐतिहासिक रूप से मानव संसाधन विकास मंत्रालय (HRD / वर्तमान शिक्षा मंत्रालय के संदर्भ) के तहत देखा जाता रहा है।</li>
+                    <li><strong>अन्य सभी बौद्धिक अधिकार (Patents, Trademarks, GI, Designs):</strong> इन्हें वाणिज्य और उद्योग मंत्रालय (Ministry of Commerce and Industry) के अधीन 'उद्योग संवर्धन और आंतरिक व्यापार विभाग' (DPIIT) द्वारा प्रशासित किया जाता है।</li>
+                </ul>
+            </div>
+
+            <!-- LINK STORY BOX FOR ACTS -->
+            <div class="link-story-box">
+                <h4>🔗 Link Story — अधिनियमों के वर्ष ऐसे याद करो:</h4>
+                <p>"सबसे पहले <strong>1957 में हमने एक सुंदर कहानी लिखी (Copyright)</strong>, फिर <strong>1970 में उसकी दवाई बनाई (Patent)</strong>। उसके बाद <strong>1999 में हमने उसका एक ब्रांड लोगो बनाया (Trademark)</strong> और उसे <strong>चेन्नई के एक विशेष गांव में ले जाकर पहचान दी (GI Tag 1999)</strong>। जब सन <strong>2000 आया, तब हमने उसे एक नई शानदार गाड़ी का लुक दे दिया (Design Act 2000)</strong>!" 🔗</p>
+            </div>
+
+            <!-- IMAGES CAPTION EXAMPLES -->
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Intellectual_property_paraphernalia.jpg" alt="IPR Patents Trademarks Concept Presentation">
+                <div class="image-caption">Image: Wikimedia Commons | Global Intellectual Property Artifacts | Public Domain Reference</div>
+            </div>
+
+            <div class="quiz-container">
+                <h4>🎯 Quick Recall Check</h4>
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: वह कौन सा बौद्धिक अधिकार है जिसे हर 10 वर्ष में असीमित बार रिन्यू कराया जा सकता है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer">भौगोलिक संकेतक (GI Tag)। इसके विपरीत पेटेंट (20 वर्ष) और कॉपीराइट (60 वर्ष) को दोबारा रिन्यू नहीं किया जा सकता।</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section id="sec-global">
+            <h2 class="section-title"><span>🌐</span> 3. Global Framework: WIPO & Innovation Index</h2>
+            
+            <div class="card">
+                <h3>विश्व बौद्धिक संपदा संगठन (WIPO)</h3>
+                <ul>
+                    <li><strong>पूरा नाम (Full Form):</strong> WIPO — World Intellectual Property Organization.</li>
+                    <li><strong>स्थापना (Establishment):</strong> <strong>वर्ष 1967</strong> में हुई।</li>
+                    <li><strong>मुख्यालय (Headquarters):</strong> <strong>जेनेवा, स्विट्जरलैंड (Geneva, Switzerland)</strong>।</li>
+                    <li><strong>शिक्षक का याद करने का लिंक (Mnemonic Link):</strong> "हमारी बौद्धिक संपदा चोरी होने से बच गई, तो अब हम सब खुशी-खुशी <strong>स्वीट (Sweet/Switzerland) खाते हुए जिएंगे (Geneva)</strong>!"</li>
+                    <li><strong>कुल सदस्य देश (Total Members):</strong> <strong>193</strong> देश।</li>
+                    <li><strong>उद्देश्य:</strong> वैश्विक स्तर पर बौद्धिक संपदा का संरक्षण करना, नवाचार को बढ़ावा देना और रचनात्मक गतिविधियों को प्रोत्साहित करना।</li>
+                    <li><strong>भारत का प्रवेश (India's Entry):</strong> भारत WIPO में <strong>वर्ष 1975</strong> में शामिल हुआ। 
+                        <br><em>याद रखने की ट्रिक:</em> 1975 में भारत में इमरजेंसी (Emergency) लगी थी, उसी संकट काल में भारत ने अपनी 'बुद्धि का प्रयोग' बढ़ाने के लिए WIPO की सदस्यता ली।
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exam-hot-box">
+                <h4>🔥 EXAM HOT: Global Milestone Dates & Metrics</h4>
+                <ul>
+                    <li><strong>विश्व बौद्धिक संपदा दिवस (World IP Day):</strong> हर साल <strong>26 अप्रैल (26th April)</strong> को मनाया जाता है।</li>
+                    <li><strong>ग्लोबल इनोवेशन इंडेक्स 2023 (Global Innovation Index — GII):</strong> यह सूचकांक WIPO द्वारा जारी किया जाता है। इस सूचकांक में <strong>भारत की रैंकिंग 40वीं (40th Rank)</strong> है। विशेष बात यह है कि वर्ष 2022 में भी भारत की रैंक 40वीं ही थी।</li>
+                    <li><strong>WTO और ट्रिप्स (TRIPS):</strong> वर्ल्ड ट्रेड ऑर्गेनाइजेशन (WTO) भी <strong>TRIPS Agreement</strong> (Trade-Related Aspects of Intellectual Property Rights) के माध्यम से अंतरराष्ट्रीय स्तर पर इन अधिकारों का कड़ाई से संरक्षण सुनिश्चित करता है।</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/WIPO_headquarters_Geneva_2.jpg/640px-WIPO_headquarters_Geneva_2.jpg" alt="WIPO Headquarters in Geneva Switzerland">
+                <div class="image-caption">Image: Wikimedia Commons, WIPO Headquarters building in Geneva, Switzerland, CC BY-SA 3.0</div>
+            </div>
+
+            <div class="quiz-container">
+                <h4>🎯 Quick Recall Check</h4>
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: ग्लोबल इनोवेशन इंडेक्स 2023 में भारत का कौन सा स्थान है और यह इंडेक्स कौन जारी करता है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer">भारत का स्थान 40वां है। यह इंडेक्स विश्व बौद्धिक संपदा संगठन (WIPO) द्वारा जारी किया जाता है।</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section id="sec-regional">
+            <h2 class="section-title"><span>📊</span> 4. MP Regional Progress Framework & IPFC</h2>
+            
+            <p style="margin-bottom: 15px;">मध्य प्रदेश आर्थिक सर्वेक्षण 2022-23 (MP Economic Survey 2022-23) के अनुसार प्रदेश में बौद्धिक संपदा अधिकारों के क्षेत्र में तीव्र प्रगति दर्ज की गई है। इसके प्रमुख सांख्यिकीय आंकड़े नीचे दिए गए हैं:</p>
+
+            <div class="card">
+                <h3>पैटेंट और डिजाइन दाखिले की सांख्यिकी (Patent & Design Filings)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>क्षेत्र (Indicator)</th>
+                            <th>वित्तीय वर्ष 2017-18</th>
+                            <th>वित्तीय वर्ष 2020-21</th>
+                            <th>प्रगति विश्लेषण (Growth Status)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MP पेटेंट दायर (Patents Filed)</strong></td>
+                            <td>190 पेटेंट</td>
+                            <td><strong>398 पेटेंट</strong></td>
+                            <td>लगभग <strong>109% की भारी वृद्धि</strong> (दोगुने से भी अधिक)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MP डिजाइन दायर (Designs Filed)</strong></td>
+                            <td>61 डिजाइन</td>
+                            <td><strong>214 डिजाइन</strong></td>
+                            <td>लगातार तीव्र गति से ऊपर की ओर वृद्धि।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>भारत पेटेंट कुल संदर्भ</strong></td>
+                            <td>~ 47,000 पेटेंट</td>
+                            <td>~ 58,000 पेटेंट</td>
+                            <td>राष्ट्रीय स्तर पर संख्या अधिक है पर MP की प्रतिशत ग्रोथ रेट सबसे तेज रही।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>भारत डिजाइन कुल संदर्भ</strong></td>
+                            <td>~ 11,000 डिजाइन</td>
+                            <td>~ 14,000 डिजाइन</td>
+                            <td>राष्ट्रीय स्तर पर प्रगति स्थिर एवं सतत रही।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>बौद्धिक संपदा सुविधा केंद्र — IPFC (Intellectual Property Facilitation Center)</h3>
+                <ul>
+                    <li class="badge-hot" style="display:inline-block; margin-bottom:10px;">🔥 DIRECT PRELIMS QUESTION: मध्य प्रदेश में IPFC का मुख्यालय कहाँ स्थित है? उत्तर: <strong>इंदौर (Indore)</strong>।</li>
+                    <li><strong>प्राथमिक उद्देश्य:</strong> प्रदेश के <strong>MSME (सूक्ष्म, लघु और मध्यम उद्यम)</strong> क्षेत्रों तथा छोटे उद्योगों को बौद्धिक संपदा (IPR) के प्रति जागरूक और प्रशिक्षित करना।</li>
+                    <li><strong>प्रदान की जाने वाली सेवाएं:</strong> ट्रेनिंग प्रोग्राम, अवेयरनेस कैंपेन, बौद्धिक संपदा संरक्षण सुविधा (IP Protection Facilitation Services) और प्रबंधन सेवाएं (Management Services)।</li>
+                    <li><strong>सेक्टर-वार ऐतिहासिक प्रगति (2003-2011 डाटा संदर्भ):</strong> उद्योगों को दी गई तकनीकी आई पी सहायता में सबसे बड़ा योगदान <strong>इंजीनियरिंग क्षेत्र (31%)</strong> का रहा है। इसके अतिरिक्त इलेक्ट्रॉनिक्स, लिटरेचर, फूड एंड एग्रो, टेक्सटाइल, तथा फार्मा और बायोटेक क्षेत्रों को भी इस केंद्र के माध्यम से कवर किया गया है।</li>
+                </ul>
+            </div>
+
+            <div class="quiz-container">
+                <h4>🎯 Quick Recall Check</h4>
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: आर्थिक सर्वेक्षण 2022-23 के अनुसार वर्ष 2020-21 में मध्य प्रदेश से कुल कितने पेटेंट दायर किए गए?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer">कुल 398 पेटेंट दायर किए गए, जो 2017-18 के 190 पेटेंट की तुलना में लगभग 109% की वृद्धि दर्शाते हैं।</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section id="sec-gi-registry">
+            <h2 class="section-title"><span>🎯</span> 5. Master GI Tag Ledger of Madhya Pradesh (1:1 Video Chronology)</h2>
+            
+            <div class="info-box" style="border-left-color: var(--accent-orange);">
+                <strong>📌 Current Status Snapshot (As of Class Date — Feb 28, 2024):</strong><br>
+                • मध्य प्रदेश के <strong>16 मूल उत्पादों</strong> को एकल/स्वतंत्र रूप से GI टैग प्राप्त हो चुका है।<br>
+                • इनमें से <strong>3 विशिष्ट उत्पादों को उनके अधिकारिक 'लोगो' (Logo)</strong> की भी जीआई सुरक्षा मिल चुकी है।<br>
+                • <strong>2 उत्पाद संयुक्त (Shared/Joint GI) श्रेणी में हैं</strong>, जिन्हें मध्य प्रदेश के साथ पड़ोसी राज्यों को संयुक्त रूप से दिया गया है।
+            </div>
+
+            <!-- CHRONOLOGICAL LEDGER CARDS -->
+            <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+                <span class="badge">वर्ष: 2005-06</span>
+                <h3 style="margin-top:10px;">• चंदेरी की साड़ियां (Chanderi Sarees) — अशोकनगर</h3>
+                <p><strong>विशेषताएं:</strong> यह <strong>मध्य प्रदेश का पहला GI टैग उत्पाद</strong> है। चंदेरी शहर को गुर्जर प्रतिहार वंश के शासक कीर्तिपाल ने बसाया था। यहाँ के ताने-बाने और सूती-रेशमी धागों का काम अनूठा है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> संख्या '5' का निचला मोड़ हुक जैसा दिखता है। विजुअलाइज़ करें कि हमने 2005 में चंदेरी की साड़ी को हुक से लटका दिया!</p>
+                <div class="image-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Chanderi_Sari_weaving_pattern.jpg" alt="Traditional Chanderi Saree Weaving Motif Grid">
+                    <div class="image-caption">Image: Wikimedia Commons | Traditional Chanderi Silk Handloom Weaving Layout | CC BY-SA 4.0</div>
+                </div>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-purple);">
+                <span class="badge">वर्ष: 2008-09</span>
+                <h3 style="margin-top:10px;">• इंदौर के चमड़े के खिलौने, धार का बाघ प्रिंट, टीकमगढ़-दतिया धातु शिल्प</h3>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> आठ यानी 'ठाट'! ठाट-बाट से रहने वाले राजाओं के पास ये तीन अनूठी कलाकृतियाँ होती थीं। इन तीनों को इस वर्ष <strong>GI टैग और विशिष्ट 'लोगो' (Logo)</strong> दोनों की सुरक्षा मिली थी।</p>
+                
+                <div style="margin-top: 15px; padding-left: 15px; border-left: 2px solid var(--border-color);">
+                    <h4>1. इंदौर के चमड़े के खिलौने (Leather Toys of Indore):</h4>
+                    <p>यह इंदौर और देवास के स्थानीय कारीगरों द्वारा चमड़े का उपयोग करके जीवंत पशु-पक्षियों के खिलौने बनाने की अनूठी भौगोलिक कला है। इसे पहला लोगो पंजीकरण मिला।</p>
+                    
+                    <h4>2. धार का बाघ प्रिंट (Bagh Print of Dhar):</h4>
+                    <p>धार जिले के बाघ नामक कस्बे और उसके आस-पास के गांवों में कपड़ों पर प्राकृतिक रंगों से हाथ द्वारा की जाने वाली ब्लॉक प्रिंटिंग (थप्पा छपाई) है। पास में ही ऐतिहासिक बाघ की गुफाएं भी स्थित हैं।</p>
+                    
+                    <h4>3. टीकमगढ़ और दतिया का धातु शिल्प (Metal Craft of Tikamgarh & Datia):</h4>
+                    <p>यहाँ पीतल और विभिन्न धातुओं को पिघलाकर भगवान की सुंदर मूर्तियां, पूजा के बर्तन, और पीतल की घंटियाँ बनाई जाती हैं। इसे वर्ष 2013-14 में अधिकारिक लोगो मिला।</p>
+                </div>
+                <div class="image-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Bagh_Print_Art_Form_Dhar.jpg" alt="Bagh Print Textile Art Block Printing from Dhar">
+                    <div class="image-caption">Image: Wikimedia Commons | Traditional Hand-block Bagh Print Motif, Madhya Pradesh | Public Domain</div>
+                </div>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-orange);">
+                <span class="badge">वर्ष: 2012-13</span>
+                <h3 style="margin-top:10px;">• महेश्वरी साड़ियां (Maheshwari Sarees) — खरगोन</h3>
+                <p><strong>ऐतिहासिक संदर्भ:</strong> महेश्वर होल्कर राजवंश की माता अहिल्याबाई होल्कर की राजधानी रहा था। अहिल्याबाई ने महेश्वर को आर्थिक रूप से आत्मनिर्भर बनाने के लिए विशेष रूप से बुनकरों को बुलाकर स्वयं अपने हाथों से रेशमी साड़ियां बनवाईं और शाही मेहमानों को उपहार स्वरूप भेंट कीं। इस प्रकार महेश्वर का पूरा कपड़ा बाजार अंतरराष्ट्रीय और राष्ट्रीय स्तर पर प्रसिद्ध हो गया। खरगोन को भौगोलिक रूप से 'पश्चिमी निमाड़' भी कहा जाता है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "2012 में दुनिया का अंत/प्रलय होने वाली थी, तो हमने मम्मी से कहा कि बक्से में बंद सभी कीमती 'महेश्वरी साड़ियाँ' निकाल कर पहन लो, नहीं तो प्रलय आ जाएगी!"</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-green);">
+                <span class="badge">वर्ष: 2013-14 (संयुक्त श्रेणी)</span>
+                <h3 style="margin-top:10px;">• नागपुरी संतरा (Nagpuri Orange) — MP और महाराष्ट्र</h3>
+                <p><strong>विवरण:</strong> नागपुर के साथ-साथ मध्य प्रदेश के छिंदवाड़ा, सिवनी और पांढुर्णा बेल्ट के संतरों की गुणवत्ता के कारण इसे <strong>मध्य प्रदेश और महाराष्ट्र को संयुक्त रूप से (Joint GI)</strong> प्रदान किया गया है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "घर में संतरा आया तो भाई-बहन दोनों (13-14 की उम्र के) लड़कर पूरे संतरे खा गए, और बोले—तेरा घाटा, मेरा क्या जाता!"</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+                <span class="badge">वर्ष: 2014-15</span>
+                <h3 style="margin-top:10px;">• रतलामी सेव (Ratlami Sev) — रतलाम</h3>
+                <p><strong>ऐतिहासिक कहानी:</strong> मुगलों के आगमन के समय जब रतलाम क्षेत्र में सामान्य भोजन सामग्री का अभाव हुआ, तो बेसन के सेव को डीप-फ्राई करके एक तीखा और स्वादिष्ट नमकीन उत्पाद ईजाद किया गया, जो 'रतलामी सेव' के नाम से विश्व प्रसिद्ध हुआ। यह एक विशिष्ट <strong>खाद्य सामग्री उत्पाद (Food Product)</strong> है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "वर्ष 2014 में जब केंद्र में नई सरकार आई, तो खुशी के मारे पूरे देश के छात्रों को रतलामी सेव बांटकर मुंह मीठा/तीखा कराया गया!"</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-purple);">
+                <span class="badge">वर्ष: 2018-19</span>
+                <h3 style="margin-top:10px;">• झाबुआ का कड़कनाथ मुर्गा (Kadaknath Chicken)</h3>
+                <p><strong>वैज्ञानिक एवं पोषण विशेषता:</strong> इस मुर्गे की त्वचा, मांस और खून का रंग गहरा काला (Jet Black) होता है, जो इसमें <strong>हीमोग्लोबिन (Hemoglobin) और आयरन की अत्यधिक मात्रा</strong> के कारण होता है। इसमें फैट बहुत कम और प्रोटीन प्रचुर मात्रा में पाया जाता है। मध्य प्रदेश पशुधन एवं कुक्कुट विकास निगम (स्थापना 1982) द्वारा इसे विशेष रूप से प्रमोट किया जा रहा है। भारत में सबसे ज्यादा मांस 'असील' नस्ल में होता है, मगर औषधीय गुणों में कड़कनाथ नंबर वन है। शिक्षक ने बताया कि वे स्वयं शुद्ध शाकाहारी (Pure Vegetarian) हैं, मगर परीक्षा हेतु जीव विज्ञान का यह तथ्य अत्यंत महत्वपूर्ण है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "2018 में कड़कनाथ मुर्गे ने अपनी ब्लैक बॉडी दिखाकर कहा—मेरा भी बाजार में पूरा ठाट (8) है!"</p>
+                <div class="image-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Kadaknath_Chicken_Fowl.jpg" alt="Kadaknath Poultry Black Chicken Breed from Jhabua">
+                    <div class="image-caption">Image: Wikimedia Commons | Kadaknath Melanic Chicken Breed, Jhabua Origin | Creative Commons PD</div>
+                </div>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-orange);">
+                <span class="badge">वर्ष: 2021</span>
+                <h3 style="margin-top:10px;">• बालाघाट का चिन्नोर चावल (Chinnor Rice)</h3>
+                <p><strong>कृषि भूगोल तथ्य:</strong> यह मध्य प्रदेश का पहला धान/कृषि जीआई उत्पाद है। धान के लिए 125 सेमी से अधिक की भारी वर्षा और लाल-पीली मृदा (Red-Yellow Soil) आवश्यक होती है, जो बालाघाट क्षेत्र में दक्षिण-पश्चिम मानसून से प्रचुर मात्रा में मिलती है। 
+                <br><em>कन्फ्यूजन क्लियरिंग टिप:</em> मध्य प्रदेश का <strong>धान अनुसंधान केंद्र बड़वानी</strong> में है, परंतु सर्वाधिक चावल उत्पादन और जीआई टैग बालाघाट के चिन्नोर चावल को मिला है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "2021 में चिन्नोर के चावल खाकर पेट भर गया था..." (अगली स्टोरी से लिंक करें)।</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-green);">
+                <span class="badge">वर्ष: 2021 (संयुक्त श्रेणी)</span>
+                <h3 style="margin-top:10px;">• महोबा का देशवारी पान (Mahoba Desawari Pan) — MP और UP</h3>
+                <p><strong>विवरण:</strong> बुंदेलखंड क्षेत्र के महोबा के साथ-साथ मध्य प्रदेश के सीमावर्ती जिलों में उगाए जाने वाले इस पान की पत्तियों की अनूठी कोमलता और स्वाद के कारण <strong>मध्य प्रदेश और उत्तर प्रदेश को संयुक्त रूप से</strong> यह जीआई टैग मिला है।</p>
+                <p><strong>🔗 याद रखने की ट्रिक:</strong> "2021 में जैसे ही हमने बालाघाट के चिन्नोर चावल का खाना खत्म किया, तुरंत महोबा वाले बोले—आओ भाई, अब हमारे यहाँ का प्रसिद्ध देशवारी पान भी दबा लो!"</p>
+            </div>
+
+            <div class="card" style="border-top: 3px solid var(--accent-cyan); background: rgba(0,212,255,0.02);">
+                <span class="badge" style="background: var(--accent-orange); color:#fff;">वर्ष: 2023 का महा-धमाका (Super Year)</span>
+                <h3 style="margin-top:15px; color: var(--accent-cyan);">वर्ष 2023 में मध्य प्रदेश के एक साथ रिकॉर्ड 8 उत्पादों को जीआई टैग प्राप्त हुआ:</h3>
+                
+                <div style="margin-top: 15px; display: grid; grid-template-columns: 1fr; gap: 15px;">
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>1. रीवा का सुंदरजा आम (Sundarja Mango):</strong> यह अपनी अनूठी सुगंध, अत्यधिक मिठास और बिना रेशे के पल्प के लिए अंतरराष्ट्रीय स्तर पर प्रसिद्ध है। रीवा के गोविंदगढ़ में <strong>आम अनुसंधान केंद्र</strong> भी है। (अलीराजपुर का नूरजहां आम भी प्रसिद्ध है, मगर जीआई टैग सुंदरजा को मिला है)। 
+                        <br><em>ट्रिक:</em> 'रावी' नाम का लड़का बहुत 'सुंदर आम' खाता है।
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>2. मुरैना की गजक (Morena Gazak):</strong> गुड़, तिल और शुद्ध तेल/घी के पारंपरिक मिश्रण को कूटकर बनाई जाने वाली यह प्रसिद्ध मिठाई है। यह पूरे मध्य प्रदेश में मुरैना के नाम से बेची जाती है।
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>3. सीहोर का शरबती गेहूं (Sharbati Wheat):</strong> सीहोर और रायसेन बेल्ट का यह गेहूं चमकीला, गोल और अत्यधिक पौष्टिक होता है जिसके आटे की रोटियां बेहद मुलायम बनती हैं। (सर्वाधिक गेहूं होशंगाबाद में होता है, पर प्रीमियम शरबती किस्म सीहोर की जीआई टैग है)।
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>4. डिंडोरी की गोंड पेंटिंग (Gond Painting of Dindori):</strong> डिंडोरी का <strong>पाटनगढ़ गांव 'चित्रकारों का गांव'</strong> कहलाता है। यहाँ की गोंड जनजाति के लोग प्रकृति, जीव-जंतुओं और लोक कथाओं को दीवारों और कैनवास पर अनूठे डॉट्स और लाइनों के माध्यम से उकेरते हैं।
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>5. उज्जैन का बाटिक प्रिंट (Batik Print of Ujjain):</strong> कपड़ों पर मोम (Wax) की कोटिंग करके विशेष रंगों से की जाने वाली प्राचीन छपाई कला है। 
+                        <br><em>शानदार ट्रिक:</em> "महाकाल की नगरी उज्जैन गए, क्षिप्रा नदी से एक <strong>बाल्टी (बाटिक)</strong> पानी भरा और बाटिक प्रिंट पर डाल दिया!"
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>6. ग्वालियर के हस्तनिर्मित कालीन (Handmade Carpets of Gwalior):</strong> ऊन और रेशम के धागों से बारीक नक्काशीदार डिजाइनों वाले कालीन जो अपनी मजबूती के लिए जाने जाते हैं। 
+                        <br><em>ट्रिक:</em> "मम्मी बाजार से ग्वालियर के महंगे कालीन खरीद तो लाती हैं, मगर साल भर छुपा कर रखती हैं, कभी बाहर नहीं निकालतीं!"
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>7. जबलपुर का स्टोन क्राफ्ट (Stone Craft of Jabalpur):</strong> भेड़ाघाट के संगमरमर के पत्थरों (Marble Stones) पर की जाने वाली बारीक नक्काशी, जिससे भगवान की मूर्तियां और सजावटी सामान बनाए जाते हैं।
+                    </div>
+                    
+                    <div style="padding:10px; background: rgba(255,255,255,0.02); border-radius:8px;">
+                        <strong>8. बालाघाट के वारासिवनी की साड़ियां और सिल्क फैब्रिक:</strong> वारासिवनी क्षेत्र के बुनकरों द्वारा तैयार की जाने वाली विशेष रेशमी साड़ियां। 
+                        <br><em>ट्रिक:</em> "मम्मी हर सोमवार या हर 'बार-बार' (वारासिवनी) साड़ी वाले की दुकान पर पहुंच जाती हैं कि नई साड़ी दिखाओ!"
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-container">
+                <h4>🎯 Quick Recall Check</h4>
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: मध्य प्रदेश के वे तीन उत्पाद कौन से हैं जिन्हें जीआई टैग के साथ उनका विशिष्ट 'लोगो' भी स्वीकृत है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer">1. इंदौर के चमड़े के खिलौने, 2. धार का बाघ प्रिंट, 3. टीकमगढ़ और दतिया का धातु शिल्प।</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section id="sec-pending">
+            <h2 class="section-title"><span>📌</span> 6. Upcoming Frameworks: Pending/Proposed GI Tags Track</h2>
+            
+            <p style="margin-bottom: 15px;">शिक्षक द्वारा क्लास के अंत में बताए गए वे उत्पाद जो वर्तमान में जीआई टैग की वेटिंग लिस्ट/पेंडिंग (Pending Status) श्रेणी में हैं और भविष्य में जिन्हें जीआई टैग मिलने की पूरी संभावना है:</p>
+
+            <div class="card">
+                <h3>1. अलीराजपुर (जोबट) की पंजा दरियां (Panja Dari of Jobat)</h3>
+                <ul>
+                    <li><strong>भौगोलिक क्षेत्र:</strong> अलीराजपुर जिले का जोबट कस्बा।</li>
+                    <li><strong>विवरण:</strong> यहाँ की भील जनजाति (Bhil Tribe) के स्थानीय कारीगरों द्वारा मोटे सूती धागों को पंजेनुमा लोहे के औजार से ठोक-ठोक कर बेहद मजबूत और रंगीन पारंपरिक दरियां बनाई जाती हैं, जिन्हें 'पंज दरी' या 'जा दरी' कहते हैं।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>2. नीमच का नंदना ब्लॉक प्रिंट (Nandna Block Print of Neemuch)</h3>
+                <ul>
+                    <li><strong>भौगोलिक क्षेत्र:</strong> नीमच जिला बेल्ट।</li>
+                    <li><strong>विवरण:</strong> यह कपड़ों पर नीले (Indigo) और मटमैले रंगों से की जाने वाली एक अत्यंत प्राचीन थप्पा छपाई कला है। इसके डिजाइनों में पारंपरिक पेड़-पौधे और प्राकृतिक आकृतियाँ बनाई जाती हैं।</li>
+                    <li><strong>🔗 याद रखने की ट्रिक:</strong> "नीमच के लोग पेड़ के नीचे चौपाल लगाकर गा रहे थे—नंद के आनंद भयो, जय कन्हैया लाल की (नंदना प्रिंट)!"</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section id="sec-fullforms">
+            <h2 class="section-title"><span>🗂️</span> 7. Alphabetical Master Matrix of Full Forms</h2>
+            
+            <p style="margin-bottom: 15px;">इस पूरी क्लास के दौरान आए सभी तकनीकी संक्षिप्ताक्षरों (Abbreviations) का अंग्रेजी पूर्ण रूप एवं हिंदी अर्थ का सिस्टेमेटिक तुलनात्मक चार्ट:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>संक्षिप्त रूप (Abbreviation)</th>
+                        <th>अंग्रेजी पूर्ण रूप (English Full Form)</th>
+                        <th>हिंदी अर्थ / व्याख्या (Hindi Meaning & Role)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>DPIIT</strong></td>
+                        <td>Department for Promotion of Industry and Internal Trade</td>
+                        <td>उद्योग संवर्धन और आंतरिक व्यापार विभाग (वाणिज्य मंत्रालय के तहत IPR नोडल विंग)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GI</strong></td>
+                        <td>Geographical Indication</td>
+                        <td>भौगोलिक संकेतक (विशेष क्षेत्रीय उत्पाद की गुणवत्ता पहचान)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GII</strong></td>
+                        <td>Global Innovation Index</td>
+                        <td>वैश्विक नवाचार सूचकांक (WIPO द्वारा जारी वैश्विक रैंकिंग)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IP</strong></td>
+                        <td>Intellectual Property</td>
+                        <td>बौद्धिक संपदा (मानव मस्तिष्क की रचनात्मक उत्पाद पूंजी)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IPFC</strong></td>
+                        <td>Intellectual Property Facilitation Center</td>
+                        <td>बौद्धिक संपदा सुविधा केंद्र (मुख्यालय: इंदौर, MSME सहायता विंग)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IPR</strong></td>
+                        <td>Intellectual Property Rights</td>
+                        <td>बौद्धिक संपदा अधिकार (नवाचार संरक्षण हेतु कानूनी एकाधिकार)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MSME</strong></td>
+                        <td>Micro, Small and Medium Enterprises</td>
+                        <td>सूक्ष्म, लघु और मध्यम उद्यम (छोटे उद्योगों का नियामक ढांचा)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RTI</strong></td>
+                        <td>Right to Information</td>
+                        <td>सूचना का अधिकार अधिनियम (व्यापार गोपनीयता इसकी परिधि से बाहर है)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRIPS</strong></td>
+                        <td>Trade-Related Aspects of Intellectual Property Rights</td>
+                        <td>बौद्धिक संपदा अधिकारों के व्यापार से जुड़े पहलू (WTO का अंतरराष्ट्रीय समझौता)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WIPO</strong></td>
+                        <td>World Intellectual Property Organization</td>
+                        <td>विश्व बौद्धिक संपदा संगठन (मुख्यालय: जेनेवा, स्थापना: 1967)।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTO</strong></td>
+                        <td>World Trade Organization</td>
+                        <td>विश्व व्यापार संगठन (वैश्विक व्यापार नियामक संस्था)।</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section id="sec-hothub">
+            <h2 class="section-title"><span>🔥</span> 8. High-Yield Exam Hot Hub (शिक्षक द्वारा चिन्हित PYQ पैटर्न्स)</h2>
+            
+            <div class="exam-hot-box">
+                <p>यह खंड उन सभी तथ्यों का संकलन है जहां शिक्षक ने क्लास में <strong>"यह पूछा जाता है"</strong>, <strong>"याद रखिए"</strong> या <strong>"इंपॉर्टेंट है"</strong> शब्द का प्रयोग किया था:</p>
+                <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+                    <li>🎯 <strong>IPFC इंदौर:</strong> प्रारंभिक परीक्षा में सीधे पूछा जाएगा कि मध्य प्रदेश में बौद्धिक संपदा सुविधा केंद्र का हेडक्वार्टर कहाँ है? उत्तर आँख बंद करके <strong>इंदौर</strong> लगाना है। इसका मुख्य काम छोटे MSME उद्योगों की सहायता करना है।</li>
+                    <li>🎯 <strong>प्रगति दर तुलना:</strong> भारत की तुलना में भले ही मध्य प्रदेश में पेटेंट की संख्या कम हो (398 पेटेंट), परंतु पिछले 5 वर्षों में मध्य प्रदेश की <strong>ग्रोथ रेट सबसे तेज (109% की छलांग)</strong> रही है, यह मुख्य परीक्षा में आर्थिक समीक्षा का विश्लेषण लिखते समय काम आएगा।</li>
+                    <li>🎯 <strong>पहला जीआई टैग:</strong> मध्य प्रदेश का पहला उत्पाद <strong>चंदेरी की साड़ी (2005-06)</strong> है, जबकि पूरे भारत स्तर पर पहला जीआई टैग <strong>दार्जिलिंग की चाय (2004)</strong> को मिला था।</li>
+                    <li>🎯 <strong>रिन्यूअल का नियम:</strong> पेटेंट (20 वर्ष) और कॉपीराइट (60 वर्ष) को कभी भी टाइम लिमिट खत्म होने के बाद दोबारा रिन्यू नहीं किया जा सकता, जबकि <strong>GI टैग (10 वर्ष) को बार-बार रिन्यू किया जा सकता है</strong>।</li>
+                    <li>🎯 <strong>संशोधन वर्ष:</strong> कॉपीराइट एक्ट 1957 में संशोधन वर्ष <strong>2012</strong> में हुआ था (YouTube स्ट्राइक नियम इसी की परिधि में आते हैं)।</li>
+                    <li>🎯 <strong>अनुसंधान केंद्र बनाम जीआई टैग जाल:</strong> याद रखें, मध्य प्रदेश का <strong>धान अनुसंधान केंद्र बड़वानी</strong> में है, परंतु चावल का जीआई टैग <strong>बालाघाट के चिन्नोर चावल</strong> को मिला है। इसी प्रकार <strong>आम अनुसंधान केंद्र गोविंदगढ़ रीवा</strong> में है और जीआई टैग <strong>रीवा के सुंदरजा आम</strong> को मिला है।</li>
+                    <li>🎯 <strong>संयुक्त जीआई टैग:</strong> मध्य प्रदेश के दो उत्पाद साझा श्रेणी में हैं—<strong>नागपुरी संतरा (महाराष्ट्र के साथ)</strong> और <strong>महोबा का देशवारी पान (उत्तर प्रदेश के साथ)</strong>।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section id="sec-checklist">
+            <h2 class="section-title"><span>⚡</span> 9. Master Revision Checklist & Active Recall Grid</h2>
+            
+            <p style="margin-bottom: 15px;">क्लास के सभी महत्वपूर्ण तथ्यों को याद करने के बाद नीचे दिए गए चेकबॉक्स को टिक करें। आपकी प्रगति ऊपर प्रोग्रेस बार में दिखाई देगी। (यह डेटा आपके ब्राउज़र में सुरक्षित रहेगा):</p>
+
+            <div id="checklist-grid">
+                <!-- Checklist items dynamically handled or rendered explicitly for static reliability -->
+                <div class="checklist-item"><input type="checkbox" id="chk1" onclick="updateProgress()"><label for="chk1"><strong>IPR Full Form:</strong> Intellectual Property Rights की परिभाषा याद हो गई।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk2" onclick="updateProgress()"><label for="chk2"><strong>Capital Category:</strong> पूंजी के 3 प्रकार (भौतिक, वित्तीय, बौद्धिक पूंजी) का वर्गीकरण स्पष्ट है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk3" onclick="updateProgress()"><label for="chk3"><strong>IP Typology:</strong> निजी बौद्धिक संपदा बनाम सामूहिक बौद्धिक संपदा का अंतर समझ आ गया।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk4" onclick="updateProgress()"><label for="chk4"><strong>Patent Law:</strong> पेटेंट अधिनियम 1970, 2005 संशोधन और 20 वर्ष की वैधता याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk5" onclick="updateProgress()"><label for="chk5"><strong>Copyright Framework:</strong> कॉपीराइट अधिनियम 1957, 2012 संशोधन और 60 वर्ष की सीमा कंठस्थ है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk6" onclick="updateProgress()"><label for="chk6"><strong>Trademark Registry:</strong> ट्रेडमार्क अधिनियम 1999 और ब्रांड लोगो सुरक्षा नियम स्पष्ट हैं।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk7" onclick="updateProgress()"><label for="chk7"><strong>GI Law Matrix:</strong> जीआई अधिनियम 1999, प्रभाव वर्ष 2003, चेन्नई हेडक्वार्टर और 10 वर्ष रिन्यूअल नियम याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk8" onclick="updateProgress()"><label for="chk8"><strong>Design Act:</strong> औद्योगिक डिजाइन अधिनियम 2000 और गाड़ी/बाइक डिजाइन चोरी के नियम स्पष्ट हैं।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk9" onclick="updateProgress()"><label for="chk9"><strong>Trade Secret:</strong> व्यापार गोपनीयता (Coca-Cola/Domino's) और इस पर RTI लागू न होने का नियम याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk10" onclick="updateProgress()"><label for="chk10"><strong>WIPO Profile:</strong> विश्व बौद्धिक संपदा संगठन की स्थापना 1967, जेनेवा मुख्यालय और 193 सदस्य देश याद हैं।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk11" onclick="updateProgress()"><label for="chk11"><strong>India & WIPO:</strong> भारत वर्ष 1975 (इमरजेंसी वर्ष) में WIPO का सदस्य बना, यह याद हो गया।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk12" onclick="updateProgress()"><label for="chk12"><strong>IP Day & Index:</strong> 26 अप्रैल विश्व IP दिवस और ग्लोबल इनोवेशन इंडेक्स 2023 में भारत की 40वीं रैंक याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk13" onclick="updateProgress()"><label for="chk13"><strong>MP Filings Data:</strong> वर्ष 2020-21 में मध्य प्रदेश द्वारा दायर 398 पेटेंट और 214 डिजाइन के आंकड़े याद हैं।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk14" onclick="updateProgress()"><label for="chk14"><strong>IPFC Location:</strong> मध्य प्रदेश बौद्धिक संपदा सुविधा केंद्र का मुख्यालय इंदौर में है, यह पक्का याद हो गया।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk15" onclick="updateProgress()"><label for="chk15"><strong>Chanderi Saree:</strong> चंदेरी साड़ी (अशोकनगर) वर्ष 2005-06 में MP का पहला जीआई टैग बना, स्पष्ट है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk16" onclick="updateProgress()"><label for="chk16"><strong>Thaat 2008 Matrix:</strong> 2008 के तीन उत्पाद—इंदौर चमड़ा खिलौना, धार बाघ प्रिंट, टीकमगढ़-दतिया धातु शिल्प याद हैं।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk17" onclick="updateProgress()"><label for="chk17"><strong>Maheshwari Saree:</strong> महेश्वरी साड़ी (खरगोन/पश्चिमी निमाड़) वर्ष 2012-13 (प्रलय ट्रिक) याद हो गया।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk18" onclick="updateProgress()"><label for="chk18"><strong>Ratlami Sev:</strong> रतलामी सेव (खाद्य उत्पाद) वर्ष 2014-15 (नई सरकार ट्रिक) कंठस्थ है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk19" onclick="updateProgress()"><label for="chk19"><strong>Kadaknath Chicken:</strong> झाबुआ का कड़कनाथ मुर्गा (काला खून, हाई आयरन) वर्ष 2018-19 स्पष्ट है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk20" onclick="updateProgress()"><label for="chk20"><strong>Chinnor Rice:</strong> बालाघाट का चिन्नोर चावल वर्ष 2021 (पहला कृषि उत्पाद) याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk21" onclick="updateProgress()"><label for="chk21"><strong>Shared GI Tags:</strong> नागपुरी संतरा (महाराष्ट्र) और महोबा देशवारी पान (UP) का साझा जीआई टैग याद है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk22" onclick="updateProgress()"><label for="chk22"><strong>Super Year 2023:</strong> 2023 के सभी 8 उत्पाद (मुरैना गजक, सीहोर शरबती गेहूं, रीवा सुंदरजा आम, डिंडोरी गोंड पेंटिंग, उज्जैन बाटिक प्रिंट, ग्वालियर कालीन, जबलपुर स्टोन क्राफ्ट, वारासिवनी साड़ियां) याद हो गए।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk23" onclick="updateProgress()"><label for="chk23"><strong>Pending Trackers:</strong> जोबट (अलीराजपुर) की पंजा दरी और नीमच का नंदना ब्लॉक प्रिंट पेंडिंग लिस्ट में हैं, स्पष्ट है।</label></div>
+                <div class="checklist-item"><input type="checkbox" id="chk24" onclick="updateProgress()"><label for="chk24"><strong>Research vs GI:</strong> धान अनुसंधान (बड़वानी) बनाम चिन्नोर चावल (बालाघाट) और आम अनुसंधान (रीवा) का अंतर याद है।</label></div>
+            </div>
+
+            <!-- CLASSROOM MCQS CONVERTED TO INTERACTIVE TEST -->
+            <div class="quiz-container" style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <h3 style="color: var(--accent-orange); margin-bottom: 15px;">📊 Classroom Live Test Series (Self-Assessment Matrix)</h3>
+                
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q1: आर्थिक सर्वेक्षण 2022-23 के अनुसार वित्तीय वर्ष 2020-21 में मध्य प्रदेश द्वारा दायर किए गए डिजाइनों की संख्या कितनी है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer"><strong>उत्तर: 214 डिजाइन।</strong> (जबकि इसी वर्ष पेटेंट की संख्या 398 थी)।</div>
+                </div>
+
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q2: मध्य प्रदेश के किस शहर को बौद्धिक संपदा सुविधा केंद्र (IPFC) का अधिकारिक मुख्यालय बनाया गया है?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer"><strong>उत्तर: इंदौर (Indore)।</strong> यह छोटे और मध्यम उद्योगों (MSME) को तकनीकी प्रशिक्षण और पेटेंट फाइलिंग में सहायता प्रदान करता है।</div>
+                </div>
+
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q3: मध्य प्रदेश का वह कौन सा उत्पाद है जिसे सबसे पहले (सर्वप्रथम) जीआई टैग प्रदान किया गया था?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer"><strong>उत्तर: चंदेरी की साड़ी (अशोकनगर)।</strong> इसे वर्ष 2005-06 में मध्य प्रदेश का पहला भौगोलिक संकेतक (GI Tag) होने का गौरव मिला।</div>
+                </div>
+
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q4: निम्नलिखित में से किस उत्पाद को मध्य प्रदेश का भौगोलिक संकेतक (GI Tag) प्राप्त नहीं है? [ऑप्शन संदर्भ: रतलमी सेव, दार्जिलिंग चाय, मुरैना गजक, वारासिवनी साड़ियां]</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer"><strong>उत्तर: दार्जिलिंग की चाय (Darjeeling Tea)।</strong> क्योंकि दार्जिलिंग की चाय पश्चिम बंगाल का उत्पाद है। इसे 2004 में भारत का पहला जीआई टैग मिला था, यह मध्य प्रदेश का उत्पाद नहीं है।</div>
+                </div>
+
+                <div class="quiz-card">
+                    <div class="quiz-question">
+                        <span>Q5: रीवा के प्रसिद्ध 'सुंदरजा आम' को किस वर्ष अधिकारिक रूप से भौगोलिक संकेतक (GI Tag) के रूप में पंजीकृत किया गया?</span>
+                        <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    </div>
+                    <div class="quiz-answer"><strong>उत्तर: वर्ष 2023 में।</strong> वर्ष 2023 में सुंदरजा आम (रीवा), मुरैना की गजक, सीहोर के शरबती गेहूं सहित कुल 8 उत्पादों को एक साथ जीआई टैग मिला था।</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER MATRICES -->
+    <footer style="grid-column: 1 / -1; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; margin-top: 20px; text-align: center; font-size: 15px; color: var(--text-muted);">
+        <p>📌 <strong>Upcoming Topic Note (आगामी विषय):</strong> शिक्षक द्वारा क्लास के अंत में सूचित किया गया कि <strong>'यूनिट 10' (Unit 10)</strong> की संपूर्ण कक्षाएं इसी अधिकारिक यूट्यूब चैनल पर जल्द ही बिल्कुल फ्री शुरू की जाएंगी, जिसमें इसी तरह मैपिंग और एमसीक्यू आधारित याद कराने की अनूठी तकनीक का प्रयोग होगा।</p>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 15px 0;">
+        <p>© 2026 MPPSC Exam Revision Hub. Transcribed with 100% Flow Fidelity. Designed for Spaced Repetition Practice.</p>
+    </footer>
+
+</div>
+
+<!-- INLINE JAVASCRIPT ENGINE FOR INTERACTIVE HUB CONTROLS -->
+<script>
+    // Theme Toggle Logic
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', targetTheme);
+        localStorage.setItem('mppsc-theme', targetTheme);
+    }
+
+    // Load persisted theme
+    const savedTheme = localStorage.getItem('mppsc-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Quiz Reveal Logic
+    function toggleQuiz(btn) {
+        const answerBlock = btn.parentElement.nextElementSibling;
+        if (answerBlock.style.display === 'block') {
+            answerBlock.style.display = 'none';
+            btn.textContent = 'Reveal Answer';
+            btn.style.background = 'var(--border-color)';
+        } else {
+            answerBlock.style.display = 'block';
+            btn.textContent = 'Hide Answer';
+            btn.style.background = 'var(--accent-orange)';
+        }
+    }
+
+    // Active Progress Tracking with LocalStorage Persistence
+    const totalCheckboxes = 24;
+
+    function updateProgress() {
+        let checkedCount = 0;
+        for (let i = 1; i <= totalCheckboxes; i++) {
+            const chk = document.getElementById(`chk${i}`);
+            if (chk && chk.checked) {
+                checkedCount++;
+                localStorage.setItem(`mppsc-chk-${i}`, 'true');
+            } else {
+                localStorage.removeItem(`mppsc-chk-${i}`);
+            }
+        }
+        
+        // Update UI components
+        const percentage = Math.round((checkedCount / totalCheckboxes) * 100);
+        document.getElementById('master-progress').style.width = `${percentage}%`;
+        document.getElementById('completion-badge').textContent = `${checkedCount}/${totalCheckboxes} Checked`;
+    }
+
+    // Load persisted checklist state on layout mount
+    window.addEventListener('DOMContentLoaded', () => {
+        for (let i = 1; i <= totalCheckboxes; i++) {
+            const status = localStorage.getItem(`mppsc-chk-${i}`);
+            const chk = document.getElementById(`chk${i}`);
+            if (status === 'true' && chk) {
+                chk.checked = true;
+            }
+        }
+        updateProgress();
+
+        // Highlighting active section in sidebar on scroll
+        const sections = document.querySelectorAll('section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const quickNav = document.getElementById('quick-nav');
+
+        window.addEventListener('scroll', () => {
+            let currentSectionId = "";
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop;
+                if (pageYOffset >= secTop - 60) {
+                    currentSectionId = sec.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                    if(quickNav) quickNav.value = `#${currentSectionId}`;
+                }
+            });
+        });
+    });
+
+    // Image Reliability Handling Script: Force preload and fallback configurations
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.onerror = function() {
+            console.log("Image asset failed to load. Initiating semantic fallback mechanism.");
+            const placeholder = document.createElement('div');
+            placeholder.style.width = '100%';
+            placeholder.style.padding = '40px 20px';
+            placeholder.style.background = 'var(--border-color)';
+            placeholder.style.color = 'var(--accent-cyan)';
+            placeholder.style.fontWeight = '600';
+            placeholder.style.borderRadius = '8px';
+            placeholder.innerHTML = `⚠️ Visual Asset Node [${this.alt || 'Conceptual Diagram'}]<br><span style="font-size:13px; font-weight:400; color:var(--text-muted);">External network media repository connection timed out. Refer to matching textbook graphics.</span>`;
+            this.parentNode.replaceChild(placeholder, this);
+        };
+    });
+</script>
+
+</body>
+</html>

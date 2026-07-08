@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MP की जनजातियाँ — Ultimate Exam Revision Page</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f111a;
+            --card-bg: #161925;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #24293e;
+            --link-bg: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            --hot-bg: rgba(255, 107, 53, 0.1);
+            --hot-border: #ff6b35;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --link-bg: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+            --hot-bg: rgba(255, 107, 53, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 17px;
+            letter-spacing: 0.03em;
+            transition: background-color 0.3s, color 0.3s;
+            padding-bottom: 60px;
+        }
+
+        /* Layout Configuration */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-badge {
+            background: var(--accent-orange);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: #94a3b8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* Sticky Navigation Controls */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--card-bg);
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-selectors {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 75%;
+        }
+
+        select {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            width: 100%;
+            max-width: 300px;
+            cursor: pointer;
+        }
+
+        .theme-btn {
+            background: var(--border-color);
+            border: none;
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Progress Tracker Bar */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: var(--border-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            width: 0%;
+            transition: width 0.2s;
+        }
+
+        /* Content Modular Cards */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 35px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Custom Information Containers */
+        .link-story {
+            background: var(--link-bg);
+            border-left: 4px solid var(--accent-purple);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .link-story-title {
+            font-weight: 700;
+            color: #f3e8ff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .exam-hot {
+            background: var(--hot-bg);
+            border: 1px dashed var(--hot-border);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .exam-hot-title {
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .teacher-analogy {
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 12px 0;
+            font-style: italic;
+        }
+
+        /* Bullet List Configuration */
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Interactive Accordion Structure */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--card-bg);
+            padding: 12px 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .accordion-content {
+            padding: 15px;
+            background: var(--bg-color);
+            display: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Table Configurations */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--card-bg);
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Image Display Layouts */
+        .image-block {
+            margin: 20px 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 8px auto;
+        }
+
+        .image-caption {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Interactive Quiz Structure */
+        .quiz-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .quiz-item {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .quiz-option {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .quiz-option:hover {
+            background: var(--border-color);
+        }
+
+        .reveal-btn {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .reveal-btn:hover {
+            background: var(--accent-cyan);
+            color: #0f111a;
+        }
+
+        .quiz-answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 255, 136, 0.08);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        /* Master Checklist Styling */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 4px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Responsive Configuration overrides */
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .sticky-nav { padding: 10px; }
+            .nav-selectors { width: 65%; }
+            select { font-size: 12px; }
+            .theme-btn { padding: 6px 10px; font-size: 12px; }
+        }
+
+        /* Print Media Layout Overrides */
+        @media print {
+            body { background: white; color: black; font-size: 14px; }
+            .sticky-nav, .theme-btn, .reveal-btn, .quiz-options, input[type="checkbox"] { display: none !important; }
+            .card, .quiz-item, .accordion-item { border: 1px solid #000; background: white; page-break-inside: avoid; }
+            .accordion-content, .quiz-answer { display: block !important; background: white; color: black; }
+            .section-title { color: black; border-bottom: 2px solid #000; }
+            .link-story, .exam-hot, .teacher-analogy { background: transparent; border: 1px solid #000; color: black; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <div class="sticky-nav">
+        <div class="nav-selectors">
+            <span style="font-size: 18px;">🎯</span>
+            <select id="topicJump" onchange="jumpToSection(this.value)">
+                <option value="">— Quick Jump Table of Contents —</option>
+                <option value="intro">📚 Class Overview & Meta</option>
+                <option value="revision-prev">🔄 Quick Revision: Previous Tribes</option>
+                <option value="bijhwar">💎 Bijhwar Tribe (Detailed)</option>
+                <option value="minor-tribes">🪵 Other New Minor Tribes</option>
+                <option value="test-session">📝 Complete Class Test (19 MCQs)</option>
+                <option value="master-summary">🔥 Master Hot Facts Table</option>
+                <option value="checklist">✅ Master Revision Checklist</option>
+                <option value="strategy">💡 Strategy Tips & Next Class</option>
+            </select>
+        </div>
+        <button class="theme-btn" onclick="toggleTheme()">
+            <span id="theme-icon">☀️</span> <span id="theme-text">Light Mode</span>
+        </button>
+    </div>
+
+    <div class="container">
+        
+        <!-- Header Profile Block -->
+        <header id="intro">
+            <div class="header-badge">MPPSC Unit 10 — Prelims + Mains</div>
+            <h1>मध्य प्रदेश की जनजातियाँ (MP Special)</h1>
+            <p>Educator: <b>Pramod Rana Sir</b> (KGS - Khan Global Studies)</p>
+            <div class="meta-info">
+                <span>📅 Format: Exam-Ready HTML Revision Notes</span>
+                <span>⏱️ Video Coverage: 100% Comprehensive File</span>
+                <span>📊 Topics Count: 17 Components</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="readingProgress"></div>
+            </div>
+        </header>
+
+        <!-- Previous Content Quick Revision Block -->
+        <div class="section-title" id="revision-prev">🔄 Quick Revision: Previously Covered Tribes</div>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">क्लास के शुरुआत में सर द्वारा पिछली क्लासों का कराया गया सुपर-फास्ट रिवीज़न:</p>
+        
+        <div class="card">
+            <h3>🌾 1. भिलाला जनजाति (Bhilaala Tribe)</h3>
+            <ul>
+                <li><b>मूल निवास स्थान:</b> छत्तीसगढ़ (Chhattisgarh) इनका मूल स्थान माना जाता है। मध्य प्रदेश के पश्चिमी हिस्सों (Western MP) में पाई जाती है।</li>
+                <li><b>भील संबंध:</b> यह मध्य प्रदेश में भील जनजाति की एक प्रमुख उपजाति (Sub-tribe) है। अपने आप को महाराणा प्रताप का वंशज मानकर राजपूत मानती है।</li>
+                <li><b>उपजातियां (Sub-tribes):</b> ओके (Oke), पटेलिया (Pateliya), और बालिया (Baliya)।</li>
+                <li><b>कबाड़ा गीत (Kabaada Song):</b> मृत्यु होने पर महिलाएँ आत्मा की शांति के लिए कबाड़ा गीत गाती हैं।</li>
+            </ul>
+            <div class="link-story">
+                <div class="link-story-title">🔗 Link Story — भिलाला उपजातियां ऐसे याद करो:</div>
+                भिलाला के लड़के ने लड़की को <b>बालिया (बालिया)</b> गिफ्ट कीं, तो लड़की ने खुश होकर कहा — <b>"ओके (ओके)"</b>, लड़के ने तुरंत दोस्तों को फोन घुमाया और बोला — भाई, लड़की को <b>पटा लिया (पटेलिया)</b>! 
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🌋 2. अगरिया जनजाति (Agariya Tribe)</h3>
+            <ul>
+                <li><b>मुख्य कार्य:</b> लोहे का काम करना और लोहे के औजार बनाना इनका पारंपरिक पेशा है।</li>
+                <li><b>प्रमुख देवता:</b> <b>लोहासुर (Lohasur)</b> इनके मुख्य देव हैं, जिनका निवास धधकती हुई भट्टियों (Burning Furnaces) में माना जाता है।</li>
+                <li><b>शुभ प्रतीक:</b> अगरिया जनजाति में <b>उड़द की दाल (Urad Dal)</b> को अत्यंत पवित्र और शुभ माना जाता है (वधु मूल्य, स्वागत व विवाह में उपयोग)।</li>
+                <li><b>उत्पत्ति संबंध:</b> यह <b>गोंड जनजाति (Gond Tribe)</b> की ही एक उपजाति मानी जाती है।</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🐪 3. बंजारा जनजाति (Banjara Tribe)</h3>
+            <ul>
+                <li><b>भौगोलिक क्षेत्र:</b> मध्य प्रदेश के पश्चिमी क्षेत्र (मालवा, निमाड़, मंदसौर, रतलाम, झाबुआ जिलों में बिखरे रूप में)।</li>
+                <li><b>ऐतिहासिक गौरव:</b> विश्व में सबसे पहले <b>कंघी का आविष्कारक (Inventors of Comb)</b> बंजारा जनजाति को ही माना जाता है।</li>
+                <li><b>जीवनशैली:</b> यह एक घुमंतु (Nomadic) और खानाबदोश जनजाति है जो अब धीरे-धीरे स्थायी निवास बना रही है।</li>
+                <li><b>पारिभाषिक शब्दावली:</b> इनके निवास स्थान को <b>टांडा (Tanda)</b> कहा जाता है और कबीले के मुखिया को <b>नायक (Nayak)</b> कहते हैं।</li>
+                <li><b>धार्मिक झुकाव:</b> ये सिख धर्म (Sikh Religion) से अत्यधिक प्रभावित हैं और बाबा रामदेव जी को भी प्रमुखता से पूजते हैं।</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>⛪ 4. उराव जनजाति (Urao Tribe)</h3>
+            <ul>
+                <li><b>मूल आगमन:</b> यह जनजाति मूल रूप से दक्षिण भारत (South India) से प्रवास कर मध्य प्रदेश आई है।</li>
+                <li><b>धार्मिक विशेषता:</b> मध्य प्रदेश की जनजातियों में सबसे अधिक <b>ईसाई धर्म (Christianity)</b> को अपनाने वाली जनजाति यही है।</li>
+                <li><b>प्रशासनिक शब्दावली:</b> कबीले का प्रमुख <b>मेतो (Mahto)</b> कहलाता है और इनका पुरोहित/पुजारी <b>बैगा (Baiga)</b> होता है।</li>
+                <li><b>बोली एवं युवाग्रह:</b> इनकी अपनी बोली <b>कुरुख (Kurukh)</b> है, तथा इनके युवाग्रह (Youth Dormitory) को <b>धूमकुरिया (Dhumkuriya)</b> कहा जाता है।</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🧵 5. पनिका जनजाति (Panika Tribe)</h3>
+            <ul>
+                <li><b>कबीरपंथ संबंध:</b> यह पूर्णतः कबीरपंथी (Kabirpanthi) जनजाति है। कबीर जी के विचारों को मानती है, मांस-मदिरा का सेवन नहीं करती।</li>
+                <li><b>उत्पत्ति कथा:</b> मानती है कि कबीर दास जी जल से प्रकट हुए थे और उनका पालन-पोषण 'पनिका' नाम की महिला ने किया था।</li>
+                <li><b>ऐतिहासिक आविष्कार:</b> विश्व में सबसे पहले <b>कपड़ा बुनने का कार्य (Textile Weaving)</b> इसी पनिका जनजाति द्वारा किया गया था।</li>
+                <li><b>उपजातियां & क्षेत्र:</b> शक्ति (Shakti) और साकेत (Saket) इसकी उपजातियां हैं। यह मुख्य रूप से <b>सीधी और शहडोल</b> जिलों में पाई जाती है।</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ 6. कवार जनजाति (Kawar Tribe)</h3>
+            <ul>
+                <li><b>पौराणिक उत्पत्ति:</b> कवार जनजाति अपनी उत्पत्ति महाभारत के <b>कौरवों (Kauravas)</b> से मानती है।</li>
+                <li><b>परंपरागत कार्य:</b> भारतीय सेना/फौज (Army) में काम करना यह अपना परंपरागत कर्तव्य और परम सौभाग्य मानती है।</li>
+                <li><b>प्रमुख नृत्य:</b> इनका सबसे प्रसिद्ध लोकनृत्य <b>'बार नृत्य' (Bar Dance)</b> है। शहडोल क्षेत्र में प्रमुखता से निवास है।</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🕸️ 7. पारधी जनजाति (Pardhi Tribe)</h3>
+            <ul>
+                <li><b>निवास क्षेत्र:</b> भोपाल संभाग (Bhopal Division) के आसपास के जिलों में इनका मुख्य संकेंद्रण है।</li>
+                <li><b>महादेव का वरदान:</b> इनका मानना है कि महादेव ने इन्हें बंदूक/गोली के बजाय <b>जाल से शिकार</b> करने का आशीर्वाद दिया, जिससे ये शिकार के पाप से बच सकें।</li>
+            </ul>
+        </div>
+
+        <!-- Image Block for Overview -->
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Gond_Artist_with_Painting_Madhya_Pradesh.jpg" alt="Tribal Art and Culture of Madhya Pradesh" loading="eager" fetchpriority="high" decoding="async">
+            <div class="image-caption">Image: Wikimedia Commons | Tribal Artist representing MP Traditions | CC BY-SA 4.0 Fallback Reference</div>
+        </div>
+
+        <!-- Detailed New Core Content Block -->
+        <div class="section-title" id="bijhwar">💎 बिजवार जनजाति (Bijhwar Tribe) — Detailed Study</div>
+        <div class="card">
+            <p style="margin-bottom: 12px;">सर ने इस जनजाति को विशेष रूप से समझाया क्योंकि नए सिलेबस के अनुसार ऐसी उपजातियों से गहरे सवाल बनने की प्रबल संभावना है:</p>
+            
+            <div class="exam-hot">
+                <div class="exam-hot-title">🔥 Exam Hot Points: बिजवार के महत्वपूर्ण तथ्य</div>
+                <ul>
+                    <li><b>बैगा की विकसित शाखा:</b> बिजवार मूल रूप से <b>बैगा जनजाति (Baiga Tribe)</b> की ही उपजाति है। परंतु बिजवार लोग खुद को बैगाओं से संबंधित नहीं मानते क्योंकि ये आर्थिक व शैक्षणिक रूप से काफी आगे बढ़ चुके हैं, समृद्ध (Wealthy) हो गए हैं।</li>
+                    <li><b>उत्पत्ति एवं नामकरण:</b> इस जनजाति का उद्गम <b>विंध्यांचल पर्वतमाला (Vindhyachal Mountain Range)</b> से हुआ है। विंध्य (Vindh) शब्द से 'बिंज' बना और बिंज से इनका नाम <b>'बिजवार'</b> पड़ा।</li>
+                    <li><b>मुख्य आराध्य देवी:</b> ये विंध्यांचल पर्वत पर वास करने वाली <b>विंध्यवासिनी देवी (Vindhyavasini Devi)</b> की प्रमुख रूप से पूजा करते हैं।</li>
+                    <li><b>भौगोलिक स्थिति:</b> यह मध्य प्रदेश के मंडला, डिंडोरी और बालाघाट (Balaghat) जिलों में मुख्य रूप से पाई जाती है।</li>
+                </ul>
+            </div>
+
+            <h3>📊 नृवंशविज्ञान (Ethnography) & कृषि पद्धति</h3>
+            <ul>
+                <li><b>द्रविडियन परिवार:</b> मानवशास्त्री रसेल और हीरालाल (Russell & Hira Lal) के अनुसार बिजवार जनजाति मूलतः द्रविडियन परिवार से संबंध रखती है।</li>
+                <li><b>कुशल कृषक:</b> रसेल और हीरालाल ने इन्हें अत्यंत <b>कुशल कृषक (Skilled Farmers)</b> बताया है, जो उन्नत खेती की आधुनिक और बेहतरीन विधियाँ जानते हैं।</li>
+            </ul>
+
+            <div class="teacher-analogy">
+                <b>🗣️ Sir's Special Classroom Talk:</b> "बीज कहाँ बोओगे? बीज हम बोएंगे विंध्यांचल पर्वत की उपजाऊ वादियों में! तो बीज से याद रखना बिजवार, विंध्यांचल पर्वत से इनका उद्गम, और देवी कौन सी होंगी? विंध्यवासिनी देवी!"
+            </div>
+
+            <div class="exam-hot">
+                <div class="exam-hot-title">🔥 स्वतंत्रता संग्राम संबंध (1857 Revolution Hook)</div>
+                छत्तीसगढ़ के महान क्रांतिकारी <b>वीर नारायण सिंह (Veer Narayan Singh)</b>, जिन्होंने 1857 की क्रांति में अंग्रेजों के छक्के छुड़ाए थे, इसी <b>बिजवार जनजाति</b> से संबंधित थे! यह प्रश्न परीक्षा की दृष्टि से 100% महत्वपूर्ण है।
+            </div>
+        </div>
+
+        <!-- Other New Minor Tribes Block -->
+        <div class="section-title" id="minor-tribes">🪵 Other New Minor Tribes of MP & Map Links</div>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">क्लास में आगे सर ने सिंगल-लाइनर और जोड़े मिलाओ (Match the Following) वाले पैटर्न पर कई छोटी जनजातियों को याद कराया:</p>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🎯 सौर / सौरिया जनजाति (Sor / Saur Tribe)</span>
+                <span>➕ Expand</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li><b>भौगोलिक क्षेत्र:</b> यह मुख्य रूप से मध्य प्रदेश के <b>सागर संभाग (Sagar Division)</b>, शिवपुरी, श्योपुर, दतिया और ग्वालियर संभाग के कुछ हिस्सों में पाई जाती है।</li>
+                    <li><b>धार्मिक मान्यता:</b> ये मुख्य रूप से <b>भवानी माता (Bhawani Mata)</b> की पूजा-अर्चना करते हैं।</li>
+                    <li><b>उपजाति संबंध:</b> यह मध्य प्रदेश की अत्यंत पिछड़ी जनजाति <b>सहरिया (Sahariya)</b> की ही एक उपजाति मानी जाती है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🥣 हलवा जनजाति (Halba Tribe)</span>
+                <span>➕ Expand</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li><b>निवास जिला:</b> मध्य प्रदेश के दक्षिण-पूर्वी हिस्से, विशेषकर <b>बालाघाट (Balaghat)</b> जिले में इनका मुख्य निवास है।</li>
+                    <li class="teacher-analogy"><b>🔗 Link Story — ऐसे याद करो:</b> "बाला (लड़का) और उसकी लाडो, नदी के 'घाट' (बालाघाट) पर बैठकर शांति से गरमा-गरम <b>'हलवा'</b> खा रहे हैं! और याद रखना, बालाघाट का लिंगानुपात (Sex Ratio) भी सबसे ज्यादा है — 1000 लड़कों पर 1021 लड़कियां!"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>🐜 कमार जनजाति (Kamar Tribe)</span>
+                <span>➕ Expand</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li><b>मुख्य विशेषता:</b> यह <b>मध्य प्रदेश की सबसे छोटी जनजाति (Smallest Tribe of MP)</b> है।</li>
+                    <li><b>क्षेत्र:</b> यह मुख्य रूप से मध्य प्रदेश के सीधी (Sidhi) जिले और छत्तीसगढ़ सीमा से लगे क्षेत्रों में पाई जाती है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>💪 भीमा जनजाति (Bhima Tribe)</span>
+                <span>➕ Expand</span>
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li><b>गोंड संबंध:</b> यह <b>गोंड जनजाति (Gond Tribe)</b> की एक विशेष और अत्यंत महत्वपूर्ण उपजाति है।</li>
+                    <li><b>जीवनशैली:</b> यह एक घुमंतु (Nomadic) यानी खानाबदोश जनजाति है, जिसका कोई निश्चित स्थायी ठिकाना नहीं होता।</li>
+                    <li><b>उत्पत्ति:</b> ये लोग अपनी उत्पत्ति महाभारत के गदाधारी <b>'भीम'</b> से मानते हैं। मध्य प्रदेश के दक्षिण-पूर्वी क्षेत्रों में इनका वास है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>⛓️ बिरहोर, बिहार, आंध, अबूझाड़ मड़िया और मड़िया जनजातियाँ</span>
+                <span>➕ Expand</span>
+            </div>
+            <div class="accordion-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>जनजाति का नाम</th>
+                            <th>मुख्य निवास क्षेत्र (MP Districts)</th>
+                            <th>सर की विशेष याद करने वाली ट्रिक / विशेषता</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>बिरहोर (Birhor)</b></td>
+                            <td>शहडोल (Shahdol)</td>
+                            <td>"सुहागपुर कोयला क्षेत्र शहडोल में है। सुहाग के लिए काले कोयले पर खाना बनाते समय विरह के आंसू आ गए, तो रो दिए (बिरहोर)!"</td>
+                        </tr>
+                        <tr>
+                            <td><b>बिहार (Bihar Tribe)</b></td>
+                            <td>टीकमगढ़ और सीधी (Tikamgarh & Sidhi)</td>
+                            <td>"लड़का टीका (टीकमगढ़) लगाकर सीधा (सीधी) बनकर बैठता था, पर पीछे जाकर 'बियर/बिहार' पीता था!"</td>
+                        </tr>
+                        <tr>
+                            <td><b>आंध / आंध्र (Andh)</b></td>
+                            <td>छिंदवाड़ा (Chhindwara)</td>
+                            <td>यह पैनगंगा नदी क्षेत्र की जनजाति है। छिंदवाड़ा में पाई जाती है। "अबू ने झाड़ दिया, आंख में छिंद लगा तो अंधे (आंध) हो गए।"</td>
+                        </tr>
+                        <tr>
+                            <td><b>अबूझाड़ मड़िया (Abujhmadia)</b></td>
+                            <td>छिंदवाड़ा (Chhindwara)</td>
+                            <td>छिंदवाड़ा के पातालकोट और घने जंगली क्षेत्रों के समीप इनका संकेंद्रण है।</td>
+                        </tr>
+                        <tr>
+                            <td><b>मड़िया / माडिया (Madia)</b></td>
+                            <td>जबलपुर (Jabalpur)</td>
+                            <td>मुख्य रूप से मध्य प्रदेश के संस्कारधानी जबलपुर संभाग के अंतर्गत आने वाले क्षेत्रों में मिलती है।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="link-story">
+            <div class="link-story-title">🔗 Complete Geographic Association Chain (Match the Following Mastery)</div>
+            "<b>सीधी और टीकमगढ़</b> का लड़का टीका लगाकर सीधा घूमता था पर <b>बिहार</b> (बियर) पीता था, जब <b>अबू ने झाड़ दिया (अबूझाड़)</b> तो वो <b>छिंदवाड़ा</b> के जंगलों में जाकर आंख से <b>अंधा (आंध)</b> हो गया। वहाँ से भागकर वो <b>जबलपुर</b> गया जहाँ उसे <b>मड़िया</b> मिली, और अंत में <b>बालाघाट</b> के घाट पर बैठकर दोनों ने <b>हलवा</b> खाया!"
+        </div>
+
+        <!-- Complete Class Test Section -->
+        <div class="section-title" id="test-session">📝 Complete Class Test (Interactive 19 MCQs)</div>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">क्लास के अंत में प्रमोद राणा सर द्वारा लाइव टेस्ट के रूप में पूछे गए सभी 19 प्रश्न, अपने उत्तर को क्लिक करके जाँचे:</p>
+
+        <div class="quiz-container">
+            <!-- Q1 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q1. भिलाला जनजाति का मूल निवास स्थान कौन सा माना जाता है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) राजस्थान</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) छत्तीसगढ़</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) महाराष्ट्र</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) गुजरात</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) छत्तीसगढ़</b><br>व्याख्या: भिलाला का मूल निवास छत्तीसगढ़ है, जबकि भील जनजाति का मूल निवास राजस्थान के कुंभलगढ़ में ढोलका माना जाता है।</div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q2. भिलाला जनजाति की प्रमुख उपजातियां कौन-कौन सी हैं?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) ओके</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) पटेलिया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) बालिया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) यह सभी</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: D) यह सभी</b><br>व्याख्या: ओके, पटेलिया और बालिया ये तीनों ही भिलाला जनजाति की उपजातियां हैं (सर की बालिया-ओके-पटा लिया ट्रिक याद रखें)।</div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q3. भिलाला जनजाति में विवाह के समय 'मध्यस्थ व्यक्ति' (Mediator) को क्या कहा जाता है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) बांजगड़िया / भाजगड़िया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) चिथड़ा</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) मानगड़िया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) इनमें से कोई नहीं</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: C) मानगड़िया</b><br>व्याख्या: भिलाला में मध्यस्थ को 'मानगड़िया' कहते हैं, भील जनजाति में 'भाजगड़िया' कहते हैं, और कोरकू जनजाति में मध्यस्थ को 'चिथड़ा' कहा जाता है।</div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q4. भिलाला जनजाति में किसी सदस्य की मृत्यु होने पर महिलाओं द्वारा कौन सा शोक गीत गाया जाता है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) कबाड़ा गीत</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) मसानिया गीत</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) कायको गीत</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) गोटुल गीत</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: A) कबाड़ा गीत</b><br>व्याख्या: भिलाला महिलाएं मृत्यु पर 'कबाड़ा गीत' गाती हैं। मसानिया या कायको गीत निमाड़ अंचल में आत्मा की शांति के लिए गाए जाते हैं।</div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q5. बंजारा जनजाति से संबंधित कौन सा कथन सर्वथा गलत/असत्य है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) यह एक घुमंतु जनजाति है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) कंघी का आविष्कार बंजारा जनजाति ने किया था।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) बंजारा कबीले का मुखिया पटेल कहलाता है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) इनका मूल निवास स्थान मध्य प्रदेश है।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: C और D दोनों असत्य हैं (प्रश्न प्रारूप के अनुसार विकल्प C व D दोनों गलत हैं)</b><br>व्याख्या: बंजारा कबीले का मुखिया 'नायक' होता है (पटेल नहीं) और इनका मूल निवास स्थान 'राजस्थान' है (मध्य प्रदेश नहीं)। क्लास में सर ने स्पष्ट किया कि यहाँ एक से अधिक कथन गलत हैं, अतः प्रायोरिटी के आधार पर ऐसे प्रश्नों की प्रकृति को समझें।</div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q6. बंजारा जनजाति के प्रमुख लोकनृत्य कौन-कौन से हैं?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) तलवार नृत्य और डंडा बेली नृत्य</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) मछली नृत्य</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) ए और बी दोनों कथन सही हैं</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) इनमें से कोई नहीं</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: C) ए और बी दोनों कथन सही हैं</b><br>व्याख्या: बंजारा जनजाति में तलवार नृत्य, डंडा बेली नृत्य और प्रसिद्ध मछली नृत्य (जो राजा-महाराजाओं के सामने किया जाता था) तीनों प्रमुख हैं।</div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q7. अगरिया जनजाति से संबंधित कौन सा कथन गलत (False) है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) इनके प्रमुख देवता लोहासुर हैं।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) भील जनजाति की उत्पत्ति अगरिया से हुई है या यह भील की उपजाति है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) इसके दो भाग पथरिया अगरिया और खुटिया अगरिया हैं।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) ये लोग उड़द की दाल को शुभ मानते हैं।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) भील जनजाति की उत्पत्ति अगरिया से हुई है या यह भील की उपजाति है</b><br>व्याख्या: यह कथन बिल्कुल गलत है क्योंकि अगरिया जनजाति 'गोंड जनजाति' (Gond Tribe) की उपजाति है, भील की नहीं। बाकी सभी विकल्प सत्य हैं।</div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q8. मध्य प्रदेश की कौन सी जनजाति प्रमुख रूप से 'कबीरपंथी' (Kabirpanthi) है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) अगरिया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) पनिका</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) पारधी</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) सौर</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) पनिका</b><br>व्याख्या: पनिका जनजाति पूर्णतः कबीरपंथी होती है जो कबीर दास जी के सिद्धांतों का पालन करती है।</div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q9. विश्व की सबसे पहली कपड़ा बुनकर (First Weaver Tribe) जनजाति किसे माना जाता है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) अगरिया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) पनिका</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) पारधी</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) सौर</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) पनिका</b><br>व्याख्या: विश्व में कपड़ा बुनने की कला की शुरुआत करने का श्रेय पनिका जनजाति को ही जाता है।</div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q10. पनिका जनजाति की प्रमुख उपजातियां कौन-कौन सी हैं?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) शक्ति</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) साकेत</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) कबीरपंथी पनिका</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) यह सभी</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: D) यह सभी</b><br>व्याख्या: शक्ति, साकेत और कबीरपंथी पनिका ये सभी पनिका जनजाति के आंतरिक उप-विभाजन हैं।</div>
+            </div>
+
+            <!-- Q11 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q11. पनिका जनजाति के संदर्भ में कौन सा कथन बिल्कुल सत्य (True) है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) यह मुख्य रूप से सीधी और शहडोल में पाई जाती है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) इसमें लमसेना, गोपे, प्रेम विवाह और देवर-भाभी विवाह प्रचलित हैं।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) इनके धर्मगुरु / मुखिया को मेती या मेतो कहा जाता है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) उपर्युक्त सभी कथन सत्य हैं।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: D) उपर्युक्त सभी कथन सत्य हैं।</b><br>व्याख्या: सर के अनुसार ये सभी तथ्य पनिका जनजाति के विषय में 100% सही और परीक्षा उपयोगी हैं।</div>
+            </div>
+
+            <!-- Q12 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q12. मध्य प्रदेश की किस जनजाति का मुख्य पारंपरिक व्यवसाय 'शिकार करना' (Hunting) है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) पारधी</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) पनिका</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) सहरिया</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) हलवा</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: A) पारधी</b><br>व्याख्या: पारधी का अर्थ ही शिकारी होता है। ये मुख्य रूप से जाल फैलाकर वन्य जीवों का शिकार करते हैं।</div>
+            </div>
+
+            <!-- Q13 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q13. उराव जनजाति के संबंध में कौन सा कथन असत्य / गलत है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) उराव लोग दक्षिण भारत से आए थे।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) यह सबसे अधिक ईसाई धर्म स्वीकार करने वाली जनजाति है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) उराव का युवाग्रह 'बंग' कहलाता है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) इनका मुखिया मेतो कहलाता है।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: C) उराव का युवाग्रह 'बंग' कहलाता है</b><br>व्याख्या: यह कथन गलत है क्योंकि उराव जनजाति के युवाग्रह को 'धूमकुरिया' कहा जाता है। 'बंग' या 'रंगबंग' भारिया/अन्य जनजाति से जुड़ा है।</div>
+            </div>
+
+            <!-- Q14 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q14. खैर (Khair) के वृक्ष से कत्था निकालने का पारंपरिक कार्य कौन सी जनजाति करती है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) कोल</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) कोरकू</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) खैरवार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) भीमा</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: C) खैरवार</b><br>व्याख्या: खैर के वृक्ष से व्यावसायिक रूप से कत्था निकालने का काम 'खैरवार' जनजाति द्वारा किया जाता है।</div>
+            </div>
+
+            <!-- Q15 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q15. मध्य प्रदेश की कौन सी जनजाति स्वयं की उत्पत्ति महाभारत के 'कौरवों' से मानती है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) कमार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) कवार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) खैरवार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) पनिका</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) कवार</b><br>व्याख्या: कवार जनजाति कौरवों से अपनी उत्पत्ति मानती है। इनकी एक शाखा 'तवर' खुद को तोमर राजपूत मानती है।</div>
+            </div>
+
+            <!-- Q16 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q16. सेना या फौज में काम करना किस जनजाति का परंपरागत व गौरवमयी कार्य माना जाता है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) कवार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) हलवा</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) बिजवार</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) पारधी</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: A) कवार</b><br>व्याख्या: कवार जनजाति के लोग ऐतिहासिक रूप से सेना और सैन्य गतिविधियों में शामिल होना अपना सौभाग्य मानते हैं।</div>
+            </div>
+
+            <!-- Q17 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q17. बिजवार (Bijhwar) वास्तव में किस प्रमुख जनजाति की एक विकसित उपजाति है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) भील</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) बैगा</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) कोरकू</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) कोल</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: B) बैगा</b><br>व्याख्या: बिजवार, बैगा जनजाति का ही आर्थिक रूप से समृद्ध और उन्नत रूप है, जो विंध्यांचल पर्वत से अपनी उत्पत्ति मानते हैं।</div>
+            </div>
+
+            <!-- Q18 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q18. बिजवार जनजाति से संबंधित कौन सा कथन शत-प्रतिशत सही है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) इनका उद्गम विंध्यांचल पर्वत से माना जाता है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) छत्तीसगढ़ के क्रांतिकारी वीर नारायण सिंह इसी जनजाति के थे।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) ये विंध्यवासिनी देवी की पूजा करते हैं।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) उपर्युक्त सभी कथन सत्य हैं।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: D) उपर्युक्त सभी कथन सत्य हैं।</b><br>व्याख्या: क्लास लेक्चर के अनुसार ये सभी बिंदु बिजवार जनजाति के बारे में पूर्णतः सत्य हैं।</div>
+            </div>
+
+            <!-- Q19 -->
+            <div class="quiz-item">
+                <div class="quiz-question">Q19. निम्नलिखित में से कौन सा युग्म/कथन पूरी तरह सत्य है?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="selectOption(this)">A) हलवा जनजाति मुख्यतः बालाघाट में पाई जाती है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">B) भीमा जनजाति गोंड की उपजाति है और भीम से उत्पत्ति मानती है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">C) मड़िया जनजाति जबलपुर और अबूझाड़ मड़िया छिंदवाड़ा में पाई जाती है।</div>
+                    <div class="quiz-option" onclick="selectOption(this)">D) सभी कथन सत्य हैं।</div>
+                </div>
+                <button class="reveal-btn" onclick="revealAnswer(this)">Show Correct Answer</button>
+                <div class="quiz-answer"><b>Correct Answer: D) सभी कथन सत्य हैं।</b><br>व्याख्या: सर ने क्लास के अंत में इन सभी छोटी जनजातियों का जिला मिलान कराया था, जो कि सभी सुमेलित हैं।</div>
+            </div>
+        </div>
+
+        <!-- Master Summary Section -->
+        <div class="section-title" id="master-summary">🔥 Master Hot Facts & Revision Matrix</div>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">पूरी क्लास का सबसे महत्वपूर्ण निचोड़ जो सीधे परीक्षा में पूछा जाएगा:</p>
+        
+        <div class="card" style="padding: 10px; overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>जनजाति (Tribe)</th>
+                        <th>प्रमुख देवता (Deity)</th>
+                        <th>विवाह मध्यस्थ (Mediator)</th>
+                        <th>विशेष पहचान / PYQ फैक्ट्स 🔥</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>भिलाला</b></td>
+                        <td>राजपूत मान्यता</td>
+                        <td>मानगड़िया</td>
+                        <td>छत्तीसगढ़ मूल, मृत्यु पर कबाड़ा शोक गीत</td>
+                    </tr>
+                    <tr>
+                        <td><b>भील</b></td>
+                        <td>राजा पंथा</td>
+                        <td>भाजगड़िया</td>
+                        <td>राजस्थान मूल (कुंभलगढ़)</td>
+                    </tr>
+                    <tr>
+                        <td><b>अगरिया</b></td>
+                        <td>लोहासुर (भट्टी वास)</td>
+                        <td>—</td>
+                        <td>उड़द दाल को परम शुभ मानना, लोहे का काम</td>
+                    </tr>
+                    <tr>
+                        <td><b>कवर / कवार</b></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>कौरवों से उत्पत्ति, सेना/फौज में जाना पारंपरिक कार्य</td>
+                    </tr>
+                    <tr>
+                        <td><b>कोरकू</b></td>
+                        <td>—</td>
+                        <td>चिथड़ा</td>
+                        <td>मध्यस्थ को चिथड़ा कहा जाता है</td>
+                    </tr>
+                    <tr>
+                        <td><b>बिजवार</b></td>
+                        <td>विंध्यवासिनी देवी</td>
+                        <td>—</td>
+                        <td>बैगा की अमीर शाखा, वीर नारायण सिंह का संबंध</td>
+                    </tr>
+                    <tr>
+                        <td><b>सौर</b></td>
+                        <td>भवानी माता</td>
+                        <td>—</td>
+                        <td>सागर संभाग, सहरिया की उपजाति</td>
+                    </tr>
+                    <tr>
+                        <td><b>कमार</b></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td><b>मध्य प्रदेश की सबसे छोटी जनजाति</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Master Revision Checklist Section -->
+        <div class="section-title" id="checklist">✅ Master Revision Checklist (LocalStorage Persistent)</div>
+        <p style="margin-bottom: 15px; color: var(--text-muted);">सेल्फ-वेरिफिकेशन के लिए सभी महत्वपूर्ण फैक्ट्स को चेक करें (यह डेटा ब्राउज़र में सुरक्षित रहेगा):</p>
+        
+        <div id="checklist-container">
+            <div class="checklist-item">
+                <input type="checkbox" id="chk1" onclick="saveChecklistState()">
+                <label for="chk1"><b>बिजवार जनजाति</b> बैगा की विकसित शाखा है और विंध्यांचल पर्वत से उत्पन्न हुई है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk2" onclick="saveChecklistState()">
+                <label for="chk2">1857 के क्रांतिकारी <b>वीर नारायण सिंह</b> बिजवार जनजाति से संबंधित थे।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk3" onclick="saveChecklistState()">
+                <label for="chk3"><b>कंघा/कंघी के आविष्कारक</b> के रूप में विश्वभर में बंजारा जनजाति प्रसिद्ध है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk4" onclick="saveChecklistState()">
+                <label for="chk4">विश्व की पहली <b>कपड़ा बुनकर जनजाति</b> पनिका है, जो कबीरपंथी होती है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk5" onclick="saveChecklistState()">
+                <label for="chk5"><b>कमार जनजाति</b> मध्य प्रदेश की सांख्यिकीय रूप से सबसे छोटी जनजाति है (सीधी जिला)।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk6" onclick="saveChecklistState()">
+                <label for="chk6"><b>कवार जनजाति</b> फौज में सेवा को पारंपरिक सौभाग्य मानती है और कौरवों से जन्मी है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk7" onclick="saveChecklistState()">
+                <label for="chk7"><b>उराव जनजाति</b> का युवाग्रह धूमकुरिया है और यह सर्वाधिक ईसाई धर्म प्रभावित है।</label>
+            </div>
+        </div>
+
+        <!-- Teacher's Strategy & Next Class Block -->
+        <div class="section-title" id="strategy">💡 Sir's Ultimate Revision Strategy Tips</div>
+        <div class="card" style="border-left: 4px solid var(--accent-orange);">
+            <p>सर ने क्लास के आखिरी 5 मिनट में छात्रों को डिप्रेशन और याद न होने की समस्या से उबरने के लिए बेहतरीन गाइडेंस दिया:</p>
+            <ul style="margin-top: 10px;">
+                <li><b>शॉर्ट नोट्स का तरीका:</b> जब पूरी जनजातियाँ पढ़ लो, तो एक पन्ने पर 'प्रमुख देवता', एक पन्ने पर 'प्रमुख नृत्य', और एक पन्ने पर 'प्रमुख उपजातियां' की तुलनात्मक लिस्ट बनाओ। इससे कन्फ्यूजन हमेशा के लिए ख़त्म हो जाएगा।</li>
+                <li><b>इतिहास (History) को याद करने का मूल मंत्र:</b> इतिहास पढ़ते समय पहले हमेशा <b>'मजबूत बेस' (Base)</b> बनाओ। जैसे दिल्ली सल्तनत पढ़ना है तो पहले राजवंशों का क्रम (गुलाम 1206-1290, खिलजी 1290-1320, तुगलक, सैयद, लोदी) और उनके संस्थापक रट लो। बेस मजबूत रहेगा तो गहराई की बातें कभी नहीं भूलोगे!</li>
+                <li><b>पॉजिटिविटी रखें:</b> दिमाग में हमेशा यह दोहराते रहें कि "मुझे सब याद हो रहा है, किसी भी हालत में याद हो रहा है!" नकारात्मकता से ब्रेन वॉश न करें।</li>
+            </ul>
+            
+            <div style="margin-top: 20px; padding: 12px; background: rgba(179, 136, 255, 0.1); border-radius: 8px;">
+                📌 <b>Upcoming Topics (अगली क्लास का टॉपिक):</b> मध्य प्रदेश की प्रमुख विमुक्त (Vi-mukt), घुमंतु (Ghumantu) और अर्ध-घुमंतु जनजातियाँ; स्वतंत्रता आंदोलन में जनजातियों का योगदान और प्रमुख जनजातीय व्यक्तित्व।
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Embedded Scripts for Interactivity -->
+    <script>
+        // Toggle Theme Implementation (Dark/Light)
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+            updateThemeUI(targetTheme);
+        }
+
+        function updateThemeUI(theme) {
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            if (theme === 'light') {
+                icon.textContent = '🌙';
+                text.textContent = 'Dark Mode';
+            } else {
+                icon.textContent = '☀️';
+                text.textContent = 'Light Mode';
+            }
+        }
+
+        // Initialize Theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeUI(savedTheme);
+
+        // Accordion Animation/Handling Trigger
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            
+            // Close all others optionally, or just toggle this one
+            content.style.display = isVisible ? 'none' : 'block';
+            header.querySelector('span:last-child').textContent = isVisible ? '➕ Expand' : '➖ Collapse';
+        }
+
+        // Dropdown Quick Navigation Selector
+        function jumpToSection(targetId) {
+            if (targetId) {
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Quiz Selection UI Feedback
+        function selectOption(optionEl) {
+            const siblings = optionEl.parentElement.children;
+            for (let sib of siblings) {
+                sib.style.background = 'var(--card-bg)';
+                sib.style.borderColor = 'var(--border-color)';
+            }
+            optionEl.style.background = 'rgba(0, 212, 255, 0.15)';
+            optionEl.style.borderColor = 'var(--accent-cyan)';
+        }
+
+        // Reveal Hidden MCQ Answers
+        function revealAnswer(btnEl) {
+            const answerDiv = btnEl.nextElementSibling;
+            if (answerDiv.style.display === 'block') {
+                answerDiv.style.display = 'none';
+                btnEl.textContent = 'Show Correct Answer';
+            } else {
+                answerDiv.style.display = 'block';
+                btnEl.textContent = 'Hide Answer';
+            }
+        }
+
+        // Save and Load Master Checklist States via localStorage
+        function saveChecklistState() {
+            const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+            checkboxes.forEach(chk => {
+                localStorage.setItem(chk.id, chk.checked);
+            });
+            updateProgressBar();
+        }
+
+        function loadChecklistState() {
+            const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+            checkboxes.forEach(chk => {
+                const state = localStorage.getItem(chk.id);
+                if (state !== null) {
+                    chk.checked = (state === 'true');
+                }
+            });
+            updateProgressBar();
+        }
+
+        // Dynamic Reading & Checklist Progress Tracking
+        function updateProgressBar() {
+            const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+            if(checkboxes.length === 0) return;
+            const checked = document.querySelectorAll('#checklist-container input[type="checkbox"]:checked');
+            const percentage = (checked.length / checkboxes.length) * 100;
+            document.getElementById('readingProgress').style.width = percentage + '%';
+        }
+
+        // Run On Initial Load
+        window.onload = function() {
+            loadChecklistState();
+        };
+
+        // Fallback Script to maintain image stability
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.style.display = 'none';
+                const fallbackMessage = document.createElement('div');
+                fallbackMessage.style.padding = '10px';
+                fallbackMessage.style.fontSize = '13px';
+                fallbackMessage.style.color = 'var(--accent-orange)';
+                fallbackMessage.innerHTML = '⚠️ Image link temporary unavailable. Please review transcription details directly.';
+                this.parentNode.appendChild(fallbackMessage);
+            };
+        });
+    </script>
+</body>
+</html>

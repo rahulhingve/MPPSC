@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MPPSC Unit 10: कोल जनजाति (Kol Tribe) - Complete Revision Page</title>
+    
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #16162a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0d0;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2a2a4a;
+            --gradient-link: linear-gradient(135deg, #1e1b4b, #0f172a);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --accent-cyan: #0088cc;
+            --accent-orange: #e65100;
+            --accent-green: #008744;
+            --accent-purple: #6200ea;
+            --border-color: #dcdcdc;
+            --gradient-link: linear-gradient(135deg, #e0e7ff, #f1f5f9);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 17px;
+            letter-spacing: 0.03em;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Layout Grid */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 992px) {
+            .app-container {
+                grid-template-columns: 320px 1fr;
+            }
+        }
+
+        /* Sticky Left Sidebar */
+        .sidebar {
+            position: static;
+        }
+
+        @media (min-width: 992px) {
+            .sidebar {
+                position: sticky;
+                top: 20px;
+                height: calc(100vh - 40px);
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Header Style */
+        header {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--border-color);
+            color: var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            background: var(--border-color);
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transition: width 0.4s ease;
+        }
+
+        /* Controls Block */
+        .controls-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .nav-dropdown {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .theme-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Sticky Map Panel for Desktop */
+        .map-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .map-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Main Content Blocks */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .section-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            scroll-margin-top: 20px;
+        }
+
+        .section-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent-cyan);
+        }
+
+        /* Chunked Cards inside Content */
+        .chunk-card {
+            background: var(--bg-primary);
+            border-left: 4px solid var(--accent-cyan);
+            border-radius: 0 12px 12px 0;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .chunk-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .chunk-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .chunk-card li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Highlight Boxes */
+        .exam-hot {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px dashed var(--accent-orange);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .exam-hot-title {
+            color: var(--accent-orange);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* Link Stories */
+        .link-story-box {
+            background: var(--gradient-link);
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+
+        .link-story-title {
+            color: var(--accent-purple);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Data Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--border-color);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Accordion / Collapsible */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 14px 20px;
+            text-align: left;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            padding: 15px 20px;
+            background: var(--bg-secondary);
+            display: none;
+        }
+
+        /* Interactive Quiz Layout */
+        .quiz-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .reveal-btn {
+            background: var(--border-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .quiz-answer {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Image Containers */
+        .image-block {
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            background: var(--bg-primary);
+            padding: 10px 15px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Checklist Formatting */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        /* Footer Formatting */
+        footer {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+            grid-column: 1 / -1;
+        }
+
+        /* Fallback elements styling */
+        .img-fallback-link {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            background: var(--bg-primary);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Print Specific Layout adjustments */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 14px;
+            }
+            .sidebar, .theme-btn, .nav-dropdown, .reveal-btn, .progress-container {
+                display: none !important;
+            }
+            .accordion-content, .quiz-answer {
+                display: block !important;
+            }
+            .section-card {
+                border: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            .app-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- 1. HEADER SECTION -->
+    <header>
+        <h1>🎯 मध्य प्रदेश की जनजातियाँ: कोल जनजाति (Kol Tribe)</h1>
+        <p style="color: var(--text-secondary); margin-top: 5px;">MPPSC Unit 10 Complete Lecture Interactive Revision Framework</p>
+        <div class="badge-container">
+            <span class="badge">📖 Unit 10: MP Tribes</span>
+            <span class="badge">🔥 Total Main Topics: 7</span>
+            <span class="badge">⚡ Language: Hinglish</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="topProgressBar"></div>
+        </div>
+    </header>
+
+    <!-- 2. STICKY INTERACTIVE NAVIGATION PANEL -->
+    <div class="sidebar">
+        <div class="controls-card">
+            <h3 style="margin-bottom: 12px;">🗂️ त्वरित नेविगेशन (Quick Jump)</h3>
+            <select class="nav-dropdown" onchange="scrollToSection(this.value)">
+                <option value="">-- टॉपिक चुनें --</option>
+                <option value="section-recap">1. Previous Classes Quick Recap</option>
+                <option value="section-constitutional">2. संवेधानिक प्रावधान (Constitutional Articles)</option>
+                <option value="section-intro">3. सामान्य परिचय (General Introduction)</option>
+                <option value="section-history">4. ऐतिहासिक साक्ष्य और विद्रोह (History & Rebellion)</option>
+                <option value="section-geography">5. भौगोलिक वितरण और निवास (Geography & Distribution)</option>
+                <option value="section-subtribes">6. कोल जनजाति की उपजातियाँ (Sub-tribes)</option>
+                <option value="section-social">7. सामाजिक एवं प्रशासनिक व्यवस्था (Social Framework)</option>
+                <option value="section-culture">8. खानपान, वेशभूषा एवं धर्म (Culture & Religion)</option>
+                <option value="master-fullforms">📑 मास्टर तालिका - Full Forms</option>
+                <option value="master-hotfacts">🔥 परीक्षा उपयोगी तथ्य (Master Exam Facts)</option>
+                <option value="master-checklist">✅ रिवीजन चेकलिस्ट (Master Revision Checklist)</option>
+            </select>
+            <button class="theme-btn" onclick="toggleTheme()">🌓 थीम बदलें (Toggle Theme)</button>
+        </div>
+
+        <!-- Sticky Reference Map Panel -->
+        <div class="map-card">
+            <h4 style="margin-bottom: 10px; color: var(--accent-orange);">🗺️ MP Reference Map</h4>
+            <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh District Map including newly formed districts like Maihar, Pandhurna, Mauganj, Niwari" width="540" height="387" id="stickyMPMap">
+            <p style="font-size: 11px; margin-top: 5px; color: var(--text-secondary);">Source: SLBC Madhya Pradesh (55 Districts Reference)</p>
+        </div>
+    </div>
+
+    <!-- MAIN BODY CONTENT -->
+    <div class="main-content">
+
+        <!-- CONTENT BLOCK 1: PREVIOUS RECAP -->
+        <div class="section-card" id="section-recap">
+            <h2 class="section-header">🔄 1. Previous Classes Quick Recap (पिछली कक्षाओं का पुनरावलोकन)</h2>
+            <p style="margin-bottom: 15px; font-weight: 500;">शिक्षक द्वारा पिछली कक्षाओं में पढ़ाई गई प्रमुख जनजातियों और उनकी उपजातियों का त्वरित रिवीज़न:</p>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>मुख्य जनजाति (Main Tribe)</th>
+                            <th>महत्वपूर्ण उपजाति समूह (Sub-tribes)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>भील (Bhil)</strong></td>
+                            <td>भिलाला, रतियास/रथिया, पटरिया, बैगास, उमड़ी, तड़वी भील</td>
+                        </tr>
+                        <tr>
+                            <td><strong>गोंड (Gond)</strong></td>
+                            <td>अगरिया, प्रधान, ओझा, सोलहस, कोयलाभूतास, नागरची</td>
+                        </tr>
+                        <tr>
+                            <td><strong>बैगा (Baiga)</strong></td>
+                            <td>नाहर, रमना, काढ़ना, भरतिया, नरोतिया, कोडवा/कदमैना, कुंडी गोडवा</td>
+                        </tr>
+                        <tr>
+                            <td><strong>कोरकू (Korku)</strong></td>
+                            <td>बबई, मोसी/मवासी, रूमा, नाला, बोडोया, चांदगढ़िया, पठारिया, बवारिया, दुलारिया</td>
+                        </tr>
+                        <tr>
+                            <td><strong>सहरिया (Sahariya)</strong></td>
+                            <td>सवर, सवर, सौर, सोर</td>
+                        </tr>
+                        <tr>
+                            <td><strong>भारिया (Bharia)</strong></td>
+                            <td>बहर, भूमिया, बुइहार, पंडो</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chunk-card">
+                <h4>🔑 कोरकू जनजाति संगठनात्मक ढांचा (Quick Snapshot)</h4>
+                <ul>
+                    <li><strong>मूल निवास स्थान:</strong> बैतुल के भवरगढ़ और सावलीगढ़ में स्थित है।</li>
+                    <li><strong>शाब्दिक अर्थ:</strong> कोरकू का अर्थ 'मानव का समूह' (Group of humans) होता है।</li>
+                    <li><strong>प्रशासनिक प्रमुख:</strong> पंचायत प्रमुख को <strong>पटेल</strong> कहते हैं; जिसकी सहायता <strong>माजन</strong> करता है। <strong>चौधरी</strong> पंचायती की व्यवस्था जुटाने का कार्य करता है।</li>
+                    <li><strong>विशिष्ट भूमिकाएँ:</strong> <strong>पडियार</strong> एक विशिष्ट प्रतिष्ठित व्यक्ति होता है; <strong>भूमका</strong> गाँव का पुरोहित (Priest) होता है; और <strong>गेटिया</strong> खान-पान एवं भोजन की व्यवस्था संभालता है।</li>
+                </ul>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — शाब्दिक अर्थों का ताना-बाना</div>
+                <p>गोंड पर्वत (कोंड) पर चढ़े, वहाँ उन्हें बैगा पुरोहित मिले। बैगा पुरोहित ने हाथ में भील का धनुष थाम रखा था, तभी सामने से कोरकू मानवों का समूह गुजरा, जो सहरिया शेरों के साथ रहने वाले जंगलों में जा छुपा!</p>
+                <p style="font-size: 13px; margin-top: 5px; opacity: 0.8;">*(गोंड = कोंड/पहाड़, बैगा = पुरोहित, भील = धनुष, कोरकू = मानवों का समूह, सहरिया = शेर/जंगल के साथ)*</p>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 2: CONSTITUTIONAL ARTICLES -->
+        <div class="section-card" id="section-constitutional">
+            <h2 class="section-header">⚖️ 2. संवेधानिक प्रावधान (Constitutional Articles & Background)</h2>
+            <div class="chunk-card">
+                <ul>
+                    <li><strong>आर्टिकल 17 (Article 17):</strong> अस्पृश्यता का अंत (Abolition of Untouchability) - समाज में छुआछूत को पूरी तरह समाप्त करने की बात कहता है।</li>
+                    <li><strong>आर्टिकल 244(2) [Article 244(2)]:</strong> असम, मेघालय, मिजोरम और त्रिपुरा (AMTM) राज्यों के जनजातीय क्षेत्रों के प्रशासन के लिए विशेष प्रावधान। यह संविधान के <strong>भाग 10 (Part 10)</strong> के अंतर्गत आता है।</li>
+                    <li><strong>आर्टिकल 243D (Article 243D):</strong> ग्रामीण स्थानीय निकायों यानी <strong>पंचायतों</strong> में अनुसूचित जनजातियों (ST) के लिए जनसंख्या के अनुपात में आरक्षण सुनिश्चित करता है।</li>
+                    <li><strong>आर्टिकल 243T (Article 243T):</strong> शहरी स्थानीय निकायों यानी <strong>नगरीय निकायों/नगरपालिकाओं</strong> में अनुसूचित जनजातियों (ST) के लिए सीटों के आरक्षण का प्रावधान करता है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 3: GENERAL INTRODUCTION -->
+        <div class="section-card" id="section-intro">
+            <h2 class="section-header">💻 3. सामान्य परिचय (General Introduction to Kol Tribe)</h2>
+            <div class="chunk-card">
+                <ul>
+                    <li><strong>तीसरी सबसे बड़ी जनजाति:</strong> कोल जनजाति मध्य प्रदेश की <strong>तीसरी सबसे बड़ी जनजाति (3rd Largest Tribe)</strong> है।</li>
+                    <li><strong>जनसंख्या क्रमानुसार स्थान (Top Tribes Structure):</strong>
+                        1. भील (लगभग 39% जनजातीय जनसंख्या) <br>
+                        2. गोंड (लगभग 33% जनजातीय जनसंख्या) <br>
+                        3. <strong>कोल (7.6% जनजातीय जनसंख्या)</strong> <br>
+                        4. कोरकू (चौथे नंबर पर) <br>
+                        5. सहरिया (पांचवें नंबर पर) <br>
+                        6. बैगा (छठवें नंबर पर)
+                    </li>
+                    <li><strong>कुल जनसंख्या शेयर:</strong> यह मध्य प्रदेश की कुल जनजातीय आबादी (1,53,16,784) का <strong>7.6%</strong> है, जिसकी संख्या लगभग <strong>11 लाख</strong> के आसपास आती है।</li>
+                    <li><strong>शाब्दिक अर्थ:</strong> 'कोल' शब्द का वास्तविक अर्थ <strong>मानव (Human)</strong> होता है।</li>
+                    <li><strong>भाषाई व जनजातीय परिवार:</strong> यह जनजाति <strong>कोलेरियन परिवार (Kolarian Family)</strong> से संबंधित मानी जाती है। इस परिवार के अन्य सदस्यों में बिहोर, भूमिज, उराव और कोड़ा जैसी जनजातियां शामिल हैं।</li>
+                </ul>
+            </div>
+
+            <div class="exam-hot">
+                <div class="exam-hot-title">🔥 Exam Hot — अत्यंत महत्वपूर्ण तथ्य</div>
+                <p>कोल जनजाति मध्य प्रदेश की कुल जनजातीय जनसंख्या का <strong>7.6%</strong> निर्मित करती है और यह राज्य की <strong>तीसरी सबसे बड़ी जनजाति</strong> है। क्रम याद रखें: भील → गोंड → कोल → कोरकू → सहरिया → बैगा।</p>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 4: HISTORY & REBELLION -->
+        <div class="section-card" id="section-history">
+            <h2 class="section-header">📜 4. ऐतिहासिक साक्ष्य और कोल विद्रोह (History & Ancient References)</h2>
+            <div class="chunk-card">
+                <h4>🏛️ प्राचीन वैदिक एवं पुरातात्विक संदर्भ</h4>
+                <ul>
+                    <li><strong>अति प्राचीन साक्ष्य:</strong> कोल जनजाति के अस्तित्व के साक्ष्य सिंधु घाटी सभ्यता/हड़प्पा सभ्यता से भी प्राप्त होते हैं।</li>
+                    <li><strong>वैदिक एवं महाकाव्य संदर्भ:</strong> इनका विस्तृत उल्लेख भारत के वैदिक ग्रंथों, पुराणों (कुल 18 पुराण), रामायण तथा महाभारत में स्पष्ट रूप से मिलता है।</li>
+                    <li><strong>ऋग्वेद में उल्लेख:</strong> ऋग्वेद काल में इस जनजाति को <strong>'कोलहाती' (Kolhati)</strong> या कोल हाती नाम से संबोधित किया गया है। इन्हें प्राचीन काल में कुलरिया या 'भुंडा' (Bhunda) नाम से भी जाना जाता था। मैक्समूलर ने भी कोलरियन स्वरूप की व्याख्या की है।</li>
+                </ul>
+            </div>
+
+            <div class="chunk-card" style="border-left-color: var(--accent-orange);">
+                <h4>⚔️ कोल विद्रोह (Kol Rebellion - 1831-32)</h4>
+                <ul>
+                    <li><strong>समय काल (Year):</strong> यह प्रसिद्ध जनजातीय विद्रोह वर्ष <strong>1831-32</strong> में घटित हुआ था।</li>
+                    <li><strong>नेतृत्वकर्ता (Leader):</strong> इस ऐतिहासिक क्रांति का कुशल नेतृत्व <strong>बुद्धू भगत (Budhhu Bhagat)</strong> द्वारा किया गया था।</li>
+                    <li><strong>विद्रोह का कारण:</strong> ब्रिटिश हुकूमत की दमनकारी प्रशासनिक नीतियों द्वारा कोलो के पारंपरिक क्षेत्रों एवं अधिकारों का जबरन हनन करना था।</li>
+                    <li><strong>तत्कालीन गवर्नर जनरल:</strong> विद्रोह के समय भारत के गवर्नर जनरल <strong>लॉर्ड विलियम बेंटिक (Lord William Bentinck)</strong> थे।</li>
+                    <li><strong>📌 ऐतिहासिक परीक्षा लिंक:</strong> लॉर्ड विलियम बेंटिक बंगाल के अंतिम गवर्नर जनरल थे, जिन्हें 1833 के चार्टर एक्ट (Charter Act of 1833) के द्वारा पूरे भारत का पहला गवर्नर जनरल बनाया गया था।</li>
+                </ul>
+            </div>
+
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Lord_William_Bentinck_by_Sir_Thomas_Lawrence.jpg" alt="Portrait painting of Lord William Bentinck, Governor General during Kol Rebellion 1831-1832" width="351" height="500">
+                <div class="image-caption">Image: Wikimedia Commons, Artist: Sir Thomas Lawrence. Lord William Bentinck, भारत के प्रथम गवर्नर जनरल (जिनके कार्यकाल में 1831-32 का कोल विद्रोह दबाया गया).</div>
+                <script>
+                    document.getElementById('stickyMPMap').addEventListener('error', function() {
+                        this.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Madhya_Pradesh_co-or_map.svg/512px-Madhya_Pradesh_co-or_map.svg.png';
+                    });
+                </script>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 5: GEOGRAPHY & HABITAT -->
+        <div class="section-card" id="section-geography">
+            <h2 class="section-header">🏞️ 5. भौगोलिक वितरण और मूल निवास (Geography & Regional Distribution)</h2>
+            <div class="chunk-card">
+                <h4>📍 मूल निवास के संबंध में ऐतिहासिक मत (Origin Theories)</h4>
+                <ul>
+                    <li><strong>रीवा रियासत संबंध:</strong> कोल जनजाति के पूर्वज ऐतिहासिक रूप से <strong>रीवा रियासत (Rewa Princely State)</strong> के स्वामी या मुख्य निवासी रहे हैं। इन्हें पूर्णतः रीवा के मूल निवासी माना जाता है।</li>
+                    <li><strong>फरेंदा गाँव (Farenda Village):</strong> मध्य प्रदेश के वर्तमान कोल जनजातीय समूह स्वयं को रीवा जिले के फरेंदा गाँव का मूल निवासी मानते हैं।</li>
+                    <li><strong>कुराली गाँव (Kurali Village):</strong> उत्तर प्रदेश के मिर्जापुर क्षेत्र में रहने वाले कोल मानते हैं कि उनकी उत्पत्ति रीवा रियासत के कुराली गाँव से हुई है।</li>
+                    <li><strong>विभिन्न किंवदंतियां:</strong> 
+                        1. कुछ इतिहासकारों के अनुसार ये पहले गंगा पार रहते थे, राजाओं के उत्पीड़न के बाद बघेलखंड आए। <br>
+                        2. एक अन्य मत के अनुसार 1576 के हल्दीघाटी युद्ध में इन्होंने महाराणा प्रताप की मदद की, बाद में यह समूह विंध्य क्षेत्र में आकर स्थापित हो गया। <br>
+                        3. रीवा के <strong>त्योंथर (Teonthar)</strong> क्षेत्र में कोल राजाओं के कई प्राचीन गढ़ (किले नुमा अवशेष) मिले हैं, जो प्रमाणित करते हैं कि इस भूभाग पर कभी कोलों का प्रत्यक्ष शासन था।
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chunk-card" style="border-left-color: var(--accent-green);">
+                <h4>⛰️ वर्तमान भौगोलिक फैलाव (Geographical Extension)</h4>
+                <ul>
+                    <li><strong>पर्वतीय क्षेत्र:</strong> यह जनजाति मुख्य रूप से विंध्यांचल पर्वतमाला की पूर्वी श्रेणियों यानी <strong>विंध्य-कैमूर श्रेणियों (Vindhya-Kaimur Ranges)</strong> में निवास करती है।</li>
+                    <li><strong>पठारी क्षेत्र:</strong> मध्य प्रदेश के सात प्रमुख भौतिक पठारों में से सबसे छोटे पठार यानी <strong>बघेलखंड के पठार (Baghelkhand Plateau)</strong> में इनका सघन जमाव है।</li>
+                    <li><strong>मुख्य जिले:</strong> रीवा, सतना, सीधी, सिंगरोली, शहडोल, मऊगंज, मंडला और जबलपुर जिलों में कोल आबादी प्रचुर मात्रा में पाई जाती है।</li>
+                    <li><strong>अन्य राज्यों में विस्तार:</strong> मध्य प्रदेश के अतिरिक्त कोल जनजाति बिहार, उत्तर प्रदेश, छत्तीसगढ़, असम और त्रिपुरा राज्यों में भी निवास करती है।</li>
+                </ul>
+            </div>
+            
+            <blockquote>
+                💡 <strong>शिक्षक का जीवन ज्ञान / अनमोल वचन (Transcript Core Segment):</strong> <br>
+                "प्रकृति के साथ कभी खिलवाड़ मत करो। रात सोने के लिए बनी है (11 से 5) और सुबह 5 बजे उठकर पढ़ना कंसंट्रेशन लेवल बढ़ाता है। समाज में 25 साल के युवा खुद को शहंशाह समझने लगते हैं, लेकिन 75 साल के हमारे बुजुर्गों के पास गहरा खानदानी अनुभव होता है, वे बहस नहीं करते क्योंकि वे जानते हैं कि समय ही असल शिक्षक है। हमेशा बुजुर्गों का सम्मान करें और उनकी बातें सुनें।"
+            </blockquote>
+        </div>
+
+        <!-- CONTENT BLOCK 6: SUB-TRIBES -->
+        <div class="section-card" id="section-subtribes">
+            <h2 class="section-header">🌿 6. कोल जनजाति की उपजातियाँ (Sub-tribes / Internal Grouping)</h2>
+            <p style="margin-bottom: 10px;">कोल जनजाति के भीतर सामाजिक स्तर पर कई उप-शाखाएं पाई जाती हैं जो आपस में वैवाहिक व सामाजिक ताने-बाने से बंधी हैं:</p>
+            
+            <div class="chunk-card">
+                <ul>
+                    <li><strong>रौतेला (Rautela):</strong> समाज में इनका सामाजिक स्थान सबसे <strong>उच्च (Highest Status)</strong> माना जाता है।</li>
+                    <li><strong>रौतिया (Rautia):</strong> रौतेला के साथ मिलकर रौतिया समूह भी उपक्रम व्यवस्था में सर्वोच्च स्थान रखता है; समाज की पंचायती में इनकी प्रधान भूमिका चलती है।</li>
+                    <li><strong>ठाकुरिया (Thakuriya):</strong> ऐतिहासिक रूप से ठाकुर राजाओं के सामंजस्य या संपर्क से बनी उपजाति।</li>
+                    <li><strong>भूमिया (Bhumia):</strong> भूमि से जुड़े पारंपरिक समूह।</li>
+                    <li><strong>मवासी (Mawasi):</strong> ध्यान रहे मवासी उपजाति कोरकू जनजाति में भी पाई जाती है और कोल समूह का भी हिस्सा है।</li>
+                    <li><strong>दशोरा (Dashora):</strong> दशहरा पर्व या विशेष व्यवस्था से जुड़ी उपशाखा।</li>
+                    <li><strong>विंज (Binjh):</strong> कोलों की एक प्रमुख पारंपरिक उपजाति।</li>
+                    <li><strong>अन्य उपजातियां:</strong> मानसी, बरतिया, गरभरिया, कठौतिया (कटोरिया), कगवारिया, रेबिया।</li>
+                </ul>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — उपजातियों को याद रखने की जादुई कहानी</div>
+                <p>कोल जनजाति का एक लड़का दशहरा <strong>(दशोरा)</strong> मनाने अपनी मौसी <strong>(मवासी/मानसी)</strong> के घर गया। वहाँ उसने एक प्रतियोगिता जीती <strong>(विंज)</strong>। रास्ते में लौटते समय उसे कुछ दबंगों <strong>(ठाकुरिया)</strong> ने घेर लिया, जिससे डरकर वह ज़मीन <strong>(भूमिया)</strong> पर गिरकर रोने लगा <strong>(रौतेला/रौतिया)</strong>। अंत में वह किसी तरह हिम्मत जुटाकर खिलौने समेटते हुए अपने घर पहुंचा और पूरे घर को खिलौनों से भर दिया <strong>(घरभरिया/कगवारिया/कठौतिया)</strong>!</p>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 7: SOCIAL FRAMEWORK -->
+        <div class="section-card" id="section-social">
+            <h2 class="section-header">👥 7. सामाजिक एवं प्रशासनिक व्यवस्था (Social Structure & Officials)</h2>
+            <div class="chunk-card">
+                <h4>🏢 सामाजिक ताना-बाना</h4>
+                <ul>
+                    <li><strong>पारिवारिक प्रकृति:</strong> इनका समाज पूर्णतः <strong>पितृसत्तात्मक (Patriarchal)</strong> होता है। लेकिन पारिवारिक निर्णयों में महिलाओं को अत्यंत उच्च और सम्मानजनक स्थान प्राप्त होता है।</li>
+                    <li><strong>वैचारिक दृष्टिकोण:</strong> यह पारंपरिक रूप से अपनी परंपराओं को लेकर <strong>रूढ़िवादी (Conservative)</strong> होते हैं। समाज में एकल (Nuclear) और संयुक्त (Joint) दोनों प्रकार के परिवार सह-अस्तित्व में रहते हैं।</li>
+                    <li><strong>औपचारिक शिक्षा:</strong> बच्चों को सामान्य व्यावहारिक शिक्षा दी जाती है, प्राचीन काल में बालिकाओं को बाहर भेजने का प्रचलन कम था, परंतु आधुनिक समय में तेजी से शैक्षणिक सुधार हो रहे हैं।</li>
+                </ul>
+            </div>
+
+            <div class="chunk-card" style="border-left-color: var(--accent-purple);">
+                <h4>⚖️ पारंपरिक जनजातीय न्याय व्यवस्था (Panchayat Structure)</h4>
+                <ul>
+                    <li><strong>गोहिया (Gohiya):</strong> कोल जनजाति की अपनी पारंपरिक ग्राम पंचायत को <strong>गोहिया</strong> कहा जाता है। यह सभी आपसी झगड़ों, विवादों और तलाक (Divorce) आदि का निपटारा गाँव के स्तर पर ही करती है। कोर्ट-कचहरी या पुलिस स्टेशन जाने की प्रवृत्ति इनमें वर्जित रही है।</li>
+                    <li><strong>मुकदम (Mukadam):</strong> कई छोटे-छोटे गाँवों की समितियों को मिलाकर बनने वाली बड़ी क्षेत्रीय पंचायत के सर्वोच्च मुखिया को <strong>मुकदम</strong> कहा जाता है।</li>
+                    <li><strong>कोदई भाजी दंड (Kodai Bhaji Punishment):</strong> यदि कोई व्यक्ति गोहिया पंचायत के नियमों का उल्लंघन करता है, तो उसे दंड स्वरूप <strong>'कोदई भाजी'</strong> का दंड दिया जाता है। इसका अर्थ होता है कि दोषी व्यक्ति को आर्थिक दंड के रूप में <strong>पूरे गाँव को सामूहिक भोज (Feast)</strong> कराना होगा, जिसमें चने की भाजी और कोदई का चावल परोसा जाता है।</li>
+                </ul>
+            </div>
+
+            <div class="chunk-card" style="border-left-color: var(--accent-orange);">
+                <h4>👮 पंचायत के प्रमुख अधिकारी एवं उनके कार्य (Panchayat Officials)</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>पद/अधिकारी का नाम</th>
+                                <th>प्रशासनिक एवं सामाजिक कार्य भूमिका (Role & Duties)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>चौधरी / महतो / गोटिया</strong></td>
+                                <td>यह सामान्यतः गाँव का <strong>मुख्य प्रशासनिक प्रधान (Village Head)</strong> होता है। सर्वोच्च प्रशासनिक देखरेख और अंतिम निर्णय प्रक्रिया इसी के अधीन होती है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>बरुआ (Barua)</strong></td>
+                                <td>गाँव का मुख्य <strong>धार्मिक नेता (Religious Leader)</strong>। यह देवताओं के पारंपरिक चबूतरे पर बैठता है। कोल मान्यता के अनुसार इसी व्यक्ति के शरीर पर वास्तविक देवी-देवता आते हैं (देवता चढ़ना/भोपे की तरह कार्य करना)।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>भुईहार / ओझा / पंडा / देवार</strong></td>
+                                <td>यह बरुआ के ठीक नीचे का महत्वपूर्ण धार्मिक-तांत्रिक पद है। इनका मुख्य कार्य झाड़-फूंक करना, जड़ी-बूटियों से रोगों का पारंपरिक इलाज करना तथा तांत्रिक क्रियाएं संपन्न करना है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>नियोतिया / निदतिया (Niyotiya)</strong></td>
+                                <td>गाँव का मुख्य संदेशवाहक या आमंत्रण अधिकारी। विवाह, उत्सव या किसी बड़े सामाजिक कार्यक्रम के अवसर पर पूरे गाँव के लोगों को घर-घर जाकर <strong>'नौता' (निमंत्रण/Invitation)</strong> देने का कार्य इसी का होता है।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT BLOCK 8: CULTURE & RELIGION -->
+        <div class="section-card" id="section-culture">
+            <h2 class="section-header">🎨 8. खानपान, बेशभूषा, आर्थिक स्थिति एवं धार्मिक विश्वास</h2>
+            
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">🏠 अ. आवास व्यवस्था (Settlements & Housing) <span>＋</span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><strong>मड़िया (Madiya):</strong> कोल जनजाति के घास-फूस और मिट्टी से बने पारंपरिक घरों/झोपड़ियों को <strong>मड़िया</strong> कहा जाता है।</li>
+                        <li><strong>कोलिन टोला (Kolin Tola):</strong> जब कोलों के मड़िया/घर दूर-दूर, खुले और बिखरे हुए परिवेश में स्थित होते हैं, तो उस क्षेत्र को <strong>कोलिन टोला</strong> पुकारा जाता है।</li>
+                        <li><strong>कोल्हन (Kolhan):</strong> जिस ग्रामीण क्षेत्र में कोल जनजाति की आबादी अत्यंत घनी (Dense Population) होती है और घर पास-पास सटे होते हैं, उस सघन बस्ती को <strong>कोल्हन</strong> कहा जाता है।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">🍲 ब. खान-पान एवं अर्थव्यवस्था (Food & Economic Status) <span>＋</span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><strong>भोजन की प्रकृति:</strong> यह पूर्णतः सर्वाहारी (शाकाहारी और मांसाहारी दोनों) होते हैं। यह सूअर और बैल का मांस भी खा लेते हैं।</li>
+                        <li><strong>कोदई भाजी:</strong> गरीब कोल परिवारों का मुख्य दैनिक भोजन <strong>कोदई भाजी</strong> (चावल के आटे या कोदई के दाने और भाजी) होता है।</li>
+                        <li><strong>मदाइन (Madain):</strong> महुआ के फूलों से निर्मित पारंपरिक मदिरा/शराब को कोल भाषा में <strong>मदाइन</strong> कहा जाता है। कोल पुरुष मैदान या खुले स्थानों में बैठकर इसका सेवन करते हैं।</li>
+                        <li><strong>मेडिकल उपयोग:</strong> प्रसव पीड़ा (Labor Pain) के समय दर्द और मानसिक तनाव को कम करने के लिए कोल महिलाओं को भी पारंपरिक रूप से मदाइन पिलाई जाती है।</li>
+                        <li><strong>आर्थिक गतिविधियां:</strong> अधिकांश कोल भूमिहीन मजदूर (Landless Labourers) हैं। ये कृषि, पशुपालन, जंगलों से लकड़ी और पत्तों का एकत्रीकरण करते हैं।</li>
+                        <li><strong>🔥 प्रमुख पहचान:</strong> इनका एक बड़ा हिस्सा <strong>कोयले की खदानों (Coal Mines) में श्रमिक</strong> के रूप में कार्य करता है, जिस कारण भी इन्हें 'कोल' नाम से जोड़ा जाता है।</li>
+                    </ul>
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Coal_mine_in_Bihar_1969.jpg" alt="Historical archival photograph of an open cast coal mine, showcasing labor conditions similar to Kol tribe miners" width="640" height="427">
+                        <div class="image-caption">Image: Wikimedia Commons, Source: US Gov National Archives (1969). कोयले की खदानों में काम करना कोल जनजाति की प्रमुख आर्थिक विशेषता रही है.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">👚 स. वस्त्र और आभूषण (Clothing Style) <span>＋</span></button>
+                <div class="accordion-content">
+                    <ul>
+                        <li><strong>पुरुष वेशभूषा:</strong> पारंपरिक रूप से पुरुष धोती, कुर्ता और सिर पर साफा (Turban) धारण करते हैं।</li>
+                        <li><strong>महिला वेशभूषा:</strong> महिलाएं मुख्य रूप से पारंपरिक भारतीय धोती और ऊपर से चोली नुमा <strong>'बंडी'</strong> वस्त्र पहनती हैं।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-trigger" onclick="toggleAccordion(this)">🔱 द. धार्मिक विश्वास एवं स्थानीय देवी-देवता (Deities) <span>＋</span></button>
+                <div class="accordion-content">
+                    <p style="margin-bottom: 10px;">कोल पूरी तरह से हिंदू रीति-रिवाजों और त्योहारों को मानते हैं। इनके प्रमुख स्थानीय देव निम्नलिखित हैं:</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <th>देवता/देवी का नाम</th>
+                                <th>विशेषता एवं स्थान विवरण (Deity Significance)</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ठाकुर देव (Thakur Dev)</strong></td>
+                                    <td>ये संपूर्ण <strong>गाँव के देवता (Village Deity)</strong> माने जाते हैं, जो गाँव को सभी प्रकार की बाहरी विपदाओं और संकटों से सुरक्षित रखते हैं।</td>
+                                }
+                                <tr>
+                                    <td><strong>बड़का देव (Badka Dev)</strong></td>
+                                    <td>कोल समाज में बड़का देव की तुलना साक्षात <strong>भगवान महादेव (Lord Shiva)</strong> से की गई है। इनका पवित्र चबूतरा हमेशा गाँव की <strong>पूर्वी दिशा (East Direction)</strong> में स्थापित किया जाता है।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>अहीर बाबा (Ahir Baba)</strong></td>
+                                    <td>मूलतः अहीरों के देवता हैं, लेकिन लंबे संपर्क के कारण कोल इन्हें अपने <strong>घर का सबसे बड़ा देवता (Highest Domestic Deity)</strong> मानते हैं। इनका चबूतरा गाँव के बाहर नहीं, बल्कि स्वयं के घर/मड़िया के भीतर उत्तर-पश्चिम कोने में बनाया जाता है। नवदुर्गा में विशेष पूजन होता है।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>घासी घमसान (Ghasi Ghamsan)</strong></td>
+                                    <td>इन्हें कोलों का महान <strong>पूर्वज (Ancestor Spirit)</strong> माना जाता है। किंवदंती है कि इन्होंने कोलों की रक्षा के लिए बाघों (Tigers) से युद्ध किया और शहीद हो गए। यह गाँव को महामारी और बीमारियों से बचाते हैं। इनका चबूतरा गाँव की <strong>पश्चिमी दिशा (West Direction)</strong> में होता है।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>वन सती देवी (Van Sati Devi)</strong></td>
+                                    <td>जंगलों में काम करते समय हिंसक वन्य जीवों और जानवरों से रक्षा के लिए कोल वन सती देवी का स्मरण व पूजन करते हैं।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>मैहर की शारदा माता (Sharda Mata)</strong></td>
+                                    <td>सतना से पृथक होकर बने नए <strong>55वें जिले मैहर (Maihar)</strong> की माँ शारदा देवी के प्रति कोलों की अगाध श्रद्धा है। नवरात्रि में ये भारी संख्या में मैहर दर्शन हेतु जाते हैं।</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Shiva_by_Raja_Ravi_Varma.jpg" alt="Raja Ravi Varma painting of Lord Shiva Mahadev, context for Badka Dev deity of Kol tribe" width="379" height="500">
+                        <div class="image-caption">Image: Wikimedia Commons, Artist: Raja Ravi Varma. भगवान शिव (जिनके रूप में कोल जनजाति बड़का देव को पूजती है).</div>
+                    </div>
+                    <p style="margin-top: 10px;"><strong>अन्य देव समूह:</strong> दूल्हा देव, बड़गा देव, बैरम देव, बर्मी देवी, सिमरी देवी, सन्यासी देवी। यह समूह तंत्र-मंत्र और जादू-टोने में भी गहरा विश्वास रखता है।</p>
+                </div>
+            </div>
+
+            <!-- 55th District Note Check -->
+            <div class="exam-hot" style="background: rgba(0, 212, 255, 0.1); border-color: var(--accent-cyan);">
+                <div class="exam-hot-title" style="color: var(--accent-cyan);">📌 परीक्षा उपयोगी जिला अपडेट (District Status)</div>
+                <p>शिक्षक के अनुसार जिलों का गठन क्रम: <br>
+                • 52वां जिला: निवाड़ी <br>
+                • 53वां जिला: मऊगंज <br>
+                • 54वां जिला: पांढुर्णा <br>
+                • <strong>55वां जिला: मैहर (सतना से अलग होकर बना)</strong>, जहाँ प्रसिद्ध शारदा माता मंदिर स्थित है।</p>
+            </div>
+
+            <!-- QUICK RECALL QUIZ SECTION -->
+            <div style="margin-top: 25px;">
+                <h3 style="margin-bottom: 12px; color: var(--accent-green);">📝 Quick Recall Quiz (स्वयं को जांचें)</h3>
+                
+                <div class="quiz-box">
+                    <p><strong>Q1. कोल जनजाति की पारंपरिक ग्राम पंचायत को क्या कहा जाता है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">उत्तर देखें</button>
+                    <p class="quiz-answer">उत्तर: गोहिया (Gohiya)</p>
+                </div>
+
+                <div class="quiz-box">
+                    <p><strong>Q2. कोलों के किस देवता का चबूतरा गाँव की पूर्वी दिशा में होता है और उनकी तुलना महादेव से की जाती है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">उत्तर देखें</button>
+                    <p class="quiz-answer">उत्तर: बड़का देव (Badka Dev)</p>
+                </div>
+
+                <div class="quiz-box">
+                    <p><strong>Q3. बुद्धू भगत के नेतृत्व में प्रसिद्ध कोल विद्रोह किस वर्ष घटित हुआ था?</strong></p>
+                    <button class="reveal-btn" onclick="thoughtToggleQuiz(this)">उत्तर देखें</button>
+                    <p class="quiz-answer">उत्तर: वर्ष 1831-32 में</p>
+                </div>
+
+                <div class="quiz-box">
+                    <p><strong>Q4. गोहिया पंचायत द्वारा दिए जाने वाले सामूहिक भोज रूपी दंड को क्या कहते हैं?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">उत्तर देखें</button>
+                    <p class="quiz-answer">उत्तर: कोदई भाजी दंड (Kodai Bhaji)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. MASTER SECTION — FULL FORMS -->
+        <div class="section-card" id="master-fullforms">
+            <h2 class="section-header">📑 मास्टर तालिका - Full Forms & Meanings</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>पारंपरिक/प्रशासनिक शब्द (Term)</th>
+                            <th>अंग्रेजी रूपांतरण / पूर्ण रूप (English Full Form / Meaning)</th>
+                            <th>हिंदी अर्थ एवं व्यावहारिक समझ (Hindi Explanation)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ST</strong></td>
+                            <td>Scheduled Tribes</td>
+                            <td>अनुसूचित जनजातियाँ (संविधान के तहत अधिसूचित समूह)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AMTM States</strong></td>
+                            <td>Assam, Meghalaya, Tripura, Mizoram</td>
+                            <td>आर्टिकल 244(2) के तहत विशेष जनजाति प्रावधान वाले चार राज्य</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gohiya</strong></td>
+                            <td>Traditional Clan Council / Village Panchayat</td>
+                            <td>कोल जनजाति की पारंपरिक न्याय व ग्राम विवाद निपटारा पंचायत</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Madain</strong></td>
+                            <td>Traditional Mahua Liquor Beverage</td>
+                            <td>महुआ के फूलों से बनी शराब (कोलों का मुख्य पेय पदार्थ)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Madiya</strong></td>
+                            <td>Traditional Thatch and Mud Cottage</td>
+                            <td>घास-फूस और मिट्टी से बनी कोलों की झोपड़ी/घर</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 5. MASTER SECTION — EXAM HOT FACTS -->
+        <div class="section-card" id="master-hotfacts">
+            <h2 class="section-header">🔥 परीक्षा उपयोगी महा-तथ्य (Master Exam Hot Facts)</h2>
+            <div class="chunk-card" style="border-left-color: var(--accent-orange); background: rgba(255, 107, 53, 0.05);">
+                <ul>
+                    <li><strong>Rank:</strong> कोल मध्य प्रदेश की <strong>तीसरी (3rd)</strong> सबसे बड़ी जनजाति है (7.6% जनजातीय आबादी शेयर).</li>
+                    <li><strong>Rigveda Name:</strong> ऋग्वेद में कोलों को <strong>'कोलहाती'</strong> कहा गया है। प्राचीन नाम कुलरिया और भुंडा भी हैं।</li>
+                    <li><strong>Rebellion:</strong> कोल विद्रोह <strong>1831-32</strong> में <strong>बुद्धू भगत</strong> के नेतृत्व में हुआ। उस समय गवर्नर जनरल लॉर्ड विलियम बेंटिक थे।</li>
+                    <li><strong>Origin Point:</strong> ये स्वयं को रीवा जिले के <strong>फरेंदा गाँव</strong> का मूल निवासी मानते हैं। त्योंथर में इनके ऐतिहासिक गढ़ मिले हैं।</li>
+                    <li><strong>Highest Sub-tribe:</strong> उपजाति क्रम में <strong>रौतेला</strong> और <strong>रौतिया</strong> को समाज में सर्वोच्च स्थान प्राप्त है।</li>
+                    <li><strong>Panchayat Leader:</strong> गाँव की पंचायत का मुखिया <strong>चौधरी/महतो/गोटिया</strong> होता है, जबकि बड़ी पंचायत का मुखिया <strong>मुकदम</strong> कहलाता है।</li>
+                    <li><strong>Deity Locations:</strong> बड़का देव = पूर्वी दिशा, घासी घमसान (पूर्वज देव) = पश्चिमी दिशा, अहीर बाबा = घर के भीतर उत्तर-पश्चिम कोना।</li>
+                    <li><strong>Punishment:</strong> पंचायत नियमों को तोड़ने पर मिलने वाले सामाजिक भोज के दंड को <strong>'कोदई भाजी'</strong> कहा जाता है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6. MASTER REVISION CHECKLIST -->
+        <div class="section-card" id="master-checklist">
+            <h2 class="section-header">✅ मास्टर रिवीजन चेकलिस्ट (Master Revision Checklist)</h2>
+            <p style="margin-bottom: 15px; font-size: 15px; color: var(--text-secondary);">पढ़े गए सभी मुख्य बिन्दुओं को टिक करें। आपकी प्रगति ऊपर प्रोग्रेस बार में दिखेगी (Data persistent via localStorage):</p>
+            
+            <div id="checklistContainer">
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-1" onclick="updateProgress()">
+                    <span>भील (39%), गोंड (33%) के बाद कोल (7.6%) मध्य प्रदेश की तीसरी सबसे बड़ी जनजाति है, यह याद हो गया।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-2" onclick="updateProgress()">
+                    <span>कोल शब्द का शाब्दिक अर्थ 'मानव' होता है और यह कोलेरियन भाषाई परिवार का हिस्सा है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-3" onclick="updateProgress()">
+                    <span>संविधान के आर्टिकल 17, 244(2) भाग 10, 243D (पंचायत ST आरक्षण) और 243T (नगरीय निकाय आरक्षण) की समझ स्पष्ट है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-4" onclick="updateProgress()">
+                    <span>ऋग्वेद में कोलों को 'कोलहाती' कहा गया है तथा हड़प्पा सभ्यता में भी इनके साक्ष्य मिलते हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-5" onclick="updateProgress()">
+                    <span>1831-32 का कोल विद्रोह बुद्धू भगत के नेतृत्व में लॉर्ड विलियम बेंटिक के समय हुआ था।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-6" onclick="updateProgress()">
+                    <span>कोल जनजाति रीवा रियासत की मूल निवासी है; मुख्य गाँव फरेंदा (MP कोल) और कुराली (UP मिर्जापुर कोल) हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-7" onclick="updateProgress()">
+                    <span>त्योंथर (Rewa) में कोल राजाओं के प्राचीन ऐतिहासिक 'गढ़' प्राप्त हुए हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-8" onclick="updateProgress()">
+                    <span>कोल भौगोलिक रूप से विंध्य-कैमूर श्रेणियों तथा बघेलखंड के सबसे छोटे पठार में केंद्रित हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-9" onclick="updateProgress()">
+                    <span>उपजातियों की ट्रिक (रौतेला, रौतिया, ठाकुरिया, भूमिया, मवासी, दशोरा, विंज, घरभरिया, कठौतिया) याद हो गई है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-10" onclick="updateProgress()">
+                    <span>कोल समाज पितृसत्तात्मक है परंतु महिलाओं को निर्णयों में पूर्ण सम्मान प्राप्त है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-11" onclick="updateProgress()">
+                    <span>पारंपरिक पंचायत को 'गोहिया' तथा कई गाँवों की समिति के मुखिया को 'मुकदम' कहते हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-12" onclick="updateProgress()">
+                    <span>गोहिया पंचायत के सामाजिक भोज रूपी विशेष दंड को 'कोदई भाजी' कहा जाता है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-13" onclick="updateProgress()">
+                    <span>पंचायत प्रशासनिक प्रमुख चौधरी/महतो/गोटिया है तथा धार्मिक प्रमुख 'बरुआ' (जिस पर देवता आते हैं) होता है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-14" onclick="updateProgress()">
+                    <span>झाड़-फूंक करने वाले बुहार/ओजा/पंडा/देवार कहलाते हैं तथा आमंत्रण देने वाले को नियोतिया/निदतिया कहते हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-15" onclick="updateProgress()">
+                    <span>कोलों के घरों को मड़िया, बिखरी बस्ती को कोलिन टोला तथा सघन बस्ती को 'कोल्हन' कहते हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-16" onclick="updateProgress()">
+                    <span>महुआ की शराब को 'मदाइन' कहते हैं, जिसे प्रसव पीड़ा के समय महिलाओं को भी दिया जाता है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-17" onclick="updateProgress()">
+                    <span>ठाकुर देव (गाँव के देव), बड़का देव (महादेव रूप - पूर्व दिशा) और अहीर बाबा (घर के देव - उत्तर पश्चिम) का स्थान याद है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-18" onclick="updateProgress()">
+                    <span>बाघों से लड़कर शहीद होने वाले पूर्वज देव 'घासी घमसान' हैं, जिनका चबूतरा पश्चिम दिशा में होता है और वे बीमारी से बचाते हैं।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="task-check" id="chk-19" onclick="updateProgress()">
+                    <span>मैहर जिला मध्य प्रदेश का 55वां जिला है, जहाँ की शारदा माता की पूजा कोल जनजाति विशेष रूप से करती है।</span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 7. FOOTER SECTION -->
+    <footer>
+        <p><strong>📌 Upcoming Topics (अगली कक्षा के विषय):</strong> शिक्षक के अनुसार आगामी क्लास में कोल जनजाति के जन्म संस्कार, मृत्यु संस्कार, विवाह संस्कार की विस्तृत व्याख्या की जाएगी तथा इसके तुरंत बाद महत्वपूर्ण MCQs का अभ्यास कराया जाएगा।</p>
+        <p style="margin-top: 15px; font-size: 14px; color: var(--text-secondary);">💡 <strong>Revision Tip:</strong> Isolated facts भूल जाते हैं, linked stories और बार-बार विजुअलाइज़ेशन (Active Recall) ही परीक्षा में सटीक अंक दिलाएगा! <br>© 2026 Exam Revision Page Builder - High Fidelity Engineering Format.</p>
+    </footer>
+
+</div>
+
+<!-- INLINE JAVASCRIPT FOR INTERACTIVE FEATURES -->
+<script>
+    // Scroll Function for Navigation Drodown
+    function scrollToSection(id) {
+        if (!id) return;
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Toggle Accordion Panels
+    function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const symbol = button.querySelector('span');
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            symbol.textContent = '＋';
+        } else {
+            content.style.display = 'block';
+            symbol.textContent = '－';
+        }
+    }
+
+    // Toggle Click-to-Reveal Answers in Quiz
+    function toggleQuiz(button) {
+        const answer = button.nextElementSibling;
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+            button.textContent = 'उत्तर देखें';
+        } else {
+            answer.style.display = 'block';
+            button.textContent = 'उत्तर छुपाएं';
+        }
+    }
+    
+    // Explicit handle for thought error prevention
+    function thoughtToggleQuiz(button) {
+        toggleQuiz(button);
+    }
+
+    // Theme Management Logic (Dark / Light Mode Toggle with localStorage persistence)
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', targetTheme);
+        localStorage.setItem('kol-theme', targetTheme);
+    }
+
+    // Initialize Theme on Page Load
+    const savedTheme = localStorage.getItem('kol-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Dynamic Progress Tracking and Checkbox State Persistence
+    function updateProgress() {
+        const checkboxes = document.querySelectorAll('.task-check');
+        const checkedCount = document.querySelectorAll('.task-check:checked').length;
+        const totalCount = checkboxes.length;
+        
+        // Calculate percentage
+        const progressPercent = totalCount > 0 ? (checkedCount / totalCount) * 100 : 0;
+        document.getElementById('topProgressBar').style.width = progressPercent + '%';
+
+        // Save individual checkbox state to localStorage
+        checkboxes.forEach(chk => {
+            localStorage.setItem(chk.id, chk.checked);
+        });
+    }
+
+    // Load Checkbox State from localStorage on Init
+    window.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.task-check');
+        checkboxes.forEach(chk => {
+            const savedState = localStorage.getItem(chk.id);
+            if (savedState === 'true') {
+                chk.checked = true;
+            }
+        });
+        updateProgress(); // Initial progress calculation
+    });
+</script>
+
+</body>
+</html>
