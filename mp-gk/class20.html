@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP GK Class 20: मध्य प्रदेश में पशुपालन — Full Revision Page</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #16162a;
+            --bg-card: #1d1d3d;
+            --text-primary: #f1f1f7;
+            --text-secondary: #b5b5d2;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2a2a5a;
+            --gradient-accent: linear-gradient(135deg, #00d4ff, #b388ff);
+            --gradient-card: linear-gradient(145deg, #1d1d3d, #16162a);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #f1f3f5;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --accent-cyan: #007bc4;
+            --accent-orange: #e65c00;
+            --accent-green: #0b9e4a;
+            --accent-purple: #6f42c1;
+            --border-color: #dee2e6;
+            --gradient-accent: linear-gradient(135deg, #007bc4, #6f42c1);
+            --gradient-card: linear-gradient(145deg, #ffffff, #f1f3f5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Outfit', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            padding-bottom: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Top Header Sticky Progress */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--border-color);
+            z-index: 1000;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-accent);
+            transition: width 0.1s ease-out;
+        }
+
+        /* Navigation Header */
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 25px 20px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .meta-info {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .badge {
+            background: var(--border-color);
+            color: var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Quick Floating Controls */
+        .controls-panel {
+            position: sticky;
+            top: 15px;
+            z-index: 900;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(22, 22, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .theme-btn {
+            background: var(--gradient-accent);
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-dropdown {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            max-width: 60%;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Topic Cards & Structural Styles */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            color: var(--accent-cyan);
+        }
+        .concept-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .concept-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .card-header {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .point-list {
+            list-style-type: none;
+        }
+        .point-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .point-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* High Visibility Custom Gradient Highlights */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(27, 27, 58, 0.4));
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+        .exam-hot {
+            background: linear-gradient(135deg, rgba(230, 92, 0, 0.15), rgba(15, 15, 26, 0.6));
+            border: 1px dashed var(--accent-orange);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .exam-hot h4 {
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Association Chains Styling Box */
+        .link-story-box {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.12), rgba(22, 22, 42, 0.6));
+            border: 1px dashed var(--accent-purple);
+            padding: 18px;
+            border-radius: 12px;
+            margin: 22px 0;
+        }
+        .link-story-title {
+            color: var(--accent-purple);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Tabular Data Designs */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.98rem;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--border-color);
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Adaptive Media Blocks & Failovers */
+        .image-container {
+            margin: 25px 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .img-caption {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .img-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.02);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+        }
+        .img-fallback svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 10px;
+            fill: var(--text-secondary);
+        }
+
+        /* Collapsible Accordion Patterns */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background: var(--bg-secondary);
+            padding: 14px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .accordion-content {
+            padding: 18px;
+            background: var(--bg-primary);
+            display: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Click to Reveal Spaced Repetition Hooks */
+        .quiz-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            margin-top: 15px;
+        }
+        .quiz-q {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .quiz-a-btn {
+            background: var(--border-color);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .quiz-a-btn:hover {
+            background: var(--accent-cyan);
+            color: #000;
+        }
+        .quiz-answer {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 255, 136, 0.08);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 4px;
+            display: none;
+        }
+
+        /* Interactive Persistence Elements */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            background: var(--bg-secondary);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-top: 4px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        .checklist-counter {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        /* Non-Disruptive Clean Dividers */
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
+        }
+
+        /* Printing Adjustments */
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                font-size: 12pt;
+            }
+            .controls-panel, .progress-container, .quiz-box button, .theme-btn {
+                display: none !important;
+            }
+            .accordion-content, .quiz-answer {
+                display: block !important;
+            }
+            .concept-card, .highlight-box, .exam-hot, .link-story-box {
+                background: #fff !important;
+                border: 1px solid #000 !important;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3 {
+                color: #000 !important;
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <div class="container">
+        
+        <header>
+            <div class="badge">Lecture No. 20</div>
+            <h1>मध्य प्रदेश में पशुपालन (Animal Husbandry in MP)</h1>
+            <p style="color: var(--accent-orange); font-weight: 600; margin-top: 5px;">MPPSC Pre 2025 & Vyapam Special</p>
+            <div class="meta-info">
+                <span>🎯 Target: प्रशासनिक अधिकारी</span>
+                <span>📋 Data Source: आर्थिक सर्वेक्षण (Economic Survey) 2023-24 & 20वीं पशु गणना</span>
+            </div>
+        </header>
+
+        <div class="controls-panel">
+            <select class="nav-dropdown" onchange="location.hash = this.value;">
+                <option value="">🗺️ Quick Jump to Topic...</option>
+                <option value="#intro">1. ग्रामीण अर्थव्यवस्था और पशुपालन</option>
+                <option value="#census">2. 20वीं पशु गणना 2018-19</option>
+                <option value="#density">3. पशु घनत्व एवं जिलावार आंकड़े</option>
+                <option value="#production">4. पशु उत्पाद एवं वितरण</option>
+                <option value="#survey">5. आर्थिक सर्वेक्षण एवं दुग्ध उपलब्धता</option>
+                <option value="#flood">6. ऑपरेशन फ्लड एवं सांची दुग्ध संघ</option>
+                <option value="#institutions">7. ऐतिहासिक बोर्ड एवं परियोजनाएं</option>
+                <option value="#breeds">8. पशुओं की प्रमुख नस्लें (Breeds)</option>
+                <option value="#diseases">9. पशु रोग (Animal Diseases)</option>
+                <option value="#breeding-centers">10. पशु प्रजनन केंद्र (Breeding Centers)</option>
+                <option value="#welfare">11. मतस्य, कुक्कुट एवं कल्याणकारी योजनाएं</option>
+                <option value="#master-forms">📊 मास्टर तालिका — पूर्ण रूप (Full Forms)</option>
+                <option value="#master-hot">🔥 मास्टर परीक्षा फैक्ट्स</option>
+                <option value="#checklist">✅ रिवीजन चेकलिस्ट</option>
+            </select>
+            <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">
+                <span>🌓</span> Switch Mode
+            </button>
+        </div>
+
+        <section id="intro">
+            <div class="section-title"><h2>1. ग्रामीण अर्थव्यवस्था और पशुपालन का महत्व</h2></div>
+            <div class="concept-card">
+                <div class="card-header">🌾 कृषि का अभिन्न अंग (Integral Part of Farming)</div>
+                <ul class="point-list">
+                    <li><b>ग्रामीण जनसंख्या का आधार:</b> 2011 की जनगणना के अनुसार मध्य प्रदेश की <b>72.4%</b> जनसंख्या ग्रामीण क्षेत्रों में निवास करती है।</li>
+                    <li><b>जीविकोपार्जन का प्रमुख साधन (Livelihood):</b> जब कृषि भूमि बंजर या खराब हो, या वर्षा बहुत कम हो, तब किसान पशुपालन की ओर रुख करते हैं।</li>
+                    <li><b>राजस्थान का उदाहरण (Analogy):</b> जैसे राजस्थान में खराब जमीन, कम वर्षा और उच्च तापमान के कारण किसान मुख्य रूप से ऊंट और भेड़ पालते हैं, वैसे ही मध्य प्रदेश के कुछ सूखे क्षेत्रों में यह मुख्य आजीविका बनता है।</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="census">
+            <div class="section-title"><h2>2. 20वीं पशु गणना 2018-19 (Latest Animal Census Data)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">📊 कुल पशुधन एवं प्रजाति वर्गीकरण</div>
+                <p style="margin-bottom: 12px; font-weight: 500;">नोट: पशु गणना सामान्यतः हर <b>5 साल</b> में आयोजित की जाती है।</p>
+                <ul class="point-list">
+                    <li><b>कुल पशुधन (Total Cattle in MP):</b> इस गणना के अनुसार मध्य प्रदेश में कुल पशुओं की संख्या <b>40.6 मिलियन</b> (कहीं आर्थिक सर्वेक्षण विवरणों में समग्र घटक <b>64.69 मिलियन</b> तक लक्षित) दर्ज की गई है। (1 मिलियन = 10 लाख)।</li>
+                    <li><b>गाय (Cow) — नंबर 1:</b> मध्य प्रदेश में सर्वाधिक पाया जाने वाला पशु गाय है, जिसकी संख्या <b>18.7 मिलियन</b> है।</li>
+                    <li><b>बकरी (Goat) — नंबर 2:</b> राज्य में दूसरे स्थान पर बकरी है, जिनकी संख्या <b>11.6 मिलियन</b> है।</li>
+                    <li><b>भैंस (Buffalo) — नंबर 3:</b> तीसरे स्थान पर भैंसों की संख्या आती है जो <b>10.3 मिलियन</b> है।</li>
+                    <li><b>भेड़ (Sheep):</b> राज्य में भेड़ों की संख्या <b>3.24 लाख</b> दर्ज है।</li>
+                    <li><b>ऊंट (Camel):</b> कुल <b>1753 ऊंट</b> पाए गए हैं, जो मुख्य रूप से राजस्थान सीमा से लगे मंदसौर और नीमच जिलों में केंद्रित हैं।</li>
+                    <li><b>कुक्कुट (Poultry):</b> मुर्गियों एवं कुक्कुट की कुल संख्या <b>16.6 मिलियन</b> है।</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <div class="img-fallback" id="fallback-census">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    <span>पशु गणना क्रम: गाय (18.7M) > बकरी (11.6M) > भैंस (10.3M)</span>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cow_buddha.jpg" alt="Indian Livestock Cow" onerror="handleImageError(this, 'fallback-census')">
+                <div class="img-caption">Image: Wikimedia Commons. मध्य प्रदेश में सर्वाधिक पाया जाने वाला पशुधन गाय माता (18.7 मिलियन) हैं।</div>
+            </div>
+
+            <div class="quiz-box">
+                <div class="quiz-q">❓ क्यूकरिकॉल: 20वीं पशु गणना के अनुसार मध्य प्रदेश में सर्वाधिक किस पशु की संख्या है और कितनी है?</div>
+                <button class="quiz-a-btn" onclick="toggleQuiz(this)">उत्तर देखें</button>
+                <div class="quiz-answer">सही उत्तर: गाय (18.7 मिलियन), इसके बाद बकरी (11.6 मिलियन) तथा भैंस (10.3 मिलियन) का स्थान है।</div>
+            </div>
+        </section>
+
+        <section id="density">
+            <div class="section-title"><h2>3. पशु घनत्व एवं जिलावार आंकड़े (Animal Density & Distribution)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">🗺️ क्षेत्रीय घनत्व विश्लेषण</div>
+                <ul class="point-list">
+                    <li><b>औसत पशु घनत्व (MP Average Density):</b> मध्य प्रदेश का समग्र पशु घनत्व <b>105 पशु प्रति वर्ग किलोमीटर</b> है।</li>
+                    <li><b>सर्वाधिक पशु घनत्व वाला जिला:</b> <b>झाबुआ (203 पशु प्रति वर्ग किमी)</b>। <span style="color: var(--text-secondary);">सर की ट्रिक: "यहाँ भेड़-बकरियां इतनी घनी हैं कि एक दूसरे को धक्के मारते हुए घूमती हैं।"</span></li>
+                    <li><b>न्यूनतम पशु घनत्व वाला जिला:</b> <b>नर्मदापुरम / होशंगाबाद (45 पशु प्रति वर्ग किमी)</b>।</li>
+                    <li><b>संख्या में सर्वाधिक पशु वाला जिला:</b> <b>सीधी (Sidhi)</b>। <span style="color: var(--text-secondary);">सर की ट्रिक: "यहाँ के लोग बहुत सीधे-साधे हैं, वे पशुओं को मार कर नुकसान नहीं पहुँचाते, इसलिए संख्या बढ़ गई।"</span></li>
+                    <li><b>संख्या में न्यूनतम पशु वाला जिला:</b> <b>बुरहानपुर (Burhanpur)</b>। <span style="color: var(--text-secondary);">सर की ट्रिक: "मुगलकालीन ऐतिहासिक नगर है, याद रखने के लिए सोच सकते हैं कि यहाँ उपभोग अधिक होने से पशुओं की लाइव काउंटिंग सबसे कम बची है।"</span></li>
+                </ul>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — ऐसे याद करो (घनत्व एवं संख्या चक्र)</div>
+                <p><b>"झाबुआ"</b> के भीड़भाड़ वाले मेले (High Density) से निकलकर लोग <b>"सीधे"</b> (Sidhi - Max Volume) <b>"नर्मदा नदी"</b> (Narmadapuram - Low Density) के शांत वीरान किनारे पर गए, जहाँ केवल <b>"बुरहानपुर"</b> का किला खाली (Min Volume) खड़ा था!</p>
+            </div>
+        </section>
+
+        <section id="production">
+            <div class="section-title"><h2>4. पशु उत्पाद एवं वितरण (Production & District Leaders)</h2></div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>पशु / उत्पाद श्रेणी</th>
+                        <th>सर्वाधिक उपलब्धता / उत्पादन वाला जिला</th>
+                        <th>शिक्षक के विशेष नोट एवं ट्रिक्स / याद रखने के सूत्र</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>गाय (Cow)</b></td>
+                        <td>रीवा (Rewa)</td>
+                        <td>विभाजन (मऊगंज) से पहले के स्वीकृत आधिकारिक आंकड़ों के अनुसार।</td>
+                    </tr>
+                    <tr>
+                        <td><b>भैंस (Buffalo)</b></td>
+                        <td>मुरैना (Morena)</td>
+                        <td>चंबल क्षेत्र में भैंस पालन बड़े स्तर पर व्यावसायिक रूप से होता है।</td>
+                    </tr>
+                    <tr>
+                        <td><b>बकरी (Goat)</b></td>
+                        <td>धार (Dhar)</td>
+                        <td>सर की ट्रिक: "बकरी के सींग बहुत पैने और धारदार होते हैं!" 🐐</td>
+                    </tr>
+                    <tr>
+                        <td><b>भेड़ (Sheep)</b></td>
+                        <td>शिवपुरी एवं टीकमगढ़</td>
+                        <td>इन दोनों जिलों में संयुक्त रूप से भेड़ आबादी सर्वाधिक केंद्रित है।</td>
+                    </tr>
+                    <tr>
+                        <td><b>ऊंट (Camel)</b></td>
+                        <td>मंदसौर</td>
+                        <td>राजस्थान सीमा के समीप होने के कारण भौगोलिक प्रभाव।</td>
+                    </tr>
+                    <tr>
+                        <td><b>अंडे व मछली (Egg & Fish)</b></td>
+                        <td>जबलपुर (Jabalpur)</td>
+                        <td>नर्मदा बेसिन और तालाबों के कारण सर्वाधिक मछली उत्पादन।</td>
+                    </tr>
+                    <tr>
+                        <td><b>मांस (Meat Production)</b></td>
+                        <td>भोपाल (Bhopal)</td>
+                        <td>शहरी मांग एवं जनसांख्यिकीय उपभोग पैटर्न के कारण।</td>
+                    </tr>
+                    <tr>
+                        <td><b>ऊन (Wool Production)</b></td>
+                        <td>शिवपुरी (Shivpuri)</td>
+                        <td>यहाँ भेड़ें अधिक पाई जाती हैं, इसलिए ऊन निष्कर्षण सर्वाधिक है।</td>
+                    </tr>
+                    <tr>
+                        <td><b>दूध (Milk Production)</b></td>
+                        <td>मुरैना (Morena)</td>
+                        <td>चंबल का मुरैना जिला सर्वाधिक दूध का उत्पादन करता है।</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="survey">
+            <div class="section-title"><h2>5. आर्थिक सर्वेक्षण एवं दुग्ध उपलब्धता (Economic Survey 2023-24)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">📈 दुग्ध उत्पादन एवं राष्ट्रीय स्थिति</div>
+                <ul class="point-list">
+                    <li><b>लेटेस्ट उत्पादन डेटा (2022-23):</b> आर्थिक सर्वेक्षण के अनुसार राज्य में दुग्ध उत्पादन बढ़कर <b>20.2 लाख टन</b> (संकेतात्मक घटक) दर्ज हुआ है, जो पिछले वित्तीय वर्ष की तुलना में <b>5.88% की वार्षिक वृद्धि (Growth)</b> दर्शाता है।</li>
+                    <li class="exam-hot"><h4>🔥 Exam Hot Point</h4> पूरे भारत में दूध उत्पादन के मामले में मध्य प्रदेश का <b>तीसरा स्थान (3rd Rank)</b> है। यह परीक्षा में सीधे पूछा जा सकता है!</li>
+                    <li><b>प्रति व्यक्ति दुग्ध उपलब्धता (Per Capita Availability):</b> राज्य में प्रति व्यक्ति दूध की उपलब्धता <b>644 ग्राम प्रतिदिन</b> है। <span style="color: var(--text-secondary);">सर का मज़ाक: "क्या आप सब अपने हिस्से का आधा लीटर से अधिक दूध रोज़ पी रहे हैं? जो लोग नहीं पीते, उनके हिस्से का कोई और पी जाता है!"</span></li>
+                    <li><b>मुरैना का शीर्ष स्थान क्यों है?</b> चंबल नदी के कारण यहाँ की जलोढ़ मृदा (Alluvial Soil) बीहड़ों में बदल कर खराब हो चुकी है। वर्षा भी कम होती है, जिससे कृषि के विकल्प सीमित होने के कारण यहाँ के लोगों ने बड़े स्तर पर पशुपालन एवं डेयरी को अपनाया।</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="flood">
+            <div class="section-title"><h2>6. ऑपरेशन फ्लड एवं सहकारी दुग्ध संघ (Operation Flood)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">🥛 ऑपरेशन फ्लड / ऑपरेशन बाढ़</div>
+                <ul class="point-list">
+                    <li><b>संबंध:</b> इसका सीधा संबंध <b>दुग्ध उत्पादन (Milk Production)</b> बढ़ाने से है।</li>
+                    <li><b>मध्य प्रदेश राज्य सहकारी डेयरी फेडरेशन लिमिटेड:</b> इसकी स्थापना <b>वर्ष 1980</b> में ऑपरेशन फ्लड कार्यक्रम के तहत <i>'मध्य प्रदेश दुग्ध महासंघ सहकारी मर्यादित'</i> के रूप में की गई थी।</li>
+                    <li><b>स्वामित्व संरचना:</b> यह एक सहकारी (Cooperative) संस्था है, जो सरकार और निजी उत्पादकों (किसानों) दोनों के संयुक्त स्वामित्व का बेहतरीन मिक्स-अप है। इसके उत्पादों को प्रसिद्ध ब्रांड <b>'सांची' (Sanchi)</b> के नाम से बेचा जाता है।</li>
+                    <li><b>ब्रांड एंबेसडर (Brand Ambassador):</b> सांची दुग्ध उत्पादों की ब्रांड एंबेसडर प्रसिद्ध पर्वतारोही <b>मेघा परमार (Megha Parmar)</b> को बनाया गया है।</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p>🔥 <b>मध्य प्रदेश में कुल क्षेत्रीय दुग्ध संघ (Milk Unions) की संख्या = 06</b></p>
+                <p>यह क्षेत्रीय कार्यालय स्थानीय स्तर पर दूध का कलेक्शन करते हैं, उसे पाश्चुरीकृत (Pasteurization) करते हैं और पैकेट्स में पैकिंग कर बाजार में सप्लाई करते हैं:</p>
+                <ol style="margin-left: 25px; margin-top: 10px;">
+                    <li><b>भोपाल दुग्ध संघ</b></li>
+                    <li><b>इंदौर दुग्ध संघ</b></li>
+                    <li><b>जबलपुर दुग्ध संघ</b></li>
+                    <li><b>ग्वालियर दुग्ध संघ</b> (यह चंबल संभाग का भी पूर्ण कलेक्शन संभालता है)</li>
+                    <li><b>उज्ैन दुग्ध संघ</b></li>
+                    <li><b>सागर दुग्ध संघ</b> (इसका आधिकारिक नाम <u>'बुंदेलखंड दुग्ध महासंघ'</u> है)</li>
+                </ol>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — 6 दुग्ध संघ याद करने की ट्रिक</div>
+                <p><b>"भोपाल"</b> के राजा <b>"इंदौर"</b> का पोहा लेकर <b>"जबलपुर"</b> के धुआंधार जलप्रपात पर घूमने गए, वहाँ से लौटते समय <b>"ग्वालियर"</b> के किले पर रुके, फिर <b>"उज्जैन"</b> में बाबा महाकाल के दर्शन किए और अंत में <b>"सागर"</b> के गहरे पानी में दूध अर्पित कर दिया!</p>
+            </div>
+        </section>
+
+        <section id="institutions">
+            <div class="section-title"><h2>7. ऐतिहासिक बोर्ड एवं स्थापना वर्ष (Key Boards & Dates)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">📅 महत्वपूर्ण तिथियां जो परीक्षा में आती हैं</div>
+                <ul class="point-list">
+                    <li><b>मध्य प्रदेश गौपालन एवं संवर्धन बोर्ड:</b> गायों के कल्याण और सशक्तिकरण हेतु इसका गठन <b>19 अक्टूबर 2004</b> को किया गया था।</li>
+                    <li><b>सहकारी डेयरी विकास कार्यक्रम:</b> राज्य में इस कार्यक्रम की शुरुआत <b>वर्ष 1975</b> में की गई थी।</li>
+                    <li><b>राष्ट्रीय गौवंश पशु प्रजनन परियोजना:</b> यह राष्ट्रीय स्तर की परियोजना मध्य प्रदेश में <b>वर्ष 1999</b> से लागू की गई।</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="breeds">
+            <div class="section-title"><h2>8. पशुओं की प्रमुख नस्लें (Animal Breeds in MP)</h2></div>
+            <p style="font-style: italic; margin-bottom: 15px;">सर का पंचायत वेब सीरीज संदर्भ: "दामाद जी जब घोड़ा खरीदने जाते हैं तो विधायक जी के लड़के से पूछते हैं कि यह किस किस्म का है, तब लड़का कहता है कि घोड़े की किस्म नहीं 'ब्रीड' (Breed) यानी नस्ल होती है।"</p>
+            
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🐄 गाय की क्षेत्रीय नस्लें (Regional Cow Breeds of MP)</span>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <ul class="point-list">
+                        <li><b>मालवी गाय (Malvi):</b> इसे <b>'मालवा की रानी'</b> कहा जाता है। यह मालवा क्षेत्र के जिलों में कृषि कार्यों के लिए उत्तम मानी जाती है।</li>
+                        <li><b>निमाड़ी गाय (Nimari):</b> इसे <b>'निमाड़ की रानी'</b> कहा जाता है। यह गहरे तांबे जैसे लाल/गेरुआ रंग की होती है। (<span style="color: var(--accent-orange);">सर का नोट: "ओंकारेश्वर रोड पर ये बहुतायत में बैठी मिलती हैं।"</span>)</li>
+                        <li class="exam-hot"><h4>🔥 Exam Hot: गाव लाभ / ग्वाल नस्ल (Gaolao)</h4> यह मुख्य रूप से <b>छिंदवाड़ा और बैतूल</b> जिलों में पाई जाती है। इसे <b>'सतपुड़ा की रानी' (Queen of Satpura)</b> कहा जाता है। यह अपने अत्यंत उन्नत और शक्तिशाली बछड़ों के लिए प्रसिद्ध है।</li>
+                        <li><b>केन कथा (Kenkatha):</b> बुंदेलखंड क्षेत्र की केन नदी के कछार (छतरपुर और पन्ना जिलों) में पाई जाने वाली गायों की विशिष्ट क्षेत्रीय नस्ल।</li>
+                        <li><b>थारपारकर (Tharparkar):</b> मूलतः राजस्थान के थार मरुस्थल की नस्ल है, किंतु मरुस्थल पार कर मध्य प्रदेश के सीमावर्ती मालवा हिस्सों में भी पाई जाती है।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🐃 भैंस एवं बकरी की नस्लें (Buffalo & Goat Breeds)</span>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><b>भैंस की प्रमुख नस्लें:</b></p>
+                    <ul class="point-list" style="margin-bottom: 15px;">
+                        <li><b>भदावरी (Bhadavari):</b> मुख्य रूप से <b>भिंड (Bhind)</b> जिले में पाई जाती है। <span style="color: var(--accent-cyan);">याद रखने का सूत्र: 'भा' से भदावरी और 'भा' से भिंड।</span> इसके दूध में वसा (Fat) की मात्रा बहुत अधिक होती है।</li>
+                        <li><b>मुर्रा (Murrah):</b> सर्वाधिक दूध देने के लिए जानी जाती है। इसका दूध बहुत गाढ़ा होता है। (पंचायत सीरीज में प्रहलाद चाचू और प्रधान जी इसी का जिक्र सचिव जी से दूध लेने के लिए करते हैं)।</li>
+                        <li><b>बधावरी / बंधावू:</b> मुरैना क्षेत्र की विशिष्ट भैंस नस्ल।</li>
+                        <li><b>अन्य भैंस नस्लें:</b> जाफराबादी, नीली रावी, सुरती, महसाना, नागपुरी, मराठवाड़ी, कालाहांडी, टोडा।</li>
+                    </ul>
+                    <p><b>बकरी की प्रमुख नस्लें:</b></p>
+                    <ul class="point-list">
+                        <li><b>जमुनापारी (Jamunapari):</b> भिंड क्षेत्र की प्रसिद्ध उन्नत नस्ल, जो व्यापक रूप से दूध और मांस दोनों के लिए पाली जाती है।</li>
+                        <li><b>अन्य बकरी नस्लें:</b> सिरोही, बीतल, बारबरी (बर्बरी)।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🐏 भेड़, मुर्गा, मछली एवं सूअर की नस्लें (Other Categories)</span>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><b>भेड़ (Sheep):</b> रेमले / रमबुले (Ram Bouillet), मेरिनो (Merino), लोही (Lohi)।</p>
+                    <p style="margin-top: 10px;"><b>मुर्गा / कुक्कुट (Poultry):</b> श्यामा, कड़कनाथ, निर्भीक, असील (यह हमारे आसपास पाए जाने वाले लड़ाकू व देसी मुर्गे हैं जो 'को-को-को' करते हैं)। <span style="color: var(--accent-orange);">सर का मीम संदर्भ: "केएफसी के बाहर घूम रहे निर्भीक मुर्गे को असली खतरों का खिलाड़ी कहते हैं!"</span></p>
+                    <p style="margin-top: 10px;"><b>मछली (Fish Species):</b> कॉमन कार्प, ग्रास कार्प, सिल्वर कार्प, महाशीर (राज्य मछली), रोहू, कतला, झींगा।</p>
+                    <p style="margin-top: 10px;"><b>सूअर (Pig Breeds):</b> नर वराह / वराही (देसी नस्ल), वाइट यार्कशायर (White Yorkshire — विदेशी सफेद/पिंक नस्ल)।</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <div class="img-fallback" id="fallback-nimari">
+                    <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                    <span>Image representation: Nimari & Malvi Cow Breeds</span>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Water_buffalo_at_Morena.jpg" alt="Morena Buffalo Breeding" onerror="handleImageError(this, 'fallback-nimari')">
+                <div class="img-caption">Image: Wikimedia Commons. चंबल संभाग (मुरैना) की उच्च उत्पादकता वाली दुधारू भैंस।</div>
+            </div>
+        </section>
+
+        <section id="diseases">
+            <div class="section-title"><h2>9. पशु रोग (Animal Diseases)</h2></div>
+            <p style="font-weight: 500; margin-bottom: 10px;">परीक्षा की दृष्टि से रोगों के कारक (जीवाणु/विषाणु) और प्रभावित पशु अत्यंत महत्वपूर्ण हैं:</p>
+            
+            <div class="concept-card" style="border-left: 4px solid var(--accent-cyan);">
+                <div class="card-header" style="color: var(--accent-cyan);">🐔 रानीखेत (Ranikhet Disease) — Extremely Important 🔥</div>
+                <ul class="point-list">
+                    <li><b>प्रभावित पशु:</b> मुर्गियों (Poultry) में होने वाला सबसे घातक रोग।</li>
+                    <li><b>कारक:</b> यह <b>विषाणु (Virus)</b> जनित रोग है।</li>
+                    <li><b>लक्षण:</b> श्वास विकार (Problem in Breathing) — मुर्गियों को सांस लेने में भारी तकलीफ होती है।</li>
+                    <li><span style="color: var(--text-secondary);">सर की मजेदार कहानी: "मुर्गी रात को मुर्गे को जगा कर बोलती है कि हमको सांस लेने में बहुत दिक्कत हो रही है, तब मुर्गा कहता है कि घबराओ मत तुमको रानीखेत हो गया है!"</span></li>
+                </ul>
+            </div>
+
+            <div class="concept-card" style="border-left: 4px solid var(--accent-orange);">
+                <div class="card-header" style="color: var(--accent-orange);">🐂 अन्य प्रमुख पशु बीमारियां</div>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th>रोग का नाम</th>
+                            <th>प्रभावित पशु</th>
+                            <th>रोग का कारक</th>
+                            <th>मुख्य लक्षण (Symptoms)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>गलघोटू</b></td>
+                            <td>गाय और भैंस</td>
+                            <td><b>जीवाणु (Bacteria)</b></td>
+                            <td>तेज बुखार (High Fever) एवं गले में सूजन के साथ श्वास अवरोध।</td>
+                        </tr>
+                        <tr>
+                            <td><b>जहरबाद (Black Quarter)</b></td>
+                            <td>चौपाया (चार पैर वाले जानवर)</td>
+                            <td><b>जीवाणु (Bacteria)</b></td>
+                            <td>पैर/खुर का काला पड़ना, अत्यधिक सूजन और लंगड़ापन आना।</td>
+                        </tr>
+                        <tr>
+                            <td><b>एंथ्रेक्स (Anthrax)</b></td>
+                            <td>सभी दुधारू मवेशी</td>
+                            <td><b>जीवाणु (Bacteria)</b></td>
+                            <td>तेज बुखार के साथ त्वचा पर चिकनपॉक्स जैसे छाले (Blisters) पड़ना।</td>
+                        </tr>
+                        <tr>
+                            <td><b>खुरपका-मुंहपका (FMD)</b></td>
+                            <td>सभी मवेशी</td>
+                            <td><b>विषाणु (Virus)</b></td>
+                            <td>मुंह और पैरों के खुरों में मवादयुक्त छाले होना। (गीली गंदगी/नमी के कारण फैलता है)।</td>
+                        </tr>
+                        <tr style="background: rgba(255,107,53,0.05);">
+                            <td><b>लंपी रोग (Lumpy Skin)</b></td>
+                            <td>मुख्यतः गाय (Cows)</td>
+                            <td><b>विषाणु (Virus)</b></td>
+                            <td>त्वचा पर बड़ी-बड़ी गांठे (Blood Clots/Nodules) बनना। संक्रामक रोग।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="exam-hot">
+                <h4>🔥 Exam Hot: लंपी वायरस टोल फ्री हेल्पलाइन नंबर</h4>
+                <p>मध्य प्रदेश शासन द्वारा लंपी महामारी के दौरान त्वरित उपचार और परामर्श हेतु जारी किया गया विशेष हेल्पलाइन नंबर <b>1962</b> था।</p>
+            </div>
+        </section>
+
+        <section id="breeding-centers">
+            <div class="section-title"><h2>10. पशु प्रजनन केंद्र (Animal Breeding Centers in MP)</h2></div>
+            <div class="concept-card">
+                <div class="card-header">🏢 सामान्य पशु प्रजनन केंद्र (कुल संख्या = 08)</div>
+                <p style="margin-bottom: 12px;">ये केंद्र पशुओं के स्वास्थ्य, उन्नत नस्ल सुधार और बछड़ों की गुणवत्ता संवर्धन के लिए कार्य करते हैं:</p>
+                <ol style="margin-left: 25px; line-height: 1.8;">
+                    <li><b>रतौना (Sagar):</b> ऐतिहासिक महत्व — यहाँ वर्ष 1921-22 में माखनलाल चतुर्वेदी ने अपने समाचार पत्र के माध्यम से प्रसिद्ध <i>'रतौना कसाईखाना आंदोलन'</i> चलाकर ब्रिटिश बूचड़खाने को रुकवाया था।</li>
+                    <li><b>मनोरा (Tikamgarh)</b></li>
+                    <li><b>जबलपुर (Jabalpur)</b></li>
+                    <li><b>भदभदा (Bhopal)</b></li>
+                    <li><b>रोडिया (Khargone)</b></li>
+                    <li><b>गढ़ी (Balaghat)</b></li>
+                    <li><b>इमलीखेड़ा (Chhindwara)</b></li>
+                    <li><b>आगर मालवा (Agar Malwa)</b></li>
+                </ol>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — 8 प्रजनन केंद्र क्रमिक रूप से याद करें</div>
+                <p>सागर के <b>"रतौना"</b> से एक बछड़ा अपना <b>"मनोहारी"</b> (Manora) रूप लेकर निकला और <b>"जबलपुर"</b> रेलवे स्टेशन पहुँचा। वहाँ से वह सीधे भोपाल के <b>"भदभदा"</b> बांध को देखने गया, रास्ते में उसे <b>"रोडिया"</b> की एक सुंदर <b>"गढ़ी"</b> (Garhi) दिखी जहाँ रुककर उसने <b>"इमली"</b> (Imlikheda) खाई और अंत में थककर <b>"आगर मालवा"</b> में विश्राम करने बैठ गया!</p>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>🔬 विशिष्ट प्रयोगशालाएं एवं विशिष्ट केंद्र (Specialized Centers)</span>
+                    <span>▼</span>
+                </div>
+                <div class="accordion-content">
+                    <ul class="point-list">
+                        <li><b>बकरी शोध एवं प्रजनन केंद्र:</b> यह <b>इंदौर (Indore)</b> में स्थापित है। (धार जिले में बकरियां सर्वाधिक होने के कारण निकटवर्ती आर्थिक केंद्र इंदौर में इसे बनाया गया)।</li>
+                        <li><b>कामधेनु प्रजनन केंद्र:</b> <b>कीरतपुर, इटारसी (नर्मदापुरम)</b>। यह विशेष रूप से उन्नत गाय प्रजातियों के विकास हेतु समर्पित है।</li>
+                        <li><b>भेड़ प्रजनन केंद्र (04 स्थान):</b> शिवपुरी, मंदसौर, मनोरा (टीकमगढ़) तथा पोरा (भिंड)।</li>
+                        <li><b>पशु सरोगेसी लैब / पशु भ्रूण प्रत्यारोपण लैब (Animal Surrogacy Lab):</b> यह <b>भोपाल</b> में स्थित है। इसमें उच्च नस्ल की गाय के भ्रूण को सामान्य गाय में प्रत्यारोपित कर उच्च नस्ल के बछड़े प्राप्त किए जाते हैं।</li>
+                        <li><b>पशु वीर्य संग्रहालय (Animal Semen Station):</b> <b>भदभदा, भोपाल</b>। यहाँ उन्नत सांडों का सीमेन स्टोर किया जाता है।</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="welfare">
+            <div class="section-title"><h2>11. मतस्य, कुक्कुट विकास एवं जनकल्याणकारी योजनाएं</h2></div>
+            
+            <div class="concept-card">
+                <div class="card-header">🐟 मतस्य पालन (Fisheries Development)</div>
+                <ul class="point-list">
+                    <li><b>मध्य प्रदेश राज्य मतस्य पालन विभाग:</b> स्थापना <b>वर्ष 1969</b>, भोपाल।</li>
+                    <li><b>मध्य प्रदेश मतस्य विकास निगम:</b> स्थापना <b>वर्ष 1979</b>, भोपाल।</li>
+                    <li><b>नया नामकरण:</b> वर्ष 1999 में इसका नाम बदलकर <b>'मध्य प्रदेश मतस्य संघ' (MP Fisheries Union)</b> कर दिया गया।</li>
+                    <li><b>महाशीर प्रजनन केंद्र:</b> राज्य मछली महाशीर के संरक्षण हेतु <b>बड़वाह (खरगोन)</b> में नर्मदा नदी के तट पर विशेष प्रजनन केंद्र स्थापित है।</li>
+                </ul>
+            </div>
+
+            <div class="concept-card">
+                <div class="card-header">🐓 कड़कनाथ — मध्य प्रदेश का गौरव (Pride of MP)</div>
+                <ul class="point-list">
+                    <li><b>क्षेत्र:</b> यह मुख्य रूप से <b>झाबुआ और अलीराजपुर</b> जिलों में पाया जाता है।</li>
+                    <li><b>भौगोलिक संकेतक (GI Tag):</b> इसे झाबुआ के नाम पर आधिकारिक GI Tag प्राप्त है।</li>
+                    <li><b>विशेषताएं:</b> इसका रक्त (Blood) और मांस (Meat) पूरी तरह <b>काले रंग (Black)</b> का होता है। इसका अन्य नाम <b>'कालामासी'</b> है। यह अत्यधिक प्रोटीन युक्त, औषधीय, पौष्टिक और स्वादिष्ट होता है। इसके अंडे भी बहुत महंगे बिकते हैं।</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <div class="img-fallback" id="fallback-kadaknath">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <span>कड़कनाथ मुर्गा (झाबुआ का जीआई टैग — कालामासी)</span>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Kadaknath_Chicken_Breed.jpg" alt="Kadaknath Chicken Breed" onerror="handleImageError(this, 'fallback-kadaknath')">
+                <div class="img-caption">Image: Wikimedia Commons. मध्य प्रदेश का गौरव - कड़कनाथ चिकन प्रजाति (झाबुआ)।</div>
+            </div>
+
+            <div class="concept-card">
+                <div class="card-header">📋 प्रमुख सरकारी योजनाएं (Welfare Schemes)</div>
+                <ul class="point-list">
+                    <li><b>नानाजी देशमुख पशु चिकित्सा विज्ञान विश्वविद्यालय:</b> यह <b>वर्ष 2009</b> में <b>जबलपुर</b> में स्थापित किया गया था। अत्यंत महत्वपूर्ण संस्थान।</li>
+                    <li><b>मैत्री योजना (Maitri Yojana) 2015:</b> इसके तहत गौवंश पालकों को आधुनिक व वैज्ञानिक तरीकों से गाय पालन का <b>प्रशिक्षण (Training)</b> दिया जाता है।</li>
+                    <li class="highlight-box"><b>नंदीशाला योजना (2005-06):</b> इस योजना का मुख्य उद्देश्य गौवंशीय पशुओं की नस्ल में सुधार करना है। इसके तहत राज्य सरकार द्वारा अनुदान (Subsidy) पर उन्नत देसी नस्लों (जैसे साहीवाल, थारपारकर, हरियाणा, गिर, गाओलाओ, मालवी, निमाड़ी, केनकथा) के <b>गौ सांड</b> किसानों को प्रदान किए जाते हैं ताकि श्रेष्ठ बछड़े प्राप्त हों। यह सभी वर्गों के लिए खुली है।</li>
+                    <li class="exam-hot"><h4>🔥 MPPSC PYQ: जलदीप योजना (2007)</h4> यह पूर्व परीक्षा में पूछा गया प्रश्न है। इसकी शुरुआत <b>पुनासा (खंडवा)</b> से इंदिरा सागर बांध के बैकवाटर क्षेत्र से हुई थी। इसके तहत मछुआरों (Fishermen) को बरसात के दिनों में गहरे पानी में सुरक्षा और मली पकड़ने का विशेष प्रशिक्षण व सहायता दी जाती है ताकि डूबने की दुर्घटनाएं न हों।</li>
+                    <li><b>प्रथम गो कैबिनेट (Cow Cabinet):</b> देश की पहली गो कैबिनेट गठित करने वाला राज्य मध्य प्रदेश है।</li>
+                    <li><b>गो एंबुलेंस सेवा (Cow Ambulance):</b> राज्य की पहली विशेष गाय एंबुलेंस <b>वर्ष 2017 में खरगोन</b> जिले से प्रारंभ की गई थी।</li>
+                </ul>
+            </div>
+
+            <div class="quiz-box" style="border: 2px solid var(--accent-orange);">
+                <div class="quiz-q" style="color: var(--accent-orange);">📝 सर का विशेष होमवर्क चैलेंज (कमेंट बॉक्स प्रश्न)</div>
+                <p style="margin-bottom: 10px; font-size: 0.95rem;">प्रश्न: मध्य प्रदेश में सभी मवेशियों/पशुओं हेतु "पशु एंबुलेंस सेवा" कब से लागू की गई और इसका टोल-फ्री कॉलिंग नंबर क्या है?</p>
+                <button class="quiz-a-btn" style="border-color: var(--accent-orange); color: var(--accent-orange);" onclick="toggleQuiz(this)">संकेत / उत्तर देखें</button>
+                <div class="quiz-answer" style="border-left-color: var(--accent-orange);">उत्तर संकेत: एंबुलेंस का मुख्य नंबर 1962 के एकीकृत तंत्र से जुड़ा है। इसकी शुरुआत और क्रियान्वयन की पुष्टि छात्र अपने स्तर पर रिवीजन को मजबूत करने के लिए खोज कर नीचे चेकलिस्ट में मार्क करेंगे।</div>
+            </div>
+        </section>
+
+        <section id="master-forms">
+            <div class="section-title"><h2>📊 मास्टर तालिका — पूर्ण रूप (Full Forms Table)</h2></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>संक्षिप्त रूप (Acronym)</th>
+                        <th>अंग्रेजी पूर्ण रूप (English Full Form)</th>
+                        <th>हिंदी व्याख्या / अर्थ (Hindi Meaning)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>MPCDF</b></td>
+                        <td>Madhya Pradesh Cooperative Dairy Federation Limited</td>
+                        <td>मध्य प्रदेश राज्य सहकारी डेयरी संघ (सांची ब्रांड का संचालनकर्ता)</td>
+                    </tr>
+                    <tr>
+                        <td><b>GI Tag</b></td>
+                        <td>Geographical Indication Tag</td>
+                        <td>भौगोलिक संकेतक (जैसे कड़कनाथ मुर्गे को झाबुआ के लिए मिला है)</td>
+                    </tr>
+                    <tr>
+                        <td><b>FMD</b></td>
+                        <td>Foot and Mouth Disease</td>
+                        <td>खुरपका और मुंहपका संक्रामक पशु रोग (विषाणु जनित)</td>
+                    </tr>
+                    <tr>
+                        <td><b>PYQ</b></td>
+                        <td>Previous Year Question</td>
+                        <td>पिछले वर्षों की परीक्षाओं में पूछे गए प्रश्न</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="master-hot">
+            <div class="section-title"><h2>🔥 मास्टर परीक्षा फैक्ट्स (Exam Hot Bullet Points)</h2></div>
+            <div class="concept-card" style="background: rgba(255,107,53,0.02); border-color: var(--accent-orange);">
+                <ul class="point-list" style="line-height: 1.9;">
+                    <li><b>3rd Rank:</b> भारत के कुल दुग्ध उत्पादन में मध्य प्रदेश का स्थान <b>तीसरा</b> है। [cite: 36]</li>
+                    <li><b>644 Grams:</b> राज्य में प्रति व्यक्ति दूध की दैनिक उपलब्धता <b>644 ग्राम</b> है। [cite: 37, 39]</li>
+                    <li><b>झाबुआ:</b> सर्वाधिक पशु घनत्व <b>(203)</b> वाला जिला है। [cite: 19, 20]</li>
+                    <li><b>नर्मदापुरम:</b> न्यूनतम पशु घनत्व <b>(45)</b> वाला जिला है। [cite: 20]</li>
+                    <li><b>सीधी:</b> राज्य में कुल पशुओं की संख्या के मामले में <b>शीर्ष जिला</b> है। [cite: 21]</li>
+                    <li><b>बुरहानपुर:</b> राज्य में कुल पशुओं की संख्या में <b>सबसे न्यूनतम जिला</b> है। [cite: 21, 22]</li>
+                    <li><b>06 संघ:</b> मध्य प्रदेश में सांची ब्रांड के तहत कुल <b>6 सहकारी दुग्ध संघ</b> कार्यरत हैं। [cite: 43, 44]</li>
+                    <li><b>मेघा परमार:</b> मध्य प्रदेश सांची दुग्ध संघ की आधिकारिक <b>ब्रांड एंबेसडर</b> हैं। [cite: 46, 48]</li>
+                    <li><b>गावलॉव (Gaolao):</b> छिंदवाड़ा-बैतूल की इस गाय की नस्ल को <b>'सतपुड़ा की रानी'</b> कहते हैं। [cite: 56, 57]</li>
+                    <li><b>रानीखेत:</b> मुर्गियों में होने वाला <b>विषाणु (Virus)</b> जनित श्वास रोग है। [cite: 83, 85]</li>
+                    <li><b>1962:</b> लंपी वायरस और पशु आपातकाल के लिए जारी <b>टोल-फ्री नंबर</b> है। [cite: 97, 128]</li>
+                    <li><b>रतौना (Sagar):</b> माखनलाल चतुर्वेदी द्वारा संचालित ऐतिहासिक <b>कसाईखाना आंदोलन (1921-22)</b> का केंद्र। [cite: 99, 100]</li>
+                    <li><b>जलदीप योजना:</b> वर्ष <b>2007</b> में खंडवा के पुनासा से मछुआरों के कल्याण हेतु शुरू की गई योजना। [cite: 124, 126]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="checklist">
+            <div class="section-title"><h2>✅ मास्टर रिवीजन चेकलिस्ट (Checklist Tool)</h2></div>
+            <div class="concept-card">
+                <div class="checklist-counter" id="checklistCounter">0 / 10 Topics Completed</div>
+                
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk1" onchange="updateChecklist()">
+                    <label for="chk1"><b>ग्रामीण अर्थव्यवस्था:</b> मुझे याद है कि MP की 72.4% आबादी ग्रामीण है और पशुपालन आजीविका का पूरक है। [cite: 7, 10]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk2" onchange="updateChecklist()">
+                    <label for="chk2"><b>20वीं पशु गणना:</b> मुझे गाय (18.7M), बकरी (11.6M), और भैंस (10.3M) का सही क्रम याद हो गया है। [cite: 13, 14]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk3" onchange="updateChecklist()">
+                    <label for="chk3"><b>घनत्व के एक्सट्रीम्स:</b> मुझे याद है कि झाबुआ डेंसिटी में नंबर 1 है और नर्मदापुरम सबसे कम है। [cite: 19, 20]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk4" onchange="updateChecklist()">
+                    <label for="chk4"><b>संख्या के एक्सट्रीम्स:</b> मुझे सीधी (सर्वाधिक) और बुरहानपुर (न्यूनतम) पशु संख्या का फैक्ट कंठस्थ है। [cite: 21, 22]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk5" onchange="updateChecklist()">
+                    <label for="chk5"><b>उत्पाद लीडर्स:</b> दूध/भैंस में मुरैना, बकरी में धार, मांस में भोपाल और अंडे/मछली में जबलपुर शीर्ष पर हैं। [cite: 24, 25, 27, 28, 29]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk6" onchange="updateChecklist()">
+                    <label for="chk6"><b>दुग्ध संघ और सांची:</b> मुझे 6 दुग्ध संघों के नाम और मेघा परमार का ब्रांड एंबेसडर होना याद है। [cite: 43, 44, 46, 48]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk7" onchange="updateChecklist()">
+                    <label for="chk7"><b>पशुओं की नस्लें:</b> मालवी (मालवा की रानी), निमाड़ी (निमाड़ की रानी), गावलॉव (सतपुड़ा की रानी) और भदावरी (भिंड)। [cite: 51, 53, 55, 56, 57]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk8" onchange="updateChecklist()">
+                    <label for="chk8"><b>पशु बीमारियां:</b> रानीखेत (मुर्गी-विषाणु), गलघोटू (गाय/भैंस-जीवाणु), लंपी हेल्पलाइन (1962)। [cite: 83, 85, 94, 95, 97]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk9" onchange="updateChecklist()">
+                    <label for="chk9"><b>प्रजन केंद्र:</b> कुल 8 केंद्र (रतौना आंदोलन सहित), कामधेनु कीरतपुर और सरोगेसी लैब भोपाल। [cite: 98, 99, 101, 107, 110]</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="chk10" onchange="updateChecklist()">
+                    <label for="chk10"><b>कल्याणकारी योजनाएं:</b> जलदीप योजना (2007-खंडवा), नंदीशाला योजना (2005-06) का उद्देश्य स्पष्ट है। [cite: 123, 124, 126, 132]</label>
+                </div>
+            </div>
+        </section>
+
+        <footer style="margin-top: 50px; padding: 20px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border-color);">
+            <p style="font-weight: 600; color: var(--accent-cyan);">📌 Upcoming Topic (अगली क्लास का विषय): मध्य प्रदेश के वन एवं वन्यजीव (Forests & Wildlife of MP) 🌳</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">विकास सर की लाइव क्लास रोज रात 8:00 बजे। नोट्स का रिवीजन करते रहें और परीक्षा में सफलता सुनिश्चित करें!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Theme Management Logic via LocalStorage
+        function initTheme() {
+            const savedTheme = localStorage.getItem('mp-gk-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+        initTheme();
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('mp-gk-theme', newTheme);
+        }
+
+        // Scroll Progress Indicator Logic
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        };
+
+        // Collapsible Accordion Action
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const symbol = header.querySelector('span:last-child');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                symbol.textContent = "▼";
+            } else {
+                content.style.display = "block";
+                symbol.textContent = "▲";
+            }
+        }
+
+        // Click to Reveal Quiz Answers
+        function toggleQuiz(button) {
+            const answerBox = button.nextElementSibling;
+            if (answerBox.style.display === "block") {
+                answerBox.style.display = "none";
+                button.textContent = "उत्तर देखें";
+            } else {
+                answerBox.style.display = "block";
+                button.textContent = "उत्तर छुपाएं";
+            }
+        }
+
+        // Checklist State Tracker with LocalStorage Persistence
+        const totalChecks = 10;
+        function loadChecklistState() {
+            for(let i=1; i<=totalChecks; i++) {
+                const checked = localStorage.getItem('chk' + i) === 'true';
+                document.getElementById('chk' + i).checked = checked;
+            }
+            updateChecklistCounter();
+        }
+
+        function updateChecklist() {
+            for(let i=1; i<=totalChecks; i++) {
+                const isChecked = document.getElementById('chk' + i).checked;
+                localStorage.setItem('chk' + i, isChecked);
+            }
+            updateChecklistCounter();
+        }
+
+        function updateChecklistCounter() {
+            let count = 0;
+            for(let i=1; i<=totalChecks; i++) {
+                if(document.getElementById('chk' + i).checked) count++;
+            }
+            document.getElementById('checklistCounter').textContent = `${count} / ${totalChecks} Topics Completed`;
+        }
+
+        // Robust Image Error Handling Redirect
+        function handleImageError(img, fallbackId) {
+            img.style.display = 'none';
+            const fallbackBox = document.getElementById(fallbackId);
+            if(fallbackBox) {
+                fallbackBox.style.display = 'flex';
+            }
+        }
+
+        // Initializing Checklist Check on Page Startup
+        window.onload = function() {
+            loadChecklistState();
+        };
+    </script>
+</body>
+</html>

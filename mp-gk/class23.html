@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP GK Class 23: मध्य प्रदेश के राष्ट्रीय उद्यान (Part 1) - Revision Sheet</title>
+    
+    <!-- Google Fonts for High Readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for Dynamic Theme Management */
+        :root {
+            --bg-main: #0f0f1a;
+            --bg-card: #16162a;
+            --bg-accent: #1f1f3e;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --primary: #00d4ff;
+            --secondary: #ff6b35;
+            --success: #00ff88;
+            --purple: #b388ff;
+            --border-color: #2e2e56;
+            --shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-accent: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0284c7;
+            --secondary: #ea580c;
+            --success: #16a34a;
+            --purple: #7c3aed;
+            --border-color: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Base Resets & Layout Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Fixed / Sticky Header & Top Navigation Bar */
+        .sticky-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-card);
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .jump-dropdown {
+            background-color: var(--bg-accent);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            max-width: 250px;
+        }
+
+        .theme-btn {
+            background-color: var(--primary);
+            color: #0f0f1a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Tracker and Metric Visuals */
+        .progress-container {
+            width: 100%;
+            background-color: var(--bg-accent);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            transition: width 0.4s ease;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-accent) 100%);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 16px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: var(--bg-accent);
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Component Cards & Typography Layouts */
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 5px solid var(--primary);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+
+        .card-heading {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        ul, ol {
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Styled Boxes & Alerts */
+        .exam-hot-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 53, 53, 0.05) 100%);
+            border: 1px solid var(--secondary);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .exam-hot-box strong {
+            color: var(--secondary);
+        }
+
+        .link-story-box {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.15) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 1px solid var(--purple);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .link-story-box strong {
+            color: var(--purple);
+        }
+
+        .info-box {
+            background-color: var(--bg-accent);
+            border-left: 4px solid var(--primary);
+            padding: 12px 16px;
+            border-radius: 0 12px 12px 0;
+            margin: 14px 0;
+            font-style: italic;
+        }
+
+        /* Tables & Structural Presentation Layouts */
+        .responsive-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-accent);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Image Modules & Attributions */
+        .image-container {
+            margin: 24px 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 12px;
+            box-shadow: 0 4px 12px var(--shadow);
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .image-caption {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .image-fallback-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--primary);
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Interactive Elements & Accordions */
+        .accordion-trigger {
+            width: 100%;
+            background-color: var(--bg-accent);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            margin-bottom: 16px;
+            background-color: var(--bg-card);
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        /* Quiz Component Modules */
+        .quiz-box {
+            background-color: var(--bg-accent);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+
+        details summary {
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+
+        details[open] summary {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .quiz-answer {
+            padding: 10px 14px;
+            background-color: var(--bg-card);
+            border-left: 3px solid var(--success);
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        /* Checklist / Persisted Elements Styles */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            cursor: pointer;
+            accent-color: var(--success);
+        }
+
+        .checklist-label {
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .checklist-counter {
+            font-weight: bold;
+            color: var(--success);
+        }
+
+        /* Print Override System */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                font-size: 12pt;
+            }
+            .sticky-navbar, .theme-btn, .image-fallback-btn, details summary::-webkit-details-marker {
+                display: none !important;
+            }
+            .card, .exam-hot-box, .link-story-box, .info-box, .accordion-content {
+                background: #ffffff !important;
+                border: 1px solid #000000 !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+                display: block !important;
+                page-break-inside: avoid;
+            }
+            .accordion-content {
+                display: block !important;
+            }
+            .quiz-answer {
+                display: block !important;
+                border: 1px dashed #000000 !important;
+                margin-top: 8px;
+            }
+            th {
+                background-color: #f1f5f9 !important;
+                color: #000000 !important;
+                border: 1px solid #000000 !important;
+            }
+            td {
+                border: 1px solid #000000 !important;
+            }
+            h1, h2, h3, h4 {
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION & CONTROLS HEADER -->
+    <div class="sticky-navbar">
+        <div class="nav-controls">
+            <select id="quick-jump" class="jump-dropdown" onchange="location.hash=this.value;">
+                <option value="">🎯 Quick Jump to Topic...</option>
+                <option value="#intro">Class Meta & Schedule</option>
+                <option value="#diff-np-sanc">NP vs Sanctuary Differences</option>
+                <option value="#mp-np-overview">MP National Parks Overview</option>
+                <option value="#project-tiger">Project Tiger Framework</option>
+                <option value="#tiger-census">Tiger Census & State Ranks</option>
+                <option value="#white-tiger-history">White Tiger Chronicles</option>
+                <option value="#wildlife-profiles">Fauna Profiles & Safaris</option>
+                <option value="#geo-mapping">Geographical Mapping Matrix</option>
+                <option value="#kanha-np">Kanha National Park (In-Depth)</option>
+                <option value="#madhav-np">Madhav National Park (In-Depth)</option>
+                <option value="#bandhavgarh-np">Bandhavgarh National Park (In-Depth)</option>
+                <option value="#master-fullforms">Master Full-Forms Data</option>
+                <option value="#master-hotfacts">Master Exam Hot Facts 🔥</option>
+                <option value="#master-checklist">Master Revision Checklist</option>
+            </select>
+            
+            <div style="font-size: 14px; font-weight:600;">
+                Revision Checked: <span id="chk-counter" class="checklist-counter">0/0</span>
+            </div>
+
+            <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
+                🌓 Switch Theme
+            </button>
+        </div>
+        <div class="progress-container">
+            <div id="revision-progress" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- LECTURE HEADER -->
+        <header class="header-card" id="intro">
+            <h1>मध्य प्रदेश के राष्ट्रीय उद्यान (National Parks of MP) - Part 1</h1>
+            <p style="color: var(--text-muted); margin-top: 6px;">MP GK Class Number: 23 | Live Series by Vikas Sir (8:00 PM Daily)</p>
+            <div class="header-meta">
+                <span class="badge">📚 Subject: MP GK</span>
+                <span class="badge">🔥 Target: MPPSC, Vyapam, Patwari, SSC</span>
+                <span class="badge">⏱️ Focus: Basic to Advanced Concept Flow</span>
+            </div>
+            
+            <div class="info-box" style="margin-top: 15px;">
+                <strong>📅 Channel Weekly Schedule (23rd – 29th):</strong><br>
+                • 08:00 AM — Daily Current Affairs (DCA) by Ashish Sir<br>
+                • English Core Concepts Class by Sapna Mam<br>
+                • 08:00 PM — MP GK Core Advanced Series by Vikas Sir
+            </div>
+        </header>
+
+        <!-- SECTION 1: CORE DIFFERENCES -->
+        <section id="diff-np-sanc">
+            <h2 class="section-title">📌 National Park vs Wildlife Sanctuary: The Core Conceptual Difference</h2>
+            
+            <div class="card">
+                <p>Students अक्सर confuse होते हैं कि <strong>National Park (राष्ट्रीय उद्यान)</strong> और <strong>Wildlife Sanctuary (अभ्यारण्य)</strong> में क्या अंतर है। यद्यपि यह अंतर सीधे Objective Pre-exams में लिखने को नहीं आता, पर <strong>Mains Paper के 3-Marker & 5-Marker Layout</strong> के लिए यह समझना अत्यंत आवश्यक है।</p>
+                
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter / आधार</th>
+                                <th>National Park (राष्ट्रीय उद्यान)</th>
+                                <th>Wildlife Sanctuary (अभ्यारण्य)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Legal Basis (अधिनियम)</strong></td>
+                                <td>यह राष्ट्र/राज्य के किसी विशेष अधिनियम (Specific Act) के तहत अधिनियमित (Enacted) होते हैं।</td>
+                                <td>सरकार द्वारा सामान्य प्रशासनिक नियमों के तहत प्रबंधित (Managed) होते हैं।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rule Strictness (नियम कानून)</strong></td>
+                                <td>वन क्षेत्र पूर्णतः <strong>आरक्षित (Reserved Forest Area)</strong> होता है। नियम कानून अत्यधिक सख्त (Extremely Rigid) होते हैं। मानवीय गतिविधियाँ (Human Activities) वर्जित हैं।</td>
+                                <td>National Park के Comparison में नियम उतने कठोर नहीं होते। यहाँ नियंत्रित मानवीय गतिविधियाँ (जैसे पशु चराना, सूखी लकड़ी बीनना) Possible हैं।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Area Boundary (क्षेत्र सीमा)</strong></td>
+                                <td>इनका क्षेत्र सीमित, स्पष्ट रूप से सीमांकित (Strictly Defined Boundaries) होता है।</td>
+                                <td>इनका क्षेत्र विस्तृत या तुलनात्मक रूप से बड़ा (Extended Area) हो सकता है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Faunal Focus (जानवरों का संरक्षण)</strong></td>
+                                <td>इसमें <strong>सभी प्रकार के जानवरों (Entire Ecosystem/All Wildlife Animals)</strong> को एक साथ प्राकृतिक आवास में संरक्षित किया जाता है।</td>
+                                <td>इसमें किसी <strong>विशेष जानवर (Particular Target Species)</strong> जैसे सोनचिड़िया या खरमोर को Focus करके संरक्षित किया जाता है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Land Control (भूमि स्वामित्व)</strong></td>
+                                <td>भूमि पूर्णतः <strong>सरकारी नियंत्रण (100% Absolute Government Possession)</strong> में होती है। यदि कोई निजी भूमि क्षेत्र में आए, तो मुआवजा देकर अधिग्रहण कर लिया जाता है।</td>
+                                <td>यह निजी वन क्षेत्र (Private Lands) में भी सरकारी नियंत्रण के साथ सह-अस्तित्व में विस्तृत हो सकता है। किसानों को खेती की सीमित अनुमति मिल सकती है।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quiz Block for Section -->
+            <div class="quiz-box">
+                <details>
+                    <summary>🙋‍♂️ Quick Recall: क्या अभ्यारण्य क्षेत्र में किसान खेती या पशु चरा सकता है?</summary>
+                    <div class="quiz-answer" style="margin-top: 10px;">
+                        <strong>उत्तर:</strong> हाँ, अभ्यारण्य (Sanctuary) के अंतर्गत नियमों में कुछ छूट होती है, जिससे निजी क्षेत्र में सरकारी अनुमति के साथ नियंत्रित खेती एवं पशु चराने जैसी मानवीय गतिविधियाँ संभव हैं, जबकि नेशनल पार्क में यह पूर्णतः प्रतिबंधित है।
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MP NATIONAL PARKS OVERVIEW & STATS -->
+        <section id="mp-np-overview">
+            <h2 class="section-title">📊 MP National Parks Status & Legal Definitions</h2>
+            
+            <div class="card">
+                <div class="card-heading">📖 Official Definition of National Park</div>
+                <blockquote>
+                    "ऐसा विशिष्ट भौगोलिक क्षेत्र जिसे किसी राष्ट्र की प्रशासन प्रणाली द्वारा औपचारिक रूप से वन्यजीवों एवं प्राकृतिक वनस्पति की सुरक्षा के लिए विशेष रूप से अधिनियमित एवं संरक्षित किया जाता है।" (Protected Formally by the Administrative System of the Nation under the National Park Framework).
+                </blockquote>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🔢 मध्य प्रदेश में कुल राष्ट्रीय उद्यानों की संख्या</div>
+                <ul>
+                    <li><strong>आर्थिक सर्वेक्षण (Economic Survey) 2023-24 के अनुसार:</strong> मध्य प्रदेश में वर्तमान में कुल <strong>11 राष्ट्रीय उद्यान पूर्णतः स्थापित</strong> हैं तथा <strong>1 राष्ट्रीय उद्यान प्रस्तावित (Proposed)</strong> है।</li>
+                    <li>⚠️ <strong>Vyapam Warning:</strong> व्यापम (PEB) ने एक पुराने एग्जाम में इसका उत्तर <strong>12</strong> माना था, परंतु उस समय विकल्प (Options) में 11 मौजूद ही नहीं था! यदि परीक्षा में 11 और 12 दोनों विकल्प आएं, तो प्रमाणिक आर्थिक सर्वेक्षण के आधार पर <strong>11</strong> ही सही उत्तर चुनना है।</li>
+                    <li><strong>प्रस्तावित राष्ट्रीय उद्यान:</strong> ओंकारेश्वर राष्ट्रीय उद्यान (Omkareshwar National Park) - खंडवा।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROJECT TIGER FRAMEWORK -->
+        <section id="project-tiger">
+            <h2 class="section-title">🐅 Project Tiger (टाइगर प्रोजेक्ट) Framework</h2>
+            
+            <div class="card">
+                <div class="card-heading">🌐 वैश्विक एवं राष्ट्रीय इतिहास (Global & National Matrix)</div>
+                <ul>
+                    <li><strong>शुरुआत:</strong> भारत में टाइगर प्रोजेक्ट की शुरुआत <strong>अप्रैल 1973</strong> में हुई। हाल ही में वर्ष 2023 में इसके गौरवमयी <strong>50 वर्ष पूरे</strong> हुए हैं, जिसके उपलक्ष्य में प्रधानमंत्री नरेंद्र मोदी जी ने बांदीपुर नेशनल पार्क (कर्नाटक) का दौरा किया था।</li>
+                    <li><strong>विश्व में जन्मदाता (Global Creator):</strong> गेनी मैनफोर्ड (Gaini Mainford) को विश्व स्तर पर टाइगर प्रोजेक्ट का प्रणेता माना जाता है।</li>
+                    <li><strong>भारत में जन्मदाता (Father of Project Tiger in India):</strong> <strong>कैलाश सांखला (Kailash Sankhla)</strong> को भारत का 'टाइगर मैन' कहा जाता है।</li>
+                </ul>
+
+                <div class="exam-hot-box">
+                    <strong>🔥 DOUBLE STAR EXAM HOT FACT:</strong><br>
+                    मध्य प्रदेश में टाइगर प्रोजेक्ट की नींव (Foundation Structure) रखने वाले महान अधिकारी <strong>जगत ज्योति दत्ता (J.J. Datta / जे जे दत्ता)</strong> थे। वर्ष <strong>2024 में इनका निधन</strong> हुआ है, इसलिए यह आगामी परीक्षाओं के लिए अत्यंत संभावित Current-Linked प्रश्न है!
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">📍 मध्य प्रदेश में प्रथम टाइगर प्रोजेक्ट विवाद निवारण</div>
+                <p>मध्य प्रदेश में सर्वप्रथम टाइगर प्रोजेक्ट <strong>कान्हा राष्ट्रीय उद्यान (Kanha National Park)</strong> में लागू किया गया।</p>
+                <div class="info-box">
+                    इंटरनेट या सामान्य पुस्तकों में आपको वर्ष 1974 लिखा मिलेगा, और व्यापम ने भी एक बार 1974 माना है क्योंकि विकल्प में 1973 नहीं था। परंतु मध्य प्रदेश शासन के <strong>आधिकारिक जनसंपर्क (Janampark Department) एवं ऑफिशियल वेबसाइट</strong> के दस्तावेजों के अनुसार कान्हा को <strong>1973</strong> में ही टाइगर रिजर्व घोषित किया गया था। दोनों विकल्प होने पर 1973 को प्राथमिकता दें।
+                </div>
+            </div>
+
+            <!-- The 7 Tiger Reserves Comparison Table -->
+            <div class="card">
+                <div class="card-heading">🗺️ MP के 7 टाइगर रिजर्व (7 Tiger Reserves Structure)</div>
+                <p>वर्तमान में मध्य प्रदेश में कुल 7 टाइगर रिजर्व क्रियाशील हैं (6 राष्ट्रीय उद्यान + 1 अभ्यारण्य)।</p>
+                
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>क्र.</th>
+                                <th>टाइगर रिजर्व का नाम</th>
+                                <th>संबंधित जिला (Location)</th>
+                                <th>टी.आर. घोषित वर्ष (TR Year)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>कान्हा राष्ट्रीय उद्यान (Kanha National Park)</td>
+                                <td>मंडला + बालाघाट</td>
+                                <td><strong>1973</strong></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>पेंच राष्ट्रीय उद्यान (Pench National Park)</td>
+                                <td>सिवनी + छिंदवाड़ा</td>
+                                <td><strong>1992</strong></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>बांधवगढ़ राष्ट्रीय उद्यान (Bandhavgarh National Park)</td>
+                                <td>उमरिया</td>
+                                <td><strong>1993</strong></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>पन्ना राष्ट्रीय उद्यान (Panna National Park)</td>
+                                <td>पन्ना (+ छतरपुर)</td>
+                                <td><strong>1994</strong> (व्यापम का सर्वाधिक पसंदीदा प्रश्न)</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>सतपुड़ा राष्ट्रीय उद्यान (Satpura National Park)</td>
+                                <td>नर्मदापुरम (पंचमढ़ी)</td>
+                                <td><strong>1999 - 2000</strong> (पहला उत्तर 1999 चुनें)</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>संजय राष्ट्रीय उद्यान (Sanjay National Park)</td>
+                                <td>सीधी + सिंगरोली</td>
+                                <td><strong>2008</strong></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>वीरांगना दुर्गावती टाइगर रिजर्व (Veerangana Durgavati TR)</td>
+                                <td>सागर + दमोह + नरसिंहपुर</td>
+                                <td><strong>2023</strong> (नौरादेही और दुर्गावती क्षेत्र का संयोजन)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="link-story-box">
+                    <strong>🔗 Link Story — 7 टाइगर रिजर्व चुटकी में याद करो:</strong><br>
+                    "<strong>कान्हा</strong> ने <strong>पेंच</strong> लड़ाया तो <strong>बांधव</strong> (भाई) ने <strong>पन्ना</strong> फाड़कर <strong>सतपुड़ा</strong> की पहाड़ियों पर फेंका, जहाँ <strong>संजय</strong> ने उसे उठाकर <strong>दुर्गावती</strong> को सौंप दिया।"<br>
+                    ✨ <em>क्रमबद्ध जुड़ाव: कान्हा (1973) ➔ पेंच (1992) ➔ बांधवगढ़ (1993) ➔ पन्ना (1994) ➔ सतपुड़ा (1999) ➔ संजय (2008) ➔ दुर्गावती (2023).</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TIGER CENSUS AND MP STATUS -->
+        <section id="tiger-census">
+            <h2 class="section-title">📊 Tiger Census 2022 & Environmental Nicknames of MP</h2>
+            
+            <div class="card">
+                <div class="card-heading">📈 बाग गणना (Tiger Census) 2022 के प्रामाणिक आंकड़े</div>
+                <ul>
+                    <li><strong>भारत में कुल बाघ:</strong> 3682</li>
+                    <li><strong>मध्य प्रदेश में कुल बाघ:</strong> <strong>785 बाघ</strong> (संपूर्ण देश में प्रथम स्थान)</li>
+                    <li>इसी गौरव के कारण मध्य प्रदेश को पुनः <strong>"टाइगर स्टेट" (Tiger State / बाघ राज्य)</strong> का दर्जा मिला हुआ है।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🎖️ मध्य प्रदेश के अन्य महत्वपूर्ण टैग / उपनाम (State Tags Matrix)</div>
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>उपनाम (State Title)</th>
+                                <th>मुख्य तथ्य / डेटा (Key Insight Data)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>تेंदुआ राज्य (Leopard State)</strong></td>
+                                <td>मध्य प्रदेश में तेंदुओं की संख्या सर्वाधिक है (4100 से अधिक तेंदुए दर्ज)।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>भेड़िया प्रदेश (Wolf State)</strong></td>
+                                <td>भारतीय भेड़ियों (Indian Wolves) की सबसे ज्यादा आबादी MP में पाई जाती है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>घड़ियाल प्रदेश (Gharial / Alligator State)</strong></td>
+                                <td>चम्बल, केन, सोन जैसी नदियों में एलीगेटर (मगरमच्छ प्रजाति) का सर्वाधिक संरक्षण होने के कारण।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>गिद्ध प्रदेश (Vulture State)</strong></td>
+                                <td>गिद्धों की प्रजातियों की गणना में मध्य प्रदेश शीर्ष स्थान पर है।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="exam-hot-box">
+                    <strong>🔥 Exam Hot Fact:</strong> बाघों के अंधाधुंध शिकार पर ऐतिहासिक रूप से सबसे पहले कड़ा प्रतिबंध लगाने वाले शासक <strong>रीवा रियासत के महाराजा मार्तंड सिंह</strong> थे। (First formal ban on Tiger hunting was imposed by Maharaja Martand Singh of Rewa).
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WHITE TIGER CHRONICLES -->
+        <section id="white-tiger-history">
+            <h2 class="section-title">🐅 सफेद बाघों का इतिहास (White Tiger Chronicles)</h2>
+            
+            <div class="card">
+                <p>सफेद बाघों के इतिहास को लेकर छात्रों में बहुत भ्रम (Confusion) रहता है। आज इस भ्रम का अंत तुरंत करते हैं:</p>
+                <ol>
+                    <li><strong>सर्वप्रथम देखा जाना (First Visual Sighting - 1915):</strong> मध्य प्रदेश में सबसे पहला सफेद बाघ <strong>वर्ष 1915</strong> में बांधवगढ़ के जंगलों/पहाड़ियों में केवल दूर से देखा गया था। इसे पकड़ा नहीं गया था।</li>
+                    <li><strong>सर्वप्रथम पकड़ा जाना (First Live Capture - 1951):</strong> रीवा रियासत के महाराजा मार्तंड सिंह ने <strong>27 मई 1951</strong> को एक जीवित सफेद बाघ के शावक को सफलतापूर्वक पकड़ा।
+                        <ul>
+                            <li>⚠️ <em>Book Correction:</em> कई स्थानीय किताबों में 28 मई लिखा है, परंतु शासकीय रिकॉर्ड के अनुसार <strong>27 मई 1951</strong> प्रामाणिक तिथि है।</li>
+                            <li><strong>स्थान:</strong> यह शावक सीधी जिले के <strong>'बगाड़' (Bagaad)</strong> क्षेत्र से पकड़ा गया था, जो वर्तमान में <strong>संजय राष्ट्रीय उद्यान</strong> के अंतर्गत आता है।</li>
+                            <li><strong>नामकरण:</strong> इस ऐतिहासिक सफेद बाघ का नाम <strong>'मोहन' (Mohan)</strong> रखा गया था।</li>
+                        </ul>
+                    </li>
+                    <li><strong>गोविंदगढ़ पैलेस का किस्सा:</strong> बगाड़ से पकड़ने के बाद मोहन को महाराजा के गोविंदगढ़ पैलेस (Govindgarh Palace) लाया गया, जहाँ से वह दो दिन बाद भाग गया था। परंतु वन विभाग और सैनिकों ने उसे दो-तीन दिन के भीतर पुनः <strong>गोविंदगढ़ के जंगलों</strong> से सुरक्षित खोज निकाला।</li>
+                    <li><strong>निधन:</strong> मोहन ने रीवा और गोविंदगढ़ में लंबा जीवन जिया और <strong>18 दिसंबर 1969</strong> को लगभग 19 वर्ष की आयु में उसका प्राकृतिक निधन हो गया।</li>
+                </ol>
+            </div>
+
+            <div class="image-container">
+                <!-- Dual Coding Visual Dynamic Preload Setup for White Tiger Safari -->
+                <img id="img-safari" src="https://upload.wikimedia.org/wikipedia/commons/7/75/White_Tiger_in_a_Zoo.jpg" alt="Maharaja Martand Singh Ju Dev White Tiger Safari Zoo Entrance Gate Concept Visual representing Captive White Tigers" width="600">
+                <div class="image-caption">
+                    <strong>Visual Reference:</strong> Captive White Tiger Concept representing the lineage of Mohan.<br>
+                    <em>Source: Wikimedia Commons | License: Public Domain / CC-BY-SA</em><br>
+                    <button class="image-fallback-btn" onclick="triggerFallback('img-safari', 'https://images.unsplash.com/photo-1602491453979-02654b52720d?q=80&w=600')">⚠️ Image won't load? Click for alternate server link</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🚏 महाराजा मार्तंड सिंह जू देव वाइट टाइगर सफारी</div>
+                <ul>
+                    <li><strong>स्थापना वर्ष:</strong> 2016</li>
+                    <li><strong>सटीक भौगोलिक अवस्थिति (Updated Location Alert!):</strong> यह सफारी पूर्व में सतना जिले में गिनी जाती थी, परंतु अब यह नवनिर्मित <strong>मैहर (Maihar) जिले की अमरपाटन तहसील के 'मुकुंदपुर' (Mukundpur)</strong> में स्थापित है। वर्तमान परीक्षा पैटर्न के अनुसार इसे मैहर जिला ही टिक करना है।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WILDLIFE PROFILES & CONCEPT DIFFERENCES -->
+        <section id="wildlife-profiles">
+            <h2 class="section-title">🦌 Wildlife Species Profile Profiles & Concept Extensions</h2>
+            
+            <div class="card">
+                <p>शिक्षकों द्वारा स्क्रीन पर समझाए गए विभिन्न जानवरों के प्रमुख चारित्रिक अंतर तथा उनकी महत्ता नीचे क्रमानुसार सूचीबद्ध है:</p>
+                <ul>
+                    <li><strong>बारासिंगा (Barasingha / Swamp Deer):</strong> यह मध्य प्रदेश का <strong>राजकीय पशु (State Animal)</strong> है। इसके सिर पर सींगों की अत्यधिक शाखाएं (12 Tines) होने के कारण इसे बारासिंगा कहा जाता है। इसे <em>"कान्हा का गहना"</em> भी कहते हैं।</li>
+                    <li><strong>नीलगाय (Nilgai):</strong> यह बुंदेलखंड के वनों एवं विशेषकर <strong>पन्ना टाइगर रिजर्व</strong> में सर्वाधिक पाई जाती है। ग्रामीण व स्थानीय भाषा में इसे <strong>"रिजवाना" (Rijwana)</strong> के नाम से संबोधित किया जाता है।</li>
+                    <li><strong>चीतल (Cheetal / Spotted Deer):</strong> यह हिरण की ही एक अत्यंत सुंदर प्रजाति है जिसके शरीर पर सफेद चितकबरे धब्बे (White Spots) पाए जाते हैं।</li>
+                    <li><strong>दूधराज (Paradise Flycatcher / शाह बुलबुल):</strong> मध्य प्रदेश का राजकीय पक्षी (State Bird), जिसकी लंबी सफेद पूंछ हवा में तैरती हुई दिखाई देती है।</li>
+                    <li><strong>खरमोर (Lesser Florican):</strong> मोर जैसी बनावट वाला एक दुर्लभ संकटग्रस्त पक्षी जिसका संरक्षण चुनिंदा अभ्यारण्यों में किया जा रहा है।</li>
+                    <li><strong>काला हिरण (Blackbuck):</strong> गहरे काले और सफेद रंग के संयोजन वाला दुर्लभ मृग।</li>
+                </ul>
+            </div>
+
+            <!-- Cheetah vs Tiger vs Leopard Matrix Card -->
+            <div class="card">
+                <div class="card-heading">🐆 चीता (Cheetah) vs बाघ (Tiger) vs तेंदुआ (Leopard) में अंतर</div>
+                <p>विद्यार्थी अक्सर इन तीनों बिग कैट्स को पहचानने में गलती करते हैं। इनका मुख्य शारीरिक भेद निम्नलिखित है:</p>
+                
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>विशेषता (Feature)</th>
+                                <th>चीता (Cheetah)</th>
+                                <th>तेन्दुआ (Leopard)</th>
+                                <th>बाघ (Tiger)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>शरीर के धब्बे (Spot Pattern)</strong></td>
+                                <td>इसके शरीर पर बिल्कुल <strong>छोटे, ठोस काले रंग के गोल धब्बे (Solid Black Dots)</strong> होते हैं।</td>
+                                <td>इसके शरीर पर धब्बे छल्लेदार या <strong>गुलाब के फूल जैसे (Rosettes Spots)</strong> होते हैं, जिनके बीच का हिस्सा हल्का खाली/भूरा होता है।</td>
+                                <td>इसके शरीर पर गोल धब्बे नहीं बल्कि <strong>लंबवत काली धारियां (Vertical Stripes)</strong> होती हैं।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>चेहरे की बनावट (Face Tear Lines)</strong></td>
+                                <td>आँखों के कोने से मुँह तक <strong>काली अश्रु रेखा (Black Tear Lines)</strong> स्पष्ट रूप से बनी होती है।</td>
+                                <td>चेहरे पर कोई अश्रु रेखा नहीं होती। मुँह थोड़ा चौड़ा और भारी होता है।</td>
+                                <td>चेहरा बड़ा, रौबदार और धारियों से युक्त होता है।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>स्वभाव एवं गति (Behavior Type)</strong></td>
+                                <td>यह संसार का सबसे तेज दौड़ने वाला (Hyper-Active) प्राणी है। स्लिम बॉडी होती है।</td>
+                                <td>यह पेड़ पर चढ़ने में माहिर और आलसी स्वभाव (Laid Back) का होता है। भारी और गठीला शरीर।</td>
+                                <td>शक्तिशाली शिकारी, नदियों में तैरने और घात लगाने में माहिर।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Night Safari Interactive Card -->
+            <div class="card">
+                <div class="card-heading">🌙 नाइट सफारी (Night Safari) का विकास</div>
+                <p>दिन के समय तेज धूप के कारण अक्सर हिंसक वन्यजीव घने जंगलों में छिप जाते हैं। पर्यटकों को रात्रिचर जीवों की गतिविधियों से रूबरू कराने के लिए सरकार द्वारा विशेष ट्रैक पर <strong>रात्रि 10 बजे तक</strong> जिप्सी सफारी की अनुमति दी जाती है।</p>
+                <div class="info-box">
+                    <strong>प्रथम चरण के तीन प्रमुख पार्क जहाँ यह शुरू हुई:</strong><br>
+                    1. कान्हा राष्ट्रीय उद्यान (Mandla)<br>
+                    2. पेंच राष्ट्रीय उद्यान (Seoni)<br>
+                    3. बांधवगढ़ राष्ट्रीय उद्यान (Umaria)<br>
+                    ✨ <em>Current Update: वर्तमान में इसे पन्ना राष्ट्रीय उद्यान में भी पर्यटकों के लिए संचालित किया जा रहा है।</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: GEOGRAPHICAL MAPPING MATRIX -->
+        <section id="geo-mapping">
+            <h2 class="section-title">🗺️ मध्य प्रदेश के 11 राष्ट्रीय उद्यानों का जिलावार मानचित्रण</h2>
+            
+            <div class="card">
+                <p>परीक्षा में सीधे जिलों के जोड़े सुमेलित करने को आते हैं। वनों और राष्ट्रीय उद्यानों को याद रखने के लिए अपने माइंड मैप को एक्टिव रखें:</p>
+                
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>क्र.</th>
+                                <th>राष्ट्रीय उद्यान का नाम</th>
+                                <th>भौगोलिक जिला (District Location)</th>
+                                <th>विशेष पहचान / स्थिति</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>कान्हा राष्ट्रीय उद्यान</strong></td>
+                                <td>मंडला + बालाघाट</td>
+                                <td>प्रथम एवं सबसे बड़ा उद्यान</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>बांधवगढ़ राष्ट्रीय उद्यान</strong></td>
+                                <td>उमरिया</td>
+                                <td>32 पहाड़ियों से घिरा क्षेत्र</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>पेंच राष्ट्रीय उद्यान</strong></td>
+                                <td>सिवनी + छिंदवाड़ा</td>
+                                <td>इंदिरा प्रियदर्शिनी नाम से भी प्रसिद्ध</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>सतपुड़ा राष्ट्रीय उद्यान</strong></td>
+                                <td>नर्मदापुरम (होशंगाबाद)</td>
+                                <td>पंचमढ़ी बायोस्फीयर का हिस्सा</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>पन्ना राष्ट्रीय उद्यान</strong></td>
+                                <td>पन्ना + छतरपुर</td>
+                                <td>केन नदी का मुख्य प्रवाह क्षेत्र</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>माधव राष्ट्रीय उद्यान</strong></td>
+                                <td>शिवपुरी</td>
+                                <td>जॉर्ज कैसल भवन की अवस्थिति</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>पालपुर कुनो राष्ट्रीय उद्यान</strong></td>
+                                <td>श्योपुर</td>
+                                <td>अफ्रीकन चीतों के पुनर्वास का केंद्र</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>फासिल (घुघवा) राष्ट्रीय उद्यान</strong></td>
+                                <td>डिंडोरी</td>
+                                <td>सबसे छोटा जीवाश्म उद्यान</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><strong>संजय राष्ट्रीय उद्यान</strong></td>
+                                <td>सीधी + सिंगरोली</td>
+                                <td>मोहन सफेद बाघ का मूल क्षेत्र</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><strong>डायनासोर जीवाश्म उद्यान</strong></td>
+                                <td>धार</td>
+                                <td>डायनासोर के अंडों के जीवाश्म उपस्थित</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td><strong>वन विहार राष्ट्रीय उद्यान</strong></td>
+                                <td>भोपाल</td>
+                                <td>आईएसओ (ISO) प्रमाणित आधुनिक चिड़ियाघर</td>
+                            </tr>
+                            <tr style="background-color: rgba(255,107,53,0.05);">
+                                <td>12</td>
+                                <td><strong>ओंकारेश्वर राष्ट्रीय उद्यान</strong></td>
+                                <td>खण्डवा</td>
+                                <td>📌 <strong>प्रस्तावित (Proposed Status)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: KANHA NATIONAL PARK IN-DEPTH -->
+        <section id="kanha-np">
+            <h2 class="section-title">🏞️ Deep Dive Topic 1: कान्हा राष्ट्रीय उद्यान (Kanha National Park)</h2>
+            
+            <div class="card">
+                <div class="card-heading">⏳ ऐतिहासिक विकासक्रम की टाइमलाइन (Evolution Timeline)</div>
+                <ul>
+                    <li><strong>1879:</strong> सर्वप्रथम इसे <strong>वन आरक्षित क्षेत्र (Forest Reserve Area)</strong> घोषित किया गया था।</li>
+                    <li><strong>1933:</strong> इसे अंग्रेजों के समय वन्यजीव <strong>अभ्यारण्य (Wild Life Sanctuary)</strong> का दर्जा दिया गया।</li>
+                    <li><strong>1 जून 1955:</strong> इसे पूर्णतः उन्नत करके <strong>राष्ट्रीय उद्यान (National Park Status)</strong> का दर्जा दिया गया। यह मध्य प्रदेश का प्रथम राष्ट्रीय उद्यान बना।</li>
+                    <li><strong>1973:</strong> यह मध्य प्रदेश का <strong>सर्वप्रथम टाइगर रिजर्व (First Tiger Reserve of MP)</strong> घोषित हुआ।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">📊 मुख्य भौगोलिक एवं प्रशासनिक संकेतक (Administrative Indicators)</div>
+                <ul>
+                    <li><strong>कुल क्षेत्रफल (Total Area Area):</strong> <strong>940 वर्ग किलोमीटर (940 Sq. Km)</strong>। यह मध्य प्रदेश का क्षेत्रफल की दृष्टि से <strong>सबसे बड़ा (Largest)</strong> राष्ट्रीय उद्यान है। (इसका क्षेत्रफल कंठस्थ याद रखना है, बाकी सबका छोड़ सकते हैं)।</li>
+                    <li><strong>आधिकारिक शुभंकर (Official Mascot):</strong> यह भारत का पहला ऐसा राष्ट्रीय उद्यान है जिसने अपना स्वयं का मस्कट / लोगो जारी किया। इसका नाम <strong>"भूरसिंह द बारासिंगा" (Bhoorsingh the Barasingha)</strong> है।
+                        <ul>
+                            <li><strong>लॉन्च वर्ष:</strong> 2017</li>
+                            <li><strong>डिजाइनर का नाम:</strong> प्रसिद्ध कार्टूनिस्ट <strong>रोहन चक्रवर्ती (Rohan Chakrabarty)</strong>।</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img id="img-barasingha" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Swamp_Deer_Kanha.jpg" alt="Hard ground Barasingha Swamp deer standing under the canopy of Kanha National Park forest" width="600">
+                <div class="image-caption">
+                    <strong>Image Field Study:</strong> The Branderi Barasingha (Jewel of Kanha) inside the core zone.<br>
+                    <em>Source: Wikimedia Commons | Creator: Public Domain Contributor</em><br>
+                    <button class="image-fallback-btn" onclick="triggerFallback('img-barasingha', 'https://images.unsplash.com/photo-1607383240742-ac9243ab27b7?q=80&w=600')">⚠️ Image won't load? Click for alternate server link</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🌿 वनस्पति, नदियाँ एवं महत्वपूर्ण आंतरिक स्पॉट (Internal Core Assets)</div>
+                <ul>
+                    <li><strong>प्रजाति विशिष्टता:</strong> यहाँ <strong>हार्ड ग्राउंड (Hard Ground)</strong> पर रहने वाला अत्यंत दुर्लभ <strong>ब्रेडरी प्रजाति (Branderi Species)</strong> का बारासिंगा पाया जाता है, जिसे कान्हा का गहना कहते हैं। इसके अतिरिक्त यहाँ चार सींगों वाला <strong>चौसिंगा (Four-horned Antelope)</strong> भी प्रचुर मात्रा में मिलता है।</li>
+                    <li><strong>वृक्षों की अधिकता:</strong> यहाँ सर्वाधिक मात्रा में <strong>साल के वृक्ष (Sal Trees)</strong> पाए जाते हैं। कान्हा के भीतर 'राजा-रानी' नाम के दो विशाल साल के वृक्षों के सूखे तने (Dry Stems) आज भी ऐतिहासिक धरोहर के रूप में पर्यटकों के आकर्षण का केंद्र हैं।</li>
+                    <li><strong>श्रवण ताल (Shravan Tal Legend):</strong> उद्यान के भीतर स्थित एक पौराणिक तालाब है। लोक कथाओं के अनुसार, त्रेतायुग में जब श्रवण कुमार अपने अंधे माता-पिता को कांधे पर बिठाकर जा रहे थे और प्यास बुझाने इस तालाब से पानी भर रहे थे, तब अयोध्या के राजा दशरथ ने पशु की ध्वनि समझकर यहाँ 'शब्दभेदी बाण' चलाया था जिससे श्रवण कुमार की मृत्यु हुई और उनके माता-पिता के श्राप के कारण राजा दशरथ को भी पुत्र वियोग सहना पड़ा।</li>
+                    <li><strong>प्रवाहित नदियाँ:</strong> नर्मदा की दो प्रसिद्ध सहायक नदियाँ — <strong>हालोन नदी (Halon River)</strong> तथा <strong>बंजार नदी (Banjar River)</strong> इस राष्ट्रीय उद्यान के मुख्य जल स्रोत हैं।</li>
+                    <li><strong>सनसेट पॉइंट (Sunset Point):</strong> कान्हा का सबसे प्रसिद्ध सूर्यास्त देखने का स्थान <strong>'बमनी दादर' (Bamani Dadar)</strong> है, जहाँ से ढलता हुआ सूरज विहंगम दृश्य प्रस्तुत करता है।</li>
+                    <li><strong>लपसी शिकारी की मूर्ति:</strong> लपसी नामक एक प्रसिद्ध स्थानीय शिकारी की याद में यहाँ एक स्मारक/मूर्ति स्थापित है, जिसने बाद में हिंसक शिकार छोड़कर वन्यजीवों के संरक्षण में अपना संपूर्ण जीवन समर्पित कर दिया था।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">⚡ आधुनिक परियोजनाएं एवं विशेष तथ्य (Advanced Dynamic Features)</div>
+                <ul>
+                    <li><strong>जंगल गलियारा परियोजना (Jungle Corridor Project):</strong> कान्हा राष्ट्रीय उद्यान को उमरिया के <strong>बांधवगढ़ राष्ट्रीय उद्यान</strong> से आपस में जोड़ने के लिए एक प्राकृतिक गलियारा (Corridor Chain) विकसित किया गया है ताकि बाघों और वन्यजीवों के स्वतंत्र आवागमन और जेनेटिक ब्रीडिंग में कोई कृत्रिम बाधा न आए।</li>
+                    <li><strong>पार्क इंटरप्रिटेशन योजना (Park Interpretation Scheme):</strong> यह योजना <strong>अमेरिका (USA) के सहयोग</strong> से संचालित की जा रही है, जिसका उद्देश्य कान्हा आने वाले पर्यटकों को यहाँ की दुर्लभ जड़ी-बूटियों, पेड़ों और वन्यजीव प्रजातियों के बारे में वैज्ञानिक व व्यावहारिक जानकारी प्रदान करना है।</li>
+                    <li><strong>मुन्ना बाघ (Munna Tiger - Legend of Kanha):</strong> कान्हा का एक अत्यंत प्रसिद्ध और खूंखार बाघ जिसके माथे (Forehead) की पट्टियों पर प्राकृतिक रूप से अंग्रेजी के अक्षरों में <strong>"CAT"</strong> लिखा हुआ दिखाई देता था। यह दुनिया भर के वाइल्डलाइफ फोटोग्राफर्स के बीच लोकप्रिय रहा है।</li>
+                    <li><strong>हवाई पट्टी (Airstrip Metric):</strong> मध्य प्रदेश का <strong>पहला ऐसा राष्ट्रीय उद्यान</strong> जिसके पास पर्यटकों एवं आपातकालीन आपात स्थितियों के लिए अपनी स्वयं की आंतरिक हवाई पट्टी (Internal Airstrip) उपलब्ध है।</li>
+                    <li><strong>घोरेला मॉडल (Ghorela Model Structure):</strong> यह मॉडल कान्हा से ही शुरू हुआ। इसके तहत यदि किसी बाघिन की मृत्यु हो जाती है, तो उसके अनाथ छोटे शावकों (Cubs) को कृत्रिम बाड़े में रखकर दूध, मांस और शिकार का कड़ा प्रशिक्षण दिया जाता है। जब वे आत्मनिर्भर हो जाते हैं, तो उन्हें पुनः प्राकृतिक जंगलों में मुक्त कर दिया जाता है।</li>
+                    <li><strong>मेटाबोलाइट तनाव (Metabolite Stress):</strong> हाल ही में जनसंपर्क की रिपोर्ट के अनुसार, यहाँ पाई जाने वाली एक विशेष खरपतवार/घास को खाने के कारण यहाँ के कुछ बाघों के पाचन तंत्र में समस्या देखी गई है, जिससे वे जैविक रूप से तनाव (Metabolite Stress) में आ जाते हैं।</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Block for Section -->
+            <div class="quiz-box">
+                <details>
+                    <summary>🙋‍♂️ Quick Recall: कान्हा राष्ट्रीय उद्यान का शुभंकर 'भूरसिंह' किस वर्ष और किसके द्वारा डिजाइन किया गया था?</summary>
+                    <div class="quiz-answer" style="margin-top: 10px;">
+                        <strong>उत्तर:</strong> वर्ष 2017 में प्रसिद्ध कार्टूनिस्ट रोहन चक्रवर्ती के द्वारा इसे डिजाइन किया गया था। यह भारत का पहला मस्कट जारी करने वाला राष्ट्रीय उद्यान है।
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- SECTION 9: MADHAV NATIONAL PARK IN-DEPTH -->
+        <section id="madhav-np">
+            <h2 class="section-title">🏞️ Deep Dive Topic 2: माधव राष्ट्रीय उद्यान (Madhav National Park)</h2>
+            
+            <div class="card">
+                <div class="card-heading">⏱️ स्थापना, अवस्थिति एवं सीमाएं (Establishment & Geometry Grid)</div>
+                <ul>
+                    <li><strong>स्थान:</strong> यह राष्ट्रीय उद्यान मध्य प्रदेश के <strong>शिवपुरी (Shivpuri)</strong> जिले में स्थित है। इसका नामकरण ग्वालियर के सिंधिया राजवंश के महाराजा माधवराव सिंधिया के नाम पर किया गया है।</li>
+                    <li><strong>स्थापना वर्ष:</strong> <strong>1958 - 1959</strong> (स्थापना क्रम की दृष्टि से यह कान्हा के बाद राज्य का दूसरा सबसे पुराना स्थापित पार्क माना जा सकता है)।</li>
+                    <li><strong>क्षेत्रफल (Official Website Data):</strong> इसका आधिकारिक क्षेत्रफल <strong>355 वर्ग किलोमीटर</strong> है (ध्यान दें: कई स्थानीय किताबों में 375 वर्ग किलोमीटर लिखा है, परंतु सरकारी साइट 355 वर्ग किमी ही मानती है। हालांकि यह डेटा परीक्षा में पूछा जाना संभावित नहीं है)।</li>
+                    <li>❌ <strong>टाइगर रिजर्व स्टेटस:</strong> स्पष्ट याद रखें कि माधव राष्ट्रीय उद्यान <strong>टाइगर रिजर्व (Project Tiger) के अंतर्गत शामिल नहीं है</strong>।</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img id="img-castle" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/George_Castle_Shivpuri_MP.jpg" alt="George Castle building stand on top of a hill inside Madhav National Park Shivpuri" width="600">
+                <div class="image-caption">
+                    <strong>Historic Monument Reference:</strong> George Castle (जॉर्ज कैसल भवन) inside the park boundaries.<br>
+                    <em>Source: Wikimedia Commons Public Domain Archives</em><br>
+                    <button class="image-fallback-btn" onclick="triggerFallback('img-castle', 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=600')">⚠️ Image won't load? Click for alternate server link</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🏰 जॉर्ज कैसल भवन एवं आंतरिक जल संरचनाएं (George Castle & Hydrology)</div>
+                <ul>
+                    <li><strong>जॉर्ज कैसल भवन (George Castle Structure - 1911):</strong> वर्ष 1911 में तत्कालीन सिंधिया महाराज ने इंग्लैंड के राजा <strong>जॉर्ज पंचम (King George V)</strong> के भारत आगमन पर उनके एक रात्रि विश्राम और जंगल में शिकार की सुविधा के लिए इस भव्य भवन का निर्माण पहाड़ी की चोटी पर करवाया था।
+                        <ul>
+                            <li>📌 <em>ऐतिहासिक विडंबना:</em> किंग जॉर्ज पंचम को दिन के उजाले में ही जंगल के निचले हिस्से में शिकार (Tiger Hunting) प्राप्त हो गया था, जिसके कारण वे इस भवन की चोटी तक कभी पहुँचे ही नहीं और न ही उन्होंने कभी इसमें पैर रखा या विश्राम किया।</li>
+                        </ul>
+                    </li>
+                    <li><strong>प्रवाहित नदी:</strong> इस राष्ट्रीय उद्यान के मध्य से <strong>मनिहार नदी (Maniyar River)</strong> बहती है, जो यहाँ की जीवन रेखा है।</li>
+                    <li><strong>हाईवे कनेक्टिविटी:</strong> इस नेशनल पार्क के पास से होकर मध्य प्रदेश का सबसे लंबा राष्ट्रीय राजमार्ग <strong>NH-46</strong> तथा पूर्व-पश्चिम कॉरिडोर का हिस्सा <strong>NH-27</strong> गुजरते हैं। (Passing nearby, not dissecting the deep core).</li>
+                    <li><strong>झीलें (Lakes Grid):</strong> यहाँ प्रसिद्ध <strong>सांख्य सागर (Sakhya Sagar)</strong> झील स्थित है, जिसे अंतरराष्ट्रीय महत्व की 'रामसर साइट' (Ramsar Wetland Site) का दर्जा प्राप्त है। (इसका विस्तृत विवरण आगामी आर्द्रभूमि क्लास में कवर होगा)।</li>
+                    <li><strong>प्रमुख वन्यजीव (Fauna Group):</strong> यहाँ मुख्य रूप से तेंदुआ, नीलगाय, सांभर, चीतल और जंगली सूअर प्रचुर संख्या में पाए जाते हैं।</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Block for Section -->
+            <div class="quiz-box">
+                <details>
+                    <summary>🙋‍♂️ Quick Recall: किस ब्रिटिश राजा के स्वागत के लिए शिवपुरी में जॉर्ज कैसल भवन बनाया गया था, और क्या उसने वहाँ विश्राम किया था?</summary>
+                    <div class="quiz-answer" style="margin-top: 10px;">
+                        <strong>उत्तर:</strong> राजा जॉर्ज पंचम (King George V) के लिए वर्ष 1911 में सिंधिया महाराजा द्वारा बनाया गया था। परंतु शिकार दिन में ही मिल जाने के कारण राजा जॉर्ज पंचम इस भवन में कभी रुके ही नहीं।
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- SECTION 10: BANDHAVGARH NATIONAL PARK IN-DEPTH -->
+        <section id="bandhavgarh-np">
+            <h2 class="section-title">🏞️ Deep Dive Topic 3: बांधवगढ़ राष्ट्रीय उद्यान (Bandhavgarh National Park)</h2>
+            
+            <div class="card">
+                <div class="card-heading">⏳ स्थापना एवं प्रोजेक्ट टाइगर टाइमलाइन (Core Matrix Metrics)</div>
+                <ul>
+                    <li><strong>स्थान:</strong> यह राष्ट्रीय उद्यान मध्य प्रदेश के <strong>उमरिया (Umaria)</strong> जिले में स्थित है।</li>
+                    <li><strong>स्थापना वर्ष:</strong> <strong>1968</strong> में इसे नेशनल पार्क बनाया गया।</li>
+                    <li><strong>प्रोजेक्ट टाइगर (Tiger Reserve Status):</strong> इसे वर्ष <strong>1993</strong> में टाइगर प्रोजेक्ट (TR) के अंतर्गत शामिल किया गया।</li>
+                    <li><strong>क्षेत्रफल:</strong> आधिकारिक वेबसाइट के अनुसार इसका क्षेत्रफल <strong>437 वर्ग किलोमीटर</strong> है।</li>
+                </ul>
+            </div>
+
+            <div class="image-container">
+                <img id="img-vishnu" src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Sheshshaiya_Vishnu_Bandhavgarh.jpg" alt="Ancient Lord Vishnu reclining statue Sheshshaiya carved in stone inside Bandhavgarh forest boundary" width="600">
+                <div class="image-caption">
+                    <strong>Historic Visual:</strong> The ancient Sheshshaiya (भगवान विष्णु की लेटी प्रतिमा) and the origin of Charan Ganga.<br>
+                    <em>Source: Wikimedia Commons / Archaeological Survey Context</em><br>
+                    <button class="image-fallback-btn" onclick="triggerFallback('img-vishnu', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600')">⚠️ Image won't load? Click for alternate server link</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">⛰️ भौगोलिक स्थलाकृति एवं पुरातात्विक संपदा (Topography & Sanskrit Inscriptions)</div>
+                <ul>
+                    <li><strong>32 पहाड़ियों का घेरा:</strong> यह नेशनल पार्क विंध्याचल पर्वतमाला की <strong>32 पहाड़ियों से घिरा हुआ (Surrounded by 32 Hills)</strong> है, जो इसे एक अभेद्य प्राकृतिक सुरक्षा कवच और अद्भुत दृश्य प्रदान करती हैं।</li>
+                    <li><strong>सफेद बाघों की भूमि:</strong> इसे ऐतिहासिक रूप से <strong>"सफेद बाघों की भूमि" (Land of White Tigers)</strong> कहा जाता है, क्योंकि रीवा संभाग के इसी बेल्ट से सफेद बाघों का मूल कनेक्शन रहा है।</li>
+                    <li><strong>चरण गंगा नदी (Charan Ganga River):</strong> इस पार्क के घने जंगलों के बीच से <strong>चरण गंगा नदी</strong> प्रवाहित होती है।</li>
+                    <li><strong>भगवान विष्णु की लेटी प्रतिमा (Sheshshaiya Location):</strong> पार्क के भीतर भगवान विष्णु की पत्थर को तराशकर बनाई गई अत्यंत प्राचीन और विशाल लेटी हुई प्रतिमा स्थित है जिसे 'शेषशैया' कहा जाता है। पौराणिक मान्यता है कि भगवान विष्णु के चरणों से ही इस नदी का उद्गम होता है, इसलिए इसका नाम <strong>'चरण गंगा'</strong> पड़ा।</li>
+                    <li><strong>संस्कृत अभिलेख एवं किला:</strong> यहाँ बांधवगढ़ का प्राचीन किला स्थित है जिसे 'भाई का किला' भी कहते हैं। किले की दीवारों और गुफाओं में प्राचीन <strong>संस्कृत भाषा के शिलालेख/अभिलेख</strong> उत्कीर्ण हैं, जो इसके समृद्ध इतिहास को दर्शाते हैं।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">🐅 प्रसिद्ध बाघों की प्रेम कथा एवं आधुनिक सफारी (Legendary Tigers & Safaris)</div>
+                <ul>
+                    <li><strong>सीता बाघिन और चार्जर बाघ की अमर प्रेम कहानी:</strong> बांधवगढ़ अपने बाघों की विशिष्ट लव-स्टोरी के लिए दुनिया भर में प्रसिद्ध है।
+                        <ul>
+                            <li><strong>सीता बाघिन (Sita Tigress):</strong> यह एक अत्यंत प्रसिद्ध बाघिन थी जो एक पैर से थोड़ी लंगड़ी थी और उसका एक कान कटा हुआ था (कनकटी और लंगड़ी बाघिन)। इसके विशिष्ट शिकार कौशल और हाव-भाव के कारण <strong>नेशनल जियोग्राफिक मैगजीन (National Geographic Magazine)</strong> ने इसे अपने मुख्य फ्रंट पेज (Front Cover Page) पर स्थान दिया था।</li>
+                            <li><strong>चार्जर बाघ (Charger Tiger):</strong> यह अत्यधिक आक्रामक और तेज स्वभाव का नर बाघ था, जो सामने आने वाली पर्यटकों की जिप्सियों पर चार्ज (हमला करने की मुद्रा में दौड़ना) करता था, जिसके कारण इसका नाम 'चार्जर' पड़ा।</li>
+                            <li><strong>डिस्कवरी चैनल कवरेज:</strong> डिस्कवरी और नेशनल जियोग्राफिक चैनलों ने सीता बाघिन और चार्जर बाघ की आपसी बांडिंग और प्रेम कहानी पर एक पूरी स्पेशल डॉक्यूमेंट्री फिल्म प्रसारित की थी, जिसने बांधवगढ़ को वैश्विक स्तर पर लोकप्रिय बना दिया।</li>
+                        </ul>
+                    </li>
+                    <li><strong>बाघ घनत्व (High Density Data):</strong> मध्य प्रदेश में प्रति वर्ग किलोमीटर की दृष्टि से <strong>सर्वाधिक बाघ घनत्व / संख्या वाला नेशनल पार्क</strong> बांधवगढ़ ही है। यहाँ बाघ दिखने की संभावना (Sighting Probability) सबसे ज्यादा होती है।</li>
+                    <li><strong>प्रथम हॉट एयर बलून सफारी (First Hot Air Balloon Safari):</strong> देश और राज्य का पहला ऐसा राष्ट्रीय उद्यान जिसने पर्यटकों को हवा में उड़ते हुए बास्केट से जंगलों और शेरों का नजारा देखने के लिए <strong>हॉट एयर बलून सफारी (Hot Air Balloon Safari)</strong> की शुरुआत की है।</li>
+                    <li><strong>हाथी महोत्सव (Elephant Festival):</strong> यहाँ वन विभाग द्वारा हाथियों की सेवा, मालिश और उनके आराम के लिए एक सप्ताह का विशेष 'हाथी महोत्सव' भी आयोजित किया जा चुका है। यहाँ नाइट सफारी भी सफलतापूर्वक संचालित की जा रही है।</li>
+                </ul>
+            </div>
+
+            <!-- Quiz Block for Section -->
+            <div class="quiz-box">
+                <details>
+                    <summary>🙋‍♂️ Quick Recall: विंध्याचल की कितनी पहाड़ियों से बांधवगढ़ राष्ट्रीय उद्यान घिरा हुआ है, और यहाँ कौन सी नदी बहती है?</summary>
+                    <div class="quiz-answer" style="margin-top: 10px;">
+                        <strong>उत्तर:</strong> यह कुल 32 पहाड़ियों से घिरा हुआ है और इसके भीतर से <strong>चरण गंगा नदी</strong> बहती है, जिसका उद्गम भगवान विष्णु की शेषशैया प्रतिमा के चरणों से माना जाता है।
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- MASTER SECTION: FULL FORMS -->
+        <section id="master-fullforms">
+            <h2 class="section-title">🔤 Master Full-Forms Mentioned in Class</h2>
+            <div class="card">
+                <div class="responsive-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym / टर्म</th>
+                                <th>English Full Form</th>
+                                <th>Hindi Meaning / व्याख्या</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>NP</strong></td>
+                                <td>National Park</td>
+                                <td>राष्ट्रीय उद्यान (पूर्णतः प्रतिबंधित सरकारी आरक्षित वन क्षेत्र)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TR</strong></td>
+                                <td>Tiger Reserve</td>
+                                <td>बाघ आरक्षित क्षेत्र (प्रोजेक्ट टाइगर के तहत विशेष रूप से संरक्षित वन)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DCA</strong></td>
+                                <td>Daily Current Affairs</td>
+                                <td>दैनिक समसामयिकी (आशीष सर द्वारा सुबह 8 बजे की लाइव क्लास)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NH</strong></td>
+                                <td>National Highway</td>
+                                <td>राष्ट्रीय राजमार्ग (जैसे माधव नेशनल पार्क के पास से गुजरने वाले NH-46 और NH-27)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO</strong></td>
+                                <td>International Organization for Standardization</td>
+                                <td>अंतरराष्ट्रीय मानकीकरण संगठन (जैसे भोपाल का वन विहार पार्क आईएसओ प्रमाणित है)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MASTER SECTION: EXAM HOT FACTS -->
+        <section id="master-hotfacts">
+            <h2 class="section-title">🔥 Master Section — Exam Hot Facts Compilation</h2>
+            <div class="card" style="border-left: 4px solid var(--secondary);">
+                <ul>
+                    <li>🔥 <strong>जे जे दत्ता (J.J. Datta) फैक्ट:</strong> मध्य प्रदेश में टाइगर प्रोजेक्ट का ब्लूप्रिंट तैयार करने वाले और इसकी नींव रखने वाले पहले व्यक्ति जगत ज्योति दत्ता थे, जिनका वर्ष 2024 में निधन हो चुका है। यह शत-प्रतिशत परीक्षा में पूछा जाएगा!</li>
+                    <li>🔥 <strong>टाइगर प्रोजेक्ट 1973 वर्ष का विवाद:</strong> कान्हा में टाइगर प्रोजेक्ट जनसंपर्क विभाग के अनुसार 1973 में आया, इंटरनेट पर 1974 है। परीक्षा में आधिकारिक सरकारी डेटा 1973 ही सही माना जाएगा।</li>
+                    <li>🔥 <strong>सफेद बाघ मोहन का रिकॉर्ड:</strong> मोहन को 27 मई 1951 को सीधी के बगाड़ से पकड़ा गया था, और 18 दिसंबर 1969 को उसका निधन हुआ।</li>
+                    <li>🔥 <strong>वाइट टाइगर सफारी मुकुंदपुर की स्थिति:</strong> नए जिला पुनर्गठन के अनुसार यह अब मैहर (Maihar) जिले में आती है, सतना जिले का विकल्प टिक न करें।</li>
+                    <li>🔥 <strong>भूरसिंह द बारासिंगा मस्कट:</strong> वर्ष 2017 में लॉन्च हुआ, इसके क्रिएटर रोहन चक्रवर्ती हैं और यह ब्रेडरी प्रजाति के बारासिंगा पर आधारित है।</li>
+                    <li>🔥 <strong>32 पहाड़ियों का चक्रव्यूह:</strong> उमरिया जिले का बांधवगढ़ नेशनल पार्क ही 32 पहाड़ियों से घिरा हुआ है और यहाँ बाघों का घनत्व सबसे ज्यादा है।</li>
+                    <li>🔥 <strong>जॉर्ज कैसल भवन की अनसुनी कहानी:</strong> यह भवन 1911 में जॉर्ज पंचम के लिए बना था, पर राजा जॉर्ज पंचम इसमें कभी पैर रखने भी नहीं आ पाए।</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MASTER REVISION CHECKLIST WITH LOCALSTORAGE PERSISTENCE -->
+        <section id="master-checklist">
+            <h2 class="section-title">✅ Master Revision Checklist (Spaced Repetition Metric)</h2>
+            <div class="card">
+                <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">पढ़ा हुआ याद रखने का सबसे वैज्ञानिक तरीका है Checklist ट्रैकिंग। जो-जो पॉइंट दिमाग में बैठ गए हैं, उन्हें टिक करते जाएं। आपका डेटा आपके ब्राउज़र में सुरक्षित रहेगा!</p>
+                
+                <div id="checklist-wrapper">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk1" onchange="syncChecklist()">
+                        <label for="chk1" class="checklist-label"><strong>[NP vs Sanctuary]</strong> नेशनल पार्क आरक्षित वन होते हैं और अभ्यारण्य में निजी वन क्षेत्र सह-अस्तित्व में हो सकते हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk2" onchange="syncChecklist()">
+                        <label for="chk2" class="checklist-label"><strong>[MP Total NPs]</strong> आर्थिक सर्वेक्षण 2023-24 के अनुसार 11 पूर्ण क्रियाशील और 1 प्रस्तावित (ओंकारेश्वर) राष्ट्रीय उद्यान हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk3" onchange="syncChecklist()">
+                        <label for="chk3" class="checklist-label"><strong>[Father of TR]</strong> विश्व में गेनी मैनफोर्ड, भारत में कैलाश सांखला और MP में नींव रखने वाले जे.जे. दत्ता (2024 निधन) हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk4" onchange="syncChecklist()">
+                        <label for="chk4" class="checklist-label"><strong>[7 Tiger Reserves]</strong> कान्हा (1973), पेंच (1992), बांधवगढ़ (1993), पन्ना (1994), सतपुड़ा (1999), संजय (2008), वीरांगना दुर्गावती (2023)।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk5" onchange="syncChecklist()">
+                        <label for="chk5" class="checklist-label"><strong>[Census & Titles]</strong> MP में 785 बाघ हैं। इसे टाइगर स्टेट, लेपर्ड स्टेट, भेड़िया प्रदेश, घड़ियाल प्रदेश और गिद्ध प्रदेश भी कहते हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk6" onchange="syncChecklist()">
+                        <label for="chk6" class="checklist-label"><strong>[White Tiger Mohan]</strong> 27 मई 1951 को सीधी के बगाड़ से महाराजा मार्तंड सिंह द्वारा पकड़ा गया। 1969 में निधन हुआ।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk7" onchange="syncChecklist()">
+                        <label for="chk7" class="checklist-label"><strong>[Mukundpur Safari]</strong> वाइट टाइगर सफारी 2016 में अमरपाटन तहसील के मुकुंदपुर में बनी, जो अब नवगठित मैहर जिले का भाग है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk8" onchange="syncChecklist()">
+                        <label for="chk8" class="checklist-label"><strong>[Big Cats Spotting]</strong> चीते के शरीर पर गोल ठोस धब्बे और अश्रु रेखा होती है; तेंदुए के शरीर पर गुलाब के फूल जैसे खोखले छल्ले (Rosettes) होते हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk9" onchange="syncChecklist()">
+                        <label for="chk9" class="checklist-label"><strong>[Night Safari Group]</strong> शुरुआत में कान्हा, पेंच और बांधवगढ़ में रात्रि 10 बजे तक पर्यटकों के लिए नाइट सफारी प्रारंभ की गई थी।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk10" onchange="syncChecklist()">
+                        <label for="chk10" class="checklist-label"><strong>[Kanha Core Specs]</strong> क्षेत्रफल 940 वर्ग किमी। मस्कट भूरसिंह (2017 - रोहन चक्रवर्ती)। हालोन और बंजार नदियाँ प्रवाहित होती हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk11" onchange="syncChecklist()">
+                        <label for="chk11" class="checklist-label"><strong>[Kanha Internal Assets]</strong> यहाँ ब्रेडरी प्रजाति का बारासिंगा, राजा-रानी साल के सूखे वृक्ष, श्रवण ताल, बमनी दादर सनसेट पॉइंट और लपसी शिकारी की मूर्ति है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk12" onchange="syncChecklist()">
+                        <label for="chk12" class="checklist-label"><strong>[Kanha Innovation]</strong> अमेरिका के सहयोग से पार्क इंटरप्रिटेशन योजना, अनाथ शावकों के लिए घोरेला मॉडल, अपनी हवाई पट्टी और कैट पट्टी वाला मुन्ना बाघ।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk13" onchange="syncChecklist()">
+                        <label for="chk13" class="checklist-label"><strong>[Madhav Core Specs]</strong> शिवपुरी में 1958-59 में स्थापित। यहाँ से मनिहार नदी बहती है और सांख्य सागर झील (रामसर साइट) स्थित है। पास से NH-46 व NH-27 गुजरते हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk14" onchange="syncChecklist()">
+                        <label for="chk14" class="checklist-label"><strong>[George Castle Logic]</strong> वर्ष 1911 में राजा जॉर्ज पंचम के शिकार विश्राम के लिए बना था, पर वे यहाँ कभी रात रुकने नहीं आए।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk15" onchange="syncChecklist()">
+                        <label for="chk15" class="checklist-label"><strong>[Bandhavgarh Grid]</strong> उमरिया जिले में 1968 में स्थापित, 1993 में टाइगर रिजर्व बना। यह 32 पहाड़ियों से घिरा हुआ है और यहाँ सर्वाधिक बाघ घनत्व है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk16" onchange="syncChecklist()">
+                        <label for="chk16" class="checklist-label"><strong>[Bandhavgarh Legacy]</strong> चरण गंगा नदी का उद्गम भगवान विष्णु की शेषशैया प्रतिमा के चरणों से होता है। संस्कृत अभिलेख हैं और देश की पहली हॉट एयर बलून सफारी शुरू हुई है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk17" onchange="syncChecklist()">
+                        <label for="chk17" class="checklist-label"><strong>[Tigers of Bandhavgarh]</strong> लंगड़ी और कनकटी 'सीता बाघिन' (NatGeo कवर पेज स्टार) तथा आक्रामक 'चार्जर बाघ' की प्रेम कहानी डिस्कवरी चैनल पर दिखाई गई थी।</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER & UPCOMING TOPICS LINK -->
+        <footer style="margin-top: 50px; border-top: 1px solid var(--border-color); padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+            <div class="info-box" style="text-align: left; font-style: normal;">
+                <strong>📌 Upcoming Topics Alert (📍 व्याख्यान के अंत में सर द्वारा की गई घोषणा):</strong><br>
+                • इस रविवार/सोमवार को इस पढ़े गए पूरे पोर्शन का एक <strong>धुआंधार लाइव टेस्ट (Live MCQs Mock Test)</strong> आयोजित किया जाएगा।<br>
+                • आगामी मंगलवार को <strong>राष्ट्रीय उद्यान Part 2</strong> की क्लास होगी, जिसमें बचे हुए सभी 8 राष्ट्रीय उद्यानों (पेंच, सतपुड़ा, पन्ना, कूनो, वन विहार आदि) का ऐसा ही विस्तृत और अपडेटेड डेटा कवर किया जाएगा।
+            </div>
+            <p>© 2026 MP GK Core Advanced Series Revision Notes Sheets. All Rights Reserved. Stay Faithful to Your Goals!</p>
+        </footer>
+
+    </div>
+
+    <!-- UTILITY JS: INTUITION MANAGEMENT & LOCALSTORAGE PERSISTENCE -->
+    <script>
+        // Image Preloader & Reliability System Configuration
+        window.addEventListener('DOMContentLoaded', () => {
+            // Force dynamic network preloading of important layout media blocks
+            const mediaImages = document.querySelectorAll('img');
+            mediaImages.forEach(img => {
+                img.setAttribute('decoding', 'async');
+                // Ensure broken icons don't interrupt student user interaction flow
+                img.addEventListener('error', function() {
+                    handleImageLoadError(this);
+                });
+            });
+
+            // Initialize checkbox configuration values from localStorage
+            initChecklistValues();
+        });
+
+        // Toggle Application Themes Dynamic Manager
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('notes-pref-theme', targetTheme);
+        }
+
+        // Apply saved user settings on initialization
+        const savedTheme = localStorage.getItem('notes-pref-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        // Fail-safe URL Redirection Logic for Assets Blocked by Network Protections
+        function triggerFallback(imgId, fallbackUrl) {
+            const targetImg = document.getElementById(imgId);
+            if(targetImg) {
+                targetImg.src = fallbackUrl;
+                console.log(`Fallback chain triggered explicitly for Element ID: ${imgId}`);
+            }
+        }
+
+        function handleImageLoadError(imgElement) {
+            console.warn(`Primary image asset failed to resolve network request: ${imgElement.src}`);
+            // Attempt auto mutation to alternate directory parameters or add distinct error indicators
+            imgElement.style.border = "2px dashed var(--secondary)";
+            const errorNotice = document.createElement('p');
+            errorNotice.style.fontSize = "11px";
+            errorNotice.style.color = "var(--secondary)";
+            errorNotice.innerText = "⚠️ Network issue detected while pulling this educational illustration source. Please try the manual bypass button below the caption.";
+            imgElement.parentNode.insertBefore(errorNotice, imgElement.nextSibling);
+        }
+
+        // Checklist State Persistence Engines
+        function initChecklistValues() {
+            const checkboxes = document.querySelectorAll('#checklist-wrapper input[type="checkbox"]');
+            checkboxes.forEach(chk => {
+                const state = localStorage.getItem('rev_chk_class23_' + chk.id);
+                if(state === 'true') {
+                    chk.checked = true;
+                }
+            });
+            calculateProgress();
+        }
+
+        function syncChecklist() {
+            const checkboxes = document.querySelectorAll('#checklist-wrapper input[type="checkbox"]');
+            checkboxes.forEach(chk => {
+                localStorage.setItem('rev_chk_class23_' + chk.id, chk.checked);
+            });
+            calculateProgress();
+        }
+
+        function calculateProgress() {
+            const checkboxes = document.querySelectorAll('#checklist-wrapper input[type="checkbox"]');
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            
+            checkboxes.forEach(chk => {
+                if(chk.checked) checkedCount++;
+            });
+
+            // Update DOM representations elements dynamically
+            document.getElementById('chk-counter').innerText = `${checkedCount}/${total}`;
+            const percentage = total > 0 ? (checkedCount / total) * 100 : 0;
+            document.getElementById('revision-progress').style.width = percentage + '%';
+        }
+    </script>
+</body>
+</html>

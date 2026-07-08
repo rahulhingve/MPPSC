@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 17 — MP Agriculture Part 2 | MPPSC Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0f1a; --bg2: #161628; --bg3: #1e1e35;
+  --text: #e8e8f0; --text2: #b0b0cc; --text3: #7070a0;
+  --cyan: #00d4ff; --orange: #ff6b35; --green: #00ff88;
+  --purple: #b388ff; --yellow: #ffd700; --pink: #ff6b9d;
+  --red: #ff4444; --border: #2a2a4a;
+  --card: #1a1a30; --card2: #20203a;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --radius: 14px;
+}
+[data-theme="light"] {
+  --bg: #f0f4ff; --bg2: #e4eaff; --bg3: #ffffff;
+  --text: #111133; --text2: #334; --text3: #556;
+  --border: #c0c8e8; --card: #ffffff; --card2: #f4f6ff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg); color: var(--text);
+  font-size: 17px; line-height: 1.75;
+  transition: background 0.3s, color 0.3s;
+}
+a { color: var(--cyan); text-decoration: none; }
+h1,h2,h3,h4 { line-height: 1.3; font-weight: 700; }
+
+/* LAYOUT */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 18px 60px; }
+
+/* HEADER */
+.site-header {
+  background: linear-gradient(135deg, #0a0a1f 0%, #1a0a35 50%, #0a1a35 100%);
+  padding: 40px 20px 30px; text-align: center;
+  border-bottom: 2px solid var(--cyan);
+  position: relative; overflow: hidden;
+}
+.site-header::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.12) 0%, transparent 70%);
+}
+.site-header .badge-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+.badge {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 14px; font-size: 13px; color: var(--text2);
+}
+.badge.hot { border-color: var(--orange); color: var(--orange); }
+.badge.cyan { border-color: var(--cyan); color: var(--cyan); }
+.site-header h1 { font-size: clamp(1.5rem, 4vw, 2.4rem); color: var(--cyan); position: relative; }
+.site-header p { color: var(--text2); margin-top: 8px; font-size: 15px; position: relative; }
+
+/* PROGRESS */
+.progress-bar-wrap { background: var(--bg2); border-radius: 8px; height: 8px; margin: 18px 0 0; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--green)); border-radius: 8px; transition: width 0.4s; }
+.progress-label { font-size: 13px; color: var(--text3); margin-top: 6px; text-align: right; }
+
+/* NAV */
+.top-nav {
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  padding: 10px 18px; display: flex; gap: 10px; align-items: center;
+  position: sticky; top: 0; z-index: 100; flex-wrap: wrap;
+}
+.top-nav select {
+  background: var(--card); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 12px; font-family: inherit; font-size: 14px;
+  flex: 1; min-width: 200px; cursor: pointer;
+}
+.theme-btn {
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--text); border-radius: 8px; padding: 6px 14px;
+  cursor: pointer; font-size: 14px; font-family: inherit;
+  transition: background 0.2s;
+}
+.theme-btn:hover { background: var(--border); }
+
+/* TOC */
+.toc-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; margin: 24px 0;
+  box-shadow: var(--shadow);
+}
+.toc-card h2 { color: var(--cyan); margin-bottom: 14px; font-size: 1.1rem; }
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.toc-item {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px; font-size: 14px;
+  color: var(--text2); transition: all 0.2s; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+}
+.toc-item:hover { border-color: var(--cyan); color: var(--cyan); transform: translateX(3px); }
+
+/* SECTION */
+.section {
+  margin: 32px 0; border-radius: var(--radius);
+  border: 1px solid var(--border); overflow: hidden;
+  box-shadow: var(--shadow); animation: fadeUp 0.5s ease;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.section-header {
+  padding: 18px 22px; display: flex; justify-content: space-between;
+  align-items: center; cursor: pointer; user-select: none;
+  transition: background 0.2s;
+}
+.section-header:hover { filter: brightness(1.1); }
+.section-header h2 { font-size: clamp(1rem, 2.5vw, 1.25rem); display: flex; align-items: center; gap: 10px; }
+.section-body { padding: 0 22px 22px; background: var(--card); }
+.collapse-icon { font-size: 18px; transition: transform 0.3s; }
+.collapsed .collapse-icon { transform: rotate(-90deg); }
+.collapsed .section-body { display: none; }
+
+/* COLOR VARIANTS */
+.sec-cyan .section-header { background: linear-gradient(135deg, #0d2535, #0a1a2a); border-bottom: 2px solid var(--cyan); }
+.sec-orange .section-header { background: linear-gradient(135deg, #2a1500, #1a0d00); border-bottom: 2px solid var(--orange); }
+.sec-green .section-header { background: linear-gradient(135deg, #002a15, #001a0d); border-bottom: 2px solid var(--green); }
+.sec-purple .section-header { background: linear-gradient(135deg, #1a0a2a, #100818); border-bottom: 2px solid var(--purple); }
+.sec-yellow .section-header { background: linear-gradient(135deg, #2a2000, #1a1400); border-bottom: 2px solid var(--yellow); }
+.sec-pink .section-header { background: linear-gradient(135deg, #2a0a1a, #1a0510); border-bottom: 2px solid var(--pink); }
+.sec-red .section-header { background: linear-gradient(135deg, #2a0505, #1a0303); border-bottom: 2px solid var(--red); }
+
+/* CARDS */
+.card {
+  background: var(--card2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px; margin: 12px 0;
+}
+.card h3 { font-size: 1rem; margin-bottom: 10px; }
+.card ul { padding-left: 18px; }
+.card ul li { margin: 5px 0; color: var(--text2); }
+.card ul li strong { color: var(--text); }
+
+/* HIGHLIGHT BOXES */
+.info-box {
+  border-radius: 10px; padding: 14px 18px; margin: 12px 0;
+  border-left: 4px solid;
+}
+.info-box.cyan { background: rgba(0,212,255,0.07); border-color: var(--cyan); }
+.info-box.orange { background: rgba(255,107,53,0.08); border-color: var(--orange); }
+.info-box.green { background: rgba(0,255,136,0.07); border-color: var(--green); }
+.info-box.yellow { background: rgba(255,215,0,0.08); border-color: var(--yellow); }
+.info-box.purple { background: rgba(179,136,255,0.08); border-color: var(--purple); }
+.info-box.pink { background: rgba(255,107,157,0.08); border-color: var(--pink); }
+.info-box.red { background: rgba(255,68,68,0.08); border-color: var(--red); }
+
+/* EXAM HOT */
+.hot-tag {
+  display: inline-block; background: rgba(255,107,53,0.15);
+  border: 1px solid var(--orange); color: var(--orange);
+  border-radius: 6px; padding: 1px 8px; font-size: 12px; margin-left: 6px;
+}
+.fire-row {
+  background: rgba(255,107,53,0.08); border: 1px solid var(--orange);
+  border-radius: 10px; padding: 10px 15px; margin: 8px 0;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.fire-row .icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+/* TABLES */
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th {
+  background: var(--bg2); color: var(--cyan);
+  padding: 10px 14px; text-align: left; font-weight: 600;
+  border: 1px solid var(--border);
+}
+td { padding: 9px 14px; border: 1px solid var(--border); color: var(--text2); }
+tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+tr:hover td { background: rgba(0,212,255,0.04); }
+
+/* LINK STORY */
+.link-story {
+  background: linear-gradient(135deg, rgba(0,100,150,0.15), rgba(100,0,150,0.12));
+  border: 1px solid #4488aa; border-radius: 12px;
+  padding: 16px 18px; margin: 14px 0;
+}
+.link-story .ls-title { color: var(--cyan); font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.link-story .ls-body { color: var(--text2); font-style: italic; line-height: 1.8; }
+
+/* QUIZ */
+.quiz-section { margin: 16px 0; }
+.quiz-item { background: var(--card2); border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; overflow: hidden; }
+.quiz-q { padding: 12px 16px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.quiz-q:hover { background: var(--bg3); }
+.quiz-a { padding: 12px 16px; border-top: 1px solid var(--border); background: rgba(0,255,136,0.06); color: var(--green); display: none; }
+.quiz-a.shown { display: block; }
+.quiz-hint { font-size: 12px; color: var(--text3); margin-left: 8px; }
+
+/* IMAGES */
+.img-block { margin: 16px 0; }
+.img-block img {
+  max-width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid var(--border); display: block;
+}
+.img-caption { font-size: 12px; color: var(--text3); margin-top: 6px; text-align: center; font-style: italic; }
+.img-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 14px 0; }
+.img-row .img-block { flex: 1; min-width: 150px; }
+
+/* CHECKLIST */
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 12px; border-radius: 8px; margin: 4px 0;
+  transition: background 0.2s;
+}
+.checklist li:hover { background: var(--bg3); }
+.checklist input[type=checkbox] { width: 18px; height: 18px; margin-top: 2px; cursor: pointer; accent-color: var(--green); flex-shrink: 0; }
+.checklist label { cursor: pointer; color: var(--text2); font-size: 15px; }
+.checklist li.done label { text-decoration: line-through; color: var(--text3); }
+
+/* CHIPS */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.chip {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 14px; font-size: 13px; color: var(--text2);
+}
+.chip.cyan { border-color: var(--cyan); color: var(--cyan); }
+.chip.orange { border-color: var(--orange); color: var(--orange); }
+.chip.green { border-color: var(--green); color: var(--green); }
+.chip.yellow { border-color: var(--yellow); color: var(--yellow); }
+.chip.purple { border-color: var(--purple); color: var(--purple); }
+.chip.pink { border-color: var(--pink); color: var(--pink); }
+
+/* PROGRESS */
+#checklist-progress { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin: 16px 0; text-align: center; }
+#progress-count { font-size: 1.4rem; font-weight: 800; color: var(--green); }
+
+/* FOOTER */
+footer { text-align: center; color: var(--text3); padding: 30px 20px; font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+
+/* PRINT */
+@media print {
+  * { background: white !important; color: black !important; }
+  .top-nav, .theme-btn, .quiz-hint, footer .btn { display: none; }
+  .section-body { display: block !important; }
+  .collapsed .section-body { display: block !important; }
+  .quiz-a { display: block !important; }
+}
+@media (max-width: 600px) {
+  .page-wrap { padding: 0 10px 40px; }
+  .site-header { padding: 24px 14px 20px; }
+  .section-body { padding: 0 14px 16px; }
+  .img-row { flex-direction: column; }
+}
+</style>
+</head>
+<body data-theme="dark">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <select id="jump-nav" onchange="jumpTo(this.value)">
+    <option value="">⚡ किसी भी Topic पर Jump करें...</option>
+    <option value="sec-wheat">🌾 गेहूं — Production Data</option>
+    <option value="sec-pulses">🫘 दलहन — Overview</option>
+    <option value="sec-chana">🟤 चना (Gram)</option>
+    <option value="sec-arhar">🌿 अरहर / तुअर (Pigeon Pea)</option>
+    <option value="sec-oilseed">🫙 तिलहन — Oil Seeds Overview</option>
+    <option value="sec-soybean">🟡 सोयाबीन (Soybean)</option>
+    <option value="sec-sarso">🌼 सरसों (Mustard)</option>
+    <option value="sec-moongfali">🥜 मूंगफली (Groundnut)</option>
+    <option value="sec-alsi">🌸 अलसी / तीसी (Flaxseed)</option>
+    <option value="sec-commercial">🏭 व्यापारिक फसलें</option>
+    <option value="sec-ganna">🎋 गन्ना (Sugarcane)</option>
+    <option value="sec-kapas">🤍 कपास (Cotton)</option>
+    <option value="sec-horticulture">🥦 उद्यान की (Horticulture)</option>
+    <option value="sec-other">🌾 अन्य फसलें</option>
+    <option value="sec-ganja">🌿 गांजा / Hemp</option>
+    <option value="sec-coffee">☕ कॉफी</option>
+    <option value="sec-tobacco">🚬 तंबाकू (Tobacco)</option>
+    <option value="sec-afeem">⚠️ अफीम (Opium)</option>
+    <option value="sec-fullforms">📋 Full Forms Table</option>
+    <option value="sec-examhot">🔥 Exam Hot Facts</option>
+    <option value="sec-checklist">✅ Master Checklist</option>
+  </select>
+  <button class="theme-btn" onclick="toggleTheme()">🌙 Theme</button>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="badge-row">
+    <span class="badge cyan">📚 MPPSC Pre 2025</span>
+    <span class="badge hot">🔥 Lecture #17</span>
+    <span class="badge">🌾 MP GK Special</span>
+    <span class="badge cyan">आर्थिक सर्वेक्षण 2023-24</span>
+  </div>
+  <h1>🌾 मध्य प्रदेश कृषि — भाग 2</h1>
+  <p>Agriculture in MP — Part 2 | दलहन • तिलहन • व्यापारिक • उद्यान की फसलें</p>
+  <div style="position:relative;">
+    <div class="progress-bar-wrap" style="margin-top:18px;">
+      <div class="progress-bar" id="main-progress" style="width:0%"></div>
+    </div>
+    <p class="progress-label" id="main-progress-label">0% Revised</p>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+<!-- TOC -->
+<div class="toc-card">
+  <h2>📑 Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#sec-wheat" class="toc-item">🌾 गेहूं Production</a>
+    <a href="#sec-pulses" class="toc-item">🫘 दलहन Overview</a>
+    <a href="#sec-chana" class="toc-item">🟤 चना (Gram)</a>
+    <a href="#sec-arhar" class="toc-item">🌿 अरहर / तुअर</a>
+    <a href="#sec-oilseed" class="toc-item">🫙 तिलहन Overview</a>
+    <a href="#sec-soybean" class="toc-item">🟡 सोयाबीन</a>
+    <a href="#sec-sarso" class="toc-item">🌼 सरसों</a>
+    <a href="#sec-moongfali" class="toc-item">🥜 मूंगफली</a>
+    <a href="#sec-alsi" class="toc-item">🌸 अलसी/तीसी</a>
+    <a href="#sec-commercial" class="toc-item">🏭 व्यापारिक फसलें</a>
+    <a href="#sec-ganna" class="toc-item">🎋 गन्ना</a>
+    <a href="#sec-kapas" class="toc-item">🤍 कपास</a>
+    <a href="#sec-horticulture" class="toc-item">🥦 उद्यान की</a>
+    <a href="#sec-other" class="toc-item">🌾 अन्य फसलें</a>
+    <a href="#sec-ganja" class="toc-item">🌿 गांजा/Hemp</a>
+    <a href="#sec-coffee" class="toc-item">☕ कॉफी</a>
+    <a href="#sec-tobacco" class="toc-item">🚬 तंबाकू</a>
+    <a href="#sec-afeem" class="toc-item">⚠️ अफीम</a>
+    <a href="#sec-fullforms" class="toc-item">📋 Full Forms</a>
+    <a href="#sec-examhot" class="toc-item">🔥 Exam Hot Facts</a>
+    <a href="#sec-checklist" class="toc-item">✅ Master Checklist</a>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 1: WHEAT ===== -->
+<div class="section sec-cyan" id="sec-wheat">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌾 गेहूं — Production Data (2023-24) <span class="hot-tag">🔥 PYQ 2024</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="info-box orange">
+      <strong>⚠️ नोट:</strong> यह क्लास Agriculture Part 2 है। गेहूं का विस्तृत विवरण Part 1 में है। यहाँ सिर्फ Latest Production Data (आर्थिक सर्वेक्षण 2023-24) है।
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>MPPSC Pre 2024</strong> में गेहूं से क्वेश्चन आया था! यह डेटा याद रखना अनिवार्य है।</div>
+    </div>
+
+    <div class="card">
+      <h3>📊 गेहूं उत्पादन — आर्थिक सर्वेक्षण 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th><th>Trend</th></tr>
+          <tr><td>उत्पादन (Production)</td><td><strong>3297.2 हज़ार टन</strong> (3,297,200 Tonnes)</td><td>📉 कमी</td></tr>
+          <tr><td>क्षेत्रफल (Area)</td><td><strong>911 हज़ार हेक्टेयर</strong></td><td>📉 कमी</td></tr>
+          <tr><td>गत वर्ष तुलना</td><td><strong>5.73% की कमी</strong></td><td>📉 कमी</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box yellow">
+      💡 <strong>क्यों कमी?</strong> — दूसरी फसलों की ओर किसान मूव कर रहे हैं। कम क्षेत्रफल में बोया गया → कम उत्पादन।
+      <br>अभी तक अधिकतर फसलों में <strong>वृद्धि</strong> थी — गेहूं और गन्ना में <strong>कमी</strong> दिखी है 2023-24 में।
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 ट्रिक — गेहूं & गन्ना दोनों "ग" से शुरू होते हैं → दोनों में कमी आई!</div>
+      <div class="ls-body">"गेहूं और गन्ना — दोनों के उत्पादन में 2023-24 में कमी! बाकी सब बढ़े।"</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--cyan); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. गेहूं के उत्पादन में 2023-24 में कितनी कमी हुई? <span class="quiz-hint">tap to reveal</span></div>
+        <div class="quiz-a">✅ <strong>5.73% की कमी</strong> — उत्पादन 3297.2 हज़ार टन, क्षेत्रफल 911 हज़ार हेक्टेयर</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. 2023-24 में किन दो फसलों के उत्पादन में कमी आई? <span class="quiz-hint">tap to reveal</span></div>
+        <div class="quiz-a">✅ <strong>गेहूं</strong> और <strong>गन्ना</strong> — बाकी सभी फसलों में वृद्धि हुई।</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: PULSES OVERVIEW ===== -->
+<div class="section sec-green" id="sec-pulses">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🫘 दलहन (Pulses) — Overview <span class="hot-tag">🔥 PYQ 2024</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>MPPSC Pre 2024</strong> में दलहन से क्वेश्चन आया था! MP भारत में दलहन उत्पादन में <strong>नंबर 1</strong> है।</div>
+    </div>
+
+    <div class="info-box green">
+      🏆 <strong>मध्य प्रदेश — भारत में दलहन उत्पादन में प्रथम (Rank #1)</strong>
+    </div>
+
+    <div class="card">
+      <h3>📊 कुल दलहन उत्पादन — आर्थिक सर्वेक्षण 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th><th>Trend</th></tr>
+          <tr><td>क्षेत्रफल वृद्धि</td><td><strong>31.3% वृद्धि</strong></td><td>📈 बड़ी वृद्धि</td></tr>
+          <tr><td>उत्पादन वृद्धि</td><td><strong>4262% वृद्धि</strong> (बहुत बड़ा उछाल!)</td><td>📈 बड़ी वृद्धि</td></tr>
+          <tr><td>क्षेत्रफल (Area)</td><td>3.35% दर से वृद्धि</td><td>📈 वृद्धि</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box cyan">
+      📌 <strong>Exam English:</strong> "According to Economic Survey 2023-24, total pulses production has seen an increase of 31.3% in area and 4262% increase in production."
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--green); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q. MP दलहन उत्पादन में भारत में किस स्थान पर है? <span class="quiz-hint">tap to reveal</span></div>
+        <div class="quiz-a">✅ <strong>प्रथम स्थान (Rank 1)</strong> — MPPSC Pre 2024 में पूछा गया था!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: CHANA ===== -->
+<div class="section sec-yellow" id="sec-chana">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🟤 चना / Gram (Chickpea)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Desi_chickpeas.jpg/320px-Desi_chickpeas.jpg" alt="चना / Chickpea seeds" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/2/27/Desi_chickpeas.jpg'">
+        <div class="img-caption">Chickpea seeds | Wikimedia Commons, CC0</div>
+      </div>
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Chickpea_field.jpg/320px-Chickpea_field.jpg" alt="चने का खेत" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9d/Chickpea_field.jpg'">
+        <div class="img-caption">Chickpea field | Wikimedia Commons, CC BY-SA</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info — चना</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Cicer arietinum</strong> (साइजर एरेटम)</td></tr>
+          <tr><td>English Name</td><td>Chickpea / Gram</td></tr>
+          <tr><td>Hindi Name</td><td>चना / ग्राम</td></tr>
+          <tr><td>फसल प्रकार</td><td>🌨️ <strong>रबी (Rabi)</strong> फसल + दलहनी फसल</td></tr>
+          <tr><td>सिंचाई</td><td>~4 बार (गेहूं को 6 बार, चने को 4 बार)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box yellow">
+      💡 <strong>याद रखो:</strong> जहाँ पानी कम होता है वहाँ गेहूं की जगह <strong>चने</strong> का उत्पादन होता है। गेहूं को 6 बार सिंचाई, चने को सिर्फ 4 बार।
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र (Key Regions)</h3>
+      <div class="chip-row">
+        <span class="chip yellow">विदिशा</span>
+        <span class="chip yellow">सागर</span>
+        <span class="chip yellow">दमोह ⭐</span>
+        <span class="chip yellow">छिंदवाड़ा</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में (Varieties)</h3>
+      <div class="chip-row">
+        <span class="chip cyan">काबुली चना ⭐</span>
+        <span class="chip">स्वेता</span>
+        <span class="chip">हेमा</span>
+        <span class="chip">वैभव</span>
+        <span class="chip">राधे</span>
+        <span class="chip">विशाल</span>
+      </div>
+      <div class="info-box cyan" style="margin-top:10px;">
+        📌 <strong>काबुली चना:</strong> काबुल से लाया गया बीज → इसलिए नाम "काबुली चना"
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>दमोह का ODOP = काबुली चना!</strong><br>
+      <em>ट्रिक:</em> "जिसमें <strong>दम</strong> होता है वही चना चबा पाएगा — <strong>दमोह</strong>" 🦷</div>
+    </div>
+
+    <div class="card">
+      <h3>🦠 प्रमुख रोग (Diseases)</h3>
+      <ul>
+        <li><strong>उख रोग</strong> — जड़ों को उखाड़ देता है</li>
+        <li><strong>मूल विगल (Root Rot)</strong> — जड़ का खराब होना (मूल = जड़)</li>
+        <li><strong>धूसर फफूंदी (Grey Mould)</strong> — ओले गिरने/ज़्यादा पानी से लगती है</li>
+      </ul>
+      <div class="info-box orange">⚠️ डिसीज से exam में प्रश्न नहीं पूछे जाते — ये सिर्फ जानकारी के लिए हैं।</div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Link Story — चना के क्षेत्र याद करो</div>
+      <div class="ls-body">"<strong>वि</strong>दिशा के <strong>सा</strong>गर में <strong>दम</strong>ोह का काबुली चना तैर रहा था, और <strong>छिं</strong>दवाड़ा का किसान उसे देख रहा था!" 🟤</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--yellow); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. चने का वैज्ञानिक नाम क्या है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Cicer arietinum</strong> (साइजर एरेटम)</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. दमोह का ODOP क्या है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>काबुली चना</strong> 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. चना रबी है या खरीफ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>रबी (Rabi)</strong> — सर्दियों में होती है</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: ARHAR ===== -->
+<div class="section sec-green" id="sec-arhar">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌿 अरहर / तुअर (Pigeon Pea) <span class="hot-tag">🔥 Most Important</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Cajanus_cajan_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-027.jpg/250px-Cajanus_cajan_-K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-027.jpg" alt="अरहर / Pigeon Pea plant" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cajanus_cajan_-_Pigeon_pea.jpg/320px-Cajanus_cajan_-_Pigeon_pea.jpg'">
+        <div class="img-caption">Pigeon Pea Plant | Wikimedia Commons, Public Domain</div>
+      </div>
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Toovar_Dal_split.jpg/320px-Toovar_Dal_split.jpg" alt="तुअर दाल" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/60/Toovar_Dal_split.jpg'">
+        <div class="img-caption">Toor Dal (Pigeon Pea) | Wikimedia Commons, CC BY-SA</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info — अरहर</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Other Names</td><td><strong>तुअर दाल</strong> / Pigeon Pea</td></tr>
+          <tr><td>Scientific Name</td><td><strong>Cajanus cajan</strong> (केजन केजन)</td></tr>
+          <tr><td>English Name</td><td>Pigeon Pea / Toor Dal</td></tr>
+          <tr><td>फसल प्रकार</td><td>☀️ <strong>खरीफ (Kharif)</strong> फसल + दलहनी फसल</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box green">
+      🏆 <strong>अरहर — MP की प्रमुख दलहनी फसल</strong><br>
+      MP दलहन उत्पादन में भारत में #1 — इसमें अरहर की बड़ी भूमिका है।
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>Exam में पूछा जा सकता है:</strong> "मध्य प्रदेश की प्रमुख दलहनी फसल कौन सी है?" → <strong>अरहर/तुअर</strong>
+      <br>OR "नरसिंहपुर का ODOP क्या है?" → <strong>तुअर दाल</strong></div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip green">⭐ नरसिंहपुर (पहला!)</span>
+        <span class="chip green">नर्मदापुरम — पिपरिया ⭐</span>
+        <span class="chip">छिंदवाड़ा</span>
+        <span class="chip">शिवपुरी</span>
+        <span class="chip">टीकमगढ़</span>
+        <span class="chip">दमोह</span>
+      </div>
+      <div class="info-box cyan" style="margin-top:10px;">
+        📌 <strong>पिपरिया (नर्मदापुरम जिला)</strong> की अरहर दाल पूरे देश में प्रसिद्ध है!
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में (Varieties)</h3>
+      <div class="chip-row">
+        <span class="chip cyan">नरेंद्र</span>
+        <span class="chip cyan">पारस</span>
+        <span class="chip cyan">पूसा 002</span>
+        <span class="chip cyan">आज़ाद बहार</span>
+        <span class="chip cyan">अमर</span>
+        <span class="chip cyan">पिपरिया (किस्म)</span>
+      </div>
+    </div>
+
+    <div class="info-box purple">
+      📌 <strong>Exam Scope:</strong> MPPSC ने अभी तक अरहर की varieties नहीं पूछी हैं। Focus करो: नरसिंहपुर = ODOP (तुअर दाल), नर्मदापुरम/पिपरिया = प्रोडक्शन, खरीफ फसल।
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Link Story — अरहर के क्षेत्र</div>
+      <div class="ls-body">"<strong>नरसिंह</strong>पुर के शेर ने <strong>नर्मदापुरम</strong> के पिपरिया से तुअर दाल मंगाई, तो <strong>छिं</strong>दवाड़ा से <strong>शिव</strong>पुरी तक लोग महक से खिंचे आए!" 🌿</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--green); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. अरहर का वैज्ञानिक नाम? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Cajanus cajan</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. नरसिंहपुर का ODOP क्या है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>तुअर दाल (Toor Dal)</strong> 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. पिपरिया किस जिले में है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>नर्मदापुरम</strong> जिले में। यहाँ की अरहर दाल पूरे देश में फेमस है।</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q4. अरहर रबी है या खरीफ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>खरीफ (Kharif)</strong> फसल — दलहनी फसल भी</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 5: OIL SEEDS OVERVIEW ===== -->
+<div class="section sec-orange" id="sec-oilseed">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🫙 तिलहन (Oil Seeds) — Overview</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="card">
+      <h3>📊 कुल तिलहन उत्पादन — आर्थिक सर्वेक्षण 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th><th>Trend</th></tr>
+          <tr><td>कुल उत्पादन</td><td><strong>9978 हज़ार टन (≈ 9,97,800 टन)</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>उत्पादन वृद्धि</td><td><strong>7.32%</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>क्षेत्रफल</td><td><strong>83,34,000 हेक्टेयर</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>क्षेत्रफल वृद्धि</td><td><strong>4.01%</strong></td><td>📈 वृद्धि</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-box orange">
+      📌 <strong>Exam English:</strong> "There has been an increase of 7.32% in the total Oil Seed production which has been seen at 9978 thousand tonnes and there has been an increase of 4.01% in the area which has been seen at a total of 83,34,000 hectares."
+    </div>
+    <div class="card">
+      <h3>🌱 MP की प्रमुख तिलहनी फसलें</h3>
+      <div class="chip-row">
+        <span class="chip orange">🟡 सोयाबीन (सबसे महत्वपूर्ण)</span>
+        <span class="chip orange">🌼 सरसों</span>
+        <span class="chip orange">🥜 मूंगफली</span>
+        <span class="chip orange">🌸 अलसी / तीसी</span>
+        <span class="chip orange">🌻 तिल</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: SOYBEAN ===== -->
+<div class="section sec-yellow" id="sec-soybean">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🟡 सोयाबीन (Soybean) <span class="hot-tag">🔥 Most Important — State Crop</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Soybeanvarieties.jpg/320px-Soybeanvarieties.jpg" alt="Soybean varieties" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/f/f8/Soybeanvarieties.jpg'">
+        <div class="img-caption">Soybean varieties | Wikimedia Commons, Public Domain</div>
+      </div>
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Soybean_seeds.jpg/320px-Soybean_seeds.jpg" alt="Soybean seeds" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/5/5a/Soybean_seeds.jpg'">
+        <div class="img-caption">Soybean seeds | Wikimedia Commons, CC BY-SA</div>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>MPPSC Pre में सोयाबीन से ज़रूर आएगा!</strong> यह MP की <strong>State Crop</strong> है। MP को <strong>"Soya State"</strong> कहते हैं।</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Glycine max</strong> (ग्लाइसिन मैक्स)</td></tr>
+          <tr><td>फसल प्रकार</td><td>☀️ <strong>खरीफ (Kharif)</strong> + तिलहनी फसल</td></tr>
+          <tr><td>मिट्टी</td><td><strong>काली मृदा (Black Soil)</strong></td></tr>
+          <tr><td>MP Status</td><td>🏆 <strong>State Crop of MP</strong> — "Soya State"</td></tr>
+          <tr><td>भारत में रैंक</td><td>🥇 <strong>प्रथम (Rank #1)</strong> उत्पादन में — 2023-24 में महाराष्ट्र को पछाड़ा!</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>PYQ — MPPSC Pre:</strong> "मध्य प्रदेश में सर्वप्रथम सोयाबीन की खेती कहाँ से प्रारंभ की गई?" → <strong>देवास</strong> जिले से!</div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip yellow">⭐ उज्जैन (पहला!)</span>
+        <span class="chip yellow">इंदौर</span>
+        <span class="chip yellow">देवास ⭐ (सर्वप्रथम खेती)</span>
+        <span class="chip yellow">रतलाम</span>
+        <span class="chip yellow">मंदसौर</span>
+        <span class="chip">मालवा रीजन (सभी)</span>
+      </div>
+      <div class="info-box yellow" style="margin-top:10px;">
+        🗺️ <strong>मालवा रीजन</strong> के सभी क्षेत्रों में सोयाबीन देखने को मिलती है।
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में (Varieties)</h3>
+      <div class="chip-row">
+        <span class="chip yellow">अहिल्या</span>
+        <span class="chip yellow">समृद्धि</span>
+        <span class="chip yellow">प्रतिकार</span>
+        <span class="chip yellow">इंदिरा</span>
+        <span class="chip yellow">अलंकार</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 सोयाबीन Production Data 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th></tr>
+          <tr><td>उत्पादन</td><td><strong>6,675 हज़ार टन (6675000 टन)</strong></td></tr>
+          <tr><td>उत्पादन वृद्धि</td><td><strong>5.42%</strong></td></tr>
+          <tr><td>क्षेत्रफल</td><td><strong>60,79,000 हेक्टेयर</strong> (≈6079000)</td></tr>
+          <tr><td>भारत रैंक</td><td>🥇 <strong>प्रथम (First)</strong> — 2023-24 में महाराष्ट्र से आगे!</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box green">
+      🏆 <strong>2023-24 में MP सोयाबीन उत्पादन में भारत में प्रथम!</strong><br>
+      पहले महाराष्ट्र से पिछड़ जाते थे, अब हम आगे हैं।
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Link Story — सोयाबीन क्षेत्र याद करो</div>
+      <div class="ls-body">"<strong>उज्जैन</strong> के महाकाल ने <strong>इंदौर</strong> से सोयाबीन मंगाई, <strong>देवास</strong> से पहली खेती शुरू हुई थी, <strong>रतलाम</strong> और <strong>मंदसौर</strong> पूरे <strong>मालवा</strong> में छा गए!" 🟡</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--yellow); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. MP में सोयाबीन की खेती सर्वप्रथम कहाँ शुरू हुई? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>देवास</strong> जिले से 🔥 (MPPSC Pre PYQ)</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. सोयाबीन का वैज्ञानिक नाम? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Glycine max</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. सोयाबीन किस मिट्टी में होती है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>काली मृदा (Black Soil)</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q4. MP को सोयाबीन के कारण क्या कहते हैं? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>"Soya State"</strong> — और सोयाबीन MP की State Crop है।</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 7: SARSO ===== -->
+<div class="section sec-orange" id="sec-sarso">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌼 सरसों (Mustard) <span class="hot-tag">🔥 Important</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Mustard_field.jpg/320px-Mustard_field.jpg" alt="सरसों का खेत — पीला सरसों" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/8/8f/Mustard_field.jpg'">
+        <div class="img-caption">Mustard field | Wikimedia Commons, CC BY-SA</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>English Name</td><td>Mustard</td></tr>
+          <tr><td>Scientific Name</td><td><strong>Brassica campestris</strong> (बेसिका कंप्रेसिव)</td></tr>
+          <tr><td>फसल प्रकार</td><td>🌨️ <strong>रबी (Rabi)</strong> + तिलहनी फसल</td></tr>
+          <tr><td>मिट्टी</td><td><strong>Alluvial Soil (जलोढ़ मृदा)</strong> — एलुवियल सोइल</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box orange">
+      💡 <strong>ट्रिक — रबी पहचानो:</strong> शाहरुख खान सरसों के पीले खेत में काली जैकेट पहने हैं → ठंड का समय = <strong>रबी की फसल!</strong>
+    </div>
+
+    <div class="info-box cyan">
+      ⚖️ <strong>Compare करो:</strong> सोयाबीन → काली मृदा | सरसों → जलोढ़ मृदा (Alluvial Soil)
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip orange">⭐ मोरेना (पहला!) — "सरसों की हांडी"</span>
+        <span class="chip orange">भिंड</span>
+        <span class="chip">पूरा चंबल संभाग</span>
+      </div>
+      <div class="info-box orange" style="margin-top:10px;">
+        🍳 <strong>मोरेना को "सरसों की हांडी" कहा जाता है!</strong> — सबसे ज़्यादा सरसों का उत्पादन यहाँ।
+        <br><em>ट्रिक: "सरसों की हांडी जो चढ़ेगी वो मुरेना/मोरेना में चढ़ेगी!"</em>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में</h3>
+      <div class="chip-row">
+        <span class="chip yellow">वरुणा ⭐</span>
+        <span class="chip yellow">पीतांबरी ⭐ (Most Imp)</span>
+        <span class="chip yellow">पूसा बोल्ड</span>
+        <span class="chip yellow">पूसा जय किसान</span>
+      </div>
+      <div class="fire-row" style="margin-top:10px;">
+        <span class="icon">🔥</span>
+        <div><strong>पीतांबरी</strong> — Most Important किस्म! Exam में पूछ सकते हैं।</div>
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 ट्रिक — मोरेना = सरसों की हांडी</div>
+      <div class="ls-body">"<strong>मो</strong>रेना में <strong>सरसों</strong> की हांडी चढ़ती है, <strong>भिंड</strong> उसे देखता रहता है — पूरा <strong>चंबल</strong> महक उठता है!" 🌼</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--orange); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. सरसों की हांडी किसे कहते हैं? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>मोरेना</strong> — यहाँ सबसे ज़्यादा सरसों का उत्पादन 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. सरसों किस मिट्टी में उगती है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Alluvial Soil (जलोढ़ मृदा)</strong> — सोयाबीन काली मृदा में होती है!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 8: MOONGFALI ===== -->
+<div class="section sec-cyan" id="sec-moongfali">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🥜 मूंगफली (Groundnut / Peanut)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Peanuts_in_shell.jpg/320px-Peanuts_in_shell.jpg" alt="मूंगफली / Groundnut" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Peanuts_in_shell.jpg'">
+      <div class="img-caption">Groundnut / Peanut | Wikimedia Commons, CC BY-SA</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>English Names</td><td>Peanut / Groundnut</td></tr>
+          <tr><td>Scientific Name</td><td><strong>Arachis hypogaea</strong> (एरेकिस हाइपोजिया)</td></tr>
+          <tr><td>फसल प्रकार</td><td>☀️ <strong>खरीफ (Kharif)</strong> + तिलहनी फसल</td></tr>
+          <tr><td>विशेषता</td><td>तिलहनी (Oil Seed) + <strong>नगदी/कैश क्रॉप</strong> दोनों!</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box cyan">
+      💡 <strong>नगदी फसल (Cash Crop):</strong> जिन फसलों को हम फुटकर बेच सकते हैं — जैसे मूंगफली ₹5-10 में बिकती है ठेले पर।
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip cyan">⭐ खरगोन (पहला!) — पश्चिमी निमाड़</span>
+        <span class="chip">बड़वानी</span>
+        <span class="chip">खंडवा</span>
+        <span class="chip">धार</span>
+        <span class="chip">छिंदवाड़ा</span>
+      </div>
+      <div class="info-box cyan" style="margin-top:10px;">
+        📌 सबसे ज़्यादा मूंगफली — <strong>खरगोन</strong> (पश्चिमी निमाड़) में। यही याद रखो!
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में</h3>
+      <div class="chip-row">
+        <span class="chip cyan">चित्रा</span>
+        <span class="chip cyan">विक्रम</span>
+        <span class="chip cyan">कौशल</span>
+        <span class="chip cyan">चंद्रा</span>
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--cyan); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. मूंगफली का वैज्ञानिक नाम? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Arachis hypogaea</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. MP में सबसे ज़्यादा मूंगफली कहाँ होती है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>खरगोन</strong> (पश्चिमी निमाड़)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 9: ALSI ===== -->
+<div class="section sec-purple" id="sec-alsi">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌸 अलसी / तीसी (Flaxseed / Linseed)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Flax_seed.jpg/320px-Flax_seed.jpg" alt="अलसी / Flaxseed" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/cc/Flax_seed.jpg'">
+      <div class="img-caption">Flaxseed / Linseed | Wikimedia Commons, CC BY-SA</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>English Names</td><td>Flaxseed / Linseed</td></tr>
+          <tr><td>Scientific Name</td><td><em>Linum usitatissimum</em> (साइंटिफिक नेम exam में नहीं पूछा जाता)</td></tr>
+          <tr><td>फसल प्रकार</td><td>🌨️ <strong>रबी (Rabi)</strong> + तिलहनी फसल</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip purple">⭐ रीवा (पहला!)</span>
+        <span class="chip purple">पन्ना</span>
+        <span class="chip purple">मऊगंज (रीवा से अलग हुआ)</span>
+      </div>
+      <div class="info-box purple" style="margin-top:10px;">
+        📌 आंसर: <strong>रीवा</strong> — अलसी का सबसे ज़्यादा उत्पादन
+      </div>
+    </div>
+
+    <div class="info-box yellow">
+      ⚠️ अलसी बहुत ज़्यादा important नहीं है exam के लिए, लेकिन रीवा = अलसी याद रखो।
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--purple); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q. अलसी का सबसे ज़्यादा उत्पादन MP में कहाँ होता है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>रीवा</strong> (और पन्ना)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 10: COMMERCIAL CROPS INTRO ===== -->
+<div class="section sec-pink" id="sec-commercial">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🏭 व्यापारिक / Commercial फसलें</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="info-box pink">
+      📌 <strong>व्यापारिक फसलें</strong> = जिनसे हम व्यापार/Trade कर सकते हैं।<br>
+      <strong>नगदी/Cash Crop</strong> = जिन्हें फुटकर बेच सकते हैं (ठेले पर 5-10 रु में)।<br>
+      दोनों हो सकती हैं एक साथ!
+    </div>
+    <div class="card">
+      <h3>MP की प्रमुख व्यापारिक फसलें</h3>
+      <div class="chip-row">
+        <span class="chip pink">🎋 गन्ना (Sugarcane)</span>
+        <span class="chip pink">🤍 कपास (Cotton)</span>
+        <span class="chip pink">🥜 मूंगफली</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 11: GANNA ===== -->
+<div class="section sec-green" id="sec-ganna">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🎋 गन्ना (Sugarcane)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Saccharum_officinarum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-125.jpg/250px-Saccharum_officinarum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-125.jpg" alt="गन्ना / Sugarcane plant" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Sugarcane_field.jpg/320px-Sugarcane_field.jpg'">
+      <div class="img-caption">Sugarcane | Wikimedia Commons, Public Domain</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Saccharum officinarum</strong> (सैक्रम ऑफिस नरम)</td></tr>
+          <tr><td>फसल प्रकार</td><td>☀️ <strong>खरीफ (Kharif)</strong> + कमर्शियल/नगदी फसल</td></tr>
+          <tr><td>मिट्टी</td><td><strong>Alluvial Soil (जलोढ़)</strong> — गंगा-यमुना के मैदानों के पास</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box yellow">
+      💡 छोटी दीपावली पर गन्ना कटना शुरू होता है → खरीफ फसल।
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip green">⭐ बहानी (नरसिंहपुर) — पहला!</span>
+        <span class="chip green">नरसिंहपुर</span>
+        <span class="chip green">मोरेना</span>
+        <span class="chip green">दतिया</span>
+        <span class="chip">चंबल क्षेत्र</span>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>दतिया का ODOP = गुड़ (Jaggery)!</strong><br>
+      ट्रिक: "<strong>दत</strong>िया — <strong>दाँत</strong>ों से गुड़ तोड़ते हैं!" 🦷</div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में</h3>
+      <div class="chip-row">
+        <span class="chip green">बाहुबली</span>
+        <span class="chip green">श्रीमुखी</span>
+      </div>
+      <div class="info-box green" style="margin-top:10px;">
+        ट्रिक: "बाहुबली में दम है तो वही गन्ना उखाड़ पाएगा। श्रीमुखी अपने श्री-मुख से खाएगी!" 💪
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 गन्ना Production Data 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th><th>Trend</th></tr>
+          <tr><td>उत्पादन</td><td><strong>7,34,000 टन</strong></td><td>📉 कमी</td></tr>
+          <tr><td>उत्पादन में कमी</td><td><strong>6.38%</strong></td><td>📉 कमी</td></tr>
+          <tr><td>क्षेत्रफल</td><td><strong>1,02,000 हेक्टेयर</strong></td><td>📉 कमी</td></tr>
+          <tr><td>क्षेत्रफल कमी</td><td><strong>1.93%</strong></td><td>📉 कमी</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box orange">
+      ⚠️ गेहूं की तरह गन्ने में भी 2023-24 में <strong>कमी</strong> आई! दोनों "ग" से शुरू → दोनों में कमी।
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 ट्रिक — गन्ना के क्षेत्र</div>
+      <div class="ls-body">"<strong>बहानी</strong> (नरसिंहपुर) में बाहुबली गन्ना खा रहा था, <strong>चंबल</strong> नदी बह रही थी, <strong>दतिया</strong> में दाँतों से गुड़ चबा रहे थे!" 🎋</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--green); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. दतिया का ODOP क्या है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>गुड़ (Jaggery)</strong> 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. गन्ने का वैज्ञानिक नाम? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>Saccharum officinarum</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. 2023-24 में गन्ने के उत्पादन में कितनी कमी? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>6.38%</strong> कमी</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 12: KAPAS ===== -->
+<div class="section sec-cyan" id="sec-kapas">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🤍 कपास (Cotton) — सफेद सोना <span class="hot-tag">🔥 Most Important</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Cotton_field_kv32.jpg/320px-Cotton_field_kv32.jpg" alt="कपास का खेत" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/2/21/Cotton_field_kv32.jpg'">
+        <div class="img-caption">Cotton field | Wikimedia Commons, CC BY-SA</div>
+      </div>
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Cotton_boll.jpg/320px-Cotton_boll.jpg" alt="कपास का बोल्ल" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/4c/Cotton_boll.jpg'">
+        <div class="img-caption">Cotton boll | Wikimedia Commons, CC BY</div>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div>कपास <strong>Most Important</strong> commercial crop of MP! Exam में ज़रूर पूछेंगे।</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Gossypium</strong> (गोसिपियम / गैसिपियम)</td></tr>
+          <tr><td>Nickname</td><td>🤍 <strong>सफेद सोना (White Gold)</strong></td></tr>
+          <tr><td>फसल प्रकार</td><td>☀️ <strong>खरीफ (Kharif)</strong> + कमर्शियल + नगदी फसल</td></tr>
+          <tr><td>मिट्टी</td><td><strong>काली मृदा / Black Soil (कपासी मृदा)</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box cyan">
+      💡 <strong>काली मृदा को ही "कपासी मृदा"</strong> कहा जाता है — क्योंकि इसमें कपास उगती है!<br>
+      कपास के कारण MP के <strong>खरगोन, खंडवा</strong> को <strong>"सुनहरे जिले" (Golden Districts)</strong> कहते हैं।
+    </div>
+
+    <div class="card">
+      <h3>🗺️ प्रमुख उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip cyan">⭐ खरगोन (Maximum!) — Golden District</span>
+        <span class="chip cyan">खंडवा — Golden District</span>
+        <span class="chip">उज्जैन</span>
+        <span class="chip">देवास</span>
+        <span class="chip">धार</span>
+        <span class="chip">बड़वानी</span>
+        <span class="chip">मालवा + निमाड़ क्षेत्र</span>
+      </div>
+      <div class="info-box green" style="margin-top:10px;">
+        🏆 <strong>Maximum Production: खरगोन</strong> — यही याद रखो! Exam answer है।
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 प्रमुख किस्में (Varieties)</h3>
+      <div class="chip-row">
+        <span class="chip cyan">BT शंकर</span>
+        <span class="chip cyan">जय लक्ष्मी</span>
+        <span class="chip cyan">महालक्ष्मी</span>
+        <span class="chip cyan">श्यामली</span>
+      </div>
+      <div class="info-box cyan" style="margin-top:10px;">
+        ट्रिक: "लक्ष्मी जी की आरती में दीये में कपास की रुई जलती है → जय लक्ष्मी, महालक्ष्मी!" 🪔
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 कपास Production Data 2023-24</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Parameter</th><th>Data</th><th>Trend</th></tr>
+          <tr><td>उत्पादन</td><td><strong>91,700 टन (917 टन)</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>उत्पादन वृद्धि</td><td><strong>3.3%</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>क्षेत्रफल</td><td><strong>6,30,000 हेक्टेयर</strong></td><td>📈 वृद्धि</td></tr>
+          <tr><td>क्षेत्रफल वृद्धि</td><td><strong>5.88%</strong></td><td>📈 वृद्धि</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 ट्रिक — कपास के जिले याद करो</div>
+      <div class="ls-body">"<strong>खरगोन</strong> और <strong>खंडवा</strong> — दोनों 'ख' से शुरू → दोनों Golden Districts! ये <strong>मालवा-निमाड़</strong> में हैं। काली मृदा = कपासी मृदा!" 🤍</div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--cyan); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. कपास को क्या कहते हैं? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>सफेद सोना (White Gold)</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. MP में कपास का सबसे ज़्यादा उत्पादन कहाँ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>खरगोन</strong> (Maximum) 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. काली मृदा का दूसरा नाम? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>कपासी मृदा</strong> — क्योंकि कपास इसी में उगती है।</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q4. MP के Golden Districts कौन से हैं? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>खरगोन और खंडवा</strong> — कपास उत्पादन के कारण</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 13: HORTICULTURE ===== -->
+<div class="section sec-green" id="sec-horticulture">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🥦 उद्यान की (Horticulture) — सब्जियाँ, फल, मसाले <span class="hot-tag">🔥 Important</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="info-box green">
+      📌 उद्यान की मिशन 2005 में आया था। सरकार इसे बढ़ावा देती है क्योंकि इससे अच्छा फायदा होता है।
+    </div>
+
+    <div class="info-box orange">
+      ⚠️ <strong>Important Note:</strong> यहाँ जो क्षेत्र बताए गए हैं वो <strong>Maximum Production</strong> के हैं — ODOP से अलग है! ODOP अलग criteria से तय होता है।
+    </div>
+
+    <div class="card">
+      <h3>🥔 सब्जियाँ — Maximum Production</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>सब्जी</th><th>English</th><th>सबसे ज़्यादा उत्पादन</th><th>ट्रिक</th></tr>
+          <tr><td>🥔 आलू</td><td>Potato</td><td><strong>इंदौर</strong> (Max)</td><td>इंदौर = व्यापारिक नगरी</td></tr>
+          <tr><td>🟢 मटर</td><td>Peas</td><td><strong>जबलपुर</strong></td><td>—</td></tr>
+          <tr><td>🍅 टमाटर</td><td>Tomato</td><td><strong>जबलपुर</strong></td><td>मटर-टमाटर एक साथ!</td></tr>
+          <tr><td>🧅 प्याज</td><td>Onion</td><td><strong>खंडवा</strong></td><td>खंड-खंड प्याज!</td></tr>
+          <tr><td>🌶️ मिर्च</td><td>Chili</td><td><strong>खरगोन</strong></td><td>बेड़िया मंडी = MP की सबसे बड़ी मिर्च मंडी</td></tr>
+          <tr><td>🫛 सभी सब्जियाँ</td><td>All Vegetables</td><td><strong>छिंदवाड़ा</strong></td><td>सभी type की सब्जियाँ यहाँ</td></tr>
+          <tr><td>🌱 आलू (छिं)</td><td>Potato</td><td><strong>छिंदवाड़ा</strong> (भी)</td><td>—</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div><strong>बेड़िया मंडी</strong> = MP की सबसे बड़ी मिर्च की मंडी (खरगोन में)</div>
+    </div>
+
+    <div class="card">
+      <h3>🌿 मसाले (Spices)</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>मसाला</th><th>English</th><th>उत्पादन क्षेत्र</th><th>ट्रिक / Special</th></tr>
+          <tr><td>🌿 धनिया</td><td>Coriander</td><td><strong>गुना</strong></td><td>गुना = कई गुना खुशबू! कुंभराज मंडी = सबसे बड़ी धनिया मंडी</td></tr>
+          <tr><td>🫚 हल्दी</td><td>Turmeric</td><td><strong>बुरहानपुर</strong></td><td>—</td></tr>
+          <tr><td>🧄 लहसुन</td><td>Garlic</td><td><strong>रतलाम</strong> + <strong>मंदसौर</strong></td><td>"मंद-मंद सिर घूमता है" → मंदसौर; रिया वन किस्म = रतलाम</td></tr>
+          <tr><td>🌶️ खड़ा मसाला</td><td>Spices</td><td><strong>बुरहानपुर</strong></td><td>—</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div>
+        <strong>रिया वन लहसुन</strong> = रतलाम जिले में होता है — जनसंपर्क विभाग ने भी यह बताया है!<br>
+        <strong>लहसुन पार्क</strong> = मंदसौर में है!<br>
+        <strong>कुंभराज मंडी</strong> = गुना में — सबसे बड़ी धनिया मंडी
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🍎 फल (Fruits)</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>फल</th><th>English</th><th>उत्पादन क्षेत्र</th><th>Special Notes</th></tr>
+          <tr><td>🥭 आम (Max)</td><td>Mango</td><td><strong>रीवा</strong></td><td>सुंदरजा आम = GI Tag 🔥</td></tr>
+          <tr><td>🥭 नूरजहाँ आम</td><td>Mango (Nurjahan)</td><td><strong>अलीराजपुर</strong></td><td>अफगानिस्तान से लाया गया! 2-3 kg का एक आम!</td></tr>
+          <tr><td>🍌 केला</td><td>Banana</td><td><strong>बुरहानपुर</strong></td><td>—</td></tr>
+          <tr><td>🍇 अंगूर</td><td>Grapes</td><td><strong>रतलाम</strong></td><td>—</td></tr>
+          <tr><td>🍊 संतरा</td><td>Orange</td><td><strong>बैतूल + छिंदवाड़ा</strong></td><td>"सतपुरा ऑरेंज" — नाम दिया गया है!</td></tr>
+          <tr><td>🍐 अमरूद</td><td>Guava</td><td><strong>रीवा</strong></td><td>आम के साथ अमरूद भी रीवा में!</td></tr>
+          <tr><td>🍈 आँवला</td><td>Amla</td><td><strong>पन्ना + छतरपुर</strong></td><td>वनस्पति में पढ़ाएंगे</td></tr>
+          <tr><td>🍉 तरबूज</td><td>Watermelon</td><td><strong>खरगोन + खंडवा</strong></td><td>नर्मदा नदी के किनारे</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="fire-row">
+      <span class="icon">🔥</span>
+      <div>
+        <strong>सुंदरजा आम (रीवा) = GI Tag!</strong> पहले MPPSC में पूछा जा चुका है।<br>
+        <strong>नूरजहाँ आम (अलीराजपुर)</strong> = अफगानिस्तान से लाया, 2-3 kg का एक आम, सिक्योरिटी गार्ड रखे जाते हैं!<br>
+        <strong>सतपुरा ऑरेंज</strong> = छिंदवाड़ा + बैतूल का संतरा
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🌿 पान (Betel Leaf)</h3>
+      <div class="chip-row">
+        <span class="chip green">⭐ छतरपुर — सर्वाधिक पान उत्पादन</span>
+        <span class="chip green">गड़ी मलहरा (छतरपुर)</span>
+        <span class="chip green">महाराजपुर (छतरपुर)</span>
+        <span class="chip green">बिलहरी (कटनी)</span>
+      </div>
+      <div class="info-box green" style="margin-top:10px;">
+        📌 पान को <strong>Betel Leaf / Vittal Leaf</strong> कहते हैं। छतरपुर = पान के लिए देश में प्रसिद्ध।<br>
+        <strong>बिलहरी पान</strong> (कटनी जिले में) भी फेमस है।
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Link Story — सब्जियों की सब्जी बनाते हैं!</div>
+      <div class="ls-body">
+        "आलू लिए <strong>इंदौर</strong> से 🥔, मटर-टमाटर <strong>जबलपुर</strong> से 🍅🟢, प्याज <strong>खंडवा</strong> से कट-कट 🧅, मिर्च <strong>खरगोन</strong> (बेड़िया मंडी) से 🌶️, धनिया <strong>गुना</strong> (कुंभराज मंडी) से — कई गुना खुशबू! 🌿, हल्दी और केला <strong>बुरहानपुर</strong> से 🟡🍌, लहसुन <strong>रतलाम/मंदसौर</strong> से 🧄 — सब्जी तैयार! 🎉"
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Link Story — फलों की टोकरी!</div>
+      <div class="ls-body">
+        "आम-अमरूद <strong>रीवा</strong> से 🥭🍐, नूरजहाँ आम <strong>अलीराजपुर</strong> से (2-3 kg!) 🥭, केला <strong>बुरहानपुर</strong> से 🍌, अंगूर <strong>रतलाम</strong> से 🍇, संतरा (सतपुरा ऑरेंज) <strong>छिंदवाड़ा-बैतूल</strong> से 🍊, आँवला <strong>पन्ना</strong> से, तरबूज <strong>खरगोन</strong> नर्मदा किनारे से 🍉!"
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--green); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. MP में सर्वाधिक आलू उत्पादन कहाँ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>इंदौर</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. सुंदरजा आम कहाँ का है और इसे क्या मिला है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>रीवा</strong> का — <strong>GI Tag</strong> मिला है 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. नूरजहाँ आम कहाँ से लाया गया था? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>अफगानिस्तान</strong> से — अलीराजपुर में होता है</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q4. सतपुरा ऑरेंज किसे कहते हैं? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>छिंदवाड़ा + बैतूल</strong> का संतरा</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q5. धनिया की सबसे बड़ी मंडी कहाँ है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>कुंभराज मंडी, गुना</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q6. MP की सबसे बड़ी मिर्च मंडी? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>बेड़िया मंडी</strong> (खरगोन) 🔥</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q7. छतरपुर का पान famous क्षेत्र? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>गड़ी मलहरा</strong> और <strong>महाराजपुर</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 14: OTHER CROPS ===== -->
+<div class="section sec-orange" id="sec-other">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌾 अन्य फसलें — बाजरा, जौ, ज्वार, शहद</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="card">
+      <h3>📊 अन्य फसलें — उत्पादन क्षेत्र</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>फसल</th><th>English</th><th>फसल प्रकार</th><th>उत्पादन क्षेत्र</th></tr>
+          <tr><td>🌾 बाजरा</td><td>Pearl Millet</td><td>☀️ खरीफ</td><td><strong>भिंड</strong></td></tr>
+          <tr><td>🌾 जौ</td><td>Barley</td><td>🌨️ रबी</td><td><strong>गुना</strong></td></tr>
+          <tr><td>🌾 ज्वार</td><td>Sorghum (सरगम)</td><td>☀️ खरीफ</td><td><strong>खरगोन, बड़वानी, धार</strong></td></tr>
+          <tr><td>🍯 शहद</td><td>Honey</td><td>—</td><td><strong>मोरेना</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 ट्रिक — Other Crops</div>
+      <div class="ls-body">"<strong>भिंड</strong> में बाजरे की रोटी 🌾, <strong>गुना</strong> में जौ की बियर 🍺, <strong>खरगोन</strong> में ज्वार का गुड़, <strong>मोरेना</strong> में शहद की मक्खी!" 🍯</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 15: GANJA ===== -->
+<div class="section sec-purple" id="sec-ganja">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🌿 गांजा / Hemp (Cannabis)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Cannabis_sativa_plant_%284%29.jpg/320px-Cannabis_sativa_plant_%284%29.jpg" alt="Cannabis / Hemp plant" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/b/bb/Cannabis_sativa_plant_%284%29.jpg'">
+      <div class="img-caption">Hemp / Cannabis plant | Wikimedia Commons, CC BY-SA</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>English Name</td><td>Hemp / Cannabis</td></tr>
+          <tr><td>Scientific Name</td><td><strong>Cannabis sativa</strong> (कैनाबिस)</td></tr>
+          <tr><td>उपयोग</td><td>⚕️ <strong>औषधि के रूप में</strong> (Medicinal Use)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ सर्वाधिक उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip purple">⭐ खंडवा — गुर्जर जामली गाँव</span>
+        <span class="chip purple">बुरहानपुर (2nd)</span>
+      </div>
+      <div class="info-box purple" style="margin-top:10px;">
+        📌 <strong>खंडवा में गुर्जर जामली गाँव</strong> — यहाँ सबसे ज़्यादा गांजे का उत्पादन होता है।<br>
+        खंडवा = <strong>पूर्वी निमाड़ (Eastern Nimar)</strong> के नाम से जाना जाता है।
+      </div>
+    </div>
+
+    <div class="info-box orange">
+      ⚠️ <strong>बुरहानपुर को "गाँजे का स्वर्ग"</strong> कहा जाता है — लेकिन वहाँ के लोगों को यह उपाधि पसंद नहीं है और उन्होंने आपत्ति भी जताई है!
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--purple); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q. गांजे का सर्वाधिक उत्पादन MP में कहाँ होता है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>खंडवा</strong> — गुर्जर जामली गाँव (पूर्वी निमाड़)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 16: COFFEE ===== -->
+<div class="section sec-orange" id="sec-coffee">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>☕ कॉफी (Coffee)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-row">
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/320px-A_small_cup_of_coffee.JPG" alt="Coffee" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG'">
+        <div class="img-caption">Coffee | Wikimedia Commons, CC BY-SA</div>
+      </div>
+      <div class="img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/320px-Roasted_coffee_beans.jpg" alt="Coffee beans" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg'">
+        <div class="img-caption">Coffee beans | Wikimedia Commons, CC BY-SA</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Coffea</strong> (कॉफिया)</td></tr>
+          <tr><td>प्रमुख Variety</td><td><strong>Arabica (अरेबिका)</strong></td></tr>
+          <tr><td>उत्पादन क्षेत्र</td><td>बैतूल — <strong>कुकरू खामला पहाड़ी</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🏔️ कुकरू खामला — Special Info</h3>
+      <ul style="padding-left:18px; color:var(--text2);">
+        <li>बैतूल जिले में <strong>कोरकू जनजाति</strong> निवास करती है</li>
+        <li>इनके नाम पर ही पहाड़ी का नाम <strong>कुकरू खामला</strong> पड़ा</li>
+        <li>यह एक <strong>Hill Station</strong> जैसा सुंदर क्षेत्र है</li>
+        <li>MP सरकार ने इसे "The Heart of Incredible India — A Dream Like Destination" कहा है</li>
+        <li>यहाँ की पहाड़ियों में कुछ जगह कॉफी उगाई जाती है</li>
+      </ul>
+    </div>
+
+    <div class="info-box cyan">
+      📌 MP में कॉफी उत्पादन बहुत अधिक नहीं है, लेकिन <strong>बैतूल (कुकरू खामला) + कोरकू जनजाति</strong> याद रखो।
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--orange); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. MP में कॉफी मुख्यतः कहाँ होती है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>बैतूल — कुकरू खामला पहाड़ी</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. कुकरू खामला का नाम किस जनजाति के नाम पर पड़ा? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>कोरकू जनजाति</strong> (बैतूल जिले में)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 17: TOBACCO ===== -->
+<div class="section sec-red" id="sec-tobacco">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🚬 तंबाकू (Tobacco)</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>Scientific Name</td><td><strong>Nicotiana tabacum</strong> (निकोटियाना)</td></tr>
+          <tr><td>फसल प्रकार</td><td>🌨️ <strong>रबी (Rabi)</strong> फसल</td></tr>
+          <tr><td>उत्पादन क्षेत्र</td><td><strong>रीवा + मऊगंज</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-box red">
+      ⚠️ तंबाकू के सेवन से स्वास्थ्य को गंभीर नुकसान होता है।
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--red); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q. तंबाकू किस प्रकार की फसल है — रबी या खरीफ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>रबी (Rabi)</strong> फसल — उत्पादन: रीवा + मऊगंज</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 18: AFEEM ===== -->
+<div class="section sec-red" id="sec-afeem">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>⚠️ अफीम (Opium) <span class="hot-tag">🔥 Most Important</span></h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Opium_poppy_seedpod_cut_%28Papaver_somniferum%29.jpg/320px-Opium_poppy_seedpod_cut_%28Papaver_somniferum%29.jpg" alt="अफीम का डोडा — लेटेक्स निकालते हुए" loading="eager" decoding="async" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9b/Opium_poppy_seedpod_cut_%28Papaver_somniferum%29.jpg'">
+      <div class="img-caption">Opium poppy pod (Doda) | Wikimedia Commons, CC BY-SA</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 Basic Info</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Property</th><th>Value</th></tr>
+          <tr><td>English Name</td><td>Opium (ओपियम)</td></tr>
+          <tr><td>Scientific Name</td><td><strong>Papaver somniferum</strong></td></tr>
+          <tr><td>उपयोग</td><td>⚕️ <strong>औषधि / दवाइयाँ बनाने में</strong></td></tr>
+          <tr><td>फल का नाम</td><td><strong>डोडा फल</strong></td></tr>
+          <tr><td>मॉर्फिन</td><td>इसमें <strong>12% तक मॉर्फिन</strong> (मादक पदार्थ) पाया जाता है</td></tr>
+          <tr><td>Export</td><td>🇺🇸 USA और 🇯🇵 Japan को Export होती है</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>⚗️ अफीम निकालने की प्रक्रिया (Process)</h3>
+      <ol style="padding-left:20px; color:var(--text2); line-height:2;">
+        <li>डोडा फल में <strong>कट (चीरा)</strong> लगाते हैं</li>
+        <li>चिपचिपा सफेद/हल्का पिंक <strong>लेटेक्स</strong> निकलता है</li>
+        <li>लेटेक्स को <strong>सुखाते</strong> हैं</li>
+        <li>सुखाने के बाद <strong>ब्राउन शुगर</strong> वगैरह बनती है</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>🏭 अल्कलाइड फैक्ट्री</h3>
+      <div class="info-box yellow">
+        📌 <strong>Alkaloid Factory = नीमच</strong> में है — यहाँ अफीम से दवाइयाँ बनाई जाती हैं।
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ सर्वाधिक उत्पादन क्षेत्र</h3>
+      <div class="chip-row">
+        <span class="chip red">⭐ मंदसौर (पहला!)</span>
+        <span class="chip red">नीमच (Alkaloid Factory)</span>
+      </div>
+      <div class="info-box red" style="margin-top:10px;">
+        ट्रिक: "अफीम खाने से <strong>मंद-मंद</strong> सिर घूमता है → <strong>मंदसौर</strong>!" 💫
+      </div>
+    </div>
+
+    <div class="link-story">
+      <div class="ls-title">🔗 Complete अफीम Summary</div>
+      <div class="ls-body">
+        "अफीम = ओपियम → डोडा फल → कट लगाओ → लेटेक्स निकलो → सुखाओ → ब्राउन शुगर | मॉर्फिन 12% | USA + Japan Export | Alkaloid Factory नीमच | <strong>मंदसौर</strong> #1 उत्पादन!"
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3 style="color:var(--red); margin-bottom:10px;">🧠 Quick Recall</h3>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q1. अफीम में मॉर्फिन कितने % होता है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>12% तक</strong></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q2. MP में अफीम का सर्वाधिक उत्पादन कहाँ? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>मंदसौर</strong> (1st) → नीमच (2nd)</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q3. Alkaloid Factory कहाँ है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>नीमच</strong> में</div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-q" onclick="toggleQuiz(this)">Q4. अफीम किन देशों को Export होती है? <span class="quiz-hint">tap</span></div>
+        <div class="quiz-a">✅ <strong>USA और Japan</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 19: FULL FORMS ===== -->
+<div class="section sec-cyan" id="sec-fullforms">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>📋 Full Forms — सभी एक जगह</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="table-wrap">
+      <table>
+        <tr><th>Short Form</th><th>Full Form</th><th>Hindi Meaning</th></tr>
+        <tr><td>MP</td><td>Madhya Pradesh</td><td>मध्य प्रदेश</td></tr>
+        <tr><td>MPPSC</td><td>Madhya Pradesh Public Service Commission</td><td>मध्य प्रदेश लोक सेवा आयोग</td></tr>
+        <tr><td>ODOP</td><td>One District One Product</td><td>एक जिला एक उत्पाद</td></tr>
+        <tr><td>GI Tag</td><td>Geographical Indication Tag</td><td>भौगोलिक संकेत टैग</td></tr>
+        <tr><td>PYQ</td><td>Previous Year Question</td><td>पिछले वर्ष का प्रश्न</td></tr>
+        <tr><td>BT (Cotton)</td><td>Bacillus thuringiensis</td><td>जीएम तकनीक से बनी कपास</td></tr>
+        <tr><td>USA</td><td>United States of America</td><td>संयुक्त राज्य अमेरिका</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 20: EXAM HOT FACTS ===== -->
+<div class="section sec-orange" id="sec-examhot">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🔥 Exam Hot Facts — सबसे ज़रूरी!</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="info-box orange">
+      🎯 ये सब teacher ने specifically बोला कि exam में आ सकते हैं।
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>#</th><th>Fact</th><th>Answer</th><th>Source</th></tr>
+        <tr><td>1</td><td>MPPSC Pre 2024 — गेहूं से पूछा गया</td><td>Production Data याद रखो</td><td>PYQ 🔥</td></tr>
+        <tr><td>2</td><td>MP दलहन उत्पादन में भारत में</td><td><strong>प्रथम (Rank 1)</strong></td><td>PYQ 2024 🔥</td></tr>
+        <tr><td>3</td><td>MP में सर्वप्रथम सोयाबीन खेती कहाँ शुरू?</td><td><strong>देवास</strong></td><td>PYQ 🔥</td></tr>
+        <tr><td>4</td><td>दमोह का ODOP</td><td><strong>काबुली चना</strong></td><td>Important 🔥</td></tr>
+        <tr><td>5</td><td>नरसिंहपुर का ODOP</td><td><strong>तुअर दाल</strong></td><td>Important 🔥</td></tr>
+        <tr><td>6</td><td>दतिया का ODOP</td><td><strong>गुड़</strong></td><td>Important 🔥</td></tr>
+        <tr><td>7</td><td>कपास का Max उत्पादन MP में</td><td><strong>खरगोन</strong></td><td>Important 🔥</td></tr>
+        <tr><td>8</td><td>सरसों की हांडी</td><td><strong>मोरेना</strong></td><td>Nickname 🔥</td></tr>
+        <tr><td>9</td><td>MP State Crop</td><td><strong>सोयाबीन</strong></td><td>Basic Fact 🔥</td></tr>
+        <tr><td>10</td><td>MP को कहते हैं</td><td><strong>Soya State</strong></td><td>Basic Fact 🔥</td></tr>
+        <tr><td>11</td><td>सुंदरजा आम</td><td><strong>रीवा — GI Tag मिला</strong></td><td>PYQ 🔥</td></tr>
+        <tr><td>12</td><td>नूरजहाँ आम — कहाँ से?</td><td><strong>अफगानिस्तान → अलीराजपुर</strong></td><td>Important 🔥</td></tr>
+        <tr><td>13</td><td>सतपुरा ऑरेंज</td><td><strong>छिंदवाड़ा + बैतूल</strong></td><td>Important 🔥</td></tr>
+        <tr><td>14</td><td>बेड़िया मंडी</td><td><strong>MP की सबसे बड़ी मिर्च मंडी</strong></td><td>Important 🔥</td></tr>
+        <tr><td>15</td><td>कुंभराज मंडी</td><td><strong>सबसे बड़ी धनिया मंडी (गुना)</strong></td><td>Important 🔥</td></tr>
+        <tr><td>16</td><td>रिया वन लहसुन</td><td><strong>रतलाम</strong></td><td>जनसंपर्क से 🔥</td></tr>
+        <tr><td>17</td><td>लहसुन पार्क</td><td><strong>मंदसौर</strong></td><td>Important 🔥</td></tr>
+        <tr><td>18</td><td>Alkaloid Factory</td><td><strong>नीमच</strong></td><td>Important 🔥</td></tr>
+        <tr><td>19</td><td>अफीम Export — किन देशों को?</td><td><strong>USA और Japan</strong></td><td>Important 🔥</td></tr>
+        <tr><td>20</td><td>काली मृदा का दूसरा नाम</td><td><strong>कपासी मृदा</strong></td><td>Concept 🔥</td></tr>
+        <tr><td>21</td><td>सोयाबीन में 2023-24 भारत में रैंक?</td><td><strong>प्रथम</strong> (महाराष्ट्र को पछाड़ा)</td><td>Data 🔥</td></tr>
+        <tr><td>22</td><td>गेहूं + गन्ने में 2023-24 में</td><td><strong>कमी</strong> — बाकी सब में वृद्धि</td><td>Data 🔥</td></tr>
+        <tr><td>23</td><td>छतरपुर — पान क्षेत्र</td><td><strong>गड़ी मलहरा + महाराजपुर</strong></td><td>Important 🔥</td></tr>
+        <tr><td>24</td><td>कॉफी — कहाँ और किस जनजाति</td><td><strong>बैतूल — कोरकू जनजाति — कुकरू खामला</strong></td><td>Important 🔥</td></tr>
+        <tr><td>25</td><td>गांजा सर्वाधिक — गाँव का नाम</td><td><strong>गुर्जर जामली गाँव, खंडवा</strong></td><td>Important 🔥</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 21: MP MAP REFERENCE ===== -->
+<div class="section sec-purple" id="sec-mpmap">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>🗺️ MP Map Reference — जिले पहचानो</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="img-block" style="text-align:center;">
+      <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh Map — MP के जिले" loading="eager" decoding="async" style="max-width:100%; height:auto; border-radius:10px; border:1px solid var(--border);">
+      <div class="img-caption">Madhya Pradesh District Map | SLBC Madhya Pradesh</div>
+    </div>
+    <div class="info-box cyan" style="margin-top:12px;">
+      📌 55 जिलों को ज़रूर याद करो! हर topic में जिले से question आता है।
+    </div>
+    <div class="card">
+      <h3>🔑 Quick Reference — Class में बताए जिले</h3>
+      <div class="table-wrap">
+        <table>
+          <tr><th>जिला</th><th>Famous For</th></tr>
+          <tr><td>नरसिंहपुर</td><td>अरहर/तुअर (ODOP), गन्ना (बहानी)</td></tr>
+          <tr><td>नर्मदापुरम / पिपरिया</td><td>अरहर दाल — देशभर में फेमस</td></tr>
+          <tr><td>दमोह</td><td>काबुली चना (ODOP)</td></tr>
+          <tr><td>विदिशा, सागर</td><td>चना उत्पादन</td></tr>
+          <tr><td>देवास</td><td>सर्वप्रथम सोयाबीन खेती 🔥</td></tr>
+          <tr><td>उज्जैन</td><td>सोयाबीन #1 क्षेत्र</td></tr>
+          <tr><td>मोरेना</td><td>सरसों की हांडी, शहद</td></tr>
+          <tr><td>भिंड</td><td>सरसों + बाजरा</td></tr>
+          <tr><td>खरगोन</td><td>कपास (Max), मिर्च (बेड़िया मंडी), तरबूज, ज्वार, मूंगफली</td></tr>
+          <tr><td>खंडवा</td><td>कपास (Golden District), प्याज, गांजा (गुर्जर जामली)</td></tr>
+          <tr><td>इंदौर</td><td>आलू (Max), सोयाबीन</td></tr>
+          <tr><td>जबलपुर</td><td>मटर + टमाटर</td></tr>
+          <tr><td>गुना</td><td>धनिया (कुंभराज मंडी), जौ</td></tr>
+          <tr><td>बुरहानपुर</td><td>केला, हल्दी, खड़ा मसाला</td></tr>
+          <tr><td>रतलाम</td><td>सोयाबीन, लहसुन (रिया वन), अंगूर</td></tr>
+          <tr><td>मंदसौर</td><td>लहसुन (पार्क), सोयाबीन, अफीम (2nd)</td></tr>
+          <tr><td>रीवा</td><td>अलसी, आम (सुंदरजा-GI), अमरूद, तंबाकू</td></tr>
+          <tr><td>अलीराजपुर</td><td>नूरजहाँ आम (अफगानिस्तान से)</td></tr>
+          <tr><td>छिंदवाड़ा</td><td>सभी सब्जियाँ (Max), संतरा (सतपुरा ऑरेंज), आलू, अरहर</td></tr>
+          <tr><td>बैतूल</td><td>संतरा + कॉफी (कुकरू खामला, कोरकू जनजाति)</td></tr>
+          <tr><td>छतरपुर</td><td>पान (गड़ी मलहरा, महाराजपुर)</td></tr>
+          <tr><td>पन्ना</td><td>आँवला, अलसी</td></tr>
+          <tr><td>दतिया</td><td>गुड़ (ODOP) 🔥</td></tr>
+          <tr><td>नीमच</td><td>अफीम Alkaloid Factory 🔥</td></tr>
+          <tr><td>मंदसौर</td><td>अफीम (1st) 🔥</td></tr>
+          <tr><td>भिंड</td><td>बाजरा</td></tr>
+          <tr><td>कटनी (बिलहरी)</td><td>बिलहरी पान</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 22: MASTER CHECKLIST ===== -->
+<div class="section sec-green" id="sec-checklist">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2>✅ Master Revision Checklist</h2>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div id="checklist-progress">
+      <div id="progress-count">0/36</div>
+      <div style="color:var(--text2); font-size:14px; margin-top:4px;">Points Revised</div>
+      <div class="progress-bar-wrap" style="margin-top:10px; max-width:400px; margin-left:auto; margin-right:auto;">
+        <div class="progress-bar" id="checklist-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <ul class="checklist" id="main-checklist">
+      <li><input type="checkbox" id="c1" onchange="updateChecklist()"><label for="c1">🌾 गेहूं उत्पादन 2023-24 — 5.73% कमी, 3297.2 हज़ार टन, 911 हज़ार हेक्टेयर</label></li>
+      <li><input type="checkbox" id="c2" onchange="updateChecklist()"><label for="c2">🫘 MP दलहन उत्पादन में भारत में प्रथम (Rank 1)</label></li>
+      <li><input type="checkbox" id="c3" onchange="updateChecklist()"><label for="c3">🟤 चना — Cicer arietinum — रबी फसल — विदिशा, सागर, दमोह, छिंदवाड़ा</label></li>
+      <li><input type="checkbox" id="c4" onchange="updateChecklist()"><label for="c4">🟤 दमोह का ODOP = काबुली चना</label></li>
+      <li><input type="checkbox" id="c5" onchange="updateChecklist()"><label for="c5">🌿 अरहर — Cajanus cajan — खरीफ — नरसिंहपुर, नर्मदापुरम/पिपरिया</label></li>
+      <li><input type="checkbox" id="c6" onchange="updateChecklist()"><label for="c6">🌿 नरसिंहपुर ODOP = तुअर दाल</label></li>
+      <li><input type="checkbox" id="c7" onchange="updateChecklist()"><label for="c7">🟡 सोयाबीन — Glycine max — State Crop of MP — Soya State</label></li>
+      <li><input type="checkbox" id="c8" onchange="updateChecklist()"><label for="c8">🟡 सोयाबीन — काली मृदा में — खरीफ — उज्जैन, इंदौर, देवास, मालवा</label></li>
+      <li><input type="checkbox" id="c9" onchange="updateChecklist()"><label for="c9">🟡 देवास — सर्वप्रथम सोयाबीन खेती (PYQ!)</label></li>
+      <li><input type="checkbox" id="c10" onchange="updateChecklist()"><label for="c10">🟡 सोयाबीन 2023-24 — 5.42% वृद्धि — 6675000 टन — भारत में प्रथम</label></li>
+      <li><input type="checkbox" id="c11" onchange="updateChecklist()"><label for="c11">🌼 सरसों — Brassica campestris — रबी — Alluvial Soil</label></li>
+      <li><input type="checkbox" id="c12" onchange="updateChecklist()"><label for="c12">🌼 मोरेना = सरसों की हांडी — चंबल संभाग</label></li>
+      <li><input type="checkbox" id="c13" onchange="updateChecklist()"><label for="c13">🥜 मूंगफली — Arachis hypogaea — खरीफ — खरगोन (Max)</label></li>
+      <li><input type="checkbox" id="c14" onchange="updateChecklist()"><label for="c14">🌸 अलसी/तीसी — रबी — रीवा (Max)</label></li>
+      <li><input type="checkbox" id="c15" onchange="updateChecklist()"><label for="c15">🎋 गन्ना — Saccharum officinarum — खरीफ — बहानी (नरसिंहपुर)</label></li>
+      <li><input type="checkbox" id="c16" onchange="updateChecklist()"><label for="c16">🎋 दतिया ODOP = गुड़ — गन्ना 2023-24 में 6.38% कमी</label></li>
+      <li><input type="checkbox" id="c17" onchange="updateChecklist()"><label for="c17">🤍 कपास = सफेद सोना — Gossypium — खरीफ — काली मृदा (कपासी मृदा)</label></li>
+      <li><input type="checkbox" id="c18" onchange="updateChecklist()"><label for="c18">🤍 कपास — खरगोन (Max) + खंडवा = Golden Districts</label></li>
+      <li><input type="checkbox" id="c19" onchange="updateChecklist()"><label for="c19">🤍 कपास 2023-24 — 3.3% वृद्धि — 630000 हेक्टेयर</label></li>
+      <li><input type="checkbox" id="c20" onchange="updateChecklist()"><label for="c20">🥔 आलू — इंदौर (Max) | 🍅🟢 मटर+टमाटर — जबलपुर</label></li>
+      <li><input type="checkbox" id="c21" onchange="updateChecklist()"><label for="c21">🧅 प्याज — खंडवा | 🌶️ मिर्च — खरगोन (बेड़िया मंडी)</label></li>
+      <li><input type="checkbox" id="c22" onchange="updateChecklist()"><label for="c22">🫛 सभी सब्जियाँ — छिंदवाड़ा (Max)</label></li>
+      <li><input type="checkbox" id="c23" onchange="updateChecklist()"><label for="c23">🌿 धनिया — गुना (कुंभराज मंडी = सबसे बड़ी धनिया मंडी)</label></li>
+      <li><input type="checkbox" id="c24" onchange="updateChecklist()"><label for="c24">🧄 लहसुन — रतलाम (रिया वन) + मंदसौर (लहसुन पार्क)</label></li>
+      <li><input type="checkbox" id="c25" onchange="updateChecklist()"><label for="c25">🍌🫚 केला + हल्दी + खड़ा मसाला — बुरहानपुर</label></li>
+      <li><input type="checkbox" id="c26" onchange="updateChecklist()"><label for="c26">🥭 आम (सुंदरजा — GI Tag) + अमरूद — रीवा</label></li>
+      <li><input type="checkbox" id="c27" onchange="updateChecklist()"><label for="c27">🥭 नूरजहाँ आम — अफगानिस्तान से, 2-3 kg — अलीराजपुर</label></li>
+      <li><input type="checkbox" id="c28" onchange="updateChecklist()"><label for="c28">🍊 सतपुरा ऑरेंज — छिंदवाड़ा + बैतूल</label></li>
+      <li><input type="checkbox" id="c29" onchange="updateChecklist()"><label for="c29">🍇 अंगूर — रतलाम | 🍉 तरबूज — खरगोन (नर्मदा किनारे)</label></li>
+      <li><input type="checkbox" id="c30" onchange="updateChecklist()"><label for="c30">🌿 पान — छतरपुर (गड़ी मलहरा, महाराजपुर) + बिलहरी (कटनी)</label></li>
+      <li><input type="checkbox" id="c31" onchange="updateChecklist()"><label for="c31">🍯 शहद — मोरेना | 🌾 बाजरा — भिंड | 🌾 जौ — गुना | ज्वार — खरगोन</label></li>
+      <li><input type="checkbox" id="c32" onchange="updateChecklist()"><label for="c32">🌿 गांजा — Cannabis sativa — खंडवा (गुर्जर जामली गाँव) — औषधि उपयोग</label></li>
+      <li><input type="checkbox" id="c33" onchange="updateChecklist()"><label for="c33">☕ कॉफी — Coffea (Arabica) — बैतूल (कुकरू खामला) — कोरकू जनजाति</label></li>
+      <li><input type="checkbox" id="c34" onchange="updateChecklist()"><label for="c34">🚬 तंबाकू — Nicotiana tabacum — रबी — रीवा + मऊगंज</label></li>
+      <li><input type="checkbox" id="c35" onchange="updateChecklist()"><label for="c35">⚠️ अफीम — 12% मॉर्फिन — डोडा फल — लेटेक्स — मंदसौर (1st) + नीमच</label></li>
+      <li><input type="checkbox" id="c36" onchange="updateChecklist()"><label for="c36">⚠️ Alkaloid Factory = नीमच | अफीम Export → USA + Japan</label></li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- end .page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:860px; margin:0 auto; padding:0 18px;">
+    <div class="info-box cyan" style="text-align:left; margin-bottom:16px;">
+      <strong>📌 Upcoming Topics (अगली क्लास में):</strong>
+      <ul style="margin-top:8px; padding-left:18px; color:var(--text2);">
+        <li>ODOP — One District One Product (पूरी Class)</li>
+        <li>Agriculture Research Centers / अनुसंधान केंद्र</li>
+        <li>Agriculture Institutions — कृषि संस्थान</li>
+        <li>Schemes — किसान कॉल सेंटर, फसल बीमा योजना etc.</li>
+      </ul>
+    </div>
+    <p>📚 MP GK Special | Class 17 | Agriculture Part 2</p>
+    <p style="margin-top:6px;">MPPSC Pre 2025 | Revision Page</p>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+function toggleTheme() {
+  const body = document.body;
+  const cur = body.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  body.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.querySelector('.theme-btn').textContent = next === 'dark' ? '🌙 Theme' : '☀️ Theme';
+}
+(function(){
+  const saved = localStorage.getItem('theme') || 'dark';
+  document.body.setAttribute('data-theme', saved);
+  const btn = document.querySelector('.theme-btn');
+  if(btn) btn.textContent = saved === 'dark' ? '🌙 Theme' : '☀️ Theme';
+})();
+
+// Section collapse
+function toggleSection(header) {
+  header.parentElement.classList.toggle('collapsed');
+}
+
+// Quiz reveal
+function toggleQuiz(el) {
+  const ans = el.nextElementSibling;
+  ans.classList.toggle('shown');
+}
+
+// Jump nav
+function jumpTo(id) {
+  if(!id) return;
+  const el = document.getElementById(id);
+  if(el) { el.scrollIntoView({behavior:'smooth', block:'start'}); }
+  document.getElementById('jump-nav').value = '';
+}
+
+// Checklist persistence + progress
+function updateChecklist() {
+  const boxes = document.querySelectorAll('#main-checklist input[type=checkbox]');
+  let checked = 0;
+  boxes.forEach((cb, i) => {
+    localStorage.setItem('cb_' + i, cb.checked);
+    if(cb.checked) {
+      checked++;
+      cb.closest('li').classList.add('done');
+    } else {
+      cb.closest('li').classList.remove('done');
+    }
+  });
+  const pct = Math.round((checked / boxes.length) * 100);
+  document.getElementById('progress-count').textContent = checked + '/' + boxes.length;
+  document.getElementById('checklist-bar').style.width = pct + '%';
+  document.getElementById('main-progress').style.width = pct + '%';
+  document.getElementById('main-progress-label').textContent = pct + '% Revised';
+}
+(function(){
+  const boxes = document.querySelectorAll('#main-checklist input[type=checkbox]');
+  boxes.forEach((cb, i) => {
+    const saved = localStorage.getItem('cb_' + i);
+    if(saved === 'true') cb.checked = true;
+  });
+  updateChecklist();
+})();
+
+// Image preload/fallback
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', function() {
+    if(!this.dataset.retried) {
+      this.dataset.retried = '1';
+      const fn = this.src.split('/').pop();
+      this.src = 'https://upload.wikimedia.org/wikipedia/commons/Special:Redirect/file/' + fn + '?width=320';
+    }
+  });
+});
+</script>
+</body>
+</html>

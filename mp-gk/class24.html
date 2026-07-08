@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MP GK Premium Revision Page - Class 24 Mock Test</title>
+    <!-- Google Fonts: Outfit for highly readable text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0f0f1a;
+            --card-bg: #16162a;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2e2e4f;
+            --wrong-alert: #ef4444;
+            --right-success: #10b981;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --accent-cyan: #0284c7;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 60px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Print Typography Adjustments for Hindi text spacing */
+        body, p, li {
+            letter-spacing: 0.03em;
+        }
+
+        /* Layout Structure */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1e38 0%, #0f0f1a 100%);
+            padding: 30px 20px;
+            border-bottom: 3px solid var(--accent-cyan);
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        [data-theme="light"] header {
+            background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%);
+            border-bottom: 3px solid var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Sticky Controls */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .progress-container {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .progress-bar-bg {
+            background: var(--border-color);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            width: 0%;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+            display: block;
+        }
+
+        .controls-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            background: var(--border-color);
+            border: 1px solid transparent;
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        select.nav-dropdown {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            max-width: 200px;
+            cursor: pointer;
+        }
+
+        /* Mind-set Booster Box */
+        .booster-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 5px solid var(--accent-orange);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 35px;
+        }
+
+        .booster-box h3 {
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Main Content Cards */
+        .topic-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .topic-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.correct {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--right-success);
+            border: 1px solid var(--right-success);
+        }
+
+        .status-badge.confused {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--wrong-alert);
+            border: 1px solid var(--wrong-alert);
+        }
+
+        /* Question & Option Styling */
+        .question-box {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            border-left: 3px solid var(--accent-cyan);
+        }
+
+        [data-theme="light"] .question-box {
+            background: #f1f5f9;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        [data-theme="light"] .option-item {
+            background: #fafafa;
+        }
+
+        .option-item.selected-wrong {
+            border-color: var(--wrong-alert);
+            background: rgba(239, 68, 68, 0.08);
+            text-decoration: line-through;
+            color: var(--wrong-alert);
+        }
+
+        .option-item.selected-right {
+            border-color: var(--right-success);
+            background: rgba(16, 185, 129, 0.08);
+            font-weight: bold;
+            color: var(--right-success);
+        }
+
+        /* Memory Hook / Link Stories Box */
+        .link-story-box {
+            background: linear-gradient(145deg, rgba(179, 136, 255, 0.08) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 1px dashed var(--accent-purple);
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .link-story-box h4 {
+            color: var(--accent-purple);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+        }
+
+        /* Interactive Accordion for Extra Explanations */
+        .accordion-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--accent-cyan);
+            text-align: left;
+            padding: 10px 0;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 10px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        /* Image Management */
+        .image-container {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            background: rgba(0, 0, 0, 0.6);
+            color: #cbd5e1;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Checklist / Master Section styling */
+        .master-section {
+            background: #131326;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        [data-theme="light"] .master-section {
+            background: #fff;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .topic-card, .master-section, header, .sticky-nav {
+                border: 1px solid #000 !important;
+                background: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            .accordion-content {
+                max-height: none !important;
+                padding: 10px !important;
+            }
+            .sticky-nav, .theme-toggle, .nav-dropdown {
+                display: none !important;
+            }
+            .option-item {
+                border: 1px solid #000 !important;
+                background: none !important;
+                color: black !important;
+            }
+            .option-item.selected-wrong {
+                text-decoration: line-through !important;
+                color: #555 !important;
+            }
+            .option-item.selected-right {
+                font-weight: bold !important;
+                border: 2px solid #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header>
+            <span class="header-badge">MPPSC PRE 2025 SPECIAL</span>
+            <h1>🎯 MP GK Comprehensive Revision Assistant</h1>
+            <p class="subtitle">Class 24 Full Mock Test Tracking & Concept Decoupler (Bilingual/Hinglish)</p>
+            <p style="font-size: 0.95rem; color: var(--text-orange); font-weight: 500;">
+                💡 <strong>Your Performance Insight:</strong> You scored 8/30 correctly (Q1, 5, 6, 7, 10, 20, 21, 23). The rest triggered right answers subconsciously but were missed due to exam rush ("jaldbaji"). Let's convert that intuition into absolute confidence!
+            </p>
+        </header>
+
+        <!-- STICKY CONTROL & NAVIGATION PANEL -->
+        <div class="sticky-nav">
+            <div class="progress-container">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBar"></div>
+                </div>
+                <span class="progress-text" id="progressText">0% of core topics mastered</span>
+            </div>
+            
+            <div class="controls-group">
+                <select class="nav-dropdown" onchange="location.hash = this.value;">
+                    <option value="">⚡ Quick Jump...</option>
+                    <option value="#t1">Q1: Ganga Mahadev Fall</option>
+                    <option value="#t2">Q2: Tiger Project Pioneer</option>
+                    <option value="#t3">Q3: Lifeline of Chhindwara</option>
+                    <option value="#t4">Q4: Center Point of India</option>
+                    <option value="#t5">Q5: MP State Bird Secrets</option>
+                    <option value="#t6">Q6: Lac Cultivation Physics</option>
+                    <option value="#t7">Q7: Tributaries of Chambal</option>
+                    <option value="#t8">Q8: Tallest Dam Blueprint</option>
+                    <option value="#t9">Q9: Rainfall Zone Matrix</option>
+                    <option value="#t10">Q10: Alluvial Soil Spectrum</option>
+                    <option value="#t11">Q11: Jeera Shankar & Millets</option>
+                    <option value="#t12">Q12: Hidden Names of Narmada</option>
+                    <option value="#t13">Q13: Forestry Institutes Timeline</option>
+                    <option value="#t14">Q14: White Tiger Mohan Archive</option>
+                    <option value="#t15">Q15: Tendu Patta Economics</option>
+                    <option value="#t16">Q16: Chhindwara Forestry Hub</option>
+                    <option value="#t17">Q17: Jhansi Ghat Topography</option>
+                    <option value="#t18">Q18: INS Betwa Naval Legacy</option>
+                    <option value="#t19">Q19: Central India Topography</option>
+                    <option value="#t20">Q20: Lava Flow Plateau</option>
+                    <option value="#t21">Q21: Landlocked District Check</option>
+                    <option value="#t22">Q22: Largest Physiographic Unit</option>
+                    <option value="#t23">Q23: Core Natural Subdivisions</option>
+                    <option value="#t24">Q24: Choolgiri Hills Geography</option>
+                    <option value="#t25">Q25: Bandhavgarh Balloon Safari</option>
+                    <option value="#t26">Q26: Bhopal Merger Timeline</option>
+                    <option value="#t27">Q27: George Castle Architecture</option>
+                    <option value="#t28">Q28: Shankar Dayal Sharma Legacy</option>
+                    <option value="#t29">Q29: Munna Tiger Forehead Markers</option>
+                    <option value="#t30">Q30: Black Leopard & Pench History</option>
+                    <option value="#master-check">Master Revision Checklist</option>
+                </select>
+                <button class="btn theme-toggle" onclick="toggleTheme()">🌓 Mode</button>
+            </div>
+        </div>
+
+        <!-- MINDSET BOOSTER BOX -->
+        <div class="booster-box">
+            <h3>🧠 Subconscious Alignment Strategy (गलती सुधार तंत्र)</h3>
+            <p>जब दिमाग में सही उत्तर trigger हो रहा हो पर जल्दबाजी में गलत विकल्प चुन लिया जाए, तो इसका मतलब है कि <strong>Data Layer 1 (Subconscious memory)</strong> में सुरक्षित है लेकिन <strong>Data Layer 2 (Active recall validation)</strong> कमजोर है। इस पेज पर आपके द्वारा छोड़े गए या गलत किए गए प्रश्नों को विशेष रंग कोड से चिन्हित किया गया है ताकि आप सीधे अपनी कमजोरियों पर वार कर सकें!</p>
+        </div>
+
+        <!-- ==================== QUESTIONS & CONCEPT CHUNKING ==================== -->
+
+        <!-- TOPIC CARD 1 -->
+        <div class="topic-card" id="t1">
+            <div class="card-header">
+                <div class="topic-title">💻 Q1: द्वापर युग शिवलिंग और गंगा महादेव जलप्रपात</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                पांडवों द्वारा स्थापित द्वाper युग का शिवलिंग जहां आज 'गंगा महादेव जलप्रपात' (Ganga Mahadev Waterfall) पाया जाता है, वह किस जिले में स्थित है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) धार (Dhar) 🌟 Right Answer</div>
+                <div class="option-item">B) सीहोर (Sehore)</div>
+                <div class="option-item">C) इंदौर (Indore)</div>
+                <div class="option-item">B) बड़वानी (Barwani)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p><strong>पहाड़ी वास्तुकला (Hill Architecture):</strong> यह जलप्रपात धार जिले की एक ऐतिहासिक पहाड़ी ऊंचाई से नीचे की ओर गिरता है।</p>
+                <p><strong>द्वापर युग मान्यता (Dwapar Era Lore):</strong> स्थानीय मान्यताओं के अनुसार पांडवों ने अपने अज्ञातवास के दौरान यहाँ एक दिव्य शिवलिंग की स्थापना की थी। प्राचीन प्राकृतिक जल धाराएं निरंतर इस शिवलिंग का अभिषेक करती हैं।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 2 -->
+        <div class="topic-card" id="t2">
+            <div class="card-header">
+                <div class="topic-title">💻 Q2: टाइगर प्रोजेक्ट की नींव (Foundation of Tiger Project)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश में टाइगर प्रोजेक्ट (Project Tiger) की नींव रखने वाले प्रमुख व्यक्तित्व कौन थे?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) जे.जे. दत्ता (Jagat Jyoti Dutta) 🌟 Target Answer</div>
+                <div class="option-item">B) मार्तंड सिंह (Martand Singh)</div>
+                <div class="option-item">C) कैलाश सांखला (Kailash Sankhla)</div>
+                <div class="option-item">D) नानाजी देशमुख (Nanaji Deshmukh)</div>
+            </div>
+            
+            <div class="link-story-box">
+                <h4>🔗 Link Story — ऐसे याद करो:</h4>
+                <p><strong>"दत्ता जी का कान्हा टाइगर":</strong> जे.जे. दत्ता (Jagat Jyoti Dutta) ने अप्रैल 1973 में कान्हा नेशनल पार्क में बैठकर मध्य प्रदेश को 'Tiger State' बनाने का <strong>दस्तावेज़ (Data)</strong> तैयार किया। ऐसे याद रखो: दत्ता = डेटा = टाइगर स्टेट की नींव का डेटा!</p>
+            </div>
+
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>J.J. Dutta Current Connection:</strong> इनका निधन <strong>3 अगस्त 2024</strong> को हुआ। यह फैक्ट आगामी परीक्षाओं के लिए सबसे महत्वपूर्ण संभावित प्रश्न है। इन्होंने मध्य प्रदेश को टाइगर स्टेट बनाने में आधारभूत कार्य किया था।</p>
+                <p><strong>National Context vs State Context:</strong> भारत में प्रोजेक्ट टाइगर के जनक कैलाश सांखला माने जाते हैं, परंतु मध्य प्रदेश के संदर्भ में बुनियादी नींव <strong>जगत ज्योति दत्ता (J.J. Dutta)</strong> ने रखी थी।</p>
+                <p><strong>Other Options Decoupled:</strong></p>
+                <ul>
+                    <li>*मार्तंड सिंह:* रीवा के महाराजा जिन्होंने सर्वप्रथम 1951 में सफेद बाघ 'मोहन' को पकड़ा था।</li>
+                    <li>*नानाजी देशमुख:* प्रसिद्ध समाजसेवी और पशु प्रेमी। इनके नाम पर <strong>2009 में जबलपुर</strong> में पशु चिकित्सा विज्ञान विश्वविद्यालय स्थापित किया गया।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 3 -->
+        <div class="topic-card" id="t3">
+            <div class="card-header">
+                <div class="topic-title">💻 Q3: छिंदवाड़ा की जीवनरेखा (Lifeline of Chhindwara)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                किस नदी को मुख्य रूप से छिंदवाड़ा जिले की 'जीवनरेखा' (Lifeline of Chhindwara) कहा जाता है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) सीता रेवा (Sita Rewa)</div>
+                <div class="option-item selected-right">B) कुलबेहरा (Kulbehra) 🌟 Target Answer</div>
+                <div class="option-item">C) पेंच (Pench)</div>
+                <div class="option-item">D) कन्हान (Kanhan)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p><strong>River Hierarchy Chart:</strong></p>
+                <p><strong>कुलबेहरा (Kulbehra)</strong> [उद्गम: छिंदवाड़ा] ➔ सहायक है <strong>पेंच (Pench)</strong> की ➔ पेंच आगे जाकर मिलती है <strong>कन्हान (Kanhan)</strong> नदी में।</p>
+                <p><strong>Visual Marker:</strong> विकास सर के अनुसार, इंटरनेट पर कुलबेहरा नदी को सर्च करने पर हमेशा विशिष्ट सफेद रंग के पेड़ों का एक प्राकृतिक दृश्य दिखाई देता है जो इसकी भूगोलीय पहचान है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 4 -->
+        <div class="topic-card" id="t4">
+            <div class="card-header">
+                <div class="topic-title">💻 Q4: भारत का भौगोलिक हृदय स्थल (Geographical Heart of India)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                भारत का भौगोलिक केंद्र बिंदु (Geographical Center Point of India) किस ग्राम को माना जाता है जिसे 'भारत का हृदय' भी कहते हैं?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) राम मनोहर लोहिया नगर, करौंदी (Katni) 🌟 Target Answer</div>
+                <div class="option-item">B) सागर (Sagar)</div>
+                <div class="option-item">C) बरसाली (Barsali, Betul)</div>
+                <div class="option-item">D) उज्जैन (Ujjain)</div>
+            </div>
+
+            <div class="link-story-box">
+                <h4>🔗 Link Story — केंद्र बिंदुओं की कहानी:</h4>
+                <p>लोहिया जी <strong>करौंदी (कटनी)</strong> तोड़कर <strong>भारत के दिल (हृदय)</strong> में छिप गए, जबकि <strong>बरसाली (बैतूल)</strong> की बारिश ने <strong>अखंड भारत</strong> को गीला कर दिया, और महाकाल ने <strong>उज्जैन (मंगलनाथ)</strong> में खड़े होकर पूरी <strong>पृथ्वी का केंद्र</strong> हिला दिया! 🔗</p>
+            </div>
+
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>केंद्र बिंदु का प्रकार (Type of Center)</th>
+                            <th>स्थान व जिला (Location & District)</th>
+                            <th>विशेष विवरण (Special Notes)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>वर्तमान भारत का भौगोलिक केंद्र</strong></td>
+                            <td>करौंदी गांव (राम मनोहर लोहिया नगर), कटनी</td>
+                            <td>यहाँ चारों दिशाओं में मुख किए हुए शेरों का अशोक स्तंभ स्मारक बना हुआ है। कर्क रेखा (Tropic of Cancer) यहाँ से स्पष्ट गुजरती है। एमपी जनसंपर्क विभाग इसे आधिकारिक तौर पर 'देश का दिल' कहता है।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>अखंड भारत का केंद्र (Undivided India)</strong></td>
+                            <td>बरसाली, बैतूल</td>
+                            <td>विभाजन से पूर्व के संपूर्ण भारत वर्ष का केंद्रीय बिंदु।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>पृथ्वी का भौगोलिक केंद्र (Center of Earth)</strong></td>
+                            <td>मंगलनाथ मंदिर, उज्जैन</td>
+                            <td>प्राचीन भारतीय खगोल विज्ञान के अनुसार पूरी पृथ्वी का केंद्र।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 5 -->
+        <div class="topic-card" id="t5">
+            <div class="card-header">
+                <div class="topic-title">💻 Q5: राजकीय पक्षी का वैकल्पिक नाम (State Bird Alternative)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश के राजकीय पक्षी 'दूधराज' (Dudhraj) को सरकारी जनसंपर्क दस्तावेजों में किस अन्य नाम से पुकारा गया है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) एशियाई दिव्य लोकी कीटमर (Asian Paradise Flycatcher) 🌟 Right Answer</div>
+                <div class="option-item">B) साहे बुलबुल</div>
+                <div class="option-item">C) टिटहरी राज</div>
+                <div class="option-item">D) सोन चिड़िया</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🎯 <strong>Scientific Name:</strong> <em>Paradise Flycatcher</em></p>
+                <p>🔥 <strong>The 1985 Controversy Concept:</strong> अधिकांश सामान्य किताबों और कोचिंग नोट्स में इसे <strong>1 नवंबर 1981</strong> (मध्य प्रदेश की 25वीं वर्षगांठ) को राजकीय पक्षी घोषित होना बताया जाता है। परंतु, विकास सर ने क्लास में आधिकारिक <strong>मध्य प्रदेश जनसंपर्क विभाग (Jan Sampark Department)</strong> का मूल डॉक्यूमेंट प्रदर्शित किया, जिसमें स्पष्ट रूप से <strong>वर्ष 1985</strong> अंकित है। परीक्षा में यदि विकल्प में 1981 न हो या जनसंपर्क के हवाले से पूछा जाए, तो 1985 को सत्य मानना होगा।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 6 -->
+        <div class="topic-card" id="t6">
+            <div class="card-header">
+                <div class="topic-title">💻 Q6: लाख उत्पादन का जैव-विज्ञान (Lac Production Biology)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                लाख (Lac) का उत्पादन करने वाले विशिष्ट कीट (Insect) का वैज्ञानिक नाम क्या है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) लेसिफर लक्का (Laccifer Lacca) 🌟 Right Answer</div>
+                <div class="option-item">B) बॉम्बिक्स मोरी (Bombyx Mori)</div>
+                <div class="option-item">C) एपिस मेलिफेरा (Apis Mellifera)</div>
+                <div class="option-item">D) लैक्टोबैसिलस</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>❌ <strong>Misconception Cleared:</strong> लाख किसी पेड़ का फल या रस नहीं है, यह <strong>Laccifer Lacca</strong> नामक कीट के शरीर से निकलने वाला प्राकृतिक रालदार (Resinous) स्राव है।</p>
+                <p>🌲 <strong>Host Trees (पोषक वृक्ष):</strong> यह कीट मुख्य रूप से <strong>बबूल, कुसुम, बेर, और पलाश (Palas)</strong> के पेड़ों पर पाला जाता है।</p>
+                <p>💄 <strong>Industrial Use:</strong> चूड़ी उद्योग (Bangle Industry) में मुख्य घटक होने के साथ-साथ सौंदर्य प्रसाधन (Cosmetics) और बॉडी लोशन बनाने में भी इसका व्यापक उपयोग होता है।</p>
+                <p>🏢 <strong>Government Factory:</strong> मध्य प्रदेश में लाख का सरकारी कारखाना <strong>उमरिया (Umaria)</strong> जिले में कार्यरत है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 7 -->
+        <div class="topic-card" id="t7">
+            <div class="card-header">
+                <div class="topic-title">💻 Q7: चंबल की महा-सहायक नदी (Largest Tributary of Chambal)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                चंबल नदी तंत्र की सबसे बड़ी सहायक नदी (Largest Tributary River) कौन सी है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) कालीसिंध (Kalisindh)</div>
+                <div class="option-item">B) क्षिप्रा (Shipra)</div>
+                <div class="option-item selected-right">C) बनास (Banas) 🌟 Right Answer</div>
+                <div class="option-item">D) पार्वती (Parvati)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🏜️ <strong>Geographical Flow:</strong> बनास नदी पूर्णतः राजस्थान की ओर से बहकर आती है और चंबल में समाहित हो जाती है।</p>
+                <p>🔥 <strong>Chambal Core Micro-Facts:</strong></p>
+                <ul>
+                    <li><strong>कुल लंबाई:</strong> 940 किलोमीटर (क्लास डेटा अनुसार)।</li>
+                    <li><strong>बीहड़ सुधार योजना (Ravine Reclamation Scheme):</strong> चंबल क्षेत्र में खड्डों (Ravines) की समस्या से निपटने के लिए प्रथम व्यापक योजना <strong>वर्ष 1971</strong> में प्रारंभ की गई थी।</li>
+                    <li><strong>अंतिम मिलन:</strong> यह नदी अंत में प्रसिद्ध <strong>पंचनद संगम (Panchnada Sangam)</strong> के निकट यमुना नदी की ट्रिब्यूटरी बन जाती है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 8 -->
+        <div class="topic-card" id="t8">
+            <div class="card-header">
+                <div class="topic-title">💻 Q8: मध्य प्रदेश का सबसे ऊंचा बांध (Highest Dam Structure)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                निम्नलिखित बांधों में से मध्य प्रदेश की भौगोलिक सीमा में स्थित सबसे ऊंचा बांध (Highest Dam) कौन सा है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) गांधी सागर बांध (Gandhi Sagar)</div>
+                <div class="option-item">B) बरगी बांध (Bargi Dam)</div>
+                <div class="option-item selected-right">C) पुनासा बांध / इंदिरा सागर (Punasa / Indira Sagar) 🌟 Target Answer</div>
+                <div class="option-item">D) तवा बांध (Tawa Dam)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🚨 <strong>Mass Elimination Question:</strong> क्लास में इस प्रश्न पर लगभग पूरी लाइव चैट धराशायी हो गई थी। पुनासा बांध को ही <strong>इंदिरा सागर बांध (Indira Sagar Dam)</strong> कहा जाता है, जिसकी ऊंचाई लगभग <strong>92 मीटर</strong> है, जो इसे मध्य प्रदेश का सबसे ऊंचा कंक्रीट ग्रेविटी बांध बनाती है। (तवा और गांधी सागर इससे कम ऊंचे हैं)।</p>
+                <p>📅 <strong>Historical Timeline:</strong></p>
+                <ul>
+                    <li><strong>नींव (Foundation):</strong> तत्कालीन प्रधानमंत्री इंदिरा गांधी द्वारा <strong>23 अक्टूबर 1984</strong> को रखी गई थी। (विशेष ट्रिक: इसके ठीक 8 दिन बाद, 31 अक्टूबर 1984 को उनकी हत्या हो गई थी)।</li>
+                    <li><strong>निर्माण पूर्ण (Construction Complete):</strong> वर्ष 1992।</li>
+                    <li><strong>विद्युत उत्पादन (Electricity Generation):</strong> वर्ष 2004 से 2005 के दौरान पूरी तरह चालू हुआ।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 9 -->
+        <div class="topic-card" id="t9">
+            <div class="card-header">
+                <div class="topic-title">💻 Q9: जलवायु एवं वर्षा विभाजन (Rainfall Zone Matrix)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश का कौन सा जिला 75 से 100 सेंटीमीटर वार्षिक वर्षा क्षेत्र (Rainfall Zone) के अंतर्गत सटीक बैठता है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) बालाघाट (Balaghat)</div>
+                <div class="option-item">B) मंदसौर (Mandsaur)</div>
+                <div class="option-item selected-right">C) पन्ना (Panna) 🌟 Target Answer</div>
+                <div class="option-item">D) नर्मदापुरम (Narmadapuram)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🎯 <strong>Elimination Strategy (छांटने की कला):</strong></p>
+                <ul>
+                    <li>*बालाघाट & नर्मदापुरम:* ये अत्यधिक वर्षा वाले क्षेत्र हैं जहां औसत वर्षा <strong>125 से 150 सेंटीमीटर प्लस</strong> होती है (पंचमढ़ी क्षेत्र 150+ जाता है)।</li>
+                    <li>*मंदसौर:* यह राजस्थान सीमा से लगा पश्चिमी क्षेत्र है जहां वर्षा <strong>75 सेंटीमीटर या उससे भी कम</strong> के आसपास सिमट जाती है।</li>
+                    <li>*पन्ना:* विंध्य पर्वतीय क्षेत्र का हिस्सा होने के कारण यह मध्य-पूर्वी बेल्ट में आता है, जो पूरी तरह <strong>75 से 100 सेमी.</strong> वर्षा की श्रेणी को संतुष्ट करता है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 10 -->
+        <div class="topic-card" id="t10">
+            <div class="card-header">
+                <div class="topic-title">💻 Q10: जलोढ़ मृदा का प्रतिशत (Alluvial Soil Distribution)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश के कुल भूगोलीय क्षेत्रफल के कितने प्रतिशत भाग पर 'जलोढ़ मृदा' (Alluvial Soil) का विस्तार पाया जाता है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 18%</div>
+                <div class="option-item selected-right">B) 3% 🌟 Right Answer</div>
+                <div class="option-item">C) 5%</div>
+                <div class="option-item">D) 11%</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>Previous Year Question Pattern:</strong> यह प्रश्न पूर्व में MP Assistant Professor, MP SI और State Engineering Exams में हूबहू पूछा जा चुका है। जलोढ़ मृदा मध्य प्रदेश में मात्र <strong>3%</strong> भूभाग पर है।</p>
+                <p>💡 <strong>Three Alternative Names for the Region (तीन नाम, एक ही जगह):</strong> परीक्षा में परीक्षक आपको भ्रमित करने के लिए इस मृदा क्षेत्र को तीन अलग नामों से पुकार सकता है:</p>
+                <ol>
+                    <li><strong>मध्य प्रदेश में गंगा-यमुना का मैदान:</strong> चूंकि उत्तरी नदियां चंबल आदि यमुना में मिलती हैं, इसलिए इस क्षेत्र को गंगा-यमुना का मैदान माना जाता है।</li>
+                    <li><strong>गिर्द क्षेत्र (Gird Region):</strong> ग्वालियर, भिंड, मुरैना का प्राचीन भूगोलीय नाम।</li>
+                    <li><strong>लश्कर का मैदान (Lashkar Plain):</strong> 'लश्कर' का अर्थ है सेना की छावनी। ग्वालियर-भिंड-मुरैना के लोग सेना में अग्रणी रहते हैं, अंग्रेजों की छावनी के कारण इसे लष्कर का मैदान भी कहते हैं।</li>
+                </ol>
+                <p>🧪 <strong>Chemical Character:</strong> यह मिट्टी सबसे उपजाऊ (Highly Fertile) होती है और इसका <strong>pH मान 7 (उदासीन / Neutral)</strong> होता है। यह क्षेत्र चंबल नदी के कारण भीषण मृदा अपरदन (Soil Erosion) और खड्डों (Ravines) का शिकार है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 11 -->
+        <div class="topic-card" id="t11">
+            <div class="card-header">
+                <div class="topic-title">💻 Q11: जीरा शंकर चावल और जनजातीय फसलें</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                'जीरा शंकर चावल' (Jeera Shankar Rice) मध्य प्रदेश के किस जिले की विशेष एक जिला एक उत्पाद (ODOP) पहचान है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) रायसेन (Raisen)</div>
+                <div class="option-item">B) बैतूल (Betul)</div>
+                <div class="option-item selected-right">C) सिवनी (Seoni) 🌟 Target Answer</div>
+                <div class="option-item">D) शहडोल (Shahdol)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🌾 <strong>Rice Varieties of MP Matrix:</strong></p>
+                <ul>
+                    <li><strong>जीरा शंकर चावल:</strong> सिवनी (Seoni)। इसकी खासियत सुगंध (Aroma) और अत्यधिक कोमलता (Softness) है। इसका आकार जीरे की तरह छोटा होता है। (सिवनी का दूसरा प्रसिद्ध ओडीओपी उत्पाद <strong>सीताफल / Custard Apple</strong> भी है)।</li>
+                    <li><strong>चिन्नोर चावल:</strong> बालाघाट (इसे प्रसिद्ध GI Tag प्राप्त है)।</li>
+                    <li><strong>बासमती चावल:</strong> रायसेन (Raisen)।</li>
+                </ul>
+                <p>🥣 <strong>कोदो-कुटकी (Millet / Tribal Staple Food) Production Belt:</strong> विकास सर ने स्पष्ट किया कि कोदो-कुटकी मुख्य रूप से पूर्वी मध्य प्रदेश की जनजातीय फसलों में आता है। इसका सर्वाधिक उत्पादन <strong>मंडला, डिंडोरी, अनूपपुर, सिंगरौली और बालाघाट</strong> के कुछ क्षेत्रों में व्यापक रूप से होता है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 12 -->
+        <div class="topic-card" id="t12">
+            <div class="card-header">
+                <div class="topic-title">💻 Q12: नर्मदा का गुप्त नाम 'निबद्ध' (Hidden Names of Narmada)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                प्राचीन धार्मिक ग्रंथों में किस नदी का एक अत्यंत विशिष्ट नाम 'निबद्ध' (Nibaddha) उल्लेखित किया गया है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) क्षिप्रा (Shipra)</div>
+                <div class="option-item">B) चंबल (Chambal)</div>
+                <div class="option-item">C) ताप्ती (Tapti)</div>
+                <div class="option-item selected-right">D) नर्मदा (Narmada) 🌟 Target Answer</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🌊 <strong>All Synonyms of Narmada in One Frame:</strong> निबद्ध (Nibaddha), सोमोदेवी (Somodevi), मेकलसुता (Mekalsuta), साकरी (Sakri), शिवपुत्री (Shivputri), और <strong>'खुशी का दाता' (Giver of Pleasure)</strong>।</p>
+                <p>📜 <strong>Scripture Reference:</strong> नर्मदा का नाम <strong>'रेवा' (Rewa)</strong> मुख्य रूप से <strong>स्कंद पुराण (Skanda Purana)</strong> में प्रमुखता से मिलता है।</p>
+                <p>🏔️ <strong>Geographical Blueprint:</strong> यह नदी भ्रंश घाटी (Rift Valley) से होकर बहती है, जिसके कारण यह सामान्य भारतीय नदियों के विपरीत पूर्व से पश्चिम की ओर बहती है। संगमरमर की चट्टानों के बीच यह <strong>V-आकार की घाटी (V-Shaped Valley)</strong> का निर्माण करती है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 13 -->
+        <div class="topic-card" id="t13">
+            <div class="card-header">
+                <div class="topic-title">💻 Q13: राजकीय वन अनुसंधान संस्थान (SFRI Timeline)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                जबलपुर में स्थित 'राजकीय वन अनुसंधान संस्थान' (State Forest Research Institute - SFRI) की स्थापना किस वर्ष की गई थी?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 1973</div>
+                <div class="option-item">B) 1982</div>
+                <div class="option-item selected-right">C) 1963 🌟 Target Answer</div>
+                <div class="option-item">D) 1995</div>
+            </div>
+
+            <div class="link-story-box">
+                <h4>🔗 Link Story — वनों का कालचक्र:</h4>
+                <p>जबलपुर के जंगलों में <strong>'63' (1963)</strong> राजकीय वन अधिकारी आए, जिन्होंने <strong>'73' (1973)</strong> में उष्णकटिबंधीय धूप से बचने के लिए रिसर्च शुरू की, तभी भोपाल से एक मैनेजर <strong>'82' (1982)</strong> में आया और उसने <strong>'95' (1995)</strong> में छिंदवाड़ा के मानवों का विकास कर दिया! 🔗</p>
+            </div>
+
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🚨 <strong>The "Jabalpur Dual-Institute" Trap (जबलपुर का दोहरा जाल):</strong> छात्र अक्सर जबलपुर के दो बड़े संस्थानों के वर्षों में उलझ जाते हैं। इसे आज ही स्पष्ट रूप से डिकोड करें:</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>संस्थान का नाम (Institute Name)</th>
+                            <th>मुख्यालय (HQ)</th>
+                            <th>स्थापना वर्ष (Year)</th>
+                            <th>प्रकार / मुख्य अंतर (Nature)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SFRI (राजकीय वन अनुसंधान संस्थान)</strong></td>
+                            <td>जबलपुर</td>
+                            <td><strong>1963</strong> 🌟</td>
+                            <td>यह देहरादून के राष्ट्रीय संस्थान की तर्ज पर राज्य स्तर का पहला रिसर्च विंग था।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TFRI (उष्णकटिबंधीय वन अनुसंधान संस्थान)</strong></td>
+                            <td>जबलपुर</td>
+                            <td><strong>1973</strong></td>
+                            <td>यह पूर्णतः केंद्रीय/उष्णकटिबंधीय (Tropical) वनों पर केंद्रित अनुसंधान शाखा है।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IIFM (भारतीय वन प्रबंधन संस्थान)</strong></td>
+                            <td>भोपाल</td>
+                            <td><strong>1982</strong></td>
+                            <td>🔥 <em>MPPSC PRE PYQ!</em> यह वन प्रबंधन (Management) की देश की शीर्ष संस्था है।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 14 -->
+        <div class="topic-card" id="t14">
+            <div class="card-header">
+                <div class="topic-title">💻 Q14: सफेद बाघ 'मोहन' का ऐतिहासिक रेस्क्यू</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                रीवा महाराजा द्वारा पकड़े गए इतिहास के पहले प्रसिद्ध सफेद बाघ 'मोहन' (White Tiger Mohan) को किस सटीक तिथि को बंदी/रेस्क्यू बनाया गया था?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 27 अप्रैल 1951</div>
+                <div class="option-item selected-right">B) 27 मई 1951 🌟 Target Answer</div>
+                <div class="option-item">C) 27 मार्च 1951</div>
+                <div class="option-item">D) 27 जून 1951</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>Official Board Proof vs Market Books:</strong> बाजार की आम किताबों में इसे 28 मई लिखा जाता है। परंतु विकास सर ने राष्ट्रीय उद्यान के प्रवेश द्वार पर लगे वन विभाग के आधिकारिक सूचना पट्ट (Official Information Board) का चित्र दिखाया, जिसमें स्पष्ट लिखा है: <strong>27 मई 1951</strong>। आयोग हमेशा आधिकारिक बोर्ड को ही सत्य मानेगा।</p>
+                <p>📍 <strong>Exact Location Track:</strong> मोहन को <strong>पनखोरा बीट (Pankhora Beat), बगाड़ गांव, सीधी (Sidhi)</strong> के जंगलों से पकड़ा गया था।</p>
+                <p>🦁 <strong>Lifespan:</strong> मोहन कुल 19 वर्षों तक जीवित रहा और मध्य प्रदेश के सफेद बाघों के वंश का मूल जनक बना।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 15 -->
+        <div class="topic-card" id="t15">
+            <div class="card-header">
+                <div class="topic-title">💻 Q15: तेंदूपत्ता राष्ट्रीयकरण (Tendu Patta Nationalization)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश वन विभाग द्वारा 'तेंदूपत्ता' का पूर्ण राष्ट्रीयकरण (Nationalization of Tendu Patta) किस वर्ष किया गया था?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 1962</div>
+                <div class="option-item">B) 1973</div>
+                <div class="option-item selected-right">C) 1964 🌟 Target Answer</div>
+                <div class="option-item">D) 1952</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>📈 <strong>Economic Monopoly Fact:</strong> मध्य प्रदेश पूरे भारत का लगभग <strong>60% तेंदूपत्ता</strong> अकेले उत्पादित करता है, जिसके कारण राज्य का देश में प्रथम स्थान है।</p>
+                <p>🍂 <strong>Policy Year:</strong> वनों से राजस्व संकलन को व्यवस्थित करने के लिए <strong>वर्ष 1964</strong> में इसका पूर्ण राष्ट्रीयकरण कर दिया गया था।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 16 -->
+        <div class="topic-card" id="t16">
+            <div class="card-header">
+                <div class="topic-title">💻 Q16: वानिकी अनुसंधान एवं मानव विकास संस्थान</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                छिंदवाड़ा में स्थित 'मध्य प्रदेश वानिकी अनुसंधान एवं मानव विकास संस्थान' की स्थापना किस वर्ष संपन्न हुई थी?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 1965</div>
+                <div class="option-item">B) 1975</div>
+                <div class="option-item">C) 1985</div>
+                <div class="option-item selected-right">D) 1995 🌟 Target Answer</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🏢 <strong>Institute Profile:</strong> इसका पूरा नाम <em>Forestry Research and Human Development Institute</em> है।</p>
+                <p>📍 <strong>Location Check:</strong> यह संस्थान <strong>छिंदवाड़ा (Chhindwara)</strong> जिले में स्थित है और इसकी स्थापना <strong>वर्ष 1995</strong> में की गई थी।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 17 -->
+        <div class="topic-card" id="t17">
+            <div class="card-header">
+                <div class="topic-title">💻 Q17: झांसी घाट की भूगोलीय अवस्थिति</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                'झांसी घाट' (Jhansi Ghat) मध्य प्रदेश की किस पवित्र नदी पर बना एक अत्यंत प्रसिद्ध एवं ऐतिहासिक घाट है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) बेतवा (Betwa)</div>
+                <div class="option-item">B) चंबल (Chambal)</div>
+                <div class="option-item">C) केन (Ken)</div>
+                <div class="option-item selected-right">D) नर्मदा (Narmada) 🌟 Target Answer</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🌉 <strong>Transit Route Landmark:</strong> झांसी घाट मुख्य रूप से <strong>जबलपुर से नरसिंहपुर मार्ग (Jabalpur-Narsinghpur Route)</strong> पर स्थित है। यह प्रशासनिक रूप से गोटेगांव, नरसिंहपुर क्षेत्र के अंतर्गत नर्मदा नदी पर बना एक विशाल घाट और पुल है। पिछली बार आयोग ने 'लम्हेटा घाट' पूछा था, अतः इस बार 'झांसी घाट' परीक्षा के लिए अत्यंत महत्वपूर्ण हो जाता है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 18 -->
+        <div class="topic-card" id="t18">
+            <div class="card-header">
+                <div class="topic-title">💻 Q18: नौसेना में मध्य प्रदेश का सम्मान (INS Betwa Frigate)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                भारतीय नौसेना (Indian Navy) ने मध्य प्रदेश की किस प्रसिद्ध नदी के सम्मान में अपने एक युद्धपोत/फ्रिगेट का नामकरण किया है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) बेतवा (INS Betwa) 🌟 Target Answer</div>
+                <div class="option-item">B) चंबल (Chambal)</div>
+                <div class="option-item">C) केन (Ken)</div>
+                <div class="option-item">D) नर्मदा (Narmada)</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🚢 <strong>INS Betwa (F39):</strong> यह भारतीय नौसेना का एक <em>Guided-Missile Frigate</em> (गाइडेड मिसाइल युद्धपोत) है, जिसका नाम आधिकारिक तौर पर मध्य प्रदेश और उत्तर प्रदेश में बहने वाली बेतवा नदी के ऐतिहासिक गौरव में रखा गया है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 19 -->
+        <div class="topic-card" id="t19">
+            <div class="card-header">
+                <div class="topic-title">💻 Q19: मध्य भारत पठार का क्षेत्रफल (Central India Plateau)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                'मध्य भारत का पठार' (Plateau of Central India) मध्य प्रदेश के कुल क्षेत्रफल के लगभग कितने प्रतिशत भाग पर विस्तृत है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 7%</div>
+                <div class="option-item">B) 28%</div>
+                <div class="option-item">C) 6%</div>
+                <div class="option-item selected-right">D) 10% (सटीक: 10.7%) 🌟 Target Answer</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>📊 <strong>Rounding-Off Strategy of MPPSC:</strong> परीक्षा में अक्सर सटीक आंकड़ा न देकर पूर्णांक (Round figure) दिया जाता है। मध्य भारत के पठार का वास्तविक क्षेत्रफल <strong>10.7%</strong> है, जिसे विकल्प में <strong>10%</strong> के रूप में दर्शाया गया है। जैसे पूर्व में सागौन वनों का प्रतिशत 19.3% होने पर आयोग ने विकल्प में 20% को सही माना था।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 20 -->
+        <div class="topic-card" id="t20">
+            <div class="card-header">
+                <div class="topic-title">💻 Q20: ज्वालामुखी लावे से निर्मित पठार (Volcanic Lava Flow)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश के किस भौतिक पठार का निर्माण प्राचीन काल में ज्वालामुखी उद्गार से निकले बेसाल्ट लावे (Lava) के फैलने से हुआ है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) मालवा का पठार (Malwa Plateau) 🌟 Right Answer</div>
+                <div class="option-item">B) बुंदेलखंड का पठार</div>
+                <div class="option-item">C) बघेलखंड का पठार</div>
+                <div class="option-item">D) रीवा-पन्ना का पठार</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🌋 <strong>Lava to Black Soil Chain:</strong> क्रिटेशियस युग में ज्वालामुखी दरारी उद्गार से निकले लावे के ठंडे होने पर बेसाल्ट चट्टानें बनीं। इन्हीं बेसाल्ट चट्टानों के मौसमी क्षरण (Weathering) से पूरे मालवा क्षेत्र में <strong>काली मिट्टी (Black Soil)</strong> का निर्माण हुआ, जो कपास और गेहूं के लिए सर्वोत्तम है। क्लास का सबसे सरल प्रश्न!</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 21 -->
+        <div class="topic-card" id="t21">
+            <div class="card-header">
+                <div class="topic-title">💻 Q21: अंतर्वर्ती जिला पहचान (Landlocked District)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                निम्नलिखित जिलों में से कौन सा जिला पूर्णतः एक 'अंतर्वर्ती जिला' (Landlocked / Intermediate District) है, जो किसी भी अन्य राज्य की सीमा को नहीं छूता?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) झाबुआ (Jhabua)</div>
+                <div class="option-item">B) अलीराजपुर (Alirajpur)</div>
+                <div class="option-item">C) मुरैना (Morena)</div>
+                <div class="option-item selected-right">D) नर्मदापुरम (Narmadapuram) 🌟 Right Answer</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🗺️ <strong>Map Elimination Method:</strong> झाबुआ और अलीराजपुर गुजरात व राजस्थान सीमा पर हैं, मुरैना उत्तर प्रदेश व राजस्थान की सीमा बनाता है। केवल <strong>नर्मदapuram (होशंगाबाद)</strong> राज्य के मध्य-दक्षिण भाग में स्थित है, जो पूरी तरह आंतरिक या अंतर्वर्ती जिला है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 22 -->
+        <div class="topic-card" id="t22">
+            <div class="card-header">
+                <div class="topic-title">💻 Q22: मध्य प्रदेश का सबसे बड़ा प्राकृतिक भूभाग</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश को विभाजित करने वाले भौतिक प्रदेशों में सबसे विशाल प्राकृतिक भूभाग (Largest Natural Physiographic Unit) कौन सा है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) मालवा का पठार (Malwa Plateau)</div>
+                <div class="option-item">B) पूर्वी पठार (Eastern Plateau)</div>
+                <div class="option-item selected-right">C) मध्य उच्च प्रदेश (Central Highlands) 🌟 Target Answer</div>
+                <div class="option-item">D) सतपुड़ा मैकल श्रेणी</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🚨 <strong>The Hierarchy Concept Trap (पदानुक्रम का जाल):</strong> छात्र अक्सर 'मालवा का पठार' लगा देते हैं क्योंकि वे इसे व्यक्तिगत पठारों में सबसे बड़ा (28%) मानते हैं। परंतु प्रश्न को ध्यान से पढ़ें! यहाँ वृहद् प्राकृतिक प्रदेश पूछा है। <strong>मध्य उच्च प्रदेश (Central Highlands)</strong> सबसे बड़ा भूभाग है क्योंकि यह अकेले राज्य के लगभग <strong>2/3 भाग</strong> को कवर करता है। मालवा का पठार, मध्य भारत का पठार, बुंदेलखंड, रीवा-पन्ना और नर्मदा घाटी — ये पांचों उप-भाग इसी 'मध्य उच्च प्रदेश' के अंतर्गत समाहित होते हैं!</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 23 -->
+        <div class="topic-card" id="t23">
+            <div class="card-header">
+                <div class="topic-title">💻 Q23: मुख्य प्राकृतिक विभाजन संख्या (Core Divisions)</div>
+                <span class="status-badge correct">✅ Correct Attempted</span>
+            </div>
+            <div class="question-box">
+                भौगोलिक संरचना के आधार पर मध्य प्रदेश को 'प्रमुख रूप से' (Mainly) कितने प्राकृतिक भागों में वर्गीकृत किया गया है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 5 भाग</div>
+                <div class="option-item selected-right">B) 3 भाग 🌟 Right Answer</div>
+                <div class="option-item">C) 7 भाग</div>
+                <div class="option-item">D) 9 भाग</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>MP SI 2017 & MPPSC Structural Framework:</strong></p>
+                <ul>
+                    <li>यदि प्रश्न में <strong>'प्रमुख रूप से' (Mainly)</strong> लिखा हो, तो उत्तर हमेशा <strong>3</strong> होगा:
+                        <ol>
+                            <li>मध्य उच्च प्रदेश (Central Highlands)</li>
+                            <li>सतपुड़ा-मैकल श्रेणी (Satpura-Maikal Range)</li>
+                            <li>पूर्वी पठार / बघेलखंड (Eastern Plateau)</li>
+                        </ol>
+                    </li>
+                    <li>यदि कुल उप-भागों की संख्या पूछी जाए (विभाजन के बाद वर्तमान मध्य प्रदेश में), तब उत्तर <strong>7</strong> होता है। अविभाजित मध्य प्रदेश (छत्तीसगढ़ सहित) में यह संख्या <strong>9</strong> थी।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 24 -->
+        <div class="topic-card" id="t24">
+            <div class="card-header">
+                <div class="topic-title">💻 Q24: चूलगिरी की पहाड़ियां (Choolgiri Hills Geography)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                'चूलगिरी की पहाड़ियां' (Choolgiri Hills) मध्य प्रदेश की किस पर्वत श्रृंखला का सबसे पश्चिमी एवं कटा-फटा हिस्सा मानी जाती हैं?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) विंध्याचल श्रेणी</div>
+                <div class="option-item">B) मैकल श्रेणी</div>
+                <div class="option-item">C) भांडेर श्रेणी</div>
+                <div class="option-item selected-right">D) सतपुड़ा / राजपीपला श्रेणी 🌟 Target Answer</div>
+            </div>
+            
+            <div class="image-container">
+                <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh District and Border Reference Map showing Southwestern Barwani Region" loading="eager" fetchpriority="high" decoding="async">
+                <div class="image-caption">Image: SLBC MP Official Regional Reference Map. Focus on the southwestern edge (Barwani/Rajpipla belt).</div>
+            </div>
+
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>⛰️ <strong>Satpura Sub-division Matrix:</strong> सतपुड़ा के सबसे पश्चिमी भाग को राजपीपला श्रेणी कहते हैं। इसी के अंतर्गत बड़वानी जिले में <strong>चूलगिरी की पहाड़ियां</strong> स्थित हैं।</p>
+                <p>🕉️ <strong>Bawangaja Jain Pilgrimage Connection:</strong> चूलगिरी पहाड़ियों पर ही प्रसिद्ध जैन तीर्थ स्थल <strong>'बावनगजा' (Bawangaja)</strong> स्थित है, जहां जैन धर्म के प्रथम तीर्थंकर <strong>भगवान आदिनाथ की 84 फीट ऊंची</strong> भव्य पाषाण मूर्ति स्थापित है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 25 -->
+        <div class="topic-card" id="t25">
+            <div class="card-header">
+                <div class="topic-title">💻 Q25: प्रथम हॉट एयर बलून सफारी (Hot Air Balloon Safari)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                मध्य प्रदेश के किस राष्ट्रीय उद्यान में वन्यजीवों को आसमान से देखने के लिए भारत की पहली 'हॉट एयर बलून सफारी' प्रारंभ की गई है?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) कान्हा राष्ट्रीय उद्यान</div>
+                <div class="option-item selected-right">B) बांधवगढ़ राष्ट्रीय उद्यान (Bandhavgarh) 🌟 Target Answer</div>
+                <div class="option-item">C) पेंच राष्ट्रीय उद्यान</div>
+                <div class="option-item">D) सतपुड़ा राष्ट्रीय उद्यान</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🚨 <strong>Recent Class Check:</strong> विकास सर ने शनिवार की क्लास में इसे विशेष रूप से पढ़ाया था और अपनी व्यक्तिगत इच्छा भी जताई थी कि वे यहाँ जाना चाहते हैं, फिर भी कई छात्रों ने इसे गलत किया। सही उत्तर <strong>बांधवगढ़ राष्ट्रीय उद्यान (उमरिया)</strong> है।</p>
+                <p>🐅 <strong>Bandhavgarh Core Revision Pack:</strong></p>
+                <ul>
+                    <li>यह राष्ट्रीय उद्यान <strong>32 पहाड़ियों (32 Hills)</strong> से घिरा हुआ है।</li>
+                    <li>यहाँ ऐतिहासिक <strong>संस्कृत भाषा के शिलालेख (Sanskrit Inscriptions)</strong> प्राप्त हुए हैं।</li>
+                    <li>यहाँ से <strong>चरण गंगा नदी (Charan Ganga River)</strong> प्रवाहित होती है।</li>
+                    <li>उद्यान के भीतर <strong>भगवान विष्णु की लेटी हुई विशाल प्रतिमा (Reclining Statue of Lord Vishnu / शेषशायी विष्णु)</strong> स्थित है।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 26 -->
+        <div class="topic-card" id="t26">
+            <div class="card-header">
+                <div class="topic-title">💻 Q26: भोपाल रियासत का भारत संघ में विलय</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                भोपाल नवाब हमीदुल्लाह खान ने किस ऐतिहासिक तिथि को भोपाल राज्य के भारत संघ में पूर्ण विलय पत्र (Instrument of Accession) पर हस्ताक्षर किए, जिससे विलय प्रभावी हुआ?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 15 अगस्त 1947</div>
+                <div class="option-item">B) 26 जनवरी 1950</div>
+                <div class="option-item selected-right">C) 1 जून 1949 🌟 Target Answer</div>
+                <div class="option-item">D) 1 नवंबर 1956</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>⏳ <strong>Historical Background:</strong> नवाब हमीदुल्लाह खान भोपाल को स्वतंत्र रखना चाहते थे या पाकिस्तान संघ के साथ विलय के इच्छुक थे। परंतु स्थानीय प्रजामंडल आंदोलन और सरदार पटेल के कड़े रुख के बाद अंततः <strong>1 जून 1949</strong> को भोपाल का भारत संघ में आधिकारिक विलय हुआ और इसे 'Part-C' राज्य का दर्जा दिया गया। मध्य प्रदेश के गठन की क्लास दोबारा देखें!</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 27 -->
+        <div class="topic-card" id="t27">
+            <div class="card-header">
+                <div class="topic-title">💻 Q27: जॉर्ज कैसल भवन (George Castle Building)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                माधव राष्ट्रीय उद्यान (शिवपुरी) की सबसे ऊंची पहाड़ी पर स्थित ऐतिहासिक 'जॉर्ज कैसल भवन' (George Castle) का निर्माण सिंधिया राजाओं द्वारा किस वर्ष करवाया गया था?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) 1921</div>
+                <div class="option-item selected-right">B) 1911 🌟 Target Answer</div>
+                <div class="option-item">C) 1931</div>
+                <div class="option-item">D) 1905</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>👑 <strong>The Irony of History (इतिहास का व्यंग्य):</strong> इसका निर्माण <strong>वर्ष 1911</strong> में ग्वालियर के महाराजा माधवराव सिंधिया ने इंग्लैंड के राजा <strong>जॉर्ज पंचम (King George V)</strong> के एक रात रुकने और शेर के शिकार के लिए करवाया था। परंतु, राजा के वहां पहुंचने से पहले ही रास्ते में महाराजा ने उनके लिए शेर का शिकार कर दिया, जिसके कारण जॉर्ज पंचम इस आलीशान भवन में कभी कदम भी नहीं रख सके!</p>
+                <p>🛣️ <strong>Madhav National Park Side-Facts:</strong> इस राष्ट्रीय उद्यान के बिल्कुल बीच से <strong>राष्ट्रीय राजमार्ग (National Highway)</strong> गुजरता है। साथ ही, यहाँ प्रसिद्ध <strong>मनिहार नदी (Manihar River)</strong> और साख्य सागर झील स्थित है।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 28 -->
+        <div class="topic-card" id="t28">
+            <div class="card-header">
+                <div class="topic-title">💻 Q28: भोपाल राज्य के मुख्यमंत्री (Chief Minister of Bhopal State)</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                वर्ष 1952 से 1956 के दौरान (विशाल मध्य प्रदेश के गठन से पूर्व) भोपाल पार्ट-सी राज्य के मुख्यमंत्री कौन बनाए गए थे?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) पंडित शंभूनाथ शुक्ल</div>
+                <div class="option-item">B) पंडित रविशंकर शुक्ल</div>
+                <div class="option-item selected-right">C) डॉ. शंकर दयाल शर्मा 🌟 Target Answer</div>
+                <div class="option-item">D) नवाब हमीदुल्लाह खान</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>Dr. Shankar Dayal Sharma Legacy (विकास सर स्पेशल):</strong> विकास सर के दो सबसे प्रिय राष्ट्रीय व्यक्तित्वों में से एक (दूसरे अटल जी हैं)। इनके विषय में निम्नलिखित तथ्य कंठस्थ कर लें, परीक्षा में स्क्रीनशॉट सीधा यहीं से आएगा:</p>
+                <ul>
+                    <li><strong>जन्म:</strong> वर्ष 1918 में भोपाल में हुआ। निधन: 1999।</li>
+                    <li><strong>राजनीतिक ऊंचाई:</strong> यह भारत के <strong>9वें राष्ट्रपति (9th President)</strong> और <strong>8वें उपराष्ट्रपति (8th Vice President)</strong> रहे।</li>
+                    <li><strong>स्टेट रोल:</strong> 1952 में जब भोपाल में पहली निर्वाचित सरकार बनी, तो यह मात्र 34 वर्ष की आयु में वहां के <strong>प्रथम मुख्यमंत्री</strong> बने और 1956 तक रहे।</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 29 -->
+        <div class="topic-card" id="t29">
+            <div class="card-header">
+                <div class="topic-title">💻 Q29: माथे पर 'CAT' और 'PM' वाला मुन्ना टाइगर</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                इतिहास का सबसे प्रसिद्ध बाघ 'मुन्ना' (Munna Tiger) किस राष्ट्रीय उद्यान की मुख्य शान रहा है, जिसके माथे पर प्राकृतिक रूप से अक्षर बने थे?
+            </div>
+            <div class="options-grid">
+                <div class="option-item selected-right">A) कान्हा राष्ट्रीय उद्यान (Kanha) 🌟 Target Answer</div>
+                <div class="option-item">B) बांधवगढ़ राष्ट्रीय उद्यान</div>
+                <div class="option-item">C) पेंच राष्ट्रीय उद्यान</div>
+                <div class="option-item">D) सतपुड़ा राष्ट्रीय उद्यान</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🐯 <strong>The Legend of Munna:</strong> मुन्ना बाघ <strong>कान्हा राष्ट्रीय उद्यान (Mandla/Balaghat)</strong> का सबसे प्रसिद्ध लड़ाका और टूरिस्ट-अट्रैक्शन बाघ था। इसके माथे (Forehead) की धारियों का प्राकृतिक पैटर्न इस प्रकार का था कि ध्यान से देखने पर स्पष्ट रूप से अंग्रेजी के अक्षर <strong>"CAT"</strong> और माथे के ऊपरी हिस्से पर <strong>"PM"</strong> लिखा हुआ दिखाई देता था।</p>
+            </div>
+        </div>
+
+        <!-- TOPIC CARD 30 -->
+        <div class="topic-card" id="t30">
+            <div class="card-header">
+                <div class="topic-title">💻 Q30: वर्ष 1992 का टाइगर रिजर्व और काला तेंदुआ</div>
+                <span class="status-badge confused">❌ Intuition Mismatch</span>
+            </div>
+            <div class="question-box">
+                वर्ष 1992 में मध्य प्रदेश के किस राष्ट्रीय उद्यान को आधिकारिक तौर पर 'प्रोजेक्ट टाइगर' (Tiger Reserve) के अंतर्गत शामिल किया गया था?
+            </div>
+            <div class="options-grid">
+                <div class="option-item">A) कान्हा राष्ट्रीय उद्यान</div>
+                <div class="option-item">B) बांधवगढ़ राष्ट्रीय उद्यान</div>
+                <div class="option-item selected-right">C) पेंच राष्ट्रीय उद्यान (Pench) 🌟 Target Answer</div>
+                <div class="option-item">D) सतपुड़ा राष्ट्रीय उद्यान</div>
+            </div>
+            <div class="accordion-btn" onclick="toggleAccordion(this)">📌 Complete Concept & Micro-Details 🔥 Exam Hot <span>▼</span></div>
+            <div class="accordion-content">
+                <p>🔥 <strong>The 'Bagheera' Current Mutation Concept:</strong> विकास सर ने इस प्रश्न को वर्तमान की सबसे बड़ी वाइल्डलाइफ न्यूज़ से जोड़ा। पेंच राष्ट्रीय उद्यान में वर्तमान में एक अत्यंत दुर्लभ <strong>काला तेंदुआ (Black Leopard)</strong> सक्रिय रूप से देखा जा रहा है, जिसका नाम वन विभाग ने <strong>'बाघिरा' (Bagheera)</strong> रखा है।</p>
+                <p>🎯 <strong>Upcoming Question Frame Pattern:</strong> आयोग इस प्रश्न को ऐसे पूछेगा: <em>"मध्य प्रदेश और महाराष्ट्र की अंतर्राजकीय भौगोलिक सीमा पर निरंतर विचरण करने वाला चर्चित काला तेंदुआ 'बाघिरा' किस नेशनल पार्क का मुख्य हिस्सा है?"</em> उत्तर होगा: <strong>पेंच राष्ट्रीय उद्यान (इंदिरा प्रियदर्शिनी नेशनल पार्क)</strong>।</p>
+            </div>
+        </div>
+
+        <!-- ==================== MASTER REVISION SECTIONS ==================== -->
+        
+        <!-- COMPREHENSIVE FULL FORMS TABLE -->
+        <div class="master-section">
+            <h2>🗂️ Master Reference — All Academic Full Forms Mentioned</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">वीडियो क्लास में प्रयुक्त सभी संक्षिप्ताक्षरों की सूची:</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Short Form</th>
+                        <th>English Full Form</th>
+                        <th>Hindi Meaning / Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SFRI</strong></td>
+                        <td>State Forest Research Institute</td>
+                        <td>राजकीय वन अनुसंधान संस्थान (जबलपुर, 1963)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TFRI</strong></td>
+                        <td>Tropical Forest Research Institute</td>
+                        <td>उष्णकटिबंधीय वन अनुसंधान संस्थान (जबलपुर, 1973)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IIFM</strong></td>
+                        <td>Indian Institute of Forest Management</td>
+                        <td>भारतीय वन प्रबंधन संस्थान (भोपाल, 1982)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ODOP</strong></td>
+                        <td>One District One Product</td>
+                        <td>एक जिला एक उत्पाद योजना (जैसे सिवनी का जीरा शंकर चावल)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>INS</strong></td>
+                        <td>Indian Naval Ship</td>
+                        <td>भारतीय नौसेना का युद्धपोत (जैसे INS बेतवा)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MASTER EXAM HOT FACTS SUMMATION -->
+        <div class="master-section">
+            <h2>🔥 High-Value Consolidated Exam Hot Facts</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px;">शिक्षक द्वारा विशेष रूप से रेखांकित किए गए अति-संभावित बिंदु:</p>
+            <ul style="padding-left: 20px;">
+                <li style="margin-bottom: 10px;">⚡ <strong>J.J. Dutta (जगत ज्योति दत्ता):</strong> मध्य प्रदेश प्रोजेक्ट टाइगर के सूत्रधार, जिनका निधन 3 अगस्त 2024 को हुआ। (100% अपेक्षित प्रश्न)</li>
+                <li style="margin-bottom: 10px;">⚡ <strong>State Bird Date Paradox:</strong> जनसंपर्क विभाग के मूल विज्ञापनों में राजकीय पक्षी की घोषणा का वर्ष <strong>1985</strong> छपा है, जबकि लोकप्रिय पुस्तकें 1981 लिखती हैं।</li>
+                <li style="margin-bottom: 10px;">⚡ <strong>Alluvial Soil Region Triggers:</strong> परीक्षा में 'गंगा-यमुना का मैदान', 'गिर्द क्षेत्र' या 'लश्कर का मैदान' शब्द आते ही सीधे <strong>जलोढ़ मिट्टी (3% क्षेत्रफल)</strong> को टिक करना है।</li>
+                <li style="margin-bottom: 10px;">⚡ <strong>Indira Sagar Foundation Key:</strong> 23 अक्टूबर 1984 को पुनासा बांध की नींव रखी गई, जिसके ठीक 8 दिन बाद इंदिरा गांधी की शहादत हुई। इस क्रोनोलॉजी से वर्ष याद रहेगा।</li>
+                <li style="margin-bottom: 10px;">⚡ <strong>The Bagheera Factor:</strong> पेंच नेशनल पार्क का काला तेंदुआ (Black Leopard) मध्य प्रदेश और महाराष्ट्र दोनों राज्यों की सीमाओं में घूमता है।</li>
+            </ul>
+        </div>
+
+        <!-- MASTER CHECKLIST WITH LOCAL STORAGE PERSISTENCE -->
+        <div class="master-section" id="master-check">
+            <h2>📊 Active Recall Master Revision Checklist</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">अपनी स्मरण शक्ति का परीक्षण करें। पढ़े गए तथ्यों को चेकमार्क करें (यह आपके ब्राउज़र में सुरक्षित रहेगा):</p>
+            
+            <div id="checklistForm">
+                <label class="checklist-item">
+                    <input type="checkbox" id="c1" onclick="updateProgress()">
+                    <span>धार जिला = गंगा महादेव जलप्रपात + द्वापर शिवलिंग स्थान।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c2" onclick="updateProgress()">
+                    <span>जे.जे. दत्ता = मध्य प्रदेश टाइगर प्रोजेक्ट के जनक (निधन: 3 अगस्त 2024)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c3" onclick="updateProgress()">
+                    <span>कुलबेहरा नदी = छिंदवाड़ा जिले की वास्तविक जीवनरेखा (पेंच की सहायक)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c4" onclick="updateProgress()">
+                    <span>करौंदी कटनी = राम मनोहर लोहिया नगर (वर्तमान भारत का भौगोलिक केंद्र)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c5" onclick="updateProgress()">
+                    <span>बरसाली बैतूल = अखंड भारत का केंद्र | मंगलनाथ उज्जैन = पृथ्वी का केंद्र।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c6" onclick="updateProgress()">
+                    <span>एशियाई दिव्य लोकी कीटमर = राजकीय पक्षी शाह-बुलबुल/दूधराज का शुद्ध नाम।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c7" onclick="updateProgress()">
+                    <span>लेसिफर लक्का = लाख उत्पादक कीट जो पलाश, बेर, कुसुम पर बैठता है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c8" onclick="updateProgress()">
+                    <span>बनास नदी = चंबल नदी तंत्र की सबसे विशाल सहायक नदी (राजस्थान प्रवाह)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c9" onclick="updateProgress()">
+                    <span>पुनासा बांध (इंदिरा सागर) = 92 मीटर ऊंचाई के साथ मध्य प्रदेश का सबसे ऊंचा बांध।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c10" onclick="updateProgress()">
+                    <span>पन्ना जिला = 75 से 100 सेमी. की मध्यम वर्षा पट्टी का प्रतिनिधित्व करता है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c11" onclick="updateProgress()">
+                    <span>3% भूभाग = मध्य प्रदेश में जलोढ़ (Alluvial) मिट्टी का कुल कवरेज एरिया।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c12" onclick="updateProgress()">
+                    <span>सिवनी जिला = जीरा शंकर चावल (ODOP) + मखमली सीताफल का गढ़।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c13" onclick="updateProgress()">
+                    <span>निबद्ध, साकरी, सोमोदेवी = मध्य प्रदेश की रीढ़ नर्मदा नदी के प्राचीन नाम।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c14" onclick="updateProgress()">
+                    <span>1963 = जबलपुर राजकीय वन अनुसंधान संस्थान (SFRI) का स्थापना वर्ष।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c15" onclick="updateProgress()">
+                    <span>27 मई 1951 = सीधी के पनखोरा बीट से सफेद बाघ 'मोहन' को पकड़े जाने की प्रामाणिक तिथि।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c16" onclick="updateProgress()">
+                    <span>1964 = मध्य प्रदेश में तेंदूपत्ता व्यापार का पूर्ण राजकीय नियंत्रण/राष्ट्रीयकरण।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c17" onclick="updateProgress()">
+                    <span>1995 = छिंदवाड़ा वानिकी अनुसंधान एवं मानव विकास संस्थान का स्थापना काल।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c18" onclick="updateProgress()">
+                    <span>झांसी घाट = जबलपुर-नरसिंहपुर मार्ग पर नर्मदा नदी का ऐतिहासिक ट्रांजिट ब्रिज।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c19" onclick="updateProgress()">
+                    <span>INS बेतवा = भारतीय नौसेना का गाइडेड मिसाइल फ्रिगेट जो नदी के नाम पर है।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c20" onclick="updateProgress()">
+                    <span>10% (10.7%) = मध्य भारत के पठार का कुल प्रादेशिक शेयर।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c21" onclick="updateProgress()">
+                    <span>मालवा पठार = प्राचीन दक्कन लावा फ्लो (बेसाल्ट) और काली मिट्टी की भूमि।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c22" onclick="updateProgress()">
+                    <span>नर्मदापुरम जिला = मध्य प्रदेश की सीमाओं के भीतर पूर्णतः अंतर्वर्ती (Landlocked)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c23" onclick="updateProgress()">
+                    <span>मध्य उच्च प्रदेश = 5 उप-पठारों को समेटने वाला राज्य का सबसे वृहद् भौतिक खंड।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c24" onclick="updateProgress()">
+                    <span>3 प्रमुख भाग = सतपुड़ा, मध्य उच्च, और बघेलखंड (मूल भौगोलिक विभाजन)।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c25" onclick="updateProgress()">
+                    <span>चूलगिरी पर्वत = पश्चिमी सतपुड़ा (राजपीपला) में स्थित बावनगजा जैन स्मारक का आधार।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c26" onclick="updateProgress()">
+                    <span>बांधवगढ़ उद्यान = भारत की प्रथम हॉट एयर बलून सफारी + चरण गंगा नदी + शेषशायी विष्णु।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c27" onclick="updateProgress()">
+                    <span>1 जून 1949 = भोपाल रियासत का भारत संघ में आधिकारिक रूप से पूर्ण विलय दिवस।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c28" onclick="updateProgress()">
+                    <span>1911 = जॉर्ज पंचम के आगमन हेतु शिवपुरी में निर्मित जॉर्ज कैसल पैलेस का वर्ष।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c29" onclick="updateProgress()">
+                    <span>डॉ. शंकर दयाल शर्मा = भोपाल पार्ट-सी के प्रथम सीएम (1952-56) तथा भारत के 9वें राष्ट्रपति।</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="c30" onclick="updateProgress()">
+                    <span>मुन्ना बाघ = माथे पर प्राकृतिक 'CAT' और 'PM' धारियों वाला कान्हा का महान शेर।</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- FOOTER & UPCOMING META TOPICS -->
+        <footer style="margin-top: 5px; border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+            <p>📌 <strong>Upcoming Track Note from Vikas Sir:</strong> ऊर्जा संसाधन (Energy Resources) एवं विद्युत उत्पादन ग्रिड से संबंधित विस्तृत डाटा आगामी क्लास में कवर किया जाएगा।</p>
+            <p style="margin-top: 10px;">🌟 "सफलता जल्दबाजी में नहीं, गहरे और केंद्रित निरंतर अभ्यास से मिलती है।" - ऑल द बेस्ट!</p>
+        </footer>
+
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT ENGINE -->
+    <script>
+        // Theme Management Toggle with LocalStorage Persistence
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+        }
+
+        // Initialize Theme on DOM Load
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        // Accordion Management Engine
+        function toggleAccordion(btn) {
+            btn.classList.toggle("active");
+            const content = btn.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // Checklist State and Progress Tracking Engine with LocalStorage
+        const totalItems = 30;
+
+        function updateProgress() {
+            let checkedCount = 0;
+            for (let i = 1; i <= totalItems; i++) {
+                const checkbox = document.getElementById('c' + i);
+                if (checkbox.checked) {
+                    checkedCount++;
+                    localStorage.setItem('c' + i, 'true');
+                } else {
+                    localStorage.removeItem('c' + i);
+                }
+            }
+            
+            const percentage = Math.round((checkedCount / totalItems) * 100);
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').innerText = percentage + '% of core concepts mastered';
+        }
+
+        // Load Checked Box States on Startup
+        window.addEventListener('DOMContentLoaded', () => {
+            for (let i = 1; i <= totalItems; i++) {
+                if (localStorage.getItem('c' + i) === 'true') {
+                    document.getElementById('c' + i).checked = true;
+                }
+            }
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

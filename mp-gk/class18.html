@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔬 MP Soil Types - Complete Revision | MPPSC Exam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        body.light-mode {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-card: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .progress-bar {
+            width: 100%; height: 8px; background: #333; border-radius: 4px; margin: 15px 0; overflow: hidden;
+        }
+        .progress-fill { height: 100%; background: var(--accent-green); width: 0%; transition: width 0.3s; }
+        .theme-toggle {
+            position: fixed; top: 15px; right: 15px; background: var(--bg-card); border: none;
+            padding: 10px 15px; border-radius: 20px; cursor: pointer; color: var(--text-primary);
+            z-index: 1000; font-weight: 600;
+        }
+        nav {
+            background: var(--bg-secondary); padding: 15px; border-radius: var(--border-radius);
+            margin-bottom: 20px; position: sticky; top: 10px; z-index: 100;
+        }
+        nav select {
+            width: 100%; padding: 10px; font-size: 16px; border-radius: 8px;
+            background: var(--bg-card); color: var(--text-primary); border: none;
+        }
+        .topic-card {
+            background: var(--bg-card); margin: 15px 0; padding: 20px;
+            border-radius: var(--border-radius); border-left: 4px solid var(--accent-cyan);
+        }
+        .topic-card h2 { color: var(--accent-cyan); margin-bottom: 15px; font-size: 1.5rem; }
+        .hot-point { background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(255,107,53,0.1)); padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 3px solid var(--accent-orange); }
+        .hot-point::before { content: "🔥 "; font-weight: bold; }
+        .link-story { background: linear-gradient(135deg, rgba(179,136,255,0.2), rgba(0,212,255,0.1)); padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .link-story h4 { color: var(--accent-purple); margin-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--bg-secondary); }
+        th { background: var(--bg-secondary); color: var(--accent-cyan); }
+        .quiz-question { background: var(--bg-secondary); padding: 12px; margin: 10px 0; border-radius: 8px; cursor: pointer; }
+        .quiz-answer { display: none; padding: 10px; color: var(--accent-green); margin-top: 8px; }
+        .quiz-question.active .quiz-answer { display: block; }
+        .checklist-item { margin: 10px 0; }
+        .checklist-item input { margin-right: 8px; }
+        .image-block { margin: 15px 0; text-align: center; }
+        .image-block img { max-width: 100%; height: auto; border-radius: 8px; }
+        .image-caption { font-size: 14px; color: var(--text-secondary); margin-top: 8px; }
+        footer { text-align: center; padding: 20px; margin-top: 30px; border-top: 1px solid var(--bg-secondary); }
+        @media print { body { background: white; color: black; } .topic-card { border: 1px solid #ccc; page-break-inside: avoid; } .quiz-question, .theme-toggle, nav { display: none; } }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark/Light Mode</button>
+
+    <header>
+        <h1>🔬 मध्य प्रदेश की मृदा वर्गीकरण | MP Soil Types Classification</h1>
+        <p>MPPSC Paper 2 - Complete Revision Notes</p>
+        <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+        <p>Total Topics Covered: <strong>5 Major Soil Types + 15 Sub-topics</strong></p>
+    </header>
+
+    <!-- MP Map Reference -->
+    <section id="mp-map" class="topic-card">
+        <h2>🗺️ मध्य प्रदेश की मृदा मानचित्र | MP Soil Map Reference</h2>
+        <div class="image-block">
+            <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="MP Map showing soil distribution zones" loading="eager" fetchpriority="high" decoding="async">
+            <div class="image-caption">Image: slbcmadhyapradesh.in, MP New Map, Educational Use</div>
+        </div>
+        <p><strong>Map Zones for Soil Types:</strong></p>
+        <ul>
+            <li><strong>उत्तरी मालवा:</strong> साधारण काली मृदा (37%)</li>
+            <li><strong>नर्मदा सोन घाटी:</strong> गहरी काली मृदा (3.7%)</li>
+            <li><strong>सतपुड़ा:</strong> छिछली काली मृदा (7%)</li>
+            <li><strong>पूर्वी MP:</strong> लाल पीली मृदा (36%)</li>
+            <li><strong>चंबल/गंगा-यमुना:</strong> जलो मृदा</li>
+            <li><strong>बुंदेलखंड:</strong> मिश्रित मृदा</li>
+        </ul>
+    </section>
+
+    <nav>
+        <select onchange="location = this.value;">
+            <option value="#intro">📚 Index - All Topics</option>
+            <option value="#mp-map">0. मध्य प्रदेश मानचित्र</option>
+            <option value="#definition">1. मृदा की परिभाषा</option>
+            <option value="#composition">2. मृदा संगठन</option>
+            <option value="#black-soil">3. काली मृदा (Black Soil)</option>
+            <option value="#red-yellow-soil">4. लाल पीली मृदा (Red-Yellow Soil)</option>
+            <option value="#alluvial-soil">5. जलो मृदा (Alluvial Soil)</option>
+            <option value="#mixed-soil">6. मिश्रित मृदा (Mixed Soil)</option>
+            <option value="#laterite-soil">7. लेटराइट मृदा (Laterite Soil)</option>
+        </select>
+    </nav>
+
+    <!-- Topic 1: Soil Definition -->
+    <section id="definition" class="topic-card">
+        <h2>1️⃣ मृदा की परिभाषा | Definition of Soil</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> मृदा = पृथ्वी का बाहरी सतह पर एक पतला आवरण जो जल और वायु की उपयुक्त मात्रा के साथ पौधों को जन्म देता है
+        </div>
+
+        <div class="image-block">
+            <svg viewBox="0 0 400 200" width="100%" style="max-width:400px; background:var(--bg-secondary); border-radius:8px;">
+                <rect x="50" y="20" width="300" height="40" fill="#8B4513"/><text x="200" y="45" text-anchor="middle" fill="white" font-size="12">मिट्टी का सतही आवरण (Outer Layer)</text>
+                <rect x="60" y="65" width="280" height="35" fill="#654321"/><text x="200" y="85" text-anchor="middle" fill="white" font-size="11">खनिज कण एवं जल (Minerals + Water)</text>
+                <rect x="70" y="110" width="260" height="30" fill="#5D4020"/><text x="200" y="125" text-anchor="middle" fill="white" font-size="10">पौधों के जड़ सम्पर्क (Root Zone)</text>
+                <rect x="80" y="145" width="240" height="25" fill="#3E2723"/><text x="200" y="160" text-anchor="middle" fill="white" font-size="9">बेसल्ट चट्टान (Basalt Rock)</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Soil Profile Structure - Outer layer with minerals, organic matter, water, roots, basalt base</div>
+        </div>
+
+        <h3>📖 परिभाषा | Definition:</h3>
+        <ul>
+            <li>मृदा वह है जो पृथ्वी के outer surface पर एक पतले आवरण में चारों ओर फैली हुई है</li>
+            <li>इसमें जल तथा वायु की उपयुक्त मात्रा होती है</li>
+            <li>पौधों, वृक्षों व जीव-जंतुओं को जन्म देने का काम करती है</li>
+            <li>लैटिन भाषा के सोलम शब्द से बना हुआ है (फ्लोर या फर्श का अर्थ)</li>
+        </ul>
+
+        <h3>⛰️ मृदा का निर्माण | Formation of Soil:</h3>
+        <ul>
+            <li>चट्टानों के टूटने से प्राप्त हुए खनिज कणों से बनती है</li>
+            <li>वॉल्केनो या ज्वालामुखी से निकला लावा जब ठंडा होता है तो बेसाल्ट चट्टान बनती है</li>
+            <li>ध्वनि ट्रैप (ठंडा हुआ लावा) और अपर्दन से मिली चट्टानों से निर्मित</li>
+            <li>वॉल्केनो वा ज्वालामुखी के उत्सर्जन से विकसित</li>
+        </ul>
+
+        <div class="image-block">
+            <svg viewBox="0 0 400 150" width="100%" style="max-width:400px; background:var(--bg-secondary); border-radius:8px;">
+                <path d="M50 100 L100 30 L150 80 L200 20 L250 70 L300 40 L350 90 L350 110 L50 110 Z" fill="#8B4513"/><text x="200" y="130" text-anchor="middle" font-size="12">चट्टानों का टूटना (Rock Weathering)</text>
+                <path d="M100 30 L110 25 L120 30" stroke="white" stroke-width="2"/><text x="115" y="20" font-size="10" fill="white">वॉल्केनो लावा</text>
+                <path d="M200 20 L210 15 L220 20" stroke="white" stroke-width="2"/><text x="210" y="12" font-size="10" fill="white">ध्वनि ट्रैप</text>
+                <text x="200" y="100" text-anchor="middle" font-size="14" fill="var(--accent-cyan)">खड़ा खनिज → मिट्टी में बदलना</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Rock weathering process - Volcanic lava and sound trap forming soil minerals</div>
+        </div>
+
+        <div class="link-story">
+            <h4>🔗 Link Story - याद कैसे करें?</h4>
+            <p>"<strong>चट्टान टूटे → खनिज आए → जल व वायु आए → पौधे पाए → मिट्टी बनाए</strong>" - वैसे ही चट्टानों का टूटना, फिर उसमें जल-वायु का मिलना, फिर पौधों का विकास, इससे मिट्टी बनती है।</p>
+        </div>
+
+        <div class="quiz-question" onclick="this.classList.toggle('active')">
+            <strong>Q:</strong> मृदा का लैटिन शब्द सोलम से क्या मतलब है?
+            <div class="quiz-answer">A: फ्लोर या फर्श - मृदा का ऊपरी सतही आवरण होता है</div>
+        </div>
+    </section>
+
+    <!-- Topic 2: Soil Composition -->
+    <section id="composition" class="topic-card">
+        <h2>2️⃣ मृदा संगठन | Soil Composition</h2>
+
+        <h3>🧱 मुख्य तत्व | Major Components:</h3>
+        <ol>
+            <li><strong>मिनरल्स (खनिज)</strong> - सबसे ज्यादा भाग (45-49%)</li>
+            <li><strong>कार्बनिक पदार्थ (Organic Matter)</strong> - कॉम्पोस्ट, खाद बनना</li>
+            <li><strong>मृदा वायु (Soil Air)</strong> - अपघटकों के लिए आवश्यक</li>
+            <li><strong>मृदा जल (Soil Water)</strong> - पौधों को पानी का स्रोत</li>
+            <li><strong>अपघटक (Microorganisms)</strong> - बैक्टीरिया, कवक, जीवाणु</li>
+        </ol>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> ह्यूमस सबसे उपजाऊ भाग होता है - पृथ्वी पर पौधे मरते हैं, सड़कर मिट्टी में मिल जाते हैं, फिर कम्पोस्ट बनते हैं
+        </div>
+
+        <h3>🔍 प्रत्येक घटक की भूमिका:</h3>
+        <ul>
+            <li><strong>मिनरल्स:</strong> खनिज पदार्थ - इरॉन, पोटाश, रेगार</li>
+            <li><strong>कार्बनिक पदार्थ:</strong> जीवाश्म - पेड़, पौधे, जानवरों के सड़े हुए अंश</li>
+            <li><strong>अपघटक:</strong> डिकम्पोजिशन करते हैं, सड़े हुए पदार्थों को तोड़ते हैं</li>
+            <li><strong>मृदा वायु व जल:</strong> पौधों को जीवन देने वाले तत्व</li>
+        </ul>
+
+        <table>
+            <tr><th>तत्व | Component</th><th>भारी भाग | Percentage</th><th>उपजाऊता | Fertility</th></tr>
+            <tr><td>मिनरल्स (Minerals)</td><td>~45-49%</td><td>अच्छा</td></tr>
+            <tr><td>ह्यूमस (Humus)</td><td>उच्च उपजाऊ</td><td>सबसे अधिक उपजाऊ</td></tr>
+            <tr><td>अपघटक (Microorganisms)</td><td>भारी नहीं</td><td>डिकम्पोजिशन के लिए</td></tr>
+        </table>
+
+        <div class="quiz-question" onclick="this.classList.toggle('active')">
+            <strong>Q:</strong> मृदा में सबसे उपजाऊ भाग कौन सा है?
+            <div class="quiz-answer">A: ह्यूमस (Humus) - जीवाश्म सड़े हुए अंशों से बना उपजाऊ भाग</div>
+        </div>
+    </section>
+
+    <!-- Topic 3: Black Soil -->
+    <section id="black-soil" class="topic-card">
+        <h2>3️⃣ काली मृदा (Black Soil) | काली मृदा</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> मध्य प्रदेश में सबसे ज्यादा (47.5% एरिया) - काली मृदा सबसे prevalent soil है
+        </div>
+
+        <div class="image-block">
+            <svg viewBox="0 0 300 150" width="100%" style="max-width:300px; background:var(--bg-secondary); border-radius:8px;">
+                <rect x="20" y="20" width="260" height="110" fill="#2C1810"/><text x="150" y="80" text-anchor="middle" fill="#5D4020" font-size="14">⚫ काली मृदा</text>
+                <text x="150" y="100" text-anchor="middle" fill="#8B4513" font-size="12">Black Cotton Soil</text>
+                <rect x="50" y="40" width="200" height="30" fill="#3E2723" opacity="0.7"/><text x="150" y="58" text-anchor="middle" fill="white" font-size="10">उच्च खनिज वाला</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Black soil - Rich in minerals, good for cotton cultivation</div>
+        </div>
+
+        <h3>📍 भौगोलिक वितरण | Geographic Distribution:</h3>
+        <ul>
+            <li>उत्तरी मालवा में सर्वाधिक (47.5% भाग)</li>
+            <li>मध्य प्रदेश के लगभग 47.5 प्रतिशत क्षेत्र पर पाई जाती है</li>
+        </ul>
+
+        <h3>📊 पीएच वैल्यू | pH Value:</h3>
+        <ul>
+            <li>7.82 (उदासीन - Neutral)</li>
+            <li>कभी-कभी 7.52 (उदासीन)</li>
+        </ul>
+
+        <h3>3 उप-प्रकार:</h3>
+        <table>
+            <tr><th>प्रकार | Type</th><th>क्षेत्र | Region</th><th>भाग | Percentage</th></tr>
+            <tr><td>साधारण काली/नॉर्मल ब्लैक</td><td>उत्तरी मालवा</td><td>~37%</td></tr>
+            <tr><td>गहरी काली/डार्क ब्लैक</td><td>नर्मदा सोन घाटी</td><td>~3.7%</td></tr>
+            <tr><td>छिछली काली/लेयर्ड ब्लैक</td><td>सतपुड़ा</td><td>~7%</td></tr>
+        </table>
+
+        <h3>🌾 उपजाऊ फसलें | Suitable Crops:</h3>
+        <ul>
+            <li>कपास (सबसे अच्छा) - Cotton crop के कारण कपासी मृदा</li>
+            <li>सोयाबीन, गेहूं, जूट</li>
+            <li>कृषि में सबसे उपजाऊ मानी जाती है</li>
+        </ul>
+
+        <h3>⚠️ कमी | Deficiencies:</h3>
+        <ul>
+            <li>नाइट्रोजन की कमी (सभी मिट्टी में)</li>
+            <li>पोटाश की कमी (सभी मिट्टी में)</li>
+        </ul>
+
+        <div class="link-story">
+            <h4>🔗 Link Story - काली मृदा याद करें:</h4>
+            <p>"<strong>47 पर्चेंट → कपास पसंद → कम नाइट्रोजन → 3 टाइप्स</strong>" - 47% है काली, कपास सबसे अच्छा फसल, लेकिन नाइट्रोजन की कमी है, वजह से 3 टाइप्स - Normal, Dark, Layered।"</p>
+        </div>
+    </section>
+
+    <!-- Topic 4: Red-Yellow Soil -->
+    <section id="red-yellow-soil" class="topic-card">
+        <h2>4️⃣ लाल पीली मृदा (Red-Yellow Soil) | लाल पीली मृदा</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> पूर्वी मध्य प्रदेश (छत्तीसगढ़ बॉर्डर तक) - 36% भाग पर पाई जाती है
+        </div>
+
+        <div class="image-block">
+            <svg viewBox="0 0 300 150" width="100%" style="max-width:300px; background:var(--bg-secondary); border-radius:8px;">
+                <rect x="20" y="20" width="260" height="110" fill="#D32F2F"/><text x="150" y="60" text-anchor="middle" fill="white" font-size="14">🔴 लाल पीली मृदा</text>
+                <text x="150" y="80" text-anchor="middle" fill="#FFD54F" font-size="12">Iron Oxide + Ferric Oxide</text>
+                <line x1="50" y1="40" x2="250" y2="40" stroke="#FFEB3B" stroke-width="3"/><text x="150" y="35" text-anchor="middle" font-size="10" fill="#FFEB3B">Iron (लोहा) → लाल</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Red-Yellow soil - Iron oxidation gives red color, ferric oxide gives yellow</div>
+        </div>
+
+        <h3>📍 वितरण | Distribution:</h3>
+        <ul>
+            <li>पूर्वी मध्य प्रदेश में फैली हुई</li>
+            <li>छत्तीसगढ़ बॉर्डर से लेकर पूर्व तक</li>
+            <li>लगभग 36 प्रतिशत क्षेत्र पर पाई जाती है</li>
+        </ul>
+
+        <h3>⛰️ निर्माण | Formation:</h3>
+        <ul>
+            <li>ग्रेनाइट और नीस चट्टानों के टूटने से बनती है</li>
+            <li>ग्लिसियन शिल्स और डोलोमिनेशन रोक से निर्मित</li>
+        </ul>
+
+        <h3>📊 पीएच वैल्यू | pH Value:</h3>
+        <ul>
+            <li>5.52 से 8.5 (अम्लीय से क्षारीय तक)</li>
+            <li>Acidic to Basic range में होती है</li>
+        </ul>
+
+        <h3>🎨 रंग का कारण | Color Reason:</h3>
+        <ul>
+            <li>लाल रंग = आयरन के ऑक्सीडेशन (लोहा) के कारण</li>
+            <li>पीला रंग = फेरिक ऑक्साइड के कारण</li>
+        </ul>
+
+        <h3>🌾 फसलें | Crops:</h3>
+        <ul>
+            <li>पेडी (sorghum) - सबसे अच्छा</li>
+            <li>धान (rice), मक्का, ज्वार, बाजरा</li>
+        </ul>
+
+        <h3>⚠️ कमी | Deficiencies:</h3>
+        <ul>
+            <li>नाइट्रोजन की कमी (हर जगह)</li>
+            <li>फास्फोरस की कमी</li>
+            <li>अन्य नाम: चलका और डोरसा</li>
+        </ul>
+
+        <div class="link-story">
+            <h4>🔗 Link Story - लाल पीली मिट्टी याद करें:</h4>
+            <p>"<strong>36 प्रॉइंट → ग्रेनाइट नीस → लाल आयरन → पीला फेरिक → पेडी चावल</strong>" - 36% पूर्वी MP, ग्रेनाइट-नीस से बना, आयरन से लाल, फेरिक ऑक्साइड से पीला, पेडी-चावल अच्छा फसल।"</p>
+        </div>
+
+        <div class="quiz-question" onclick="this.classList.toggle('active')">
+            <strong>Q:</strong> लाल पीली मिट्टी का लाल रंग किसके कारण होता है?
+            <div class="quiz-answer">A: आयरन के ऑक्सीडेशन (लोहा के) के कारण - Iron oxidation देता है लाल रंग</div>
+        </div>
+    </section>
+
+    <!-- Topic 5: Alluvial Soil -->
+    <section id="alluvial-soil" class="topic-card">
+        <h2>5️⃣ जलो मृदा (Alluvial Soil) | जलो मृदा / एलविल सोइल</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> सबसे उपजाऊ मिट्टी - गंगा-यमुना के मैदान में पाई जाती है, लगभग 3% भाग पर फैली है
+        </div>
+
+        <div class="image-block">
+            <svg viewBox="0 0 350 150" width="100%" style="max-width:350px; background:var(--bg-secondary); border-radius:8px;">
+                <path d="M50 120 Q100 40 150 80 T250 60 T350 30" fill="#8D6E63"/><text x="175" y="50" text-anchor="middle" fill="white" font-size="12">नदी (River)</text>
+                <rect x="100" y="80" width="150" height="35" fill="#689F38"/><text x="175" y="100" text-anchor="middle" fill="white" font-size="11">जलो मृदा (Alluvial)</text>
+                <text x="175" y="120" text-anchor="middle" font-size="10" fill="var(--accent-green)">गंगा-यमुना मैदान</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Alluvial soil - River flowing deposits fertile soil in plains</div>
+        </div>
+
+        <h3>📍 वितरण | Distribution:</h3>
+        <ul>
+            <li>गंगा-यमुना के मैदान (Plains of Ganga-Yamuna)</li>
+            <li>चंबल नदी के क्षेत्र (Chambal region)</li>
+            <li>लश्कर का मैदान (Lashkar Ka Maiyyan)</li>
+            <li>गिर्द क्षेत्र (Girdh region)</li>
+        </ul>
+
+        <h3>⛰️ निर्माण | Formation:</h3>
+        <ul>
+            <li>नदियों के तेज बहाव से उपजाऊ मिट्टी को लाने से</li>
+            <li>किनारों पर बिछा देती है</li>
+            <li>अपघटकों को बहाकर लाती है</li>
+        </ul>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> अन्य नाम: कछारी मिट्टी, दोमट मिट्टी - नदी के किनारों पर बिछाई हुई मिट्टी
+        </div>
+
+        <h3>🌾 फसलें | Crops:</h3>
+        <ul>
+            <li>सरसों (सबसे अच्छा)</li>
+            <li>गेहूं, चाय, कॉफ़ी</li>
+            <li>सब्लस (subabul), मूंग (मung bean)</li>
+        </ul>
+
+        <h3>⚠️ विशेष विशेषता | Special Features:</h3>
+        <ul>
+            <li>Neutral pH वाली है (सबसे उपजाऊ कारण)</li>
+            <li>भारतीय मृदा विज्ञान संस्थान (IISR), भोपाल में स्थापित (1988)</li>
+            <li>नाइट्रोजन की कमी होती है पर उपजाऊ होती है</li>
+        </ul>
+
+        <div class="link-story">
+            <h4>🔗 Link Story - जलो मिट्टी याद करें:</h4>
+            <p>"<strong>3 पॉंट → नदियां बहें → मैदान गंगा-यमुना → सरसों चावल → IISR 88</strong>" - 3% MP में, नदियों से बना, गंगा-यमुना मैदान में, सरसों सबसे अच्छा, IISR 1988 में स्थापित।"</p>
+        </div>
+
+        <div class="quiz-question" onclick="this.classList.toggle('active')">
+            <strong>Q:</strong> जलो मृदा किस क्षेत्र में सबसे उपजाऊ होती है?
+            <div class="quiz-answer">A: गंगा-यमुना के मैदान (Plains of Ganga-Yamuna) - यहां पर सबसे ज्यादा उपजाऊ होती है</div>
+        </div>
+    </section>
+
+    <!-- Topic 6: Mixed Soil -->
+    <section id="mixed-soil" class="topic-card">
+        <h2>6️⃣ मिश्रित मृदा (Mixed Soil) | मिक्स्ड सोइल</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> बुंदेलखंड के आसपास - बिजली उठे नहीं पर कडवे पानी वाली मिट्टी
+        </div>
+
+        <div class="image-block">
+            <svg viewBox="0 0 300 150" width="100%" style="max-width:300px; background:var(--bg-secondary); border-radius:8px;">
+                <path d="M20 120 L80 80 L140 70 L200 90 L260 60 L280 40" stroke="#6D4C41" stroke-width="20" fill="none"/><text x="150" y="140" text-anchor="middle" font-size="12" fill="#6D4C41">बुंदेलखंड</text>
+                <text x="150" y="30" text-anchor="middle" font-size="12" fill="var(--accent-orange)">Mix of Black + Red + Yellow</text>
+                <circle cx="80" cy="80" r="12" fill="#2C1810"/><text x="80" y="85" text-anchor="middle" font-size="8" fill="white">Black</circle>
+                <circle cx="140" cy="70" r="12" fill="#D32F2F"/><text x="140" y="75" text-anchor="middle" font-size="8" fill="white">Red</text>
+                <circle cx="200" cy="90" r="12" fill="#FF9800"/><text x="200" y="95" text-anchor="middle" font-size="8" fill="white">Yellow</text>
+            </svg>
+            <div class="image-caption">SVG Diagram: Bundelkhand - Mixed soil types combine in patches</div>
+        </div>
+
+        <h3>📍 वितरण | Distribution:</h3>
+        <ul>
+            <li>बुंदेलखंड के आसपास</li>
+            <li>कुछ भाग छिंदवाड़ा, नरसिंहपुर तक फैली है</li>
+        </ul>
+
+        <h3>⚠️ विशेष विशेषता | Features:</h3>
+        <ul>
+            <li>कई मिट्टियों का सम्मिश्रण</li>
+            <li>फिक्स्ड पीएच वैल्यू नहीं होता</li>
+            <li>अधिकतम आयरन और एलुमिनियम की वर्षा से पत्थर खिसकने के कारण</li>
+        </ul>
+
+        <h3>🌾 फसलें | Crops:</h3>
+        <ul>
+            <li>मोटे अनाज - मक्का, ज्वार, बाजरा</li>
+            <li>अलसी, तिल</li>
+            <li>खाद्यान मिट्टी (Food grains) भी कहा जाता है</li>
+        </ul>
+
+        <div class="quiz-question" onclick="this.classList.toggle('active')">
+            <strong>Q:</strong> मिश्रित मिट्टी का फिक्स्ड पीएच वैल्यू क्यों नहीं होता?
+            <div class="quiz-answer">A: कई मिट्टियों का सम्मिश्रण होने से, व ज्यादा आयरन और एलुमिनियम इसमें होता है</div>
+        </div>
+    </section>
+
+    <!-- Topic 7: Laterite Soil -->
+    <section id="laterite-soil" class="topic-card">
+        <h2>7️⃣ लेटराइट मृदा (Laterite Soil) | लेटराइट मिट्टी</h2>
+
+        <div class="hot-point">
+            <strong>🔥 Exam Hot:</strong> लगभग 2.5% भाग पर पाई जाती है - ईंट बनाने के काम आती है, भट्टा मिट्टी भी कहा जाता है
+        </div>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Laterite_rock_in_India.jpg" alt="Laterite soil formation - red laterite rock and brick making clay" loading="eager" decoding="async">
+            <div class="image-caption">Image: Wikimedia Commons, Laterite Soil in India, CC BY-SA</div>
+        </div>
+
+        <h3>📍 वितरण | Distribution:</h3>
+        <ul>
+            <li>बालाघाट छिंदवाड़ा के आसपास</li>
+            <li>नरसिंहपुर और जबलपुर के आसपास भी</li>
+        </ul>
+
+        <h3>⛰️ निर्माण | Formation:</h3>
+        <ul>
+            <li>लाल बलुआ पत्थरों से बनती है</li>
+            <li>लाल चट्टानों के टूटने से</li>
+        </ul>
+
+        <h3>📊 पीएच वैल्यू | pH Value:</h3>
+        <ul>
+            <li>4.5 से 5.5 (अम्लीय/Acidic)</li>
+        </ul>
+
+        <h3>🌾 फसलें | Crops:</h3>
+            <ul>
+            <li>कॉफ़ी, चाय (कम मात्रा में)</li>
+            <li>किस्मतबागी फसलें ही उगाती हैं</li>
+        </ul>
+
+        <h3>⚠️ विशेष विशेषता | Features:</h3>
+        <ul>
+            <li>अन्य नाम: भट्टा मिट्टी (ईंट बनाने में आती है)</li>
+            <li>सबसे कम उपजाऊ - बॉकर और अपर्दन से रहती है</li>
+            <li>बारिश को sandstone होने के कारण अब्जॉर्ब नहीं करती</li>
+        </ul>
+
+        <div class="link-story">
+            <h4>🔗 Link Story - Laterite Soil:</h4>
+            <p>"<strong>2.5% छोटा → भट्टा लगे → कॉफी चाय → अम्लीय 4.5-5.5 → कम उपजाऊ</strong>" - सिर्फ 2.5% है, भट्टा लगाती है, कॉफी-चाय अच्छी होती है, पर अम्लीय है और कम उपजाऊ।"</p>
+        </div>
+    </section>
+
+    <!-- Master Full Forms Section -->
+    <section id="fullforms" class="topic-card">
+        <h2>📚 सभी फुल फॉर्म्स | All Full Forms</h2>
+        <table>
+            <tr><th>शब्द | Term</th><th>फुल फॉर्म | Full Form</th><th>मतलब | Meaning</th></tr>
+            <tr><td>सोलम</td><td>Solm Word</td><td>फ्लोर या फर्श (Upper surface)</td></tr>
+            <tr><td>आयरन</td><td>Iron</td><td>लोहा - रक्ख मिट्टी का काला रंग देता है</td></tr>
+            <tr><td>ह्यूमस</td><td>Humus</td><td>सड़े हुए पौधे-जानवरों का उपजाऊ भाग</td></tr>
+            <tr><td>डिकम्पोजन</td><td>Decomposition</td><td>अपघटन - मृत पदार्थों को तोड़ना</td></tr>
+            <tr><td>पीएच वैल्यू</td><td>pH Value</td><td>मिट्टी की खाद्य क्रम (Hydrogen ion concentration)</td></tr>
+            <li><td>इंडियन सोइल सर्वे</li><td>IISR</td><td>भारतीय मृदा विज्ञान संस्थान, भोपाल (1988)</li></tr>
+        </table>
+    </section>
+
+    <!-- Master Exam Hot Facts -->
+    <section id="exam-hot" class="topic-card">
+        <h2>🔥 पूरा एग्जाम हॉट फैक्ट्स | Master Exam Hot Facts</h2>
+
+        <ul>
+            <li>मध्य प्रदेश में काली मृदा सबसे ज्यादा (47.5%)</li>
+            <li>काली मृदा का pH = 7.82 (Neutral/उदासीन)</li>
+            <li>लाल पीली मृदा का pH = 5.52-8.5 (Acidic to Basic)</li>
+            <li>जलो मृदा सबसे उपजाऊ - गंगा-यमुना मैदान में</li>
+            <li>भारतीय मृदा विज्ञान संस्थान, भोपाल स्थापित: 16 अप्रैल 1988</li>
+            <li>सभी मिट्टियों में नाइट्रोजन की कमी होती है</li>
+            <li>काली मृदा में कपास सबसे अच्छा फसल</li>
+            <li>लेटराइट मिट्टी = भट्टा मिट्टी, 4.5-5.5 pH</li>
+        </ul>
+    </section>
+
+    <!-- Master Checklist -->
+    <section id="checklist" class="topic-card">
+        <h2>✅ मास्टर रिवीजन चेकलिस्ट | Master Revision Checklist</h2>
+        <p><strong>Progress:</strong> <span id="check-progress">0</span>/10 topics completed</p>
+
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> मृदा की परिभाषा समझें (Outer surface layer)</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> मृदा संगठन - 5 मुख्य घटक</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> काली मृदा - 3 उप-प्रकार और उपजाऊ फसलें</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> लाल पीली मृदा - pH range और फसलें</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> जलो मृदा - गंगा-यमुना मैदान में</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> मिश्रित मृदा - बुंदेलखंड के आसपास</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> लेटराइट मृदा - भट्टा मिट्टी, 2.5% भाग</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> सभी pH वैल्यूज़ याद रखें</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> उपजाऊ फसलें - कपास, पेडी, सरसों</div>
+        <div class="checklist-item"><input type="checkbox" onchange="updateProgress()"> भारतीय मृदा विज्ञान संस्थान का विवरण</div>
+    </section>
+
+    <footer>
+        <h3>📌 उपकमिंग टॉपिक्स | Upcoming Topics</h3>
+        <p>Next class - और भी मृदा विषयों पर विस्तृत वर्गीकरण और उन्नत जानकारी</p>
+        <p><em>Revise daily, crack MPPSC! 🎯</em></p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+        if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+
+        // Progress tracking
+        function updateProgress() {
+            const checked = document.querySelectorAll('.checklist-item input:checked').length;
+            const total = document.querySelectorAll('.checklist-item input').length;
+            document.getElementById('check-progress').textContent = checked;
+            document.getElementById('progress').style.width = (checked/total*100) + '%';
+            localStorage.setItem('checkProgress', checked);
+        }
+        if(localStorage.getItem('checkProgress')) {
+            document.querySelectorAll('.checklist-item input').forEach((cb, i) => {
+                if(i < localStorage.getItem('checkProgress')) cb.checked = true;
+            });
+        }
+
+        // Preload all images aggressively
+        window.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const preloadLink = document.createElement('link');
+                preloadLink.rel = 'preload';
+                preloadLink.as = 'image';
+                preloadLink.href = img.src;
+                document.head.appendChild(preloadLink);
+            });
+        });
+        // Image error handling with retry
+        document.addEventListener('error', function(e) {
+            if(e.target.tagName === 'IMG') {
+                const src = e.target.src;
+                if(!e.target.dataset.retried) {
+                    e.target.dataset.retried = 'true';
+                    const filename = src.split('/').pop();
+                    e.target.src = 'https://upload.wikimedia.org/wikipedia/commons/' + filename;
+                }
+            }
+        }, true);
+    </script>
+</body>
+</html>

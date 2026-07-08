@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MP Wildlife Sanctuaries, Ramser Sites, Zoos & Biosphere Reserves - Ultimate Revision Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f0f1a;
+            --card-bg: #16162a;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2e2e4f;
+            --gradient-primary: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            --gradient-accent: linear-gradient(90deg, #00d4ff 0%, #b388ff 100%);
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .light-theme {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 60px;
+            letter-spacing: 0.02em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .header-title {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .badge.orange {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--accent-orange);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            background: var(--gradient-accent);
+            width: 0%;
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        /* Sticky Controls */
+        .sticky-controls {
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            background: rgba(22, 22, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .light-theme .sticky-controls {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .jump-select {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            cursor: pointer;
+            width: 70%;
+            max-width: 400px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--gradient-accent);
+            color: #0f0f1a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.2s;
+        }
+
+        .theme-toggle-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Cards and Structural Blocks */
+        .section-header {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .concept-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: border-color 0.3s;
+        }
+
+        .concept-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .light-theme .card-title {
+            color: var(--text-color);
+        }
+
+        .card-title-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Bullet lists with spacing */
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        /* Link Story Box */
+        .link-story-box {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+            border: 1px dashed var(--accent-purple);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .link-story-title {
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Exam Hot Alert Box */
+        .exam-hot-box {
+            background: rgba(255, 107, 53, 0.08);
+            border-left: 4px solid var(--accent-orange);
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+        }
+
+        .exam-hot-title {
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: rgba(22, 22, 42, 0.6);
+            padding: 12px 16px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--accent-cyan);
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Images and Fallbacks */
+        .image-wrapper {
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #0b0b13;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        .image-caption {
+            background: rgba(15, 15, 26, 0.9);
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .image-fallback-link {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Active Recall Quiz */
+        .quiz-container {
+            margin-top: 25px;
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .quiz-heading {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        details {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            background: rgba(22, 22, 42, 0.3);
+        }
+
+        .details-content {
+            padding: 15px;
+            border-top: 1px solid var(--border-color);
+            background: rgba(0, 255, 136, 0.02);
+        }
+
+        /* Master Checklist */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            cursor: pointer;
+            accent-color: var(--accent-cyan);
+        }
+
+        .checklist-text {
+            flex-grow: 1;
+        }
+
+        /* Sidebar/Sticky layout additions for wide viewports */
+        @media (min-width: 1200px) {
+            .map-sidebar {
+                position: fixed;
+                right: calc(50% - 620px);
+                top: 85px;
+                width: 320px;
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                background: var(--card-bg);
+                padding: 15px;
+                box-shadow: var(--shadow);
+            }
+            .container {
+                margin-left: calc(50% - 500px);
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .map-sidebar {
+                margin-top: 20px;
+                width: 100%;
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                background: var(--card-bg);
+                padding: 15px;
+            }
+        }
+
+        /* Print Layout Rules */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+            }
+            .sticky-controls, .theme-toggle-btn, .progress-container, .quiz-container, .map-sidebar {
+                display: none !important;
+            }
+            .concept-card, header, .link-story-box, .exam-hot-box {
+                border: 1px solid #000 !important;
+                background: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+                color: black !important;
+            }
+            details {
+                border: 1px solid #000 !important;
+            }
+            details[open] summary {
+                border-bottom: 1px solid #000 !important;
+            }
+            summary {
+                font-weight: bold;
+            }
+            .card-title, .section-header {
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="badge">MPPSC Pre 2025 & Exams Special</div>
+        <h1 class="header-title">MP Wildlife Sanctuaries, Ramser Sites, Zoos & Biosphere Reserves</h1>
+        <div class="header-meta">
+            <span class="badge orange">🎯 Complete Concept Breakdown</span>
+            <span>👨‍🏫 Lecture by: Vikas Sir</span>
+            <span>📚 Subject: Madhya Pradesh GK (Bilingual/Hinglish)</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+            यह HTML संसोधन पृष्ठ आपके व्याख्यान के 1:1 प्रवाह का अनुसरण करता है। इसमें 100% सटीक, अद्यतन डेटा और परीक्षा के लिए महत्वपूर्ण 'Exam Hot' तथ्य शामिल हैं।
+        </p>
+        <div class="progress-container">
+            <div class="progress-bar" id="topProgressBar"></div>
+        </div>
+    </header>
+
+    <!-- 2. STICKY CONTROLS & NAVIGATION -->
+    <div class="sticky-controls">
+        <select class="jump-select" onchange="location.hash = this.value;">
+            <option value="">⚡ Quick Jump Menu (किसी भी विषय पर तुरंत जाएँ)</option>
+            <option value="#intro">📝 Core Concepts & Differences</option>
+            <option value="#num-controversy">📊 Total Number & New Updates</option>
+            <option value="#visual-glossary">🐊 Visual Vocabulary / Glossary</option>
+            <option value="#sanctuaries-list">🗺️ Detailed Breakdown of 24 Sanctuaries</option>
+            <option value="#proposed-sanctuary">📌 Denotified & Proposed Sanctuaries</option>
+            <option value="#biosphere-reserves">🧠 Biosphere Reserves (जैव मंडल)</option>
+            <option value="#ramsar-sites">💧 Ramsar Sites (आद्र भूमि)</option>
+            <option value="#zoos-parks">🦁 Zoos & Botanical Parks Breakdown</option>
+            <option value="#master-fullforms">📑 Master Full Forms Registry</option>
+            <option value="#master-revision">✅ Persistent Revision Checklist</option>
+        </select>
+        <button class="theme-toggle-btn" onclick="toggleTheme()">🌓 Toggle View</button>
+    </div>
+
+    <!-- MAIN CORE SECTIONS -->
+
+    <!-- SECTION: BASIC CONCEPT -->
+    <section id="intro">
+        <h2 class="section-header">🎬 Core Concepts & Lexicon Definitions</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>Wildlife Sanctuary (अभ्यारण्य) का वास्तविक अर्थ</span>
+                <span class="card-title-meta">Sequence Reference: 04:26</span>
+            </div>
+            <p style="margin-bottom: 12px;">
+                <strong>अभ्यारण्य</strong> शब्द दो महत्वपूर्ण शब्दों के योग से बना है: 
+                <code>अभय + अरण्य</code>
+            </p>
+            <ul class="bullet-list">
+                <li><strong>अभय (Fear-free / भय मुक्त):</strong> बिना किसी डर या आतंक के स्वच्छंद विचरण करना।</li>
+                <li><strong>अरण्य (Forest / वन / जंगल):</strong> वह प्राकृतिक क्षेत्र जहाँ वृक्षों और प्रकृति का वास हो।</li>
+                <li><strong>Core Objective:</strong> एक ऐसा वन क्षेत्र जहाँ वन्य प्राणियों (Wild Animals) को बिना किसी भय के सुरक्षित रहने दिया जाता है।</li>
+                <li><strong>Specific Species Protection:</strong> अभ्यारण्य विशेष रूप से किसी <em>विशेष प्रजाति</em> (Particular Endangered or Protected Species) के संरक्षण या उनके पुनर्वास (Rehabilitation) के लिए स्थापित किया जाता है।</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTROVERSY & STATISTICS -->
+    <section id="num-controversy">
+        <h2 class="section-header">📊 Total Sanctuary Count Controversy Solved</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>मध्य प्रदेश में कुल अभ्यारण्यों की संख्या: 24 (Verified Official Data)</span>
+                <span class="card-title-meta">Sequence Reference: 05:58</span>
+            </div>
+            <p style="margin-bottom: 15px;">
+                बाजार में मिलने वाली विभिन्न किताबों में आपको इसकी संख्या <strong>26</strong> या <strong>31</strong> देखने को मिलेगी, जो कि छात्रों को भ्रमित करती है। मध्य प्रदेश शासन (MP Govt Official Release) के आधिकारिक डेटा के अनुसार वर्तमान में कुल सक्रिय अभ्यारण्यों की संख्या <strong>24</strong> है।
+            </p>
+
+            <div class="exam-hot-box">
+                <div class="exam-hot-title">🔥 Exam Hot Note: +1 & -1 Equation</div>
+                <p>
+                    <strong>1. कर्माझरी अभ्यारण्य (Karmajhari Sanctuary):</strong> यह पेंच टाइगर रिजर्व (Pench Tiger Reserve) के सीमावर्ती वन क्षेत्र को सम्मिलित करते हुए सिवनी जिले में बनाया गया एक नवीन अभ्यारण्य है। इसका क्षेत्रफल <strong>1410.42 हेक्टेयर</strong> (ध्यान दें: यह हेक्टेयर में है, वर्ग किलोमीटर नहीं) है।<br>
+                    <strong>2. करेरा अभ्यारण्य (Karera Sanctuary):</strong> शिवपुरी के इस अभ्यारण्य को मध्य प्रदेश सरकार द्वारा <em>डिनोटिफाइड (Denotified / समाप्त)</em> कर दिया गया है।<br>
+                    <strong>Equation:</strong> पहले की संख्या में एक नया जुड़ा (+1) और एक पुराना समाप्त हुआ (-1), इसलिए कुल संख्या आज भी <strong>24</strong> ही बनी हुई है।
+                </p>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Method — National Park vs Sanctuary Matrix</div>
+                <p>
+                    <strong>नियम याद रखें:</strong> कोई भी अभ्यारण्य (Sanctuary) पूर्ण या आंशिक रूप से राष्ट्रीय उद्यान (National Park) में बदला जा सकता है। लेकिन एक पूर्ण राष्ट्रीय उद्यान को वापस घटाकर केवल अभ्यारण्य नहीं बनाया जाता।<br>
+                    <strong>उदाहरण (Kuno NP):</strong> कुनो नेशनल पार्क का कुल क्षेत्रफल 749 वर्ग किलोमीटर है, जिसमें से ऐतिहासिक रूप से 344 वर्ग किलोमीटर का क्षेत्र आज भी वन्यजीव अभ्यारण्य (Sanctuary status inside NP) के रूप में वर्गीकृत है। दोनों साथ-साथ सह-अस्तित्व में रह सकते हैं।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: VISUAL GLOSSARY -->
+    <section id="visual-glossary">
+        <h2 class="section-header">🐊 Visual Vocabulary / Glossary</h2>
+        <p style="color:var(--text-muted); margin-bottom:15px;">विकाश सर द्वारा कक्षा में स्पष्ट किए गए जीवों के महत्वपूर्ण अंतरों को समझें:</p>
+
+        <div class="concept-card">
+            <ul class="bullet-list">
+                <li><strong>बाटागुर कछुआ (Batagur Turtle):</strong> यह अत्यंत दुर्लभ प्रजाति का कछुआ है। इसकी गर्दन पीले/सुनहरे (Yellow/Golden Neck) रंग की होती है। स्थानीय धार्मिक मान्यताओं में इसे भगवान विष्णु का अवतार मानकर लोग इसकी पूजा करते हैं। यह IUCN की रेड लिस्ट (Extinction Borderline) में शामिल है।</li>
+                <li><strong>मगरमच्छ (Crocodile):</strong> चौड़ा और मोटा जबड़ा, भारी शरीर। यह स्वभाव से अत्यधिक आक्रामक और खतरनाक होता है।</li>
+                <li><strong>घड़ियाल (Alligator / Gharial):</strong> इसका मुंह लंबा और चपटा (Slender, Long Snout) होता है। मगरमच्छ की तुलना में यह कम हिंसक होता है। (जैसे तेंदुआ भारी और आलसी होता है, जबकि चीता पतला, फुर्तीला और तेज होता है; ठीक वैसा ही अंतर मगरमच्छ और घड़ियाल में होता है)।</li>
+            </ul>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>State Designation (मध्य प्रदेश के उपनाम)</th>
+                            <th>Why it is called? (कारण)</th>
+                            <th>Current Estimated Data Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wolf State (भेड़िया प्रदेश)</strong></td>
+                            <td>मध्य प्रदेश में पूरे देश में सर्वाधिक भेड़िए (Wolves) पाए जाते हैं।</td>
+                            <td>772 से अधिक भेड़िए (पुराना डेटा, संख्या निरंतर बढ़ रही है)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gharial State (घड़ियाल प्रदेश)</strong></td>
+                            <td>संपूर्ण भारत में सर्वाधिक घड़ियालों (Alligators) की आबादी यहाँ है।</td>
+                            <td>2000 से अधिक घड़ियाल वर्तमान में संरक्षित हैं।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="image-wrapper">
+                <img id="img-gharial" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Gharial_%28Gavialis_gangeticus%29_female_head.jpg" alt="Gharial with unique slender long snout" width="800" height="500">
+                <div class="image-caption">Image: Wikimedia Commons. Long slender snout separating a Gharial from a broad-jawed crocodile.</div>
+                <a class="image-fallback-link" id="fallback-gharial" href="https://upload.wikimedia.org/wikipedia/commons/2/22/Gharial_%28Gavialis_gangeticus%29_female_head.jpg" target="_blank">🖼️ View Gharial Snout Structure Map Inline</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: THE DETAILED 24 SANCTUARIES -->
+    <section id="sanctuaries-list">
+        <h2 class="section-header">🗺️ 1:1 Complete Breakdown of the 24 Sanctuaries</h2>
+        <p style="color:var(--text-muted); margin-bottom:15px;">विकाश सर द्वारा बताए गए क्रम के अनुसार सभी 24 अभ्यारण्य एवं उनकी मुख्य विशेषताएं निम्नलिखित हैं:</p>
+
+        <!-- 1. Nauradehi -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>1. नौरादेही अभ्यारण्य (Nauradehi Sanctuary)</span>
+                <span class="badge">Largest / सबसे बड़ा</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> मुख्य रूप से <strong>सागर (Sagar)</strong> जिले में स्थित है, परंतु यह एक त्रिभुजाकार (Triangle Shape) बनाते हुए <strong>रायसेन (Raisen)</strong> और <strong>नरसिंहपुर (Narsinghpur)</strong> जिलों तक विस्तृत है।</li>
+                <li><strong>स्थापना (Established Year):</strong> 1975</li>
+                <li><strong>क्षेत्रफल (Total Area):</strong> 1197 वर्ग किलोमीटर (मध्य प्रदेश का सबसे बड़ा अभ्यारण्य - कुछ किताबों में 1193 अंकित है परंतु 1197 प्रामाणिक है)।</li>
+                <li><strong>Geographical Target Question:</strong> यह <strong>गंगा बेसिन (Ganga Basin)</strong> और <strong>नर्मदा बेसिन (Narmada Basin)</strong> के मध्य जल विभाजक के रूप में त्रिभुजाकार आकृति में विस्तृत है।</li>
+                <li><strong>मुख्य जीव संरक्षण:</strong> यह मुख्य रूप से <strong>भेड़ियों (Wolves)</strong> के संरक्षण के लिए जाना जाता है। इसका एक अनौपचारिक शुभंकर (Unofficial Mascot) भी भेड़िया है। इसके अतिरिक्त यहाँ तेंदुआ, नीलगाय, चीतल, सांभर और जंगली सूअर भी मिलते हैं।</li>
+                <li><strong>Tiger Reserve Overlay:</strong> इसके कुछ भाग को रानी दुर्गावती टाइगर रिजर्व (7th Tiger Reserve of MP) में शामिल किया गया है।</li>
+            </ul>
+            <div class="image-wrapper">
+                <img id="img-wolf" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Indian_wolf_%28Canis_lupus_pallipes%29.jpg" alt="Indian Wolf protected in Nauradehi Sanctuary" width="800" height="530">
+                <div class="image-caption">Image: Wikimedia Commons. Indian Wolf (Canis lupus pallipes) - Nauradehi's prime protected species.</div>
+                <a class="image-fallback-link" id="fallback-wolf" href="https://upload.wikimedia.org/wikipedia/commons/0/07/Indian_wolf_%28Canis_lupus_pallipes%29.jpg" target="_blank">🖼️ View Indian Wolf Sample Image</a>
+            </div>
+        </div>
+
+        <!-- 2. Ralamandal -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>2. रालामंडल अभ्यारण्य (Ralamandal Sanctuary)</span>
+                <span class="badge orange">Smallest / सबसे छोटा</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> इंदौर (Indore)</li>
+                <li><strong>स्थापना (Established Year):</strong> 1989</li>
+                <li><strong>क्षेत्रफल (Total Area):</strong> 2.34 वर्ग किलोमीटर (मध्य प्रदेश का सबसे छोटा वाइल्डलाइफ सैंचुरी)।</li>
+                <li><strong>Primary Conservation Accent:</strong> यह मुख्य रूप से <strong>लोमड़ी संरक्षण (Fox Conservation)</strong> के लिए स्थापित किया गया है।</li>
+            </ul>
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Size-Species Contrast Story</div>
+                <p>याद रखने की ट्रिक: मध्य प्रदेश का जो <strong>सबसे बड़ा</strong> (नौरादेही) है, वह खतरनाक <strong>भेड़िए (Wolf)</strong> के लिए है; और जो <strong>सबसे छोटा</strong> (रालामंडल) है, वह चतुर और छोटी <strong>लोमड़ी (Fox)</strong> के लिए है!</p>
+            </div>
+        </div>
+
+        <!-- 3. Kheoni -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>3. खिवनी अभ्यारण्य (Kheoni Sanctuary)</span>
+                <span class="card-title-meta">Location Focus</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> देवास (Dewas)</li>
+                <li><strong>स्थापना (Established Year):</strong> 1955 | <strong>क्षेत्रफल:</strong> 134 वर्ग किलोमीटर।</li>
+                <li><strong>नदियाँ (Rivers Flowing):</strong> बालगंगा नदी (Balganga River) एवं जामनेर नदी (Jamner River)।</li>
+                <li><strong>Water Feature:</strong> जामनेर नदी पर यहाँ प्रसिद्ध <strong>शंकर खो जलप्रपात (Shankarkho Waterfall)</strong> स्थित है।</li>
+            </ul>
+        </div>
+
+        <!-- 4. Narsinghgarh Rock -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>4. नरसिंहगढ़ रॉक अभ्यारण्य (Narsinghgarh Rock Sanctuary)</span>
+                <span class="badge">🔥 PYQ Pattern</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> राजगढ़ (Rajgarh) — ध्यान दें, यह नरसिंहपुर में नहीं, राजगढ़ जिले के अंतर्गत नरसिंहगढ़ रियासत क्षेत्र में है।</li>
+                <li><strong>स्थापना (Established Year):</strong> 1974</li>
+                <li><strong>Topographical Features:</strong> यह प्रागैतिहासिक पाषाण गुफाओं (Rock Shelters) के लिए विख्यात है।</li>
+                <li><strong>चिड़ीखो झील (Chidikho Lake):</strong> [MPPSC Assistant Professor Exam PYQ] इस अभ्यारण्य के ठीक मध्य में प्रसिद्ध 'चिड़ीखो झील' अवस्थित है।</li>
+                <li><strong>उपनाम (Moniker):</strong> प्राकृतिक सौंदर्य के कारण इसे <strong>"मालवा का कश्मीर" (Kashmir-e-Malwa)</strong> भी कहा जाता है।</li>
+            </ul>
+        </div>
+
+        <!-- 5. Ratapani & 6. Singhori -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>5. रातापानी (Ratapani) & 6. सिंघोरी अभ्यारण्य (Singhori)</span>
+                <span class="card-title-meta">Raisen Core Belt</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>रातापानी स्थान (Location):</strong> रायसेन (Raisen) | <strong>स्थापना:</strong> 1976</li>
+                <li><strong>Biodiversity Values:</strong> यहाँ पक्षियों की <strong>210 से अधिक प्रजातियां</strong> पाई जाती हैं। इसके अंदर एक समर्पित <strong>तितली पार्क (Butterfly Park)</strong> भी संचालित है।</li>
+                <li><strong>सागौन वृक्ष की बहुलता (Teak Forest Accent):</strong> यहाँ उच्च गुणवत्ता वाले सागौन (Teak) के वृक्षों का सघन घनत्व पाया जाता है (व्यापम का पुराना प्रश्न)।</li>
+                <li><strong>Tiger Presence Note:</strong> सर ने स्पष्ट किया कि यहाँ बाघ बहुतायत में हैं। कई पुरानी किताबों में इसे सातवां टाइगर रिजर्व प्रोजेक्ट लिखा गया था, परंतु वर्तमान आधिकारिक सूची में सातवां प्रोजेक्ट रानी दुर्गावती को घोषित किया गया है, अतः रातापानी अभी केवल प्रस्तावित श्रेणी में ही समझा जाता है।</li>
+                <li><strong>6. सिंघोरी अभ्यारण्य (Singhori):</strong> यह भी पूर्ण रूप से <strong>रायसेन (Raisen)</strong> जिले के अंतर्गत ही आता है।</li>
+            </ul>
+        </div>
+
+        <!-- 7. Sanjay Dubri -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>7. संजय डूबरी अभ्यारण्य (Sanjay Dubri Sanctuary)</span>
+                <span class="card-title-meta">Dual Status Zone</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> सीधी और सिंगरौली (Sidhi & Singrauli) जिलों में संयुक्त रूप से विस्तृत।</li>
+                <li><strong>स्थापना:</strong> 1975 | <strong>क्षेत्रफल:</strong> 364 वर्ग किलोमीटर।</li>
+                <li><strong>Note:</strong> यह क्षेत्र राष्ट्रीय उद्यान (National Park) और वन्यजीव अभ्यारण्य दोनों श्रेणियों में विभाजित है।</li>
+            </ul>
+        </div>
+
+        <!-- 8. Bori & Pachmarhi -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>8. बोरी और पचमढ़ी अभ्यारण्य (Bori & Pachmarhi Sanctuary)</span>
+                <span class="card-title-meta">Narmadapuram Jewel</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> नर्मदापुरम (Narmadapuram / पुराना नाम होशंगाबाद)।</li>
+                <li><strong>स्थापना (Established Year):</strong> 1978 | <strong>क्षेत्रफल:</strong> 485 वर्ग किलोमीटर।</li>
+                <li><strong>प्रमुख भौगोलिक वनस्पतियां:</strong> भारत की सबसे पुरानी और सघन <strong>बोरी घाटी (Bori Valley)</strong> और मढ़ई वन (Madhai Range) इसी के अंतर्गत सतपुड़ा राष्ट्रीय उद्यान के नजदीक आते हैं। यहाँ सागौन (Teak) के विशाल और प्राचीन वृक्ष पाए जाते हैं।</li>
+                <li><strong>नदियाँ (Hydro Systems):</strong> तवा नदी (Tawa), नावा नदी (Nawa), और मालिनी नदी (Malini River)।</li>
+                <li><strong>Unique Fauna:</strong> यहाँ विशेष रूप से <strong>उड़न गिलहरी (Flying Squirrel)</strong> और बाइसन गौर (Bison/Gaur) नामक दुर्लभ वन्यजीव पाए जाते हैं।</li>
+            </ul>
+        </div>
+
+        <!-- 9. Chambal Gharial -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>9. चंबल घड़ियाल अभ्यारण्य (Chambal Gharial Sanctuary)</span>
+                <span class="badge">🔥 High Value Target</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> मुरैना (Morena) | <strong>स्थापना:</strong> 1978</li>
+                <li><strong>Protected Ecosystem:</strong> चंबल नदी (Chambal River) के जलीय पारिस्थितिकी तंत्र को संरक्षित करता है।</li>
+                <li><strong>संरक्षित जीव प्रजातियां:</strong> घड़ियाल (Alligator), मगरमच्छ (Crocodile), <strong>बाटागुर कछुआ (Batagur Turtle)</strong> और नदीय डॉल्फिन (Dolphin)।<br>
+                <small style="color:var(--accent-orange);">*विशेष ध्यान रखें: डॉल्फिन चंबल नदी में पाई जाती है, जबकि नर्मदा नदी में राजकीय मछली 'महाशीर' पाई जाती है, दोनों में भ्रमित न हों।*</small></li>
+                <li><strong>घड़ियाल प्रजनन केंद्र (Breeding Center):</strong> इस सैंचुरी के अंतर्गत <strong>देवरी गाँव, मुरैना (Deori Village, Morena)</strong> में घड़ियालों का कृत्रिम प्रजनन केंद्र स्थापित किया गया है।</li>
+            </ul>
+        </div>
+
+        <!-- 10. Son Gharial & 11. Ken Gharial -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>10. सोन घड़ियाल (Son) & 11. केन घड़ियाल अभ्यारण्य (Ken)</span>
+                <span class="card-title-meta">Riverine Alligator Protection</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>10. सोन घड़ियाल अभ्यारण्य:</strong> यह <strong>सीधी और शहडोल (Sidhi & Shahdol)</strong> की सीमा पर स्थित है। देवलोद बांध के पास पानी रोके जाने वाले क्षेत्रों के कारण इसका विस्तार इन दोनों जिलों के जलीय क्षेत्र में है। स्थापना: 1974। यहाँ घड़ियाल, मगरमच्छ और कछुओं का प्राकृतिक वास है।</li>
+                <li><strong>11. केन घड़ियाल अभ्यारण्य:</strong> यह <strong>छतरपुर और पन्ना (Chhatarpur & Panna)</strong> जिलों के बीच केन नदी (Ken River) पर अवस्थित है। यहाँ भी घड़ियाल, मगरमच्छ और कछुओं को विशेष जलीय संरक्षण दिया गया है।</li>
+            </ul>
+        </div>
+
+        <!-- 12. Gangau & 13. Bagdara -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>12. गंगऊ (Gangau) & 13. बगदरा अभ्यारण्य (Bagdara)</span>
+                <span class="card-title-meta">Flora and Trees Matrix</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>12. गंगऊ अभ्यारण्य:</strong> स्थान <strong>पन्ना और छतरपुर (Panna & Chhatarpur)</strong> की सीमाओं पर है। स्थापना: 1979। यह मुख्य रूप से वनस्पतियों और जंगली जानवरों जैसे <em>जंगली सूअर (Wild Boar)</em> और <em>नीलगाय (Nilgai)</em> के लिए प्रसिद्ध है। यहाँ से <strong>केन और खद्दर नदियाँ (Ken & Khaddar Rivers)</strong> सीमा बनाती हुई गुजरती हैं। यहाँ सागौन के वनों की अधिकता है।</li>
+                <li><strong>13. बगदरा अभ्यारण्य:</strong> यह पूर्ण रूप से <strong>सीधी (Sidhi)</strong> जिले में स्थित है। यह अभ्यारण्य मुख्य रूप से अपने घने <strong>साल के वृक्षों (Sal Trees Forest)</strong> के संरक्षण के लिए जाना जाता है।</li>
+            </ul>
+        </div>
+
+        <!-- 14. Kuno Palpur -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>14. कुनो पालपुर अभ्यारण्य (Kuno Palpur Sanctuary Area)</span>
+                <span class="badge orange">Global Cheetah Project</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> श्योपुर (Sheopur)</li>
+                <li><strong>स्थापना (Established Year):</strong> 1981 | <strong>ऐतिहासिक अभ्यारण्य क्षेत्रफल:</strong> 344 वर्ग किलोमीटर।</li>
+                <li><strong>River Line:</strong> इसके बीच से कुनो नदी (Kuno River) प्रवाहित होती है।</li>
+                <li><strong>Cheetah Rehabilitation:</strong> यह वर्तमान में वैश्विक <strong>चीता संरक्षण/पुनर्वास क्षेत्र (Cheetah Protected Zone)</strong> के रूप में पूरी दुनिया में विख्यात है।</li>
+                <li><strong>Historical Aspect:</strong> यहाँ गुजरात के गिर राष्ट्रीय उद्यान से एशियाई बब्बर शेरों (Asiatic Lions) को लाने की योजना भी लंबे समय से प्रस्तावित रही है।</li>
+                <li><strong>Forest Density:</strong> श्योपुर जिला चंबल संभाग का एकमात्र ऐसा क्षेत्र है जहाँ वनों का घनत्व अत्यधिक सघन है (MPPSC वन रिपोर्ट आधारित प्रश्न)।</li>
+            </ul>
+            <div class="image-wrapper">
+                <img id="img-cheetah" src="https://upload.wikimedia.org/wikipedia/commons/2/23/Great_Indian_Bustard_Ardeotis_nigriceps.jpg" alt="Great Indian Bustard - Protected in Ghatigaon" width="800" height="500">
+                <div class="image-caption">Image: Wikimedia Commons. Great Indian Bustard (Ardeotis nigriceps) - Locally called Sonchiriya.</div>
+                <a class="image-fallback-link" id="fallback-cheetah" href="https://upload.wikimedia.org/wikipedia/commons/2/23/Great_Indian_Bustard_Ardeotis_nigriceps.jpg" target="_blank">🖼️ View Sonchiriya/Bustard Specimen Visual</a>
+            </div>
+        </div>
+
+        <!-- 15. Ghatigaon -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>15. घाटीगांव अभ्यारण्य (Ghatigaon Sanctuary)</span>
+                <span class="badge">🔥 Exam Hot — Sonchiriya Only Home</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> ग्वालियर (Gwalior) | <strong>स्थापना:</strong> 1981 | <strong>क्षेत्रफल:</strong> 510 वर्ग किलोमीटर।</li>
+                <li><strong>Target Endangered Species:</strong> यह मुख्य रूप से <strong>ग्रेट इंडियन बस्टर्ड (Great Indian Bustard)</strong> जिसे स्थानीय भाषा में <strong>सोनचिड़िया (Sonchiriya)</strong> कहा जाता है, के संरक्षण के लिए स्थापित हुआ था।</li>
+                <li><strong>Critical Status Update:</strong> शिवपुरी का करेरा अभ्यारण्य समाप्त होने के बाद, अब मध्य प्रदेश में सोनचिड़िया के संरक्षण के लिए बचा हुआ एकमात्र समर्पित अभ्यारण्य केवल <strong>घाटीगांव (Gwalior)</strong> ही है। अतः परीक्षा की दृष्टि से यह सबसे महत्वपूर्ण है।</li>
+            </ul>
+        </div>
+
+        <!-- 16. Gandhi Sagar -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>16. गांधी सागर अभ्यारण्य (Gandhi Sagar Sanctuary)</span>
+                <span class="badge orange">Current Affairs Focus</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>स्थान (Location):</strong> मंदसौर (Mandsaur) | <strong>स्थापना:</strong> 1981 | <strong>क्षेत्रफल:</strong> 368 वर्ग किलोमीटर।</li>
+                <li><strong>Fauna Anchor:</strong> यह मुख्य रूप से <strong>गिद्ध संरक्षण क्षेत्र (Vulture Conservation Zone)</strong> के रूप में कार्य करता है।</li>
+                <li><strong>🔄 Current Affairs Update (Cheetah Second Home):</strong> कुनो नेशनल पार्क के बाद, मध्य प्रदेश में चीतों का <em>"दूसरा घर"</em> बनाने के लिए गांधी सागर अभ्यारण्य को चुना गया है। यहाँ एक <strong>अंतरराज्यीय चीता परियोजना (Inter-state Cheetah Conservation Project)</strong> प्रस्तावित है, जिसमें राजस्थान की सीमाओं के कनेक्टिंग जंगलों को जोड़कर चीतों के स्वच्छंद विचरण के लिए एक विशाल और सुरक्षित कॉरिडोर तैयार किया जा रहा है।</li>
+            </ul>
+        </div>
+
+        <!-- 17. Phen & 18. Panpatha -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>17. फेन (Phen) & 18. पनपठा अभ्यारण्य (Panpatha)</span>
+                <span class="card-title-meta">Sal Tree Clusters</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>17. फेन अभ्यारण्य:</strong> स्थान <strong>मंडला (Mandla)</strong> जिला। यहाँ सघन रूप से साल के वृक्ष (Sal Trees) पाए जाते हैं तथा मुख्य रूप से मध्य प्रदेश का राजकीय पशु <strong>बारासिंगा (Barasingha)</strong> यहाँ प्रमुखता से विचरण करता हुआ पाया जाता है।</li>
+                <li><strong>18. पनपठा अभ्यारण्य:</strong> स्थान <strong>उमरिया और शहडोल (Umaria & Shahdol)</strong>। स्थापना: 1983। क्षेत्रफल: 245 वर्ग किलोमीटर। यहाँ भी साल के वृक्षों (Sal Forests) की प्रचुरता पाई जाती है।</li>
+            </ul>
+        </div>
+
+        <!-- 19. Sailana & 20. Sardarpur -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>19. सैलाना (Sailana) & 20. सरदारपुर अभ्यारण्य (Sardarpur)</span>
+                <span class="badge">🔥 Kharmor Protection Duet</span>
+            </div>
+            <p style="margin-bottom: 10px; font-weight: 500; color: var(--accent-cyan);">यह दोनों अभ्यारण्य मध्य प्रदेश में 'खरमोर पक्षी' के संरक्षण के लिए एक साथ स्थापित किए गए थे (स्थापना वर्ष: 1983)।</p>
+            <ul class="bullet-list">
+                <li><strong>19. सैलाना अभ्यारण्य (Sailana):</strong> स्थान <strong>रतलाम (Ratlam)</strong> जिला। यहाँ मुख्य रूप से <strong>खरमोर पक्षी (Kharmor Bird)</strong> का संरक्षण क्षेत्र है। इसके अतिरिक्त यहाँ प्रसिद्ध <strong>कैक्टस गार्डन (Cactus Garden)</strong> स्थित है, जहाँ नागफनी/कैक्टस की अनेक दुर्लभ प्रजातियों को संरक्षित किया गया है। यहाँ राजकीय पक्षी <em>दूधराज (Paradise Flycatcher)</em> और विभिन्न विदेशी प्रवासी पक्षी भी आते हैं।</li>
+                <li><strong>20. सरदारपुर अभ्यारण्य (Sardarpur):</strong> स्थान <strong>धार (Dhar)</strong> जिला। यह भी मुख्य रूप से <strong>खरमोर पक्षी संरक्षण (Kharmor Bird Sanctuary)</strong> के लिए ही अधिसूचित है। यहाँ भी दूधराज और विदेशी प्रवासी पक्षियों का आगमन बड़े पैमाने पर होता है।</li>
+            </ul>
+        </div>
+
+        <!-- 21. Orchha & 22. Durgavati -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>21. ओरछा (Orchha) & 22. दुर्गावती अभ्यारण्य (Durgavati)</span>
+                <span class="card-title-meta">Historical Heritage Zones</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>21. ओरछा अभ्यारण्य:</strong> स्थान <strong>निवाड़ी (Niwari)</strong> जिला (ध्यान दें: पहले यह टीकमगढ़ में आता था, परंतु निवाड़ी के नया जिला बनने के बाद अब यह निवाड़ी के अधिकार क्षेत्र में है)। यहाँ से प्रसिद्ध <strong>बेतवा नदी (Betwa River)</strong> प्रवाहित होती है। यह मुख्य रूप से जंगली सूअर, नीलगाय, और बंदरों/लंगूरों की घनी आबादी के लिए जाना जाता है।</li>
+                <li><strong>22. दुर्गावती अभ्यारण्य:</strong> स्थान <strong>दमोह (Damoh)</strong> जिला। स्थापना: 1997। रानी दुर्गावती के ऐतिहासिक किलों और विरासत से घिरा हुआ क्षेत्र है। इसके <strong>समीप प्रसिद्ध निदान जलप्रपात (Nidan Waterfall)</strong> स्थित है (ध्यान दें: जलप्रपात इसके बिल्कुल पास में है, इसके अंदर नहीं)। नौरादेही और दुर्गावती के क्षेत्रों को मिलाकर ही मध्य प्रदेश का सातवां टाइगर रिजर्व आकार ले चुका है।</li>
+            </ul>
+        </div>
+
+        <!-- 23. Kamdhenu & 24. Karmajhari -->
+        <div class="concept-card">
+            <div class="card-title">
+                <span>23. कामधेनु गौ अभ्यारण्य (Kamdhenu) & 24. कर्माझरी (Karmajhari)</span>
+                <span class="badge">🔥 Premier Landmarks</span>
+            </div>
+            <ul class="bullet-list">
+                <li><strong>23. कामधेनु गौ अभ्यारण्य:</strong> स्थान <strong>आगर मालवा (Agar Malwa)</strong> जिले के <strong>सुसनेर (Susner)</strong> नामक स्थान पर। यह <strong>भारत (देश) का पहला समर्पित गौ अभ्यारण्य (First Cow Sanctuary of India)</strong> है, जो परीक्षा में बार-बार पूछा जाता है।<br>
+                <small style="color:var(--text-muted);">*📌 आगामी सूचना तथ्य: रीवा जिले में गायों की बहुतायत के कारण 'बसावन मामा गौ अभ्यारण्य' भी प्रस्तावित किया गया था, परंतु वर्तमान में वह ठंडे बस्ते में है।*</small></li>
+                <li><strong>24. कर्माझरी अभ्यारण्य (Karmajhari Sanctuary):</strong> स्थान <strong>सिवनी (Seoni)</strong> जिला। स्थापना: <strong>वर्ष 2022 (मध्य प्रदेश का सबसे नया/नवीनतम अभ्यारण्य)</strong>। यह प्रसिद्ध पेंच टाइगर रिजर्व की सीमाओं से सटा हुआ वन क्षेत्र है, जिसे वन्यजीवों की सुरक्षा सुदृढ़ करने के लिए नया अभ्यारण्य घोषित किया गया है (क्षेत्रफल: 1410.42 हेक्टेयर)।</li>
+            </ul>
+            <div class="image-wrapper">
+                <img id="img-cow" src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Indian_cow.jpg" alt="Indian Breed Cow - Kamdhenu Sanctuary Context" width="800" height="530">
+                <div class="image-caption">Image: Wikimedia Commons. Representative image of indigenous Indian cow protected at Susner, Agar Malwa.</div>
+                <a class="image-fallback-link" id="fallback-cow" href="https://upload.wikimedia.org/wikipedia/commons/4/4d/Indian_cow.jpg" target="_blank">🖼️ View Indian Cow Reference Image</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: DENOTIFIED & PROPOSED -->
+    <section id="proposed-sanctuary">
+        <h2 class="section-header">📌 Denotified & Proposed Sanctuaries Matrix</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>समाप्त होने का कारण और नए प्रस्तावित अभ्यारण्य</span>
+                <span class="card-title-meta">Policy Analysis</span>
+            </div>
+            <p style="margin-bottom: 12px;">
+                <strong>करेरा अभ्यारण्य (शिवपुरी - 1981) क्यों बंद हुआ?</strong> सर ने कक्षा में एक व्यावहारिक कारण समझाया: अभ्यारण्य क्षेत्र घोषित होने के कारण वहाँ के स्थानीय ग्रामीणों की निजी जमीनों की खरीद-फरोख्त (Land Transactions) और व्यावसायिक उपयोग पूरी तरह प्रतिबंधित हो गए थे। दूसरी तरफ, पिछले कई वर्षों से यहाँ एक भी सोनचिड़िया (Sonchiriya) नहीं देखी गई। जब मुख्य जीव ही विलुप्त हो गया तो जनता की समस्याओं को देखते हुए जन आंदोलनों के बाद सरकार ने इसे <strong>डिनोटिफाइड (समाप्त)</strong> कर दिया।
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Proposed Sanctuary Name (प्रस्तावित अभ्यारण्य)</th>
+                            <th>District (जिला)</th>
+                            <th>Target Protected Species / Significance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>मानधाता अभ्यारण्य (Mandhata)</strong></td>
+                            <td>खंडवा (Khandwa)</td>
+                            <td>नर्मदा नदीय वन क्षेत्र संरक्षण</td>
+                        </tr>
+                        <tr>
+                            <td><strong>कट्ठीवाड़ा अभ्यारण्य (Kattiwada)</strong></td>
+                            <td>अलीराजपुर (Alirajpur)</td>
+                            <td>मुख्य रूप से <strong>मोर (Peacocks)</strong> के संरक्षण हेतु प्रस्तावित।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>कालीभीत अभ्यारण्य (Kalibhit)</strong></td>
+                            <td>बैतूल (Betul)</td>
+                            <td>कालीभीत की पहाड़ियों में <strong>काले भालू (Black Bears)</strong> के संरक्षण हेतु।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>सुरमानिया अभ्यारण्य (Surmaniya)</strong></td>
+                            <td>खंडवा (Khandwa)</td>
+                            <td>सामान्य वन एवं वन्यजीव कॉरिडोर विकास</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BIOSPHERE RESERVES -->
+    <section id="biosphere-reserves">
+        <h2 class="section-header">🧠 Biosphere Reserves (जैव मंडल आरक्षित क्षेत्र)</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>क्या होते हैं जैव मंडल आरक्षित क्षेत्र?</span>
+                <span class="card-title-meta">Ecological Science</span>
+            </div>
+            <p style="margin-bottom: 15px;">
+                <strong>जैव मंडल (Biosphere Reserve):</strong> ऐसे विशाल प्राकृतिक क्षेत्र जहाँ अत्यधिक <strong>जैव विविधता (Biodiversity)</strong> पाई जाती है। पृथ्वी पर भूमध्य रेखा (Equator) के पास उष्णकटिबंधीय क्षेत्रों में सबसे ज्यादा जैव विविधता होती है। भारत सरकार और यूनेस्को (UNESCO) मिलकर ऐसे समृद्ध क्षेत्रों को चिन्हित करते हैं जहाँ विभिन्न प्रकार के जीव-जंतु और पेड़-पौधे एक साथ फलते-फूलते हैं।
+            </p>
+            <p style="font-weight: 600; color: var(--accent-cyan); margin-bottom: 10px;">मध्य प्रदेश में कुल बायोस्फीयर रिजर्व की संख्या = 3 (तीनों यूनेस्को सूची में शामिल हैं):</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>BR Name & Location (नाम एवं जिला)</th>
+                            <th>Govt Estd Year (स्थापना)</th>
+                            <th>UNESCO MAB Inclusion (यूनेस्को सूची)</th>
+                            <th>Key Structural Facts (मुख्य तथ्य)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. पचमढ़ी (Pachmarhi)</strong><br><small>नर्मदापुरम (Narmadapuram)</small></td>
+                            <td>1999</td>
+                            <td>2009</td>
+                            <td>यह <strong>मध्य प्रदेश का प्रथम (First)</strong> जैव मंडल आरक्षित क्षेत्र है। इसके ठीक 10 वर्ष बाद इसे यूनेस्को ने मान्यता दी।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. अचानकमार-अमरकंटक</strong><br><small>अनूपपुर (Anuppur) + छत्तीसगढ़ सीमा</small></td>
+                            <td>2005</td>
+                            <td>2012</td>
+                            <td>अमरकंटक की पहाड़ियों और मैकाल रेंज में फैला विस्तृत प्राकृतिक क्षेत्र।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. पन्ना (Panna)</strong><br><small>पन्ना एवं छतरपुर (Panna-Chhatarpur)</small></td>
+                            <td>2011</td>
+                            <td>2020</td>
+                            <td>यह मध्य प्रदेश का <strong>नवीनतम (Latest / 3rd)</strong> बायोस्फीयर रिजर्व है जिसे यूनेस्को वर्ल्ड नेटवर्क में शामिल किया गया है।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: RAMSAR SITES -->
+    <section id="ramsar-sites">
+        <h2 class="section-header">💧 Ramsar Sites (आद्र भूमि / वेटलैंड्स)</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>वेटलैंड्स का महत्व और रामसर कन्वेंशन की कहानी</span>
+                <span class="card-title-meta">Global Environmental Policy</span>
+            </div>
+            <p style="margin-bottom: 12px;">
+                <strong>आद्र भूमि (Wetlands):</strong> वह दलदली या उथला जलीय क्षेत्र (जैसे तालाब, झीलें, जलाशय) जहाँ सालों भर पानी जमा रहता है। यह भूमि में नमी (Moisture) बनाए रखने और वाटर टेबल (Water Level) को रीचार्ज करने के लिए पृथ्वी के गुर्दे (Kidneys of Earth) की तरह काम करते हैं। यदि ये खत्म हो गए तो पृथ्वी से पानी और जीवन समाप्त हो जाएगा।
+            </p>
+            <ul class="bullet-list" style="margin-bottom: 15px;">
+                <li><strong>रामसर क्या है?</strong> यह किसी व्यक्ति का नाम नहीं है। <strong>रामसर (Ramsar)</strong> कैस्पियन सागर के तट पर स्थित <strong>ईरान (Iran)</strong> देश का एक ऐतिहासिक शहर/स्थान है।</li>
+                <li><strong>कन्वेंशन तिथि:</strong> <strong>2 फरवरी 1971</strong> को यहाँ दुनिया भर के देशों ने आद्र भूमियों को बचाने के लिए एक वैश्विक समझौते (Convention) पर हस्ताक्षर किए थे।</li>
+                <li><strong>विश्व आद्र भूमि दिवस:</strong> इसी कारण प्रतिवर्ष <strong>2 फरवरी</strong> को संपूर्ण विश्व में <strong>World Wetland Day (विश्व आद्र भूमि दिवस)</strong> मनाया जाता है।</li>
+            </ul>
+
+            <div class="exam-hot-box">
+                <div class="exam-hot-title">🔥 Exam Hot: MP's 5 Ramsar Sites Breakdown (Latest 2026 Status)</div>
+                <p style="font-weight: 500; margin-bottom: 10px;">वर्तमान में मध्य प्रदेश में कुल 5 रामसर साइट्स अधिसूचित हैं:</p>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>1. भोज वेटलैंड (Bhoj Wetland - भोपाल):</strong> बड़ा तालाब / बड़ी झील क्षेत्र। इसे <strong>वर्ष 2002</strong> में शामिल किया गया था। यह <strong>मध्य प्रदेश की पहली (First) रामसर साइट</strong> है।</li>
+                    <li><strong>2. सांख्य सागर (Sakhya Sagar - शिवपुरी):</strong> माधव राष्ट्रीय उद्यान के अंतर्गत स्थित सांख्य सागर झील को <strong>वर्ष 2022</strong> में रामसर साइट का दर्जा मिला।</li>
+                    <li><strong>3. सिरपुर वेटलैंड (Sirpur Wetland - इंदौर):</strong> इंदौर का ऐतिहासिक सिरपुर तालाब, पक्षियों का प्रमुख बसेरा। शामिल वर्ष: <strong>2022</strong>.</li>
+                    <li><strong>4. यशवंत सागर (Yashwant Sagar - इंदौर):</strong> यशवंत राव होलकर द्वारा निर्मित ऐतिहासिक जलाशय। शामिल वर्ष: <strong>2022</strong>.</li>
+                    <li><strong>5. तवा जलाशय (Tawa Reservoir - नर्मदापुरम):</strong> तवा नदी पर बना विशाल जलाशय। इसे <strong>वर्ष 2024</strong> में मध्य प्रदेश की <strong>पांचवीं (5th / Latest) रामसर साइट</strong> के रूप में आधिकारिक तौर पर घोषित किया गया।</li>
+                </ol>
+            </div>
+
+            <div class="link-story-box">
+                <div class="link-story-title">🔗 Link Story — रामसर साइट्स को याद करने की श्रृंखला</div>
+                <p><em>"राजा <strong>भोज</strong> अपनी पालकी में बैठकर <strong>शिवपुरी के सांख्य सागर</strong> गए, वहाँ से उन्होंने <strong>इंदौर के सिरपुर</strong> और <strong>यशवंत</strong> को बुलाया और सब मिलकर <strong>नर्मदापुरम के तवा</strong> पर चाय पीने चले गए!"</em> इस मजेदार विजुअल स्टोरी से आपको पाँचों जिलों का क्रम (भोपाल → शिवपुरी → इंदौर → इंदौर → नर्मदापुरम) हमेशा के लिए याद रहेगा!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ZOOS & BOTANICAL PARKS -->
+    <section id="zoos-parks">
+        <h2 class="section-header">🦁 Zoos, Biological & Botanical Parks Matrix</h2>
+        <div class="concept-card">
+            <div class="card-title">
+                <span>मध्य प्रदेश के प्रमुख चिड़ियाघर एवं क्षेत्रीय पार्क</span>
+                <span class="card-title-meta">1:1 Video Transcription Coverage</span>
+            </div>
+            <p style="margin-bottom: 15px;">विकाश सर द्वारा ब्लैकबोर्ड पर जिला-वार वर्गीकृत किए गए सभी चिड़ियाघरों और विशेष पार्कों की सूची यहाँ समेकित की गई है:</p>
+
+            <!-- INDORE BELT -->
+            <h4 style="color: var(--accent-cyan); margin: 15px 0 5px 0;">📍 इंदौर संभाग (Indore Zone)</h4>
+            <ul class="bullet-list">
+                <li><strong>कमला नेहरू प्राणी संग्रहालय (Kamla Nehru Zoo):</strong> यह इंदौर का मुख्य चिड़ियाघर (Zoo) है, जहाँ सभी प्रकार के वन्यजीवों को रखा गया है।</li>
+                <li><strong>रीजनल पार्क (Regional Park):</strong> इसका आधिकारिक नाम <strong>अटल बिहारी वाजपेयी पार्क (Atal Bihari Vajpayee Park)</strong> है, जो अटल जी की स्मृति में समर्पित है।</li>
+                <li><strong>नेहरू पार्क (Nehru Park):</strong> इंदौर शहर के मध्य स्थित एक पुराना पारंपरिक पार्क।</li>
+                <li><strong>मेघदूत गार्डन (Meghdoot Garden):</strong> [व्यापम परीक्षाओं में पूछा गया प्रश्न] यह इंदौर का एक अत्यंत प्रसिद्ध सार्वजनिक उद्यान है।</li>
+                <li><strong>गुलावट लोटस वैली (Gulawat Lotus Valley):</strong> इंदौर के पास गुलावट में स्थित कमल के फूलों की एक बहुत बड़ी प्राकृतिक घाटी/झील (Massive Lotus Ecosystem Valley) है, जो अपनी असीम सुंदरता के लिए विख्यात है।</li>
+            </ul>
+
+            <!-- GWALIOR BELT -->
+            <h4 style="color: var(--accent-cyan); margin: 15px 0 5px 0;">📍 ग्वालियर संभाग (Gwalior Zone)</h4>
+            <ul class="bullet-list">
+                <li><strong>गांधी प्राणी उद्यान (Gandhi Prani Udyan):</strong> यह ग्वालियर का मुख्य चिड़ियाघर (Zoo) है।</li>
+                <li><strong>🚨 Current Affairs Flash (मीरा सफेद बाघिन):</strong> सर ने हाल ही की एक महत्वपूर्ण खबर साझा की कि इस चिड़ियाघर में रहने वाली <strong>'मीरा' नामक सफेद बाघिन (Meera White Tigress)</strong> ने हाल ही में <strong>तीन शावकों (3 Tiger Cubs)</strong> को जन्म दिया है, जो वर्तमान में चर्चा का विषय है।</li>
+            </ul>
+
+            <!-- BHOPAL BELT -->
+            <h4 style="color: var(--accent-cyan); margin: 15px 0 5px 0;">📍 भोपाल संभाग (Bhopal Zone)</h4>
+            <ul class="bullet-list">
+                <li><strong>कमला नेहरू पार्क (Kamla Nehru Park - Bhopal):</strong> ध्यान दें, इंदौर वाले का नाम 'प्राणी संग्रहालय' (Zoo) है, जबकि भोपाल में बड़ी झील/तालाब के शुरुआती मुहाने (Starting Point of Upper Lake) पर केवल 'कमला नेहरू पार्क' स्थित है। दोनों के नाम में भ्रमित न हों।</li>
+                <li><strong>प्रियदर्शनी पार्क (Priyadarshini Park):</strong> भोपाल में स्थित स्थानीय प्राकृतिक पार्क।</li>
+                <li><strong>मछली घर (Aquarium - Bhopal):</strong> भोपाल में स्थित प्रसिद्ध जलीय मछली घर।</li>
+            </ul>
+
+            <!-- JABALPUR & OTHERS -->
+            <h4 style="color: var(--accent-cyan); margin: 15px 0 5px 0;">📍 जबलपुर, डिंडोरी, सिंगरौली एवं उज्जैन</h4>
+            <ul class="bullet-list">
+                <li><strong>डुमना नेचर/जियोलॉजिकल पार्क (Dumna Nature Park):</strong> [🔥 Recent MPPSC Pre Target Question] यह <strong>जबलपुर (Jabalpur)</strong> में स्थित है। आधिकारिक जनसंपर्क विभाग के डेटा से यह प्रश्न सीधे परीक्षा में पूछा गया था।</li>
+                <li><strong>मकड़ी घर (Spider House):</strong> यह विशिष्ट अनुसंधान पार्क भी <strong>जबलपुर (Jabalpur)</strong> में ही स्थित है।</li>
+                <li><strong>कारो पानी डियर पार्क (Karopani Deer Park):</strong> यह प्रसिद्ध हिरण पार्क मध्य प्रदेश के <strong>डिंडोरी (Dindori)</strong> जिले में स्थित है। यहाँ काले हिरण और चित्तीदार हिरणों का प्राकृतिक झुंड देखा जा सकता है।</li>
+                <li><strong>जयंत इको पार्क (Jayant Eco Park):</strong> यह पर्यावरण-अनुकूल पार्क ऊर्जा राजधानी <strong>सिंगरौली (Singrauli)</strong> जिले के अंतर्गत संचालित है।</li>
+                <li><strong>पक्षी घर (Bird House) - उज्जैन:</strong> उज्जैन के प्रसिद्ध <strong>मंगलनाथ मंदिर (Mangalnath Temple)</strong> परिसर में एक विशाल और अनूठा पक्षी घर बनाया गया है। यह कुतुब मीनार की तरह एक ऊंचे स्तंभ के आकार का है, जिसकी कुल ऊंचाई <strong>55 फीट (55 Feet Tall structure)</strong> है। शाम के समय यहाँ हजारों पक्षी आकर विश्राम करते हैं, जिनके बैठने की शानदार वैज्ञानिक व्यवस्था की गई है।</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION: FULL FORMS REGISTRY -->
+    <section id="master-fullforms">
+        <h2 class="section-header">📑 Master Full Forms Registry</h2>
+        <div class="concept-card">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technical Term / Acronym</th>
+                            <th>English Full Form</th>
+                            <th>Hindi Meaning & Contextual Explanation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>IUCN</strong></td>
+                            <td>International Union for Conservation of Nature</td>
+                            <td>अंतरराष्ट्रीय प्रकृति संरक्षण संघ (यह संकटग्रस्त जीवों की 'रेड डेटा बुक' जारी करता है, जैसे बाटागुर कछुआ)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PYQ</strong></td>
+                            <td>Previous Year Question</td>
+                            <td>विगत वर्षों के परीक्षा प्रश्न (जैसे चिड़ीखो झील और डुमna पार्क के प्रश्न पूर्व परीक्षाओं से आए हैं)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BR</strong></td>
+                            <td>Biosphere Reserve</td>
+                            <td>जैव मंडल आरक्षित क्षेत्र (अत्यधिक जैव विविधता वाले विशाल भौगोलिक क्षेत्र जैसे पचमढ़ी, पन्ना)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MAB (UNESCO)</strong></td>
+                            <td>Man and the Biosphere Programme</td>
+                            <td>मानव और जैवमंडल कार्यक्रम (इसी कार्यक्रम के तहत यूनेस्को वैश्विक स्तर पर बायोस्फीयर रिजर्व को अपनी सूची में शामिल करता है)।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NP</strong></td>
+                            <td>National Park</td>
+                            <td>राष्ट्रीय उद्यान (पूर्णतः प्रतिबंधित सरकारी संरक्षण क्षेत्र जहाँ मानवीय गतिविधियां वर्जित होती हैं)।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ACTIVE RECALL QUIZZES -->
+    <section style="margin-top:20px;">
+        <h2 class="section-header">🧠 Active Recall Topic Quizzes</h2>
+        <div class="quiz-container">
+            <div class="quiz-heading">❓ Challenge Your Memory (उत्तर देखने के लिए क्लिक करें)</div>
+            
+            <details>
+                <summary>Q1. मध्य प्रदेश के उस अभ्यारण्य का नाम बताइए जो गंगा बेसिन और नर्मदा बेसिन के बीच त्रिभुजाकार आकृति में फैला है?</summary>
+                <div class="details-content">
+                    <strong>उत्तर:</strong> नौरादेही अभ्यारण्य (Nauradehi Sanctuary)। यह सागर, रायसेन और नरसिंहपुर जिलों में त्रिभुजाकार आकृति में फैला हुआ मध्य प्रदेश का सबसे बड़ा अभ्यारण्य है।
+                </div>
+            </details>
+
+            <details>
+                <summary>Q2. शिवपुरी का कौन सा अभ्यारण्य हाल ही में समाप्त (Denotified) कर दिया गया है और क्यों?</summary>
+                <div class="details-content">
+                    <strong>उत्तर:</strong> करेरा अभ्यारण्य (Karera Sanctuary)। इसे समाप्त करने का कारण यह था कि यहाँ वर्षों से मुख्य संरक्षित जीव 'सोनचिड़िया' नहीं देखी गई थी, और अभ्यारण्य के कड़े नियमों के कारण स्थानीय ग्रामीणों को अपनी जमीन खरीदने और बेचने में भारी दिक्कतों का सामना करना पड़ रहा था।
+                </div>
+            </details>
+
+            <details>
+                <summary>Q3. मध्य प्रदेश की पांचवीं और सबसे नवीनतम रामसर साइट कौन सी घोषित की गई है?</summary>
+                <div class="details-content">
+                    <strong>उत्तर:</strong> तवा जलाशय / वेटलैंड (Tawa Reservoir - नर्मदापुरम)। इसे वर्ष 2024 में मध्य प्रदेश की 5वीं आधिकारिक रामसर साइट के रूप में पंजीकृत किया गया है।
+                </div>
+            </details>
+
+            <details>
+                <summary>Q4. उज्जैन के मंगलनाथ मंदिर में स्थित विशेष पक्षी घर की कुल ऊंचाई कितनी फीट है?</summary>
+                <div class="details-content">
+                    <strong>उत्तर:</strong> 55 फीट (55 Feet)। यह कुतुब मीनार जैसी ऊँची संरचना है जहाँ पक्षियों के बैठने की आधुनिक व्यवस्था है।
+                </div>
+            </details>
+
+            <details>
+                <summary>Q5. कर्माझरी अभ्यारण्य मध्य प्रदेश के किस जिले में है और यह किस प्रसिद्ध टाइगर रिजर्व से सटा हुआ है?</summary>
+                <div class="details-content">
+                    <strong>उत्तर:</strong> यह सिवनी (Seoni) जिले में स्थित है और प्रसिद्ध पेंच टाइगर रिजर्व (Pench Tiger Reserve) के सीमावर्ती वन क्षेत्र को मिलाकर वर्ष 2022 में बनाया गया मध्य प्रदेश का सबसे नया अभ्यारण्य है।
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- SECTION: PERSISTENT CHECKLIST -->
+    <section id="master-revision">
+        <h2 class="section-header">✅ Master Revision Checklist (Progressive Tracks)</h2>
+        <p style="color:var(--text-muted); margin-bottom:15px;">जितने तथ्य आपको याद होते जाएँ, उन पर सही का निशान (Check) लगाते जाएँ। आपका डेटा ब्राउज़र में सुरक्षित रहेगा।</p>
+        
+        <div id="checklist-wrapper">
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk1')">
+                <input type="checkbox" id="chk1">
+                <div class="checklist-text">मध्य प्रदेश में कुल अभ्यारण्यों की वास्तविक संख्या प्रमाण सहित 24 याद है। [Karmajhari +1, Karera -1]</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk2')">
+                <input type="checkbox" id="chk2">
+                <div class="checklist-text">नौरादेही सबसे बड़ा (1197 वर्ग किमी, भेड़िया संरक्षण) और रालामंडल सबसे छोटा (लोमड़ी संरक्षण) का अंतर स्पष्ट है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk3')">
+                <input type="checkbox" id="chk3">
+                <div class="checklist-text">राजगढ़ के नरसिंहगढ़ रॉक अभ्यारण्य में स्थित 'चिड़ीखो झील' और इसके "मालवा का कश्मीर" उपनाम को याद कर लिया है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk4')">
+                <input type="checkbox" id="chk4">
+                <div class="checklist-text">घाटीगांव (ग्वालियर) अब सोनचिड़िया का एकमात्र सक्रिय संरक्षण केंद्र है, क्योंकि करेरा बंद हो चुका है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk5')">
+                <input type="checkbox" id="chk5">
+                <div class="checklist-text">गांधी सागर (मंदसौर) में चीतों का "दूसरा घर" और अंतरराज्यीय चीता कॉरिडोर परियोजना का करंट अफेयर्स फैक्ट याद है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk6')">
+                <input type="checkbox" id="chk6">
+                <div class="checklist-text">देवरी गाँव (मुरैना) में स्थित राष्ट्रीय चंबल घड़ियाल अनुसंधान/प्रजनन केंद्र का नाम याद है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk7')">
+                <input type="checkbox" id="chk7">
+                <div class="checklist-text">भारत का पहला गौ अभ्यारण्य 'कामधेनु गौ अभ्यारण्य' सुसनेर (आगर मालवा) में अवस्थित है, यह कंठस्थ है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk8')">
+                <input type="checkbox" id="chk8">
+                <div class="checklist-text">मध्य प्रदेश के तीनों बायोस्फीयर रिजर्व (पचमढ़ी 1999, अचानकमार 2005, पन्ना 2011) और उनके यूनेस्को वर्ष याद हैं।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk9')">
+                <input type="checkbox" id="chk9">
+                <div class="checklist-text">पांचों रामसर साइट्स का क्रम (भोज 2002 से लेकर नवीनतम तवा जलाशय 2024 तक) पूरी तरह याद हो गया है।</div>
+            </div>
+            <div class="checklist-item" onclick="toggleChecklist(this, 'chk10')">
+                <input type="checkbox" id="chk10">
+                <div class="checklist-text">ग्वालियर चिड़ियाघर की सफेद बाघिन 'मीरा' और उज्जैन मंगलनाथ मंदिर के 55 फीट ऊंचे पक्षी घर का अनूठा तथ्य स्पष्ट है।</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+        <p>📌 <strong>Upcoming Topic Notice from Transcript:</strong> विकाश सर ने बताया कि अगले सत्रों में नदियों, अपवाह तंत्र और मध्य प्रदेश के राष्ट्रीय उद्यानों के बचे हुए प्रश्नों पर विस्तृत चर्चा की जाएगी।</p>
+        <p style="margin-top: 10px;">Exam Revision Builder Tool Core Ecosystem Engine. Built for Strategic Spaced Repetition Study.</p>
+    </footer>
+
+    <!-- MAP SIDEBAR PANELS FOR DESKTOP -->
+    <div class="map-sidebar">
+        <h4 style="font-family:'Outfit'; margin-bottom:10px; color:var(--accent-cyan);">🗺️ Static Reference Map</h4>
+        <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Official Reference Map of Madhya Pradesh Districts" style="width:100%; height:auto; border-radius:8px; border:1px solid var(--border-color);">
+        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px; line-height:1.4;">
+            यह मध्य प्रदेश का आधिकारिक जिला मानचित्र है। सागर, इंदौर, धार, रायसेन, सीधी और श्योपुर जैसे अभ्यारण्य केंद्रों को पढ़ते समय इस मानचित्र से जिलों की सीमाओं का मिलान अवश्य करते रहें।
+        </p>
+    </div>
+
+</div>
+
+<script>
+    // Theme Switcher Logic
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+        const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+        localStorage.setItem('mp_rev_theme', currentTheme);
+    }
+
+    // Load saved theme on load
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('mp_rev_theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+        }
+        loadChecklistStates();
+        updateProgressBar();
+    });
+
+    // Checklist Persist Engine Logic
+    function toggleChecklist(element, key) {
+        const checkbox = element.querySelector('input[type="checkbox"]');
+        // Prevent recursive loop if clicked directly on input box
+        if (event.target.tagName !== 'INPUT') {
+            checkbox.checked = !checkbox.checked;
+        }
+        localStorage.setItem('mp_check_' + key, checkbox.checked ? 'true' : 'false');
+        updateProgressBar();
+    }
+
+    function loadChecklistStates() {
+        const keys = ['chk1','chk2','chk3','chk4','chk5','chk6','chk7','chk8','chk9','chk10'];
+        keys.forEach(k => {
+            const state = localStorage.getItem('mp_check_' + k);
+            if (state === 'true') {
+                document.getElementById(k).checked = true;
+            }
+        });
+    }
+
+    function updateProgressBar() {
+        const totalItems = 10;
+        let checkedCount = 0;
+        const keys = ['chk1','chk2','chk3','chk4','chk5','chk6','chk7','chk8','chk9','chk10'];
+        keys.forEach(k => {
+            if (document.getElementById(k) && document.getElementById(k).checked) {
+                checkedCount++;
+            }
+        });
+        const pct = Math.round((checkedCount / totalItems) * 100);
+        document.getElementById('topProgressBar').style.width = pct + '%';
+    }
+
+    // Image Fallback Handling System Architecture
+    function setupImageFallbacks() {
+        const fallbacks = [
+            { imgId: 'img-gharial', fallbackId: 'fallback-gharial' },
+            { imgId: 'img-wolf', fallbackId: 'fallback-wolf' },
+            { imgId: 'img-cheetah', fallbackId: 'fallback-cheetah' },
+            { imgId: 'img-cow', fallbackId: 'fallback-cow' }
+        ];
+
+        fallbacks.forEach(item => {
+            const img = document.getElementById(item.imgId);
+            const link = document.getElementById(item.fallbackId);
+            
+            if(img) {
+                img.onerror = function() {
+                    this.style.display = 'none';
+                    if(link) link.style.display = 'block';
+                };
+                
+                // Force check if already complete or cached error
+                if(img.complete && img.naturalWidth === 0) {
+                    img.style.display = 'none';
+                    if(link) link.style.display = 'block';
+                }
+            }
+        });
+    }
+
+    window.addEventListener('load', setupImageFallbacks);
+</script>
+
+</body>
+</html>

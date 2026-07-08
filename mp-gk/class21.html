@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 MP के वन (Forests in MP) - Complete Revision Page (Part 1)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0f0f1a;
+            --bg-surface: #16162a;
+            --bg-card: #1f1f3e;
+            --text-main: #f1f1f7;
+            --text-muted: #a0a0c0;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --gradient-indigo: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .light-theme {
+            --bg-base: #f4f6fa;
+            --bg-surface: #ffffff;
+            --bg-card: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-cyan: #0284c7;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --gradient-indigo: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 17px;
+            letter-spacing: 0.02em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Layout Framework */
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--bg-surface);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .badge-orange {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--accent-orange);
+        }
+
+        /* Top Sticky & Controls */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-surface);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .quick-nav-select {
+            background: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            max-width: 70%;
+            cursor: pointer;
+        }
+
+        .theme-btn {
+            background: var(--accent-purple);
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .theme-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Progress Tracker Bar */
+        .progress-container {
+            width: 100%;
+            background: var(--bg-card);
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transition: width 0.3s ease;
+        }
+
+        /* Structural Hierarchy styling */
+        h1 { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+        h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px 0; color: var(--accent-cyan); display: flex; align-items: center; gap: 10px; }
+        h3 { font-size: 19px; font-weight: 600; margin: 20px 0 12px 0; color: var(--accent-purple); }
+
+        hr { border: 0; height: 1px; background: var(--border-color); margin: 30px 0; }
+
+        /* Card Structures */
+        .concept-card {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Association Link Stories Styling */
+        .link-story-box {
+            background: var(--gradient-indigo);
+            border-left: 5px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .link-story-title {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Exam Hot and Notification Banners */
+        .exam-hot-banner {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 14px 0;
+            color: var(--text-main);
+        }
+
+        .exam-hot-tag {
+            background: var(--accent-orange);
+            color: #fff;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-right: 6px;
+            display: inline-block;
+        }
+
+        /* Content elements formatting */
+        ul { list-style-position: inside; margin-bottom: 16px; padding-left: 5px; }
+        li { margin-bottom: 8px; }
+        
+        .bilingual-term {
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        /* Tables Formatting */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-surface);
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background: var(--bg-card);
+            color: var(--accent-cyan);
+            font-weight: 600;
+            padding: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Collapsible Layouts */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: var(--bg-surface);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 14px 20px;
+            background: var(--bg-card);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .accordion-content {
+            padding: 20px;
+            display: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Image Display Blocks */
+        .image-block {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px auto;
+            background: #2c2c44;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .image-fallback-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--accent-cyan);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Interactive Quiz Layouts */
+        .quiz-box {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .quiz-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            color: var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .quiz-btn:hover {
+            background: var(--accent-green);
+            color: #000;
+        }
+
+        .quiz-answer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-color);
+            display: none;
+            color: var(--accent-green);
+        }
+
+        /* Interactive Master Checklist */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            background: var(--bg-surface);
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Layout Grid for Reference map placement on desktop screen */
+        .main-layout {
+            display: flex;
+            gap: 24px;
+        }
+
+        .content-area {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .sidebar-map-panel {
+            width: 280px;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            display: none; /* Display logic switched via media queries */
+        }
+
+        /* Responsive Layout Overrides */
+        @media (min-width: 1200px) {
+            .container { max-width: 1140px; }
+            .sidebar-map-panel { display: block; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            .sticky-controls { padding: 10px; }
+            .quick-nav-select { max-width: 60%; font-size: 13px; }
+        }
+
+        /* Print Override Rules Styles */
+        @media print {
+            body { background: #fff !important; color: #000 !important; font-size: 14pt; }
+            .sticky-controls, .theme-btn, .quiz-btn, .progress-container, .image-fallback-btn { display: none !important; }
+            .accordion-content, .quiz-answer { display: block !important; }
+            .concept-card, .link-story-box, .accordion-item { border: 1px solid #000 !important; background: #fff !important; page-break-inside: avoid; }
+            h2, h3 { color: #000 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-controls">
+        <select class="quick-nav-select" onchange="window.location.hash=this.value;">
+            <option value="">🎯 Quick Jump to Topic...</option>
+            <option value="#intro">1. Introduction & Context</option>
+            <option value="#definitions">2. Forest Definition & Initial Laws</option>
+            <option value="#report-overview">3. India State of Forest Report (ISFR) 2021</option>
+            <option value="#mp-metrics">4. MP Core Metrics & Comparisons</option>
+            <option value="#district-analysis">5. District-Wise Forest Distributions</option>
+            <option value="#admin-hierarchy">6. Administrative Circles & Divisions</option>
+            <option value="#climatic-base">7. Climatic Classification Formats</option>
+            <option value="#admin-base">8. Administrative Legal Cover Classification</option>
+            <option value="#regional-belts">9. Regional Belts Breakdown</option>
+            <option value="#master-full-forms">10. Master Full Forms Reference List</option>
+            <option value="#master-hot-points">11. Master Exam Hot Points List</option>
+            <option value="#master-checklist">12. Revision Checklist Loop</option>
+        </select>
+        <button class="theme-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️ Theme</button>
+    </div>
+
+    <div class="container">
+        
+        <div class="main-layout">
+            
+            <div class="content-area">
+                
+                <header>
+                    <h1>🌳 मध्य प्रदेश के वन (Forests in Madhya Pradesh) - Part 1</h1>
+                    <div class="badge-container">
+                        <span class="badge">Subject: MP GK</span>
+                        <span class="badge badge-orange">Lecture: 21</span>
+                        <span class="badge">Target: MPPSC Pre 2025 & Vyapam Exams</span>
+                        <span class="badge badge-orange" id="completionBadge">0/12 Completed</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="topProgressBar"></div>
+                    </div>
+                </header>
+
+                <section id="intro" class="concept-card">
+                    <h2><span class="step-num">1</span>. Introduction & Exam Weights Context</h2>
+                    <p>नमस्कार दोस्तों, <strong>MP Exam Wala</strong> में आप सभी का बहुत-बहुत स्वागत है! यह क्लास आपके आगामी <strong>MPPSC Pre 2025</strong>, MP-SI, और व्यापम एग्जाम्स के दृष्टिकोण से अत्यधिक महत्वपूर्ण है।</p>
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Exam Weightage Fact</span><strong>MP GK का भारांक (Weightage):</strong> MPPSC Pre परीक्षा में कुल 100 प्रश्नों में से लगभग <strong>45 प्रश्न सीधे MP GK</strong> के पूछे जाते हैं। यानी आपके पूरे सिलेबस का लगभग आधा हिस्सा यहीं कवर होता है!</p>
+                    </div>
+                    <ul>
+                        <li>वनों से संबंधित प्रश्न <strong>100% परीक्षा में आते ही हैं</strong>। आप पुराने प्रश्नपत्र उठाकर देख सकते हैं।</li>
+                        <li>पिछली परीक्षाओं में वन रिपोर्ट से सीधे प्रश्न आए थे (जैसे किस जिले में सर्वाधिक वन क्षेत्र पाया जाता है)।</li>
+                        <li>हाल ही में आयोजित परीक्षाओं में <strong>बांस का राष्ट्रीयकरण (Nationalization of Bamboo)</strong> कब किया गया, यह प्रश्न पूछा जा चुका है।</li>
+                    </ul>
+                </section>
+
+                <section id="definitions" class="concept-card">
+                    <h2><span class="step-num">2</span>. Forest Definition & Historical Acts</h2>
+                    <h3>वन (Forest) क्या होता है?</h3>
+                    <p><strong>परिभाषा (Definition):</strong> वन एक ऐसा क्षेत्र है जहाँ <strong>प्राकृतिक रूप से (Naturally)</strong> उगे वृक्षों एवं वनस्पतियों का <strong>घनत्व (Density)</strong> अधिक होता है।</p>
+                    <blockquote>
+                        <em>"Forest is an area where the density of naturally grown trees and plants is high."</em>
+                    </blockquote>
+                    <p>इन वृक्षों को लगाने के लिए न तो कोई बीज डालने जाता है, न पानी देने, और न ही कोई कीटनाशक छिड़कने जाता है। ये पूरी तरह प्रकृति की देखरेख में अपनी जीवन यात्रा पूरी करते हैं।</p>
+                    
+                    <h3>ऐतिहासिक वन अधिनियम (Historical Forest Acts)</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>अधिनियम का नाम (Act Name)</th>
+                                    <th>वर्ष (Year)</th>
+                                    <th>मुख्य विशेषता (Key Detail)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="bilingual-term">Indian Forest Act</span> (भारतीय वन अधिनियम)</td>
+                                    <td><strong>1927</strong></td>
+                                    <td>अंग्रेजों के जमाने में पारित मुख्य वन नियम कानून।</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="bilingual-term">Forest Conservation Act</span> (वन संरक्षण अधिनियम)</td>
+                                    <td><strong>1980</strong></td>
+                                    <td>आजादी के बाद वनों के संरक्षण के लिए लाया गया विशेष अधिनियम।</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Exam Hot Point</span><strong>वनों का राष्ट्रीयकरण (Nationalization of Forests):</strong> वनों का पूर्ण राष्ट्रीयकरण करने वाला भारत का <strong>पहला राज्य मध्य प्रदेश है</strong>, जिसने यह ऐतिहासिक कार्य वर्ष <strong>1970</strong> में किया था!</p>
+                    </div>
+
+                    <h3>संवैधानिक स्थिति (Constitutional Status)</h3>
+                    <ul>
+                        <li>संविधान की <strong>समवर्ती सूची (Concurrent List)</strong> के अंतर्गत वनों को रखा गया है। इसका तात्पर्य यह है कि वनों के संरक्षण और विकास के संबंध में <strong>राज्य (State) एवं केंद्र (Center) दोनों</strong> कानून बनाने का पूर्ण अधिकार रखते हैं।</li>
+                    </ul>
+
+                    <h3>मध्य प्रदेश की वन नीतियाँ (Forest Policies)</h3>
+                    <ul>
+                        <li><strong>प्रथम वन नीति (First Forest Policy):</strong> वर्ष <strong>1952</strong> में भारत की राष्ट्रीय वन नीति के साथ ही मध्य प्रदेश ने भी अपनी वन नीति जारी की थी (ध्यान रहे कि उस समय वर्तमान मध्य प्रदेश का गठन नहीं हुआ था)।</li>
+                        <li><strong>नवीन वन नीति (New Forest Policy):</strong> वर्तमान समय में मध्य प्रदेश की नई वन नीति वर्ष <strong>2005</strong> से क्रियान्वित है।</li>
+                    </ul>
+
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Double Star Potential Question</span><strong>मध्य प्रदेश राज्य वन विकास निगम (MP State Forest Development Corporation):</strong> वनों के संवर्धन और व्यवस्थित विकास हेतु इसकी स्थापना <strong>24 जुलाई 1975</strong> को की गई थी। इसका मुख्यालय <strong>भोपाल (Bhopal)</strong> में अवस्थित है।</p>
+                    </div>
+
+                    <div class="image-block">
+                        <img id="img-deforestation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Forest_growth_layers.svg/640px-Forest_growth_layers.svg.png" alt="Forest Canopy Layer Structure Diagram" loading="lazy" decoding="async">
+                        <div class="image-caption">Image Source: Wikimedia Commons, Diagram of Forest Stratification and Canopy Layers, CC BY-SA 4.0.</div>
+                        <span class="image-fallback-btn" onclick="retryImage('img-deforestation', 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Forest_growth_layers.svg')">🔄 Reload / Fix Image link</span>
+                    </div>
+
+                    <div class="link-story-box">
+                        <div class="link-story-title">🔗 Link Story — ऐसे याद करो (Acts Matrix Sequence)</div>
+                        <p><em>"अंग्रेजों ने <strong>1927</strong> में वन की जमीन छीनी, तो भारत सरकार ने आजादी के बाद <strong>1970</strong> में उसका राष्ट्रीयकरण कर दिया। फिर जनता से बचाने के लिए <strong>1975</strong> में 'विकास निगम' बनाया और अंततः <strong>1980</strong> में पूरे 'वन का संरक्षण' कानून लागू कर दिया!"</em></p>
+                    </div>
+
+                    <div class="quiz-box">
+                        <p><strong>🙋 Quick Recall Quiz:</strong> मध्य प्रदेश राज्य वन विकास निगम की सटीक स्थापना तिथि क्या है?</p>
+                        <button class="quiz-btn" onclick="toggleQuiz(this)">Show Answer</button>
+                        <div class="quiz-answer">सही उत्तर: 24 जुलाई 1975 (मुख्यालय: भोपाल)</div>
+                    </div>
+                </section>
+
+                <section id="report-overview" class="concept-card">
+                    <h2><span class="step-num">3</span>. India State of Forest Report (ISFR) 2021 Overview</h2>
+                    <p>वर्तमान समय में उपलब्ध आधिकारिक आंकड़ों के लिए हमें नवीनतम <strong>17वीं वन रिपोर्ट 2021</strong> के डाटा का ही अध्ययन करना होगा।</p>
+                    <ul>
+                        <li><strong>रिपोर्ट जारी होने की तिथि:</strong> 13 जनवरी 2022</li>
+                        <li><strong>जारी करने वाला मंत्रालय:</strong> केंद्रीय पर्यावरण, वन एवं जलवायु परिवर्तन मंत्रालय (Ministry of Environment, Forest and Climate Change).</li>
+                        <li><strong>लॉन्चकर्ता मंत्री:</strong> तत्कालीन केंद्रीय मंत्री <strong>श्री भूपेंद्र यादव</strong> के द्वारा इसे जारी किया गया था।</li>
+                        <li><strong>इतिहास पृष्ठभूमि:</strong> भारत की सबसे पहली वन रिपोर्ट वर्ष <strong>1987</strong> में जारी की गई थी।</li>
+                        <li><strong>द्विवार्षिक चक्र (Biennial Cycle):</strong> यह रिपोर्ट <strong>प्रत्येक 2 वर्ष के अंतराल पर</strong> जारी की जाती है। इसे तैयार करने का मुख्य कार्य <strong>भारतीय वन सर्वेक्षण, देहरादून (Forest Survey of India - FSI)</strong> द्वारा किया जाता है। (FSI की स्थापना वर्ष <strong>1981</strong> में की गई थी)।</li>
+                    </ul>
+
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Brain Warning - घुमावदार प्रश्न</span>
+                        <strong>1. सर्वाधिक वनावरण क्षेत्रफल में (Maximum Forest Cover by Area):</strong> भारत में सबसे अग्रणी राज्य हमारा <strong>मध्य प्रदेश (Madhya Pradesh)</strong> है।<br>
+                        <strong>2. सर्वाधिक वनावरण प्रतिशत में (Maximum Forest Cover by Percentage):</strong> यदि प्रतिशत के लिहाज से प्रश्न पूछा जाए तो उत्तर <strong>मिजोरम (Mizoram)</strong> होगा (जहाँ लगभग $84\%$ भूभाग पर वन विस्तृत हैं)। एग्जाम में जल्दबाजी में गलती न करें, ध्यान से पढ़ें कि क्षेत्रफल पूछा है या प्रतिशत!
+                        </p>
+                    </div>
+
+                    <div class="image-block">
+                        <img id="img-fsi" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dehradun_Forest_Research_Institute.jpg/640px-Dehradun_Forest_Research_Institute.jpg" alt="Forest Research Institute FRI Dehradun building campus" loading="lazy" decoding="async">
+                        <div class="image-caption">Image Source: Wikimedia Commons, FRI Dehradun Main Building Complex, Public Domain.</div>
+                        <span class="image-fallback-btn" onclick="retryImage('img-fsi', 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Dehradun_Forest_Research_Institute.jpg')">🔄 Reload / Fix Image link</span>
+                    </div>
+                </section>
+
+                <section id="mp-metrics" class="concept-card">
+                    <h2><span class="step-num">4</span>. MP Core Metrics & Carbon Stock Analytics</h2>
+                    <p>17वीं वन रिपोर्ट 2021 के अनुसार मध्य प्रदेश के वनों से जुड़े प्रमुख सांख्यिकीय आंकड़े निम्नलिखित प्रकार हैं:</p>
+                    
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>मानक श्रेणी (Metric Category)</th>
+                                    <th>वन रिपोर्ट 2021 डेटा</th>
+                                    <th>वन रिपोर्ट 2019 डेटा</th>
+                                    <th>परिवर्तन / मुख्य टिप्पणी</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>कुल वनावरण क्षेत्र (Total Forest Cover)</strong></td>
+                                    <td><strong>$77,492.60\text{ वर्ग किमी}$</strong></td>
+                                    <td>$77,482.49\text{ वर्ग किमी}$</td>
+                                    <td>क्षेत्रफल में कुल <strong>$10.11\text{ वर्ग किमी}$ का इंक्रीमेंट (वृद्धि)</strong> दर्ज की गई है।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>राज्य के कुल क्षेत्रफल का प्रतिशत</strong></td>
+                                    <td><strong>$25.14\%$</strong></td>
+                                    <td>$25.14\%$ के करीब</td>
+                                    <td>भौगोलिक क्षेत्रफल के आधार पर देश में सर्वाधिक।</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>रिकॉर्डेड वन क्षेत्र (Recorded Forest Area - RFA)</strong></td>
+                                    <td><strong>$94,689\text{ वर्ग किमी}$</strong></td>
+                                    <td>स्थिर रहता है</td>
+                                    <td>यह सरकारी अभिलेखों (Records) में दर्ज वन भूमि है, जो राज्य के कुल क्षेत्रफल का <strong>$30.72\%$</strong> बनाती है।</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>कार्बन स्टॉक (Carbon Stock Analysis)</h3>
+                    <p><strong>क्या होता है कार्बन स्टॉक?</strong> वनों के वृक्षों द्वारा पर्यावरण से कितनी मात्रा में हानिकारक कार्बन डाइऑक्साइड ($CO_2$) को सोखकर उसे जीवनदायिनी ऑक्सीजन ($O_2$) में परिवर्तित किया गया है, उसकी संग्रहित मात्रा को कार्बन स्टॉक कहते हैं।</p>
+                    <ul>
+                        <li>मध्य प्रदेश का कुल कार्बन स्टॉक <strong>$69.25\text{ मिलियन टन}$</strong> आंका गया है।</li>
+                        <li>यह संपूर्ण भारत के कुल कार्बन स्टॉक का लगभग <strong>$8.46\%$</strong> हिस्सा कवर करता है।</li>
+                    </ul>
+
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Direct Core Fact</span><strong>कार्बन फ्लक्स टावर (Carbon Flux Tower):</strong> वनों में कार्बन डाइऑक्साइड के अवशोषण की सटीक गणना हेतु मध्य प्रदेश का पहला कार्बन फ्लक्स टावर <strong>तावड़ी, बैतूल (Tawli, Betul)</strong> में स्थापित किया गया है।</p>
+                    </div>
+
+                    <div class="quiz-box">
+                        <p><strong>🙋 Quick Recall Quiz:</strong> वन रिपोर्ट 2021 के अनुसार मध्य प्रदेश का कुल वनावरण क्षेत्र कितने वर्ग किलोमीटर है?</p>
+                        <button class="quiz-btn" onclick="toggleQuiz(this)">Show Answer</button>
+                        <div class="quiz-answer">सही उत्तर: $77,492.60\text{ वर्ग किलोमीटर}$ (राज्य के कुल भौगोलिक क्षेत्रफल का $25.14\%$)</div>
+                    </div>
+                </section>
+
+                <section id="district-analysis" class="concept-card">
+                    <h2><span class="step-num">5</span>. District-Wise Forest Distributions</h2>
+                    <p><em>विशेष नोट:</em> वन रिपोर्ट 2021 में मध्य प्रदेश के तत्कालीन <strong>50 जिलों का डेटा</strong> ही प्रयुक्त किया गया है। इसका मुख्य कारण यह है कि निवाड़ी (2018 में निर्मित) का डेटा पूर्व मूल जिले टीकमगढ़ के साथ तथा आगर मालवा (2013 में निर्मित) का डेटा शाजापुर के साथ ही सम्मिलित रूप से केंद्रीय स्तर पर प्रदर्शित किया गया था।</p>
+
+                    <h3>🔝 सर्वाधिक वनावरण वाले शीर्ष जिले (Maximum Forest Coverage)</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>रैंक</th>
+                                    <th>क्षेत्रफल के आधार पर जिला (Area Wise)</th>
+                                    <th>प्रतिशत के आधार पर जिला (Percentage Wise)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>बालाघाट (Balaghat)</strong> - $4,923\text{ वर्ग किमी}$</td>
+                                    <td><strong>बालाघाट (Balaghat)</strong> - लगभग $53\%$ भूभाग पर वन</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>छिंदवाड़ा (Chhindwara)</strong></td>
+                                    <td><strong>शिवपुर (Sheopur)</strong> <span class="badge badge-orange">🔥 PYQ Alert</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>बैतूल (Betul)</strong></td>
+                                    <td><strong>उमरिया (Umaria)</strong> / अन्य संबंधित श्रेणियाँ</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>शिवपुर (Sheopur)</strong></td>
+                                    <td><strong>मंडला (Mandla)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>सिवनी (Seoni)</strong></td>
+                                    <td><strong>सीधी (Sidhi)</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exam-hot-banner">
+                        <p><span class="exam-hot-tag">🔥 Examiner's Trap</span><strong>शिवपुर (Sheopur) का रहस्य:</strong> अधिकांश विद्यार्थी सोचते हैं कि शिवपुर चंबल संभाग का जिला है, वर्षा कम होती है तो वहाँ केवल शुष्क झाड़ियाँ होंगी। परंतु ध्यान रहे, शिवपुर <strong>प्रतिशत वनावरण में सीधे छलांग लगाकर दूसरे स्थान पर आता है</strong>! यही कारण है कि MPPSC ने यहाँ से सीधा प्रश्न उठाकर पूछा था और कई छात्र गलत करके आ गए थे।</p>
+                    </div>
+
+                    <div class="link-story-box">
+                        <div class="link-story-title">🔗 Link Story — ऐसे याद करो (Top Districts Combo)</div>
+                        <p><em>"<strong>बालाघाट</strong> के सुंदर घाट पर <strong>छिंदवाड़ा</strong> का एक शेर बैठा था, जिसे गुस्से में देखकर <strong>बैतूल</strong> के लोग डरकर सीधे <strong>शिवपुर</strong> की तरफ भागे जहाँ पहले से <strong>सिवनी (शिवानी)</strong> नाम की लड़की खड़ी थी!"</em></p>
+                    </div>
+
+                    <h3>🔻 न्यूनतम वनावरण वाले जिले (Minimum Forest Coverage)</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>रैंक</th>
+                                    <th>क्षेत्रफल के आधार पर जिला (Area Wise)</th>
+                                    <th>प्रतिशत के आधार पर जिला (Percentage Wise)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><strong>उज्जैन (Ujjain)</strong> - मात्र $37\text{ वर्ग किमी}$ वन</td>
+                                    <td><strong>उज्जैन (Ujjain)</strong> - $1\%$ भाग से भी कम वन क्षेत्र</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><strong>शाजापुर (Shajapur)</strong></td>
+                                    <td><strong>शाजापुर (Shajapur)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><strong>रतलाम (Ratlam)</strong></td>
+                                    <td><strong>रतलाम (Ratlam)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><strong>राजगढ़ (Rajgarh)</strong></td>
+                                    <td><strong>राजगढ़ (Rajgarh)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><strong>दतिया (Datia)</strong></td>
+                                    <td><strong>मंदसौर (Mandsaur)</strong> <span class="badge">⚠️ रैंक में अंतर</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>उज्जैन में सबसे कम वन क्यों हैं?</strong> कृषि वाले अध्याय में हमने पढ़ा था कि उज्जैन के कुल क्षेत्रफल के लगभग <strong>$80\%$ हिस्से पर सक्रिय खेती (Agriculture)</strong> की जाती है। शेष भाग में मानव आबादी निवास करती है, इसलिए वन के लिए केवल नाममात्र की भूमि बची है।</p>
+
+                    <div class="link-story-box">
+                        <div class="link-story-title">🔗 Link Story — ऐसे याद करो (Lowest Districts Sequence)</div>
+                        <p><em>"<strong>उज्जैन</strong> के महाकाल मंदिर के पास <strong>शाजापुर</strong> का प्रसिद्ध <strong>रतलामी सेव</strong> बिका, जिसे खाकर <strong>राजगढ़</strong> का राजा चुपके से <strong>दतिया/मंदसौर</strong> भाग गया!"</em></p>
+                    </div>
+
+                    <h3>⚡ विशेष वन प्रवृत्तियां (Special Forest Trends)</h3>
+                    <ul>
+                        <li>📈 <strong>सर्वाधिक वन वृद्धि वाला जिला (Highest Growth):</strong> <strong>भिंड (Bhind)</strong> - यहाँ वनों के क्षेत्र में सबसे ज्यादा सकारात्मक वृद्धि देखी गई है।</li>
+                        <li>📉 <strong>सर्वाधिक वन कमी वाला जिला (Highest Loss):</strong> <strong>बड़वानी (Barwani)</strong> - यहाँ वन क्षेत्र में गिरावट दर्ज की गई है।</li>
+                        <li>🌵 <strong>सर्वाधिक झाड़ी वाला वन (Max Shrub Forest):</strong> <strong>नीमच (Neemuch)</strong> - राजस्थान के मरुस्थल के समीप होने के कारण काँटेदार झाड़ियाँ अधिक हैं।</li>
+                        <li>💧 <strong>न्यूनतम झाड़ी वाला जिला (Min Shrub Forest):</strong> <strong>हरदा (Harda)</strong> - नर्मदा नदी घाटी के पास होने के कारण पानी की उपलब्धता अच्छी है, फलतः झाड़ियाँ कम हैं।</li>
+                        <li>🌳 <strong>अति सघन वन (Very Dense Forest):</strong> सबसे ज्यादा <strong>बालाघाट (Balaghat)</strong> में पाए जाते हैं (दंडकारण्य बेल्ट के निकट घने वन)।</li>
+                        <li>🍃 <strong>सर्वाधिक खुले वन (Most Open Forest):</strong> सबसे ज्यादा <strong>शिवपुर (Sheopur)</strong> क्षेत्र में विस्तृत हैं।</li>
+                    </ul>
+
+                    <div class="quiz-box">
+                        <p><strong>🙋 Quick Recall Quiz:</strong> प्रतिशत वनावरण के दृष्टिकोण से मध्य प्रदेश में दूसरे स्थान पर कौन सा जिला आता है?</p>
+                        <button class="quiz-btn" onclick="toggleQuiz(this)">Show Answer</button>
+                        <div class="quiz-answer">सही उत्तर: शिवपुर (Sheopur) - इसे चंबल का शुष्क इलाका समझकर छोड़ने की भूल न करें।</div>
+                    </div>
+                </section>
+
+                <section id="admin-hierarchy" class="concept-card">
+                    <h2><span class="step-num">6</span>. Administrative Circles & Divisions Structuring</h2>
+                    <p>जिस प्रकार प्रशासनिक व्यवस्था को सुचारू रूप से चलाने के लिए संपूर्ण मध्य प्रदेश को 10 राजस्व संभागों में विभाजित किया गया है, ठीक उसी प्रकार वन विभाग के प्रबंधन हेतु राज्य को <strong>वन वृत्तों (Forest Circles)</strong> में बाँटा गया है।</p>
+                    
+                    <ul>
+                        <li>🏢 <strong>कुल वन वृत्तों की संख्या (Total Forest Circles):</strong> <strong>16</strong></li>
+                        <li>🌳 <strong>सबसे बड़ा वन वृत्त (Largest Forest Circle):</strong> <strong>खंडवा (Khandwa)</strong> - इसके अंतर्गत कई जिलों के वन क्षेत्र सम्मिलित हैं।</li>
+                        <li>📉 <strong>सबसे छोटा वन वृत्त (Smallest Forest Circle):</strong> <strong>नर्मदापुरम (Narmadapuram)</strong> - यद्यपि यहाँ वन भरपूर हैं, परंतु प्रशासनिक क्षेत्राधिकार के मामले में यह वृत्त छोटा है।</li>
+                    </ul>
+
+                    <h3>वन विभाग का संगठनात्मक ढांचा (Organizational Hierarchy)</h3>
+                    <p>प्रशासनिक सोपानक्रम ऊपर से नीचे के क्रम में इस प्रकार व्यवस्थित है:</p>
+                    <div class="link-story-box" style="background: var(--bg-card); border-left-color: var(--accent-cyan);">
+                        <p><strong>वन वृत्त (Forest Circle)</strong> [कुल: 16]<br>
+                        └── <strong>वन मंडल (Forest Division)</strong> [कुल: 63]<br>
+                            └── <strong>उपवन मंडल (Sub-Forest Division)</strong> [कुल: 135]<br>
+                                └── <strong>वन परिक्षेत्र (Forest Range)</strong> [कुल: 473]<br>
+                                    └── <strong>उपवन / वन बीट (Sub-Range / Beats)</strong> [कुल: 18,735]</p>
+                    </div>
+
+                    <ul>
+                        <li>📋 <strong>वन ग्रामों की संख्या (Forest Villages):</strong> मध्य प्रदेश वन विभाग की ऑफिशियल शासकीय वेबसाइट के प्रामाणिक आंकड़ों के अनुसार राज्य में कुल <strong>925 वन ग्राम</strong> अवस्थित हैं।</li>
+                    </ul>
+
+                    <div class="link-story-box">
+                        <div class="link-story-title">🔗 Link Story — ऐसे याद करो (Hierarchy Chain)</div>
+                        <p><em>"एक बड़े <strong>वन वृत्त (सर्कल)</strong> के अंदर बैठकर बड़े अफसरों के पूरे <strong>मंडल</strong> ने मीटिंग की, फिर <strong>उपमंडल</strong> के बाबू ने फाइल आगे बढ़ाई ताकि पूरे <strong>वन परिक्षेत्र (रेंज)</strong> को नापकर छोटे-छोटे <strong>उपवनों</strong> में बाँटा जा सके!"</em></p>
+                    </div>
+                </section>
+
+                <section id="climatic-base" class="concept-card">
+                    <h2><span class="step-num">7</span>. Climatic Base Classifications (जलवायु के आधार पर)</h2>
+                    <p>मध्य प्रदेश मुख्य रूप से उष्ण कटिबंध (Tropical Zone) में स्थित है क्योंकि कर्क रेखा इसके मध्य से गुजरती है। इसलिए यहाँ पाए जाने वाले सभी वनों के नाम के आगे <strong>"उष्ण कटिबंधीय" (Tropical)</strong> शब्द अनिवार्य रूप से प्रयुक्त होता है। जलवायु और वर्षा के आधार पर वनों को मुख्य रूप से 3 (कुल 4) भागों में वर्गीकृत किया गया है:</p>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>1. उष्ण कटिबंधीय आर्द्र पर्णपाती वन (Tropical Moist Deciduous Forest)</span>
+                            <span>➕</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>वर्षा की मात्रा:</strong> $125\text{ सेंटीमीटर}$ या उससे अधिक वर्षा वाले क्षेत्रों में।</li>
+                                <li><strong>विशेषता:</strong> पानी की अच्छी उपलब्धता के कारण यहाँ के वृक्ष गर्मियों में अपनी पत्तियाँ <strong>पूर्ण रूप से एक साथ नहीं गिराते</strong>। वाष्पोत्सर्जन (Transpiration) को नियंत्रित करने के लिए कुछ पत्तियाँ गिरती हैं, पर जंगल कभी पूरी तरह नग्न/सूखा नहीं दिखता।</li>
+                                <li><strong>मुख्य वृक्ष:</strong> मुख्य रूप से <strong>साल वृक्ष (Sal Tree)</strong> यहाँ बहुतायत में पाया जाता है।</li>
+                                <li><strong>विस्तार क्षेत्र:</strong> शहडोल से लेकर बैतूल तक की जो पट्टी (Belt) है, वहाँ ये वन विस्तृत हैं। मुख्य जिले: मंडला, बालाघाट, छिंदवाड़ा, सिवनी, पांडुरना, डिंडोरी तथा संपूर्ण दक्षिण-पूर्वी मध्य प्रदेश।</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>2. उष्ण कटिबंधीय शुष्क पतझड़ वन (Tropical Dry Deciduous Forest)</span>
+                            <span>➕</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exam-hot-banner">
+                                <p><span class="exam-hot-tag">🔥 Extreme Importance Fact</span> यह मध्य प्रदेश में पाया जाने वाला <strong>सर्वाधिक विस्तृत वन प्रकार है</strong>, जो राज्य के कुल वन क्षेत्र के लगभग <strong>$68\%$ भाग को कवर करता है</strong>।</p>
+                            </div>
+                            <ul>
+                                <li><strong>वर्षा की मात्रा:</strong> $70/75\text{ सेंटीमीटर}$ से $100\text{ सेंटीमीटर}$ तक।</li>
+                                <li><strong>विशेषता:</strong> ग्रीष्म ऋतु (Summer Season) के आगमन पर पानी की कमी के कारण ये वृक्ष अपनी <strong>पत्तियाँ पूरी तरह से गिरा देते हैं</strong>। गर्मियों में ये वन बिल्कुल सूखे डंठल जैसे दिखाई देते हैं, परंतु वर्षा की पहली फुहार पड़ते ही पुनः अत्यधिक हरे-भरे हो जाते हैं।</li>
+                                <li><strong>मुख्य वृक्ष:</strong> इस बेल्ट का सबसे प्रमुख राजा वृक्ष <strong>सागौन (Teak Wood)</strong> और <strong>बांस (Bamboo)</strong> है।</li>
+                                <li><strong>विस्तार क्षेत्र:</strong> जबलपुर, नर्मदापुरम, खंडवा, इंदौर, उज्जैन, भोपाल, सागर, दमोह, पन्ना, छतरपुर, टीकमगढ़, निवाड़ी, रायसेन, सतना, रीवा, शिवपुरी, ग्वालियर, मऊगंज आदि (मध्य, उत्तर तथा पश्चिमी जिले)।</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>3. उष्ण कटिबंधीय काँटेदार वन (Tropical Thorny Forest)</span>
+                            <span>➕</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>वर्षा की मात्रा:</strong> अत्यंत कम वर्षा वाले क्षेत्रों में (प्रायः $50-75\text{ सेमी}$ से कम)।</li>
+                                <li><strong>विशेषता:</strong> अत्यधिक शुष्क परिस्थितियों के कारण यहाँ के पौधे पत्तियों को काँटों में तब्दील कर लेते हैं ताकि वाष्पोत्सर्जन को न्यूनतम किया जा सके (जैसे साइंस में आपने मरुद्भिद या Xerophytes पौधों के बारे में पढ़ा होगा)।</li>
+                                <li><strong>मुख्य वृक्ष:</strong> कीकर, बबूल, खैर (Kher), नीम, खेजड़ी, पलास, खजूर आदि जैसी झाड़ियों वाले वृक्ष।</li>
+                                <li><strong>विस्तार क्षेत्र:</strong> मध्य प्रदेश का उत्तर-पश्चिमी भाग, विशेषकर <strong>चंबल घाटी (Chambal Valley)</strong> और राजस्थान सीमा से लगे जिले।</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>4. उप-आर्द्र पहाड़ी वन (Sub-Moist Hill Forest)</span>
+                            <span>➕</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>विशेषता:</strong> यह बहुत ही सीमित और न्यूनतम क्षेत्रफल में पाए जाते हैं।</li>
+                                <li><strong>स्थिति:</strong> मुख्य रूप से सतपुड़ा और विंध्याचल पर्वतमाला की अत्यधिक ऊँची पहाड़ियों के शिखरों पर मिलते हैं।</li>
+                                <li><strong>मुख्य वृक्ष:</strong> <strong>पचमढ़ी (Pachmarhi)</strong> के आसपास देवदार और लंबे कद वाले विशेष प्रकार के सदाबहार जैसे ऊंचे वृक्ष इसी श्रेणी के अंतर्गत आते हैं।</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="admin-base" class="concept-card">
+                    <h2><span class="step-num">8</span>. Administrative & Legal Classification (शासकीय आधार)</h2>
+                    <p>यह टॉपिक आपके <strong>MPPSC Pre 2025 परीक्षा के लिए सर्वाधिक महत्वपूर्ण (Most Important)</strong> है। शासन-प्रशासन के कड़े नियमों और नियंत्रण के आधार पर वनों को 3 श्रेणियों में विभाजित किया गया है:</p>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>वन श्रेणी (Forest Category)</th>
+                                    <th>सटीक प्रतिशत (Exact %)</th>
+                                    <th>पशु चारण (Grazing Rules)</th>
+                                    <th>लकड़ी काटना (Wood Cutting)</th>
+                                    <th>मुख्य विशेषता व प्रशासनिक उदाहरण</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(0, 212, 255, 0.05);">
+                                    <td><strong>1. आरक्षित वन (Reserved Forest)</strong></td>
+                                    <td><strong>$65.5\%$</strong><br>(सर्वाधिक)</td>
+                                    <td>⛔ पूर्णतः प्रतिबंधित</td>
+                                    <td>⛔ पूर्णतः प्रतिबंधित</td>
+                                    <td>गवर्नमेंट के कड़े नियंत्रण में होते हैं। बिना विशेष सरकारी अनुमति के मानवीय गतिविधियाँ शून्य होती हैं। हमारे सभी <strong>राष्ट्रीय उद्यान (National Parks)</strong> इसी आरक्षित श्रेणी में आते हैं। सर्वाधिक आरक्षित वन <strong>खंडवा</strong> वृत्त में हैं, न्यूनतम <strong>उज्जैन</strong> में।</td>
+                                </tr>
+                                <tr style="background: rgba(255, 107, 53, 0.05);">
+                                    <td><strong>2. संरक्षित वन (Protected Forest)</strong></td>
+                                    <td><strong>$32.8\%$</strong></td>
+                                    <td>✅ नियमों के साथ अनुमति</td>
+                                    <td>⛔ पूर्णतः प्रतिबंधित</td>
+                                    <td>सरकार की देखरेख में होते हैं, परंतु स्थानीय निवासियों को पशु चराने व सूखी लकड़ियाँ बीनने की सीमित छूट होती है। हमारे <strong>वन्यजीव अभ्यारण्य (Wildlife Sanctuaries)</strong> इसी श्रेणी के अंग हैं। सर्वाधिक संरक्षित वन <strong>छतरपुर</strong> जिले में हैं, न्यूनतम <strong>खंडवा</strong> में।</td>
+                                </tr>
+                                <tr style="background: rgba(0, 255, 136, 0.05);">
+                                    <td><strong>3. अवर्गीकृत वन (Unclassified Forest)</strong></td>
+                                    <td><strong>$1.81\%$</strong><br>(न्यूनतम)</td>
+                                    <td>✅ पूरी तरह मान्य</td>
+                                    <td>✅ बिना टैक्स/कड़े नियमों के मान्य</td>
+                                    <td>इन वनों पर सरकार का कोई सख्त कानूनी पहरा नहीं होता। नागरिक सभी सामान्य मानवीय गतिविधियाँ आसानी से संचालित कर सकते हैं। मध्य प्रदेश में ऐसे वनों का हिस्सा नाममात्र का है।</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="link-story-box">
+                        <div class="link-story-title">🔗 Link Story — ऐसे याद करो (Admin Distribution Rules)</div>
+                        <p><em>"<strong>आरक्षित (Reserved)</strong> सीट पर बैठ गए तो टीटी बिल्कुल हिलने नहीं देगा (नो एक्टिविटी), <strong>संरक्षित (Protected)</strong> पर बैठोगे तो थोड़ा बहुत एडजस्ट होने देगा, लेकिन अगर सीट <strong>अवर्गीकृत (Unclassified)</strong> यानी जनरल कोच की हुई, तो फिर चाहे पशु चराओ या लकड़ी काटो, कोई देखने वाला नहीं!"</em></p>
+                    </div>
+
+                    <div class="quiz-box">
+                        <p><strong>🙋 Quick Recall Quiz:</strong> मध्य प्रदेश में राष्ट्रीय उद्यान (National Parks) शासकीय वर्गीकरण के अंतर्गत किस प्रकार के वनों का हिस्सा होते हैं?</p>
+                        <button class="quiz-btn" onclick="toggleQuiz(this)">Show Answer</button>
+                        <div class="quiz-answer">सही उत्तर: आरक्षित वन (Reserved Forest) - जहाँ मानवीय गतिविधियाँ और पशु चारण पूर्णतः वर्जित होते हैं।</div>
+                    </div>
+                </section>
+
+                <section id="regional-belts" class="concept-card">
+                    <h2><span class="step-num">9</span>. Regional Belts Breakdown (प्रादेशिक/क्षेत्रीय आधार)</h2>
+                    <p>मध्य प्रदेश को भौगोलिक और प्रादेशिक विस्तार के आधार पर मुख्य रूप से <strong>3 वन पेटियों (Forest Belts)</strong> में विभाजित किया गया है:</p>
+
+                    <ol>
+                        <li>🌲 <strong>सतपुड़ा मैकाल व बघेलखंड पठार क्षेत्र (Satpura Maikal & Baghelkhand Plateau Region):</strong> यह राज्य का सुदूर दक्षिण-पूर्वी हिस्सा है। यहाँ वर्षा अधिक होने के कारण वृक्षों की <strong>सघनता अत्यधिक उच्च (Dense Forest)</strong> पाई जाती है।</li>
+                        <li>⛰️ <strong>विंध्य कैमूर श्रेणी क्षेत्र (Vindhya Kaimur Range Region):</strong> पर्वत श्रृंखलाओं के इस हिस्से में सघनता थोड़ी कम पाई जाती है, जिसके फलस्वरूप यहाँ मुख्यतः <strong>विरल वन (Rare/Sparse Forest)</strong> दिखाई देते हैं।</li>
+                        <li>🎯 <strong>शिवपुरी-मुरैना क्षेत्र / मध्य क्षेत्र (Sheopur-Morena Central Region):</strong> राज्य के इस उत्तरी भाग में कँटीले और शुष्क वनों का बाहुल्य पाया जाता है, जहाँ मुख्यतः <strong>काँटेदार वन झाड़ियाँ</strong> विस्तृत हैं।</li>
+                    </ol>
+                </section>
+
+                <section id="master-full-forms" class="concept-card">
+                    <h2><span class="step-num">10</span>. Master Full Forms Reference List</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>संक्षिप्त रूप (Abbreviation)</th>
+                                    <th>अंग्रेजी में पूर्ण रूप (Full Form in English)</th>
+                                    <th>हिंदी अर्थ / मुख्य विवरण</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ISFR</strong></td>
+                                    <td>India State of Forest Report</td>
+                                    <td>भारत राज्य वन रिपोर्ट (FSI द्वारा प्रत्येक 2 वर्ष में जारी)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>FSI</strong></td>
+                                    <td>Forest Survey of India</td>
+                                    <td>भारतीय वन सर्वेक्षण (स्थापना: 1981, मुख्यालय: देहरादून)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>RFA</strong></td>
+                                    <td>Recorded Forest Area</td>
+                                    <td>रिकॉर्डेड वन क्षेत्र (सरकारी दस्तावेजों में दर्ज वन क्षेत्र - $30.72\%$)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PYQ</strong></td>
+                                    <td>Previous Year Questions</td>
+                                    <td>विगत वर्षों की परीक्षाओं में पूछे जा चुके मुख्य प्रश्न</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="master-hot-points" class="concept-card">
+                    <h2><span class="step-num">11</span>. Master Exam Hot Points Summary</h2>
+                    <div class="exam-hot-banner">
+                        <ul>
+                            <li>🔥 <strong>वनों का राष्ट्रीयकरण करने वाला देश का पहला राज्य कौन सा है?</strong> मध्य प्रदेश (वर्ष 1970 में)।</li>
+                            <li>🔥 <strong>बांस का राष्ट्रीयकरण किस राज्य द्वारा सर्वप्रथम किया गया था?</strong> मध्य प्रदेश (व्यापम एवं पीएससी का पसंदीदा प्रश्न)।</li>
+                            <li>🔥 <strong>मध्य प्रदेश राज्य वन विकास निगम कहाँ स्थित है?</strong> भोपाल में (स्थापना: 24 जुलाई 1975)।</li>
+                            <li>🔥 <strong>वन रिपोर्ट 2021 के अनुसार सर्वाधिक वनावरण क्षेत्रफल वाला जिला कौन सा है?</strong> बालाघाट ($4923\text{ वर्ग किमी}$)।</li>
+                            <li>🔥 <strong>किस जिले में न्यूनतम वन क्षेत्रफल पाया जाता है?</strong> उज्जैन (मात्र $37\text{ वर्ग किमी}$)।</li>
+                            <li>🔥 <strong>मध्य प्रदेश का पहला कार्बन फ्लक्स टावर कहाँ लगाया गया है?</strong> तावड़ी, बैतूल में।</li>
+                            <li>🔥 <strong>कौन सा वन प्रकार मध्य प्रदेश में सर्वाधिक क्षेत्रफल ($68\%$) पर पाया जाता है?</strong> उष्ण कटिबंधीय शुष्क पतझड़ वन।</li>
+                            <li>🔥 <strong>राष्ट्रीय उद्यान किस श्रेणी के वनों के अंतर्गत प्रबंधित किए जाते हैं?</strong> आरक्षित वन (Reserved Forest - $65.5\%$)।</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="master-checklist" class="concept-card">
+                    <h2><span class="step-num">12</span>. Master Interactive Revision Checklist</h2>
+                    <p>सभी महत्वपूर्ण तथ्यों को याद करने के बाद यहाँ चेकबॉक्स पर टिक मार्क करें। आपका डेटा स्थानीय रूप से सुरक्षित रहेगा:</p>
+                    
+                    <div id="checklistContainer">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk1" onchange="updateChecklistProgress()">
+                            <label for="chk1">वन की परिभाषा और प्राकृतिक रूप से उगने का मुख्य सिद्धांत स्पष्ट है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk2" onchange="updateChecklistProgress()">
+                            <label for="chk2">भारतीय वन अधिनियम 1927 और वन संरक्षण अधिनियम 1980 के वर्ष याद हैं।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk3" onchange="updateChecklistProgress()">
+                            <label for="chk3">मध्य प्रदेश में वनों का राष्ट्रीयकरण 1970 में हुआ, यह याद हो गया है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk4" onchange="updateChecklistProgress()">
+                            <label for="chk4">राज्य वन विकास निगम की स्थापना तिथि 24 जुलाई 1975 (भोपाल) कंठस्थ है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk5" onchange="updateChecklistProgress()">
+                            <label for="chk5">वन रिपोर्ट 2021 का कुल वनावरण डेटा ($77492.60\text{ वर्ग किमी}$, $25.14\%$) याद है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk6" onchange="updateChecklistProgress()">
+                            <label for="chk6">क्षेत्रफल में प्रथम (बालाघाट) और प्रतिशत में दूसरे स्थान वाले (शिवपुर) का अंतर स्पष्ट है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk7" onchange="updateChecklistProgress()">
+                            <label for="chk7">न्यूनतम वनावरण वाले जिले में उज्जैन ($37\text{ वर्ग किमी}$) का कारण याद है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk8" onchange="updateChecklistProgress()">
+                            <label for="chk8">कार्बन फ्लक्स टावर (तावड़ी, बैतूल) का स्थान अच्छे से याद कर लिया है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk9" onchange="updateChecklistProgress()">
+                            <label for="chk9">कुल वन वृत्तों की संख्या 16 है तथा सबसे बड़ा वृत्त खंडवा है, यह स्पष्ट है।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk10" onchange="updateChecklistProgress()">
+                            <label for="chk10">जलवायु वर्गीकरण के चारों प्रकार (आर्द्र, शुष्क, काँटेदार, पहाड़ी) के लक्षण याद हैं।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk11" onchange="updateChecklistProgress()">
+                            <label for="chk11">शासकीय वर्गीकरण में आरक्षित ($65.5\%$) और संरक्षित ($32.8\%$) के प्रतिशत याद हैं।</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="chk12" onchange="updateChecklistProgress()">
+                            <label for="chk12">तीनों क्षेत्रीय वन पेटियाँ (सतपुड़ा, विंध्य, शिवपुरी) की सघनता का अंतर स्पष्ट है।</label>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="concept-card" style="border-top: 4px solid var(--accent-orange);">
+                        <h3>📌 Upcoming Topics in Part 2 (अगली क्लास में क्या होगा)</h3>
+                        <p>विकास सर के अनुसार, कल रात 8:00 बजे होने वाले पार्ट 2 के अंतर्गत निम्नलिखित विषयों को कड़े आर्थिक सर्वेक्षण के साथ विस्तार से पढ़ाया जाएगा:</p>
+                        <ul>
+                            <li>प्रजातियों के आधार पर वनों का वर्गीकरण (बांस, सागौन, साल, मिश्रित वन आदि की गहरी जानकारी)।</li>
+                            <li>मध्य प्रदेश के प्रमुख वृक्ष जैसे महुआ, भिलावा, खैर आदि का आर्थिक महत्व।</li>
+                            <li>राज्य में वनों से संबंधित सभी कल्याणकारी सरकारी संस्थाएँ एवं अद्यतन योजनाएँ।</li>
+                        </ul>
+                        <hr>
+                        <p>🌅 <strong>Current Affairs Recommendation by Ashish Sir:</strong> कल सुबह 8:00 बजे आशीष सर की धमाकेदार करंट अफेयर्स क्लास होगी, जिसमें प्रधानमंत्री नरेंद्र मोदी द्वारा शुरू की गई <strong>सुभद्रा योजना (Subhadra Yojana)</strong> के बारे में विस्तार से चर्चा की जाएगी। उसमें भी अवश्य पधारें!</p>
+                        <p style="text-align: center; font-weight: bold; margin-top: 15px; color: var(--accent-cyan);">जय हिन्द, जय भारत! क्लास कैसी लगी, कमेंट बॉक्स में रिव्यु जरूर दें! ⚖️</p>
+                    </div>
+                </footer>
+
+            </div>
+
+            <div class="sidebar-map-panel">
+                <h3 style="margin-top: 0; font-size: 16px; text-align: center; color: var(--accent-cyan);">🗺️ MP Reference Map</h3>
+                <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Official Map of Madhya Pradesh districts Grid" style="width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--border-color);">
+                <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 6px; line-height: 1.3;">Useful for locating Balaghat, Sheopur, Ujjain, Betul, and Khandwa Circle divisions directly.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Check local storage for system preferences on initialization
+        window.onload = function() {
+            // Load theme state
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-theme');
+            }
+            
+            // Load checklist check states
+            const totalItems = 12;
+            for(let i = 1; i <= totalItems; i++) {
+                const checkedStatus = localStorage.getItem('chk' + i);
+                if (checkedStatus === 'true') {
+                    document.getElementById('chk' + i).checked = true;
+                }
+            }
+            updateChecklistProgress();
+        };
+
+        // Theme Switch Toggle Function
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Active Recall Accordions System logic
+        function toggleAccordion(headerElement) {
+            const content = headerElement.nextElementSibling;
+            const icon = headerElement.querySelector('span:last-child');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.innerText = "➕";
+            } else {
+                content.style.display = "block";
+                icon.innerText = "➖";
+            }
+        }
+
+        // Quick Recall Quiz View Trigger logic
+        function toggleQuiz(btnElement) {
+            const answerDiv = btnElement.nextElementSibling;
+            if (answerDiv.style.display === "block") {
+                answerDiv.style.display = "none";
+                btnElement.innerText = "Show Answer";
+            } else {
+                answerDiv.style.display = "block";
+                btnElement.innerText = "Hide Answer";
+            }
+        }
+
+        // Checklist State and Top Progress Updates Calculator
+        function updateChecklistProgress() {
+            const totalItems = 12;
+            let checkedCount = 0;
+            
+            for(let i = 1; i <= totalItems; i++) {
+                const item = document.getElementById('chk' + i);
+                localStorage.setItem('chk' + i, item.checked);
+                if(item.checked) {
+                    checkedCount++;
+                }
+            }
+            
+            // Update textual elements badges
+            document.getElementById('completionBadge').innerText = checkedCount + "/" + totalItems + " Completed";
+            
+            // Update visual linear bar values
+            const pct = Math.round((checkedCount / totalItems) * 100);
+            document.getElementById('topProgressBar').style.width = pct + "%";
+        }
+
+        // Image Preload Error fallback routing logic handler
+        function retryImage(imgId, alternateUrl) {
+            const targetImg = document.getElementById(imgId);
+            if (targetImg) {
+                targetImg.src = alternateUrl;
+                alert("Attempting to bypass parameters and fetch direct fallback URL stream raw.");
+            }
+        }
+    </script>
+</body>
+</html>

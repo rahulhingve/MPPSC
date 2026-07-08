@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 22 Revision: मध्य प्रदेश के वन (प्रजाति एवं वनोपज)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0f0f1a;
+            --surface-color: #16162a;
+            --border-color: #26264d;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --gradient-indigo: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            --gradient-accent: linear-gradient(90deg, #00d4ff, #b388ff);
+        }
+
+        .light-mode {
+            --bg-color: #f8fafc;
+            --surface-color: #ffffff;
+            --border-color: #e2e8f0;
+            --text-color: #0f172a;
+            --text-muted: #64748b;
+            --accent-cyan: #0284c7;
+            --accent-orange: #ea580c;
+            --accent-green: #16a34a;
+            --accent-purple: #7c3aed;
+            --gradient-indigo: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+            --gradient-accent: linear-gradient(90deg, #0284c7, #7c3aed);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+            transition: background-color 0.3s, color 0.3s;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Layout Architecture */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            .app-container {
+                grid-template-columns: 280px 1fr;
+            }
+            .sticky-sidebar {
+                position: sticky;
+                top: 20px;
+                height: calc(100vh - 40px);
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Header Components */
+        header {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            grid-column: 1 / -1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .header-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background: var(--border-color);
+            color: var(--text-color);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .badge-highlight {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+
+        .badge-danger {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+        }
+
+        .progress-container {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 999px;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-accent);
+            transition: width 0.4s ease;
+        }
+
+        /* Nav & Sidebar Controls */
+        .controls-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .theme-toggle {
+            width: 100%;
+            padding: 10px;
+            background: var(--border-color);
+            border: 1px solid transparent;
+            color: var(--text-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        .quick-jump {
+            width: 100%;
+            padding: 10px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 12px;
+            font-family: inherit;
+        }
+
+        .toc-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .toc-item a {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-left: 2px solid var(--border-color);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .toc-item a:hover, .toc-item.active a {
+            color: var(--accent-cyan);
+            border-left-color: var(--accent-cyan);
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        /* Sticky Reference Panels */
+        .sticky-map-container {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--surface-color);
+            padding: 8px;
+            text-align: center;
+        }
+
+        .sticky-map-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Main Content Cards */
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .topic-section {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .topic-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .concept-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .concept-card h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Global Instruction Boxes */
+        .box-definition {
+            background: rgba(179, 136, 255, 0.08);
+            border-left: 4px solid var(--accent-purple);
+            padding: 16px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .box-exam-hot {
+            background: rgba(255, 107, 37, 0.08);
+            border-left: 4px solid var(--accent-orange);
+            padding: 16px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+            font-weight: 500;
+        }
+
+        .box-link-story {
+            background: var(--gradient-indigo);
+            border: 1px solid rgba(179, 136, 255, 0.3);
+            padding: 18px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .box-link-story h5 {
+            font-family: 'Outfit', sans-serif;
+            color: #f3e8ff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Interactive Accordions */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--border-color);
+            padding: 12px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .accordion-content {
+            padding: 16px;
+            background: rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        /* Visual Media Blocks */
+        .image-block {
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            background: #000;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            background: var(--surface-color);
+            padding: 10px 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .fallback-link {
+            color: var(--accent-cyan);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+            display: none;
+            padding: 20px;
+        }
+
+        /* Data Displays & Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background: var(--border-color);
+            color: var(--accent-cyan);
+            font-weight: 600;
+            padding: 12px 16px;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-top: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.01);
+        }
+
+        tr:hover td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* Interactive Active Recall Quizzes */
+        .quiz-card {
+            background: rgba(0, 212, 255, 0.03);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .quiz-item {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .quiz-answer-trigger {
+            background: var(--border-color);
+            color: var(--text-color);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .quiz-answer-trigger:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        .quiz-answer {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--accent-green);
+            font-size: 14px;
+        }
+
+        /* Master Checklist Styling */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 6px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent-green);
+        }
+
+        .checklist-counter {
+            font-size: 14px;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Custom Structure Layout Illustration using pure CSS Grid/Flex */
+        .leaf-structure-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .leaf-visual {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .leaf-shape {
+            width: 80px;
+            height: 120px;
+            margin: 0 auto 12px auto;
+            background: #155e75;
+            transition: all 0.3s;
+        }
+        .leaf-sal {
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: inset 20px 0 0 rgba(0,0,0,0.2);
+            transform: perspective(200px) rotateY(15deg);
+        }
+        .leaf-teak {
+            border-radius: 50%;
+            background: #166534;
+        }
+
+        /* Sticky Mobile Control Bar */
+        .mobile-nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            padding: 10px 16px;
+            display: flex;
+            gap: 12px;
+            z-index: 1000;
+        }
+        @media (min-width: 1024px) {
+            .mobile-nav-bar {
+                display: none;
+            }
+        }
+
+        /* Universal Print Configuration styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 14px;
+            }
+            .sticky-sidebar, .mobile-nav-bar, .theme-toggle, .quiz-answer-trigger, .quick-jump {
+                display: none !important;
+            }
+            .app-container {
+                display: block !important;
+            }
+            .topic-section {
+                border: none !important;
+                page-break-after: always;
+                padding: 0 !important;
+                margin-bottom: 40px;
+            }
+            .accordion-content, .quiz-answer {
+                display: block !important;
+            }
+            input[type="checkbox"] {
+                display: inline-block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <aside class="sticky-sidebar">
+            <div class="controls-card">
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+                    ☀️ Toggle Theme
+                </button>
+                <select class="quick-jump" onchange="navigateToSection(this.value)">
+                    <option value="">🎯 Quick Jump to Topic...</option>
+                    <option value="intro">Class Introduction & Weightage</option>
+                    <option value="classification">Classification by Species</option>
+                    <option value="sal">Sal Tree (साल वृक्ष)</option>
+                    <option value="sagoun">Sagoun/Teak Tree (सागौन वृक्ष)</option>
+                    <option value="bamboo">Bamboo (बांस)</option>
+                    <option value="tendu">Tendu Patta (तेंदू पत्ता)</option>
+                    <option value="lakh">Lakh (लाख कीट)</option>
+                    <option value="khair">Khair Tree (खैर वृक्ष)</option>
+                    <option value="minor-produce">Other Minor Produce (हर्रा, आंवला, महुआ, गोंद, भिलावा)</option>
+                    <option value="master-fullforms">Master Full Forms List</option>
+                    <option value="master-hotfacts">Master Exam Hot Facts 🔥</option>
+                    <option value="master-checklist">Master Revision Checklist</option>
+                </select>
+
+                <ul class="toc-list">
+                    <li class="toc-item"><a href="#intro">1. Intro & Weightage</a></li>
+                    <li class="toc-item"><a href="#classification">2. Species Classification</a></li>
+                    <li class="toc-item"><a href="#sal">3. Sal Tree (साल)</a></li>
+                    <li class="toc-item"><a href="#sagoun">4. Sagoun Tree (सागौन)</a></li>
+                    <li class="toc-item"><a href="#bamboo">5. Bamboo (बांस)</a></li>
+                    <li class="toc-item"><a href="#tendu">6. Tendu Patta (तेंदू)</a></li>
+                    <li class="toc-item"><a href="#lakh">7. Lakh (लाख)</a></li>
+                    <li class="toc-item"><a href="#khair">8. Khair Tree (खैर)</a></li>
+                    <li class="toc-item"><a href="#minor-produce">9. Minor Produce Directory</a></li>
+                    <li class="toc-item"><a href="#master-fullforms">10. Full Forms Table</a></li>
+                    <li class="toc-item"><a href="#master-hotfacts">11. Exam Hot Facts 🔥</a></li>
+                    <li class="toc-item"><a href="#master-checklist">12. Revision Checklist</a></li>
+                </ul>
+            </div>
+
+            <div class="sticky-map-container">
+                <span class="badge badge-highlight" style="margin-bottom: 8px; display: inline-block;">🗺️ MP Boundary Reference</span>
+                <div class="image-container">
+                    <img id="sticky-mp-map" src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh Official Administrative District Reference Map" decoding="async">
+                </div>
+                <div class="image-caption" style="font-size: 11px; padding: 4px;">Source: SLBC Madhya Pradesh Portal Reference</div>
+            </div>
+        </aside>
+
+        <main class="content-main">
+            
+            <header>
+                <div class="header-meta">
+                    <span class="badge badge-highlight">📚 Subject: MP GK</span>
+                    <span class="badge">🔢 Class Number: 22</span>
+                    <span class="badge badge-danger">🎯 Target: MPPSC Pre (100% Core Content Coverage)</span>
+                </div>
+                <h1 style="font-size: 28px; margin-top: 8px;">मध्य प्रदेश के वन: प्रजाति के आधार पर वर्गीकरण एवं वनोपज</h1>
+                <p style="color: var(--text-muted); font-size: 15px; margin-top: 6px;">
+                    Comprehensive structured revision asset engineered for high-retention examination prep. Mirrors the 1:1 timeline sequence of the instructional session.
+                </p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="topProgressBar"></div>
+                </div>
+            </header>
+
+            <section id="intro" class="topic-section">
+                <h2 class="topic-title">💻 1. Introduction & Exam Weightage 分析</h2>
+                <div class="concept-card">
+                    <h4>🔥 MP GK का अखंड सत्य (The Hard Fact)</h4>
+                    <ul>
+                        <li><strong>45 / 100 Questions Weightage:</strong> MPPSC Pre GS Paper-1 में कुल 100 प्रश्नों में से लगभग <strong>45 प्रश्न सीधे MP GK</strong> के होते हैं!</li>
+                        <li><strong>सफलता का एकमात्र रास्ता:</strong> अगर आप इस पोर्शन से बचकर भाग रहे हैं, तो सफलता सुनिश्चित होने में बहुत बड़ी रुकावट आने वाली है। इसे बाद में कवर करने की सोचना जाल में फंसने जैसा है।</li>
+                        <li>यह लेक्चर सीरीज का <strong>लेक्चर नंबर 22</strong> है। पिछले सभी वर्गीकृत लेक्चर प्लेलिस्ट के अंदर व्यवस्थित रूप से उपलब्ध हैं।</li>
+                    </ul>
+                </div>
+                
+                <div class="box-exam-hot">
+                    🔥 <strong>Exam Trend Notice:</strong> इस वन संसाधन टॉपिक से हर बार <strong>1 से 2 प्रश्न 100% निश्चित रूप से</strong> पूछे जाते हैं। कल की क्लास में प्रशासनिक/जलवायु वर्गीकरण देखा था; आज की क्लास से सीधे प्रश्न हिट होने वाले हैं!
+                </div>
+            </section>
+
+            <section id="classification" class="topic-section">
+                <h2 class="topic-title">📊 2. प्रजाति के आधार पर वनों का वर्गीकरण (Classification by Species)</h2>
+                <div class="concept-card">
+                    <h4>🌳 मुख्य तीन प्रकार के वन समूह</h4>
+                    <p>मध्य प्रदेश में प्रमुख रूप से वृक्ष प्रजातियों के आधार पर वनों को 3 मुख्य डिवीजनों में बांटा जाता है:</p>
+                    <ol style="margin-left: 24px; margin-top: 10px;">
+                        <li><strong>सागौन वन (Teak Forests)</strong></li>
+                        <li><strong>साल वन (Sal Forests)</strong></li>
+                        <li><strong>मिश्रित वन (Mixed Forests)</strong></li>
+                    </ol>
+                </div>
+
+                <div class="box-definition">
+                    <strong>📋 मिश्रित वनों (Mixed Forests) का प्रभुत्व:</strong> मध्य प्रदेश में प्रजाति के आधार पर <strong>सर्वाधिक क्षेत्रफल मिश्रित वनों का है, जो 58% से भी अधिक भाग पर फैले हैं</strong>। इसमें सभी प्रकार के वृक्ष एक साथ सह-अस्तित्व में जन्म लेते हैं और बड़े होते हैं।
+                </div>
+
+                <div class="concept-card">
+                    <h4>🌱 Ecological Health Rule (33% सूचकांक)</h4>
+                    <ul>
+                        <li><strong>वनों के लिए सबसे उपयुक्त क्षेत्र:</strong> यदि किसी रीजन या वानिकी क्षेत्रफल में मिश्रित वन का अनुपात <strong>33% से अधिक</strong> होता है, तो वह क्षेत्र वनों के संवर्धन के लिए सबसे उत्तम/उपयुक्त माना जाता है।</li>
+                        <li><strong>कारण:</strong> यह दर्शाता है कि वहां की जलवायु (Climate) और धरती/मृदा इतनी समृद्ध है कि वह हर प्रकार की पादप प्रजाति को बिना किसी रुकावट के पोषण देने में सक्षम है ("सब कोई जन्म ले लेता है, किसी को दिक्कत नहीं आती")।</li>
+                    </ul>
+                </div>
+
+                <div class="box-link-story">
+                    <h5>🔗 Link Story — ऐसे याद करो (Forest Matrix Chain)</h5>
+                    <p>मिश्रित वनों की <strong>58% की भारी भीड़</strong> में एक तरफ <strong>सागौन</strong> अपनी महंगी लकड़ी का घमंड दिखा रहा था, तभी <strong>साल</strong> ने आकर उसे जल का संरक्षण सिखाया, और तीनों ने मिलकर तय किया कि जहां <strong>33% से ज्यादा मिक्स्ड भाईचारा</strong> होगा, वही धरती वनों का स्वर्ग कहलाएगी!</p>
+                </div>
+            </section>
+
+            <section id="sal" class="topic-section">
+                <h2 class="topic-title">🌲 3. साल या साज या साखू वृक्ष (Sal / Saaj Tree Depth Analysis)</h2>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>पैरामीटर (Parameter)</th>
+                                <th>वैज्ञानिक एवं सांख्यिकीय विवरण (Scientific & Statistical Data)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>स्थानीय नाम (Local Names)</strong></td>
+                                <td>साल, साज, साखू (Saakhu)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>वैज्ञानिक नाम (Scientific Name)</strong></td>
+                                <td><em>Shorea robusta</em> (सोरे रोबउस्ता या सोरिया रोबउस्ता)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>वनाच्छादन प्रतिशत (Forest Cover Area %)</strong></td>
+                                <td>मध्य प्रदेश के वनाच्छादित क्षेत्र के <strong>4.15% भाग पर</strong> विस्तृत।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>उपयुक्त मृदा (Required Soil Type)</strong></td>
+                                <td><strong>लाल-पीली मृदा (Red-Yellow Soil)</strong> क्षेत्र।</td>
+                            </tr>
+                            <tr>
+                                <td><strong>वर्षा की मात्रा (Rainfall Dependency)</strong></td>
+                                <td>अधिक वर्षा वाले क्षेत्र: <strong>100 से 125 सेंटीमीटर या उससे अधिक</strong> वार्षिक वर्षा।</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🤝 जनजाति एवं भौगोलिक संबंध</h4>
+                    <ul>
+                        <li><strong>बैगा जनजाति (Baiga Tribe):</strong> साज वृक्ष की पूजा पवित्र मानकर करती है। बैगा मुख्य रूप से उन्हीं क्षेत्रों में निवास करती है जहां साल/साज के घने वन पाए जाते हैं।</li>
+                        <li><strong>मुख्य भौगोलिक क्षेत्र:</strong> छत्तीसगढ़ बॉर्डर से लगा हुआ <strong>पूर्वी मध्य प्रदेश (Eastern MP)</strong>।</li>
+                        <li><strong>प्रमुख उत्पादक जिले:</strong> सर्वाधिक उत्पादन <strong>मंडला (Mandla) - [🔥 Exam Hot Star Point]</strong> जिले में होता है। इसके अलावा डिंडोरी, बालाघाट, अनूपपुर, सीधी और शहडोल जिलों में यह पाया जाता है। (नोट: नर्मदापुरम मुख्य रूप से सागौन के लिए है, साल के लिए नहीं)।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🧠 Anatomy & Biological Advantage (पत्ते की अनूठी बनावट)</h4>
+                    <p><strong>सागौन बनाम साल जल संचय प्रणाली:</strong></p>
+                    <ul>
+                        <li><strong>साल के पत्ते की विशेषता:</strong> इसका पत्ता लंबा होता है, परंतु बीच की मुख्य शिरा से वह अंदर की ओर मुड़ा/झुका (Folded/Incurved Shape) रहता है। जब वर्षा का जल गिरता है, तो पत्ता पानी को छिटकने नहीं देता, बल्कि वह पानी को सीधे अपनी ही जड़ (Root Base) की ओर गिरा लेता है, जिससे पेड़ के नीचे नमी (Moisture) हमेशा बनी रहती है।</li>
+                        <li><strong>सागौन के पत्ते की विशेषता:</strong> इसका पत्ता चपटा और फैला होता है। इस पर जैसे ही पानी की बूंद गिरती है, वह छिटक कर बाहर की तरफ गिर जाती है।</li>
+                    </ul>
+                    <p style="margin-top: 8px; font-size: 14px; color: var(--text-muted);">
+                        📌 <em>शिक्षक का संदर्भ: अमरकंटक (अनूपपुर) प्रवास के दौरान तत्कालीन मुख्यमंत्री शिवराज सिंह चौहान ने भी ट्वीट कर साल वृक्ष की इस जल-संरक्षण क्षमता की विशेष सराहना की थी और अधिक से अधिक साल लगाने पर जोर दिया था।</em>
+                    </p>
+                </div>
+
+                <div class="leaf-structure-box">
+                    <div class="leaf-visual">
+                        <div class="leaf-shape leaf-sal"></div>
+                        <strong style="color:var(--accent-cyan)">साल का पत्ता (Folded Channel)</strong>
+                        <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">पानी को सीधे अपनी जड़ों में गिराकर नमी सुरक्षित रखता है।</p>
+                    </div>
+                    <div class="leaf-visual">
+                        <div class="leaf-shape leaf-teak"></div>
+                        <strong style="color:var(--accent-orange)">सागौन का पत्ता (Flat Surface)</strong>
+                        <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">पानी की बूंदों को छिटककर बाहर फेंक देता है।</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🚨 राष्ट्रीय स्तर एवं बोरर कीट का संकट</h4>
+                    <ul>
+                        <li><strong>देश में प्रथम:</strong> मध्य प्रदेश में पूरे देश के <strong>सर्वाधिक साल वृक्ष</strong> पाए जाते हैं (जनसंपर्क आधिकारिक पोर्टल डेटा)।</li>
+                        <li><strong>बोरर कीट (Sal Borer Insect Threat):</strong> साल के वृक्षों में 'बोरा' या 'बोरर' नामक खतरनाक कीट लग जाता है, जो एक संक्रामक महामारी की तरह पूरे जंगल में फैलता है। इसके प्रभाव से खड़ा पेड़ सूख जाता है।</li>
+                        <li><strong>ऐतिहासिक घटना:</strong> इस संक्रामक कीट के कारण एक बार मध्य प्रदेश सरकार को <strong>10 लाख से अधिक साल के पेड़ों को एक साथ काटना पड़ा था</strong> ताकि पूरे वन क्षेत्र को नष्ट होने से बचाया जा सके।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🛠️ व्यापारिक उपयोग एवं राष्ट्रीयकरण का सच</h4>
+                    <ul>
+                        <li><strong>मुख्य उपयोग:</strong> इमारती लकड़ी (Timber) के रूप में तथा <strong>रेलवे स्लीपर (Railway Sleepers)</strong> बनाने में इसकी लकड़ी का व्यापक उपयोग होता था। सीहोर के <strong>बुधनी (Budni)</strong> में इसका रेलवे स्लीपर बनाने का पुराना कारखाना स्थापित था।</li>
+                        <li><strong>🔥 साल बीज का राष्ट्रीयकरण (1975):</strong> याद रखिए, साल के वृक्ष का राष्ट्रीयकरण नहीं हुआ है, बल्कि <strong>1975 में साल के बीज (Sal Seed) का राष्ट्रीयकरण किया गया है</strong> (जनसंपर्क विभाग डेटा)।</li>
+                        <li><strong>औषधीय महत्व:</strong> साल के बीजों का उपयोग पेट दर्द की अचूक दवा, अल्सर (Ulcer) और पेचिस (Dysentery/मरोड़) जैसी पेट की गंभीर प्राकृतिक बीमारियों के इलाज में किया जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Shorea_robusta_-_Fruits_and_leaves_-_Kolkata_2011-10-26_1919.jpg" alt="Shorea robusta (Sal tree) fruits and diagnostic incurved foliage structure" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Shorea_robusta')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Shorea robusta (Sal tree leaves & seeds) | Public Domain/CC License Reference</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — साल वृक्ष</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. साल के किस भाग का राष्ट्रीयकरण किस वर्ष में किया गया?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">साल के बीज (Sal Seed) का राष्ट्रीयकरण वर्ष 1975 में किया गया।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. किस संक्रामक कीट के कारण MP में 10 लाख साल के पेड़ काटने पड़े थे?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">साल बोरर कीट (Sal Borer Insect) के कारण।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sagoun" class="topic-section">
+                <h2 class="topic-title">🌳 4. सागौन वृक्ष (Teak Wood Industrial Profile)</h2>
+                
+                <div class="concept-card">
+                    <h4>📊 वैज्ञानिक एवं सांख्यिकीय आंकड़े</h4>
+                    <ul>
+                        <li><strong>वैज्ञानिक नाम:</strong> <em>Tectona grandis</em> (टेक्टोना ग्रांडिस / टेक्टोन ग्रांडेस)</li>
+                        <li><strong>भौगोलिक क्षेत्रफल:</strong> मध्य प्रदेश के कुल वन क्षेत्र के लगभग <strong>19.36% भाग पर</strong> सागौन के वनों का विस्तार है।
+                            <br><span style="color:var(--accent-orange); font-size:14px;">🔥 <strong>MPPSC Pre Real Question Pattern:</strong> पीएससी प्री में यह प्रश्न पूछा जा चुका है, जहां विकल्प में राउंड फिगर में <strong>20%</strong> दिया गया था। अतः 19.36% को 20% के समकक्ष याद रखें।</span>
+                        </li>
+                        <li><strong>वर्षा सीमा:</strong> साल वृक्ष से कम वर्षा वाले क्षेत्रों (लगभग <strong>75 से 100 सेंटीमीटर</strong>) में सहजता से उगता है। इसे अत्यधिक जलभराव या दलदली नमी पसंद नहीं है।</li>
+                        <li><strong>मृदा:</strong> मुख्य रूप से <strong>काली मृदा (Black Soil)</strong> वाले क्षेत्रों तथा बुंदेलखंड के कुछ मिश्रित मृदा पठार क्षेत्रों में सर्वाधिक विकसित होता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📍 संकेंद्रण एवं वन क्षेत्र (High-Density Hubs)</h4>
+                    <ul>
+                        <li><strong>सर्वाधिक घने सागौन वन:</strong> <strong>नर्मदापुरम (Narmadapuram)</strong> जिला सागौन का मुख्य केंद्र है।</li>
+                        <li><strong>मढ़ई वन एवं बोरी घाटी:</strong> नर्मदापुरम के अंतर्गत आने वाला <strong>मढ़ई वन क्षेत्र (Madai Forest)</strong> और <strong>बोरी घाटी (Bori Valley)</strong> सागौन के विशाल वृक्षों के लिए विख्यात हैं। यह क्षेत्र तवा तथा देनवा नदियों के अपवाह क्षेत्र के पास स्थित है (व्यापम का पसंदीदा प्रश्न, PSC के लिए अति-महत्वपूर्ण)।</li>
+                        <li><strong>रायसेन - रातापानी अभ्यारण्य:</strong> रायसेन जिले के <strong>रातापानी अभ्यारण्य (Ratapani Sanctuary)</strong> में भी सागौन के वृक्ष अत्यधिक घने रूप में पाए जाते हैं।</li>
+                        <li><strong>अन्य जिले:</strong> सागर, छिंदवाड़ा, बैतूल, पन्ना, छतरपुर और खंडवा।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>💎 एक जिला एक उत्पाद (ODOP Strategy) & Characteristics</h4>
+                    <ul>
+                        <li><strong>गुणवत्ता में श्रेष्ठ:</strong> सागौन की लकड़ी अत्यंत महंगी और टिकाऊ होती है। इसमें बरसात के दिनों में सड़न नहीं होती और <strong>दीमक (Termites) या अन्य कोई कीड़ा बिल्कुल नहीं लगता</strong>।</li>
+                        <li><strong>🔥 बैतूल (Betul) - ODOP:</strong> उच्च कोटि (Premium Quality) की सागौन लकड़ी की प्राप्ति के लिए <strong>बैतूल जिले</strong> को 'एक जिला एक उत्पाद' (ODOP) में शामिल किया गया है।</li>
+                        <li><strong>🔥 छतरपुर (Chhatarpur) - ODOP:</strong> सागौन की लकड़ी से निर्मित उत्कृष्ट <strong>फर्नीचर (Furniture)</strong> उद्योग के लिए छतरपुर को ODOP घोषित किया गया है।
+                            <br><span style="color:var(--accent-cyan); font-size:14px;">⚠️ <strong>शब्दों का खेल समझिए:</strong> परीक्षा में पूछे कि सबसे घने सागौन वन कहां हैं? उत्तर: नर्मदापुरम। पूछे कि सर्वश्रेष्ठ सागौन लकड़ी का ODOP जिला कौन सा है? उत्तर: बैतूल!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Teak_Tectona_grandis_Foliage_and_flowers_at_Jayanti_WB_W_IMG_8030.jpg" alt="Tectona grandis (Teak or Sagoun tree) large green leaves and terminal panicle flowers" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Tectona_grandis')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Tectona grandis (Sagoun foliage and blooms) | Open Intellectual Property Source</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — सागौन वन</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. सागौन के उत्कृष्ट फर्नीचर निर्माण के लिए कौन सा जिला ODOP में चुना गया है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">छतरपुर (Chhatarpur) जिला फर्नीचर निर्माण के लिए ODOP में शामिल है।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. मढ़ई वन और बोरी घाटी मुख्य रूप से किस नदी क्षेत्र के पास हैं और किस वृक्ष के लिए प्रसिद्ध हैं?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">तवा एवं देनवा नदी क्षेत्र के पास (नर्मदापुरम) और यह सागौन (Teak) वृक्षों के लिए प्रसिद्ध हैं।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="bamboo" class="topic-section">
+                <h2 class="topic-title">🎋 5. बांस (Green Gold - Structural Analysis)</h2>
+                <div class="concept-card">
+                    <h4>🌾 वानस्पतिक परिचय एवं प्रजाति</h4>
+                    <ul>
+                        <li><strong>वैज्ञानिक नाम परिवार:</strong> बंबूजा बलगी या बंबू सडी (<em>Bambusa</em> Species)।</li>
+                        <li><strong>प्रजाति जो MP में पाई जाती है:</strong> मध्य प्रदेश के वनों में मुख्य रूप से <strong>डेंड्रोकैलेमस स्टक्टस (Dendrocalamus strictus) [🔥 मोस्ट इंपोर्टेंट फैक्ट]</strong> प्रजाति का बांस प्रचुर मात्रा में मिलता है।</li>
+                        <li><strong>घास का स्वरूप:</strong> बांस वनस्पति विज्ञान की दृष्टि से कोई पेड़ नहीं है, बल्कि यह पृथ्वी की <strong>सबसे बड़ी प्राकृतिक घास (Largest Natural Grass)</strong> है। इसे वनों का <strong>"हरा सोना" (Green Gold)</strong> कहा जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📈 राष्ट्रीय स्तर पर मध्य प्रदेश का स्थान</h4>
+                    <ul>
+                        <li><strong>कुल वन क्षेत्रफल का योगदान:</strong> मध्य प्रदेश के कुल वन क्षेत्रफल के लगभग <strong>23% भाग पर</strong> बांस के वनों का विस्तार पाया जाता है।</li>
+                        <li><strong>भारत में प्रथम स्थान:</strong> बांस वन आच्छादन के मामले में <strong>मध्य प्रदेश देश में प्रथम स्थान (Rank 1) पर है</strong>। दूसरे स्थान पर अरुणाचल प्रदेश आता है।
+                            <br><span style="color:var(--accent-green); font-size:14px;">📌 <em>डेटा का स्रोत: जनसंपर्क विभाग के प्रतिवेदन में दिए गए कुल क्षेत्रफल के आधार पर गणना कर यह 23% निकाला गया है, जो परीक्षा के लिए अत्यंत प्रामाणिक है।</em></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📍 भौगोलिक वितरण एवं औद्योगिक उपयोग</h4>
+                    <ul>
+                        <li><strong>मुख्य क्षेत्र:</strong> यह मध्य प्रदेश के <strong>दक्षिण-पूर्वी जिलों (South-Eastern Districts)</strong> में नमी वाले क्षेत्रों में बहुतायत से पाया जाता है।</li>
+                        <li><strong>प्रमुख जिले:</strong> बालाघाट (विशालतम संकेंद्रण), शहडोल, अनूपपुर, बैतूल, खंडवा और नर्मदापुरम (बोरी घाटी)।</li>
+                        <li><strong>प्रमुख उपयोग:</strong> इसका सबसे बड़ा औद्योगिक उपयोग <strong>कागज निर्माण एवं लुगदी (Paper & Pulp Industry)</strong> तैयार करने में किया जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🏢 बांस विकास हेतु प्रशासनिक बोर्ड एवं मिशन्स</h4>
+                    <ul>
+                        <li><strong>🔥 मध्य प्रदेश बांस शिल्प विकास बोर्ड:</strong> बांस से कलात्मक टोकरियां और शिल्प वस्तुएं बनाने को बढ़ावा देने के लिए <strong>15 जुलाई 2013 को भोपाल में</strong> इसकी स्थापना की गई।</li>
+                        <li><strong>🔥 राज्य बांस मिशन (State Bamboo Mission):</strong> आर्थिक सर्वेक्षण के अनुसार इसकी शुरुआत <strong>3 जुलाई 2013</strong> को की गई थी।</li>
+                        <li><strong>प्रथम सरकारी शोरूम (Current Update):</strong> मध्य प्रदेश के <strong>इंदौर (Indore)</strong> शहर में बांस उत्पादों की प्रदर्शनी और बिक्री के लिए प्रदेश का <strong>पहला सरकारी शोरूम</strong> खोला गया है।</li>
+                    </ul>
+                </div>
+
+                <div class="box-link-story">
+                    <h5>🔗 Link Story — बांस विकास टाइमलाइन (The July 2013 Twins)</h5>
+                    <p>साल 2013 के जुलाई महीने में बांस को "हरा सोना" घोषित करने की होड़ मची! पहले <strong>3 जुलाई को बांस मिशन</strong> आया, फिर ठीक 12 दिन बाद <strong>15 जुलाई को भोपाल में बांस शिल्प विकास बोर्ड</strong> बैठ गया, और इन दोनों ने मिलकर अपने सारे सुंदर प्रोडक्ट्स बेचने के लिए <strong>इंदौर में पहला सरकारी शोरूम</strong> खोल दिया!</p>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Dendrocalamus_strictus_-_Kolkata_2011-10-21_1430.jpg" alt="Dendrocalamus strictus cluster, the primary bamboo species found across Madhya Pradesh forest tracts" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Dendrocalamus_strictus')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Dendrocalamus strictus (Male Bamboo Ecosystem) | Verified Open Asset</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — बांस मिशन</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. मध्य प्रदेश में मुख्य रूप से बांस की कौन सी प्रजाति पाई जाती है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">डेंड्रोकैलेमस स्टक्टस (Dendrocalamus strictus)।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. मध्य प्रदेश बांस शिल्प विकास बोर्ड की स्थापना कब और कहां हुई?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">15 जुलाई 2013 को भोपाल में की गई थी।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tendu" class="topic-section">
+                <h2 class="topic-title">🍃 6. तेंदू पत्ता या इबोनी (Tendu Leaves Socio-Economic Value)</h2>
+                
+                <div class="concept-card">
+                    <h4>📊 वानस्पतिक एवं राष्ट्रीय सांख्यिकी</h4>
+                    <ul>
+                        <li><strong>वैज्ञानिक नाम:</strong> <em>Diospyros melanoxylon</em> (डायस्पोरा मेलेनजाइलन)</li>
+                        <li><strong>राष्ट्रीय उत्पादन में हिस्सेदारी:</strong> मध्य प्रदेश अकेले पूरे देश का लगभग <strong>60% तेंदू पत्ता उत्पादन [🔥 मोस्ट क्रिटिकल फैक्ट]</strong> करता है। इस मामले में मध्य प्रदेश का देश में प्रथम स्थान है।</li>
+                        <li><strong>🔥 तेंदू पत्ता राष्ट्रीयकरण (1964):</strong> मध्य प्रदेश सरकार ने वन्य उपज के क्षेत्र में कदम बढ़ाते हुए <strong>वर्ष 1964 में तेंदू पत्ता का राष्ट्रीयकरण (Nationalization)</strong> किया था। यह मध्य प्रदेश में किसी भी वनोपज के राष्ट्रीयकरण का पहला बड़ा कदम था।</li>
+                        <li><strong>तेंदू पत्ता अधिनियम:</strong> वर्ष 1964 में ही मध्य प्रदेश तेंदू पत्ता अधिनियम पारित कर सरकार ने इसके व्यापार को बिचौलियों से मुक्त कराया।</li>
+                    </ul>
+                </div>
+
+                <div class="box-definition">
+                    <strong>💰 आदिवासियों का हरा सोना (Tribal Livelihood Anchor):</strong> तेंदू पत्ता को मुख्य रूप से "आदिवासियों का हरा सोना" कहा जाता है, क्योंकि सुदूर जंगलों में रहने वाले जनजातीय परिवारों की आजीविका का यह मुख्य साधन है। पहले बिचौलिए (Middlemen) आदिवासियों से औने-पौने दाम में पत्ते खरीदकर शहरों में महंगे बेचते थे। इसे रोकने के लिए सरकार स्वयं न्यूनतम समर्थन मूल्य (MSP) पर गांवों में 'फड़' (Collection Centers) निकालकर पत्तों की खरीदी करती है।
+                </div>
+
+                <div class="concept-card">
+                    <h4>📦 संग्रहण इकाई गणना (Standard Unit Matrix)</h4>
+                    <p>तेंदू पत्ता संग्रहण की गणना गड्डियों के आधार पर होती है:</p>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>संग्रहण इकाई</th>
+                                    <th>पत्तियों की संख्या / मात्रा</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1 गड्डी (Standard Bundle)</strong></td>
+                                    <td>50 तेंदू के पत्ते (Leaves)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>मानक गणना आधार (MSP Target)</strong></td>
+                                    <td>100 गड्डियों के बंडल पर न्यूनतम मूल्य तय होता है।</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📍 भौगोलिक बेल्ट एवं औद्योगिक उपयोग</h4>
+                    <ul>
+                        <li><strong>मुख्य भौगोलिक क्षेत्र:</strong> विंध्यांचल पर्वत श्रेणी (Vindhyan Range) से सटे हुए पठारी भागों में इसका संकेन्द्रण सर्वाधिक है।</li>
+                        <li><strong>प्रमुख संग्रहक जिले:</strong> सागर, जबलपुर, शहडोल, रीवा, सीधी, दमोह, उमरिया और छतरपुर।</li>
+                        <li><strong>मुख्य औद्योगिक उपयोग:</strong> इसका 100% उपयोग <strong>बीड़ी निर्माण उद्योग (Beedi Industry)</strong> में सिगरेट के विकल्प के रूप में लपेटने हेतु किया जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>👟 कल्याणकारी योजना: चरण पादुका योजना (Charan Paduka Scheme)</h4>
+                    <ul>
+                        <li><strong>मूल शुरुआत:</strong> यह योजना मूलतः वर्ष 2005 में शुरू हुई थी।</li>
+                        <li><strong>🔥 रीलॉन्च / पुनः शुभारंभ (2018):</strong> तत्कालीन मुख्यमंत्री द्वारा वर्ष <strong>2018 में सिंगरोली (Singrauli) [🔥 एग्जाम हॉट]</strong> जिले से इसे भव्य रूप से रीलॉन्च किया गया था।</li>
+                        <li><strong>उद्देश्य एवं लाभ:</strong> जो जनजातीय भाई-बहन भयंकर गर्मी के मौसम में जंगलों में तेंदू पत्ता तोड़ने जाते हैं, उन्हें पैरों की सुरक्षा और राहत देने के लिए सरकार द्वारा <strong>चप्पल/जूते, पानी की बोतल (Water Bottle), और धूप/बारिश से बचाव हेतु रेनकोट (Raincoat)</strong> निःशुल्क वितरित किए जाते हैं।</li>
+                    </ul>
+                </div>
+
+                <div class="box-link-story">
+                    <h5>🔗 Link Story — तेंदू पत्ता वितरण बेल्ट (The Vindhyan Ridge Chain)</h5>
+                    <p><strong>सागर</strong> की लहरों से उड़कर तेंदू पत्ता सीधे <strong>जबलपुर</strong> के धुआंधार में भीगा, वहां से <strong>शहडोल</strong> और <strong>रीवा</strong> के सफेद शेरों के रास्ते <strong>सीधी</strong> होकर <strong>दमोह</strong> पहुंचा, जहां <strong>उमरिया</strong> और <strong>छतरपुर</strong> के आदिवासियों ने <strong>2018 में सिंगरोली की चप्पल (चरण पादुका)</strong> पहनकर उसे बीड़ी बनाने के लिए कलेक्ट कर लिया!</p>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Diospyros_melanoxylon_W_IMG_7159.jpg" alt="Diospyros melanoxylon foliage, locally known as Tendu, harvested extensively for the indigenous beedi manufacturing sector" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Diospyros_melanoxylon')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Diospyros melanoxylon (Tendu Leaves) | Open Source Botanical Directory</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — तेंदू पत्ता</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. मध्य प्रदेश में तेंदू पत्ता का राष्ट्रीयकरण किस वर्ष में किया गया था?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">वर्ष 1964 में (मध्य Pradesh का पहला वनोपज राष्ट्रीयकरण)।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. चरण पादुका योजना को 2018 में किस जिले से दोबारा रीलॉन्च किया गया था और इसमें क्या बांटा जाता है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">सिंगरोली (Singrauli) जिले से; इसमें पानी की बोतल, रेनकोट और चप्पलें बांटी जाती हैं।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lakh" class="topic-section">
+                <h2 class="topic-title">🐛 7. लाख कीट पालन (Lac Culture & Tribal Economy)</h2>
+                <div class="concept-card">
+                    <h4>🔬 जैविक उद्गम (Biological Concept)</h4>
+                    <ul>
+                        <li><strong>कोई वृक्ष उत्पाद नहीं:</strong> याद रखिए, लाख का अपना कोई स्वतंत्र वृक्ष नहीं होता है। लाख वास्तव में एक सूक्ष्म <strong>कीट के शरीर से स्रावित होने वाला चिपचिपा राल/पदार्थ (Secretion from Insect's Body)</strong> है।</li>
+                        <li><strong>कीट का वैज्ञानिक नाम:</strong> इस लाख उत्पादक कीट का नाम <strong>लेसिफर लक्का (<em>Laccifer lacca</em> या लेसफ़र लक्का)</strong> है।</li>
+                        <li><strong>पोषक वृक्ष (Host Trees):</strong> यह कीट मुख्य रूप से तीन वृक्षों की कोमल टहनियों पर बैठकर उनका रस चूसता है और लाख का स्राव करता है:
+                            <br>1. <strong>बेर (Ber)</strong> &nbsp;&nbsp; 2. <strong>पलास (Palas)</strong> &nbsp;&nbsp; 3. <strong>कुसुम (Kusum)</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🍃 पलास वृक्ष की कहानी (The Flame of the Forest)</h4>
+                    <p>
+                        पलास के वृक्ष को स्थानीय ग्रामीण भाषा में <strong>'छोला' (Chhola)</strong> कहा जाता है। गर्मियों के दिनों में इस पर चटक नारंगी-लाल रंग के फूल खिलते हैं, जिससे पूरा जंगल आग की लपटों जैसा दिखता है, इसलिए इसे 'जंगल की आग' भी कहते हैं।
+                        <br><span style="color:var(--text-muted); font-size:14px;">📌 <em>पुरानी यादें: पुराने समय में गांवों में जब चाट या पानीपुरी वाले आते थे, तो वे पलास/छोला के पत्तों से बने दोनों में ही प्याज रखकर खाने को देते थे।</em></span>
+                    </p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📍 उत्पादक क्षेत्र एवं सरकारी कारखाना</h4>
+                    <ul>
+                        <li><strong>प्रमुख जिले:</strong> जबलपुर, नर्मदापुरम, सिवनी, शहडोल और उमरिया। इन क्षेत्रों के वनों में रहने वाले आदिवासियों की आजीविका कलेक्टेड लाख को बेचकर चलती है।</li>
+                        <li><strong>मुख्य औद्योगिक उपयोग:</strong> लाख का उपयोग पारंपरिक रूप से <strong>चूड़ी उद्योग (Bangle Industry)</strong>, सीलिंग वैक्स, पेंट उद्योग और महंगे <strong>सौंदर्य प्रसाधनों (Cosmetics / Body Lotions)</strong> में खुशबूदार गाढ़ेपन के अवयव के रूप में किया जाता है।</li>
+                        <li><strong>🔥 लाख का सरकारी कारखाना:</strong> मध्य प्रदेश में लाख से व्यावसायिक उत्पाद बनाने का एकमात्र <strong>सरकारी कारखाना उमरिया (Umaria) [🔥 एग्जाम हॉट]</strong> जिले में स्थापित किया गया है।</li>
+                    </ul>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Butea_monosperma_at_Jayanti_WB_W_IMG_8207.jpg" alt="Butea monosperma, known as Palas or Chhola, which serves as a major host tree for the Laccifer lacca insect" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Butea_monosperma')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Butea monosperma (Palas / Chhola Tree blooms) | Public Domain Media</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — लाख उद्योग</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. लाख बनाने का मध्य प्रदेश का सरकारी कारखाना किस जिले में स्थित है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">उमरिया (Umaria) जिले में स्थित है।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. लाख कीट मुख्य रूप से किन तीन वृक्षों पर पाला जाता है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">बेर, पलास (छोला) और कुसुम के वृक्षों पर।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="khair" class="topic-section">
+                <h2 class="topic-title">🪵 8. खैर का वृक्ष (Catechu Extraction Matrix)</h2>
+                <div class="concept-card">
+                    <h4>🪝 वानस्पतिक गुण एवं उपनाम</h4>
+                    <ul>
+                        <li><strong>प्रकृति:</strong> यह पूर्णतः एक <strong>कांटेदार वृक्ष (Thorny Tree)</strong> है जो शुष्क बबूल की ही एक विशिष्ट प्रजाति माना जाता है।</li>
+                        <li><strong>वैज्ञानिक नाम:</strong> <em>Senegalia catechu</em> या <em>Acacia catechu</em> (सानेगालिया कटैचू)।</li>
+                        <li><strong>अन्य प्राचीन स्थानीय नाम:</strong> इसे कई क्षेत्रों में <strong>'कतकीकर' (Katkikar)</strong> और <strong>'सोन कीकर' (Son Kikar)</strong> के नाम से भी पुकारा जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>👥 जनजातीय श्रम एवं कत्था निर्माण</h4>
+                    <ul>
+                        <li><strong>खैरवार जनजाति (Khairwar Tribe):</strong> विंध्य एवं कैमूर पर्वत श्रृंखला (कटनी से रीवा बेल्ट) में रहने वाली 'खैरवार' जनजाति का मुख्य पारंपरिक पेशा खैर के वृक्ष की कड़ाही (Inner Wood) से कत्था निकालना है।</li>
+                        <li><strong>कोंदर आदिवासी (Kondar Tribals):</strong> यही खैर से कत्था निकालने का काम जब छतरपुर और टीकमगढ़ जिलों के आदिवासी करते हैं, तो उन्हें स्थानीय भाषा में <strong>'कोंदर' (Kondar)</strong> कहा जाता है। ये भी जनजातीय समुदाय का ही हिस्सा हैं।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📍 भौगोलिक बेल्ट एवं कत्था कारखाने</h4>
+                    <ul>
+                        <li><strong>वितरण जिले:</strong> शहडोल, रीवा, सीधी, पन्ना, छतरपुर, सागर, दमोह, जबलपुर, रायसेन, भोपाल, शिवपुरी, उमरिया और मुरैना।</li>
+                        <li><strong>🔥 औद्योगिक कारखाने (Industrial Units):</strong> खैर की लकड़ी से व्यावसायिक स्तर पर कत्था बनाने के दो बड़े केंद्र स्थापित हैं:
+                            <br>1. <strong>शिवपुरी (Shivpuri)</strong>
+                            <br>2. <strong>बानमोर (Banmore) - मुरैना</strong>
+                        </li>
+                        <li><strong>बहुआयामी उपयोग:</strong> 
+                            <br>• पान में लगाने वाले <strong>कत्था (Catechu)</strong> निर्माण में।
+                            <br>• <strong>चर्म शोधन (Leather Tanning):</strong> इसमें मौजूद टैनिन चमड़े को साफ और कड़ा करने में काम आता है।
+                            <br>• <strong>औषधि:</strong> त्वचा पर होने वाली खाज-खुजली और एलर्जी को मिटाने के लिए इसका लेप लगाया जाता है।
+                            <br>• इसके अतिरिक्त गाढ़े वॉल पेंट्स (Wall Paints) बनाने में भी इसका उपयोग होता है।
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Acacia_catechu_W_IMG_1537.jpg" alt="Acacia catechu thorny branch and leaves, widely processed in Shivpuri and Banmore factories for catechu extraction" onerror="handleImageError(this)">
+                        <div class="fallback-link" onclick="retryImage(this, 'Acacia_catechu')">⚠️ Image Failed to load. Click to view alternative reference source.</div>
+                    </div>
+                    <div class="image-caption">Image: Wikimedia Commons | Acacia catechu (Khair / Thorny Kikar) | Standard Open Domain Reference</div>
+                </div>
+
+                <div class="quiz-card">
+                    <h4>🔍 Quick Recall Quiz — खैर वृक्ष</h4>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q1. मध्य प्रदेश में खैर से कत्था बनाने के प्रमुख कारखाने किन दो स्थानों पर हैं?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">शिवपुरी और बानमोर (मुरैना) में।</div>
+                    </div>
+                    <div class="quiz-item">
+                        <div class="quiz-question">Q2. छतरपुर और टीकमगढ़ में खैर से कत्था निकालने वाले आदिवासियों को क्या कहा जाता है?</div>
+                        <button class="quiz-answer-trigger" onclick="toggleAnswer(this)">Show Answer</button>
+                        <div class="quiz-answer">कोंदर (Kondar) कहा जाता है।</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="minor-produce" class="topic-section">
+                <h2 class="topic-title">🗂️ 9. लघु वनोपज निर्देशिका (Minor Forest Produce Master Directory)</h2>
+                
+                <div class="concept-card" style="border-left: 4px solid var(--accent-purple);">
+                    <h4>🖤 हर्रा (Harra Tree Profile)</h4>
+                    <ul>
+                        <li><strong>वैज्ञानिक नाम:</strong> <em>Terminalia chebula</em> (टर्मिनलिया चेबुला)</li>
+                        <li><strong>मुख्य उत्पादक जिले:</strong> उमरिया, शहडोल और नर्मदापुरम।</li>
+                        <li><strong>पारंपरिक उपयोग:</strong> यह काले रंग की सूखी घुंडी जैसी होती है। घरों में दादाजी लोग इसे भूनकर, पीसकर पेट साफ करने का औषधीय 'चूरन' (Digestive Powder) बनाते हैं। इसके अलावा खांसी होने पर इसे शहद के साथ चटाया जाता है। चर्म शोधन, स्याही और पेंट उद्योगों में भी यह उपयोगी है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card" style="border-left: 4px solid var(--accent-cyan);">
+                    <h4>🟢 आंवला (The Doctor Plant)</h4>
+                    <ul>
+                        <li><strong>वैज्ञानिक नाम:</strong> <em>Phyllanthus emblica</em> (एम्बलिका ऑफिसिनैलिस)</li>
+                        <li><strong>🔥 आंवला जिला (Amla District):</strong> पूरे मध्य प्रदेश में <strong>पन्ना (Panna) [🔥 सुपर हॉट स्टार पॉइंट]</strong> को आधिकारिक तौर पर 'आंँवला जिला' घोषित किया गया है। परीक्षा में यही एक मुख्य प्रश्न आता है। इसके अलावा टीकमगढ़, मुरैना, छतरपुर, सीधी और शहडोल में भी उत्पादन होता है।</li>
+                        <li><strong>गुण:</strong> इसे 'डॉक्टर प्लांट' कहा जाता है क्योंकि इसमें प्रचुर मात्रा में <strong>विटामिन सी (Vitamin C)</strong> पाया जाता है। इसका उपयोग त्रिफला औषधि, मुरब्बा, अचार और जूस बनाने में होता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card" style="border-left: 4px solid var(--accent-orange);">
+                    <h4>🟡 महुआ (Tribal Conclave & Export Hub)</h4>
+                    <ul>
+                        <li><strong>🔥 राष्ट्रीय महुआ कॉन्क्लेव 2023 (National Mahua Conclave):</strong> आर्थिक सर्वेक्षण के अनुसार, <strong>30 सितंबर 2023 को भोपाल स्थित आर.सी.पी.वी. नरोन्हा प्रशासनिक अकादमी (RCPV Noronha Academy)</strong> में देश का पहला भव्य महुआ कॉन्क्लेव आयोजित किया गया था।</li>
+                        <li><strong>📍 अंतर्राष्ट्रीय एक्सपोर्ट (UK Market):</strong> मध्य प्रदेश के <strong>अलीराजपुर (Alirajpur)</strong> और <strong>उमरिया (Umaria)</strong> जिलों का महुआ इतनी उच्च गुणवत्ता का है कि इसे सीधे <strong>ब्रिटेन (Britain)</strong> में निर्यात किया जा रहा है, जहां विदेशी लोग इसे बेहद पसंद कर रहे हैं। सिंगरोली में भी महुआ प्रचुरता से होता है।</li>
+                        <li><strong>हास्य संदर्भ:</strong> इसका उपयोग जनजातीय पारंपरिक वाइन/औषधि बनाने में होता है, जिसे पीने के बाद व्यक्ति इंग्लिश से जापानी, और जापानी से सीधे उर्दू बोलने लगता है!</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card" style="border-left: 4px solid var(--accent-green);">
+                    <h4>⚪ गोंद या ग्लू (Natural Plant Resin Excretion)</h4>
+                    <ul>
+                        <li><strong>जैविक प्रक्रिया:</strong> यह वृक्षों की <strong>कोशिका भित्ति (Cell Wall)</strong> से स्वतः उत्सर्जित होने वाला गाढ़ा पदार्थ है। जब पेड़ की छाल पर गहरा कट लगाया जाता है, तो जैसे इंसानी शरीर पर चोट लगने के बाद पपड़ी जमती है, वैसे ही पेड़ पर गोंद जम जाती है।</li>
+                        <li><strong>मुख्य वृक्ष प्रजातियां:</strong> बबूल (सामान्य श्रेणी), कुसुम, और <strong>कुल्लू वृक्ष (Kullu Tree)</strong>।</li>
+                        <li><strong>🔥 कुल्लू का गोंद (Highest Quality 'Gaad'):</strong> <strong>कुल्लू के वृक्ष</strong> से निकलने वाला गोंद सर्वश्रेष्ठ उच्च गुणवत्ता (Premium Grade) का होता है, जिसे ग्रामीण भाषा में 'गाद' कहते हैं।</li>
+                        <li><strong>उपयोग एवं जिले:</strong> सीधी, शहडोल, मुरैना और उमरिया। इसका उपयोग सर्दियों के पौष्टिक लड्डू बनाने, बेकरी के बर्थडे केक्स को सेट करने, छपाई (Printing Press) में और सौंदर्य प्रसाधनों में होता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card" style="border-left: 4px solid var(--accent-purple);">
+                    <h4>🟤 भिलावा (Bhilawa Seed Dynamics)</h4>
+                    <ul>
+                        <li><strong>मुख्य संकेंद्रण जिले:</strong> मुख्य रूप से केवल तीन जिलों में पाया जाता है — <strong>छिंदवाड़ा (Chhindwara), पांढुर्णा (Pandhurna) [नया जिला], और बैतूल (Betul)</strong>।</li>
+                        <li><strong>उपयोग:</strong> इसके बीजों को प्रोसेस करके हाथ-पैरों के जोड़ों के दर्द की अचूक पारम्परिक दवा बनाई जाती है। इसका उपयोग स्याही और पेंट उद्योगों में भी किया जाता है।</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card" style="background: rgba(0, 212, 255, 0.05); border: 1px solid var(--accent-cyan);">
+                    <h4>🏢 मध्य प्रदेश लघु वनोपज संघ (Minor Forest Produce Apex Body)</h4>
+                    <ul>
+                        <li><strong>🔥 आधिकारिक स्थापना:</strong> <strong>वर्ष 1984 में भोपाल में [🔥 महा-महत्वपूर्ण प्रश्न]</strong> 'मध्य प्रदेश लघु वनोपज व्यापार एवं विकास सहकारी संघ' (Minor Forest Produce Federation) की स्थापना की गई। इसका मुख्य उद्देश्य वनों की इन सभी छोटी-मोटी वनोपजों के व्यापार को व्यवस्थित करना है।</li>
+                        <li><strong>🔥 इमारती लकड़ी का राष्ट्रीयकरण (1971):</strong> मध्य प्रदेश में सभी प्रकार की व्यावसायिक इमारती लकड़ियों (Timber Production) का राष्ट्रीयकरण <strong>वर्ष 1971</strong> में किया गया था।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="master-fullforms" class="topic-section">
+                <h2 class="topic-title">🔤 10. Master Full Forms Table (वर्णानुक्रम निर्देशिका)</h2>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">लेक्चर के दौरान आए सभी महत्वपूर्ण संक्षिप्ताक्षरों की अंग्रेजी और हिंदी व्याख्या:</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acronym</th>
+                                <th>English Full Form</th>
+                                <th>Hindi Meaning / व्याख्या</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>IIFM</strong></td>
+                                <td>Indian Institute of Forest Management</td>
+                                <td>भारतीय वन प्रबंधन संस्थान (भोपाल - 1982)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TFRI</strong></td>
+                                <td>Tropical Forest Research Institute</td>
+                                <td>उष्णकटिबंधीय वन अनुसंधान संस्थान (जबलपुर - 1973)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SFRI</strong></td>
+                                <td>State Forest Research Institute</td>
+                                <td>राज्य वन अनुसंधान संस्थान (जबलपुर - 1963)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ODOP</strong></td>
+                                <td>One District One Product</td>
+                                <td>एक जिला एक उत्पाद योजना (जैसे: बैतूल हेतु सागौन लकड़ी)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MSP</strong></td>
+                                <td>Minimum Support Price</td>
+                                <td>न्यूनतम समर्थन मूल्य (तेंदू पत्ता आदि की सरकारी खरीद दर)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MPPSC</strong></td>
+                                <td>Madhya Pradesh Public Service Commission</td>
+                                <td>मध्य प्रदेश लोक सेवा आयोग (जिसकी प्री परीक्षा का यह मुख्य टॉपिक है)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="master-hotfacts" class="topic-section">
+                <h2 class="topic-title">🔥 11. महत्वपूर्ण वन संस्थान एवं संगठन निर्देशिका (Exam Hot Directory)</h2>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+                    शिक्षक द्वारा मानचित्र पर एक साथ लिखवाए गए सभी संस्थान, स्थापना वर्ष और स्थान की अकाट्य सूची:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                    
+                    <div class="concept-card" style="border-top: 3px solid var(--accent-cyan);">
+                        <strong>📍 भोपाल केंद्र (Bhopal Hub)</strong>
+                        <ul style="font-size: 14px; margin-top: 8px; list-style-type: square; margin-left: 16px;">
+                            <li><strong>IIFM:</strong> स्थापना 1982 में भोपाल।</li>
+                            <li><strong>आपदा प्रबंधन संस्थान (DMI):</strong> स्थापना 1987 में भोपाल (वनों में आग, बाढ़ प्रबंधन हेतु)।</li>
+                            <li><strong>🔥 राज्य आपदा प्रबंधन प्राधिकरण (SDMA):</strong> स्थापना 2007 में भोपाल। (नोट: संस्थान 1987 है, प्राधिकरण 2007 है!)</li>
+                            <li><strong>इको पर्यटन विकास बोर्ड:</strong> स्थापना 2005 में भोपाल।</li>
+                            <li><strong>संजीवनी संस्थान:</strong> जड़ी-बूटियों के विपणन हेतु भोपाल में स्थित।</li>
+                            <li><strong>हर्बल मेला:</strong> हर साल भोपाल के <strong>लाल परेड ग्राउंड</strong> पर लगता है, जहां वनोपज बेची जाती है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card" style="border-top: 3px solid var(--accent-orange);">
+                        <strong>📍 जबलपुर केंद्र (Jabalpur Hub)</strong>
+                        <ul style="font-size: 14px; margin-top: 8px; list-style-type: square; margin-left: 16px;">
+                            <li><strong>TFRI (उष्णकटिबंधीय संस्थान):</strong> स्थापना 1973 में जबलपुर।</li>
+                            <li><strong>SFRI (राज्य वन संस्थान):</strong> स्थापना 1963 में जबलपुर। (यह MP का अपना पुराना रिसर्च सेंटर है)।</li>
+                            <li><strong>लाख कीट संरक्षण केंद्र:</strong> लाख के लेसिफर कीट को बचाने का रिसर्च सेंटर जबलपुर में है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card" style="border-top: 3px solid var(--accent-green);">
+                        <strong>📍 अन्य क्षेत्रीय केंद्र (Regional Hubs)</strong>
+                        <ul style="font-size: 14px; margin-top: 8px; list-style-type: square; margin-left: 16px;">
+                            <li><strong>प्रथम वन राजकीय महाविद्यालय:</strong> वर्ष 1979 में <strong>बालाघाट</strong> में खुला।</li>
+                            <li><strong>द्वितीय वन राजकीय महाविद्यालय:</strong> वर्ष 1980 में <strong>बैतूल</strong> में स्थापित।</li>
+                            <li><strong>हर्बल पार्क (Herbal Park):</strong> जड़ी-बूटियों का सजीव पार्क <strong>पचमढ़ी (नर्मदापुरम)</strong> में है (संस्थान भोपाल में है, पार्क पचमढ़ी में है!)</li>
+                            <li><strong>वानिकी अनुसंधान एवं मानव विकास संस्थान:</strong> स्थापना 1995 में <strong>छिंदवाड़ा</strong>।</li>
+                            <li><strong>राजीव गांधी वानिकी प्रशिक्षण संस्थान:</strong> वन रक्षकों के प्रशिक्षण हेतु <strong>सिवनी (Seoni)</strong> में स्थित।</li>
+                            <li><strong>प्रथम प्रादेशिक वन स्कूल:</strong> वन चौकियों के प्रशिक्षण के लिए <strong>शिवपुरी</strong> में स्थापित।</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-indigo-gradient box-link-story">
+                    <h5>🔗 Link Story — जबलपुर वन त्रिमूर्ति (The Jabalpur Green Trio)</h5>
+                    <p>जबलपुर के भेड़ाघाट में <strong>1963 में सबसे पहले राज्य का अपना वन संस्थान (SFRI)</strong> तैरने आया, ठीक 10 साल बाद <strong>1973 में दिल्ली से उष्णकटिबंधीय संस्थान (TFRI)</strong> उसकी मदद के लिए उतरा, और इन दोनों ने मिलकर वहां के पेड़ों पर रेंगने वाले <strong>लाख कीट के संरक्षण का केंद्र</strong> वहीं स्थापित कर दिया!</p>
+                </div>
+
+                <div class="concept-card" style="background: rgba(179, 136, 255, 0.05); margin-top: 20px;">
+                    <h4>🌳 महत्वपूर्ण वानिकी कल्याणकारी योजनाएं (Welfare Schemes)</h4>
+                    <ul>
+                        <li><strong>🔥 सामाजिक वानिकी योजना (Social Forestry Scheme - 1976):</strong> वर्ष 1976 में शुरू की गई। इसके तहत शहरों के अंदर नागरिकों को समाज के सहयोग से पेड़ लगाने हेतु न्यूनतम रियायती शुल्क पर सरकारी नर्सरी से पौधे वितरित किए जाते हैं। (📌 <em>उदाहरण स्वरूप हाल ही में इंदौर में चलाया गया 51 लाख वृक्षारोपण अभियान इसी विजन का हिस्सा है</em>)।</li>
+                        <li><strong>पंचवन योजना (Panchvan Yojana):</strong> वनीकरण संवर्धन हेतु वर्ष <strong>1976-77</strong> में लागू की गई थी।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="master-checklist" class="topic-section">
+                <h2 class="topic-title">✅ 12. Master Revision Checklist (localStorage Persistence)</h2>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">
+                    सभी महत्वपूर्ण तथ्यों को याद करने के बाद टिक करें। आपका डेटा ब्राउज़र में सुरक्षित रहेगा:
+                </p>
+
+                <div id="checklistContainer">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk1" onchange="updateProgress()">
+                        <label for="chk1">MP GK का वेटेज परीक्षा में 100 में से लगभग 45 प्रश्नों का है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk2" onchange="updateProgress()">
+                        <label for="chk2">मध्य प्रदेश में सर्वाधिक क्षेत्रफल पर मिश्रित वन (58%+) पाए जाते हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk3" onchange="updateProgress()">
+                        <label for="chk3">33% से अधिक मिश्रित वन क्षेत्र को वनों के लिए सबसे आदर्श माना जाता है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk4" onchange="updateProgress()">
+                        <label for="chk4">साल वृक्ष का वैज्ञानिक नाम Shorea robusta है और यह वन क्षेत्र के 4.15% पर है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk5" onchange="updateProgress()">
+                        <label for="chk5">साल वृक्ष का सर्वाधिक उत्पादन मंडला जिले में होता है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk6" onchange="updateProgress()">
+                        <label for="chk6">वर्ष 1975 में साल के बीजों (Sal Seed) का राष्ट्रीयकरण हुआ, पेड़ का नहीं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk7" onchange="updateProgress()">
+                        <label for="chk7">सागौन वन कुल वन क्षेत्र के 19.36% (लगभग 20%) भाग पर विस्तृत हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk8" onchange="updateProgress()">
+                        <label for="chk8">नर्मदापुरम का मढ़ई वन और बोरी घाटी घने सागौन वनों के लिए विख्यात हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk9" onchange="updateProgress()">
+                        <label for="chk9">सागौन लकड़ी हेतु बैतूल जिला और फर्नीचर हेतु छतरपुर जिला ODOP में शामिल है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk10" onchange="updateProgress()">
+                        <label for="chk10">बांस वनों के मामले में मध्य प्रदेश का देश में प्रथम स्थान है (23% वन क्षेत्र)।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk11" onchange="updateProgress()">
+                        <label for="chk11">बांस शिल्प विकास बोर्ड 15 जुलाई 2013 को भोपाल में स्थापित किया गया था।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk12" onchange="updateProgress()">
+                        <label for="chk12">मध्य प्रदेश देश का लगभग 60% तेंदू पत्ता अकेले उत्पादित करता है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk13" onchange="updateProgress()">
+                        <label for="chk13">तेंदू पत्ता का राष्ट्रीयकरण वर्ष 1964 में किया गया था (तेंदू पत्ता अधिनियम)।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk14" onchange="updateProgress()">
+                        <label for="chk14">तेंदू पत्ता संग्राहकों हेतु चरण पादुका योजना 2018 में सिंगरोली से रीलॉन्च हुई।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk15" onchange="updateProgress()">
+                        <label for="chk15">लाख बनाने का सरकारी कारखाना उमरिया जिले में स्थित है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk16" onchange="updateProgress()">
+                        <label for="chk16">खैर से कत्था बनाने के कारखाने शिवपुरी और बानमोर (मुरैना) में हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk17" onchange="updateProgress()">
+                        <label for="chk17">पन्ना जिले को मध्य प्रदेश का आधिकारिक 'आंवला जिला' घोषित किया गया है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk18" onchange="updateProgress()">
+                        <label for="chk18">30 सितंबर 2023 को भोपाल के नरोन्हा अकादमी में राष्ट्रीय महुआ कॉन्क्लेव हुआ।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk19" onchange="updateProgress()">
+                        <label for="chk19">अलीराजपुर और उमरिया का उच्च गुणवत्ता वाला महुआ ब्रिटेन को एक्सपोर्ट हो रहा है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk20" onchange="updateProgress()">
+                        <label for="chk20">सर्वश्रेष्ठ ग्रेड की गोंद (गाद) कुल्लू के वृक्ष से प्राप्त की जाती है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk21" onchange="updateProgress()">
+                        <label for="chk21">भिलावा मुख्य रूप से छिंदवाड़ा, पांढुर्णा और बैतूल जिलों में पाया जाता है।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk22" onchange="updateProgress()">
+                        <label for="chk22">लघु वनोपज संघ की स्थापना वर्ष 1984 में भोपाल में की गई थी।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk23" onchange="updateProgress()">
+                        <label for="chk23">इमारती लकड़ी (Timber) का राष्ट्रीयकरण वर्ष 1971 में किया गया था।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk24" onchange="updateProgress()">
+                        <label for="chk24">IIFM भोपाल (1982), TFRI जबलपुर (1973), SFRI जबलपुर (1963) में स्थित हैं।</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk25" onchange="updateProgress()">
+                        <label for="chk25">आपदा प्रबंधन संस्थान 1987 में बना, जबकि आपदा प्रबंधन प्राधिकरण 2007 में बना।</label>
+                    </div>
+                </div>
+
+                <div class="checklist-counter" id="checklistCounter">Completed: 0 / 25 (0%)</div>
+            </section>
+
+            <footer style="background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: center; margin-top: 20px;">
+                <div class="box-definition" style="text-align: left; margin: 0 0 16px 0;">
+                    <strong>📌 Upcoming Next Topic:</strong> शिक्षक के अनुसार कल रात 8 बजे की लाइव क्लास <strong>मध्य प्रदेश के राष्ट्रीय उद्यान (National Parks)</strong> पर आधारित होगी, जो डेटा और वर्गीकरण की दृष्टि से सबसे महत्वपूर्ण क्लास होने वाली है।
+                </div>
+                <p style="font-weight: 600; color: var(--accent-cyan);">🎯 होमवर्क प्रश्न: मध्य प्रदेश जैव विविधता बोर्ड (Biodiversity Board) की स्थापना कब और कहां हुई? [कमेंट बॉक्स में उत्तर दें]</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Class 22 Master Revision Sheet • Generated for high-efficiency memory retention.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <div class="mobile-nav-bar">
+        <button class="theme-toggle" style="flex: 1; margin:0;" onclick="toggleTheme()">🌓 Theme</button>
+        <select class="quick-jump" style="flex: 2; margin:0;" onchange="navigateToSection(this.value)">
+            <option value="">🎯 Jump to Section...</option>
+            <option value="intro">1. Introduction</option>
+            <option value="classification">2. Species Matrix</option>
+            <option value="sal">3. Sal Details</option>
+            <option value="sagoun">4. Teak Hubs</option>
+            <option value="bamboo">5. Bamboo Gold</option>
+            <option value="tendu">6. Tendu Patta</option>
+            <option value="lakh">7. Lac Insect</option>
+            <option value="khair">8. Khair Wood</option>
+            <option value="minor-produce">9. Minor Directory</option>
+            <option value="master-fullforms">10. Full Forms</option>
+            <option value="master-hotfacts">11. Institution List</option>
+            <option value="master-checklist">12. Checklist</option>
+        </select>
+    </div>
+
+    <script>
+        // Synchronous Configuration & Initialization
+        document.addEventListener("DOMContentLoaded", () => {
+            loadSavedTheme();
+            loadChecklistState();
+            setupIntersectionObserver();
+            updateProgress();
+        });
+
+        // Robust Theme Management Architecture
+        function toggleTheme() {
+            const isLight = document.body.classList.toggle("light-mode");
+            localStorage.setItem("revision-theme", isLight ? "light" : "dark");
+            document.querySelector(".theme-toggle").innerHTML = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+        }
+
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem("revision-theme");
+            if (savedTheme === "light") {
+                document.body.classList.add("light-mode");
+                document.querySelector(".theme-toggle").innerHTML = "🌙 Dark Mode";
+            } else {
+                document.body.classList.remove("light-mode");
+                document.querySelector(".theme-toggle").innerHTML = "☀️ Light Mode";
+            }
+        }
+
+        // Seamless Navigation Functionality
+        function navigateToSection(targetId) {
+            if (!targetId) return;
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Active Recall Interface Mechanics
+        function toggleAnswer(buttonBtn) {
+            const answerDiv = buttonBtn.nextElementSibling;
+            if (answerDiv.style.display === "block") {
+                answerDiv.style.display = "none";
+                buttonBtn.textContent = "Show Answer";
+            } else {
+                answerDiv.style.display = "block";
+                buttonBtn.textContent = "Hide Answer";
+            }
+        }
+
+        // LocalStorage Checklist Tracking Logic
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll("#checklistContainer input[type='checkbox']");
+            let checkedCount = 0;
+            
+            checkboxes.forEach((cb) => {
+                if (cb.checked) checkedCount++;
+                localStorage.setItem(`revision-cb-${cb.id}`, cb.checked ? "1" : "0");
+            });
+
+            const total = checkboxes.length;
+            const percentage = Math.round((checkedCount / total) * 100);
+            
+            // Render text metric counter
+            document.getElementById("checklistCounter").textContent = `Completed: ${checkedCount} / ${total} (${percentage}%)`;
+            
+            // Render structural linear top slider progress bar
+            document.getElementById("topProgressBar").style.width = `${percentage}%`;
+        }
+
+        function loadChecklistState() {
+            const checkboxes = document.querySelectorAll("#checklistContainer input[type='checkbox']");
+            checkboxes.forEach((cb) => {
+                const state = localStorage.getItem(`revision-cb-${cb.id}`);
+                if (state === "1") {
+                    cb.checked = true;
+                }
+            });
+        }
+
+        // UI Scroll Spy Tracking Mechanism
+        function setupIntersectionObserver() {
+            const sections = document.querySelectorAll(".topic-section");
+            const tocItems = document.querySelectorAll(".toc-item");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "-20% 0px -60% 0px",
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute("id");
+                        tocItems.forEach((item) => {
+                            item.classList.remove("active");
+                            if (item.querySelector("a").getAttribute("href") === `#${id}`) {
+                                item.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((section) => observer.observe(section));
+        }
+
+        // Image Handling and Fault Tolerant Redirection Fallbacks
+        function handleImageError(imageEl) {
+            console.warn("Asset pipeline resolution error for direct URL:", imageEl.src);
+            const fallbackLink = imageEl.nextElementSibling;
+            if (fallbackLink) {
+                fallbackLink.style.display = "block";
+            }
+        }
+
+        function retryImage(fallbackDiv, queryTerm) {
+            // Re-route failed assets directly through stable auto-sizing Special Redirect endpoint APIs
+            const targetContainer = fallbackDiv.previousElementSibling;
+            if (targetContainer && targetContainer.tagName === "IMG") {
+                targetContainer.src = `https://en.wikipedia.org/wiki/Special:Redirect/file/${queryTerm}_Foliage.jpg?width=600`;
+                fallbackDiv.style.display = "none";
+            } else {
+                window.open(`https://commons.wikimedia.org/w/index.php?search=${queryTerm}`, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP GK Lecture 19: Agriculture Institutes & ODOP Revision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #16162a;
+            --bg-card: #1f1f38;
+            --text-main: #f1f1f7;
+            --text-muted: #a0a0c0;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --border-color: #2a2a4a;
+        }
+
+        .light-theme {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: #eef2f7;
+            --text-main: #1a1a2e;
+            --text-muted: #555577;
+            --accent-cyan: #0088cc;
+            --accent-orange: #e65100;
+            --accent-green: #2e7d32;
+            --accent-purple: #6a1b9a;
+            --border-color: #d0d7de;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding-bottom: 60px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .header-badge {
+            background: var(--accent-orange);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--accent-cyan);
+        }
+
+        .progress-container {
+            background: var(--border-color);
+            border-radius: 10px;
+            height: 8px;
+            width: 100%;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Sticky Nav controls */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            background: var(--bg-secondary);
+            padding: 12px 20px;
+            border-bottom: 2px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .nav-select {
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 15px;
+            outline: none;
+            width: 70%;
+        }
+
+        .theme-toggle {
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Content Blocks & Cards */
+        .section-header {
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,212,255,0.1);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: var(--accent-orange);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-cyan);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Styled Boxes */
+        .hot-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 5px solid var(--accent-orange);
+            padding: 15px;
+            border-radius: 4px 12px 12px 4px;
+            margin: 15px 0;
+        }
+
+        .link-story-box {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border-left: 5px solid var(--accent-purple);
+            padding: 15px;
+            border-radius: 4px 12px 12px 4px;
+            margin: 15px 0;
+        }
+
+        .definition-box {
+            background: rgba(0, 255, 136, 0.08);
+            border-left: 5px solid var(--accent-green);
+            padding: 15px;
+            border-radius: 4px 12px 12px 4px;
+            margin: 15px 0;
+        }
+
+        /* Image Styling */
+        .image-container {
+            margin: 15px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #000;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .image-caption {
+            background: var(--bg-card);
+            padding: 8px 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-cyan);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Interactive Elements */
+        .accordion-btn {
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 12px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background: rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .quiz-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .reveal-btn {
+            background: var(--accent-cyan);
+            color: #0f0f1a;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .quiz-answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 4px;
+        }
+
+        /* Checkbox list */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: var(--bg-card);
+            border-radius: 6px;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 5px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: white; color: black; }
+            .sticky-controls, .theme-toggle, .reveal-btn, .accordion-btn::after { display: none !important; }
+            .accordion-content, .quiz-answer { display: block !important; }
+            .card, header { border: 1px solid #000; background: none; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-controls">
+        <select class="nav-select" onchange="location = this.value;">
+            <option value="#top">🎯 Jump to Section...</option>
+            <option value="#intro">📝 Intro & Overview</option>
+            <option value="#institutes">🔬 Agri Research Institutes</option>
+            <option value="#organizations">🏢 Agri Organizations & Boards</option>
+            <option value="#schemes">🌾 Government Schemes & Policies</option>
+            <option value="#odop-intro">📦 ODOP Concept & Framework</option>
+            <option value="#odop-districts">📍 District-wise ODOP Mapping</option>
+            <option value="#master-fullforms">🔤 Master Full Forms</option>
+            <option value="#master-hotfacts">🔥 Master Exam Hot Facts</option>
+            <option value="#master-checklist">✅ Revision Checklist</option>
+            <option value="#upcoming">📌 Upcoming Class Agenda</option>
+        </select>
+        <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">☀️ Light Mode</button>
+    </div>
+
+    <div class="container" id="top">
+        <header>
+            <span class="header-badge">MP GK Series — Lecture 19</span>
+            <h1>मध्य प्रदेश कृषि अनुसंधान, योजनाएं एवं एक जिला एक उत्पाद (ODOP)</h1>
+            <p style="color: var(--text-muted); font-size: 14px;"><strong>Faculty:</strong> विकास सर (Vikas Sir) | <strong>Target:</strong> MPPSC, Patwari, SI & state exams (2 Marks Guaranteed)</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 5px; text-align: right;" id="progressText">Revision Progress: 0%</p>
+        </header>
+
+        <section id="intro" class="card">
+            <h2 class="card-title">📝 लेक्चर परिचय एवं सिंहावलोकन (Overview)</h2>
+            <p>यह लेक्चर मुख्य रूप से दो महत्वपूर्ण भागों में विभाजित है: प्रथम भाग में पिछले लेक्चर के बचे हुए महत्वपूर्ण <strong>कृषि अनुसंधान संस्थान (Agri Research Institutes)</strong>, कृषि संगठन एवं महत्वपूर्ण सरकारी योजनाओं को कवर किया गया है। द्वितीय भाग में मध्य प्रदेश के सभी जिलों की अनूठी पहचान <strong>एक जिला एक उत्पाद (One District One Product - ODOP)</strong> का संपूर्ण विश्लेषण प्रामाणिक जनसंपर्क डेटा के साथ साझा किया गया है।</p>
+        </section>
+
+        <section id="institutes">
+            <h2 class="section-header">🔬 कृषि अनुसंधान संस्थान (Agricultural Research Institutes)</h2>
+            <p style="margin-bottom: 15px;">कृषि को उन्नत (advanced) बनाने, फसलों की उन्नत किस्में विकसित करने तथा उत्पादकता बढ़ाने के लिए कृषि वैज्ञानिकों द्वारा अनुसंधान हेतु इन संस्थानों की स्थापना की जाती है।</p>
+
+            <div class="card">
+                <h3 class="card-title">📍 प्रमुख अनुसंधान केंद्रों की सूची</h3>
+                <ul>
+                    <li><strong>गेहूं एवं मक्का अनुसंधान केंद्र (Wheat & Maize Research Center):</strong> खमरिया, जबलपुर (Khamaria, Jabalpur)।</li>
+                    <li><strong>मध्य प्रदेश गेहूं अनुसंधान केंद्र (Wheat Research Center of MP):</strong> पावरखेड़ा / पवारखेड़ा, नर्मदापुरम (Powerkheda, Narmadapuram)। <span style="color:var(--accent-orange)">*नोट: सर्वाधिक गेहूं उत्पादन इसी क्षेत्र में होता है।</span></li>
+                    <li><strong>सोयाबीन अनुसंधान केंद्र (Soybean Research Center):</strong> इंदौर (Indore) — भवरकुआं से खंडवा रोड, आईटी पार्क के पास।</li>
+                    <li><strong>कपास अनुसंधान केंद्र (Cotton Research Center):</strong> खरगोन (Khargone)।</li>
+                    <li><strong>मूंगफली अनुसंधान केंद्र (Groundnut Research Center):</strong> खरगोन (Khargone)।</li>
+                    <li><strong>चावल अनुसंधान केंद्र (Rice Research Center):</strong> बड़वानी (Barwani)।</li>
+                    <li><strong>केला अनुसंधान केंद्र (Banana Research Center):</strong> बुरहानपुर (Burhanpur)।</li>
+                    <li><strong>जैविक कपास अनुसंधान केंद्र (Organic Cotton Research Center):</strong> खंडवा (Khandwa)।</li>
+                </ul>
+
+                <div class="definition-box">
+                    <strong>💡 जैविक कृषि (Organic Farming) क्या है?</strong><br>
+                    वह खेती जिसमें किसी भी प्रकार के हानिकारक केमिकल या रासायनिक खादों का प्रयोग न करके पूर्णतः प्राकृतिक/ऑर्गेनिक खाद (जैसे पेड़-पौधों के पत्ते, गोबर, जीवाश्म) का उपयोग किया जाता है।
+                </div>
+
+                <div class="image-container">
+                    <img id="img-cotton" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cotton_field_kv11.jpg" alt="Cotton Field with ripe bolls" onerror="handleImgError(this)">
+                    <div class="image-caption">Image: Wikimedia Commons | Cotton cultivation base for Research Reference | CC BY-SA 3.0</div>
+                </div>
+
+                <ul>
+                    <li><strong>खरपतवार अनुसंधान केंद्र (Weed Research Center):</strong> जबलपुर (Jabalpur) — खरपतवार जनित समस्याओं और उनके निवारण पर शोध हेतु।</li>
+                    <li><strong>अंगूर अनुसंधान केंद्र (Grapes Research Center):</strong> रतलाम (Ratlam) — मध्य प्रदेश में सर्वाधिक अंगूर उत्पादन रतलाम में ही होता है।</li>
+                    <li><strong>आलू अनुसंधान केंद्र (Potato Research Center):</strong> ग्वालियर (Gwalior)।</li>
+                    <li><strong>गन्ना अनुसंधान केंद्र (Sugarcane Research Center):</strong> बोहानी, नरसिंहपुर (Bohani, Narsinghpur)।</li>
+                    <li><strong>दलहन अनुसंधान केंद्र (Pulses Research Center):</strong> अमलाहा, सीहोर (Amlaha, Sehore)।</li>
+                    <li><strong>कृषि का अंतरराष्ट्रीय अनुसंधान केंद्र (International Agriculture Research Institute):</strong> अमलाहा, सीहोर (Amlaha, Sehore)।</li>
+                    <li><strong>कृषि अभियांत्रिकी अनुसंधान केंद्र (Agricultural Engineering Research Center):</strong> भोपाल (Bhopal)।</li>
+                    <li><strong>फूल उत्पादन एवं अनुसंधान केंद्र (Flower Production & Research Center):</strong> श्यामपुर, सीहोर (Shyampur, Sehore)।</li>
+                </ul>
+            </div>
+
+            <div class="link-story-box">
+                <h3>🔗 Link Story — सीहोर के रिसर्च याद रखने की ट्रिक</h3>
+                <p><strong>"मामा जी (शिवराज सिंह चौहान) के गृह जिले सीहोर के अमलाहा में खूब सारी दलहन (दालें) उगाई गईं, जिसे अंतरराष्ट्रीय स्तर पर सराहा गया। फिर श्यामपुर के फूलों से सबका स्वागत हुआ!"</strong><br>
+                👉 इससे याद रहेगा: अमलाहा (सीहोर) = दलहन + अंतरराष्ट्रीय कृषि केंद्र; श्यामपुर (सीहोर) = फूल अनुसंधान।</p>
+            </div>
+
+            <div class="link-story-box">
+                <h3>🔗 Link Story — खरगोन और खंडवा में कंफ्यूजन का समाधान</h3>
+                <p><strong>"खरगोन में कपास को सामान्य रूप से उगाया जाता है, लेकिन खंडवा में उसके टुकड़े-टुकड़े करके ऑर्गेनिक या जैविक कपास (Biological/Organic Cut) बनाया जाता है।"</strong><br>
+                👉 कपास = खरगोन | जैविक कपास = खंडवा।</p>
+            </div>
+
+            <div class="hot-box">
+                🔥 <strong>EXAM HOT TIP:</strong> अक्सर छात्र आलू अनुसंधान केंद्र इंदौर लगा देते हैं क्योंकि वहां आलू का उत्पादन और एईजेड (AEZ) है, परंतु प्रामाणिक तौर पर <strong>मध्य प्रदेश का आलू अनुसंधान केंद्र ग्वालियर में स्थित है</strong>। इसे अच्छी तरह याद रखें!
+            </div>
+
+            <button class="accordion-btn" onclick="toggleAccordion(this)">📝 Quick Recall Quiz — भाग 1 <span>▼</span></button>
+            <div class="accordion-content">
+                <div class="quiz-card">
+                    <p><strong>Q1. मध्य प्रदेश में जैविक कपास अनुसंधान केंद्र कहाँ स्थित है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: खंडवा (Khandwa)</div>
+                </div>
+                <div class="quiz-card">
+                    <p><strong>Q2. गन्ना अनुसंधान केंद्र नरसिंहपुर में किस स्थान पर है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: बोहानी (Bohani)</div >
+                </div>
+                <div class="quiz-card">
+                    <p><strong>Q3. अंतरराष्ट्रीय कृषि अनुसंधान संस्थान सीहोर के किस कस्बे में स्थापित है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: अमलाहा (Amlaha)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="organizations">
+            <h2 class="section-header">🏢 कृषि संबंधी संगठन एवं संस्थान (Agri Organizations)</h2>
+            
+            <div class="card">
+                <h3 class="card-title">🎓 कृषि विश्वविद्यालय (Agricultural Universities)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>विश्वविद्यालय का नाम</th>
+                            <th>स्थान</th>
+                            <th>स्थापना वर्ष</th>
+                            <th>विशेष विवरण</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>जवाहरलाल नेहरू कृषि विश्वविद्यालय (JNKVV)</strong></td>
+                            <td>जबलपुर</td>
+                            <td>1964</td>
+                            <td>मध्य प्रदेश का प्रथम कृषि विश्वविद्यालय।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>राजमाता विजयाराजे सिंधिया कृषि विश्वविद्यालय</strong></td>
+                            <td>ग्वालियर</td>
+                            <td>2008</td>
+                            <td>मध्य प्रदेश का द्वितीय कृषि विश्वविद्यालय।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🏢 प्रमुख विकास निगम व कॉर्पोरेशन्स</h3>
+                <ul>
+                    <li><strong>मध्य प्रदेश बीज तथा फार्म विकास निगम (MP Seed & Farm Development Corporation):</strong> 
+                        <ul>
+                            <li>स्थापना: 19 नवंबर 1980</li>
+                            <li>मुख्यालय: भोपाल</li>
+                            <li>उद्देश्य: उन्नत बीजों के विकास और वितरण को सुलभ बनाना।</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 10px;"><strong>मध्य प्रदेश कृषि उद्योग विकास निगम (MP Agricultural Industrial Development Corporation):</strong>
+                        <ul>
+                            <li>स्थापना: 1969 - 1970</li>
+                            <li>मुख्यालय: भोपाल</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 10px;"><strong>मध्य प्रदेश राज्य भंडार गृह निगम (MP State Warehousing Corporation):</strong>
+                        <ul>
+                            <li>स्थापना: 1958</li>
+                            <li>मुख्यालय: भोपाल</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">📊 मध्य प्रदेश राज्य कृषि विपणन बोर्ड (मंडी बोर्ड)</h3>
+                <p>मंडियों का मुख्य कार्य कृषि उत्पादों (जैसे गेहूं, धान, कपास) के सुचारू क्रय-विक्रय व विपणन की व्यवस्था करना है।</p>
+                <ul>
+                    <li><strong>मुख्यालय (Headquarters):</strong> भोपाल (Bhopal)</li>
+                    <li><strong>अधिनियम (Act):</strong> मंडी बोर्ड अधिनियम 1972</li>
+                    <li><strong>स्थापना तिथि:</strong> 7 अगस्त 1973</li>
+                </ul>
+                
+                <div class="hot-box">
+                    🔥 <strong>EXAM HOT / PYQ PATTERN:</strong> व्यापम/MPSI में मंडी बोर्ड के <strong>क्षेत्रीय कार्यालयों (Regional Offices)</strong> की संख्या पूछी जा चुकी है। मध्य प्रदेश में कुल <strong>7 क्षेत्रीय कार्यालय</strong> हैं:
+                    <ol style="margin-left: 20px; margin-top: 5px; list-style-type: decimal;">
+                        <li>भोपाल (Bhopal)</li>
+                        <li>जबलपुर (Jabalpur)</li>
+                        <li>ग्वालियर (Gwalior)</li>
+                        <li>इंदौर (Indore)</li>
+                        <li>उज्जैन (Ujjain)</li>
+                        <li>रीवा (Rewa)</li>
+                        <li>सागर (Sagar)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="schemes">
+            <h2 class="section-header">🌾 कृषि संबंधी योजनाएं एवं नीतियां (Govt Schemes)</h2>
+            
+            <div class="card">
+                <h3 class="card-title">🌱 जैविक कृषि नीति व इकाइयां</h3>
+                <ul>
+                    <li><strong>जैविक कृषि नीति (Organic Farming Policy):</strong> मध्य प्रदेश सरकार द्वारा यह नीति वर्ष <strong>2011</strong> में लाई गई।</li>
+                    <li><strong>प्रथम जैविक इकाई (First Organic Unit):</strong> मध्य प्रदेश की पहली जैविक खाद बनाने की इकाई <strong>इंदौर (Indore)</strong> में स्थापित की गई।</li>
+                    <li><strong>सर्वाधिक प्रगतिशील जिला:</strong> वर्तमान में जैविक कृषि को बढ़ावा देने में <strong>मंडला (Mandla)</strong> जिला अग्रणी भूमिका निभा रहा है।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🚜 महत्वपूर्ण कृषि कल्याण योजनाएं</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>1. उद्यानिकी मिशन (Horticulture Mission):</strong>
+                    <ul>
+                        <li>प्रारंभ: वर्ष 2006 - 2007</li>
+                        <li>उद्देश्य: पारंपरिक खेती के साथ बागवानी (फल जैसे आम, पपीता, नींबू, संतरा) को प्रमोट करना।</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <strong>2. सूरज धारा योजना (Suraj Dhara Yojna):</strong>
+                    <ul>
+                        <li>प्रारंभ: वर्ष 2000</li>
+                        <li>लाभार्थी: अनुसूचित जाति (SC) और अनुसूचित जनजाति (ST) वर्ग के किसान।</li>
+                        <li>उद्देश्य: सब्सिडी के माध्यम से गरीब किसानों को उन्नत किस्म के बीज उपलब्ध कराना ताकि फसल बेहतर हो सके।</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <strong>3. बलराम ताल योजना (Balram Taal Yojna):</strong>
+                    <ul>
+                        <li>प्रारंभ: 25 मई 2007 (व्यापम का पसंदीदा प्रश्न)</li>
+                        <li>उद्देश्य: वर्षा जल (Rainwater Harvesting) को खेतों में रोकने के लिए तालाब निर्माण हेतु किसानों को सब्सिडी प्रदान करना।</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <strong>4. किसान क्रेडिट कार्ड (KCC) योजना:</strong>
+                    <ul>
+                        <li>प्रारंभ: वर्ष 1998</li>
+                        <li>विवरण: किसानों को उनकी भूमि/रकबे के आधार पर एक क्रेडिट लिमिट दी जाती है, जिससे वे न्यूनतम ब्याज दरों पर कृषि ऋण (Loan) प्राप्त कर सकें।</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <strong>5. किसान कॉल सेंटर (KCC Call Center):</strong>
+                    <ul>
+                        <li>प्रारंभ: वर्ष 2004 में इसकी शुरुआत की गई ताकि किसान फोन पर कृषि संबंधी समस्याओं का समाधान पा सकें।</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <strong>6. भावांतर भुगतान योजना (Bhavantar Bhugtan Yojna):</strong>
+                    <ul>
+                        <li>प्रारंभ: 16 अक्टूबर 2017</li>
+                        <li>स्थान: खुरई, सागर (Khurai, Sagar) से तत्कालीन मुख्यमंत्री शिवराज सिंह चौहान द्वारा प्रारंभ।</li>
+                        <li>कार्यप्रणाली: यदि बाजार भाव सरकार द्वारा तय न्यूनतम समर्थन मूल्य (MSP) से कम हो, तो बाजार दर और MSP के बीच के अंतर (डिफरेंस) का भुगतान सीधे सरकार किसान के खाते में करती है। <span style="color:var(--accent-cyan)">उदाहरण: यदि MSP ₹1900 है और बाजार दर ₹1700 है, तो ₹200 का अंतर सरकार देगी।</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🌐 डिजिटल एवं एक्सपोर्ट इंफ्रास्ट्रक्चर</h3>
+                <ul>
+                    <li><strong>E-NAM (इलेक्ट्रॉनिक नेशनल एग्रीकल्चर मार्केट):</strong> यह एक एकीकृत वेब पोर्टल है जिसके माध्यम से देश व प्रदेश की सभी मंडियों को ऑनलाइन जोड़ा गया है। किसान घर बैठे मोबाइल से विभिन्न मंडियों के भाव देख सकता है और जहाँ अच्छा दाम मिले वहाँ फसल बेच सकता है।</li>
+                    <li><strong>AEZ (Agri Export Zone - कृषि निर्यात क्षेत्र):</strong> मध्य प्रदेश का पहला AEZ वर्ष <strong>2002 में इंदौर</strong> में स्थापित किया गया था, जो विशेष रूप से <strong>आलू (Potato)</strong> के अंतरराष्ट्रीय स्तर पर निर्यात के लिए बनाया गया था।</li>
+                </ul>
+            </div>
+
+            <div class="hot-box">
+                📌 <strong>HOMEWORK TOPIC FOR STUDENTS:</strong> विकास सर द्वारा दिया गया गृहकार्य: <strong>मुख्यमंत्री किसान कल्याण योजना</strong> के बारे में संपूर्ण विवरण खोजें (यह कब शुरू हुई, इसमें कितनी राशि दी जाती है - यह परीक्षा में पूछा जा सकता है)।
+            </div>
+        </section>
+
+        <section id="odop-intro">
+            <h2 class="section-header">📦 एक जिला एक उत्पाद (One District One Product - ODOP)</h2>
+            
+            <div class="card">
+                <h3 class="card-title">🤔 ODOP क्या है और इसका निर्धारण कैसे होता है?</h3>
+                <p>मध्य प्रदेश सरकार द्वारा आत्मनिर्भर भारत की तर्ज पर हर जिले की एक विशेष पहचान स्थापित करने के लिए ओडीओपी योजना लागू की गई है। इसके संदर्भ में महत्वपूर्ण बिंदु निम्नलिखित हैं:</p>
+                <ul>
+                    <li><strong>एक से अधिक उत्पाद:</strong> कई छात्रों को भ्रम होता है कि एक जिले में केवल एक ही उत्पाद होगा। ऐसा नहीं है, कुछ जिलों में <strong>दो-दो उत्पाद भी चुने गए हैं</strong> (जैसे मटर के साथ रेडीमेड गारमेंट्स)।</li>
+                    <li><strong>निर्धारण का आधार:</strong> केवल उत्पादन की मात्रा ही नहीं, बल्कि उस क्षेत्र की मिट्टी की प्रकृति, प्राकृतिक दशाएं, जलवायु और पारंपरिक कौशल को देखकर उत्पाद का चयन किया जाता है।</li>
+                    <li><strong>लाभ:</strong> उत्पादों को राष्ट्रीय और अंतरराष्ट्रीय बाजार मिलता है, किसानों व स्थानीय कारीगरों की आय बढ़ती है तथा वैश्विक पहचान स्थापित होती है (जैसे शिवनी का सीताफल अब विदेशों तक प्रसिद्ध हो रहा है)।</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="odop-districts">
+            <h2 class="section-header">📍 जिला-वार ओडीओपी उत्पाद (District-wise ODOP Mapping)</h2>
+            <p style="margin-bottom: 15px;">नीचे मध्य प्रदेश के सभी प्रमुख जिलों के ओडीओपी उत्पाद, उनके पीछे की विशेष कड़ियों (Tricks) और महत्वपूर्ण तथ्यों के साथ प्रस्तुत हैं:</p>
+
+            <div class="card">
+                <h3 class="card-title">🥔 इंदौर एवं देवास क्षेत्र</h3>
+                <ul>
+                    <li><strong>इंदौर (Indore):</strong> आलू (Potato)। यह मालवी आलू शुगर-फ्री होता है, जिसकी सिंचाई खान नदी के स्वच्छ जल से की जाती है। इसकी विदेशों में भारी मांग है।</li>
+                    <li><strong>देवास (Dewas):</strong> बांस (Bamboo) एवं आलू (Potato)।</li>
+                </ul>
+                <div class="link-story-box">
+                    🔗 <strong>याद रखने की ट्रिक:</strong> "इंदौर के लोग आलू खाकर देवास की तरफ दौड़ (दौड़ = देवास) लगाते हैं और वहां बांस से अपनी सुरक्षा करते हैं।"
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🧄 मंदसौर व नीमच (मालवा क्षेत्र)</h3>
+                <ul>
+                    <li><strong>मंदसौर (Mandsaur):</strong> लहसुन (Garlic) एवं अदरक। 
+                        <div class="hot-box">
+                            🔥 <strong>EXAM HOT / GENERATED FACT:</strong> मंदसौर के लहसुन को पूरे देश में <strong>'सफेद चांदी' (White Silver)</strong> के नाम से जाना जाता है। इसकी प्रसिद्ध किस्में हैं: <em>ऊटी जी-2 (Ooty G2), महादेव, तुलसी, अमरेटा एवं रियावन</em>। (यह परीक्षा में सीधा पूछा जाता है!)
+                        </div>
+                    </li>
+                    <li><strong>नीमच (Neemach):</strong> धनिया (Coriander) एवं औषधीय फसलें (Medicinal Plants)। यहां धनिया की बड़ी प्रोसेसिंग यूनिट्स स्थापित हैं जो ग्रेडिंग और पैकेजिंग कर निर्यात करती हैं।</li>
+                </ul>
+                <div class="image-container">
+                    <img id="img-garlic" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Garlic_bulbs_by_Augustus_Binu.jpg" alt="White garlic bulbs" onerror="handleImgError(this)">
+                    <div class="image-caption">Image: Wikimedia Commons | Mandsaur's famous 'White Silver' Garlic | CC BY-SA 3.0</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🌾 चंबल एवं ग्वालियर संभाग</h3>
+                <ul>
+                    <li><strong>मुरैना (Morena):</strong> सरसों (Mustard) व गजक।</li>
+                    <li><strong>भिंड (Bhind):</strong> सरसों (Mustard) एवं बाजरा।</li>
+                    <li><strong>ग्वालियर (Gwalior):</strong> सैंडस्टोन टाइल्स (Sandstone Tiles) / बलुआ पत्थर।</li>
+                    <li><strong>शिवपुरी (Shivpuri):</strong> कपड़ा जैकेट (Clothing Jackets) एवं सैंडस्टोन।
+                        <div class="hot-box">
+                            🔥 <strong>अंदर की लाइन का प्रश्न:</strong> शिवपुरी में जैकेट निर्माण की शुरुआत मुख्य रूप से <strong>बदरवास विकासखंड (Badarwas Block)</strong> से हुई है, जिसे सरकार ने विशेष पहचान दी है।
+                        </div>
+                    </li>
+                    <li><strong>श्योपुर (Sheopur):</strong> अमरूद (Guava) — यहाँ की प्राकृतिक दशाएं अमरूद के लिए सर्वोत्तम हैं।</li>
+                    <li><strong>गुना (Guna):</strong> धनिया (Coriander)। देश के कुल धनिया उत्पादन का लगभग <strong>25% भाग अकेले गुना जिला</strong> उत्पादित करता है। कुंभराज मंडी यहाँ की प्रसिद्ध मंडी है।</li>
+                    <li><strong>दतिया (Datia):</strong> गुड़ (Jaggery)।</li>
+                </ul>
+                <div class="link-story-box">
+                    🔗 <strong>दतिया याद रखने की ट्रिक:</strong> "दांतों (दतिया) के बीच दबाकर ही गुड़ की ढेली को फोड़ा जाता है।"
+                </div>
+                <div class="link-story-box">
+                    🔗 <strong>गुना याद रखने की ट्रिक:</strong> "धनिया कूटने पर उसकी खुशबू कई गुना (गुना) बढ़ जाती है।"
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🍊 संतरा उत्पादक जिले (Orange Belt)</h3>
+                <p>मध्य प्रदेश में मुख्य रूप से 3 जिलों को संतरे के लिए चिन्हित किया गया है:</p>
+                <ul>
+                    <li><strong>छिंदवाड़ा (Chhindwara):</strong> संतरा। छिंदवाड़ा के संतरे को विशेष रूप से <strong>'सतपुड़ा ऑरेंज' (Satpura Orange)</strong> ब्रांड नाम दिया गया है। यह सौसर और नवनिर्मित जिला पांढुरना (Pandhurna) क्षेत्र में व्यापक रूप से उगाया जाता है।</li>
+                    <li><strong>राजगढ़ (Rajgarh):</strong> संतरा।</li>
+                    <li><strong>आगर मालवा (Agar Malwa):</strong> संतरा एवं नींबू (Lemon)। यहाँ की लाल मिट्टी नींबू की झाड़ियों के लिए अत्यंत उपयुक्त है।</li>
+                </ul>
+                <div class="image-container">
+                    <img id="img-orange" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg" alt="Fresh oranges" onerror="handleImgError(this)">
+                    <div class="image-caption">Image: Wikimedia Commons | Satpura Orange Cultivation Reference | CC BY 3.0</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🪵 महाकौशल एवं विंध्य क्षेत्र</h3>
+                <ul>
+                    <li><strong>जबलपुर (Jabalpur):</strong> मटर (Green Peas) एवं रेडीमेड वस्त्र। मटर उत्पादन में जबलपुर शीर्ष पर है।</li>
+                    <li><strong>नरसिंहपुर (Narsingpur):</strong> गन्ना (Sugarcane), तुअर दाल व गुड़। मध्य प्रदेश के कुल गन्ना उत्पादन का लगभग <strong>65% भाग अकेले नरसिंहपुर</strong> में होता है। यहाँ की जलधारण क्षमता वाली मिट्टी गन्ने के लिए सर्वोत्तम है।</li>
+                    <li><strong>कटनी (Katni):</strong> स्टोन / स्टोन आर्टिकल्स (कटनी स्टोन देश भर में प्रसिद्ध है)।</li>
+                    <li><strong>दमोह (Damoh):</strong> काबुली चना (Chickpeas)।
+                        <div class="link-story-box">
+                            🔗 <strong>ट्रिक:</strong> "जिसके दांतों में दम (दमोह) होगा, वही कड़े चने चबा पाएगा।"
+                        </div>
+                    </li>
+                    <li><strong>पन्ना (Panna):</strong> आंवला (Aonla)। आंवले को विटामिन C के समृद्ध स्रोत के कारण <strong>'डॉक्टर प्लांट' (Doctor Plant)</strong> भी कहा जाता है।</li>
+                    <li><strong>रीवा (Rewa):</strong> सुंदरजा आम (Sunderja Mango) एवं हल्दी। गोविंदगढ़ रीवा में आम अनुसंधान केंद्र है। यह आम शुगर-फ्री (कम शर्करा) होने के कारण विख्यात है और इसे <strong>जीआई टैग (GI Tag)</strong> प्राप्त है।</li>
+                    <li><strong>सीधी (Sidhi):</strong> कारपेट / दरी / गलीचा।</li>
+                    <li><strong>उमरिया (Umaria) व अलीराजपुर (Alirajpur):</strong> महुआ (Mahua) के फूल व उत्पाद।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🌾 बालाघाट का गौरव</h3>
+                <ul>
+                    <li><strong>बालाघाट (Balaghat):</strong> <strong>चिन्नौर चावल (Chinnor Rice)</strong> एवं कोदो-कुटकी। चिन्नौर चावल मध्य प्रदेश का पहला कृषि उत्पाद है जिसे <strong>जीआई टैग (GI Tag)</strong> से सम्मानित किया गया है। यह पटवारी, पीएससी और राज्य की सभी परीक्षाओं में बार-बार दोहराया जाने वाला प्रश्न है।</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🪵 बैतूल व छतरपुर (सागौन एवं फर्नीचर जुगलबंदी)</h3>
+                <ul>
+                    <li><strong>बैतूल (Betul):</strong> सागौन की लकड़ी (Teak Wood)। यहाँ उत्तम गुणवत्ता का सागौन मिलता है जो बहुत महंगा होता है।
+                        <div class="link-story-box">
+                            🔗 <strong>ट्रिक:</strong> "सागौन की लकड़ी इतनी महंगी है कि उसे तोल-तोल कर (बैतूल) बेचा जाता है।"
+                        </div>
+                    </li>
+                    <li><strong>छतरपुर (Chhatarpur):</strong> लकड़ी का सुंदर फर्नीचर (Wooden Furniture) व देशवासी पान।
+                        <div class="link-story-box">
+                            🔗 <strong>जुगलबंदी ट्रिक:</strong> "बैतूल से महंगी सागौन की लकड़ी कानूनी रूप से लाओ और उसका आलीशान फर्नीचर छतरपुर में बनवाओ!"
+                        </div>
+                        <div class="hot-box">
+                            🔥 <strong>पान उत्पादक क्षेत्र:</strong> छतरपुर का <strong>महाराजपुर और गढ़ी मलहरा</strong> क्षेत्र पान की खेती के लिए प्रसिद्ध है, जिसे मुख्य रूप से चौरसिया समाज के लोग पारंपरिक रूप से उगाते हैं।
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">👜 भोपाल का ऐतिहासिक शिल्प</h3>
+                <ul>
+                    <li><strong>भोपाल (Bhopal):</strong> जरदोजी शिल्प (Zardozi Print) एवं जूट उत्पाद।
+                        <div class="definition-box">
+                            <strong>📐 जरदोजी कला का इतिहास:</strong> जरी-जरदोजी कढ़ाई की एक अनूठी शैली है जो <strong>12वीं सदी में मध्य एशिया (Central Asia) से भारत आई थी</strong>। यह रेशमी कपड़ों पर सुनहरे जरी धागों, मोतियों और सितारों से की जाने वाली महीन कढ़ाई है। भोपाल में इसे प्रमोट करने के लिए स्वयं सहायता समूह की महिलाओं को जोड़कर <strong>'राग भोपाली एंपोरियम'</strong> के माध्यम से मंच दिया गया है।
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🪙 उज्जैन का बटीक प्रिंट</h3>
+                <ul>
+                    <li><strong>उज्जैन (Ujjain):</strong> बटीक प्रिंट (Batik Print) एवं प्याज।
+                        <div class="hot-box">
+                            🔥 <strong>EXAM HOT FACT:</strong> उज्जैन के प्रसिद्ध बटीक प्रिंट को कपड़ों पर उकेरने के लिए <strong>पिघली हुई मोम (Melted Wax)</strong> का विशेष प्रयोग किया जाता है।
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">🌾 कोदो-कुटकी बेल्ट (मिलेट्स)</h3>
+                <p>मध्य प्रदेश के चार प्रमुख जनजातीय बाहुल्य जिलों में <strong>कोदो-कुटकी (Kodo-Kutki)</strong> को ओडीओपी में शामिल किया गया है:</p>
+                <ol style="margin-left: 25px; margin-bottom: 15px;">
+                    <li><strong>डिंडोरी (Dindori)</strong> — गोंड चित्रकला के साथ।</li>
+                    <li><strong>मंडला (Mandla)</strong> — गोंड चित्रकला के साथ।</li>
+                    <li><strong>अनूपपुर (Anuppur)</strong></li>
+                    <li><strong>सिंगरौली (Singrauli)</strong> — महुआ के साथ।</li>
+                </ol>
+
+                <div class="definition-box">
+                    <strong>🌾 कोदो-कुटकी क्या है?</strong><br>
+                    जनसंपर्क विभाग के डेटा के अनुसार, कोदो-कुटकी वास्तव में <strong>बाजरा की एक प्रजाति (Species of Pearl Millet)</strong> है। इसके दानों को दिखने में और खाने में चावल की तरह उपयोग किया जाता है। बैगा और गोंड जनजाति के लोग इसे मैकल श्रेणी की पहाड़ी ढलानों और घाटियों में पारंपरिक रूप से बोते हैं।
+                </div>
+
+                <div class="link-story-box" style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1)); border-left: 5px solid var(--accent-green);">
+                    <h3>👑 श्री अन्न की ब्रांड एंबेसडर: लहरी बाई (Lahari Bai)</h3>
+                    <p>परीक्षा के दृष्टिकोण से अत्यंत महत्वपूर्ण (Most Important):<br>
+                    👉 <strong>जनजाति:</strong> बैगा जनजाति (Baiga Tribe)<br>
+                    👉 <strong>निवासी:</strong> डिंडोरी जिला (Dindori District)<br>
+                    👉 <strong>पहचान:</strong> मध्य प्रदेश बीज बैंक की ब्रांड एंबेसडर। इन्होंने अपने घर में दुर्लभ मोटे अनाजों (श्री अन्न) की <strong>150 से अधिक प्रजातियों को संरक्षित और जीवित रखा है</strong>। प्रधान मंत्री नरेंद्र मोदी ने भी मन की बात में इनकी सराहना की है।</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">💡 अन्य प्रमुख ओडीओपी जिले</h3>
+                <ul>
+                    <li><strong>झाबुआ (Jhabua):</strong> कड़कनाथ मुर्गा (जीआई टैग प्राप्त, अपने काले मांस और औषधीय गुणों के लिए प्रसिद्ध)।</li>
+                    <li><strong>धार (Dhar):</strong> बाग प्रिंट (Bagh Print) एवं आलू।</li>
+                    <li><strong>टीकमगढ़ (Tikamgarh):</strong> अदरक एवं पीतल की मूर्तियां / बेल मेटल (Bell Metal)। यहाँ के पीतल के घोड़े और कलाकृतियां ऐतिहासिक हैं।</li>
+                    <li><strong>निवाड़ी (Niwari):</strong> अदरक (Ginger) एवं मूंगफली।</li>
+                    <li><strong>बड़वानी (Barwani):</strong> अदरक (Ginger)।
+                        <div class="link-story-box">
+                            🔗 <strong>ट्रिक:</strong> "अदरक वाली कड़क चाय पीने के बाद इंसान बड़ी-बड़ी बातें या बानी (बड़वानी) बोलने लगता है।"
+                        </div>
+                    </li>
+                    <li><strong>रायसेन (Raisen):</strong> बासमती चावल (Basmati Rice)।</li>
+                    <li><strong>सीहोर (Sehore):</strong> दूधी की लकड़ी के खिलौने (Wooden Toys)।</li>
+                    <li><strong>शाहजहाँपुर / शाजापुर (Shajapur):</strong> प्याज (Onion)। <span style="color:var(--text-muted)">(नोट: सरकारी विज्ञापनों में सुजालपुर लिखा रहता है, जो कि शाजापुर जिले के अंतर्गत ही आता है)।</span></li>
+                    <li><strong>खंडवा (Khandwa):</strong> प्याज (Onion) — प्याज रबी और खरीफ दोनों सीजन में होती है।</li>
+                    <li><strong>हरदा (Harda):</strong> बांस (Bamboo)।
+                        <div class="link-story-box">
+                            🔗 <strong>ट्रिक:</strong> "अगर देवास और हरदा के बांस से सिर पर चोट लग जाए, तो तुरंत घाव पर हल्दी (हरदा) लगा लेनी चाहिए।"
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="accordion-btn" onclick="toggleAccordion(this)">📝 Quick Recall Quiz — ओडीओपी विशेष <span>▼</span></button>
+            <div class="accordion-content">
+                <div class="quiz-card">
+                    <p><strong>Q1. 'सफेद चांदी' किस जिले के लहसुन को कहा जाता है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: मंदसौर (Mandsaur)</div>
+                </div>
+                <div class="quiz-card">
+                    <p><strong>Q2. 'सतपुड़ा ऑरेंज' किस जिले के संतरे का आधिकारिक ब्रांड नाम है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: छिंदवाड़ा (Chhindwara)</div>
+                </div>
+                <div class="quiz-card">
+                    <p><strong>Q3. श्री अन्न की ब्रांड एंबेसडर लहरी बाई का संबंध किस जिले और किस जनजाति से है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: डिंडोरी जिला, बैगा जनजाति</div>
+                </div>
+                <div class="quiz-card">
+                    <p><strong>Q4. उज्जैन के बटीक प्रिंट में कपड़ों पर डिजाइन बनाने के लिए किसका उपयोग किया जाता है?</strong></p>
+                    <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                    <div class="quiz-answer">उत्तर: पिघली हुई मोम (Melted Wax)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="master-fullforms" class="card">
+            <h2 class="section-header" style="border-bottom-color: var(--accent-purple);">🔤 मास्टर फुल फॉर्म्स तालिका (Full Forms Master List)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>संक्षिप्त रूप (Abbreviation)</th>
+                        <th>अंग्रेजी पूर्ण रूप (English Full Form)</th>
+                        <th>हिंदी अर्थ / व्याख्या</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ODOP</strong></td>
+                        <td>One District One Product</td>
+                        <td>एक जिला एक उत्पाद योजना</td>
+                    </tr>
+                    <tr>
+                        <td><strong>JNKVV</strong></td>
+                        <td>Jawaharlal Nehru Krishi Vishwavidyalaya</td>
+                        <td>जवाहरलाल नेहरू कृषि विश्वविद्यालय (जबलपुर)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>KCC</strong></td>
+                        <td>Katni Stone Center / Kisan Credit Card</td>
+                        <td>किसान क्रेडिट कार्ड (1998) / किसान कॉल सेंटर (2004)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E-NAM</strong></td>
+                        <td>Electronic National Agriculture Market</td>
+                        <td>राष्ट्रीय कृषि डिजिटल बाजार पोर्टल</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AEZ</strong></td>
+                        <td>Agri Export Zone</td>
+                        <td>कृषि निर्यात क्षेत्र (जैसे - इंदौर आलू निर्यात क्षेत्र)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MSP</strong></td>
+                        <td>Minimum Support Price</td>
+                        <td>न्यूनतम समर्थन मूल्य (भावांतर योजना का आधार)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="master-hotfacts" class="card">
+            <h2 class="section-header" style="border-bottom-color: var(--accent-orange);">🔥 मास्टर परीक्षा हॉट फैक्ट्स (Exam Hot Points Summary)</h2>
+            <ul>
+                <li>🔥 <strong>चिन्नौर चावल:</strong> बालाघाट का प्रसिद्ध उत्पाद, जो मध्य प्रदेश का पहला कृषि उत्पाद जीआई टैग धारक बना।</li>
+                <li>🔥 <strong>आलू अनुसंधान केंद्र:</strong> इंदौर में सबसे ज्यादा आलू व्यापार और पहला AEZ होने के बावजूद, मुख्य अनुसंधान केंद्र <strong>ग्वालियर</strong> में स्थित है।</li>
+                <li>🔥 <strong>मंडी बोर्ड क्षेत्रीय कार्यालय:</strong> मध्य प्रदेश में कुल <strong>7 क्षेत्रीय कार्यालय</strong> कार्य कर रहे हैं (भोपाल, इंदौर, उज्जैन, ग्वालियर, जबलपुर, सागर, रीवा)।</li>
+                <li>🔥 <strong>बलराम ताल योजना की तिथि:</strong> व्यापम और पीएससी परीक्षाओं के लिए अति महत्वपूर्ण तिथि — <strong>25 मई 2007</strong>।</li>
+                <li>🔥 <strong>भावांतर भुगतान योजना की शुरुआत:</strong> <strong>16 अक्टूबर 2017 को खुरई, सागर</strong> से की गई थी।</li>
+                <li>🔥 <strong>कोदो-कुटकी का वनस्पति सत्य:</strong> यह चावल नहीं बल्कि <strong>बाजरा (Millet) की एक प्रजाति</strong> है, जिसे पहाड़ों की ढलानों पर उगाया जाता है।</li>
+                <li>🔥 <strong>बदरवास क्षेत्र:</strong> शिवनी या अन्य जिलों से भ्रमित न हों, बदरवास <strong>शिवपुरी</strong> में स्थित जैकेट निर्माण का मुख्य केंद्र है।</li>
+            </ul>
+        </section>
+
+        <section id="master-checklist" class="card">
+            <h2 class="section-header" style="border-bottom-color: var(--accent-green);">✅ मास्टर रिवीजन चेकलिस्ट (Self Assessment Checklist)</h2>
+            <p style="font-size: 14px; margin-bottom: 12px; color: var(--text-muted);">पढ़े गए विषयों को याद करने के बाद टिक करें। यह डेटा आपके ब्राउज़र में सुरक्षित रहेगा।</p>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="chk1" onclick="updateProgress()"><label for="chk1">खमरिया जबलपुर में गेहूं व मक्का अनुसंधान केंद्र याद है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk2" onclick="updateProgress()"><label for="chk2">पावरखेड़ा (नर्मदापुरम) का मुख्य गेहूं अनुसंधान केंद्र स्पष्ट है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk3" onclick="updateProgress()"><label for="chk3">मंदसौर के लहसुन की किस्में (ऊटी जी-2, रियावन) और 'सफेद चांदी' नाम याद है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk4" onclick="updateProgress()"><label for="chk4">मंडी बोर्ड के अधिनियम (1972) और स्थापना (1973) में अंतर पता है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk5" onclick="updateProgress()"><label for="chk5">बलराम ताल योजना (25 मई 2007) की तारीख रट ली है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk6" onclick="updateProgress()"><label for="chk6">लहरी बाई (बैगा जनजाति, डिंडोरी) और उनके 150+ बीजों का रिकॉर्ड याद है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk7" onclick="updateProgress()"><label for="chk7">जरी-जरदोजी शिल्प का 12वीं सदी का मध्य एशिया का इतिहास याद है।</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="chk8" onclick="updateProgress()"><label for="chk8">उज्जैन के बटीक प्रिंट में प्रयुक्त पिघली मोम का कॉन्सेप्ट क्लियर है।</label>
+            </div>
+        </section>
+
+        <section id="upcoming" class="card" style="background: linear-gradient(135deg, var(--bg-card), rgba(255,107,53,0.05)); border: 1px dashed var(--accent-orange);">
+            <h2 class="card-title" style="color: var(--accent-orange);">📌 Upcoming Topic — आगामी क्लास का एजेंडा</h2>
+            <p><strong>अगला अध्याय: मध्य प्रदेश में पशुपालन (Animal Husbandry in MP)</strong></p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 5px;">विकास सर की अगली क्लास पूर्णतः अपडेटेड और प्रामाणिक पशुपालन आंकड़ों पर आधारित होगी। पूरे मध्य प्रदेश के यूट्यूब इतिहास में सबसे सटीक और विस्तृत कवरेज का दावा। कल रात <strong>8:00 PM</strong> लाइव जुड़ना न भूलें!</p>
+        </section>
+    </div>
+
+    <script>
+        // Theme Management
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('themeBtn');
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                btn.innerText = "☀️ Light Mode";
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.add('light-theme');
+                btn.innerText = "🌙 Dark Mode";
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load Theme on init
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-theme');
+                document.getElementById('themeBtn').innerText = "🌙 Dark Mode";
+            }
+            // Load checkboxes state
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(chk => {
+                const savedValue = localStorage.getItem(chk.id);
+                if (savedValue === 'true') {
+                    chk.checked = true;
+                }
+            });
+            updateProgress();
+        };
+
+        // Accordion Management
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const span = btn.querySelector('span');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                span.innerText = "▼";
+            } else {
+                content.style.display = "block";
+                span.innerText = "▲";
+            }
+        }
+
+        // Quiz Reveal Management
+        function toggleQuiz(btn) {
+            const ans = btn.nextElementSibling;
+            if (ans.style.display === "block") {
+                ans.style.display = "none";
+                btn.innerText = "Reveal Answer";
+            } else {
+                ans.style.display = "block";
+                btn.innerText = "Hide Answer";
+            }
+        }
+
+        // Progress Calculation and Save States
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                localStorage.setItem(chk.id, chk.checked);
+                if (chk.checked) checkedCount++;
+            });
+            
+            const percent = checkboxes.length ? Math.round((checkedCount / checkboxes.length) * 100) : 0;
+            document.getElementById('progressBar').style.width = percent + '%';
+            document.getElementById('progressText').innerText = `Revision Progress: ${percent}%`;
+        }
+
+        // Image Fallback Handling to prevent broken assets
+        function handleImgError(img) {
+            img.style.display = 'none';
+            const fallbackLink = document.createElement('p');
+            fallbackLink.style.fontSize = '12px';
+            fallbackLink.style.color = 'var(--accent-orange)';
+            fallbackLink.style.padding = '10px';
+            fallbackLink.style.textAlign = 'center';
+            fallbackLink.innerHTML = `⚠️ Image failed to load. Reference concept text instead.`;
+            img.parentNode.appendChild(fallbackLink);
+        }
+    </script>
+</body>
+</html>

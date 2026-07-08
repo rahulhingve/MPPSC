@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 MP National Parks (Part 2) - Exam Revision Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #16162a;
+            --bg-card: #1f1f3e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0d0;
+            --accent-cyan: #00d4ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #00ff88;
+            --accent-purple: #b388ff;
+            --gradient-link: linear-gradient(135deg, #1e1e3f, #2b1b4d);
+            --border-color: #2a2a50;
+            --contrast-ratio: 7.5;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f4f5f9;
+            --bg-secondary: #ffffff;
+            --bg-card: #eaebee;
+            --text-primary: #111122;
+            --text-secondary: #444466;
+            --accent-cyan: #0088cc;
+            --accent-orange: #d14d14;
+            --accent-green: #008844;
+            --accent-purple: #6a1b9a;
+            --gradient-link: linear-gradient(135deg, #e2e4f0, #d5cbe6);
+            --border-color: #cccccc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', 'Outfit', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 18px;
+            line-height: 1.75;
+            letter-spacing: 0.03em;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-secondary);
+            border-bottom: 3px solid var(--accent-cyan);
+            padding: 30px 20px;
+            border-radius: 0 0 16px 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-badge {
+            background-color: var(--accent-orange);
+            color: white;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .progress-container {
+            background: #2a2a4a;
+            border-radius: 10px;
+            height: 10px;
+            width: 10px;
+            width: 100%;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* Sticky Controls */
+        .sticky-controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-secondary);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-select {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .theme-btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            background-color: var(--accent-purple);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        /* Layout Split Panel for Desktop Maps */
+        .main-layout {
+            display: flex;
+            gap: 25px;
+            flex-direction: column;
+        }
+
+        @media (min-width: 1200px) {
+            .main-layout {
+                flex-direction: row-reverse;
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            .container {
+                flex: 1;
+                max-width: 850px;
+                margin: 0;
+            }
+            .sticky-side-panel {
+                position: sticky;
+                top: 80px;
+                width: 400px;
+                height: calc(100vh - 120px);
+                background-color: var(--bg-secondary);
+                border-radius: 12px;
+                padding: 15px;
+                border: 1px solid var(--border-color);
+                overflow-y: auto;
+            }
+        }
+
+        .sticky-side-panel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Accordion & Cards */
+        .topic-section {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent-cyan);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .topic-section.orange-border { border-left-color: var(--accent-orange); }
+        .topic-section.green-border { border-left-color: var(--accent-green); }
+        .topic-section.purple-border { border-left-color: var(--accent-purple); }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .concept-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .concept-card h4 {
+            margin-bottom: 8px;
+            color: var(--accent-cyan);
+            font-size: 19px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 5px;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        /* Highlight Boxes */
+        .exam-hot {
+            background-color: rgba(255, 107, 53, 0.15);
+            border: 1px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .exam-hot h5 {
+            color: var(--accent-orange);
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .link-story {
+            background: var(--gradient-link);
+            border: 1px solid var(--accent-purple);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .link-story h5 {
+            color: var(--accent-purple);
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        /* Media blocks */
+        .image-block {
+            margin: 15px 0;
+            background-color: var(--bg-card);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto 8px auto;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Quiz elements */
+        .quiz-container {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .quiz-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+        }
+
+        .quiz-item:last-child { border-bottom: none; }
+
+        .quiz-question {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .quiz-answer {
+            display: none;
+            background-color: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid var(--accent-green);
+            padding: 8px 12px;
+            margin-top: 5px;
+            border-radius: 0 6px 6px 0;
+            font-size: 16px;
+        }
+
+        .reveal-btn {
+            background-color: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        /* Checklist Component */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 6px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Content Collapsible State */
+        .collapsible-content {
+            display: block;
+        }
+        .collapsed .collapsible-content {
+            display: none;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 14px;
+            }
+            .sticky-controls, .theme-btn, .reveal-btn, .progress-container, .sticky-side-panel {
+                display: none !important;
+            }
+            .collapsible-content {
+                display: block !important;
+            }
+            .quiz-answer {
+                display: block !important;
+                background: #eee !important;
+            }
+            .topic-section {
+                border: 1px solid #ccc !important;
+                page-break-inside: avoid;
+                background: transparent !important;
+            }
+            .concept-card {
+                background: transparent !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Control Panel -->
+    <div class="sticky-controls">
+        <select class="nav-select" onchange="scrollToSection(this.value)">
+            <option value="">🎯 Quick Jump to National Park Section...</option>
+            <option value="intro">🏠 Intro & Class Info</option>
+            <option value="fossil">1. जीवाश्म (घुघवा) राष्ट्रीय उद्यान - डिंडोरी</option>
+            <option value="pench">2. पेंच राष्ट्रीय उद्यान - सिवनी/छिंदवाड़ा</option>
+            <option value="panna">3. पन्ना राष्ट्रीय उद्यान - पन्ना/छतरपुर</option>
+            <option value="satpura">4. सतपुड़ा राष्ट्रीय उद्यान - नर्मदापुरम</option>
+            <option value="vanvihar">5. वन बिहार राष्ट्रीय उद्यान - भोपाल</option>
+            <option value="sanjay">6. संजय राष्ट्रीय उद्यान (डबरी) - सीधी/सिंगरोली</option>
+            <option value="dinosaur">7. डायनासोर राष्ट्रीय उद्यान - धार</option>
+            <option value="kuno">8. कूनो राष्ट्रीय उद्यान - श्योपुर</option>
+            <option value="omkareshwar">9. ओमकारेश्वर राष्ट्रीय उद्यान - खंडवा</option>
+            <option value="master-fullforms">📋 Master Table: Full Forms</option>
+            <option value="master-hotfacts">🔥 Master List: Exam Hot Facts</option>
+            <option value="master-checklist">✅ Master Revision Checklist</option>
+        </select>
+        <button class="theme-btn" onclick="toggleTheme()">🌓 Theme Toggle</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Desktop Sticky Map Panel -->
+        <div class="sticky-side-panel">
+            <h3 style="font-family:'Outfit'; font-size:18px; border-bottom:1px solid var(--border-color); padding-bottom:5px;">🗺️ MP Reference Map</h3>
+            <img src="https://www.slbcmadhyapradesh.in/images/MP-NewMap-55.gif" alt="Madhya Pradesh New Map highlighting districts" decoding="async">
+            <div style="font-size:12px; color:var(--text-secondary); margin-top:5px; text-align:center;">Source: SLBC MP Government Reference Map Layout</div>
+        </div>
+
+        <div class="container">
+            <!-- Header Section -->
+            <header id="intro">
+                <span class="header-badge">MPGK Special Class #25</span>
+                <h1>मध्य प्रदेश के राष्ट्रीय उद्यान (National Parks in MP) — Part 2</h1>
+                <p style="color: var(--text-secondary); font-size: 16px;">
+                    Expert Revision System compiled from Vikas Sir's Lecture (MP Exam Wallah). Side-by-side video study companion.
+                </p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="masterProgress"></div>
+                </div>
+                <div style="font-size:13px; margin-top:5px; color:var(--accent-green); font-weight:600;" id="progressText">Revision Progress: 0%</div>
+            </header>
+
+            <!-- Topic 1: Ghughua Fossil National Park -->
+            <section class="topic-section" id="fossil">
+                <h2 class="section-title" onclick="toggleSection(this)">🦕 1. जीवाश्म राष्ट्रीय उद्यान / घुघवा फॉसिल पार्क</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Location & Demographics</h4>
+                        <ul>
+                            <li><strong>District Location:</strong> डिंडोरी (Dindori) जिले के अंतर्गत आता है।</li>
+                            <li><strong>Micro Location:</strong> डिंडोरी का <strong>शाहपुरा क्षेत्र (Shahpura Region)</strong> पड़ता है। गहराई से प्रश्न पूछे जाने पर शाहपुरा याद रखना जरूरी है।</li>
+                            <li><strong>Core Subject Matter:</strong> यहाँ पर <strong>वनस्पति जीवाश्म (Vegetation Fossils)</strong> सुरक्षित रखे गए हैं, जो करोड़ों वर्ष पहले के प्राचीन पेड़-पौधों के अवशेष हैं।</li>
+                        </ul>
+                    </div>
+
+                    <div class="link-story">
+                        <h5>🔗 Link Story — ऐसे याद करो (Association Chain)</h5>
+                        <p><strong>फांसी (Fossil)</strong> कैसे लगाता है आदमी? <strong>डोरी (Dindori)</strong> से! जीवाश्म (Fossil) सुनते ही दिमाग में 'फांसी' लाओ और सीधे 'डोरी' (डिंडोरी) टिक करो। <br><small style="color:var(--text-secondary); font-style:italic;">*(Disclaimer: यह सिर्फ एक मजेदार एजुकेशनल ट्रिक है, हकीकत में ऐसा सोचना अपराध है!)*</small></p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🗓️ Timeline & Area (verified Data)</h4>
+                        <ul>
+                            <li><strong>Establishment Year:</strong> 1968 में स्थापित किया गया था।</li>
+                            <li><strong>National Park Status:</strong> 1983 में इसे आधिकारिक तौर पर नेशनल पार्क का स्टेटस दिया गया। डेटा को बिल्कुल न छेड़ें।</li>
+                            <li><strong>Total Area:</strong> 0.27 वर्ग किलोमीटर ($0.27 \text{ km}^2$).</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 Exam Hot Point — यह पूछा जाता है!</h5>
+                        <p>यह <strong>मध्य प्रदेश का सबसे छोटा नेशनल पार्क (Smallest National Park of MP)</strong> है। <br>
+                        <em>क्लास लाइव चर्चा:</em> सबसे बड़ा नेशनल पार्क कान्हा नेशनल पार्क (Kanha National Park) है जो मंडला-बालाघाट में 940 वर्ग किलोमीटर ($940 \text{ km}^2$) में फैला हुआ है।</p>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Fossilized_wood_at_Ghughua_Fossil_Park.jpg" alt="Fossilized tree trunk at Ghughua Fossil Park Dindori" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Ghughua Fossil Park Vegetation Fossils | Public Domain</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. घुघवा जीवाश्म राष्ट्रीय उद्यान डिंडोरी के किस विशिष्ट क्षेत्र में स्थित है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">शाहपुरा क्षेत्र (Shahpura Region)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 2: Pench National Park -->
+            <section class="topic-section orange-border" id="pench">
+                <h2 class="section-title" onclick="toggleSection(this)">🐅 2. पेंच राष्ट्रीय उद्यान (Pench National Park)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Location & Nomenclature</h4>
+                        <ul>
+                            <li><strong>Geographic Location:</strong> सिवनी (Seoni) और छिंदवाड़ा (Chhindwara) जिलों के अंतर्गत फैला हुआ है।</li>
+                            <li><strong>Nomenclature Source:</strong> इसका नामकरण यहाँ से प्रवाहित होने वाली <strong>पेंच नदी (Pench River)</strong> के कारण पड़ा है। इसके अतिरिक्त यहाँ <strong>हरी नदी (Hari River)</strong> भी प्रवाहित होती है।</li>
+                            <li><strong>Alternate Name:</strong> वर्ष 2002 से इसका अन्य नाम <strong>प्रियदर्शिनी इंदिरा गांधी राष्ट्रीय उद्यान (Priyadarshini Indira National Park)</strong> रखा गया है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="link-story">
+                        <h5>🔗 Link Story — ऐसे याद करो (Association Chain)</h5>
+                        <p><strong>पेंच (Screw)</strong> कहाँ लगाते हैं भाई साहब? जहाँ दीवार या बोर्ड में होता है <strong>छेद (छिंदवाड़ा)</strong>! पेंच को स्क्रू ड्राइवर से घुमाकर छेद में कस दिया। छेद = छिंदवाड़ा, पेंच = पेंच नेशनल पार्क।</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🗓️ Operational Timeline</h4>
+                        <ul>
+                            <li><strong>Establishment Year:</strong> 1975 (याद रखने की ट्रिक: पेंच और 75 एक जैसा साउंड करते हैं — पेंच-75)।</li>
+                            <li><strong>National Park Status:</strong> 1983 में राष्ट्रीय उद्यान का दर्जा मिला।</li>
+                            <li><strong>Tiger Reserve Notification:</strong> इसे वर्ष <strong>1992</strong> में प्रोजेक्ट टाइगर (Tiger Reserve) के अंतर्गत शामिल किया गया था।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🌿 Historical & Cultural Importance (Mogli Land)</h4>
+                        <ul>
+                            <li><strong>Mogli Land (मोगली लैंड):</strong> सिवनी के इन्हीं घने जंगलों को मोगली का जन्मस्थान माना जाता है। "जंगल जंगल बात चली है पता चला है..."।</li>
+                            <li><strong>Mogli Utsav:</strong> यहाँ वर्ष <strong>2004</strong> से लगातार मोगली उत्सव मनाया जाता है।</li>
+                            <li><strong>Historical Mentions:</strong> इस वन क्षेत्र का उल्लेख अबुल फजल की प्रसिद्ध पुस्तक <strong>'आईने अकबरी' (Ain-i-Akbari)</strong> में मिलता है।</li>
+                            <li><strong>The Jungle Book:</strong> रूडयार्ड किपलिंग (Rudyard Kipling) की विश्व प्रसिद्ध कृति 'द जंगल बुक' की पृष्ठभूमि और प्रेरणा यही राष्ट्रीय उद्यान है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 Exam Hot Point — पुराना पीएससी पेपर पैटर्न</h5>
+                        <p>इस राष्ट्रीय उद्यान में <strong>'काला पहाड़' (Black Mountain)</strong> पाया जाता है। काले पत्थरों की उपस्थिति के कारण इसे काला पहाड़ कहते हैं। पीएससी पुराने पेपर्स में काला पहाड़/नीला पहाड़ से प्रश्न पूछ चुका है!</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🐾 Key Wildlife Identity</h4>
+                        <ul>
+                            <li><strong>कॉलर वाली बाघिन (Collarwali Tigress):</strong> पेंच की अत्यंत प्रसिद्ध बाघिन, जिसे <strong>'द सुपर टाइग्रेस मॉम' (The Super Tigress Mom)</strong> कहा जाता था (अब इनका निधन हो चुका है)। इसने एक साथ रिकॉर्ड 5 शावकों को भी जन्म दिया था।</li>
+                            <li><strong>बघीरा (Bagheera) - काला तेंदुआ:</strong> मध्य प्रदेश और महाराष्ट्र की सीमा पर विचरण करने वाला अत्यंत दुर्लभ <strong>काला तेंदुआ (Black Leopard)</strong> जिसका नाम 'बघीरा' है, इसी क्षेत्र में पाया जाता है।</li>
+                            <li><strong>कृष्ण मृग (Blackbuck):</strong> यह नेशनल पार्क विशेष रूप से काले हिरणों (Black Buck) की बड़ी आबादी के लिए प्रसिद्ध है।</li>
+                            <li><strong>अन्य जीव:</strong> तेंदुआ (Leopard), चीतल (Deer), सांभर (Sambar), बाघ (Tiger), नीलगाय (Nilgai)।</li>
+                            <li><strong>National Highway Passing:</strong> भारत का प्रमुख नेशनल हाईवे <strong>NH 44</strong> इसके पास से होकर गुजरता है (श्रीनगर से कन्याकुमारी)।</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Pench_tiger.jpg" alt="Tiger in water at Pench National Park MP" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Tiger at Pench National Park Border Zone | CC BY-SA 4.0</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. पेंच राष्ट्रीय उद्यान का नाम बदलकर प्रियदर्शिनी इंदिरा गांधी राष्ट्रीय उद्यान किस वर्ष किया गया?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">वर्ष 2002 में</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. 'द सुपर टाइग्रेस मॉम' के नाम से पेंच की किस मशहूर बाघिन को जाना जाता था?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">कॉलर वाली बाघिन (Collarwali Tigress)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 3: Panna National Park -->
+            <section class="topic-section green-border" id="panna">
+                <h2 class="section-title" onclick="toggleSection(this)">🦅 3. पन्ना राष्ट्रीय उद्यान (Panna National Park)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Geography & Fundamental Details</h4>
+                        <ul>
+                            <li><strong>Location:</strong> मुख्य रूप से पन्ना जिले में स्थित है और इसका कुछ भाग छतरपुर (Chhatarpur) के पास तक विस्तृत है।</li>
+                            <li><strong>Total Area:</strong> 542 वर्ग किलोमीटर ($542 \text{ km}^2$)।</li>
+                            <li><strong>Establishment (NP):</strong> वर्ष 1981 में राष्ट्रीय उद्यान के रूप में स्थापित।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 Exam Hot Point — व्यापम का सबसे फेवरेट प्रश्न!</h5>
+                        <p>पन्ना को <strong>टाइगर रिजर्व (TR)</strong> कब बनाया गया? वर्ष <strong>1994</strong> में। यह प्रश्न 5 से 6 बार परीक्षाओं में रिपीट हो चुका है। कंठस्थ कर लें!</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🐊 Reptile Park & Key Ecological Zones</h4>
+                        <ul>
+                            <li><strong>रेप्टाइल पार्क (Reptile Park):</strong> यहाँ मध्य प्रदेश का प्रसिद्ध सरीसृप पार्क विकसित किया गया है, जहाँ रेंगने वाले जीव बहुतायत में मिलते हैं।</li>
+                            <li><strong>Fauna Varieties:</strong> एलीगेटर (घड़ियाल - Alligator), क्रोकोडाइल (मगरमच्छ), तथा कछुआ (Turtle) आदि का प्राकृतिक संरक्षण यहाँ किया जाता है।</li>
+                            <li><strong>जंगली भैंसा संरक्षण (Wild Buffalo / Bison):</strong> पन्ना राष्ट्रीय उद्यान में जंगली भैंसों को विशेष संरक्षण प्रदान किया गया है।</li>
+                            <li><strong>पांडव गुफाएं (Pandav Caves):</strong> सैलानियों के आकर्षण का मुख्य केंद्र पांडव केव्स इसी नेशनल पार्क क्षेत्र के भीतर मौजूद हैं।</li>
+                            <li><strong>Rivers Flowing:</strong> यहाँ से <strong>केन (Ken River)</strong> एवं <strong>खद्दर (Khaddar River)</strong> नदियाँ प्रवाहित होती हैं।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🦅 गिद्ध संरक्षण एवं अद्भुत 'सोलर चिप' घटना (Vulture Conservation)</h4>
+                        <ul>
+                            <li><strong>सर्वाधिक गिद्ध:</strong> मध्य प्रदेश में सबसे ज्यादा गिद्धों की संख्या पन्ना राष्ट्रीय उद्यान में दर्ज है। इसे गिद्ध पुनर्वास केंद्र के रूप में जाना जाता है।</li>
+                            <li><strong>7500 किलोमीटर की अद्भुत उड़ान:</strong> यहाँ वैज्ञानिकों द्वारा गिद्धों के कंधों पर <strong>सोलर पावर्ड जीपीएस ट्रैकिंग चिप (Solar Powered Chip)</strong> लगाई गई थी (जो सीधे सूर्य की रोशनी से चार्ज होती है)।</li>
+                            <li><strong>अद्भुत घटनाक्रम:</strong> यहाँ से <strong>25 हिमालयन ग्रिफिन गिद्ध (Himalayan Griffon Vultures)</strong> उड़ान भरकर नेपाल और तिब्बत के रास्ते होते हुए चीन की अंतरराष्ट्रीय सीमा तक पहुँच गए। उन्होंने मात्र 60 दिनों में लगभग 7500 किलोमीटर की लंबी दूरी तय की, जिसे सोलर चिप द्वारा ट्रैक किया गया।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🎖️ Titles, Honors & Celebrated Wildlife</h4>
+                        <ul>
+                            <li><strong>मध्य प्रदेश का सरिस्का (Sariska of MP):</strong> इसकी तुलना राजस्थान के सरिस्का नेशनल पार्क से की जाती है।</li>
+                            <li><strong>राष्ट्रीय उद्यानों का रत्न:</strong> इसे भारत के राष्ट्रीय उद्यानों का 'रत्न' (Jewel of National Parks) भी पुकारा जाता है।</li>
+                            <li><strong>वत्सला हथनी (Vatsala Elephant):</strong> पन्ना में रहने वाली विश्व की सबसे <strong>उम्रदराज हथनी (Oldest Living Elephant)</strong> है, जिसकी आयु लगभग 105 से 110 वर्ष बताई जाती है। इसके मालिक द्वारा सटीक जन्म प्रमाण पत्र न दे पाने के कारण इसका नाम गिनीज बुक ऑफ वर्ल्ड रिकॉर्ड में दर्ज होते-होते चूक गया।</li>
+                            <li><strong>TripAdvisor Award:</strong> प्रसिद्ध ट्रैवल वेबसाइट 'ट्रिप एडवाइजर' ने वर्ष 2016-17 में इसे 'बेस्ट टूरिज्म डेस्टिनेशन' (Best Tourist Destination) का सर्वश्रेष्ठ पुरस्कार प्रदान किया था।</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Gharial_at_Panna.jpg" alt="Gharial Alligator in Ken River at Panna National Park" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Gharial (Alligator) Conservation inside Panna National Park | CC BY-SA 3.0</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. पन्ना नेशनल पार्क से उड़ान भरने वाले 25 हिमालयन ग्रिफिन गिद्धों ने 60 दिनों में कुल कितने किलोमीटर की यात्रा की?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">7500 किलोमीटर (7500 km tracked via Solar Chips)</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. विश्व की सबसे बुजुर्ग हथनी 'वत्सला' मध्य प्रदेश के किस राष्ट्रीय उद्यान का गौरव है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">पन्ना राष्ट्रीय उद्यान (Panna National Park)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 4: Satpura National Park -->
+            <section class="topic-section purple-border" id="satpura">
+                <h2 class="section-title" onclick="toggleSection(this)">🌲 4. सतपुड़ा राष्ट्रीय उद्यान (Satpura National Park)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Geography & Location Parameters</h4>
+                        <ul>
+                            <li><strong>Region Location:</strong> पचमढ़ी, जिला <strong>नर्मदापुरम (Narmadapuram)</strong> के अंतर्गत स्थित है।</li>
+                            <li><strong>Total Area:</strong> 528 वर्ग किलोमीटर ($528 \text{ km}^2$)।</li>
+                            <li><strong>Establishment Timeline:</strong> वर्ष 1981 में स्थापित हुआ।</li>
+                            <li><strong>Tiger Reserve Target:</strong> वर्ष 1999-2000 में इसे टाइगर रिजर्व घोषित किया गया। <em>एग्जाम टिप:</em> यदि परीक्षा के विकल्पों में दोनों अलग-अलग वर्ष आएं तो 100% बिना किसी संशय के <strong>1999</strong> को सही उत्तर चुनना है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 Star Point — अत्यंत महत्वपूर्ण भौगोलिक स्थिति</h5>
+                        <p>यह राष्ट्रीय उद्यान भौगोलिक दृष्टि से <strong>नर्मदा नदी के दक्षिण में (South of Narmada River)</strong> स्थित है। कॉन्सेप्चुअल प्रश्नों के लिए इसे विशेष तौर पर याद रखें।</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🐿️ Fauna Specifications & Dynamic Mascot Identity</h4>
+                        <ul>
+                            <li><strong>जायंट गिलहरी / उड़न गिलहरी (Giant / Flying Squirrel):</strong> यह इस पार्क का अनऑफिशियल शुभंकर (Unofficial Mascot) या मुख्य पहचान चिन्ह है। यहाँ बड़े आकार की उड़ने वाली गिलहरियाँ पाई जाती हैं।</li>
+                            <li><strong>गौर (Indian Bison):</strong> विशालकाय जंगली भैंसे की प्रजाति 'गौर' (Indian Bison) यहाँ की मुख्य रीढ़ है।</li>
+                            <li><strong>कृष्ण मृग (Blackbuck) & भालू (Bear):</strong> यहाँ भालू और काले हिरणों की अत्यधिक प्रचुरता देखने को मिलती है।</li>
+                            <li><strong>करंट अफेयर्स अपडेट (Current Affairs Update):</strong> हाल ही में (क्लास रिकॉर्डिंग समय से कुछ दिन पूर्व) वन्यजीव प्रबंधन के तहत <strong>4 विशेष हाथी कर्नाटक (Karnataka)</strong> से यहाँ स्थानांतरित करके लाए गए हैं।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🚣 Hydrological Elements & Eco-Tourism</h4>
+                        <ul>
+                            <li><strong>Rivers passing through:</strong> यहाँ <strong>तवा नदी (Tawa River)</strong>, <strong>देनवा नदी (Denwa River)</strong>, तथा <strong>मालिनी नदी (Malini River)</strong> का प्रवाह क्षेत्र है।</li>
+                            <li><strong>Eco Safaris:</strong> देनवा नदी में पर्यटकों के लिए विशेष <strong>नाव सफारी (Boat Safari)</strong> संचालित की जाती है। इसके अलावा यहाँ <strong>हाथी सफारी (Elephant Safari)</strong> भी अत्यंत लोकप्रिय है।</li>
+                            <li><strong>मढ़ई वन क्षेत्र (Madhai Forest Region):</strong> तवा और देनवा नदी के खूबसूरत संगम पर स्थित प्रसिद्ध मढ़ई फॉरेस्ट इसी उद्यान का हिस्सा है (जैसा वन विभाग की पिछली क्लास में भी पढ़ाया गया था)।</li>
+                            <li><strong>Flora Abundance:</strong> यहाँ <strong>सागौन (Teak Wood Trees)</strong> तथा <strong>बांस (Bamboo)</strong> के सघन और ऊंचे वृक्षों की भारी अधिकता पाई जाती है — "सतपुड़ा के घने जंगल, ऊंघते अनमने जंगल"।</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Indian_bison_at_Satpura.jpg" alt="Indian Bison Gaur inside Satpura National Park Narmadapuram" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Indian Bison (Gaur) at Satpura Meadows | CC BY-SA 4.0</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. सतपुड़ा राष्ट्रीय उद्यान में नाव सफारी (Boat Safari) का आनंद किस नदी में लिया जाता है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">देनवा नदी (Denwa River)</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. यदि परीक्षा में सतपुड़ा राष्ट्रीय उद्यान को टाइगर रिजर्व बनाने का वर्ष पूछा जाए और 1999 तथा 2000 दोनों विकल्प में हों, तो आप किसे प्राथमिकता देंगे?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">1999 को प्राथमिक उत्तर माना जाएगा।</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 5: Van Vihar National Park -->
+            <section class="topic-section" id="vanvihar">
+                <h2 class="section-title" onclick="toggleSection(this)">🏙️ 5. वन विहार राष्ट्रीय उद्यान (Van Vihar National Park)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Urban Location Profile</h4>
+                        <ul>
+                            <li><strong>Location:</strong> मध्य प्रदेश की राजधानी <strong>भोपाल (Bhopal)</strong> के मध्य में स्थित है।</li>
+                            <li><strong>Specific Environs:</strong> यह <strong>श्यामला हिल्स (Shyamla Hills)</strong> के समीप मुख्यमंत्री निवास के ठीक नीचे की तरफ ढलान पर विस्तृत है। मुख्यमंत्री साहब ऊपर खिड़की से झांकते हैं तो नीचे सीधा वन विहार दिखता है।</li>
+                            <li><strong>Natural Boundaries:</strong> यह भोपाल की प्रसिद्ध <strong>बड़ी झील (Bada Talaab / Upper Lake)</strong> और ऐतिहासिक <strong>टाकिया द्वीप (Takia Island)</strong> से सटा हुआ है।</li>
+                            <li><strong>Total Area:</strong> 4.4 वर्ग किलोमीटर ($4.4 \text{ km}^2$)।</li>
+                            <li><strong>Structural Core:</strong> यह पूर्णतः एक चिड़ियाघर (Zoo) के आधुनिक प्रारूप के तौर पर विकसित एक अनूठा नेशनल पार्क है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 Exam Hot Point — 3 अति-महत्वपूर्ण तारीखों का महा-कंफ्यूजन दूर!</h5>
+                        <p>इंटरनेट, किताबों और विद्वानों के बीच फैले भ्रम को दूर कर लें। परीक्षा में पूछे जाने वाले शब्दों के अनुसार सटीक उत्तर लगाएं:</p>
+                        <table>
+                            <thead>
+                                border="1"
+                                <tr>
+                                    <th>पूछा जाने वाला शब्द / संदर्भ</th>
+                                    <th>सटीक वर्ष (Standard Year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>स्थापना वर्ष (Established Year)</strong></td>
+                                    <td><strong>1979</strong> (100% आधिकारिक)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>वन्यजीव आरक्षित क्षेत्र (Wildlife Reserve Area)</strong></td>
+                                    <td><strong>1981</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>राष्ट्रीय उद्यान का दर्जा (National Park Status)</strong></td>
+                                    <td><strong>1983</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🛡️ Quality Benchmarks & Dynamic Facilities</h4>
+                        <ul>
+                            <li><strong>First ISO Certified Park:</strong> यह उच्च प्रबंधन, सफ़ाई और वन्यजीवों के भोजन एवं रखरखाव की उत्कृष्ट गुणवत्ता के लिए <strong>मध्य प्रदेश का प्रथम ISO प्रमाणित (First ISO Certified) नेशनल पार्क</strong> है।</li>
+                            <li><strong>सर्प उद्यान (Snake Park):</strong> यहाँ एक विशाल और अत्याधुनिक स्नेक पार्क स्थित है जहाँ विभिन्न प्रजातियों के विषैले और विषहीन सांप मौजूद हैं।</li>
+                            <li><strong>तितली पार्क (Butterfly Park):</strong> यहाँ सुंदर रंग-बिरंगी तितलियों के संरक्षण के लिए बटरफ्लाई पार्क भी स्थापित किया गया है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 वन्य प्राणी गोद लेने की अनूठी प्रथा (Animal Adoption Scheme)</h5>
+                        <ul>
+                            <li>यह योजना वन विहार में वर्ष <strong>2008</strong> से लगातार सफलता से संचालित हो रही है।</li>
+                            <li><strong>नियम व शर्तें:</strong> कोई भी व्यक्ति या संस्था अपनी स्वेच्छा से किसी वन्य प्राणी के भोजन और भरण-पोषण का सालाना खर्च देकर उसे गोद ले सकता है। परंतु याद रखें, आप जानवर को <em>घर नहीं ले जा सकते!</em> आप दुबई के शेख की तरह घर में दो शेर पालकर बगल में नहीं बैठ सकते, वो आपको नाश्ते में खा जाएगा!</li>
+                            <li><strong>SBI Adoption:</strong> स्टेट बैंक ऑफ इंडिया (SBI) ने इस अनूठी योजना के तहत यहाँ एक बाघिन को गोद लिया हुआ है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="link-story">
+                        <h5>🔗 'टीटू अजगर' की सच्ची और रोचक कहानी (Memory Hook Analogy)</h5>
+                        <p>यूएस (US) में रहने वाला एक छोटा बच्चा <strong>'बिहान'</strong> अपनी छुट्टियों में भोपाल दादा-दादी के घर आया। उसे स्कूल में सांपों के बारे में पढ़ाया गया था, तो वह बेहद एक्साइटेड था। दादा-दादी उसे वन विहार ले गए। वहाँ एक गहरे कुएं नुमा बाड़े में विशालकाय <strong>'टीटू अजगर' (Titu Python)</strong> रहता था। बिहान उसे देखकर मचल गया और बोला "ग्रैंडमदर, इसे हम अपने घर ले चलेंगे!"। <br>
+                        दादी ने माथा पकड़ लिया और समझाया "बेटा! अगर इसे घर ले गए तो यह रास्ते में हमें और सुबह नाश्ते में दादाजी को चबा जाएगा!"। <br>
+                        अंततः बच्चे की ज़िद पूरी करने के लिए परिवार ने अपनी पॉकेट मनी और गुल्लक के पैसों से 'टीटू अजगर' को इसी <strong>एनिमल अडॉप्शन स्कीम (2008)</strong> के तहत वहीं ऑफिशियल तौर पर गोद ले लिया! टीटू अजगर की यह कहानी मीडिया में बहुत चर्चित रही थी।</p>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Van_Vihar_National_Park%2CBhopal.jpg" alt="Entry gate of Van Vihar National Park Bhopal near lake" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Van Vihar National Park Urban Landscape Entry Zone | Public Domain</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. वन विहार राष्ट्रीय उद्यान को किस वर्ष आधिकारिक तौर पर राष्ट्रीय उद्यान (National Park) का दर्जा दिया गया था?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">वर्ष 1983 में (जबकि स्थापना 1979 में हुई थी)</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. वन विहार में प्रसिद्ध वन्य प्राणी गोद लेने की प्रथा (Animal Adoption Scheme) किस वर्ष से लागू है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">वर्ष 2008 से</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 6: Sanjay National Park -->
+            <section class="topic-section orange-border" id="sanjay">
+                <h2 class="section-title" onclick="toggleSection(this)">🛡️ 6. संजय राष्ट्रीय उद्यान / संजय डबरी</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Inter-State Location Matrix</h4>
+                        <ul>
+                            <li><strong>Geographic Location:</strong> मध्य प्रदेश के <strong>सीधी (Sidhi)</strong> और <strong>सिंगरोली (Singrauli)</strong> जिलों के अंतर्गत फैला हुआ है।</li>
+                            <li><strong>Bifurcation Matrix:</strong> यह राष्ट्रीय उद्यान मध्य प्रदेश और छत्तीसगढ़ (MP + CG) दोनों राज्यों की सीमाओं में विभाजित है।</li>
+                            <li><strong>Name in Chhattisgarh:</strong> विभाजन के बाद छत्तीसगढ़ वाले हिस्से में इस राष्ट्रीय उद्यान को <strong>गुरु घासीदास राष्ट्रीय उद्यान (Guru Ghasidas National Park)</strong> के नाम से पुकारा जाता है। आज तक यह बात कई बच्चों को नहीं पता होगी!</li>
+                            <li><strong>Total Area (MP side):</strong> 466 वर्ग किलोमीटर ($466 \text{ km}^2$)।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🗓️ Operational Roadmap (Official Website Data)</h4>
+                        <ul>
+                            <li><strong>Establishment Year:</strong> 1975 (यह पूरी तरह से ऑफिशियल वेबसाइट का प्रामाणिक डेटा है, किताबों के जाल में न फंसें)।</li>
+                            <li><strong>National Park Status:</strong> 1983 में राष्ट्रीय उद्यान का पूर्ण दर्जा प्राप्त हुआ।</li>
+                            <li><strong>Tiger Reserve Integration (TR):</strong> वर्ष <strong>2008</strong> में इसे प्रोजेक्ट टाइगर के दायरे में शामिल किया गया था।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>💧 Hydrology & Flora Landscape</h4>
+                        <ul>
+                            <li><strong>Rivers:</strong> इस पार्क के निकटवर्ती और आंतरिक क्षेत्रों से <strong>सोन नदी (Son River)</strong>, <strong>गोपद नदी (Gopad River)</strong>, तथा <strong>बनास नदी (Banas River)</strong> प्रवाहित होती हैं। <em>विशेष नोट:</em> यह बनास नदी सोन की सहायक नदी है, राजस्थान वाली चंबल की सहायक बनास नहीं है। कंफ्यूज बिल्कुल न हों!</li>
+                            <li><strong>Key Features:</strong> यहाँ प्रसिद्ध <strong>रामदहा कुंड (Ramdaha Kund / Pond)</strong> तथा मनमोहक <strong>कन्हैया दाह जलप्रपात (Kanhaiyadah Waterfall)</strong> स्थित हैं।</li>
+                            <li><strong>साल वृक्षों का साम्राज्य (Sal Trees Domination):</strong> इस राष्ट्रीय उद्यान के लगभग <strong>80% भू-भाग पर केवल साल के वृक्ष (Sal Trees)</strong> पाए जाते हैं। यहाँ साल वनों की अत्यधिक सघनता है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 सफेद बाघ 'मोहन' का ऐतिहासिक कनेक्शन (White Tiger Mohan History)</h5>
+                        <p>संसार के सबसे पहले प्रसिद्ध सफेद बाघ <strong>'मोहन' (Mohan Tiger)</strong> को इसी संजय राष्ट्रीय उद्यान के जंगलों से पकड़ा गया था (उस समय यह नेशनल पार्क घोषित नहीं था)। <br>
+                        <strong>ऐतिहासिक तारीख:</strong> रीवा के महाराजा मार्तंड सिंह जुदेव (Maharaja Martand Singh Ju Deo) द्वारा <strong>27 मई 1951</strong> को सीधी जिले के <strong>'पनखोरा'</strong> वन क्षेत्र के अंतर्गत आने वाले <strong>'बगाड़ नाले'</strong> के पास स्थित एक गहरी मांद (गुफा) से इस सफ़ेद शावक मोहन को सफलतापूर्वक पकड़ा गया था।</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🐘 Upcoming Infrastructure</h4>
+                        <ul>
+                            <li><strong>एलीफेंट हैबिटेट (Elephant Habitat):</strong> मध्य प्रदेश मूल रूप से हाथियों की बड़ी आबादी के लिए नहीं जाना जाता है (हम अक्सर कर्नाटक या पश्चिम बंगाल से हाथी बुलाते हैं)। परंतु हाथियों के सुचारू स्थानीय संरक्षण के लिए संजय नेशनल पार्क में एक विशेष 'एलीफेंट हैबिटेट' का निर्माण कार्य प्रगति पर है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/White_Tiger_at_zoo.jpg" alt="White Tiger Mohan bloodline descendant sitting" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Descendant of White Tiger Mohan Lineage | Public Domain</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. संजय राष्ट्रीय उद्यान को छत्तीसगढ़ राज्य में किस नाम से जाना जाता है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">गुरु घासीदास राष्ट्रीय उद्यान (Guru Ghasidas National Park)</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. महाराजा मार्तंड सिंह जुदेव ने सीधी के बगाड़ नाले से प्रसिद्ध सफेद बाघ 'मोहन' को किस तारीख को पकड़ा था?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">27 मई 1951 (27th May 1951)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 7: Dinosaur Fossil National Park -->
+            <section class="topic-section green-border" id="dinosaur">
+                <h2 class="section-title" onclick="toggleSection(this)">🦖 7. डायनासोर जीवाश्म राष्ट्रीय उद्यान (धार)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Core Metric & Warning Alerts</h4>
+                        <ul>
+                            <li><strong>Location:</strong> यह मध्य प्रदेश के <strong>धार (Dhar) जिले के सरदारपुर (Sardarpur)</strong> क्षेत्र में स्थित है।</li>
+                            <li><strong>Establishment Matrix:</strong> वर्ष 2010 में इसकी शुरुआती आधिकारिक अधिसूचना जारी हुई थी तथा वर्ष 2011 में इसे पूर्णतः स्थापित कर दिया गया (इसलिए किताबों में 2010-11 लिखा मिलता है)।</li>
+                            <li><strong>River Connection:</strong> इसके पास से <strong>हथनी नदी (Hathni River)</strong> प्रवाहित होती है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🚨 Area Unit Alert — परीक्षा के लिए विशेष चेतावनी!</h5>
+                        <p>मध्य प्रदेश के अन्य सभी नेशनल पार्क का क्षेत्रफल <strong>वर्ग किलोमीटर (Square KM)</strong> में बताया जाता है। परंतु डायनासोर राष्ट्रीय उद्यान का क्षेत्रफल आधिकारिक तौर पर <strong>89 हेक्टेयर (89 Hectares)</strong> है। यूनिट पर विशेष ध्यान दें, यह बहुत छोटा और सीमित संवेदी जोन है (लगभग $0.89 \text{ km}^2$ के आसपास बैठता है)।</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🦕 Core Scientific Subject Matter</h4>
+                        <ul>
+                            <li>यहाँ पर पृथ्वी पर करोड़ों वर्ष पहले विचरण करने वाले प्राचीन विशालकाय <strong>डायनासोरों के अंडों के जीवाश्म (Fossils of Dinosaur Eggs)</strong> तथा उनके घोंसलों के अवशेष सुरक्षित खोजे गए हैं।</li>
+                            <li>वहाँ कोई जिंदा डायनासोर नहीं बैठा है, केवल उनके प्राचीन पत्थरीकृत अंडों के फॉसिल्स देखने को मिलते हैं, जिन पर वैज्ञानिक रिसर्च जारी है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Dinosaur_egg_fossil_relic.jpg" alt="Dinosaur egg fossil on display" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | Dinosaur Egg Fossil Sample Structure Model | CC BY-SA 3.0</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. डायनासोर जीवाश्म राष्ट्रीय उद्यान का कुल क्षेत्रफल किस इकाई (Unit) में और कितना दर्ज है?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">89 हेक्टेयर (89 Hectares) में दर्ज है।</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 8: Kuno National Park -->
+            <section class="topic-section purple-border" id="kuno">
+                <h2 class="section-title" onclick="toggleSection(this)">🐆 8. कूनो राष्ट्रीय उद्यान (Kuno National Park)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Location Layout & Evolutionary Split</h4>
+                        <ul>
+                            <li><strong>Location:</strong> श्योपुर (Sheopur) जिले के अंतर्गत पालपुर कूनो क्षेत्र में आता है।</li>
+                            <li><strong>Hydrological Spine:</strong> यहाँ से पवित्र <strong>कूनो नदी (Kuno River)</strong> मध्य से होकर गुजरती है, जो इसकी जीवन रेखा है।</li>
+                            <li><strong>Evolutionary Journey:</strong> वर्ष <strong>1981</strong> में इसे वन्यजीव अभ्यारण्य (Wildlife Sanctuary) के रूप में स्थापित किया गया था। यह अभ्यारण्य आज भी मौजूद है।</li>
+                            <li><strong>National Park Status:</strong> वर्ष <strong>2018</strong> में इसके अतिरिक्त कोर एरिया को सम्मिलित करके इसे राष्ट्रीय उद्यान (National Park) का पूर्ण दर्जा प्रदान किया गया।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>📊 Precise Area Breakdown (No Confusion Data)</h4>
+                        <ul>
+                            <li><strong>Total Combined Area:</strong> वर्तमान में कुल क्षेत्रफल बढ़ाकर लगभग <strong>749 वर्ग किलोमीटर ($749 \text{ km}^2$)</strong> कर दिया गया है।</li>
+                            <li><strong>Internal Breakup Structure:</strong> इस कुल $749 \text{ km}^2$ क्षेत्रफल के भीतर ही <strong>344 वर्ग किलोमीटर ($344 \text{ km}^2$)</strong> का हिस्सा मूल वाइल्डलाइफ सेंचुरी (अभ्यारण्य क्षेत्र) के रूप में आज भी प्रशासनिक तौर पर क्रियाशील है। इस प्रामाणिक डेटा के बाद कोई कंफ्यूजन नहीं बचना चाहिए।</li>
+                        </ul>
+                    </div>
+
+                    <div class="exam-hot">
+                        <h5>🔥 विश्व का सबसे बड़ा चीता पुनर्वास केंद्र (Project Cheetah)</h5>
+                        <ul>
+                            <li><strong>Historical Reintroduction:</strong> भारत से चीते पूर्णतः विलुप्त हो चुके थे। उन्हें दोबारा भारत की धरती पर बसाने के लिए कूनो को चुना गया।</li>
+                            <li><strong>The First Batch Delivery:</strong> अफ्रीकी देश <strong>नामीबिया (Namibia)</strong> से हवाई मार्ग द्वारा सबसे पहले <strong>8 चीते</strong> भारत लाए गए थे।</li>
+                            <li><strong>Historical Date:</strong> प्रधानमंत्री नरेंद्र मोदी जी के जन्मदिवस के पावन अवसर पर <strong>17 सितंबर 2022</strong> को इन चीतों को कूनो के विशेष बाड़े में छोड़ा गया था।</li>
+                            <li><strong>Gender Categorization:</strong> इस प्रथम लॉट में <strong>5 मादा चीते (Female Cheetahs)</strong> तथा <strong>3 नर चीते (Male Cheetahs)</strong> शामिल थे।</li>
+                            <li><strong>The Logistics Blueprint:</strong> चीतों को जिस विशेष बड़े मालवाहक चार्टर्ड विमान से लाया गया था, वह <strong>बोइंग 747 (Boeing 747)</strong> था, और उस विमान का ऐतिहासिक <strong>फ्लैग नंबर 118 (Flag Number 118)</strong> दर्ज था।</li>
+                            <li><strong>Asha Cheetah:</strong> इन्हीं नामीबियाई मादा चीतों में से एक का नाम <strong>'आशा' (Asha)</strong> है, जिसने हाल ही में कूनो के अनुकूल वातावरण में स्वस्थ शावकों (Cubs) को जन्म देकर भारत में चीतों के वंश को आगे बढ़ाया है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h4>🐿️ Mascot & Inter-State Projects</h4>
+                        <ul>
+                            <li><strong>चिंटू चीता (Chintu Cheetah):</strong> वर्ष <strong>2021</strong> में कूनो प्रबंधन द्वारा इसका आधिकारिक शुभंकर (Mascot) जारी किया गया जिसका नाम 'चिंटू चीता' है। चिंटू चीता का प्रसिद्ध स्लोगन है — <em>"तेज दौड़कर आऊंगा, कूनो में बस जाऊंगा!"</em>। चीते के चेहरे पर आंखों के पास विशिष्ट आंसू जैसी काली धारियां (Tear Marks) होती हैं।</li>
+                            <li><strong>प्रस्तावित एशियाई सिंह परियोजना:</strong> पूर्व में गुजरात के <strong>गिर राष्ट्रीय उद्यान (Gir National Park)</strong> से प्रसिद्ध एशियाई बब्बर शेरों (Asiatic Lions) को कूनो में लाकर पुनर्वासित करने की योजना लंबे समय से प्रस्तावित थी, परंतु कतिपय प्रशासनिक कारणों से यह फिलहाल ठंडे बस्ते में पड़ी हुई है।</li>
+                        </ul>
+                    </div>
+
+                    <div class="link-story">
+                        <h5>🎙️ विकास सर का स्पेशल मोटिवेशनल संवाद (Modi Monologue Mimicry Segment)</h5>
+                        <p>क्लास में सर ने देश के नेतृत्व का लहजा अपनाते हुए समझाया: <em>"मित्रों... भाइयों और बहनों... लाल किले की प्राचीर से... यह जो हम कूनो में चीते छोड़े हैं, यह देश की एक नई ऊर्जा का सशक्त प्रतीक बनेंगे! जिस प्रकार चीते अद्वितीय गति से दौड़ते हैं, हमारा देश भी विकास की रफ्तार छुएगा। पर्यावरण की सुरक्षा के लिए, ओडीएफ (ODF) और प्रधानमंत्री आवास योजना की तरह यह प्रोजेक्ट भी सुनहरे भारत की ओर एक कदम है..."</em> <br><br>
+                        <strong>🧠 Teacher's Golden Rule for Success:</strong> सर ने अपने जीवन के <strong>10 साल (A whole decade of struggle)</strong> इस शिक्षण और अध्ययन के क्षेत्र को दिए हैं, तब जाकर आज वो इतने पूरे आत्मविश्वास के साथ दहाड़कर बिना किताबों को देखे डेटा लाइव स्क्रीन पर लिखा देते हैं। छात्रों! तुम अपने जीवन का सिर्फ <strong>1 से 2 साल</strong> पूरी ईमानदारी के साथ इस एसडीएम (SDM) या डिप्टी कलेक्टर बनने के लक्ष्य को प्राइमरी प्रायोरिटी बनाकर दे दो, तुम्हारा भविष्य 100% उज्जवल हो जाएगा!</p>
+                    </div>
+
+                    <div class="image-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Cheetah_Kuno.jpg" alt="Cheetah under tree canopy inside Kuno National Park" decoding="async">
+                        <div class="image-caption">Image: Wikimedia Commons | African Cheetah inside Kuno National Park Savannah Enclosure | Public Domain</div>
+                    </div>
+
+                    <div class="quiz-container">
+                        <h5>🧠 Quick Recall Quiz</h5>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q1. नामीबिया से 17 सितंबर 2022 को लाए गए चीतों को किस विशिष्ट विमान मॉडल और फ्लैग नंबर द्वारा कूनो पहुँचाया गया था?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">विमान मॉडल: बोइंग 747 (Boeing 747) | फ्लैग नंबर: 118</div>
+                        </div>
+                        <div class="quiz-item">
+                            <p class="quiz-question">Q2. कूनो राष्ट्रीय उद्यान के आधिकारिक शुभंकर 'चिंटू चीता' को किस वर्ष लॉन्च किया गया था?</p>
+                            <button class="reveal-btn" onclick="toggleQuiz(this)">Reveal Answer</button>
+                            <div class="quiz-answer">वर्ष 2021 में (Mascot: Chintu Cheetah)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Topic 9: Omkareshwar National Park -->
+            <section class="topic-section" id="omkareshwar">
+                <h2 class="section-title" onclick="toggleSection(this)">📌 9. ओमकारेश्वर राष्ट्रीय उद्यान (खण्डवा)</h2>
+                <div class="collapsible-content">
+                    <div class="concept-card">
+                        <h4>📍 Proposed Parameters</h4>
+                        <ul>
+                            <li><strong>Location:</strong> यह मध्य प्रदेश के <strong>खंडवा (Khandwa)</strong> जिले के अंतर्गत आता है।</li>
+                            <li><strong>Current Status Check:</strong> यह राष्ट्रीय उद्यान वर्ष <strong>2004 से केवल और केवल प्रस्तावित (Proposed Only)</strong> चल रहा है।</li>
+                            <li><strong>Ground Reality:</strong> वर्ष 2004 से लेकर आज तक धरातल पर इस राष्ट्रीय उद्यान के संबंध में कोई भी नया प्रशासनिक कार्य या विकास कार्य नहीं हुआ है। परीक्षा के लिहाज से सिर्फ इसका जिला और 'प्रस्तावित' स्टेटस ही याद रखना पर्याप्त है।</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Master Section: Full Forms -->
+            <section class="topic-section orange-border" id="master-fullforms">
+                <h2 class="section-title" onclick="toggleSection(this)">📋 MASTER TABLE — FULL FORMS MENTIONED</h2>
+                <div class="collapsible-content">
+                    <p style="font-size:15px; margin-bottom:10px; color:var(--text-secondary);">इस लेक्चर और राष्ट्रीय उद्यान श्रृंखला में उपयोग किए गए सभी संक्षिप्त रूपों की वर्णानुक्रम सूची:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Abbreviation</th>
+                                <th>English Full Form</th>
+                                <th>Hindi Meaning / व्याख्या</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>NP</strong></td>
+                                <td>National Park</td>
+                                <td>राष्ट्रीय उद्यान (उच्चतम संरक्षण प्राप्त वन क्षेत्र)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TR</strong></td>
+                                <td>Tiger Reserve</td>
+                                <td>बाघ आरक्षित क्षेत्र (प्रोजेक्ट टाइगर के तहत शामिल विक्षेत्र)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO</strong></td>
+                                <td>International Organization for Standardization</td>
+                                <td>अंतरराष्ट्रीय मानकीकरण संगठन (उच्च प्रबंधन एवं गुणवत्ता प्रमाण पत्र)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PYQ</strong></td>
+                                <td>Previous Year Questions</td>
+                                <td>पिछली परीक्षाओं में पूछे गए महत्वपूर्ण प्रश्न</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NH</strong></td>
+                                <td>National Highway</td>
+                                <td>राष्ट्रीय राजमार्ग (पार्क के पास से गुजरने वाले मार्ग जैसे NH 44)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ODF</strong></td>
+                                <td>Open Defecation Free</td>
+                                <td>खुले में शौच से मुक्त क्षेत्र (मोदी जी के भाषण संदर्भ में)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Master Section: Exam Hot Facts -->
+            <section class="topic-section green-border" id="master-hotfacts">
+                <h2 class="section-title" onclick="toggleSection(this)">🔥 MASTER SECTION — EXAM HOT FACTS</h2>
+                <div class="collapsible-content">
+                    <ul>
+                        <li><strong>स्मॉलेट नेशनल पार्क:</strong> जीवाश्म राष्ट्रीय उद्यान घुघवा (डिंडोरी) मध्य प्रदेश का सबसे छोटा ($0.27 \text{ km}^2$) नेशनल पार्क है।</li>
+                        <li><strong>स्क्रू और छेद ट्रिक:</strong> पेंच राष्ट्रीय उद्यान सिवनी और छिंदवाड़ा में है (पेंच छेद में लगाते हैं)। स्थापना 1975 (पेंच-75)।</li>
+                        <li><strong>काला पहाड़ साक्ष्य:</strong> पेंच राष्ट्रीय उद्यान के भीतर 'काला पहाड़' (Black Mountain) स्थित है, जो पीएससी का पुराना प्रश्न पैटर्न रहा है।</li>
+                        <li><strong>व्यापम का दामाद प्रश्न:</strong> पन्ना राष्ट्रीय उद्यान को टाइगर रिजर्व (TR) वर्ष <strong>1994</strong> में बनाया गया था, जो बार-बार रिपीट होता है।</li>
+                        <li><strong>अद्भुत गिद्ध उड़ान:</strong> पन्ना नेशनल पार्क से सोलर चिप लगे 25 हिमालयन ग्रिफिन गिद्ध उड़कर तिब्बत होते हुए चीन बॉर्डर पहुँचे (7500 किमी, 60 दिन)।</li>
+                        <li><strong>नर्मदा के दक्षिण में:</strong> सतपुड़ा राष्ट्रीय उद्यान नर्मदापुरम की भौगोलिक स्थिति नर्मदा नदी के ठीक <strong>दक्षिण (South)</strong> में है।</li>
+                        <li><strong>सतपुड़ा टाइगर रिजर्व ईयर:</strong> यदि परीक्षा में 1999 और 2000 दोनों विकल्प हों, तो सतपुड़ा के लिए <strong>1999</strong> को सही उत्तर मानें।</li>
+                        <li><strong>वन बिहार की तीन तारीखें:</strong> स्थापना = 1979, वन्यजीव आरक्षित = 1981, नेशनल पार्क दर्जा = 1983।</li>
+                        <li><strong>एनिमल अडॉप्शन:</strong> वन विहार भोपाल में वन्य प्राणियों को गोद लेने की प्रथा वर्ष <strong>2008</strong> से शुरू हुई थी (SBI ने बाघिन को गोद लिया)।</li>
+                        <li><strong>छत्तीसगढ़ का नाम:</strong> संजय राष्ट्रीय उद्यान को छत्तीसगढ़ राज्य के भीतर <strong>गुरु घासीदास राष्ट्रीय उद्यान</strong> कहा जाता है।</li>
+                        <li><strong>मोहन का मूल निवास:</strong> विश्व के प्रथम सफेद बाघ 'मोहन' को 27 मई 1951 को सीधी के बगाड़ नाले की मांद से महाराजा मार्तंड सिंह द्वारा पकड़ा गया था।</li>
+                        <li><strong>यूनिट का खेल:</strong> डायनासोर राष्ट्रीय उद्यान (धार) का क्षेत्रफल वर्ग किलोमीटर में न होकर <strong>89 हेक्टेयर</strong> दर्ज है।</li>
+                        <li><strong>चिंटू चीता स्लोगन:</strong> कूनो नेशनल पार्क का शुभंकर चिंटू चीता (2021) है। नामीबिया से 8 चीते 17 सितंबर 2022 को बोइंग 747 विमान (फ्लैग नंबर 118) से कूनो लाए गए।</li>
+                        <li><strong>2004 से ठप:</strong> ओमकारेश्वर राष्ट्रीय उद्यान खंडवा में वर्ष 2004 से आज तक सिर्फ कागजों पर 'प्रस्तावित' ही चल रहा है।</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Master Revision Checklist -->
+            <section class="topic-section purple-border" id="master-checklist">
+                <h2 class="section-title" onclick="toggleSection(this)">✅ MASTER REVISION CHECKLIST</h2>
+                <div class="collapsible-content">
+                    <p style="font-size:15px; margin-bottom:12px; color:var(--text-secondary);">इस क्लास के सभी मुख्य तथ्यों को याद करके चेकबॉक्स टिक करें। आपका प्रोग्रेस डेटा लोकल स्टोरेज में सुरक्षित रहेगा।</p>
+                    <div id="checklistContainer">
+                        <!-- Items rendered by JS to ensure absolute data persistence -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer & Outro Section -->
+            <footer style="margin-top:30px; background-color:var(--bg-secondary); padding:20px; border-radius:12px; border-top:2px solid var(--accent-purple);">
+                <h3 style="font-family:'Outfit'; font-size:20px; color:var(--accent-orange); margin-bottom:10px;">📌 Upcoming Lecture Roadmap (अगली क्लास का अमृत)</h3>
+                <p style="font-size:16px; margin-bottom:15px; color:var(--text-secondary);">
+                    अगली क्लास रात <strong>8:00 PM</strong> पर होगी, जिसमें हम मध्य प्रदेश की सभी <strong>रामसर साइट्स (Ramsar Sites)</strong>, <strong>बायोस्फीयर रिजर्व (Biosphere Reserves)</strong>, मध्य प्रदेश के प्रमुख <strong>चिड़ियाघर (Zoos)</strong> तथा संपूर्ण <strong>वाइल्डलाइफ सेंचुरीज (अभ्यारण्य)</strong> को संपूर्ण प्रामाणिक सरकारी प्रूफ के साथ पढ़ेंगे ताकि किताबों का कंफ्यूजन हमेशा के लिए जड़ से खत्म हो जाए!
+                </p>
+                <div style="background-color:var(--bg-card); padding:12px; border-radius:8px; border:1px solid var(--border-color); font-size:15px;">
+                    <strong>💬 विकास सर का लाइव वोटिंग संदेश:</strong> पिछली टेस्ट (MCQ) क्लास में लाइव बच्चों की संख्या सामान्य से ठीक <strong>दोगुनी (Double Watching)</strong> थी। आप सभी छात्र इस रिवीजन पेज को पढ़ने के बाद नीचे कमेंट बॉक्स में अपना रिव्यू जरूर दें कि आप अगली क्लासों में पूरी थ्योरी (Descriptive) पढ़ना चाहते हैं या फिर लगातार लाइव टेस्ट (MCQs Series) चाहते हैं? आपके कमेंट्स के आधार पर ही मैं मैनेजर सर से बात करके आगे का शेड्यूल तय करूँगा!
+                </div>
+                <div style="text-align:center; margin-top:20px; font-size:13px; color:var(--text-secondary);">
+                    Developed for MPPSC Pre 2025 Comprehensive Study Ecosystem. जय हिन्द, जय भारत!
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Core Dynamic Scripts for Interactive Elements & LocalStorage Persistence -->
+    <script>
+        // Standard Dataset for Revision Checkboxes
+        const checklistItems = [
+            "घुघवा फॉसिल पार्क डिंडोरी का शाहपुरा क्षेत्र याद हो गया।",
+            "जीवाश्म राष्ट्रीय उद्यान का स्थापना वर्ष 1968 और दर्जा 1983 कंठस्थ है।",
+            "घुघवा मध्य प्रदेश का सबसे छोटा नेशनल पार्क (0.27 Sq KM) है, यह स्पष्ट है।",
+            "पेंच राष्ट्रीय उद्यान सिवनी और छिंदवाड़ा जिलों में फैला है (पेंच-छेद ट्रिक)।",
+            "पेंच का स्थापना वर्ष 1975 और टाइगर रिजर्व वर्ष 1992 याद है।",
+            "मोगली लैंड, मोगली उत्सव (2004), आईने अकबरी और द जंगल बुक का संबंध पेंच से है।",
+            "पेंच राष्ट्रीय उद्यान में स्थित 'काला पहाड़' का तथ्य याद हो गया है।",
+            "सुपर टाइग्रेस मॉम (कॉलरवाली बाघिन) और बघीरा काला तेंदुआ पेंच से संबंधित हैं।",
+            "पन्ना राष्ट्रीय उद्यान का टाइगर रिजर्व वर्ष 1994 (व्यापम फेवरेट) कंठस्थ है।",
+            "पन्ना का रेप्टाइल पार्क, घड़ियाल संरक्षण और पांडव गुफाओं की स्थिति याद है।",
+            "25 हिमालयन ग्रिफिन गिद्धों की सोलर चिप ट्रैकिंग और 7500 किमी की उड़ान स्पष्ट है।",
+            "विश्व की सबसे उम्रदराज वत्सला हथनी पन्ना नेशनल पार्क में रहती है।",
+            "सतपुड़ा राष्ट्रीय उद्यान नर्मदा नदी के दक्षिण में स्थित है (स्टार पॉइंट)।",
+            "सतपुड़ा को टाइगर रिजर्व बनाने का प्राथमिक वर्ष 1999 विकल्प में चुनना है।",
+            "उड़न गिलहरी (जायंट गिलहरी), इंडियन बाइसन (गौर) और कर्नाटक से आए 4 हाथी सतपुड़ा में हैं।",
+            "तवा, देनवा, मालिनी नदियाँ और देनवा में बोट सफारी तथा मढ़ई वन क्षेत्र याद हैं।",
+            "वन विहार भोपाल श्यामला हिल्स में मुख्यमंत्री निवास के नीचे बड़ी झील के पास स्थित है।",
+            "वन विहार टाइमलाइन: स्थापना 1979, वन्यजीव आरक्षित 1981, नेशनल पार्क दर्जा 1983।",
+            "वन विहार मध्य प्रदेश का पहला ISO प्रमाणित नेशनल पार्क और स्नेक पार्क स्थल है।",
+            "वन विहार में वन्य प्राणी गोद लेने की प्रथा 2008 से लागू है (टीटू अजगर की कहानी)।",
+            "संजय राष्ट्रीय उद्यान सीधी-सिंगरोली में है और छत्तीसगढ़ में गुरु घासीदास नाम है।",
+            "संजय नेशनल पार्क की नदियाँ सोन, गोपद, बनास (सोन की सहायक) और साल के 80% वृक्ष याद हैं।",
+            "प्रथम सफेद बाघ 'मोहन' को 27 मई 1951 को सीधी के बगाड़ नाले से पकड़ा गया था।",
+            "डायनासोर जीवाश्म राष्ट्रीय उद्यान धार (सरदारपुर) में है और इसका क्षेत्रफल 89 हेक्टेयर है।",
+            "कूनो राष्ट्रीय उद्यान श्योपुर में है। अभ्यारण्य 1981 में बना और नेशनल पार्क 2018 में।",
+            "कूनो का कुल क्षेत्रफल 749 Sq KM है जिसके भीतर 344 Sq KM का अभ्यारण्य क्षेत्र शामिल है।",
+            "नामीबिया से 8 चीते 17 सितंबर 2022 को बोइंग 747 (फ्लैग 118) विमान से कूनो लाए गए।",
+            "कूनो का आधिकारिक शुभंकर चिंटू चीता (2021) है और मादा चीता आशा ने शावकों को जन्म दिया है।",
+            "ओमकारेश्वर राष्ट्रीय उद्यान खंडवा में वर्ष 2004 से केवल प्रस्तावित है।"
+        ];
+
+        // Initialize Page Layout settings and Load LocalStorage Cache
+        document.addEventListener("DOMContentLoaded", function() {
+            // Setup Theme Configuration
+            const savedTheme = localStorage.getItem("revision-theme") || "dark";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+
+            // Render Checklist System Dynamically
+            const container = document.getElementById("checklistContainer");
+            checklistItems.forEach((text, index) => {
+                const checkedState = localStorage.getItem(`chk_np2_${index}`) === "true" ? "checked" : "";
+                const itemHtml = `
+                    <div class="checklist-item">
+                        <input type="checkbox" id="chk_${index}" ${checkedState} onchange="updateProgress(${index}, this.checked)">
+                        <label for="chk_${index}">${text}</label>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', itemHtml);
+            });
+
+            // Calculate Progress Bar Metrics initially
+            calculateMetrics();
+        });
+
+        // Toggle Theme Engine between Dark and Light Layouts
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("revision-theme", newTheme);
+        }
+
+        // Section Collapsible Action
+        function toggleSection(headerElement) {
+            const section = headerElement.parentElement;
+            section.classList.toggle("collapsed");
+        }
+
+        // Scroll Engine to trigger smooth slide view transitions from dropdown selection
+        function scrollToSection(id) {
+            if (!id) return;
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Automatically uncollapse if target section is closed
+                element.classList.remove("collapsed");
+            }
+        }
+
+        // Quiz Reveal Handler Engine
+        function toggleQuiz(btnElement) {
+            const answerDiv = btnElement.nextElementSibling;
+            if (answerDiv.style.display === "block") {
+                answerDiv.style.display = "none";
+                btnElement.textContent = "Reveal Answer";
+            } else {
+                answerDiv.style.display = "block";
+                btnElement.textContent = "Hide Answer";
+            }
+        }
+
+        // Progress Tracking Calculations
+        function updateProgress(index, isChecked) {
+            localStorage.setItem(`chk_np2_${index}`, isChecked);
+            calculateMetrics();
+        }
+
+        function calculateMetrics() {
+            const totalBoxes = checklistItems.length;
+            let checkedBoxes = 0;
+            for (let i = 0; i < totalBoxes; i++) {
+                if (localStorage.getItem(`chk_np2_${i}`) === "true") {
+                    checkedBoxes++;
+                }
+            }
+            const percentage = Math.round((checkedBoxes / totalBoxes) * 100);
+            document.getElementById("masterProgress").style.width = percentage + "%";
+            document.getElementById("progressText").textContent = `Revision Progress: ${percentage}% Completed (${checkedBoxes}/${totalBoxes} Facts Verified)`;
+        }
+
+        // Image Load Robust Fallback Strategy Engine Script
+        window.addEventListener("load", function() {
+            const images = document.querySelectorAll("img");
+            images.forEach(img => {
+                img.addEventListener("error", function() {
+                    console.log("Image load failure captured for url: " + img.src);
+                    // Check if fallback URL logic can recovery or transform
+                    if (img.src.includes("upload.wikimedia.org")) {
+                        // Alternate stable redirection pathway processing fallback mechanism
+                        const filename = img.src.substring(img.src.lastIndexOf('/') + 1);
+                        img.src = "https://en.wikipedia.org/wiki/Special:Redirect/file/" + filename;
+                    } else {
+                        // Display clean layout failure boundary link wrapper text object replacement
+                        const txtWarning = document.createElement("div");
+                        txtWarning.style.padding = "10px";
+                        txtWarning.style.color = "var(--accent-orange)";
+                        txtWarning.style.fontSize = "14px";
+                        txtWarning.innerHTML = `⚠️ Visual asset failed to load via external host connection network pathway. You can check reference records manually via destination mirror.`;
+                        img.replaceWith(txtWarning);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
