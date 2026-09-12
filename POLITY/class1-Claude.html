@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historical Underpinnings · Ep.1 · Company Raj to Pitt's India Act — Laxmikanth Summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --paper:#E8E1CC;
+  --paper-alt:#DED5B8;
+  --paper-raised:#F1ECDA;
+  --ink:#23324D;
+  --ink-soft:#4B5A73;
+  --line:#C2B896;
+  --seal:#8B3A3A;      /* MUST REMEMBER */
+  --gold:#A6762F;      /* IMPORTANT / accent */
+  --teal:#3F6357;      /* SUPPORTING */
+  --grey:#8A8370;      /* LOW PRIORITY */
+  --good:#3F6B4A;
+  --bad:#8B3A3A;
+  --shadow: 0 1px 0 rgba(35,50,77,.08);
+  --serif-display:'IM Fell English', 'EB Garamond', Georgia, serif;
+  --serif-body:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --ui-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --radius: 3px;
+}
+[data-theme="dark"]{
+  --paper:#14181F;
+  --paper-alt:#1B212B;
+  --paper-raised:#1F2530;
+  --ink:#DDD6C0;
+  --ink-soft:#A79E86;
+  --line:#333B47;
+  --seal:#D9714E;
+  --gold:#D9AE55;
+  --teal:#6FA98F;
+  --grey:#8D93A0;
+  --good:#6FA98F;
+  --bad:#D9714E;
+  --shadow: 0 1px 0 rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif-body);
+  font-size:18px;
+  line-height:1.6;
+  transition:background .25s ease, color .25s ease;
+}
+::selection{ background:var(--gold); color:var(--paper); }
+
+h1,h2,h3,h4{ font-family:var(--serif-display); font-weight:400; color:var(--ink); margin:0 0 .4em; letter-spacing:.2px;}
+h1{ font-size:2.6rem; line-height:1.15; }
+h2{ font-size:1.9rem; border-bottom:2px solid var(--line); padding-bottom:.25em; margin-top:0; }
+h3{ font-size:1.35rem; color:var(--seal); }
+h4{ font-size:1.1rem; color:var(--teal); font-family:var(--serif-body); font-weight:600; }
+p{ margin:.6em 0; max-width:70ch; }
+a{ color:var(--seal); }
+a.btn, button, .btn{
+  font-family:var(--ui-font);
+}
+.container{ max-width:1180px; margin:0 auto; padding:0 20px; }
+hr.rule{ border:none; border-top:1px solid var(--line); margin:2.2em 0; }
+
+/* ============ HEADER / NAV ============ */
+#progress-bar{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:var(--seal); z-index:1000; transition:width .1s linear;
+}
+header.topbar{
+  position:sticky; top:0; z-index:900;
+  background:var(--paper-raised);
+  border-bottom:2px solid var(--ink);
+  padding:10px 0;
+}
+.topbar-inner{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.brand{ font-family:var(--serif-display); font-size:1.15rem; color:var(--ink); white-space:nowrap; }
+.brand small{ display:block; font-family:var(--ui-font); font-size:.62rem; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; }
+.topbar-tools{ margin-left:auto; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+#search-box{
+  font-family:var(--ui-font); font-size:.9rem;
+  padding:7px 12px; border:1px solid var(--line); border-radius:20px;
+  background:var(--paper); color:var(--ink); min-width:190px;
+}
+#search-box:focus{ outline:2px solid var(--gold); }
+.icon-btn{
+  font-family:var(--ui-font); font-size:.85rem; cursor:pointer;
+  border:1px solid var(--ink); background:var(--paper); color:var(--ink);
+  padding:7px 12px; border-radius:20px; transition:transform .1s ease;
+}
+.icon-btn:hover{ background:var(--ink); color:var(--paper); }
+.icon-btn:active{ transform:scale(.96); }
+#search-count{ font-family:var(--ui-font); font-size:.75rem; color:var(--ink-soft); white-space:nowrap; }
+
+/* ============ LAYOUT ============ */
+.layout{ display:grid; grid-template-columns:230px 1fr; gap:36px; align-items:start; margin-top:26px; }
+@media (max-width:900px){ .layout{ grid-template-columns:1fr; } }
+
+nav.toc{
+  position:sticky; top:76px;
+  border:1px solid var(--line);
+  background:var(--paper-alt);
+  padding:16px;
+  border-radius:var(--radius);
+  max-height:calc(100vh - 100px);
+  overflow-y:auto;
+}
+nav.toc h4{ margin-top:0; font-family:var(--ui-font); text-transform:uppercase; font-size:.72rem; letter-spacing:.08em; color:var(--ink-soft);}
+nav.toc a{ display:block; font-family:var(--ui-font); font-size:.86rem; color:var(--ink); text-decoration:none; padding:5px 0; border-bottom:1px dotted var(--line); }
+nav.toc a:hover{ color:var(--seal); }
+@media (max-width:900px){
+  nav.toc{ position:static; max-height:none; }
+  nav.toc[data-collapsed="true"] .toc-list{ display:none; }
+}
+#toc-toggle{ display:none; width:100%; text-align:left; background:none; border:none; font-family:var(--serif-display); font-size:1.1rem; color:var(--ink); padding:0; cursor:pointer;}
+@media (max-width:900px){ #toc-toggle{ display:block; margin-bottom:8px;} }
+
+main{ min-width:0; }
+
+/* ============ HERO ============ */
+.hero{
+  border:1px solid var(--ink);
+  background:var(--paper-raised);
+  padding:34px 30px;
+  margin-bottom:30px;
+  position:relative;
+}
+.hero::before, .hero::after{
+  content:""; position:absolute; width:16px; height:16px; border:2px solid var(--gold);
+}
+.hero::before{ top:8px; left:8px; border-right:none; border-bottom:none; }
+.hero::after{ bottom:8px; right:8px; border-left:none; border-top:none; }
+.hero .eyebrow{ font-family:var(--ui-font); font-size:.75rem; letter-spacing:.1em; color:var(--gold); }
+.hero p.lede{ font-size:1.1rem; color:var(--ink-soft); }
+.hero-meta{ display:flex; gap:22px; flex-wrap:wrap; margin-top:16px; font-family:var(--ui-font); font-size:.82rem; color:var(--ink-soft); }
+.hero-meta b{ color:var(--ink); }
+.hero-actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+.pill-link{
+  font-family:var(--ui-font); font-size:.85rem; text-decoration:none;
+  background:var(--ink); color:var(--paper); padding:9px 16px; border-radius:20px;
+  display:inline-flex; align-items:center; gap:6px;
+}
+[data-theme="dark"] .pill-link{ background:var(--gold); color:#14181F; }
+
+/* ============ CARDS / TAGS ============ */
+section{ margin-bottom:48px; scroll-margin-top:80px; }
+.card{
+  border:1px solid var(--line); background:var(--paper-raised);
+  padding:20px 22px; margin:16px 0; border-radius:var(--radius);
+  border-left:4px solid var(--line);
+}
+.card.must{ border-left-color:var(--seal); }
+.card.imp{ border-left-color:var(--gold); }
+.card.support{ border-left-color:var(--teal); }
+.card.low{ border-left-color:var(--grey); }
+
+.tag{
+  display:inline-block; font-family:var(--ui-font); font-size:.68rem; font-weight:700;
+  letter-spacing:.03em; padding:3px 9px; border-radius:12px; margin:0 6px 8px 0; color:#fff;
+}
+.tag.must{ background:var(--seal); }
+.tag.imp{ background:var(--gold); color:#221a06;}
+.tag.support{ background:var(--teal); }
+.tag.low{ background:var(--grey); }
+.tag.verify{ background:transparent; border:1px dashed var(--bad); color:var(--bad); }
+.tag.hifreq{ background:var(--ink); color:var(--paper); }
+[data-theme="dark"] .tag.hifreq{ background:var(--gold); color:#14181F; }
+
+.memtrick{
+  border:1px dashed var(--teal); background:transparent; padding:14px 18px;
+  margin:14px 0; border-radius:var(--radius); position:relative;
+}
+.memtrick h4{ margin-top:0; }
+.dontconfuse{ border:2px solid var(--seal); padding:16px 18px; margin:16px 0; border-radius:var(--radius); }
+.dontconfuse h4{ color:var(--seal); }
+.watch{
+  font-family:var(--ui-font); font-size:.82rem; display:inline-flex; gap:6px; align-items:center;
+  color:var(--ink); border-bottom:1px solid var(--gold); text-decoration:none; padding-bottom:1px;
+}
+.watch:hover{ color:var(--seal); }
+.imgsuggest{
+  border:1px dotted var(--ink-soft); padding:12px 16px; font-family:var(--ui-font); font-size:.85rem;
+  color:var(--ink-soft); margin:14px 0; border-radius:var(--radius);
+}
+
+/* tables */
+table{ width:100%; border-collapse:collapse; margin:14px 0; font-size:.96rem;}
+th,td{ border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top;}
+th{ background:var(--paper-alt); font-family:var(--ui-font); font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);}
+tr.searchable.hidden{ display:none; }
+
+/* timeline */
+.timeline{ position:relative; margin:26px 0; padding-left:26px; border-left:3px solid var(--gold); }
+.tl-item{ position:relative; margin-bottom:26px; }
+.tl-item::before{
+  content:""; position:absolute; left:-33px; top:4px; width:14px; height:14px;
+  background:var(--paper); border:3px solid var(--seal); border-radius:50%;
+}
+.tl-year{ font-family:var(--ui-font); font-weight:700; color:var(--seal); font-size:.95rem;}
+.tl-item h4{ margin:2px 0 4px; }
+
+/* diagram boxes */
+.diagram{ display:flex; flex-wrap:wrap; gap:0; align-items:stretch; margin:20px 0; font-family:var(--ui-font); font-size:.85rem;}
+.dbox{ border:1.5px solid var(--ink); background:var(--paper-raised); padding:12px 14px; flex:1 1 200px; text-align:center; }
+.darrow{ display:flex; align-items:center; justify-content:center; padding:0 10px; font-size:1.4rem; color:var(--gold); flex:0 0 auto;}
+@media(max-width:700px){ .diagram{ flex-direction:column;} .darrow{ transform:rotate(90deg); padding:6px 0;} }
+.dsplit{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+@media(max-width:600px){ .dsplit{ grid-template-columns:1fr; } }
+.dsplit .dbox{ border-color:var(--teal); }
+.dsplit .dbox.right{ border-color:var(--seal); }
+
+/* rapid recall */
+.qa-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:750px){ .qa-grid{ grid-template-columns:1fr; } }
+.qa-item{ border:1px solid var(--line); background:var(--paper-raised); padding:12px 14px; border-radius:var(--radius); }
+.qa-item .q{ font-weight:600; color:var(--ink); }
+.qa-item .a{ color:var(--teal); margin-top:4px; }
+.qa-item.hidden{ display:none; }
+
+/* active recall */
+details.recall{
+  border:1px solid var(--line); background:var(--paper-raised); border-radius:var(--radius);
+  margin:10px 0; padding:10px 16px;
+}
+details.recall summary{ cursor:pointer; font-weight:600; font-family:var(--ui-font); font-size:.95rem; }
+details.recall .ans{ margin-top:8px; padding-top:8px; border-top:1px dashed var(--line); color:var(--teal); }
+details.recall.hidden{ display:none; }
+
+/* MCQ / quiz */
+.mcq-item{ border:1px solid var(--line); background:var(--paper-raised); padding:16px 18px; margin:14px 0; border-radius:var(--radius); }
+.mcq-item.hidden{ display:none; }
+.mcq-item .qtype{ font-family:var(--ui-font); font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); }
+.mcq-opts{ list-style:none; padding:0; margin:10px 0; }
+.mcq-opts li{ padding:4px 0; }
+.mcq-item .reveal-ans{ font-family:var(--ui-font); font-size:.85rem; }
+.mcq-item .reveal-ans summary{ cursor:pointer; color:var(--seal); font-weight:600; }
+
+#quiz-app{ border:2px solid var(--ink); background:var(--paper-raised); padding:24px; border-radius:var(--radius); }
+.quiz-option{
+  display:block; width:100%; text-align:left; font-family:var(--ui-font); font-size:.95rem;
+  padding:10px 14px; margin:7px 0; border:1px solid var(--line); background:var(--paper);
+  color:var(--ink); border-radius:6px; cursor:pointer;
+}
+.quiz-option:hover{ border-color:var(--gold); }
+.quiz-option.correct{ background:var(--good); color:#fff; border-color:var(--good); }
+.quiz-option.incorrect{ background:var(--bad); color:#fff; border-color:var(--bad); }
+.quiz-option[disabled]{ cursor:default; }
+#quiz-explain{ font-family:var(--ui-font); font-size:.9rem; margin-top:10px; padding:10px 14px; background:var(--paper-alt); border-radius:6px; display:none;}
+.quiz-progress{ font-family:var(--ui-font); font-size:.8rem; color:var(--ink-soft); margin-bottom:10px;}
+.quiz-nav-btn{
+  font-family:var(--ui-font); background:var(--ink); color:var(--paper); border:none; padding:9px 18px;
+  border-radius:20px; cursor:pointer; margin-top:14px;
+}
+[data-theme="dark"] .quiz-nav-btn{ background:var(--gold); color:#14181F;}
+#quiz-result{ text-align:center; }
+#quiz-result .score-num{ font-family:var(--serif-display); font-size:3rem; color:var(--seal); }
+
+/* cheat sheet */
+.cheatsheet{ background:var(--ink); color:var(--paper); padding:24px 26px; border-radius:var(--radius); font-size:.95rem;}
+.cheatsheet h3, .cheatsheet h4{ color:var(--gold); }
+.cheatsheet ul{ columns:2; -webkit-columns:2; column-gap:32px; padding-left:20px;}
+.cheatsheet li{ break-inside:avoid; margin-bottom:6px; }
+@media(max-width:700px){ .cheatsheet ul{ columns:1; } }
+
+/* tracker */
+.tracker-row{ display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px dotted var(--line); font-family:var(--ui-font); font-size:.92rem;}
+.tracker-row input{ width:18px; height:18px; accent-color:var(--seal); }
+.tracker-row span.day{ font-weight:700; color:var(--gold); min-width:60px; display:inline-block;}
+
+footer{ text-align:center; padding:40px 0 60px; font-family:var(--ui-font); font-size:.82rem; color:var(--ink-soft); }
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-thumb{ background:var(--line); border-radius:6px; }
+
+@media print{
+  header.topbar, nav.toc, #search-box, .topbar-tools, #quiz-app, .hero-actions{ display:none !important; }
+  body{ background:#fff; color:#000; font-size:12px; }
+  .layout{ display:block; }
+  section{ break-inside:avoid; }
+  a{ color:#000; text-decoration:underline; }
+}
+mark{ background:var(--gold); color:#221a06; padding:0 2px;}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">समरी कोर्स ऑफ लक्ष्मीकांत — Polity
+      <small>Historical Underpinnings · Episode 1 · Section 1/4</small>
+    </div>
+    <div class="topbar-tools">
+      <input id="search-box" type="text" placeholder="Search: person, date, act, place…" aria-label="Search notes">
+      <span id="search-count"></span>
+      <button class="icon-btn" id="theme-toggle">🌓 Theme</button>
+      <button class="icon-btn" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="container layout">
+
+<nav class="toc" id="toc-nav">
+  <button id="toc-toggle">☰ Table of Contents</button>
+  <div class="toc-list">
+    <h4>Jump to</h4>
+    <a href="#overview">Overview</a>
+    <a href="#timeline">Timeline (1600–1858)</a>
+    <a href="#charter-1600">1600 · The Charter & Monopoly</a>
+    <a href="#plassey-buxar">Plassey & Buxar</a>
+    <a href="#diwani">Treaty of Allahabad & Diwani Rights</a>
+    <a href="#legitimacy">The Legitimacy Concept</a>
+    <a href="#financial-crisis">Financial Crisis → Regulation</a>
+    <a href="#regulating-act-1773">Regulating Act, 1773</a>
+    <a href="#amending-act-1781">Amending Act, 1781</a>
+    <a href="#pitts-act-1784">Pitt's India Act, 1784</a>
+    <a href="#dont-confuse">⚠️ Don't Confuse</a>
+    <a href="#memory-tricks">🧠 Memory Tricks</a>
+    <a href="#rapid-recall">⚡ Rapid Recall Q&amp;A</a>
+    <a href="#mcq">MCQ Practice</a>
+    <a href="#quiz">🧪 Self-Test Quiz</a>
+    <a href="#active-recall">🧠 Active Recall</a>
+    <a href="#one-minute">⚡ 1-Minute Revision</a>
+    <a href="#cheat-sheet">🚨 Exam-Day Cheat Sheet</a>
+    <a href="#tracker">📋 Revision Tracker</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="hero">
+  <div class="eyebrow">GS PAPER · INDIAN POLITY · LAXMIKANTH SUMMARY SERIES (7TH EDN.)</div>
+  <h1>Historical Underpinnings</h1>
+  <p class="lede">Episode 1, Section 1 of 4 — From the East India Company's arrival (1600) to the Pitt's India Act, 1784. Built for MP SI, SSC, Railway, UPSC/State PSC and other government exams.</p>
+  <div class="hero-meta">
+    <span><b>Covers:</b> 1600 → 1773 → 1781 → 1784</span>
+    <span><b>Reference text:</b> M. Laxmikanth, <i>Indian Polity</i>, 7th Edition</span>
+    <span><b>Next section:</b> continues from Pitt's India Act, 1784 onward</span>
+  </div>
+  <div class="hero-actions">
+    <a class="pill-link" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&list=PLSVABdpsEegkDCTeZ0QNezcbgNL8D6_Nk&index=1" target="_blank" rel="noopener">▶ Watch full lecture</a>
+    <a class="pill-link" href="#quiz">🧪 Jump to self-test</a>
+    <a class="pill-link" href="#cheat-sheet">🚨 Jump to cheat sheet</a>
+  </div>
+</div>
+
+<section id="overview">
+  <h2>What This Lecture Covers</h2>
+  <div class="card imp searchable">
+    <p>This is <b>Section 1 of 4</b> of the "Historical Underpinnings" chapter (Laxmikanth, Ch. 1). It traces how a trading company became a ruling power, and how the British Parliament slowly began regulating that company:</p>
+    <ol>
+      <li>East India Company's arrival and monopoly charter (1600) and early trade footing (Surat, Jahangir).</li>
+      <li>Political decline of the Mughals after Nadir Shah's invasion (1739) and the Company's "Divide and Rule" opportunity.</li>
+      <li>Battle of Plassey (1757) and Battle of Buxar (1764) — from trader to ruler.</li>
+      <li>Treaty of Allahabad (1765) — Diwani rights over Bengal, Bihar and Odisha (Orissa).</li>
+      <li>The Company's financial crisis (1770s) and why the British Parliament stepped in.</li>
+      <li>The Regulating Act, 1773 — first step towards Parliamentary control and administrative centralisation.</li>
+      <li>The Amending Act / Act of Settlement, 1781 — first attempt at separating executive and judiciary.</li>
+      <li>Pitt's India Act, 1784 — the System of Double Government (Court of Directors + Board of Control).</li>
+    </ol>
+    <p><b>Big picture to hold in your head:</b> the British Crown never directly ruled India during this phase — it only progressively tightened its <i>control over the East India Company</i>, while the Company continued to administer India on the ground. That is "Company Raj" (~1757/1773–1858), distinct from the later "Crown Raj" / British Raj (1858–1947).</p>
+  </div>
+</section>
+
+<section id="timeline">
+  <h2>Timeline — 1600 to 1858</h2>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=812s" target="_blank" rel="noopener">🎥 Watch: the story from 1600 (13:32)</a></p>
+  <div class="timeline searchable">
+    <div class="tl-item"><div class="tl-year">1600</div><h4>Charter granted to the East India Company</h4><p>Exclusive ("monopoly") trading licence granted by the English Crown. No other English company could trade with the East.</p></div>
+    <div class="tl-item"><div class="tl-year">1613</div><h4>Factory established at Surat</h4><p>Trading post set up with the goodwill of Mughal emperor Jahangir; formalised further by Sir Thomas Roe's embassy (1615–19). <span class="tag verify">⚠️ verify exact year in your textbook edition</span></p></div>
+    <div class="tl-item"><div class="tl-year">1739</div><h4>Battle of Karnal &amp; Nadir Shah's invasion</h4><p>Nadir Shah defeats the Mughal army (24 Feb 1739) and sacks Delhi. This shattered Mughal central authority and triggered political fragmentation — the opening the Company needed.</p></div>
+    <div class="tl-item"><div class="tl-year">1757</div><h4>Battle of Plassey</h4><p>Robert Clive defeats Nawab Siraj-ud-Daulah with Mir Jafar's betrayal. Company's first real political/military foothold in Bengal.</p></div>
+    <div class="tl-item"><div class="tl-year">1764</div><h4>Battle of Buxar</h4><p>Company defeats the combined forces of Mir Qasim, Shuja-ud-Daulah (Awadh) and Emperor Shah Alam II. Establishes unquestioned Company military supremacy.</p></div>
+    <div class="tl-item"><div class="tl-year">1765</div><h4>Treaty of Allahabad</h4><p>Shah Alam II grants Diwani rights (Bengal, Bihar, Odisha) to the Company. "Dual Government of Bengal" begins under Robert Clive.</p></div>
+    <div class="tl-item"><div class="tl-year">1770</div><h4>Bengal Famine</h4><p>Massive revenue and humanitarian crisis for Company-run Bengal — deepens the Company's financial trouble. <span class="tag support">SUPPORTING</span></p></div>
+    <div class="tl-item"><div class="tl-year">1772–73</div><h4>Company seeks a bailout</h4><p>Company reports a loss and requests a £1 million loan from the British Government; Parliament investigates.</p></div>
+    <div class="tl-item"><div class="tl-year">1773</div><h4>Regulating Act</h4><p>First step of British Parliamentary control over the Company; Warren Hastings becomes first Governor-General of Bengal.</p></div>
+    <div class="tl-item"><div class="tl-year">1774</div><h4>Supreme Court at Calcutta</h4><p>Established under the Regulating Act; Sir Elijah Impey is the first Chief Justice.</p></div>
+    <div class="tl-item"><div class="tl-year">1781</div><h4>Amending Act (Act of Settlement)</h4><p>Clarifies the jurisdiction tangle between the Supreme Court and the Governor-General-in-Council; first move toward separating judiciary from executive.</p></div>
+    <div class="tl-item"><div class="tl-year">1784</div><h4>Pitt's India Act</h4><p>System of Double Government: Court of Directors (commercial) + Board of Control (political/military/revenue).</p></div>
+    <div class="tl-item"><div class="tl-year">1793 · 1813 · 1833 · 1853</div><h4>Later Charter Acts</h4><p>Company's charter renewed roughly every 20 years — covered in the next sections of this series.</p></div>
+    <div class="tl-item"><div class="tl-year">1858</div><h4>Government of India Act, 1858</h4><p>Company rule abolished; Crown Rule (British Raj) begins directly.</p></div>
+    <div class="tl-item"><div class="tl-year">1947</div><h4>Independence</h4><p>End of Crown Rule.</p></div>
+  </div>
+</section>
+
+<section id="charter-1600">
+  <h2>1600 — The Charter &amp; Monopoly</h2>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span><span class="tag hifreq">🔥 PYQ-pattern</span>
+    <p>The East India Company was <b>not just a trading firm</b> — it was backed by the English state (the Crown), and it was carrying forward England's broader European "imperialism" push (other powers — France, Denmark, Portugal, the Dutch — were doing the same in Asia).</p>
+    <p>Around <b>1600</b>, the Company received a trading licence from the English Crown — this licence is called a <b>Charter</b>. Crucially, this charter was given <i>only</i> to the East India Company: an <b>exclusive licence</b>, technically called a <b>monopoly</b>.</p>
+    <p>The Company then set up a factory at <b>Surat</b>, obtaining goodwill/permission from Mughal Emperor <b>Jahangir</b> to trade — this is the "trader" phase, before the Company turned into a ruler.</p>
+  </div>
+  <div class="memtrick searchable">
+    <h4>🧠 Memory Trick</h4>
+    <p><b>चार्टर = Exclusive Licence = मोनोपोली।</b> Yaad rakho: "1600 mein Charter mila, aur wo sirf EIC ko mila — isliye Monopoly."</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=891s" target="_blank" rel="noopener">🎥 Watch: Surat factory &amp; Jahangir (14:51)</a></p>
+
+  <h3>Nadir Shah's Invasion (1739) — the political opening</h3>
+  <div class="card imp searchable">
+    <span class="tag imp">IMPORTANT</span>
+    <p>Especially after the Mughals, Nadir Shah's attack (<b>Battle of Karnal, 24 February 1739</b>) broke the "spine" of Mughal power — after this massacre in Delhi, the Mughals never recovered their old strength. This caused <b>political fragmentation</b> across India — regional powers began asserting themselves independently.</p>
+    <p>The English exploited this fragmentation using their old strategy — <b>Divide and Rule</b> — turning regional rivalries to their advantage.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=934s" target="_blank" rel="noopener">🎥 Watch: Nadir Shah's invasion (15:34)</a></p>
+</section>
+
+<section id="plassey-buxar">
+  <h2>From Trader to Ruler — Plassey (1757) &amp; Buxar (1764)</h2>
+  <div class="diagram searchable">
+    <div class="dbox"><b>1757</b><br>Battle of Plassey<br><small>Robert Clive vs Siraj-ud-Daulah (betrayed by Mir Jafar)</small></div>
+    <div class="darrow">→</div>
+    <div class="dbox"><b>Result</b><br>Company gets first political foothold in Bengal; Mir Jafar installed as puppet Nawab</div>
+    <div class="darrow">→</div>
+    <div class="dbox"><b>1764</b><br>Battle of Buxar<br><small>Company vs Mir Qasim + Shuja-ud-Daulah + Shah Alam II</small></div>
+    <div class="darrow">→</div>
+    <div class="dbox"><b>Result</b><br>Company's unquestioned military supremacy over a <i>combined</i> Indian front</div>
+  </div>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span>
+    <p>By <b>1757</b>, under Robert Clive's leadership, the Company won the <b>Battle of Plassey</b> — its first real taste of military effectiveness ("we can actually win"). But the truly world-changing victory was the <b>Battle of Buxar (1764)</b>, where a combined force of three powers — the Nawab of Bengal (Mir Qasim), the Nawab of Awadh (Shuja-ud-Daulah), and the Mughal Emperor himself (Shah Alam II) — lost decisively to the Company.</p>
+    <p><b>Why Buxar matters more than Plassey for exams:</b> Plassey gave the Company its first foothold (via political intrigue/betrayal); Buxar proved outright military supremacy over the era's biggest combined power, and directly led to the Treaty of Allahabad.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=997s" target="_blank" rel="noopener">🎥 Watch: Battle of Plassey (16:37)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1033s" target="_blank" rel="noopener">Battle of Buxar (17:13)</a></p>
+</section>
+
+<section id="diwani">
+  <h2>Treaty of Allahabad (1765) &amp; Diwani Rights</h2>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span><span class="tag hifreq">🔥 PYQ-pattern</span>
+    <p>Soon after Buxar, the defeated Emperor <b>Shah Alam II</b> sought protection from the Company and signed the <b>Treaty of Allahabad (1765)</b>. In exchange for an annual pension, he granted the Company the <b>Diwani rights</b> — the right to collect land revenue and administer civil justice — over three rich provinces: <b>Bengal, Bihar and Odisha (Orissa)</b>.</p>
+    <p><b>Diwani rights</b> = civil administration + revenue collection (tax) rights. This is different from <b>Nizamat rights</b> = police/criminal-justice/military administration, which nominally stayed with the Nawab's deputy (Naib Diwan/Naib Nazim) for a few more years. This split of Diwani (Company) + Nizamat (Nawab's deputy) from 1765 is what historians call the <b>"Dual Government of Bengal"</b> under Robert Clive — abolished later by Warren Hastings in 1772.</p>
+  </div>
+  <table class="searchable">
+    <tr><th>Term</th><th>Meaning</th><th>Who held it after 1765</th></tr>
+    <tr><td><b>Diwani</b></td><td>Revenue collection + civil justice</td><td>East India Company</td></tr>
+    <tr><td><b>Nizamat</b></td><td>Police, criminal justice, military/defence administration</td><td>Nawab's deputy (Naib Diwan) — nominal, until 1772</td></tr>
+  </table>
+  <div class="memtrick searchable">
+    <h4>🧠 Memory Trick</h4>
+    <p><b>दी-वानी में "धन" (Diwani = Dhan/Revenue)। नि-जामत में "न्याय-पुलिस" (Nizamat = Nyay/Police)।</b> Both start differently, so don't mix them — Diwani is money, Nizamat is muscle/justice.</p>
+  </div>
+  <div class="imgsuggest searchable">
+    <b>IMAGE SUGGESTION:</b> A simple outline map of India (1765) highlighting Bengal, Bihar, and Odisha (Orissa) as the three ceded provinces, with a label "Diwani rights granted, 1765." Helps fix which three provinces first came under direct Company revenue control. Labels needed: Bengal, Bihar, Odisha, Calcutta (Company HQ).
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1143s" target="_blank" rel="noopener">🎥 Watch: Treaty of Allahabad &amp; Diwani rights (19:03)</a></p>
+</section>
+
+<section id="legitimacy">
+  <h2>The "Legitimacy" Concept</h2>
+  <div class="card support searchable">
+    <span class="tag support">SUPPORTING</span>
+    <p>Before Buxar, the Company's money-making in India looked like extortion/plunder to people back in England ("रंगदारी") — the Company's own officers were seen as corrupt looters. After Buxar and the acquisition of Diwani rights, the Company effectively became the <b>tax collector</b> of the region — and tax collection (however harsh) carries social <b>legitimacy</b> that plunder does not.</p>
+    <p><b>Analogy used in the lecture:</b> a local strongman ("gunda") demanding money has no legitimacy, even if people pay up — but an official tax notice from the government is paid willingly, because the collector has legitimacy. Buxar is what converted the Company from "gunda" to "government" in the eyes of contemporaries.</p>
+    <p>This is a conceptual/analytical point — useful for statement-based and "significance of Buxar" questions, not a fact to memorise verbatim.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1256s" target="_blank" rel="noopener">🎥 Watch: the legitimacy analogy (20:56)</a></p>
+</section>
+
+<section id="financial-crisis">
+  <h2>Financial Crisis → Road to Regulation</h2>
+  <div class="card imp searchable">
+    <span class="tag imp">IMPORTANT</span>
+    <p>Despite the huge revenue windfall from Diwani rights, the Company reported a massive <b>loss (~£1 million / 10 lakh pounds, circa 1772)</b> to its shareholders. The real reason: large-scale personal enrichment/corruption by Company officers (Robert Clive became one of the richest men of his time), not genuine military expenditure as claimed.</p>
+    <p>Facing bankruptcy, the Company approached the British Government for a bailout loan. The Government agreed — but on a <b>quid pro quo</b> (Latin: "something for something," give-and-take) basis: in return for the rescue, the British Government demanded the right to <b>regulate/monitor</b> the Company.</p>
+    <p><b>Key nuance:</b> The British Government did not take over the rule of India directly. It only took control <i>over the Company</i>; the Company continued to rule India. This is why the period is still called "Company Raj," not "Crown Raj," even after 1773.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1659s" target="_blank" rel="noopener">🎥 Watch: the financial crisis (27:39)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1747s" target="_blank" rel="noopener">Quid pro quo (29:07)</a></p>
+</section>
+
+<section id="regulating-act-1773">
+  <h2>Regulating Act, 1773</h2>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span><span class="tag hifreq">🔥 PYQ-pattern</span>
+    <p>Passed by the <b>British Parliament</b>, piloted by Prime Minister <b>Lord North</b>. This was the first law by which the British Parliament began regulating/controlling the East India Company's affairs (also loosely referred to, along with its successors, as one of the "Charter Acts" — see the ⚠️ Don't Confuse note below).</p>
+  </div>
+  <h4>Main provisions</h4>
+  <ul class="searchable">
+    <li><span class="tag must">MUST</span> Designated the <b>Governor of Bengal as the Governor-General of Bengal</b>. <b>Warren Hastings</b> became the first Governor-General of Bengal.</li>
+    <li><span class="tag must">MUST</span> Created a <b>4-member Executive Council</b> ("Council of Four") to assist the Governor-General — an <i>executive</i> council, not a legislative one.</li>
+    <li><span class="tag must">MUST</span> Made the Governors of <b>Bombay and Madras subordinate</b> to the Governor-General of Bengal — the <b>first step towards centralisation</b> of governance in India.</li>
+    <li><span class="tag imp">IMP</span> Established a <b>Supreme Court at Calcutta (Fort William), 1774</b> — with <b>1 Chief Justice + 3 other judges</b>. First Chief Justice: <b>Sir Elijah Impey</b>.</li>
+    <li><span class="tag imp">IMP</span> <b>Prohibited Company servants from private trade</b> and from accepting gifts/bribes.</li>
+    <li><span class="tag imp">IMP</span> Required the Company's <b>Court of Directors</b> (its governing body in London) to report to the British Government on revenue, civil, and military affairs.</li>
+  </ul>
+  <div class="memtrick searchable">
+    <h4>🧠 Memory Trick</h4>
+    <p>One sentence to remember all four pillars: <b>"Supreme Court बना, Council बनी, Bombay-Madras झुके, Private Trade बंद हुआ।"</b></p>
+  </div>
+  <div class="card support searchable">
+    <span class="tag support">SUPPORTING</span>
+    <h4>The in-lecture demonstration MCQ (why "Board of Control" is a trap here)</h4>
+    <p>The instructor deliberately tests: "Which of these are features of the Regulating Act, 1773 — (1) Supreme Court at Calcutta, (2) Council for the Governor-General of Bengal, (3) subordinated Bombay &amp; Madras governors, (4) established a Board of Control for political affairs?" The correct answer is <b>only 1, 2 and 3</b> — the <b>Board of Control did not exist in 1773</b>; it was created eleven years later by the <b>Pitt's India Act of 1784</b>. This exact trap (attaching "Board of Control" to 1773) is a classic exam trick.</p>
+  </div>
+  <div class="card low searchable">
+    <span class="tag low">LOW PRIORITY / SUPPLEMENTARY</span>
+    <p>The Regulating Act's vague division of powers between the Supreme Court and the Governor-General-in-Council led to real conflicts — the <b>Raja Nand Kumar case (1775)</b> is the standard textbook illustration of this clash (not detailed in this lecture, but commonly cited alongside the Act's failure). <span class="tag verify">⚠️ VERIFY exact details in your source before quoting in Mains</span></p>
+  </div>
+  <h4>Why the Regulating Act, 1773 is considered a failure</h4>
+  <div class="card imp searchable">
+    <p>It <b>lacked clarity</b> — the boundaries between the powers of the Supreme Court, the Governor-General's Council, and the Court of Directors were not clearly defined. Vague laws are always more exploitable ("जितनी लॉ में क्लेरिटी कम, उतना मिसयूज ज़्यादा") — this ambiguity caused repeated institutional clashes and made the Act largely unworkable, necessitating the Amending Act of 1781.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=1790s" target="_blank" rel="noopener">🎥 Watch: Regulating Act introduced (29:50)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=2152s" target="_blank" rel="noopener">Governor-General title (35:52)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=2386s" target="_blank" rel="noopener">Supreme Court &amp; private-trade ban (39:46)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=2749s" target="_blank" rel="noopener">The demo MCQ (45:49)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=2891s" target="_blank" rel="noopener">Why it failed (48:11)</a></p>
+</section>
+
+<section id="amending-act-1781">
+  <h2>Amending Act, 1781 (Act of Settlement)</h2>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span><span class="tag hifreq">🔥 PYQ-pattern</span>
+    <p>Also called the <b>Act of Settlement, 1781</b> — passed to fix the Regulating Act's biggest flaw: the unclear jurisdiction between the Supreme Court and the Governor-General-in-Council. <span class="tag verify">⚠️ Do not confuse this with the Pitt's India Act of 1784 — they are separate acts, three years apart.</span></p>
+  </div>
+  <h4>Main provisions</h4>
+  <ul class="searchable">
+    <li><span class="tag must">MUST</span> Introduced, for the first time in India, the concept of <b>Separation of Powers</b> — by clearly defining what the Supreme Court could and could not do, versus what the Governor-General-in-Council (executive) could do.</li>
+    <li><span class="tag imp">IMP</span> <b>Restricted the Supreme Court's jurisdiction to Calcutta</b> only.</li>
+    <li><span class="tag imp">IMP</span> <b>Exempted</b> government servants/revenue collectors/judicial officers acting in their <b>official capacity</b> from the Supreme Court's jurisdiction.</li>
+    <li><span class="tag imp">IMP</span> Empowered the <b>Governor-General-in-Council</b> to frame rules, ordinances and regulations for provincial courts, and allowed <b>appeals from provincial courts to go to the Governor-General-in-Council</b> (not directly to the Supreme Court).</li>
+  </ul>
+  <div class="card support searchable">
+    <span class="tag support">SUPPORTING — exam phrasing to memorise verbatim</span>
+    <p>"It represented the <b>first attempt in India to separate the Executive from the Judiciary</b>, by clearly defining their respective jurisdictions." This exact framing is commonly tested.</p>
+  </div>
+  <div class="memtrick searchable">
+    <h4>🧠 Memory Trick</h4>
+    <p><b>"1781 = अठारह इक्यासी में अलग-अलग"</b> — Judiciary अलग, Executive अलग. The rhyme of the year with "अलग-अलग" (separate-separate) is your cue for "Separation of Powers, 1781."</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3042s" target="_blank" rel="noopener">🎥 Watch: Amending Act introduced (50:42)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3173s" target="_blank" rel="noopener">Separation of Powers (52:53)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3294s" target="_blank" rel="noopener">Full feature list (54:54)</a></p>
+</section>
+
+<section id="pitts-act-1784">
+  <h2>Pitt's India Act, 1784</h2>
+  <div class="card must searchable">
+    <span class="tag must">MUST REMEMBER</span><span class="tag hifreq">🔥 PYQ-pattern</span>
+    <p>Named after British Prime Minister <b>William Pitt "the Younger."</b> This Act split the Company's functions into two clearly separate tracks — a system usually called the <b>"System of Double Government."</b></p>
+  </div>
+  <div class="dsplit searchable">
+    <div class="dbox">
+      <h4 style="color:var(--teal)">Commercial affairs</h4>
+      <p>Handled by the Company's own <b>Court of Directors</b> (trade, investment, business decisions).</p>
+    </div>
+    <div class="dbox right">
+      <h4 style="color:var(--seal)">Political / military / revenue affairs</h4>
+      <p>Handed to a brand-new body appointed by the British Government: the <b>Board of Control</b>.</p>
+    </div>
+  </div>
+  <div class="card imp searchable">
+    <span class="tag imp">IMPORTANT</span>
+    <p>This was the first time the British Government secured <b>supreme control over the Company's civil, military and revenue affairs</b> in India — a bigger leap than the Regulating Act, which had only made the Company's Court of Directors <i>report</i> to Parliament. Even so, the Company continued to administer India on the ground; the Crown still had not taken over direct rule.</p>
+    <p>This "System of Double Government" (Court of Directors + Board of Control) continued right until <b>1858</b>, when the Company was abolished after the Revolt of 1857 and Crown Rule began directly.</p>
+  </div>
+  <p class="watch"><a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3422s" target="_blank" rel="noopener">🎥 Watch: Pitt's India Act introduced (57:02)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3566s" target="_blank" rel="noopener">Double Government explained (59:26)</a> · <a class="watch" href="https://www.youtube.com/watch?v=JIvTeA2i-c4&t=3774s" target="_blank" rel="noopener">Supreme control over Company affairs (62:54)</a></p>
+  <div class="imgsuggest searchable">
+    <b>IMAGE SUGGESTION:</b> A simple two-column organisation chart: "East India Company" branching into "Court of Directors → Commercial decisions" and "Board of Control (appointed by British Crown) → Political/Military/Revenue decisions," both eventually reporting up to "British Parliament." Helps visually separate the two tracks of the Double Government.
+  </div>
+</section>
+
+<section id="dont-confuse">
+  <h2>⚠️ Don't Confuse</h2>
+
+  <div class="dontconfuse searchable">
+    <h4>1. "Dual Government of Bengal" (1765) vs "Double Government" under Pitt's Act (1784)</h4>
+    <p>Same-sounding term, two completely different arrangements, decades apart — this is the single most common trap on this topic.</p>
+    <table>
+      <tr><th></th><th>Dual Government of Bengal</th><th>System of Double/Dual Government (Pitt's Act)</th></tr>
+      <tr><td>Year</td><td>1765</td><td>1784</td></tr>
+      <tr><td>Introduced by</td><td>Robert Clive (Treaty of Allahabad arrangement)</td><td>Pitt's India Act (British Parliament)</td></tr>
+      <tr><td>The two "halves"</td><td>Diwani (revenue) with the Company; Nizamat (police/justice) with the Nawab's deputy</td><td>Commercial affairs with Court of Directors; Political/military/revenue affairs with Board of Control</td></tr>
+      <tr><td>Ended</td><td>1772, by Warren Hastings</td><td>1858, by Government of India Act</td></tr>
+    </table>
+  </div>
+
+  <div class="dontconfuse searchable">
+    <h4>2. Diwani vs Nizamat</h4>
+    <table>
+      <tr><th>Diwani</th><th>Nizamat</th></tr>
+      <tr><td>Revenue collection + civil justice</td><td>Police + criminal justice + military/defence</td></tr>
+      <tr><td>Went to the Company, 1765</td><td>Stayed (nominally) with the Nawab's deputy till 1772</td></tr>
+    </table>
+  </div>
+
+  <div class="dontconfuse searchable">
+    <h4>3. Regulating Act (1773) vs Amending Act (1781) vs Pitt's India Act (1784)</h4>
+    <table>
+      <tr><th></th><th>Regulating Act, 1773</th><th>Amending Act, 1781</th><th>Pitt's India Act, 1784</th></tr>
+      <tr><td>Also called</td><td>—</td><td>Act of Settlement</td><td>—</td></tr>
+      <tr><td>PM who piloted it</td><td>Lord North</td><td>Lord North (2nd term)<span class="tag verify"> ⚠️ verify</span></td><td>William Pitt "the Younger"</td></tr>
+      <tr><td>Core contribution</td><td>Governor-General of Bengal + Council of 4 + Supreme Court + centralisation begins</td><td>Separation of powers (Executive vs Judiciary); Supreme Court limited to Calcutta</td><td>System of Double Government (Court of Directors + Board of Control)</td></tr>
+      <tr><td>Created Board of Control?</td><td>❌ No</td><td>❌ No</td><td>✅ Yes</td></tr>
+      <tr><td>First Governor-General?</td><td>✅ Warren Hastings named</td><td>—</td><td>—</td></tr>
+    </table>
+  </div>
+
+  <div class="dontconfuse searchable">
+    <h4>4. Court of Directors vs Board of Control</h4>
+    <table>
+      <tr><th></th><th>Court of Directors</th><th>Board of Control</th></tr>
+      <tr><td>Belongs to</td><td>The East India Company itself (existed since the Company's founding; formally made accountable by the 1773 Act)</td><td>The British Government (created fresh by Pitt's India Act, 1784)</td></tr>
+      <tr><td>Handles</td><td>Commercial/trade affairs (post-1784)</td><td>Political, military, revenue affairs</td></tr>
+      <tr><td>First appears in this story</td><td>1773 (made to report to Parliament)</td><td>1784 (created)</td></tr>
+    </table>
+  </div>
+
+  <div class="dontconfuse searchable">
+    <h4>5. "Regulating Act" vs the term "Charter Act"</h4>
+    <p>The lecture broadly groups 1773 / 1793 / 1813 / 1833 / 1853 together as periodic charter-renewal laws. But in standard nomenclature, only <b>1773 is called the "Regulating Act"</b>; the later renewals (1793, 1813, 1833, 1853) are specifically called <b>"Charter Acts."</b> Calling 1773 a "Charter Act" is a loose simplification, not the standard exam term. <span class="tag verify">⚠️ POSSIBLE ERROR in casual usage — use "Regulating Act, 1773" in your answers, not "Charter Act, 1773."</span></p>
+  </div>
+</section>
+
+<section id="memory-tricks">
+  <h2>🧠 Memory Tricks — Compiled</h2>
+  <div class="memtrick searchable"><h4>Chronology of the 3 acts in this section</h4><p><b>"पहले Regulate किया (1773), फिर Amend किया (1781), आखिर में कंपनी पिट गई — यानी Pitt's Act (1784) आ गया।"</b> The pun: "पिट गई" (got beaten/reined-in) sounds like "Pitt" — and that's exactly when the Company got its biggest rein-in yet.</p></div>
+  <div class="memtrick searchable"><h4>Charter renewal cycle</h4><p>Every <b>20 years</b> starting 1773: <b>1773 → 1793 → 1813 → 1833 → 1853.</b> Just keep adding 20.</p></div>
+  <div class="memtrick searchable"><h4>Diwani vs Nizamat</h4><p><b>दी-वानी = धन (money)। नि-जामत = न्याय+पुलिस।</b></p></div>
+  <div class="memtrick searchable"><h4>Regulating Act, 1773 — 4 pillars</h4><p><b>"Supreme Court बना, Council बनी, Bombay-Madras झुके, Private Trade बंद।"</b></p></div>
+  <div class="memtrick searchable"><h4>1781 = Separation</h4><p><b>"इक्यासी में अलग-अलग"</b> — the rhyme cues "separation of powers."</p></div>
+  <div class="memtrick searchable"><h4>1784 = Double Government</h4><p><b>"Do Sarkar: व्यापार वाली (Court of Directors) + राज वाली (Board of Control)."</b></p></div>
+  <div class="memtrick searchable"><h4>Battle sequence</h4><p><b>Plassey (1757) = पहला भरोसा (first confidence). Buxar (1764) = पक्का राज (real, unquestioned power).</b> Confidence before conquest.</p></div>
+</section>
+
+<section id="rapid-recall">
+  <h2>⚡ Rapid Recall Q&amp;A</h2>
+  <p style="font-family:var(--ui-font); font-size:.85rem; color:var(--ink-soft);">Scan these fast — your brain should recognise the answer instantly.</p>
+  <div class="qa-grid searchable" id="rapid-recall-grid">
+    <div class="qa-item searchable"><div class="q">Q: In which year was the East India Company given its founding charter?</div><div class="a">A: 1600</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What does "monopoly" mean in the Company's 1600 charter?</div><div class="a">A: An exclusive trading licence given only to the East India Company.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Where did the Company establish its early factory with Mughal permission?</div><div class="a">A: Surat.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which Mughal emperor permitted the Company to trade at Surat?</div><div class="a">A: Jahangir.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year did Nadir Shah's invasion (Battle of Karnal) occur?</div><div class="a">A: 1739 (24 February).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What policy did the Company use to exploit post-1739 fragmentation?</div><div class="a">A: Divide and Rule.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was the Battle of Plassey fought?</div><div class="a">A: 1757.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who led the Company forces at Plassey?</div><div class="a">A: Robert Clive.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which Nawab was defeated at Plassey?</div><div class="a">A: Siraj-ud-Daulah.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who betrayed Siraj-ud-Daulah at Plassey?</div><div class="a">A: Mir Jafar.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was the Battle of Buxar fought?</div><div class="a">A: 1764.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which three powers fought the Company jointly at Buxar?</div><div class="a">A: Mir Qasim, Shuja-ud-Daulah (Awadh), and Shah Alam II (Mughal Emperor).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Why is Buxar considered more significant than Plassey?</div><div class="a">A: It defeated a combined front of three powers, proving unquestioned Company military supremacy.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was the Treaty of Allahabad signed?</div><div class="a">A: 1765.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who granted Diwani rights to the Company?</div><div class="a">A: Mughal Emperor Shah Alam II.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which three provinces' Diwani rights went to the Company?</div><div class="a">A: Bengal, Bihar, and Odisha (Orissa).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What do "Diwani rights" mean?</div><div class="a">A: The right to collect land revenue and administer civil justice.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What do "Nizamat rights" mean?</div><div class="a">A: Police, criminal justice, and military/defence administration.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What is the "Dual Government of Bengal" (1765)?</div><div class="a">A: Diwani with the Company, Nizamat (nominally) with the Nawab's deputy.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who ended the Dual Government of Bengal, and when?</div><div class="a">A: Warren Hastings, in 1772.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What made the Company's post-Buxar tax collection "legitimate" rather than "extortion"?</div><div class="a">A: It now held official Diwani (revenue-collecting) rights, not just raw power.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Around what amount did the Company report as a loss/debt in the early 1770s?</div><div class="a">A: About £1 million (10 lakh pounds).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What was the real reason behind this "loss," despite huge revenue?</div><div class="a">A: Large-scale personal enrichment/corruption by Company officers.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which Company officer became extremely wealthy and faced scrutiny?</div><div class="a">A: Robert Clive.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What condition did the British Government attach to bailing out the Company?</div><div class="a">A: The right to regulate/control the Company ("quid pro quo").</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was the Regulating Act passed?</div><div class="a">A: 1773.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which British PM piloted the Regulating Act in Parliament?</div><div class="a">A: Lord North.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who became the first Governor-General of Bengal?</div><div class="a">A: Warren Hastings.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: How many members were in the Governor-General's Executive Council?</div><div class="a">A: 4 ("Council of Four").</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What did the Regulating Act do to the governors of Bombay and Madras?</div><div class="a">A: Made them subordinate to the Governor-General of Bengal.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What is the Regulating Act's biggest "first" for Indian governance?</div><div class="a">A: The first step towards centralisation of governance in India.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Where and when was the first Supreme Court in India established?</div><div class="a">A: Calcutta (Fort William), 1774.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: How many judges did the first Supreme Court have?</div><div class="a">A: Four — 1 Chief Justice + 3 other judges.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who was the first Chief Justice of the Supreme Court at Calcutta?</div><div class="a">A: Sir Elijah Impey.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What trade-related restriction did the Regulating Act place on Company servants?</div><div class="a">A: Prohibited private trade and accepting gifts/bribes.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Who did the Court of Directors have to report to, under the Regulating Act?</div><div class="a">A: The British Government (on revenue, civil, and military affairs).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Why did the Regulating Act, 1773 ultimately fail?</div><div class="a">A: Lack of clarity on the respective powers of the Supreme Court, the Governor-General-in-Council, and the Court of Directors.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was the Amending Act passed?</div><div class="a">A: 1781.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What is the Amending Act, 1781 also known as?</div><div class="a">A: The Act of Settlement.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What key constitutional concept did the Amending Act, 1781 introduce for the first time in India?</div><div class="a">A: Separation of Powers (Executive vs Judiciary).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What did the Amending Act do to the Supreme Court's jurisdiction?</div><div class="a">A: Restricted it to Calcutta only.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Whom did the Amending Act exempt from Supreme Court jurisdiction?</div><div class="a">A: Government servants/revenue collectors/judicial officers acting in official capacity.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Under the Amending Act, where did appeals from provincial courts go?</div><div class="a">A: To the Governor-General-in-Council (not directly to the Supreme Court).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: In which year was Pitt's India Act passed?</div><div class="a">A: 1784.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: After whom is Pitt's India Act named?</div><div class="a">A: British PM William Pitt "the Younger."</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What system did Pitt's India Act introduce?</div><div class="a">A: The System of Double Government.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which body handled commercial affairs after 1784?</div><div class="a">A: The Court of Directors.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which new body handled political/military/revenue affairs after 1784?</div><div class="a">A: The Board of Control (appointed by the British Government).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Until which year did the Double Government system (1784) last?</div><div class="a">A: 1858 (Government of India Act, 1858).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What broad period is called "Company Raj"?</div><div class="a">A: Roughly 1757/1773 to 1858.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: What broad period is called "Crown Raj" / British Raj?</div><div class="a">A: 1858 to 1947.</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Which edition of Laxmikanth's Indian Polity is used as the base text in this series?</div><div class="a">A: The 7th edition (earlier run used the 5th edition).</div></div>
+    <div class="qa-item searchable"><div class="q">Q: Into how many sections is "Historical Underpinnings" divided in this series?</div><div class="a">A: Four sections.</div></div>
+  </div>
+</section>
+
+<section id="mcq">
+  <h2>MCQ Practice</h2>
+  <p style="font-family:var(--ui-font); font-size:.85rem; color:var(--ink-soft);">Static list for review/printing — the same questions are also available as a scored interactive quiz below (<a href="#quiz">jump to quiz</a>).</p>
+  <div id="mcq-static-list"></div>
+</section>
+
+<section id="quiz">
+  <h2>🧪 Self-Test Quiz</h2>
+  <div id="quiz-app">
+    <div class="quiz-progress" id="quiz-progress">Question 1 of 15</div>
+    <div id="quiz-question-area"></div>
+    <div id="quiz-explain"></div>
+    <button class="quiz-nav-btn" id="quiz-next-btn" style="display:none;">Next question →</button>
+    <div id="quiz-result" style="display:none;"></div>
+  </div>
+</section>
+
+<section id="active-recall">
+  <h2>🧠 Active Recall</h2>
+  <p style="font-family:var(--ui-font); font-size:.85rem; color:var(--ink-soft);">Try to answer before you click. Click to reveal.</p>
+  <div id="active-recall-list"></div>
+</section>
+
+<section id="one-minute">
+  <h2>⚡ 1-Minute Revision</h2>
+  <div class="card imp searchable">
+    <ul>
+      <li>EIC got a monopoly <b>Charter in 1600</b>; set up a factory at <b>Surat</b> with Jahangir's permission.</li>
+      <li><b>Nadir Shah's invasion (1739)</b> broke Mughal power → political fragmentation → EIC's "Divide and Rule."</li>
+      <li><b>Plassey (1757)</b> — Clive vs Siraj-ud-Daulah (Mir Jafar's betrayal) → first foothold.</li>
+      <li><b>Buxar (1764)</b> — EIC vs Mir Qasim + Shuja-ud-Daulah + Shah Alam II → unquestioned supremacy.</li>
+      <li><b>Treaty of Allahabad (1765)</b> — Shah Alam II grants <b>Diwani rights</b> (Bengal, Bihar, Odisha) to EIC.</li>
+      <li><b>Diwani</b> = revenue + civil justice; <b>Nizamat</b> = police/criminal justice — stayed with Nawab's deputy till 1772.</li>
+      <li>"Dual Government of Bengal" (1765, Clive) ≠ "Double Government" under Pitt's Act (1784) — don't mix these up.</li>
+      <li>EIC's post-Diwani "loss" (~£1 million) was really officer corruption (Robert Clive got very rich).</li>
+      <li>EIC sought a British bailout → Britain agreed on a <b>quid pro quo</b>: rescue in exchange for regulatory control.</li>
+      <li><b>Regulating Act, 1773</b> (PM Lord North): Governor of Bengal → <b>Governor-General</b> (Warren Hastings, first GG); 4-member Executive Council; Bombay &amp; Madras subordinated (first centralisation step); Supreme Court at Calcutta (1774, 4 judges, CJ Elijah Impey); private trade banned; Court of Directors made accountable to Parliament.</li>
+      <li>Regulating Act, 1773 <b>failed</b> — lacked clarity on who held what power.</li>
+      <li><b>Amending Act, 1781</b> (Act of Settlement): first Separation of Powers in India; Supreme Court's jurisdiction limited to Calcutta; official-capacity exemption; appeals from provincial courts to Governor-General-in-Council.</li>
+      <li><b>Pitt's India Act, 1784</b> (PM Pitt the Younger): System of <b>Double Government</b> — Court of Directors (commercial) + Board of Control (political/military/revenue, new, Crown-appointed).</li>
+      <li>Board of Control did <b>not</b> exist under the 1773 Act — a very common trap.</li>
+      <li>Double Government (1784) lasted till <b>1858</b>, when Crown Rule began directly.</li>
+      <li>"Company Raj" ≈ 1757/1773–1858; "Crown Raj" = 1858–1947.</li>
+      <li>Charter renewed roughly every 20 years post-1773: 1793, 1813, 1833, 1853 (covered in later sections).</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cheat-sheet">
+  <h2>🚨 Exam-Day Cheat Sheet</h2>
+  <div class="cheatsheet searchable">
+    <ul>
+      <li>1600 — Charter to EIC (monopoly)</li>
+      <li>1613 — Surat factory (Jahangir)</li>
+      <li>1739 — Battle of Karnal / Nadir Shah</li>
+      <li>1757 — Battle of Plassey (Clive, Siraj-ud-Daulah, Mir Jafar)</li>
+      <li>1764 — Battle of Buxar (Mir Qasim + Shuja-ud-Daulah + Shah Alam II)</li>
+      <li>1765 — Treaty of Allahabad, Diwani rights (Bengal, Bihar, Odisha)</li>
+      <li>1765 — Dual Government of Bengal begins (Clive)</li>
+      <li>1772 — Dual Government of Bengal ends (Warren Hastings)</li>
+      <li>1772–73 — EIC financial crisis, £1 mn bailout sought</li>
+      <li>1773 — Regulating Act (PM Lord North)</li>
+      <li>1773 — Warren Hastings: first Governor-General of Bengal</li>
+      <li>1774 — Supreme Court, Calcutta (4 judges; CJ Elijah Impey)</li>
+      <li>1775 — Raja Nand Kumar case (illustrates 1773 Act's flaws) ⚠️ verify</li>
+      <li>1781 — Amending Act / Act of Settlement</li>
+      <li>1781 — First Separation of Powers in India</li>
+      <li>1784 — Pitt's India Act (PM Pitt the Younger)</li>
+      <li>1784 — Board of Control created (political affairs)</li>
+      <li>1784 — Court of Directors retains commercial affairs</li>
+      <li>1793 / 1813 / 1833 / 1853 — subsequent Charter Acts (20-yr cycle)</li>
+      <li>1858 — Government of India Act; Company abolished; Crown Rule begins</li>
+      <li>1947 — Independence; Crown Rule ends</li>
+      <li>Diwani = revenue + civil justice | Nizamat = police + criminal justice</li>
+      <li>Dual Govt. of Bengal (1765) ≠ Double Govt. under Pitt's Act (1784)</li>
+      <li>Board of Control ∈ 1784 ONLY — never attach it to 1773</li>
+      <li>Reference text: M. Laxmikanth, <i>Indian Polity</i>, 7th edition</li>
+    </ul>
+  </div>
+</section>
+
+<section id="tracker">
+  <h2>📋 Revision Tracker</h2>
+  <p style="font-family:var(--ui-font); font-size:.85rem; color:var(--ink-soft);">Ticks are saved in this browser (localStorage) so they survive a page refresh.</p>
+  <div class="card">
+    <div class="tracker-row"><input type="checkbox" id="trk-day0"><label for="trk-day0"><span class="day">Day 0</span> Learn — watched the lecture + read these notes fully</label></div>
+    <div class="tracker-row"><input type="checkbox" id="trk-day1"><label for="trk-day1"><span class="day">Day 1</span> Active Recall — completed the Active Recall section without peeking</label></div>
+    <div class="tracker-row"><input type="checkbox" id="trk-day3"><label for="trk-day3"><span class="day">Day 3</span> MCQ — scored well on the Self-Test Quiz</label></div>
+    <div class="tracker-row"><input type="checkbox" id="trk-day7"><label for="trk-day7"><span class="day">Day 7</span> Rapid Revision — reread the ⚡ 1-Minute Revision + Cheat Sheet</label></div>
+    <div class="tracker-row"><input type="checkbox" id="trk-day14"><label for="trk-day14"><span class="day">Day 14</span> Test — retook the Self-Test Quiz cold</label></div>
+    <div class="tracker-row"><input type="checkbox" id="trk-day30"><label for="trk-day30"><span class="day">Day 30</span> Final Revision — one last full pass before combining with Section 2</label></div>
+    <p style="margin-top:14px;"><button class="icon-btn" id="tracker-reset">Reset tracker</button></p>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <p>Built from the Unacademy "Summary Course of Laxmikanth for Polity" series (Episode 1, Section 1 of 4) · Next: Section 2 continues from Pitt's India Act, 1784 onward.</p>
+  <p><a href="https://www.youtube.com/watch?v=JIvTeA2i-c4&list=PLSVABdpsEegkDCTeZ0QNezcbgNL8D6_Nk&index=1" target="_blank" rel="noopener">▶ Watch the source lecture on YouTube</a></p>
+</footer>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+const MCQ_DATA = [
+  {
+    type: "Direct factual",
+    q: "Who was the first Governor-General of Bengal, appointed under the Regulating Act of 1773?",
+    options: ["Robert Clive", "Warren Hastings", "Lord Cornwallis", "Lord Wellesley"],
+    answer: 1,
+    explain: "The Regulating Act, 1773 designated the Governor of Bengal as the Governor-General of Bengal; Warren Hastings was the first to hold this title."
+  },
+  {
+    type: "Chronology",
+    q: "Arrange in chronological order: (I) Battle of Buxar (II) Regulating Act (III) Battle of Plassey (IV) Pitt's India Act",
+    options: ["III–I–II–IV", "I–III–II–IV", "III–II–I–IV", "II–III–I–IV"],
+    answer: 0,
+    explain: "Plassey (1757) → Buxar (1764) → Regulating Act (1773) → Pitt's India Act (1784)."
+  },
+  {
+    type: "Match the following",
+    q: "Match: (a) Regulating Act (b) Amending Act/Act of Settlement (c) Pitt's India Act (d) Treaty of Allahabad — with years (1) 1784 (2) 1773 (3) 1765 (4) 1781. Which option correctly matches all four?",
+    options: ["a-2, b-4, c-1, d-3", "a-1, b-2, c-3, d-4", "a-2, b-1, c-4, d-3", "a-4, b-2, c-1, d-3"],
+    answer: 0,
+    explain: "Regulating Act = 1773, Amending Act = 1781, Pitt's India Act = 1784, Treaty of Allahabad = 1765."
+  },
+  {
+    type: "Statement-based",
+    q: "Consider these statements about Diwani rights: (1) They include the right to collect land revenue. (2) They were granted via the Treaty of Allahabad, 1765. (3) They refer to policing and criminal-justice administration. Which are correct?",
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explain: "Statement 3 describes Nizamat, not Diwani. Diwani = revenue + civil justice, granted via the Treaty of Allahabad, 1765."
+  },
+  {
+    type: "Assertion / Reason",
+    q: "Assertion (A): The Regulating Act, 1773 is regarded as the first step towards centralisation of administration in India. Reason (R): It made the Governors of Bombay and Madras subordinate to the Governor-General of Bengal. Which is correct?",
+    options: ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is NOT the correct explanation of A", "A is true, R is false", "A is false, R is true"],
+    answer: 0,
+    explain: "Subordinating Bombay and Madras to Bengal's Governor-General is precisely why the Act is seen as the first centralising step."
+  },
+  {
+    type: "Incorrect statement",
+    q: "Which statement about the Amending Act of 1781 is INCORRECT?",
+    options: ["It is also called the Act of Settlement", "It clearly separated the Company's commercial and political functions", "It restricted the Supreme Court's jurisdiction to Calcutta", "It empowered the Governor-General-in-Council to frame regulations for provincial courts"],
+    answer: 1,
+    explain: "Separating commercial from political functions (Court of Directors vs Board of Control) was done by Pitt's India Act, 1784 — not the Amending Act, 1781, whose core contribution was separating the executive from the judiciary."
+  },
+  {
+    type: "Multiple statements",
+    q: "Statement I: The Board of Control was established by the Regulating Act of 1773. Statement II: The Board of Control was established by Pitt's India Act of 1784. Which is correct?",
+    options: ["Only Statement I is correct", "Only Statement II is correct", "Both statements are correct", "Neither statement is correct"],
+    answer: 1,
+    explain: "The Board of Control is exclusively a creation of the Pitt's India Act, 1784. It did not exist under the 1773 Act."
+  },
+  {
+    type: "Pair matching",
+    q: "Which of these pairs is INCORRECTLY matched?",
+    options: ["Warren Hastings — First Governor-General of Bengal", "Elijah Impey — First Chief Justice, Supreme Court at Calcutta", "Lord North — Piloted the Pitt's India Act, 1784", "Robert Clive — Negotiated the Treaty of Allahabad, 1765"],
+    answer: 2,
+    explain: "Lord North was Prime Minister when the Regulating Act (1773) was passed. Pitt's India Act (1784) was piloted by William Pitt the Younger."
+  },
+  {
+    type: "Location-based",
+    q: "The first Supreme Court in India (1774) was established at:",
+    options: ["Bombay", "Madras", "Calcutta", "Delhi"],
+    answer: 2,
+    explain: "The Supreme Court was established at Calcutta (Fort William) in 1774, under the Regulating Act, 1773."
+  },
+  {
+    type: "Cause-effect",
+    q: "The immediate financial trigger that pushed the British Parliament to pass the Regulating Act of 1773 was:",
+    options: ["The Battle of Buxar", "The East India Company's bankruptcy-like financial crisis and bailout request", "The Revolt of 1857", "The Battle of Plassey"],
+    answer: 1,
+    explain: "The Company's reported loss (~£1 million) and its request for a Government loan directly led Parliament to attach regulatory conditions — the Regulating Act."
+  },
+  {
+    type: "Direct factual (from lecture)",
+    q: "As referenced in this lecture series, which edition of M. Laxmikanth's 'Indian Polity' forms the base text for the 2024–25 run?",
+    options: ["5th Edition", "6th Edition", "7th Edition", "8th Edition"],
+    answer: 2,
+    explain: "The lecturer explicitly says the earlier 2019 series used the 5th edition; this updated series is based on the 7th edition."
+  },
+  {
+    type: "Statement-based (trap)",
+    q: "Which of the following correctly describes a 'Dual/Double Government' arrangement from this period?",
+    options: ["Under Robert Clive's 1765 arrangement in Bengal, Diwani (revenue) was held by the Company while Nizamat (police/justice) remained with the Nawab's deputy", "Under Pitt's India Act, 1784, commercial affairs were handled by the Board of Control and political affairs by the Court of Directors", "Both A and B describe the same 1765 arrangement", "None of the above"],
+    answer: 0,
+    explain: "Option B swaps the roles — under Pitt's Act, the Court of Directors handled commercial affairs and the Board of Control handled political affairs, the reverse of what's stated."
+  },
+  {
+    type: "Assertion / Reason",
+    q: "Assertion (A): The East India Company's charter was subject to periodic Parliamentary renewal after 1773. Reason (R): This gave Parliament a recurring mechanism to review and modify the Company's rights and administration. Which is correct?",
+    options: ["Both A and R are true, and R correctly explains A", "Both A and R are true, but R does not explain A", "A is true, R is false", "A is false, R is true"],
+    answer: 0,
+    explain: "The ~20-year renewal cycle (1773, 1793, 1813, 1833, 1853) was precisely this kind of periodic review mechanism."
+  },
+  {
+    type: "Direct factual",
+    q: "Nadir Shah's invasion of India, closely associated with the collapse of Mughal central authority, occurred in:",
+    options: ["1707", "1739", "1757", "1764"],
+    answer: 1,
+    explain: "Nadir Shah defeated the Mughal army at the Battle of Karnal on 24 February 1739 and subsequently sacked Delhi."
+  },
+  {
+    type: "Match the following",
+    q: "Match the battle with its key outcome: (a) Battle of Plassey, 1757 (b) Battle of Buxar, 1764 — with outcomes (i) Established unquestioned Company military supremacy over a combined Indian force (ii) Gave the Company its first political foothold in Bengal via Mir Jafar",
+    options: ["a-ii, b-i", "a-i, b-ii", "a-i, b-i", "a-ii, b-ii"],
+    answer: 0,
+    explain: "Plassey (a) gave the first foothold via betrayal (ii); Buxar (b) proved outright supremacy over a combined front (i)."
+  }
+];
+
+const ACTIVE_RECALL_DATA = [
+  ["What does the term 'Charter' mean in the context of the East India Company?", "A trading licence granted by the Crown; the Company's 1600 charter was exclusive, making it a monopoly."],
+  ["Why is the Company sometimes described as 'more than a company'?", "Because it was backed by the English state and carried forward the Crown's imperial policy, with many officers who were also politicians."],
+  ["Which emperor's permission allowed the Company to set up its Surat factory?", "Jahangir."],
+  ["What was the political consequence of Nadir Shah's 1739 invasion?", "It shattered Mughal central authority, causing fragmentation that the Company exploited via Divide and Rule."],
+  ["Name the Nawab defeated at Plassey and the man who betrayed him.", "Siraj-ud-Daulah was defeated; Mir Jafar betrayed him."],
+  ["Why do exams treat Buxar (1764) as more significant than Plassey (1757)?", "Buxar defeated a combined front of three powers, establishing unquestioned Company military supremacy, whereas Plassey succeeded mainly through betrayal against a single Nawab."],
+  ["Who were the three parties defeated by the Company at Buxar?", "Mir Qasim, Shuja-ud-Daulah (Nawab of Awadh), and Shah Alam II (Mughal Emperor)."],
+  ["What specific right did the Treaty of Allahabad (1765) transfer to the Company?", "Diwani rights — revenue collection and civil justice — over Bengal, Bihar and Odisha."],
+  ["Differentiate Diwani from Nizamat.", "Diwani = revenue collection + civil justice (went to the Company); Nizamat = police + criminal justice + military administration (nominally stayed with the Nawab's deputy)."],
+  ["What is the 'Dual Government of Bengal' and who introduced it?", "The 1765 split of Diwani (Company) and Nizamat (Nawab's deputy); introduced under Robert Clive, ended by Warren Hastings in 1772."],
+  ["Explain the 'legitimacy' concept discussed with the tax-collector analogy.", "Before Buxar, Company revenue extraction looked like extortion; after gaining official Diwani rights, the same extraction became legitimate 'taxation,' changing its perceived character even though the money flow was similar."],
+  ["What triggered the East India Company's financial crisis in the early 1770s?", "Despite huge revenue from Diwani rights, large-scale personal corruption by Company officers left the Company reporting a loss and needing a bailout."],
+  ["What condition did the British Government attach to the Company's bailout?", "A 'quid pro quo': rescue in exchange for the right to regulate/control the Company — this led to the Regulating Act, 1773."],
+  ["Who piloted the Regulating Act, 1773 in the British Parliament?", "Prime Minister Lord North."],
+  ["List the four main features of the Regulating Act, 1773.", "(1) Governor of Bengal → Governor-General of Bengal; (2) 4-member Executive Council; (3) Bombay & Madras Governors subordinated to Bengal; (4) Supreme Court at Calcutta established (1774)."],
+  ["What additional restriction did the Regulating Act place on Company officers?", "Banned private trade and accepting gifts/bribes; required the Court of Directors to report to the British Government."],
+  ["Why is 'Board of Control' a trap answer for the Regulating Act, 1773?", "The Board of Control was created only in 1784 by Pitt's India Act — it did not exist under the 1773 Act."],
+  ["Why did the Regulating Act, 1773 fail?", "It lacked clarity on the respective powers of the Supreme Court, the Governor-General-in-Council, and the Court of Directors, leading to institutional clashes."],
+  ["What is the alternate name for the Amending Act, 1781?", "The Act of Settlement."],
+  ["What is the single biggest constitutional contribution of the Amending Act, 1781?", "The first attempt at Separation of Powers in India — clearly separating the Executive (Governor-General-in-Council) from the Judiciary (Supreme Court)."],
+  ["How did the Amending Act, 1781 limit the Supreme Court?", "Restricted its jurisdiction to Calcutta and exempted officials acting in their official capacity from its reach."],
+  ["Under the Amending Act, 1781, where did provincial-court appeals go?", "To the Governor-General-in-Council, not directly to the Supreme Court."],
+  ["Who is Pitt's India Act, 1784 named after?", "British Prime Minister William Pitt 'the Younger.'"],
+  ["Describe the System of Double Government introduced in 1784.", "Commercial affairs stayed with the Company's Court of Directors; political, military and revenue affairs were transferred to a newly created, Crown-appointed Board of Control."],
+  ["Why was Pitt's India Act a bigger leap in British control than the Regulating Act?", "The Regulating Act only made the Company report to Parliament; Pitt's Act gave the British Government direct supreme control over political, military and revenue decisions via the Board of Control."],
+  ["Until when did the 1784 System of Double Government last, and what ended it?", "It lasted until 1858, ended by the Government of India Act, 1858, which abolished Company rule and began direct Crown Rule."],
+  ["Differentiate 'Company Raj' from 'Crown Raj.'", "Company Raj (~1757/1773–1858): Britain controlled the Company, which ruled India. Crown Raj (1858–1947): the British Crown ruled India directly."],
+  ["Why shouldn't you call the Regulating Act, 1773 a 'Charter Act'?", "Standard nomenclature reserves 'Charter Act' for the later renewals (1793, 1813, 1833, 1853); 1773 is specifically the 'Regulating Act.'"],
+  ["What is the recurring renewal cycle for the Company's charter after 1773?", "Roughly every 20 years: 1773 → 1793 → 1813 → 1833 → 1853."]
+];
+
+/* ============================================================
+   RENDER: MCQ static list
+   ============================================================ */
+function renderStaticMCQs(){
+  const wrap = document.getElementById('mcq-static-list');
+  const letters = ['A','B','C','D'];
+  MCQ_DATA.forEach((m,i)=>{
+    const div = document.createElement('div');
+    div.className = 'mcq-item searchable';
+    let optsHtml = m.options.map((o,j)=>`<li>${letters[j]}. ${o}</li>`).join('');
+    div.innerHTML = `
+      <div class="qtype">${m.type} · Q${i+1}</div>
+      <p><b>${m.q}</b></p>
+      <ul class="mcq-opts">${optsHtml}</ul>
+      <details class="reveal-ans"><summary>Show answer & explanation</summary>
+        <p><b>Correct answer: ${letters[m.answer]}. ${m.options[m.answer]}</b></p>
+        <p>${m.explain}</p>
+      </details>`;
+    wrap.appendChild(div);
+  });
+}
+
+/* ============================================================
+   RENDER: Active recall
+   ============================================================ */
+function renderActiveRecall(){
+  const wrap = document.getElementById('active-recall-list');
+  ACTIVE_RECALL_DATA.forEach(([q,a])=>{
+    const d = document.createElement('details');
+    d.className = 'recall searchable';
+    d.innerHTML = `<summary>${q}</summary><div class="ans">${a}</div>`;
+    wrap.appendChild(d);
+  });
+}
+
+/* ============================================================
+   INTERACTIVE QUIZ
+   ============================================================ */
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+let quizWrong = [];
+
+function renderQuizQuestion(){
+  const area = document.getElementById('quiz-question-area');
+  const m = MCQ_DATA[quizIndex];
+  const letters = ['A','B','C','D'];
+  document.getElementById('quiz-progress').textContent = `Question ${quizIndex+1} of ${MCQ_DATA.length}`;
+  document.getElementById('quiz-explain').style.display = 'none';
+  document.getElementById('quiz-next-btn').style.display = 'none';
+  quizAnswered = false;
+  area.innerHTML = `<div class="qtype">${m.type}</div><p><b>${m.q}</b></p>`;
+  m.options.forEach((opt,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.textContent = `${letters[i]}. ${opt}`;
+    btn.onclick = () => handleQuizAnswer(i, btn);
+    area.appendChild(btn);
+  });
+}
+
+function handleQuizAnswer(i, btnEl){
+  if(quizAnswered) return;
+  quizAnswered = true;
+  const m = MCQ_DATA[quizIndex];
+  const allBtns = document.querySelectorAll('#quiz-question-area .quiz-option');
+  allBtns.forEach(b=>b.disabled = true);
+  if(i === m.answer){
+    btnEl.classList.add('correct');
+    quizScore++;
+  } else {
+    btnEl.classList.add('incorrect');
+    allBtns[m.answer].classList.add('correct');
+    quizWrong.push(quizIndex);
+  }
+  const explainBox = document.getElementById('quiz-explain');
+  explainBox.style.display = 'block';
+  explainBox.innerHTML = `<b>${i===m.answer ? 'Correct!' : 'Not quite.'}</b> ${m.explain}`;
+  const nextBtn = document.getElementById('quiz-next-btn');
+  nextBtn.style.display = 'inline-block';
+  nextBtn.textContent = (quizIndex === MCQ_DATA.length-1) ? 'See final score →' : 'Next question →';
+}
+
+function quizNext(){
+  quizIndex++;
+  if(quizIndex >= MCQ_DATA.length){
+    showQuizResult();
+  } else {
+    renderQuizQuestion();
+  }
+}
+
+function showQuizResult(){
+  document.getElementById('quiz-progress').style.display='none';
+  document.getElementById('quiz-question-area').innerHTML='';
+  document.getElementById('quiz-explain').style.display='none';
+  document.getElementById('quiz-next-btn').style.display='none';
+  const pct = Math.round((quizScore/MCQ_DATA.length)*100);
+  let reviewHtml = '';
+  if(quizWrong.length){
+    reviewHtml = '<h4>Review these:</h4><ul style="text-align:left; font-family:var(--ui-font); font-size:.9rem;">' +
+      quizWrong.map(idx=>`<li>${MCQ_DATA[idx].q}</li>`).join('') + '</ul>';
+  } else {
+    reviewHtml = '<p>Clean sweep — no incorrect answers this round.</p>';
+  }
+  const resultBox = document.getElementById('quiz-result');
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = `
+    <div class="score-num">${quizScore}/${MCQ_DATA.length}</div>
+    <p style="font-family:var(--ui-font);">${pct}% correct</p>
+    ${reviewHtml}
+    <button class="quiz-nav-btn" id="quiz-restart-btn">Restart quiz</button>`;
+  document.getElementById('quiz-restart-btn').onclick = restartQuiz;
+}
+
+function restartQuiz(){
+  quizIndex = 0; quizScore = 0; quizWrong = [];
+  document.getElementById('quiz-progress').style.display='block';
+  document.getElementById('quiz-result').style.display='none';
+  renderQuizQuestion();
+}
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+function initTheme(){
+  const saved = localStorage.getItem('hu-ep1-theme');
+  if(saved === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
+  document.getElementById('theme-toggle').onclick = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if(isDark){
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('hu-ep1-theme','light');
+    } else {
+      document.documentElement.setAttribute('data-theme','dark');
+      localStorage.setItem('hu-ep1-theme','dark');
+    }
+  };
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+function initProgressBar(){
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = scrolled + '%';
+  });
+}
+
+/* ============================================================
+   TOC TOGGLE (mobile)
+   ============================================================ */
+function initTocToggle(){
+  const nav = document.getElementById('toc-nav');
+  const btn = document.getElementById('toc-toggle');
+  nav.setAttribute('data-collapsed','true');
+  btn.onclick = () => {
+    const collapsed = nav.getAttribute('data-collapsed') === 'true';
+    nav.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
+  };
+}
+
+/* ============================================================
+   REVISION TRACKER (localStorage)
+   ============================================================ */
+function initTracker(){
+  const ids = ['trk-day0','trk-day1','trk-day3','trk-day7','trk-day14','trk-day30'];
+  const key = 'hu-ep1-tracker';
+  let saved = {};
+  try{ saved = JSON.parse(localStorage.getItem(key) || '{}'); }catch(e){ saved = {}; }
+  ids.forEach(id=>{
+    const el = document.getElementById(id);
+    if(saved[id]) el.checked = true;
+    el.addEventListener('change', ()=>{
+      saved[id] = el.checked;
+      localStorage.setItem(key, JSON.stringify(saved));
+    });
+  });
+  document.getElementById('tracker-reset').onclick = () => {
+    ids.forEach(id=>{ document.getElementById(id).checked = false; });
+    localStorage.removeItem(key);
+  };
+}
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+function initSearch(){
+  const box = document.getElementById('search-box');
+  const countEl = document.getElementById('search-count');
+  box.addEventListener('input', ()=>{
+    const q = box.value.trim().toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+    let visible = 0;
+    let total = 0;
+    items.forEach(item=>{
+      // treat table rows and top-level items as searchable leaves;
+      // if an item contains nested .searchable elements, skip filtering the parent itself
+      if(item.querySelector('.searchable')) return;
+      total++;
+      const text = item.textContent.toLowerCase();
+      const match = q === '' || text.includes(q);
+      item.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+    countEl.textContent = q === '' ? '' : `${visible}/${total} match`;
+  });
+}
+
+/* ============================================================
+   PRINT: force-open all details
+   ============================================================ */
+window.addEventListener('beforeprint', ()=>{
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open',''));
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderStaticMCQs();
+  renderActiveRecall();
+  renderQuizQuestion();
+  document.getElementById('quiz-next-btn').addEventListener('click', quizNext);
+  initTheme();
+  initProgressBar();
+  initTocToggle();
+  initTracker();
+  initSearch();
+});
+</script>
+</body>
+</html>
