@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP SI 2026 — Subject &amp; Topic Priority Report</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d212b; --border:#2a2f3a;
+    --text:#e8eaf0; --muted:#9aa2b1; --accent:#ff8a3d; --accent2:#4fd1c5;
+    --high:#ff5c5c; --med:#ffc857; --low:#6bcf7f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans Devanagari",Arial,sans-serif;
+    line-height:1.55; padding-bottom:60px;
+  }
+  header.top{
+    background:linear-gradient(135deg,#1a1d25,#20242e);
+    padding:32px 20px 24px; border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:5;
+  }
+  header.top h1{margin:0 0 6px; font-size:1.5rem; color:#fff;}
+  header.top p{margin:2px 0; color:var(--muted); font-size:.92rem;}
+  .badge{display:inline-block; padding:3px 10px; border-radius:20px; font-size:.75rem; font-weight:600; margin-right:6px;}
+  .badge.date{background:rgba(255,138,61,.15); color:var(--accent); border:1px solid rgba(255,138,61,.4);}
+  .badge.days{background:rgba(79,209,197,.15); color:var(--accent2); border:1px solid rgba(79,209,197,.4);}
+  nav.toc{
+    display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px; background:var(--card);
+    border-bottom:1px solid var(--border); position:sticky; top:96px; z-index:4; font-size:.82rem;
+  }
+  nav.toc a{color:var(--muted); text-decoration:none; padding:5px 10px; border:1px solid var(--border); border-radius:16px;}
+  nav.toc a:hover{color:var(--text); border-color:var(--accent);}
+  main{max-width:920px; margin:0 auto; padding:24px 18px;}
+  section{margin-bottom:44px;}
+  h2{font-size:1.25rem; color:#fff; border-left:4px solid var(--accent); padding-left:10px; margin-bottom:14px;}
+  h3{font-size:1.05rem; color:var(--accent2); margin:22px 0 8px;}
+  .card{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin-bottom:16px;}
+  .note{background:rgba(255,200,87,.08); border:1px solid rgba(255,200,87,.35); border-radius:10px; padding:14px 16px; font-size:.9rem; color:#f0dca0;}
+  .note.important{background:rgba(255,92,92,.08); border-color:rgba(255,92,92,.4); color:#ffb3b3;}
+  .note.good{background:rgba(107,207,127,.08); border-color:rgba(107,207,127,.4); color:#bdf0c6;}
+  table{width:100%; border-collapse:collapse; margin:10px 0 4px; font-size:.88rem;}
+  th, td{border:1px solid var(--border); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--card2); color:#fff; font-weight:600;}
+  tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+  .pri{padding:2px 9px; border-radius:12px; font-size:.75rem; font-weight:700; white-space:nowrap; display:inline-block;}
+  .pri.high{background:rgba(255,92,92,.18); color:var(--high);}
+  .pri.med{background:rgba(255,200,87,.18); color:var(--med);}
+  .pri.low{background:rgba(107,207,127,.18); color:var(--low);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;} nav.toc{top:88px;}}
+  .stat{background:var(--card2); border-radius:10px; padding:12px 14px; text-align:center;}
+  .stat b{display:block; font-size:1.3rem; color:var(--accent);}
+  .stat span{font-size:.75rem; color:var(--muted);}
+  .statgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:10px;}
+  @media(max-width:640px){.statgrid{grid-template-columns:repeat(2,1fr);}}
+  footer{max-width:920px; margin:30px auto 0; padding:0 18px; color:var(--muted); font-size:.8rem; text-align:center;}
+  ul{margin:6px 0; padding-left:20px;}
+  li{margin-bottom:3px;}
+  code{background:var(--card2); padding:1px 6px; border-radius:4px; font-size:.85em;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>MP SI 2026 (Prelims) — Subject &amp; Topic-wise Priority Report</h1>
+  <p>Rahul ke liye | MPESB Subedar / Sub-Inspector Cadre Selection Exam 2026 | 507 posts</p>
+  <p><span class="badge date">Prelims: 28 Oct 2026</span><span class="badge days">Aaj se ~45 din baaki (13 Sep 2026 se)</span></p>
+</header>
+
+<nav class="toc">
+  <a href="#snapshot">Exam Snapshot</a>
+  <a href="#matrix">Subject Priority Matrix</a>
+  <a href="#history">History</a>
+  <a href="#geography">Geography</a>
+  <a href="#science">Science</a>
+  <a href="#civics">Civics</a>
+  <a href="#currentaffairs">Current Affairs</a>
+  <a href="#computer">Computer</a>
+  <a href="#reasoning">Reasoning</a>
+  <a href="#analytical">Analytical/Quant</a>
+  <a href="#hindi">Hindi</a>
+  <a href="#english">English</a>
+  <a href="#strategy">Time Allocation</a>
+  <a href="#mains">Mains Preview</a>
+  <a href="#caveat">Caveat</a>
+</nav>
+
+<main>
+
+<section id="snapshot">
+  <h2>1. Exam Snapshot</h2>
+  <div class="statgrid">
+    <div class="stat"><b>100</b><span>Total Marks</span></div>
+    <div class="stat"><b>100</b><span>Questions (MCQ)</span></div>
+    <div class="stat"><b>2 hrs</b><span>Duration</span></div>
+    <div class="stat"><b>0</b><span>Negative Marking</span></div>
+  </div>
+  <div class="card">
+    <p><b>Selection funnel:</b> Prelims (screening only, marks carry-forward nahi hote) → Mains (2 papers, 600 marks, 1/3 negative marking) → Physical Test (100) → Interview (50) → Document Verification.</p>
+    <p><b>Vacancies:</b> 507 total — Subedar 81, SI District Police Force 312, SI Special Armed Force 69, Technical SI (Arms/Photo/QD/Fingerprint) 45.</p>
+    <p><b>Prelims ka role:</b> Sirf shortlisting ke liye hai (~10x vacancies Mains ke liye qualify karte hain) — matlab yahan accuracy + coverage zyada important hai speed se bhi zyada, kyunki koi negative marking nahi hai.</p>
+  </div>
+</section>
+
+<section id="matrix">
+  <h2>2. Subject-wise Priority Matrix (10 Subjects)</h2>
+  <div class="note important">MPESB ne Prelims ke liye per-subject marks split officially publish nahi kiya — sirf 10 subject names diye hain, total 100 marks/questions. Neeche wala estimate (~10 Q har subject) aur priority ranking standard MPESB/Vyapam-style GK exam pattern + tumhare MPPSC background ko dekh ke banayi gayi hai, koi official confirmed split nahi hai.</div>
+  <table>
+    <tr><th>#</th><th>Subject</th><th>Est. Qs</th><th>Priority</th><th>Reason (tumhare context me)</th></tr>
+    <tr><td>1</td><td>History (इतिहास)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>MPPSC prep se base already strong — sirf MP History layer add karni hai</td></tr>
+    <tr><td>2</td><td>Geography (भूगोल)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>Same — MP Geography (nadiyan, parvat, park) add karo</td></tr>
+    <tr><td>3</td><td>Civics (नागरिक शास्त्र)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>MPPSC Polity se overlap — MP Vidhan Sabha/Panchayati Raj add karo</td></tr>
+    <tr><td>4</td><td>Science (विज्ञान)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>School-level GK, kam time me max score — high ROI</td></tr>
+    <tr><td>5</td><td>Current Affairs</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>Zero backlog allowed — roz ka kaam, exam ke paas revise karo</td></tr>
+    <tr><td>6</td><td>Reasoning (तर्कशक्ति)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>MPPSC me kam cover hota hai — sabse bada NEW skill gap, daily practice zaroori</td></tr>
+    <tr><td>7</td><td>Analytical Ability (Quant)</td><td>~10</td><td><span class="pri high">HIGH</span></td><td>Same as reasoning — naya area, daily practice se hi accuracy aayegi</td></tr>
+    <tr><td>8</td><td>Basic Computer Knowledge</td><td>~10</td><td><span class="pri med">MEDIUM-HIGH</span></td><td>Chhota fixed syllabus, jaldi 8-9/10 tak le ja sakte ho</td></tr>
+    <tr><td>9</td><td>Hindi Bhasha Bodh</td><td>~10</td><td><span class="pri med">MEDIUM</span></td><td>Native strength — sirf vyakaran rules revise karo</td></tr>
+    <tr><td>10</td><td>English Bhasha Bodh</td><td>~10</td><td><span class="pri med">MEDIUM (weak-spot risk)</span></td><td>Hindi-medium candidates ke liye typically sabse kamzor area — daily thoda practice</td></tr>
+  </table>
+  <p class="card">Chunki har subject ka weight roughly barabar hai aur negative marking nahi hai, <b>koi bhi subject skip mat karo</b> — attempt karne layak base sabme banao. "Priority" ka matlab hai <i>effort allocation</i>: History/Geography/Civics/Science me tumhara MPPSC-driven base already accha hai (kam naya kaam), jabki Reasoning/Analytical/Computer/English me zyada fresh time dena hoga.</p>
+</section>
+
+<section id="history">
+  <h2>3. History (इतिहास) — Topic-wise</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>सिंधु घाटी सभ्यता (Indus Valley)</td><td><span class="pri high">HIGH</span></td><td>Sites, town planning, seals — classic GK staple</td></tr>
+    <tr><td>वैदिक काल, जैन धर्म, बौद्ध धर्म</td><td><span class="pri high">HIGH</span></td><td>Founders, teachings, councils — repeatedly asked</td></tr>
+    <tr><td>मौर्य साम्राज्य (Ashoka, administration)</td><td><span class="pri high">HIGH</span></td><td>Edicts, Kalinga war, Arthashastra</td></tr>
+    <tr><td>गुप्त साम्राज्य + हर्षवर्धन</td><td><span class="pri high">HIGH</span></td><td>Golden age facts, Fa-Hien/Hiuen Tsang</td></tr>
+    <tr><td>दिल्ली सल्तनत (Khilji, Tughlaq, Lodi)</td><td><span class="pri high">HIGH</span></td><td>Founders, key rulers, major events</td></tr>
+    <tr><td>विजयनगर व बहमनी साम्राज्य</td><td><span class="pri med">MEDIUM</span></td><td>Founders + capital enough</td></tr>
+    <tr><td>भक्ति व सूफी आंदोलन</td><td><span class="pri med">MEDIUM</span></td><td>Key saints and their teachings</td></tr>
+    <tr><td>मुगल साम्राज्य (Babar–Aurangzeb)</td><td><span class="pri high">HIGH</span></td><td>Har ruler ke important events/battles — high-frequency</td></tr>
+    <tr><td>यूरोपीय कंपनियों का आगमन</td><td><span class="pri med">MEDIUM</span></td><td>Portuguese/Dutch/French/British sequence</td></tr>
+    <tr><td>1857 की क्रांति</td><td><span class="pri high">HIGH</span></td><td>Causes, leaders (incl. MP ke — Tantia Tope, Rani Avantibai), results</td></tr>
+    <tr><td>सामाजिक-धार्मिक सुधार आंदोलन</td><td><span class="pri high">HIGH</span></td><td>Brahmo Samaj, Arya Samaj, etc. — founder+year MCQs common</td></tr>
+    <tr><td>कांग्रेस की स्थापना व अधिवेशन</td><td><span class="pri high">HIGH</span></td><td>Sessions, presidents, venues — very high frequency</td></tr>
+    <tr><td>क्रांतिकारी आंदोलन (Ghadar, HSRA etc.)</td><td><span class="pri med">MEDIUM</span></td><td>Key names, organisations</td></tr>
+    <tr><td>गांधी युग (NCM, CDM, QIM)</td><td><span class="pri high">HIGH</span></td><td>Dates, causes, outcomes — core topic</td></tr>
+    <tr><td>प्रमुख अधिनियम (Acts 1773–1947)</td><td><span class="pri high">HIGH</span></td><td>Regulating Act se Independence Act tak — sequence yaad rakho</td></tr>
+    <tr><td>गवर्नर जनरल/वायसराय सूची</td><td><span class="pri high">HIGH</span></td><td>Kis viceroy ke time kya hua — bahut common GK Q</td></tr>
+    <tr><td>स्वतंत्रता के बाद एकीकरण (Sardar Patel, states merger)</td><td><span class="pri med">MEDIUM</span></td><td>Princely states, MP-related merger bhi (Gwalior/Indore/Bhopal)</td></tr>
+    <tr><td>विश्व इतिहास (French/Russian Revolution, WWI, WWII, Fascism)</td><td><span class="pri low">LOW</span></td><td>State police GK me rarely core, par ek-do MCQ aa sakta hai — sirf basic facts (saal, key figures) yaad rakho</td></tr>
+  </table>
+  <h3>MP History (राज्य-विशिष्ट) — हमेशा HIGH</h3>
+  <ul>
+    <li>MP ke प्राचीन राजवंश: परमार, चंदेल, कलचुरी, होल्कर (Indore), सिंधिया (Gwalior), भोपाल रियासत</li>
+    <li>1857 में MP: तात्या टोपे, रानी अवंतीबाई लोधी, शंकर शाह-रघुनाथ शाह (जबलपुर), झांसी-ग्वालियर connection</li>
+    <li>MP राज्य निर्माण (1956 पुनर्गठन), राजधानी भोपाल बनने का इतिहास</li>
+    <li>MP से जुड़े स्वतंत्रता सेनानी (चंद्रशेखर आजाद जन्म स्थान, आदि)</li>
+    <li>महत्वपूर्ण स्मारक/धरोहर स्थल (Sanchi, Khajuraho) — history + culture angle दोनों</li>
+  </ul>
+</section>
+
+<section id="geography">
+  <h2>4. Geography (भूगोल) — Topic-wise</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>भारत की भौतिक संरचना (Himalaya, plains, plateau)</td><td><span class="pri high">HIGH</span></td><td>Basic classification, key ranges/peaks</td></tr>
+    <tr><td>भारत की नदियाँ (Ganga, Yamuna, Narmada system)</td><td><span class="pri high">HIGH</span></td><td>Origin, tributaries, dams — always asked</td></tr>
+    <tr><td>जलवायु व मानसून</td><td><span class="pri med">MEDIUM</span></td><td>Basic seasons + monsoon mechanism</td></tr>
+    <tr><td>मृदा के प्रकार</td><td><span class="pri med">MEDIUM</span></td><td>Alluvial/black/red soil — region-wise</td></tr>
+    <tr><td>कृषि व फसलें</td><td><span class="pri med">MEDIUM</span></td><td>Major crop belts, Green Revolution facts</td></tr>
+    <tr><td>खनिज व उद्योग</td><td><span class="pri high">HIGH</span></td><td>Coal, iron ore, industrial regions — high frequency</td></tr>
+    <tr><td>जनसंख्या/जनगणना 2011</td><td><span class="pri high">HIGH</span></td><td>Density, sex ratio, literacy stats — very common</td></tr>
+    <tr><td>विश्व भूगोल (महाद्वीप, महासागर, बुनियादी तथ्य)</td><td><span class="pri low">LOW</span></td><td>Sirf famous landmarks/records level</td></tr>
+  </table>
+  <h3>MP Geography (राज्य-विशिष्ट) — हमेशा HIGH</h3>
+  <ul>
+    <li>MP की नदियाँ: नर्मदा, ताप्ती, बेतवा, चंबल, सोन, क्षिप्रा — उद्गम/सहायक नदियाँ</li>
+    <li>MP की पर्वत श्रृंखलाएँ: विंध्याचल, सतपुड़ा, मैकाल, धूपगढ़ (सबसे ऊँची चोटी)</li>
+    <li>राष्ट्रीय उद्यान/वन्यजीव अभयारण्य: कान्हा, बांधवगढ़, पेंच, सतपुड़ा, पन्ना</li>
+    <li>MP के खनिज संसाधन: हीरा (पन्ना), कोयला, मैंगनीज, ताँबा</li>
+    <li>MP के संभाग/जिले, सीमावर्ती राज्य, जलवायु व मिट्टी के प्रकार</li>
+    <li>MP की जनसंख्या/जनगणना संबंधी आँकड़े (2011)</li>
+  </ul>
+</section>
+
+<section id="science">
+  <h2>5. Science (विज्ञान) — Topic-wise</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>भौतिकी (गति, बल, प्रकाश, ध्वनि, ऊष्मा — बेसिक)</td><td><span class="pri high">HIGH</span></td><td>School (9th-10th) level concepts, direct fact-based MCQs</td></tr>
+    <tr><td>रसायन विज्ञान (तत्व, अम्ल-क्षार, रोज़मर्रा की रसायन)</td><td><span class="pri high">HIGH</span></td><td>Common compounds, everyday chemistry facts</td></tr>
+    <tr><td>जीव विज्ञान — मानव शरीर तंत्र</td><td><span class="pri high">HIGH</span></td><td>Organ systems, diseases, deficiency diseases — very high frequency</td></tr>
+    <tr><td>वनस्पति व जंतु वर्गीकरण</td><td><span class="pri med">MEDIUM</span></td><td>Basic classification facts</td></tr>
+    <tr><td>विज्ञान की खोजें/आविष्कार</td><td><span class="pri high">HIGH</span></td><td>Kisne kya banaya/discover kiya — classic GK</td></tr>
+    <tr><td>भारत के अंतरिक्ष कार्यक्रम (ISRO)</td><td><span class="pri high">HIGH</span></td><td>Missions, current developments — overlaps Current Affairs bhi</td></tr>
+  </table>
+</section>
+
+<section id="civics">
+  <h2>6. Civics (नागरिक शास्त्र) — Topic-wise</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>संविधान की प्रस्तावना, विशेषताएँ</td><td><span class="pri high">HIGH</span></td><td>Direct fact recall</td></tr>
+    <tr><td>मौलिक अधिकार व कर्तव्य</td><td><span class="pri high">HIGH</span></td><td>Articles-wise breakdown — very high frequency</td></tr>
+    <tr><td>राज्य के नीति निदेशक तत्व (DPSP)</td><td><span class="pri med">MEDIUM</span></td><td>Key articles</td></tr>
+    <tr><td>संघ कार्यपालिका (राष्ट्रपति, PM)</td><td><span class="pri high">HIGH</span></td><td>Powers, election process, tenure facts</td></tr>
+    <tr><td>राज्य कार्यपालिका (राज्यपाल, CM)</td><td><span class="pri high">HIGH</span></td><td>MP ke context me bhi relevant</td></tr>
+    <tr><td>संसद व राज्य विधानमंडल</td><td><span class="pri med">MEDIUM</span></td><td>Composition, sessions, bill process basics</td></tr>
+    <tr><td>न्यायपालिका (Supreme Court, High Court)</td><td><span class="pri med">MEDIUM</span></td><td>Structure, jurisdiction basics</td></tr>
+    <tr><td>पंचायती राज व स्थानीय स्वशासन</td><td><span class="pri high">HIGH</span></td><td>73rd/74th amendment — state exams me high frequency</td></tr>
+    <tr><td>निर्वाचन आयोग व चुनाव प्रक्रिया</td><td><span class="pri med">MEDIUM</span></td><td>Basic composition, functions</td></tr>
+    <tr><td>राष्ट्रीय प्रतीक (ध्वज, गान, चिन्ह)</td><td><span class="pri med">MEDIUM</span></td><td>Static facts, quick to revise</td></tr>
+  </table>
+  <h3>MP Civics — HIGH</h3>
+  <ul>
+    <li>MP विधानसभा की संरचना, वर्तमान मुख्यमंत्री/राज्यपाल</li>
+    <li>MP में पंचायती राज व्यवस्था के त्रि-स्तरीय ढाँचे की विशेषताएँ</li>
+  </ul>
+</section>
+
+<section id="currentaffairs">
+  <h2>7. Current Affairs — Focus Areas</h2>
+  <table>
+    <tr><th>Area</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>राष्ट्रीय/अंतरराष्ट्रीय घटनाक्रम (last 6–8 महीने)</td><td><span class="pri high">HIGH</span></td><td>Sept 2026 tak ka coverage zaroori</td></tr>
+    <tr><td>MP सरकार की योजनाएँ/बजट</td><td><span class="pri high">HIGH</span></td><td>State-specific — SI exam me heavily favoured</td></tr>
+    <tr><td>खेल (पुरस्कार, टूर्नामेंट विजेता)</td><td><span class="pri high">HIGH</span></td><td>Recent tournaments, Olympics-adjacent facts</td></tr>
+    <tr><td>नियुक्तियाँ (राष्ट्रीय व राज्य स्तर)</td><td><span class="pri high">HIGH</span></td><td>New appointments in last few months</td></tr>
+    <tr><td>पुरस्कार व सम्मान</td><td><span class="pri med">MEDIUM</span></td><td>Padma awards, international awards</td></tr>
+    <tr><td>विज्ञान-तकनीक करेंट (ISRO, defence)</td><td><span class="pri high">HIGH</span></td><td>Recent missions/tests</td></tr>
+    <tr><td>महत्वपूर्ण दिवस</td><td><span class="pri med">MEDIUM</span></td><td>Dates + themes</td></tr>
+  </table>
+  <p class="card">Ye subject <b>exam ke last 2 hafton me sabse zyada revise</b> karne wala hai — ab se sirf ek monthly current affairs PDF/source follow karo, notes banate raho.</p>
+</section>
+
+<section id="computer">
+  <h2>8. Basic Computer Knowledge</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>कंप्यूटर की पीढ़ियाँ (Generations)</td><td><span class="pri high">HIGH</span></td><td>Direct fact-based</td></tr>
+    <tr><td>Hardware vs Software, Input/Output devices</td><td><span class="pri high">HIGH</span></td><td>Basic classification</td></tr>
+    <tr><td>MS Office basics (Word/Excel/PowerPoint)</td><td><span class="pri high">HIGH</span></td><td>Common shortcuts, file extensions</td></tr>
+    <tr><td>Internet व नेटवर्किंग बेसिक्स</td><td><span class="pri med">MEDIUM</span></td><td>LAN/WAN, browser, email basics</td></tr>
+    <tr><td>Abbreviations (RAM, ROM, CPU, URL etc.)</td><td><span class="pri high">HIGH</span></td><td>Very frequent MCQ format</td></tr>
+    <tr><td>Shortcut keys</td><td><span class="pri med">MEDIUM</span></td><td>Common Ctrl+ combinations</td></tr>
+  </table>
+</section>
+
+<section id="reasoning">
+  <h2>9. Reasoning (तर्कशक्ति)</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>Series (number/alphabet/mixed)</td><td><span class="pri high">HIGH</span></td><td>Daily practice se speed banti hai</td></tr>
+    <tr><td>Coding-Decoding</td><td><span class="pri high">HIGH</span></td><td>Pattern-based, practice-dependent</td></tr>
+    <tr><td>Blood Relations</td><td><span class="pri high">HIGH</span></td><td>High frequency, diagram practice se easy</td></tr>
+    <tr><td>Direction Sense</td><td><span class="pri med">MEDIUM</span></td><td>Basic diagram-based</td></tr>
+    <tr><td>Syllogism</td><td><span class="pri high">HIGH</span></td><td>Venn diagram method practice karo</td></tr>
+    <tr><td>Analogy व Classification</td><td><span class="pri high">HIGH</span></td><td>Quick scoring once pattern samajh aa jaye</td></tr>
+    <tr><td>Seating Arrangement (basic)</td><td><span class="pri med">MEDIUM</span></td><td>Linear/circular basics</td></tr>
+    <tr><td>Mirror/Water Image, Non-verbal</td><td><span class="pri med">MEDIUM</span></td><td>Diagram-based, thoda practice chahiye</td></tr>
+    <tr><td>Statement-Conclusion/Assumption</td><td><span class="pri med">MEDIUM</span></td><td>Logic-based, thoda tricky</td></tr>
+  </table>
+</section>
+
+<section id="analytical">
+  <h2>10. Analytical Ability (Quantitative)</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>सरलीकरण (Simplification)</td><td><span class="pri high">HIGH</span></td><td>Speed-building foundation</td></tr>
+    <tr><td>प्रतिशत (Percentage)</td><td><span class="pri high">HIGH</span></td><td>Base for many other topics</td></tr>
+    <tr><td>लाभ-हानि (Profit-Loss)</td><td><span class="pri high">HIGH</span></td><td>Very common</td></tr>
+    <tr><td>औसत (Average)</td><td><span class="pri med">MEDIUM</span></td><td>Direct formula-based</td></tr>
+    <tr><td>अनुपात-समानुपात (Ratio-Proportion)</td><td><span class="pri high">HIGH</span></td><td>High frequency</td></tr>
+    <tr><td>समय-कार्य, समय-चाल-दूरी</td><td><span class="pri high">HIGH</span></td><td>Formula-heavy, practice se fast hoga</td></tr>
+    <tr><td>साधारण व चक्रवृद्धि ब्याज (SI-CI)</td><td><span class="pri med">MEDIUM</span></td><td>Formula-based</td></tr>
+    <tr><td>क्षेत्रमिति (Mensuration) बेसिक</td><td><span class="pri med">MEDIUM</span></td><td>Area/perimeter basic shapes</td></tr>
+    <tr><td>Data Interpretation बेसिक</td><td><span class="pri med">MEDIUM</span></td><td>Bar/pie chart reading practice</td></tr>
+  </table>
+</section>
+
+<section id="hindi">
+  <h2>11. Hindi Bhasha Bodh</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>संधि, समास</td><td><span class="pri high">HIGH</span></td><td>Rule-based, revise karke fix ho jaata hai</td></tr>
+    <tr><td>पर्यायवाची व विलोम शब्द</td><td><span class="pri high">HIGH</span></td><td>Rote-learn list banao</td></tr>
+    <tr><td>मुहावरे-लोकोक्तियाँ</td><td><span class="pri high">HIGH</span></td><td>High frequency, common list revise karo</td></tr>
+    <tr><td>अनेकार्थी/अनेक शब्दों के लिए एक शब्द</td><td><span class="pri med">MEDIUM</span></td><td>List-based revision</td></tr>
+    <tr><td>शब्द शुद्धि / वाक्य शुद्धि</td><td><span class="pri med">MEDIUM</span></td><td>Grammar rule application</td></tr>
+    <tr><td>गद्यांश (Comprehension passage)</td><td><span class="pri high">HIGH</span></td><td>Practice se accuracy improve hoti hai</td></tr>
+  </table>
+</section>
+
+<section id="english">
+  <h2>12. English Bhasha Bodh</h2>
+  <table>
+    <tr><th>Topic</th><th>Priority</th><th>Note</th></tr>
+    <tr><td>Tenses & basic grammar</td><td><span class="pri high">HIGH</span></td><td>Foundation — daily thoda practice zaroori</td></tr>
+    <tr><td>Synonyms-Antonyms</td><td><span class="pri high">HIGH</span></td><td>Vocabulary list banao aur daily revise karo</td></tr>
+    <tr><td>One word substitution</td><td><span class="pri med">MEDIUM</span></td><td>Common list-based</td></tr>
+    <tr><td>Error spotting / Spelling correction</td><td><span class="pri med">MEDIUM</span></td><td>Rule-based practice</td></tr>
+    <tr><td>Comprehension passage</td><td><span class="pri high">HIGH</span></td><td>Reading habit banao — daily 1 passage</td></tr>
+    <tr><td>Articles, Prepositions</td><td><span class="pri med">MEDIUM</span></td><td>Basic usage rules</td></tr>
+  </table>
+</section>
+
+<section id="strategy">
+  <h2>13. Suggested Time Allocation (~45 din baaki)</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">Week 1–2 (Foundation)</h3>
+      <ul>
+        <li>History + Geography + Civics: MPPSC notes se revise karo, MP-specific facts alag se note banao</li>
+        <li>Reasoning + Analytical: daily 30-45 min practice शुरू करो (basics se)</li>
+        <li>Computer Knowledge: pura syllabus ek baar cover kar lo (chhota hai)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Week 3–4 (Build + Practice)</h3>
+      <ul>
+        <li>Science: daily thoda GK revise karo (facts-based)</li>
+        <li>Hindi + English: grammar rules + daily 1 passage each</li>
+        <li>Reasoning/Analytical: topic-wise mock tests shuru karo</li>
+        <li>Current Affairs: last 3-4 mahine ka backlog cover karo</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Week 5 (Full Mocks)</h3>
+      <ul>
+        <li>Full-length mock tests (2 hrs, 100 Q) — weekly 2-3</li>
+        <li>Weak topics identify karke targeted revision</li>
+        <li>MP-specific facts ka ek consolidated revision sheet banao</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Last week (Revision only)</h3>
+      <ul>
+        <li>Naya kuch mat padho — sirf apne notes revise karo</li>
+        <li>Current Affairs ka final update le lo</li>
+        <li>2-3 aur full mocks, timing/accuracy pe focus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="mains">
+  <h2>14. Bonus: Mains Syllabus Preview (Prelims ke baad, abhi ke liye nahi)</h2>
+  <div class="note">Ye October wale Prelims paper ka hissa <b>nahi</b> hai — sirf isliye de raha hoon taaki pata rahe aage kya aane wala hai (Prelims History/Polity ka overlap yahan bhi kaam aayega).</div>
+  <h3>Paper I (300 marks)</h3>
+  <p><b>Part A — इतिहास व भारतीय समाज:</b> हड़प्पा सभ्यता, मौर्य, गुप्त, हर्षवर्धन, 11वीं-14वीं सदी के यात्रियों के विवरण, भक्ति-सूफी परंपरा, विजयनगर, मुगल साम्राज्य, ईस्ट इंडिया कंपनी व उपनिवेशवाद, 1857 का विद्रोह, औपनिवेशिक नगरीकरण, गांधी व राष्ट्रीय आंदोलन, संविधान निर्माण, स्वतंत्रता बाद एकीकरण, भारतीय समाज की विविधता, भारत व MP की जनसांख्यिकी, MP की जनजातियाँ, महिलाओं की भूमिका, जनसंख्या, गरीबी-विकास, शहरीकरण, वैश्वीकरण।</p>
+  <p><b>Part B — शासन, संविधान, राजनीति, सामाजिक न्याय:</b> संवैधानिक इतिहास व विकास, संशोधन, मूल ढांचा, केंद्र-राज्य संबंध, संघवाद, शक्तियों का विभाजन, संसद, राज्य विधानमंडल, कार्यपालिका, न्यायपालिका, दबाव समूह, कल्याण योजनाएँ, कमजोर वर्ग, गरीबी, भुखमरी, सामाजिक न्याय।</p>
+  <h3>Paper II (300 marks)</h3>
+  <p><b>Part A — करेंट अफेयर्स, विज्ञान-तकनीक, पर्यावरण, अर्थव्यवस्था, आंतरिक सुरक्षा:</b> राष्ट्रीय/अंतरराष्ट्रीय घटनाक्रम, IT/स्पेस/रोबोटिक्स/AI, पर्यावरण संरक्षण-प्रदूषण, भारतीय अर्थव्यवस्था-योजना, पुलिस की भूमिका, आंतरिक सुरक्षा, साइबर सुरक्षा, संगठित अपराध-आतंकवाद संबंध, नई तकनीकें (GIS, GPS, Remote Sensing) व उनका पुलिसिंग/यातायात में उपयोग, ऊर्जा (पारंपरिक/गैर-पारंपरिक)।</p>
+  <p><b>Part B — तर्क व आंकड़ों की व्याख्या:</b> सांख्यिकी, प्रायिकता, डेटा इंटरप्रिटेशन (charts/graphs/tables), माध्य-माध्यिका-बहुलक, अनुपात-समानुपात, इकाई विधि, लाभ-हानि, प्रतिशत, छूट, ब्याज, क्षेत्रमिति, तार्किक व विश्लेषणात्मक क्षमता।</p>
+</section>
+
+<section id="caveat">
+  <h2>15. ईमानदार Caveat</h2>
+  <div class="note important">
+    <ul>
+      <li>MPESB ne Prelims ke liye subject-wise/topic-wise exact marks ya PYQ frequency publicly publish nahi ki hai — is report ki priority ranking <b>strategic estimate</b> hai (official Mains syllabus + general MPESB/state-police GK exam pattern + tumhare MPPSC background ke basis par), <b>verified official weightage nahi</b>.</li>
+      <li>Jo confirm hua hai search me: MP-specific History/Geography/Culture ke questions is exam me consistently frequent rehte hain — isliye MP-specific sections har subject me HIGH maarka hain.</li>
+      <li>Best next step: jab bhi purane MP SI (2016-2024) ya MP Police Constable/Patwari GK paper mile, unhe solve karke apna khud ka topic-frequency data banao — wo isse zyada accurate hoga.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>Prepared 13 Sep 2026 · MP SI/Subedar Recruitment 2026 (MPESB) · Prelims: 28 Oct 2026</footer>
+
+</body>
+</html>
