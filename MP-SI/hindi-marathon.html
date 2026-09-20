@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP SI 2026 Hindi Master Notes | Interactive Dashboard</title>
+    <style>
+        /* =========================================================
+           1. CSS VARIABLES & THEME SETUP
+           ========================================================= */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary: #10b981;
+            --dark-bg: #0f172a;
+            --dark-surface: #1e293b;
+            --light-bg: #f8fafc;
+            --light-surface: #ffffff;
+            --text-main: #334155;
+            --text-light: #94a3b8;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --border-color: #e2e8f0;
+            --highlight: #fef08a;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --light-bg: var(--dark-bg);
+            --light-surface: var(--dark-surface);
+            --text-main: #f8fafc;
+            --border-color: #334155;
+            --highlight: #854d0e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--light-bg); color: var(--text-main); line-height: 1.6; transition: var(--transition); }
+
+        /* =========================================================
+           2. LAYOUT & NAVIGATION
+           ========================================================= */
+        .layout { display: flex; min-height: 100vh; }
+        
+        /* Sticky Sidebar */
+        .sidebar {
+            width: 260px; background: var(--light-surface); border-right: 1px solid var(--border-color);
+            position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 20px; transition: var(--transition);
+        }
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        .nav-links { list-style: none; }
+        .nav-links li { margin-bottom: 10px; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-main); font-weight: 600; display: block;
+            padding: 8px 12px; border-radius: 6px; transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; }
+
+        /* Main Content Area */
+        .main-content { flex: 1; padding: 30px; max-width: 1200px; margin: 0 auto; overflow-x: hidden; }
+
+        /* Top Bar */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; gap: 20px;}
+        .search-container { flex: 1; position: relative; }
+        .search-container input {
+            width: 100%; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--border-color);
+            background: var(--light-surface); color: var(--text-main); font-size: 1rem;
+        }
+        .controls { display: flex; gap: 15px; align-items: center; }
+        .btn { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; color: white; transition: var(--transition); }
+        .btn-primary { background: var(--primary); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-secondary { background: var(--secondary); }
+
+        /* =========================================================
+           3. TYPOGRAPHY & TAGS
+           ========================================================= */
+        h1, h2, h3, h4 { color: var(--primary); margin: 20px 0 10px 0; }
+        h1 { font-size: 2.5rem; text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-bottom: 40px;}
+        
+        .tag { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-left: 10px; display: inline-block; }
+        .tag-fire { background: #fee2e2; color: #b91c1c; } /* 🔥 MUST REMEMBER */
+        .tag-star { background: #fef3c7; color: #b45309; } /* ⭐ HIGH PRIORITY */
+        .tag-check { background: #d1fae5; color: #047857; } /* ✅ IMPORTANT */
+        .tag-trap { background: #fce7f3; color: #be185d; } /* ⚠️ TRAP */
+
+        /* =========================================================
+           4. MODULES (CARDS, TABLES, VISUALS)
+           ========================================================= */
+        .card { background: var(--light-surface); padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid var(--border-color); }
+        
+        .concept-box { border-left: 4px solid var(--primary); padding-left: 15px; margin: 15px 0; background: rgba(37, 99, 235, 0.05); padding: 15px; border-radius: 0 8px 8px 0;}
+        .memory-trick { background: rgba(16, 185, 129, 0.1); border: 2px dashed var(--secondary); padding: 15px; border-radius: 8px; margin: 15px 0; font-weight: bold; }
+        .trap-box { border-left: 4px solid var(--danger); background: rgba(239, 68, 68, 0.05); padding: 15px; margin: 15px 0; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--primary); color: white; }
+
+        /* Active Recall */
+        .recall-container { margin: 20px 0; padding: 15px; border: 1px solid var(--primary); border-radius: 8px; background: rgba(37, 99, 235, 0.05); }
+        .answer-hidden { display: none; margin-top: 10px; padding: 10px; background: var(--light-bg); border-radius: 6px; border-left: 3px solid var(--secondary); }
+        
+        /* MCQs */
+        .mcq-box { margin: 20px 0; padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; }
+        .mcq-options { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .mcq-btn { text-align: left; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--light-surface); cursor: pointer; color: var(--text-main); font-weight: 500; transition: 0.2s; }
+        .mcq-btn:hover { background: var(--border-color); }
+        .mcq-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
+        .mcq-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        .mcq-explanation { display: none; margin-top: 15px; padding: 15px; background: #fef3c7; border-radius: 6px; font-size: 0.95rem; }
+
+        /* Diagrams */
+        .diagram-container { display: flex; justify-content: center; margin: 20px 0; padding: 20px; background: var(--light-bg); border-radius: 8px; }
+        .tree-level { display: flex; justify-content: center; gap: 20px; position: relative; margin-bottom: 40px; }
+        .tree-node { padding: 10px 20px; background: var(--primary); color: white; border-radius: 8px; font-weight: bold; z-index: 2;}
+        .tree-connector { position: absolute; height: 40px; width: 2px; background: var(--primary); top: 100%; left: 50%; z-index: 1;}
+
+        /* Progress */
+        .progress-container { background: var(--border-color); height: 10px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        .progress-bar { height: 100%; background: var(--secondary); width: 0%; transition: width 0.5s ease; }
+
+        .hidden { display: none !important; }
+        .video-ref { font-size: 0.85rem; color: var(--primary); cursor: pointer; text-decoration: underline; display: inline-flex; align-items: center; gap: 5px;}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border-color); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+    <!-- STICKY NAVIGATION -->
+    <aside class="sidebar">
+        <h2>MP SI 2026 Dashboard</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p style="font-size: 0.8rem; text-align: center; margin-bottom: 15px;" id="progressText">Progress: 0%</p>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active" onclick="navTo('home')">🏠 Home / Syllabus</a></li>
+            <li><a href="#ch1" onclick="navTo('ch1')">1. वर्णमाला (Alphabets)</a></li>
+            <li><a href="#ch2" onclick="navTo('ch2')">2. लिंग (Gender)</a></li>
+            <li><a href="#ch3" onclick="navTo('ch3')">3. वचन (Number)</a></li>
+            <li><a href="#ch4" onclick="navTo('ch4')">4. वर्तनी (Spelling)</a></li>
+            <li><a href="#ch5" onclick="navTo('ch5')">5. शब्द विचार (Words)</a></li>
+            <li><a href="#ch6" onclick="navTo('ch6')">6. संज्ञा (Noun)</a></li>
+            <li><a href="#ch7" onclick="navTo('ch7')">7. सर्वनाम (Pronoun)</a></li>
+            <li><a href="#ch8" onclick="navTo('ch8')">8. विशेषण (Adjective)</a></li>
+            <li><a href="#ch9" onclick="navTo('ch9')">9. क्रिया (Verb)</a></li>
+            <li><a href="#ch10" onclick="navTo('ch10')">10. संधि (Sandhi)</a></li>
+            <li><a href="#rapid" onclick="navTo('rapid')">⚡ Rapid Revision</a></li>
+            <li><a href="#lastday" onclick="navTo('lastday')">🚨 Last Day Revision</a></li>
+            <li><a href="#traps" onclick="navTo('traps')">⚠️ Common Traps</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- TOP CONTROLS -->
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search concept, rule, or tricky word (e.g., संधि, समास)..." onkeyup="searchContent()">
+            </div>
+            <div class="controls">
+                <button class="btn btn-secondary" onclick="startSelfTest()">📝 Test Yourself</button>
+                <button class="btn btn-primary" onclick="toggleTheme()">🌓 Theme</button>
+            </div>
+        </div>
+
+        <!-- HOME / SYLLABUS -->
+        <section id="home" class="card search-target">
+            <h1>MP Police SI 2026: Hindi Master Notes</h1>
+            <p><strong>लक्ष्य:</strong> "एक बार पढ़ो → समझो → दिमाग में structure बनाओ → बाद में recall कर सको।"</p>
+            
+            <h3 style="margin-top: 30px;">📊 Syllabus Coverage Map</h3>
+            <table>
+                <tr><th>Topic</th><th>Status in Original Lecture</th><th>Exam Priority</th></tr>
+                <tr><td>वर्णमाला (Varnamala)</td><td>✔ Covered (Detailed)</td><td>🔥 MUST REMEMBER</td></tr>
+                <tr><td>लिंग, वचन (Gender, Number)</td><td>✔ Covered</td><td>⭐ HIGH PRIORITY</td></tr>
+                <tr><td>वर्तनी (Spelling)</td><td>✔ Covered (Practical traps)</td><td>🔥 MUST REMEMBER</td></tr>
+                <tr><td>शब्द विचार (Word Origins)</td><td>✔ Covered (Detailed)</td><td>✅ IMPORTANT</td></tr>
+                <tr><td>संज्ञा, सर्वनाम, विशेषण, क्रिया (Grammar)</td><td>✔ Covered (Core rules)</td><td>🔥 MUST REMEMBER</td></tr>
+                <tr><td>संधि (Sandhi)</td><td>✔ Partially Covered (Swara Sandhi)</td><td>🔥 MUST REMEMBER</td></tr>
+                <tr><td>समास, रस, छंद, अलंकार</td><td>✖ Not found in this lecture part</td><td>➕ Needs external source</td></tr>
+            </table>
+            
+            <p class="trap-box"><strong>Note:</strong> Checkboxes <input type="checkbox"> are placed throughout. Check them as you master a section to track your readiness!</p>
+        </section>
+
+        <!-- CHAPTER 1: वर्णमाला -->
+        <section id="ch1" class="card search-target">
+            <h2>1. वर्णमाला (Alphabets) <input type="checkbox" onchange="updateProgress()"></h2>
+            <div class="concept-box">
+                <strong>1. सबसे पहले concept समझो:</strong> भाषा की सबसे छोटी इकाई ध्वनि (Spoken) है और सबसे छोटी लिखित इकाई वर्ण (Written) है। वर्णों का व्यवस्थित समूह ही वर्णमाला कहलाता है।
+                <br><a class="video-ref" href="https://www.youtube.com/watch?v=-GwHwluhwG0&t=445s" target="_blank">🎥 Lecture Ref: [00:07:22]</a>
+            </div>
+
+            <h3>2. Exam Definitions <span class="tag tag-fire">🔥 MUST REMEMBER</span></h3>
+            <ul>
+                <li><strong>अक्षर (Syllable):</strong> जिसका क्षरण न हो सके (ना नाश हो)।</li>
+                <li><strong>वर्ण (Letter):</strong> भाषा की सबसे छोटी लिखित इकाई, जिसके और टुकड़े ना हो सकें (हलंत के साथ)।</li>
+                <li><strong>स्वर (Vowel):</strong> जो स्वतंत्र रूप से बोले जा सकें। <em>(लिखित 13, उच्चारण 10, कुल 11)</em></li>
+                <li><strong>व्यंजन (Consonant):</strong> जो स्वरों की सहायता से बोले जाते हैं। (हलंत वाले)।</li>
+            </ul>
+
+            <h3>3. Core Facts & Rules <span class="tag tag-star">⭐ HIGH PRIORITY</span></h3>
+            <p><strong>अयोगवाह (Ayogvaha):</strong> अं (अनुस्वार) और अः (विसर्ग)। <em>(किशोरीदास वाजपेयी ने नाम दिया)</em></p>
+            <p><strong>स्वर वर्गीकरण:</strong></p>
+            <ul>
+                <li><strong>मात्रा के आधार पर:</strong> ह्रस्व (अ, इ, उ, ऋ - 4), दीर्घ (आ, ई, ऊ, ए, ऐ, ओ, औ - 7), प्लुत (ॐ - 3 times time).</li>
+                <li><strong>जीभ के आधार पर:</strong> अग्र (इ, ई, ए, ऐ), मध्य (अ - उदासीन), पश्च (आ, उ, ऊ, ओ, औ).</li>
+                <li><strong>मुख खुलने के आधार पर:</strong> विवृत (पूरा खुला - आ), संवृत (लगभग बंद - इ, ई, उ, ऊ).</li>
+            </ul>
+
+            <div class="memory-trick">
+                <strong>🧠 MEMORY TRICK (मुख खुलने के आधार पर):</strong><br>
+                "भाभी जी घर पर हैं" - संवृत (लगभग मुँह बंद): "सुई" (इ, ई, उ, ऊ) चुभती है तो मुँह बंद हो जाता है। विवृत (पूरा मुँह खुला): डॉक्टर कहता है "आ" करो (आ)।
+            </div>
+
+            <div class="trap-box">
+                <strong>⚠️ COMMON TRAP: बिंदी (Anuswar) Rule</strong><br>
+                बिंदी 5 जगह <strong>नहीं</strong> लगती:
+                1. शब्द के शुरू में। 
+                2. अंग्रेजी शब्दों में (जैसे - डैडी)।
+                3. जब वर्ण दो बार आए (जैसे - डंडा नहीं, डण्डा)।
+                4. उपसर्ग में। 
+                5. अनुस्वार के ठीक पहले या बाद (जैसे - चंडी, आडंबर)।
+            </div>
+
+            <h3>4. उच्चारण स्थान (Pronunciation Places)</h3>
+            <table>
+                <tr><th>वर्ग (Class)</th><th>स्थान (Place)</th><th>Trick</th></tr>
+                <tr><td>क वर्ग (क, ख, ग, घ, ङ) + अ, आ, ह, विसर्ग</td><td>कंठ (Throat)</td><td><strong>K</strong> (Kanth)</td></tr>
+                <tr><td>च वर्ग (च, छ, ज, झ, ञ) + इ, ई, य, श</td><td>तालु (Palate)</td><td><strong>T</strong> (Talu)</td></tr>
+                <tr><td>ट वर्ग (ट, ठ, ड, ढ, ण) + ऋ, र, ष</td><td>मूर्धा (Hard Palate)</td><td><strong>M</strong> (Murdha)</td></tr>
+                <tr><td>त वर्ग (त, थ, द, ध, न) + ल, स</td><td>दंत (Teeth)</td><td><strong>D</strong> (Dant)</td></tr>
+                <tr><td>प वर्ग (प, फ, ब, भ, म) + उ, ऊ</td><td>ओष्ठ (Lips)</td><td><strong>O</strong> (Oshth)</td></tr>
+            </table>
+
+            <h3>5. प्राणवायु और घोष (Breath & Vibration)</h3>
+            <ul>
+                <li><strong>अल्पप्राण (Alpran):</strong> कम हवा। 1st, 3rd, 5rd letters + अंतस्थ (य, र, ल, व) + सभी स्वर। <em>(Trick: 135)</em></li>
+                <li><strong>महाप्राण (Mahapran):</strong> ज्यादा हवा। 2nd, 4th letters + ऊष्म (श, ष, स, ह)। <em>(Trick: 24)</em></li>
+                <li><strong>अघोष (Aghosh):</strong> No vibration. 1st, 2nd letters + श, ष, स. <em>(Trick: 12)</em></li>
+                <li><strong>सघोष/घोष (Saghosh):</strong> Vibration. 3rd, 4th, 5th letters + य, र, ल, व, ह + सभी स्वर। <em>(Trick: 345)</em></li>
+            </ul>
+
+            <div class="recall-container">
+                <h4>🔁 Active Recall</h4>
+                <p><strong>Q:</strong> शब्दकोश (Dictionary) में 'क्ष' (Ksha) किस वर्ण के बाद आता है?</p>
+                <button class="btn btn-secondary" onclick="revealAnswer('ans1')">Show Answer</button>
+                <div id="ans1" class="answer-hidden">
+                    <strong>Answer:</strong> 'क' (Ka) के बाद। क्योंकि क्ष = क् + ष। <span class="tag tag-fire">VERY FREQUENT MP SI Q</span>
+                </div>
+            </div>
+
+            <div class="mcq-box">
+                <h4>📝 MP SI MCQ Check <span class="tag tag-check">Difficulty: 🔴 Tricky</span></h4>
+                <p>इनमें से कौन सा कथन सही है?</p>
+                <div class="mcq-options">
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp1')">A. 'ह' एक अघोष वर्ण है।</button>
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp1')">B. 'अं' और 'अः' को स्वर माना जाता है।</button>
+                    <button class="mcq-btn correct" onclick="checkMCQ(this, true, 'exp1')">C. सभी स्वर सघोष (घोष) होते हैं।</button>
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp1')">D. 'क्ष' का शब्दकोश में स्थान 'छ' के बाद आता है।</button>
+                </div>
+                <div id="exp1" class="mcq-explanation">
+                    <strong>Explanation:</strong> C सही है। सभी स्वर सघोष होते हैं। (A गलत: 'ह' सघोष है। B गलत: अं/अः अयोगवाह हैं। D गलत: क्ष 'क' के बाद आता है।)
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 2: लिंग -->
+        <section id="ch2" class="card search-target">
+            <h2>2. लिंग (Gender) <input type="checkbox" onchange="updateProgress()"></h2>
+            <div class="concept-box">
+                <strong>1. सबसे पहले concept समझो:</strong> हिंदी में केवल दो लिंग होते हैं - पुल्लिंग (Male) और स्त्रीलिंग (Female)। नपुंसकलिंग हिंदी में नहीं होता।
+            </div>
+
+            <h3>2. Rules to Identify Gender <span class="tag tag-star">⭐ HIGH PRIORITY</span></h3>
+            <p>सबसे बेहतरीन तरीका: शब्द के आगे <strong>"मेरा/मेरी"</strong>, <strong>"अच्छा/अच्छी"</strong> या क्रिया <strong>"रहा है/रही है"</strong> लगाकर वाक्य बनाएँ।</p>
+            <ul>
+                <li><strong>सड़क:</strong> मेरी सड़क (स्त्रीलिंग)। सड़क अच्छी है।</li>
+                <li><strong>संसद:</strong> भारत की संसद बड़ी है (स्त्रीलिंग)।</li>
+                <li><strong>दीवार:</strong> दीवार गिर गई (स्त्रीलिंग)।</li>
+                <li><strong>टेलीविजन:</strong> मेरा टेलीविजन (पुल्लिंग)।</li>
+            </ul>
+
+            <div class="trap-box">
+                <strong>⚠️ EXCEPTIONS & TRAPS:</strong><br>
+                * अनाजों के नाम <strong>पुल्लिंग</strong> (गेहूँ, चावल, चना) <em>अपवाद:</em> ज्वार, सरसों, मक्का, अरहर, मूंग (स्त्रीलिंग)।<br>
+                * रत्नों के नाम <strong>पुल्लिंग</strong> <em>अपवाद:</em> सीपी, मणि (स्त्रीलिंग)।<br>
+                * देशों के नाम <strong>पुल्लिंग</strong> (भारत, जापान) <em>अपवाद:</em> श्रीलंका (स्त्रीलिंग - रावण की लंका)।<br>
+                * द्रव्यों के नाम <strong>पुल्लिंग</strong> (पानी, दूध, घी) <em>अपवाद:</em> चाय, स्याही, शराब, कॉफी, लस्सी (स्त्रीलिंग)।<br>
+                * महीनों के नाम <strong>पुल्लिंग</strong> <em>अपवाद:</em> जनवरी, फरवरी, मई, जुलाई (स्त्रीलिंग)।
+            </div>
+
+            <h3>3. Comparison Table: सदा एकलिंग (Constant Gender)</h3>
+            <table>
+                <tr><th>सदा पुल्लिंग (Always Masculine)</th><th>सदा स्त्रीलिंग (Always Feminine)</th></tr>
+                <tr>
+                    <td>उल्लू, कौवा, खरगोश, कछुआ, मच्छर, गेंडा, चीता</td>
+                    <td>मछली, कोयल, छिपकली, तितली, गिलहरी, मैना</td>
+                </tr>
+                <tr>
+                    <td>(To make female, add "मादा": मादा उल्लू)</td>
+                    <td>(To make male, add "नर": नर छिपकली)</td>
+                </tr>
+            </table>
+
+            <div class="recall-container">
+                <h4>🔁 Active Recall</h4>
+                <p><strong>Q:</strong> 'हाथी' और 'कवि' का स्त्रीलिंग रूप क्या होगा?</p>
+                <button class="btn btn-secondary" onclick="revealAnswer('ans2')">Show Answer</button>
+                <div id="ans2" class="answer-hidden">
+                    <strong>Answer:</strong> हाथी -> हथिनी (Not हाथिनी), कवि -> कवयित्री (Very important spelling!).
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 3: वचन -->
+        <section id="ch3" class="card search-target">
+            <h2>3. वचन (Number) <input type="checkbox" onchange="updateProgress()"></h2>
+            <div class="concept-box">
+                <strong>1. सबसे पहले concept समझो:</strong> हिंदी में दो वचन होते हैं - एकवचन (Singular) और बहुवचन (Plural)।
+            </div>
+
+            <h3>2. Rules of Conversion <span class="tag tag-check">✅ IMPORTANT</span></h3>
+            <ul>
+                <li><strong>Rule 1:</strong> अगर शब्द के अंत में 'आ' है, तो 'ए' कर दो। (लड़का -> लड़के)। <em>Trap: कारक चिह्न (ने, को, से) आने पर ही "लड़कों" होता है। सामान्य बहुवचन 'लड़के' है।</em></li>
+                <li><strong>Rule 2:</strong> अगर अंत में बड़ी 'ई' (ी) है, तो बहुवचन बनाते समय वह छोटी 'इ' (ि) हो जाती है और अंत में 'याँ' लगता है। 
+                    <br><em>Examples:</em> लड़की -> लड़कियाँ, दवाई -> दवाइयाँ, अच्छाई -> अच्छाइयाँ।</li>
+                <li><strong>Rule 3:</strong> अगर अंत में 'या' है, तो सिर्फ चंद्रबिंदु लगाएँ। (चिड़िया -> चिड़ियाँ, गुड़िया -> गुड़ियाँ)।</li>
+                <li><strong>Rule 4:</strong> उ/ऊ के अंत वाले शब्दों में 'एँ' लगता है (बड़ा ऊ छोटा उ बन जाता है)। (वधू -> वधुएँ, बहु -> बहुएँ)।</li>
+            </ul>
+
+            <div class="trap-box">
+                <strong>⚠️ COMMON TRAP: तिर्यक रूप (Oblique Case)</strong><br>
+                सड़क का बहुवचन 'सड़कें' होता है, 'सड़कों' नहीं। 'सड़कों' तब इस्तेमाल होता है जब इसके बाद कोई कारक हो (जैसे - सड़कों पर काम चल रहा है)। परीक्षा में बिना कारक के पूछे तो 'सड़कें' चुनें।
+            </div>
+
+            <h3>3. सदा एकवचन / बहुवचन (Always Singular/Plural) <span class="tag tag-fire">🔥 EXAM FAVORITE</span></h3>
+            <table>
+                <tr><th>सदा बहुवचन (Always Plural)</th><th>सदा एकवचन (Always Singular)</th></tr>
+                <tr>
+                    <td>प्राण, दर्शन, आंसू, होश, हस्ताक्षर, नेत्र, अनेक, लोग, बाल।</td>
+                    <td>जनता, पानी, दूध, वर्षा, आग, आकाश, घी, प्रत्येक, हर एक।</td>
+                </tr>
+            </table>
+
+            <div class="mcq-box">
+                <h4>📝 MP SI MCQ Check <span class="tag tag-check">Difficulty: 🟡 Moderate</span></h4>
+                <p>वाक्य शुद्धि के अनुसार सही वाक्य चुनें:</p>
+                <div class="mcq-options">
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp3')">A. उसके प्राण निकल गया।</button>
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp3')">B. वहाँ अनेकों लोग थे।</button>
+                    <button class="mcq-btn correct" onclick="checkMCQ(this, true, 'exp3')">C. मैंने आपके हस्ताक्षर देख लिए हैं।</button>
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp3')">D. मेरा दर्शन हो गया।</button>
+                </div>
+                <div id="exp3" class="mcq-explanation">
+                    <strong>Explanation:</strong> C सही है। 'हस्ताक्षर' बहुवचन है इसलिए 'लिए हैं'। (A: प्राण बहुवचन है -> प्राण निकल गए। B: 'अनेक' स्वयं बहुवचन है, 'अनेकों' गलत है। D: दर्शन बहुवचन है -> दर्शन हो गए।)
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 4: वर्तनी -->
+        <section id="ch4" class="card search-target">
+            <h2>4. वर्तनी (Spelling Rules & Traps) <input type="checkbox" onchange="updateProgress()"></h2>
+            
+            <p>MP SI में 2-3 प्रश्न सीधे वर्तनी से आते हैं। यहाँ सबसे ज्यादा confuse करने वाले शब्द हैं:</p>
+            
+            <h3>High Priority Confusion Table <span class="tag tag-fire">🔥 MUST REMEMBER</span></h3>
+            <table>
+                <tr><th>अशुद्ध (Wrong)</th><th>शुद्ध (Right - Exam Answer)</th><th>Reason / Trick</th></tr>
+                <tr><td>अनाधिकार</td><td><strong>अनधिकार</strong></td><td>अन् + अधिकार = अनधिकार (ना में आ की मात्रा नहीं होती)</td></tr>
+                <tr><td>कवित्री / कवयित्री</td><td><strong>कवयित्री</strong></td><td>कव् + यि + त्री</td></tr>
+                <tr><td>उज्वल / उज्जल</td><td><strong>उज्ज्वल</strong></td><td>उत् + ज्वल (दोनों 'ज' आधे होते हैं)</td></tr>
+                <tr><td>आशिर्वाद / आर्शिवाद</td><td><strong>आशीर्वाद</strong></td><td>आशीः + वाद ('र' की रेफ 'वा' पर लगती है)</td></tr>
+                <tr><td>निरपराधी</td><td><strong>निरपराध</strong></td><td>अपराधी का विलोम निरपराध होता है, निरपराधी नहीं।</td></tr>
+                <tr><td>अतिश्योक्ति</td><td><strong>अतिशयोक्ति</strong></td><td>अतिशय + उक्ति (पूरा 'श' आता है, आधा नहीं)</td></tr>
+                <tr><td>सन्यासी</td><td><strong>संन्यासी</strong></td><td>सम् + न्यासी (अनुस्वार और आधा 'न' दोनों आते हैं)</td></tr>
+                <tr><td>अंत्याक्षरी</td><td><strong>अन्त्याक्षरी</strong> / अंत्याक्षरी</td><td>अन्त्य + अक्षरी (आधा न, आधा त)</td></tr>
+                <tr><td>जिजिविषा</td><td><strong>जिजीविषा</strong></td><td>जीने की इच्छा (जि + जी + वि + षा)</td></tr>
+                <tr><td>द्वारिका</td><td><strong>द्वारका</strong></td><td>'रि' में मात्रा नहीं होती।</td></tr>
+                <tr><td>अहिल्या</td><td><strong>अहल्या</strong></td><td>'हि' नहीं होता।</td></tr>
+            </table>
+
+            <div class="recall-container">
+                <h4>🔁 Active Recall</h4>
+                <p><strong>Q:</strong> "उपरोक्त" और "अक्षोहिणी" में क्या गलती है?</p>
+                <button class="btn btn-secondary" onclick="revealAnswer('ans4')">Show Answer</button>
+                <div id="ans4" class="answer-hidden">
+                    <strong>Answer:</strong> 1. "उपरोक्त" गलत है, सही शब्द <strong>उपर्युक्त</strong> (उपरि + उक्त) है। <br>
+                    2. "अक्षोहिणी" सही वर्तनी है (अक्ष + ऊहिनी) - यह गुण/वृद्धि संधि का अपवाद है।
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 5: शब्द विचार -->
+        <section id="ch5" class="card search-target">
+            <h2>5. शब्द विचार (Etymology/Word Types) <input type="checkbox" onchange="updateProgress()"></h2>
+            
+            <h3>1. रचना के आधार पर (Based on Structure)</h3>
+            <ul>
+                <li><strong>रूढ़ (Root):</strong> जिनके टुकड़े करने पर कोई अर्थ ना निकले (जैसे: नल, पानी, राम)।</li>
+                <li><strong>यौगिक (Compound):</strong> दो रूढ़ शब्दों के मेल से बने (जैसे: विद्या + आलय = विद्यालय)।</li>
+                <li><strong>योगरूढ़ (Conventional):</strong> यौगिक होते हैं लेकिन किसी विशेष अर्थ (तीसरे) को दर्शाते हैं। (बहुव्रीहि समास के सभी उदाहरण। जैसे: दशानन, नीलकंठ, पंकज)।</li>
+            </ul>
+
+            <h3>2. उत्पत्ति के आधार पर (Based on Origin)</h3>
+            <p><strong>तत्सम (Sanskrit) vs तद्भव (Hindi):</strong></p>
+            <div class="memory-trick">
+                <strong>🧠 तत्सम पहचानने की Tricks:</strong><br>
+                1. <strong>क्ष, त्र, ज्ञ, श्र</strong> वाले शब्द प्रायः तत्सम होते हैं। (क्ष -> छ/ख में बदलता है। जैसे: क्षीर -> खीर, क्षेत्र -> खेत)।<br>
+                2. <strong>व</strong> तत्सम में होता है, जो तद्भव में <strong>ब</strong> बन जाता है। (वानर -> बंदर, वधू -> बहू)।<br>
+                3. <strong>ष</strong> (षट्कोण) वाले शब्द तत्सम होते हैं (कृषक -> किसान)।<br>
+                4. <strong>ऋ</strong> की मात्रा (ृ) तत्सम होती है।<br>
+                5. <strong>चंद्रबिंदु (ँ)</strong> हमेशा <strong>तद्भव</strong> होता है (जैसे: आँख, चाँद)।
+            </div>
+
+            <h3>3. विदेशज शब्द (Foreign Words) <span class="tag tag-star">⭐ HIGH PRIORITY</span></h3>
+            <p><strong>अरबी (Arabic) Memory Trick:</strong> एक 'आशिक' ने 'इश्क' का 'इज़हार' किया, 'गुलाब' 'लिफाफे' में दिया, फिर 'हमला' हुआ, 'अदालत' गया, 'मुकदमा' चला। <em>(आशिक, इश्क, इजहार, लिफाफा, हमला, अदालत, मुकदमा, हुलिया - सब अरबी हैं)।</em></p>
+            <p><strong>तुर्की (Turkish) Trick:</strong> मार-काट वाले और कपड़े। <em>(कैंची, चाकू, बारूद, तोप, तमंचा, कुली, चम्मच, लात, बीवी, कुर्ता)।</em></p>
+            <p><strong>पुर्तगाली (Portuguese):</strong> घर का सामान। <em>(बाल्टी, तौलिया, साबुन, आलमारी, पपीता, आलू, गोभी, काजू)।</em></p>
+            <p><strong>संकर शब्द (Hybrid):</strong> दो भाषाओं से बने। (रेलगाड़ी: रेल(Eng) + गाड़ी(Hindi)। जेलखाना: जेल(Eng) + खाना(Persian))।</p>
+        </section>
+
+        <!-- CHAPTER 6: संज्ञा -->
+        <section id="ch6" class="card search-target">
+            <h2>6. संज्ञा (Nouns) <input type="checkbox" onchange="updateProgress()"></h2>
+            <div class="concept-box">
+                <strong>Concept:</strong> दुनिया में जो भी नाम है, वह संज्ञा है। प्राचीन हिंदी में 5 भेद थे, आधुनिक हिंदी में 3 भेद हैं (समूहवाचक और द्रव्यवाचक को जातिवाचक में मिला लिया गया है)।
+            </div>
+
+            <table style="margin-top:20px;">
+                <tr>
+                    <th>Type</th>
+                    <th>Visual/Number Rule <span class="tag tag-fire">🔥 TRICK</span></th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td><strong>व्यक्तिवाचक (Proper)</strong></td>
+                    <td>दृश्य (Visible) + एकवचन (जिसके जैसा दुनिया में कोई और न हो)</td>
+                    <td>महात्मा गांधी, दिल्ली, ताजमहल, हिमालय, गंगा</td>
+                </tr>
+                <tr>
+                    <td><strong>जातिवाचक (Common)</strong></td>
+                    <td>दृश्य (Visible) + बहुवचन (या जिसका बहुवचन बन सके)</td>
+                    <td>लड़का (लड़के), पर्वत, नदी, पुस्तक, कुत्ता</td>
+                </tr>
+                <tr>
+                    <td><strong>भाववाचक (Abstract)</strong></td>
+                    <td>अदृश्य (Invisible) + एकवचन (जिसे प्लेट में परोसा न जा सके)</td>
+                    <td>बुढ़ापा, मिठास, ईमानदारी, क्रोध, प्रेम</td>
+                </tr>
+            </table>
+
+            <div class="trap-box">
+                <strong>⚠️ COMMON TRAP: भाववाचक से जातिवाचक</strong><br>
+                अगर किसी भाववाचक संज्ञा का बहुवचन बना दिया जाए, तो वह <strong>जातिवाचक संज्ञा</strong> बन जाती है।<br>
+                <em>उदाहरण:</em> 'अच्छाई' (भाववाचक) -> 'अच्छाइयाँ' (जातिवाचक: "उसकी अच्छाइयाँ सबको पता हैं")। 'दूरी' (भाववाचक) -> 'दूरियाँ' (जातिवाचक)।
+            </div>
+            
+            <div class="mcq-box">
+                <h4>📝 MP SI MCQ Check</h4>
+                <p>"देश में आज भी जयचंदों की कमी नहीं है।" वाक्य में 'जयचंदों' कौन सी संज्ञा है?</p>
+                <div class="mcq-options">
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp6')">A. व्यक्तिवाचक</button>
+                    <button class="mcq-btn correct" onclick="checkMCQ(this, true, 'exp6')">B. जातिवाचक</button>
+                    <button class="mcq-btn wrong" onclick="checkMCQ(this, false, 'exp6')">C. भाववाचक</button>
+                </div>
+                <div id="exp6" class="mcq-explanation">
+                    <strong>Explanation:</strong> B सही है। जयचंद एक व्यक्तिवाचक संज्ञा है, लेकिन यहाँ यह गद्दारों की एक 'जाति' या समूह का बोध करा रहा है (बहुवचन में प्रयोग हुआ है)।
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 7: सर्वनाम -->
+        <section id="ch7" class="card search-target">
+            <h2>7. सर्वनाम (Pronouns) <input type="checkbox" onchange="updateProgress()"></h2>
+            <p><strong>Rule:</strong> संज्ञा के स्थान पर प्रयुक्त होने वाले शब्द। सर्वनाम शब्दों की कुल संख्या <strong>11</strong> है (मैं, तू, आप, यह, वह, जो, सो, कोई, कुछ, कौन, क्या)। इसके भेद <strong>6</strong> होते हैं।</p>
+
+            <h3>सर्वनाम के 6 भेद (6 Types)</h3>
+            <ul>
+                <li><strong>1. पुरुषवाचक:</strong> उत्तम पुरुष (मैं, हम), मध्यम पुरुष (तू, तुम, आप), अन्य पुरुष (यह, वह)।</li>
+                <li><strong>2. निश्चयवाचक:</strong> यह, वह (पास या दूर की निश्चित वस्तु के लिए। जैसे: "यह मेरी पुस्तक है")।</li>
+                <li><strong>3. अनिश्चयवाचक:</strong> कोई, कुछ (जैसे: "दरवाजे पर कोई खड़ा है")।</li>
+                <li><strong>4. प्रश्नवाचक:</strong> कौन, क्या (जैसे: "वहाँ कौन है?")।</li>
+                <li><strong>5. संबंधवाचक:</strong> जो-सो, जैसा-वैसा (जैसे: "जैसी करनी वैसी भरनी")।</li>
+                <li><strong>6. निजवाचक:</strong> आप, स्वयं, खुद (कर्ता अपने लिए प्रयोग करे। जैसे: "मैं यह काम खुद कर लूंगा")।</li>
+            </ul>
+
+            <div class="trap-box">
+                <strong>⚠️ CONFUSION: निश्चयवाचक सर्वनाम vs सार्वनामिक विशेषण</strong><br>
+                * "यह मेरी पुस्तक है" -> 'यह' के तुरंत बाद सर्वनाम 'मेरी' है। तो 'यह' <strong>निश्चयवाचक सर्वनाम</strong> है।<br>
+                * "यह पुस्तक मेरी है" -> 'यह' के तुरंत बाद संज्ञा 'पुस्तक' है। जब सर्वनाम के तुरंत बाद संज्ञा आ जाए, तो वह <strong>सार्वनामिक विशेषण</strong> बन जाता है।
+            </div>
+        </section>
+
+        <!-- CHAPTER 8: विशेषण -->
+        <section id="ch8" class="card search-target">
+            <h2>8. विशेषण (Adjectives) <input type="checkbox" onchange="updateProgress()"></h2>
+            
+            <p><strong>विशेष्य:</strong> जिसकी विशेषता बताई जाए (संज्ञा/सर्वनाम)।<br>
+               <strong>विशेषण:</strong> जो विशेषता बताए।<br>
+               <strong>प्रविशेषण:</strong> जो विशेषण की भी विशेषता बताए (जैसे: "राम <em>बहुत</em> चालाक है" - यहाँ 'बहुत' प्रविशेषण है)।</p>
+
+            <h3>विशेषण की अवस्थाएं (Degrees of Comparison) <span class="tag tag-check">✅ IMPORTANT</span></h3>
+            <ul>
+                <li><strong>मूलावस्था (Positive):</strong> कोई तुलना नहीं। (जैसे: राम अच्छा है। उच्च, निम्न)।</li>
+                <li><strong>उत्तरावस्था (Comparative):</strong> दो के बीच तुलना। (जैसे: राम श्याम से अच्छा है। उच्चतर, निम्नतर)। <em>Hint: 'तर' लगा होता है।</em></li>
+                <li><strong>उत्तमावस्था (Superlative):</strong> सबसे तुलना। (जैसे: राम कक्षा में सबसे अच्छा है। उच्चतम, निम्नतम)। <em>Hint: 'तम' लगा होता है।</em></li>
+            </ul>
+        </section>
+
+        <!-- CHAPTER 9: क्रिया -->
+        <section id="ch9" class="card search-target">
+            <h2>9. क्रिया (Verbs) <input type="checkbox" onchange="updateProgress()"></h2>
+            
+            <h3>कर्म के आधार पर (Based on Object) <span class="tag tag-fire">🔥 EXAM FAVORITE</span></h3>
+            <p>पहचानने की 🧠 Trick: क्रिया से पहले <strong>'क्या'</strong> या <strong>'किसको'</strong> लगाकर प्रश्न पूछें।</p>
+            <ul>
+                <li><strong>सकर्मक (Transitive):</strong> अगर उत्तर मिल जाए (या मिलने की संभावना हो)। 
+                    <br><em>Example:</em> "राम आम खाता है।" (क्या खाता है? आम -> सकर्मक)। "गीता पढ़ रही है।" (क्या पढ़ रही है? किताब/अखबार कुछ तो पढ़ रही होगी -> सकर्मक)।</li>
+                <li><strong>अकर्मक (Intransitive):</strong> अगर उत्तर ना मिले (या उत्तर कर्ता ही हो)। 
+                    <br><em>Example:</em> "पक्षी आकाश में उड़ रहे हैं।" (क्या उड़ रहे हैं? पक्षी - यह तो कर्ता है। आकाश - यह स्थान है। कर्म नहीं है -> अकर्मक)। रोना, सोना, उड़ना, चलना, हंसना - सब अकर्मक हैं।</li>
+            </ul>
+
+            <h3>संरचना के आधार पर (Based on Structure)</h3>
+            <ul>
+                <li><strong>प्रेरणार्थक (Causative):</strong> जब कर्ता खुद काम ना करके किसी और से करवाए। (जैसे: "माँ ने नौकर से सफाई करवाई")। मूल धातु में 'आना' लगाने से प्रथम प्रेरणार्थक (हंसाना) और 'वाना' लगाने से द्वितीय प्रेरणार्थक (हंसवाना) बनता है।</li>
+                <li><strong>पूर्वकालिक (Antecedent):</strong> मुख्य क्रिया से पहले होने वाली क्रिया। <em>(Trick: शब्द में 'कर' लगा होता है)</em>। (जैसे: "वह <em>खेलकर</em> सो गया")।</li>
+                <li><strong>नामधातु (Nominal):</strong> संज्ञा, सर्वनाम या विशेषण से बनने वाली क्रिया। (जैसे: बात -> बतियाना, लाठी -> लठियाना, शर्म -> शर्माना)।</li>
+            </ul>
+        </section>
+
+        <!-- CHAPTER 10: संधि -->
+        <section id="ch10" class="card search-target">
+            <h2>10. संधि (Sandhi - Basics) <input type="checkbox" onchange="updateProgress()"></h2>
+            <div class="concept-box">
+                <strong>Concept:</strong> दो वर्णों के मेल से उत्पन्न विकार (परिवर्तन) संधि कहलाता है। अगर विकार न हो, तो वह 'संयोग' होता है। संधि 3 प्रकार की होती है: स्वर, व्यंजन, विसर्ग।
+            </div>
+
+            <h3>स्वर संधि के 5 भेद (Families Trick) <span class="tag tag-star">⭐ HIGH PRIORITY</span></h3>
+            <p>स्वरों को 3 Family में बाँटें:</p>
+            <ul>
+                <li><strong>Family A:</strong> अ, आ</li>
+                <li><strong>Family B:</strong> इ, ई, उ, ऊ, ऋ</li>
+                <li><strong>Family C:</strong> ए, ऐ, ओ, औ</li>
+            </ul>
+
+            <table>
+                <tr><th>संधि (Type)</th><th>Formula</th><th>पहचान (Trick) / Examples</th></tr>
+                <tr>
+                    <td><strong>1. दीर्घ (Dirgha)</strong></td>
+                    <td>Same Family (A+A, B+B)</td>
+                    <td>बड़ी मात्रा (आ, ई, ऊ, ॠ)।<br>विद्या + आलय = विद्यालय, भानु + उदय = भानूदय।</td>
+                </tr>
+                <tr>
+                    <td><strong>2. गुण (Gun)</strong></td>
+                    <td>A + B</td>
+                    <td>ऊपर <strong>एक</strong> मात्रा (े, ो) या 'अर' की ध्वनि।<br>महा + ईश = महेश, पर + उपकार = परोपकार, महा + ऋषि = महर्षि।</td>
+                </tr>
+                <tr>
+                    <td><strong>3. वृद्धि (Vriddhi)</strong></td>
+                    <td>A + C</td>
+                    <td>ऊपर <strong>दो</strong> मात्रा (ै, ौ)।<br>एक + एक = एकैक, महा + ओज = महौज।</td>
+                </tr>
+                <tr>
+                    <td><strong>4. यण (Yan)</strong></td>
+                    <td>B + Any other</td>
+                    <td>य, व, र के ठीक पहले <strong>आधा अक्षर</strong>।<br>प्रति + एक = प्रत्येक, सु + आगत = स्वागत।</td>
+                </tr>
+                <tr>
+                    <td><strong>5. अयादि (Ayadi)</strong></td>
+                    <td>C + Any other</td>
+                    <td>ऐ, आय, अव, आव की ध्वनि (अधिकतर 3 अक्षर के सरल शब्द)।<br>ने + अन = नयन, पौ + अक = पावक, नौ + इक = नाविक।</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- RAPID REVISION -->
+        <section id="rapid" class="card search-target">
+            <h2>⚡ Rapid Revision (20-Minute Exam Review)</h2>
+            <ul>
+                <li><strong>वर्ण:</strong> भाषा की सबसे छोटी लिखित इकाई। (ध्वनि मौखिक इकाई है)।</li>
+                <li><strong>स्वर/व्यंजन:</strong> कुल स्वर 11, कुल व्यंजन 33।</li>
+                <li><strong>प्राण/घोष:</strong> अल्पप्राण (1,3,5), महाप्राण (2,4)। अघोष (1,2), सघोष (3,4,5)।</li>
+                <li><strong>लिंग/वचन:</strong> 'प्राण, दर्शन, आंसू, हस्ताक्षर' सदा बहुवचन। 'जनता, पानी' सदा एकवचन।</li>
+                <li><strong>संज्ञा:</strong> जो प्लेट में ना परोसी जा सके = भाववाचक संज्ञा। भाववाचक का बहुवचन = जातिवाचक।</li>
+                <li><strong>सर्वनाम:</strong> कुल संख्या 11. भेद 6. (यह/वह अगर संज्ञा के तुरंत पहले आए तो सार्वनामिक विशेषण)।</li>
+                <li><strong>क्रिया:</strong> 'क्या/किसको' से उत्तर मिले तो सकर्मक। काम खुद न करके दूसरे से करवाए तो प्रेरणार्थक। 'कर' लगा हो तो पूर्वकालिक।</li>
+                <li><strong>संधि:</strong> बड़ी मात्रा (दीर्घ), 1 मात्रा (गुण), 2 मात्रा (वृद्धि), आधे अक्षर के बाद य/व (यण), तीन अक्षर बिना मात्रा (अयादि)।</li>
+            </ul>
+        </section>
+
+        <!-- LAST DAY REVISION -->
+        <section id="lastday" class="card search-target">
+            <h2>🚨 Last Day Revision (Top 5 Traps to avoid)</h2>
+            <ol>
+                <li><strong>Trap 1:</strong> 'क्ष' का शब्दकोश में स्थान 'छ' के बाद <strong>नहीं</strong> आता, 'क' के बाद आता है।</li>
+                <li><strong>Trap 2:</strong> 'हथिनी' और 'कवयित्री' की वर्तनी रट लें। 'उज्ज्वल' में दोनों 'ज' आधे होते हैं।</li>
+                <li><strong>Trap 3:</strong> 'सड़कों' और 'लड़कों' तिर्यक रूप हैं। अगर वाक्य में कोई कारक नहीं है, तो बहुवचन 'सड़कें' और 'लड़के' होगा।</li>
+                <li><strong>Trap 4:</strong> 'उड़ना', 'रोना', 'सोना' हमेशा <strong>अकर्मक</strong> क्रियाएँ हैं।</li>
+                <li><strong>Trap 5:</strong> 'अक्षोहिणी' में दो मात्राएँ होने के बावजूद यह वृद्धि संधि नहीं, गुण संधि का अपवाद है।</li>
+            </ol>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    // 1. Theme Toggle
+    function toggleTheme() {
+        const body = document.body;
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    // Set initial theme
+    if(localStorage.getItem('theme') === 'dark') document.body.setAttribute('data-theme', 'dark');
+
+    // 2. Navigation & Smooth Scroll
+    function navTo(id) {
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        event.target.classList.add('active');
+        const el = document.getElementById(id);
+        if(el) {
+            window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
+        }
+    }
+
+    // 3. Progress Tracking
+    function updateProgress() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let checked = 0;
+        checkboxes.forEach((cb, index) => {
+            if(cb.checked) checked++;
+            // Save state
+            localStorage.setItem('cb_' + index, cb.checked);
+        });
+        const percentage = Math.round((checked / checkboxes.length) * 100) || 0;
+        document.getElementById('progressBar').style.width = percentage + '%';
+        document.getElementById('progressText').innerText = `Progress: ${percentage}%`;
+    }
+
+    // Load progress
+    window.onload = function() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((cb, index) => {
+            cb.checked = localStorage.getItem('cb_' + index) === 'true';
+        });
+        updateProgress();
+    };
+
+    // 4. Client-side Search
+    function searchContent() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const targets = document.querySelectorAll('.search-target');
+        
+        targets.forEach(target => {
+            const text = target.innerText.toLowerCase();
+            if(text.includes(input)) {
+                target.classList.remove('hidden');
+            } else {
+                target.classList.add('hidden');
+            }
+        });
+    }
+
+    // 5. Active Recall Reveal
+    function revealAnswer(id) {
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 6. MCQ Logic
+    function checkMCQ(btn, isCorrect, expId) {
+        // Reset siblings
+        const siblings = btn.parentElement.children;
+        for(let sibling of siblings) {
+            sibling.classList.remove('correct', 'wrong');
+            sibling.style.opacity = "0.5";
+            sibling.style.pointerEvents = "none";
+        }
+        
+        btn.style.opacity = "1";
+        if(isCorrect) {
+            btn.classList.add('correct');
+        } else {
+            btn.classList.add('wrong');
+            // Highlight correct one too
+            for(let sibling of siblings) {
+                if(sibling.getAttribute('onclick').includes('true')) {
+                    sibling.classList.add('correct');
+                    sibling.style.opacity = "1";
+                }
+            }
+        }
+        document.getElementById(expId).style.display = 'block';
+    }
+
+    // 7. Self Test Mode
+    function startSelfTest() {
+        alert("Entering Self-Test Mode! (Focus mode activated)");
+        // Scroll to first MCQ
+        const firstMcq = document.querySelector('.mcq-box');
+        if(firstMcq) {
+            firstMcq.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+    }
+</script>
+
+</body>
+</html>
